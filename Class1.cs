@@ -99,6 +99,6 @@ public class ListViewColumnSorter : IComparer
             return OrderOfSort;
         }
     }
-
 }
+
 
