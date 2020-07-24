@@ -15,8 +15,8 @@ paths, automatically rename output files, overwrite them etc.
 
 Features
 
-    Video encoding h264 / h265 / NVENC / QuickSync / ProRes
-    Audio encoding MP3 / AAC / AC3 / FLAC / WAV / Opus
+    Video encoding h264 / h265 / NVENC / QuickSync / ProRes / Any other video format supported by ffmpeg.
+    Audio encoding MP3 / AAC / AC3 / FLAC / WAV / Opus / Any other audio format supported by ffmpeg.
     Multi-file encode for thousands of files
     Automatic shutdown, with option to run post-encoding script
     Batch processing
