@@ -23,8 +23,7 @@ Features
     Set encoding priority
     Drag and drop
     Stream mapping and multiplex
-    Batch download m3u8 urls
-    FFmpeg A/V encoding wizard
-    Filter files
+    Batch download YouTube and m3u8 urls
+    FFmpeg parameters wizard
+    Filter files using different criteria.
     Trim and concatenate files
-    Batch YouTube video download
