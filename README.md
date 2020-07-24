@@ -5,6 +5,7 @@ with a few mouse clicks in a convenient GUI. Among other things, you can drag an
 resume, and set automatic shutdown. It is good for seasoned ffmpeg users as well as beginners.
 
 Downloads: https://sourceforge.net/p/ffmpeg-batch/wiki / https://github.com/eibol/ffmpeg_batch/releases
+
 Support donations: https://bit.ly/3hAZrZU / https://www.paypal.me/eibolff 
 
 It provides unlimited single or multi-file batch encoding for almost any audio/video format. You can use any set of parameters 
