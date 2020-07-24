@@ -13,17 +13,17 @@ trim, concatenate, record screen, capture M3u8 or YouTube URLs. You can also acc
 You can manually save your favourite custom ffmpeg parameters, using a fancy encoding wizard. You can use relative/absolute output 
 paths, automatically rename output files, overwrite them etc.
 
-Features
+FEATURES
 
-    Video encoding h264 / h265 / NVENC / QuickSync / ProRes / Any other video format supported by ffmpeg.
-    Audio encoding MP3 / AAC / AC3 / FLAC / WAV / Opus / Any other audio format supported by ffmpeg.
-    Multi-file encode for thousands of files
-    Automatic shutdown, with option to run post-encoding script
-    Batch processing
-    Set encoding priority
-    Drag and drop
-    Stream mapping and multiplex
-    Batch download YouTube and m3u8 urls
-    FFmpeg parameters wizard
-    Filter files using different criteria.
-    Trim and concatenate files
+   - Video encoding: AV1 / H264 / H265 / NVENC / QuickSync / ProRes / VP9 / Any other video format supported by ffmpeg.
+   - Audio encoding: MP3 / AAC / AC3 / FLAC / WAV / Opus / Vorbis / Any other audio format supported by ffmpeg.
+   - Multi-file encode for thousands of files
+   - Automatic shutdown, with option to run post-encoding script
+   - Batch processing
+   - Set encoding priority
+   - Drag and drop
+   - Stream mapping and multiplex
+   - Batch download YouTube and m3u8 urls
+   - FFmpeg parameters wizard
+   - Filter files using different criteria.
+   - Trim and concatenate files
