@@ -65,10 +65,10 @@
     <StartupObject>FFBatch.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>BAD5BAFD541ECDF55A8D818397CE59923F1977D9</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>435F46A2ACDB27F59B873A7AC0D6E884937B5C75</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>EibolSoft_2020_2.pfx</ManifestKeyFile>
+    <ManifestKeyFile>FFBatch_Converter_3_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -80,7 +80,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>EibolSoft_2020_2.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>FFBatch_Converter_3_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <NoWin32Manifest>true</NoWin32Manifest>
@@ -287,6 +287,7 @@
     <None Include="EibolSoft_2020_2.pfx" />
     <None Include="FFBatch_2020Key.pfx" />
     <None Include="FFBatch_Converter_2_TemporaryKey.pfx" />
+    <None Include="FFBatch_Converter_3_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>

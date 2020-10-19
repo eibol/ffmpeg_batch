@@ -44,6 +44,7 @@ namespace FFBatch
         public Boolean sort_multi;
         public Boolean send_params_console;
         public Boolean warn_successful;
+        public Boolean no_warn_0;
         public Boolean reload_config;
         public Boolean subfolders;
         public Boolean to_sleep;
@@ -396,11 +397,36 @@ namespace FFBatch
                     warn_successful = true;
                 }
 
-                //End warn sucessful items
+            //End warn sucessful items
 
-                //No saving of logs
+            //Warn 0 duration
 
-                String f_nologs = String.Empty;
+            String f_warn_0 = String.Empty;
+            if (is_portable == false)
+            {
+                f_warn_0 = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_warn_0.ini";
+            }
+            else
+            {
+                f_warn_0 = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_warn_0_portable.ini";
+            }
+
+            if (File.Exists(f_warn_0))
+            {
+                chk_non0.CheckState = CheckState.Checked;
+                no_warn_0 = false;
+            }
+            else
+            {
+                chk_non0.CheckState = CheckState.Unchecked;
+                no_warn_0 = true;
+            }
+
+            //End warn 0 duration
+
+            //No saving of logs
+
+            String f_nologs = String.Empty;
                 if (is_portable == false)
                 {
                     f_nologs = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_nologs.ini";
@@ -838,6 +864,7 @@ namespace FFBatch
             checkBox1.CheckState = CheckState.Unchecked;
             chk_play.Checked = false;
             chk_w_position.Checked = false;
+            chk_non0.Checked = false;
         }
 
         private void btn_restore_Click(object sender, EventArgs e)
@@ -1035,6 +1062,12 @@ namespace FFBatch
         {
             if (chk_w_position.CheckState == CheckState.Checked) remember_w = true;
             else remember_w = false;
+        }
+
+        private void chk_non0_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_non0.CheckState == CheckState.Checked) no_warn_0 = true;
+            else no_warn_0 = false;
         }
     }
 }

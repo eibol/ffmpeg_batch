@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.panel2 = new System.Windows.Forms.GroupBox();
+            this.chk_non0 = new System.Windows.Forms.CheckBox();
             this.btn_stop_play = new System.Windows.Forms.Button();
             this.btn_browse_play = new System.Windows.Forms.Button();
             this.btn_play_sound = new System.Windows.Forms.Button();
@@ -52,6 +53,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chk_w_position = new System.Windows.Forms.CheckBox();
             this.chk_remember_tab = new System.Windows.Forms.CheckBox();
             this.chk_verbose_log = new System.Windows.Forms.CheckBox();
             this.chk_console_params = new System.Windows.Forms.CheckBox();
@@ -69,7 +71,6 @@
             this.browse_sound = new System.Windows.Forms.OpenFileDialog();
             this.img_play = new System.Windows.Forms.ImageList(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.chk_w_position = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -78,6 +79,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.chk_non0);
             this.panel2.Controls.Add(this.btn_stop_play);
             this.panel2.Controls.Add(this.btn_browse_play);
             this.panel2.Controls.Add(this.btn_play_sound);
@@ -97,13 +99,24 @@
             this.panel2.TabStop = false;
             this.panel2.Text = "Runtime settings";
             // 
+            // chk_non0
+            // 
+            this.chk_non0.AutoSize = true;
+            this.chk_non0.Location = new System.Drawing.Point(17, 55);
+            this.chk_non0.Name = "chk_non0";
+            this.chk_non0.Size = new System.Drawing.Size(233, 17);
+            this.chk_non0.TabIndex = 140;
+            this.chk_non0.Text = "Do not display warning for zero duration files";
+            this.chk_non0.UseVisualStyleBackColor = true;
+            this.chk_non0.CheckedChanged += new System.EventHandler(this.chk_non0_CheckedChanged);
+            // 
             // btn_stop_play
             // 
             this.btn_stop_play.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_stop_play.FlatAppearance.BorderSize = 0;
             this.btn_stop_play.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_stop_play.Image = ((System.Drawing.Image)(resources.GetObject("btn_stop_play.Image")));
-            this.btn_stop_play.Location = new System.Drawing.Point(267, 206);
+            this.btn_stop_play.Location = new System.Drawing.Point(267, 228);
             this.btn_stop_play.Name = "btn_stop_play";
             this.btn_stop_play.Size = new System.Drawing.Size(20, 20);
             this.btn_stop_play.TabIndex = 139;
@@ -117,7 +130,7 @@
             this.btn_browse_play.FlatAppearance.BorderSize = 0;
             this.btn_browse_play.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btn_browse_play.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_browse_play.Location = new System.Drawing.Point(207, 206);
+            this.btn_browse_play.Location = new System.Drawing.Point(207, 228);
             this.btn_browse_play.Name = "btn_browse_play";
             this.btn_browse_play.Size = new System.Drawing.Size(60, 22);
             this.btn_browse_play.TabIndex = 134;
@@ -132,7 +145,7 @@
             this.btn_play_sound.FlatAppearance.BorderSize = 0;
             this.btn_play_sound.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_play_sound.Image = ((System.Drawing.Image)(resources.GetObject("btn_play_sound.Image")));
-            this.btn_play_sound.Location = new System.Drawing.Point(267, 206);
+            this.btn_play_sound.Location = new System.Drawing.Point(267, 228);
             this.btn_play_sound.Name = "btn_play_sound";
             this.btn_play_sound.Size = new System.Drawing.Size(20, 20);
             this.btn_play_sound.TabIndex = 138;
@@ -142,7 +155,7 @@
             // chk_play
             // 
             this.chk_play.AutoSize = true;
-            this.chk_play.Location = new System.Drawing.Point(17, 209);
+            this.chk_play.Location = new System.Drawing.Point(17, 231);
             this.chk_play.Name = "chk_play";
             this.chk_play.Size = new System.Drawing.Size(180, 17);
             this.chk_play.TabIndex = 133;
@@ -153,7 +166,7 @@
             // chk_full_info
             // 
             this.chk_full_info.AutoSize = true;
-            this.chk_full_info.Location = new System.Drawing.Point(17, 183);
+            this.chk_full_info.Location = new System.Drawing.Point(17, 207);
             this.chk_full_info.Name = "chk_full_info";
             this.chk_full_info.Size = new System.Drawing.Size(171, 17);
             this.chk_full_info.TabIndex = 132;
@@ -175,7 +188,7 @@
             // chk_sleep
             // 
             this.chk_sleep.AutoSize = true;
-            this.chk_sleep.Location = new System.Drawing.Point(17, 158);
+            this.chk_sleep.Location = new System.Drawing.Point(17, 183);
             this.chk_sleep.Name = "chk_sleep";
             this.chk_sleep.Size = new System.Drawing.Size(202, 17);
             this.chk_sleep.TabIndex = 129;
@@ -187,7 +200,7 @@
             // 
             this.txt_suffix.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_suffix.Enabled = false;
-            this.txt_suffix.Location = new System.Drawing.Point(132, 105);
+            this.txt_suffix.Location = new System.Drawing.Point(132, 130);
             this.txt_suffix.MaxLength = 12;
             this.txt_suffix.Name = "txt_suffix";
             this.txt_suffix.Size = new System.Drawing.Size(49, 20);
@@ -198,7 +211,7 @@
             // chk_try
             // 
             this.chk_try.AutoSize = true;
-            this.chk_try.Location = new System.Drawing.Point(17, 132);
+            this.chk_try.Location = new System.Drawing.Point(17, 157);
             this.chk_try.Name = "chk_try";
             this.chk_try.Size = new System.Drawing.Size(207, 17);
             this.chk_try.TabIndex = 125;
@@ -209,7 +222,7 @@
             // check_open_output
             // 
             this.check_open_output.AutoSize = true;
-            this.check_open_output.Location = new System.Drawing.Point(17, 55);
+            this.check_open_output.Location = new System.Drawing.Point(17, 80);
             this.check_open_output.Name = "check_open_output";
             this.check_open_output.Size = new System.Drawing.Size(216, 17);
             this.check_open_output.TabIndex = 28;
@@ -220,7 +233,7 @@
             // check_recreate
             // 
             this.check_recreate.AutoSize = true;
-            this.check_recreate.Location = new System.Drawing.Point(17, 80);
+            this.check_recreate.Location = new System.Drawing.Point(17, 105);
             this.check_recreate.Name = "check_recreate";
             this.check_recreate.Size = new System.Drawing.Size(227, 17);
             this.check_recreate.TabIndex = 67;
@@ -231,7 +244,7 @@
             // chk_suffix
             // 
             this.chk_suffix.AutoSize = true;
-            this.chk_suffix.Location = new System.Drawing.Point(17, 107);
+            this.chk_suffix.Location = new System.Drawing.Point(17, 132);
             this.chk_suffix.Name = "chk_suffix";
             this.chk_suffix.Size = new System.Drawing.Size(115, 17);
             this.chk_suffix.TabIndex = 68;
@@ -350,6 +363,17 @@
             this.groupBox2.TabIndex = 128;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "General settings";
+            // 
+            // chk_w_position
+            // 
+            this.chk_w_position.AutoSize = true;
+            this.chk_w_position.Location = new System.Drawing.Point(17, 231);
+            this.chk_w_position.Name = "chk_w_position";
+            this.chk_w_position.Size = new System.Drawing.Size(156, 17);
+            this.chk_w_position.TabIndex = 133;
+            this.chk_w_position.Text = "Remember window location";
+            this.chk_w_position.UseVisualStyleBackColor = true;
+            this.chk_w_position.CheckedChanged += new System.EventHandler(this.chk_w_position_CheckedChanged);
             // 
             // chk_remember_tab
             // 
@@ -540,17 +564,6 @@
             this.timer1.Interval = 8000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // chk_w_position
-            // 
-            this.chk_w_position.AutoSize = true;
-            this.chk_w_position.Location = new System.Drawing.Point(17, 231);
-            this.chk_w_position.Name = "chk_w_position";
-            this.chk_w_position.Size = new System.Drawing.Size(156, 17);
-            this.chk_w_position.TabIndex = 133;
-            this.chk_w_position.Text = "Remember window location";
-            this.chk_w_position.UseVisualStyleBackColor = true;
-            this.chk_w_position.CheckedChanged += new System.EventHandler(this.chk_w_position_CheckedChanged);
-            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -629,5 +642,6 @@
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btn_stop_play;
         private System.Windows.Forms.CheckBox chk_w_position;
+        private System.Windows.Forms.CheckBox chk_non0;
     }
 }

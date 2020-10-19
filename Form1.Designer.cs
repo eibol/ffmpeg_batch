@@ -4491,7 +4491,7 @@
             this.toolStripSeparator27,
             this.menu_settings});
             this.main_2.Name = "main_2";
-            this.main_2.Size = new System.Drawing.Size(46, 20);
+            this.main_2.Size = new System.Drawing.Size(48, 20);
             this.main_2.Text = "Tools";
             // 
             // menu_reload_settings
