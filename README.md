@@ -24,8 +24,9 @@ FEATURES
    - Batch processing
    - Set encoding priority
    - Drag and drop
-   - Stream mapping and multiplex
+   - Stream mapping and multiplex with jobs manager.
    - Batch download YouTube and m3u8 urls
    - FFmpeg parameters wizard
    - Filter files using different criteria.
    - Trim and concatenate files
+   - Batch image thumbnail extraction
