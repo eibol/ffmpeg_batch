@@ -1,16 +1,15 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("FFBatch")]
-[assembly: AssemblyDescription("FFmpeg Batch Converter for Windows")]
+[assembly: AssemblyTitle("FFmpeg Batch AV Converter")]
+[assembly: AssemblyDescription("Universal batch encoder for Windows")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Eibolsoft")]
-[assembly: AssemblyProduct("FFBatch Converter")]
-[assembly: AssemblyCopyright("License Creative Commons CC BY-NC-SA 2018")]
+[assembly: AssemblyProduct("FFmpeg Batch AV Converter")]
+[assembly: AssemblyCopyright("GNU Lesser General Public License (LGPL) version 3.1 or later")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +31,5 @@ using System.Runtime.InteropServices;
 // Puede especificar todos los valores o utilizar los números de compilación y de revisión predeterminados
 // mediante el carácter '*', como se muestra a continuación:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.6.2.0")]
-[assembly: AssemblyFileVersion("1.6.2.0")]
+[assembly: AssemblyVersion("2.2.6")]
+[assembly: AssemblyFileVersion("2.2.6")]

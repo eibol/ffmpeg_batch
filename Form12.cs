@@ -47,6 +47,8 @@ namespace FFBatch
             timer1.Stop();
             Process[] localByName = Process.GetProcessesByName("ffmpeg");
             if (localByName.Count() > 0) foreach (Process p in localByName) p.Kill();
+            Process[] localByName2 = Process.GetProcessesByName("youtube-dl");
+            if (localByName2.Count() > 0) foreach (Process p in localByName2) p.Kill();
         }
     }
 }

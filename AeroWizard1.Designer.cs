@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AeroWizard1));
             this.wizardControl1 = new AeroWizard.WizardControl();
             this.wz0 = new AeroWizard.WizardPage();
+            this.radio_images = new System.Windows.Forms.RadioButton();
             this.lbl_silence = new System.Windows.Forms.Label();
             this.pic_warn_silence = new System.Windows.Forms.PictureBox();
             this.radio_silence = new System.Windows.Forms.RadioButton();
@@ -172,6 +173,7 @@
             // 
             // wz0
             // 
+            this.wz0.Controls.Add(this.radio_images);
             this.wz0.Controls.Add(this.lbl_silence);
             this.wz0.Controls.Add(this.pic_warn_silence);
             this.wz0.Controls.Add(this.radio_silence);
@@ -186,10 +188,21 @@
             this.wz0.Text = "Select the type of preset or wizard";
             this.wz0.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz0_Commit);
             // 
+            // radio_images
+            // 
+            this.radio_images.AutoSize = true;
+            this.radio_images.Location = new System.Drawing.Point(45, 161);
+            this.radio_images.Name = "radio_images";
+            this.radio_images.Size = new System.Drawing.Size(150, 19);
+            this.radio_images.TabIndex = 28;
+            this.radio_images.TabStop = true;
+            this.radio_images.Text = "Image extraction wizard";
+            this.radio_images.UseVisualStyleBackColor = true;
+            // 
             // lbl_silence
             // 
             this.lbl_silence.AutoSize = true;
-            this.lbl_silence.Location = new System.Drawing.Point(248, 130);
+            this.lbl_silence.Location = new System.Drawing.Point(248, 135);
             this.lbl_silence.Name = "lbl_silence";
             this.lbl_silence.Size = new System.Drawing.Size(0, 15);
             this.lbl_silence.TabIndex = 27;
@@ -197,7 +210,7 @@
             // pic_warn_silence
             // 
             this.pic_warn_silence.Image = ((System.Drawing.Image)(resources.GetObject("pic_warn_silence.Image")));
-            this.pic_warn_silence.Location = new System.Drawing.Point(221, 128);
+            this.pic_warn_silence.Location = new System.Drawing.Point(221, 133);
             this.pic_warn_silence.Name = "pic_warn_silence";
             this.pic_warn_silence.Size = new System.Drawing.Size(21, 22);
             this.pic_warn_silence.TabIndex = 26;
@@ -207,7 +220,7 @@
             // radio_silence
             // 
             this.radio_silence.AutoSize = true;
-            this.radio_silence.Location = new System.Drawing.Point(45, 128);
+            this.radio_silence.Location = new System.Drawing.Point(45, 133);
             this.radio_silence.Name = "radio_silence";
             this.radio_silence.Size = new System.Drawing.Size(146, 19);
             this.radio_silence.TabIndex = 25;
@@ -219,7 +232,7 @@
             // pic_warn_two
             // 
             this.pic_warn_two.Image = ((System.Drawing.Image)(resources.GetObject("pic_warn_two.Image")));
-            this.pic_warn_two.Location = new System.Drawing.Point(221, 99);
+            this.pic_warn_two.Location = new System.Drawing.Point(221, 104);
             this.pic_warn_two.Name = "pic_warn_two";
             this.pic_warn_two.Size = new System.Drawing.Size(21, 22);
             this.pic_warn_two.TabIndex = 24;
@@ -229,7 +242,7 @@
             // lbl_two
             // 
             this.lbl_two.AutoSize = true;
-            this.lbl_two.Location = new System.Drawing.Point(246, 101);
+            this.lbl_two.Location = new System.Drawing.Point(246, 106);
             this.lbl_two.Name = "lbl_two";
             this.lbl_two.Size = new System.Drawing.Size(0, 15);
             this.lbl_two.TabIndex = 3;
@@ -237,9 +250,9 @@
             // radio_2pass
             // 
             this.radio_2pass.AutoSize = true;
-            this.radio_2pass.Location = new System.Drawing.Point(45, 99);
+            this.radio_2pass.Location = new System.Drawing.Point(45, 104);
             this.radio_2pass.Name = "radio_2pass";
-            this.radio_2pass.Size = new System.Drawing.Size(141, 19);
+            this.radio_2pass.Size = new System.Drawing.Size(143, 19);
             this.radio_2pass.TabIndex = 2;
             this.radio_2pass.TabStop = true;
             this.radio_2pass.Text = "Two pass video wizard";
@@ -402,7 +415,7 @@
             this.label27.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.Location = new System.Drawing.Point(58, 152);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(44, 15);
+            this.label27.Size = new System.Drawing.Size(45, 15);
             this.label27.TabIndex = 43;
             this.label27.Text = "Vendor";
             this.label27.Visible = false;
@@ -426,7 +439,7 @@
             this.label26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.Location = new System.Drawing.Point(214, 108);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(71, 15);
+            this.label26.Size = new System.Drawing.Size(70, 15);
             this.label26.TabIndex = 41;
             this.label26.Text = "Pixel format";
             this.label26.Visible = false;
@@ -556,7 +569,7 @@
             this.label16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.Location = new System.Drawing.Point(36, 231);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(71, 15);
+            this.label16.Size = new System.Drawing.Size(70, 15);
             this.label16.TabIndex = 22;
             this.label16.Text = "Pixel format";
             this.label16.Visible = false;
@@ -593,7 +606,7 @@
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(355, 157);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(33, 15);
+            this.label8.Size = new System.Drawing.Size(34, 15);
             this.label8.TabIndex = 13;
             this.label8.Text = "Tune";
             this.label8.Visible = false;
@@ -1309,7 +1322,7 @@
             // txt_preset_name
             // 
             this.txt_preset_name.Enabled = false;
-            this.txt_preset_name.Location = new System.Drawing.Point(120, 203);
+            this.txt_preset_name.Location = new System.Drawing.Point(120, 204);
             this.txt_preset_name.Name = "txt_preset_name";
             this.txt_preset_name.Size = new System.Drawing.Size(365, 23);
             this.txt_preset_name.TabIndex = 25;
@@ -1339,7 +1352,7 @@
             this.chk_save_pres.AutoSize = true;
             this.chk_save_pres.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk_save_pres.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk_save_pres.Location = new System.Drawing.Point(22, 207);
+            this.chk_save_pres.Location = new System.Drawing.Point(24, 207);
             this.chk_save_pres.Name = "chk_save_pres";
             this.chk_save_pres.Size = new System.Drawing.Size(85, 19);
             this.chk_save_pres.TabIndex = 20;
@@ -1534,5 +1547,6 @@
         private System.Windows.Forms.Label lbl_silence;
         private System.Windows.Forms.PictureBox pic_warn_silence;
         private System.Windows.Forms.RadioButton radio_silence;
+        private System.Windows.Forms.RadioButton radio_images;
     }
 }

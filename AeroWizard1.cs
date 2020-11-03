@@ -55,6 +55,7 @@ namespace FFBatch
         public String lv1_item = String.Empty;
         public Boolean no_two = false;
         public Boolean no_silence = false;
+        public Boolean w_images = false;
 
 
         private void wizardControl1_SelectedPageChanged(object sender, EventArgs e)
@@ -836,12 +837,7 @@ namespace FFBatch
         }
 
         private void cb_audio_encoder_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //if (cb_audio_encoder.SelectedItem.ToString() == "none" && audio_preset == true)
-            //{
-            //  MessageBox.Show("You can't select none for audio preset", "Audio preset", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //return;
-            //}
+        {            
             label11.Top = 204;
             cb_channels.Top = 201;
 
@@ -1143,11 +1139,11 @@ namespace FFBatch
                     cb_bitrate_mode.Items.Add("CBR");
                     label13.Text = "Kbps";
                     cb_bitrate_mode.SelectedIndex = 0;
-                    n_bit_audio.Minimum = 64;
+                    n_bit_audio.Minimum = 16;
                     n_bit_audio.Maximum = 512;
                     n_bit_audio.Value = 192;
                     track_bits_audio.Minimum = 2;
-                    track_bits_audio.Maximum = 16;
+                    track_bits_audio.Maximum = 32;
                     track_bits_audio.Value = 6;
                 }
 
@@ -1277,38 +1273,38 @@ namespace FFBatch
             {
                 if (n_bit_audio.Value == 288 && is_max == false)
                 {
-                    n_bit_audio.Value = n_bit_audio.Value + 32;
+                    n_bit_audio.Value = n_bit_audio.Value + 16;
                     is_max = true;
                 }
                 if (n_bit_audio.Value == 288 && is_max == true)
                 {
-                    n_bit_audio.Value = n_bit_audio.Value - 32;
+                    n_bit_audio.Value = n_bit_audio.Value - 16;
                     is_max = false;
                 }
 
                 if (n_bit_audio.Value == 352 && is_max == false)
                 {
-                    n_bit_audio.Value = n_bit_audio.Value + 32;
+                    n_bit_audio.Value = n_bit_audio.Value + 16;
                     is_max = true;
                 }
                 if (n_bit_audio.Value == 352 && is_max == true)
                 {
-                    n_bit_audio.Value = n_bit_audio.Value - 32;
+                    n_bit_audio.Value = n_bit_audio.Value - 16;
                     is_max = false;
                 }
 
                 if (n_bit_audio.Value == 416 && is_max == false)
                 {
-                    n_bit_audio.Value = n_bit_audio.Value + 32;
+                    n_bit_audio.Value = n_bit_audio.Value + 16;
                     is_max = true;
                 }
                 if (n_bit_audio.Value == 416 && is_max == true)
                 {
-                    n_bit_audio.Value = n_bit_audio.Value - 32;
+                    n_bit_audio.Value = n_bit_audio.Value - 16;
                     is_max = false;
                 }
 
-                track_bits_audio.Value = Convert.ToInt32(n_bit_audio.Value) / 32;
+                track_bits_audio.Value = Convert.ToInt32(n_bit_audio.Value) / 16;
             }
         }
 
@@ -1375,8 +1371,8 @@ namespace FFBatch
 
             if (cb_audio_encoder.SelectedIndex == 10)
             {
-                n_bit_audio.Value = Convert.ToInt32(Math.Floor(Convert.ToDouble(track_bits_audio.Value) * 32));
-                track_bits_audio.Value = Convert.ToInt32(n_bit_audio.Value) / 32;
+                n_bit_audio.Value = Convert.ToInt32(Math.Floor(Convert.ToDouble(track_bits_audio.Value) * 16));
+                track_bits_audio.Value = Convert.ToInt32(n_bit_audio.Value) / 16;
             }
         }
 
@@ -1535,13 +1531,13 @@ namespace FFBatch
                 cb_cutoff.Visible = true;
 
                 label13.Text = "Kbps";
-                n_bit_audio.Minimum = 64;
+                n_bit_audio.Minimum = 16;
                 n_bit_audio.Maximum = 512;
                 n_bit_audio.Value = 192;
                 track_bits_audio.Minimum = 2;
                 track_bits_audio.Maximum = 16;
                 track_bits_audio.Value = 6;
-                n_bit_audio.Increment = 32;
+                n_bit_audio.Increment = 16;
             }
 
         }
@@ -1583,6 +1579,13 @@ namespace FFBatch
                     no_silence = false;
                     ActiveForm.Close();
                 }
+            }
+            if (radio_images.Checked == true)
+            {
+                wizardControl1.Visible = false;
+                w_images = true;
+                wizardControl1.Visible = false;
+                ActiveForm.Close();
             }
         }
 
@@ -1989,7 +1992,7 @@ namespace FFBatch
             if (chk_vbr_opus.CheckState == CheckState.Checked)
             {
                 cb_opus_vbr.Enabled = true;
-                cb_opus_vbr.SelectedIndex = 0;
+                cb_opus_vbr.SelectedIndex = 5;
             }
             else
             {

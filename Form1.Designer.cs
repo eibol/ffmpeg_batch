@@ -74,6 +74,7 @@
             this.btn_add_folders = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_fix_pre = new System.Windows.Forms.Button();
             this.btn_save_queue = new System.Windows.Forms.Button();
             this.btn_display_log = new System.Windows.Forms.Button();
             this.txt_config_ver = new System.Windows.Forms.TextBox();
@@ -233,65 +234,26 @@
             this.BG_Try_button = new System.ComponentModel.BackgroundWorker();
             this.btn_update = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lbl_mux_jobs = new System.Windows.Forms.Label();
             this.txt_mux_type = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.button16 = new System.Windows.Forms.Button();
             this.txt_path_mux = new System.Windows.Forms.TextBox();
             this.lbl_tr_n = new System.Windows.Forms.Label();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.btn_mux_show_jobs = new System.Windows.Forms.Button();
+            this.btn_mux_job = new System.Windows.Forms.Button();
             this.txt_track_format = new System.Windows.Forms.TextBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.btn_default_track = new System.Windows.Forms.Button();
             this.btn_del_track = new System.Windows.Forms.Button();
             this.btn_extract = new System.Windows.Forms.Button();
             this.timer_est_size = new System.Windows.Forms.Timer(this.components);
-            this.combo_ext_m3u = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btn_start_m3u = new System.Windows.Forms.Button();
-            this.btn_clear_urls = new System.Windows.Forms.Button();
-            this.chk_m3u_params = new System.Windows.Forms.CheckBox();
-            this.txt_m3u_params = new System.Windows.Forms.TextBox();
-            this.txt_path_m3u = new System.Windows.Forms.TextBox();
-            this.btn_browse_path_m3u = new System.Windows.Forms.Button();
-            this.btn_add_urls = new System.Windows.Forms.Button();
-            this.btn_stop_m3u8 = new System.Windows.Forms.Button();
-            this.btn_cancel_validate = new System.Windows.Forms.Button();
-            this.btn_validate_url = new System.Windows.Forms.Button();
-            this.chk_output_server = new System.Windows.Forms.CheckBox();
-            this.txt_output_server = new System.Windows.Forms.TextBox();
             this.txt_search_url = new System.Windows.Forms.TextBox();
             this.lbl_search_url = new System.Windows.Forms.Label();
-            this.btn_clean_errors = new System.Windows.Forms.Button();
-            this.btn_url_info = new System.Windows.Forms.Button();
-            this.btn_n_urls = new System.Windows.Forms.Button();
-            this.groupBox_m3u = new System.Windows.Forms.GroupBox();
-            this.pic_wait_1 = new System.Windows.Forms.PictureBox();
-            this.lbl_yl_name = new System.Windows.Forms.TextBox();
-            this.pic_ok = new System.Windows.Forms.PictureBox();
-            this.btn_logs_url = new System.Windows.Forms.Button();
-            this.pg_update_yl = new System.Windows.Forms.ProgressBar();
-            this.txt_up_output = new System.Windows.Forms.TextBox();
-            this.btn_update_yt = new System.Windows.Forms.Button();
-            this.lbl_yt_v = new System.Windows.Forms.Label();
-            this.group_downs = new System.Windows.Forms.GroupBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.btn_save_downs = new System.Windows.Forms.Button();
-            this.n_downs = new System.Windows.Forms.NumericUpDown();
-            this.pic_noimg = new System.Windows.Forms.PictureBox();
-            this.groupBox_yout = new System.Windows.Forms.GroupBox();
-            this.chk_convert_srt = new System.Windows.Forms.CheckBox();
-            this.chk_save_subtitles = new System.Windows.Forms.CheckBox();
-            this.chk_embed_meta = new System.Windows.Forms.CheckBox();
-            this.chk_yout_subs = new System.Windows.Forms.CheckBox();
-            this.chk_down_limit = new System.Windows.Forms.CheckBox();
-            this.chk_cache_yt = new System.Windows.Forms.CheckBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.n_down_speed = new System.Windows.Forms.NumericUpDown();
-            this.btn_save_path_url = new System.Windows.Forms.Button();
-            this.btn_pl_videos = new System.Windows.Forms.Button();
-            this.btn_add_yts = new System.Windows.Forms.Button();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.LB_Wait = new System.Windows.Forms.TextBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.btn_help = new System.Windows.Forms.Button();
@@ -393,6 +355,7 @@
             this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_two_pass_wizard = new System.Windows.Forms.ToolStripMenuItem();
             this.wiz_silence_menu = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_extract_images = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
             this.menu_settings = new System.Windows.Forms.ToolStripMenuItem();
             this.main_3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -467,6 +430,50 @@
             this.BG_check_ytdl = new System.ComponentModel.BackgroundWorker();
             this.pic_rec_cell = new System.Windows.Forms.PictureBox();
             this.BG_Single_yt = new System.ComponentModel.BackgroundWorker();
+            this.combo_ext_m3u = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btn_start_m3u = new System.Windows.Forms.Button();
+            this.btn_clear_urls = new System.Windows.Forms.Button();
+            this.chk_m3u_params = new System.Windows.Forms.CheckBox();
+            this.txt_m3u_params = new System.Windows.Forms.TextBox();
+            this.txt_path_m3u = new System.Windows.Forms.TextBox();
+            this.btn_browse_path_m3u = new System.Windows.Forms.Button();
+            this.btn_add_urls = new System.Windows.Forms.Button();
+            this.btn_stop_m3u8 = new System.Windows.Forms.Button();
+            this.btn_cancel_validate = new System.Windows.Forms.Button();
+            this.btn_validate_url = new System.Windows.Forms.Button();
+            this.chk_output_server = new System.Windows.Forms.CheckBox();
+            this.txt_output_server = new System.Windows.Forms.TextBox();
+            this.btn_clean_errors = new System.Windows.Forms.Button();
+            this.btn_url_info = new System.Windows.Forms.Button();
+            this.btn_n_urls = new System.Windows.Forms.Button();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.btn_add_yts = new System.Windows.Forms.Button();
+            this.btn_pl_videos = new System.Windows.Forms.Button();
+            this.btn_save_path_url = new System.Windows.Forms.Button();
+            this.groupBox_yout = new System.Windows.Forms.GroupBox();
+            this.chk_convert_srt = new System.Windows.Forms.CheckBox();
+            this.chk_save_subtitles = new System.Windows.Forms.CheckBox();
+            this.chk_embed_meta = new System.Windows.Forms.CheckBox();
+            this.chk_yout_subs = new System.Windows.Forms.CheckBox();
+            this.chk_down_limit = new System.Windows.Forms.CheckBox();
+            this.chk_cache_yt = new System.Windows.Forms.CheckBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.n_down_speed = new System.Windows.Forms.NumericUpDown();
+            this.pic_noimg = new System.Windows.Forms.PictureBox();
+            this.group_downs = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.btn_save_downs = new System.Windows.Forms.Button();
+            this.n_downs = new System.Windows.Forms.NumericUpDown();
+            this.lbl_yt_v = new System.Windows.Forms.Label();
+            this.btn_update_yt = new System.Windows.Forms.Button();
+            this.txt_up_output = new System.Windows.Forms.TextBox();
+            this.pg_update_yl = new System.Windows.Forms.ProgressBar();
+            this.btn_logs_url = new System.Windows.Forms.Button();
+            this.pic_ok = new System.Windows.Forms.PictureBox();
+            this.lbl_yl_name = new System.Windows.Forms.TextBox();
+            this.pic_wait_1 = new System.Windows.Forms.PictureBox();
+            this.groupBox_m3u = new System.Windows.Forms.GroupBox();
             this.ctm1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -486,14 +493,6 @@
             this.groupBox15.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            this.groupBox_m3u.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_wait_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_ok)).BeginInit();
-            this.group_downs.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.n_downs)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_noimg)).BeginInit();
-            this.groupBox_yout.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.n_down_speed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_threads)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_a_out)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_a_in)).BeginInit();
@@ -516,6 +515,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_success)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_error)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_rec_cell)).BeginInit();
+            this.groupBox_yout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.n_down_speed)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_noimg)).BeginInit();
+            this.group_downs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.n_downs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_ok)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_wait_1)).BeginInit();
+            this.groupBox_m3u.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_add_files
@@ -892,6 +899,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_fix_pre);
             this.groupBox1.Controls.Add(this.btn_save_queue);
             this.groupBox1.Controls.Add(this.btn_display_log);
             this.groupBox1.Controls.Add(this.txt_config_ver);
@@ -919,11 +927,24 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(4, 359);
+            this.groupBox1.Location = new System.Drawing.Point(4, 339);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(624, 252);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
+            // 
+            // btn_fix_pre
+            // 
+            this.btn_fix_pre.Enabled = false;
+            this.btn_fix_pre.FlatAppearance.BorderSize = 0;
+            this.btn_fix_pre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_fix_pre.Image = ((System.Drawing.Image)(resources.GetObject("btn_fix_pre.Image")));
+            this.btn_fix_pre.Location = new System.Drawing.Point(201, 104);
+            this.btn_fix_pre.Name = "btn_fix_pre";
+            this.btn_fix_pre.Size = new System.Drawing.Size(24, 24);
+            this.btn_fix_pre.TabIndex = 127;
+            this.btn_fix_pre.UseVisualStyleBackColor = true;
+            this.btn_fix_pre.Click += new System.EventHandler(this.btn_fix_pre_Click);
             // 
             // btn_save_queue
             // 
@@ -955,7 +976,7 @@
             this.btn_display_log.Text = "View last log";
             this.btn_display_log.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_display_log.UseVisualStyleBackColor = true;
-            this.btn_display_log.Click += new System.EventHandler(this.btn_load_queue_Click);
+            this.btn_display_log.Click += new System.EventHandler(this.btn_display_log_Click);
             // 
             // txt_config_ver
             // 
@@ -1072,7 +1093,7 @@
             this.txt_pre_input.Location = new System.Drawing.Point(69, 107);
             this.txt_pre_input.MaxLength = 500;
             this.txt_pre_input.Name = "txt_pre_input";
-            this.txt_pre_input.Size = new System.Drawing.Size(165, 20);
+            this.txt_pre_input.Size = new System.Drawing.Size(132, 20);
             this.txt_pre_input.TabIndex = 23;
             this.txt_pre_input.Click += new System.EventHandler(this.txt_pre_input_Click);
             this.txt_pre_input.TextChanged += new System.EventHandler(this.txt_pre_input_TextChanged);
@@ -1366,7 +1387,7 @@
             this.button23.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.button23.Location = new System.Drawing.Point(2, 9);
             this.button23.Name = "button23";
-            this.button23.Size = new System.Drawing.Size(72, 71);
+            this.button23.Size = new System.Drawing.Size(52, 74);
             this.button23.TabIndex = 74;
             this.button23.Text = "Clear tracks";
             this.button23.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1381,7 +1402,7 @@
             this.btn_mux.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_mux.Image = ((System.Drawing.Image)(resources.GetObject("btn_mux.Image")));
             this.btn_mux.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_mux.Location = new System.Drawing.Point(541, 9);
+            this.btn_mux.Location = new System.Drawing.Point(561, 9);
             this.btn_mux.Name = "btn_mux";
             this.btn_mux.Size = new System.Drawing.Size(55, 73);
             this.btn_mux.TabIndex = 73;
@@ -1790,7 +1811,7 @@
             this.list_tracks.FullRowSelect = true;
             this.list_tracks.HideSelection = false;
             this.list_tracks.LabelWrap = false;
-            this.list_tracks.Location = new System.Drawing.Point(2, 363);
+            this.list_tracks.Location = new System.Drawing.Point(2, 343);
             this.list_tracks.Name = "list_tracks";
             this.list_tracks.ShowItemToolTips = true;
             this.list_tracks.Size = new System.Drawing.Size(1254, 161);
@@ -2074,13 +2095,14 @@
             this.btn_add_tracks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_add_tracks.Image = ((System.Drawing.Image)(resources.GetObject("btn_add_tracks.Image")));
             this.btn_add_tracks.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_add_tracks.Location = new System.Drawing.Point(75, 9);
+            this.btn_add_tracks.Location = new System.Drawing.Point(58, 9);
             this.btn_add_tracks.Name = "btn_add_tracks";
-            this.btn_add_tracks.Size = new System.Drawing.Size(82, 71);
+            this.btn_add_tracks.Size = new System.Drawing.Size(62, 74);
             this.btn_add_tracks.TabIndex = 88;
             this.btn_add_tracks.Text = "Add file tracks";
             this.btn_add_tracks.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_add_tracks.UseVisualStyleBackColor = true;
+            this.btn_add_tracks.Visible = false;
             this.btn_add_tracks.Click += new System.EventHandler(this.btn_add_tracks_Click);
             // 
             // lbl_size
@@ -2115,7 +2137,7 @@
             this.groupBox10.Controls.Add(this.pic_warnings);
             this.groupBox10.Controls.Add(this.pic_no_errors);
             this.groupBox10.Controls.Add(this.pic_recording);
-            this.groupBox10.Location = new System.Drawing.Point(4, 610);
+            this.groupBox10.Location = new System.Drawing.Point(4, 590);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(1252, 76);
             this.groupBox10.TabIndex = 100;
@@ -2618,7 +2640,7 @@
             this.groupBox15.Controls.Add(this.Combo_ext_sub_mux);
             this.groupBox15.Controls.Add(this.lbl_lang_sub_mux);
             this.groupBox15.Controls.Add(this.Combo_sub_lang_mux);
-            this.groupBox15.Location = new System.Drawing.Point(3, 359);
+            this.groupBox15.Location = new System.Drawing.Point(3, 339);
             this.groupBox15.Name = "groupBox15";
             this.groupBox15.Size = new System.Drawing.Size(1253, 252);
             this.groupBox15.TabIndex = 84;
@@ -2679,6 +2701,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lbl_mux_jobs);
             this.groupBox2.Controls.Add(this.txt_mux_type);
             this.groupBox2.Controls.Add(this.label14);
             this.groupBox2.Controls.Add(this.button16);
@@ -2693,11 +2716,21 @@
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.btn_set_mux_def);
             this.groupBox2.Controls.Add(this.btn_set_track_param);
-            this.groupBox2.Location = new System.Drawing.Point(633, 523);
+            this.groupBox2.Location = new System.Drawing.Point(633, 503);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(623, 88);
             this.groupBox2.TabIndex = 108;
             this.groupBox2.TabStop = false;
+            // 
+            // lbl_mux_jobs
+            // 
+            this.lbl_mux_jobs.Location = new System.Drawing.Point(482, 10);
+            this.lbl_mux_jobs.Name = "lbl_mux_jobs";
+            this.lbl_mux_jobs.Size = new System.Drawing.Size(62, 16);
+            this.lbl_mux_jobs.TabIndex = 92;
+            this.lbl_mux_jobs.Text = "Jobs: 0";
+            this.lbl_mux_jobs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_mux_jobs.Visible = false;
             // 
             // txt_mux_type
             // 
@@ -2753,8 +2786,12 @@
             // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.btn_mux_show_jobs);
+            this.groupBox9.Controls.Add(this.btn_mux_job);
             this.groupBox9.Controls.Add(this.txt_track_format);
             this.groupBox9.Controls.Add(this.groupBox7);
+            this.groupBox9.Controls.Add(this.groupBox8);
+            this.groupBox9.Controls.Add(this.groupBox11);
             this.groupBox9.Controls.Add(this.groupBox6);
             this.groupBox9.Controls.Add(this.button23);
             this.groupBox9.Controls.Add(this.btn_default_track);
@@ -2762,16 +2799,51 @@
             this.groupBox9.Controls.Add(this.btn_extract);
             this.groupBox9.Controls.Add(this.btn_add_tracks);
             this.groupBox9.Controls.Add(this.btn_mux);
-            this.groupBox9.Location = new System.Drawing.Point(4, 523);
+            this.groupBox9.Location = new System.Drawing.Point(4, 503);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(624, 88);
             this.groupBox9.TabIndex = 109;
             this.groupBox9.TabStop = false;
             // 
+            // btn_mux_show_jobs
+            // 
+            this.btn_mux_show_jobs.Enabled = false;
+            this.btn_mux_show_jobs.FlatAppearance.BorderSize = 0;
+            this.btn_mux_show_jobs.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_mux_show_jobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_mux_show_jobs.Image = ((System.Drawing.Image)(resources.GetObject("btn_mux_show_jobs.Image")));
+            this.btn_mux_show_jobs.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_mux_show_jobs.Location = new System.Drawing.Point(347, 8);
+            this.btn_mux_show_jobs.Name = "btn_mux_show_jobs";
+            this.btn_mux_show_jobs.Size = new System.Drawing.Size(62, 79);
+            this.btn_mux_show_jobs.TabIndex = 118;
+            this.btn_mux_show_jobs.Text = "View mux jobs";
+            this.btn_mux_show_jobs.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_mux_show_jobs.UseVisualStyleBackColor = true;
+            this.btn_mux_show_jobs.Visible = false;
+            this.btn_mux_show_jobs.Click += new System.EventHandler(this.btn_mux_show_jobs_Click);
+            // 
+            // btn_mux_job
+            // 
+            this.btn_mux_job.FlatAppearance.BorderSize = 0;
+            this.btn_mux_job.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_mux_job.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_mux_job.Image = ((System.Drawing.Image)(resources.GetObject("btn_mux_job.Image")));
+            this.btn_mux_job.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_mux_job.Location = new System.Drawing.Point(284, 8);
+            this.btn_mux_job.Name = "btn_mux_job";
+            this.btn_mux_job.Size = new System.Drawing.Size(62, 79);
+            this.btn_mux_job.TabIndex = 117;
+            this.btn_mux_job.Text = "Add as mux job";
+            this.btn_mux_job.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_mux_job.UseVisualStyleBackColor = true;
+            this.btn_mux_job.Visible = false;
+            this.btn_mux_job.Click += new System.EventHandler(this.btn_mux_job_Click);
+            // 
             // txt_track_format
             // 
             this.txt_track_format.BackColor = System.Drawing.Color.White;
-            this.txt_track_format.Location = new System.Drawing.Point(440, 25);
+            this.txt_track_format.Location = new System.Drawing.Point(510, 25);
             this.txt_track_format.MaxLength = 4;
             this.txt_track_format.Name = "txt_track_format";
             this.txt_track_format.Size = new System.Drawing.Size(35, 20);
@@ -2782,16 +2854,34 @@
             // groupBox7
             // 
             this.groupBox7.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox7.Location = new System.Drawing.Point(179, 6);
+            this.groupBox7.Location = new System.Drawing.Point(129, 6);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(2, 74);
             this.groupBox7.TabIndex = 116;
             this.groupBox7.TabStop = false;
             // 
+            // groupBox8
+            // 
+            this.groupBox8.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox8.Location = new System.Drawing.Point(267, 7);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(2, 74);
+            this.groupBox8.TabIndex = 115;
+            this.groupBox8.TabStop = false;
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox11.Location = new System.Drawing.Point(554, 7);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(2, 74);
+            this.groupBox11.TabIndex = 115;
+            this.groupBox11.TabStop = false;
+            // 
             // groupBox6
             // 
             this.groupBox6.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox6.Location = new System.Drawing.Point(512, 7);
+            this.groupBox6.Location = new System.Drawing.Point(422, 7);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(2, 74);
             this.groupBox6.TabIndex = 115;
@@ -2804,9 +2894,9 @@
             this.btn_default_track.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_default_track.Image = ((System.Drawing.Image)(resources.GetObject("btn_default_track.Image")));
             this.btn_default_track.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_default_track.Location = new System.Drawing.Point(200, 11);
+            this.btn_default_track.Location = new System.Drawing.Point(137, 10);
             this.btn_default_track.Name = "btn_default_track";
-            this.btn_default_track.Size = new System.Drawing.Size(78, 70);
+            this.btn_default_track.Size = new System.Drawing.Size(58, 75);
             this.btn_default_track.TabIndex = 114;
             this.btn_default_track.Text = "Default track";
             this.btn_default_track.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -2821,9 +2911,9 @@
             this.btn_del_track.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_del_track.Image = ((System.Drawing.Image)(resources.GetObject("btn_del_track.Image")));
             this.btn_del_track.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_del_track.Location = new System.Drawing.Point(280, 11);
+            this.btn_del_track.Location = new System.Drawing.Point(200, 11);
             this.btn_del_track.Name = "btn_del_track";
-            this.btn_del_track.Size = new System.Drawing.Size(82, 70);
+            this.btn_del_track.Size = new System.Drawing.Size(62, 74);
             this.btn_del_track.TabIndex = 113;
             this.btn_del_track.Text = "Remove track";
             this.btn_del_track.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -2838,7 +2928,7 @@
             this.btn_extract.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_extract.Image = ((System.Drawing.Image)(resources.GetObject("btn_extract.Image")));
             this.btn_extract.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_extract.Location = new System.Drawing.Point(374, 8);
+            this.btn_extract.Location = new System.Drawing.Point(444, 8);
             this.btn_extract.Name = "btn_extract";
             this.btn_extract.Size = new System.Drawing.Size(67, 73);
             this.btn_extract.TabIndex = 89;
@@ -2852,199 +2942,6 @@
             // 
             this.timer_est_size.Interval = 1000;
             this.timer_est_size.Tick += new System.EventHandler(this.timer_est_size_Tick);
-            // 
-            // combo_ext_m3u
-            // 
-            this.combo_ext_m3u.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.combo_ext_m3u.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.combo_ext_m3u.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.combo_ext_m3u.FormattingEnabled = true;
-            this.combo_ext_m3u.Items.AddRange(new object[] {
-            "mp4",
-            "mkv",
-            "webm",
-            "aac",
-            "ogg",
-            "m3u8"});
-            this.combo_ext_m3u.Location = new System.Drawing.Point(566, 187);
-            this.combo_ext_m3u.MaxDropDownItems = 3;
-            this.combo_ext_m3u.Name = "combo_ext_m3u";
-            this.combo_ext_m3u.Size = new System.Drawing.Size(53, 21);
-            this.combo_ext_m3u.TabIndex = 88;
-            this.combo_ext_m3u.SelectedIndexChanged += new System.EventHandler(this.combo_ext_m3u_SelectedIndexChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(635, 201);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 13);
-            this.label8.TabIndex = 97;
-            this.label8.Text = "Output path";
-            // 
-            // btn_start_m3u
-            // 
-            this.btn_start_m3u.FlatAppearance.BorderSize = 0;
-            this.btn_start_m3u.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_start_m3u.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_start_m3u.Image = ((System.Drawing.Image)(resources.GetObject("btn_start_m3u.Image")));
-            this.btn_start_m3u.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_start_m3u.Location = new System.Drawing.Point(634, 10);
-            this.btn_start_m3u.Name = "btn_start_m3u";
-            this.btn_start_m3u.Size = new System.Drawing.Size(67, 87);
-            this.btn_start_m3u.TabIndex = 86;
-            this.btn_start_m3u.Text = "Sequential download";
-            this.btn_start_m3u.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_start_m3u.UseVisualStyleBackColor = true;
-            this.btn_start_m3u.Click += new System.EventHandler(this.btn_start_m3u_Click);
-            // 
-            // btn_clear_urls
-            // 
-            this.btn_clear_urls.FlatAppearance.BorderSize = 0;
-            this.btn_clear_urls.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_clear_urls.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_clear_urls.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_clear_urls.ImageKey = "clear_list.png";
-            this.btn_clear_urls.ImageList = this.imageList1;
-            this.btn_clear_urls.Location = new System.Drawing.Point(5, 14);
-            this.btn_clear_urls.Name = "btn_clear_urls";
-            this.btn_clear_urls.Size = new System.Drawing.Size(57, 86);
-            this.btn_clear_urls.TabIndex = 88;
-            this.btn_clear_urls.Text = "Clear URL list";
-            this.btn_clear_urls.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_clear_urls.UseVisualStyleBackColor = true;
-            this.btn_clear_urls.Click += new System.EventHandler(this.button19_Click_1);
-            // 
-            // chk_m3u_params
-            // 
-            this.chk_m3u_params.AutoSize = true;
-            this.chk_m3u_params.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chk_m3u_params.Location = new System.Drawing.Point(22, 189);
-            this.chk_m3u_params.Name = "chk_m3u_params";
-            this.chk_m3u_params.Size = new System.Drawing.Size(104, 17);
-            this.chk_m3u_params.TabIndex = 100;
-            this.chk_m3u_params.Text = "M3U parameters";
-            this.chk_m3u_params.UseVisualStyleBackColor = true;
-            this.chk_m3u_params.CheckedChanged += new System.EventHandler(this.chk_m3u_params_CheckedChanged);
-            // 
-            // txt_m3u_params
-            // 
-            this.txt_m3u_params.Enabled = false;
-            this.txt_m3u_params.Location = new System.Drawing.Point(134, 187);
-            this.txt_m3u_params.Name = "txt_m3u_params";
-            this.txt_m3u_params.Size = new System.Drawing.Size(427, 20);
-            this.txt_m3u_params.TabIndex = 101;
-            this.txt_m3u_params.Text = "-bsf:a aac_adtstoasc -c copy";
-            // 
-            // txt_path_m3u
-            // 
-            this.txt_path_m3u.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txt_path_m3u.Location = new System.Drawing.Point(636, 220);
-            this.txt_path_m3u.Name = "txt_path_m3u";
-            this.txt_path_m3u.ReadOnly = true;
-            this.txt_path_m3u.Size = new System.Drawing.Size(533, 20);
-            this.txt_path_m3u.TabIndex = 96;
-            this.txt_path_m3u.Text = "No path selected";
-            // 
-            // btn_browse_path_m3u
-            // 
-            this.btn_browse_path_m3u.FlatAppearance.BorderSize = 0;
-            this.btn_browse_path_m3u.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_browse_path_m3u.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_browse_path_m3u.Location = new System.Drawing.Point(1173, 219);
-            this.btn_browse_path_m3u.Name = "btn_browse_path_m3u";
-            this.btn_browse_path_m3u.Size = new System.Drawing.Size(76, 22);
-            this.btn_browse_path_m3u.TabIndex = 98;
-            this.btn_browse_path_m3u.Text = "Browse";
-            this.btn_browse_path_m3u.UseVisualStyleBackColor = true;
-            this.btn_browse_path_m3u.Click += new System.EventHandler(this.button16_Click_1);
-            // 
-            // btn_add_urls
-            // 
-            this.btn_add_urls.FlatAppearance.BorderSize = 0;
-            this.btn_add_urls.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_add_urls.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_add_urls.Image = ((System.Drawing.Image)(resources.GetObject("btn_add_urls.Image")));
-            this.btn_add_urls.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_add_urls.Location = new System.Drawing.Point(63, 10);
-            this.btn_add_urls.Name = "btn_add_urls";
-            this.btn_add_urls.Size = new System.Drawing.Size(70, 91);
-            this.btn_add_urls.TabIndex = 103;
-            this.btn_add_urls.Text = "Add URLs from file";
-            this.btn_add_urls.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_add_urls.UseVisualStyleBackColor = true;
-            this.btn_add_urls.Click += new System.EventHandler(this.button31_Click);
-            // 
-            // btn_stop_m3u8
-            // 
-            this.btn_stop_m3u8.FlatAppearance.BorderSize = 0;
-            this.btn_stop_m3u8.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_stop_m3u8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_stop_m3u8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_stop_m3u8.ImageKey = "skip_39.png";
-            this.btn_stop_m3u8.ImageList = this.imageList1;
-            this.btn_stop_m3u8.Location = new System.Drawing.Point(774, 9);
-            this.btn_stop_m3u8.Name = "btn_stop_m3u8";
-            this.btn_stop_m3u8.Size = new System.Drawing.Size(67, 88);
-            this.btn_stop_m3u8.TabIndex = 104;
-            this.btn_stop_m3u8.Text = "Skip current";
-            this.btn_stop_m3u8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_stop_m3u8.UseVisualStyleBackColor = true;
-            this.btn_stop_m3u8.Click += new System.EventHandler(this.btn_stop_m3u8_Click);
-            // 
-            // btn_cancel_validate
-            // 
-            this.btn_cancel_validate.FlatAppearance.BorderSize = 0;
-            this.btn_cancel_validate.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_cancel_validate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cancel_validate.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_cancel_validate.ImageKey = "stop_32.png";
-            this.btn_cancel_validate.ImageList = this.imageList1;
-            this.btn_cancel_validate.Location = new System.Drawing.Point(363, 17);
-            this.btn_cancel_validate.Name = "btn_cancel_validate";
-            this.btn_cancel_validate.Size = new System.Drawing.Size(61, 85);
-            this.btn_cancel_validate.TabIndex = 105;
-            this.btn_cancel_validate.Text = "Stop validation";
-            this.btn_cancel_validate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_cancel_validate.UseVisualStyleBackColor = true;
-            this.btn_cancel_validate.Click += new System.EventHandler(this.btn_cancel_validate_Click);
-            // 
-            // btn_validate_url
-            // 
-            this.btn_validate_url.FlatAppearance.BorderSize = 0;
-            this.btn_validate_url.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_validate_url.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_validate_url.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_validate_url.ImageKey = "Check_URLs_v2.png";
-            this.btn_validate_url.ImageList = this.imageList1;
-            this.btn_validate_url.Location = new System.Drawing.Point(300, 18);
-            this.btn_validate_url.Name = "btn_validate_url";
-            this.btn_validate_url.Size = new System.Drawing.Size(61, 85);
-            this.btn_validate_url.TabIndex = 106;
-            this.btn_validate_url.Text = "Validate URLs";
-            this.btn_validate_url.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_validate_url.UseVisualStyleBackColor = true;
-            this.btn_validate_url.Click += new System.EventHandler(this.btn_validate_url_Click_1);
-            // 
-            // chk_output_server
-            // 
-            this.chk_output_server.AutoSize = true;
-            this.chk_output_server.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chk_output_server.Location = new System.Drawing.Point(22, 222);
-            this.chk_output_server.Name = "chk_output_server";
-            this.chk_output_server.Size = new System.Drawing.Size(104, 17);
-            this.chk_output_server.TabIndex = 107;
-            this.chk_output_server.Text = "Output server url";
-            this.chk_output_server.UseVisualStyleBackColor = true;
-            this.chk_output_server.CheckedChanged += new System.EventHandler(this.chk_output_server_CheckedChanged);
-            // 
-            // txt_output_server
-            // 
-            this.txt_output_server.Enabled = false;
-            this.txt_output_server.Location = new System.Drawing.Point(134, 220);
-            this.txt_output_server.Name = "txt_output_server";
-            this.txt_output_server.Size = new System.Drawing.Size(485, 20);
-            this.txt_output_server.TabIndex = 108;
             // 
             // txt_search_url
             // 
@@ -3064,416 +2961,6 @@
             this.lbl_search_url.TabIndex = 110;
             this.lbl_search_url.Text = "Find";
             this.lbl_search_url.Visible = false;
-            // 
-            // btn_clean_errors
-            // 
-            this.btn_clean_errors.FlatAppearance.BorderSize = 0;
-            this.btn_clean_errors.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_clean_errors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_clean_errors.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_clean_errors.ImageKey = "clean_urls.png";
-            this.btn_clean_errors.ImageList = this.imageList1;
-            this.btn_clean_errors.Location = new System.Drawing.Point(560, 16);
-            this.btn_clean_errors.Name = "btn_clean_errors";
-            this.btn_clean_errors.Size = new System.Drawing.Size(61, 85);
-            this.btn_clean_errors.TabIndex = 111;
-            this.btn_clean_errors.Text = "Remove error rows";
-            this.btn_clean_errors.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_clean_errors.UseVisualStyleBackColor = true;
-            this.btn_clean_errors.Click += new System.EventHandler(this.btn_clean_errors_Click);
-            // 
-            // btn_url_info
-            // 
-            this.btn_url_info.FlatAppearance.BorderSize = 0;
-            this.btn_url_info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_url_info.Image = ((System.Drawing.Image)(resources.GetObject("btn_url_info.Image")));
-            this.btn_url_info.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_url_info.Location = new System.Drawing.Point(493, 16);
-            this.btn_url_info.Name = "btn_url_info";
-            this.btn_url_info.Size = new System.Drawing.Size(62, 85);
-            this.btn_url_info.TabIndex = 112;
-            this.btn_url_info.Text = "Get URL streams";
-            this.btn_url_info.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_url_info.UseVisualStyleBackColor = true;
-            this.btn_url_info.Click += new System.EventHandler(this.btn_url_info_Click);
-            // 
-            // btn_n_urls
-            // 
-            this.btn_n_urls.FlatAppearance.BorderSize = 0;
-            this.btn_n_urls.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_n_urls.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_n_urls.Image = ((System.Drawing.Image)(resources.GetObject("btn_n_urls.Image")));
-            this.btn_n_urls.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_n_urls.Location = new System.Drawing.Point(707, 9);
-            this.btn_n_urls.Name = "btn_n_urls";
-            this.btn_n_urls.Size = new System.Drawing.Size(67, 89);
-            this.btn_n_urls.TabIndex = 113;
-            this.btn_n_urls.Text = "Multi URL download";
-            this.btn_n_urls.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_n_urls.UseVisualStyleBackColor = true;
-            this.btn_n_urls.Click += new System.EventHandler(this.btn_n_urls_Click);
-            // 
-            // groupBox_m3u
-            // 
-            this.groupBox_m3u.Controls.Add(this.pic_wait_1);
-            this.groupBox_m3u.Controls.Add(this.lbl_yl_name);
-            this.groupBox_m3u.Controls.Add(this.pic_ok);
-            this.groupBox_m3u.Controls.Add(this.btn_logs_url);
-            this.groupBox_m3u.Controls.Add(this.pg_update_yl);
-            this.groupBox_m3u.Controls.Add(this.txt_up_output);
-            this.groupBox_m3u.Controls.Add(this.btn_update_yt);
-            this.groupBox_m3u.Controls.Add(this.lbl_yt_v);
-            this.groupBox_m3u.Controls.Add(this.group_downs);
-            this.groupBox_m3u.Controls.Add(this.pic_noimg);
-            this.groupBox_m3u.Controls.Add(this.groupBox_yout);
-            this.groupBox_m3u.Controls.Add(this.btn_save_path_url);
-            this.groupBox_m3u.Controls.Add(this.btn_pl_videos);
-            this.groupBox_m3u.Controls.Add(this.btn_add_yts);
-            this.groupBox_m3u.Controls.Add(this.groupBox5);
-            this.groupBox_m3u.Controls.Add(this.btn_n_urls);
-            this.groupBox_m3u.Controls.Add(this.btn_url_info);
-            this.groupBox_m3u.Controls.Add(this.btn_clean_errors);
-            this.groupBox_m3u.Controls.Add(this.txt_output_server);
-            this.groupBox_m3u.Controls.Add(this.chk_output_server);
-            this.groupBox_m3u.Controls.Add(this.btn_validate_url);
-            this.groupBox_m3u.Controls.Add(this.btn_cancel_validate);
-            this.groupBox_m3u.Controls.Add(this.btn_stop_m3u8);
-            this.groupBox_m3u.Controls.Add(this.btn_add_urls);
-            this.groupBox_m3u.Controls.Add(this.btn_browse_path_m3u);
-            this.groupBox_m3u.Controls.Add(this.txt_path_m3u);
-            this.groupBox_m3u.Controls.Add(this.txt_m3u_params);
-            this.groupBox_m3u.Controls.Add(this.chk_m3u_params);
-            this.groupBox_m3u.Controls.Add(this.btn_clear_urls);
-            this.groupBox_m3u.Controls.Add(this.btn_start_m3u);
-            this.groupBox_m3u.Controls.Add(this.label8);
-            this.groupBox_m3u.Controls.Add(this.combo_ext_m3u);
-            this.groupBox_m3u.Location = new System.Drawing.Point(3, 359);
-            this.groupBox_m3u.Name = "groupBox_m3u";
-            this.groupBox_m3u.Size = new System.Drawing.Size(1253, 252);
-            this.groupBox_m3u.TabIndex = 103;
-            this.groupBox_m3u.TabStop = false;
-            this.groupBox_m3u.Visible = false;
-            // 
-            // pic_wait_1
-            // 
-            this.pic_wait_1.Image = ((System.Drawing.Image)(resources.GetObject("pic_wait_1.Image")));
-            this.pic_wait_1.Location = new System.Drawing.Point(1191, 167);
-            this.pic_wait_1.Name = "pic_wait_1";
-            this.pic_wait_1.Size = new System.Drawing.Size(16, 16);
-            this.pic_wait_1.TabIndex = 145;
-            this.pic_wait_1.TabStop = false;
-            // 
-            // lbl_yl_name
-            // 
-            this.lbl_yl_name.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.lbl_yl_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbl_yl_name.Location = new System.Drawing.Point(1010, 169);
-            this.lbl_yl_name.Name = "lbl_yl_name";
-            this.lbl_yl_name.ReadOnly = true;
-            this.lbl_yl_name.Size = new System.Drawing.Size(74, 13);
-            this.lbl_yl_name.TabIndex = 144;
-            this.lbl_yl_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.lbl_yl_name.Click += new System.EventHandler(this.lbl_yl_name_Click);
-            // 
-            // pic_ok
-            // 
-            this.pic_ok.Image = ((System.Drawing.Image)(resources.GetObject("pic_ok.Image")));
-            this.pic_ok.Location = new System.Drawing.Point(1191, 167);
-            this.pic_ok.Name = "pic_ok";
-            this.pic_ok.Size = new System.Drawing.Size(16, 16);
-            this.pic_ok.TabIndex = 143;
-            this.pic_ok.TabStop = false;
-            this.pic_ok.Visible = false;
-            // 
-            // btn_logs_url
-            // 
-            this.btn_logs_url.FlatAppearance.BorderSize = 0;
-            this.btn_logs_url.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_logs_url.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_logs_url.Image = ((System.Drawing.Image)(resources.GetObject("btn_logs_url.Image")));
-            this.btn_logs_url.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_logs_url.Location = new System.Drawing.Point(841, 9);
-            this.btn_logs_url.Name = "btn_logs_url";
-            this.btn_logs_url.Size = new System.Drawing.Size(54, 88);
-            this.btn_logs_url.TabIndex = 142;
-            this.btn_logs_url.Text = "View log file";
-            this.btn_logs_url.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_logs_url.UseVisualStyleBackColor = true;
-            this.btn_logs_url.Click += new System.EventHandler(this.btn_logs_url_Click);
-            // 
-            // pg_update_yl
-            // 
-            this.pg_update_yl.Location = new System.Drawing.Point(1087, 169);
-            this.pg_update_yl.Name = "pg_update_yl";
-            this.pg_update_yl.Size = new System.Drawing.Size(101, 14);
-            this.pg_update_yl.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.pg_update_yl.TabIndex = 141;
-            this.pg_update_yl.Visible = false;
-            // 
-            // txt_up_output
-            // 
-            this.txt_up_output.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txt_up_output.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_up_output.Location = new System.Drawing.Point(1034, 193);
-            this.txt_up_output.Name = "txt_up_output";
-            this.txt_up_output.Size = new System.Drawing.Size(208, 13);
-            this.txt_up_output.TabIndex = 140;
-            this.txt_up_output.Text = "Update in progress, please wait...";
-            this.txt_up_output.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_up_output.Visible = false;
-            // 
-            // btn_update_yt
-            // 
-            this.btn_update_yt.Location = new System.Drawing.Point(1193, 164);
-            this.btn_update_yt.Name = "btn_update_yt";
-            this.btn_update_yt.Size = new System.Drawing.Size(51, 23);
-            this.btn_update_yt.TabIndex = 138;
-            this.btn_update_yt.Text = "Update";
-            this.btn_update_yt.UseVisualStyleBackColor = true;
-            this.btn_update_yt.Visible = false;
-            this.btn_update_yt.Click += new System.EventHandler(this.btn_update_yt_Click);
-            // 
-            // lbl_yt_v
-            // 
-            this.lbl_yt_v.AutoSize = true;
-            this.lbl_yt_v.Location = new System.Drawing.Point(1085, 169);
-            this.lbl_yt_v.Name = "lbl_yt_v";
-            this.lbl_yt_v.Size = new System.Drawing.Size(0, 13);
-            this.lbl_yt_v.TabIndex = 137;
-            // 
-            // group_downs
-            // 
-            this.group_downs.Controls.Add(this.label12);
-            this.group_downs.Controls.Add(this.btn_save_downs);
-            this.group_downs.Controls.Add(this.n_downs);
-            this.group_downs.Location = new System.Drawing.Point(637, 117);
-            this.group_downs.Name = "group_downs";
-            this.group_downs.Size = new System.Drawing.Size(197, 39);
-            this.group_downs.TabIndex = 128;
-            this.group_downs.TabStop = false;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(4, 16);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(113, 13);
-            this.label12.TabIndex = 121;
-            this.label12.Text = "Concurrent downloads";
-            // 
-            // btn_save_downs
-            // 
-            this.btn_save_downs.Enabled = false;
-            this.btn_save_downs.FlatAppearance.BorderSize = 0;
-            this.btn_save_downs.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_save_downs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_save_downs.Image = ((System.Drawing.Image)(resources.GetObject("btn_save_downs.Image")));
-            this.btn_save_downs.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_save_downs.Location = new System.Drawing.Point(170, 10);
-            this.btn_save_downs.Name = "btn_save_downs";
-            this.btn_save_downs.Size = new System.Drawing.Size(24, 24);
-            this.btn_save_downs.TabIndex = 122;
-            this.btn_save_downs.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_save_downs.UseVisualStyleBackColor = true;
-            this.btn_save_downs.Click += new System.EventHandler(this.btn_save_downs_Click);
-            // 
-            // n_downs
-            // 
-            this.n_downs.Location = new System.Drawing.Point(120, 13);
-            this.n_downs.Maximum = new decimal(new int[] {
-            64,
-            0,
-            0,
-            0});
-            this.n_downs.Name = "n_downs";
-            this.n_downs.Size = new System.Drawing.Size(46, 20);
-            this.n_downs.TabIndex = 120;
-            this.n_downs.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.n_downs.Value = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
-            this.n_downs.ValueChanged += new System.EventHandler(this.n_downs_ValueChanged);
-            // 
-            // pic_noimg
-            // 
-            this.pic_noimg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pic_noimg.Image = ((System.Drawing.Image)(resources.GetObject("pic_noimg.Image")));
-            this.pic_noimg.Location = new System.Drawing.Point(932, 101);
-            this.pic_noimg.Name = "pic_noimg";
-            this.pic_noimg.Size = new System.Drawing.Size(80, 45);
-            this.pic_noimg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pic_noimg.TabIndex = 127;
-            this.pic_noimg.TabStop = false;
-            this.pic_noimg.Visible = false;
-            // 
-            // groupBox_yout
-            // 
-            this.groupBox_yout.Controls.Add(this.chk_convert_srt);
-            this.groupBox_yout.Controls.Add(this.chk_save_subtitles);
-            this.groupBox_yout.Controls.Add(this.chk_embed_meta);
-            this.groupBox_yout.Controls.Add(this.chk_yout_subs);
-            this.groupBox_yout.Controls.Add(this.chk_down_limit);
-            this.groupBox_yout.Controls.Add(this.chk_cache_yt);
-            this.groupBox_yout.Controls.Add(this.label25);
-            this.groupBox_yout.Controls.Add(this.n_down_speed);
-            this.groupBox_yout.Location = new System.Drawing.Point(1020, 14);
-            this.groupBox_yout.Name = "groupBox_yout";
-            this.groupBox_yout.Size = new System.Drawing.Size(223, 144);
-            this.groupBox_yout.TabIndex = 127;
-            this.groupBox_yout.TabStop = false;
-            this.groupBox_yout.Text = "YouTube settings";
-            // 
-            // chk_convert_srt
-            // 
-            this.chk_convert_srt.AutoSize = true;
-            this.chk_convert_srt.Enabled = false;
-            this.chk_convert_srt.Location = new System.Drawing.Point(120, 117);
-            this.chk_convert_srt.Name = "chk_convert_srt";
-            this.chk_convert_srt.Size = new System.Drawing.Size(89, 17);
-            this.chk_convert_srt.TabIndex = 132;
-            this.chk_convert_srt.Text = "Convert to srt";
-            this.chk_convert_srt.UseVisualStyleBackColor = true;
-            // 
-            // chk_save_subtitles
-            // 
-            this.chk_save_subtitles.AutoSize = true;
-            this.chk_save_subtitles.Location = new System.Drawing.Point(15, 117);
-            this.chk_save_subtitles.Name = "chk_save_subtitles";
-            this.chk_save_subtitles.Size = new System.Drawing.Size(92, 17);
-            this.chk_save_subtitles.TabIndex = 131;
-            this.chk_save_subtitles.Text = "Save subtitles";
-            this.chk_save_subtitles.UseVisualStyleBackColor = true;
-            this.chk_save_subtitles.CheckedChanged += new System.EventHandler(this.chk_save_subtitles_CheckedChanged);
-            // 
-            // chk_embed_meta
-            // 
-            this.chk_embed_meta.AutoSize = true;
-            this.chk_embed_meta.Location = new System.Drawing.Point(15, 70);
-            this.chk_embed_meta.Name = "chk_embed_meta";
-            this.chk_embed_meta.Size = new System.Drawing.Size(106, 17);
-            this.chk_embed_meta.TabIndex = 130;
-            this.chk_embed_meta.Text = "Embed metadata";
-            this.chk_embed_meta.UseVisualStyleBackColor = true;
-            // 
-            // chk_yout_subs
-            // 
-            this.chk_yout_subs.AutoSize = true;
-            this.chk_yout_subs.Location = new System.Drawing.Point(15, 94);
-            this.chk_yout_subs.Name = "chk_yout_subs";
-            this.chk_yout_subs.Size = new System.Drawing.Size(100, 17);
-            this.chk_yout_subs.TabIndex = 129;
-            this.chk_yout_subs.Text = "Embed subtitles";
-            this.chk_yout_subs.UseVisualStyleBackColor = true;
-            // 
-            // chk_down_limit
-            // 
-            this.chk_down_limit.AutoSize = true;
-            this.chk_down_limit.Location = new System.Drawing.Point(15, 23);
-            this.chk_down_limit.Name = "chk_down_limit";
-            this.chk_down_limit.Size = new System.Drawing.Size(126, 17);
-            this.chk_down_limit.TabIndex = 128;
-            this.chk_down_limit.Text = "Download speed limit";
-            this.chk_down_limit.UseVisualStyleBackColor = true;
-            this.chk_down_limit.CheckedChanged += new System.EventHandler(this.chk_down_limit_CheckedChanged);
-            // 
-            // chk_cache_yt
-            // 
-            this.chk_cache_yt.AutoSize = true;
-            this.chk_cache_yt.Location = new System.Drawing.Point(15, 46);
-            this.chk_cache_yt.Name = "chk_cache_yt";
-            this.chk_cache_yt.Size = new System.Drawing.Size(132, 17);
-            this.chk_cache_yt.TabIndex = 127;
-            this.chk_cache_yt.Text = "Clear download cache";
-            this.chk_cache_yt.UseVisualStyleBackColor = true;
-            this.chk_cache_yt.CheckedChanged += new System.EventHandler(this.chk_cache_yt_CheckedChanged);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(189, 25);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(33, 13);
-            this.label25.TabIndex = 125;
-            this.label25.Text = "MB/s";
-            // 
-            // n_down_speed
-            // 
-            this.n_down_speed.Enabled = false;
-            this.n_down_speed.Location = new System.Drawing.Point(142, 22);
-            this.n_down_speed.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.n_down_speed.Name = "n_down_speed";
-            this.n_down_speed.Size = new System.Drawing.Size(46, 20);
-            this.n_down_speed.TabIndex = 124;
-            this.n_down_speed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.n_down_speed.Value = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            // 
-            // btn_save_path_url
-            // 
-            this.btn_save_path_url.Enabled = false;
-            this.btn_save_path_url.FlatAppearance.BorderSize = 0;
-            this.btn_save_path_url.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_save_path_url.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_save_path_url.Image = ((System.Drawing.Image)(resources.GetObject("btn_save_path_url.Image")));
-            this.btn_save_path_url.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_save_path_url.Location = new System.Drawing.Point(1146, 221);
-            this.btn_save_path_url.Name = "btn_save_path_url";
-            this.btn_save_path_url.Size = new System.Drawing.Size(22, 16);
-            this.btn_save_path_url.TabIndex = 119;
-            this.btn_save_path_url.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_save_path_url.UseVisualStyleBackColor = true;
-            this.btn_save_path_url.Click += new System.EventHandler(this.btn_save_path_url_Click);
-            // 
-            // btn_pl_videos
-            // 
-            this.btn_pl_videos.FlatAppearance.BorderSize = 0;
-            this.btn_pl_videos.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_pl_videos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_pl_videos.Image = ((System.Drawing.Image)(resources.GetObject("btn_pl_videos.Image")));
-            this.btn_pl_videos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_pl_videos.Location = new System.Drawing.Point(211, 12);
-            this.btn_pl_videos.Name = "btn_pl_videos";
-            this.btn_pl_videos.Size = new System.Drawing.Size(99, 90);
-            this.btn_pl_videos.TabIndex = 116;
-            this.btn_pl_videos.Text = "Get YouTube playlists contents";
-            this.btn_pl_videos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_pl_videos.UseVisualStyleBackColor = true;
-            this.btn_pl_videos.Visible = false;
-            this.btn_pl_videos.Click += new System.EventHandler(this.button1_Click_2);
-            // 
-            // btn_add_yts
-            // 
-            this.btn_add_yts.FlatAppearance.BorderSize = 0;
-            this.btn_add_yts.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_add_yts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_add_yts.Image = ((System.Drawing.Image)(resources.GetObject("btn_add_yts.Image")));
-            this.btn_add_yts.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_add_yts.Location = new System.Drawing.Point(135, 10);
-            this.btn_add_yts.Name = "btn_add_yts";
-            this.btn_add_yts.Size = new System.Drawing.Size(85, 91);
-            this.btn_add_yts.TabIndex = 115;
-            this.btn_add_yts.Text = "Add YouTube URLs from file";
-            this.btn_add_yts.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btn_add_yts.UseVisualStyleBackColor = true;
-            this.btn_add_yts.Click += new System.EventHandler(this.btn_add_yts_Click);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.BackColor = System.Drawing.SystemColors.Control;
-            this.groupBox5.Location = new System.Drawing.Point(627, 8);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(2, 235);
-            this.groupBox5.TabIndex = 114;
-            this.groupBox5.TabStop = false;
             // 
             // LB_Wait
             // 
@@ -3942,7 +3429,7 @@
             this.panel1.Controls.Add(this.button21);
             this.panel1.Controls.Add(this.btn_capture);
             this.panel1.Controls.Add(this.btn_concat);
-            this.panel1.Location = new System.Drawing.Point(633, 359);
+            this.panel1.Location = new System.Drawing.Point(633, 339);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(623, 252);
             this.panel1.TabIndex = 35;
@@ -4488,6 +3975,7 @@
             this.toolStripMenuItem9,
             this.menu_two_pass_wizard,
             this.wiz_silence_menu,
+            this.menu_extract_images,
             this.toolStripSeparator27,
             this.menu_settings});
             this.main_2.Name = "main_2";
@@ -4498,27 +3986,27 @@
             // 
             this.menu_reload_settings.Image = ((System.Drawing.Image)(resources.GetObject("menu_reload_settings.Image")));
             this.menu_reload_settings.Name = "menu_reload_settings";
-            this.menu_reload_settings.Size = new System.Drawing.Size(201, 22);
+            this.menu_reload_settings.Size = new System.Drawing.Size(204, 22);
             this.menu_reload_settings.Text = "Reload settings";
             this.menu_reload_settings.Click += new System.EventHandler(this.menu_reload_settings_Click);
             // 
             // menu_save_settings
             // 
             this.menu_save_settings.Name = "menu_save_settings";
-            this.menu_save_settings.Size = new System.Drawing.Size(201, 22);
+            this.menu_save_settings.Size = new System.Drawing.Size(204, 22);
             this.menu_save_settings.Text = "Save settings";
             this.menu_save_settings.Click += new System.EventHandler(this.menu_save_settings_Click);
             // 
             // toolStripSeparator19
             // 
             this.toolStripSeparator19.Name = "toolStripSeparator19";
-            this.toolStripSeparator19.Size = new System.Drawing.Size(198, 6);
+            this.toolStripSeparator19.Size = new System.Drawing.Size(201, 6);
             // 
             // menu_reset
             // 
             this.menu_reset.Image = ((System.Drawing.Image)(resources.GetObject("menu_reset.Image")));
             this.menu_reset.Name = "menu_reset";
-            this.menu_reset.Size = new System.Drawing.Size(201, 22);
+            this.menu_reset.Size = new System.Drawing.Size(204, 22);
             this.menu_reset.Text = "Reset to factory defaults";
             this.menu_reset.Click += new System.EventHandler(this.menu_reset_Click);
             // 
@@ -4526,20 +4014,20 @@
             // 
             this.toolStripMenuItem4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem4.Image")));
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(201, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(204, 22);
             this.toolStripMenuItem4.Text = "Replace ffmpeg";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // toolStripSeparator26
             // 
             this.toolStripSeparator26.Name = "toolStripSeparator26";
-            this.toolStripSeparator26.Size = new System.Drawing.Size(198, 6);
+            this.toolStripSeparator26.Size = new System.Drawing.Size(201, 6);
             // 
             // toolStripMenuItem7
             // 
             this.toolStripMenuItem7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem7.Image")));
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(201, 22);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(204, 22);
             this.toolStripMenuItem7.Text = "Show media info";
             this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
             // 
@@ -4547,20 +4035,20 @@
             // 
             this.main_menu_streams.Image = ((System.Drawing.Image)(resources.GetObject("main_menu_streams.Image")));
             this.main_menu_streams.Name = "main_menu_streams";
-            this.main_menu_streams.Size = new System.Drawing.Size(201, 22);
+            this.main_menu_streams.Size = new System.Drawing.Size(204, 22);
             this.main_menu_streams.Text = "Show file streams";
             this.main_menu_streams.Click += new System.EventHandler(this.toolStripMenuItem8_Click);
             // 
             // toolStripSeparator20
             // 
             this.toolStripSeparator20.Name = "toolStripSeparator20";
-            this.toolStripSeparator20.Size = new System.Drawing.Size(198, 6);
+            this.toolStripSeparator20.Size = new System.Drawing.Size(201, 6);
             // 
             // toolStripMenuItem9
             // 
             this.toolStripMenuItem9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem9.Image")));
             this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            this.toolStripMenuItem9.Size = new System.Drawing.Size(201, 22);
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(204, 22);
             this.toolStripMenuItem9.Text = "Multiple presets";
             this.toolStripMenuItem9.Click += new System.EventHandler(this.toolStripMenuItem9_Click);
             // 
@@ -4568,7 +4056,7 @@
             // 
             this.menu_two_pass_wizard.Image = ((System.Drawing.Image)(resources.GetObject("menu_two_pass_wizard.Image")));
             this.menu_two_pass_wizard.Name = "menu_two_pass_wizard";
-            this.menu_two_pass_wizard.Size = new System.Drawing.Size(201, 22);
+            this.menu_two_pass_wizard.Size = new System.Drawing.Size(204, 22);
             this.menu_two_pass_wizard.Text = "Two pass wizard";
             this.menu_two_pass_wizard.Click += new System.EventHandler(this.menu_two_pass_wizard_Click);
             // 
@@ -4576,20 +4064,28 @@
             // 
             this.wiz_silence_menu.Image = ((System.Drawing.Image)(resources.GetObject("wiz_silence_menu.Image")));
             this.wiz_silence_menu.Name = "wiz_silence_menu";
-            this.wiz_silence_menu.Size = new System.Drawing.Size(201, 22);
-            this.wiz_silence_menu.Text = "Detect silence";
+            this.wiz_silence_menu.Size = new System.Drawing.Size(204, 22);
+            this.wiz_silence_menu.Text = "Detect silence wizard";
             this.wiz_silence_menu.Click += new System.EventHandler(this.wiz_silence_menu_Click);
+            // 
+            // menu_extract_images
+            // 
+            this.menu_extract_images.Image = ((System.Drawing.Image)(resources.GetObject("menu_extract_images.Image")));
+            this.menu_extract_images.Name = "menu_extract_images";
+            this.menu_extract_images.Size = new System.Drawing.Size(204, 22);
+            this.menu_extract_images.Text = "Images extraction wizard";
+            this.menu_extract_images.Click += new System.EventHandler(this.menu_extract_images_Click);
             // 
             // toolStripSeparator27
             // 
             this.toolStripSeparator27.Name = "toolStripSeparator27";
-            this.toolStripSeparator27.Size = new System.Drawing.Size(198, 6);
+            this.toolStripSeparator27.Size = new System.Drawing.Size(201, 6);
             // 
             // menu_settings
             // 
             this.menu_settings.Image = ((System.Drawing.Image)(resources.GetObject("menu_settings.Image")));
             this.menu_settings.Name = "menu_settings";
-            this.menu_settings.Size = new System.Drawing.Size(201, 22);
+            this.menu_settings.Size = new System.Drawing.Size(204, 22);
             this.menu_settings.Text = "Settings";
             this.menu_settings.Click += new System.EventHandler(this.menu_settings_Click);
             // 
@@ -4821,7 +4317,7 @@
             this.tabPage4.ImageIndex = 3;
             this.tabPage4.Location = new System.Drawing.Point(4, 23);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1251, 231);
+            this.tabPage4.Size = new System.Drawing.Size(1251, 211);
             this.tabPage4.TabIndex = 2;
             this.tabPage4.Text = "Batch URLs";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -4869,7 +4365,7 @@
             this.dg1.RowHeadersWidth = 25;
             this.dg1.RowTemplate.Height = 18;
             this.dg1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dg1.Size = new System.Drawing.Size(1254, 233);
+            this.dg1.Size = new System.Drawing.Size(1254, 213);
             this.dg1.TabIndex = 36;
             this.dg1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dg1_CellBeginEdit);
             this.dg1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg1_CellEndEdit);
@@ -4951,7 +4447,7 @@
             this.tabPage3.ImageKey = "subs_icon.png";
             this.tabPage3.Location = new System.Drawing.Point(4, 23);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1251, 231);
+            this.tabPage3.Size = new System.Drawing.Size(1251, 211);
             this.tabPage3.TabIndex = 0;
             this.tabPage3.Text = "Batch subtitles ";
             // 
@@ -4975,7 +4471,7 @@
             this.listView3.MultiSelect = false;
             this.listView3.Name = "listView3";
             this.listView3.ShowItemToolTips = true;
-            this.listView3.Size = new System.Drawing.Size(1254, 233);
+            this.listView3.Size = new System.Drawing.Size(1254, 213);
             this.listView3.Sorting = System.Windows.Forms.SortOrder.Ascending;
             this.listView3.TabIndex = 36;
             this.listView3.UseCompatibleStateImageBehavior = false;
@@ -5028,7 +4524,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 23);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1251, 231);
+            this.tabPage2.Size = new System.Drawing.Size(1251, 211);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Stream multiplex ";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -5046,7 +4542,7 @@
             this.listView2.Location = new System.Drawing.Point(0, 0);
             this.listView2.Name = "listView2";
             this.listView2.ShowItemToolTips = true;
-            this.listView2.Size = new System.Drawing.Size(1254, 233);
+            this.listView2.Size = new System.Drawing.Size(1254, 213);
             this.listView2.TabIndex = 35;
             this.listView2.UseCompatibleStateImageBehavior = false;
             this.listView2.View = System.Windows.Forms.View.Details;
@@ -5066,7 +4562,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 23);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1251, 231);
+            this.tabPage1.Size = new System.Drawing.Size(1251, 211);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Batch processing ";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -5091,7 +4587,7 @@
             this.listView1.Location = new System.Drawing.Point(0, 0);
             this.listView1.Name = "listView1";
             this.listView1.ShowItemToolTips = true;
-            this.listView1.Size = new System.Drawing.Size(1254, 233);
+            this.listView1.Size = new System.Drawing.Size(1254, 213);
             this.listView1.TabIndex = 34;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
@@ -5147,7 +4643,7 @@
             this.tabControl1.Location = new System.Drawing.Point(-1, 102);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1259, 258);
+            this.tabControl1.Size = new System.Drawing.Size(1259, 238);
             this.tabControl1.TabIndex = 73;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -5232,12 +4728,615 @@
             // 
             this.BG_Single_yt.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BG_Single_yt_DoWork);
             // 
+            // combo_ext_m3u
+            // 
+            this.combo_ext_m3u.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.combo_ext_m3u.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.combo_ext_m3u.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_ext_m3u.FormattingEnabled = true;
+            this.combo_ext_m3u.Items.AddRange(new object[] {
+            "mp4",
+            "mkv",
+            "webm",
+            "aac",
+            "ogg",
+            "m3u8"});
+            this.combo_ext_m3u.Location = new System.Drawing.Point(566, 187);
+            this.combo_ext_m3u.MaxDropDownItems = 3;
+            this.combo_ext_m3u.Name = "combo_ext_m3u";
+            this.combo_ext_m3u.Size = new System.Drawing.Size(53, 21);
+            this.combo_ext_m3u.TabIndex = 88;
+            this.combo_ext_m3u.SelectedIndexChanged += new System.EventHandler(this.combo_ext_m3u_SelectedIndexChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(635, 201);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(63, 13);
+            this.label8.TabIndex = 97;
+            this.label8.Text = "Output path";
+            // 
+            // btn_start_m3u
+            // 
+            this.btn_start_m3u.FlatAppearance.BorderSize = 0;
+            this.btn_start_m3u.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_start_m3u.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_start_m3u.Image = ((System.Drawing.Image)(resources.GetObject("btn_start_m3u.Image")));
+            this.btn_start_m3u.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_start_m3u.Location = new System.Drawing.Point(634, 10);
+            this.btn_start_m3u.Name = "btn_start_m3u";
+            this.btn_start_m3u.Size = new System.Drawing.Size(67, 87);
+            this.btn_start_m3u.TabIndex = 86;
+            this.btn_start_m3u.Text = "Sequential download";
+            this.btn_start_m3u.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_start_m3u.UseVisualStyleBackColor = true;
+            this.btn_start_m3u.Click += new System.EventHandler(this.btn_start_m3u_Click);
+            // 
+            // btn_clear_urls
+            // 
+            this.btn_clear_urls.FlatAppearance.BorderSize = 0;
+            this.btn_clear_urls.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_clear_urls.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_clear_urls.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_clear_urls.ImageKey = "clear_list.png";
+            this.btn_clear_urls.ImageList = this.imageList1;
+            this.btn_clear_urls.Location = new System.Drawing.Point(5, 14);
+            this.btn_clear_urls.Name = "btn_clear_urls";
+            this.btn_clear_urls.Size = new System.Drawing.Size(57, 86);
+            this.btn_clear_urls.TabIndex = 88;
+            this.btn_clear_urls.Text = "Clear URL list";
+            this.btn_clear_urls.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_clear_urls.UseVisualStyleBackColor = true;
+            this.btn_clear_urls.Click += new System.EventHandler(this.button19_Click_1);
+            // 
+            // chk_m3u_params
+            // 
+            this.chk_m3u_params.AutoSize = true;
+            this.chk_m3u_params.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chk_m3u_params.Location = new System.Drawing.Point(22, 189);
+            this.chk_m3u_params.Name = "chk_m3u_params";
+            this.chk_m3u_params.Size = new System.Drawing.Size(104, 17);
+            this.chk_m3u_params.TabIndex = 100;
+            this.chk_m3u_params.Text = "M3U parameters";
+            this.chk_m3u_params.UseVisualStyleBackColor = true;
+            this.chk_m3u_params.CheckedChanged += new System.EventHandler(this.chk_m3u_params_CheckedChanged);
+            // 
+            // txt_m3u_params
+            // 
+            this.txt_m3u_params.Enabled = false;
+            this.txt_m3u_params.Location = new System.Drawing.Point(134, 187);
+            this.txt_m3u_params.Name = "txt_m3u_params";
+            this.txt_m3u_params.Size = new System.Drawing.Size(427, 20);
+            this.txt_m3u_params.TabIndex = 101;
+            this.txt_m3u_params.Text = "-bsf:a aac_adtstoasc -c copy";
+            // 
+            // txt_path_m3u
+            // 
+            this.txt_path_m3u.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txt_path_m3u.Location = new System.Drawing.Point(636, 220);
+            this.txt_path_m3u.Name = "txt_path_m3u";
+            this.txt_path_m3u.ReadOnly = true;
+            this.txt_path_m3u.Size = new System.Drawing.Size(533, 20);
+            this.txt_path_m3u.TabIndex = 96;
+            this.txt_path_m3u.Text = "No path selected";
+            // 
+            // btn_browse_path_m3u
+            // 
+            this.btn_browse_path_m3u.FlatAppearance.BorderSize = 0;
+            this.btn_browse_path_m3u.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_browse_path_m3u.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_browse_path_m3u.Location = new System.Drawing.Point(1173, 219);
+            this.btn_browse_path_m3u.Name = "btn_browse_path_m3u";
+            this.btn_browse_path_m3u.Size = new System.Drawing.Size(76, 22);
+            this.btn_browse_path_m3u.TabIndex = 98;
+            this.btn_browse_path_m3u.Text = "Browse";
+            this.btn_browse_path_m3u.UseVisualStyleBackColor = true;
+            this.btn_browse_path_m3u.Click += new System.EventHandler(this.button16_Click_1);
+            // 
+            // btn_add_urls
+            // 
+            this.btn_add_urls.FlatAppearance.BorderSize = 0;
+            this.btn_add_urls.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_add_urls.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_add_urls.Image = ((System.Drawing.Image)(resources.GetObject("btn_add_urls.Image")));
+            this.btn_add_urls.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_add_urls.Location = new System.Drawing.Point(63, 10);
+            this.btn_add_urls.Name = "btn_add_urls";
+            this.btn_add_urls.Size = new System.Drawing.Size(70, 91);
+            this.btn_add_urls.TabIndex = 103;
+            this.btn_add_urls.Text = "Add URLs from file";
+            this.btn_add_urls.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_add_urls.UseVisualStyleBackColor = true;
+            this.btn_add_urls.Click += new System.EventHandler(this.button31_Click);
+            // 
+            // btn_stop_m3u8
+            // 
+            this.btn_stop_m3u8.FlatAppearance.BorderSize = 0;
+            this.btn_stop_m3u8.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_stop_m3u8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_stop_m3u8.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_stop_m3u8.ImageKey = "skip_39.png";
+            this.btn_stop_m3u8.ImageList = this.imageList1;
+            this.btn_stop_m3u8.Location = new System.Drawing.Point(774, 9);
+            this.btn_stop_m3u8.Name = "btn_stop_m3u8";
+            this.btn_stop_m3u8.Size = new System.Drawing.Size(67, 88);
+            this.btn_stop_m3u8.TabIndex = 104;
+            this.btn_stop_m3u8.Text = "Skip current";
+            this.btn_stop_m3u8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_stop_m3u8.UseVisualStyleBackColor = true;
+            this.btn_stop_m3u8.Click += new System.EventHandler(this.btn_stop_m3u8_Click);
+            // 
+            // btn_cancel_validate
+            // 
+            this.btn_cancel_validate.FlatAppearance.BorderSize = 0;
+            this.btn_cancel_validate.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_cancel_validate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancel_validate.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_cancel_validate.ImageKey = "stop_32.png";
+            this.btn_cancel_validate.ImageList = this.imageList1;
+            this.btn_cancel_validate.Location = new System.Drawing.Point(363, 17);
+            this.btn_cancel_validate.Name = "btn_cancel_validate";
+            this.btn_cancel_validate.Size = new System.Drawing.Size(61, 85);
+            this.btn_cancel_validate.TabIndex = 105;
+            this.btn_cancel_validate.Text = "Stop validation";
+            this.btn_cancel_validate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_cancel_validate.UseVisualStyleBackColor = true;
+            this.btn_cancel_validate.Click += new System.EventHandler(this.btn_cancel_validate_Click);
+            // 
+            // btn_validate_url
+            // 
+            this.btn_validate_url.FlatAppearance.BorderSize = 0;
+            this.btn_validate_url.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_validate_url.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_validate_url.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_validate_url.ImageKey = "Check_URLs_v2.png";
+            this.btn_validate_url.ImageList = this.imageList1;
+            this.btn_validate_url.Location = new System.Drawing.Point(300, 18);
+            this.btn_validate_url.Name = "btn_validate_url";
+            this.btn_validate_url.Size = new System.Drawing.Size(61, 85);
+            this.btn_validate_url.TabIndex = 106;
+            this.btn_validate_url.Text = "Validate URLs";
+            this.btn_validate_url.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_validate_url.UseVisualStyleBackColor = true;
+            this.btn_validate_url.Click += new System.EventHandler(this.btn_validate_url_Click_1);
+            // 
+            // chk_output_server
+            // 
+            this.chk_output_server.AutoSize = true;
+            this.chk_output_server.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chk_output_server.Location = new System.Drawing.Point(22, 222);
+            this.chk_output_server.Name = "chk_output_server";
+            this.chk_output_server.Size = new System.Drawing.Size(104, 17);
+            this.chk_output_server.TabIndex = 107;
+            this.chk_output_server.Text = "Output server url";
+            this.chk_output_server.UseVisualStyleBackColor = true;
+            this.chk_output_server.CheckedChanged += new System.EventHandler(this.chk_output_server_CheckedChanged);
+            // 
+            // txt_output_server
+            // 
+            this.txt_output_server.Enabled = false;
+            this.txt_output_server.Location = new System.Drawing.Point(134, 220);
+            this.txt_output_server.Name = "txt_output_server";
+            this.txt_output_server.Size = new System.Drawing.Size(485, 20);
+            this.txt_output_server.TabIndex = 108;
+            // 
+            // btn_clean_errors
+            // 
+            this.btn_clean_errors.FlatAppearance.BorderSize = 0;
+            this.btn_clean_errors.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_clean_errors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_clean_errors.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_clean_errors.ImageKey = "clean_urls.png";
+            this.btn_clean_errors.ImageList = this.imageList1;
+            this.btn_clean_errors.Location = new System.Drawing.Point(560, 16);
+            this.btn_clean_errors.Name = "btn_clean_errors";
+            this.btn_clean_errors.Size = new System.Drawing.Size(61, 85);
+            this.btn_clean_errors.TabIndex = 111;
+            this.btn_clean_errors.Text = "Remove error rows";
+            this.btn_clean_errors.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_clean_errors.UseVisualStyleBackColor = true;
+            this.btn_clean_errors.Click += new System.EventHandler(this.btn_clean_errors_Click);
+            // 
+            // btn_url_info
+            // 
+            this.btn_url_info.FlatAppearance.BorderSize = 0;
+            this.btn_url_info.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_url_info.Image = ((System.Drawing.Image)(resources.GetObject("btn_url_info.Image")));
+            this.btn_url_info.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_url_info.Location = new System.Drawing.Point(493, 16);
+            this.btn_url_info.Name = "btn_url_info";
+            this.btn_url_info.Size = new System.Drawing.Size(62, 85);
+            this.btn_url_info.TabIndex = 112;
+            this.btn_url_info.Text = "Get URL streams";
+            this.btn_url_info.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_url_info.UseVisualStyleBackColor = true;
+            this.btn_url_info.Click += new System.EventHandler(this.btn_url_info_Click);
+            // 
+            // btn_n_urls
+            // 
+            this.btn_n_urls.FlatAppearance.BorderSize = 0;
+            this.btn_n_urls.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_n_urls.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_n_urls.Image = ((System.Drawing.Image)(resources.GetObject("btn_n_urls.Image")));
+            this.btn_n_urls.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_n_urls.Location = new System.Drawing.Point(707, 9);
+            this.btn_n_urls.Name = "btn_n_urls";
+            this.btn_n_urls.Size = new System.Drawing.Size(67, 89);
+            this.btn_n_urls.TabIndex = 113;
+            this.btn_n_urls.Text = "Multi URL download";
+            this.btn_n_urls.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_n_urls.UseVisualStyleBackColor = true;
+            this.btn_n_urls.Click += new System.EventHandler(this.btn_n_urls_Click);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBox5.Location = new System.Drawing.Point(627, 8);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(2, 235);
+            this.groupBox5.TabIndex = 114;
+            this.groupBox5.TabStop = false;
+            // 
+            // btn_add_yts
+            // 
+            this.btn_add_yts.FlatAppearance.BorderSize = 0;
+            this.btn_add_yts.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_add_yts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_add_yts.Image = ((System.Drawing.Image)(resources.GetObject("btn_add_yts.Image")));
+            this.btn_add_yts.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_add_yts.Location = new System.Drawing.Point(135, 10);
+            this.btn_add_yts.Name = "btn_add_yts";
+            this.btn_add_yts.Size = new System.Drawing.Size(85, 91);
+            this.btn_add_yts.TabIndex = 115;
+            this.btn_add_yts.Text = "Add YouTube URLs from file";
+            this.btn_add_yts.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_add_yts.UseVisualStyleBackColor = true;
+            this.btn_add_yts.Click += new System.EventHandler(this.btn_add_yts_Click);
+            // 
+            // btn_pl_videos
+            // 
+            this.btn_pl_videos.FlatAppearance.BorderSize = 0;
+            this.btn_pl_videos.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_pl_videos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pl_videos.Image = ((System.Drawing.Image)(resources.GetObject("btn_pl_videos.Image")));
+            this.btn_pl_videos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_pl_videos.Location = new System.Drawing.Point(211, 12);
+            this.btn_pl_videos.Name = "btn_pl_videos";
+            this.btn_pl_videos.Size = new System.Drawing.Size(99, 90);
+            this.btn_pl_videos.TabIndex = 116;
+            this.btn_pl_videos.Text = "Get YouTube playlists contents";
+            this.btn_pl_videos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_pl_videos.UseVisualStyleBackColor = true;
+            this.btn_pl_videos.Visible = false;
+            this.btn_pl_videos.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // btn_save_path_url
+            // 
+            this.btn_save_path_url.Enabled = false;
+            this.btn_save_path_url.FlatAppearance.BorderSize = 0;
+            this.btn_save_path_url.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_save_path_url.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_save_path_url.Image = ((System.Drawing.Image)(resources.GetObject("btn_save_path_url.Image")));
+            this.btn_save_path_url.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_save_path_url.Location = new System.Drawing.Point(1146, 221);
+            this.btn_save_path_url.Name = "btn_save_path_url";
+            this.btn_save_path_url.Size = new System.Drawing.Size(22, 16);
+            this.btn_save_path_url.TabIndex = 119;
+            this.btn_save_path_url.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_save_path_url.UseVisualStyleBackColor = true;
+            this.btn_save_path_url.Click += new System.EventHandler(this.btn_save_path_url_Click);
+            // 
+            // groupBox_yout
+            // 
+            this.groupBox_yout.Controls.Add(this.chk_convert_srt);
+            this.groupBox_yout.Controls.Add(this.chk_save_subtitles);
+            this.groupBox_yout.Controls.Add(this.chk_embed_meta);
+            this.groupBox_yout.Controls.Add(this.chk_yout_subs);
+            this.groupBox_yout.Controls.Add(this.chk_down_limit);
+            this.groupBox_yout.Controls.Add(this.chk_cache_yt);
+            this.groupBox_yout.Controls.Add(this.label25);
+            this.groupBox_yout.Controls.Add(this.n_down_speed);
+            this.groupBox_yout.Location = new System.Drawing.Point(1020, 14);
+            this.groupBox_yout.Name = "groupBox_yout";
+            this.groupBox_yout.Size = new System.Drawing.Size(223, 144);
+            this.groupBox_yout.TabIndex = 127;
+            this.groupBox_yout.TabStop = false;
+            this.groupBox_yout.Text = "YouTube settings";
+            // 
+            // chk_convert_srt
+            // 
+            this.chk_convert_srt.AutoSize = true;
+            this.chk_convert_srt.Enabled = false;
+            this.chk_convert_srt.Location = new System.Drawing.Point(120, 117);
+            this.chk_convert_srt.Name = "chk_convert_srt";
+            this.chk_convert_srt.Size = new System.Drawing.Size(89, 17);
+            this.chk_convert_srt.TabIndex = 132;
+            this.chk_convert_srt.Text = "Convert to srt";
+            this.chk_convert_srt.UseVisualStyleBackColor = true;
+            // 
+            // chk_save_subtitles
+            // 
+            this.chk_save_subtitles.AutoSize = true;
+            this.chk_save_subtitles.Location = new System.Drawing.Point(15, 117);
+            this.chk_save_subtitles.Name = "chk_save_subtitles";
+            this.chk_save_subtitles.Size = new System.Drawing.Size(92, 17);
+            this.chk_save_subtitles.TabIndex = 131;
+            this.chk_save_subtitles.Text = "Save subtitles";
+            this.chk_save_subtitles.UseVisualStyleBackColor = true;
+            this.chk_save_subtitles.CheckedChanged += new System.EventHandler(this.chk_save_subtitles_CheckedChanged);
+            // 
+            // chk_embed_meta
+            // 
+            this.chk_embed_meta.AutoSize = true;
+            this.chk_embed_meta.Location = new System.Drawing.Point(15, 70);
+            this.chk_embed_meta.Name = "chk_embed_meta";
+            this.chk_embed_meta.Size = new System.Drawing.Size(106, 17);
+            this.chk_embed_meta.TabIndex = 130;
+            this.chk_embed_meta.Text = "Embed metadata";
+            this.chk_embed_meta.UseVisualStyleBackColor = true;
+            // 
+            // chk_yout_subs
+            // 
+            this.chk_yout_subs.AutoSize = true;
+            this.chk_yout_subs.Location = new System.Drawing.Point(15, 94);
+            this.chk_yout_subs.Name = "chk_yout_subs";
+            this.chk_yout_subs.Size = new System.Drawing.Size(100, 17);
+            this.chk_yout_subs.TabIndex = 129;
+            this.chk_yout_subs.Text = "Embed subtitles";
+            this.chk_yout_subs.UseVisualStyleBackColor = true;
+            // 
+            // chk_down_limit
+            // 
+            this.chk_down_limit.AutoSize = true;
+            this.chk_down_limit.Location = new System.Drawing.Point(15, 23);
+            this.chk_down_limit.Name = "chk_down_limit";
+            this.chk_down_limit.Size = new System.Drawing.Size(126, 17);
+            this.chk_down_limit.TabIndex = 128;
+            this.chk_down_limit.Text = "Download speed limit";
+            this.chk_down_limit.UseVisualStyleBackColor = true;
+            this.chk_down_limit.CheckedChanged += new System.EventHandler(this.chk_down_limit_CheckedChanged);
+            // 
+            // chk_cache_yt
+            // 
+            this.chk_cache_yt.AutoSize = true;
+            this.chk_cache_yt.Location = new System.Drawing.Point(15, 46);
+            this.chk_cache_yt.Name = "chk_cache_yt";
+            this.chk_cache_yt.Size = new System.Drawing.Size(132, 17);
+            this.chk_cache_yt.TabIndex = 127;
+            this.chk_cache_yt.Text = "Clear download cache";
+            this.chk_cache_yt.UseVisualStyleBackColor = true;
+            this.chk_cache_yt.CheckedChanged += new System.EventHandler(this.chk_cache_yt_CheckedChanged);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(189, 25);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(33, 13);
+            this.label25.TabIndex = 125;
+            this.label25.Text = "MB/s";
+            // 
+            // n_down_speed
+            // 
+            this.n_down_speed.Enabled = false;
+            this.n_down_speed.Location = new System.Drawing.Point(142, 22);
+            this.n_down_speed.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.n_down_speed.Name = "n_down_speed";
+            this.n_down_speed.Size = new System.Drawing.Size(46, 20);
+            this.n_down_speed.TabIndex = 124;
+            this.n_down_speed.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.n_down_speed.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
+            // pic_noimg
+            // 
+            this.pic_noimg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pic_noimg.Image = ((System.Drawing.Image)(resources.GetObject("pic_noimg.Image")));
+            this.pic_noimg.Location = new System.Drawing.Point(932, 101);
+            this.pic_noimg.Name = "pic_noimg";
+            this.pic_noimg.Size = new System.Drawing.Size(80, 45);
+            this.pic_noimg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_noimg.TabIndex = 127;
+            this.pic_noimg.TabStop = false;
+            this.pic_noimg.Visible = false;
+            // 
+            // group_downs
+            // 
+            this.group_downs.Controls.Add(this.label12);
+            this.group_downs.Controls.Add(this.btn_save_downs);
+            this.group_downs.Controls.Add(this.n_downs);
+            this.group_downs.Location = new System.Drawing.Point(637, 117);
+            this.group_downs.Name = "group_downs";
+            this.group_downs.Size = new System.Drawing.Size(197, 39);
+            this.group_downs.TabIndex = 128;
+            this.group_downs.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(4, 16);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(113, 13);
+            this.label12.TabIndex = 121;
+            this.label12.Text = "Concurrent downloads";
+            // 
+            // btn_save_downs
+            // 
+            this.btn_save_downs.Enabled = false;
+            this.btn_save_downs.FlatAppearance.BorderSize = 0;
+            this.btn_save_downs.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_save_downs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_save_downs.Image = ((System.Drawing.Image)(resources.GetObject("btn_save_downs.Image")));
+            this.btn_save_downs.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_save_downs.Location = new System.Drawing.Point(170, 10);
+            this.btn_save_downs.Name = "btn_save_downs";
+            this.btn_save_downs.Size = new System.Drawing.Size(24, 24);
+            this.btn_save_downs.TabIndex = 122;
+            this.btn_save_downs.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_save_downs.UseVisualStyleBackColor = true;
+            this.btn_save_downs.Click += new System.EventHandler(this.btn_save_downs_Click);
+            // 
+            // n_downs
+            // 
+            this.n_downs.Location = new System.Drawing.Point(120, 13);
+            this.n_downs.Maximum = new decimal(new int[] {
+            64,
+            0,
+            0,
+            0});
+            this.n_downs.Name = "n_downs";
+            this.n_downs.Size = new System.Drawing.Size(46, 20);
+            this.n_downs.TabIndex = 120;
+            this.n_downs.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.n_downs.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.n_downs.ValueChanged += new System.EventHandler(this.n_downs_ValueChanged);
+            // 
+            // lbl_yt_v
+            // 
+            this.lbl_yt_v.AutoSize = true;
+            this.lbl_yt_v.Location = new System.Drawing.Point(1085, 169);
+            this.lbl_yt_v.Name = "lbl_yt_v";
+            this.lbl_yt_v.Size = new System.Drawing.Size(0, 13);
+            this.lbl_yt_v.TabIndex = 137;
+            // 
+            // btn_update_yt
+            // 
+            this.btn_update_yt.Location = new System.Drawing.Point(1193, 164);
+            this.btn_update_yt.Name = "btn_update_yt";
+            this.btn_update_yt.Size = new System.Drawing.Size(51, 23);
+            this.btn_update_yt.TabIndex = 138;
+            this.btn_update_yt.Text = "Update";
+            this.btn_update_yt.UseVisualStyleBackColor = true;
+            this.btn_update_yt.Visible = false;
+            this.btn_update_yt.Click += new System.EventHandler(this.btn_update_yt_Click);
+            // 
+            // txt_up_output
+            // 
+            this.txt_up_output.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txt_up_output.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_up_output.Location = new System.Drawing.Point(1034, 193);
+            this.txt_up_output.Name = "txt_up_output";
+            this.txt_up_output.Size = new System.Drawing.Size(208, 13);
+            this.txt_up_output.TabIndex = 140;
+            this.txt_up_output.Text = "Update in progress, please wait...";
+            this.txt_up_output.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_up_output.Visible = false;
+            // 
+            // pg_update_yl
+            // 
+            this.pg_update_yl.Location = new System.Drawing.Point(1087, 169);
+            this.pg_update_yl.Name = "pg_update_yl";
+            this.pg_update_yl.Size = new System.Drawing.Size(101, 14);
+            this.pg_update_yl.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.pg_update_yl.TabIndex = 141;
+            this.pg_update_yl.Visible = false;
+            // 
+            // btn_logs_url
+            // 
+            this.btn_logs_url.FlatAppearance.BorderSize = 0;
+            this.btn_logs_url.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_logs_url.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_logs_url.Image = ((System.Drawing.Image)(resources.GetObject("btn_logs_url.Image")));
+            this.btn_logs_url.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_logs_url.Location = new System.Drawing.Point(841, 9);
+            this.btn_logs_url.Name = "btn_logs_url";
+            this.btn_logs_url.Size = new System.Drawing.Size(54, 88);
+            this.btn_logs_url.TabIndex = 142;
+            this.btn_logs_url.Text = "View log file";
+            this.btn_logs_url.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_logs_url.UseVisualStyleBackColor = true;
+            this.btn_logs_url.Click += new System.EventHandler(this.btn_logs_url_Click);
+            // 
+            // pic_ok
+            // 
+            this.pic_ok.Image = ((System.Drawing.Image)(resources.GetObject("pic_ok.Image")));
+            this.pic_ok.Location = new System.Drawing.Point(1191, 167);
+            this.pic_ok.Name = "pic_ok";
+            this.pic_ok.Size = new System.Drawing.Size(16, 16);
+            this.pic_ok.TabIndex = 143;
+            this.pic_ok.TabStop = false;
+            this.pic_ok.Visible = false;
+            // 
+            // lbl_yl_name
+            // 
+            this.lbl_yl_name.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lbl_yl_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lbl_yl_name.Location = new System.Drawing.Point(1010, 169);
+            this.lbl_yl_name.Name = "lbl_yl_name";
+            this.lbl_yl_name.ReadOnly = true;
+            this.lbl_yl_name.Size = new System.Drawing.Size(74, 13);
+            this.lbl_yl_name.TabIndex = 144;
+            this.lbl_yl_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.lbl_yl_name.Click += new System.EventHandler(this.lbl_yl_name_Click);
+            // 
+            // pic_wait_1
+            // 
+            this.pic_wait_1.Image = ((System.Drawing.Image)(resources.GetObject("pic_wait_1.Image")));
+            this.pic_wait_1.Location = new System.Drawing.Point(1191, 167);
+            this.pic_wait_1.Name = "pic_wait_1";
+            this.pic_wait_1.Size = new System.Drawing.Size(16, 16);
+            this.pic_wait_1.TabIndex = 145;
+            this.pic_wait_1.TabStop = false;
+            // 
+            // groupBox_m3u
+            // 
+            this.groupBox_m3u.Controls.Add(this.pic_wait_1);
+            this.groupBox_m3u.Controls.Add(this.lbl_yl_name);
+            this.groupBox_m3u.Controls.Add(this.pic_ok);
+            this.groupBox_m3u.Controls.Add(this.btn_logs_url);
+            this.groupBox_m3u.Controls.Add(this.pg_update_yl);
+            this.groupBox_m3u.Controls.Add(this.txt_up_output);
+            this.groupBox_m3u.Controls.Add(this.btn_update_yt);
+            this.groupBox_m3u.Controls.Add(this.lbl_yt_v);
+            this.groupBox_m3u.Controls.Add(this.group_downs);
+            this.groupBox_m3u.Controls.Add(this.pic_noimg);
+            this.groupBox_m3u.Controls.Add(this.groupBox_yout);
+            this.groupBox_m3u.Controls.Add(this.btn_save_path_url);
+            this.groupBox_m3u.Controls.Add(this.btn_pl_videos);
+            this.groupBox_m3u.Controls.Add(this.btn_add_yts);
+            this.groupBox_m3u.Controls.Add(this.groupBox5);
+            this.groupBox_m3u.Controls.Add(this.btn_n_urls);
+            this.groupBox_m3u.Controls.Add(this.btn_url_info);
+            this.groupBox_m3u.Controls.Add(this.btn_clean_errors);
+            this.groupBox_m3u.Controls.Add(this.txt_output_server);
+            this.groupBox_m3u.Controls.Add(this.chk_output_server);
+            this.groupBox_m3u.Controls.Add(this.btn_validate_url);
+            this.groupBox_m3u.Controls.Add(this.btn_cancel_validate);
+            this.groupBox_m3u.Controls.Add(this.btn_stop_m3u8);
+            this.groupBox_m3u.Controls.Add(this.btn_add_urls);
+            this.groupBox_m3u.Controls.Add(this.btn_browse_path_m3u);
+            this.groupBox_m3u.Controls.Add(this.txt_path_m3u);
+            this.groupBox_m3u.Controls.Add(this.txt_m3u_params);
+            this.groupBox_m3u.Controls.Add(this.chk_m3u_params);
+            this.groupBox_m3u.Controls.Add(this.btn_clear_urls);
+            this.groupBox_m3u.Controls.Add(this.btn_start_m3u);
+            this.groupBox_m3u.Controls.Add(this.label8);
+            this.groupBox_m3u.Controls.Add(this.combo_ext_m3u);
+            this.groupBox_m3u.Location = new System.Drawing.Point(3, 339);
+            this.groupBox_m3u.Name = "groupBox_m3u";
+            this.groupBox_m3u.Size = new System.Drawing.Size(1253, 252);
+            this.groupBox_m3u.TabIndex = 103;
+            this.groupBox_m3u.TabStop = false;
+            this.groupBox_m3u.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(1260, 691);
+            this.ClientSize = new System.Drawing.Size(1260, 671);
             this.Controls.Add(this.pic_rec_cell);
             this.Controls.Add(this.pic_error);
             this.Controls.Add(this.pic_success);
@@ -5323,17 +5422,6 @@
             this.groupBox2.PerformLayout();
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
-            this.groupBox_m3u.ResumeLayout(false);
-            this.groupBox_m3u.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_wait_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_ok)).EndInit();
-            this.group_downs.ResumeLayout(false);
-            this.group_downs.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.n_downs)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_noimg)).EndInit();
-            this.groupBox_yout.ResumeLayout(false);
-            this.groupBox_yout.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.n_down_speed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_threads)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_a_out)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_a_in)).EndInit();
@@ -5361,6 +5449,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_success)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_error)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_rec_cell)).EndInit();
+            this.groupBox_yout.ResumeLayout(false);
+            this.groupBox_yout.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.n_down_speed)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_noimg)).EndInit();
+            this.group_downs.ResumeLayout(false);
+            this.group_downs.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.n_downs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_ok)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_wait_1)).EndInit();
+            this.groupBox_m3u.ResumeLayout(false);
+            this.groupBox_m3u.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5531,26 +5630,8 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label lbl_est_size;
         private System.Windows.Forms.Timer timer_est_size;
-        private System.Windows.Forms.ComboBox combo_ext_m3u;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btn_start_m3u;
-        private System.Windows.Forms.Button btn_clear_urls;
-        private System.Windows.Forms.CheckBox chk_m3u_params;
-        private System.Windows.Forms.TextBox txt_m3u_params;
-        private System.Windows.Forms.TextBox txt_path_m3u;
-        private System.Windows.Forms.Button btn_browse_path_m3u;
-        private System.Windows.Forms.Button btn_add_urls;
-        private System.Windows.Forms.Button btn_stop_m3u8;
-        private System.Windows.Forms.Button btn_cancel_validate;
-        private System.Windows.Forms.Button btn_validate_url;
-        private System.Windows.Forms.CheckBox chk_output_server;
-        private System.Windows.Forms.TextBox txt_output_server;
         private System.Windows.Forms.TextBox txt_search_url;
         private System.Windows.Forms.Label lbl_search_url;
-        private System.Windows.Forms.Button btn_clean_errors;
-        private System.Windows.Forms.Button btn_url_info;
-        private System.Windows.Forms.Button btn_n_urls;
-        private System.Windows.Forms.GroupBox groupBox_m3u;
         private System.Windows.Forms.Label lbl_bitrate;
         private System.Windows.Forms.TextBox LB_Wait;
         private System.Windows.Forms.Timer timer2;
@@ -5714,32 +5795,14 @@
         private System.IO.FileSystemWatcher watch_other_instance;
         private System.Windows.Forms.ToolStripMenuItem wiz_silence_menu;
         private System.Windows.Forms.Button btn_abort_all;
-        private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button btn_multimedia;
         private System.Windows.Forms.Button btn_inc_font;
         private System.Windows.Forms.Button btn_decr_font;
         private System.Windows.Forms.ToolStripMenuItem ct_paste_youtube;
-        private System.Windows.Forms.Button btn_add_yts;
         private System.ComponentModel.BackgroundWorker BG_Validate_URLs_YT;
-        private System.Windows.Forms.Button btn_pl_videos;
         private System.ComponentModel.BackgroundWorker BG_Validate_PLSS;
         private System.Windows.Forms.Label lbl_dw_speed;
         private System.Windows.Forms.Label lbl_urls_time;
-        private System.Windows.Forms.Button btn_save_path_url;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.NumericUpDown n_downs;
-        private System.Windows.Forms.Button btn_save_downs;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.NumericUpDown n_down_speed;
-        private System.Windows.Forms.GroupBox groupBox_yout;
-        private System.Windows.Forms.PictureBox pic_noimg;
-        private System.Windows.Forms.CheckBox chk_cache_yt;
-        private System.Windows.Forms.CheckBox chk_down_limit;
-        private System.Windows.Forms.GroupBox group_downs;
-        private System.Windows.Forms.CheckBox chk_embed_meta;
-        private System.Windows.Forms.CheckBox chk_yout_subs;
-        private System.Windows.Forms.CheckBox chk_convert_srt;
-        private System.Windows.Forms.CheckBox chk_save_subtitles;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.ListView listView1;
@@ -5763,13 +5826,6 @@
         private System.Windows.Forms.DataGridView dg1;
         private System.Windows.Forms.ToolStripMenuItem ct_remove_url;
         private System.Windows.Forms.Label lbl_n_urls;
-        private System.Windows.Forms.Button btn_update_yt;
-        private System.Windows.Forms.Label lbl_yt_v;
-        private System.Windows.Forms.TextBox txt_up_output;
-        private System.Windows.Forms.ProgressBar pg_update_yl;
-        private System.Windows.Forms.Button btn_logs_url;
-        private System.Windows.Forms.PictureBox pic_ok;
-        private System.Windows.Forms.TextBox lbl_yl_name;
         private System.ComponentModel.BackgroundWorker BG_pre_validate_url_txt;
         private System.Windows.Forms.DataGridViewImageColumn Column0;
         private System.Windows.Forms.DataGridViewTextBoxColumn File1;
@@ -5777,7 +5833,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Capture_time1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Type1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status1;
-        private System.Windows.Forms.PictureBox pic_wait_1;
         private System.ComponentModel.BackgroundWorker BG_Validate_Plays;
         private System.Windows.Forms.ToolStripMenuItem ct1_paste_youtube;
         private System.Windows.Forms.ToolStripMenuItem ct1_paste_m3u;
@@ -5797,6 +5852,57 @@
         private System.ComponentModel.BackgroundWorker BG_Single_yt;
         private System.Windows.Forms.Button btn_display_log;
         private System.Windows.Forms.ColumnHeader col_dir;
+        private System.Windows.Forms.Button btn_fix_pre;
+        private System.Windows.Forms.GroupBox groupBox_m3u;
+        private System.Windows.Forms.PictureBox pic_wait_1;
+        private System.Windows.Forms.TextBox lbl_yl_name;
+        private System.Windows.Forms.PictureBox pic_ok;
+        private System.Windows.Forms.Button btn_logs_url;
+        private System.Windows.Forms.ProgressBar pg_update_yl;
+        private System.Windows.Forms.TextBox txt_up_output;
+        private System.Windows.Forms.Button btn_update_yt;
+        private System.Windows.Forms.Label lbl_yt_v;
+        private System.Windows.Forms.GroupBox group_downs;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btn_save_downs;
+        private System.Windows.Forms.NumericUpDown n_downs;
+        private System.Windows.Forms.PictureBox pic_noimg;
+        private System.Windows.Forms.GroupBox groupBox_yout;
+        private System.Windows.Forms.CheckBox chk_convert_srt;
+        private System.Windows.Forms.CheckBox chk_save_subtitles;
+        private System.Windows.Forms.CheckBox chk_embed_meta;
+        private System.Windows.Forms.CheckBox chk_yout_subs;
+        private System.Windows.Forms.CheckBox chk_down_limit;
+        private System.Windows.Forms.CheckBox chk_cache_yt;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.NumericUpDown n_down_speed;
+        private System.Windows.Forms.Button btn_save_path_url;
+        private System.Windows.Forms.Button btn_pl_videos;
+        private System.Windows.Forms.Button btn_add_yts;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button btn_n_urls;
+        private System.Windows.Forms.Button btn_url_info;
+        private System.Windows.Forms.Button btn_clean_errors;
+        private System.Windows.Forms.TextBox txt_output_server;
+        private System.Windows.Forms.CheckBox chk_output_server;
+        private System.Windows.Forms.Button btn_validate_url;
+        private System.Windows.Forms.Button btn_cancel_validate;
+        private System.Windows.Forms.Button btn_stop_m3u8;
+        private System.Windows.Forms.Button btn_add_urls;
+        private System.Windows.Forms.Button btn_browse_path_m3u;
+        private System.Windows.Forms.TextBox txt_path_m3u;
+        private System.Windows.Forms.TextBox txt_m3u_params;
+        private System.Windows.Forms.CheckBox chk_m3u_params;
+        private System.Windows.Forms.Button btn_clear_urls;
+        private System.Windows.Forms.Button btn_start_m3u;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox combo_ext_m3u;
+        private System.Windows.Forms.Button btn_mux_job;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Button btn_mux_show_jobs;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.Label lbl_mux_jobs;
+        private System.Windows.Forms.ToolStripMenuItem menu_extract_images;
     }
 }
 
