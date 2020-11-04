@@ -4,7 +4,7 @@ FFmpeg Batch AV Converter is a front-end for Windows ffmpeg users, and for Linux
 with a few mouse clicks in a convenient GUI. Among other things, you can drag and drop, see progress information, change encoding priority, pause and 
 resume, and set automatic shutdown. It is good for seasoned ffmpeg users as well as beginners.
 
-Downloads: https://sourceforge.net/p/ffmpeg-batch/wiki / https://github.com/eibol/ffmpeg_batch/releases
+Downloads: https://ffmpeg-batch.sourceforge.io
 
 Support donations: https://bit.ly/3hAZrZU / https://www.paypal.me/eibolff 
 
