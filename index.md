@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## Welcome to FFmpeg Batch AV Converter
 
 You can use the [editor on GitHub](https://github.com/eibol/ffmpeg_batch/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
