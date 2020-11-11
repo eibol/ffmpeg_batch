@@ -1,0 +1,11 @@
+2.2.6
+Changelog:
+
+- FFmpeg 4.3.1.2020-10-28 (32 bits version no longer updated).
+- Fixed bug on file list cells disappearing when mouse hovering them.
+- Fixed youtube-dl automatic update (git repository down).
+- Pre-input parameters saved for all or just default preset.
+- Output path and filename can be overriden by selecting Format "nul".
+- New wizard for batch video frame extraction as image.
+- New Stream multiplex batch job manager feature.
+- Minor changes on presets wizard (Opus).
