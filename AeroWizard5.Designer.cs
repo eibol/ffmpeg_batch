@@ -386,7 +386,7 @@
             this.txt_path_main.Name = "txt_path_main";
             this.txt_path_main.Size = new System.Drawing.Size(88, 23);
             this.txt_path_main.TabIndex = 124;
-            this.txt_path_main.Text = "..\\FF_thumbs";
+            this.txt_path_main.Text = ".\\FF_thumbs";
             this.txt_path_main.TextChanged += new System.EventHandler(this.txt_path_main_TextChanged);
             // 
             // groupBox1

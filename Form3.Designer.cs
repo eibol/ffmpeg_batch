@@ -71,10 +71,15 @@
             this.browse_sound = new System.Windows.Forms.OpenFileDialog();
             this.img_play = new System.Windows.Forms.ImageList(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btn_update = new System.Windows.Forms.Button();
+            this.lbl_ff_ver = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -270,7 +275,7 @@
             this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_save.Image = ((System.Drawing.Image)(resources.GetObject("btn_save.Image")));
             this.btn_save.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_save.Location = new System.Drawing.Point(612, 436);
+            this.btn_save.Location = new System.Drawing.Point(612, 476);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(60, 82);
             this.btn_save.TabIndex = 129;
@@ -285,7 +290,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 340);
+            this.groupBox1.Location = new System.Drawing.Point(12, 384);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(660, 90);
             this.groupBox1.TabIndex = 131;
@@ -337,7 +342,7 @@
             this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_cancel.Image = ((System.Drawing.Image)(resources.GetObject("btn_cancel.Image")));
             this.btn_cancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_cancel.Location = new System.Drawing.Point(548, 438);
+            this.btn_cancel.Location = new System.Drawing.Point(548, 478);
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(61, 80);
             this.btn_cancel.TabIndex = 130;
@@ -472,7 +477,7 @@
             this.btn_defaults.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_defaults.Image = ((System.Drawing.Image)(resources.GetObject("btn_defaults.Image")));
             this.btn_defaults.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_defaults.Location = new System.Drawing.Point(75, 437);
+            this.btn_defaults.Location = new System.Drawing.Point(75, 477);
             this.btn_defaults.Name = "btn_defaults";
             this.btn_defaults.Size = new System.Drawing.Size(62, 81);
             this.btn_defaults.TabIndex = 133;
@@ -523,7 +528,7 @@
             this.btn_reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_reset.Image = ((System.Drawing.Image)(resources.GetObject("btn_reset.Image")));
             this.btn_reset.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_reset.Location = new System.Drawing.Point(16, 438);
+            this.btn_reset.Location = new System.Drawing.Point(16, 478);
             this.btn_reset.Name = "btn_reset";
             this.btn_reset.Size = new System.Drawing.Size(58, 81);
             this.btn_reset.TabIndex = 136;
@@ -539,7 +544,7 @@
             this.btn_edit_presets_n.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_edit_presets_n.Image = ((System.Drawing.Image)(resources.GetObject("btn_edit_presets_n.Image")));
             this.btn_edit_presets_n.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_edit_presets_n.Location = new System.Drawing.Point(308, 439);
+            this.btn_edit_presets_n.Location = new System.Drawing.Point(308, 479);
             this.btn_edit_presets_n.Name = "btn_edit_presets_n";
             this.btn_edit_presets_n.Size = new System.Drawing.Size(68, 80);
             this.btn_edit_presets_n.TabIndex = 137;
@@ -564,14 +569,60 @@
             this.timer1.Interval = 8000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.label3);
+            this.groupBox4.Controls.Add(this.btn_update);
+            this.groupBox4.Controls.Add(this.lbl_ff_ver);
+            this.groupBox4.Location = new System.Drawing.Point(12, 336);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(660, 42);
+            this.groupBox4.TabIndex = 133;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "FFmpeg";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(32, 18);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(116, 13);
+            this.label3.TabIndex = 109;
+            this.label3.Text = "Current ffmpeg version:";
+            // 
+            // btn_update
+            // 
+            this.btn_update.FlatAppearance.BorderSize = 0;
+            this.btn_update.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_update.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_update.Image = ((System.Drawing.Image)(resources.GetObject("btn_update.Image")));
+            this.btn_update.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_update.Location = new System.Drawing.Point(514, 10);
+            this.btn_update.Name = "btn_update";
+            this.btn_update.Size = new System.Drawing.Size(140, 28);
+            this.btn_update.TabIndex = 108;
+            this.btn_update.Text = "Browse latest builds";
+            this.btn_update.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
+            // 
+            // lbl_ff_ver
+            // 
+            this.lbl_ff_ver.Location = new System.Drawing.Point(205, 18);
+            this.lbl_ff_ver.Name = "lbl_ff_ver";
+            this.lbl_ff_ver.Size = new System.Drawing.Size(256, 13);
+            this.lbl_ff_ver.TabIndex = 0;
+            this.lbl_ff_ver.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.CancelButton = this.btn_cancel;
-            this.ClientSize = new System.Drawing.Size(682, 533);
+            this.ClientSize = new System.Drawing.Size(682, 567);
             this.ControlBox = false;
+            this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.btn_edit_presets_n);
             this.Controls.Add(this.btn_reset);
             this.Controls.Add(this.groupBox3);
@@ -597,6 +648,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -643,5 +696,9 @@
         private System.Windows.Forms.Button btn_stop_play;
         private System.Windows.Forms.CheckBox chk_w_position;
         private System.Windows.Forms.CheckBox chk_non0;
+        private System.Windows.Forms.GroupBox groupBox4;
+        public System.Windows.Forms.Label lbl_ff_ver;
+        private System.Windows.Forms.Button btn_update;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -809,7 +809,7 @@ namespace FFBatch
         }
 
         private void wz2_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
-        {
+        {            
             if (started_audio == false)
             {
                 cb_audio_encoder.Items.Clear();
@@ -844,6 +844,10 @@ namespace FFBatch
             if (cb_audio_encoder.SelectedItem.ToString() == "copy" || cb_audio_encoder.SelectedItem.ToString() == "none")
             {
 
+                label31.Visible = false;
+                label32.Visible = false;
+                n_speed2.Visible = false;
+
                 label10.Visible = false;
                 label11.Visible = false;
                 label12.Visible = false;
@@ -866,6 +870,13 @@ namespace FFBatch
             }
             if (cb_audio_encoder.SelectedItem.ToString() == "pcm16" || cb_audio_encoder.SelectedItem.ToString() == "pcm24" || cb_audio_encoder.SelectedItem.ToString() == "flac")
             {
+                if (n_speed2.Value != 0)
+                {
+                    label31.Visible = true;
+                    label32.Visible = true;
+                    n_speed2.Visible = true;
+                }
+
                 label10.Visible = true;
                 label11.Visible = true;
                 label12.Visible = false;
@@ -884,6 +895,13 @@ namespace FFBatch
 
                 if (cb_audio_encoder.SelectedItem.ToString() == "pcm16" || cb_audio_encoder.SelectedItem.ToString() == "pcm24")
                 {
+                    if (n_speed.Value == 0)
+                    {
+                        label31.Visible = true;
+                        label32.Visible = true;
+                        n_speed2.Visible = true;
+                    }
+
                     label11.Top = 96;
                     cb_channels.Top = 93;
                     label29.Visible = true;
@@ -907,6 +925,13 @@ namespace FFBatch
 
                 if (cb_audio_encoder.SelectedItem.ToString() == "flac")
                 {
+                    if (n_speed.Value == 0)
+                    {
+                        label31.Visible = true;
+                        label32.Visible = true;
+                        n_speed2.Visible = true;
+                    }
+
                     label10.Visible = true;
                     label11.Visible = true;
                     label12.Visible = true;
@@ -942,6 +967,13 @@ namespace FFBatch
 
             if (cb_audio_encoder.SelectedItem.ToString() == "aac" || cb_audio_encoder.SelectedItem.ToString() == "ac3" || cb_audio_encoder.SelectedItem.ToString() == "e-ac3" || cb_audio_encoder.SelectedItem.ToString() == "mp3" || cb_audio_encoder.SelectedItem.ToString() == "vorbis" || cb_audio_encoder.SelectedItem.ToString() == "opus")
             {
+                if (n_speed.Value == 0)
+                {
+                    label31.Visible = true;
+                    label32.Visible = true;
+                    n_speed2.Visible = true;
+                }
+
                 label10.Visible = true;
                 label11.Visible = true;
                 label12.Visible = true;
@@ -971,7 +1003,12 @@ namespace FFBatch
 
                 if (cb_audio_encoder.SelectedItem.ToString() == "e-ac3")
                 {
-
+                    if (n_speed.Value == 0)
+                    {
+                        label31.Visible = true;
+                        label32.Visible = true;
+                        n_speed2.Visible = true;
+                    }
                     label22.Visible = true;
                     label29.Visible = false;
                     cb_chunk_size.Visible = false;
@@ -1003,6 +1040,12 @@ namespace FFBatch
                 if (cb_audio_encoder.SelectedItem.ToString() == "ac3")
                 {
 
+                    if (n_speed.Value == 0)
+                    {
+                        label31.Visible = true;
+                        label32.Visible = true;
+                        n_speed2.Visible = true;
+                    }
                     label22.Visible = true;
                     cb_cutoff.Visible = true;
                     label29.Visible = false;
@@ -1032,7 +1075,12 @@ namespace FFBatch
 
                 if (cb_audio_encoder.SelectedItem.ToString() == "aac")
                 {
-
+                    if (n_speed.Value == 0)
+                    {
+                        label31.Visible = true;
+                        label32.Visible = true;
+                        n_speed2.Visible = true;
+                    }
 
                     label22.Visible = true;
                     label29.Visible = false;
@@ -1057,6 +1105,12 @@ namespace FFBatch
                 if (cb_audio_encoder.SelectedItem.ToString() == "mp3")
                 {
 
+                    if (n_speed.Value == 0)
+                    {
+                        label31.Visible = true;
+                        label32.Visible = true;
+                        n_speed2.Visible = true;
+                    }
                     label22.Visible = true;
                     label29.Visible = false;
                     cb_chunk_size.Visible = false;
@@ -1088,7 +1142,12 @@ namespace FFBatch
                 }
                 if (cb_audio_encoder.SelectedItem.ToString() == "vorbis")
                 {
-
+                    if (n_speed.Value == 0)
+                    {
+                        label31.Visible = true;
+                        label32.Visible = true;
+                        n_speed2.Visible = true;
+                    }
                     label22.Visible = true;
                     label29.Visible = false;
                     cb_chunk_size.Visible = false;
@@ -1119,7 +1178,12 @@ namespace FFBatch
                 }
                 if (cb_audio_encoder.SelectedItem.ToString() == "opus")
                 {
-
+                    if (n_speed.Value == 0)
+                    {
+                        label31.Visible = true;
+                        label32.Visible = true;
+                        n_speed2.Visible = true;
+                    }
                     label22.Visible = true;
                     label29.Visible = false;
                     cb_chunk_size.Visible = false;
@@ -1768,6 +1832,25 @@ namespace FFBatch
                         video_encoder_param = video_encoder_param + filters;
                     }
                 }
+                Decimal v_sp = 0;
+                Decimal a_sp = 0;
+                Decimal const1 = 0.5M;
+                if (n_speed.Value != 0)
+                {
+                    if (n_speed.Value > 0)
+                    {
+                        v_sp = const1 + ((100 - n_speed.Value) / 200);
+                        a_sp =  1 + (n_speed.Value / 100);
+                    }
+                    
+                    if (n_speed.Value < 0)
+                    {
+                        v_sp = 1 + Math.Abs(n_speed.Value / 100);
+                        a_sp = const1 + (Math.Abs(-100 - n_speed.Value) / 200);
+                    }
+                    video_encoder_param = video_encoder_param + " -filter_complex " + '\u0022' + "[0:v]setpts=" + v_sp.ToString().Replace(",", ".") + "*PTS[v];[0:a]atempo=" + a_sp.ToString().Replace(",", ".") + "[a]" + '\u0022' + " -map " + '\u0022' + "[v]" + '\u0022' + " -map " + '\u0022' + "[a]" + '\u0022' + " ";
+                }
+
             }
 
             else //Back and forth
@@ -1992,7 +2075,7 @@ namespace FFBatch
             if (chk_vbr_opus.CheckState == CheckState.Checked)
             {
                 cb_opus_vbr.Enabled = true;
-                cb_opus_vbr.SelectedIndex = 5;
+                cb_opus_vbr.SelectedIndex = 10;
             }
             else
             {
@@ -2007,6 +2090,7 @@ namespace FFBatch
             video_preset = false;
             lbl_two.Text = String.Empty;
             pic_warn_two.Visible = false;
+            pic_warn_silence.Visible = false;
             wizardControl1.Pages[0].AllowNext = true;
         }
 
@@ -2016,6 +2100,7 @@ namespace FFBatch
             video_preset = true;
             lbl_two.Text = String.Empty;
             pic_warn_two.Visible = false;
+            pic_warn_silence.Visible = false;
             wizardControl1.Pages[0].AllowNext = true;
         }
 
@@ -2899,6 +2984,11 @@ namespace FFBatch
 
         private void wz2_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
         {
+            if (n_speed.Value != 0 && cb_audio_encoder.SelectedItem.ToString() == "copy")
+            {
+                MessageBox.Show("Speed up/down filter cannot be used with audio stream copy.");
+                e.Cancel = true;
+            }
             reset_a_params();
 
             if ((cb_audio_encoder.SelectedItem.ToString() == "none" || cb_audio_encoder.SelectedItem.ToString() == "copy") && audio_preset == true)
@@ -3069,6 +3159,22 @@ namespace FFBatch
                     if (cb_channels.SelectedIndex == 2) opus_params = opus_params + "1";
                 }
                 audio_encoder_param = audio_encoder_param + opus_params;
+            }
+            
+            Decimal a_sp = 0;
+            Decimal const1 = 0.5M;
+            if (n_speed2.Value != 0)
+            {
+                if (n_speed2.Value > 0)
+                {                   
+                    a_sp = 1 + (n_speed2.Value / 100);
+                }
+
+                if (n_speed2.Value < 0)
+                {                 
+                    a_sp = const1 + (Math.Abs(-100 - n_speed2.Value) / 200);
+                }
+                audio_encoder_param = audio_encoder_param + " -filter:a " + '\u0022' + "atempo=" + a_sp.ToString().Replace(",", ".") + '\u0022' +  " ";
             }
         }
 
@@ -3542,10 +3648,14 @@ namespace FFBatch
 
             if (Directory.Exists(destino) == true)
             {
-                if (Directory.GetFiles(destino).Length == 0)
+                try
                 {
-                    System.IO.Directory.Delete(destino);
+                    if (Directory.GetFiles(destino).Length == 0)
+                    {
+                        System.IO.Directory.Delete(destino);
+                    }
                 }
+                catch { } 
             }
             wizardControl1.Pages[4].AllowNext = true;
         }
@@ -3604,6 +3714,16 @@ namespace FFBatch
                 pic_warn_silence.Visible = false;
                 wizardControl1.Pages[0].AllowNext = true;
             }
+        }
+
+        private void radio_images_CheckedChanged(object sender, EventArgs e)
+        {           
+            lbl_two.Text = String.Empty;
+            pic_warn_two.Visible = false;
+            pic_warn_silence.Visible = false;
+            lbl_two.Text = String.Empty;
+            lbl_silence.Text = String.Empty;
+            wizardControl1.Pages[0].AllowNext = true;
         }
     }
 }

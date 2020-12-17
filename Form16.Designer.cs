@@ -28,19 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form16));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dg_pr = new System.Windows.Forms.DataGridView();
-            this.column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btn_clear = new System.Windows.Forms.Button();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.item_up = new System.Windows.Forms.Button();
@@ -52,6 +45,14 @@
             this.btn_clear_list = new System.Windows.Forms.Button();
             this.requeue = new System.Windows.Forms.Button();
             this.btn_jobs = new System.Windows.Forms.Button();
+            this.btn_logs_url = new System.Windows.Forms.Button();
+            this.column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dg_pr)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
             this.SuspendLayout();
@@ -60,8 +61,8 @@
             // 
             this.dg_pr.AllowDrop = true;
             this.dg_pr.AllowUserToAddRows = false;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.AliceBlue;
-            this.dg_pr.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            this.dg_pr.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dg_pr.BackgroundColor = System.Drawing.SystemColors.InactiveBorder;
             this.dg_pr.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_pr.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -82,68 +83,6 @@
             this.dg_pr.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dg_pr_CellPainting);
             this.dg_pr.CellValidated += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_pr_CellValidated);
             this.dg_pr.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dg_pr_RowsRemoved);
-            // 
-            // column4
-            // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.column4.DefaultCellStyle = dataGridViewCellStyle10;
-            this.column4.HeaderText = "Nr";
-            this.column4.MinimumWidth = 35;
-            this.column4.Name = "column4";
-            this.column4.ReadOnly = true;
-            this.column4.Width = 35;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Filename";
-            this.Column1.MinimumWidth = 50;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 153;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "FFmpeg parameters";
-            this.Column2.MinimumWidth = 50;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 548;
-            // 
-            // Column6
-            // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle11;
-            this.Column6.HeaderText = "Streams";
-            this.Column6.MinimumWidth = 55;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 55;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Duration";
-            this.Column7.MinimumWidth = 80;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Width = 80;
-            // 
-            // Column3
-            // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle12;
-            this.Column3.HeaderText = "Output";
-            this.Column3.MinimumWidth = 50;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 153;
-            // 
-            // Column5
-            // 
-            this.Column5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.Column5.HeaderText = "";
-            this.Column5.MinimumWidth = 25;
-            this.Column5.Name = "Column5";
-            this.Column5.Text = "";
-            this.Column5.Width = 25;
             // 
             // btn_clear
             // 
@@ -226,7 +165,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.label1.Location = new System.Drawing.Point(433, 13);
+            this.label1.Location = new System.Drawing.Point(441, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(197, 20);
             this.label1.TabIndex = 159;
@@ -286,11 +225,90 @@
             this.btn_jobs.UseVisualStyleBackColor = true;
             this.btn_jobs.Click += new System.EventHandler(this.btn_jobs_Click);
             // 
+            // btn_logs_url
+            // 
+            this.btn_logs_url.FlatAppearance.BorderSize = 0;
+            this.btn_logs_url.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_logs_url.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_logs_url.Image = ((System.Drawing.Image)(resources.GetObject("btn_logs_url.Image")));
+            this.btn_logs_url.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_logs_url.Location = new System.Drawing.Point(602, 439);
+            this.btn_logs_url.Name = "btn_logs_url";
+            this.btn_logs_url.Size = new System.Drawing.Size(54, 88);
+            this.btn_logs_url.TabIndex = 165;
+            this.btn_logs_url.Text = "View log file";
+            this.btn_logs_url.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_logs_url.UseVisualStyleBackColor = true;
+            this.btn_logs_url.Click += new System.EventHandler(this.btn_logs_url_Click);
+            // 
+            // column4
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.column4.DefaultCellStyle = dataGridViewCellStyle2;
+            this.column4.HeaderText = "Nr";
+            this.column4.MinimumWidth = 35;
+            this.column4.Name = "column4";
+            this.column4.ReadOnly = true;
+            this.column4.Width = 35;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Filename";
+            this.Column1.MinimumWidth = 50;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 153;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "FFmpeg parameters";
+            this.Column2.MinimumWidth = 50;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 548;
+            // 
+            // Column6
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column6.HeaderText = "Streams";
+            this.Column6.MinimumWidth = 55;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 55;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Duration";
+            this.Column7.MinimumWidth = 70;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 70;
+            // 
+            // Column3
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column3.HeaderText = "Output";
+            this.Column3.MinimumWidth = 50;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 163;
+            // 
+            // Column5
+            // 
+            this.Column5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Column5.HeaderText = "";
+            this.Column5.MinimumWidth = 25;
+            this.Column5.Name = "Column5";
+            this.Column5.Text = "";
+            this.Column5.Width = 25;
+            // 
             // Form16
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1079, 532);
+            this.Controls.Add(this.btn_logs_url);
             this.Controls.Add(this.btn_jobs);
             this.Controls.Add(this.requeue);
             this.Controls.Add(this.btn_clear_list);
@@ -328,6 +346,9 @@
         public System.Windows.Forms.DataGridView dg_pr;
         private System.Windows.Forms.PictureBox pic;
         private System.Windows.Forms.Button btn_clear_list;
+        private System.Windows.Forms.Button requeue;
+        private System.Windows.Forms.Button btn_jobs;
+        private System.Windows.Forms.Button btn_logs_url;
         private System.Windows.Forms.DataGridViewTextBoxColumn column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -335,7 +356,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewButtonColumn Column5;
-        private System.Windows.Forms.Button requeue;
-        private System.Windows.Forms.Button btn_jobs;
     }
 }

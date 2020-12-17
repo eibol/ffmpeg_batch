@@ -16,8 +16,9 @@ namespace FFBatch
     {
         public String flnm, ff_params, output_flnm = String.Empty;
         public Boolean start_jobs = false;
-        
-        
+        public Boolean view_logs = false;
+
+
         private void item_up_Click(object sender, EventArgs e)
         {
             if (dg_pr.SelectedCells.Count == 0 || dg_pr.SelectedCells.Count > 1) return;
@@ -108,7 +109,9 @@ namespace FFBatch
         {
             if (e.ColumnIndex == 2)
             {
-                MessageBox.Show(dg_pr.Rows[e.RowIndex].Cells[2].Value.ToString());
+                dg_pr.Rows[e.RowIndex].Cells[e.ColumnIndex].ReadOnly = false;
+                MessageBox.Show("FFMPEG PARAMETERS COPIED TO CLIPBOARD:" + Environment.NewLine + Environment.NewLine + dg_pr.Rows[e.RowIndex].Cells[2].Value.ToString());
+                Clipboard.SetText(dg_pr.Rows[e.RowIndex].Cells[2].Value.ToString());
             }
         }
              
@@ -149,6 +152,7 @@ namespace FFBatch
                 
         private void btn_jobs_Click(object sender, EventArgs e)
         {
+            view_logs = false;
             List<string> no_overw = new List<string>();
             foreach (DataGridViewRow row in dg_pr.Rows) no_overw.Add(row.Cells[5].Value.ToString());
 
@@ -207,9 +211,16 @@ namespace FFBatch
             else btn_jobs.Enabled = false;
         }
 
+        private void btn_logs_url_Click(object sender, EventArgs e)
+        {
+            view_logs = true;
+            this.Close();
+        }
+
         private void btn_cancel_Click(object sender, EventArgs e)
         {
-            start_jobs = false;            
+            start_jobs = false;
+            view_logs = false;
             this.Close();
         }
         

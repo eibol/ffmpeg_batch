@@ -64,29 +64,29 @@ namespace FFBatch
 
             if (radio_Frames.Checked == true && check_resize.Checked == false)
             {
-                pr_1st_params = pr_1st_params + "-vf " + "\u0022" + "select=not(mod(n" + "\\" + "," + combo_Frames.Text + "))" + "\u0022" + " -vsync vfr";
+                pr_1st_params = pr_1st_params + "-vf " + "\u0022" + "select=not(mod(n" + "\\" + "," + combo_Frames.Text + "))" + "\u0022" + " -vsync vfr -frame_pts true";
             }
             if (radio_Frames.Checked == true && check_resize.Checked == true)
             {
-                pr_1st_params = pr_1st_params + "-vf " + "\u0022" + "scale=" + combo_resize.Text + ", " + "select=not(mod(n" + "\\" + "," + combo_Frames.Text + "))" + "\u0022" + " -vsync vfr";
+                pr_1st_params = pr_1st_params + "-vf " + "\u0022" + "scale=" + combo_resize.Text + ", " + "select=not(mod(n" + "\\" + "," + combo_Frames.Text + "))" + "\u0022" + " -vsync vfr -frame_pts true";
             }
 
             if (radio_all.Checked == true && check_resize.Checked == false)
             {
-                pr_1st_params = pr_1st_params + "-vf " + "\u0022" + "select=not(mod(n" + "\\" + "," + "1" + "))" + "\u0022" + " -vsync vfr";
+                pr_1st_params = pr_1st_params + "-vf " + "\u0022" + "select=not(mod(n" + "\\" + "," + "1" + "))" + "\u0022" + " -vsync vfr -frame_pts true";
             }
             if (radio_all.Checked == true && check_resize.Checked == true)
             {
-                pr_1st_params = pr_1st_params + "-vf " + "\u0022" + "scale=" + combo_resize.Text + ", " + "select=not(mod(n" + "\\" + "," + "1" + "))" + "\u0022" + " -vsync vfr";
+                pr_1st_params = pr_1st_params + "-vf " + "\u0022" + "scale=" + combo_resize.Text + ", " + "select=not(mod(n" + "\\" + "," + "1" + "))" + "\u0022" + " -vsync vfr -frame_pts true";
             }
 
             if (radio_keys.Checked == true && check_resize.Checked == false)
             {
-                pr_1st_params = pr_1st_params + "-vf " + "\u0022" + "select='eq(pict_type,PICT_TYPE_I)'" + "\u0022" + " -vsync vfr";
+                pr_1st_params = pr_1st_params + "-vf " + "\u0022" + "select='eq(pict_type,PICT_TYPE_I)'" + "\u0022" + " -vsync vfr -frame_pts true";
             }
             if (radio_keys.Checked == true && check_resize.Checked == true)
             {
-                pr_1st_params = pr_1st_params + "-vf " + "\u0022" + "scale=" + combo_resize.Text + ", " + "select='eq(pict_type,PICT_TYPE_I)'" + "\u0022" + " -vsync vfr";
+                pr_1st_params = pr_1st_params + "-vf " + "\u0022" + "scale=" + combo_resize.Text + ", " + "select='eq(pict_type,PICT_TYPE_I)'" + "\u0022" + " -vsync vfr -frame_pts true";
             }
 
             if (combo_ext.SelectedIndex == 0) jpg_q = "-q:v 6";
@@ -97,7 +97,7 @@ namespace FFBatch
             //Output path
             if (radio_relative.Checked == true)
             {
-                out_path = "%fp" + "\\" + txt_path_main.Text.Substring(3, txt_path_main.Text.Length - 3) + "\\";
+                out_path = "%fp" + "\\" + txt_path_main.Text.Substring(2, txt_path_main.Text.Length - 2) + "\\";
             }
             if (radio_absolute.Checked == true)
             {
@@ -122,14 +122,14 @@ namespace FFBatch
             //End
             if (combo_ext.SelectedIndex == 4)
             {
-                pr_1st_params = pr_1st_params + "-pred mixed " + out_path;
+                pr_1st_params = pr_1st_params + "-pred mixed " + "\u0022" + out_path + "\u0022";
             }
-            else pr_1st_params = pr_1st_params + out_path;
+            else pr_1st_params = pr_1st_params + "\u0022" + out_path + "\u0022";
         }
 
         private void txt_path_main_TextChanged(object sender, EventArgs e)
         {
-            if (txt_path_main.TextLength >= 3 && txt_path_main.Text.Substring(0, 3) != "..\\") MessageBox.Show("Please include ..\\ on relative path.");
+            if (txt_path_main.TextLength >= 3 && txt_path_main.Text.Substring(0, 3) != ".\\") MessageBox.Show("Please include .\\ on relative path.");
         }
 
         private void combo_Frames_TextChanged(object sender, EventArgs e)

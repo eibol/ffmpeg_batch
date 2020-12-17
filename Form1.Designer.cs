@@ -41,7 +41,7 @@
             this.btn_add_files = new System.Windows.Forms.Button();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_parameters = new System.Windows.Forms.TextBox();
             this.txt_format = new System.Windows.Forms.TextBox();
             this.btn_save_config = new System.Windows.Forms.Button();
             this.btn_load_config = new System.Windows.Forms.Button();
@@ -65,6 +65,8 @@
             this.ct1_streams = new System.Windows.Forms.ToolStripMenuItem();
             this.ct1_total_frames = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
+            this.cti1_cols = new System.Windows.Forms.ToolStripMenuItem();
+            this.cti_remove_col = new System.Windows.Forms.ToolStripMenuItem();
             this.cti4_2 = new System.Windows.Forms.ToolStripMenuItem();
             this.cti5 = new System.Windows.Forms.ToolStripMenuItem();
             this.cti6 = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,14 +84,14 @@
             this.lbl_config_ver = new System.Windows.Forms.Label();
             this.cb_hwdecode = new System.Windows.Forms.ComboBox();
             this.btn_ref_dcd = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lbl_gpu = new System.Windows.Forms.Label();
             this.ss_time_input = new System.Windows.Forms.TextBox();
             this.btn_save_preset = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
             this.lbl_pre_input = new System.Windows.Forms.Label();
             this.txt_pre_input = new System.Windows.Forms.TextBox();
             this.btn_del_preset = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.btn_show_console = new System.Windows.Forms.Button();
             this.btn_try_pr = new System.Windows.Forms.Button();
             this.btn_edit_presets = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -220,7 +222,7 @@
             this.button26 = new System.Windows.Forms.Button();
             this.chk_burn = new System.Windows.Forms.CheckBox();
             this.txt_hard_subs = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txt_output_subs = new System.Windows.Forms.TextBox();
             this.button25 = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
@@ -474,6 +476,11 @@
             this.lbl_yl_name = new System.Windows.Forms.TextBox();
             this.pic_wait_1 = new System.Windows.Forms.PictureBox();
             this.groupBox_m3u = new System.Windows.Forms.GroupBox();
+            this.panel_yt = new System.Windows.Forms.Panel();
+            this.btn_add_col = new System.Windows.Forms.Button();
+            this.BG_add_col_res = new System.ComponentModel.BackgroundWorker();
+            this.BG_Add_col_vcodec = new System.ComponentModel.BackgroundWorker();
+            this.BG_Add_col_Acodec = new System.ComponentModel.BackgroundWorker();
             this.ctm1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -523,6 +530,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_ok)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_wait_1)).BeginInit();
             this.groupBox_m3u.SuspendLayout();
+            this.panel_yt.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_add_files
@@ -587,16 +595,16 @@
             this.openFileDialog1.Multiselect = true;
             this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
             // 
-            // textBox1
+            // txt_parameters
             // 
-            this.textBox1.Location = new System.Drawing.Point(69, 48);
-            this.textBox1.MaxLength = 1500;
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(477, 47);
-            this.textBox1.TabIndex = 21;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
+            this.txt_parameters.Location = new System.Drawing.Point(69, 48);
+            this.txt_parameters.MaxLength = 1500;
+            this.txt_parameters.Multiline = true;
+            this.txt_parameters.Name = "txt_parameters";
+            this.txt_parameters.Size = new System.Drawing.Size(477, 47);
+            this.txt_parameters.TabIndex = 21;
+            this.txt_parameters.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txt_parameters.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // txt_format
             // 
@@ -701,18 +709,20 @@
             this.ct1_streams,
             this.ct1_total_frames,
             this.toolStripSeparator15,
+            this.cti1_cols,
+            this.cti_remove_col,
             this.cti4_2,
             this.cti5,
             this.cti6});
             this.ctm1.Name = "ctm1";
-            this.ctm1.Size = new System.Drawing.Size(223, 388);
+            this.ctm1.Size = new System.Drawing.Size(228, 436);
             this.ctm1.Opening += new System.ComponentModel.CancelEventHandler(this.ctm1_Opening);
             // 
             // ctm_add_files
             // 
             this.ctm_add_files.Image = ((System.Drawing.Image)(resources.GetObject("ctm_add_files.Image")));
             this.ctm_add_files.Name = "ctm_add_files";
-            this.ctm_add_files.Size = new System.Drawing.Size(222, 24);
+            this.ctm_add_files.Size = new System.Drawing.Size(227, 24);
             this.ctm_add_files.Text = "Add files";
             this.ctm_add_files.Click += new System.EventHandler(this.ctm_add_files_Click);
             // 
@@ -720,7 +730,7 @@
             // 
             this.ctm_add_folder.Image = ((System.Drawing.Image)(resources.GetObject("ctm_add_folder.Image")));
             this.ctm_add_folder.Name = "ctm_add_folder";
-            this.ctm_add_folder.Size = new System.Drawing.Size(222, 24);
+            this.ctm_add_folder.Size = new System.Drawing.Size(227, 24);
             this.ctm_add_folder.Text = "Add folder";
             this.ctm_add_folder.Click += new System.EventHandler(this.ctm_add_folder_Click);
             // 
@@ -728,7 +738,7 @@
             // 
             this.ct1_paste_youtube.Image = ((System.Drawing.Image)(resources.GetObject("ct1_paste_youtube.Image")));
             this.ct1_paste_youtube.Name = "ct1_paste_youtube";
-            this.ct1_paste_youtube.Size = new System.Drawing.Size(222, 24);
+            this.ct1_paste_youtube.Size = new System.Drawing.Size(227, 24);
             this.ct1_paste_youtube.Text = "Paste YouTube URL";
             this.ct1_paste_youtube.Visible = false;
             this.ct1_paste_youtube.Click += new System.EventHandler(this.ct1_paste_youtube_Click);
@@ -737,7 +747,7 @@
             // 
             this.ct1_paste_m3u.Image = ((System.Drawing.Image)(resources.GetObject("ct1_paste_m3u.Image")));
             this.ct1_paste_m3u.Name = "ct1_paste_m3u";
-            this.ct1_paste_m3u.Size = new System.Drawing.Size(222, 24);
+            this.ct1_paste_m3u.Size = new System.Drawing.Size(227, 24);
             this.ct1_paste_m3u.Text = "Paste M3u URL";
             this.ct1_paste_m3u.Visible = false;
             this.ct1_paste_m3u.Click += new System.EventHandler(this.ct1_paste_m3u_Click);
@@ -745,13 +755,13 @@
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(219, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(224, 6);
             // 
             // cti2
             // 
             this.cti2.Image = ((System.Drawing.Image)(resources.GetObject("cti2.Image")));
             this.cti2.Name = "cti2";
-            this.cti2.Size = new System.Drawing.Size(222, 24);
+            this.cti2.Size = new System.Drawing.Size(227, 24);
             this.cti2.Text = "Play file";
             this.cti2.Click += new System.EventHandler(this.cti2_Click);
             // 
@@ -759,20 +769,20 @@
             // 
             this.cti1.Image = ((System.Drawing.Image)(resources.GetObject("cti1.Image")));
             this.cti1.Name = "cti1";
-            this.cti1.Size = new System.Drawing.Size(222, 24);
+            this.cti1.Size = new System.Drawing.Size(227, 24);
             this.cti1.Text = "Open file path";
             this.cti1.Click += new System.EventHandler(this.cti1_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
-            this.toolStripSeparator8.Size = new System.Drawing.Size(219, 6);
+            this.toolStripSeparator8.Size = new System.Drawing.Size(224, 6);
             // 
             // cti3
             // 
             this.cti3.Image = ((System.Drawing.Image)(resources.GetObject("cti3.Image")));
             this.cti3.Name = "cti3";
-            this.cti3.Size = new System.Drawing.Size(222, 24);
+            this.cti3.Size = new System.Drawing.Size(227, 24);
             this.cti3.Text = "Open output folder";
             this.cti3.Click += new System.EventHandler(this.cti3_Click);
             // 
@@ -780,28 +790,28 @@
             // 
             this.ctdel.Image = ((System.Drawing.Image)(resources.GetObject("ctdel.Image")));
             this.ctdel.Name = "ctdel";
-            this.ctdel.Size = new System.Drawing.Size(222, 24);
-            this.ctdel.Text = "Remove from list";
+            this.ctdel.Size = new System.Drawing.Size(227, 24);
+            this.ctdel.Text = "Remove file from list";
             this.ctdel.Click += new System.EventHandler(this.ctdel_Click);
             // 
             // ctm1_queue
             // 
             this.ctm1_queue.Image = ((System.Drawing.Image)(resources.GetObject("ctm1_queue.Image")));
             this.ctm1_queue.Name = "ctm1_queue";
-            this.ctm1_queue.Size = new System.Drawing.Size(222, 24);
+            this.ctm1_queue.Size = new System.Drawing.Size(227, 24);
             this.ctm1_queue.Text = "Reset item status to queued";
             this.ctm1_queue.Click += new System.EventHandler(this.ctm1_queue_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(219, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(224, 6);
             // 
             // cti4
             // 
             this.cti4.Image = ((System.Drawing.Image)(resources.GetObject("cti4.Image")));
             this.cti4.Name = "cti4";
-            this.cti4.Size = new System.Drawing.Size(222, 24);
+            this.cti4.Size = new System.Drawing.Size(227, 24);
             this.cti4.Text = "View multimedia file info";
             this.cti4.Click += new System.EventHandler(this.cti4_Click);
             // 
@@ -809,7 +819,7 @@
             // 
             this.ct1_streams.Image = ((System.Drawing.Image)(resources.GetObject("ct1_streams.Image")));
             this.ct1_streams.Name = "ct1_streams";
-            this.ct1_streams.Size = new System.Drawing.Size(222, 24);
+            this.ct1_streams.Size = new System.Drawing.Size(227, 24);
             this.ct1_streams.Text = "Show file streams";
             this.ct1_streams.Click += new System.EventHandler(this.ct1_streams_Click);
             // 
@@ -817,20 +827,37 @@
             // 
             this.ct1_total_frames.Image = ((System.Drawing.Image)(resources.GetObject("ct1_total_frames.Image")));
             this.ct1_total_frames.Name = "ct1_total_frames";
-            this.ct1_total_frames.Size = new System.Drawing.Size(222, 24);
+            this.ct1_total_frames.Size = new System.Drawing.Size(227, 24);
             this.ct1_total_frames.Text = "Get total seconds/frames";
             this.ct1_total_frames.Click += new System.EventHandler(this.ct1_total_frames_Click);
             // 
             // toolStripSeparator15
             // 
             this.toolStripSeparator15.Name = "toolStripSeparator15";
-            this.toolStripSeparator15.Size = new System.Drawing.Size(219, 6);
+            this.toolStripSeparator15.Size = new System.Drawing.Size(224, 6);
+            // 
+            // cti1_cols
+            // 
+            this.cti1_cols.Image = ((System.Drawing.Image)(resources.GetObject("cti1_cols.Image")));
+            this.cti1_cols.Name = "cti1_cols";
+            this.cti1_cols.Size = new System.Drawing.Size(227, 24);
+            this.cti1_cols.Text = "Add custom colum";
+            this.cti1_cols.Click += new System.EventHandler(this.cti1_cols_Click);
+            // 
+            // cti_remove_col
+            // 
+            this.cti_remove_col.Enabled = false;
+            this.cti_remove_col.Image = ((System.Drawing.Image)(resources.GetObject("cti_remove_col.Image")));
+            this.cti_remove_col.Name = "cti_remove_col";
+            this.cti_remove_col.Size = new System.Drawing.Size(227, 24);
+            this.cti_remove_col.Text = "Remove last custom column";
+            this.cti_remove_col.Click += new System.EventHandler(this.cti_remove_col_Click);
             // 
             // cti4_2
             // 
             this.cti4_2.Image = ((System.Drawing.Image)(resources.GetObject("cti4_2.Image")));
             this.cti4_2.Name = "cti4_2";
-            this.cti4_2.Size = new System.Drawing.Size(222, 24);
+            this.cti4_2.Size = new System.Drawing.Size(227, 24);
             this.cti4_2.Text = "Show/hide grid";
             this.cti4_2.Click += new System.EventHandler(this.cti4_2_Click);
             // 
@@ -838,7 +865,7 @@
             // 
             this.cti5.Image = ((System.Drawing.Image)(resources.GetObject("cti5.Image")));
             this.cti5.Name = "cti5";
-            this.cti5.Size = new System.Drawing.Size(222, 24);
+            this.cti5.Size = new System.Drawing.Size(227, 24);
             this.cti5.Text = "Set as trim end time";
             this.cti5.Click += new System.EventHandler(this.cti5_Click);
             // 
@@ -846,7 +873,7 @@
             // 
             this.cti6.Image = ((System.Drawing.Image)(resources.GetObject("cti6.Image")));
             this.cti6.Name = "cti6";
-            this.cti6.Size = new System.Drawing.Size(222, 24);
+            this.cti6.Size = new System.Drawing.Size(227, 24);
             this.cti6.Text = "Stop task";
             this.cti6.Click += new System.EventHandler(this.cti6_Click);
             // 
@@ -907,7 +934,7 @@
             this.groupBox1.Controls.Add(this.lbl_config_ver);
             this.groupBox1.Controls.Add(this.cb_hwdecode);
             this.groupBox1.Controls.Add(this.btn_ref_dcd);
-            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.lbl_gpu);
             this.groupBox1.Controls.Add(this.ss_time_input);
             this.groupBox1.Controls.Add(this.btn_save_preset);
             this.groupBox1.Controls.Add(this.label22);
@@ -915,8 +942,8 @@
             this.groupBox1.Controls.Add(this.txt_pre_input);
             this.groupBox1.Controls.Add(this.txt_format);
             this.groupBox1.Controls.Add(this.btn_del_preset);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.button13);
+            this.groupBox1.Controls.Add(this.txt_parameters);
+            this.groupBox1.Controls.Add(this.btn_show_console);
             this.groupBox1.Controls.Add(this.btn_try_pr);
             this.groupBox1.Controls.Add(this.btn_save_config);
             this.groupBox1.Controls.Add(this.btn_load_config);
@@ -1034,14 +1061,14 @@
             this.btn_ref_dcd.UseVisualStyleBackColor = true;
             this.btn_ref_dcd.Click += new System.EventHandler(this.btn_ref_dcd_Click);
             // 
-            // label16
+            // lbl_gpu
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(242, 110);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(69, 13);
-            this.label16.TabIndex = 116;
-            this.label16.Text = "GPU decode";
+            this.lbl_gpu.AutoSize = true;
+            this.lbl_gpu.Location = new System.Drawing.Point(242, 110);
+            this.lbl_gpu.Name = "lbl_gpu";
+            this.lbl_gpu.Size = new System.Drawing.Size(69, 13);
+            this.lbl_gpu.TabIndex = 116;
+            this.lbl_gpu.Text = "GPU decode";
             // 
             // ss_time_input
             // 
@@ -1112,21 +1139,21 @@
             this.btn_del_preset.UseVisualStyleBackColor = true;
             this.btn_del_preset.Click += new System.EventHandler(this.btn_del_preset_Click);
             // 
-            // button13
+            // btn_show_console
             // 
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Image = ((System.Drawing.Image)(resources.GetObject("button13.Image")));
-            this.button13.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button13.Location = new System.Drawing.Point(181, 141);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(57, 87);
-            this.button13.TabIndex = 34;
-            this.button13.Text = "Try on console";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button13.UseVisualStyleBackColor = true;
-            this.button13.Click += new System.EventHandler(this.button13_Click);
+            this.btn_show_console.FlatAppearance.BorderSize = 0;
+            this.btn_show_console.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_show_console.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_show_console.Image = ((System.Drawing.Image)(resources.GetObject("btn_show_console.Image")));
+            this.btn_show_console.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_show_console.Location = new System.Drawing.Point(179, 141);
+            this.btn_show_console.Name = "btn_show_console";
+            this.btn_show_console.Size = new System.Drawing.Size(57, 87);
+            this.btn_show_console.TabIndex = 34;
+            this.btn_show_console.Text = "Try on console";
+            this.btn_show_console.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_show_console.UseVisualStyleBackColor = true;
+            this.btn_show_console.Click += new System.EventHandler(this.button13_Click);
             // 
             // btn_try_pr
             // 
@@ -1814,7 +1841,7 @@
             this.list_tracks.Location = new System.Drawing.Point(2, 343);
             this.list_tracks.Name = "list_tracks";
             this.list_tracks.ShowItemToolTips = true;
-            this.list_tracks.Size = new System.Drawing.Size(1254, 161);
+            this.list_tracks.Size = new System.Drawing.Size(1254, 160);
             this.list_tracks.SmallImageList = this.img_streams;
             this.list_tracks.TabIndex = 75;
             this.list_tracks.UseCompatibleStateImageBehavior = false;
@@ -2320,7 +2347,7 @@
             // 
             // btn_cancel_add
             // 
-            this.btn_cancel_add.Location = new System.Drawing.Point(728, 101);
+            this.btn_cancel_add.Location = new System.Drawing.Point(705, 101);
             this.btn_cancel_add.Margin = new System.Windows.Forms.Padding(0);
             this.btn_cancel_add.Name = "btn_cancel_add";
             this.btn_cancel_add.Size = new System.Drawing.Size(48, 22);
@@ -2334,7 +2361,7 @@
             // 
             this.pg_adding.Location = new System.Drawing.Point(569, 105);
             this.pg_adding.Name = "pg_adding";
-            this.pg_adding.Size = new System.Drawing.Size(121, 15);
+            this.pg_adding.Size = new System.Drawing.Size(101, 15);
             this.pg_adding.TabIndex = 110;
             this.pg_adding.Visible = false;
             // 
@@ -2342,7 +2369,7 @@
             // 
             this.txt_adding_p.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_adding_p.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_adding_p.Location = new System.Drawing.Point(696, 106);
+            this.txt_adding_p.Location = new System.Drawing.Point(676, 106);
             this.txt_adding_p.Name = "txt_adding_p";
             this.txt_adding_p.Size = new System.Drawing.Size(27, 13);
             this.txt_adding_p.TabIndex = 111;
@@ -2384,27 +2411,34 @@
             this.Combo_sub_lang_mux.FormattingEnabled = true;
             this.Combo_sub_lang_mux.Items.AddRange(new object[] {
             "English (eng)",
-            "Arabic: (ara)",
-            "Armenian (arm)",
-            "Basque: (baq)",
-            "Bengali: (ben)",
-            "Bosnian (bos)",
-            "Catalan: (cat)",
             "Chinese (chi)",
+            "Spanish (spa)",
+            "Arabic (ara)",
+            "Armenian (arm)",
+            "Basque (baq)",
+            "Bengali (ben)",
+            "Bosnian (bos)",
+            "Catalan (cat)",
+            "Chinese (zho)",
+            "Chinese (yue)",
             "Croatian (hrv)",
             "Czech (cze)",
             "Danish (dan)",
             "Dutch (dut)",
             "French (fra)",
+            "Finnish (fin)",
             "Galician (glg)",
             "German (ger)",
+            "Greek (gre)",
             "Hebrew (heb)",
             "Hindi (hin)",
             "Hungarian (hun)",
             "Icelandic (ice)",
+            "Indonesian (ind)",
             "Italian (ita)",
             "Japanese (jpn)",
             "Korean (kor)",
+            "Malay (may)",
             "Macedonian (mac)",
             "Norwegian (nno)",
             "Polish (pol)",
@@ -2412,11 +2446,30 @@
             "Romanian (rum)",
             "Russian (rus)",
             "Serbian (srp)",
-            "Spanish (spa)",
             "Swedish (swe)",
             "Thai (tha)",
             "Turkish (tur)",
-            "Vietnamese (vie)"});
+            "Vietnamese (vie)",
+            "Urdu (urd)",
+            "Hungarian (hun)",
+            "Icelandic (ice)",
+            "Indonesian (ind)",
+            "Italian (ita)",
+            "Japanese (jpn)",
+            "Korean (kor)",
+            "Malay (may)",
+            "Macedonian (mac)",
+            "Norwegian (nno)",
+            "Polish (pol)",
+            "Portuguese (por)",
+            "Romanian (rum)",
+            "Russian (rus)",
+            "Serbian (srp)",
+            "Swedish (swe)",
+            "Thai (tha)",
+            "Turkish (tur)",
+            "Vietnamese (vie)",
+            "Urdu (urd)"});
             this.Combo_sub_lang_mux.Location = new System.Drawing.Point(932, 12);
             this.Combo_sub_lang_mux.Name = "Combo_sub_lang_mux";
             this.Combo_sub_lang_mux.Size = new System.Drawing.Size(112, 21);
@@ -2584,17 +2637,16 @@
             this.txt_hard_subs.Size = new System.Drawing.Size(608, 20);
             this.txt_hard_subs.TabIndex = 101;
             // 
-            // textBox8
+            // txt_output_subs
             // 
-            this.textBox8.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox8.Location = new System.Drawing.Point(638, 221);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(534, 20);
-            this.textBox8.TabIndex = 96;
-            this.textBox8.Text = "..\\FFBatch";
-            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
-            this.textBox8.DoubleClick += new System.EventHandler(this.textBox8_DoubleClick);
+            this.txt_output_subs.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txt_output_subs.Location = new System.Drawing.Point(638, 221);
+            this.txt_output_subs.Name = "txt_output_subs";
+            this.txt_output_subs.Size = new System.Drawing.Size(534, 20);
+            this.txt_output_subs.TabIndex = 96;
+            this.txt_output_subs.Text = ".\\FFBatch";
+            this.txt_output_subs.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
+            this.txt_output_subs.DoubleClick += new System.EventHandler(this.textBox8_DoubleClick);
             // 
             // button25
             // 
@@ -2625,7 +2677,7 @@
             this.groupBox15.Controls.Add(this.button26);
             this.groupBox15.Controls.Add(this.textBox6);
             this.groupBox15.Controls.Add(this.button25);
-            this.groupBox15.Controls.Add(this.textBox8);
+            this.groupBox15.Controls.Add(this.txt_output_subs);
             this.groupBox15.Controls.Add(this.txt_hard_subs);
             this.groupBox15.Controls.Add(this.chk_burn);
             this.groupBox15.Controls.Add(this.groupBox17);
@@ -2718,9 +2770,10 @@
             this.groupBox2.Controls.Add(this.btn_set_track_param);
             this.groupBox2.Location = new System.Drawing.Point(633, 503);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(623, 88);
+            this.groupBox2.Size = new System.Drawing.Size(619, 88);
             this.groupBox2.TabIndex = 108;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Visible = false;
             // 
             // lbl_mux_jobs
             // 
@@ -2768,10 +2821,10 @@
             this.txt_path_mux.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_path_mux.Location = new System.Drawing.Point(77, 63);
             this.txt_path_mux.Name = "txt_path_mux";
-            this.txt_path_mux.ReadOnly = true;
             this.txt_path_mux.Size = new System.Drawing.Size(482, 20);
             this.txt_path_mux.TabIndex = 88;
-            this.txt_path_mux.Text = "..\\FFBatch";
+            this.txt_path_mux.Text = ".\\FFBatch";
+            this.txt_path_mux.TextChanged += new System.EventHandler(this.txt_path_mux_TextChanged);
             this.txt_path_mux.DoubleClick += new System.EventHandler(this.textBox9_DoubleClick);
             // 
             // lbl_tr_n
@@ -2804,6 +2857,7 @@
             this.groupBox9.Size = new System.Drawing.Size(624, 88);
             this.groupBox9.TabIndex = 109;
             this.groupBox9.TabStop = false;
+            this.groupBox9.Visible = false;
             // 
             // btn_mux_show_jobs
             // 
@@ -3059,10 +3113,10 @@
             this.txt_path_main.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_path_main.Location = new System.Drawing.Point(79, 227);
             this.txt_path_main.Name = "txt_path_main";
-            this.txt_path_main.ReadOnly = true;
             this.txt_path_main.Size = new System.Drawing.Size(477, 20);
             this.txt_path_main.TabIndex = 64;
-            this.txt_path_main.Text = "..\\FFBatch";
+            this.txt_path_main.Text = ".\\FFBatch";
+            this.txt_path_main.TextChanged += new System.EventHandler(this.txt_path_main_TextChanged);
             this.txt_path_main.DoubleClick += new System.EventHandler(this.textBox3_DoubleClick);
             // 
             // btn_trim
@@ -3183,7 +3237,6 @@
             // 
             // btn_save_path
             // 
-            this.btn_save_path.Enabled = false;
             this.btn_save_path.FlatAppearance.BorderSize = 0;
             this.btn_save_path.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btn_save_path.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -4592,11 +4645,13 @@
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
             this.listView1.ColumnClick += new System.Windows.Forms.ColumnClickEventHandler(this.listView1_ColumnClick);
+            this.listView1.ColumnWidthChanged += new System.Windows.Forms.ColumnWidthChangedEventHandler(this.listView1_ColumnWidthChanged);
             this.listView1.DrawColumnHeader += new System.Windows.Forms.DrawListViewColumnHeaderEventHandler(this.listView1_DrawColumnHeader);
             this.listView1.DrawSubItem += new System.Windows.Forms.DrawListViewSubItemEventHandler(this.listView1_DrawSubItem);
             this.listView1.DragDrop += new System.Windows.Forms.DragEventHandler(this.listView1_DragDrop);
             this.listView1.DragEnter += new System.Windows.Forms.DragEventHandler(this.listView1_DragEnter);
             this.listView1.DoubleClick += new System.EventHandler(this.listView1_DoubleClick);
+            this.listView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listView1_KeyDown);
             this.listView1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.listView1_KeyUp);
             // 
             // col1
@@ -5206,14 +5261,14 @@
             // lbl_yt_v
             // 
             this.lbl_yt_v.AutoSize = true;
-            this.lbl_yt_v.Location = new System.Drawing.Point(1085, 169);
+            this.lbl_yt_v.Location = new System.Drawing.Point(78, 9);
             this.lbl_yt_v.Name = "lbl_yt_v";
             this.lbl_yt_v.Size = new System.Drawing.Size(0, 13);
             this.lbl_yt_v.TabIndex = 137;
             // 
             // btn_update_yt
             // 
-            this.btn_update_yt.Location = new System.Drawing.Point(1193, 164);
+            this.btn_update_yt.Location = new System.Drawing.Point(186, 4);
             this.btn_update_yt.Name = "btn_update_yt";
             this.btn_update_yt.Size = new System.Drawing.Size(51, 23);
             this.btn_update_yt.TabIndex = 138;
@@ -5226,7 +5281,7 @@
             // 
             this.txt_up_output.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_up_output.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_up_output.Location = new System.Drawing.Point(1034, 193);
+            this.txt_up_output.Location = new System.Drawing.Point(27, 33);
             this.txt_up_output.Name = "txt_up_output";
             this.txt_up_output.Size = new System.Drawing.Size(208, 13);
             this.txt_up_output.TabIndex = 140;
@@ -5236,7 +5291,7 @@
             // 
             // pg_update_yl
             // 
-            this.pg_update_yl.Location = new System.Drawing.Point(1087, 169);
+            this.pg_update_yl.Location = new System.Drawing.Point(80, 9);
             this.pg_update_yl.Name = "pg_update_yl";
             this.pg_update_yl.Size = new System.Drawing.Size(101, 14);
             this.pg_update_yl.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -5262,7 +5317,7 @@
             // pic_ok
             // 
             this.pic_ok.Image = ((System.Drawing.Image)(resources.GetObject("pic_ok.Image")));
-            this.pic_ok.Location = new System.Drawing.Point(1191, 167);
+            this.pic_ok.Location = new System.Drawing.Point(184, 7);
             this.pic_ok.Name = "pic_ok";
             this.pic_ok.Size = new System.Drawing.Size(16, 16);
             this.pic_ok.TabIndex = 143;
@@ -5273,7 +5328,7 @@
             // 
             this.lbl_yl_name.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.lbl_yl_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbl_yl_name.Location = new System.Drawing.Point(1010, 169);
+            this.lbl_yl_name.Location = new System.Drawing.Point(3, 9);
             this.lbl_yl_name.Name = "lbl_yl_name";
             this.lbl_yl_name.ReadOnly = true;
             this.lbl_yl_name.Size = new System.Drawing.Size(74, 13);
@@ -5284,7 +5339,7 @@
             // pic_wait_1
             // 
             this.pic_wait_1.Image = ((System.Drawing.Image)(resources.GetObject("pic_wait_1.Image")));
-            this.pic_wait_1.Location = new System.Drawing.Point(1191, 167);
+            this.pic_wait_1.Location = new System.Drawing.Point(184, 7);
             this.pic_wait_1.Name = "pic_wait_1";
             this.pic_wait_1.Size = new System.Drawing.Size(16, 16);
             this.pic_wait_1.TabIndex = 145;
@@ -5292,14 +5347,8 @@
             // 
             // groupBox_m3u
             // 
-            this.groupBox_m3u.Controls.Add(this.pic_wait_1);
-            this.groupBox_m3u.Controls.Add(this.lbl_yl_name);
-            this.groupBox_m3u.Controls.Add(this.pic_ok);
+            this.groupBox_m3u.Controls.Add(this.panel_yt);
             this.groupBox_m3u.Controls.Add(this.btn_logs_url);
-            this.groupBox_m3u.Controls.Add(this.pg_update_yl);
-            this.groupBox_m3u.Controls.Add(this.txt_up_output);
-            this.groupBox_m3u.Controls.Add(this.btn_update_yt);
-            this.groupBox_m3u.Controls.Add(this.lbl_yt_v);
             this.groupBox_m3u.Controls.Add(this.group_downs);
             this.groupBox_m3u.Controls.Add(this.pic_noimg);
             this.groupBox_m3u.Controls.Add(this.groupBox_yout);
@@ -5331,12 +5380,62 @@
             this.groupBox_m3u.TabStop = false;
             this.groupBox_m3u.Visible = false;
             // 
+            // panel_yt
+            // 
+            this.panel_yt.Controls.Add(this.pg_update_yl);
+            this.panel_yt.Controls.Add(this.pic_wait_1);
+            this.panel_yt.Controls.Add(this.lbl_yt_v);
+            this.panel_yt.Controls.Add(this.lbl_yl_name);
+            this.panel_yt.Controls.Add(this.btn_update_yt);
+            this.panel_yt.Controls.Add(this.pic_ok);
+            this.panel_yt.Controls.Add(this.txt_up_output);
+            this.panel_yt.Location = new System.Drawing.Point(1005, 163);
+            this.panel_yt.Name = "panel_yt";
+            this.panel_yt.Size = new System.Drawing.Size(241, 50);
+            this.panel_yt.TabIndex = 146;
+            // 
+            // btn_add_col
+            // 
+            this.btn_add_col.FlatAppearance.BorderSize = 0;
+            this.btn_add_col.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_add_col.Image = ((System.Drawing.Image)(resources.GetObject("btn_add_col.Image")));
+            this.btn_add_col.Location = new System.Drawing.Point(758, 95);
+            this.btn_add_col.Name = "btn_add_col";
+            this.btn_add_col.Size = new System.Drawing.Size(25, 27);
+            this.btn_add_col.TabIndex = 150;
+            this.btn_add_col.UseVisualStyleBackColor = true;
+            this.btn_add_col.Click += new System.EventHandler(this.btn_add_col_Click);
+            // 
+            // BG_add_col_res
+            // 
+            this.BG_add_col_res.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BG_add_col_res_DoWork);
+            this.BG_add_col_res.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BG_add_col_res_RunWorkerCompleted);
+            // 
+            // BG_Add_col_vcodec
+            // 
+            this.BG_Add_col_vcodec.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BG_Add_col_vcodec_DoWork);
+            this.BG_Add_col_vcodec.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BG_Add_col_vcodec_RunWorkerCompleted);
+            // 
+            // BG_Add_col_Acodec
+            // 
+            this.BG_Add_col_Acodec.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BG_Add_col_Acodec_DoWork);
+            this.BG_Add_col_Acodec.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BG_Add_col_Acodec_RunWorkerCompleted);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(1260, 671);
+            this.Controls.Add(this.btn_add_col);
+            this.Controls.Add(this.groupBox_m3u);
+            this.Controls.Add(this.groupBox15);
+            this.Controls.Add(this.groupBox9);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.list_tracks);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.pic_rec_cell);
             this.Controls.Add(this.pic_error);
             this.Controls.Add(this.pic_success);
@@ -5369,11 +5468,7 @@
             this.Controls.Add(this.btn_wizard);
             this.Controls.Add(this.btn_help);
             this.Controls.Add(this.LB_Wait);
-            this.Controls.Add(this.groupBox_m3u);
-            this.Controls.Add(this.list_tracks);
             this.Controls.Add(this.txt_adding_p);
-            this.Controls.Add(this.groupBox15);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_add_folders);
             this.Controls.Add(this.btn_refresh);
             this.Controls.Add(this.chk_subfolders);
@@ -5384,19 +5479,14 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btn_clear_list);
             this.Controls.Add(this.btn_add_files);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox9);
-            this.Controls.Add(this.groupBox10);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FFmpeg Batch AV Converter";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.ctm1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -5460,6 +5550,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_wait_1)).EndInit();
             this.groupBox_m3u.ResumeLayout(false);
             this.groupBox_m3u.PerformLayout();
+            this.panel_yt.ResumeLayout(false);
+            this.panel_yt.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5469,7 +5561,7 @@
 
         private System.Windows.Forms.Button btn_add_files;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_parameters;
         private System.Windows.Forms.TextBox txt_format;
         private System.Windows.Forms.Button btn_save_config;
         private System.Windows.Forms.Button btn_load_config;
@@ -5500,7 +5592,7 @@
         private System.Windows.Forms.Button btn_cancel_shut;
         private System.Windows.Forms.Button btn_try_pr;
         private System.Windows.Forms.ListBox listBox4;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button btn_show_console;
         private System.Windows.Forms.ImageList imageList2;
         private System.Windows.Forms.Label lbl_items;
         private System.Windows.Forms.Button btn_clean_list;
@@ -5583,7 +5675,7 @@
         private System.Windows.Forms.Button button26;
         private System.Windows.Forms.CheckBox chk_burn;
         private System.Windows.Forms.TextBox txt_hard_subs;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txt_output_subs;
         private System.Windows.Forms.Button button25;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.GroupBox groupBox15;
@@ -5648,7 +5740,7 @@
         private System.Windows.Forms.CheckBox chk_shift;
         private System.Windows.Forms.NumericUpDown Num_Shift;
         private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lbl_gpu;
         private System.Windows.Forms.ComboBox cb_hwdecode;
         private System.Windows.Forms.TextBox txt_mux_type;
         private System.ComponentModel.BackgroundWorker BG_refresh_dur;
@@ -5853,6 +5945,12 @@
         private System.Windows.Forms.Button btn_display_log;
         private System.Windows.Forms.ColumnHeader col_dir;
         private System.Windows.Forms.Button btn_fix_pre;
+        private System.Windows.Forms.Button btn_mux_job;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Button btn_mux_show_jobs;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.Label lbl_mux_jobs;
+        private System.Windows.Forms.ToolStripMenuItem menu_extract_images;
         private System.Windows.Forms.GroupBox groupBox_m3u;
         private System.Windows.Forms.PictureBox pic_wait_1;
         private System.Windows.Forms.TextBox lbl_yl_name;
@@ -5897,12 +5995,13 @@
         private System.Windows.Forms.Button btn_start_m3u;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox combo_ext_m3u;
-        private System.Windows.Forms.Button btn_mux_job;
-        private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.Button btn_mux_show_jobs;
-        private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.Label lbl_mux_jobs;
-        private System.Windows.Forms.ToolStripMenuItem menu_extract_images;
+        private System.Windows.Forms.Panel panel_yt;
+        private System.Windows.Forms.Button btn_add_col;
+        private System.ComponentModel.BackgroundWorker BG_add_col_res;
+        private System.ComponentModel.BackgroundWorker BG_Add_col_vcodec;
+        private System.ComponentModel.BackgroundWorker BG_Add_col_Acodec;
+        private System.Windows.Forms.ToolStripMenuItem cti1_cols;
+        private System.Windows.Forms.ToolStripMenuItem cti_remove_col;
     }
 }
 

@@ -78,6 +78,9 @@
             this.Combo_encoders = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.wz1_1 = new AeroWizard.WizardPage();
+            this.label30 = new System.Windows.Forms.Label();
+            this.n_speed = new System.Windows.Forms.NumericUpDown();
+            this.label21 = new System.Windows.Forms.Label();
             this.cb_rotate = new System.Windows.Forms.ComboBox();
             this.d_crop = new System.Windows.Forms.NumericUpDown();
             this.r_crop = new System.Windows.Forms.NumericUpDown();
@@ -93,6 +96,9 @@
             this.n_width = new System.Windows.Forms.NumericUpDown();
             this.label18 = new System.Windows.Forms.Label();
             this.wz2 = new AeroWizard.WizardPage();
+            this.label31 = new System.Windows.Forms.Label();
+            this.n_speed2 = new System.Windows.Forms.NumericUpDown();
+            this.label32 = new System.Windows.Forms.Label();
             this.cb_chunk_size = new System.Windows.Forms.ComboBox();
             this.label29 = new System.Windows.Forms.Label();
             this.txt_current_audio = new System.Windows.Forms.TextBox();
@@ -137,6 +143,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.n_crf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.track_q_v)).BeginInit();
             this.wz1_1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.n_speed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.d_crop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.r_crop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.l_crop)).BeginInit();
@@ -145,6 +152,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.n_height)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_width)).BeginInit();
             this.wz2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.n_speed2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_bit_audio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.track_bits_audio)).BeginInit();
             this.wz_end.SuspendLayout();
@@ -198,6 +206,7 @@
             this.radio_images.TabStop = true;
             this.radio_images.Text = "Image extraction wizard";
             this.radio_images.UseVisualStyleBackColor = true;
+            this.radio_images.CheckedChanged += new System.EventHandler(this.radio_images_CheckedChanged);
             // 
             // lbl_silence
             // 
@@ -765,6 +774,9 @@
             // 
             // wz1_1
             // 
+            this.wz1_1.Controls.Add(this.label30);
+            this.wz1_1.Controls.Add(this.n_speed);
+            this.wz1_1.Controls.Add(this.label21);
             this.wz1_1.Controls.Add(this.cb_rotate);
             this.wz1_1.Controls.Add(this.d_crop);
             this.wz1_1.Controls.Add(this.r_crop);
@@ -784,6 +796,38 @@
             this.wz1_1.TabIndex = 4;
             this.wz1_1.Text = "Video filters";
             this.wz1_1.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz1_1_Commit);
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(150, 237);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(17, 15);
+            this.label30.TabIndex = 46;
+            this.label30.Text = "%";
+            // 
+            // n_speed
+            // 
+            this.n_speed.Location = new System.Drawing.Point(104, 233);
+            this.n_speed.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.n_speed.Name = "n_speed";
+            this.n_speed.Size = new System.Drawing.Size(43, 23);
+            this.n_speed.TabIndex = 45;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(7, 236);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(91, 15);
+            this.label21.TabIndex = 44;
+            this.label21.Text = "Speed up/down";
             // 
             // cb_rotate
             // 
@@ -978,6 +1022,9 @@
             // 
             // wz2
             // 
+            this.wz2.Controls.Add(this.label31);
+            this.wz2.Controls.Add(this.n_speed2);
+            this.wz2.Controls.Add(this.label32);
             this.wz2.Controls.Add(this.cb_chunk_size);
             this.wz2.Controls.Add(this.label29);
             this.wz2.Controls.Add(this.txt_current_audio);
@@ -1004,6 +1051,38 @@
             this.wz2.Text = "Audio encoder settings";
             this.wz2.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz2_Commit);
             this.wz2.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz2_Initialize);
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(358, 203);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(17, 15);
+            this.label31.TabIndex = 49;
+            this.label31.Text = "%";
+            // 
+            // n_speed2
+            // 
+            this.n_speed2.Location = new System.Drawing.Point(312, 199);
+            this.n_speed2.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
+            this.n_speed2.Name = "n_speed2";
+            this.n_speed2.Size = new System.Drawing.Size(43, 23);
+            this.n_speed2.TabIndex = 48;
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(215, 202);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(91, 15);
+            this.label32.TabIndex = 47;
+            this.label32.Text = "Speed up/down";
             // 
             // cb_chunk_size
             // 
@@ -1429,6 +1508,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.track_q_v)).EndInit();
             this.wz1_1.ResumeLayout(false);
             this.wz1_1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.n_speed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.d_crop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.r_crop)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.l_crop)).EndInit();
@@ -1438,6 +1518,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.n_width)).EndInit();
             this.wz2.ResumeLayout(false);
             this.wz2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.n_speed2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_bit_audio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.track_bits_audio)).EndInit();
             this.wz_end.ResumeLayout(false);
@@ -1548,5 +1629,11 @@
         private System.Windows.Forms.PictureBox pic_warn_silence;
         private System.Windows.Forms.RadioButton radio_silence;
         private System.Windows.Forms.RadioButton radio_images;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.NumericUpDown n_speed;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.NumericUpDown n_speed2;
+        private System.Windows.Forms.Label label32;
     }
 }

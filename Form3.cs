@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Threading;
@@ -848,6 +849,7 @@ namespace FFBatch
             checkBox1.CheckState = CheckState.Unchecked;
             check_concat.CheckState = CheckState.Unchecked;
             chk_sort.CheckState = CheckState.Unchecked;
+            chk_verbose_log.CheckState = CheckState.Unchecked;
             chk_console_params.CheckState = CheckState.Unchecked;
             chk_auto_updates.CheckState = CheckState.Checked;
             chk_warn_successful.CheckState = CheckState.Unchecked;
@@ -1068,6 +1070,11 @@ namespace FFBatch
         {
             if (chk_non0.CheckState == CheckState.Checked) no_warn_0 = true;
             else no_warn_0 = false;
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://www.gyan.dev/ffmpeg/builds/");
         }
     }
 }
