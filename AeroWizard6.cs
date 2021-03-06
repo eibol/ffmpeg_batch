@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace FFBatch
 {
-    public partial class AeroWizard5 : Form
+    public partial class AeroWizard6 : Form
     {
-        public AeroWizard5()
+        public AeroWizard6()
         {
             InitializeComponent();
         }
@@ -34,8 +34,7 @@ namespace FFBatch
         }
 
         private void wizardControl1_SelectedPageChanged(object sender, EventArgs e)
-        {
-            combo_Frames.SelectedIndex = 0;
+        {            
             combo_Seconds.SelectedIndex = 0;
             combo_ext.SelectedIndex = 0;
         }
@@ -52,47 +51,7 @@ namespace FFBatch
             {
                 MessageBox.Show("Absolute path cannot be blank.");
                 e.Cancel = true;
-            }
-            if (radio_time.Checked == true && check_resize.Checked == false)
-            {
-                pr_1st_params = pr_1st_params + "-vf fps=fps=1/" + combo_Seconds.Text;
-            }
-            if (radio_time.Checked == true && check_resize.Checked == true)
-            {
-                pr_1st_params = pr_1st_params + "-vf " + "\u0022" + "scale=" + combo_resize.Text + ", " + "fps=fps=1/" + combo_Seconds.Text + "\u0022";
-            }
-
-            if (radio_Frames.Checked == true && check_resize.Checked == false)
-            {
-                pr_1st_params = pr_1st_params + "-vf " + "\u0022" + "select=not(mod(n" + "\\" + "," + combo_Frames.Text + "))" + "\u0022" + " -vsync vfr -frame_pts true";
-            }
-            if (radio_Frames.Checked == true && check_resize.Checked == true)
-            {
-                pr_1st_params = pr_1st_params + "-vf " + "\u0022" + "scale=" + combo_resize.Text + ", " + "select=not(mod(n" + "\\" + "," + combo_Frames.Text + "))" + "\u0022" + " -vsync vfr -frame_pts true";
-            }
-
-            if (radio_all.Checked == true && check_resize.Checked == false)
-            {
-                pr_1st_params = pr_1st_params + "-vf " + "\u0022" + "select=not(mod(n" + "\\" + "," + "1" + "))" + "\u0022" + " -vsync vfr -frame_pts true";
-            }
-            if (radio_all.Checked == true && check_resize.Checked == true)
-            {
-                pr_1st_params = pr_1st_params + "-vf " + "\u0022" + "scale=" + combo_resize.Text + ", " + "select=not(mod(n" + "\\" + "," + "1" + "))" + "\u0022" + " -vsync vfr -frame_pts true";
-            }
-
-            if (radio_keys.Checked == true && check_resize.Checked == false)
-            {
-                pr_1st_params = pr_1st_params + "-vf " + "\u0022" + "select='eq(pict_type,PICT_TYPE_I)'" + "\u0022" + " -vsync vfr -frame_pts true";
-            }
-            if (radio_keys.Checked == true && check_resize.Checked == true)
-            {
-                pr_1st_params = pr_1st_params + "-vf " + "\u0022" + "scale=" + combo_resize.Text + ", " + "select='eq(pict_type,PICT_TYPE_I)'" + "\u0022" + " -vsync vfr -frame_pts true";
-            }
-
-            if (combo_ext.SelectedIndex == 0) jpg_q = "-q:v 6";
-            if (combo_ext.SelectedIndex == 1) jpg_q = "-q:v 1";
-            if (combo_ext.SelectedIndex == 2) jpg_q = "-q:v 10";            
-            pr_1st_params = pr_1st_params + " " + jpg_q + " ";
+            }           
 
             //Output path
             if (radio_relative.Checked == true)
@@ -111,35 +70,20 @@ namespace FFBatch
             {
                 out_path = out_path + txt_naming + "_%0d";
             }
-            if (combo_ext.SelectedIndex == 0 || combo_ext.SelectedIndex == 1 || combo_ext.SelectedIndex == 2)
-            {
-                out_path = out_path + ".jpg";
-            }
-            if (combo_ext.SelectedIndex == 3) out_path = out_path + ".png";
-            if (combo_ext.SelectedIndex == 4) out_path = out_path + ".png";
-            if (combo_ext.SelectedIndex == 5) out_path = out_path + ".bmp";
+
+            out_path = out_path + "." + combo_ext.Text;
 
             //End
-            if (combo_ext.SelectedIndex == 4)
-            {
-                pr_1st_params = pr_1st_params + "-pred mixed " + "\u0022" + out_path + "\u0022";
-            }
-            else pr_1st_params = pr_1st_params + "\u0022" + out_path + "\u0022";
+            String strcopy = "";
+            if (chk_streamcopy.Checked == true) strcopy = " -c copy ";
+            pr_1st_params = "-f segment -segment_time " + combo_Seconds.Text + " " + "-reset_timestamps 1 ";            
+           pr_1st_params = pr_1st_params + strcopy + "-map 0 " + "\u0022" + out_path + "\u0022";
         }
 
         private void txt_path_main_TextChanged(object sender, EventArgs e)
         {
             if (txt_path_main.TextLength >= 3 && txt_path_main.Text.Substring(0, 2) != ".\\") MessageBox.Show("Please include .\\ on relative path.");
-        }
-
-        private void combo_Frames_TextChanged(object sender, EventArgs e)
-        {
-            if (System.Text.RegularExpressions.Regex.IsMatch(combo_Frames.Text, "[^0-9]"))
-            {
-                MessageBox.Show("Please enter only numbers.");
-                combo_Frames.Text = combo_Frames.Text.Remove(combo_Frames.Text.Length - 1);
-            }
-        }
+        }      
 
         private void combo_Seconds_TextChanged(object sender, EventArgs e)
         {
@@ -172,72 +116,7 @@ namespace FFBatch
             txt_path.Enabled = false;
             txt_path_main.Enabled = true;
             btn_browse.Enabled = false;
-        }
-
-        private void check_resize_CheckedChanged(object sender, EventArgs e)
-        {
-            if (check_resize.Checked == true)
-            {
-                combo_resize.Enabled = true;
-                radio_16_9.Enabled = true;
-                radio_4_3.Enabled = true;
-
-                if (radio_16_9.Checked == true)
-                {
-                    combo_resize.Items.Clear();
-                    combo_resize.Items.Add("320x180");
-                    combo_resize.Items.Add("640x360");
-                    combo_resize.Items.Add("800x480");
-                    combo_resize.Items.Add("1024x640");
-                    combo_resize.Items.Add("1280x720");
-                    combo_resize.Items.Add("1920x1080");                    
-                }
-                if (radio_4_3.Checked == true)
-                {
-                    combo_resize.Items.Clear();
-                    combo_resize.Items.Add("320x240");
-                    combo_resize.Items.Add("800x600");
-                    combo_resize.Items.Add("1024x768");
-                    combo_resize.Items.Add("1280x1024");                    
-                }
-                
-                combo_resize.SelectedIndex = 0;
-            }
-            else
-            {
-                combo_resize.Enabled = false;
-                radio_16_9.Enabled = false;
-                radio_4_3.Enabled = false;
-            }
-        }
-
-        private void radio_4_3_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radio_4_3.Checked == true)
-            {
-                combo_resize.Items.Clear();
-                combo_resize.Items.Add("320x240");
-                combo_resize.Items.Add("800x600");
-                combo_resize.Items.Add("1024x768");
-                combo_resize.Items.Add("1280x1024");
-                combo_resize.SelectedIndex = 0;
-            }
-        }
-
-        private void radio_16_9_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radio_16_9.Checked == true)
-            {
-                combo_resize.Items.Clear();
-                combo_resize.Items.Add("320x180");
-                combo_resize.Items.Add("640x360");
-                combo_resize.Items.Add("800x480");
-                combo_resize.Items.Add("1024x640");
-                combo_resize.Items.Add("1280x720");
-                combo_resize.Items.Add("1920x1080");
-                combo_resize.SelectedIndex = 0;
-            }
-        }
+        }    
 
     
         private void chk_save_pres_CheckedChanged_1(object sender, EventArgs e)
@@ -280,11 +159,7 @@ namespace FFBatch
             }
             else txt_naming.Enabled = false;
         }
-
-        private void radio_time_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
+               
 
         private void wiz_img_Finished(object sender, EventArgs e)
         {            

@@ -46,6 +46,9 @@ namespace FFBatch
         private ColumnHeader SortingColumn = null;
                 
         private const int _minimumColumnWidth = 64;
+        List<string> list_successful_m = new List<string>();
+        List<string> list_failed_m = new List<string>();
+
         int col_width = 0;
         String selected_add_col = "";
         System.Media.SoundPlayer soundPlayer = new System.Media.SoundPlayer();
@@ -250,6 +253,8 @@ namespace FFBatch
         private string down_ver = "https://drive.upm.es/index.php/s/qx2KzwVy77y7pL3/download";
         private string down_ver2 = "https://ffmpeg-batch.sourceforge.io/current_ffb.txt";
         String yl_latest = "https://youtube-dl.org/downloads/latest/youtube-dl.exe";
+        Boolean images_v = false;
+        String images_time = "5";
 
         public String pr1_string_main
         {
@@ -963,6 +968,8 @@ namespace FFBatch
             //End get total duration of files
 
             List<string> list_lines = new List<string>();
+            List<string> list_successful = new List<string>();
+            List<string> list_failed = new List<string>();
             process_glob.StartInfo.Arguments = String.Empty;
 
             time_n_tasks = 0;
@@ -1238,33 +1245,51 @@ namespace FFBatch
 
                     textbox_params = txt_parameters.Text;
                     String file2 = file;
-                    if (textbox_params.Contains("%fn"))
+                    while (textbox_params.Contains("%fn"))
                     {
-                        textbox_params = textbox_params.Replace("%fn", Path.GetFileNameWithoutExtension(file));
+                        if (textbox_params.Contains("%fn"))
+                        {
+                            textbox_params = textbox_params.Replace("%fn", Path.GetFileNameWithoutExtension(file));
+                        }
                     }
-                    if (textbox_params.Contains("%fp"))
+                    while (textbox_params.Contains("%fp"))
                     {
-                        textbox_params = textbox_params.Replace("%fp", Path.GetDirectoryName(file));
-                    }
-                    if (textbox_params.Contains("%fd"))
-                    {
-                        var path = Path.GetFullPath(file);
-                        var dirName = Path.GetFileName(Path.GetDirectoryName(path));
-                        textbox_params = textbox_params.Replace("%fd", dirName);
+                        if (textbox_params.Contains("%fp"))
+                        {
+                            textbox_params = textbox_params.Replace("%fp", Path.GetDirectoryName(file));
+                        }
                     }
 
-                    if (textbox_params.Contains("%1"))
+                    while (textbox_params.Contains("%fd"))
                     {
-                        file2 = file2.Replace("\\", "\\\\\\\\");
-                        file2 = file2.Replace(":", "\\\\" + ":");
-                        textbox_params = textbox_params.Replace("%1", file2);
+                        if (textbox_params.Contains("%fd"))
+                        {
+                            var path = Path.GetFullPath(file);
+                            var dirName = Path.GetFileName(Path.GetDirectoryName(path));
+                            textbox_params = textbox_params.Replace("%fd", dirName);
+                        }
                     }
-                    if (textbox_params.Contains("%2"))
+
+                    while (textbox_params.Contains("%1"))
                     {
-                        file2 = file2.Replace("\\", "\\\\\\\\");
-                        file2 = file2.Replace(":", "\\\\" + ":");
-                        textbox_params = textbox_params.Replace("%2", Path.Combine(System.IO.Path.GetDirectoryName(file2), Path.GetFileNameWithoutExtension(file2)));
+                        if (textbox_params.Contains("%1"))
+                        {
+                            file2 = file2.Replace("\\", "\\\\\\\\");
+                            file2 = file2.Replace(":", "\\\\" + ":");
+                            textbox_params = textbox_params.Replace("%1", file2);
+                        }
                     }
+
+                    while (textbox_params.Contains("%2"))
+                    {
+                        if (textbox_params.Contains("%2"))
+                        {
+                            file2 = file2.Replace("\\", "\\\\\\\\");
+                            file2 = file2.Replace(":", "\\\\" + ":");
+                            textbox_params = textbox_params.Replace("%2", Path.Combine(System.IO.Path.GetDirectoryName(file2), Path.GetFileNameWithoutExtension(file2)));
+                        }
+                    }
+
                     String AppParam = String.Empty;
                     String file_cache = String.Empty;
                     String current_out = destino + "\\" + System.IO.Path.GetFileNameWithoutExtension(file) + add_suffix + ext_output1;
@@ -1387,10 +1412,9 @@ namespace FFBatch
                         {
                             if (split[i].Contains("\\") == true)
                             {
-                                String pre_path = split[i].Replace("%fp", Path.GetDirectoryName(file)).Replace("%", "_");
-
+                                String pre_path = split[i].Replace("%fp", Path.GetDirectoryName(file)).Replace("%fn", Path.GetFileNameWithoutExtension(file)).Replace("%", "_");
                                 second_path = Path.GetDirectoryName(pre_path.Replace('\u0022', ' '));
-
+                                
                                 if (!Directory.Exists(second_path))
                                 {
                                     try
@@ -1408,16 +1432,16 @@ namespace FFBatch
 
                     if (!Directory.Exists(destino) && ext_output1 != "nul")
                     {
-                        Directory.CreateDirectory(destino);
+                        try { Directory.CreateDirectory(destino); }
+                        catch { }
                     }
 
-                    if (verbose_logs == false) AppParam = AppParam + " -loglevel warning -stats";
-
+                    if (verbose_logs == false) AppParam = AppParam + " -loglevel warning -stats";                    
                     process_glob.StartInfo.FileName = ffm;
                     process_glob.StartInfo.Arguments = AppParam;
                     valid_prog = false;
                     this.InvokeEx(f => f.listView1.Items[list_index].SubItems[5].Text = "Processing");
-
+                    
                     process_glob.StartInfo.RedirectStandardOutput = true;
                     process_glob.StartInfo.StandardOutputEncoding = Encoding.UTF8;
                     process_glob.StartInfo.RedirectStandardInput = true;
@@ -1652,6 +1676,7 @@ namespace FFBatch
 
                     if (process_glob.ExitCode == 0)
                     {
+                        list_successful.Add(file);
                         if (skipped == false)
                         {
                             this.InvokeEx(f => f.listView1.Items[list_index].SubItems[5].Text = "Success");
@@ -1685,10 +1710,11 @@ namespace FFBatch
                     }
                     else
                     {
+                        list_failed.Add(file);
                         this.InvokeEx(f => f.listView1.Items[list_index].SubItems[5].Text = "Error");
                         errors_enc = errors_enc + 1;
                     }
-
+                    
                     //Save session
                     lista_queue = queue_params;
                     lista_queue = lista_queue + queue_ext;
@@ -1878,15 +1904,7 @@ namespace FFBatch
                                 if (chk_delete_source.CheckState == CheckState.Checked)
                                 {
                                     Disable_Controls();
-                                    System.Threading.Thread.Sleep(500);
-                                    list_proc.Items.Clear();
-                                    listView1.Invoke(new MethodInvoker(delegate
-                                    {
-                                        foreach (ListViewItem item in listView1.Items)
-                                        {
-                                            list_proc.Items.Add((ListViewItem)item.Clone());
-                                        }
-                                    }));
+                                    System.Threading.Thread.Sleep(500);                                    
 
                                     Label prog_txt = new Label();
                                     this.InvokeEx(f => prog_txt.Parent = panel1);
@@ -1916,24 +1934,23 @@ namespace FFBatch
                                     int i = 0;
                                     int err = 0;
 
-                                    foreach (ListViewItem item in list_proc.Items)
-                                    {
-                                        if (item.SubItems[5].Text == "Success")
-                                        {
+                                    foreach (String item in list_successful)
+                                    {                                       
                                             try
                                             {
-                                                FileSystem.DeleteFile(item.SubItems[1].Text + "\\" + item.Text, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
+                                                FileSystem.DeleteFile(item, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
                                                 this.InvokeEx(f => pg_del.Value = i);
                                                 i = i + 1;
                                             }
                                             catch
                                             {
                                                 err = err + 1;
+                                            list_failed.Add(item + " could not be deleted.");
                                             }
 
                                             this.InvokeEx(f => prog_txt.Text = "Sending source files to recycle bin... " + i.ToString() + " of " + list_proc.Items.Count);
                                             this.InvokeEx(f => prog_txt.Refresh());
-                                        }
+                                    
                                     }
                                     this.InvokeEx(f => prog_txt.Visible = false);
                                     this.InvokeEx(f => prog_txt.Dispose());
@@ -1941,7 +1958,7 @@ namespace FFBatch
                                     this.InvokeEx(f => pg_del.Dispose());
                                     Enable_Controls();
 
-                                    if (err > 0) MessageBox.Show(err.ToString() + " files could not be moved to the recycle bin", "Some files not recycled", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    if (err > 0) MessageBox.Show(err.ToString() + " files could not be moved to the recycle bin. Check log file at the end for further details.", "Some files not recycled", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                                     Boolean all_ok = true;
                                     foreach (ListViewItem item in list_proc.Items)
@@ -1955,6 +1972,16 @@ namespace FFBatch
                                     if (all_ok == true)
                                     {
                                         this.InvokeEx(f => f.btn_refresh.PerformClick());
+                                    }
+                                    if (list_failed.Count > 0)
+                                    {
+                                        String path = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch.log";
+                                        File.AppendAllText(path, Environment.NewLine + Environment.NewLine +  "Source files that could not be deleted due to failed encoding or file in use:");
+                                        File.AppendAllText(path, Environment.NewLine + "-------------------------------");
+                                        foreach (String item in list_failed)
+                                        {                                            
+                                            File.AppendAllText(path, Environment.NewLine + item);
+                                        }                                        
                                     }
                                 }
                                 if (errors_enc == 0)
@@ -5541,10 +5568,9 @@ namespace FFBatch
         private void Form1_Load(object sender, EventArgs e)
         {
             pic_pause.Image = btn_pause.Image;
-
             main_progress_bar();
             listView1.OwnerDraw = true;
-            listView3.OwnerDraw = true;
+            listView3.OwnerDraw = true;            
 
             typeof(DataGridView).InvokeMember(
             "DoubleBuffered", BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetProperty,
@@ -6439,7 +6465,6 @@ namespace FFBatch
 
                 //Fix pre-input
 
-
                 String f_fix_pre = String.Empty;
                 if (is_portable == false)
                 {
@@ -6458,6 +6483,27 @@ namespace FFBatch
 
                 //End fix pre_input
 
+                //Save trim check
+
+                String f_trim = String.Empty;
+                if (is_portable == false)
+                {
+                    f_trim = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_trim.ini";
+                }
+                else
+                {
+                    f_trim = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_trim_portable.ini";
+                }
+                if (File.Exists(f_trim))
+                {
+                    this.InvokeEx(f => f.chk_trim2.CheckState = CheckState.Checked);
+                }
+                else
+                {
+                    this.InvokeEx(f => f.chk_trim2.CheckState = CheckState.Unchecked);
+                }
+
+                //End save trim check
 
             }).Start();
         }
@@ -6709,8 +6755,9 @@ namespace FFBatch
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Pg1.Focus();            
+            Pg1.Focus();
 
+            lbl_mux_jobs.Text = "Jobs: 0";
             lbl_size.Text = "";
             LB_Wait.Visible = false;
             txt_remain.Text = "Time remaining: 00h:00m:00s";
@@ -7059,6 +7106,9 @@ namespace FFBatch
                     ct1_streams.Enabled = true;
                     ctm_add_files.Visible = false;
                     ctm_add_folder.Visible = false;
+                    ctm_paste_path.Visible = false;
+                    ct_move_bottom.Enabled = true;
+                    ct_move_top.Enabled = true;
                     toolStripSeparator2.Visible = false;
                     ctm1_queue.Enabled = false;
                     foreach (ListViewItem item in listView1.SelectedItems)
@@ -7075,7 +7125,10 @@ namespace FFBatch
                     e.Cancel = false;
                     ctm_add_files.Visible = true;
                     ctm_add_folder.Visible = true;
+                    ctm_paste_path.Visible = true;
                     ctm1_queue.Enabled = false;
+                    ct_move_bottom.Enabled = false;
+                    ct_move_top.Enabled = false;
                     toolStripSeparator2.Visible = true;
                     cti1.Enabled = false;
                     cti2.Enabled = false;
@@ -7508,6 +7561,7 @@ namespace FFBatch
 
         private void button6_Click(object sender, EventArgs e)
         {
+
             Pg1.Focus();
             if (!File.Exists(Path.Combine(Application.StartupPath, "ffmpeg.exe")))
             {
@@ -7547,9 +7601,16 @@ namespace FFBatch
             {
                 change_tab_2 = true;
             }
-
+            int fl = 0;
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
+                Form11_2 frm11_2 = new Form11_2();
+                Task t2 = Task.Run(() =>
+                {
+                    frm11_2.label1.Text = "Reading path contents, please wait...";
+                    frm11_2.ShowDialog();
+                });
+                Thread.Sleep(100);
                 List<string> files2 = new List<string>();
 
                 foreach (string file in Directory.GetFiles(folderBrowserDialog1.SelectedPath))
@@ -7557,6 +7618,19 @@ namespace FFBatch
                     if (!File.GetAttributes(file).HasFlag(FileAttributes.Hidden))
                     {
                         files2.Add(file);
+                        fl = fl + 1;
+                        if (frm11_2.abort_validate == true) return;
+                        else
+                        {
+                            try
+                            {
+                                frm11_2.Invoke(new MethodInvoker(delegate
+                                {
+                                    frm11_2.label2.Text = fl.ToString() + " files";
+                                }));
+                            }
+                            catch { }
+                        }
                     }
                 }
 
@@ -7575,23 +7649,65 @@ namespace FFBatch
                                 if (!File.GetAttributes(f).HasFlag(FileAttributes.Hidden))
                                 {
                                     files2.Add(f);
+                                    fl = fl + 1;
                                     num_drop++;
+                                    if (frm11_2.abort_validate == true) return;
+                                    else
+                                    {
+                                        try
+                                        {
+                                            frm11_2.Invoke(new MethodInvoker(delegate
+                                            {
+                                                frm11_2.label2.Text = fl.ToString() + " files";
+                                            }));
+                                        }
+                                        catch { }
+                                    }
                                 }
                             }
                         }
                         catch (System.Exception excpt)
                         {
+                            try
+                            {
+                                frm11_2.Invoke(new MethodInvoker(delegate
+                                {
+                                    frm11_2.TopMost = true;
+                                    frm11_2.TopMost = false;
+                                }));
+                            }
+                            catch { }
                             var a = MessageBox.Show("Error: " + excpt.Message + " Continue?", "Access error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                            if (a == DialogResult.Cancel) return;
+                            if (a == DialogResult.Cancel) 
+                            {                                
+                                try
+                                {
+                                    frm11_2.Invoke(new MethodInvoker(delegate
+                                    {
+                                        frm11_2.Dispose();
+                                    }));
+                                }
+                                catch { }
+                                return;
+                            }
                         }
                     }
                 }
+                Thread.Sleep(100);
+                try
+                {
+                    frm11_2.Invoke(new MethodInvoker(delegate
+                    {
+                        frm11_2.Dispose();
+                    }));
+                }
+                catch { }
 
                 if (num_drop == 0)
-                {
-                    var a = MessageBox.Show("Folder is empty", "Folder empty", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                {                    
+                    MessageBox.Show("Folder is empty", "Folder empty", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
-                }
+                }                                
 
                 if (num_drop >= 10000)
                 {
@@ -8884,6 +9000,27 @@ namespace FFBatch
 
         private void Create_Tooltips()
         {
+            ToolTip toolT4z = new ToolTip();
+            toolT4z.AutoPopDelay = 9000;
+            toolT4z.InitialDelay = 750;
+            toolT4z.ReshowDelay = 500;
+            toolT4z.ShowAlways = true;
+            toolT4z.SetToolTip(this.btn_track_up, "Move track up");
+
+            ToolTip toolT5z = new ToolTip();
+            toolT5z.AutoPopDelay = 9000;
+            toolT5z.InitialDelay = 750;
+            toolT5z.ReshowDelay = 500;
+            toolT5z.ShowAlways = true;
+            toolT5z.SetToolTip(this.btn_track_down, "Move track down");
+
+            ToolTip toolT2z = new ToolTip();
+            toolT2z.AutoPopDelay = 9000;
+            toolT2z.InitialDelay = 750;
+            toolT2z.ReshowDelay = 500;
+            toolT2z.ShowAlways = true;
+            toolT2z.SetToolTip(this.pic_title, "About application and donations");
+
             ToolTip toolT1z = new ToolTip();
             toolT1z.AutoPopDelay = 9000;
             toolT1z.InitialDelay = 750;
@@ -9203,14 +9340,7 @@ namespace FFBatch
             toolTip30.ReshowDelay = 500;
             toolTip30.ShowAlways = true;
             toolTip30.SetToolTip(this.chk_subfolders, "Add files in path subfolders");
-
-            ToolTip toolTip31 = new ToolTip();
-            toolTip31.AutoPopDelay = 3500;
-            toolTip31.InitialDelay = 750;
-            toolTip31.ReshowDelay = 500;
-            toolTip31.ShowAlways = true;
-            toolTip31.SetToolTip(this.btn_add_folders, "Select path");
-
+            
             ToolTip toolTip32 = new ToolTip();
             toolTip32.AutoPopDelay = 3500;
             toolTip32.InitialDelay = 750;
@@ -10124,17 +10254,23 @@ namespace FFBatch
                 //Begin get file icon
                 Icon iconForFile = SystemIcons.WinLogo;
 
-                // Check to see if the image collection contains an image
-                // for this extension, using the extension as a key.
-                if (!imageList2.Images.ContainsKey(System.IO.Path.GetExtension(item.Text)))
+                if (!elemento.Text.Contains("\\\\"))
                 {
-                    // If not, add the image to the image list.
-                    iconForFile = System.Drawing.Icon.ExtractAssociatedIcon(item.Text);
-                    imageList2.Images.Add(System.IO.Path.GetExtension(item.Text), iconForFile);
+                    if (!imageList2.Images.ContainsKey(System.IO.Path.GetExtension(elemento.Text)))
+                    {
+                        iconForFile = System.Drawing.Icon.ExtractAssociatedIcon(elemento.Text);
+                        this.InvokeEx(f => f.imageList2.Images.Add(System.IO.Path.GetExtension(elemento.Text), iconForFile));
+                    }
                 }
 
-                elemento.ImageKey = System.IO.Path.GetExtension(item.Text);
-
+                if (!elemento.Text.Contains("\\\\"))
+                {
+                    elemento.ImageKey = System.IO.Path.GetExtension(elemento.Text);
+                }
+                else
+                {
+                    elemento.ImageIndex = 0;
+                }
                 listView3.Items.Add(elemento);
             }
 
@@ -13434,7 +13570,6 @@ namespace FFBatch
                     {
                         Change_mem_prio();
                     }
-
                 }));
 
                 consola_pre.WaitForExit();
@@ -13507,8 +13642,6 @@ namespace FFBatch
             new System.Threading.Thread(() =>
             {
                 System.Threading.Thread.CurrentThread.IsBackground = true;
-                /* run your code here */
-
                 String remain_time = "";
 
                 //foreach (ListViewItem file in list_proc.Items)
@@ -13595,14 +13728,36 @@ namespace FFBatch
                         AppParam = " -i " + "" + '\u0022' + file + '\u0022' + shifting + " " + " -ss " + txt_ini.Text + " -to " + txt_fin.Text + " -y " + txt_parameters.Text + " " + change_vol + '\u0022' + destino + "\\" + System.IO.Path.GetFileNameWithoutExtension(file) + add_suffix + ext_output1 + '\u0022';
                     }
                     else
-                    {
-                        Double durat_f = 0;
-                        this.InvokeEx(f => durat_f = TimeSpan.Parse(listView1.Items[list_index].SubItems[3].Text).TotalSeconds - TimeSpan.Parse(txt_fin.Text).TotalSeconds);
-                        String trim_end_2 = durat_f.ToString();
+                    {                     
+                        Process tmp = new Process();
+                        tmp.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "ffprobe.exe");
+                        tmp.StartInfo.Arguments = "-v error -show_entries format=duration -sexagesimal -of default=noprint_wrappers=1:nokey=1 " + " -i " + '\u0022' + file + '\u0022';
 
-                        trim_end_2 = trim_end_2.Replace(",", ".");
-                        AppParam = " -i " + "" + '\u0022' + file + '\u0022' + shifting + " " + " -ss " + txt_ini.Text + " -to " + trim_end_2 + " -y " + txt_parameters.Text + " " + change_vol + '\u0022' + destino + "\\" + System.IO.Path.GetFileNameWithoutExtension(file) + add_suffix + ext_output1 + '\u0022';
-                    }
+                        tmp.StartInfo.RedirectStandardOutput = true;
+                        tmp.StartInfo.UseShellExecute = false;
+                        tmp.StartInfo.CreateNoWindow = true;
+                        tmp.EnableRaisingEvents = true;
+                        tmp.Start();
+
+                        String duracion = tmp.StandardOutput.ReadToEnd();
+                        tmp.WaitForExit();
+
+                        if (duracion == null) duracion = "0";
+
+                        String trim_end_2 = duracion.Substring(0, duracion.LastIndexOf("0"));                  
+                        DateTime init_trim = Convert.ToDateTime(txt_ini.Text);                        
+                        DateTime final_trim = Convert.ToDateTime(txt_fin.Text);
+                        DateTime dur_date = Convert.ToDateTime(trim_end_2);
+                        var trim_to = dur_date.Subtract(final_trim);
+                        if (txt_fin.Text == "0:00:00.000" || txt_fin.Text == "00:00:00.000")
+                        {
+                            AppParam = " -ss " + txt_ini.Text + " -i " + "" + '\u0022' + file + '\u0022' + shifting + " -y " + txt_parameters.Text + " " + change_vol + '\u0022' + destino + "\\" + System.IO.Path.GetFileNameWithoutExtension(file) + add_suffix + ext_output1 + '\u0022';
+                        }
+                        else
+                        {
+                            AppParam = " -i " + "" + '\u0022' + file + '\u0022' + shifting + " " + " -ss " + txt_ini.Text + " -to " + trim_to + " -y " + txt_parameters.Text + " " + change_vol + '\u0022' + destino + "\\" + System.IO.Path.GetFileNameWithoutExtension(file) + add_suffix + ext_output1 + '\u0022';
+                        }                            
+                    }                    
 
                     if (!Directory.Exists(destino))
                     {
@@ -15807,9 +15962,13 @@ namespace FFBatch
         }
 
         public string av_col(string key)
-        {
+        {         
             if (key.Contains("mp3")) key = "mp3";
-            if (key.Contains("ac3")) key = "ac3";
+            if (key.ToLower().Contains("eac3")) key = "EAC3";
+            else
+            {
+                if (key.Contains("ac3")) key = "ac3";
+            }            
             if (key.Contains("aac (LC)")) key = "aac (LC)";
             if (key.Contains("aac (HE-AAC)")) key = "aac (HE-AAC)";
             if (key.Contains("pcm_f16le")) key = "pcm_f16le";
@@ -15818,6 +15977,7 @@ namespace FFBatch
             if (key.Contains("pcm_s16le")) key = "pcm_s16le";
             if (key.Contains("pcm_s32le")) key = "pcm_s32le";
             if (key.Contains("pcm_s24le")) key = "pcm_s24le";
+            if (key.Contains("pcm_u8")) key = "pcm_u8";
             return key;            
         }
 
@@ -16368,22 +16528,29 @@ namespace FFBatch
             listView2.SmallImageList = listView1.SmallImageList;
             foreach (ListViewItem item in listView1.Items)
             {
+                //Bad
                 this.Cursor = Cursors.WaitCursor;
                 ListViewItem elemento = new ListViewItem(item.SubItems[1].Text + "\\" + item.Text, 1);
                 //Begin get file icon
-                Icon iconForFile = SystemIcons.WinLogo;
+                 Icon iconForFile = SystemIcons.WinLogo;
 
-                // Check to see if the image collection contains an image
-                // for this extension, using the extension as a key.
-                if (!imageList2.Images.ContainsKey(System.IO.Path.GetExtension(item.Text)))
-                {
-                    // If not, add the image to the image list.
-                    iconForFile = System.Drawing.Icon.ExtractAssociatedIcon(item.Text);
-                    imageList2.Images.Add(System.IO.Path.GetExtension(item.Text), iconForFile);
-                }
+                    if (!elemento.Text.Contains("\\\\"))
+                    {
+                        if (!imageList2.Images.ContainsKey(System.IO.Path.GetExtension(elemento.Text)))
+                        {
+                            iconForFile = System.Drawing.Icon.ExtractAssociatedIcon(elemento.Text);
+                            this.InvokeEx(f => f.imageList2.Images.Add(System.IO.Path.GetExtension(elemento.Text), iconForFile));
+                        }
+                    }
 
-                elemento.ImageKey = System.IO.Path.GetExtension(item.Text);
-                //End get file icon
+                    if (!elemento.Text.Contains("\\\\"))
+                    {
+                        elemento.ImageKey = System.IO.Path.GetExtension(elemento.Text);
+                    }
+                    else
+                    {
+                        elemento.ImageIndex = 0;
+                    }
 
                 listView2.Items.Add(elemento);
             }
@@ -17084,7 +17251,7 @@ namespace FFBatch
                 form_prog2.progressBar1.Maximum = dg1.RowCount + 1;
                 form_prog2.progressBar1.Value = 1;
                 form_prog2.Refresh();
-                form_prog2.label1.Text = "Validating youtube links, please wait...";
+                form_prog2.label1.Text = "Validating m3u8 links, please wait...";
                 form_prog2.lab_count.Text = "1/" + dg1.RowCount;
                 form_prog2.lab_count.Refresh();
                 form_prog2.Refresh();
@@ -17141,7 +17308,8 @@ namespace FFBatch
                     var tmp = procs["proc_urls_" + i.ToString()];
 
                     tmp.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "ffprobe.exe");
-                    tmp.StartInfo.Arguments = "-i " + dg1.Rows[i].Cells[1].Value.ToString() + " -timeout 9000000";
+                    //tmp.StartInfo.Arguments = "-i " + dg1.Rows[i].Cells[1].Value.ToString() + " -timeout 9000000";
+                    tmp.StartInfo.Arguments = "-v error -show_entries format=duration -sexagesimal -of default=noprint_wrappers=1:nokey=1 -timeout 10000000" + " -i " + '\u0022' + dg1.Rows[i].Cells[1].Value.ToString() + '\u0022';
                     tmp.StartInfo.RedirectStandardOutput = true;
                     tmp.StartInfo.RedirectStandardError = true;
                     tmp.StartInfo.UseShellExecute = false;
@@ -17155,27 +17323,24 @@ namespace FFBatch
                     {
                         tmp.Start();
 
-                        while (!tmp.StandardError.EndOfStream)
-                        {
-                            std_out = tmp.StandardError.ReadLine();
+                        //Check
+                        duracion = tmp.StandardOutput.ReadLine();
+                        tmp.WaitForExit(10000);
 
-                            if (std_out.Contains("Duration: N/A"))
+                        if (duracion == null) duracion = "N/A";
+                        else
+                        {                            
+                            if (duracion.Length >= 7)
                             {
-                                duracion = "N/A";
-                            }
-                            if (std_out.Contains("Duration: "))
-                            {
+                                duracion.Substring(0, 7);
                                 TimeSpan time = new TimeSpan();
-                                if (TimeSpan.TryParse(std_out.Substring(12, 7), out time))
+                                if (!TimeSpan.TryParse(duracion, out time))
                                 {
-                                    duracion = std_out.Substring(12, 7);
+                                    duracion = "N/A";
                                 }
                             }
-
-                            tmp.WaitForExit();
-                            tmp.StartInfo.Arguments = String.Empty;
-
-                        }                        
+                        }
+                        tmp.StartInfo.Arguments = String.Empty;
                     }
                     else return;
 
@@ -17253,7 +17418,9 @@ namespace FFBatch
                     {
                         this.InvokeEx(f => f.dg1.Rows[i].Cells[5].Value = "");
                     }
+                    //MessageBox.Show(prog.ToString());
                 });
+
                 try
                 {
                     form_prog2.Invoke(new MethodInvoker(delegate
@@ -17261,6 +17428,12 @@ namespace FFBatch
                 }
                 catch
                 {
+                    try
+                    {
+                        form_prog2.Invoke(new MethodInvoker(delegate
+                        { form_prog2.Close(); }));
+                    }
+                    catch { }
                     form_prog2.abort_validate = true;
                 }
             }
@@ -19633,9 +19806,8 @@ namespace FFBatch
                 {
                     if (split[i].Contains("\\") == true)
                     {
-                        String pre_path = split[i].Replace("%fp", Path.GetDirectoryName(sel_test)).Replace("%", "_");
-
-                        second_path = Path.GetDirectoryName(pre_path.Replace('\u0022', ' '));
+                        String pre_path = split[i].Replace("%fp", Path.GetDirectoryName(sel_test)).Replace("%fn", Path.GetFileNameWithoutExtension(sel_test)).Replace("%", "_");
+                        second_path = Path.GetDirectoryName(pre_path.Replace('\u0022', ' '));                        
 
                         if (!Directory.Exists(second_path))
                         {
@@ -19684,35 +19856,58 @@ namespace FFBatch
                 textbox_params = txt_parameters.Text;
                 String file_prueba2 = file_prueba;
 
-                if (textbox_params.Contains("%fn"))
+                while (textbox_params.Contains("%fn"))
                 {
-                    textbox_params = textbox_params.Replace("%fn", Path.GetFileNameWithoutExtension(file_prueba));
+                    if (textbox_params.Contains("%fn"))
+                    {
+                        textbox_params = textbox_params.Replace("%fn", Path.GetFileNameWithoutExtension(file_prueba));
+                    }
                 }
-                if (textbox_params.Contains("%fp"))
+                
+                while (textbox_params.Contains("%fp"))
                 {
-                    textbox_params = textbox_params.Replace("%fp", Path.GetDirectoryName(file_prueba));
+                    if (textbox_params.Contains("%fp"))
+                    {
+                        textbox_params = textbox_params.Replace("%fp", Path.GetDirectoryName(file_prueba));
+                    }
                 }
-                if (textbox_params.Contains("%fd"))
+                
+                while (textbox_params.Contains("%fd"))
                 {
-                    var path = Path.GetFullPath(file_prueba);
-                    var dirName = Path.GetFileName(Path.GetDirectoryName(path));
-                    textbox_params = textbox_params.Replace("%fd", dirName);
+                    if (textbox_params.Contains("%fd"))
+                    {
+                        var path = Path.GetFullPath(file_prueba);
+                        var dirName = Path.GetFileName(Path.GetDirectoryName(path));
+                        textbox_params = textbox_params.Replace("%fd", dirName);
+                    }
                 }
 
-                if (textbox_params.Contains("%1"))
+                while (textbox_params.Contains("%1"))
                 {
-                    if (file_prueba2.Contains("[") || file_prueba2.Contains("]"))
+                    if (textbox_params.Contains("%1"))
                     {
-                        MessageBox.Show("Input file name contains characters [ ]. Please remove them from input file name to avoid errors with -vf filter", "Conflicting characters in file name", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        Enable_Controls();
-                        this.InvokeEx(f => this.Cursor = Cursors.Arrow);
-                        tried_ok = false;
-                        bad_chars = true;
-                        return;
+                        if (file_prueba2.Contains("[") || file_prueba2.Contains("]"))
+                        {
+                            MessageBox.Show("Input file name contains characters [ ]. Please remove them from input file name to avoid errors with -vf filter", "Conflicting characters in file name", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            Enable_Controls();
+                            this.InvokeEx(f => this.Cursor = Cursors.Arrow);
+                            tried_ok = false;
+                            bad_chars = true;
+                            return;
+                        }
+                        file_prueba2 = file_prueba2.Replace("\\", "\\\\\\\\");
+                        file_prueba2 = file_prueba2.Replace(":", "\\\\" + ":");
+                        textbox_params = textbox_params.Replace("%1", file_prueba2);
                     }
-                    file_prueba2 = file_prueba2.Replace("\\", "\\\\\\\\");
-                    file_prueba2 = file_prueba2.Replace(":", "\\\\" + ":");
-                    textbox_params = textbox_params.Replace("%1", file_prueba2);
+                }
+
+                while (textbox_params.Contains("%2"))
+                {
+                    if (textbox_params.Contains("%2"))
+                    {
+                        file_prueba2 = file_prueba2.Replace("\\", "\\\\\\\\");
+                        file_prueba2 = file_prueba2.Replace(":", "\\\\" + ":");
+                        textbox_params = textbox_params.Replace("%2", Path.Combine(System.IO.Path.GetDirectoryName(file_prueba2), Path.GetFileNameWithoutExtension(file_prueba2)));                    }
                 }
 
                 consola_pre.StartInfo.FileName = "ffmpeg.exe";
@@ -20099,33 +20294,76 @@ namespace FFBatch
                 textbox_params = txt_parameters.Text;
                 String file_prueba2 = file_prueba;
 
-                if (textbox_params.Contains("%fn"))
+                while (textbox_params.Contains("%fn"))
                 {
-                    textbox_params = textbox_params.Replace("%fn", Path.GetFileNameWithoutExtension(file_prueba));
-                }
-                if (textbox_params.Contains("%fp"))
-                {
-                    textbox_params = textbox_params.Replace("%fp", Path.GetDirectoryName(file_prueba));
-                }
-                if (textbox_params.Contains("%fd"))
-                {
-                    var path = Path.GetFullPath(file_prueba);
-                    var dirName = Path.GetFileName(Path.GetDirectoryName(path));
-                    textbox_params = textbox_params.Replace("%fd", dirName);
-                }
-
-                if (textbox_params.Contains("%1"))
-                {
-                    if (file_prueba2.Contains("[") || file_prueba2.Contains("]"))
+                    if (textbox_params.Contains("%fn"))
                     {
-                        MessageBox.Show("Input file name contains characters [ ]. Please remove them from input file name to avoid errors with -vf filter", "Conflicting characters in file name", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        this.InvokeEx(f => f.btn_try_pr.Image = img_try.Images[0]);
-                        return;
+                        textbox_params = textbox_params.Replace("%fn", Path.GetFileNameWithoutExtension(file_prueba));
                     }
+                }
 
-                    file_prueba2 = file_prueba2.Replace("\\", "\\\\\\\\");
-                    file_prueba2 = file_prueba2.Replace(":", "\\\\" + ":");
-                    textbox_params = textbox_params.Replace("%1", file_prueba2);
+                while (textbox_params.Contains("%fp"))
+                {
+                    if (textbox_params.Contains("%fp"))
+                    {
+                        textbox_params = textbox_params.Replace("%fp", Path.GetDirectoryName(file_prueba));
+                    }
+                }
+
+                while (textbox_params.Contains("%fd"))
+                {
+                    if (textbox_params.Contains("%fd"))
+                    {
+                        var path = Path.GetFullPath(file_prueba);
+                        var dirName = Path.GetFileName(Path.GetDirectoryName(path));
+                        textbox_params = textbox_params.Replace("%fd", dirName);
+                    }
+                }
+
+                while (textbox_params.Contains("%1"))
+                {
+                    if (textbox_params.Contains("%1"))
+                    {                        
+                        file_prueba2 = file_prueba2.Replace("\\", "\\\\\\\\");
+                        file_prueba2 = file_prueba2.Replace(":", "\\\\" + ":");
+                        textbox_params = textbox_params.Replace("%1", file_prueba2);
+                    }
+                }
+
+                while (textbox_params.Contains("%2"))
+                {
+                    if (textbox_params.Contains("%2"))
+                    {
+                        file_prueba2 = file_prueba2.Replace("\\", "\\\\\\\\");
+                        file_prueba2 = file_prueba2.Replace(":", "\\\\" + ":");
+                        textbox_params = textbox_params.Replace("%2", Path.Combine(System.IO.Path.GetDirectoryName(file_prueba2), Path.GetFileNameWithoutExtension(file_prueba2)));
+                    }
+                }
+
+                String second_path = "";
+                if (textbox_params == "nul")
+                {
+                    String[] split = txt_parameters.Text.Split(' ');
+                    for (int i = 0; i < split.Length; i++)
+                    {
+                        if (split[i].Contains("\\") == true)
+                        {
+                            String pre_path = split[i].Replace("%fp", Path.GetDirectoryName(file_prueba2)).Replace("%fn", Path.GetFileNameWithoutExtension(file_prueba2)).Replace("%", "_");
+                            second_path = Path.GetDirectoryName(pre_path.Replace('\u0022', ' '));
+
+                            if (!Directory.Exists(second_path))
+                            {
+                                try
+                                {
+                                    Directory.CreateDirectory(second_path);
+                                }
+                                catch
+                                {
+
+                                }
+                            }
+                        }
+                    }
                 }
 
                 consola.StartInfo.Arguments = hw_decode_glob + " -i " + "" + '\u0022' + file_prueba + '\u0022' + " -t 0.2" + " -y " + textbox_params + " " + '\u0022' + destino + "\\" + System.IO.Path.GetFileNameWithoutExtension(file_prueba) + ext_output + '\u0022' + " -loglevel warning -stats";
@@ -22208,6 +22446,14 @@ namespace FFBatch
                 this.Cursor = Cursors.Arrow;
                 return;
             }
+
+            if (wizard1.w_split == true)
+            {
+                this.Cursor = Cursors.WaitCursor;
+                menu_split.PerformClick();
+                this.Cursor = Cursors.Arrow;
+                return;
+            }
             if (wizard1.no_silence == true) return;
             if (wizard1.wiz_silence == true)
             {
@@ -23428,7 +23674,27 @@ namespace FFBatch
                 BG_Dur.RunWorkerAsync();
                 return;
             }
-
+            String img = listView1.Items[0].Text.Substring(listView1.Items[0].Text.LastIndexOf(".") + 1, 3);
+            String img_aud = String.Empty;
+            if (img == "jpg" || img == "jpeg" || img == "png" || img == "gif")
+            {
+                DialogResult a = MessageBox.Show("Images were found on file list. Do you want to join image files to video?", "Image detected for concatenation", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                    if (a == DialogResult.Yes) images_v = true;
+                if (a == DialogResult.No) return;
+                if (a == DialogResult.Cancel) return;
+            }            
+            if (images_v == true)
+            {
+                Form18 frm18 = new Form18();
+                frm18.ShowDialog();
+                if (frm18.canceled == false)
+                {
+                    images_time = frm18.numericUpDown1.Value.ToString();
+                    if (frm18.txt_audio_path.Enabled == true) img_aud = frm18.txt_audio_path.Text;
+                }
+                else images_v = false;
+            }
+            
             Disable_Controls();
             txt_remain.Text = "Time remaining: 00h:00m:00s";
             time_n_tasks = 0;
@@ -23519,61 +23785,111 @@ namespace FFBatch
 
             new System.Threading.Thread(() =>
             {
-            System.Threading.Thread.CurrentThread.IsBackground = true;
+                System.Threading.Thread.CurrentThread.IsBackground = true;
 
-            String remain_time = "";
+                String remain_time = "";
 
-            String path = String.Empty;
-            String inputs = String.Empty;
+                String path = String.Empty;
+                String inputs = String.Empty;
 
-            foreach (ListViewItem item in list_proc.Items)
-            {
-                String file = item.SubItems[1].Text + "\\" + item.Text;
-                //Aborted requested
-                if (cancel_queue == true)
+                if (images_v == false)
                 {
+                    foreach (ListViewItem item in list_proc.Items)
+                    {
+                        String file = item.SubItems[1].Text + "\\" + item.Text;
+                        //Aborted requested
+                        if (cancel_queue == true)
+                        {
+                            working = false;
+                            this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
+                            this.InvokeEx(f => f.Pg1.Value = 0);
+                            //this.InvokeEx(f => f.pg_current.Value = 0);
+                            Enable_Controls();
+                            MessageBox.Show("Queue processing aborted", "Tasks aborted", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            return;
+                        }
+
+                        if (check_concat.CheckState == CheckState.Unchecked)
+                        {
+                            if (file.Contains(" "))
+                            {
+                                lista_concat[i] = "file " + "'" + file + "'";
+                                i = i + 1;
+                            }
+
+                            else
+                            {
+                                lista_concat[i] = "file " + "'" + file.Replace("\\", "\\\\") + "'";
+                                i = i + 1;
+                            }
+
+                            path = System.IO.Path.Combine(Path.GetTempPath(), "concat.txt");
+                        }
+                        else
+                        {
+                            inputs = inputs + " -i " + '\u0022' + file + '\u0022';
+                        }
+                    }
+                }
+                if (images_v == true)
+                {
+                    for (int i1 = 0; i1 < list_proc.Items.Count; i1++)
+                    {
+                        String file = list_proc.Items[i1].SubItems[1].Text + "\\" + list_proc.Items[i1].Text;
+                        //Aborted requested
+                        if (cancel_queue == true)
+                        {
+                            working = false;
+                            this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
+                            this.InvokeEx(f => f.Pg1.Value = 0);
+                            //this.InvokeEx(f => f.pg_current.Value = 0);
+                            Enable_Controls();
+                            MessageBox.Show("Queue processing aborted", "Tasks aborted", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            return;
+                        }
+
+                        if (check_concat.CheckState == CheckState.Unchecked)
+                        {
+                            if (file.Contains(" "))
+                            {
+                                lista_concat[i1] = "file " + "'" + file + "'" + Environment.NewLine + "duration " + images_time;
+                                if (i1 == list_proc.Items.Count - 1) lista_concat[i1] = lista_concat[i1] + Environment.NewLine + "file " + "'" + file + "'";
+
+
+                            }
+                            else
+                            {
+                                lista_concat[i1] = "file " + "'" + file.Replace("\\", "\\\\") + "'" + Environment.NewLine + "duration " + images_time;
+                                if (i1 == list_proc.Items.Count - 1) lista_concat[i1] = lista_concat[i1] + Environment.NewLine + "file " + "'" + file.Replace("\\", "\\\\") + "'";
+
+                            }
+
+                            path = System.IO.Path.Combine(Path.GetTempPath(), "concat.txt");
+                        }
+                        else
+                        {
+                            inputs = inputs + " -i " + '\u0022' + file + '\u0022';
+                        }
+                    }                    
+                }
+            
+             //   foreach (String ln in lista_concat) MessageBox.Show(ln);
+            //Array.Resize(ref lista_concat, lista_concat.Length - 1);
+                
+                try
+                {
+                    File.WriteAllLines(path, lista_concat);
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show("There was an error creating the intermediate concatenation file." + Environment.NewLine + Environment.NewLine + exc.Message);
                     working = false;
-                    this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
-                    this.InvokeEx(f => f.Pg1.Value = 0);
-                    //this.InvokeEx(f => f.pg_current.Value = 0);
                     Enable_Controls();
-                    MessageBox.Show("Queue processing aborted", "Tasks aborted", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                 }
 
-                if (check_concat.CheckState == CheckState.Unchecked)
-                {
-                    if (file.Contains(" "))
-                    {
-                        lista_concat[i] = "file " + "'" + file + "'";
-                        i = i + 1;
-                    }
-                    else
-                    {
-                        lista_concat[i] = "file " + "'" + file.Replace("\\", "\\\\") + "'";
-                        i = i + 1;
-                    }
-                    path = System.IO.Path.Combine(Path.GetTempPath(), "concat.txt");
-                    try
-                    {
-                        File.WriteAllLines(path, lista_concat);
-                    }
-                    catch (Exception exc)
-                    {
-                        MessageBox.Show("There was an error creating the intermediate concatenation file." + Environment.NewLine + Environment.NewLine + exc.Message);
-                        working = false;
-                        Enable_Controls();
-                        return;
-                    }
-                }
-                else
-                {
-                    inputs = inputs + " -i " + '\u0022' + file + '\u0022';
-                }
-            }
-
-            //Change Volume
-            String change_vol = "";
+                //Change Volume
+                String change_vol = "";
             if (chk_vol.Checked == true)
             {
                 change_vol = "-filter:a " + '\u0022' + "volume=" + vol_ch.Value.ToString() + "dB " + '\u0022' + " ";
@@ -23582,8 +23898,9 @@ namespace FFBatch
             String AppParam = String.Empty;
             if (check_concat.CheckState == CheckState.Unchecked)
             {
-                AppParam = " -f concat -safe 0 -i " + '\u0022' + path + '\u0022' + " " + txt_parameters.Text + " " + " -y " + change_vol + '\u0022' + destino + "\\" + concat_name + "_joined" + "." + txt_format.Text + '\u0022';
-            }
+                if (img_aud == String.Empty) AppParam = " -f concat -safe 0 -i " + '\u0022' + path + '\u0022' + " " + txt_parameters.Text + " " + " -y " + change_vol + '\u0022' + destino + "\\" + concat_name + "_joined" + "." + txt_format.Text + '\u0022';
+                else AppParam = " -f concat -safe 0 -i " + '\u0022' + path + '\u0022' + " " +  "-i " + '\u0022' + img_aud + '\u0022' + " " + txt_parameters.Text + " " + " -y " + change_vol + '\u0022' + destino + "\\" + concat_name + "_joined" + "." + txt_format.Text + '\u0022';
+                }
             else
             {
                 AppParam = inputs + " -filter_complex " + '\u0022' + "concat=n=" + list_proc.Items.Count + ":v=1:a=1" + '\u0022' + " " + txt_parameters.Text + " " + " -y " + change_vol + '\u0022' + destino + "\\" + concat_name + "_joined" + "." + txt_format.Text + '\u0022';
@@ -23619,13 +23936,20 @@ namespace FFBatch
             {
                 err_txt = process_glob.StandardError.ReadLine();
                 list_lines.Add(err_txt);
-
-                if (err_txt.Contains("time=") && err_txt.Contains("time=-") == false)
+                    int percent2 = 0;
+                if (err_txt.Contains("time=") && err_txt.Contains("time=-") == false && images_v == false)
                 {
                     int start_time_index = err_txt.IndexOf("time=") + 5;
                     Double sec_prog = TimeSpan.Parse(err_txt.Substring(start_time_index, 8)).TotalSeconds;
                     Double percent = (sec_prog * 100 / total_duration);
-                    int percent2 = Convert.ToInt32(percent);
+                        try
+                        {
+                            percent2 = Convert.ToInt32(percent);
+                        }
+                        catch
+                        {
+                            percent2 = 0;
+                        }
 
                     if (percent2 <= 100)
                     {
@@ -23965,25 +24289,42 @@ namespace FFBatch
             frm_custom_path.Text = "Custom relative path";
 
             Label texto = new Label();
-            texto.Top = 10;
-            texto.Left = 15;
-            texto.Width = 220;
+            texto.Top = 14;
+            texto.Height = 20;
+            texto.Left = 45;
+            texto.Width = 200;
             texto.Parent = frm_custom_path;
             texto.Text = "Write below your custom relative path";
 
+            PictureBox pic = new PictureBox();
+            pic.Top = 9;
+            pic.Left = 9;
+            pic.Height = 26;            
+            pic.Width = 26;
+            pic.Parent = frm_custom_path;
+            Form19 frm19 = new Form19();
+            pic.Image = frm19.pictureBox1.Image;
+
+            Label texto2 = new Label();
+            texto2.Top = 41;
+            texto2.Left = 5;
+            texto2.Width = 35;
+            texto2.Parent = frm_custom_path;
+            texto2.Text = "Path:";
+
             path_txt.Parent = frm_custom_path;
-            path_txt.Top = 35;
-            path_txt.Left = 15;
-            path_txt.Width = 368;
+            path_txt.Top = 38;
+            path_txt.Left = 45;
+            path_txt.Width = 343;
             path_txt.Focus();
             path_txt.TabIndex = 0;
             path_txt.KeyDown += new KeyEventHandler(path_txt_KeyDown);
 
             Button boton_user_source_path = new Button();
             boton_user_source_path.Parent = frm_custom_path;
-            boton_user_source_path.Left = 15;
-            boton_user_source_path.Top = 63;
-            boton_user_source_path.Width = 135;
+            boton_user_source_path.Left = 45;
+            boton_user_source_path.Top = 66;
+            boton_user_source_path.Width = 115;
             boton_user_source_path.Height = 25;
             boton_user_source_path.Text = "Use source files path";
             boton_user_source_path.TabIndex = 0;
@@ -23991,8 +24332,8 @@ namespace FFBatch
 
             Button boton_ok_path = new Button();
             boton_ok_path.Parent = frm_custom_path;
-            boton_ok_path.Left = 315;
-            boton_ok_path.Top = 63;
+            boton_ok_path.Left = 320;
+            boton_ok_path.Top = 66;
             boton_ok_path.Width = 70;
             boton_ok_path.Height = 25;
             boton_ok_path.Text = "OK";
@@ -24001,8 +24342,8 @@ namespace FFBatch
 
             Button boton_cancel_path = new Button();
             boton_cancel_path.Parent = frm_custom_path;
-            boton_cancel_path.Left = 243;
-            boton_cancel_path.Top = 63;
+            boton_cancel_path.Left = 248;
+            boton_cancel_path.Top = 66;
             boton_cancel_path.Width = 70;
             boton_cancel_path.Height = 25;
             boton_cancel_path.Text = "Cancel";
@@ -24031,7 +24372,7 @@ namespace FFBatch
         }
 
         private void item_up_Click(object sender, EventArgs e)
-        {
+        {            
             Pg1.Focus();
             if (tabControl1.SelectedIndex == 0)
             {
@@ -24599,7 +24940,7 @@ namespace FFBatch
                 btn_clean_list.Left = this.Width - 145;
                 txt_search_url.Left = this.Width - 206;
                 lbl_search_url.Left = this.Width - 237;
-                lbl_size.Left = this.Width - 201;
+                lbl_size.Left = this.Width - 199;
                 lbl_dur_list.Left = this.Width - 283;
                 lbl_items.Left = this.Width - 349;
 
@@ -24730,7 +25071,7 @@ namespace FFBatch
                 btn_clean_list.Left = this.Width - 158;
                 txt_search_url.Left = this.Width - 216;
                 lbl_search_url.Left = this.Width - 247;
-                lbl_size.Left = this.Width - 212;
+                lbl_size.Left = this.Width - 210;
                 lbl_dur_list.Left = this.Width - 292;
                 lbl_items.Left = this.Width - 355;
                 btn_inc_font.Left = this.Width - 419;
@@ -24858,7 +25199,7 @@ namespace FFBatch
             {
                 File.WriteAllText(path_pr, "Version 1.0" + Environment.NewLine
    + "PR: Video: MP4 Stream copy & -c copy % mp4" + Environment.NewLine
-   + "PR: Video: Convert audio track to AAC HQ 2 channels & -c:v copy -c:a aac -cutoff 20K -b:a 256K -ac 2 % mkv" + Environment.NewLine + "PR: Video: Convert audio tracks to AC3 2 channels & -map 0 -c:v copy -c:a ac3 -b:a 256K -ac 2 -c:s copy % mkv" + Environment.NewLine + "PR: Video: Convert to ProRes MKV & -c:v prores_ks -profile:v standard -vendor:v ap10 -pix_fmt yuv422p10le -c:a pcm_s16le -chunk_size 64K % mkv" + Environment.NewLine + "PR: Video: Convert to H264 HQ + Source Audio & -map 0 -c:v libx264 -crf 20 -c:a copy % mkv" + Environment.NewLine + "PR: Video: Convert to H264 Ultrafast + Source Audio & -map 0 -c:v libx264 -crf 23 -preset ultrafast -c:a copy % mkv" + Environment.NewLine + "PR: Video: Convert to H265 HQ + Source Audio & -map 0 -c:v libx265 -crf 23 -c:a copy % mkv" + Environment.NewLine + "PR: Video: Resize 1280x720 H264-AAC & -map 0 -c:v libx264 -crf 23 -vf scale=1280:720 -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Rotate 90 degress Clockwise to H264 + Source audio & -c:v libx264 -crf 21 -vf " + "\u0022" + "transpose=1" + "\u0022" + " -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Rotate 90 degress CounterCLockwise and Vertical Flip to H264 + Source audio & -c:v libx264 -crf 21 -vf " + "\u0022" + "transpose=0" + "\u0022" + " -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Rotate 90 degress CounterClockwise to H264 + Source audio & -c:v libx264 -crf 21 -vf " + "\u0022" + "transpose=2" + "\u0022" + " -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Rotate 90 degress Clockwise and Vertical Flip to H264 + Source audio & -c:v libx264 -crf 21 -vf " + "\u0022" + "transpose=3" + "\u0022" + " -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Rotate 180 degress to H264 + Source audio & -c:v libx264 -crf 21 -vf " + "\u0022" + "transpose=2, transpose=2" + "\u0022" + " -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Remove subtitles to MP4 & -map 0 -c copy -sn % mp4" + Environment.NewLine + "PR: Audio: Convert to FLAC 16/44,1KHz 2 channels & -vn -c:a flac -ar 44100 -sample_fmt s16 -ac 2 % flac" + Environment.NewLine + "PR: Audio: Convert to MP3 VBR HQ 2 ch embedded cover & -c:v copy -c:a libmp3lame -qscale:a 0 -ac 2  % mp3" + Environment.NewLine + "PR: Audio: Convert to MP3 VBR HQ 2 ch & -vn -c:a libmp3lame -qscale:a 1 -ac 2 % mp3" + Environment.NewLine + "PR: Audio: Convert to MP3 CBR HQ 2 ch & -vn -c:a libmp3lame -b:a 224K -ac 2 % mp3" + Environment.NewLine + "PR: Audio: Convert to WAV 16/44,1KHz 2 channels & -vn -c:a pcm_s16le -ar 44100 -sample_fmt s16 -ac 2 % wav" + Environment.NewLine + "PR: Subtitle: Extract first subtitle track to SRT & -map 0:2 -c:s copy % srt" + Environment.NewLine + "PR: Image: Extract frame as image & -vframes 1 -f image2  % png" + Environment.NewLine + "PR: Record screen at 24 fps + Audio AAC to MKV & -r 24 -c:a aac -b:a 128K % mkv" + Environment.NewLine + "PR: Record screen at 15 fps 1280x720 + Audio to MKV & -r 15 -vf scale=1280x720 -c:a aac -b:a 128K % mkv" + Environment.NewLine + "PR: Record screen at 30 fps Nvidia NVENC + Audio AAC to MKV & -c:v h264_nvenc -qp 20 -r 30 -c:a aac -b:a 128K % mkv" + Environment.NewLine + "PR: Record screen at 25 fps Intel QuickSync + Audio AAC to MKV & -c:v  h264_qsv -qp 20 -r 25 -c:a aac -b:a 128K % mkv");
+   + "PR: Video: Convert audio track to AAC HQ 2 channels & -c:v copy -c:a aac -cutoff 20K -b:a 256K -ac 2 % mkv" + Environment.NewLine + "PR: Video: Convert audio tracks to AC3 2 channels & -map 0 -c:v copy -c:a ac3 -b:a 256K -ac 2 -c:s copy % mkv" + Environment.NewLine + "PR: Video: Convert to ProRes MKV & -c:v prores_ks -profile:v standard -vendor:v ap10 -pix_fmt yuv422p10le -c:a pcm_s16le -chunk_size 64K % mkv" + Environment.NewLine + "PR: Video: Convert to H264 HQ + Source Audio & -map 0 -c:v libx264 -crf 20 -c:a copy % mkv" + Environment.NewLine + "PR: Video: Convert to H264 Ultrafast + Source Audio & -map 0 -c:v libx264 -crf 23 -preset ultrafast -c:a copy % mkv" + Environment.NewLine + "PR: Video: Convert to H265 HQ + Source Audio & -map 0 -c:v libx265 -crf 23 -c:a copy % mkv" + Environment.NewLine + "PR: Video: Resize 1280x720 H264-AAC & -map 0 -c:v libx264 -crf 23 -vf scale=1280:720 -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Rotate 90 degress Clockwise to H264 + Source audio & -c:v libx264 -crf 21 -vf " + "\u0022" + "transpose=1" + "\u0022" + " -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Rotate 90 degress CounterCLockwise and Vertical Flip to H264 + Source audio & -c:v libx264 -crf 21 -vf " + "\u0022" + "transpose=0" + "\u0022" + " -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Rotate 90 degress CounterClockwise to H264 + Source audio & -c:v libx264 -crf 21 -vf " + "\u0022" + "transpose=2" + "\u0022" + " -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Rotate 90 degress Clockwise and Vertical Flip to H264 + Source audio & -c:v libx264 -crf 21 -vf " + "\u0022" + "transpose=3" + "\u0022" + " -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Rotate 180 degress to H264 + Source audio & -c:v libx264 -crf 21 -vf " + "\u0022" + "transpose=2, transpose=2" + "\u0022" + " -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Remove subtitles to MP4 & -map 0 -c copy -sn % mp4" + Environment.NewLine + "PR: Audio: Convert to FLAC 16/44,1KHz 2 channels & -vn -c:a flac -ar 44100 -sample_fmt s16 -ac 2 % flac" + Environment.NewLine + "PR: Audio: Convert to MP3 VBR HQ 2 ch embedded cover & -c:v copy -c:a libmp3lame -qscale:a 0 -ac 2  % mp3" + Environment.NewLine + "PR: Audio: Convert to MP3 VBR HQ 2 ch & -vn -c:a libmp3lame -qscale:a 1 -ac 2 % mp3" + Environment.NewLine + "PR: Audio: Convert to MP3 CBR HQ 2 ch & -vn -c:a libmp3lame -b:a 224K -ac 2 % mp3" + Environment.NewLine + "PR: Audio: Convert to WAV 16/44,1KHz 2 channels & -vn -c:a pcm_s16le -ar 44100 -sample_fmt s16 -ac 2 % wav" + Environment.NewLine + "PR: Subtitle: Extract first subtitle track to SRT & -map 0:2 -c:s copy % srt" + Environment.NewLine + "PR: Image: Extract frame as image & -vframes 1 -f image2  % png" + Environment.NewLine + "PR: Record screen at 24 fps + Audio AAC to MKV & -r 24 -c:a aac -b:a 128K % mkv" + Environment.NewLine + "PR: Record screen at 15 fps 1280x720 + Audio to MKV & -r 15 -vf scale=1280x720 -c:a aac -b:a 128K % mkv" + Environment.NewLine + "PR: Record screen at 30 fps Nvidia NVENC + Audio AAC to MKV & -c:v h264_nvenc -qp 20 -r 30 -c:a aac -b:a 128K % mkv" + Environment.NewLine + "PR: Record screen at 25 fps Intel QuickSync + Audio AAC to MKV & -c:v  h264_qsv -qp 20 -r 25 -c:a aac -b:a 128K % mkv" + Environment.NewLine + "PR: Join images at 1920px width to MP4 video & -c:v libx264 -preset veryfast -vf " + '\u0022' + "fps=25,format=yuv420p,scale=1920:-2" + '\u0022' + " -c:a aac -b:a 128K % mp4");
                 btn_load_config.PerformClick();
             }
             
@@ -24973,11 +25314,12 @@ namespace FFBatch
 
             //FFmpeg version
 
-
             new System.Threading.Thread(() =>
             {
                 System.Threading.Thread.CurrentThread.IsBackground = true;
-                this.InvokeEx(f => f.change_ff.Text = "Loading...");
+                try
+                {
+                    this.InvokeEx(f => f.change_ff.Text = "Loading...");
                 Process proc_v = new Process();
                 proc_v.StartInfo.FileName = Path.Combine(Application.StartupPath, "ffmpeg.exe");
                 proc_v.StartInfo.Arguments = "-version";
@@ -24987,8 +25329,7 @@ namespace FFBatch
                 proc_v.StartInfo.UseShellExecute = false;
                 proc_v.StartInfo.CreateNoWindow = true;
                 proc_v.EnableRaisingEvents = true;
-                try
-                {
+                
                     proc_v.Start();
                     String arch = String.Empty;
                     Boolean is_32 = false;
@@ -25027,7 +25368,8 @@ namespace FFBatch
                 }
                 catch
                 {
-                    MessageBox.Show("Error parsing ffmpeg version. File may be damaged.", "FFmpeg error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    this.InvokeEx(f => f.change_ff.Text = "FFmpeg unknown version");
+
                 }
             }).Start();
 
@@ -25076,7 +25418,6 @@ namespace FFBatch
                 }
                 if (a == DialogResult.Yes)
                 {
-
                     int linea = 0;
                     int not_found = 0;
                     combo_presets.Text = "";
@@ -27304,7 +27645,7 @@ namespace FFBatch
             
             File.WriteAllText(path_pr, "Version 1.0" + Environment.NewLine
         + "PR: Video: MP4 Stream copy & -c copy % mp4" + Environment.NewLine
-        + "PR: Video: Convert audio track to AAC HQ 2 channels & -c:v copy -c:a aac -cutoff 20K -b:a 256K -ac 2 % mkv" + Environment.NewLine + "PR: Video: Convert audio tracks to AC3 2 channels & -map 0 -c:v copy -c:a ac3 -b:a 256K -ac 2 -c:s copy % mkv" + Environment.NewLine + "PR: Video: Convert to ProRes MKV & -c:v prores_ks -profile:v standard -vendor:v ap10 -pix_fmt yuv422p10le -c:a pcm_s16le -chunk_size 64K % mkv" + Environment.NewLine + "PR: Video: Convert to H264 HQ + Source Audio & -map 0 -c:v libx264 -crf 20 -c:a copy % mkv" + Environment.NewLine + "PR: Video: Convert to H264 Ultrafast + Source Audio & -map 0 -c:v libx264 -crf 23 -preset ultrafast -c:a copy % mkv" + Environment.NewLine + "PR: Video: Convert to H265 HQ + Source Audio & -map 0 -c:v libx265 -crf 23 -c:a copy % mkv" + Environment.NewLine + "PR: Video: Resize 1280x720 H264-AAC & -map 0 -c:v libx264 -crf 23 -vf scale=1280:720 -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Rotate 90 degress Clockwise to H264 + Source audio & -c:v libx264 -crf 21 -vf " + "\u0022" + "transpose=1" + "\u0022" + " -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Rotate 90 degress CounterCLockwise and Vertical Flip to H264 + Source audio & -c:v libx264 -crf 21 -vf " + "\u0022" + "transpose=0" + "\u0022" + " -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Rotate 90 degress CounterClockwise to H264 + Source audio & -c:v libx264 -crf 21 -vf " + "\u0022" + "transpose=2" + "\u0022" + " -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Rotate 90 degress Clockwise and Vertical Flip to H264 + Source audio & -c:v libx264 -crf 21 -vf " + "\u0022" + "transpose=3" + "\u0022" + " -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Rotate 180 degress to H264 + Source audio & -c:v libx264 -crf 21 -vf " + "\u0022" + "transpose=2, transpose=2" + "\u0022" + " -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Remove subtitles to MP4 & -map 0 -c copy -sn % mp4" + Environment.NewLine + "PR: Audio: Convert to FLAC 16/44,1KHz 2 channels & -vn -c:a flac -ar 44100 -sample_fmt s16 -ac 2 % flac" + Environment.NewLine + "PR: Audio: Convert to MP3 VBR HQ 2 ch embedded cover & -c:v copy -c:a libmp3lame -qscale:a 0 -ac 2  % mp3" + Environment.NewLine + "PR: Audio: Convert to MP3 VBR HQ 2 ch & -vn -c:a libmp3lame -qscale:a 1 -ac 2 % mp3" + Environment.NewLine + "PR: Audio: Convert to MP3 CBR HQ 2 ch & -vn -c:a libmp3lame -b:a 224K -ac 2 % mp3" + Environment.NewLine + "PR: Audio: Convert to WAV 16/44,1KHz 2 channels & -vn -c:a pcm_s16le -ar 44100 -sample_fmt s16 -ac 2 % wav" + Environment.NewLine + "PR: Subtitle: Extract first subtitle track to SRT & -map 0:2 -c:s copy % srt" + Environment.NewLine + "PR: Image: Extract frame as image & -vframes 1 -f image2  % png" + Environment.NewLine + "PR: Record screen at 24 fps + Audio AAC to MKV & -r 24 -c:a aac -b:a 128K % mkv" + Environment.NewLine + "PR: Record screen at 15 fps 1280x720 + Audio to MKV & -r 15 -vf scale=1280x720 -c:a aac -b:a 128K % mkv" + Environment.NewLine + "PR: Record screen at 30 fps Nvidia NVENC + Audio AAC to MKV & -c:v h264_nvenc -qp 20 -r 30 -c:a aac -b:a 128K % mkv" + Environment.NewLine + "PR: Record screen at 25 fps Intel QuickSync + Audio AAC to MKV & -c:v  h264_qsv -qp 20 -r 25 -c:a aac -b:a 128K % mkv");
+   + "PR: Video: Convert audio track to AAC HQ 2 channels & -c:v copy -c:a aac -cutoff 20K -b:a 256K -ac 2 % mkv" + Environment.NewLine + "PR: Video: Convert audio tracks to AC3 2 channels & -map 0 -c:v copy -c:a ac3 -b:a 256K -ac 2 -c:s copy % mkv" + Environment.NewLine + "PR: Video: Convert to ProRes MKV & -c:v prores_ks -profile:v standard -vendor:v ap10 -pix_fmt yuv422p10le -c:a pcm_s16le -chunk_size 64K % mkv" + Environment.NewLine + "PR: Video: Convert to H264 HQ + Source Audio & -map 0 -c:v libx264 -crf 20 -c:a copy % mkv" + Environment.NewLine + "PR: Video: Convert to H264 Ultrafast + Source Audio & -map 0 -c:v libx264 -crf 23 -preset ultrafast -c:a copy % mkv" + Environment.NewLine + "PR: Video: Convert to H265 HQ + Source Audio & -map 0 -c:v libx265 -crf 23 -c:a copy % mkv" + Environment.NewLine + "PR: Video: Resize 1280x720 H264-AAC & -map 0 -c:v libx264 -crf 23 -vf scale=1280:720 -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Rotate 90 degress Clockwise to H264 + Source audio & -c:v libx264 -crf 21 -vf " + "\u0022" + "transpose=1" + "\u0022" + " -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Rotate 90 degress CounterCLockwise and Vertical Flip to H264 + Source audio & -c:v libx264 -crf 21 -vf " + "\u0022" + "transpose=0" + "\u0022" + " -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Rotate 90 degress CounterClockwise to H264 + Source audio & -c:v libx264 -crf 21 -vf " + "\u0022" + "transpose=2" + "\u0022" + " -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Rotate 90 degress Clockwise and Vertical Flip to H264 + Source audio & -c:v libx264 -crf 21 -vf " + "\u0022" + "transpose=3" + "\u0022" + " -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Rotate 180 degress to H264 + Source audio & -c:v libx264 -crf 21 -vf " + "\u0022" + "transpose=2, transpose=2" + "\u0022" + " -c:a aac -b:a 128K % mp4" + Environment.NewLine + "PR: Video: Remove subtitles to MP4 & -map 0 -c copy -sn % mp4" + Environment.NewLine + "PR: Audio: Convert to FLAC 16/44,1KHz 2 channels & -vn -c:a flac -ar 44100 -sample_fmt s16 -ac 2 % flac" + Environment.NewLine + "PR: Audio: Convert to MP3 VBR HQ 2 ch embedded cover & -c:v copy -c:a libmp3lame -qscale:a 0 -ac 2  % mp3" + Environment.NewLine + "PR: Audio: Convert to MP3 VBR HQ 2 ch & -vn -c:a libmp3lame -qscale:a 1 -ac 2 % mp3" + Environment.NewLine + "PR: Audio: Convert to MP3 CBR HQ 2 ch & -vn -c:a libmp3lame -b:a 224K -ac 2 % mp3" + Environment.NewLine + "PR: Audio: Convert to WAV 16/44,1KHz 2 channels & -vn -c:a pcm_s16le -ar 44100 -sample_fmt s16 -ac 2 % wav" + Environment.NewLine + "PR: Subtitle: Extract first subtitle track to SRT & -map 0:2 -c:s copy % srt" + Environment.NewLine + "PR: Image: Extract frame as image & -vframes 1 -f image2  % png" + Environment.NewLine + "PR: Record screen at 24 fps + Audio AAC to MKV & -r 24 -c:a aac -b:a 128K % mkv" + Environment.NewLine + "PR: Record screen at 15 fps 1280x720 + Audio to MKV & -r 15 -vf scale=1280x720 -c:a aac -b:a 128K % mkv" + Environment.NewLine + "PR: Record screen at 30 fps Nvidia NVENC + Audio AAC to MKV & -c:v h264_nvenc -qp 20 -r 30 -c:a aac -b:a 128K % mkv" + Environment.NewLine + "PR: Record screen at 25 fps Intel QuickSync + Audio AAC to MKV & -c:v  h264_qsv -qp 20 -r 25 -c:a aac -b:a 128K % mkv" + Environment.NewLine + "PR: Join images at 1920px width to MP4 video & -c:v libx264 -preset veryfast -vf " + '\u0022' + "fps=25,format=yuv420p,scale=1920:-2" + '\u0022' + " -c:a aac -b:a 64K % mp4");
             btn_load_config.PerformClick();
         }
 
@@ -31819,6 +32160,9 @@ namespace FFBatch
 
             List<string> destis = new List<string>();
             List<string> list_lines = new List<string>();
+            list_successful_m.Clear();
+            list_failed_m.Clear();
+
 
             for (int ii = 0; ii < list_global_proc.Items.Count; ii++)
             {
@@ -31836,9 +32180,9 @@ namespace FFBatch
             aborted = false;
 
             var items_lv = Enumerable.Range(0, listView1.Items.Count);
-
             Disable_Controls();
             ParallelLoopResult result = new ParallelLoopResult();
+            
             try
             {
                 result = Parallel.ForEach(items_lv.AsParallel().AsOrdered(), par_op, (file_int) =>
@@ -31957,38 +32301,86 @@ namespace FFBatch
                             n_th_source_ext = ext_output1;
 
                             textbox_params = txt_parameters.Text;
+
+                            if (txt_format.Text == "nul") ext_output1 = "nul";
+
                             String file2 = fullPath;
-                            if (textbox_params.Contains("%fn"))
+                            while (textbox_params.Contains("%fn"))
                             {
-                                textbox_params = textbox_params.Replace("%fn", Path.GetFileNameWithoutExtension(file2));
+                                if (textbox_params.Contains("%fn"))
+                                {
+                                    textbox_params = textbox_params.Replace("%fn", Path.GetFileNameWithoutExtension(file2));
+                                }
                             }
-                            if (textbox_params.Contains("%fp"))
+                            while (textbox_params.Contains("%fp"))
                             {
-                                textbox_params = textbox_params.Replace("%fp", Path.GetDirectoryName(file2));
-                            }
-                            if (textbox_params.Contains("%fd"))
-                            {
-                                var path3 = Path.GetFullPath(file2);
-                                var dirName = Path.GetFileName(Path.GetDirectoryName(path3));
-                                textbox_params = textbox_params.Replace("%fd", dirName);
+                                if (textbox_params.Contains("%fp"))
+                                {
+                                    textbox_params = textbox_params.Replace("%fp", Path.GetDirectoryName(file2));
+                                }
                             }
 
-                            if (textbox_params.Contains("%1"))
+                            while (textbox_params.Contains("%fd"))
                             {
-                                file2 = file2.Replace("\\", "\\\\\\\\");
-                                file2 = file2.Replace(":", "\\\\" + ":");
-                                textbox_params = textbox_params.Replace("%1", file2);
+                                if (textbox_params.Contains("%fd"))
+                                {
+                                    var path = Path.GetFullPath(file2);
+                                    var dirName = Path.GetFileName(Path.GetDirectoryName(path));
+                                    textbox_params = textbox_params.Replace("%fd", dirName);
+                                }
                             }
-                            if (textbox_params.Contains("%2"))
+
+                            while (textbox_params.Contains("%1"))
                             {
-                                file2 = file2.Replace("\\", "\\\\\\\\");
-                                file2 = file2.Replace(":", "\\\\" + ":");
-                                textbox_params = textbox_params.Replace("%2", Path.Combine(System.IO.Path.GetDirectoryName(file2), Path.GetFileNameWithoutExtension(file2)));
+                                if (textbox_params.Contains("%1"))
+                                {
+                                    file2 = file2.Replace("\\", "\\\\\\\\");
+                                    file2 = file2.Replace(":", "\\\\" + ":");
+                                    textbox_params = textbox_params.Replace("%1", file2);
+                                }
+                            }
+
+                            while (textbox_params.Contains("%2"))
+                            {
+                                if (textbox_params.Contains("%2"))
+                                {
+                                    file2 = file2.Replace("\\", "\\\\\\\\");
+                                    file2 = file2.Replace(":", "\\\\" + ":");
+                                    textbox_params = textbox_params.Replace("%2", Path.Combine(System.IO.Path.GetDirectoryName(file2), Path.GetFileNameWithoutExtension(file2)));
+                                }
                             }
 
                             var tmp = procs["proc_urls_" + file_int.ToString()];
                             var n_logs = multi_logs["log_n_" + file_int.ToString()];
                             tmp.StartInfo.Arguments = tmp.StartInfo.Arguments = hw_decode + " " + pre_input_var + " " + pre_ss + " -i " + "" + '\u0022' + fullPath + '\u0022' + " " + shifting + " " + " -y " + textbox_params + " " + change_vol + '\u0022' + destis[file_int] + "\\" + System.IO.Path.GetFileNameWithoutExtension(fullPath) + add_suffix + ext_output1 + '\u0022' + " -hide_banner";
+                            if (ext_output1 == "nul") tmp.StartInfo.Arguments = hw_decode + " " + pre_input_var + " " + pre_ss + " -i " + "" + '\u0022' + fullPath + '\u0022' + " " + shifting + " " + textbox_params + " " + change_vol + " " + " -hide_banner";
+
+                            String second_path = "";
+                            if (ext_output1 == "nul")
+                            {
+                                String[] split = txt_parameters.Text.Split(' ');
+                                for (int i = 0; i < split.Length; i++)
+                                {
+                                    if (split[i].Contains("\\") == true)
+                                    {
+                                        String pre_path = split[i].Replace("%fp", Path.GetDirectoryName(file2)).Replace("%fn", Path.GetFileNameWithoutExtension(file2)).Replace("%", "_");
+                                        second_path = Path.GetDirectoryName(pre_path.Replace('\u0022', ' '));
+
+                                        if (!Directory.Exists(second_path))
+                                        {
+                                            try
+                                            {
+                                                Directory.CreateDirectory(second_path);
+                                            }
+                                            catch
+                                            {
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
 
                             String current_out = destis[file_int] + "\\" + System.IO.Path.GetFileNameWithoutExtension(fullPath) + add_suffix + ext_output1;
                             Boolean to_overw = false;
@@ -32101,6 +32493,7 @@ namespace FFBatch
 
                             if (tmp.ExitCode == 0)
                             {
+                                list_successful_m.Add(fullPath);
                                 if (cancelados_paralelos == false && cts.IsCancellationRequested == false)
                                 {
                                     if (aborted_url == false && File.Exists(fullPath) == true)
@@ -32147,7 +32540,7 @@ namespace FFBatch
                             }
                             else
                             {
-                                //Thread.Sleep(75);
+                                list_failed_m.Add(fullPath);
                                 this.InvokeEx(f => f.listView1.Items[Convert.ToInt32(file_int)].SubItems[5].Text = "Failed");
                                 errors_enc = errors_enc + 1;
                             }
@@ -32325,74 +32718,83 @@ namespace FFBatch
                         }
                     }
 
+                if (chk_delete_source.CheckState == CheckState.Checked)
+                {
+                    Disable_Controls();
+
+                    Label prog_txt = new Label();
+                    prog_txt.Parent = panel1;
+                    prog_txt.Top = 95;
+                    prog_txt.Left = 80;
+                    prog_txt.Width = 250;
+                    prog_txt.TabIndex = 1;
+                    prog_txt.BackColor = panel1.BackColor;
+                    prog_txt.BorderStyle = BorderStyle.None;
+                    prog_txt.TextAlign = ContentAlignment.MiddleLeft;
+                    prog_txt.BringToFront();
+                    prog_txt.Text = "Sending processed files to recycle bin...";
+
+                    ProgressBar pg_del = new ProgressBar();
+                    pg_del.Parent = panel1;
+                    pg_del.Top = 98;
+                    pg_del.Left = 315;
+                    pg_del.Width = 152;
+                    pg_del.Height = 15;
+                    pg_del.TabIndex = 0;
+                    pg_del.BackColor = this.BackColor;
+                    pg_del.Minimum = 0;
+                    pg_del.BringToFront();
+                    pg_del.Maximum = list_global_proc.Items.Count;
+                    pg_del.Show();
+                    pg_del.Refresh();
+                    int i = 0;
+                    int err = 0;
+
+                    listView1.Invoke(new MethodInvoker(delegate
+                    {
+                        foreach (String item in list_successful_m)
+                        {
+                            try
+                            {
+                                FileSystem.DeleteFile(item, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
+                                pg_del.Value = i;
+                                i = i + 1;
+                            }
+                            catch
+                            {
+                                err = err + 1;
+                            }
+                            prog_txt.Text = "Sending source files to recycle bin... " + i.ToString() + " of " + list_global_proc.Items.Count;
+                            prog_txt.Refresh();
+
+                        }
+                        prog_txt.Visible = false;
+                        prog_txt.Dispose();
+                        pg_del.Visible = false;
+                        pg_del.Dispose();
+                        Enable_Controls();
+
+                        if (err > 0) MessageBox.Show(err.ToString() + " files could not be moved to the recycle bin. Check log file at the end for further details.", "Some files not recycled", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                        if (list_failed_m.Count > 0)
+                        {
+                            String path = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch.log";
+                            File.AppendAllText(path, Environment.NewLine + Environment.NewLine + "Source files that could not be deleted due to failed encoding or file in use:");
+                            File.AppendAllText(path, Environment.NewLine + "-------------------------------");
+                            foreach (String item in list_failed_m)
+                            {
+                                File.AppendAllText(path, Environment.NewLine + item);
+                            }
+                        }
+                    }));
+
+                    //End delete source
+                }
+
                 if (errors_enc == 0)
                 {
                     pic_no_errors.Visible = true;
-                    //Delete source
-
-                    if (chk_delete_source.CheckState == CheckState.Checked)
-                    {
-                        Disable_Controls();
-
-                        Label prog_txt = new Label();
-                        prog_txt.Parent = panel1;
-                        prog_txt.Top = 95;
-                        prog_txt.Left = 80;
-                        prog_txt.Width = 250;
-                        prog_txt.TabIndex = 1;
-                        prog_txt.BackColor = panel1.BackColor;
-                        prog_txt.BorderStyle = BorderStyle.None;
-                        prog_txt.TextAlign = ContentAlignment.MiddleLeft;
-                        prog_txt.BringToFront();
-                        prog_txt.Text = "Sending processed files to recycle bin...";
-
-                        ProgressBar pg_del = new ProgressBar();
-                        pg_del.Parent = panel1;
-                        pg_del.Top = 98;
-                        pg_del.Left = 315;
-                        pg_del.Width = 152;
-                        pg_del.Height = 15;
-                        pg_del.TabIndex = 0;
-                        pg_del.BackColor = this.BackColor;
-                        pg_del.Minimum = 0;
-                        pg_del.BringToFront();
-                        pg_del.Maximum = list_global_proc.Items.Count;
-                        pg_del.Show();
-                        pg_del.Refresh();
-                        int i = 0;
-                        int err = 0;
-
-                        listView1.Invoke(new MethodInvoker(delegate
-                        {
-                            foreach (ListViewItem item in listView1.Items)
-                            {
-                                if (item.SubItems[5].Text == "Success")
-                                {
-                                    try
-                                    {
-                                        FileSystem.DeleteFile(item.SubItems[1].Text + "\\" + item.Text, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
-                                        pg_del.Value = i;
-                                        i = i + 1;
-                                    }
-                                    catch
-                                    {
-                                        err = err + 1;
-                                    }
-                                    prog_txt.Text = "Sending source files to recycle bin... " + i.ToString() + " of " + list_global_proc.Items.Count;
-                                    prog_txt.Refresh();
-                                }
-                            }
-                            prog_txt.Visible = false;
-                            prog_txt.Dispose();
-                            pg_del.Visible = false;
-                            pg_del.Dispose();
-                            Enable_Controls();
-
-                            if (err > 0) MessageBox.Show(err.ToString() + " files could not be moved to the recycle bin", "Some files not recycled", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }));                        
-
-                        //End delete source
-                    }
+                    //Delete source                   
 
                 //Automatic shutdown check
                 if (chkshut.Checked)
@@ -34095,8 +34497,7 @@ namespace FFBatch
                         MessageBox.Show("An error occurred while saving setting");
                     }
                 }
-            }
-            
+            }            
         }
 
         private void add_video_mux_job()
@@ -36036,6 +36437,361 @@ namespace FFBatch
             }
             refresh_full();
     }
+
+        private void chk_trim2_CheckedChanged(object sender, EventArgs e)
+        {
+            String f_trim = String.Empty;
+            if (is_portable == false)
+            {
+                f_trim = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_trim.ini";
+            }
+            else
+            {
+                f_trim = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_trim_portable.ini";
+            }
+
+            if (chk_trim2.CheckState == CheckState.Checked)
+            {
+                File.WriteAllText(f_trim, String.Empty);
+            }
+            else
+            {
+                try
+                {
+                    File.Delete(f_trim);
+                }
+                catch
+                {
+                    MessageBox.Show("An error ocurred when saving configuration.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void pic_title_Click(object sender, EventArgs e)
+        {
+            menu_about.PerformClick();
+        }
+
+        private void menu_split_Click(object sender, EventArgs e)
+        {
+            AeroWizard6 wiz_split = new AeroWizard6();
+            wiz_split.pr1_first_params = "";
+            wiz_split.StartPosition = FormStartPosition.CenterParent;
+            wiz_split.list_count = listView1.Items.Count;
+            wiz_split.combo_ext.SelectedIndex = 0;
+            wiz_split.combo_Seconds.SelectedIndex = 2;
+            wiz_split.ShowDialog();
+            if (wiz_split.canceled == true) return;
+
+
+            if (wiz_split.save_preset == false)
+            {
+                combo_presets.Text = "New unsaved preset";
+                txt_parameters.Text = wiz_split.pr1_first_params;
+                txt_format.Text = "nul";
+            }
+            else
+            {
+                combo_presets.SelectedIndex = combo_presets.Items.Count - 1;
+                combo_presets.Text = wiz_split.txt_preset_name.Text;
+                txt_parameters.Text = wiz_split.pr1_first_params;
+                txt_format.Text = "nul";
+                btn_save_preset.PerformClick();
+            }
+            if (wiz_split.start_enc == true) button2.PerformClick();
+        }
+
+        private void btn_track_up_Click(object sender, EventArgs e)
+        {
+            if (list_tracks.SelectedItems.Count == 1)
+            {
+                lvwColumnSorter_Full.Order = SortOrder.None;
+                var currentIndex = list_tracks.SelectedItems[0].Index;
+                var item = list_tracks.Items[list_tracks.SelectedIndices[0]];
+                if (currentIndex > 0) // && list_tracks.Items[currentIndex - 1].SubItems[5].Text == "Queued")
+                {
+                    list_tracks.Items.RemoveAt(currentIndex);
+                    list_tracks.Items.Insert(currentIndex - 1, item);
+                }
+            }
+        }
+
+        private void btn_track_down_Click(object sender, EventArgs e)
+        {
+            if (list_tracks.SelectedItems.Count == 1)
+            {
+                lvwColumnSorter_Full.Order = SortOrder.None;
+                var currentIndex = list_tracks.SelectedItems[0].Index;
+                var item = list_tracks.Items[list_tracks.SelectedIndices[0]];
+                if (currentIndex > -1 && currentIndex < list_tracks.Items.Count - 1)
+                {
+                    list_tracks.Items.RemoveAt(currentIndex);
+                    list_tracks.Items.Insert(currentIndex + 1, item);
+                }
+            }
+        }
+
+        public void add_paste_folder (string path1)
+        {
+            Pg1.Focus();
+            if (!File.Exists(Path.Combine(Application.StartupPath, "ffmpeg.exe")))
+            {
+                MessageBox.Show("FFmpeg executable file was not found. Restart or reinstall application.", "Executable error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (!File.Exists(Path.Combine(Application.StartupPath, "ffprobe.exe")))
+            {
+                MessageBox.Show("FFprobe executable file was not found. Restart or reinstall application.", "Executable error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (listView1.Items.Count == 0)
+            {
+                list_not_empty = false;
+            }
+            else
+            {
+                list_not_empty = true;
+            }
+
+            if (tabControl1.SelectedIndex == 1)
+            {
+                change_tab_1 = true;
+            }
+            if (tabControl1.SelectedIndex == 2)
+            {
+                change_tab_2 = true;
+            }
+            if (!Directory.Exists(path1))
+                {
+                MessageBox.Show("Selected path was not found.", "Path not found");
+                return;
+                }
+            Form11_2 frm11_2 = new Form11_2();
+            Task t2 = Task.Run(() =>
+            {                
+                frm11_2.label1.Text = "Reading path contents, please wait...";
+                frm11_2.ShowDialog();
+            });
+            Thread.Sleep(100);
+            List<string> files2 = new List<string>();
+            int fl = 0;
+            foreach (string file in Directory.GetFiles(path1))
+            {
+                if (!File.GetAttributes(file).HasFlag(FileAttributes.Hidden))
+                {
+                    files2.Add(file);
+                    fl = fl + 1;
+                    if (frm11_2.abort_validate == true) return;
+                    else
+                    {
+                        try
+                        {
+                            frm11_2.Invoke(new MethodInvoker(delegate
+                            {
+                                frm11_2.label2.Text = fl.ToString() + " files";
+                            }));
+                        }
+                        catch { }
+                    }
+                }
+            }           
+                int num_drop = files2.Count();
+
+                if (add_subfs == true)
+                {
+                    string[] dirs = Directory.GetDirectories(path1);
+
+                    foreach (string ds in dirs)
+                    {
+                        try
+                        {
+                            foreach (string f in Directory.GetFiles(ds, "*.*", System.IO.SearchOption.AllDirectories))
+                            {
+                                if (!File.GetAttributes(f).HasFlag(FileAttributes.Hidden))
+                                {
+                                    files2.Add(f);
+                                    fl = fl + 1;
+                                    num_drop++;
+                                if (frm11_2.abort_validate == true) return;
+                                else
+                                {
+                                    try
+                                    {
+                                        frm11_2.Invoke(new MethodInvoker(delegate
+                                        {
+                                            frm11_2.label2.Text = fl.ToString() + " files";
+                                        }));
+                                    }
+                                    catch { }
+                                }
+                                
+                            }
+                            }
+                        }
+                        catch (System.Exception excpt)
+                        {
+                        try
+                        {
+                            
+                        }
+                        catch { }
+                        var a = MessageBox.Show("Error: " + excpt.Message + " Continue?", "Access error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                        if (a == DialogResult.Cancel)
+                        {
+                            try
+                            {
+                                frm11_2.Invoke(new MethodInvoker(delegate
+                                {
+                                    frm11_2.Dispose();
+                                }));
+                            }
+                            catch { }
+
+                            return;
+                        }
+                        try
+                        {
+                            frm11_2.Invoke(new MethodInvoker(delegate
+                            {
+                                frm11_2.TopMost = true;
+                                frm11_2.TopMost = false;
+                            }));
+                        }
+                        catch { }
+                    }
+                    }
+                }
+            Thread.Sleep(100);
+            try
+            {
+                frm11_2.Invoke(new MethodInvoker(delegate
+                {
+                    frm11_2.Dispose();
+                }));
+            }
+            catch { }
+
+            if (num_drop == 0)
+                {
+                    var a = MessageBox.Show("Folder is empty", "Folder empty", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }           
+
+            if (num_drop >= 10000)
+                {
+                    var a = MessageBox.Show("Adding " + num_drop + " files can take some time. Continue?", "Adding many files", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (a == DialogResult.Cancel)
+                    {
+                        return;
+                    }
+                }
+                files_to_add = files2;
+                canceled_file_adding = false;
+                btn_cancel_add.Enabled = true;
+                btn_cancel_add.Visible = true;
+                btn_cancel_add.Refresh();
+                BG_Files.RunWorkerAsync();
+        }
+
+        private void btn_add_folders_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                Form19 frm19 = new Form19();
+                frm19.ShowDialog();
+                if (frm19.canceled == false)
+                {
+                    add_paste_folder(frm19.textBox1.Text);
+                }
+            }
+        }
+
+        private void ctm_paste_path_Click(object sender, EventArgs e)
+        {
+            Form19 frm19 = new Form19();
+            frm19.ShowDialog();
+            if (frm19.canceled == false)
+            {
+                add_paste_folder(frm19.textBox1.Text);
+            }
+        }
+
+        private void item_up_MouseClick(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void button1_Click_3(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ct_move_top_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count == 1 && listView1.SelectedItems[0].SubItems[5].Text == "Queued")
+            {
+                lvwColumnSorter_Full.Order = SortOrder.None;
+                var currentIndex = listView1.SelectedItems[0].Index;
+                var item = listView1.Items[listView1.SelectedIndices[0]];
+                if (currentIndex > 0 && listView1.Items[currentIndex - 1].SubItems[5].Text == "Queued")
+                {
+                    listView1.Items.RemoveAt(currentIndex);
+                    listView1.Items.Insert(0, item);
+                }
+            }
+        }
+
+        private void ct_move_bottom_Click(object sender, EventArgs e)
+        {
+            if (listView1.SelectedItems.Count == 1 && listView1.SelectedItems[0].SubItems[5].Text == "Queued")
+            {
+                lvwColumnSorter_Full.Order = SortOrder.None;
+                var currentIndex = listView1.SelectedItems[0].Index;
+                var item = listView1.Items[listView1.SelectedIndices[0]];
+                if (currentIndex > -1 && currentIndex < listView1.Items.Count - 1)
+                {
+                    listView1.Items.RemoveAt(currentIndex);
+                    listView1.Items.Insert(listView1.Items.Count, item);
+                }
+            }
+        }
+
+        private void ct3_up_Click(object sender, EventArgs e)
+        {
+            if (list_tracks.SelectedItems.Count == 1)
+            {
+                lvwColumnSorter_Full.Order = SortOrder.None;
+                var currentIndex = list_tracks.SelectedItems[0].Index;
+                var item = list_tracks.Items[list_tracks.SelectedIndices[0]];
+                if (currentIndex > 0) // && list_tracks.Items[currentIndex - 1].SubItems[5].Text == "Queued")
+                {
+                    list_tracks.Items.RemoveAt(currentIndex);
+                    list_tracks.Items.Insert(currentIndex - 1, item);
+                }
+            }
+        }
+
+        private void ct3_down_Click(object sender, EventArgs e)
+        {
+            if (list_tracks.SelectedItems.Count == 1)
+            {
+                lvwColumnSorter_Full.Order = SortOrder.None;
+                var currentIndex = list_tracks.SelectedItems[0].Index;
+                var item = list_tracks.Items[list_tracks.SelectedIndices[0]];
+                if (currentIndex > -1 && currentIndex < list_tracks.Items.Count - 1)
+                {
+                    list_tracks.Items.RemoveAt(currentIndex);
+                    list_tracks.Items.Insert(currentIndex + 1, item);
+                }
+            }
+        }
 
         private void dg1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {

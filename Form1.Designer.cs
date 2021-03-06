@@ -51,6 +51,7 @@
             this.ctm1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ctm_add_files = new System.Windows.Forms.ToolStripMenuItem();
             this.ctm_add_folder = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctm_paste_path = new System.Windows.Forms.ToolStripMenuItem();
             this.ct1_paste_youtube = new System.Windows.Forms.ToolStripMenuItem();
             this.ct1_paste_m3u = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -59,6 +60,8 @@
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.cti3 = new System.Windows.Forms.ToolStripMenuItem();
             this.ctdel = new System.Windows.Forms.ToolStripMenuItem();
+            this.ct_move_top = new System.Windows.Forms.ToolStripMenuItem();
+            this.ct_move_bottom = new System.Windows.Forms.ToolStripMenuItem();
             this.ctm1_queue = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.cti4 = new System.Windows.Forms.ToolStripMenuItem();
@@ -162,6 +165,8 @@
             this.ctm3 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ct3_default = new System.Windows.Forms.ToolStripMenuItem();
             this.ct3_del = new System.Windows.Forms.ToolStripMenuItem();
+            this.ct3_up = new System.Windows.Forms.ToolStripMenuItem();
+            this.ct3_down = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator14 = new System.Windows.Forms.ToolStripSeparator();
             this.ct3_default_enc = new System.Windows.Forms.ToolStripMenuItem();
             this.ct3_encode_default = new System.Windows.Forms.ToolStripMenuItem();
@@ -236,6 +241,8 @@
             this.BG_Try_button = new System.ComponentModel.BackgroundWorker();
             this.btn_update = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_track_down = new System.Windows.Forms.Button();
+            this.btn_track_up = new System.Windows.Forms.Button();
             this.lbl_mux_jobs = new System.Windows.Forms.Label();
             this.txt_mux_type = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -358,6 +365,7 @@
             this.menu_two_pass_wizard = new System.Windows.Forms.ToolStripMenuItem();
             this.wiz_silence_menu = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_extract_images = new System.Windows.Forms.ToolStripMenuItem();
+            this.menu_split = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator27 = new System.Windows.Forms.ToolStripSeparator();
             this.menu_settings = new System.Windows.Forms.ToolStripMenuItem();
             this.main_3 = new System.Windows.Forms.ToolStripMenuItem();
@@ -695,6 +703,7 @@
             this.ctm1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ctm_add_files,
             this.ctm_add_folder,
+            this.ctm_paste_path,
             this.ct1_paste_youtube,
             this.ct1_paste_m3u,
             this.toolStripSeparator2,
@@ -703,6 +712,8 @@
             this.toolStripSeparator8,
             this.cti3,
             this.ctdel,
+            this.ct_move_top,
+            this.ct_move_bottom,
             this.ctm1_queue,
             this.toolStripSeparator1,
             this.cti4,
@@ -715,7 +726,7 @@
             this.cti5,
             this.cti6});
             this.ctm1.Name = "ctm1";
-            this.ctm1.Size = new System.Drawing.Size(228, 436);
+            this.ctm1.Size = new System.Drawing.Size(228, 508);
             this.ctm1.Opening += new System.ComponentModel.CancelEventHandler(this.ctm1_Opening);
             // 
             // ctm_add_files
@@ -733,6 +744,14 @@
             this.ctm_add_folder.Size = new System.Drawing.Size(227, 24);
             this.ctm_add_folder.Text = "Add folder";
             this.ctm_add_folder.Click += new System.EventHandler(this.ctm_add_folder_Click);
+            // 
+            // ctm_paste_path
+            // 
+            this.ctm_paste_path.Image = ((System.Drawing.Image)(resources.GetObject("ctm_paste_path.Image")));
+            this.ctm_paste_path.Name = "ctm_paste_path";
+            this.ctm_paste_path.Size = new System.Drawing.Size(227, 24);
+            this.ctm_paste_path.Text = "Paste/write path";
+            this.ctm_paste_path.Click += new System.EventHandler(this.ctm_paste_path_Click);
             // 
             // ct1_paste_youtube
             // 
@@ -793,6 +812,22 @@
             this.ctdel.Size = new System.Drawing.Size(227, 24);
             this.ctdel.Text = "Remove file from list";
             this.ctdel.Click += new System.EventHandler(this.ctdel_Click);
+            // 
+            // ct_move_top
+            // 
+            this.ct_move_top.Image = ((System.Drawing.Image)(resources.GetObject("ct_move_top.Image")));
+            this.ct_move_top.Name = "ct_move_top";
+            this.ct_move_top.Size = new System.Drawing.Size(227, 24);
+            this.ct_move_top.Text = "Move item to top";
+            this.ct_move_top.Click += new System.EventHandler(this.ct_move_top_Click);
+            // 
+            // ct_move_bottom
+            // 
+            this.ct_move_bottom.Image = ((System.Drawing.Image)(resources.GetObject("ct_move_bottom.Image")));
+            this.ct_move_bottom.Name = "ct_move_bottom";
+            this.ct_move_bottom.Size = new System.Drawing.Size(227, 24);
+            this.ct_move_bottom.Text = "Move item to bottom";
+            this.ct_move_bottom.Click += new System.EventHandler(this.ct_move_bottom_Click);
             // 
             // ctm1_queue
             // 
@@ -919,6 +954,7 @@
             this.btn_add_folders.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_add_folders.UseVisualStyleBackColor = true;
             this.btn_add_folders.Click += new System.EventHandler(this.button6_Click);
+            this.btn_add_folders.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_add_folders_MouseDown);
             // 
             // folderBrowserDialog1
             // 
@@ -1891,6 +1927,8 @@
             this.ctm3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ct3_default,
             this.ct3_del,
+            this.ct3_up,
+            this.ct3_down,
             this.toolStripSeparator14,
             this.ct3_default_enc,
             this.ct3_encode_default,
@@ -1901,7 +1939,7 @@
             this.toolStripSeparator13,
             this.ct3_save_track});
             this.ctm3.Name = "ctm2";
-            this.ctm3.Size = new System.Drawing.Size(251, 199);
+            this.ctm3.Size = new System.Drawing.Size(251, 247);
             this.ctm3.Closed += new System.Windows.Forms.ToolStripDropDownClosedEventHandler(this.ctm3_Closed);
             this.ctm3.Opening += new System.ComponentModel.CancelEventHandler(this.ctm3_Opening);
             // 
@@ -1920,6 +1958,22 @@
             this.ct3_del.Size = new System.Drawing.Size(250, 24);
             this.ct3_del.Text = "Remove item";
             this.ct3_del.Click += new System.EventHandler(this.ct3_del_Click);
+            // 
+            // ct3_up
+            // 
+            this.ct3_up.Image = ((System.Drawing.Image)(resources.GetObject("ct3_up.Image")));
+            this.ct3_up.Name = "ct3_up";
+            this.ct3_up.Size = new System.Drawing.Size(250, 24);
+            this.ct3_up.Text = "Move item up";
+            this.ct3_up.Click += new System.EventHandler(this.ct3_up_Click);
+            // 
+            // ct3_down
+            // 
+            this.ct3_down.Image = ((System.Drawing.Image)(resources.GetObject("ct3_down.Image")));
+            this.ct3_down.Name = "ct3_down";
+            this.ct3_down.Size = new System.Drawing.Size(250, 24);
+            this.ct3_down.Text = "Move item down";
+            this.ct3_down.Click += new System.EventHandler(this.ct3_down_Click);
             // 
             // toolStripSeparator14
             // 
@@ -2135,7 +2189,7 @@
             // lbl_size
             // 
             this.lbl_size.AutoSize = true;
-            this.lbl_size.Location = new System.Drawing.Point(1072, 103);
+            this.lbl_size.Location = new System.Drawing.Point(1070, 103);
             this.lbl_size.Name = "lbl_size";
             this.lbl_size.Size = new System.Drawing.Size(0, 13);
             this.lbl_size.TabIndex = 101;
@@ -2391,6 +2445,7 @@
             this.pic_title.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_title.TabIndex = 11;
             this.pic_title.TabStop = false;
+            this.pic_title.Click += new System.EventHandler(this.pic_title_Click);
             this.pic_title.DoubleClick += new System.EventHandler(this.pictureBox1_DoubleClick);
             // 
             // btn_refresh
@@ -2753,6 +2808,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btn_track_down);
+            this.groupBox2.Controls.Add(this.btn_track_up);
             this.groupBox2.Controls.Add(this.lbl_mux_jobs);
             this.groupBox2.Controls.Add(this.txt_mux_type);
             this.groupBox2.Controls.Add(this.label14);
@@ -2775,14 +2832,38 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Visible = false;
             // 
+            // btn_track_down
+            // 
+            this.btn_track_down.FlatAppearance.BorderSize = 0;
+            this.btn_track_down.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_track_down.Image = ((System.Drawing.Image)(resources.GetObject("btn_track_down.Image")));
+            this.btn_track_down.Location = new System.Drawing.Point(575, 8);
+            this.btn_track_down.Name = "btn_track_down";
+            this.btn_track_down.Size = new System.Drawing.Size(18, 18);
+            this.btn_track_down.TabIndex = 119;
+            this.btn_track_down.UseVisualStyleBackColor = true;
+            this.btn_track_down.Click += new System.EventHandler(this.btn_track_down_Click);
+            // 
+            // btn_track_up
+            // 
+            this.btn_track_up.FlatAppearance.BorderSize = 0;
+            this.btn_track_up.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_track_up.Image = ((System.Drawing.Image)(resources.GetObject("btn_track_up.Image")));
+            this.btn_track_up.Location = new System.Drawing.Point(595, 8);
+            this.btn_track_up.Name = "btn_track_up";
+            this.btn_track_up.Size = new System.Drawing.Size(18, 18);
+            this.btn_track_up.TabIndex = 118;
+            this.btn_track_up.UseVisualStyleBackColor = true;
+            this.btn_track_up.Click += new System.EventHandler(this.btn_track_up_Click);
+            // 
             // lbl_mux_jobs
             // 
-            this.lbl_mux_jobs.Location = new System.Drawing.Point(482, 10);
+            this.lbl_mux_jobs.Location = new System.Drawing.Point(407, 10);
             this.lbl_mux_jobs.Name = "lbl_mux_jobs";
             this.lbl_mux_jobs.Size = new System.Drawing.Size(62, 16);
             this.lbl_mux_jobs.TabIndex = 92;
             this.lbl_mux_jobs.Text = "Jobs: 0";
-            this.lbl_mux_jobs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_mux_jobs.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lbl_mux_jobs.Visible = false;
             // 
             // txt_mux_type
@@ -2829,7 +2910,7 @@
             // 
             // lbl_tr_n
             // 
-            this.lbl_tr_n.Location = new System.Drawing.Point(539, 10);
+            this.lbl_tr_n.Location = new System.Drawing.Point(480, 10);
             this.lbl_tr_n.Name = "lbl_tr_n";
             this.lbl_tr_n.Size = new System.Drawing.Size(75, 16);
             this.lbl_tr_n.TabIndex = 86;
@@ -3280,10 +3361,11 @@
             this.chk_trim2.AutoSize = true;
             this.chk_trim2.Location = new System.Drawing.Point(550, 91);
             this.chk_trim2.Name = "chk_trim2";
-            this.chk_trim2.Size = new System.Drawing.Size(71, 17);
+            this.chk_trim2.Size = new System.Drawing.Size(72, 17);
             this.chk_trim2.TabIndex = 108;
-            this.chk_trim2.Text = "Start/end";
+            this.chk_trim2.Text = "Start/End";
             this.chk_trim2.UseVisualStyleBackColor = true;
+            this.chk_trim2.CheckedChanged += new System.EventHandler(this.chk_trim2_CheckedChanged);
             // 
             // label23
             // 
@@ -4029,37 +4111,38 @@
             this.menu_two_pass_wizard,
             this.wiz_silence_menu,
             this.menu_extract_images,
+            this.menu_split,
             this.toolStripSeparator27,
             this.menu_settings});
             this.main_2.Name = "main_2";
-            this.main_2.Size = new System.Drawing.Size(48, 20);
+            this.main_2.Size = new System.Drawing.Size(46, 20);
             this.main_2.Text = "Tools";
             // 
             // menu_reload_settings
             // 
             this.menu_reload_settings.Image = ((System.Drawing.Image)(resources.GetObject("menu_reload_settings.Image")));
             this.menu_reload_settings.Name = "menu_reload_settings";
-            this.menu_reload_settings.Size = new System.Drawing.Size(204, 22);
+            this.menu_reload_settings.Size = new System.Drawing.Size(205, 22);
             this.menu_reload_settings.Text = "Reload settings";
             this.menu_reload_settings.Click += new System.EventHandler(this.menu_reload_settings_Click);
             // 
             // menu_save_settings
             // 
             this.menu_save_settings.Name = "menu_save_settings";
-            this.menu_save_settings.Size = new System.Drawing.Size(204, 22);
+            this.menu_save_settings.Size = new System.Drawing.Size(205, 22);
             this.menu_save_settings.Text = "Save settings";
             this.menu_save_settings.Click += new System.EventHandler(this.menu_save_settings_Click);
             // 
             // toolStripSeparator19
             // 
             this.toolStripSeparator19.Name = "toolStripSeparator19";
-            this.toolStripSeparator19.Size = new System.Drawing.Size(201, 6);
+            this.toolStripSeparator19.Size = new System.Drawing.Size(202, 6);
             // 
             // menu_reset
             // 
             this.menu_reset.Image = ((System.Drawing.Image)(resources.GetObject("menu_reset.Image")));
             this.menu_reset.Name = "menu_reset";
-            this.menu_reset.Size = new System.Drawing.Size(204, 22);
+            this.menu_reset.Size = new System.Drawing.Size(205, 22);
             this.menu_reset.Text = "Reset to factory defaults";
             this.menu_reset.Click += new System.EventHandler(this.menu_reset_Click);
             // 
@@ -4067,20 +4150,20 @@
             // 
             this.toolStripMenuItem4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem4.Image")));
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(204, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(205, 22);
             this.toolStripMenuItem4.Text = "Replace ffmpeg";
             this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // toolStripSeparator26
             // 
             this.toolStripSeparator26.Name = "toolStripSeparator26";
-            this.toolStripSeparator26.Size = new System.Drawing.Size(201, 6);
+            this.toolStripSeparator26.Size = new System.Drawing.Size(202, 6);
             // 
             // toolStripMenuItem7
             // 
             this.toolStripMenuItem7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem7.Image")));
             this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(204, 22);
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(205, 22);
             this.toolStripMenuItem7.Text = "Show media info";
             this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
             // 
@@ -4088,20 +4171,20 @@
             // 
             this.main_menu_streams.Image = ((System.Drawing.Image)(resources.GetObject("main_menu_streams.Image")));
             this.main_menu_streams.Name = "main_menu_streams";
-            this.main_menu_streams.Size = new System.Drawing.Size(204, 22);
+            this.main_menu_streams.Size = new System.Drawing.Size(205, 22);
             this.main_menu_streams.Text = "Show file streams";
             this.main_menu_streams.Click += new System.EventHandler(this.toolStripMenuItem8_Click);
             // 
             // toolStripSeparator20
             // 
             this.toolStripSeparator20.Name = "toolStripSeparator20";
-            this.toolStripSeparator20.Size = new System.Drawing.Size(201, 6);
+            this.toolStripSeparator20.Size = new System.Drawing.Size(202, 6);
             // 
             // toolStripMenuItem9
             // 
             this.toolStripMenuItem9.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem9.Image")));
             this.toolStripMenuItem9.Name = "toolStripMenuItem9";
-            this.toolStripMenuItem9.Size = new System.Drawing.Size(204, 22);
+            this.toolStripMenuItem9.Size = new System.Drawing.Size(205, 22);
             this.toolStripMenuItem9.Text = "Multiple presets";
             this.toolStripMenuItem9.Click += new System.EventHandler(this.toolStripMenuItem9_Click);
             // 
@@ -4109,7 +4192,7 @@
             // 
             this.menu_two_pass_wizard.Image = ((System.Drawing.Image)(resources.GetObject("menu_two_pass_wizard.Image")));
             this.menu_two_pass_wizard.Name = "menu_two_pass_wizard";
-            this.menu_two_pass_wizard.Size = new System.Drawing.Size(204, 22);
+            this.menu_two_pass_wizard.Size = new System.Drawing.Size(205, 22);
             this.menu_two_pass_wizard.Text = "Two pass wizard";
             this.menu_two_pass_wizard.Click += new System.EventHandler(this.menu_two_pass_wizard_Click);
             // 
@@ -4117,7 +4200,7 @@
             // 
             this.wiz_silence_menu.Image = ((System.Drawing.Image)(resources.GetObject("wiz_silence_menu.Image")));
             this.wiz_silence_menu.Name = "wiz_silence_menu";
-            this.wiz_silence_menu.Size = new System.Drawing.Size(204, 22);
+            this.wiz_silence_menu.Size = new System.Drawing.Size(205, 22);
             this.wiz_silence_menu.Text = "Detect silence wizard";
             this.wiz_silence_menu.Click += new System.EventHandler(this.wiz_silence_menu_Click);
             // 
@@ -4125,20 +4208,28 @@
             // 
             this.menu_extract_images.Image = ((System.Drawing.Image)(resources.GetObject("menu_extract_images.Image")));
             this.menu_extract_images.Name = "menu_extract_images";
-            this.menu_extract_images.Size = new System.Drawing.Size(204, 22);
+            this.menu_extract_images.Size = new System.Drawing.Size(205, 22);
             this.menu_extract_images.Text = "Images extraction wizard";
             this.menu_extract_images.Click += new System.EventHandler(this.menu_extract_images_Click);
+            // 
+            // menu_split
+            // 
+            this.menu_split.Image = ((System.Drawing.Image)(resources.GetObject("menu_split.Image")));
+            this.menu_split.Name = "menu_split";
+            this.menu_split.Size = new System.Drawing.Size(205, 22);
+            this.menu_split.Text = "A/V Split wizard";
+            this.menu_split.Click += new System.EventHandler(this.menu_split_Click);
             // 
             // toolStripSeparator27
             // 
             this.toolStripSeparator27.Name = "toolStripSeparator27";
-            this.toolStripSeparator27.Size = new System.Drawing.Size(201, 6);
+            this.toolStripSeparator27.Size = new System.Drawing.Size(202, 6);
             // 
             // menu_settings
             // 
             this.menu_settings.Image = ((System.Drawing.Image)(resources.GetObject("menu_settings.Image")));
             this.menu_settings.Name = "menu_settings";
-            this.menu_settings.Size = new System.Drawing.Size(204, 22);
+            this.menu_settings.Size = new System.Drawing.Size(205, 22);
             this.menu_settings.Text = "Settings";
             this.menu_settings.Click += new System.EventHandler(this.menu_settings_Click);
             // 
@@ -6002,6 +6093,14 @@
         private System.ComponentModel.BackgroundWorker BG_Add_col_Acodec;
         private System.Windows.Forms.ToolStripMenuItem cti1_cols;
         private System.Windows.Forms.ToolStripMenuItem cti_remove_col;
+        private System.Windows.Forms.ToolStripMenuItem menu_split;
+        private System.Windows.Forms.Button btn_track_down;
+        private System.Windows.Forms.Button btn_track_up;
+        private System.Windows.Forms.ToolStripMenuItem ctm_paste_path;
+        private System.Windows.Forms.ToolStripMenuItem ct_move_top;
+        private System.Windows.Forms.ToolStripMenuItem ct_move_bottom;
+        private System.Windows.Forms.ToolStripMenuItem ct3_up;
+        private System.Windows.Forms.ToolStripMenuItem ct3_down;
     }
 }
 

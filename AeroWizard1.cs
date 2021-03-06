@@ -56,7 +56,8 @@ namespace FFBatch
         public Boolean no_two = false;
         public Boolean no_silence = false;
         public Boolean w_images = false;
-
+        public Boolean w_split = false;
+        public Boolean images_v = false;
 
         private void wizardControl1_SelectedPageChanged(object sender, EventArgs e)
         {
@@ -1648,6 +1649,13 @@ namespace FFBatch
             {
                 wizardControl1.Visible = false;
                 w_images = true;
+                wizardControl1.Visible = false;
+                ActiveForm.Close();
+            }
+            if (radio_split.Checked == true)
+            {
+                wizardControl1.Visible = false;
+                w_split = true;
                 wizardControl1.Visible = false;
                 ActiveForm.Close();
             }

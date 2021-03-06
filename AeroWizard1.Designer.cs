@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AeroWizard1));
             this.wizardControl1 = new AeroWizard.WizardControl();
             this.wz0 = new AeroWizard.WizardPage();
+            this.radio_split = new System.Windows.Forms.RadioButton();
             this.radio_images = new System.Windows.Forms.RadioButton();
             this.lbl_silence = new System.Windows.Forms.Label();
             this.pic_warn_silence = new System.Windows.Forms.PictureBox();
@@ -181,6 +182,7 @@
             // 
             // wz0
             // 
+            this.wz0.Controls.Add(this.radio_split);
             this.wz0.Controls.Add(this.radio_images);
             this.wz0.Controls.Add(this.lbl_silence);
             this.wz0.Controls.Add(this.pic_warn_silence);
@@ -195,6 +197,17 @@
             this.wz0.TabIndex = 0;
             this.wz0.Text = "Select the type of preset or wizard";
             this.wz0.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz0_Commit);
+            // 
+            // radio_split
+            // 
+            this.radio_split.AutoSize = true;
+            this.radio_split.Location = new System.Drawing.Point(45, 188);
+            this.radio_split.Name = "radio_split";
+            this.radio_split.Size = new System.Drawing.Size(105, 19);
+            this.radio_split.TabIndex = 29;
+            this.radio_split.TabStop = true;
+            this.radio_split.Text = "File split wizard";
+            this.radio_split.UseVisualStyleBackColor = true;
             // 
             // radio_images
             // 
@@ -1635,5 +1648,6 @@
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.NumericUpDown n_speed2;
         private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.RadioButton radio_split;
     }
 }
