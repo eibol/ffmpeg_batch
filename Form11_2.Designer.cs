@@ -93,7 +93,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form11_2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form11";
             this.Load += new System.EventHandler(this.Form11_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form11_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();

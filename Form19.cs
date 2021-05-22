@@ -29,11 +29,16 @@ namespace FFBatch
         private void button1_Click(object sender, EventArgs e)
         {
             canceled = false;
+            if (textBox1.Text.Length == 0)
+            {
+                MessageBox.Show("Path field cannot be empty.");
+                return;
+            }
             if (textBox1.Text.Length < 2)
             {
-                MessageBox.Show("Invalid path");
+                MessageBox.Show("Selected path is not valid.");
                 return;
-            }            
+            }
             this.Close();
         }
 
@@ -58,6 +63,7 @@ namespace FFBatch
         private void button3_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog fd = new FolderBrowserDialog();
+            fd.ShowNewFolderButton = false;
             if (fd.ShowDialog() == DialogResult.OK)
                 textBox1.Text = fd.SelectedPath;
         }

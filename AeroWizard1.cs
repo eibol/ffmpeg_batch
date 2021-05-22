@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
@@ -13,8 +14,18 @@ namespace FFBatch
         {
             InitializeComponent();
         }
+
+        public String sel_preset = "";
+        Boolean presets_init = false;
+        public Boolean start_no_files = false;
+        public Boolean add_files = false;
+        public Boolean add_folder = false;
+        Boolean preset_ok = false;
+        String port_path = System.IO.Path.Combine(Application.StartupPath, "settings") + "\\";
+        public Boolean is_portable = false;
         Boolean started_video = false;
         Boolean started_audio = false;
+        Boolean existing_preset = false;
         String params_result = String.Empty;
         String ext_result = String.Empty;
         String preset_name = String.Empty;
@@ -61,7 +72,13 @@ namespace FFBatch
 
         private void wizardControl1_SelectedPageChanged(object sender, EventArgs e)
         {
+            String app_location = Application.StartupPath;
+            String portable_flag = Application.StartupPath + "\\" + "portable.ini";
+            if (File.Exists(portable_flag)) is_portable = true;
+            else is_portable = false;                
+                
             if (wizardControl1.SelectedPage == wz_end) btn_status.PerformClick();
+            
             if (started_video == false)
             {
                 String[] video_encoders = new string[] { "copy", "libx264", "libx265", "h264_qsv", "hevc_qsv", "h264_nvenc", "hevc_nvenc", "libvpx-vp9", "prores_ks", "dnxhd", "dnxhr" };
@@ -303,6 +320,10 @@ namespace FFBatch
                 track_q_v.Visible = true;
                 track_q_v.Enabled = true;
                 n_crf.Visible = true;
+                n_crf.Maximum = 51;
+                n_crf.Minimum = 1;
+                track_q_v.Minimum = 1;
+                track_q_v.Maximum = 50;
                 track_q_v.Value = 20;
                 n_crf.Value = 20;
                 wz1_1.Suppress = false;
@@ -496,7 +517,7 @@ namespace FFBatch
             if (Combo_encoders.SelectedItem.ToString() == "copy")
             {
                 wz1_1.Suppress = true;
-                txt_video_current.Text = String.Empty;
+                txt_video_current.Text = "Video stream copy";
                 track_q_v.Enabled = false;
                 label2.Visible = false;
                 label3.Visible = false;
@@ -858,7 +879,8 @@ namespace FFBatch
                 label22.Visible = false;
                 label29.Visible = false;
                 cb_chunk_size.Visible = false;
-                txt_current_audio.Text = String.Empty;
+                if (cb_audio_encoder.SelectedItem.ToString() == "copy") txt_current_audio.Text = "Audio stream copy";
+                else txt_current_audio.Text = "Exclude audio stream";
                 cb_opus_vbr.Visible = false;
                 chk_vbr_opus.Visible = false;
                 cb_cutoff.Visible = false;
@@ -1609,13 +1631,37 @@ namespace FFBatch
 
         private void wz0_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
         {
+            if (radio_existing.Checked == true)
+            {
+                wz1.Suppress = true;
+                wz2.Suppress = true;
+                wz_0_1.Suppress = false;
+                wz1_1.Suppress = true;
+                wz2.Suppress = true;
+                audio_preset = false;
+                video_preset = false;
+                existing_preset = true;
+            }
+            
             if (radio_audio.Checked == true)
             {
                 wz1.Suppress = true;
+                wz_0_1.Suppress = true;
+                wz1_1.Suppress = true;
+                wz2.Suppress = false;
+                audio_preset = true;
+                video_preset = false;
+                existing_preset = false;
             }
             if (radio_video.Checked == true)
             {
                 wz1.Suppress = false;
+                wz2.Suppress = false;
+                wz1_1.Suppress = false;
+                wz_0_1.Suppress = true;
+                audio_preset = false;
+                video_preset = true;
+                existing_preset = false;
             }
             if (radio_2pass.Checked == true)
             {
@@ -2093,23 +2139,27 @@ namespace FFBatch
         }
 
         private void radio_audio_CheckedChanged(object sender, EventArgs e)
-        {
+        {            
             audio_preset = true;
             video_preset = false;
+            existing_preset = false;
             lbl_two.Text = String.Empty;
             pic_warn_two.Visible = false;
             pic_warn_silence.Visible = false;
-            wizardControl1.Pages[0].AllowNext = true;
+            wizardControl1.Pages[1].AllowNext = true;
+            pic_1.Image = images.Images[1];
         }
 
         private void radio_video_CheckedChanged(object sender, EventArgs e)
         {
             audio_preset = false;
             video_preset = true;
+            existing_preset = false;
             lbl_two.Text = String.Empty;
             pic_warn_two.Visible = false;
             pic_warn_silence.Visible = false;
-            wizardControl1.Pages[0].AllowNext = true;
+            pic_1.Image = images.Images[0];
+            wizardControl1.Pages[1].AllowNext = true;
         }
 
 
@@ -2148,26 +2198,49 @@ namespace FFBatch
         }
 
         private void wz_end_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
-        {
+        {            
             if (lv1_item != String.Empty)
             {
                 pic_status.Visible = true;
                 btn_status.Visible = true;
                 pic_status.Image = img_status.Images[0];
             }
+            else
+            {
+                lbl_help.Text = "Wizard is ready. Add files to main screen and select Start sequential or Multi-file encoding.";
+            }
+            
+            cb_container.Items.Clear();
+
+            if (existing_preset == true)
+            {             
+                String[] containers = new String[] { txt_ext_format.Text, "mkv", "mp4", "m4v", "mov", "flv", "avi", "ts", "mts", "m2ts", "wav", "flac", "aac", "mp3", "ogg", "ogv" };
+                foreach (String contain in containers) cb_container.Items.Add(contain);
+
+                List<object> list = new List<object>();
+                foreach (object o in cb_container.Items)
+                {
+                    if (!list.Contains(o))
+                    {
+                        list.Add(o);
+                    }
+                }
+                cb_container.Items.Clear();
+                cb_container.Items.AddRange(list.ToArray());
+
+                cb_container.SelectedIndex = cb_container.FindString(txt_ext_format.Text);
+                txt_preset_name.Text = combo_presets_ext.Text;
+            }
 
             if (video_preset == true)
-            {
-
-                cb_container.Items.Clear();
+            {                
                 String[] containers = new String[] { "mkv", "mp4", "m4v", "mov", "flv", "avi", "ts", "mts", "m2ts", "webm", "mxf" };
                 foreach (String contain in containers) cb_container.Items.Add(contain);
                 cb_container.SelectedIndex = 0;
                 txt_preset_name.Text = "Video: " + Combo_encoders.SelectedItem.ToString() + " - " + cb_audio_encoder.SelectedItem.ToString();
             }
             if (audio_preset == true)
-            {
-                cb_container.Items.Clear();
+            {                
                 String[] containers = new String[] { "wav", "flac", "aac", "ac3", "eac3", "mp3", "ogg", "opus", "m4a", "thd", "dts", "mka", "mkv", "mxf" };
                 foreach (String contain in containers) cb_container.Items.Add(contain);
                 switch (cb_audio_encoder.SelectedIndex)
@@ -2208,6 +2281,8 @@ namespace FFBatch
         private void cb_container_SelectedIndexChanged(object sender, EventArgs e)
         {
             pic_status.Image = img_status.Images[0];
+            preset_ok = false;            
+            
             //Video containers
             if (cb_container.SelectedIndex == cb_container.FindString("mkv")) txt_container.Text = "Matroska Video";
             if (cb_container.SelectedIndex == cb_container.FindString("mp4")) txt_container.Text = "MPEG-4 Video";
@@ -2240,12 +2315,14 @@ namespace FFBatch
                 {
                     pic_warning.Visible = true;
                     lbl_container.Visible = true;
+                    btn_status.PerformClick();
                     return;
                 }
                 else
                 {
                     pic_warning.Visible = false;
                     lbl_container.Visible = false;
+                    btn_status.PerformClick();
                 }
 
                 if (Combo_encoders.SelectedIndex == 1 || Combo_encoders.SelectedIndex == 2 || Combo_encoders.SelectedIndex == 3 || Combo_encoders.SelectedIndex == 4 || Combo_encoders.SelectedIndex == 5 || Combo_encoders.SelectedIndex == 6)
@@ -2254,6 +2331,7 @@ namespace FFBatch
                     {
                         pic_warning.Visible = true;
                         lbl_container.Visible = true;
+                        btn_status.PerformClick();
                         return;
                     }
                     if (cb_container.SelectedIndex != 0)
@@ -2262,6 +2340,7 @@ namespace FFBatch
                         {
                             pic_warning.Visible = true;
                             lbl_container.Visible = true;
+                            btn_status.PerformClick();
                             return;
                         }
                     }
@@ -2270,6 +2349,7 @@ namespace FFBatch
                 {
                     pic_warning.Visible = false;
                     lbl_container.Visible = false;
+                    btn_status.PerformClick();
                 }
 
                 if (Combo_encoders.SelectedIndex == 7)
@@ -2278,6 +2358,7 @@ namespace FFBatch
                     {
                         pic_warning.Visible = true;
                         lbl_container.Visible = true;
+                        btn_status.PerformClick();
                         return;
                     }
                     if (cb_container.SelectedIndex != 0)
@@ -2286,6 +2367,7 @@ namespace FFBatch
                         {
                             pic_warning.Visible = true;
                             lbl_container.Visible = true;
+                            btn_status.PerformClick();
                             return;
                         }
                     }
@@ -2294,6 +2376,7 @@ namespace FFBatch
                 {
                     pic_warning.Visible = false;
                     lbl_container.Visible = false;
+                    btn_status.PerformClick();
                 }
                 if (Combo_encoders.SelectedIndex == 8)
                 {
@@ -2301,6 +2384,7 @@ namespace FFBatch
                     {
                         pic_warning.Visible = true;
                         lbl_container.Visible = true;
+                        btn_status.PerformClick();
                         return;
                     }
                     if (cb_container.SelectedIndex != 0)
@@ -2309,6 +2393,7 @@ namespace FFBatch
                         {
                             pic_warning.Visible = true;
                             lbl_container.Visible = true;
+                            btn_status.PerformClick();
                             return;
                         }
                     }
@@ -2317,6 +2402,7 @@ namespace FFBatch
                 {
                     pic_warning.Visible = false;
                     lbl_container.Visible = false;
+                    btn_status.PerformClick();
                 }
 
             }
@@ -2327,103 +2413,127 @@ namespace FFBatch
                 {
                     pic_warning.Visible = true;
                     lbl_container.Visible = true;
+                    btn_status.PerformClick();
                     return;
                 }
                 else
                 {
                     pic_warning.Visible = false;
                     lbl_container.Visible = false;
+                    btn_status.PerformClick();
 
                 }
                 if (cb_audio_encoder.SelectedIndex == 3 && cb_container.SelectedIndex != 0)
                 {
                     pic_warning.Visible = true;
                     lbl_container.Visible = true;
+                    btn_status.PerformClick();
                     return;
                 }
                 else
                 {
                     pic_warning.Visible = false;
                     lbl_container.Visible = false;
+                    btn_status.PerformClick();
 
                 }
                 if (cb_audio_encoder.SelectedIndex == 4 && cb_container.SelectedIndex != 1)
                 {
                     pic_warning.Visible = true;
                     lbl_container.Visible = true;
+                    btn_status.PerformClick();
                     return;
                 }
                 else
                 {
                     pic_warning.Visible = false;
                     lbl_container.Visible = false;
+                    btn_status.PerformClick();
                 }
                 if (cb_audio_encoder.SelectedIndex == 5 && cb_container.SelectedIndex != 2)
                 {
                     pic_warning.Visible = true;
                     lbl_container.Visible = true;
+                    btn_status.PerformClick();
                     return;
                 }
                 else
                 {
                     pic_warning.Visible = false;
                     lbl_container.Visible = false;
+                    btn_status.PerformClick();
                 }
                 if (cb_audio_encoder.SelectedIndex == 6 && cb_container.SelectedIndex != 3)
                 {
                     pic_warning.Visible = true;
                     lbl_container.Visible = true;
+                    btn_status.PerformClick();
                     return;
                 }
                 else
                 {
                     pic_warning.Visible = false;
                     lbl_container.Visible = false;
+                    btn_status.PerformClick();
                 }
                 if (cb_audio_encoder.SelectedIndex == 7 && cb_container.SelectedIndex != 4)
                 {
                     pic_warning.Visible = true;
                     lbl_container.Visible = true;
+                    btn_status.PerformClick();
                     return;
                 }
                 else
                 {
                     pic_warning.Visible = false;
                     lbl_container.Visible = false;
+                    btn_status.PerformClick();
                 }
                 if (cb_audio_encoder.SelectedIndex == 8 && cb_container.SelectedIndex != 5)
                 {
                     pic_warning.Visible = true;
                     lbl_container.Visible = true;
+                    btn_status.PerformClick();
                     return;
                 }
                 else
                 {
                     pic_warning.Visible = false;
                     lbl_container.Visible = false;
+                    btn_status.PerformClick();
                 }
                 if (cb_audio_encoder.SelectedIndex == 9 && cb_container.SelectedIndex != 6)
                 {
                     pic_warning.Visible = true;
                     lbl_container.Visible = true;
+                    btn_status.PerformClick();
                     return;
                 }
                 else
                 {
                     pic_warning.Visible = false;
                     lbl_container.Visible = false;
+                    btn_status.PerformClick();
                 }
                 if (cb_audio_encoder.SelectedIndex == 10 && cb_container.SelectedIndex != 7)
                 {
                     pic_warning.Visible = true;
                     lbl_container.Visible = true;
+                    btn_status.PerformClick();
                     return;
                 }
                 else
                 {
                     pic_warning.Visible = false;
                     lbl_container.Visible = false;
+                    btn_status.PerformClick();
                 }
+            } 
+            if (existing_preset == true)
+            {                
+                pic_warning.Visible = false;
+                lbl_container.Visible = false;                
+                btn_status.PerformClick();
             }
         }
 
@@ -2461,7 +2571,12 @@ namespace FFBatch
         private void commit_video_1()
         {
             reset_v_params();
-            if (Combo_encoders.SelectedIndex == Combo_encoders.FindString("copy")) video_encoder_param = "-c:v copy";
+            if (Combo_encoders.SelectedIndex == Combo_encoders.FindString("copy"))
+            {
+                video_encoder_param = "-c:v copy";
+                wz1_1.Suppress = true;
+            }
+            else wz2.Suppress = false;
             if (Combo_encoders.SelectedIndex == Combo_encoders.FindString("libx264"))
             {
                 video_encoder_param = "-c:v libx264";
@@ -2528,11 +2643,11 @@ namespace FFBatch
 
                 if (combo_crf_mode.SelectedIndex == 0)
                 {
-                    libx264_params = libx265_params + " -crf " + n_crf.Value.ToString();
+                    libx265_params = libx265_params + " -crf " + n_crf.Value.ToString();
                 }
                 if (combo_crf_mode.SelectedIndex == 1)
                 {
-                    libx264_params = libx265_params + " -x265-params strict-cbr=1" + " -b:v " + (Math.Round(n_crf.Value * 1024 / 1000)).ToString() + "K" + " -minrate " + (Math.Round(n_crf.Value * 1024 / 1000)).ToString() + "K" + " -maxrate " + (Math.Round(n_crf.Value * 1024 / 1000)).ToString() + "K" + " -bufsize " + (Math.Round(n_crf.Value * 1024 / 1000 * 2)).ToString() + "K";
+                    libx265_params = libx265_params + " -x265-params strict-cbr=1" + " -b:v " + (Math.Round(n_crf.Value * 1024 / 1000)).ToString() + "K" + " -minrate " + (Math.Round(n_crf.Value * 1024 / 1000)).ToString() + "K" + " -maxrate " + (Math.Round(n_crf.Value * 1024 / 1000)).ToString() + "K" + " -bufsize " + (Math.Round(n_crf.Value * 1024 / 1000 * 2)).ToString() + "K";
                 }
 
                 if (cb_pixel.SelectedIndex != -1) libx265_params = libx265_params + " -pix_fmt " + cb_pixel.SelectedItem.ToString();
@@ -3441,26 +3556,28 @@ namespace FFBatch
 
         private void radio_2pass_CheckedChanged(object sender, EventArgs e)
         {
+            pic_1.Image = images.Images[2];
             if (lv1_item == String.Empty)
             {
                 lbl_two.Text = "File list is empty";
                 lbl_silence.Text = String.Empty;
                 pic_warn_two.Visible = true;
                 pic_warn_silence.Visible = false;
-                wizardControl1.Pages[0].AllowNext = false;
+                wizardControl1.Pages[1].AllowNext = false;
             }
             else
             {
                 lbl_two.Text = String.Empty;
                 pic_warn_two.Visible = false;
-                wizardControl1.Pages[0].AllowNext = true;
+                wizardControl1.Pages[1].AllowNext = true;
             }
         }
 
         private void BG1_DoWork(object sender, DoWorkEventArgs e)
         {
             this.InvokeEx(f => this.Cursor = Cursors.WaitCursor);
-            this.InvokeEx(f => f.wizardControl1.Pages[4].AllowNext = false);
+            this.InvokeEx(f => f.wizardControl1.Enabled = false);
+            this.InvokeEx(f => f.wizardControl1.Pages[6].AllowNext = false);
             ListBox LB1_o = new ListBox();
             Process consola_pre = new Process();
             String file_prueba = "";
@@ -3525,13 +3642,16 @@ namespace FFBatch
                 }
                 consola_pre.WaitForExit();
                 consola_pre.StartInfo.Arguments = String.Empty;
+                this.InvokeEx(f => this.Cursor = Cursors.Arrow);
 
             });
 
-            if (!tt.Wait(1500) && consola_pre.StartInfo.Arguments != String.Empty)
+            if (!tt.Wait(1000) && consola_pre.StartInfo.Arguments != String.Empty)
             {
                 consola_pre.Kill();
                 pic_status.Image = img_status.Images[1];
+                preset_ok = true;
+                this.InvokeEx(f => lbl_help.Text = "Select sequential or multi-file encoding on main screen to start.");
                 tried_ok = true;
                 this.InvokeEx(f => this.Cursor = Cursors.Arrow);
 
@@ -3543,9 +3663,7 @@ namespace FFBatch
                         {
                             File.Delete(file);
                         }
-                        catch
-                        {
-                        }
+                        catch { }
                     }
                 }
 
@@ -3554,6 +3672,7 @@ namespace FFBatch
                     System.IO.Directory.Delete(destino_test);
                 }
                 LB1_o.Items.Clear();
+                this.InvokeEx(f => this.Cursor = Cursors.Arrow);
                 return;
             }
 
@@ -3562,6 +3681,8 @@ namespace FFBatch
                 if (consola_pre.ExitCode != 0)
                 {
                     pic_status.Image = img_status.Images[2];
+                    preset_ok = false;
+                    this.InvokeEx(f => lbl_help.Text = "Preset is not valid. It may require to review encoding parameters or output container.");
                     if (Directory.Exists(destino_test) && Directory.GetFiles(destino_test).Length > 0)
                     {
                         foreach (String file in Directory.GetFiles(destino_test))
@@ -3618,7 +3739,10 @@ namespace FFBatch
                         System.IO.Directory.Delete(destino_test);
                     }
                     pic_status.Image = img_status.Images[1];
+                    preset_ok = true;
+                    this.InvokeEx(f => lbl_help.Text = "Select sequential or multi-file encoding on main screen to start.");
                     tried_ok = true;
+                    this.InvokeEx(f => this.Cursor = Cursors.Arrow);
                 }
             }
             //END try preset
@@ -3665,7 +3789,8 @@ namespace FFBatch
                 }
                 catch { } 
             }
-            wizardControl1.Pages[4].AllowNext = true;
+            this.InvokeEx(f => f.wizardControl1.Enabled = true);
+            wizardControl1.Pages[6].AllowNext = true;
         }
 
         private void btn_status_Click(object sender, EventArgs e)
@@ -3693,45 +3818,531 @@ namespace FFBatch
             }
 
             wiz_ext = cb_container.Text;
-            BG1.RunWorkerAsync();
+            if (lv1_item != String.Empty)
+                try
+                {
+                    BG1.RunWorkerAsync();
+                }
+                catch { }
+        }
+
+        private void check_pr()
+        {
+            this.Cursor = Cursors.WaitCursor;
+            wizardControl1.Pages[4].AllowNext = false;
+            ListBox LB1_o = new ListBox();
+            Process consola_pre = new Process();
+            String file_prueba = "";
+            String sel_test = "";
+            sel_test = lv1_item;
+            file_prueba = sel_test;
+            String destino_test = Path.GetTempPath() + "\\" + "FFBatch_test";
+            Boolean bad_chars = false;
+            Boolean unsupported = false;
+
+                            String fichero = Path.GetFileName(file_prueba);
+
+                if (!Directory.Exists(destino_test))
+                {
+                    try
+                    {
+                        Directory.CreateDirectory(destino_test);
+                    }
+                    catch (System.Exception excpt)
+                    {
+                        MessageBox.Show("Error: " + excpt.Message, "Error writing to folder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.Cursor = Cursors.Arrow;
+                        return;
+                    }
+                }
+
+                String ext_output = String.Empty;
+                ext_output = cb_container.SelectedItem.ToString();
+
+                String textbox_params = wiz_params;
+                String file_prueba3 = file_prueba;
+                if (textbox_params.Contains("%1"))
+                {
+                    if (file_prueba3.Contains("[") || file_prueba3.Contains("]"))
+                    {
+                        MessageBox.Show("Input test file name contains characters [ ]. Please remove them from input file name to avoid errors with -vf filter", "Conflicting characters in file name", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        this.Cursor = Cursors.Arrow;
+                        bad_chars = true;
+                        return;
+                    }
+                    file_prueba3 = file_prueba3.Replace("\\", "\\\\\\\\");
+                    file_prueba3 = file_prueba3.Replace(":", "\\\\" + ":");
+                    textbox_params = textbox_params.Replace("%1", file_prueba3);
+                }
+
+                consola_pre.StartInfo.FileName = "ffmpeg.exe";
+                consola_pre.StartInfo.Arguments = " -i " + "" + '\u0022' + file_prueba + '\u0022' + "" + " -y " + textbox_params + " " + '\u0022' + destino_test + "\\" + System.IO.Path.GetFileNameWithoutExtension(file_prueba) + "." + ext_output + '\u0022';
+                consola_pre.StartInfo.RedirectStandardOutput = true;
+                consola_pre.StartInfo.RedirectStandardError = true;
+                consola_pre.StartInfo.UseShellExecute = false;
+                consola_pre.StartInfo.CreateNoWindow = true;
+                consola_pre.EnableRaisingEvents = true;
+                consola_pre.Start();
+
+                while (!consola_pre.StandardError.EndOfStream)
+                {
+                    LB1_o.Items.Add(consola_pre.StandardError.ReadLine());
+                    LB1_o.TopIndex = LB1_o.Items.Count - 1;
+                    LB1_o.Refresh();
+                }
+                consola_pre.WaitForExit(1000);
+                consola_pre.StartInfo.Arguments = String.Empty;
+                this.InvokeEx(f => this.Cursor = Cursors.Arrow);
+
+                if (bad_chars == false)
+                {
+                    if (consola_pre.ExitCode != 0)
+                    {
+                        pic_status.Image = img_status.Images[2];
+                        preset_ok = false;
+                        lbl_help.Text = "Preset is not valid. It may require to review encoding parameters.";
+                        if (Directory.Exists(destino_test) && Directory.GetFiles(destino_test).Length > 0)
+                        {
+                            foreach (String file in Directory.GetFiles(destino_test))
+                            {
+                                try
+                                {
+                                    File.Delete(file);
+                                }
+                                catch
+                                {
+                                }
+                            }
+                        }
+
+                        if (Directory.GetFiles(destino_test).Length == 0)
+                        {
+                            System.IO.Directory.Delete(destino_test);
+                        }
+
+                        this.Cursor = Cursors.Arrow;
+                        foreach (String lin in LB1_o.Items)
+                        {
+                            if (lin.Contains("not load the requested plugin") || lin.Contains("Cannot load nvcuda.dll"))
+                            {
+                                unsupported = true;
+                            }
+                        }
+                        if (unsupported == true) MessageBox.Show("FFmpeg command failed on selected file: " + Environment.NewLine + Environment.NewLine + "Possibly unsupported encoder" + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + "Try preset for more error information", "FFmpeg command failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        else MessageBox.Show("FFmpeg command failed on selected file: " + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + "Try preset for more error information", "FFmpeg command failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                        this.Cursor = Cursors.Arrow;
+                        tried_ok = false;
+                        return;
+                    }
+                    else
+                    {
+                        System.Threading.Thread.Sleep(50);
+                        if (Directory.Exists(destino_test) && Directory.GetFiles(destino_test).Length > 0)
+                        {
+                            foreach (String file in Directory.GetFiles(destino_test))
+                            {
+                                try
+                                {
+                                    File.Delete(file);
+                                }
+                                catch
+                                {
+                                }
+                            }
+                        }
+
+                        if (Directory.Exists(destino_test) && Directory.GetFiles(destino_test).Length == 0)
+                        {
+                            System.IO.Directory.Delete(destino_test);
+                        }
+                        pic_status.Image = img_status.Images[1];
+                        preset_ok = true;
+                        lbl_help.Text = "Select sequential or multi-file encoding on main screen to start.";
+                        tried_ok = true;
+                        this.Cursor = Cursors.Arrow;
+                    }
+                }
+
+           
+            if (consola_pre.StartInfo.Arguments != String.Empty)
+            {
+                consola_pre.Kill();
+                pic_status.Image = img_status.Images[1];
+                preset_ok = true;
+                lbl_help.Text = "Select sequential or multi-file encoding on main screen to start.";
+                tried_ok = true;
+                this.Cursor = Cursors.Arrow;
+
+                if (Directory.Exists(destino_test) && Directory.GetFiles(destino_test).Length > 0)
+                {
+                    foreach (String file in Directory.GetFiles(destino_test))
+                    {
+                        try
+                        {
+                            File.Delete(file);
+                        }
+                        catch { }
+                    }
+                }
+
+                if (Directory.GetFiles(destino_test).Length == 0)
+                {
+                    System.IO.Directory.Delete(destino_test);
+                }
+                LB1_o.Items.Clear();
+                this.Cursor = Cursors.Arrow;
+                return;
+            }
+            
+            //END try preset
+            this.Cursor = Cursors.Arrow;
+
+            if (Directory.Exists(destino_test))
+            {
+                if (Directory.GetFiles(destino_test).Length == 0)
+                {
+                    System.IO.Directory.Delete(destino_test);
+                }
+            }
+            LB1_o.Items.Clear();
+            consola_pre.Dispose();
+            
+            String file_prueba2 = "";
+            String sel_test2 = lv1_item;
+            file_prueba2 = sel_test2;
+            String destino = Path.Combine(Path.GetTempPath(), "FFBatch_test");
+            String borrar = destino + "\\" + System.IO.Path.GetFileNameWithoutExtension(file_prueba2) + "." + wiz_ext;
+
+            if (File.Exists(borrar))
+            {
+                try
+                {
+                    File.Delete(borrar);
+                }
+                catch
+                {
+                }
+            }
+
+            if (Directory.Exists(destino) == true)
+            {
+                try
+                {
+                    if (Directory.GetFiles(destino).Length == 0)
+                    {
+                        System.IO.Directory.Delete(destino);
+                    }
+                }
+                catch { }
+            }
+            wizardControl1.Pages[4].AllowNext = true;
         }
 
         private void chk_mapall_CheckedChanged(object sender, EventArgs e)
         {
             pic_status.Image = img_status.Images[0];
+            preset_ok = false;
+            if (lv1_item != String.Empty) BG1.RunWorkerAsync();
         }
 
         private void chk_subs_copy_CheckedChanged(object sender, EventArgs e)
         {
             pic_status.Image = img_status.Images[0];
+            preset_ok = false;
+            if (lv1_item != String.Empty) BG1.RunWorkerAsync();
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
+            pic_1.Image = images.Images[3];
             if (lv1_item == String.Empty)
             {
                 lbl_silence.Text = "File list is empty";
                 pic_warn_silence.Visible = true;
                 lbl_two.Text = String.Empty;
                 pic_warn_two.Visible = false;
-                wizardControl1.Pages[0].AllowNext = false;
+                wizardControl1.Pages[1].AllowNext = false;
             }
             else
             {
                 lbl_silence.Text = String.Empty;
                 pic_warn_silence.Visible = false;
-                wizardControl1.Pages[0].AllowNext = true;
+                wizardControl1.Pages[1].AllowNext = true;
             }
         }
 
         private void radio_images_CheckedChanged(object sender, EventArgs e)
-        {           
+        {
+            pic_1.Image = images.Images[4];
             lbl_two.Text = String.Empty;
             pic_warn_two.Visible = false;
             pic_warn_silence.Visible = false;
             lbl_two.Text = String.Empty;
             lbl_silence.Text = String.Empty;
-            wizardControl1.Pages[0].AllowNext = true;
+            wizardControl1.Pages[1].AllowNext = true;
+        }
+
+        private void chk_start_CheckedChanged(object sender, EventArgs e)
+        {
+            String f_show_wiz = String.Empty;
+            if (is_portable == false)
+            {
+                f_show_wiz = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_show_wiz.ini";
+            }
+            else
+            {
+                f_show_wiz = port_path + "ff_show_wiz_portable.ini";
+            }
+
+            if (chk_start.CheckState == CheckState.Unchecked)
+            {
+                try
+                {
+                    File.WriteAllText(f_show_wiz, "");
+                }
+                catch { }
+                chk_start_0.CheckState = CheckState.Unchecked;
+            }
+            else
+            {
+                try
+                {
+                    File.Delete(f_show_wiz);
+                }
+                catch { }
+                chk_start_0.CheckState = CheckState.Checked;
+            }
+        }
+
+        private void radio_split_CheckedChanged(object sender, EventArgs e)
+        {
+            pic_1.Image = images.Images[5];
+            lbl_two.Text = String.Empty;
+            pic_warn_two.Visible = false;
+            pic_warn_silence.Visible = false;
+            lbl_two.Text = String.Empty;
+            lbl_silence.Text = String.Empty;
+            wizardControl1.Pages[1].AllowNext = true;
+        }
+
+        private void wz_end_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
+        {
+            if (preset_ok != true && lv1_item != String.Empty)
+            {
+                DialogResult a = MessageBox.Show("Preset validation failed. Use preset anyway?", "Invalid preset", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if (a == DialogResult.Yes) e.Cancel = false;
+                else e.Cancel = true;
+            }
+        }
+
+        private void wz0_0_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
+        {
+            if (lv1_item != String.Empty || start_no_files == false) wizardControl1.NextPage();
+        }
+
+        private void btn_add_files_Click(object sender, EventArgs e)
+        {
+            add_files = true;
+            add_folder = false;            
+            this.Close();
+        }
+
+        private void btn_add_folders_Click(object sender, EventArgs e)
+        {
+            add_files = false;
+            add_folder = true;
+            this.Close();
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            String f_show_wiz = String.Empty;
+            if (is_portable == false)
+            {
+                f_show_wiz = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_show_wiz.ini";
+            }
+            else
+            {
+                f_show_wiz = port_path + "ff_show_wiz_portable.ini";
+            }
+
+            if (chk_start_0.CheckState == CheckState.Unchecked)
+            {
+                try
+                {
+                    File.WriteAllText(f_show_wiz, "");
+                }
+                catch { }
+                chk_start.CheckState = CheckState.Unchecked;
+            }
+            else
+            {
+                try
+                {
+                    File.Delete(f_show_wiz);
+                }
+                catch { }
+                chk_start.CheckState = CheckState.Checked;
+            }
+        }
+
+        private void radio_existing_CheckedChanged(object sender, EventArgs e)
+        {            
+            audio_preset = false;
+            video_preset = false;
+            existing_preset = true;
+            lbl_two.Text = String.Empty;
+            pic_warn_two.Visible = false;
+            pic_warn_silence.Visible = false;
+            pic_1.Image = images.Images[6];
+            wizardControl1.Pages[1].AllowNext = true;
+        }
+
+        private void txt_pr_1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_w_presets_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void combo_presets_ext_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String app_location = Application.StartupPath;
+            String portable_flag = Application.StartupPath + "\\" + "portable.ini";
+            if (File.Exists(portable_flag)) is_portable = true;
+            else is_portable = false;
+
+            if (combo_presets_ext.SelectedIndex == 0)
+            {
+                String path = "";
+                if (is_portable == true)
+                {
+                    path = port_path + "ff_batch_portable.ini";
+                    if (!Directory.Exists(System.IO.Path.Combine(Application.StartupPath, "settings")))
+                    {
+                        Directory.CreateDirectory(System.IO.Path.Combine(Application.StartupPath, "settings"));
+                    }
+                }
+                else
+                {
+                    path = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch.ini";
+                    if (!Directory.Exists(System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch")))
+                    {
+                        Directory.CreateDirectory(System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch"));
+                    }
+                }               
+
+                if (!File.Exists(path))
+                {
+                    File.WriteAllText(path, "-c copy" + "\n" + "mp4" + "\n" + "yes" + "\n" + "Vs" + "\n" + "grid_yes" + "\n" + "keep_no" + "\n" + "subf_no");
+                }
+
+                int linea = 0;
+                String ext1 = "";
+                String pres1 = "";
+                foreach (string line in File.ReadLines(path))
+                {
+                    if (linea == 0) pres1 = line;
+                    if (linea == 1) ext1 = line;
+                    if (linea > 1) break;
+                    linea = linea + 1;
+                }
+                txt_ext_format.Text = ext1;                
+                txt_pr_1_ex.Text = pres1;                
+            }
+            else
+            {
+                String path = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets.ini";
+                if (is_portable == true) path = port_path + "ff_presets_portable.ini";
+                String pre_name = String.Empty;
+                int i = 0;
+                foreach (string line in File.ReadLines(path))
+                {
+                    if (line != "" && line.Contains("Version ") == false)
+                    {
+                        if (line.Substring(4, line.IndexOf("&") - 5) == combo_presets_ext.SelectedItem.ToString())
+                        {
+
+                            int cortar = line.LastIndexOf("%") - line.LastIndexOf("&");
+
+                            txt_ext_format.Text = line.Substring(line.LastIndexOf("%") + 2);                            
+                            txt_pr_1_ex.Text = line.Substring(line.LastIndexOf("&") + 2, cortar - 3);                           
+
+                        }
+                    }
+                    i = i + 1;
+                }
+            }
+        }
+
+        private void wz_0_1_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
+        {
+            sel_preset = String.Empty;
+            combo_presets_ext.Items.Clear();
+            combo_presets_ext.Items.Add("Default parameters");
+            String path, path_pr = "";
+
+            path_pr = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets.ini";
+            path = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch.ini";
+            if (is_portable == true)
+            {
+                path_pr = port_path + "ff_presets_portable.ini";
+                path = port_path + "ff_batch_portable.ini";
+            }
+            int linea = 0;
+            String ext1 = "";
+            String pres1 = "";
+
+            combo_presets_ext.SelectedIndex = combo_presets_ext.FindString("Default parameters");
+            foreach (string line in File.ReadLines(path))
+            {
+                if (linea == 0) pres1 = line;
+                if (linea == 1) ext1 = line;
+                if (linea > 1) break;
+                linea = linea + 1;
+            }
+            if (txt_pr_1.Text.Length == 0)
+            {
+                txt_ext_1.Text = ext1;
+                txt_pr_1.Text = pres1;
+               
+            }
+
+            foreach (string line in File.ReadLines(path_pr))
+            {
+                if (line.Contains("PR: "))
+                {
+                    combo_presets_ext.Items.Add(line.Substring(4, line.LastIndexOf("&") - 5));
+                }
+            }
+
+            if (presets_init = true)
+            {
+                try { combo_presets_ext.SelectedIndex = combo_presets_ext.FindString(sel_preset); }
+                catch { }
+            }
+            presets_init = true;
+        }
+
+        private void wz_0_1_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
+        {            
+            video_encoder_param = txt_pr_1_ex.Text;
+            sel_preset = combo_presets_ext.Text;
+            
+        }
+
+        private void btn_skip_files_Click(object sender, EventArgs e)
+        {
+            wizardControl1.NextPage();
+        }
+
+        private void wz0_0_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
+        {
+            
         }
     }
 }

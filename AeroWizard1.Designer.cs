@@ -31,7 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AeroWizard1));
             this.wizardControl1 = new AeroWizard.WizardControl();
+            this.wz0_0 = new AeroWizard.WizardPage();
+            this.btn_skip_files = new System.Windows.Forms.Button();
+            this.chk_start_0 = new System.Windows.Forms.CheckBox();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.btn_add_folders = new System.Windows.Forms.Button();
+            this.btn_add_files = new System.Windows.Forms.Button();
             this.wz0 = new AeroWizard.WizardPage();
+            this.radio_existing = new System.Windows.Forms.RadioButton();
+            this.pic_1 = new System.Windows.Forms.PictureBox();
+            this.chk_start = new System.Windows.Forms.CheckBox();
             this.radio_split = new System.Windows.Forms.RadioButton();
             this.radio_images = new System.Windows.Forms.RadioButton();
             this.lbl_silence = new System.Windows.Forms.Label();
@@ -120,7 +131,15 @@
             this.label9 = new System.Windows.Forms.Label();
             this.track_bits_audio = new System.Windows.Forms.TrackBar();
             this.label13 = new System.Windows.Forms.Label();
+            this.wz_0_1 = new AeroWizard.WizardPage();
+            this.label41 = new System.Windows.Forms.Label();
+            this.txt_ext_format = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.txt_pr_1_ex = new System.Windows.Forms.TextBox();
+            this.combo_presets_ext = new System.Windows.Forms.ComboBox();
+            this.label43 = new System.Windows.Forms.Label();
             this.wz_end = new AeroWizard.WizardPage();
+            this.lbl_help = new System.Windows.Forms.Label();
             this.pic_status = new System.Windows.Forms.PictureBox();
             this.btn_status = new System.Windows.Forms.Button();
             this.chk_subs_copy = new System.Windows.Forms.CheckBox();
@@ -135,8 +154,19 @@
             this.img_rotate = new System.Windows.Forms.ImageList(this.components);
             this.img_status = new System.Windows.Forms.ImageList(this.components);
             this.BG1 = new System.ComponentModel.BackgroundWorker();
+            this.images = new System.Windows.Forms.ImageList(this.components);
+            this.label39 = new System.Windows.Forms.Label();
+            this.cb_w_presets = new System.Windows.Forms.ComboBox();
+            this.txt_pr_1 = new System.Windows.Forms.TextBox();
+            this.label38 = new System.Windows.Forms.Label();
+            this.txt_ext_1 = new System.Windows.Forms.TextBox();
+            this.label37 = new System.Windows.Forms.Label();
+            this.wizardPage1 = new AeroWizard.WizardPage();
+            this.label36 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl1)).BeginInit();
+            this.wz0_0.SuspendLayout();
             this.wz0.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_warn_silence)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_warn_two)).BeginInit();
             this.wz1.SuspendLayout();
@@ -156,9 +186,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.n_speed2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_bit_audio)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.track_bits_audio)).BeginInit();
+            this.wz_0_1.SuspendLayout();
             this.wz_end.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_status)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_warning)).BeginInit();
+            this.wizardPage1.SuspendLayout();
             this.SuspendLayout();
             // 
             // wizardControl1
@@ -168,20 +200,135 @@
             this.wizardControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.266055F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wizardControl1.Location = new System.Drawing.Point(0, 0);
             this.wizardControl1.Name = "wizardControl1";
+            this.wizardControl1.Pages.Add(this.wz0_0);
             this.wizardControl1.Pages.Add(this.wz0);
             this.wizardControl1.Pages.Add(this.wz1);
             this.wizardControl1.Pages.Add(this.wz1_1);
             this.wizardControl1.Pages.Add(this.wz2);
+            this.wizardControl1.Pages.Add(this.wz_0_1);
             this.wizardControl1.Pages.Add(this.wz_end);
             this.wizardControl1.Size = new System.Drawing.Size(574, 415);
             this.wizardControl1.TabIndex = 0;
-            this.wizardControl1.Title = "FFmpeg Batch Wizard";
+            this.wizardControl1.Title = "FFmpeg Batch AV Converter Wizard";
             this.wizardControl1.TitleIcon = ((System.Drawing.Icon)(resources.GetObject("wizardControl1.TitleIcon")));
             this.wizardControl1.Finished += new System.EventHandler(this.wizardControl1_Finished);
             this.wizardControl1.SelectedPageChanged += new System.EventHandler(this.wizardControl1_SelectedPageChanged);
             // 
+            // wz0_0
+            // 
+            this.wz0_0.Controls.Add(this.btn_skip_files);
+            this.wz0_0.Controls.Add(this.chk_start_0);
+            this.wz0_0.Controls.Add(this.label35);
+            this.wz0_0.Controls.Add(this.label34);
+            this.wz0_0.Controls.Add(this.label33);
+            this.wz0_0.Controls.Add(this.btn_add_folders);
+            this.wz0_0.Controls.Add(this.btn_add_files);
+            this.wz0_0.Name = "wz0_0";
+            this.wz0_0.NextPage = this.wz0;
+            this.wz0_0.Size = new System.Drawing.Size(527, 261);
+            this.wz0_0.TabIndex = 5;
+            this.wz0_0.Text = "FFmpeg Bath AV Converter Wizard";
+            this.wz0_0.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz0_0_Commit);
+            this.wz0_0.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz0_0_Initialize);
+            // 
+            // btn_skip_files
+            // 
+            this.btn_skip_files.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_skip_files.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_skip_files.FlatAppearance.BorderSize = 0;
+            this.btn_skip_files.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_skip_files.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_skip_files.Image = ((System.Drawing.Image)(resources.GetObject("btn_skip_files.Image")));
+            this.btn_skip_files.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_skip_files.Location = new System.Drawing.Point(204, 113);
+            this.btn_skip_files.Name = "btn_skip_files";
+            this.btn_skip_files.Size = new System.Drawing.Size(68, 87);
+            this.btn_skip_files.TabIndex = 32;
+            this.btn_skip_files.Text = "Skip files";
+            this.btn_skip_files.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_skip_files.UseVisualStyleBackColor = true;
+            this.btn_skip_files.Click += new System.EventHandler(this.btn_skip_files_Click);
+            // 
+            // chk_start_0
+            // 
+            this.chk_start_0.AutoSize = true;
+            this.chk_start_0.Checked = true;
+            this.chk_start_0.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chk_start_0.Location = new System.Drawing.Point(45, 242);
+            this.chk_start_0.Name = "chk_start_0";
+            this.chk_start_0.Size = new System.Drawing.Size(170, 19);
+            this.chk_start_0.TabIndex = 31;
+            this.chk_start_0.Text = "Show this dialog on startup";
+            this.chk_start_0.UseVisualStyleBackColor = true;
+            this.chk_start_0.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(38, 77);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(254, 15);
+            this.label35.TabIndex = 30;
+            this.label35.Text = "Please add some files or folders to be encoded:";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(39, 37);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(316, 15);
+            this.label34.TabIndex = 29;
+            this.label34.Text = "through the encoding process and application capabilities.";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(38, 17);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(371, 15);
+            this.label33.TabIndex = 28;
+            this.label33.Text = "Welcome to FFmpeg Batch AV Converter.  This wizard will guide you ";
+            // 
+            // btn_add_folders
+            // 
+            this.btn_add_folders.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_add_folders.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_add_folders.FlatAppearance.BorderSize = 0;
+            this.btn_add_folders.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_add_folders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_add_folders.Image = ((System.Drawing.Image)(resources.GetObject("btn_add_folders.Image")));
+            this.btn_add_folders.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_add_folders.Location = new System.Drawing.Point(122, 115);
+            this.btn_add_folders.Name = "btn_add_folders";
+            this.btn_add_folders.Size = new System.Drawing.Size(71, 85);
+            this.btn_add_folders.TabIndex = 27;
+            this.btn_add_folders.Text = "Add folder";
+            this.btn_add_folders.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_add_folders.UseVisualStyleBackColor = true;
+            this.btn_add_folders.Click += new System.EventHandler(this.btn_add_folders_Click);
+            // 
+            // btn_add_files
+            // 
+            this.btn_add_files.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_add_files.FlatAppearance.BorderSize = 0;
+            this.btn_add_files.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_add_files.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_add_files.Image = ((System.Drawing.Image)(resources.GetObject("btn_add_files.Image")));
+            this.btn_add_files.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_add_files.Location = new System.Drawing.Point(43, 114);
+            this.btn_add_files.Name = "btn_add_files";
+            this.btn_add_files.Size = new System.Drawing.Size(72, 86);
+            this.btn_add_files.TabIndex = 1;
+            this.btn_add_files.Text = "Add files";
+            this.btn_add_files.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btn_add_files.UseVisualStyleBackColor = true;
+            this.btn_add_files.Click += new System.EventHandler(this.btn_add_files_Click);
+            // 
             // wz0
             // 
+            this.wz0.Controls.Add(this.radio_existing);
+            this.wz0.Controls.Add(this.pic_1);
+            this.wz0.Controls.Add(this.chk_start);
             this.wz0.Controls.Add(this.radio_split);
             this.wz0.Controls.Add(this.radio_images);
             this.wz0.Controls.Add(this.lbl_silence);
@@ -195,28 +342,61 @@
             this.wz0.Name = "wz0";
             this.wz0.Size = new System.Drawing.Size(527, 261);
             this.wz0.TabIndex = 0;
-            this.wz0.Text = "Select the type of preset or wizard";
+            this.wz0.Text = "Select an encoding option";
             this.wz0.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz0_Commit);
+            // 
+            // radio_existing
+            // 
+            this.radio_existing.AutoSize = true;
+            this.radio_existing.Location = new System.Drawing.Point(45, 14);
+            this.radio_existing.Name = "radio_existing";
+            this.radio_existing.Size = new System.Drawing.Size(191, 19);
+            this.radio_existing.TabIndex = 0;
+            this.radio_existing.Text = "Use an existing encoding preset";
+            this.radio_existing.UseVisualStyleBackColor = true;
+            this.radio_existing.CheckedChanged += new System.EventHandler(this.radio_existing_CheckedChanged);
+            // 
+            // pic_1
+            // 
+            this.pic_1.Image = ((System.Drawing.Image)(resources.GetObject("pic_1.Image")));
+            this.pic_1.Location = new System.Drawing.Point(447, 12);
+            this.pic_1.Name = "pic_1";
+            this.pic_1.Size = new System.Drawing.Size(64, 64);
+            this.pic_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_1.TabIndex = 31;
+            this.pic_1.TabStop = false;
+            // 
+            // chk_start
+            // 
+            this.chk_start.AutoSize = true;
+            this.chk_start.Checked = true;
+            this.chk_start.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chk_start.Location = new System.Drawing.Point(45, 242);
+            this.chk_start.Name = "chk_start";
+            this.chk_start.Size = new System.Drawing.Size(170, 19);
+            this.chk_start.TabIndex = 7;
+            this.chk_start.Text = "Show this dialog on startup";
+            this.chk_start.UseVisualStyleBackColor = true;
+            this.chk_start.CheckedChanged += new System.EventHandler(this.chk_start_CheckedChanged);
             // 
             // radio_split
             // 
             this.radio_split.AutoSize = true;
-            this.radio_split.Location = new System.Drawing.Point(45, 188);
+            this.radio_split.Location = new System.Drawing.Point(45, 199);
             this.radio_split.Name = "radio_split";
             this.radio_split.Size = new System.Drawing.Size(105, 19);
-            this.radio_split.TabIndex = 29;
-            this.radio_split.TabStop = true;
+            this.radio_split.TabIndex = 6;
             this.radio_split.Text = "File split wizard";
             this.radio_split.UseVisualStyleBackColor = true;
+            this.radio_split.CheckedChanged += new System.EventHandler(this.radio_split_CheckedChanged);
             // 
             // radio_images
             // 
             this.radio_images.AutoSize = true;
-            this.radio_images.Location = new System.Drawing.Point(45, 161);
+            this.radio_images.Location = new System.Drawing.Point(45, 172);
             this.radio_images.Name = "radio_images";
             this.radio_images.Size = new System.Drawing.Size(150, 19);
-            this.radio_images.TabIndex = 28;
-            this.radio_images.TabStop = true;
+            this.radio_images.TabIndex = 5;
             this.radio_images.Text = "Image extraction wizard";
             this.radio_images.UseVisualStyleBackColor = true;
             this.radio_images.CheckedChanged += new System.EventHandler(this.radio_images_CheckedChanged);
@@ -224,7 +404,7 @@
             // lbl_silence
             // 
             this.lbl_silence.AutoSize = true;
-            this.lbl_silence.Location = new System.Drawing.Point(248, 135);
+            this.lbl_silence.Location = new System.Drawing.Point(248, 146);
             this.lbl_silence.Name = "lbl_silence";
             this.lbl_silence.Size = new System.Drawing.Size(0, 15);
             this.lbl_silence.TabIndex = 27;
@@ -232,7 +412,7 @@
             // pic_warn_silence
             // 
             this.pic_warn_silence.Image = ((System.Drawing.Image)(resources.GetObject("pic_warn_silence.Image")));
-            this.pic_warn_silence.Location = new System.Drawing.Point(221, 133);
+            this.pic_warn_silence.Location = new System.Drawing.Point(221, 144);
             this.pic_warn_silence.Name = "pic_warn_silence";
             this.pic_warn_silence.Size = new System.Drawing.Size(21, 22);
             this.pic_warn_silence.TabIndex = 26;
@@ -242,11 +422,10 @@
             // radio_silence
             // 
             this.radio_silence.AutoSize = true;
-            this.radio_silence.Location = new System.Drawing.Point(45, 133);
+            this.radio_silence.Location = new System.Drawing.Point(45, 144);
             this.radio_silence.Name = "radio_silence";
             this.radio_silence.Size = new System.Drawing.Size(146, 19);
-            this.radio_silence.TabIndex = 25;
-            this.radio_silence.TabStop = true;
+            this.radio_silence.TabIndex = 4;
             this.radio_silence.Text = "Silence detector wizard";
             this.radio_silence.UseVisualStyleBackColor = true;
             this.radio_silence.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
@@ -254,7 +433,7 @@
             // pic_warn_two
             // 
             this.pic_warn_two.Image = ((System.Drawing.Image)(resources.GetObject("pic_warn_two.Image")));
-            this.pic_warn_two.Location = new System.Drawing.Point(221, 104);
+            this.pic_warn_two.Location = new System.Drawing.Point(221, 115);
             this.pic_warn_two.Name = "pic_warn_two";
             this.pic_warn_two.Size = new System.Drawing.Size(21, 22);
             this.pic_warn_two.TabIndex = 24;
@@ -264,7 +443,7 @@
             // lbl_two
             // 
             this.lbl_two.AutoSize = true;
-            this.lbl_two.Location = new System.Drawing.Point(246, 106);
+            this.lbl_two.Location = new System.Drawing.Point(246, 117);
             this.lbl_two.Name = "lbl_two";
             this.lbl_two.Size = new System.Drawing.Size(0, 15);
             this.lbl_two.TabIndex = 3;
@@ -272,11 +451,10 @@
             // radio_2pass
             // 
             this.radio_2pass.AutoSize = true;
-            this.radio_2pass.Location = new System.Drawing.Point(45, 104);
+            this.radio_2pass.Location = new System.Drawing.Point(45, 115);
             this.radio_2pass.Name = "radio_2pass";
             this.radio_2pass.Size = new System.Drawing.Size(143, 19);
-            this.radio_2pass.TabIndex = 2;
-            this.radio_2pass.TabStop = true;
+            this.radio_2pass.TabIndex = 3;
             this.radio_2pass.Text = "Two pass video wizard";
             this.radio_2pass.UseVisualStyleBackColor = true;
             this.radio_2pass.CheckedChanged += new System.EventHandler(this.radio_2pass_CheckedChanged);
@@ -284,24 +462,22 @@
             // radio_audio
             // 
             this.radio_audio.AutoSize = true;
-            this.radio_audio.Location = new System.Drawing.Point(45, 64);
+            this.radio_audio.Location = new System.Drawing.Point(45, 71);
             this.radio_audio.Name = "radio_audio";
-            this.radio_audio.Size = new System.Drawing.Size(92, 19);
-            this.radio_audio.TabIndex = 1;
-            this.radio_audio.TabStop = true;
-            this.radio_audio.Text = "Audio preset";
+            this.radio_audio.Size = new System.Drawing.Size(196, 19);
+            this.radio_audio.TabIndex = 2;
+            this.radio_audio.Text = "Create an encoding audio preset";
             this.radio_audio.UseVisualStyleBackColor = true;
             this.radio_audio.CheckedChanged += new System.EventHandler(this.radio_audio_CheckedChanged);
             // 
             // radio_video
             // 
             this.radio_video.AutoSize = true;
-            this.radio_video.Location = new System.Drawing.Point(45, 35);
+            this.radio_video.Location = new System.Drawing.Point(45, 42);
             this.radio_video.Name = "radio_video";
-            this.radio_video.Size = new System.Drawing.Size(90, 19);
-            this.radio_video.TabIndex = 0;
-            this.radio_video.TabStop = true;
-            this.radio_video.Text = "Video preset";
+            this.radio_video.Size = new System.Drawing.Size(195, 19);
+            this.radio_video.TabIndex = 1;
+            this.radio_video.Text = "Create an encoding video preset";
             this.radio_video.UseVisualStyleBackColor = true;
             this.radio_video.CheckedChanged += new System.EventHandler(this.radio_video_CheckedChanged);
             // 
@@ -1337,8 +1513,80 @@
             this.label13.TabIndex = 12;
             this.label13.Text = "Kbps";
             // 
+            // wz_0_1
+            // 
+            this.wz_0_1.Controls.Add(this.label41);
+            this.wz_0_1.Controls.Add(this.txt_ext_format);
+            this.wz_0_1.Controls.Add(this.label42);
+            this.wz_0_1.Controls.Add(this.txt_pr_1_ex);
+            this.wz_0_1.Controls.Add(this.combo_presets_ext);
+            this.wz_0_1.Controls.Add(this.label43);
+            this.wz_0_1.Name = "wz_0_1";
+            this.wz_0_1.NextPage = this.wz_end;
+            this.wz_0_1.Size = new System.Drawing.Size(527, 261);
+            this.wz_0_1.TabIndex = 6;
+            this.wz_0_1.Text = "Use an existing encoding preset";
+            this.wz_0_1.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz_0_1_Commit);
+            this.wz_0_1.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz_0_1_Initialize);
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(16, 33);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(247, 15);
+            this.label41.TabIndex = 100;
+            this.label41.Text = "Select an encoding preset from the list below:";
+            // 
+            // txt_ext_format
+            // 
+            this.txt_ext_format.BackColor = System.Drawing.SystemColors.Info;
+            this.txt_ext_format.Location = new System.Drawing.Point(471, 138);
+            this.txt_ext_format.MaxLength = 4;
+            this.txt_ext_format.Name = "txt_ext_format";
+            this.txt_ext_format.Size = new System.Drawing.Size(30, 23);
+            this.txt_ext_format.TabIndex = 99;
+            this.txt_ext_format.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(424, 141);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(45, 15);
+            this.label42.TabIndex = 98;
+            this.label42.Text = "Format";
+            // 
+            // txt_pr_1_ex
+            // 
+            this.txt_pr_1_ex.Location = new System.Drawing.Point(67, 129);
+            this.txt_pr_1_ex.MaxLength = 500;
+            this.txt_pr_1_ex.Multiline = true;
+            this.txt_pr_1_ex.Name = "txt_pr_1_ex";
+            this.txt_pr_1_ex.Size = new System.Drawing.Size(354, 40);
+            this.txt_pr_1_ex.TabIndex = 97;
+            // 
+            // combo_presets_ext
+            // 
+            this.combo_presets_ext.FormattingEnabled = true;
+            this.combo_presets_ext.Location = new System.Drawing.Point(67, 85);
+            this.combo_presets_ext.Name = "combo_presets_ext";
+            this.combo_presets_ext.Size = new System.Drawing.Size(434, 23);
+            this.combo_presets_ext.TabIndex = 95;
+            this.combo_presets_ext.SelectedIndexChanged += new System.EventHandler(this.combo_presets_ext_SelectedIndexChanged);
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(15, 88);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(44, 15);
+            this.label43.TabIndex = 96;
+            this.label43.Text = "Presets";
+            // 
             // wz_end
             // 
+            this.wz_end.Controls.Add(this.lbl_help);
             this.wz_end.Controls.Add(this.pic_status);
             this.wz_end.Controls.Add(this.btn_status);
             this.wz_end.Controls.Add(this.chk_subs_copy);
@@ -1355,7 +1603,16 @@
             this.wz_end.Size = new System.Drawing.Size(527, 261);
             this.wz_end.TabIndex = 3;
             this.wz_end.Text = "Preset complete";
+            this.wz_end.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz_end_Commit);
             this.wz_end.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz_end_Initialize);
+            // 
+            // lbl_help
+            // 
+            this.lbl_help.AutoSize = true;
+            this.lbl_help.Location = new System.Drawing.Point(24, 237);
+            this.lbl_help.Name = "lbl_help";
+            this.lbl_help.Size = new System.Drawing.Size(0, 15);
+            this.lbl_help.TabIndex = 100;
             // 
             // pic_status
             // 
@@ -1414,7 +1671,7 @@
             // txt_preset_name
             // 
             this.txt_preset_name.Enabled = false;
-            this.txt_preset_name.Location = new System.Drawing.Point(120, 204);
+            this.txt_preset_name.Location = new System.Drawing.Point(120, 179);
             this.txt_preset_name.Name = "txt_preset_name";
             this.txt_preset_name.Size = new System.Drawing.Size(365, 23);
             this.txt_preset_name.TabIndex = 25;
@@ -1444,7 +1701,7 @@
             this.chk_save_pres.AutoSize = true;
             this.chk_save_pres.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chk_save_pres.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chk_save_pres.Location = new System.Drawing.Point(24, 207);
+            this.chk_save_pres.Location = new System.Drawing.Point(24, 182);
             this.chk_save_pres.Name = "chk_save_pres";
             this.chk_save_pres.Size = new System.Drawing.Size(85, 19);
             this.chk_save_pres.TabIndex = 20;
@@ -1498,6 +1755,95 @@
             this.BG1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BG1_DoWork);
             this.BG1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BG1_RunWorkerCompleted);
             // 
+            // images
+            // 
+            this.images.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("images.ImageStream")));
+            this.images.TransparentColor = System.Drawing.Color.Transparent;
+            this.images.Images.SetKeyName(0, "av_64px.jpg");
+            this.images.Images.SetKeyName(1, "Music_Note_64.jpg");
+            this.images.Images.SetKeyName(2, "Video_2_pass_64.jpg");
+            this.images.Images.SetKeyName(3, "silence_64.jpg");
+            this.images.Images.SetKeyName(4, "Extract_images_64.jpg");
+            this.images.Images.SetKeyName(5, "split_files_64.jpg");
+            this.images.Images.SetKeyName(6, "stored_preset_64.jpg");
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(16, 91);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(42, 13);
+            this.label39.TabIndex = 96;
+            this.label39.Text = "Presets";
+            // 
+            // cb_w_presets
+            // 
+            this.cb_w_presets.FormattingEnabled = true;
+            this.cb_w_presets.Location = new System.Drawing.Point(68, 88);
+            this.cb_w_presets.Name = "cb_w_presets";
+            this.cb_w_presets.Size = new System.Drawing.Size(434, 21);
+            this.cb_w_presets.TabIndex = 95;
+            // 
+            // txt_pr_1
+            // 
+            this.txt_pr_1.Location = new System.Drawing.Point(68, 132);
+            this.txt_pr_1.MaxLength = 500;
+            this.txt_pr_1.Multiline = true;
+            this.txt_pr_1.Name = "txt_pr_1";
+            this.txt_pr_1.Size = new System.Drawing.Size(354, 40);
+            this.txt_pr_1.TabIndex = 97;
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(425, 144);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(39, 13);
+            this.label38.TabIndex = 98;
+            this.label38.Text = "Format";
+            // 
+            // txt_ext_1
+            // 
+            this.txt_ext_1.BackColor = System.Drawing.SystemColors.Info;
+            this.txt_ext_1.Location = new System.Drawing.Point(472, 141);
+            this.txt_ext_1.MaxLength = 4;
+            this.txt_ext_1.Name = "txt_ext_1";
+            this.txt_ext_1.Size = new System.Drawing.Size(30, 20);
+            this.txt_ext_1.TabIndex = 99;
+            this.txt_ext_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(17, 36);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(234, 13);
+            this.label37.TabIndex = 100;
+            this.label37.Text = "Select base preset for two pass video encoding:";
+            // 
+            // wizardPage1
+            // 
+            this.wizardPage1.Controls.Add(this.label36);
+            this.wizardPage1.Controls.Add(this.label37);
+            this.wizardPage1.Controls.Add(this.txt_ext_1);
+            this.wizardPage1.Controls.Add(this.label38);
+            this.wizardPage1.Controls.Add(this.txt_pr_1);
+            this.wizardPage1.Controls.Add(this.cb_w_presets);
+            this.wizardPage1.Controls.Add(this.label39);
+            this.wizardPage1.Name = "wizardPage1";
+            this.wizardPage1.Size = new System.Drawing.Size(527, 261);
+            this.wizardPage1.TabIndex = 6;
+            this.wizardPage1.Text = "Select a saved encoding preset";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(65, 183);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(234, 13);
+            this.label36.TabIndex = 101;
+            this.label36.Text = "Required parameters will be added on next step.";
+            // 
             // AeroWizard1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1508,10 +1854,13 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AeroWizard1";
-            this.Text = "FFmpeg Batch A/V Converter";
+            this.Text = "FFmpeg Batch AV Converter";
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl1)).EndInit();
+            this.wz0_0.ResumeLayout(false);
+            this.wz0_0.PerformLayout();
             this.wz0.ResumeLayout(false);
             this.wz0.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_warn_silence)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_warn_two)).EndInit();
             this.wz1.ResumeLayout(false);
@@ -1534,10 +1883,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.n_speed2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_bit_audio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.track_bits_audio)).EndInit();
+            this.wz_0_1.ResumeLayout(false);
+            this.wz_0_1.PerformLayout();
             this.wz_end.ResumeLayout(false);
             this.wz_end.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_status)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_warning)).EndInit();
+            this.wizardPage1.ResumeLayout(false);
+            this.wizardPage1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1649,5 +2002,33 @@
         private System.Windows.Forms.NumericUpDown n_speed2;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.RadioButton radio_split;
+        public System.Windows.Forms.CheckBox chk_start;
+        private System.Windows.Forms.Label lbl_help;
+        private AeroWizard.WizardPage wz0_0;
+        private System.Windows.Forms.Button btn_add_files;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Button btn_add_folders;
+        public System.Windows.Forms.CheckBox chk_start_0;
+        private System.Windows.Forms.PictureBox pic_1;
+        private System.Windows.Forms.ImageList images;
+        private System.Windows.Forms.RadioButton radio_existing;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.ComboBox cb_w_presets;
+        public System.Windows.Forms.TextBox txt_pr_1;
+        private System.Windows.Forms.Label label38;
+        public System.Windows.Forms.TextBox txt_ext_1;
+        private System.Windows.Forms.Label label37;
+        private AeroWizard.WizardPage wizardPage1;
+        private System.Windows.Forms.Label label36;
+        private AeroWizard.WizardPage wz_0_1;
+        private System.Windows.Forms.Label label41;
+        public System.Windows.Forms.TextBox txt_ext_format;
+        private System.Windows.Forms.Label label42;
+        public System.Windows.Forms.TextBox txt_pr_1_ex;
+        private System.Windows.Forms.ComboBox combo_presets_ext;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Button btn_skip_files;
     }
 }

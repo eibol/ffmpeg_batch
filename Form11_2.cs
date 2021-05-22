@@ -56,6 +56,7 @@ namespace FFBatch
             abort_validate = true;
             btn_abort.Text = "Aborting";
             btn_abort.Enabled = false;
+            this.Cursor = Cursors.Arrow;
             this.Close();           
         }
     }

@@ -73,7 +73,7 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(79, 92);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(176, 16);
+            this.label8.Size = new System.Drawing.Size(216, 16);
             this.label8.TabIndex = 105;
             this.label8.Text = "Launching application in 5";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -133,7 +133,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panel1.Controls.Add(this.btn_abort);
             this.panel1.Location = new System.Drawing.Point(2, 124);
             this.panel1.Name = "panel1";
@@ -144,9 +144,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btn_abort;
             this.ClientSize = new System.Drawing.Size(415, 161);
-            this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pic_error);
             this.Controls.Add(this.pic_success);
@@ -155,13 +155,14 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txt_path);
             this.Controls.Add(this.label8);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form14";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Run external command";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form14_FormClosing);
             this.Load += new System.EventHandler(this.Form14_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_error)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_success)).EndInit();
@@ -175,7 +176,6 @@
 
         private System.Windows.Forms.Button btn_abort;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Timer timer1;
         public System.Windows.Forms.TextBox txt_path;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -183,5 +183,6 @@
         private System.Windows.Forms.PictureBox pic_error;
         private System.Windows.Forms.PictureBox pic_success;
         private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Timer timer1;
     }
 }

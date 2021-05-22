@@ -105,11 +105,11 @@ namespace FFBatch
             }
             if (chk_out_name.Checked == true)
             {
-                out_path = out_path + "%fn_%0d";
+                out_path = out_path + "%fn_%04d";
             }
             if (chk_out_name.Checked == false)
             {
-                out_path = out_path + txt_naming + "_%0d";
+                out_path = out_path + txt_naming + "_%04d";
             }
             if (combo_ext.SelectedIndex == 0 || combo_ext.SelectedIndex == 1 || combo_ext.SelectedIndex == 2)
             {
@@ -328,6 +328,20 @@ namespace FFBatch
             pr_1st_params = "";
             out_path = "";
             out_format = "";
+        }
+
+        private void wz_end_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
+        {
+            if (list_count > 0)
+            {
+                btn_Start.Enabled = true;
+                label9.Visible = true;
+            }
+            else
+            {
+                btn_Start.Enabled = false;
+                label9.Visible = false;
+            }
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,6 +47,12 @@ namespace FFBatch
         {
             if (txt_path.Text != String.Empty)
             {
+                if (!File.Exists(txt_path.Text))
+                {
+                    MessageBox.Show("Executable file was not found.");
+                    return;
+                }
+                    
                 cancel = false;
                 this.Close();
             }

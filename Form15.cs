@@ -13,6 +13,8 @@ namespace FFBatch
 {
     public partial class Form15 : Form
     {
+
+        String port_path = Application.StartupPath + "\\" + "settings" + "\\";
         Boolean is_portable = false;
         private Rectangle dragBoxFromMouseDown;
         private int rowIndexFromMouseDown;
@@ -26,23 +28,20 @@ namespace FFBatch
         }
 
         private void Form15_Load(object sender, EventArgs e)
-        {
+        {            
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
-            if (File.Exists(portable_flag))
-            {
-                is_portable = true;                
-            }
-            else is_portable = false;
+            if (File.Exists(portable_flag)) is_portable = true;
+            else is_portable = false;            
 
             dg_pr.RowHeadersWidth = 25;
             String path = "";
             if (is_portable == false)
             {
-                path = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets.ini";                
+                path = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets.ini";
             }
             else
             {
-                path = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets_portable.ini";                
+                path = port_path + "ff_presets_portable.ini";                
             }
 
             String path_log_backup = "";
@@ -52,7 +51,7 @@ namespace FFBatch
             }
             else
             {
-                path_log_backup = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets_bck_portable.ini";                
+                path_log_backup = port_path + "ff_presets_bck_portable.ini";                
             }
 
             if (!File.Exists(path_log_backup) && File.Exists(path))
@@ -83,7 +82,7 @@ namespace FFBatch
             }
             else
             {                
-                path_presets = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets_portable.ini";
+                path_presets = port_path + "ff_presets_portable.ini";
             }
             
 
@@ -112,7 +111,6 @@ namespace FFBatch
                     try
                     {
                         param = line.Substring(line.LastIndexOf("&") + 2, cortar - 3);
-
                         dg_pr.Rows.Add(line.Substring(4, line.LastIndexOf("&") - 5), param, format);
 
                     }
@@ -186,8 +184,8 @@ namespace FFBatch
             }
             else
             {
-                path_log_backup = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets_bck_portable.ini";
-                path = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets_portable.ini";
+                path_log_backup = port_path + "ff_presets_bck_portable.ini";
+                path = port_path + "ff_presets_portable.ini";
             }            
             if (!File.Exists(path)) File.WriteAllText(path, "");
             File.Copy(path, path_log_backup, true);
@@ -385,7 +383,7 @@ namespace FFBatch
             }
             else
             {
-                path = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets_bck_portable.ini";
+                path = port_path + "ff_presets_bck_portable.ini";
             }
 
             String param = "";
@@ -510,7 +508,7 @@ namespace FFBatch
             {
                 try
                 {
-                    if (File.Exists(System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets_portable.ini"))
+                    if (File.Exists(port_path + "ff_presets_portable.ini"))
                     {
                         File.Copy(System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch_presets.ini", folderBrowserDialog1.SelectedPath + "\\" + "ff_batch_presets.ini", true);
                         MessageBox.Show("Configuration was saved successfully.", "Configuration restored", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -542,8 +540,8 @@ namespace FFBatch
             }
             else
             {
-                backup = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets_bck_portable.ini";
-                dest = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets_portable.ini";
+                backup = port_path + "ff_presets_bck_portable.ini";
+                dest = port_path + "ff_presets_portable.ini";
             }
             try
             {

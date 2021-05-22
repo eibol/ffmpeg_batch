@@ -70,7 +70,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 4000;
+            this.timer1.Interval = 50000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // pic_ok
@@ -96,7 +96,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form11";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form11";
             this.Load += new System.EventHandler(this.Form11_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form11_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();

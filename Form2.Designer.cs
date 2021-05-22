@@ -79,7 +79,7 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(117, 13);
             this.label3.TabIndex = 3;
-            this.label3.Text = "(C) 2017-2020 Eibolsoft";
+            this.label3.Text = "(C) 2017-2021 Eibolsoft";
             // 
             // linkLabel3
             // 
@@ -175,9 +175,9 @@
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(215, 16);
+            this.textBox1.Size = new System.Drawing.Size(221, 16);
             this.textBox1.TabIndex = 13;
-            this.textBox1.Text = "Thanks for considering a supporting donation here:";
+            this.textBox1.Text = "Thanks for considering a supporting donation.";
             // 
             // Form2
             // 

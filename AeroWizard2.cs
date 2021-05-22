@@ -13,7 +13,8 @@ namespace FFBatch
         }
 
         Form obj = new FFBatch.Form1();
-
+        Boolean is_portable = false;
+        String port_path = System.IO.Path.Combine(Application.StartupPath, "settings") + "\\";
         String pr1_params = String.Empty;
         String pr1_ext = String.Empty;
         String pr2_params = String.Empty;
@@ -81,6 +82,10 @@ namespace FFBatch
 
         private void wz_mpresets_SelectedPageChanged(object sender, EventArgs e)
         {
+            String app_location = Application.StartupPath;
+            String portable_flag = Application.StartupPath + "\\" + "portable.ini";
+            if (File.Exists(portable_flag)) is_portable = true;
+
             wz_mpresets.FinishButtonText = "Start encoding";
 
             if (wz_mpresets.SelectedPage == wzp1 && started == false)
@@ -124,6 +129,12 @@ namespace FFBatch
                                 
                 path_pr = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets.ini";
                 path = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch.ini";
+                if (is_portable == true)
+                {
+                    path_pr = port_path + "ff_presets_portable.ini";
+                    path = port_path + "ff_batch_portable.ini";
+                }
+
                 int linea = 0;
 
                 cb_w_presets.SelectedIndex = cb_w_presets.FindString(("Default parameters"));
@@ -242,9 +253,16 @@ namespace FFBatch
             if (cb_w_presets.SelectedIndex == 0)
             {
                 String path = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch.ini";
-                if (!Directory.Exists(System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch")))
+                if (is_portable == true)
                 {
-                    Directory.CreateDirectory(System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch"));
+                    path = port_path + "ff_batch_portable.ini";                    
+                }
+                else
+                {
+                    if (!Directory.Exists(System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch")))
+                    {
+                        Directory.CreateDirectory(System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch"));
+                    }
                 }
 
                 if (!File.Exists(path))
@@ -291,6 +309,7 @@ namespace FFBatch
             else
             {
                 String path = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets.ini";
+                if (is_portable == true) path = port_path + "ff_presets_portable.ini";
                 String pre_name = String.Empty;
                 int i = 0;
                 foreach (string line in File.ReadLines(path))

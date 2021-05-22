@@ -128,7 +128,6 @@
             this.Name = "Form9";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Obtaining playlist contents";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form9_FormClosing);
             this.Load += new System.EventHandler(this.Form9_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form9_Paint);

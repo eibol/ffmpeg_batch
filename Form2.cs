@@ -33,7 +33,7 @@ namespace FFBatch
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Process.Start("https://sourceforge.net/p/ffmpeg-batch/wiki/FFmpeg%20Batch/");
+            Process.Start("https://sourceforge.net/p/ffmpeg-batch/wiki");
         }
 
         private void button2_Click(object sender, EventArgs e)

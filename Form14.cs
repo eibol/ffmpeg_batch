@@ -14,7 +14,7 @@ namespace FFBatch
     public partial class Form14 : Form
     {
         int i = 5;
-        Process proc = new Process();
+        public Process proc = new Process();
         public String args = String.Empty;
         public Form14()
         {
@@ -24,19 +24,21 @@ namespace FFBatch
         private void timer1_Tick(object sender, EventArgs e)
         {
             i--;
-            label8.Text = "Launching application in " + i.ToString();
-            if (i == 0 )
+            if (timer1.Interval == 1000) label8.Text = "Launching application in " + i.ToString();
+            else label8.Text = "Starting application on encoded file";
+            if (i == 0)
             {
                 timer1.Stop();
-                label8.Text = "Waiting for application to finish";
+                label8.Text = "Waiting for external application to finish";
                 label8.Refresh();
                 proc.StartInfo.FileName = txt_path.Text;
-                proc.StartInfo.Arguments = args;
+                proc.StartInfo.Arguments = args;                
+
                 try
                 {
                     Task t = Task.Run(() =>
                     {
-                        proc.Start();
+                        proc.Start();                        
                         proc.WaitForExit();
                     });
                     t.Wait();
@@ -60,6 +62,7 @@ namespace FFBatch
                     pic_success.Visible = false;
                     label8.Text = "Application finished with error code " + proc.ExitCode.ToString();
                 }
+                if (timer1.Interval == 100) this.Close();
             }
         }
 
@@ -69,18 +72,22 @@ namespace FFBatch
             timer1.Start();
             if (args != String.Empty) txt_args.Text = args;
             else txt_args.Enabled = false;
-            
+
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            timer1.Stop();
             this.Close();
         }
 
         private void label8_Click(object sender, EventArgs e)
         {
             txt_args.Text = args;
+        }
+
+        private void Form14_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timer1.Stop();
         }
     }
 }

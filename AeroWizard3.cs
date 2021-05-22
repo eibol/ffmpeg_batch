@@ -15,8 +15,8 @@ namespace FFBatch
         {
             InitializeComponent();
         }
-        
-        
+        String port_path = System.IO.Path.Combine(Application.StartupPath, "settings") + "\\";
+        Boolean is_portable = false;
         String saved_pres1 = "";
         String saved_ext1 = "";
         Boolean tried_ok = false;
@@ -80,9 +80,20 @@ namespace FFBatch
             if (cb_w_presets.SelectedIndex == 0)
             {
                 String path = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch.ini";
-                if (!Directory.Exists(System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch")))
+                if (is_portable == true) path = port_path + "ff_batch_portable.ini";
+                if (is_portable = false)
                 {
-                    Directory.CreateDirectory(System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch"));
+                    if (!Directory.Exists(System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch")))
+                    {
+                        Directory.CreateDirectory(System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch"));
+                    }
+                }
+                else
+                {
+                    if (!Directory.Exists(System.IO.Path.Combine(Application.StartupPath, "settings")))
+                    {
+                        Directory.CreateDirectory(System.IO.Path.Combine(Application.StartupPath, "settings"));
+                    }
                 }
 
                 if (!File.Exists(path))
@@ -108,6 +119,7 @@ namespace FFBatch
             else
             {
                 String path = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets.ini";
+                if (is_portable == true) path = port_path + "ff_presets_portable.ini";
                 String pre_name = String.Empty;
                 int i = 0;
                 foreach (string line in File.ReadLines(path))
@@ -133,6 +145,10 @@ namespace FFBatch
 
         private void wizard3_SelectedPageChanged(object sender, EventArgs e)
         {
+            String app_location = Application.StartupPath;
+            String portable_flag = Application.StartupPath + "\\" + "portable.ini";
+            if (File.Exists(portable_flag)) is_portable = true;
+
             wizard3.FinishButtonText = "Start encoding";
 
             if (wizard3.SelectedPage.Name == "wz_two_end")
@@ -152,6 +168,11 @@ namespace FFBatch
 
                     path_pr = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets.ini";
                     path = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch.ini";
+                    if (is_portable == true)
+                    {
+                        path_pr = port_path + "ff_presets_portable.ini";
+                        path = port_path + "ff_batch_portable.ini";
+                    }
                     int linea = 0;
                     String ext1 = "";
                     String pres1 = "";
@@ -888,7 +909,9 @@ namespace FFBatch
 
         private void AeroWizard3_Load(object sender, EventArgs e)
         {
-            
+            String app_location = Application.StartupPath;
+            String portable_flag = Application.StartupPath + "\\" + "portable.ini";
+            if (File.Exists(portable_flag)) is_portable = true;
         }
     }    
 }

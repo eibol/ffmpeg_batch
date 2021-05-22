@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Net;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,8 +17,12 @@ namespace FFBatch
             InitializeComponent();
         }
 
+        public String ff_ver = String.Empty;
         System.Media.SoundPlayer soundPl = new System.Media.SoundPlayer();
-
+        String port_path = System.IO.Path.Combine(Application.StartupPath, "settings") + "\\";
+        public Boolean delete_def;
+        public Boolean delete_one;
+        String new_ver = "";
         public Boolean edit_presets = false;
         private Boolean playing = false;
         private RichTextBox Rtxt = new RichTextBox();
@@ -56,6 +61,20 @@ namespace FFBatch
 
         private void toolTips()
         {
+            ToolTip toolT4z = new ToolTip();
+            toolT4z.AutoPopDelay = 9000;
+            toolT4z.InitialDelay = 750;
+            toolT4z.ReshowDelay = 500;
+            toolT4z.ShowAlways = true;
+            toolT4z.SetToolTip(this.pic_ver, "A new version of ffmpeg is available");
+
+            ToolTip toolT5z = new ToolTip();
+            toolT5z.AutoPopDelay = 9000;
+            toolT5z.InitialDelay = 750;
+            toolT5z.ReshowDelay = 500;
+            toolT5z.ShowAlways = true;
+            toolT5z.SetToolTip(this.pic_ff_ok, "You are using the latest ffmpeg version");
+
             ToolTip toolT0z = new ToolTip();
             toolT0z.AutoPopDelay = 9000;
             toolT0z.InitialDelay = 750;
@@ -104,9 +123,23 @@ namespace FFBatch
             ActiveForm.Close();
         }
 
+        public class WebClientWithTimeout : WebClient
+        {
+            protected override WebRequest GetWebRequest(Uri address)
+            {
+                WebRequest wr = base.GetWebRequest(address);
+                wr.Timeout = 5000; // timeout in milliseconds (ms)
+                return wr;
+            }
+        }
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            String app_location = Application.StartupPath;
+            String portable_flag = Application.StartupPath + "\\" + "portable.ini";
+            if (File.Exists(portable_flag)) is_portable = true;
+            else is_portable = false;
+
             toolTips();
             reload_config = false;
             cancel = true;
@@ -114,11 +147,7 @@ namespace FFBatch
             edit_presets = false;
             browse_sound.InitialDirectory = Application.StartupPath;
 
-            //Read configuration
-
-            String temp_location = Path.Combine(Path.GetTempPath(), "FFmpeg_Batch_Converter_Portable");
-            String app_location = Application.StartupPath;
-            if (temp_location == app_location) is_portable = true;
+            //Read configuration            
 
             String path_s = String.Empty;
             if (is_portable == false)
@@ -127,7 +156,7 @@ namespace FFBatch
             }
             else
             {
-                path_s = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_path_portable.ini";
+                path_s = port_path + "ff_path_portable.ini";
             }
 
             if (File.Exists(path_s))
@@ -147,7 +176,7 @@ namespace FFBatch
             }
             else
             {
-                path = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch_portable.ini";
+                path = port_path + "ff_batch_portable.ini";
             }
 
             int linea = 0;
@@ -217,186 +246,195 @@ namespace FFBatch
                 }
             }
 
-                //End read configuration
+            //End read configuration
 
-                //Read auto-saved configuration
+            //Read auto-saved configuration
 
-                //Disable try preset
+            //Disable try preset
 
-                String f_try = String.Empty;
-                if (is_portable == false)
-                {
-                    f_try = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_try.ini";
-                }
-                else
-                {
-                    f_try = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_try_portable.ini";
-                }
+            String f_try = String.Empty;
+            if (is_portable == false)
+            {
+                f_try = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_try.ini";
+            }
+            else
+            {
+                f_try = port_path + "ff_try_portable.ini";
+            }
 
-                if (File.Exists(f_try))
-                {
-                    chk_try.Checked = true;
-                }
-                else
-                {
-                    chk_try.Checked = false;
-                }
+            if (File.Exists(f_try))
+            {
+                chk_try.Checked = true;
+            }
+            else
+            {
+                chk_try.Checked = false;
+            }
 
-                if (chk_try.CheckState == CheckState.Checked) try_preset = true;
-                else try_preset = false;
+            if (chk_try.CheckState == CheckState.Checked) try_preset = true;
+            else try_preset = false;
 
-                //End Disable preset
+            //End Disable preset
 
-                //Concat video filter
+            //Concat video filter
 
-                String f_concat = String.Empty;
-                if (is_portable == false)
-                {
-                    f_concat = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_concat.ini";
-                }
-                else
-                {
-                    f_concat = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_concat_portable.ini";
-                }
+            String f_concat = String.Empty;
+            if (is_portable == false)
+            {
+                f_concat = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_concat.ini";
+            }
+            else
+            {
+                f_concat = port_path + "ff_concat_portable.ini";
+            }
 
-                if (File.Exists(f_concat))
-                {
-                    check_concat.Checked = true;
-                }
-                else
-                {
-                    check_concat.Checked = false;
-                }
-                if (check_concat.CheckState == CheckState.Checked)
-                {
-                    concat_filter = true;
-                }
-                else
-                {
-                    concat_filter = false;
-                }
+            if (File.Exists(f_concat))
+            {
+                check_concat.Checked = true;
+            }
+            else
+            {
+                check_concat.Checked = false;
+            }
+            if (check_concat.CheckState == CheckState.Checked)
+            {
+                concat_filter = true;
+            }
+            else
+            {
+                concat_filter = false;
+            }
 
-                //End concat video filter
+            //End concat video filter
 
-                //Auto updates
+            //Auto updates
 
-                String f_updates = String.Empty;
-                if (is_portable == false)
-                {
-                    f_updates = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_updates.ini";
-                }
-                else
-                {
-                    f_updates = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_updates_portable.ini";
-                }
+            String f_updates = String.Empty;
+            if (is_portable == false)
+            {
+                f_updates = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_updates.ini";
+            }
+            else
+            {
+                f_updates = port_path + "ff_updates_portable.ini";
+            }
 
-                if (File.Exists(f_updates))
-                {
-                    chk_auto_updates.CheckState = CheckState.Unchecked;
-                    updates = false;
-                }
+            if (File.Exists(f_updates))
+            {
+                chk_auto_updates.CheckState = CheckState.Unchecked;
+                updates = false;
+            }
 
-                if (!File.Exists(f_updates))
-                {
-                    chk_auto_updates.CheckState = CheckState.Checked;
-                    updates = true;
-                }
+            if (!File.Exists(f_updates))
+            {
+                chk_auto_updates.CheckState = CheckState.Checked;
+                updates = true;
+            }
 
-                //End auto updates
+            //End auto updates
 
-                //Computer to sleep
+            //Computer to sleep
 
-                String f_sleep = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_sleep.ini";
+            String f_sleep = String.Empty;
+            if (is_portable == false)
+            {
+                f_sleep = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_sleep.ini";
+            }
+            else
+            {
+                f_sleep = port_path + "ff_sleep_portable.ini";
+            }
 
-                if (File.Exists(f_sleep))
-                {
-                    chk_sleep.CheckState = CheckState.Checked;
-                }
-                else
-                {
-                    chk_sleep.CheckState = CheckState.Unchecked;
-                }
-                if (chk_sleep.CheckState == CheckState.Checked) to_sleep = true;
-                else to_sleep = false;
+            if (File.Exists(f_sleep))
+            {
+                chk_sleep.CheckState = CheckState.Checked;
+                to_sleep = true;
+            }
+            else
+            {
+                chk_sleep.CheckState = CheckState.Unchecked;
+                to_sleep = false;
+            }
+                        
+            
+            //End computer to sleep
 
-                //End computer to sleep
+            //Sort multi
 
-                //Sort multi
+            String f_sort_dur = String.Empty;
+            if (is_portable == false)
+            {
+                f_sort_dur = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_sort_dur.ini";
+            }
+            else
+            {
+                f_sort_dur = port_path + "ff_sort_dur_portable.ini";
+            }
 
-                String f_sort_dur = String.Empty;
-                if (is_portable == false)
-                {
-                    f_sort_dur = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_sort_dur.ini";
-                }
-                else
-                {
-                    f_sort_dur = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_sort_dur_portable.ini";
-                }
-
-                if (File.Exists(f_sort_dur))
-                {
-                    String read = File.ReadAllText(f_sort_dur);
-                    if (read == "No")
-                    {
-                        chk_sort.CheckState = CheckState.Unchecked;
-                    }
-                    if (read == "Yes")
-                    {
-                        chk_sort.CheckState = CheckState.Checked;
-                    }
-                }
-                else
+            if (File.Exists(f_sort_dur))
+            {
+                String read = File.ReadAllText(f_sort_dur);
+                if (read == "No")
                 {
                     chk_sort.CheckState = CheckState.Unchecked;
                 }
+                if (read == "Yes")
+                {
+                    chk_sort.CheckState = CheckState.Checked;
+                }
+            }
+            else
+            {
+                chk_sort.CheckState = CheckState.Unchecked;
+            }
 
-                //Send params to console
+            //Send params to console
 
-                String f_params_console = String.Empty;
-                if (is_portable == false)
-                {
-                    f_params_console = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_par_con.ini";
-                }
-                else
-                {
-                    f_params_console = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_par_con_portable.ini";
-                }
+            String f_params_console = String.Empty;
+            if (is_portable == false)
+            {
+                f_params_console = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_par_con.ini";
+            }
+            else
+            {
+                f_params_console = port_path + "ff_par_con_portable.ini";
+            }
 
-                if (File.Exists(f_params_console))
-                {
-                    chk_console_params.CheckState = CheckState.Checked;
-                    send_params_console = false;
-                }
-                else
-                {
-                    chk_console_params.CheckState = CheckState.Unchecked;
-                    send_params_console = true;
-                }
+            if (File.Exists(f_params_console))
+            {
+                chk_console_params.CheckState = CheckState.Checked;
+                send_params_console = false;
+            }
+            else
+            {
+                chk_console_params.CheckState = CheckState.Unchecked;
+                send_params_console = true;
+            }
 
-                //End send params to console
+            //End send params to console
 
-                //Warn successful items
+            //Warn successful items
 
-                String f_warn_suc = String.Empty;
-                if (is_portable == false)
-                {
-                    f_warn_suc = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_warn_suc.ini";
-                }
-                else
-                {
-                    f_warn_suc = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_warn_suc_portable.ini";
-                }
+            String f_warn_suc = String.Empty;
+            if (is_portable == false)
+            {
+                f_warn_suc = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_warn_suc.ini";
+            }
+            else
+            {
+                f_warn_suc = port_path + "ff_warn_suc_portable.ini";
+            }
 
-                if (File.Exists(f_warn_suc))
-                {
-                    chk_warn_successful.CheckState = CheckState.Checked;
-                    warn_successful = false;
-                }
-                else
-                {
-                    chk_warn_successful.CheckState = CheckState.Unchecked;
-                    warn_successful = true;
-                }
+            if (File.Exists(f_warn_suc))
+            {
+                chk_warn_successful.CheckState = CheckState.Checked;
+                warn_successful = false;
+            }
+            else
+            {
+                chk_warn_successful.CheckState = CheckState.Unchecked;
+                warn_successful = true;
+            }
 
             //End warn sucessful items
 
@@ -409,18 +447,18 @@ namespace FFBatch
             }
             else
             {
-                f_warn_0 = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_warn_0_portable.ini";
+                f_warn_0 = port_path + "ff_warn_0_portable.ini";
             }
 
             if (File.Exists(f_warn_0))
             {
                 chk_non0.CheckState = CheckState.Checked;
-                no_warn_0 = false;
+                no_warn_0 = true;
             }
             else
             {
                 chk_non0.CheckState = CheckState.Unchecked;
-                no_warn_0 = true;
+                no_warn_0 = false;
             }
 
             //End warn 0 duration
@@ -428,195 +466,195 @@ namespace FFBatch
             //No saving of logs
 
             String f_nologs = String.Empty;
-                if (is_portable == false)
+            if (is_portable == false)
+            {
+                f_nologs = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_nologs.ini";
+            }
+            else
+            {
+                f_nologs = port_path + "ff_nologs_portable.ini";
+            }
+
+            if (File.Exists(f_nologs))
+            {
+                checkBox1.CheckState = CheckState.Checked;
+                not_save_logs = true;
+            }
+            else
+            {
+                checkBox1.CheckState = CheckState.Unchecked;
+                not_save_logs = false;
+            }
+
+            //End do not save logs
+
+            //Verbose logs
+
+            String f_verbose = String.Empty;
+            if (is_portable == false)
+            {
+                f_verbose = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_verbose.ini";
+            }
+            else
+            {
+                f_verbose = port_path + "ff_verbose_portable.ini";
+            }
+
+            if (File.Exists(f_verbose))
+            {
+                chk_verbose_log.CheckState = CheckState.Checked;
+                verbose_logs = true;
+            }
+            else
+            {
+                chk_verbose_log.CheckState = CheckState.Unchecked;
+                verbose_logs = false;
+            }
+
+            //End verbose logs
+
+            //Verbose logs
+
+            String f_report = String.Empty;
+            if (is_portable == false)
+            {
+                f_report = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_report.ini";
+            }
+            else
+            {
+                f_report = port_path + "ff_report_portable.ini";
+            }
+
+            if (File.Exists(f_report))
+            {
+                chk_full_info.CheckState = CheckState.Checked;
+                full_report = true;
+            }
+            else
+            {
+                chk_full_info.CheckState = CheckState.Unchecked;
+                full_report = false;
+            }
+
+            //End full report
+
+            //Not save network cache
+
+            String f_no_cache = String.Empty;
+            if (is_portable == false)
+            {
+                f_no_cache = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_nocache.ini";
+            }
+            else
+            {
+                f_no_cache = port_path + "ff_nocache_portable.ini";
+            }
+
+            if (File.Exists(f_no_cache))
+            {
+                chk_never_cache.CheckState = CheckState.Checked;
+                not_save_cache = true;
+                chk_cache_dialog.Enabled = false;
+            }
+            else
+            {
+                chk_never_cache.CheckState = CheckState.Unchecked;
+                not_save_cache = false;
+                chk_cache_dialog.Enabled = true;
+            }
+
+            //End do not cache network files
+
+            //Use OS cache dialog
+
+            String f_os_cache = String.Empty;
+            if (is_portable == false)
+            {
+                f_os_cache = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_oscache.ini";
+            }
+            else
+            {
+                f_os_cache = port_path + "ff_oscache_portable.ini";
+            }
+
+            if (File.Exists(f_os_cache))
+            {
+                chk_cache_dialog.CheckState = CheckState.Checked;
+                use_cache_os = true;
+            }
+            else
+            {
+                chk_cache_dialog.CheckState = CheckState.Unchecked;
+                use_cache_os = false;
+            }
+
+            //END use OS cache dialog
+
+            //Remember tab
+
+            String f_remember = String.Empty;
+            if (is_portable == false)
+            {
+                f_remember = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_remember.ini";
+            }
+            else
+            {
+                f_remember = port_path + "ff_remember_portable.ini";
+            }
+
+            if (File.Exists(f_remember))
+            {
+                chk_remember_tab.CheckState = CheckState.Checked;
+                remember_tab = true;
+            }
+            else
+            {
+                chk_remember_tab.CheckState = CheckState.Unchecked;
+                remember_tab = false;
+            }
+
+            //END remember tab
+
+            //Read play sound
+
+            String ff_play_sound = String.Empty;
+            if (is_portable == false)
+            {
+                ff_play_sound = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_play.ini";
+            }
+            else
+            {
+                ff_play_sound = port_path + "ff_play_portable.ini";
+            }
+
+            if (!File.Exists(ff_play_sound))
+            {
+                chk_play.Checked = false;
+                play_file = String.Empty;
+                btn_browse_play.Enabled = false;
+                btn_play_sound.Enabled = false;
+                play_end = false;
+            }
+            else
+            {
+                String read_play = File.ReadAllText(ff_play_sound);
+                if (read_play.Length != 0)
                 {
-                    f_nologs = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_nologs.ini";
+                    play_end = true;
+                    play_file = read_play;
+                    chk_play.Checked = true;
+                    btn_browse_play.Enabled = true;
+                    btn_play_sound.Enabled = true;
                 }
                 else
                 {
-                    f_nologs = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_nologs_portable.ini";
-                }
-
-                if (File.Exists(f_nologs))
-                {
-                    checkBox1.CheckState = CheckState.Checked;
-                    not_save_logs = true;
-                }
-                else
-                {
-                    checkBox1.CheckState = CheckState.Unchecked;
-                    not_save_logs = false;
-                }
-
-                //End do not save logs
-
-                //Verbose logs
-
-                String f_verbose = String.Empty;
-                if (is_portable == false)
-                {
-                    f_verbose = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_verbose.ini";
-                }
-                else
-                {
-                    f_verbose = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_verbose_portable.ini";
-                }
-
-                if (File.Exists(f_verbose))
-                {
-                    chk_verbose_log.CheckState = CheckState.Checked;
-                    verbose_logs = true;
-                }
-                else
-                {
-                    chk_verbose_log.CheckState = CheckState.Unchecked;
-                    verbose_logs = false;
-                }
-
-                //End verbose logs
-
-                //Verbose logs
-
-                String f_report = String.Empty;
-                if (is_portable == false)
-                {
-                    f_report = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_report.ini";
-                }
-                else
-                {
-                    f_report = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_report_portable.ini";
-                }
-
-                if (File.Exists(f_report))
-                {
-                    chk_full_info.CheckState = CheckState.Checked;
-                    full_report = true;
-                }
-                else
-                {
-                    chk_full_info.CheckState = CheckState.Unchecked;
-                    full_report = false;
-                }
-
-                //End full report
-
-                //Not save network cache
-
-                String f_no_cache = String.Empty;
-                if (is_portable == false)
-                {
-                    f_no_cache = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_nocache.ini";
-                }
-                else
-                {
-                    f_no_cache = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_nocache_portable.ini";
-                }
-
-                if (File.Exists(f_no_cache))
-                {
-                    chk_never_cache.CheckState = CheckState.Checked;
-                    not_save_cache = true;
-                    chk_cache_dialog.Enabled = false;
-                }
-                else
-                {
-                    chk_never_cache.CheckState = CheckState.Unchecked;
-                    not_save_cache = false;
-                    chk_cache_dialog.Enabled = true;
-                }
-
-                //End do not cache network files
-
-                //Use OS cache dialog
-
-                String f_os_cache = String.Empty;
-                if (is_portable == false)
-                {
-                    f_os_cache = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_oscache.ini";
-                }
-                else
-                {
-                    f_os_cache = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_oscache_portable.ini";
-                }
-
-                if (File.Exists(f_os_cache))
-                {
-                    chk_cache_dialog.CheckState = CheckState.Checked;
-                    use_cache_os = true;
-                }
-                else
-                {
-                    chk_cache_dialog.CheckState = CheckState.Unchecked;
-                    use_cache_os = false;
-                }
-
-                //END use OS cache dialog
-
-                //Remember tab
-
-                String f_remember = String.Empty;
-                if (is_portable == false)
-                {
-                    f_remember = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_remember.ini";
-                }
-                else
-                {
-                    f_remember = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_remember_portable.ini";
-                }
-
-                if (File.Exists(f_remember))
-                {
-                    chk_remember_tab.CheckState = CheckState.Checked;
-                    remember_tab = true;
-                }
-                else
-                {
-                    chk_remember_tab.CheckState = CheckState.Unchecked;
-                    remember_tab = false;
-                }
-
-                //END remember tab
-
-                //Read play sound
-
-                String ff_play_sound = String.Empty;
-                if (is_portable == false)
-                {
-                    ff_play_sound = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_play.ini";
-                }
-                else
-                {
-                    ff_play_sound = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_play_portable.ini";
-                }
-
-                if (!File.Exists(ff_play_sound))
-                {
-                    chk_play.Checked = false;
+                    play_end = false;
                     play_file = String.Empty;
+                    chk_play.Checked = false;
                     btn_browse_play.Enabled = false;
                     btn_play_sound.Enabled = false;
-                    play_end = false;
                 }
-                else
-                {
-                    String read_play = File.ReadAllText(ff_play_sound);
-                    if (read_play.Length != 0)
-                    {
-                        play_end = true;
-                        play_file = read_play;
-                        chk_play.Checked = true;
-                        btn_browse_play.Enabled = true;
-                        btn_play_sound.Enabled = true;
-                    }
-                    else
-                    {
-                        play_end = false;
-                        play_file = String.Empty;
-                        chk_play.Checked = false;
-                        btn_browse_play.Enabled = false;
-                        btn_play_sound.Enabled = false;
-                    }
-                }
+            }
             //End Read play sound
 
             //Read window position
@@ -627,7 +665,7 @@ namespace FFBatch
             }
             else
             {
-                f_remember_w = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_remember_w_portable.ini";
+                f_remember_w = port_path + "ff_remember_w_portable.ini";
             }
 
             if (File.Exists(f_remember_w))
@@ -642,6 +680,80 @@ namespace FFBatch
             }
 
             //End read window position
+
+            //Read delete definitively
+            String f_delete_full = String.Empty;
+            if (is_portable == false)
+            {
+                f_delete_full = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_delete_full.ini";
+            }
+            else
+            {
+                f_delete_full = port_path + "ff_delete_full_portable.ini";
+            }
+
+            if (File.Exists(f_delete_full))
+            {
+                chk_delete_def.CheckState = CheckState.Checked;
+                delete_def = true;
+            }
+            else
+            {
+                chk_delete_def.CheckState = CheckState.Unchecked;
+                delete_def = false;
+            }
+
+            //End delete definitively
+
+            //Read delete one
+            String f_delete_one = String.Empty;
+            if (is_portable == false)
+            {
+                f_delete_one = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_delete_one.ini";
+            }
+            else
+            {
+                f_delete_one = port_path + "ff_delete_one_portable.ini";
+            }
+
+            if (File.Exists(f_delete_one))
+            {
+                chk_delete_one.CheckState = CheckState.Checked;
+                delete_one = true;
+            }
+            else
+            {
+                chk_delete_one.CheckState = CheckState.Unchecked;
+                delete_one = false;
+            }
+
+            //End delete one
+
+            //FFmpeg latest version
+
+                      
+                    if (ff_ver == "Error")
+                {
+                lbl_ff_latest.Text = "Connection error";
+                pic_ver.Visible = false;
+                pic_ff_ok.Visible = false;
+                return;
+                }
+            
+            lbl_ff_latest.Text = "FFmpeg " + ff_ver;
+            if (!lbl_ff_ver.Text.Contains(ff_ver))
+                    {
+                        pic_ver.Visible = true;
+                        pic_ver.Left = lbl_ff_latest.Left + lbl_ff_latest.Text.Length + 60;
+                        pic_ff_ok.Visible = false;
+                                                
+                    }
+                    else
+                    {
+                        pic_ver.Visible = false;
+                        pic_ff_ok.Visible = true;
+                        pic_ff_ok.Left = lbl_ff_latest.Left + lbl_ff_latest.Text.Length + 60;
+                    }          
         }
 
         private void boton_load_bck_Click(object sender, System.EventArgs e)
@@ -653,7 +765,7 @@ namespace FFBatch
             }
             else
             {
-                path_log_backup = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch_bck_portable.ini";
+                path_log_backup = port_path + "ff_batch_bck_portable.ini";
             }
 
             if (!File.Exists(path_log_backup))
@@ -684,6 +796,11 @@ namespace FFBatch
         {
             String path_log_file = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch.ini";
             String path_log_backup = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch_bck.ini";
+            if (is_portable == true)
+            {
+                path_log_file = port_path + "ff_batch.ini";
+                path_log_backup = port_path + "ff_batch_bck.ini";
+            }
 
             try
             {
@@ -845,6 +962,8 @@ namespace FFBatch
 
         private void btn_defaults_Click(object sender, EventArgs e)
         {
+            chk_delete_one.CheckState = CheckState.Checked;
+            chk_delete_def.CheckState = CheckState.Unchecked;
             chk_subf.CheckState = CheckState.Checked;
             checkBox1.CheckState = CheckState.Unchecked;
             check_concat.CheckState = CheckState.Unchecked;
@@ -942,6 +1061,7 @@ namespace FFBatch
         private void btn_reset_Click(object sender, EventArgs e)
         {
             reset_asked = true;
+            cancel = false;
             ActiveForm.Close();
         }
 
@@ -954,6 +1074,7 @@ namespace FFBatch
         private void btn_edit_presets_n_Click(object sender, EventArgs e)
         {
             edit_presets = true;
+            cancel = false;
             this.Close();
         }
 
@@ -1075,6 +1196,40 @@ namespace FFBatch
         private void btn_update_Click(object sender, EventArgs e)
         {
             Process.Start("https://www.gyan.dev/ffmpeg/builds/");
+        }
+
+        private void pic_ff_ok_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("You are using the latest version of ffmpeg.");
+        }
+
+        private void pic_ver_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("A new version of ffmpeg is available: " + new_ver, "New version available", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void chk_delete_def_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_delete_def.CheckState == CheckState.Checked)
+            {
+                delete_def = true;
+            }
+            else
+            {
+                delete_def = false;
+            }
+        }
+
+        private void chk_delete_one_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_delete_one.CheckState == CheckState.Checked)
+            {
+                delete_one = true;
+            }
+            else
+            {
+                delete_one = false;
+            }
         }
     }
 }

@@ -326,6 +326,14 @@ namespace FFBatch
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Boolean add_new = false;
+            foreach (String item in cb_value_f.Items)
+            {
+                if (item != cb_value_f.Text) add_new = true;
+                break;
+            }
+            if (add_new == true) cb_value_f.Items.Add(cb_value_f.Text);
+
             cancel_filter = false;
             if (chk_invalid.CheckState == CheckState.Checked) remove_invalid = true;
             else remove_invalid = false;
@@ -533,7 +541,6 @@ namespace FFBatch
         private void cb_value_f_TextChanged(object sender, EventArgs e)
         {
             filter_value = cb_value_f.Text;
-
         }
 
         private void chk_invalid_CheckedChanged(object sender, EventArgs e)

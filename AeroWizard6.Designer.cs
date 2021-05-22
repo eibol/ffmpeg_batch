@@ -406,7 +406,6 @@
             this.wiz_split.Title = "FFmpeg Batch A/V Split Wizard";
             this.wiz_split.TitleIcon = ((System.Drawing.Icon)(resources.GetObject("wiz_split.TitleIcon")));
             this.wiz_split.Cancelling += new System.ComponentModel.CancelEventHandler(this.wizardControl1_Cancelling);
-            this.wiz_split.Finished += new System.EventHandler(this.wiz_img_Finished);
             // 
             // wz_end
             // 
@@ -423,6 +422,7 @@
             this.wz_end.TabIndex = 1;
             this.wz_end.Text = "Preset complete";
             this.wz_end.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz_end_Commit);
+            this.wz_end.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz_end_Initialize);
             this.wz_end.Rollback += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz_end_Rollback);
             // 
             // label9
@@ -448,9 +448,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(27, 22);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(166, 15);
+            this.label7.Size = new System.Drawing.Size(170, 15);
             this.label7.TabIndex = 93;
-            this.label7.Text = "The split preset wizard is ready";
+            this.label7.Text = "The split preset wizard is ready.";
             // 
             // txt_preset_name
             // 

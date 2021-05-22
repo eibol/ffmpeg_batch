@@ -19,6 +19,7 @@ namespace FFBatch
         public Boolean canceled = false;
         public Boolean start_enc = false;
         
+        
         Boolean  ok_images = false;
 
         public String pr1_first_params
@@ -45,12 +46,19 @@ namespace FFBatch
         }
 
         private void wz1_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
-        {
+        {            
             canceled = false;
+            if (combo_ext.Text == String.Empty)
+            {
+                MessageBox.Show("Output format extension cannot be blank.");
+                e.Cancel = true;
+                return;
+            }
             if (radio_absolute.Checked == true && txt_path.Text.Length == 0)
             {
                 MessageBox.Show("Absolute path cannot be blank.");
                 e.Cancel = true;
+                return;
             }           
 
             //Output path
@@ -64,11 +72,11 @@ namespace FFBatch
             }
             if (chk_out_name.Checked == true)
             {
-                out_path = out_path + "%fn_%0d";
+                out_path = out_path + "%fn_%04d";                
             }
             if (chk_out_name.Checked == false)
-            {
-                out_path = out_path + txt_naming + "_%0d";
+            {                
+                 out_path = out_path + txt_naming + "_%04d";
             }
 
             out_path = out_path + "." + combo_ext.Text;
@@ -159,12 +167,7 @@ namespace FFBatch
             }
             else txt_naming.Enabled = false;
         }
-               
 
-        private void wiz_img_Finished(object sender, EventArgs e)
-        {            
-            
-        }
 
         private void wz_end_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
         {
@@ -203,6 +206,20 @@ namespace FFBatch
             pr_1st_params = "";
             out_path = "";
             out_format = "";
+        }
+
+        private void wz_end_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
+        {
+            if (list_count > 0)
+            {
+                btn_Start.Enabled = true;
+                label9.Visible = true;
+            }
+            else
+            {
+                btn_Start.Enabled = false;
+                label9.Visible = false;
+            }
         }
     }
 }

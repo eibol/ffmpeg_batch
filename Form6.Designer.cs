@@ -58,7 +58,6 @@
             this.Name = "Form6";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form_intro";
             this.TopMost = true;
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form6_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

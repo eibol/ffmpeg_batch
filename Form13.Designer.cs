@@ -32,7 +32,7 @@
             this.btn_browse_path_m3u = new System.Windows.Forms.Button();
             this.txt_path = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_cancel = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.open_F = new System.Windows.Forms.OpenFileDialog();
             this.button3 = new System.Windows.Forms.Button();
@@ -41,6 +41,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.open_f2 = new System.Windows.Forms.OpenFileDialog();
             this.label3 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_browse_path_m3u
@@ -48,7 +52,7 @@
             this.btn_browse_path_m3u.FlatAppearance.BorderSize = 0;
             this.btn_browse_path_m3u.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btn_browse_path_m3u.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_browse_path_m3u.Location = new System.Drawing.Point(406, 60);
+            this.btn_browse_path_m3u.Location = new System.Drawing.Point(391, 60);
             this.btn_browse_path_m3u.Name = "btn_browse_path_m3u";
             this.btn_browse_path_m3u.Size = new System.Drawing.Size(68, 22);
             this.btn_browse_path_m3u.TabIndex = 101;
@@ -62,7 +66,7 @@
             this.txt_path.Location = new System.Drawing.Point(79, 61);
             this.txt_path.Name = "txt_path";
             this.txt_path.ReadOnly = true;
-            this.txt_path.Size = new System.Drawing.Size(323, 20);
+            this.txt_path.Size = new System.Drawing.Size(308, 20);
             this.txt_path.TabIndex = 99;
             // 
             // label8
@@ -74,25 +78,26 @@
             this.label8.TabIndex = 100;
             this.label8.Text = "Executable";
             // 
-            // button1
+            // btn_cancel
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.Location = new System.Drawing.Point(178, 158);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(72, 22);
-            this.button1.TabIndex = 102;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_cancel.FlatAppearance.BorderSize = 0;
+            this.btn_cancel.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_cancel.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_cancel.Location = new System.Drawing.Point(391, 12);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(72, 22);
+            this.btn_cancel.TabIndex = 102;
+            this.btn_cancel.Text = "Cancel";
+            this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(256, 158);
+            this.button2.Location = new System.Drawing.Point(313, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(72, 22);
             this.button2.TabIndex = 103;
@@ -109,7 +114,7 @@
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(406, 99);
+            this.button3.Location = new System.Drawing.Point(391, 99);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(68, 22);
             this.button3.TabIndex = 106;
@@ -122,7 +127,7 @@
             this.txt_args.BackColor = System.Drawing.SystemColors.Window;
             this.txt_args.Location = new System.Drawing.Point(79, 100);
             this.txt_args.Name = "txt_args";
-            this.txt_args.Size = new System.Drawing.Size(323, 20);
+            this.txt_args.Size = new System.Drawing.Size(308, 20);
             this.txt_args.TabIndex = 104;
             // 
             // label1
@@ -156,14 +161,34 @@
             this.label3.TabIndex = 109;
             this.label3.Text = "Select an application or document to open after a successful queue encoding.";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(19, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(36, 28);
+            this.pictureBox1.TabIndex = 110;
+            this.pictureBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.panel1.Controls.Add(this.button2);
+            this.panel1.Controls.Add(this.btn_cancel);
+            this.panel1.Location = new System.Drawing.Point(0, 150);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(477, 50);
+            this.panel1.TabIndex = 111;
+            // 
             // Form13
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(486, 192);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button2);
+            this.BackColor = System.Drawing.Color.White;
+            this.CancelButton = this.btn_cancel;
+            this.ClientSize = new System.Drawing.Size(471, 192);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button3);
@@ -181,6 +206,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Open application on queue completion";
             this.Load += new System.EventHandler(this.Form13_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,9 +216,8 @@
         #endregion
 
         private System.Windows.Forms.Button btn_browse_path_m3u;
-        private System.Windows.Forms.TextBox txt_path;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.OpenFileDialog open_F;
         private System.Windows.Forms.Button button3;
@@ -199,6 +225,9 @@
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox txt_args;
         private System.Windows.Forms.OpenFileDialog open_f2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Panel panel1;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox txt_path;
     }
 }
