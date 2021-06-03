@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
-using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Threading;
@@ -19,8 +17,6 @@ namespace FFBatch
             InitializeComponent();
         }
 
-        public Boolean changed_lang = false;
-        public String lang_set = "";
         public String ff_ver = String.Empty;
         System.Media.SoundPlayer soundPl = new System.Media.SoundPlayer();
         String port_path = System.IO.Path.Combine(Application.StartupPath, "settings") + "\\";
@@ -123,7 +119,7 @@ namespace FFBatch
                 }
             }
             
-            cancel = false;            
+            cancel = false;
             ActiveForm.Close();
         }
 
@@ -608,13 +604,13 @@ namespace FFBatch
 
             if (File.Exists(f_remember))
             {
+                chk_remember_tab.CheckState = CheckState.Checked;
                 remember_tab = true;
-                chk_remember_tab.CheckState = CheckState.Checked;                
             }
             else
             {
+                chk_remember_tab.CheckState = CheckState.Unchecked;
                 remember_tab = false;
-                chk_remember_tab.CheckState = CheckState.Unchecked;                
             }
 
             //END remember tab
@@ -1072,14 +1068,8 @@ namespace FFBatch
 
         private void chk_remember_tab_CheckedChanged(object sender, EventArgs e)
         {
-            if (chk_remember_tab.Checked)
-            {
-                remember_tab = true;
-            }
-            else
-            {
-                remember_tab = false;
-            }
+            if (chk_remember_tab.CheckState == CheckState.Checked) remember_tab = true;
+            else remember_tab = false;
         }
 
         private void btn_edit_presets_n_Click(object sender, EventArgs e)
@@ -1241,41 +1231,6 @@ namespace FFBatch
             {
                 delete_one = false;
             }
-        }
-
-        private void combo_lang_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (combo_lang.SelectedIndex == 0)
-            {
-                lang_set = "en";
-                FFBatch.Properties.Settings.Default.app_lang = "en";
-            }
-            if (combo_lang.SelectedIndex == 1)
-            { 
-                lang_set = "es";
-                FFBatch.Properties.Settings.Default.app_lang = "es";
-            }            
-            FFBatch.Properties.Settings.Default.Save();
-            refresh_lang();
-            if (FFBatch.Properties.Settings.Default.app_lang == "en") this.Text = "Settings";
-            if (FFBatch.Properties.Settings.Default.app_lang == "es") this.Text = "Configuración";
-        }
-
-        private void refresh_lang()
-        {
-            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
-            RefreshResources(this, resources);
-            changed_lang = true;            
-        }
-        private void RefreshResources(Control ctrl, ComponentResourceManager res)
-        {
-            ctrl.SuspendLayout();
-            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
-            foreach (Control control in ctrl.Controls)
-                RefreshResources(control, res); // recursion
-            ctrl.ResumeLayout(false);
         }
     }
 }

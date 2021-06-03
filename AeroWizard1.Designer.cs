@@ -195,8 +195,10 @@
             // 
             // wizardControl1
             // 
-            resources.ApplyResources(this.wizardControl1, "wizardControl1");
             this.wizardControl1.BackColor = System.Drawing.Color.White;
+            this.wizardControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.wizardControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.266055F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wizardControl1.Location = new System.Drawing.Point(0, 0);
             this.wizardControl1.Name = "wizardControl1";
             this.wizardControl1.Pages.Add(this.wz0_0);
             this.wizardControl1.Pages.Add(this.wz0);
@@ -205,12 +207,15 @@
             this.wizardControl1.Pages.Add(this.wz2);
             this.wizardControl1.Pages.Add(this.wz_0_1);
             this.wizardControl1.Pages.Add(this.wz_end);
+            this.wizardControl1.Size = new System.Drawing.Size(574, 415);
+            this.wizardControl1.TabIndex = 0;
+            this.wizardControl1.Title = "FFmpeg Batch AV Converter Wizard";
+            this.wizardControl1.TitleIcon = ((System.Drawing.Icon)(resources.GetObject("wizardControl1.TitleIcon")));
             this.wizardControl1.Finished += new System.EventHandler(this.wizardControl1_Finished);
             this.wizardControl1.SelectedPageChanged += new System.EventHandler(this.wizardControl1_SelectedPageChanged);
             // 
             // wz0_0
             // 
-            resources.ApplyResources(this.wz0_0, "wz0_0");
             this.wz0_0.Controls.Add(this.btn_skip_files);
             this.wz0_0.Controls.Add(this.chk_start_0);
             this.wz0_0.Controls.Add(this.label35);
@@ -220,63 +225,107 @@
             this.wz0_0.Controls.Add(this.btn_add_files);
             this.wz0_0.Name = "wz0_0";
             this.wz0_0.NextPage = this.wz0;
+            this.wz0_0.Size = new System.Drawing.Size(527, 261);
+            this.wz0_0.TabIndex = 5;
+            this.wz0_0.Text = "FFmpeg Bath AV Converter Wizard";
             this.wz0_0.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz0_0_Commit);
             this.wz0_0.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz0_0_Initialize);
             // 
             // btn_skip_files
             // 
-            resources.ApplyResources(this.btn_skip_files, "btn_skip_files");
+            this.btn_skip_files.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_skip_files.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_skip_files.FlatAppearance.BorderSize = 0;
             this.btn_skip_files.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_skip_files.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_skip_files.Image = ((System.Drawing.Image)(resources.GetObject("btn_skip_files.Image")));
+            this.btn_skip_files.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_skip_files.Location = new System.Drawing.Point(204, 113);
             this.btn_skip_files.Name = "btn_skip_files";
+            this.btn_skip_files.Size = new System.Drawing.Size(68, 87);
+            this.btn_skip_files.TabIndex = 32;
+            this.btn_skip_files.Text = "Skip files";
+            this.btn_skip_files.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_skip_files.UseVisualStyleBackColor = true;
             this.btn_skip_files.Click += new System.EventHandler(this.btn_skip_files_Click);
             // 
             // chk_start_0
             // 
-            resources.ApplyResources(this.chk_start_0, "chk_start_0");
+            this.chk_start_0.AutoSize = true;
             this.chk_start_0.Checked = true;
             this.chk_start_0.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chk_start_0.Location = new System.Drawing.Point(45, 242);
             this.chk_start_0.Name = "chk_start_0";
+            this.chk_start_0.Size = new System.Drawing.Size(170, 19);
+            this.chk_start_0.TabIndex = 31;
+            this.chk_start_0.Text = "Show this dialog on startup";
             this.chk_start_0.UseVisualStyleBackColor = true;
             this.chk_start_0.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // label35
             // 
-            resources.ApplyResources(this.label35, "label35");
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(38, 77);
             this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(254, 15);
+            this.label35.TabIndex = 30;
+            this.label35.Text = "Please add some files or folders to be encoded:";
             // 
             // label34
             // 
-            resources.ApplyResources(this.label34, "label34");
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(39, 37);
             this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(316, 15);
+            this.label34.TabIndex = 29;
+            this.label34.Text = "through the encoding process and application capabilities.";
             // 
             // label33
             // 
-            resources.ApplyResources(this.label33, "label33");
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(38, 17);
             this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(371, 15);
+            this.label33.TabIndex = 28;
+            this.label33.Text = "Welcome to FFmpeg Batch AV Converter.  This wizard will guide you ";
             // 
             // btn_add_folders
             // 
-            resources.ApplyResources(this.btn_add_folders, "btn_add_folders");
+            this.btn_add_folders.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_add_folders.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_add_folders.FlatAppearance.BorderSize = 0;
             this.btn_add_folders.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_add_folders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_add_folders.Image = ((System.Drawing.Image)(resources.GetObject("btn_add_folders.Image")));
+            this.btn_add_folders.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_add_folders.Location = new System.Drawing.Point(122, 115);
             this.btn_add_folders.Name = "btn_add_folders";
+            this.btn_add_folders.Size = new System.Drawing.Size(71, 85);
+            this.btn_add_folders.TabIndex = 27;
+            this.btn_add_folders.Text = "Add folder";
+            this.btn_add_folders.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_add_folders.UseVisualStyleBackColor = true;
             this.btn_add_folders.Click += new System.EventHandler(this.btn_add_folders_Click);
             // 
             // btn_add_files
             // 
-            resources.ApplyResources(this.btn_add_files, "btn_add_files");
+            this.btn_add_files.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_add_files.FlatAppearance.BorderSize = 0;
             this.btn_add_files.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_add_files.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_add_files.Image = ((System.Drawing.Image)(resources.GetObject("btn_add_files.Image")));
+            this.btn_add_files.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_add_files.Location = new System.Drawing.Point(43, 114);
             this.btn_add_files.Name = "btn_add_files";
+            this.btn_add_files.Size = new System.Drawing.Size(72, 86);
+            this.btn_add_files.TabIndex = 1;
+            this.btn_add_files.Text = "Add files";
+            this.btn_add_files.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_add_files.UseVisualStyleBackColor = true;
             this.btn_add_files.Click += new System.EventHandler(this.btn_add_files_Click);
             // 
             // wz0
             // 
-            resources.ApplyResources(this.wz0, "wz0");
             this.wz0.Controls.Add(this.radio_existing);
             this.wz0.Controls.Add(this.pic_1);
             this.wz0.Controls.Add(this.chk_start);
@@ -291,97 +340,149 @@
             this.wz0.Controls.Add(this.radio_audio);
             this.wz0.Controls.Add(this.radio_video);
             this.wz0.Name = "wz0";
+            this.wz0.Size = new System.Drawing.Size(527, 261);
+            this.wz0.TabIndex = 0;
+            this.wz0.Text = "Select an encoding option";
             this.wz0.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz0_Commit);
             // 
             // radio_existing
             // 
-            resources.ApplyResources(this.radio_existing, "radio_existing");
+            this.radio_existing.AutoSize = true;
+            this.radio_existing.Location = new System.Drawing.Point(45, 14);
             this.radio_existing.Name = "radio_existing";
+            this.radio_existing.Size = new System.Drawing.Size(191, 19);
+            this.radio_existing.TabIndex = 0;
+            this.radio_existing.Text = "Use an existing encoding preset";
             this.radio_existing.UseVisualStyleBackColor = true;
             this.radio_existing.CheckedChanged += new System.EventHandler(this.radio_existing_CheckedChanged);
             // 
             // pic_1
             // 
-            resources.ApplyResources(this.pic_1, "pic_1");
+            this.pic_1.Image = ((System.Drawing.Image)(resources.GetObject("pic_1.Image")));
+            this.pic_1.Location = new System.Drawing.Point(447, 12);
             this.pic_1.Name = "pic_1";
+            this.pic_1.Size = new System.Drawing.Size(64, 64);
+            this.pic_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_1.TabIndex = 31;
             this.pic_1.TabStop = false;
             // 
             // chk_start
             // 
-            resources.ApplyResources(this.chk_start, "chk_start");
+            this.chk_start.AutoSize = true;
             this.chk_start.Checked = true;
             this.chk_start.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chk_start.Location = new System.Drawing.Point(45, 242);
             this.chk_start.Name = "chk_start";
+            this.chk_start.Size = new System.Drawing.Size(170, 19);
+            this.chk_start.TabIndex = 7;
+            this.chk_start.Text = "Show this dialog on startup";
             this.chk_start.UseVisualStyleBackColor = true;
             this.chk_start.CheckedChanged += new System.EventHandler(this.chk_start_CheckedChanged);
             // 
             // radio_split
             // 
-            resources.ApplyResources(this.radio_split, "radio_split");
+            this.radio_split.AutoSize = true;
+            this.radio_split.Location = new System.Drawing.Point(45, 199);
             this.radio_split.Name = "radio_split";
+            this.radio_split.Size = new System.Drawing.Size(105, 19);
+            this.radio_split.TabIndex = 6;
+            this.radio_split.Text = "File split wizard";
             this.radio_split.UseVisualStyleBackColor = true;
             this.radio_split.CheckedChanged += new System.EventHandler(this.radio_split_CheckedChanged);
             // 
             // radio_images
             // 
-            resources.ApplyResources(this.radio_images, "radio_images");
+            this.radio_images.AutoSize = true;
+            this.radio_images.Location = new System.Drawing.Point(45, 172);
             this.radio_images.Name = "radio_images";
+            this.radio_images.Size = new System.Drawing.Size(150, 19);
+            this.radio_images.TabIndex = 5;
+            this.radio_images.Text = "Image extraction wizard";
             this.radio_images.UseVisualStyleBackColor = true;
             this.radio_images.CheckedChanged += new System.EventHandler(this.radio_images_CheckedChanged);
             // 
             // lbl_silence
             // 
-            resources.ApplyResources(this.lbl_silence, "lbl_silence");
+            this.lbl_silence.AutoSize = true;
+            this.lbl_silence.Location = new System.Drawing.Point(248, 146);
             this.lbl_silence.Name = "lbl_silence";
+            this.lbl_silence.Size = new System.Drawing.Size(0, 15);
+            this.lbl_silence.TabIndex = 27;
             // 
             // pic_warn_silence
             // 
-            resources.ApplyResources(this.pic_warn_silence, "pic_warn_silence");
+            this.pic_warn_silence.Image = ((System.Drawing.Image)(resources.GetObject("pic_warn_silence.Image")));
+            this.pic_warn_silence.Location = new System.Drawing.Point(221, 144);
             this.pic_warn_silence.Name = "pic_warn_silence";
+            this.pic_warn_silence.Size = new System.Drawing.Size(21, 22);
+            this.pic_warn_silence.TabIndex = 26;
             this.pic_warn_silence.TabStop = false;
+            this.pic_warn_silence.Visible = false;
             // 
             // radio_silence
             // 
-            resources.ApplyResources(this.radio_silence, "radio_silence");
+            this.radio_silence.AutoSize = true;
+            this.radio_silence.Location = new System.Drawing.Point(45, 144);
             this.radio_silence.Name = "radio_silence";
+            this.radio_silence.Size = new System.Drawing.Size(146, 19);
+            this.radio_silence.TabIndex = 4;
+            this.radio_silence.Text = "Silence detector wizard";
             this.radio_silence.UseVisualStyleBackColor = true;
             this.radio_silence.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
             // pic_warn_two
             // 
-            resources.ApplyResources(this.pic_warn_two, "pic_warn_two");
+            this.pic_warn_two.Image = ((System.Drawing.Image)(resources.GetObject("pic_warn_two.Image")));
+            this.pic_warn_two.Location = new System.Drawing.Point(221, 115);
             this.pic_warn_two.Name = "pic_warn_two";
+            this.pic_warn_two.Size = new System.Drawing.Size(21, 22);
+            this.pic_warn_two.TabIndex = 24;
             this.pic_warn_two.TabStop = false;
+            this.pic_warn_two.Visible = false;
             // 
             // lbl_two
             // 
-            resources.ApplyResources(this.lbl_two, "lbl_two");
+            this.lbl_two.AutoSize = true;
+            this.lbl_two.Location = new System.Drawing.Point(246, 117);
             this.lbl_two.Name = "lbl_two";
+            this.lbl_two.Size = new System.Drawing.Size(0, 15);
+            this.lbl_two.TabIndex = 3;
             // 
             // radio_2pass
             // 
-            resources.ApplyResources(this.radio_2pass, "radio_2pass");
+            this.radio_2pass.AutoSize = true;
+            this.radio_2pass.Location = new System.Drawing.Point(45, 115);
             this.radio_2pass.Name = "radio_2pass";
+            this.radio_2pass.Size = new System.Drawing.Size(143, 19);
+            this.radio_2pass.TabIndex = 3;
+            this.radio_2pass.Text = "Two pass video wizard";
             this.radio_2pass.UseVisualStyleBackColor = true;
             this.radio_2pass.CheckedChanged += new System.EventHandler(this.radio_2pass_CheckedChanged);
             // 
             // radio_audio
             // 
-            resources.ApplyResources(this.radio_audio, "radio_audio");
+            this.radio_audio.AutoSize = true;
+            this.radio_audio.Location = new System.Drawing.Point(45, 71);
             this.radio_audio.Name = "radio_audio";
+            this.radio_audio.Size = new System.Drawing.Size(196, 19);
+            this.radio_audio.TabIndex = 2;
+            this.radio_audio.Text = "Create an encoding audio preset";
             this.radio_audio.UseVisualStyleBackColor = true;
             this.radio_audio.CheckedChanged += new System.EventHandler(this.radio_audio_CheckedChanged);
             // 
             // radio_video
             // 
-            resources.ApplyResources(this.radio_video, "radio_video");
+            this.radio_video.AutoSize = true;
+            this.radio_video.Location = new System.Drawing.Point(45, 42);
             this.radio_video.Name = "radio_video";
+            this.radio_video.Size = new System.Drawing.Size(195, 19);
+            this.radio_video.TabIndex = 1;
+            this.radio_video.Text = "Create an encoding video preset";
             this.radio_video.UseVisualStyleBackColor = true;
             this.radio_video.CheckedChanged += new System.EventHandler(this.radio_video_CheckedChanged);
             // 
             // wz1
             // 
-            resources.ApplyResources(this.wz1, "wz1");
             this.wz1.Controls.Add(this.chk_vp9_threads);
             this.wz1.Controls.Add(this.btn_ref);
             this.wz1.Controls.Add(this.cb_profile_dnxhr);
@@ -418,132 +519,215 @@
             this.wz1.Controls.Add(this.Combo_encoders);
             this.wz1.Controls.Add(this.label1);
             this.wz1.Name = "wz1";
+            this.wz1.Size = new System.Drawing.Size(527, 261);
+            this.wz1.TabIndex = 1;
+            this.wz1.Text = "Video encoder settings";
             this.wz1.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz1_Commit);
             // 
             // chk_vp9_threads
             // 
-            resources.ApplyResources(this.chk_vp9_threads, "chk_vp9_threads");
+            this.chk_vp9_threads.AutoSize = true;
             this.chk_vp9_threads.Checked = true;
             this.chk_vp9_threads.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chk_vp9_threads.Location = new System.Drawing.Point(152, 180);
             this.chk_vp9_threads.Name = "chk_vp9_threads";
+            this.chk_vp9_threads.Size = new System.Drawing.Size(153, 19);
+            this.chk_vp9_threads.TabIndex = 49;
+            this.chk_vp9_threads.Text = "Enable vp9 multi-thread";
             this.chk_vp9_threads.UseVisualStyleBackColor = true;
+            this.chk_vp9_threads.Visible = false;
             // 
             // btn_ref
             // 
-            resources.ApplyResources(this.btn_ref, "btn_ref");
+            this.btn_ref.Image = ((System.Drawing.Image)(resources.GetObject("btn_ref.Image")));
+            this.btn_ref.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ref.Location = new System.Drawing.Point(230, 38);
+            this.btn_ref.Margin = new System.Windows.Forms.Padding(1);
             this.btn_ref.Name = "btn_ref";
+            this.btn_ref.Size = new System.Drawing.Size(91, 25);
+            this.btn_ref.TabIndex = 48;
+            this.btn_ref.Text = "Reference";
+            this.btn_ref.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_ref.UseVisualStyleBackColor = true;
             this.btn_ref.Click += new System.EventHandler(this.btn_ref_Click);
             // 
             // cb_profile_dnxhr
             // 
-            resources.ApplyResources(this.cb_profile_dnxhr, "cb_profile_dnxhr");
             this.cb_profile_dnxhr.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_profile_dnxhr.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_profile_dnxhr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_profile_dnxhr.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_profile_dnxhr.FormattingEnabled = true;
             this.cb_profile_dnxhr.Items.AddRange(new object[] {
-            resources.GetString("cb_profile_dnxhr.Items"),
-            resources.GetString("cb_profile_dnxhr.Items1"),
-            resources.GetString("cb_profile_dnxhr.Items2"),
-            resources.GetString("cb_profile_dnxhr.Items3"),
-            resources.GetString("cb_profile_dnxhr.Items4")});
+            "dnxhr_hq",
+            "dnxhr_hqx",
+            "dnxhr_444",
+            "dnxhr_sq",
+            "dnxhr_lb"});
+            this.cb_profile_dnxhr.Location = new System.Drawing.Point(105, 105);
             this.cb_profile_dnxhr.Name = "cb_profile_dnxhr";
+            this.cb_profile_dnxhr.Size = new System.Drawing.Size(91, 23);
+            this.cb_profile_dnxhr.TabIndex = 47;
+            this.cb_profile_dnxhr.Visible = false;
             // 
             // cb_bits_prores
             // 
-            resources.ApplyResources(this.cb_bits_prores, "cb_bits_prores");
             this.cb_bits_prores.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_bits_prores.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_bits_prores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_bits_prores.Font = new System.Drawing.Font("Segoe UI", 7.926606F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_bits_prores.FormattingEnabled = true;
+            this.cb_bits_prores.Location = new System.Drawing.Point(287, 149);
             this.cb_bits_prores.Name = "cb_bits_prores";
+            this.cb_bits_prores.Size = new System.Drawing.Size(100, 21);
+            this.cb_bits_prores.TabIndex = 46;
+            this.cb_bits_prores.Visible = false;
             // 
             // label28
             // 
-            resources.ApplyResources(this.label28, "label28");
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(214, 153);
             this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(71, 15);
+            this.label28.TabIndex = 45;
+            this.label28.Text = "Bits_per_mb";
+            this.label28.Visible = false;
             // 
             // cb_vendor_prores
             // 
-            resources.ApplyResources(this.cb_vendor_prores, "cb_vendor_prores");
             this.cb_vendor_prores.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_vendor_prores.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_vendor_prores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_vendor_prores.Font = new System.Drawing.Font("Segoe UI", 7.926606F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_vendor_prores.FormattingEnabled = true;
+            this.cb_vendor_prores.Location = new System.Drawing.Point(105, 149);
             this.cb_vendor_prores.Name = "cb_vendor_prores";
+            this.cb_vendor_prores.Size = new System.Drawing.Size(91, 21);
+            this.cb_vendor_prores.TabIndex = 44;
+            this.cb_vendor_prores.Visible = false;
             // 
             // label27
             // 
-            resources.ApplyResources(this.label27, "label27");
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(58, 152);
             this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(45, 15);
+            this.label27.TabIndex = 43;
+            this.label27.Text = "Vendor";
+            this.label27.Visible = false;
             // 
             // cb_pixel_prores
             // 
-            resources.ApplyResources(this.cb_pixel_prores, "cb_pixel_prores");
             this.cb_pixel_prores.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_pixel_prores.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_pixel_prores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_pixel_prores.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_pixel_prores.FormattingEnabled = true;
+            this.cb_pixel_prores.Location = new System.Drawing.Point(287, 105);
             this.cb_pixel_prores.Name = "cb_pixel_prores";
+            this.cb_pixel_prores.Size = new System.Drawing.Size(100, 23);
+            this.cb_pixel_prores.TabIndex = 42;
+            this.cb_pixel_prores.Visible = false;
             // 
             // label26
             // 
-            resources.ApplyResources(this.label26, "label26");
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(214, 108);
             this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(70, 15);
+            this.label26.TabIndex = 41;
+            this.label26.Text = "Pixel format";
+            this.label26.Visible = false;
             // 
             // cb_profile_prores
             // 
-            resources.ApplyResources(this.cb_profile_prores, "cb_profile_prores");
             this.cb_profile_prores.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_profile_prores.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_profile_prores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_profile_prores.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_profile_prores.FormattingEnabled = true;
+            this.cb_profile_prores.Location = new System.Drawing.Point(105, 105);
             this.cb_profile_prores.Name = "cb_profile_prores";
+            this.cb_profile_prores.Size = new System.Drawing.Size(91, 23);
+            this.cb_profile_prores.TabIndex = 40;
+            this.cb_profile_prores.Visible = false;
             // 
             // label25
             // 
-            resources.ApplyResources(this.label25, "label25");
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(58, 109);
             this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(41, 15);
+            this.label25.TabIndex = 39;
+            this.label25.Text = "Profile";
+            this.label25.Visible = false;
             // 
             // cb_cq_vp9
             // 
-            resources.ApplyResources(this.cb_cq_vp9, "cb_cq_vp9");
             this.cb_cq_vp9.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_cq_vp9.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_cq_vp9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_cq_vp9.Font = new System.Drawing.Font("Segoe UI", 7.926606F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_cq_vp9.FormattingEnabled = true;
+            this.cb_cq_vp9.Location = new System.Drawing.Point(274, 143);
             this.cb_cq_vp9.Name = "cb_cq_vp9";
+            this.cb_cq_vp9.Size = new System.Drawing.Size(44, 21);
+            this.cb_cq_vp9.TabIndex = 38;
+            this.cb_cq_vp9.Visible = false;
             // 
             // label23
             // 
-            resources.ApplyResources(this.label23, "label23");
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(148, 146);
             this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(120, 15);
+            this.label23.TabIndex = 37;
+            this.label23.Text = "Constant Quality CRF";
+            this.label23.Visible = false;
             // 
             // txt_video_current
             // 
-            resources.ApplyResources(this.txt_video_current, "txt_video_current");
             this.txt_video_current.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_video_current.Location = new System.Drawing.Point(15, 3);
             this.txt_video_current.Name = "txt_video_current";
+            this.txt_video_current.Size = new System.Drawing.Size(184, 16);
+            this.txt_video_current.TabIndex = 36;
             // 
             // label17
             // 
-            resources.ApplyResources(this.label17, "label17");
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(251, 231);
             this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(63, 15);
+            this.label17.TabIndex = 35;
+            this.label17.Text = "Frame rate";
+            this.label17.Visible = false;
             // 
             // cb_framerate
             // 
-            resources.ApplyResources(this.cb_framerate, "cb_framerate");
             this.cb_framerate.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_framerate.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_framerate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_framerate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_framerate.FormattingEnabled = true;
+            this.cb_framerate.Location = new System.Drawing.Point(319, 228);
             this.cb_framerate.Name = "cb_framerate";
+            this.cb_framerate.Size = new System.Drawing.Size(94, 23);
+            this.cb_framerate.TabIndex = 34;
+            this.cb_framerate.Visible = false;
             this.cb_framerate.SelectedIndexChanged += new System.EventHandler(this.cb_framerate_SelectedIndexChanged_1);
             // 
             // n_framerate
             // 
-            resources.ApplyResources(this.n_framerate, "n_framerate");
+            this.n_framerate.Enabled = false;
+            this.n_framerate.Font = new System.Drawing.Font("Segoe UI", 7.926606F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.n_framerate.Location = new System.Drawing.Point(418, 228);
             this.n_framerate.Maximum = new decimal(new int[] {
             60,
             0,
@@ -555,145 +739,230 @@
             0,
             0});
             this.n_framerate.Name = "n_framerate";
+            this.n_framerate.Size = new System.Drawing.Size(37, 22);
+            this.n_framerate.TabIndex = 33;
             this.n_framerate.Value = new decimal(new int[] {
             30,
             0,
             0,
             0});
+            this.n_framerate.Visible = false;
             // 
             // cb_pixel
             // 
-            resources.ApplyResources(this.cb_pixel, "cb_pixel");
             this.cb_pixel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_pixel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_pixel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_pixel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_pixel.FormattingEnabled = true;
+            this.cb_pixel.Location = new System.Drawing.Point(111, 228);
             this.cb_pixel.Name = "cb_pixel";
+            this.cb_pixel.Size = new System.Drawing.Size(97, 23);
+            this.cb_pixel.TabIndex = 23;
+            this.cb_pixel.Visible = false;
             // 
             // label16
             // 
-            resources.ApplyResources(this.label16, "label16");
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(36, 231);
             this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(70, 15);
+            this.label16.TabIndex = 22;
+            this.label16.Text = "Pixel format";
+            this.label16.Visible = false;
             // 
             // cb_level
             // 
-            resources.ApplyResources(this.cb_level, "cb_level");
             this.cb_level.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_level.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_level.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_level.Font = new System.Drawing.Font("Segoe UI", 7.926606F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_level.FormattingEnabled = true;
+            this.cb_level.Location = new System.Drawing.Point(293, 154);
             this.cb_level.Name = "cb_level";
+            this.cb_level.Size = new System.Drawing.Size(41, 21);
+            this.cb_level.TabIndex = 15;
+            this.cb_level.Visible = false;
             // 
             // cb_tune
             // 
-            resources.ApplyResources(this.cb_tune, "cb_tune");
             this.cb_tune.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_tune.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_tune.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_tune.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_tune.FormattingEnabled = true;
+            this.cb_tune.Location = new System.Drawing.Point(393, 154);
             this.cb_tune.Name = "cb_tune";
+            this.cb_tune.Size = new System.Drawing.Size(85, 23);
+            this.cb_tune.TabIndex = 14;
+            this.cb_tune.Visible = false;
             // 
             // label8
             // 
-            resources.ApplyResources(this.label8, "label8");
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(355, 157);
             this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(34, 15);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Tune";
+            this.label8.Visible = false;
             // 
             // label7
             // 
-            resources.ApplyResources(this.label7, "label7");
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 7.926606F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(347, 81);
             this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(0, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Visible = false;
             // 
             // label6
             // 
-            resources.ApplyResources(this.label6, "label6");
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 7.926606F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(14, 84);
             this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(0, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Visible = false;
             // 
             // cb_profile
             // 
-            resources.ApplyResources(this.cb_profile, "cb_profile");
             this.cb_profile.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_profile.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_profile.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_profile.Font = new System.Drawing.Font("Segoe UI", 7.926606F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_profile.FormattingEnabled = true;
+            this.cb_profile.Location = new System.Drawing.Point(201, 154);
             this.cb_profile.Name = "cb_profile";
+            this.cb_profile.Size = new System.Drawing.Size(88, 21);
+            this.cb_profile.TabIndex = 10;
+            this.cb_profile.Visible = false;
             this.cb_profile.SelectedIndexChanged += new System.EventHandler(this.cb_profile_SelectedIndexChanged);
             // 
             // label5
             // 
-            resources.ApplyResources(this.label5, "label5");
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 7.926606F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(154, 157);
             this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Profile";
+            this.label5.Visible = false;
             // 
             // cb_preset
             // 
-            resources.ApplyResources(this.cb_preset, "cb_preset");
             this.cb_preset.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_preset.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_preset.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_preset.Font = new System.Drawing.Font("Segoe UI", 7.926606F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_preset.FormattingEnabled = true;
+            this.cb_preset.Location = new System.Drawing.Point(57, 154);
             this.cb_preset.Name = "cb_preset";
+            this.cb_preset.Size = new System.Drawing.Size(80, 21);
+            this.cb_preset.TabIndex = 8;
+            this.cb_preset.Visible = false;
             this.cb_preset.SelectedIndexChanged += new System.EventHandler(this.cb_preset_SelectedIndexChanged);
             // 
             // label4
             // 
-            resources.ApplyResources(this.label4, "label4");
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 157);
             this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 15);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Preset";
+            this.label4.Visible = false;
             // 
             // label3
             // 
-            resources.ApplyResources(this.label3, "label3");
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(486, 107);
             this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 15);
+            this.label3.TabIndex = 6;
             // 
             // n_crf
             // 
-            resources.ApplyResources(this.n_crf, "n_crf");
+            this.n_crf.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.n_crf.Location = new System.Drawing.Point(439, 103);
             this.n_crf.Name = "n_crf";
+            this.n_crf.Size = new System.Drawing.Size(40, 23);
+            this.n_crf.TabIndex = 5;
+            this.n_crf.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.n_crf.Value = new decimal(new int[] {
             23,
             0,
             0,
             0});
+            this.n_crf.Visible = false;
             this.n_crf.ValueChanged += new System.EventHandler(this.n_crf_ValueChanged);
             // 
             // combo_crf_mode
             // 
-            resources.ApplyResources(this.combo_crf_mode, "combo_crf_mode");
             this.combo_crf_mode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.combo_crf_mode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.combo_crf_mode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_crf_mode.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.combo_crf_mode.FormattingEnabled = true;
+            this.combo_crf_mode.Location = new System.Drawing.Point(336, 39);
             this.combo_crf_mode.Name = "combo_crf_mode";
+            this.combo_crf_mode.Size = new System.Drawing.Size(145, 23);
+            this.combo_crf_mode.TabIndex = 4;
+            this.combo_crf_mode.Visible = false;
             this.combo_crf_mode.SelectedIndexChanged += new System.EventHandler(this.combo_h264_mode_SelectedIndexChanged);
             // 
             // label2
             // 
-            resources.ApplyResources(this.label2, "label2");
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(236, 41);
             this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(91, 15);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Encoding mode";
+            this.label2.Visible = false;
             // 
             // track_q_v
             // 
-            resources.ApplyResources(this.track_q_v, "track_q_v");
+            this.track_q_v.Location = new System.Drawing.Point(3, 103);
             this.track_q_v.Maximum = 880;
             this.track_q_v.Name = "track_q_v";
+            this.track_q_v.Size = new System.Drawing.Size(432, 45);
+            this.track_q_v.TabIndex = 2;
+            this.track_q_v.Visible = false;
             this.track_q_v.Scroll += new System.EventHandler(this.track_q_v_Scroll);
             // 
             // Combo_encoders
             // 
-            resources.ApplyResources(this.Combo_encoders, "Combo_encoders");
             this.Combo_encoders.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.Combo_encoders.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.Combo_encoders.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Combo_encoders.Font = new System.Drawing.Font("Segoe UI", 7.926606F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Combo_encoders.FormattingEnabled = true;
+            this.Combo_encoders.Location = new System.Drawing.Point(105, 39);
             this.Combo_encoders.Name = "Combo_encoders";
+            this.Combo_encoders.Size = new System.Drawing.Size(91, 21);
+            this.Combo_encoders.TabIndex = 1;
             this.Combo_encoders.SelectedIndexChanged += new System.EventHandler(this.Combo_encoders_SelectedIndexChanged);
             // 
             // label1
             // 
-            resources.ApplyResources(this.label1, "label1");
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 41);
             this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Video encoder";
             // 
             // wz1_1
             // 
-            resources.ApplyResources(this.wz1_1, "wz1_1");
             this.wz1_1.Controls.Add(this.label30);
             this.wz1_1.Controls.Add(this.n_speed);
             this.wz1_1.Controls.Add(this.label21);
@@ -712,128 +981,182 @@
             this.wz1_1.Controls.Add(this.n_width);
             this.wz1_1.Controls.Add(this.label18);
             this.wz1_1.Name = "wz1_1";
+            this.wz1_1.Size = new System.Drawing.Size(527, 261);
+            this.wz1_1.TabIndex = 4;
+            this.wz1_1.Text = "Video filters";
             this.wz1_1.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz1_1_Commit);
             // 
             // label30
             // 
-            resources.ApplyResources(this.label30, "label30");
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(150, 237);
             this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(17, 15);
+            this.label30.TabIndex = 46;
+            this.label30.Text = "%";
             // 
             // n_speed
             // 
-            resources.ApplyResources(this.n_speed, "n_speed");
+            this.n_speed.Location = new System.Drawing.Point(104, 233);
             this.n_speed.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
             this.n_speed.Name = "n_speed";
+            this.n_speed.Size = new System.Drawing.Size(43, 23);
+            this.n_speed.TabIndex = 45;
             // 
             // label21
             // 
-            resources.ApplyResources(this.label21, "label21");
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(7, 236);
             this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(91, 15);
+            this.label21.TabIndex = 44;
+            this.label21.Text = "Speed up/down";
             // 
             // cb_rotate
             // 
-            resources.ApplyResources(this.cb_rotate, "cb_rotate");
             this.cb_rotate.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_rotate.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_rotate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_rotate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_rotate.FormattingEnabled = true;
             this.cb_rotate.Items.AddRange(new object[] {
-            resources.GetString("cb_rotate.Items"),
-            resources.GetString("cb_rotate.Items1"),
-            resources.GetString("cb_rotate.Items2"),
-            resources.GetString("cb_rotate.Items3"),
-            resources.GetString("cb_rotate.Items4")});
+            "none",
+            "Rotate 90º clockwise",
+            "Rotate 90º counter-clockwise",
+            "Rotate 180º",
+            "Horizontal flip"});
+            this.cb_rotate.Location = new System.Drawing.Point(50, 168);
             this.cb_rotate.Name = "cb_rotate";
+            this.cb_rotate.Size = new System.Drawing.Size(187, 23);
+            this.cb_rotate.TabIndex = 25;
             this.cb_rotate.SelectedIndexChanged += new System.EventHandler(this.cb_rotate_SelectedIndexChanged);
             // 
             // d_crop
             // 
-            resources.ApplyResources(this.d_crop, "d_crop");
+            this.d_crop.Enabled = false;
+            this.d_crop.Location = new System.Drawing.Point(427, 65);
             this.d_crop.Maximum = new decimal(new int[] {
             3840,
             0,
             0,
             0});
             this.d_crop.Name = "d_crop";
+            this.d_crop.Size = new System.Drawing.Size(45, 23);
+            this.d_crop.TabIndex = 43;
             // 
             // r_crop
             // 
-            resources.ApplyResources(this.r_crop, "r_crop");
+            this.r_crop.Enabled = false;
+            this.r_crop.Location = new System.Drawing.Point(475, 39);
             this.r_crop.Maximum = new decimal(new int[] {
             3840,
             0,
             0,
             0});
             this.r_crop.Name = "r_crop";
+            this.r_crop.Size = new System.Drawing.Size(45, 23);
+            this.r_crop.TabIndex = 42;
             // 
             // l_crop
             // 
-            resources.ApplyResources(this.l_crop, "l_crop");
+            this.l_crop.Enabled = false;
+            this.l_crop.Location = new System.Drawing.Point(380, 39);
             this.l_crop.Maximum = new decimal(new int[] {
             3840,
             0,
             0,
             0});
             this.l_crop.Name = "l_crop";
+            this.l_crop.Size = new System.Drawing.Size(45, 23);
+            this.l_crop.TabIndex = 41;
             // 
             // u_crop
             // 
-            resources.ApplyResources(this.u_crop, "u_crop");
+            this.u_crop.Enabled = false;
+            this.u_crop.Location = new System.Drawing.Point(427, 13);
             this.u_crop.Maximum = new decimal(new int[] {
             3840,
             0,
             0,
             0});
             this.u_crop.Name = "u_crop";
+            this.u_crop.Size = new System.Drawing.Size(45, 23);
+            this.u_crop.TabIndex = 40;
             // 
             // cb_crop
             // 
-            resources.ApplyResources(this.cb_crop, "cb_crop");
             this.cb_crop.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_crop.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_crop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_crop.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_crop.FormattingEnabled = true;
+            this.cb_crop.Location = new System.Drawing.Point(298, 39);
             this.cb_crop.Name = "cb_crop";
+            this.cb_crop.Size = new System.Drawing.Size(77, 23);
+            this.cb_crop.TabIndex = 39;
             this.cb_crop.SelectedIndexChanged += new System.EventHandler(this.cb_crop_SelectedIndexChanged);
             // 
             // lbl_crop
             // 
-            resources.ApplyResources(this.lbl_crop, "lbl_crop");
+            this.lbl_crop.AutoSize = true;
+            this.lbl_crop.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_crop.Location = new System.Drawing.Point(264, 43);
             this.lbl_crop.Name = "lbl_crop";
+            this.lbl_crop.Size = new System.Drawing.Size(33, 15);
+            this.lbl_crop.TabIndex = 38;
+            this.lbl_crop.Text = "Crop";
             // 
             // pic_rotate
             // 
-            resources.ApplyResources(this.pic_rotate, "pic_rotate");
+            this.pic_rotate.Location = new System.Drawing.Point(215, 117);
             this.pic_rotate.Name = "pic_rotate";
+            this.pic_rotate.Size = new System.Drawing.Size(221, 124);
+            this.pic_rotate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pic_rotate.TabIndex = 37;
             this.pic_rotate.TabStop = false;
             // 
             // label20
             // 
-            resources.ApplyResources(this.label20, "label20");
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(7, 43);
             this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(39, 15);
+            this.label20.TabIndex = 36;
+            this.label20.Text = "Resize";
             // 
             // cb_resize
             // 
-            resources.ApplyResources(this.cb_resize, "cb_resize");
             this.cb_resize.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_resize.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_resize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_resize.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_resize.FormattingEnabled = true;
+            this.cb_resize.Location = new System.Drawing.Point(50, 40);
             this.cb_resize.Name = "cb_resize";
+            this.cb_resize.Size = new System.Drawing.Size(77, 23);
+            this.cb_resize.TabIndex = 35;
             this.cb_resize.SelectedIndexChanged += new System.EventHandler(this.cb_resize_SelectedIndexChanged);
             // 
             // label19
             // 
-            resources.ApplyResources(this.label19, "label19");
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 7.926606F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(183, 44);
             this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(11, 13);
+            this.label19.TabIndex = 29;
+            this.label19.Text = "X";
             // 
             // n_height
             // 
-            resources.ApplyResources(this.n_height, "n_height");
+            this.n_height.Enabled = false;
+            this.n_height.Location = new System.Drawing.Point(197, 40);
             this.n_height.Maximum = new decimal(new int[] {
             2160,
             0,
@@ -845,6 +1168,8 @@
             0,
             0});
             this.n_height.Name = "n_height";
+            this.n_height.Size = new System.Drawing.Size(50, 23);
+            this.n_height.TabIndex = 28;
             this.n_height.Value = new decimal(new int[] {
             120,
             0,
@@ -853,7 +1178,8 @@
             // 
             // n_width
             // 
-            resources.ApplyResources(this.n_width, "n_width");
+            this.n_width.Enabled = false;
+            this.n_width.Location = new System.Drawing.Point(132, 40);
             this.n_width.Maximum = new decimal(new int[] {
             3840,
             0,
@@ -865,6 +1191,8 @@
             0,
             0});
             this.n_width.Name = "n_width";
+            this.n_width.Size = new System.Drawing.Size(50, 23);
+            this.n_width.TabIndex = 27;
             this.n_width.Value = new decimal(new int[] {
             160,
             0,
@@ -873,12 +1201,16 @@
             // 
             // label18
             // 
-            resources.ApplyResources(this.label18, "label18");
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(7, 172);
             this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(41, 15);
+            this.label18.TabIndex = 24;
+            this.label18.Text = "Rotate";
             // 
             // wz2
             // 
-            resources.ApplyResources(this.wz2, "wz2");
             this.wz2.Controls.Add(this.label31);
             this.wz2.Controls.Add(this.n_speed2);
             this.wz2.Controls.Add(this.label32);
@@ -903,92 +1235,152 @@
             this.wz2.Controls.Add(this.track_bits_audio);
             this.wz2.Controls.Add(this.label13);
             this.wz2.Name = "wz2";
+            this.wz2.Size = new System.Drawing.Size(527, 261);
+            this.wz2.TabIndex = 2;
+            this.wz2.Text = "Audio encoder settings";
             this.wz2.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz2_Commit);
             this.wz2.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz2_Initialize);
             // 
             // label31
             // 
-            resources.ApplyResources(this.label31, "label31");
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label31.Location = new System.Drawing.Point(358, 203);
             this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(17, 15);
+            this.label31.TabIndex = 49;
+            this.label31.Text = "%";
             // 
             // n_speed2
             // 
-            resources.ApplyResources(this.n_speed2, "n_speed2");
+            this.n_speed2.Location = new System.Drawing.Point(312, 199);
             this.n_speed2.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
             this.n_speed2.Name = "n_speed2";
+            this.n_speed2.Size = new System.Drawing.Size(43, 23);
+            this.n_speed2.TabIndex = 48;
             // 
             // label32
             // 
-            resources.ApplyResources(this.label32, "label32");
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(215, 202);
             this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(91, 15);
+            this.label32.TabIndex = 47;
+            this.label32.Text = "Speed up/down";
             // 
             // cb_chunk_size
             // 
-            resources.ApplyResources(this.cb_chunk_size, "cb_chunk_size");
             this.cb_chunk_size.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_chunk_size.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_chunk_size.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_chunk_size.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_chunk_size.FormattingEnabled = true;
+            this.cb_chunk_size.Location = new System.Drawing.Point(264, 94);
             this.cb_chunk_size.Name = "cb_chunk_size";
+            this.cb_chunk_size.Size = new System.Drawing.Size(71, 23);
+            this.cb_chunk_size.TabIndex = 23;
             // 
             // label29
             // 
-            resources.ApplyResources(this.label29, "label29");
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(195, 96);
             this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(64, 15);
+            this.label29.TabIndex = 22;
+            this.label29.Text = "Chunk size";
             // 
             // txt_current_audio
             // 
-            resources.ApplyResources(this.txt_current_audio, "txt_current_audio");
             this.txt_current_audio.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_current_audio.Location = new System.Drawing.Point(17, 3);
             this.txt_current_audio.Name = "txt_current_audio";
+            this.txt_current_audio.Size = new System.Drawing.Size(184, 16);
+            this.txt_current_audio.TabIndex = 21;
             // 
             // cb_opus_vbr
             // 
-            resources.ApplyResources(this.cb_opus_vbr, "cb_opus_vbr");
             this.cb_opus_vbr.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_opus_vbr.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_opus_vbr.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_opus_vbr.Enabled = false;
+            this.cb_opus_vbr.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_opus_vbr.FormattingEnabled = true;
+            this.cb_opus_vbr.Location = new System.Drawing.Point(280, 156);
             this.cb_opus_vbr.Name = "cb_opus_vbr";
+            this.cb_opus_vbr.Size = new System.Drawing.Size(70, 23);
+            this.cb_opus_vbr.TabIndex = 20;
             // 
             // chk_vbr_opus
             // 
-            resources.ApplyResources(this.chk_vbr_opus, "chk_vbr_opus");
+            this.chk_vbr_opus.AutoSize = true;
+            this.chk_vbr_opus.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chk_vbr_opus.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_vbr_opus.Location = new System.Drawing.Point(227, 158);
             this.chk_vbr_opus.Name = "chk_vbr_opus";
+            this.chk_vbr_opus.Size = new System.Drawing.Size(47, 19);
+            this.chk_vbr_opus.TabIndex = 19;
+            this.chk_vbr_opus.Text = "VBR";
             this.chk_vbr_opus.UseVisualStyleBackColor = true;
+            this.chk_vbr_opus.Visible = false;
             this.chk_vbr_opus.CheckedChanged += new System.EventHandler(this.chk_vbr_opus_CheckedChanged);
             // 
             // cb_cutoff
             // 
-            resources.ApplyResources(this.cb_cutoff, "cb_cutoff");
             this.cb_cutoff.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_cutoff.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_cutoff.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_cutoff.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_cutoff.FormattingEnabled = true;
+            this.cb_cutoff.Location = new System.Drawing.Point(424, 38);
             this.cb_cutoff.Name = "cb_cutoff";
+            this.cb_cutoff.Size = new System.Drawing.Size(59, 23);
+            this.cb_cutoff.TabIndex = 18;
+            this.cb_cutoff.Visible = false;
             // 
             // label22
             // 
-            resources.ApplyResources(this.label22, "label22");
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(374, 41);
             this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(44, 15);
+            this.label22.TabIndex = 17;
+            this.label22.Text = "Cut off";
+            this.label22.Visible = false;
             // 
             // label14
             // 
-            resources.ApplyResources(this.label14, "label14");
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(172, 90);
             this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(78, 15);
+            this.label14.TabIndex = 14;
+            this.label14.Text = "Lower quality";
+            this.label14.Visible = false;
             // 
             // label15
             // 
-            resources.ApplyResources(this.label15, "label15");
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(334, 90);
             this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(82, 15);
+            this.label15.TabIndex = 13;
+            this.label15.Text = "Higher quality";
+            this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label15.Visible = false;
             // 
             // n_bit_audio
             // 
-            resources.ApplyResources(this.n_bit_audio, "n_bit_audio");
+            this.n_bit_audio.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.n_bit_audio.Location = new System.Drawing.Point(433, 116);
             this.n_bit_audio.Maximum = new decimal(new int[] {
             320,
             0,
@@ -1000,87 +1392,129 @@
             0,
             0});
             this.n_bit_audio.Name = "n_bit_audio";
+            this.n_bit_audio.Size = new System.Drawing.Size(50, 23);
+            this.n_bit_audio.TabIndex = 11;
+            this.n_bit_audio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.n_bit_audio.Value = new decimal(new int[] {
             64,
             0,
             0,
             0});
+            this.n_bit_audio.Visible = false;
             this.n_bit_audio.ValueChanged += new System.EventHandler(this.n_bit_audio_ValueChanged);
             // 
             // cb_bitrate_mode
             // 
-            resources.ApplyResources(this.cb_bitrate_mode, "cb_bitrate_mode");
             this.cb_bitrate_mode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_bitrate_mode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_bitrate_mode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_bitrate_mode.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_bitrate_mode.FormattingEnabled = true;
+            this.cb_bitrate_mode.Location = new System.Drawing.Point(93, 116);
             this.cb_bitrate_mode.Name = "cb_bitrate_mode";
+            this.cb_bitrate_mode.Size = new System.Drawing.Size(62, 23);
+            this.cb_bitrate_mode.TabIndex = 9;
+            this.cb_bitrate_mode.Visible = false;
             this.cb_bitrate_mode.SelectedIndexChanged += new System.EventHandler(this.cb_bitrate_mode_SelectedIndexChanged);
             // 
             // label12
             // 
-            resources.ApplyResources(this.label12, "label12");
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(10, 119);
             this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(75, 15);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "Bitrate mode";
             // 
             // cb_channels
             // 
-            resources.ApplyResources(this.cb_channels, "cb_channels");
             this.cb_channels.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_channels.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_channels.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_channels.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_channels.FormattingEnabled = true;
+            this.cb_channels.Location = new System.Drawing.Point(81, 194);
             this.cb_channels.Name = "cb_channels";
+            this.cb_channels.Size = new System.Drawing.Size(75, 23);
+            this.cb_channels.TabIndex = 7;
             // 
             // label11
             // 
-            resources.ApplyResources(this.label11, "label11");
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(17, 197);
             this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(56, 15);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "Channels";
             // 
             // cb_sample_rate
             // 
-            resources.ApplyResources(this.cb_sample_rate, "cb_sample_rate");
             this.cb_sample_rate.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_sample_rate.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_sample_rate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_sample_rate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_sample_rate.FormattingEnabled = true;
+            this.cb_sample_rate.Location = new System.Drawing.Point(264, 38);
             this.cb_sample_rate.Name = "cb_sample_rate";
+            this.cb_sample_rate.Size = new System.Drawing.Size(71, 23);
+            this.cb_sample_rate.TabIndex = 5;
             // 
             // label10
             // 
-            resources.ApplyResources(this.label10, "label10");
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(189, 41);
             this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(69, 15);
+            this.label10.TabIndex = 4;
+            this.label10.Text = "Sample rate";
             // 
             // cb_audio_encoder
             // 
-            resources.ApplyResources(this.cb_audio_encoder, "cb_audio_encoder");
             this.cb_audio_encoder.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_audio_encoder.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_audio_encoder.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_audio_encoder.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_audio_encoder.FormattingEnabled = true;
+            this.cb_audio_encoder.Location = new System.Drawing.Point(92, 38);
             this.cb_audio_encoder.Name = "cb_audio_encoder";
+            this.cb_audio_encoder.Size = new System.Drawing.Size(65, 23);
+            this.cb_audio_encoder.TabIndex = 3;
             this.cb_audio_encoder.SelectedIndexChanged += new System.EventHandler(this.cb_audio_encoder_SelectedIndexChanged);
             // 
             // label9
             // 
-            resources.ApplyResources(this.label9, "label9");
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(12, 41);
             this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 15);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Audio codec";
             // 
             // track_bits_audio
             // 
-            resources.ApplyResources(this.track_bits_audio, "track_bits_audio");
+            this.track_bits_audio.Location = new System.Drawing.Point(159, 116);
             this.track_bits_audio.Maximum = 5600;
             this.track_bits_audio.Name = "track_bits_audio";
+            this.track_bits_audio.Size = new System.Drawing.Size(270, 45);
+            this.track_bits_audio.TabIndex = 10;
             this.track_bits_audio.Value = 128;
+            this.track_bits_audio.Visible = false;
             this.track_bits_audio.Scroll += new System.EventHandler(this.track_bits_audio_Scroll);
             // 
             // label13
             // 
-            resources.ApplyResources(this.label13, "label13");
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 7.926606F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(486, 120);
             this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(32, 13);
+            this.label13.TabIndex = 12;
+            this.label13.Text = "Kbps";
             // 
             // wz_0_1
             // 
-            resources.ApplyResources(this.wz_0_1, "wz_0_1");
             this.wz_0_1.Controls.Add(this.label41);
             this.wz_0_1.Controls.Add(this.txt_ext_format);
             this.wz_0_1.Controls.Add(this.label42);
@@ -1089,45 +1523,69 @@
             this.wz_0_1.Controls.Add(this.label43);
             this.wz_0_1.Name = "wz_0_1";
             this.wz_0_1.NextPage = this.wz_end;
+            this.wz_0_1.Size = new System.Drawing.Size(527, 261);
+            this.wz_0_1.TabIndex = 6;
+            this.wz_0_1.Text = "Use an existing encoding preset";
             this.wz_0_1.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz_0_1_Commit);
             this.wz_0_1.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz_0_1_Initialize);
             // 
             // label41
             // 
-            resources.ApplyResources(this.label41, "label41");
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(16, 33);
             this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(247, 15);
+            this.label41.TabIndex = 100;
+            this.label41.Text = "Select an encoding preset from the list below:";
             // 
             // txt_ext_format
             // 
-            resources.ApplyResources(this.txt_ext_format, "txt_ext_format");
             this.txt_ext_format.BackColor = System.Drawing.SystemColors.Info;
+            this.txt_ext_format.Location = new System.Drawing.Point(471, 138);
+            this.txt_ext_format.MaxLength = 4;
             this.txt_ext_format.Name = "txt_ext_format";
+            this.txt_ext_format.Size = new System.Drawing.Size(30, 23);
+            this.txt_ext_format.TabIndex = 99;
+            this.txt_ext_format.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label42
             // 
-            resources.ApplyResources(this.label42, "label42");
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(424, 141);
             this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(45, 15);
+            this.label42.TabIndex = 98;
+            this.label42.Text = "Format";
             // 
             // txt_pr_1_ex
             // 
-            resources.ApplyResources(this.txt_pr_1_ex, "txt_pr_1_ex");
+            this.txt_pr_1_ex.Location = new System.Drawing.Point(67, 129);
+            this.txt_pr_1_ex.MaxLength = 500;
+            this.txt_pr_1_ex.Multiline = true;
             this.txt_pr_1_ex.Name = "txt_pr_1_ex";
+            this.txt_pr_1_ex.Size = new System.Drawing.Size(354, 40);
+            this.txt_pr_1_ex.TabIndex = 97;
             // 
             // combo_presets_ext
             // 
-            resources.ApplyResources(this.combo_presets_ext, "combo_presets_ext");
             this.combo_presets_ext.FormattingEnabled = true;
+            this.combo_presets_ext.Location = new System.Drawing.Point(67, 85);
             this.combo_presets_ext.Name = "combo_presets_ext";
+            this.combo_presets_ext.Size = new System.Drawing.Size(434, 23);
+            this.combo_presets_ext.TabIndex = 95;
             this.combo_presets_ext.SelectedIndexChanged += new System.EventHandler(this.combo_presets_ext_SelectedIndexChanged);
             // 
             // label43
             // 
-            resources.ApplyResources(this.label43, "label43");
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(15, 88);
             this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(44, 15);
+            this.label43.TabIndex = 96;
+            this.label43.Text = "Presets";
             // 
             // wz_end
             // 
-            resources.ApplyResources(this.wz_end, "wz_end");
             this.wz_end.Controls.Add(this.lbl_help);
             this.wz_end.Controls.Add(this.pic_status);
             this.wz_end.Controls.Add(this.btn_status);
@@ -1142,86 +1600,137 @@
             this.wz_end.Controls.Add(this.label24);
             this.wz_end.IsFinishPage = true;
             this.wz_end.Name = "wz_end";
+            this.wz_end.Size = new System.Drawing.Size(527, 261);
+            this.wz_end.TabIndex = 3;
+            this.wz_end.Text = "Preset complete";
             this.wz_end.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz_end_Commit);
             this.wz_end.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz_end_Initialize);
             // 
             // lbl_help
             // 
-            resources.ApplyResources(this.lbl_help, "lbl_help");
+            this.lbl_help.AutoSize = true;
+            this.lbl_help.Location = new System.Drawing.Point(24, 237);
             this.lbl_help.Name = "lbl_help";
+            this.lbl_help.Size = new System.Drawing.Size(0, 15);
+            this.lbl_help.TabIndex = 100;
             // 
             // pic_status
             // 
-            resources.ApplyResources(this.pic_status, "pic_status");
+            this.pic_status.Location = new System.Drawing.Point(460, 103);
             this.pic_status.Name = "pic_status";
+            this.pic_status.Size = new System.Drawing.Size(28, 28);
+            this.pic_status.TabIndex = 99;
             this.pic_status.TabStop = false;
+            this.pic_status.Visible = false;
             // 
             // btn_status
             // 
-            resources.ApplyResources(this.btn_status, "btn_status");
             this.btn_status.FlatAppearance.BorderSize = 0;
             this.btn_status.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_status.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_status.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btn_status.Location = new System.Drawing.Point(375, 102);
             this.btn_status.Name = "btn_status";
+            this.btn_status.Size = new System.Drawing.Size(81, 29);
+            this.btn_status.TabIndex = 98;
+            this.btn_status.Text = "Preset status";
             this.btn_status.UseVisualStyleBackColor = true;
+            this.btn_status.Visible = false;
             this.btn_status.Click += new System.EventHandler(this.btn_status_Click);
             // 
             // chk_subs_copy
             // 
-            resources.ApplyResources(this.chk_subs_copy, "chk_subs_copy");
+            this.chk_subs_copy.AutoSize = true;
+            this.chk_subs_copy.Location = new System.Drawing.Point(27, 123);
             this.chk_subs_copy.Name = "chk_subs_copy";
+            this.chk_subs_copy.Size = new System.Drawing.Size(178, 19);
+            this.chk_subs_copy.TabIndex = 39;
+            this.chk_subs_copy.Text = "Stream copy subtitle streams";
             this.chk_subs_copy.UseVisualStyleBackColor = true;
             this.chk_subs_copy.CheckedChanged += new System.EventHandler(this.chk_subs_copy_CheckedChanged);
             // 
             // chk_mapall
             // 
-            resources.ApplyResources(this.chk_mapall, "chk_mapall");
+            this.chk_mapall.AutoSize = true;
+            this.chk_mapall.Location = new System.Drawing.Point(27, 94);
             this.chk_mapall.Name = "chk_mapall";
+            this.chk_mapall.Size = new System.Drawing.Size(143, 19);
+            this.chk_mapall.TabIndex = 38;
+            this.chk_mapall.Text = "Include all file streams";
             this.chk_mapall.UseVisualStyleBackColor = true;
             this.chk_mapall.CheckedChanged += new System.EventHandler(this.chk_mapall_CheckedChanged);
             // 
             // txt_container
             // 
-            resources.ApplyResources(this.txt_container, "txt_container");
             this.txt_container.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_container.Location = new System.Drawing.Point(27, 3);
             this.txt_container.Name = "txt_container";
+            this.txt_container.Size = new System.Drawing.Size(184, 16);
+            this.txt_container.TabIndex = 37;
             // 
             // txt_preset_name
             // 
-            resources.ApplyResources(this.txt_preset_name, "txt_preset_name");
+            this.txt_preset_name.Enabled = false;
+            this.txt_preset_name.Location = new System.Drawing.Point(120, 179);
             this.txt_preset_name.Name = "txt_preset_name";
+            this.txt_preset_name.Size = new System.Drawing.Size(365, 23);
+            this.txt_preset_name.TabIndex = 25;
             // 
             // lbl_container
             // 
-            resources.ApplyResources(this.lbl_container, "lbl_container");
+            this.lbl_container.AutoSize = true;
+            this.lbl_container.Location = new System.Drawing.Point(216, 42);
             this.lbl_container.Name = "lbl_container";
+            this.lbl_container.Size = new System.Drawing.Size(270, 15);
+            this.lbl_container.TabIndex = 24;
+            this.lbl_container.Text = "Container may not be suitable for selected codecs";
+            this.lbl_container.Visible = false;
             // 
             // pic_warning
             // 
-            resources.ApplyResources(this.pic_warning, "pic_warning");
+            this.pic_warning.Image = ((System.Drawing.Image)(resources.GetObject("pic_warning.Image")));
+            this.pic_warning.Location = new System.Drawing.Point(191, 39);
             this.pic_warning.Name = "pic_warning";
+            this.pic_warning.Size = new System.Drawing.Size(21, 22);
+            this.pic_warning.TabIndex = 23;
             this.pic_warning.TabStop = false;
+            this.pic_warning.Visible = false;
             // 
             // chk_save_pres
             // 
-            resources.ApplyResources(this.chk_save_pres, "chk_save_pres");
+            this.chk_save_pres.AutoSize = true;
+            this.chk_save_pres.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chk_save_pres.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chk_save_pres.Location = new System.Drawing.Point(24, 182);
             this.chk_save_pres.Name = "chk_save_pres";
+            this.chk_save_pres.Size = new System.Drawing.Size(85, 19);
+            this.chk_save_pres.TabIndex = 20;
+            this.chk_save_pres.Text = "Save preset";
             this.chk_save_pres.UseVisualStyleBackColor = true;
             this.chk_save_pres.CheckedChanged += new System.EventHandler(this.chk_save_pres_CheckedChanged);
             // 
             // cb_container
             // 
-            resources.ApplyResources(this.cb_container, "cb_container");
             this.cb_container.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_container.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_container.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_container.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_container.FormattingEnabled = true;
+            this.cb_container.Location = new System.Drawing.Point(125, 38);
             this.cb_container.Name = "cb_container";
+            this.cb_container.Size = new System.Drawing.Size(58, 23);
+            this.cb_container.TabIndex = 4;
             this.cb_container.SelectedIndexChanged += new System.EventHandler(this.cb_container_SelectedIndexChanged);
             // 
             // label24
             // 
-            resources.ApplyResources(this.label24, "label24");
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(22, 41);
             this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(98, 15);
+            this.label24.TabIndex = 3;
+            this.label24.Text = "Output container";
             // 
             // img_rotate
             // 
@@ -1260,39 +1769,60 @@
             // 
             // label39
             // 
-            resources.ApplyResources(this.label39, "label39");
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(16, 91);
             this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(42, 13);
+            this.label39.TabIndex = 96;
+            this.label39.Text = "Presets";
             // 
             // cb_w_presets
             // 
-            resources.ApplyResources(this.cb_w_presets, "cb_w_presets");
             this.cb_w_presets.FormattingEnabled = true;
+            this.cb_w_presets.Location = new System.Drawing.Point(68, 88);
             this.cb_w_presets.Name = "cb_w_presets";
+            this.cb_w_presets.Size = new System.Drawing.Size(434, 21);
+            this.cb_w_presets.TabIndex = 95;
             // 
             // txt_pr_1
             // 
-            resources.ApplyResources(this.txt_pr_1, "txt_pr_1");
+            this.txt_pr_1.Location = new System.Drawing.Point(68, 132);
+            this.txt_pr_1.MaxLength = 500;
+            this.txt_pr_1.Multiline = true;
             this.txt_pr_1.Name = "txt_pr_1";
+            this.txt_pr_1.Size = new System.Drawing.Size(354, 40);
+            this.txt_pr_1.TabIndex = 97;
             // 
             // label38
             // 
-            resources.ApplyResources(this.label38, "label38");
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(425, 144);
             this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(39, 13);
+            this.label38.TabIndex = 98;
+            this.label38.Text = "Format";
             // 
             // txt_ext_1
             // 
-            resources.ApplyResources(this.txt_ext_1, "txt_ext_1");
             this.txt_ext_1.BackColor = System.Drawing.SystemColors.Info;
+            this.txt_ext_1.Location = new System.Drawing.Point(472, 141);
+            this.txt_ext_1.MaxLength = 4;
             this.txt_ext_1.Name = "txt_ext_1";
+            this.txt_ext_1.Size = new System.Drawing.Size(30, 20);
+            this.txt_ext_1.TabIndex = 99;
+            this.txt_ext_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label37
             // 
-            resources.ApplyResources(this.label37, "label37");
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(17, 36);
             this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(234, 13);
+            this.label37.TabIndex = 100;
+            this.label37.Text = "Select base preset for two pass video encoding:";
             // 
             // wizardPage1
             // 
-            resources.ApplyResources(this.wizardPage1, "wizardPage1");
             this.wizardPage1.Controls.Add(this.label36);
             this.wizardPage1.Controls.Add(this.label37);
             this.wizardPage1.Controls.Add(this.txt_ext_1);
@@ -1301,21 +1831,30 @@
             this.wizardPage1.Controls.Add(this.cb_w_presets);
             this.wizardPage1.Controls.Add(this.label39);
             this.wizardPage1.Name = "wizardPage1";
+            this.wizardPage1.Size = new System.Drawing.Size(527, 261);
+            this.wizardPage1.TabIndex = 6;
+            this.wizardPage1.Text = "Select a saved encoding preset";
             // 
             // label36
             // 
-            resources.ApplyResources(this.label36, "label36");
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(65, 183);
             this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(234, 13);
+            this.label36.TabIndex = 101;
+            this.label36.Text = "Required parameters will be added on next step.";
             // 
             // AeroWizard1
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(574, 415);
             this.Controls.Add(this.wizardControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "AeroWizard1";
-            this.Load += new System.EventHandler(this.AeroWizard1_Load);
+            this.Text = "FFmpeg Batch AV Converter";
             ((System.ComponentModel.ISupportInitialize)(this.wizardControl1)).EndInit();
             this.wz0_0.ResumeLayout(false);
             this.wz0_0.PerformLayout();
