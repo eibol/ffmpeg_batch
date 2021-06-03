@@ -30,3 +30,12 @@ FEATURES
    - Filter files using different criteria.
    - Trim and concatenate files
    - Batch image thumbnail extraction
+
+To compile code, please follow these steps:
+
+- Create a folder of your choice.
+- Download FFbatch_main.sln on it as well as github folders (Properties, resoureces).
+- Create a subfolder named 'FFBatch' and copy there all the files, except previous folders.
+
+- 
+- 
