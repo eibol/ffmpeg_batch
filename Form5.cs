@@ -2,8 +2,6 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
-using System.Globalization;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace FFBatch
@@ -18,22 +16,8 @@ namespace FFBatch
         public String stream_n = String.Empty;
         public String lv1_item = String.Empty;
         public int Id = 0;
-
         private void Form5_Load(object sender, EventArgs e)
-        {
-            refresh_lang();
-            if (FFBatch.Properties.Settings.Default.app_lang == "en")
-            {
-                this.Text = "Multimedia streams";
-                dg_streams.Columns[2].HeaderText = "Stream output";
-
-            }
-            if (FFBatch.Properties.Settings.Default.app_lang == "es")
-            {
-                this.Text = "Flujos multimedia";
-                dg_streams.Columns[2].HeaderText = "Información de salida";                
-            }
-
+        {            
             this.Enabled = false;
 
             dg_streams.BackgroundColor = this.BackColor;
@@ -212,22 +196,6 @@ namespace FFBatch
             if (dg_streams.SelectedCells.Count == 0) e.Cancel = true;
             if (dg_streams.SelectedCells[0].ColumnIndex == 0) e.Cancel = true;
 
-        }
-
-        private void refresh_lang()
-        {
-            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
-            RefreshResources(this, resources);
-        }
-        private void RefreshResources(Control ctrl, ComponentResourceManager res)
-        {
-            ctrl.SuspendLayout();
-            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
-            foreach (Control control in ctrl.Controls)
-                RefreshResources(control, res); // recursion
-            ctrl.ResumeLayout(false);
         }
     }
 }

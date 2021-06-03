@@ -40,20 +40,30 @@
             // 
             // label1
             // 
-            resources.ApplyResources(this.label1, "label1");
+            this.label1.Location = new System.Drawing.Point(0, 10);
             this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(218, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Reading playlist contents";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pic
             // 
-            resources.ApplyResources(this.pic, "pic");
+            this.pic.Image = ((System.Drawing.Image)(resources.GetObject("pic.Image")));
+            this.pic.Location = new System.Drawing.Point(93, 34);
             this.pic.Name = "pic";
+            this.pic.Size = new System.Drawing.Size(33, 33);
+            this.pic.TabIndex = 1;
             this.pic.TabStop = false;
             // 
             // btn_abort
             // 
-            resources.ApplyResources(this.btn_abort, "btn_abort");
             this.btn_abort.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btn_abort.Location = new System.Drawing.Point(80, 107);
             this.btn_abort.Name = "btn_abort";
+            this.btn_abort.Size = new System.Drawing.Size(62, 23);
+            this.btn_abort.TabIndex = 2;
+            this.btn_abort.Text = "Abort";
             this.btn_abort.UseVisualStyleBackColor = false;
             this.btn_abort.Click += new System.EventHandler(this.btn_abort_Click);
             // 
@@ -64,20 +74,25 @@
             // 
             // label2
             // 
-            resources.ApplyResources(this.label2, "label2");
+            this.label2.Location = new System.Drawing.Point(73, 80);
             this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 23);
+            this.label2.TabIndex = 4;
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form11_2
             // 
-            resources.ApplyResources(this, "$this");
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.ClientSize = new System.Drawing.Size(220, 136);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_abort);
             this.Controls.Add(this.pic);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form11_2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form11_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form11_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();

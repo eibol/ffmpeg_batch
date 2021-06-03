@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -55,35 +53,8 @@ namespace FFBatch
                 textBox1.Select(0,0);
             }
             else textBox1.Focus();
-
-            refresh_lang();
-
-            if (FFBatch.Properties.Settings.Default.app_lang == "en")
-            {
-                this.Text = "Manual output path selection";
-            }
-            if (FFBatch.Properties.Settings.Default.app_lang == "es")
-            {
-                this.Text = "Seleccionar ruta de destino";
-            }
         }
-
-        private void refresh_lang()
-        {
-            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form19));
-            RefreshResources(this, resources);
-        }
-        private void RefreshResources(Control ctrl, ComponentResourceManager res)
-        {
-            ctrl.SuspendLayout();
-            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
-            foreach (Control control in ctrl.Controls)
-                RefreshResources(control, res); // recursion
-            ctrl.ResumeLayout(false);
-        }
-
+                
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) button1.PerformClick();

@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -78,24 +77,7 @@ namespace FFBatch
             abort_validate = false;
             btn_abort_pls.Enabled = true;
             timer1.Stop();
-            lab_count.Refresh();
-            refresh_lang();
-        }
-
-        private void refresh_lang()
-        {
-            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form9));
-            RefreshResources(this, resources);
-        }
-        private void RefreshResources(Control ctrl, ComponentResourceManager res)
-        {
-            ctrl.SuspendLayout();
-            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
-            foreach (Control control in ctrl.Controls)
-                RefreshResources(control, res); // recursion
-            ctrl.ResumeLayout(false);
+            lab_count.Refresh();            
         }
 
         private void Form9_FormClosing(object sender, FormClosingEventArgs e)

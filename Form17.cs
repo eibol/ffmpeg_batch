@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Globalization;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -30,33 +28,6 @@ namespace FFBatch
                 btn_add_col.Enabled = true;
             }
             else btn_add_col.Enabled = false;
-
-            refresh_lang();
-
-            if (FFBatch.Properties.Settings.Default.app_lang == "en")
-            {
-                this.Text = "Add custom column";
-            }
-            if (FFBatch.Properties.Settings.Default.app_lang == "es")
-            {
-                this.Text = "Agregar columna";
-            }
-        }
-
-        private void refresh_lang()
-        {
-            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form17));
-            RefreshResources(this, resources);
-        }
-        private void RefreshResources(Control ctrl, ComponentResourceManager res)
-        {
-            ctrl.SuspendLayout();
-            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
-            foreach (Control control in ctrl.Controls)
-                RefreshResources(control, res); // recursion
-            ctrl.ResumeLayout(false);
         }
 
         private void btn_exit_Click(object sender, EventArgs e)
@@ -75,17 +46,17 @@ namespace FFBatch
 
         private void cb_col_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cb_col.SelectedItem.ToString().Contains(FFBatch.Properties.Strings.Audio_codec))
+            if (cb_col.SelectedItem.ToString().Contains("Audio codec"))
             {
-                label3.Text = FFBatch.Properties.Strings.first_audio;
+                label3.Text = "(First audio stream found)";
             }
-            if (cb_col.SelectedItem.ToString().Contains(FFBatch.Properties.Strings.Video_codec))
+            if (cb_col.SelectedItem.ToString().Contains("Video codec"))
             {
-                label3.Text = FFBatch.Properties.Strings.first_video;
+                label3.Text = "(First video stream found)";
             }
-            if (cb_col.SelectedItem.ToString().Contains(FFBatch.Properties.Strings.resolution))
+            if (cb_col.SelectedItem.ToString().Contains("Resolution"))
             {
-                label3.Text = FFBatch.Properties.Strings.width_heigh;
+                label3.Text = "(Width amd height)";
             }
         }
 

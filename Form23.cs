@@ -11,7 +11,6 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Threading;
 using System.Net;
-using System.Globalization;
 
 namespace FFBatch
 {
@@ -484,26 +483,10 @@ namespace FFBatch
                     Enable_Controls();
             }).Start();
         }
-
-        private void refresh_lang()
-        {
-            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form23));
-            RefreshResources(this, resources);
-        }
-        private void RefreshResources(Control ctrl, ComponentResourceManager res)
-        {
-            ctrl.SuspendLayout();
-            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
-            foreach (Control control in ctrl.Controls)
-                RefreshResources(control, res); // recursion
-            ctrl.ResumeLayout(false);
-        }
-
+        
         private void Form23_Load(object sender, EventArgs e)
         {   
-            
+            txt_get_url.Text = "- Go to YouTube channel main url, and click on VIDEOS tab." + Environment.NewLine + "- Copy the url and paste on channel field." + Environment.NewLine + "- Example: https://www.youtube.com/user/[channel_name]/videos";
             working = false;
             Pg1.Text = "0%";
             pg2.Text = "0%";
@@ -511,19 +494,6 @@ namespace FFBatch
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
             if (File.Exists(portable_flag)) is_portable = true; else is_portable = false;
             //Read play sound
-
-            refresh_lang();
-
-            if (FFBatch.Properties.Settings.Default.app_lang == "en")
-            {
-                this.Text = "Quick YouTube channel/playlist download";
-                txt_get_url.Text = "- Go to YouTube channel main url, and click on VIDEOS tab." + Environment.NewLine + "- Copy the url and paste on channel field." + Environment.NewLine + "- Example: https://www.youtube.com/user/[channel_name]/videos";
-            }
-            if (FFBatch.Properties.Settings.Default.app_lang == "es")
-            {
-                this.Text = "Descarga rápida de canal/lista de YouTube";
-                txt_get_url.Text = "- Vaya a la página principal del canal, y haga click en la pestaña VIDEOS." + Environment.NewLine + "- Copie el enlace y cópielo en el campo Canal." + Environment.NewLine + "- Ejemplo: https://www.youtube.com/user/[channel_name]/videos";
-            }
 
             String ff_play_sound = String.Empty;
             if (is_portable == false)
