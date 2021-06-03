@@ -36,3 +36,9 @@ To compile code, please follow these steps:
 - Create a folder of your choice.
 - Download FFbatch_main.sln on it as well as github folders (Properties, resoureces).
 - Create a subfolder named 'FFBatch' and copy there all the files, except previous folders.
+
+NOTES:
+- The application uses some nuget packages, Aerowizard is mandatory, IICSharpCode.SharpZipLib, are not.
+- You can find these packages at nuget package manager inside Visual Studio.
+- You need to create your own Code key for encryption, at menu Project -> Properties of FFBatch_Converter -> Signature, or disable code signing.
+- You may have to run Visual Studio 2019 with admin rights at least once, after key generation.
