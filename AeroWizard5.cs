@@ -1,4 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Globalization;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace FFBatch
@@ -342,6 +345,27 @@ namespace FFBatch
                 btn_Start.Enabled = false;
                 label9.Visible = false;
             }
+        }
+
+        private void AeroWizard5_Load(object sender, EventArgs e)
+        {
+            refresh_lang();
+        }
+
+        private void refresh_lang()
+        {
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AeroWizard5));
+            RefreshResources(this, resources);
+        }
+        private void RefreshResources(Control ctrl, ComponentResourceManager res)
+        {
+            ctrl.SuspendLayout();
+            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
+            foreach (Control control in ctrl.Controls)
+                RefreshResources(control, res); // recursion
+            ctrl.ResumeLayout(false);
         }
     }
 }

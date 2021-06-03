@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace FFBatch
@@ -322,6 +325,26 @@ namespace FFBatch
             toolTipa7.ReshowDelay = 500;
             toolTipa7.ShowAlways = true;
             toolTipa7.SetToolTip(this.btn_mediainfo, "Show full media info of selected file on file list");
+            refresh_lang();
+            if (FFBatch.Properties.Settings.Default.app_lang == "en") this.Text = "File list filtering";
+            if (FFBatch.Properties.Settings.Default.app_lang == "es") this.Text = "Filtrar lista de ficheros";
+
+        }
+
+        private void refresh_lang()
+        {
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
+            RefreshResources(this, resources);            
+        }
+        private void RefreshResources(Control ctrl, ComponentResourceManager res)
+        {
+            ctrl.SuspendLayout();
+            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
+            foreach (Control control in ctrl.Controls)
+                RefreshResources(control, res); // recursion
+            ctrl.ResumeLayout(false);
         }
 
         private void button1_Click(object sender, EventArgs e)

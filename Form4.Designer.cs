@@ -60,190 +60,129 @@
             // 
             // cb_filterby
             // 
+            resources.ApplyResources(this.cb_filterby, "cb_filterby");
             this.cb_filterby.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_filterby.FormattingEnabled = true;
             this.cb_filterby.Items.AddRange(new object[] {
-            "Status",
-            "File extension",
-            "File size",
-            "File bitrate",
-            "Video codec",
-            "Video bitrate",
-            "Audio codec",
-            "Frame rate",
-            "Frame size",
-            "Custom string (FF)",
-            "Custom string (MI)",
-            "Metadata"});
-            this.cb_filterby.Location = new System.Drawing.Point(24, 40);
+            resources.GetString("cb_filterby.Items"),
+            resources.GetString("cb_filterby.Items1"),
+            resources.GetString("cb_filterby.Items2"),
+            resources.GetString("cb_filterby.Items3"),
+            resources.GetString("cb_filterby.Items4"),
+            resources.GetString("cb_filterby.Items5"),
+            resources.GetString("cb_filterby.Items6"),
+            resources.GetString("cb_filterby.Items7"),
+            resources.GetString("cb_filterby.Items8"),
+            resources.GetString("cb_filterby.Items9"),
+            resources.GetString("cb_filterby.Items10"),
+            resources.GetString("cb_filterby.Items11")});
             this.cb_filterby.Name = "cb_filterby";
-            this.cb_filterby.Size = new System.Drawing.Size(124, 21);
-            this.cb_filterby.TabIndex = 0;
             this.cb_filterby.SelectedIndexChanged += new System.EventHandler(this.cb_filterby_SelectedIndexChanged);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 21);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Filter by";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(326, 21);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Value";
             // 
             // cb_value_f
             // 
+            resources.ApplyResources(this.cb_value_f, "cb_value_f");
             this.cb_value_f.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_value_f.FormattingEnabled = true;
-            this.cb_value_f.Location = new System.Drawing.Point(329, 40);
             this.cb_value_f.Name = "cb_value_f";
-            this.cb_value_f.Size = new System.Drawing.Size(81, 21);
-            this.cb_value_f.TabIndex = 2;
             this.cb_value_f.SelectedIndexChanged += new System.EventHandler(this.cb_value_f_SelectedIndexChanged);
             this.cb_value_f.DropDownClosed += new System.EventHandler(this.cb_value_f_DropDownClosed);
             this.cb_value_f.TextChanged += new System.EventHandler(this.cb_value_f_TextChanged);
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(467, 21);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Action";
             // 
             // cb_action
             // 
+            resources.ApplyResources(this.cb_action, "cb_action");
             this.cb_action.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_action.FormattingEnabled = true;
             this.cb_action.Items.AddRange(new object[] {
-            "Keep",
-            "Remove"});
-            this.cb_action.Location = new System.Drawing.Point(470, 40);
+            resources.GetString("cb_action.Items"),
+            resources.GetString("cb_action.Items1")});
             this.cb_action.Name = "cb_action";
-            this.cb_action.Size = new System.Drawing.Size(75, 21);
-            this.cb_action.TabIndex = 4;
             this.cb_action.SelectedIndexChanged += new System.EventHandler(this.cb_action_SelectedIndexChanged);
             // 
             // btn_apply
             // 
+            resources.ApplyResources(this.btn_apply, "btn_apply");
             this.btn_apply.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_apply.FlatAppearance.BorderSize = 0;
-            this.btn_apply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_apply.Image = ((System.Drawing.Image)(resources.GetObject("btn_apply.Image")));
-            this.btn_apply.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_apply.Location = new System.Drawing.Point(511, 137);
             this.btn_apply.Name = "btn_apply";
-            this.btn_apply.Size = new System.Drawing.Size(55, 63);
-            this.btn_apply.TabIndex = 6;
-            this.btn_apply.Text = " Apply";
-            this.btn_apply.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_apply.UseVisualStyleBackColor = true;
             this.btn_apply.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_cancel
             // 
+            resources.ApplyResources(this.btn_cancel, "btn_cancel");
             this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_cancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_cancel.FlatAppearance.BorderSize = 0;
-            this.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_cancel.Image = ((System.Drawing.Image)(resources.GetObject("btn_cancel.Image")));
-            this.btn_cancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_cancel.Location = new System.Drawing.Point(454, 137);
             this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(55, 64);
-            this.btn_cancel.TabIndex = 7;
-            this.btn_cancel.Text = "Cancel";
-            this.btn_cancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_cancel.UseVisualStyleBackColor = true;
             this.btn_cancel.Click += new System.EventHandler(this.button2_Click);
             // 
             // chk_invalid
             // 
+            resources.ApplyResources(this.chk_invalid, "chk_invalid");
             this.chk_invalid.Checked = true;
             this.chk_invalid.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk_invalid.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.chk_invalid.Location = new System.Drawing.Point(171, 175);
             this.chk_invalid.Name = "chk_invalid";
-            this.chk_invalid.Size = new System.Drawing.Size(239, 17);
-            this.chk_invalid.TabIndex = 8;
-            this.chk_invalid.Text = "Remove invalid items (with N/A or 0 duration)";
             this.chk_invalid.UseVisualStyleBackColor = true;
             this.chk_invalid.CheckedChanged += new System.EventHandler(this.chk_invalid_CheckedChanged);
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(315, 44);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(12, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "if";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(440, 44);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "then";
             // 
             // cb_streams
             // 
+            resources.ApplyResources(this.cb_streams, "cb_streams");
             this.cb_streams.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_streams.Enabled = false;
             this.cb_streams.FormattingEnabled = true;
-            this.cb_streams.Location = new System.Drawing.Point(185, 40);
             this.cb_streams.Name = "cb_streams";
-            this.cb_streams.Size = new System.Drawing.Size(101, 21);
-            this.cb_streams.TabIndex = 12;
             this.cb_streams.SelectedIndexChanged += new System.EventHandler(this.cb_streams_SelectedIndexChanged);
             // 
             // lb_of
             // 
-            this.lb_of.AutoSize = true;
-            this.lb_of.Location = new System.Drawing.Point(168, 44);
+            resources.ApplyResources(this.lb_of, "lb_of");
             this.lb_of.Name = "lb_of";
-            this.lb_of.Size = new System.Drawing.Size(16, 13);
-            this.lb_of.TabIndex = 13;
-            this.lb_of.Text = "of";
             // 
             // chk_novideo
             // 
-            this.chk_novideo.AutoSize = true;
+            resources.ApplyResources(this.chk_novideo, "chk_novideo");
             this.chk_novideo.Checked = true;
             this.chk_novideo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chk_novideo.Enabled = false;
-            this.chk_novideo.Location = new System.Drawing.Point(171, 152);
             this.chk_novideo.Name = "chk_novideo";
-            this.chk_novideo.Size = new System.Drawing.Size(205, 17);
-            this.chk_novideo.TabIndex = 15;
-            this.chk_novideo.Text = "Remove files with no 0:0 video stream";
             this.chk_novideo.UseVisualStyleBackColor = true;
             this.chk_novideo.CheckedChanged += new System.EventHandler(this.chk_novideo_CheckedChanged);
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(182, 21);
+            resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 13);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Selector";
             // 
             // n_width
             // 
-            this.n_width.Enabled = false;
-            this.n_width.Location = new System.Drawing.Point(312, 72);
+            resources.ApplyResources(this.n_width, "n_width");
             this.n_width.Maximum = new decimal(new int[] {
             3840,
             0,
@@ -255,19 +194,15 @@
             0,
             0});
             this.n_width.Name = "n_width";
-            this.n_width.Size = new System.Drawing.Size(50, 20);
-            this.n_width.TabIndex = 37;
             this.n_width.Value = new decimal(new int[] {
             160,
             0,
             0,
             0});
-            this.n_width.Visible = false;
             // 
             // n_height
             // 
-            this.n_height.Enabled = false;
-            this.n_height.Location = new System.Drawing.Point(379, 72);
+            resources.ApplyResources(this.n_height, "n_height");
             this.n_height.Maximum = new decimal(new int[] {
             2160,
             0,
@@ -279,83 +214,51 @@
             0,
             0});
             this.n_height.Name = "n_height";
-            this.n_height.Size = new System.Drawing.Size(50, 20);
-            this.n_height.TabIndex = 38;
             this.n_height.Value = new decimal(new int[] {
             120,
             0,
             0,
             0});
-            this.n_height.Visible = false;
             // 
             // lbl_size
             // 
-            this.lbl_size.Font = new System.Drawing.Font("Segoe UI", 7.926606F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_size.Location = new System.Drawing.Point(364, 75);
+            resources.ApplyResources(this.lbl_size, "lbl_size");
             this.lbl_size.Name = "lbl_size";
-            this.lbl_size.Size = new System.Drawing.Size(11, 13);
-            this.lbl_size.TabIndex = 39;
-            this.lbl_size.Text = "X";
-            this.lbl_size.Visible = false;
             // 
             // btn_mediainfo
             // 
+            resources.ApplyResources(this.btn_mediainfo, "btn_mediainfo");
             this.btn_mediainfo.FlatAppearance.BorderSize = 0;
-            this.btn_mediainfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_mediainfo.Image = ((System.Drawing.Image)(resources.GetObject("btn_mediainfo.Image")));
-            this.btn_mediainfo.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_mediainfo.Location = new System.Drawing.Point(12, 138);
             this.btn_mediainfo.Name = "btn_mediainfo";
-            this.btn_mediainfo.Size = new System.Drawing.Size(55, 63);
-            this.btn_mediainfo.TabIndex = 40;
-            this.btn_mediainfo.Text = "File info";
-            this.btn_mediainfo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_mediainfo.UseVisualStyleBackColor = true;
             this.btn_mediainfo.Click += new System.EventHandler(this.btn_mediainfo_Click);
             // 
             // lbl_greater
             // 
-            this.lbl_greater.AutoSize = true;
-            this.lbl_greater.Location = new System.Drawing.Point(364, 21);
+            resources.ApplyResources(this.lbl_greater, "lbl_greater");
             this.lbl_greater.Name = "lbl_greater";
-            this.lbl_greater.Size = new System.Drawing.Size(38, 13);
-            this.lbl_greater.TabIndex = 41;
-            this.lbl_greater.Text = ">= MB";
-            this.lbl_greater.Visible = false;
             // 
             // btn_streams
             // 
+            resources.ApplyResources(this.btn_streams, "btn_streams");
             this.btn_streams.FlatAppearance.BorderSize = 0;
-            this.btn_streams.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_streams.Image = ((System.Drawing.Image)(resources.GetObject("btn_streams.Image")));
-            this.btn_streams.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_streams.Location = new System.Drawing.Point(73, 137);
             this.btn_streams.Name = "btn_streams";
-            this.btn_streams.Size = new System.Drawing.Size(55, 64);
-            this.btn_streams.TabIndex = 43;
-            this.btn_streams.Text = "Streams";
-            this.btn_streams.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_streams.UseVisualStyleBackColor = true;
             this.btn_streams.Click += new System.EventHandler(this.btn_streams_Click_1);
             // 
             // label6
             // 
+            resources.ApplyResources(this.label6, "label6");
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label6.Location = new System.Drawing.Point(16, 131);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(543, 2);
-            this.label6.TabIndex = 44;
             // 
             // lbl_info_search
             // 
+            resources.ApplyResources(this.lbl_info_search, "lbl_info_search");
             this.lbl_info_search.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.lbl_info_search.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lbl_info_search.Location = new System.Drawing.Point(136, 108);
             this.lbl_info_search.Name = "lbl_info_search";
             this.lbl_info_search.ReadOnly = true;
-            this.lbl_info_search.Size = new System.Drawing.Size(293, 13);
-            this.lbl_info_search.TabIndex = 45;
-            this.lbl_info_search.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // img_streams
             // 
@@ -370,11 +273,10 @@
             // 
             // Form4
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.CancelButton = this.btn_cancel;
-            this.ClientSize = new System.Drawing.Size(571, 209);
             this.Controls.Add(this.lbl_info_search);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btn_streams);
@@ -399,12 +301,9 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cb_filterby);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form4";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Filter";
             this.Load += new System.EventHandler(this.Form4_Load);
             ((System.ComponentModel.ISupportInitialize)(this.n_width)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_height)).EndInit();
