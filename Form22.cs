@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -30,6 +32,22 @@ namespace FFBatch
         public Boolean cancel = true;
         OpenFileDialog of1 = new OpenFileDialog();
 
+        private void refresh_lang()
+        {
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form22));
+            RefreshResources(this, resources);
+        }
+        private void RefreshResources(Control ctrl, ComponentResourceManager res)
+        {
+            ctrl.SuspendLayout();
+            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
+            foreach (Control control in ctrl.Controls)
+                RefreshResources(control, res); // recursion
+            ctrl.ResumeLayout(false);
+        }
+
         private void Form22_Load(object sender, EventArgs e)
         {
             String app_location = Application.StartupPath;
@@ -38,6 +56,17 @@ namespace FFBatch
             else is_portable = false;
 
             //Concat video filter
+
+            refresh_lang();
+
+            if (FFBatch.Properties.Settings.Default.app_lang == "en")
+            {
+                this.Text = "Join files";
+            }
+            if (FFBatch.Properties.Settings.Default.app_lang == "es")
+            {
+                this.Text = "Unir ficheros";
+            }
 
             String f_concat = String.Empty;
             if (is_portable == false)

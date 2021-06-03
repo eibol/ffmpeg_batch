@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -130,6 +132,44 @@ namespace FFBatch
             start_jobs = false;
             tooltips();
             btn_jobs.Enabled = true;
+
+            refresh_lang();
+
+            if (FFBatch.Properties.Settings.Default.app_lang == "en")
+            {
+                this.Text = "Multiplex jobs manager";
+                dg_pr.Columns[1].HeaderText = "Filename";
+                dg_pr.Columns[2].HeaderText = "FFmpeg parameters";
+                dg_pr.Columns[3].HeaderText = "Streams";
+                dg_pr.Columns[4].HeaderText = "Duration";
+                dg_pr.Columns[5].HeaderText = "Output";
+            }
+
+            if (FFBatch.Properties.Settings.Default.app_lang == "es")
+            {
+                this.Text = "Gestor de tareas de multiplexado";
+                dg_pr.Columns[1].HeaderText = "Nombre de archivo";
+                dg_pr.Columns[2].HeaderText = "Parámetros FFmpeg";
+                dg_pr.Columns[3].HeaderText = "Flujos";
+                dg_pr.Columns[4].HeaderText = "Duración";
+                dg_pr.Columns[5].HeaderText = "Salida";
+            }
+        }
+
+        private void refresh_lang()
+        {
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form16));
+            RefreshResources(this, resources);
+        }
+        private void RefreshResources(Control ctrl, ComponentResourceManager res)
+        {
+            ctrl.SuspendLayout();
+            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
+            foreach (Control control in ctrl.Controls)
+                RefreshResources(control, res); // recursion
+            ctrl.ResumeLayout(false);
         }
 
         private void btn_inc_font_Click(object sender, EventArgs e)

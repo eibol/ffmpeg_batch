@@ -51,9 +51,9 @@ namespace FFBatch
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lbl_down_time = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pg2 = new FFBatch.ProgressBarWithText();
             this.Pg1 = new FFBatch.ProgressBarWithText();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -61,80 +61,50 @@ namespace FFBatch
             // 
             // txt_channel
             // 
-            this.txt_channel.Location = new System.Drawing.Point(125, 18);
+            resources.ApplyResources(this.txt_channel, "txt_channel");
             this.txt_channel.Name = "txt_channel";
-            this.txt_channel.Size = new System.Drawing.Size(336, 20);
-            this.txt_channel.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 21);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Playlist/channel URL";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 49);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Additional parameters";
             // 
             // txt_parameters
             // 
-            this.txt_parameters.Location = new System.Drawing.Point(125, 46);
+            resources.ApplyResources(this.txt_parameters, "txt_parameters");
             this.txt_parameters.Name = "txt_parameters";
-            this.txt_parameters.Size = new System.Drawing.Size(336, 20);
-            this.txt_parameters.TabIndex = 2;
             // 
             // button1
             // 
+            resources.ApplyResources(this.button1, "button1");
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button1.Location = new System.Drawing.Point(203, 100);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(64, 87);
-            this.button1.TabIndex = 148;
-            this.button1.Text = "Start download";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(9, 77);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 13);
-            this.label4.TabIndex = 152;
-            this.label4.Text = "File destination path";
             // 
             // txt_path_main
             // 
+            resources.ApplyResources(this.txt_path_main, "txt_path_main");
             this.txt_path_main.BackColor = System.Drawing.Color.White;
-            this.txt_path_main.Location = new System.Drawing.Point(125, 74);
             this.txt_path_main.Name = "txt_path_main";
-            this.txt_path_main.ReadOnly = true;
-            this.txt_path_main.Size = new System.Drawing.Size(265, 20);
-            this.txt_path_main.TabIndex = 151;
             // 
             // btn_browse_path_m3u
             // 
+            resources.ApplyResources(this.btn_browse_path_m3u, "btn_browse_path_m3u");
             this.btn_browse_path_m3u.FlatAppearance.BorderSize = 0;
             this.btn_browse_path_m3u.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_browse_path_m3u.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_browse_path_m3u.Location = new System.Drawing.Point(394, 73);
             this.btn_browse_path_m3u.Name = "btn_browse_path_m3u";
-            this.btn_browse_path_m3u.Size = new System.Drawing.Size(67, 22);
-            this.btn_browse_path_m3u.TabIndex = 153;
-            this.btn_browse_path_m3u.Text = "Browse...";
             this.btn_browse_path_m3u.UseVisualStyleBackColor = true;
             this.btn_browse_path_m3u.Click += new System.EventHandler(this.btn_browse_path_m3u_Click);
             // 
@@ -144,86 +114,62 @@ namespace FFBatch
             // 
             // notifyIcon1
             // 
-            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "FFmpeg Batch AV Converter";
-            this.notifyIcon1.Visible = true;
+            resources.ApplyResources(this.notifyIcon1, "notifyIcon1");
             // 
             // btn_abort_all
             // 
+            resources.ApplyResources(this.btn_abort_all, "btn_abort_all");
             this.btn_abort_all.FlatAppearance.BorderSize = 0;
             this.btn_abort_all.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_abort_all.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_abort_all.Image = ((System.Drawing.Image)(resources.GetObject("btn_abort_all.Image")));
-            this.btn_abort_all.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_abort_all.Location = new System.Drawing.Point(262, 100);
             this.btn_abort_all.Name = "btn_abort_all";
-            this.btn_abort_all.Size = new System.Drawing.Size(61, 88);
-            this.btn_abort_all.TabIndex = 154;
-            this.btn_abort_all.Text = "Abort download";
-            this.btn_abort_all.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_abort_all.UseVisualStyleBackColor = true;
             this.btn_abort_all.Click += new System.EventHandler(this.btn_abort_all_Click);
             // 
             // lbl_d_v
             // 
-            this.lbl_d_v.Location = new System.Drawing.Point(7, 14);
+            resources.ApplyResources(this.lbl_d_v, "lbl_d_v");
             this.lbl_d_v.Name = "lbl_d_v";
-            this.lbl_d_v.Size = new System.Drawing.Size(346, 18);
-            this.lbl_d_v.TabIndex = 156;
-            this.lbl_d_v.Text = "Downloading file:";
-            this.lbl_d_v.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbl_d_v.TextChanged += new System.EventHandler(this.lbl_d_v_TextChanged);
+            // 
+            // fd1
+            // 
+            resources.ApplyResources(this.fd1, "fd1");
             // 
             // txt_get_url
             // 
+            resources.ApplyResources(this.txt_get_url, "txt_get_url");
             this.txt_get_url.BackColor = System.Drawing.Color.White;
             this.txt_get_url.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_get_url.Location = new System.Drawing.Point(78, 40);
-            this.txt_get_url.Multiline = true;
             this.txt_get_url.Name = "txt_get_url";
             this.txt_get_url.ReadOnly = true;
-            this.txt_get_url.Size = new System.Drawing.Size(369, 47);
-            this.txt_get_url.TabIndex = 159;
             this.txt_get_url.TabStop = false;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(75, 16);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(308, 13);
-            this.label3.TabIndex = 160;
-            this.label3.Text = "HOW TO OBTAIN A YOUTUBE CHANNEL DOWNLOAD LINK";
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txt_get_url);
-            this.groupBox1.Location = new System.Drawing.Point(15, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(468, 93);
-            this.groupBox1.TabIndex = 161;
             this.groupBox1.TabStop = false;
             // 
             // btn_clear_list
             // 
+            resources.ApplyResources(this.btn_clear_list, "btn_clear_list");
             this.btn_clear_list.FlatAppearance.BorderSize = 0;
             this.btn_clear_list.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_clear_list.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_clear_list.Image = ((System.Drawing.Image)(resources.GetObject("btn_clear_list.Image")));
-            this.btn_clear_list.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btn_clear_list.Location = new System.Drawing.Point(147, 100);
             this.btn_clear_list.Name = "btn_clear_list";
-            this.btn_clear_list.Size = new System.Drawing.Size(54, 87);
-            this.btn_clear_list.TabIndex = 162;
-            this.btn_clear_list.Text = "Clear channel";
-            this.btn_clear_list.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btn_clear_list.UseVisualStyleBackColor = true;
             this.btn_clear_list.Click += new System.EventHandler(this.btn_clear_list_Click);
             // 
             // groupBox2
             // 
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.BackColor = System.Drawing.Color.White;
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.btn_clear_list);
@@ -235,69 +181,52 @@ namespace FFBatch
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.btn_abort_all);
             this.groupBox2.Controls.Add(this.btn_browse_path_m3u);
-            this.groupBox2.Location = new System.Drawing.Point(15, 105);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(468, 195);
-            this.groupBox2.TabIndex = 164;
             this.groupBox2.TabStop = false;
             // 
             // groupBox3
             // 
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.BackColor = System.Drawing.Color.White;
             this.groupBox3.Controls.Add(this.lbl_d_v);
             this.groupBox3.Controls.Add(this.lbl_down_time);
             this.groupBox3.Controls.Add(this.pg2);
             this.groupBox3.Controls.Add(this.Pg1);
-            this.groupBox3.Location = new System.Drawing.Point(15, 301);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(468, 96);
-            this.groupBox3.TabIndex = 165;
             this.groupBox3.TabStop = false;
             // 
             // lbl_down_time
             // 
-            this.lbl_down_time.Location = new System.Drawing.Point(352, 14);
+            resources.ApplyResources(this.lbl_down_time, "lbl_down_time");
             this.lbl_down_time.Name = "lbl_down_time";
-            this.lbl_down_time.Size = new System.Drawing.Size(104, 16);
-            this.lbl_down_time.TabIndex = 164;
-            this.lbl_down_time.Text = "Speed/Est. time";
-            this.lbl_down_time.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // pg2
-            // 
-            this.pg2.Location = new System.Drawing.Point(7, 36);
-            this.pg2.Name = "pg2";
-            this.pg2.Size = new System.Drawing.Size(452, 21);
-            this.pg2.TabIndex = 163;
-            // 
-            // Pg1
-            // 
-            this.Pg1.Location = new System.Drawing.Point(7, 64);
-            this.Pg1.Name = "Pg1";
-            this.Pg1.Size = new System.Drawing.Size(452, 21);
-            this.Pg1.TabIndex = 161;
             // 
             // timer1
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // pg2
+            // 
+            resources.ApplyResources(this.pg2, "pg2");
+            this.pg2.Name = "pg2";
+            // 
+            // Pg1
+            // 
+            resources.ApplyResources(this.Pg1, "Pg1");
+            this.Pg1.Name = "Pg1";
+            // 
             // Form23
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(498, 410);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form23";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Fast YouTube channel/playlist download";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form23_FormClosing);
             this.Load += new System.EventHandler(this.Form23_Load);
             this.groupBox1.ResumeLayout(false);

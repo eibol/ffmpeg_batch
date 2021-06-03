@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Threading;
+using System.Net;
+using System.Globalization;
 
 namespace FFBatch
 {
@@ -65,9 +67,9 @@ namespace FFBatch
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
-            lbl_d_v.TextAlign = ContentAlignment.MiddleCenter;
-            lbl_d_v.Width = 452;
+        {         
+         
+            
             if (txt_channel.Text.Length == 0)
             {
                 MessageBox.Show("YouTube URL field is empty.");
@@ -77,8 +79,11 @@ namespace FFBatch
             {
                 MessageBox.Show("YouTube URL is too short.");
                 return;
-            }            
-
+            }
+            
+            lbl_d_v.TextAlign = ContentAlignment.MiddleCenter;
+            lbl_d_v.Width = 452;
+            
             List<string> list_lines = new List<string>();
             List<string> list_err = new List<string>();
             total_videos = 0;
@@ -87,8 +92,17 @@ namespace FFBatch
             Pg1.Value = 0;
             pg2.Value = 0;
             working = true;
-            killed = false;
-            Disable_Controls();
+            killed = false;            
+            Pg1.Value = 0;
+            Pg1.Text = "0%";
+            pg2.Value = 0;
+            pg2.Text = "0%";
+            Pg1.Refresh();
+            pg2.Refresh();
+            lbl_d_v.Text = "";
+            lbl_down_time.Text = "";
+         
+            Disable_Controls();            
 
             new System.Threading.Thread(() =>
             {
@@ -109,7 +123,7 @@ namespace FFBatch
                         catch (System.Exception excpt)
                         {
                             MessageBox.Show("Error writing output folder: " + excpt.Message, "Error writing to folder", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            this.Cursor = Cursors.Arrow;
+                            this.InvokeEx(f => this.Cursor = Cursors.Arrow);
                             this.InvokeEx(f => f.lbl_d_v.Text = "");
                             return;
                         }
@@ -168,17 +182,21 @@ namespace FFBatch
                     Decimal est_size = 0;
                     Double sec_prog = 0;
                 //this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.Normal));
+                String pl_title = "";
 
                 while (!process_glob.StandardOutput.EndOfStream)
                         {
                             err_txt = process_glob.StandardOutput.ReadLine();
                             list_lines.Add(err_txt);
 
+                    if (err_txt.Contains("[download] Downloading playlist: ")) pl_title = err_txt.Replace("[download] Downloading playlist: ", "");
+                    
                     if (err_txt.Contains("[youtube:tab] Downloading page "))
                     {
                         lbl_d_v.Invoke(new MethodInvoker(delegate
                         {
-                            lbl_d_v.Text = "Browsing url contents: Page " +  err_txt.Replace("[youtube:tab] Downloading page ", "");
+                            if (pl_title.Length == 0 ) lbl_d_v.Text = "Browsing url contents: Page " +  err_txt.Replace("[youtube:tab] Downloading page ", "");
+                            else lbl_d_v.Text = "Browsing " + "\u0022" + pl_title + "\u0022" + " Page " + err_txt.Replace("[youtube:tab] Downloading page ", "");
                         }));
                     }
 
@@ -193,9 +211,9 @@ namespace FFBatch
                             //lbl_d_v.Visible = true;
                             //lbl_d_v.Text = "Starting downloads...";
                             total_videos = Convert.ToInt32(n_vs.Replace("Videos: Downloading ", "").Replace("videos", "").Trim());
-                            Pg1.Maximum = total_videos;
-                            this.InvokeEx(f => TaskbarProgress.SetValue(this.Handle, Pg1.Value, Pg1.Maximum));
+                            Pg1.Maximum = total_videos;                            
                             this.InvokeEx(f => f.Pg1.Text = "0 of " + total_videos.ToString());
+                            
                         }));
                     }
                     if (err_txt.Contains("[download] Destination: "))
@@ -217,34 +235,55 @@ namespace FFBatch
                                 prog = prog.Replace(" of " + total_videos.ToString(), "");
                                 Pg1.Value = Convert.ToInt32(prog);
                                 Pg1.Text = err_txt.Replace("[download] Downloading video ", "");
+                                this.InvokeEx(f => TaskbarProgress.SetValue(this.Handle, Pg1.Value, Pg1.Maximum));
                             }
                             catch
                             {
                                 lbl_d_v.Text = "Downloading. Total count not available. Output folder count: " + Directory.GetFiles(destino).Length.ToString();
                                 lbl_d_v.Refresh();
-                                total_videos = 0;                        
+                                total_videos = 0;
                             }
                         }));                        
                     }
                     if (err_txt.Contains("%"))
                     {
-                        this.InvokeEx(f => f.lbl_d_v.TextAlign = ContentAlignment.MiddleLeft);
-                        this.InvokeEx(f => f.lbl_d_v.Width = 349);
-                        Double prog_y = Double.Parse(err_txt.Substring(err_txt.IndexOf("%") - 4, 4));
-                        prog_y = prog_y / 10;
-                        int progress = Convert.ToInt32(prog_y);
-                        this.InvokeEx(f => f.pg2.Value = progress);
-                        this.InvokeEx(f => f.pg2.Text = progress.ToString() + "%");
+                        try
+                        {
+                            this.InvokeEx(f => f.lbl_d_v.TextAlign = ContentAlignment.MiddleLeft);
+                            this.InvokeEx(f => f.lbl_d_v.Width = 349);
+                            Double prog_y = Double.Parse(err_txt.Substring(err_txt.IndexOf("%") - 4, 4));
+                            prog_y = prog_y / 10;
+                            int progress = Convert.ToInt32(prog_y);
+                            this.InvokeEx(f => f.pg2.Value = progress);
+                            this.InvokeEx(f => f.pg2.Text = progress.ToString() + "%");
+                            
+                        }
+                        catch { }
                     }
                     if (err_txt.Contains("ETA") && show_est == true)
                     {
-                        int ind1 = err_txt.LastIndexOf("ETA");
-                        String unit = "";
-                        String est_time = err_txt.Substring(ind1, err_txt.Length - ind1).Replace("ETA", "").Trim();
-                        if (err_txt.ToLower().Contains("mib/s")) unit = " MB/s";
-                        if (err_txt.ToLower().Contains("kib/s")) unit = " KB/s";
-                        this.InvokeEx(f => f.lbl_down_time.Text = err_txt.Substring(err_txt.IndexOf("at ") + 3, 5) + " " + unit + " - " + est_time);
-                    }                    
+                        try
+                        {
+                            int ind1 = err_txt.LastIndexOf("ETA");
+                            String unit = "";
+                            String est_time = err_txt.Substring(ind1, err_txt.Length - ind1).Replace("ETA", "").Trim();
+                            if (err_txt.ToLower().Contains("mib/s")) unit = " MB/s";
+                            if (err_txt.ToLower().Contains("kib/s")) unit = " KB/s";
+                            this.InvokeEx(f => f.lbl_down_time.Text = err_txt.Substring(err_txt.IndexOf("at ") + 3, 5) + " " + unit + " - " + est_time);
+                        }
+                        catch { }
+                    }
+                    if (total_videos == 0 || total_videos == 1)
+                    {
+                        try
+                        {
+                            this.InvokeEx(f => f.Pg1.Maximum = pg2.Maximum);
+                            this.InvokeEx(f => f.Pg1.Value = pg2.Value);
+                            this.InvokeEx(f => f.Pg1.Text = pg2.Text);
+                            this.InvokeEx(f => TaskbarProgress.SetValue(this.Handle, Pg1.Value, Pg1.Maximum));
+                        }
+                        catch { }
+                    }
                 }
                 
                 while (!process_glob.StandardError.EndOfStream)
@@ -255,11 +294,7 @@ namespace FFBatch
                     process_glob.StartInfo.Arguments = String.Empty;
                     this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
                     this.InvokeEx(f => timer1.Stop());
-
-                    this.InvokeEx(f => f.pg2.Text = "0%");
-                    this.InvokeEx(f => f.Pg1.Text = "0%");
-                    this.InvokeEx(f => f.pg2.Value = 0 );
-                    this.InvokeEx(f => f.Pg1.Value = 0);
+                                    
                     this.InvokeEx(f => f.lbl_d_v.Text = "");
                     this.InvokeEx(f => f.lbl_down_time.Text = "");
 
@@ -268,6 +303,12 @@ namespace FFBatch
                     list_lines.Add("");
                     if (process_glob.ExitCode == 0)
                     {
+                    
+                    this.InvokeEx(f => f.pg2.Text = "100%");
+                    this.InvokeEx(f => f.Pg1.Text = "100%");
+                    this.InvokeEx(f => f.pg2.Value = pg2.Maximum);
+                    this.InvokeEx(f => f.Pg1.Value = Pg1.Maximum);
+
                     if (total_videos > 0 && Directory.GetFiles(destino).Length == total_videos)
                     {
                         MessageBox.Show("Download complete. " + Environment.NewLine + Environment.NewLine + total_videos.ToString() + " videos on destination folder.","Download complete",MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -279,7 +320,9 @@ namespace FFBatch
                 }
                     else
                     {
- 
+                    this.InvokeEx(f => f.Pg1.Refresh());
+                    this.InvokeEx(f => f.pg2.Refresh());
+
                     String to_remove = "please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; type  youtube-dl -U  to update. Be sure to call youtube-dl with the --verbose flag and include its complete output.";
                     String remove2 = "Type youtube-dl --help to see a list of all options.";
                     if (aborted_url == false &&  killed == false) MessageBox.Show("An error ocurred." + Environment.NewLine + Environment.NewLine + error_out.Replace(to_remove, "").Replace(remove2,"Check youtube-dl parameters and url."),"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
@@ -433,20 +476,34 @@ namespace FFBatch
                             
                     if (aborted_url == true)
                     {
-                        this.InvokeEx(f => MessageBox.Show("Download aborted by user.", "Aborted", MessageBoxButtons.OK, MessageBoxIcon.Error));
-                    this.InvokeEx(f => f.Pg1.Value = 0);
-                    this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
-                    this.InvokeEx(f => f.lbl_d_v.Text = "");
-                }
-                
-                Enable_Controls();                
-
+                        this.InvokeEx(f => MessageBox.Show("Download aborted by user.", "Aborted", MessageBoxButtons.OK, MessageBoxIcon.Error));                    
+                        this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
+                        this.InvokeEx(f => this.Cursor = Cursors.Arrow);
+                    }
+                    
+                    Enable_Controls();
             }).Start();
         }
-        
+
+        private void refresh_lang()
+        {
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form23));
+            RefreshResources(this, resources);
+        }
+        private void RefreshResources(Control ctrl, ComponentResourceManager res)
+        {
+            ctrl.SuspendLayout();
+            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
+            foreach (Control control in ctrl.Controls)
+                RefreshResources(control, res); // recursion
+            ctrl.ResumeLayout(false);
+        }
+
         private void Form23_Load(object sender, EventArgs e)
         {   
-            txt_get_url.Text = "- Go to YouTube channel main url, and click on VIDEOS tab." + Environment.NewLine + "- Copy the url and paste on channel field." + Environment.NewLine + "- Example: https://www.youtube.com/user/[channel_name]/videos";
+            
             working = false;
             Pg1.Text = "0%";
             pg2.Text = "0%";
@@ -454,6 +511,19 @@ namespace FFBatch
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
             if (File.Exists(portable_flag)) is_portable = true; else is_portable = false;
             //Read play sound
+
+            refresh_lang();
+
+            if (FFBatch.Properties.Settings.Default.app_lang == "en")
+            {
+                this.Text = "Quick YouTube channel/playlist download";
+                txt_get_url.Text = "- Go to YouTube channel main url, and click on VIDEOS tab." + Environment.NewLine + "- Copy the url and paste on channel field." + Environment.NewLine + "- Example: https://www.youtube.com/user/[channel_name]/videos";
+            }
+            if (FFBatch.Properties.Settings.Default.app_lang == "es")
+            {
+                this.Text = "Descarga rápida de canal/lista de YouTube";
+                txt_get_url.Text = "- Vaya a la página principal del canal, y haga click en la pestaña VIDEOS." + Environment.NewLine + "- Copie el enlace y cópielo en el campo Canal." + Environment.NewLine + "- Ejemplo: https://www.youtube.com/user/[channel_name]/videos";
+            }
 
             String ff_play_sound = String.Empty;
             if (is_portable == false)
@@ -525,14 +595,16 @@ namespace FFBatch
 
         private void btn_clear_list_Click(object sender, EventArgs e)
         {
+            lbl_d_v.Text = "";
+            lbl_d_v.TextAlign = ContentAlignment.MiddleLeft;
+            lbl_down_time.Text = "";
             txt_channel.Text = "";
             Pg1.Value = 0;
             Pg1.Text = "0%";
             pg2.Value = 0;
             pg2.Text = "0%";
-            lbl_d_v.Text = "Downloading file:";
-            lbl_down_time.Text = "Speed/Est. time";
-                 
+            Pg1.Refresh();
+            pg2.Refresh();                 
         }
 
         private void btn_exit_Click(object sender, EventArgs e)

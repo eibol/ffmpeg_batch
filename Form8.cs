@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -37,6 +39,22 @@ namespace FFBatch
             dg_streams.Columns[3].ReadOnly = true;
             dg_streams.Columns[4].ReadOnly = true;
             dg_streams.Rows.Clear();
+        }
+
+        private void refresh_lang()
+        {
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form8));
+            RefreshResources(this, resources);
+        }
+        private void RefreshResources(Control ctrl, ComponentResourceManager res)
+        {
+            ctrl.SuspendLayout();
+            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
+            foreach (Control control in ctrl.Controls)
+                RefreshResources(control, res); // recursion
+            ctrl.ResumeLayout(false);
         }
 
         private void Form8_Load(object sender, EventArgs e)
@@ -128,9 +146,28 @@ namespace FFBatch
                 {
                     dg_streams.Refresh();
                 }));
-
             });
-            
+            dg_streams.Sort(dg_streams.Columns[4], ListSortDirection.Descending);
+
+            if (FFBatch.Properties.Settings.Default.app_lang == "en")
+            {
+                this.Text = "YOUTUBE AVAILABLE QUALITY STREAMS";
+                dg_streams.Columns[1].HeaderText = "Use";
+                dg_streams.Columns[2].HeaderText = "Fomat ID";
+                dg_streams.Columns[3].HeaderText = "Extension";
+                dg_streams.Columns[4].HeaderText = "Resolution";
+                dg_streams.Columns[5].HeaderText = "Codec";
+            }
+            if (FFBatch.Properties.Settings.Default.app_lang == "es")
+            {
+                this.Text = "Calidades de YouTube disponibles";
+                dg_streams.Columns[1].HeaderText = "Usar";
+                dg_streams.Columns[2].HeaderText = "ID";
+                dg_streams.Columns[3].HeaderText = "Extensión";
+                dg_streams.Columns[4].HeaderText = "Resolución";
+                dg_streams.Columns[5].HeaderText = "Codec";
+            }
+
         }
 
         private void btn_close_Click(object sender, EventArgs e)
@@ -143,8 +180,23 @@ namespace FFBatch
             String f_vid = String.Empty;
             String f_aud = String.Empty;
             int i = 0;
+            Boolean mark = false;
 
-            foreach (DataGridViewRow row in dg_streams.Rows)
+            foreach (DataGridViewRow row1 in dg_streams.Rows)
+            {                
+                if (row1.Cells[1].Value.ToString().ToLower() == "true")
+                {
+                    mark = true;
+                    break;
+                }
+            }
+            if (mark == false)
+            {
+                MessageBox.Show("No stream was checked for selection.");
+                return;
+            }
+            
+                foreach (DataGridViewRow row in dg_streams.Rows)
             {
                 if (Convert.ToBoolean(row.Cells[1].Value) == true)
                 {

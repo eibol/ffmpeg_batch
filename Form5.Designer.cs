@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dg_streams = new System.Windows.Forms.DataGridView();
             this.Column3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,6 +48,7 @@
             // 
             // dg_streams
             // 
+            resources.ApplyResources(this.dg_streams, "dg_streams");
             this.dg_streams.AllowUserToAddRows = false;
             this.dg_streams.AllowUserToDeleteRows = false;
             this.dg_streams.AllowUserToOrderColumns = true;
@@ -60,60 +61,50 @@
             this.Column1,
             this.Column2});
             this.dg_streams.ContextMenuStrip = this.menu_grid;
-            this.dg_streams.Location = new System.Drawing.Point(12, 64);
             this.dg_streams.Name = "dg_streams";
-            this.dg_streams.Size = new System.Drawing.Size(473, 250);
-            this.dg_streams.TabIndex = 0;
             // 
             // Column3
             // 
             this.Column3.FillWeight = 25F;
-            this.Column3.HeaderText = "";
+            resources.ApplyResources(this.Column3, "Column3");
             this.Column3.Name = "Column3";
             this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column3.Width = 25;
             // 
             // Column1
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column1.HeaderText = "ID";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            resources.ApplyResources(this.Column1, "Column1");
             this.Column1.Name = "Column1";
             this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column1.Width = 40;
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "Stream ouput";
+            resources.ApplyResources(this.Column2, "Column2");
             this.Column2.Name = "Column2";
             this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Column2.Width = 405;
             // 
             // menu_grid
             // 
+            resources.ApplyResources(this.menu_grid, "menu_grid");
             this.menu_grid.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ct1});
             this.menu_grid.Name = "menu_grid";
-            this.menu_grid.Size = new System.Drawing.Size(103, 26);
             this.menu_grid.Opening += new System.ComponentModel.CancelEventHandler(this.menu_grid_Opening);
             // 
             // ct1
             // 
+            resources.ApplyResources(this.ct1, "ct1");
             this.ct1.Name = "ct1";
-            this.ct1.Size = new System.Drawing.Size(102, 22);
-            this.ct1.Text = "Copy";
             this.ct1.Click += new System.EventHandler(this.ct1_Click);
             // 
             // txt_file
             // 
+            resources.ApplyResources(this.txt_file, "txt_file");
             this.txt_file.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_file.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_file.Location = new System.Drawing.Point(12, 43);
             this.txt_file.Name = "txt_file";
             this.txt_file.ReadOnly = true;
-            this.txt_file.Size = new System.Drawing.Size(473, 13);
-            this.txt_file.TabIndex = 1;
-            this.txt_file.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // img_streams
             // 
@@ -127,26 +118,18 @@
             // 
             // btn_close
             // 
+            resources.ApplyResources(this.btn_close, "btn_close");
             this.btn_close.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_close.Location = new System.Drawing.Point(12, 320);
             this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(473, 25);
-            this.btn_close.TabIndex = 2;
-            this.btn_close.Text = "Close window";
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.button1_Click);
             // 
             // txt_name
             // 
+            resources.ApplyResources(this.txt_name, "txt_name");
             this.txt_name.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txt_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_name.Location = new System.Drawing.Point(12, 15);
             this.txt_name.Name = "txt_name";
             this.txt_name.ReadOnly = true;
-            this.txt_name.Size = new System.Drawing.Size(473, 20);
-            this.txt_name.TabIndex = 3;
-            this.txt_name.Text = "FILE STREAMS INFORMATION";
-            this.txt_name.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // ff_str
             // 
@@ -160,22 +143,18 @@
             // 
             // Form5
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.CancelButton = this.btn_close;
-            this.ClientSize = new System.Drawing.Size(496, 350);
             this.Controls.Add(this.txt_name);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.txt_file);
             this.Controls.Add(this.dg_streams);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form5";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Multimedia streams";
             this.Load += new System.EventHandler(this.Form5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dg_streams)).EndInit();
             this.menu_grid.ResumeLayout(false);

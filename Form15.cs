@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -25,6 +27,22 @@ namespace FFBatch
         public Form15()
         {
             InitializeComponent();
+        }
+
+        private void refresh_lang()
+        {
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form15));
+            RefreshResources(this, resources);
+        }
+        private void RefreshResources(Control ctrl, ComponentResourceManager res)
+        {
+            ctrl.SuspendLayout();
+            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
+            foreach (Control control in ctrl.Controls)
+                RefreshResources(control, res); // recursion
+            ctrl.ResumeLayout(false);
         }
 
         private void Form15_Load(object sender, EventArgs e)
@@ -61,7 +79,23 @@ namespace FFBatch
             create_tips();
             read_presets();
             dg_pr.ClearSelection();
+            
+            refresh_lang();
+
+            if (FFBatch.Properties.Settings.Default.app_lang == "en")
+            {
+                dg_pr.Columns[0].HeaderText = "Name";
+                dg_pr.Columns[1].HeaderText = "FFmpeg parameters";
+                dg_pr.Columns[2].HeaderText = "Format";
+            }
+            if (FFBatch.Properties.Settings.Default.app_lang == "es")
+            {
+                dg_pr.Columns[0].HeaderText = "Nombre";
+                dg_pr.Columns[1].HeaderText = "Parámetros FFmpeg";
+                dg_pr.Columns[2].HeaderText = "Formato";
+            }
         }
+
         private void create_tips()
         {
             ToolTip T001 = new ToolTip();
@@ -83,8 +117,7 @@ namespace FFBatch
             else
             {                
                 path_presets = port_path + "ff_presets_portable.ini";
-            }
-            
+            }            
 
             String param = "";
             String format = "";
