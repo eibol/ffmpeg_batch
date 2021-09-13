@@ -1,6 +1,61 @@
-2.5.0
-• Multilanguage support enabled, (english and spanish, italian coming soon).
-• New autorun feature to start encoding on startup or after adding files to the application.
-• Load file lists from plain text files, not only .ffq format.
-• Fixed bug loading two pass encoding video wizard.
-• Other minor improvements and bugfixes..
+﻿2.5.2
+EN
+• Italian language now available (thanks Bovirus).
+• Portuguese (BR) language now available (thanks Claudio).
+• Fixed issue with some relative paths when using variables in parameters field (%1 or %2).
+• Fixed issue in Batch subtitles burn feature (filter path bug).
+• Fixed multiplex tab runtime error with zero duration files.
+• Fixed error on updates server.
+• Fixed some UI and translation cosmetic issues.
+• Added AMD Video Coding Engine to encoders Wizard.
+• Other minor improvements and bugfixes.
+----------------------------------------
+
+ES
+• Agregado idioma italiano (Gracias Bovirus).
+• Agregado idioma portugués (Brasil) (Gracias Claudio).
+• Corregido error con rutas de archivo relativas al usar las variables %1 o %2 en el campo de parámetros.
+• Corregido error en la función de Subtitulado por lotes (codificar subtítulos, fallo en la ruta del filtro).
+• Corregido error de ejecuión en la pestaña de multiplexado de flujos con ficheros de duración cero o desconocida.
+• Corregido error en el servidor de actualizaciones.
+• Corregidos algunos errores menores de traducción en la interfaz.
+• Agregado AMD Video Coding Engine al Asistente de codificación.
+• Otras mejoras y correcciones menores.
+----------------------------------------
+
+IT
+• Ora disponibile la lingua italiana (grazie Bovirus).
+
+• Ora disponibile la lingua portoghese (BR) (grazie Claudio).
+
+• Risolto il problema con alcuni percorsi relativi quando si utilizzano le variabili nel campo dei parametri (%1 o %2).
+
+• Risolto problema nella funzione di masterizzazione dei sottotitoli in batch (bug del percorso del filtro).
+
+• Corretto errore di runtime della scheda multiplex con file di durata zero.
+
+• Corretto errore sul server degli aggiornamenti.
+• Risolti alcuni problemi estetici dell'interfaccia utente e della traduzione.
+
+• Aggiunto il motore di codifica video AMD alla procedura guidata degli encoder.
+
+• Altri miglioramenti minori e correzioni di bug.
+----------------------------------------
+
+PT
+• Língua italiana agora disponível (obrigado Bovirus).
+
+• Língua portuguesa (BR) agora disponível (obrigado Claudio).
+
+• Corrigido problema com alguns caminhos relativos ao usar variáveis no campo de parâmetros (% 1 ou% 2).
+
+• Corrigido problema no recurso de gravação de legendas em lote (bug no caminho do filtro).
+
+• Corrigido erro de tempo de execução da guia multiplex com arquivos de duração zero.
+
+• Corrigido erro no servidor de atualizações.
+• Corrigidos alguns problemas cosméticos de tradução e interface do usuário.
+
+• Adicionado o AMD Video Coding Engine ao assistente de codificadores.
+
+• Outras pequenas melhorias e correções de bugs.
