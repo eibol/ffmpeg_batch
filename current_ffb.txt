@@ -1,0 +1,6 @@
+﻿2.5.0
+• Multilanguage support enabled, (english and spanish, italian coming soon).
+• New autorun feature to start encoding on startup or after adding files to the application.
+• Load file lists from plain text files, not only .ffq format.
+• Fixed bug loading two pass encoding video wizard.
+• Other minor improvements and bugfixes..
