@@ -1,11 +1,6 @@
-2.2.6
-Changelog:
-
-- FFmpeg 4.3.1.2020-10-28 (32 bits version no longer updated).
-- Fixed bug on file list cells disappearing when mouse hovering them.
-- Fixed youtube-dl automatic update (git repository down).
-- Pre-input parameters saved for all or just default preset.
-- Output path and filename can be overriden by selecting Format "nul".
-- New wizard for batch video frame extraction as image.
-- New Stream multiplex batch job manager feature.
-- Minor changes on presets wizard (Opus).
+2.5.0
+• Multilanguage support enabled, (english and spanish, italian coming soon).
+• New autorun feature to start encoding on startup or after adding files to the application.
+• Load file lists from plain text files, not only .ffq format.
+• Fixed bug loading two pass encoding video wizard.
+• Other minor improvements and bugfixes..
