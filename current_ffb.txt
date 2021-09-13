@@ -25,18 +25,12 @@ ES
 
 IT
 • Ora disponibile la lingua italiana (grazie Bovirus).
-
 • Ora disponibile la lingua portoghese (BR) (grazie Claudio).
-
 • Risolto il problema con alcuni percorsi relativi quando si utilizzano le variabili nel campo dei parametri (%1 o %2).
-
 • Risolto problema nella funzione di masterizzazione dei sottotitoli in batch (bug del percorso del filtro).
-
 • Corretto errore di runtime della scheda multiplex con file di durata zero.
-
 • Corretto errore sul server degli aggiornamenti.
 • Risolti alcuni problemi estetici dell'interfaccia utente e della traduzione.
-
 • Aggiunto il motore di codifica video AMD alla procedura guidata degli encoder.
 
 • Altri miglioramenti minori e correzioni di bug.
@@ -44,18 +38,11 @@ IT
 
 PT
 • Língua italiana agora disponível (obrigado Bovirus).
-
 • Língua portuguesa (BR) agora disponível (obrigado Claudio).
-
 • Corrigido problema com alguns caminhos relativos ao usar variáveis no campo de parâmetros (% 1 ou% 2).
-
 • Corrigido problema no recurso de gravação de legendas em lote (bug no caminho do filtro).
-
 • Corrigido erro de tempo de execução da guia multiplex com arquivos de duração zero.
-
 • Corrigido erro no servidor de atualizações.
 • Corrigidos alguns problemas cosméticos de tradução e interface do usuário.
-
 • Adicionado o AMD Video Coding Engine ao assistente de codificadores.
-
 • Outras pequenas melhorias e correções de bugs.
