@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -130,6 +132,30 @@ namespace FFBatch
             start_jobs = false;
             tooltips();
             btn_jobs.Enabled = true;
+            refresh_lang();
+            this.Text = FFBatch.Properties.Strings2.mux_jobs;
+                dg_pr.Columns[1].HeaderText = FFBatch.Properties.Strings.filename;
+                dg_pr.Columns[2].HeaderText = FFBatch.Properties.Strings.ff_params;
+                dg_pr.Columns[3].HeaderText = FFBatch.Properties.Strings2.streams;
+                dg_pr.Columns[4].HeaderText = FFBatch.Properties.Strings.duration;
+                dg_pr.Columns[5].HeaderText = FFBatch.Properties.Strings.output;
+         
+        }
+
+        private void refresh_lang()
+        {
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form16));
+            RefreshResources(this, resources);
+        }
+        private void RefreshResources(Control ctrl, ComponentResourceManager res)
+        {
+            ctrl.SuspendLayout();
+            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
+            foreach (Control control in ctrl.Controls)
+                RefreshResources(control, res); // recursion
+            ctrl.ResumeLayout(false);
         }
 
         private void btn_inc_font_Click(object sender, EventArgs e)
@@ -161,7 +187,7 @@ namespace FFBatch
             no_overw = no_overw.Distinct().ToList();
             if (no_overw.Count < count)
             {
-                MessageBox.Show("Output filename already exists. Please use a different name");
+                MessageBox.Show(FFBatch.Properties.Strings.out_exists);
                 return;
             }
 
@@ -170,7 +196,7 @@ namespace FFBatch
             {
                 if (row.DefaultCellStyle.BackColor == Color.LightGreen || row.DefaultCellStyle.BackColor == Color.LightSalmon)
                 {
-                    MessageBox.Show("Jobs list was already processed. Please reset status with botton at the top right corner to start it over.", "Items already processed on jobs lists", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(FFBatch.Properties.Strings.jobs_reset, FFBatch.Properties.Strings.items_alr, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ret = true;
                     break;
                 }
@@ -182,7 +208,7 @@ namespace FFBatch
                 start_jobs = true;
                 this.Close();
             }
-            else MessageBox.Show("Jobs list is empty");
+            else MessageBox.Show(FFBatch.Properties.Strings.jobs_blank);
         }
 
         private void dg_pr_CellValidated(object sender, DataGridViewCellEventArgs e)
@@ -195,7 +221,7 @@ namespace FFBatch
             no_overw = no_overw.Distinct().ToList();
             if (no_overw.Count < count)
             {
-                MessageBox.Show("Output filename already exists. Please use a different name");             
+                MessageBox.Show(FFBatch.Properties.Strings.out_exists);             
             }
             if (dg_pr.RowCount > 0) btn_jobs.Enabled = true;
             else btn_jobs.Enabled = false;

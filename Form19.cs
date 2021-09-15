@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,6 +21,7 @@ namespace FFBatch
          
         }
         public Boolean canceled = false;
+        public Boolean subfs = false;
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -31,12 +34,12 @@ namespace FFBatch
             canceled = false;
             if (textBox1.Text.Length == 0)
             {
-                MessageBox.Show("Path field cannot be empty.");
+                MessageBox.Show(FFBatch.Properties.Strings.path_empty);
                 return;
             }
             if (textBox1.Text.Length < 2)
             {
-                MessageBox.Show("Selected path is not valid.");
+                MessageBox.Show(FFBatch.Properties.Strings.invalid_path);
                 return;
             }
             this.Close();
@@ -44,17 +47,41 @@ namespace FFBatch
 
         private void Form19_Load(object sender, EventArgs e)
         {
+            refresh_lang();
+            this.Text = FFBatch.Properties.Strings.man_path;
             textBox1.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             textBox1.AutoCompleteSource = AutoCompleteSource.FileSystem;
             canceled = true;
             if (Directory.Exists(Clipboard.GetText()))
             {
                 textBox1.Text = Clipboard.GetText();
-                textBox1.Select(0,0);
+                textBox1.Select(0, 0);
             }
             else textBox1.Focus();
+
+            this.Text = FFBatch.Properties.Strings.man_path;           
+
+            if (subfs == true) label4.Text = FFBatch.Properties.Strings.subs_en;
+            else label4.Text = FFBatch.Properties.Strings.subs_dis;
         }
-                
+         
+
+        private void refresh_lang()
+        {
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form19));
+            RefreshResources(this, resources);
+        }
+        private void RefreshResources(Control ctrl, ComponentResourceManager res)
+        {
+            ctrl.SuspendLayout();
+            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
+            foreach (Control control in ctrl.Controls)
+                RefreshResources(control, res); // recursion
+            ctrl.ResumeLayout(false);
+        }
+
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter) button1.PerformClick();

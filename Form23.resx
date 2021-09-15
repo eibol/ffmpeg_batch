@@ -139,7 +139,7 @@
   <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 301</value>
   </data>
-  <data name="&gt;&gt;txt_channel.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;pg2.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
@@ -200,23 +200,23 @@
   <data name="Pg1.Size" type="System.Drawing.Size, System.Drawing">
     <value>452, 23</value>
   </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;txt_get_url.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txt_channel.Name" xml:space="preserve">
-    <value>txt_channel</value>
+  <data name="&gt;&gt;btn_clear_list.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="lbl_d_v.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="btn_clear_list.Size" type="System.Drawing.Size, System.Drawing">
     <value>54, 86</value>
@@ -689,6 +689,9 @@
   <data name="&gt;&gt;button1.Parent" xml:space="preserve">
     <value>groupBox2</value>
   </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>File destination path</value>
+  </data>
   <data name="btn_clear_list.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -704,8 +707,8 @@
   <data name="&gt;&gt;btn_clear_list.Name" xml:space="preserve">
     <value>btn_clear_list</value>
   </data>
-  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form23</value>
   </data>
   <data name="&gt;&gt;btn_abort_all.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2503,9 +2506,6 @@
   <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="btn_browse_path_m3u.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
   <data name="&gt;&gt;lbl_down_time.Parent" xml:space="preserve">
     <value>groupBox3</value>
   </data>
@@ -2540,7 +2540,7 @@
     <value>Downloading file:</value>
   </data>
   <data name="&gt;&gt;pg2.Type" xml:space="preserve">
-    <value>FFBatch.ProgressBarWithText, FFBatch, Version=2.4.2.0, Culture=neutral, PublicKeyToken=05c3747134ed808f</value>
+    <value>FFBatch.ProgressBarWithText, FFBatch, Version=2.4.2.0, Culture=neutral, PublicKeyToken=1e53f0e83fc1b3bc</value>
   </data>
   <data name="lbl_down_time.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 16</value>
@@ -2588,7 +2588,10 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;Pg1.Type" xml:space="preserve">
-    <value>FFBatch.ProgressBarWithText, FFBatch, Version=2.4.2.0, Culture=neutral, PublicKeyToken=05c3747134ed808f</value>
+    <value>FFBatch.ProgressBarWithText, FFBatch, Version=2.4.2.0, Culture=neutral, PublicKeyToken=1e53f0e83fc1b3bc</value>
+  </data>
+  <data name="btn_browse_path_m3u.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 8</value>
@@ -2596,14 +2599,11 @@
   <data name="btn_abort_all.Location" type="System.Drawing.Point, System.Drawing">
     <value>269, 102</value>
   </data>
-  <data name="&gt;&gt;btn_clear_list.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;txt_parameters.Parent" xml:space="preserve">
+    <value>groupBox2</value>
   </data>
   <data name="btn_clear_list.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
-  </data>
-  <data name="txt_channel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="&gt;&gt;lbl_d_v.Name" xml:space="preserve">
     <value>lbl_d_v</value>
@@ -2617,11 +2617,11 @@
   <data name="&gt;&gt;fd1.Type" xml:space="preserve">
     <value>System.Windows.Forms.FolderBrowserDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
   <data name="btn_browse_path_m3u.Text" xml:space="preserve">
     <value>Browse...</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>161</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2646,9 +2646,6 @@
   </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form23</value>
   </data>
   <data name="notifyIcon1.Visible" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2718,6 +2715,9 @@
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
   </data>
+  <data name="&gt;&gt;txt_channel.Name" xml:space="preserve">
+    <value>txt_channel</value>
+  </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Additional parameters</value>
   </data>
@@ -2736,6 +2736,9 @@
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 105</value>
   </data>
+  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
   <data name="Pg1.TabIndex" type="System.Int32, mscorlib">
     <value>161</value>
   </data>
@@ -2745,8 +2748,8 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="&gt;&gt;pg2.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="txt_channel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Playlist/channel URL</value>
@@ -2772,8 +2775,8 @@
   <data name="btn_abort_all.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 88</value>
   </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>161</value>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
@@ -2807,9 +2810,6 @@
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="button1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
@@ -2850,17 +2850,17 @@
   <data name="&gt;&gt;txt_path_main.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
-  <data name="&gt;&gt;txt_parameters.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>groupBox2</value>
   </data>
   <data name="lbl_down_time.Location" type="System.Drawing.Point, System.Drawing">
     <value>354, 14</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>File destination path</value>
+  <data name="&gt;&gt;txt_channel.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2882,8 +2882,5 @@
   </metadata>
   <metadata name="notifyIcon1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>129, 17</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>es</value>
   </metadata>
 </root>

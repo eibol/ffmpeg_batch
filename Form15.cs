@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -25,6 +27,22 @@ namespace FFBatch
         public Form15()
         {
             InitializeComponent();
+        }
+
+        private void refresh_lang()
+        {
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form15));
+            RefreshResources(this, resources);
+        }
+        private void RefreshResources(Control ctrl, ComponentResourceManager res)
+        {
+            ctrl.SuspendLayout();
+            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
+            foreach (Control control in ctrl.Controls)
+                RefreshResources(control, res); // recursion
+            ctrl.ResumeLayout(false);
         }
 
         private void Form15_Load(object sender, EventArgs e)
@@ -61,7 +79,15 @@ namespace FFBatch
             create_tips();
             read_presets();
             dg_pr.ClearSelection();
+            
+            refresh_lang();
+            
+                dg_pr.Columns[0].HeaderText = FFBatch.Properties.Strings.Name;
+                dg_pr.Columns[1].HeaderText = FFBatch.Properties.Strings.ff_params;
+                dg_pr.Columns[2].HeaderText = FFBatch.Properties.Strings.Format;
+            
         }
+
         private void create_tips()
         {
             ToolTip T001 = new ToolTip();
@@ -69,7 +95,7 @@ namespace FFBatch
             T001.InitialDelay = 750;
             T001.ReshowDelay = 500;
             T001.ShowAlways = true;
-            T001.SetToolTip(this.btn_save_backup, "Backup configuration file");
+            T001.SetToolTip(this.btn_save_backup, FFBatch.Properties.Strings.bck_conf);
         }
 
         private void read_presets()
@@ -83,8 +109,7 @@ namespace FFBatch
             else
             {                
                 path_presets = port_path + "ff_presets_portable.ini";
-            }
-            
+            }            
 
             String param = "";
             String format = "";
@@ -126,14 +151,14 @@ namespace FFBatch
         {
             if (duplicates == true)
             {
-                MessageBox.Show("Two presets have the same name, please edit one of them.");
+                MessageBox.Show(FFBatch.Properties.Strings.pres_name);
                 return;
             }
             foreach (DataGridViewRow row in dg_pr.Rows)
             {
                 if (row.Cells[0].Value == null)
                 {
-                    MessageBox.Show("Preset description is empty");
+                    MessageBox.Show(FFBatch.Properties.Strings.pres_empty);
                     dg_pr.ClearSelection();//If you want
 
                     int nRowIndex = row.Index;
@@ -148,7 +173,7 @@ namespace FFBatch
                 }
                 if (row.Cells[1].Value == null)
                 {
-                    MessageBox.Show("Preset parameters field is empty.");
+                    MessageBox.Show(FFBatch.Properties.Strings.pres_empty2);
                     int nRowIndex = row.Index;
                     int nColumnIndex = 0;
 
@@ -161,7 +186,7 @@ namespace FFBatch
                 }
                 if (row.Cells[1].Value.ToString().Length < 6)
                 {
-                    MessageBox.Show("Preset parameters field is too short.");
+                    MessageBox.Show(FFBatch.Properties.Strings.params_short);
                     int nRowIndex = row.Index;
                     int nColumnIndex = 0;
 
@@ -213,7 +238,7 @@ namespace FFBatch
             FileInfo fi = new FileInfo(open_file.FileName);
             if (fi.Length > 100000)
             {
-                MessageBox.Show("File is too big.");
+                MessageBox.Show(FFBatch.Properties.Strings.file_big);
                 return;
             }
             String param = "";
@@ -277,7 +302,7 @@ namespace FFBatch
 
         private void item_down_Click(object sender, EventArgs e)
         {
-            if (dg_pr.SelectedCells.Count == 0 || dg_pr.SelectedCells.Count > 1 || dg_pr.SelectedCells[0].RowIndex == dg_pr.RowCount - 2) return;
+            if (dg_pr.SelectedCells.Count == 0 || dg_pr.SelectedCells.Count > 1 || dg_pr.SelectedCells[0].RowIndex == dg_pr.RowCount - 1) return;
             DataGridView dgv = dg_pr;
             try
             {
@@ -391,7 +416,7 @@ namespace FFBatch
             dg_pr.Rows.Clear();
             if (!File.Exists(path))
             {
-                MessageBox.Show("No backup file was created yet.");
+                MessageBox.Show(FFBatch.Properties.Strings.no_bck);
                 return;
             }
             foreach (string line in File.ReadLines(path))
@@ -432,7 +457,7 @@ namespace FFBatch
 
         private void btn_add_pr_Click(object sender, EventArgs e)
         {
-            dg_pr.Rows.Add("New preset" + (dg_pr.RowCount + 1).ToString(), "", "");
+            dg_pr.Rows.Add(FFBatch.Properties.Strings.new_preset2 + (dg_pr.RowCount + 1).ToString(), "", "");
             dg_pr.ClearSelection();//If you want
 
             int nRowIndex = dg_pr.Rows.Count - 1;
@@ -457,8 +482,8 @@ namespace FFBatch
                     if (row.Cells[0].Value.ToString() == e.FormattedValue.ToString())
                     {
                         dg_pr.Rows[e.RowIndex].ErrorText =
-                            "Duplicate value not allowed";
-                        MessageBox.Show("Duplicated preset name found.");
+                            FFBatch.Properties.Strings.dup_not;
+                        MessageBox.Show(FFBatch.Properties.Strings.dup_pres_n);
                         e.Cancel = true;
                         return;
                     }
@@ -472,8 +497,8 @@ namespace FFBatch
         {
             FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
             folderBrowserDialog1.ShowNewFolderButton = true;
-            if (is_portable == false) folderBrowserDialog1.Description = "Select path to save a copy of presets file (ff_presets.ini)";
-            else folderBrowserDialog1.Description = "Select path to save a copy of presets file (ff_presets_portable.ini)";
+            if (is_portable == false) folderBrowserDialog1.Description = FFBatch.Properties.Strings.sel_path_pres + " " +"(ff_presets.ini)";
+            else folderBrowserDialog1.Description = FFBatch.Properties.Strings.sel_path_pres + " " + "(ff_presets_portable.ini)";
 
             if (folderBrowserDialog1.ShowDialog() != DialogResult.OK)
             {
@@ -489,18 +514,18 @@ namespace FFBatch
                 {
                     if (File.Exists(folderBrowserDialog1.SelectedPath + "\\" + "ff_presets.ini"))
                     {
-                        var a = MessageBox.Show("Another presets file was found this location. Do you want to overwrite it?", "Confirm overwrite", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                        var a = MessageBox.Show(FFBatch.Properties.Strings.over_pres_loc, FFBatch.Properties.Strings.conf_act, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                         if (a == DialogResult.No) return;
                     }
 
                     try
                     {
                         File.Copy(System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets.ini", folderBrowserDialog1.SelectedPath + "\\" + "ff_presets.ini", true);
-                        MessageBox.Show("Configuration was saved successfully.", "Configuration restored", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(FFBatch.Properties.Strings.conf_saved, FFBatch.Properties.Strings.conf_rest, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception excpt)
                     {
-                        MessageBox.Show("An error ocurred saving presets file." + Environment.NewLine + excpt.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(FFBatch.Properties.Strings.err_saving_pres + Environment.NewLine + excpt.Message, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -511,12 +536,12 @@ namespace FFBatch
                     if (File.Exists(port_path + "ff_presets_portable.ini"))
                     {
                         File.Copy(System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch_presets.ini", folderBrowserDialog1.SelectedPath + "\\" + "ff_batch_presets.ini", true);
-                        MessageBox.Show("Configuration was saved successfully.", "Configuration restored", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(FFBatch.Properties.Strings.conf_saved, FFBatch.Properties.Strings.conf_rest, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 catch (Exception excpt)
                 {
-                    MessageBox.Show("An error ocurred saving configuration file." + Environment.NewLine + excpt.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(FFBatch.Properties.Strings.err_set + Environment.NewLine + excpt.Message, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -524,7 +549,7 @@ namespace FFBatch
         private void btn_restore_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog3 = new OpenFileDialog();
-            openFileDialog3.Filter = "Presets file|ff_presets*.ini|Configuration files|*.ini|All files (*.*)|*.*";
+            openFileDialog3.Filter = "Presets" + " " + "|ff_presets*.ini|" + FFBatch.Properties.Strings.conf_files + " " + "|*.ini|" + FFBatch.Properties.Strings.all_files + "(*.*)|*.*";
 
             if (openFileDialog3.ShowDialog() != DialogResult.OK)
             {
@@ -552,11 +577,11 @@ namespace FFBatch
                 //ActiveForm.Close();
                 dg_pr.Rows.Clear();
                 read_presets();
-                MessageBox.Show("Presets file was restored successfully", "Presets restored", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(FFBatch.Properties.Strings.pres_file + " " + FFBatch.Properties.Strings.was_rest, FFBatch.Properties.Strings.pres_rest, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception excpt)
             {
-                MessageBox.Show("An error ocurred while saving presets file." + Environment.NewLine + Environment.NewLine + excpt.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(FFBatch.Properties.Strings.err_set + Environment.NewLine + Environment.NewLine + excpt.Message, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

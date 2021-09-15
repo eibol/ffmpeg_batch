@@ -307,6 +307,9 @@
   <data name="btn_load_bck.Location" type="System.Drawing.Point, System.Drawing">
     <value>511, 432</value>
   </data>
+  <data name="btn_load_bck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 84</value>
+  </data>
   <data name="btn_load_bck.Text" xml:space="preserve">
     <value>Recargar últimos presets</value>
   </data>

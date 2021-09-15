@@ -119,145 +119,88 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="radio_filter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 17</value>
+    <value>174, 17</value>
   </data>
   <data name="radio_filter.Text" xml:space="preserve">
-    <value>Usar filtro de concatenación de vídeo</value>
+    <value>Usa filtro video concatenazione</value>
   </data>
   <data name="radio_demuxer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 17</value>
+    <value>166, 17</value>
   </data>
   <data name="radio_demuxer.Text" xml:space="preserve">
-    <value>Usar concatenador nativo</value>
-  </data>
-  <data name="chk_copy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 80</value>
+    <value>Usa demuxer concatenazione</value>
   </data>
   <data name="chk_copy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 17</value>
+    <value>87, 17</value>
   </data>
   <data name="chk_copy.Text" xml:space="preserve">
-    <value>Copiar flujos</value>
-  </data>
-  <data name="chk_filter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>238, 109</value>
+    <value>Copia stream</value>
   </data>
   <data name="chk_filter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 17</value>
+    <value>166, 17</value>
   </data>
   <data name="chk_filter.Text" xml:space="preserve">
-    <value>Usar ajustes automáticos</value>
-  </data>
-  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 139</value>
-  </data>
-  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>408, 61</value>
+    <value>Usa impostazioni automatiche</value>
   </data>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>En este modo, los ficheros multimedia son unidos copiando los flujos, siempre que tengas las mismas características (codec, tamaño, tasa de bits). NOTE: no todos los formatos admiten copia de flujos, si la reproducción falla, es necesario recodificar.</value>
-  </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>294, 7</value>
+    <value>In questa modalità è possibile copiare lo stream audio/video dei file, purché condividano le qualità (dimensioni, codec, bitrate). NOTA: non tutti i contenitori sono supportati per la copia dello stream. </value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>Iniciar</value>
-  </data>
-  <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>368, 7</value>
+    <value>Avvia</value>
   </data>
   <data name="btn_cancel.Text" xml:space="preserve">
-    <value>Cancelar</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>460, 47</value>
-  </data>
-  <data name="txt_params.Size" type="System.Drawing.Size, System.Drawing">
-    <value>323, 20</value>
+    <value>Annulla</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 13</value>
+    <value>91, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Parámetros de codificación</value>
-  </data>
-  <data name="chk_batch_concat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 212</value>
+    <value>Parametri codifica</value>
   </data>
   <data name="chk_batch_concat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 17</value>
+    <value>163, 17</value>
   </data>
   <data name="chk_batch_concat.Text" xml:space="preserve">
-    <value>Habilitar concatenación en serie</value>
+    <value>Abilita concatenazione batch</value>
   </data>
   <data name="txt_intro.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 1</value>
+    <value>66, 1</value>
   </data>
   <data name="txt_intro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>253, 20</value>
+    <value>257, 20</value>
   </data>
   <data name="txt_end.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 29</value>
+    <value>66, 29</value>
   </data>
   <data name="txt_end.Size" type="System.Drawing.Size, System.Drawing">
-    <value>253, 20</value>
-  </data>
-  <data name="txt_batch_concat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>407, 34</value>
+    <value>257, 20</value>
   </data>
   <data name="txt_batch_concat.Text" xml:space="preserve">
-    <value>En este modo los ficheros especificados de principio y final son concatenados a cada fichero de la lista, en vez de concatenar la lista como un solo fichero.</value>
-  </data>
-  <data name="btn_end.Location" type="System.Drawing.Point, System.Drawing">
-    <value>338, 28</value>
-  </data>
-  <data name="btn_end.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 23</value>
+    <value>In questa modalità il file iniziale e/o finale verrà concatenato a ogni file nell'elenco, invece di concatenare tutti i file insieme.</value>
   </data>
   <data name="btn_end.Text" xml:space="preserve">
-    <value>Examinar...</value>
-  </data>
-  <data name="btn_intro.Location" type="System.Drawing.Point, System.Drawing">
-    <value>338, 0</value>
-  </data>
-  <data name="btn_intro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 23</value>
+    <value>Sfoglia...</value>
   </data>
   <data name="btn_intro.Text" xml:space="preserve">
-    <value>Examinar...</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 32</value>
+    <value>Sfoglia...</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 13</value>
+    <value>51, 13</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Fichero final</value>
+    <value>File finale</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>71, 13</value>
+    <value>57, 13</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Fichero inicial</value>
-  </data>
-  <data name="panel_batch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>418, 103</value>
-  </data>
-  <data name="txt_c_format.Location" type="System.Drawing.Point, System.Drawing">
-    <value>400, 46</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>354, 49</value>
+    <value>File iniziale</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Formato</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>456, 287</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -545,5 +488,8 @@
         AAcAAAAAAAAABwAAAAAAAAAHAAAAAAAAAAcAAAAAAAAABwAAAAAAAAAHAAAAAAAAAAcAAAAAAAAABwAA
         AAAAAAAHAAAAAAAAAA8AAAAAAAAAD4AAAAAAAAAfwAAAAAAAAD8=
 </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Unisci file</value>
   </data>
 </root>

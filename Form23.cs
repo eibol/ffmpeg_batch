@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Threading;
 using System.Net;
+using System.Globalization;
 
 namespace FFBatch
 {
@@ -66,17 +67,21 @@ namespace FFBatch
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {         
-         
+        {   
+            if (txt_path_main.Text.Length == 0)
+            {
+                MessageBox.Show(FFBatch.Properties.Strings.out_blank);
+                return;
+            }
             
             if (txt_channel.Text.Length == 0)
             {
-                MessageBox.Show("YouTube URL field is empty.");
+                MessageBox.Show(FFBatch.Properties.Strings2.yt_url_blank);
                 return;
             }
             if (txt_channel.Text.Length < 8)
             {
-                MessageBox.Show("YouTube URL is too short.");
+                MessageBox.Show(FFBatch.Properties.Strings2.yt_url_sh);
                 return;
             }
             
@@ -121,7 +126,7 @@ namespace FFBatch
                         }
                         catch (System.Exception excpt)
                         {
-                            MessageBox.Show("Error writing output folder: " + excpt.Message, "Error writing to folder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show(FFBatch.Properties.Strings.write_error2 + " " + excpt.Message, FFBatch.Properties.Strings.write_error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                             this.InvokeEx(f => this.Cursor = Cursors.Arrow);
                             this.InvokeEx(f => f.lbl_d_v.Text = "");
                             return;
@@ -130,7 +135,7 @@ namespace FFBatch
 
                 if (Directory.GetFiles(destino).Length > 0)
                 {
-                    DialogResult a = MessageBox.Show("Destination folder is not empty. Continue?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    DialogResult a = MessageBox.Show(FFBatch.Properties.Strings2.dest_not_empty, FFBatch.Properties.Strings.warning, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (a == DialogResult.No)
                     {
                         working = false;
@@ -155,12 +160,12 @@ namespace FFBatch
                         this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
                         this.InvokeEx(f => timer1.Stop());
                         this.InvokeEx(f => f.lbl_down_time.Text = "");
-                        MessageBox.Show("Youtube-dl was not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(FFBatch.Properties.Strings.yt_not, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
 
                     }
 
-                this.InvokeEx(f => f.lbl_d_v.Text = "Initializing download, please wait...");
+                this.InvokeEx(f => f.lbl_d_v.Text = FFBatch.Properties.Strings2.init_wait);
                 this.InvokeEx(f => timer1.Start());
 
                 process_glob.StartInfo.RedirectStandardOutput = true;
@@ -194,8 +199,8 @@ namespace FFBatch
                     {
                         lbl_d_v.Invoke(new MethodInvoker(delegate
                         {
-                            if (pl_title.Length == 0 ) lbl_d_v.Text = "Browsing url contents: Page " +  err_txt.Replace("[youtube:tab] Downloading page ", "");
-                            else lbl_d_v.Text = "Browsing " + "\u0022" + pl_title + "\u0022" + " Page " + err_txt.Replace("[youtube:tab] Downloading page ", "");
+                            if (pl_title.Length == 0 ) lbl_d_v.Text = FFBatch.Properties.Strings2.brow_page + " " +  err_txt.Replace("[youtube:tab] Downloading page ", "");
+                            else lbl_d_v.Text = FFBatch.Properties.Strings2.browsing + " "  + "\u0022" + pl_title + "\u0022" + " Page " + err_txt.Replace("[youtube:tab] Downloading page ", "");
                         }));
                     }
 
@@ -206,7 +211,7 @@ namespace FFBatch
                         String n_vs = err_txt.Substring(ind1, ind2 - ind1).Replace("Downloading ", "").Replace("videos", "").Trim(); ;
                         lbl_d_v.Invoke(new MethodInvoker(delegate
                         {                            
-                            lbl_d_v.Text = "Total: " + n_vs.Replace("Videos: Downloading ","").Replace("videos","").Trim();
+                            lbl_d_v.Text = FFBatch.Properties.Strings2.total + ": "  + n_vs.Replace("Videos: Downloading ","").Replace("videos","").Trim();
                             //lbl_d_v.Visible = true;
                             //lbl_d_v.Text = "Starting downloads...";
                             total_videos = Convert.ToInt32(n_vs.Replace("Videos: Downloading ", "").Replace("videos", "").Trim());
@@ -238,7 +243,7 @@ namespace FFBatch
                             }
                             catch
                             {
-                                lbl_d_v.Text = "Downloading. Total count not available. Output folder count: " + Directory.GetFiles(destino).Length.ToString();
+                                lbl_d_v.Text = FFBatch.Properties.Strings2.outf_count + " "  + Directory.GetFiles(destino).Length.ToString();
                                 lbl_d_v.Refresh();
                                 total_videos = 0;
                             }
@@ -324,7 +329,7 @@ namespace FFBatch
 
                     String to_remove = "please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; type  youtube-dl -U  to update. Be sure to call youtube-dl with the --verbose flag and include its complete output.";
                     String remove2 = "Type youtube-dl --help to see a list of all options.";
-                    if (aborted_url == false &&  killed == false) MessageBox.Show("An error ocurred." + Environment.NewLine + Environment.NewLine + error_out.Replace(to_remove, "").Replace(remove2,"Check youtube-dl parameters and url."),"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    if (aborted_url == false &&  killed == false) MessageBox.Show("An error ocurred." + Environment.NewLine + Environment.NewLine + error_out.Replace(to_remove, "").Replace(remove2,"Check youtube-dl parameters and url."),FFBatch.Properties.Strings.error,MessageBoxButtons.OK,MessageBoxIcon.Error);
                     if (killed == true) MessageBox.Show("Download was terminated by user.", "Aborted", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }                       
@@ -447,9 +452,9 @@ namespace FFBatch
                             {
                                 if (Form.ActiveForm == null)
                                 {
-                                    notifyIcon1.BalloonTipText = "FFmpeg Batch URL capture successfully completed";
+                                    notifyIcon1.BalloonTipText = FFBatch.Properties.Strings.url_comp;
                                     notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
-                                    notifyIcon1.BalloonTipTitle = "URL capture complete";
+                                    notifyIcon1.BalloonTipTitle = FFBatch.Properties.Strings.url_comp2;
                                     notifyIcon1.ShowBalloonTip(0);
                         if (play_on_end == true && process_glob.ExitCode == 0 && aborted_url == false) play_end();
                     }
@@ -475,7 +480,7 @@ namespace FFBatch
                             
                     if (aborted_url == true)
                     {
-                        this.InvokeEx(f => MessageBox.Show("Download aborted by user.", "Aborted", MessageBoxButtons.OK, MessageBoxIcon.Error));                    
+                        this.InvokeEx(f => MessageBox.Show(FFBatch.Properties.Strings2.aborted2, FFBatch.Properties.Strings.aborted, MessageBoxButtons.OK, MessageBoxIcon.Error));                    
                         this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
                         this.InvokeEx(f => this.Cursor = Cursors.Arrow);
                     }
@@ -483,10 +488,26 @@ namespace FFBatch
                     Enable_Controls();
             }).Start();
         }
-        
+
+        private void refresh_lang()
+        {
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form23));
+            RefreshResources(this, resources);
+        }
+        private void RefreshResources(Control ctrl, ComponentResourceManager res)
+        {
+            ctrl.SuspendLayout();
+            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
+            foreach (Control control in ctrl.Controls)
+                RefreshResources(control, res); // recursion
+            ctrl.ResumeLayout(false);
+        }
+
         private void Form23_Load(object sender, EventArgs e)
         {   
-            txt_get_url.Text = "- Go to YouTube channel main url, and click on VIDEOS tab." + Environment.NewLine + "- Copy the url and paste on channel field." + Environment.NewLine + "- Example: https://www.youtube.com/user/[channel_name]/videos";
+            
             working = false;
             Pg1.Text = "0%";
             pg2.Text = "0%";
@@ -495,6 +516,10 @@ namespace FFBatch
             if (File.Exists(portable_flag)) is_portable = true; else is_portable = false;
             //Read play sound
 
+            refresh_lang();            
+            this.Text = FFBatch.Properties.Strings2.quick_yt1;
+            txt_get_url.Text = FFBatch.Properties.Strings2.quick_yt2 + Environment.NewLine + FFBatch.Properties.Strings2.quick_yt3 + Environment.NewLine + FFBatch.Properties.Strings2.quick_yt4 + " " + "https://www.youtube.com/user/[channel_name]/videos";
+            
             String ff_play_sound = String.Empty;
             if (is_portable == false)
             {
@@ -581,7 +606,7 @@ namespace FFBatch
         {
             if (working == true)
             {
-                MessageBox.Show("Download is in progress, please abort before closing window.");
+                MessageBox.Show(FFBatch.Properties.Strings2.down_prog);
                 return;
             }
             else this.Close();
@@ -591,7 +616,7 @@ namespace FFBatch
         {
             if (working == true)
             {
-                DialogResult a =  MessageBox.Show("Download is in progress. Do you want to force quit?", "Download in progress",MessageBoxButtons.YesNoCancel,MessageBoxIcon.Question);
+                DialogResult a =  MessageBox.Show(FFBatch.Properties.Strings2.down_p_ab, FFBatch.Properties.Strings2.down_prog2,MessageBoxButtons.YesNoCancel,MessageBoxIcon.Question);
                 if (a == DialogResult.No || a == DialogResult.Cancel) e.Cancel = true;
                 else
                 {

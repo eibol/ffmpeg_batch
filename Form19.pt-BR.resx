@@ -118,35 +118,35 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>65, 51</value>
+  </data>
   <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 20</value>
+    <value>352, 20</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>180, 13</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Aceptar</value>
+    <value>199, 13</value>
   </data>
   <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>259, 13</value>
+    <value>278, 13</value>
   </data>
   <data name="btn_cancel.Text" xml:space="preserve">
     <value>Cancelar</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>52, 25</value>
+    <value>65, 25</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>213, 13</value>
+    <value>229, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Escriba o pegue aquí la ruta local o remota:</value>
+    <value>Escreva ou cole seu caminho local ou de rede:</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 13</value>
+    <value>51, 13</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Ruta:</value>
+    <value>Caminho:</value>
   </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -175,23 +175,19 @@
 </value>
   </data>
   <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>338, 13</value>
+    <value>357, 13</value>
   </data>
   <data name="button3.Text" xml:space="preserve">
-    <value>Examinar...</value>
+    <value>Navegar...</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>431, 58</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>453, 58</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>289, 25</value>
+    <value>307, 25</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>410, 143</value>
+    <value>435, 143</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1982,5 +1978,8 @@
         xRPuE8QT7hPCE+4TwBPuE74T7ha9Fu5Ax0CeAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Seleção de caminho manual</value>
   </data>
 </root>
