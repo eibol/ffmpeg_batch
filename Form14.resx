@@ -1972,9 +1972,8 @@
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>151</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
+  <data name="&gt;&gt;pic_error.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1985,8 +1984,8 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;pic_error.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>108</value>
@@ -1999,6 +1998,9 @@
   </data>
   <data name="&gt;&gt;btn_abort.Name" xml:space="preserve">
     <value>btn_abort</value>
+  </data>
+  <data name="pic_error.Size" type="System.Drawing.Size, System.Drawing">
+    <value>14, 14</value>
   </data>
   <data name="&gt;&gt;btn_abort.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -2027,11 +2029,12 @@
   <data name="btn_abort.TabIndex" type="System.Int32, mscorlib">
     <value>104</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
   <data name="&gt;&gt;txt_path.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Arguments</value>
   </data>
   <data name="pic_error.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2057,6 +2060,9 @@
   </data>
   <data name="txt_args.TabIndex" type="System.Int32, mscorlib">
     <value>109</value>
+  </data>
+  <data name="pic_success.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 16</value>
   </data>
   <data name="label8.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -2115,9 +2121,6 @@
   <data name="&gt;&gt;txt_path.Name" xml:space="preserve">
     <value>txt_path</value>
   </data>
-  <data name="&gt;&gt;pic_error.Name" xml:space="preserve">
-    <value>pic_error</value>
-  </data>
   <data name="&gt;&gt;label8.Name" xml:space="preserve">
     <value>label8</value>
   </data>
@@ -2133,8 +2136,8 @@
   <data name="&gt;&gt;pic_error.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="pic_success.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 16</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Arguments</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 56</value>
@@ -2142,14 +2145,14 @@
   <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;txt_args.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="&gt;&gt;btn_abort.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>2, 124</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Launching application in 5</value>
   </data>
   <data name="btn_abort.Text" xml:space="preserve">
     <value>Abort</value>
@@ -2163,9 +2166,6 @@
   <data name="&gt;&gt;label8.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txt_args.Name" xml:space="preserve">
-    <value>txt_args</value>
-  </data>
   <data name="&gt;&gt;timer1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -2178,17 +2178,17 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Launching application in 5</value>
+  <data name="&gt;&gt;txt_args.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="pic_error.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;txt_args.Name" xml:space="preserve">
+    <value>txt_args</value>
   </data>
-  <data name="pic_error.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 14</value>
+  <data name="&gt;&gt;pic_error.Name" xml:space="preserve">
+    <value>pic_error</value>
   </data>
   <data name="&gt;&gt;panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2201,5 +2201,8 @@
   </metadata>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>pt-BR</value>
   </metadata>
 </root>

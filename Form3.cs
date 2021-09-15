@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Threading;
@@ -17,6 +19,10 @@ namespace FFBatch
             InitializeComponent();
         }
 
+        public Boolean autorun = false;
+        public Boolean automulti = false;
+        public Boolean changed_lang = false;
+        public String lang_set = "";
         public String ff_ver = String.Empty;
         System.Media.SoundPlayer soundPl = new System.Media.SoundPlayer();
         String port_path = System.IO.Path.Combine(Application.StartupPath, "settings") + "\\";
@@ -66,21 +72,21 @@ namespace FFBatch
             toolT4z.InitialDelay = 750;
             toolT4z.ReshowDelay = 500;
             toolT4z.ShowAlways = true;
-            toolT4z.SetToolTip(this.pic_ver, "A new version of ffmpeg is available");
+            toolT4z.SetToolTip(this.pic_ver, FFBatch.Properties.Strings.new_ff_a);
 
             ToolTip toolT5z = new ToolTip();
             toolT5z.AutoPopDelay = 9000;
             toolT5z.InitialDelay = 750;
             toolT5z.ReshowDelay = 500;
             toolT5z.ShowAlways = true;
-            toolT5z.SetToolTip(this.pic_ff_ok, "You are using the latest ffmpeg version");
+            toolT5z.SetToolTip(this.pic_ff_ok, FFBatch.Properties.Strings.latest_ff);
 
             ToolTip toolT0z = new ToolTip();
             toolT0z.AutoPopDelay = 9000;
             toolT0z.InitialDelay = 750;
             toolT0z.ReshowDelay = 500;
             toolT0z.ShowAlways = true;
-            toolT0z.SetToolTip(this.btn_play_sound, "Play audio file (max. 8 seconds)");
+            toolT0z.SetToolTip(this.btn_play_sound, FFBatch.Properties.Strings.play_8);
         }
         
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -109,17 +115,17 @@ namespace FFBatch
                 {
                 if (play_file == null)
                 {
-                    MessageBox.Show("Play sound is enabled but no audio file was selected.");
+                    MessageBox.Show(FFBatch.Properties.Strings.play_nofile);
                     return;
                 }
                 if (play_file.Length == 0)
                 {
-                    MessageBox.Show("Play sound is enabled but no audio file was selected.");
+                    MessageBox.Show(FFBatch.Properties.Strings.play_nofile);
                     return;
                 }
             }
             
-            cancel = false;
+            cancel = false;            
             ActiveForm.Close();
         }
 
@@ -164,7 +170,7 @@ namespace FFBatch
                 String saved_path = File.ReadAllText(path_s);
                 if (saved_path == String.Empty)
                 {
-                    MessageBox.Show("Configuration error, reset configuration.");
+                    MessageBox.Show(FFBatch.Properties.Strings.config_err);
                     return;
                 }
             }
@@ -201,7 +207,7 @@ namespace FFBatch
                     chk_suffix.CheckState = CheckState.Unchecked;
                     txt_suffix.Enabled = false;
                 }
-                if (line.Substring(0, 2) == "Vs")
+                if (line.Length > 1 && line.Substring(0, 2) == "Vs")
                 {
                     chk_suffix.CheckState = CheckState.Checked;
                     txt_suffix.Enabled = true;
@@ -373,15 +379,7 @@ namespace FFBatch
 
             if (File.Exists(f_sort_dur))
             {
-                String read = File.ReadAllText(f_sort_dur);
-                if (read == "No")
-                {
-                    chk_sort.CheckState = CheckState.Unchecked;
-                }
-                if (read == "Yes")
-                {
-                    chk_sort.CheckState = CheckState.Checked;
-                }
+                    chk_sort.CheckState = CheckState.Checked;              
             }
             else
             {
@@ -604,13 +602,13 @@ namespace FFBatch
 
             if (File.Exists(f_remember))
             {
-                chk_remember_tab.CheckState = CheckState.Checked;
                 remember_tab = true;
+                chk_remember_tab.CheckState = CheckState.Checked;                
             }
             else
             {
-                chk_remember_tab.CheckState = CheckState.Unchecked;
                 remember_tab = false;
+                chk_remember_tab.CheckState = CheckState.Unchecked;                
             }
 
             //END remember tab
@@ -729,12 +727,51 @@ namespace FFBatch
 
             //End delete one
 
+            //Autorun settings
+
+            String f_autorun = String.Empty;
+            String f_multi = String.Empty;
+            if (is_portable == false)
+            {
+                f_autorun = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_autorun.ini";
+                f_multi = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_autorun_m.ini";
+            }
+            else
+            {
+                f_autorun = port_path + "ff_autorun_portable.ini";
+                f_multi = port_path + "ff_autorun_m_portable.ini";
+            }
+            if (File.Exists(f_autorun))
+            {
+                chk_auto_start.Checked = true;
+                chk_auto_multi.Enabled = true;
+                if (File.Exists(f_multi)) chk_auto_multi.Checked = true;
+                else chk_auto_multi.Checked = false;
+            }
+
+            else 
+            {
+                chk_auto_start.Checked = false;
+                chk_auto_multi.Enabled = false;
+                try
+                {
+                    File.Delete(f_autorun);
+                    File.Delete(f_multi);
+                }
+                catch
+                {
+
+                }
+            }
+
+            //End autorun settings
+
             //FFmpeg latest version
 
-                      
-                    if (ff_ver == "Error")
+
+            if (ff_ver == FFBatch.Properties.Strings.error)
                 {
-                lbl_ff_latest.Text = "Connection error";
+                lbl_ff_latest.Text = FFBatch.Properties.Strings.err_con2;
                 pic_ver.Visible = false;
                 pic_ff_ok.Visible = false;
                 return;
@@ -754,7 +791,9 @@ namespace FFBatch
                         pic_ver.Visible = false;
                         pic_ff_ok.Visible = true;
                         pic_ff_ok.Left = lbl_ff_latest.Left + lbl_ff_latest.Text.Length + 60;
-                    }          
+                    }
+            if (chk_auto_start.Checked) chk_autor.Image = pic_auto_en.Image;
+            else chk_autor.Image = pic_auto_dis.Image;
         }
 
         private void boton_load_bck_Click(object sender, System.EventArgs e)
@@ -771,7 +810,7 @@ namespace FFBatch
 
             if (!File.Exists(path_log_backup))
             {
-                MessageBox.Show("No backup file was found", "No backup found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(FFBatch.Properties.Strings.no_backup, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -783,7 +822,7 @@ namespace FFBatch
                     i = i + 1;
                 }
                 Rtxt.Lines = conf_presets.ToArray();
-                MessageBox.Show("Backup file successfully loaded", "Backup loaded", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(FFBatch.Properties.Strings.backup_suc, FFBatch.Properties.Strings.back_l, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -810,7 +849,7 @@ namespace FFBatch
             }
             catch
             {
-                var a = MessageBox.Show("Configuration backup could not be created. Continue?", "Error creating backup", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var a = MessageBox.Show(FFBatch.Properties.Strings.back_cont, FFBatch.Properties.Strings.error, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (a == DialogResult.No) return;
             }
             reload_config = true;
@@ -931,18 +970,6 @@ namespace FFBatch
             else to_sleep = false;
         }
 
-        private void check_concat_Click(object sender, EventArgs e)
-        {
-            if (check_concat.CheckState == CheckState.Checked)
-            {
-                MessageBox.Show("Concatenation video filter will be used to join files." + Environment.NewLine + Environment.NewLine + "This filter improves compatibility but requires videos to be re-encoded. Parameters field can be empty on this mode.", "Concatenation video filter enabled", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Concatenation demuxer will be used to join files." + Environment.NewLine + Environment.NewLine + "In this mode audio/video files can be stream copied, but it can lead to playback issues when joining videos with different qualities.", "Concatenation demuxer enabled", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-        }
-
         private void chk_console_params_CheckedChanged(object sender, EventArgs e)
         {
             if (chk_console_params.CheckState == CheckState.Checked)
@@ -989,16 +1016,6 @@ namespace FFBatch
             chk_non0.Checked = false;
         }
 
-        private void btn_restore_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_save_backup_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void chk_never_cache_CheckedChanged(object sender, EventArgs e)
         {
             if (chk_never_cache.CheckState == CheckState.Checked)
@@ -1029,7 +1046,7 @@ namespace FFBatch
         {
             if (chk_never_cache.CheckState == CheckState.Checked)
             {
-                MessageBox.Show("It is recommended to cache network files to avoid network latency and reliability issues. Application may crash if network connection is lost during encoding.", "Network files caching disabled", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(FFBatch.Properties.Strings.cache_rec, FFBatch.Properties.Strings.cache_dis, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -1037,7 +1054,7 @@ namespace FFBatch
         {
             if (chk_cache_dialog.CheckState == CheckState.Checked)
             {
-                MessageBox.Show("Operating system copy dialog can be faster caching files, though it pops up every time a new file is being cached.", "OS file copy dialog enabled", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(FFBatch.Properties.Strings.cache_os, FFBatch.Properties.Strings.cache_os2, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -1068,8 +1085,14 @@ namespace FFBatch
 
         private void chk_remember_tab_CheckedChanged(object sender, EventArgs e)
         {
-            if (chk_remember_tab.CheckState == CheckState.Checked) remember_tab = true;
-            else remember_tab = false;
+            if (chk_remember_tab.Checked)
+            {
+                remember_tab = true;
+            }
+            else
+            {
+                remember_tab = false;
+            }
         }
 
         private void btn_edit_presets_n_Click(object sender, EventArgs e)
@@ -1105,6 +1128,8 @@ namespace FFBatch
 
         private void btn_browse_play_Click(object sender, EventArgs e)
         {
+            browse_sound.Filter = Properties.Strings2.Aud_wave + " | *.wav| " + Properties.Strings.all_files  + " (*.*) | *.*";
+            
             if (browse_sound.ShowDialog() == DialogResult.OK)
             {
                 play_file = browse_sound.FileName;
@@ -1145,7 +1170,7 @@ namespace FFBatch
                         }
                         catch { }
 
-                        MessageBox.Show("Error playing file. Only PCM wave files are supported." + Environment.NewLine + Environment.NewLine + excpt.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(FFBatch.Properties.Strings.err_wavs + Environment.NewLine + Environment.NewLine + excpt.Message, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     finally
                     {
@@ -1201,12 +1226,12 @@ namespace FFBatch
 
         private void pic_ff_ok_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("You are using the latest version of ffmpeg.");
+            MessageBox.Show(FFBatch.Properties.Strings.latest_ff);
         }
 
         private void pic_ver_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("A new version of ffmpeg is available: " + new_ver, "New version available", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show(FFBatch.Properties.Strings.new_ff_a + ":"  + " "  + new_ver, FFBatch.Properties.Strings.new_ver, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void chk_delete_def_CheckedChanged(object sender, EventArgs e)
@@ -1231,6 +1256,85 @@ namespace FFBatch
             {
                 delete_one = false;
             }
+        }
+
+        private void combo_lang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (combo_lang.SelectedIndex == 0)
+            {
+                lang_set = "en";
+                FFBatch.Properties.Settings.Default.app_lang = "en";
+            }
+            if (combo_lang.SelectedIndex == 1)
+            { 
+                lang_set = "es";
+                FFBatch.Properties.Settings.Default.app_lang = "es";
+            }
+            if (combo_lang.SelectedIndex == 2)
+            {
+                lang_set = "it";
+                FFBatch.Properties.Settings.Default.app_lang = "it";
+            }
+            if (combo_lang.SelectedIndex == 3)
+            {
+                lang_set = "pt-BR";
+                FFBatch.Properties.Settings.Default.app_lang = "pt-BR";
+            }
+            FFBatch.Properties.Settings.Default.Save();
+            refresh_lang();
+            this.Text = FFBatch.Properties.Strings.Settings;            
+        }
+
+        private void refresh_lang()
+        {
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
+            RefreshResources(this, resources);
+            changed_lang = true;            
+        }
+        private void RefreshResources(Control ctrl, ComponentResourceManager res)
+        {
+            ctrl.SuspendLayout();
+            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
+            foreach (Control control in ctrl.Controls)
+                RefreshResources(control, res); // recursion
+            ctrl.ResumeLayout(false);
+        }
+
+        private void chk_auto_start_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_auto_start.CheckState == CheckState.Checked)
+            {
+                autorun = true;
+                chk_auto_multi.Enabled = true;
+            }
+            else
+            {
+                autorun = false;
+                chk_auto_multi.Enabled = false;
+            }
+            if (chk_auto_start.Checked) chk_autor.Image = pic_auto_en.Image;
+            else chk_autor.Image = pic_auto_dis.Image;
+        }
+
+        private void chk_auto_multi_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_auto_multi.CheckState == CheckState.Checked)
+            {
+                automulti = true;                
+            }
+            else
+            {
+                automulti = false;                
+            }
+        }
+
+        private void chk_autor_Click(object sender, EventArgs e)
+        {
+            chk_auto_start.Checked = !chk_auto_start.Checked;
+            if (chk_auto_start.Checked) chk_autor.Image = pic_auto_en.Image;
+            else chk_autor.Image = pic_auto_dis.Image;
         }
     }
 }

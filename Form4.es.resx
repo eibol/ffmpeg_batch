@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="cb_filterby.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 21</value>
+  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 13</value>
   </data>
@@ -258,11 +261,26 @@
   <data name="label5.Text" xml:space="preserve">
     <value>entonces</value>
   </data>
+  <data name="cb_streams.Location" type="System.Drawing.Point, System.Drawing">
+    <value>189, 40</value>
+  </data>
+  <data name="lb_of.Location" type="System.Drawing.Point, System.Drawing">
+    <value>172, 44</value>
+  </data>
+  <data name="lb_of.Size" type="System.Drawing.Size, System.Drawing">
+    <value>19, 13</value>
+  </data>
+  <data name="lb_of.Text" xml:space="preserve">
+    <value>de</value>
+  </data>
   <data name="chk_novideo.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 17</value>
   </data>
   <data name="chk_novideo.Text" xml:space="preserve">
     <value>Eliminar ficheros sin pista 0:0 de vídeo</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>186, 21</value>
   </data>
   <data name="btn_mediainfo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -399,7 +417,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABC
-        GAAAAk1TRnQBSQFMAgEBBgEAAYQBOAGEATgBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        GAAAAk1TRnQBSQFMAgEBBgEAAZQBOAGUATgBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABIAMAAQEBAAEgBgABIBIAAykBPgNYAdEBcAFvAW0B/gNcAfgDYgH2A2IB9gNiAfYDYgH2A2IB9gNi
         AfYDYgH2A2IB9gNiAfYDYgH2AUIBQQFAAf4DYAHrCAADCgEOAycBOgMnAToDJwE6AycBOgMnAToDJwE6
         AycBOgMnAToDJwE6AyQBNQMYASIDBgEIhAADWgHTAtQB0QP/Af4B/wH8Af0B+QH/AfkB/AH2Af8B+gH9

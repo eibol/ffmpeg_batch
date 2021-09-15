@@ -141,7 +141,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txt_name.Size" type="System.Drawing.Size, System.Drawing">
-    <value>473, 20</value>
+    <value>548, 20</value>
   </data>
   <data name="&gt;&gt;btn_close.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -190,7 +190,7 @@
     <value>102, 22</value>
   </data>
   <data name="Column2.Width" type="System.Int32, mscorlib">
-    <value>405</value>
+    <value>475</value>
   </data>
   <data name="&gt;&gt;txt_file.Name" xml:space="preserve">
     <value>txt_file</value>
@@ -199,7 +199,7 @@
     <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
   </data>
   <data name="dg_streams.Size" type="System.Drawing.Size, System.Drawing">
-    <value>473, 250</value>
+    <value>548, 250</value>
   </data>
   <data name="&gt;&gt;menu_grid.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -214,7 +214,7 @@
     <value>ff_str</value>
   </data>
   <data name="txt_file.Size" type="System.Drawing.Size, System.Drawing">
-    <value>473, 13</value>
+    <value>545, 13</value>
   </data>
   <data name="&gt;&gt;img_streams.Name" xml:space="preserve">
     <value>img_streams</value>
@@ -241,7 +241,7 @@
     <value>btn_close</value>
   </data>
   <data name="btn_close.Size" type="System.Drawing.Size, System.Drawing">
-    <value>473, 25</value>
+    <value>548, 25</value>
   </data>
   <data name="btn_close.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 320</value>
@@ -251,7 +251,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAC0
-        FAAAAk1TRnQBSQFMAgEBBQEAAYABOAGIATgBEAEAARABAAT/ASEBEAj/AUIBTQE2BwABNgMAASgDAAFA
+        FAAAAk1TRnQBSQFMAgEBBQEAAZwBOAGwATgBEAEAARABAAT/ASEBEAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABIAMAAQEBAAEgBgABIBIAAykBPgNYAdEBcAFvAW0B/gNcAfgDYgH2A2IB9gNiAfYDYgH2A2IB9gNi
         AfYDYgH2A2IB9gNiAfYDYgH2AUIBQQFAAf4DYAHrwAADWgHTAtQB0QP/Af4B/wH8Af0B+QH/AfkB/AH2
         Af8B+gH9AfcB/wH6Af0B9wH/AfoB/QH2Af8B+wH9AfkB/wH+Af8B/QP/Af4D/wH+Cf8BzgHNAcwB/wNM
@@ -2154,7 +2154,7 @@
     <value>4</value>
   </data>
   <data name="txt_file.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 43</value>
+    <value>14, 43</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Multimedia streams</value>
@@ -2175,7 +2175,7 @@
     <value>$this</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>496, 350</value>
+    <value>572, 350</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2195,8 +2195,11 @@
   <metadata name="menu_grid.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>137, 17</value>
   </metadata>
+  <metadata name="img_streams.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>es</value>
+    <value>pt-BR</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2210,13 +2213,10 @@
   <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <metadata name="ff_str.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>247, 17</value>
   </metadata>
-  <metadata name="img_streams.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
   </metadata>
 </root>

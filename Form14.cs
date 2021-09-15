@@ -4,8 +4,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -24,12 +26,12 @@ namespace FFBatch
         private void timer1_Tick(object sender, EventArgs e)
         {
             i--;
-            if (timer1.Interval == 1000) label8.Text = "Launching application in " + i.ToString();
-            else label8.Text = "Starting application on encoded file";
+            if (timer1.Interval == 1000) label8.Text = FFBatch.Properties.Strings.launch  + " " + i.ToString();
+            else label8.Text = FFBatch.Properties.Strings.start_app_enc;
             if (i == 0)
             {
                 timer1.Stop();
-                label8.Text = "Waiting for external application to finish";
+                label8.Text = FFBatch.Properties.Strings.wait_finish;
                 label8.Refresh();
                 proc.StartInfo.FileName = txt_path.Text;
                 proc.StartInfo.Arguments = args;                
@@ -45,12 +47,12 @@ namespace FFBatch
                 }
                 catch
                 {
-                    label8.Text = "Application failed.";
-                    btn_abort.Text = "Close";
+                    label8.Text = FFBatch.Properties.Strings.app_failed;
+                    btn_abort.Text = FFBatch.Properties.Strings.close;
                     return;
                 }
-                label8.Text = "Application finished successfully.";
-                btn_abort.Text = "Close";
+                label8.Text = FFBatch.Properties.Strings.app_ok;
+                btn_abort.Text = FFBatch.Properties.Strings.close;
                 if (proc.ExitCode == 0)
                 {
                     pic_error.Visible = false;
@@ -60,7 +62,7 @@ namespace FFBatch
                 {
                     pic_error.Visible = true;
                     pic_success.Visible = false;
-                    label8.Text = "Application finished with error code " + proc.ExitCode.ToString();
+                    label8.Text = FFBatch.Properties.Strings.app_err_code + " "  + proc.ExitCode.ToString();
                 }
                 if (timer1.Interval == 100) this.Close();
             }
@@ -72,7 +74,24 @@ namespace FFBatch
             timer1.Start();
             if (args != String.Empty) txt_args.Text = args;
             else txt_args.Enabled = false;
+            refresh_lang();
+            this.Text = FFBatch.Properties.Strings.run_ext;           
+        }
 
+        private void refresh_lang()
+        {
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form14));
+            RefreshResources(this, resources);
+        }
+        private void RefreshResources(Control ctrl, ComponentResourceManager res)
+        {
+            ctrl.SuspendLayout();
+            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
+            foreach (Control control in ctrl.Controls)
+                RefreshResources(control, res); // recursion
+            ctrl.ResumeLayout(false);
         }
 
         private void button2_Click(object sender, EventArgs e)

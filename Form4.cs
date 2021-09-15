@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace FFBatch
@@ -31,16 +34,16 @@ namespace FFBatch
             {
                 cb_value_f.DropDownStyle = ComboBoxStyle.DropDownList;
                 cb_value_f.Items.Clear();
-                cb_value_f.Items.Add("Success");
-                cb_value_f.Items.Add("Replaced");
-                cb_value_f.Items.Add("Queued");
-                cb_value_f.Items.Add("Error");
-                cb_value_f.Items.Add("Aborted");
+                cb_value_f.Items.Add(FFBatch.Properties.Strings.success);
+                cb_value_f.Items.Add(FFBatch.Properties.Strings.replaced);
+                cb_value_f.Items.Add(FFBatch.Properties.Strings.queued);
+                cb_value_f.Items.Add(FFBatch.Properties.Strings.error);
+                cb_value_f.Items.Add(FFBatch.Properties.Strings.aborted);
                 cb_value_f.SelectedIndex = 0;
                 cb_action.SelectedIndex = 0;
-                filter_type = "Status";
+                filter_type = FFBatch.Properties.Strings.status;
                 cb_streams.Items.Clear();
-                cb_streams.Items.Add("All items");
+                cb_streams.Items.Add(FFBatch.Properties.Strings.all_items);
                 cb_streams.SelectedIndex = 0;
                 cb_streams.Enabled = false;
                 chk_novideo.Enabled = false;
@@ -48,17 +51,17 @@ namespace FFBatch
                 n_height.Visible = false;
                 lbl_size.Visible = false;
                 lbl_greater.Visible = false;
-                lbl_info_search.Text = "Filter by queue status";
+                lbl_info_search.Text = FFBatch.Properties.Strings.filter_status;
             }
             if (cb_filterby.SelectedIndex == 1)
             {
                 cb_value_f.Items.Clear();
                 cb_value_f.DropDownStyle = ComboBoxStyle.Simple;
                 cb_action.SelectedIndex = 0;
-                filter_type = "File extension";
+                filter_type = FFBatch.Properties.Strings.file_ext;
                 cb_value_f.Text = String.Empty;
                 cb_streams.Items.Clear();
-                cb_streams.Items.Add("All items");
+                cb_streams.Items.Add(FFBatch.Properties.Strings.all_items);
                 cb_streams.SelectedIndex = 0;
                 cb_streams.Enabled = false;
                 chk_novideo.Enabled = false;
@@ -66,7 +69,7 @@ namespace FFBatch
                 n_height.Visible = false;
                 lbl_size.Visible = false;
                 lbl_greater.Visible = false;
-                lbl_info_search.Text = "Filter by file extension";
+                lbl_info_search.Text = FFBatch.Properties.Strings.filter_ext;
             }
 
             if (cb_filterby.SelectedIndex == 2)
@@ -74,10 +77,10 @@ namespace FFBatch
                 cb_value_f.Items.Clear();
                 cb_value_f.DropDownStyle = ComboBoxStyle.Simple;
                 cb_action.SelectedIndex = 0;
-                filter_type = "File size";
+                filter_type = FFBatch.Properties.Strings.f_size;
                 cb_value_f.Text = String.Empty;
                 cb_streams.Items.Clear();
-                cb_streams.Items.Add("All items");
+                cb_streams.Items.Add(FFBatch.Properties.Strings.all_items);
                 cb_streams.SelectedIndex = 0;
                 cb_streams.Enabled = false;
                 chk_novideo.Enabled = false;
@@ -86,7 +89,7 @@ namespace FFBatch
                 lbl_size.Visible = false;
                 lbl_greater.Text = ">= MB";
                 lbl_greater.Visible = true;
-                lbl_info_search.Text = "Filter by file size";
+                lbl_info_search.Text = FFBatch.Properties.Strings.filter_size;
             }
 
             if (cb_filterby.SelectedIndex == 3)
@@ -94,10 +97,10 @@ namespace FFBatch
                 cb_value_f.Items.Clear();
                 cb_value_f.DropDownStyle = ComboBoxStyle.Simple;
                 cb_action.SelectedIndex = 0;
-                filter_type = "File bitrate";
+                filter_type = FFBatch.Properties.Strings.f_bitr;
                 cb_value_f.Text = String.Empty;
                 cb_streams.Items.Clear();
-                cb_streams.Items.Add("All items");
+                cb_streams.Items.Add(FFBatch.Properties.Strings.all_items);
                 cb_streams.SelectedIndex = 0;
                 cb_streams.Enabled = false;
                 chk_novideo.Enabled = false;
@@ -106,7 +109,7 @@ namespace FFBatch
                 lbl_size.Visible = false;
                 lbl_greater.Text = ">= Kbps";
                 lbl_greater.Visible = true;
-                lbl_info_search.Text = "Filter by file overall bitrate";
+                lbl_info_search.Text = FFBatch.Properties.Strings.filter_all_bit;
             }
 
             if (cb_filterby.SelectedIndex == 4)
@@ -123,12 +126,12 @@ namespace FFBatch
                 cb_value_f.Items.Add("rawvideo");
                 cb_value_f.SelectedIndex = 0;
                 cb_action.SelectedIndex = 0;
-                filter_type = "Video codec";
+                filter_type = FFBatch.Properties.Strings.Video_codec;
                 cb_streams.Visible = true;
                 cb_streams.Items.Clear();
-                cb_streams.Items.Add("First stream");
-                cb_streams.Items.Add("Second stream");
-                cb_streams.Items.Add("Any stream");
+                cb_streams.Items.Add(FFBatch.Properties.Strings.f_str);
+                cb_streams.Items.Add(FFBatch.Properties.Strings.s_str);
+                cb_streams.Items.Add(FFBatch.Properties.Strings.any_str);
                 cb_streams.SelectedIndex = 0;
                 cb_streams.Enabled = true;
                 chk_novideo.Enabled = true;
@@ -136,7 +139,7 @@ namespace FFBatch
                 n_height.Visible = false;
                 lbl_size.Visible = false;
                 lbl_greater.Visible = false;
-                lbl_info_search.Text = "Filter by video codec";
+                lbl_info_search.Text = FFBatch.Properties.Strings.filter_vcodec;
 
             }
 
@@ -145,10 +148,10 @@ namespace FFBatch
                 cb_value_f.Items.Clear();
                 cb_value_f.DropDownStyle = ComboBoxStyle.Simple;
                 cb_action.SelectedIndex = 0;
-                filter_type = "Video bitrate";
+                filter_type = FFBatch.Properties.Strings.v_bitr;
                 cb_value_f.Text = String.Empty;
                 cb_streams.Items.Clear();
-                cb_streams.Items.Add("All items");
+                cb_streams.Items.Add(FFBatch.Properties.Strings.all_items);
                 cb_streams.SelectedIndex = 0;
                 cb_streams.Enabled = false;
                 chk_novideo.Enabled = false;
@@ -157,7 +160,7 @@ namespace FFBatch
                 lbl_size.Visible = false;
                 lbl_greater.Text = ">= Kbps";
                 lbl_greater.Visible = true;
-                lbl_info_search.Text = "Filter video bitrate";
+                lbl_info_search.Text = FFBatch.Properties.Strings.filter_vbr;
             }
 
             if (cb_filterby.SelectedIndex == 6)
@@ -174,12 +177,12 @@ namespace FFBatch
                 cb_value_f.Items.Add("pcm");
                 cb_value_f.SelectedIndex = 0;
                 cb_action.SelectedIndex = 0;
-                filter_type = "Audio codec";
+                filter_type = FFBatch.Properties.Strings.Audio_codec;
                 cb_streams.Visible = true;
                 cb_streams.Items.Clear();
-                cb_streams.Items.Add("First stream");
-                cb_streams.Items.Add("Second stream");
-                cb_streams.Items.Add("Any stream");
+                cb_streams.Items.Add(FFBatch.Properties.Strings.f_str);
+                cb_streams.Items.Add(FFBatch.Properties.Strings.s_str);
+                cb_streams.Items.Add(FFBatch.Properties.Strings.any_str);
                 cb_streams.SelectedIndex = 0;
                 cb_streams.Enabled = true;
                 lb_of.Visible = true;
@@ -188,7 +191,7 @@ namespace FFBatch
                 n_height.Visible = false;
                 lbl_size.Visible = false;
                 lbl_greater.Visible = false;
-                lbl_info_search.Text = "Filter by audio codec";
+                lbl_info_search.Text = FFBatch.Properties.Strings.filter_acodec;
             }
             if (cb_filterby.SelectedIndex == 7)
             {
@@ -205,9 +208,9 @@ namespace FFBatch
                 cb_value_f.Items.Add("60");
                 cb_value_f.SelectedIndex = 0;
                 cb_action.SelectedIndex = 0;
-                filter_type = "Frame rate";
+                filter_type = FFBatch.Properties.Strings.fr_rate;
                 cb_streams.Items.Clear();
-                cb_streams.Items.Add("All items");
+                cb_streams.Items.Add(FFBatch.Properties.Strings.all_items);
                 cb_streams.SelectedIndex = 0;
                 cb_streams.Enabled = false;
                 lb_of.Visible = true;
@@ -216,7 +219,7 @@ namespace FFBatch
                 n_height.Visible = false;
                 lbl_size.Visible = false;
                 lbl_greater.Visible = false;
-                lbl_info_search.Text = "Filter by video frame rate";
+                lbl_info_search.Text = FFBatch.Properties.Strings.filter_rate;
             }
 
             if (cb_filterby.SelectedIndex == 8)
@@ -229,7 +232,7 @@ namespace FFBatch
                 cb_action.SelectedIndex = 0;
                 filter_type = "Frame size";
                 cb_streams.Items.Clear();
-                cb_streams.Items.Add("All items");
+                cb_streams.Items.Add(FFBatch.Properties.Strings.all_items);
                 cb_streams.SelectedIndex = 0;
                 cb_streams.Enabled = false;
                 lb_of.Visible = true;
@@ -238,20 +241,20 @@ namespace FFBatch
                 n_height.Visible = true;
                 lbl_size.Visible = true;
                 lbl_greater.Visible = false;
-                lbl_info_search.Text = "Filter by video frame size";
+                lbl_info_search.Text = FFBatch.Properties.Strings.filter_frame;
             }
             if (cb_filterby.SelectedIndex == 9)
             {
                 cb_value_f.DropDownStyle = ComboBoxStyle.DropDown;
                 cb_value_f.Items.Clear();
                 cb_action.SelectedIndex = 0;
-                filter_type = "Custom string";
+                filter_type = FFBatch.Properties.Strings.c_str;
                 cb_value_f.Text = String.Empty;
                 cb_streams.Visible = true;
                 cb_streams.Items.Clear();
-                cb_streams.Items.Add("First stream");
-                cb_streams.Items.Add("Second stream");
-                cb_streams.Items.Add("Any stream");
+                cb_streams.Items.Add(FFBatch.Properties.Strings.f_str);
+                cb_streams.Items.Add(FFBatch.Properties.Strings.s_str);
+                cb_streams.Items.Add(FFBatch.Properties.Strings.any_str);
                 cb_streams.SelectedIndex = 0;
                 cb_streams.Enabled = true;
                 chk_novideo.Enabled = false;
@@ -259,7 +262,7 @@ namespace FFBatch
                 n_height.Visible = false;
                 lbl_size.Visible = false;
                 lbl_greater.Visible = false;
-                lbl_info_search.Text = "Search for any string contained in ffmpeg streams output";
+                lbl_info_search.Text = FFBatch.Properties.Strings.filter_ff_out;
             }
 
             if (cb_filterby.SelectedIndex == 10)
@@ -267,11 +270,11 @@ namespace FFBatch
                 cb_value_f.DropDownStyle = ComboBoxStyle.DropDown;
                 cb_value_f.Items.Clear();
                 cb_action.SelectedIndex = 0;
-                filter_type = "Custom string (MI)";
+                filter_type = FFBatch.Properties.Strings.c_str + " " + "(MI)";
                 cb_value_f.Text = String.Empty;
                 cb_streams.Visible = true;
                 cb_streams.Items.Clear();
-                cb_streams.Items.Add("All files");
+                cb_streams.Items.Add(FFBatch.Properties.Strings.all_files);
                 cb_streams.SelectedIndex = 0;
                 cb_streams.Enabled = false;
                 chk_novideo.Enabled = false;
@@ -279,7 +282,7 @@ namespace FFBatch
                 n_height.Visible = false;
                 lbl_size.Visible = false;
                 lbl_greater.Visible = false;
-                lbl_info_search.Text = "Search for any string contained in mediainfo file output";
+                lbl_info_search.Text = FFBatch.Properties.Strings.filter_med_out;
             }
 
             if (cb_filterby.SelectedIndex == 11)
@@ -287,7 +290,7 @@ namespace FFBatch
                 cb_value_f.DropDownStyle = ComboBoxStyle.DropDown;
                 cb_value_f.Items.Clear();
                 cb_action.SelectedIndex = 0;
-                filter_type = "Metadata";
+                filter_type = FFBatch.Properties.Strings.Metadata;
                 cb_value_f.Text = String.Empty;
                 cb_streams.Visible = true;
                 cb_streams.Items.Clear();
@@ -303,25 +306,61 @@ namespace FFBatch
                 n_height.Visible = false;
                 lbl_size.Visible = false;
                 lbl_greater.Visible = false;
-                lbl_info_search.Text = "Search for file metadata.";
+                lbl_info_search.Text = FFBatch.Properties.Strings.filter_meta;
             }
         }
 
         private void Form4_Load(object sender, EventArgs e)
         {
+            cb_filterby.Items.Clear();
+            cb_filterby.Items.Add(FFBatch.Properties.Strings.status);
+            cb_filterby.Items.Add(FFBatch.Properties.Strings.file_ext);
+            cb_filterby.Items.Add(FFBatch.Properties.Strings.f_size);
+            cb_filterby.Items.Add(FFBatch.Properties.Strings.f_bitr);
+            cb_filterby.Items.Add(FFBatch.Properties.Strings.Video_codec);
+            cb_filterby.Items.Add(FFBatch.Properties.Strings.v_bitr);
+            cb_filterby.Items.Add(FFBatch.Properties.Strings.Audio_codec);
+            cb_filterby.Items.Add(FFBatch.Properties.Strings.fr_rate);
+            cb_filterby.Items.Add(FFBatch.Properties.Strings2.frame_size);
+            cb_filterby.Items.Add(FFBatch.Properties.Strings.c_str + " (FF)");
+            cb_filterby.Items.Add(FFBatch.Properties.Strings.c_str + " (MI)");
+            cb_filterby.Items.Add(FFBatch.Properties.Strings.Metadata);
+
+            cb_action.Items.Clear();
+            cb_action.Items.Add(FFBatch.Properties.Strings.keep);
+            cb_action.Items.Add(FFBatch.Properties.Strings.remove);
+
             ToolTip toolTipaA6 = new ToolTip();
             toolTipaA6.AutoPopDelay = 9000;
             toolTipaA6.InitialDelay = 750;
             toolTipaA6.ReshowDelay = 500;
             toolTipaA6.ShowAlways = true;
-            toolTipaA6.SetToolTip(this.btn_streams, "Show streams of file list selected file");
+            toolTipaA6.SetToolTip(this.btn_streams, FFBatch.Properties.Strings.Display_file_streams);
 
             ToolTip toolTipa7 = new ToolTip();
             toolTipa7.AutoPopDelay = 9000;
             toolTipa7.InitialDelay = 750;
             toolTipa7.ReshowDelay = 500;
             toolTipa7.ShowAlways = true;
-            toolTipa7.SetToolTip(this.btn_mediainfo, "Show full media info of selected file on file list");
+            toolTipa7.SetToolTip(this.btn_mediainfo, FFBatch.Properties.Strings.Display_multimedia_file_info);
+            refresh_lang();
+            this.Text = FFBatch.Properties.Strings.file_filtering;
+        }
+
+        private void refresh_lang()
+        {
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
+            RefreshResources(this, resources);            
+        }
+        private void RefreshResources(Control ctrl, ComponentResourceManager res)
+        {
+            ctrl.SuspendLayout();
+            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
+            foreach (Control control in ctrl.Controls)
+                RefreshResources(control, res); // recursion
+            ctrl.ResumeLayout(false);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -340,36 +379,36 @@ namespace FFBatch
             if (chk_novideo.CheckState == CheckState.Checked) remove_not_video = true;
             else remove_not_video = false;
 
-            if (cb_streams.SelectedIndex == 0) stream_n = "First stream";
-            if (cb_streams.SelectedIndex == 1) stream_n = "Second stream";
-            if (cb_streams.SelectedIndex == 2) stream_n = "Any stream";
+            if (cb_streams.SelectedIndex == 0) stream_n = FFBatch.Properties.Strings.f_str;
+            if (cb_streams.SelectedIndex == 1) stream_n = FFBatch.Properties.Strings.s_str;
+            if (cb_streams.SelectedIndex == 2) stream_n = FFBatch.Properties.Strings.any_str;
 
             if (cb_filterby.SelectedIndex == 11) stream_n = cb_streams.Text;
 
             if (cb_filterby.SelectedIndex == -1)
             {
-                MessageBox.Show("No filter was selected");
+                MessageBox.Show(FFBatch.Properties.Strings.no_filter);
                 cancel_filter = true;
                 return;
             }
-            if (cb_filterby.SelectedIndex == 0) filter_type = "Status";
+            if (cb_filterby.SelectedIndex == 0) filter_type = FFBatch.Properties.Strings.status;
             if (cb_filterby.SelectedIndex == 1)
             {
-                filter_type = "File extension";
+                filter_type = FFBatch.Properties.Strings.file_ext;
                 if (filter_value.ToString() == String.Empty)
                 {
-                    MessageBox.Show("Filter value is empty");
+                    MessageBox.Show(FFBatch.Properties.Strings.filter_bl);
                     cancel_filter = true;
                     return;
                 }
             }
-            if (cb_filterby.SelectedIndex == 2) filter_type = "File size";
+            if (cb_filterby.SelectedIndex == 2) filter_type = FFBatch.Properties.Strings.f_size;
             if (cb_filterby.SelectedIndex == 3)
             {
-                filter_type = "File bitrate";
+                filter_type = FFBatch.Properties.Strings.f_bitr;
                 if (filter_value.ToString() == String.Empty)
                 {
-                    MessageBox.Show("Filter value is empty");
+                    MessageBox.Show(FFBatch.Properties.Strings.filter_bl);
                     cancel_filter = true;
                     return;
                 }
@@ -379,7 +418,7 @@ namespace FFBatch
                 }
                 catch
                 {
-                    MessageBox.Show("Invalid file size value (Kbps).");
+                    MessageBox.Show(FFBatch.Properties.Strings.invalid_fsize + " "  + "(Kbps).");
                     cancel_filter = true;
                     return;
                 }
@@ -387,20 +426,20 @@ namespace FFBatch
 
             if (cb_filterby.SelectedIndex == 4)
             {
-                filter_type = "Video codec";
+                filter_type = FFBatch.Properties.Strings.Video_codec;
                 if (filter_value.ToString() == String.Empty)
                 {
-                    MessageBox.Show("Filter value is empty");
+                    MessageBox.Show(FFBatch.Properties.Strings.filter_bl);
                     cancel_filter = true;
                     return;
                 }
             }
             if (cb_filterby.SelectedIndex == 5)
             {
-                filter_type = "Video bitrate";
+                filter_type = FFBatch.Properties.Strings.v_bitr;
                 if (filter_value.ToString() == String.Empty)
                 {
-                    MessageBox.Show("Filter value is empty");
+                    MessageBox.Show(FFBatch.Properties.Strings.filter_bl);
                     cancel_filter = true;
                     return;
                 }
@@ -408,22 +447,22 @@ namespace FFBatch
 
             if (cb_filterby.SelectedIndex == 6)
             {
-                filter_type = "Audio codec";
+                filter_type = FFBatch.Properties.Strings.Audio_codec;
                 if (filter_value.ToString() == String.Empty)
                 {
-                    MessageBox.Show("Filter value is empty");
+                    MessageBox.Show(FFBatch.Properties.Strings.filter_bl);
                     cancel_filter = true;
                     return;
                 }
             }
-            if (cb_filterby.SelectedIndex == 7) filter_type = "Frame rate";
+            if (cb_filterby.SelectedIndex == 7) filter_type = FFBatch.Properties.Strings.fr_rate;
             if (cb_filterby.SelectedIndex == 8) filter_type = "Frame size";
             if (cb_filterby.SelectedIndex == 9)
             {
-                filter_type = "Custom string";
+                filter_type = FFBatch.Properties.Strings.c_str;
                 if (filter_value == String.Empty)
                 {
-                    MessageBox.Show("Filter value is empty");
+                    MessageBox.Show(FFBatch.Properties.Strings.filter_bl);
                     cancel_filter = true;
                     return;
                 }
@@ -431,20 +470,20 @@ namespace FFBatch
 
             if (cb_filterby.SelectedIndex == 10)
             {
-                filter_type = "Custom string (MI)";
+                filter_type = FFBatch.Properties.Strings.c_str + " " + "(MI)";
                 if (filter_value == String.Empty)
                 {
-                    MessageBox.Show("Filter value is empty");
+                    MessageBox.Show(FFBatch.Properties.Strings.filter_bl);
                     cancel_filter = true;
                     return;
                 }
             }
             if (cb_filterby.SelectedIndex == 11)
             {
-                filter_type = "Metadata";
+                filter_type = FFBatch.Properties.Strings.Metadata;
                 if (filter_value == String.Empty)
                 {
-                    MessageBox.Show("Filter value is empty");
+                    MessageBox.Show(FFBatch.Properties.Strings.filter_bl);
                     cancel_filter = true;
                     return;
                 }
@@ -467,7 +506,7 @@ namespace FFBatch
                 }
                 catch
                 {
-                    MessageBox.Show("Invalid file size value (Megabytes).");
+                    MessageBox.Show(FFBatch.Properties.Strings.invalid_fsize + " "  + "(Megabytes).");
                     cancel_filter = true;
                     return;
                 }
@@ -482,7 +521,7 @@ namespace FFBatch
                 }
                 catch
                 {
-                    MessageBox.Show("Invalid framerate value");
+                    MessageBox.Show(FFBatch.Properties.Strings.invalid_frate);
                     cancel_filter = true;
                     return;
                 }
@@ -498,7 +537,7 @@ namespace FFBatch
                     }
                     catch
                     {
-                        MessageBox.Show("Invalid frame size value");
+                        MessageBox.Show(FFBatch.Properties.Strings.invalid_frame_s);
                         cancel_filter = true;
                         return;
                     }
@@ -557,9 +596,9 @@ namespace FFBatch
 
         private void cb_streams_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cb_streams.SelectedIndex == 0) stream_n = "First stream";
-            if (cb_streams.SelectedIndex == 1) stream_n = "Second stream";
-            if (cb_streams.SelectedIndex == 1) stream_n = "Any stream";
+            if (cb_streams.SelectedIndex == 0) stream_n = FFBatch.Properties.Strings.f_str;
+            if (cb_streams.SelectedIndex == 1) stream_n = FFBatch.Properties.Strings.s_str;
+            if (cb_streams.SelectedIndex == 1) stream_n = FFBatch.Properties.Strings.any_str;
         }
 
         private void chk_novideo_CheckedChanged(object sender, EventArgs e)
@@ -599,7 +638,7 @@ namespace FFBatch
             String ffm = System.IO.Path.Combine(Application.StartupPath, "mediainfo.exe");
             if (!File.Exists(ffm))
             {
-                MessageBox.Show("Error obtaining file information. You may have to reinstall application.", "Mediainfo not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(FFBatch.Properties.Strings.no_mediainfo, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -611,7 +650,7 @@ namespace FFBatch
 
                 if (!File.Exists(testPath))
                 {
-                    MessageBox.Show("File was not found", "File missing", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(FFBatch.Properties.Strings.file_not_f, FFBatch.Properties.Strings.file_miss, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 this.Cursor = Cursors.WaitCursor;
@@ -629,7 +668,7 @@ namespace FFBatch
 
                 Form frmInfo = new Form();
                 frmInfo.Name = "Multimedia information";
-                frmInfo.Text = "FFmpeg Batch A/V Converter";
+                frmInfo.Text = "FFmpeg Batch A/V Converter";                
                 frmInfo.Icon = this.Icon;
                 frmInfo.Height = 724;
                 frmInfo.Width = 496;
@@ -678,7 +717,7 @@ namespace FFBatch
                 titulo.TextAlign = HorizontalAlignment.Center;
                 titulo.ReadOnly = true;
 
-                titulo.Text = "MULTIMEDIA INFORMATION (FULL REPORT)";
+                titulo.Text = FFBatch.Properties.Strings.multi_full;
 
                 Button boton_ok = new Button();
                 boton_ok.Parent = frmInfo;
@@ -686,7 +725,7 @@ namespace FFBatch
                 boton_ok.Top = 650;
                 boton_ok.Width = 446;
                 boton_ok.Height = 27;
-                boton_ok.Text = "Close window";
+                boton_ok.Text = FFBatch.Properties.Strings.close_win;
                 boton_ok.Click += new EventHandler(boton_ok_Click);
 
                 String fichero = Path.GetFileName(lv1_item);
@@ -789,7 +828,7 @@ namespace FFBatch
             else
 
             {
-                MessageBox.Show("No item was selected", "No item selected", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(FFBatch.Properties.Strings.no_item_sel, FFBatch.Properties.Strings.information, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             this.Cursor = Cursors.Arrow;
         }

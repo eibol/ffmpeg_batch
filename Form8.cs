@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -37,6 +39,22 @@ namespace FFBatch
             dg_streams.Columns[3].ReadOnly = true;
             dg_streams.Columns[4].ReadOnly = true;
             dg_streams.Rows.Clear();
+        }
+
+        private void refresh_lang()
+        {
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form8));
+            RefreshResources(this, resources);
+        }
+        private void RefreshResources(Control ctrl, ComponentResourceManager res)
+        {
+            ctrl.SuspendLayout();
+            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
+            foreach (Control control in ctrl.Controls)
+                RefreshResources(control, res); // recursion
+            ctrl.ResumeLayout(false);
         }
 
         private void Form8_Load(object sender, EventArgs e)
@@ -102,7 +120,7 @@ namespace FFBatch
                 }));
                 txt_name.Invoke(new MethodInvoker(delegate
                 {
-                    txt_name.Text = "YOUTUBE AVAILABLE STREAMS";
+                    txt_name.Text = FFBatch.Properties.Strings.yt_str_av;
                 }));
 
                 yt.StartInfo.Arguments = String.Empty;
@@ -131,6 +149,12 @@ namespace FFBatch
             });
             dg_streams.Sort(dg_streams.Columns[4], ListSortDirection.Descending);
 
+            this.Text = FFBatch.Properties.Strings.yt_str_av2;                         
+                dg_streams.Columns[1].HeaderText = FFBatch.Properties.Strings.Use;
+                dg_streams.Columns[2].HeaderText = FFBatch.Properties.Strings.format_id;
+                dg_streams.Columns[3].HeaderText = FFBatch.Properties.Strings.extension;
+                dg_streams.Columns[4].HeaderText = FFBatch.Properties.Strings.resolution;
+                dg_streams.Columns[5].HeaderText = FFBatch.Properties.Strings.codec;            
         }
 
         private void btn_close_Click(object sender, EventArgs e)
@@ -155,7 +179,7 @@ namespace FFBatch
             }
             if (mark == false)
             {
-                MessageBox.Show("No stream was checked for selection.");
+                MessageBox.Show(FFBatch.Properties.Strings.no_chk_str);
                 return;
             }
             
@@ -175,7 +199,7 @@ namespace FFBatch
                     }
                     if (i > 2)
                     {
-                        MessageBox.Show("Please select only two compatible formats.");
+                        MessageBox.Show(FFBatch.Properties.Strings.two_comp_f);
                         return;                        
                     }
                 }

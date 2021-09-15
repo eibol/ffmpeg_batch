@@ -47,36 +47,25 @@
             // 
             // btn_abort
             // 
+            resources.ApplyResources(this.btn_abort, "btn_abort");
             this.btn_abort.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_abort.FlatAppearance.BorderSize = 0;
             this.btn_abort.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_abort.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_abort.Location = new System.Drawing.Point(334, 7);
             this.btn_abort.Name = "btn_abort";
-            this.btn_abort.Size = new System.Drawing.Size(69, 25);
-            this.btn_abort.TabIndex = 104;
-            this.btn_abort.Text = "Abort";
             this.btn_abort.UseVisualStyleBackColor = true;
             this.btn_abort.Click += new System.EventHandler(this.button2_Click);
             // 
             // txt_path
             // 
+            resources.ApplyResources(this.txt_path, "txt_path");
             this.txt_path.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_path.Location = new System.Drawing.Point(79, 17);
             this.txt_path.Name = "txt_path";
             this.txt_path.ReadOnly = true;
-            this.txt_path.Size = new System.Drawing.Size(308, 20);
-            this.txt_path.TabIndex = 104;
             // 
             // label8
             // 
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(79, 92);
+            resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(216, 16);
-            this.label8.TabIndex = 105;
-            this.label8.Text = "Launching application in 5";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // timer1
@@ -86,67 +75,46 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 20);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 108;
-            this.label1.Text = "Executable";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 56);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 13);
-            this.label2.TabIndex = 110;
-            this.label2.Text = "Arguments";
             // 
             // txt_args
             // 
+            resources.ApplyResources(this.txt_args, "txt_args");
             this.txt_args.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_args.Location = new System.Drawing.Point(79, 53);
             this.txt_args.Name = "txt_args";
             this.txt_args.ReadOnly = true;
-            this.txt_args.Size = new System.Drawing.Size(308, 20);
-            this.txt_args.TabIndex = 109;
             // 
             // pic_error
             // 
-            this.pic_error.Image = ((System.Drawing.Image)(resources.GetObject("pic_error.Image")));
-            this.pic_error.Location = new System.Drawing.Point(371, 92);
+            resources.ApplyResources(this.pic_error, "pic_error");
             this.pic_error.Name = "pic_error";
-            this.pic_error.Size = new System.Drawing.Size(14, 14);
-            this.pic_error.TabIndex = 150;
             this.pic_error.TabStop = false;
-            this.pic_error.Visible = false;
             // 
             // pic_success
             // 
-            this.pic_success.Image = ((System.Drawing.Image)(resources.GetObject("pic_success.Image")));
-            this.pic_success.Location = new System.Drawing.Point(371, 92);
+            resources.ApplyResources(this.pic_success, "pic_success");
             this.pic_success.Name = "pic_success";
-            this.pic_success.Size = new System.Drawing.Size(16, 16);
-            this.pic_success.TabIndex = 149;
             this.pic_success.TabStop = false;
-            this.pic_success.Visible = false;
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panel1.Controls.Add(this.btn_abort);
-            this.panel1.Location = new System.Drawing.Point(2, 124);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(418, 41);
-            this.panel1.TabIndex = 151;
             // 
             // Form14
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.CancelButton = this.btn_abort;
-            this.ClientSize = new System.Drawing.Size(415, 161);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pic_error);
             this.Controls.Add(this.pic_success);
@@ -156,12 +124,9 @@
             this.Controls.Add(this.txt_path);
             this.Controls.Add(this.label8);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form14";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Run external command";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form14_FormClosing);
             this.Load += new System.EventHandler(this.Form14_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_error)).EndInit();

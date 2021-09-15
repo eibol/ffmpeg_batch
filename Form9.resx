@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="label1.Text" xml:space="preserve">
-    <value>Validating YouTube links,...</value>
+    <value>Validating YouTube links...</value>
   </data>
   <data name="&gt;&gt;lab_count.Parent" xml:space="preserve">
     <value>$this</value>
@@ -135,9 +135,6 @@
   </data>
   <data name="progressBar1.Size" type="System.Drawing.Size, System.Drawing">
     <value>343, 21</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lab_err.Location" type="System.Drawing.Point, System.Drawing">
     <value>237, 15</value>
@@ -192,11 +189,11 @@
   <data name="lab_err.TabIndex" type="System.Int32, mscorlib">
     <value>147</value>
   </data>
-  <data name="pictureBox2.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 13</value>
+    <value>133, 13</value>
   </data>
   <data name="&gt;&gt;btn_abort_pls.Parent" xml:space="preserve">
     <value>$this</value>
@@ -213,8 +210,8 @@
   <data name="&gt;&gt;btn_abort_pls.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="pictureBox2.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="lab_count.Location" type="System.Drawing.Point, System.Drawing">
     <value>301, 15</value>
@@ -343,6 +340,9 @@
   <data name="&gt;&gt;progressBar1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="&gt;&gt;lab_err.Name" xml:space="preserve">
+    <value>lab_err</value>
+  </data>
   <data name="&gt;&gt;timer1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -416,8 +416,8 @@
         jRk9cwyTwb5752JatxlR/Zmg5JsJiEaqz62lQg7hco+uSYf+ASi8fqY/ePDEAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="&gt;&gt;lab_err.Name" xml:space="preserve">
-    <value>lab_err</value>
+  <data name="&gt;&gt;pictureBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lab_count.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -439,5 +439,8 @@
   </metadata>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>pt-BR</value>
   </metadata>
 </root>

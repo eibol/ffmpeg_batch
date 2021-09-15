@@ -1,5 +1,8 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Diagnostics;
+using System.Globalization;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace FFBatch
@@ -11,9 +14,27 @@ namespace FFBatch
             InitializeComponent();
         }
 
+        private void RefreshResources(Control ctrl, ComponentResourceManager res)
+        {
+            ctrl.SuspendLayout();
+            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
+            foreach (Control control in ctrl.Controls)
+                RefreshResources(control, res); // recursion
+            ctrl.ResumeLayout(false);
+        }
+
+        private void init_lang()
+        { 
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang);
+                System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+                RefreshResources(this, resources);
+        }
+
         private void Form2_Load(object sender, EventArgs e)
         {
+            init_lang();
             label2.Text = "Version " + Application.ProductVersion;
+            this.Text = FFBatch.Properties.Strings.About + " " + Application.ProductName;            
         }
 
         private void button1_Click(object sender, EventArgs e)

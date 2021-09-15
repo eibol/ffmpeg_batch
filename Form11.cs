@@ -4,8 +4,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,15 +22,32 @@ namespace FFBatch
             InitializeComponent();
         }
         public int procId = 0;
+        public String reading = "";
 
         private void Form11_Load(object sender, EventArgs e)
         {
             this.Top = this.Top - 35;
-            //this.TransparencyKey = Color.LightBlue;
-            //this.BackColor = Color.LightBlue;
             abort_validate = false;
             btn_abort.Enabled = true;
-            timer1.Stop();            
+            timer1.Stop();
+            refresh_lang();
+            if (reading.Length > 0) label1.Text = reading;
+        }
+
+        private void refresh_lang()
+        {
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form11));
+            RefreshResources(this, resources);
+        }
+        private void RefreshResources(Control ctrl, ComponentResourceManager res)
+        {
+            ctrl.SuspendLayout();
+            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
+            foreach (Control control in ctrl.Controls)
+                RefreshResources(control, res); // recursion
+            ctrl.ResumeLayout(false);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -53,7 +72,7 @@ namespace FFBatch
         private void btn_abort_Click(object sender, EventArgs e)
         {            
             abort_validate = true;
-            btn_abort.Text = "Aborting";
+            btn_abort.Text = FFBatch.Properties.Strings.aborting;
             btn_abort.Enabled = false;
             Process[] localByName = Process.GetProcessesByName("ffmpeg");
             foreach (Process p in localByName)

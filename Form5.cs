@@ -2,6 +2,9 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
+using System.Text.RegularExpressions;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace FFBatch
@@ -16,8 +19,13 @@ namespace FFBatch
         public String stream_n = String.Empty;
         public String lv1_item = String.Empty;
         public int Id = 0;
+
         private void Form5_Load(object sender, EventArgs e)
-        {            
+        {
+            refresh_lang();
+          
+                this.Text = FFBatch.Properties.Strings.multi_streams;
+                dg_streams.Columns[2].HeaderText = FFBatch.Properties.Strings.str_ouput;
             this.Enabled = false;
 
             dg_streams.BackgroundColor = this.BackColor;
@@ -42,8 +50,8 @@ namespace FFBatch
             }
             new System.Threading.Thread(() =>
             {
-                this.InvokeEx(f => txt_file.Text = name);
-            
+            this.InvokeEx(f => txt_file.Text = name);
+
             ff_str.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "ffmpeg.exe");
             ff_str.StartInfo.Arguments = " -i " + '\u0022' + lv1_item + '\u0022';
             ff_str.StartInfo.RedirectStandardOutput = true;
@@ -52,66 +60,77 @@ namespace FFBatch
             ff_str.StartInfo.CreateNoWindow = true;
             ff_str.EnableRaisingEvents = true;
             ff_str.Start();
-                
-                Form11 frm_prog = new Form11();               
-                frm_prog.Refresh();
-                frm_prog.label1.Text = "Obtaining streams information";
-                frm_prog.label1.Refresh();
-                
-                new System.Threading.Thread(() =>
-                {
-                    System.Threading.Thread.CurrentThread.IsBackground = true;                              
-                    frm_prog.ShowDialog();
-                    frm_prog.Refresh();
 
-                }).Start();
-                frm_prog.procId = ff_str.Id;                
-                String stream = "";
+            Form11 frm_prog = new Form11();
+            frm_prog.Refresh();
+            frm_prog.label1.Text = FFBatch.Properties.Strings.obt_strs;
+            frm_prog.label1.Refresh();
+
+            new System.Threading.Thread(() =>
+            {
+                System.Threading.Thread.CurrentThread.IsBackground = true;
+                frm_prog.ShowDialog();
+                frm_prog.Refresh();
+
+            }).Start();
+            frm_prog.procId = ff_str.Id;
+            String stream = "";
             String sub_str = "";
             int f_streams = -1;
             Boolean has_stream = false;
             int img = 0;
-              while (!ff_str.StandardError.EndOfStream)
-                {                    
-                        stream = ff_str.StandardError.ReadLine();
+            while (!ff_str.StandardError.EndOfStream)
+            {
+                stream = ff_str.StandardError.ReadLine();
 
-                        if (stream.Contains("Stream #0:"))
+                if (stream.Contains("Stream #0:"))
+                {
+                    has_stream = true;
+                    f_streams = f_streams + 1;
+
+                    if (stream.Contains("Video")) img = 0;
+                    if (stream.Contains("Audio")) img = 1;
+                    if (stream.Contains("Subtitle")) img = 2;
+
+                    if (stream.Substring(stream.IndexOf("#0:") + 4, 1) == "(")
+                    {
+                        if (stream.Substring(stream.IndexOf("#0:") + 4, 5) == "(und)" || stream.Substring(stream.IndexOf("#0:") + 4, 5) == "(unk)")
                         {
-                            has_stream = true;
-                            f_streams = f_streams + 1;
 
-                            if (stream.Contains("Video")) img = 0;
-                            if (stream.Contains("Audio")) img = 1;
-                            if (stream.Contains("Subtitle")) img = 2;
+                            stream_n = stream_n + 1;
+                            sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 11);
+                            this.InvokeEx(f => dg_streams.Rows.Add(img_streams.Images[img], "#0:" + f_streams.ToString(), stream.Substring((stream.LastIndexOf("#0:") + 11), (stream.Length - sub_str.Length))));
 
-                            if (stream.Substring(stream.IndexOf("#0:") + 4, 1) == "(")
-                            {
-                                if (stream.Substring(stream.IndexOf("#0:") + 4, 5) == "(und)" || stream.Substring(stream.IndexOf("#0:") + 4, 5) == "(unk)")
-                                {
+                        }
+                        else
+                        {
+                            sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 4);
+                            this.InvokeEx(f => dg_streams.Rows.Add(img_streams.Images[img], "#0:" + f_streams.ToString(), stream.Substring((stream.LastIndexOf("#0:") + 4), (stream.Length - sub_str.Length))));
 
-                                    stream_n = stream_n + 1;
-                                    sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 11);
-                                    this.InvokeEx(f => dg_streams.Rows.Add(img_streams.Images[img], "#0:" + f_streams.ToString(), stream.Substring((stream.LastIndexOf("#0:") + 11), (stream.Length - sub_str.Length))));
+                        }
+                    }
+                    else
+                    {
+                        if (stream.Contains("Video"))
+                        {
+                            sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 6);
+                                String to_add = stream.Substring((stream.LastIndexOf("#0:") + 6), (stream.Length - sub_str.Length));
+                                to_add = Regex.Replace(to_add, @"\([^()]*\)", string.Empty);
+                                RegexOptions options = RegexOptions.None;
+                                Regex regex = new Regex("[ ]{2,}", options);
+                                to_add = regex.Replace(to_add, " ");
 
-                                }
-                                else
-                                {
-                                    sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 4);
-                                    this.InvokeEx(f => dg_streams.Rows.Add(img_streams.Images[img], "#0:" + f_streams.ToString(), stream.Substring((stream.LastIndexOf("#0:") + 4), (stream.Length - sub_str.Length))));
-
-                                }
+                                this.InvokeEx(f => dg_streams.Rows.Add(img_streams.Images[0], "#0:" + f_streams.ToString(), to_add));
                             }
-                            else
-                            {
-                                if (stream.Contains("Video"))
-                                {
-                                    sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 6);
-                                    this.InvokeEx(f => dg_streams.Rows.Add(img_streams.Images[0], "#0:" + f_streams.ToString(), stream.Substring((stream.LastIndexOf("#0:") + 6), (stream.Length - sub_str.Length))));
-                                }
                                 if (stream.Contains("Audio"))
                                 {
                                     sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 6);
-                                    this.InvokeEx(f => dg_streams.Rows.Add(img_streams.Images[1], "#0:" + f_streams.ToString(), stream.Substring((stream.LastIndexOf("#0:") + 6), (stream.Length - sub_str.Length))));
+                                String to_add = stream.Substring((stream.LastIndexOf("#0:") + 6), (stream.Length - sub_str.Length));
+                                to_add = Regex.Replace(to_add, @"\([^()]*\)", string.Empty);
+                                RegexOptions options = RegexOptions.None;
+                                Regex regex = new Regex("[ ]{2,}", options);
+                                to_add = regex.Replace(to_add, " ");
+                                this.InvokeEx(f => dg_streams.Rows.Add(img_streams.Images[1], "#0:" + f_streams.ToString(), to_add));
                                 }
                                 if (stream.Contains("Subtitle"))
                                 {
@@ -144,24 +163,24 @@ namespace FFBatch
          
             if (has_stream == false)
             {
-                    this.InvokeEx(f => dg_streams.Rows.Add(img_streams.Images[3], "0", "No usable streams found"));
+                    this.InvokeEx(f => dg_streams.Rows.Add(img_streams.Images[3], "0", FFBatch.Properties.Strings.no_str_f));
             }
-            if (dg_streams.Rows.Count <= 11)
-            {
-                    this.InvokeEx(f => this.Width = 516);
-                    this.InvokeEx(f => f.dg_streams.Width = 473);
-                    this.InvokeEx(f => f.txt_file.Width = 473);
-                    this.InvokeEx(f => f.txt_name.Width = 473);
-                    this.InvokeEx(f => f.btn_close.Width = 473);
-            }
-            else
-            {
-                    this.InvokeEx(f => this.Width = 533);
-                    this.InvokeEx(f => dg_streams.Width = 490);
-                    this.InvokeEx(f => txt_file.Width = 490);
-                    this.InvokeEx(f => txt_name.Width = 490);
-                    this.InvokeEx(f => btn_close.Width = 490);
-            }
+            //if (dg_streams.Rows.Count <= 11)
+            //{
+            //        this.InvokeEx(f => this.Width = 516);
+            //        this.InvokeEx(f => f.dg_streams.Width = 473);
+            //        this.InvokeEx(f => f.txt_file.Width = 473);
+            //        this.InvokeEx(f => f.txt_name.Width = 473);
+            //        this.InvokeEx(f => f.btn_close.Width = 473);
+            //}
+            //else
+            //{
+            //        this.InvokeEx(f => this.Width = 533);
+            //        this.InvokeEx(f => dg_streams.Width = 490);
+            //        this.InvokeEx(f => txt_file.Width = 490);
+            //        this.InvokeEx(f => txt_name.Width = 490);
+            //        this.InvokeEx(f => btn_close.Width = 490);
+            //}
 
                 this.InvokeEx(f => dg_streams.ClearSelection());
                 this.InvokeEx(f => dg_streams.CurrentCell = null);
@@ -196,6 +215,22 @@ namespace FFBatch
             if (dg_streams.SelectedCells.Count == 0) e.Cancel = true;
             if (dg_streams.SelectedCells[0].ColumnIndex == 0) e.Cancel = true;
 
+        }
+
+        private void refresh_lang()
+        {
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
+            RefreshResources(this, resources);
+        }
+        private void RefreshResources(Control ctrl, ComponentResourceManager res)
+        {
+            ctrl.SuspendLayout();
+            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
+            foreach (Control control in ctrl.Controls)
+                RefreshResources(control, res); // recursion
+            ctrl.ResumeLayout(false);
         }
     }
 }

@@ -119,28 +119,22 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>437, 9</value>
+    <value>453, 9</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Aceptar</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 20</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 20</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 100</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>462, 16</value>
+    <value>465, 16</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Puede eliminar dichos elementos con el botón "Quitar elementos no válidos"</value>
+    <value>Puede eliminar dichos elementos con el botón "Quitar elementos no válidos".</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>529, 45</value>
+    <value>573, 45</value>
   </data>
   <data name="pic1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -254,23 +248,29 @@
         /k7P/kbPjsll0mNUmdMo5LJjdP+Y7Pt73yhVyt9RYbnHbrcz/w9F10F/y085nQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 24</value>
+  </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>221, 20</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>añadidos a la lista de ficheros.</value>
   </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 50</value>
+  </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>345, 20</value>
+    <value>341, 20</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>no pudieron ser validados (Duración = 0 o N/D.).</value>
+    <value>no pudieron ser validados (Duración = 0 o N/D).</value>
   </data>
   <data name="pic_clean.Location" type="System.Drawing.Point, System.Drawing">
     <value>488, 93</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>524, 201</value>
+    <value>560, 201</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
