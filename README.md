@@ -34,7 +34,7 @@ FEATURES
 To compile code, please follow these steps:
 
 - Create a folder of your choice.
-- Download FFbatch_main.sln on it as well as github folders (Properties, resoureces).
+- Download FFbatch_main.sln on it as well as github folders (Properties, resources).
 - Create a subfolder named 'FFBatch' and copy there all the files, except previous folders.
 
 NOTES:
