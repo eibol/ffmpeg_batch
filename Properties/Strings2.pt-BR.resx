@@ -1,0 +1,543 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+	<xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+		<xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+		<xsd:element name="root" msdata:IsDataSet="true">
+			<xsd:complexType>
+				<xsd:choice maxOccurs="unbounded">
+					<xsd:element name="metadata">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" />
+							</xsd:sequence>
+							<xsd:attribute name="name" use="required" type="xsd:string" />
+							<xsd:attribute name="type" type="xsd:string" />
+							<xsd:attribute name="mimetype" type="xsd:string" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="assembly">
+						<xsd:complexType>
+							<xsd:attribute name="alias" type="xsd:string" />
+							<xsd:attribute name="name" type="xsd:string" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="data">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+								<xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+							<xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+							<xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+							<xsd:attribute ref="xml:space" />
+						</xsd:complexType>
+					</xsd:element>
+					<xsd:element name="resheader">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+							</xsd:sequence>
+							<xsd:attribute name="name" type="xsd:string" use="required" />
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:choice>
+			</xsd:complexType>
+		</xsd:element>
+	</xsd:schema>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="aborted2" xml:space="preserve">
+    <value>Arquivo baixado do link foi abortado pelo usuário.</value>
+  </data>
+	<data name="abort_cap" xml:space="preserve">
+    <value>Abortar captura de tela</value>
+  </data>
+	<data name="app_min_1" xml:space="preserve">
+    <value>A janela do aplicativo será minimizada 1 segundo antes do início da gravação.</value>
+  </data>
+	<data name="Aud_wave" xml:space="preserve">
+    <value>Formato de áudio wave</value>
+  </data>
+	<data name="autorun_dis" xml:space="preserve">
+    <value>Autoexecutar está desabilitado</value>
+  </data>
+	<data name="autorun_en" xml:space="preserve">
+    <value>Autoexecutar está habilitado</value>
+  </data>
+	<data name="auto_ask" xml:space="preserve">
+    <value>A execução automática de codificação sequencial está ativada. Você deseja manter esta configuração?</value>
+  </data>
+	<data name="auto_ask2" xml:space="preserve">
+    <value>A execução automática de codificação de vários arquivos está ativada. Você deseja manter esta configuração?</value>
+  </data>
+	<data name="batch_concat_msg" xml:space="preserve">
+    <value>A concatenação em lote está habilitada, mas nenhum arquivo inicial ou final foi selecionado. Escolha um deles ou desative esta configuração.</value>
+  </data>
+	<data name="big_size" xml:space="preserve">
+    <value>Tamanho maior</value>
+  </data>
+	<data name="black" xml:space="preserve">
+    <value>Preto</value>
+  </data>
+	<data name="browsing" xml:space="preserve">
+    <value>Procurando</value>
+  </data>
+	<data name="brow_page" xml:space="preserve">
+    <value>Conteúdo do link de navegação: Página</value>
+  </data>
+	<data name="capt_1" xml:space="preserve">
+    <value>Capturando em 1 segundo</value>
+  </data>
+	<data name="capt_2" xml:space="preserve">
+    <value>Capturando em 2 segundos</value>
+  </data>
+	<data name="capt_3" xml:space="preserve">
+    <value>Capturando em 3 segundos</value>
+  </data>
+	<data name="capt_term" xml:space="preserve">
+    <value>Captura concluída</value>
+  </data>
+	<data name="capt_virtual" xml:space="preserve">
+    <value>Para capturar a reprodução de áudio, é necessário um driver de áudio virtual.</value>
+  </data>
+	<data name="concat_vid_help" xml:space="preserve">
+    <value>Este filtro permite juntar vídeos com qualidades diferentes, melhora a compatibilidade mas requer que o áudio e o vídeo sejam recodificados. O campo de parâmetros pode ser deixado em branco. NOTA: Somente arquivos de vídeo são permitidos.</value>
+  </data>
+	<data name="contin" xml:space="preserve">
+    <value>Continuar?</value>
+  </data>
+	<data name="custom" xml:space="preserve">
+    <value>Personalizado</value>
+  </data>
+	<data name="demuxer_help" xml:space="preserve">
+    <value>Neste modo, os arquivos de áudio / vídeo podem ser copiados em fluxo, desde que compartilhem qualidades (tamanho, codec, taxa de bits). NOTA: Nem todos os contêineres têm suporte para cópia de fluxo. Se ocorrerem problemas de reprodução ou os arquivos não forem unidos, pode ser necessária a recodificação.</value>
+  </data>
+	<data name="dest_not_empty" xml:space="preserve">
+    <value>A pasta de destino não está vazia. Continuar?</value>
+  </data>
+	<data name="download" xml:space="preserve">
+    <value>Baixar</value>
+  </data>
+	<data name="down_prog" xml:space="preserve">
+    <value>O arquivo baixando está em andamento, cancele antes de fechar a janela.</value>
+  </data>
+	<data name="down_prog2" xml:space="preserve">
+    <value>Baixando arquivo em progresso</value>
+  </data>
+	<data name="down_p_ab" xml:space="preserve">
+    <value>O arquivo baixando está em andamento. Você deseja forçar o encerramento?</value>
+  </data>
+	<data name="error_writing" xml:space="preserve">
+    <value>Erro ao gravar na pasta de destino. Selecione outro caminho ou certifique-se de ter permissões de gravação.</value>
+  </data>
+	<data name="ext_com_err" xml:space="preserve">
+    <value>O comando externo retornou um erro em</value>
+  </data>
+	<data name="frame_size" xml:space="preserve">
+    <value>Tamanho da moldura</value>
+  </data>
+	<data name="init_wait" xml:space="preserve">
+    <value>Começando a baixar, aguarde...</value>
+  </data>
+	<data name="invalid_param" xml:space="preserve">
+    <value>Parâmetros inválidos para captura de tela.</value>
+  </data>
+	<data name="invalid_p_2" xml:space="preserve">
+    <value>Parâmetros de captura inválidos</value>
+  </data>
+	<data name="lang_corrupted" xml:space="preserve">
+    <value>A configuração do idioma foi corrompida, reinstale o aplicativo.</value>
+  </data>
+	<data name="low_size" xml:space="preserve">
+    <value>Tamanho menor</value>
+  </data>
+	<data name="mux_jobs" xml:space="preserve">
+    <value>Gerenciador de Tarefas de Junção em Lotes </value>
+  </data>
+	<data name="none" xml:space="preserve">
+    <value>Nenhum</value>
+  </data>
+	<data name="no_concat_ef" xml:space="preserve">
+    <value>Nenhum arquivo inicial ou final</value>
+  </data>
+	<data name="one_track" xml:space="preserve">
+    <value>Selecione apenas um arquivo para adicionar seus fluxos.</value>
+  </data>
+	<data name="outf_count" xml:space="preserve">
+    <value>Baixando. Contagem total não disponível. Contagem da pasta de saída:</value>
+  </data>
+	<data name="pr01" xml:space="preserve">
+    <value>Vídeo: Copiar o fluxo para MP4</value>
+  </data>
+	<data name="pr02" xml:space="preserve">
+    <value>Vídeo: Converter trilha de áudio para AAC HQ - 2 canais</value>
+  </data>
+	<data name="pr03" xml:space="preserve">
+    <value>Vídeo: Converter trilhas de áudio para AC3 - 2 canais</value>
+  </data>
+	<data name="pr04" xml:space="preserve">
+    <value>Vídeo: Converter para ProRes MKV</value>
+  </data>
+	<data name="pr05" xml:space="preserve">
+    <value>Vídeo: Converter para H264 HQ + Fonte de Áudio</value>
+  </data>
+	<data name="pr06" xml:space="preserve">
+    <value>Vídeo: Converter para H264 ultrarrápido</value>
+  </data>
+	<data name="pr07" xml:space="preserve">
+    <value>Vídeo: Converter para H265 HQ + Fonte de Áudio</value>
+  </data>
+	<data name="pr08" xml:space="preserve">
+    <value>Vídeo: Redimensionar para 1280x720 H264-AAC</value>
+  </data>
+	<data name="pr09" xml:space="preserve">
+    <value>Vídeo: Girar 90 graus no sentido horário para H264 + Fonte de áudio</value>
+  </data>
+	<data name="pr10" xml:space="preserve">
+    <value>Vídeo: Girar 90 graus no sentido anti-horário e virar vertical para H264 + Fonte de áudio</value>
+  </data>
+	<data name="pr11" xml:space="preserve">
+    <value>Vídeo: Girar 90 graus no sentido anti-horário para H264 + Fonte de áudio</value>
+  </data>
+	<data name="pr12" xml:space="preserve">
+    <value>Vídeo: Girar 90 graus no sentido horário e virar vertical para H264 + Fonte de áudio</value>
+  </data>
+	<data name="pr13" xml:space="preserve">
+    <value>Vídeo: Girar 180 graus para H264 + Fonte de áudio</value>
+  </data>
+	<data name="pr14" xml:space="preserve">
+    <value>Vídeo: Remover as legendas para MP4</value>
+  </data>
+	<data name="pr15" xml:space="preserve">
+    <value>Áudio: Converter para FLAC 16 / 44.1KHz - 2 canais</value>
+  </data>
+	<data name="pr16" xml:space="preserve">
+    <value>Áudio: Converter para MP3 VBR HQ 2 canais com capa incorporada</value>
+  </data>
+	<data name="pr17" xml:space="preserve">
+    <value>Áudio: Converter para MP3 VBR HQ 2 canais</value>
+  </data>
+	<data name="pr18" xml:space="preserve">
+    <value>Áudio: Converter para MP3 CBR HQ 2 canais</value>
+  </data>
+	<data name="pr19" xml:space="preserve">
+    <value>Áudio: Converter para WAV 16 / 44.1KHz - 2 canais</value>
+  </data>
+	<data name="pr20" xml:space="preserve">
+    <value>Legenda: Extrair a primeira faixa de legenda para SRT</value>
+  </data>
+	<data name="pr21" xml:space="preserve">
+    <value>Imagem: Extrair quadro como imagem</value>
+  </data>
+	<data name="pr22" xml:space="preserve">
+    <value>Gravação de tela a 24 fps + Áudio AAC para MKV</value>
+  </data>
+	<data name="pr23" xml:space="preserve">
+    <value>Gravação de tela a 15 fps 1280x720 + Áudio para MKV</value>
+  </data>
+	<data name="pr24" xml:space="preserve">
+    <value>Gravação de tela a 30 fps Nvidia NVENC + Áudio AAC para MKV</value>
+  </data>
+	<data name="pr25" xml:space="preserve">
+    <value>Gravação de tela a 25 fps Intel QuickSync + Audio AAC para MKV</value>
+  </data>
+	<data name="pr26" xml:space="preserve">
+    <value>Juntar imagens com largura de 1920px para vídeo MP4</value>
+  </data>
+	<data name="queue_not_f" xml:space="preserve">
+    <value>Arquivo(s) de fila não foram encontrados.</value>
+  </data>
+	<data name="queue_warn" xml:space="preserve">
+    <value>Lista de arquivos carregada com sucesso.</value>
+  </data>
+	<data name="quick_yt1" xml:space="preserve">
+    <value>Baixar rápido de canal/lista de reprodução do YouTube</value>
+  </data>
+	<data name="quick_yt2" xml:space="preserve">
+    <value>- Acesse a página principal do canal no YouTube e clique na guia VÍDEOS.</value>
+  </data>
+	<data name="quick_yt3" xml:space="preserve">
+    <value>- Copie o link e cole no campo do canal.</value>
+  </data>
+	<data name="quick_yt4" xml:space="preserve">
+    <value>- Exemplo:</value>
+  </data>
+	<data name="rec_fail" xml:space="preserve">
+    <value>O teste de gravação falhou</value>
+  </data>
+	<data name="rem_from_list" xml:space="preserve">
+    <value>Remover itens selecionados da lista</value>
+  </data>
+	<data name="rotate1" xml:space="preserve">
+    <value>Girar 90º no sentido horário</value>
+  </data>
+	<data name="rotate2" xml:space="preserve">
+    <value>Girar 90º no sentido anti-horário</value>
+  </data>
+	<data name="rotate3" xml:space="preserve">
+    <value>Girar horizontal</value>
+  </data>
+	<data name="rot_flip" xml:space="preserve">
+    <value>Girar horizontal</value>
+  </data>
+	<data name="scr_cap" xml:space="preserve">
+    <value>Captura de tela</value>
+  </data>
+	<data name="scr_fail" xml:space="preserve">
+    <value>O teste de captura de tela falhou.</value>
+  </data>
+	<data name="scsr_term" xml:space="preserve">
+    <value>A captura de tela foi encerrada inesperadamente. O arquivo pode estar truncado.</value>
+  </data>
+	<data name="selc_dev" xml:space="preserve">
+    <value>Selecione o dispositivo de captura de áudio</value>
+  </data>
+	<data name="sel_lang" xml:space="preserve">
+    <value>Selecione o idioma</value>
+  </data>
+	<data name="skip_from_list" xml:space="preserve">
+    <value>Pular itens selecionados da codificação</value>
+  </data>
+	<data name="sort_before" xml:space="preserve">
+    <value>Classificar a lista antes de começar?</value>
+  </data>
+	<data name="sort_status" xml:space="preserve">
+    <value>Classifique e verifique a lista de arquivos para os itens marcados com status</value>
+  </data>
+	<data name="source_not_deleted" xml:space="preserve">
+    <value>Arquivos de origem que não puderam ser excluídos devido a falha na codificação ou arquivo em uso:</value>
+  </data>
+	<data name="start_cap" xml:space="preserve">
+    <value>Iniciar Captura de Tela</value>
+  </data>
+	<data name="stop_any" xml:space="preserve">
+    <value>Você pode interromper a gravação pressionando Control-Shift-P a qualquer momento.</value>
+  </data>
+	<data name="stop_capt" xml:space="preserve">
+    <value>Parar de gravar</value>
+  </data>
+	<data name="stop_proc" xml:space="preserve">
+    <value>Parar de processar</value>
+  </data>
+	<data name="streams" xml:space="preserve">
+    <value>Fluxos</value>
+  </data>
+	<data name="subtitles" xml:space="preserve">
+    <value>Legendas</value>
+  </data>
+	<data name="total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+	<data name="try_scr_pr" xml:space="preserve">
+    <value>Experimente uma predefinição de captura de tela e verifique os parâmetros de codificação.</value>
+  </data>
+	<data name="version" xml:space="preserve">
+    <value>Versão</value>
+  </data>
+	<data name="warnings_last_s" xml:space="preserve">
+    <value>aviso(s) durante a última sessão</value>
+  </data>
+	<data name="warning_file" xml:space="preserve">
+    <value>AVISO: Arquivo</value>
+  </data>
+	<data name="warning_not_rep" xml:space="preserve">
+    <value>Não foi substituído</value>
+  </data>
+	<data name="white" xml:space="preserve">
+    <value>Branco</value>
+  </data>
+	<data name="yt_url_blank" xml:space="preserve">
+    <value>O campo do link do YouTube está vazio.</value>
+  </data>
+	<data name="yt_url_sh" xml:space="preserve">
+    <value>O link do YouTube é muito curto.</value>
+  </data>
+	<data name="autoshut_en" xml:space="preserve">
+    <value>DESLIGAMENTO AUTOMÁTICO HABILITADO</value>
+  </data>
+	<data name="autoshut_st" xml:space="preserve">
+    <value>DESLIGAMENTO AUTOMÁTICO INICIADO</value>
+  </data>
+	<data name="avoid_overw" xml:space="preserve">
+    <value>para evitar uma possível substituição.</value>
+  </data>
+	<data name="check_web_up" xml:space="preserve">
+    <value>Gostaria de visitar o site do projeto para verificar se há novos lançamentos?</value>
+  </data>
+	<data name="computer_will" xml:space="preserve">
+    <value>O computador vai</value>
+  </data>
+	<data name="deleting_f" xml:space="preserve">
+    <value>Excluindo...</value>
+  </data>
+	<data name="deleting_files" xml:space="preserve">
+    <value>Excluindo arquivos ...</value>
+  </data>
+	<data name="deleting_proc" xml:space="preserve">
+    <value>Excluindo arquivos processados ...</value>
+  </data>
+	<data name="deleting_sourc" xml:space="preserve">
+    <value>Excluindo arquivos de origem ...</value>
+  </data>
+	<data name="dif_in_out_f" xml:space="preserve">
+    <value>Diferentes pastas de entrada para uma única pasta de saída</value>
+  </data>
+	<data name="drop_big" xml:space="preserve">
+    <value>O arquivo descartado é muito grande. Apenas arquivos de texto com menos de 1 MB são suportados.</value>
+  </data>
+	<data name="drop_one" xml:space="preserve">
+    <value>Solte apenas um arquivo.</value>
+  </data>
+	<data name="err_clipb" xml:space="preserve">
+    <value>Erro ao copiar para a área de transferência.</value>
+  </data>
+	<data name="err_pl_vlc" xml:space="preserve">
+    <value>Erro ao tentar reproduzir URL com VLC:</value>
+  </data>
+	<data name="err_save_qu" xml:space="preserve">
+    <value>Ocorreu um erro ao salvar o arquivo da fila.</value>
+  </data>
+	<data name="err_save_track" xml:space="preserve">
+    <value>Erro ao salvar a trilha</value>
+  </data>
+	<data name="err_test_temp" xml:space="preserve">
+    <value>A pasta de teste não pôde ser criada no local TEMP.</value>
+  </data>
+	<data name="err_write_out" xml:space="preserve">
+    <value>Erro ao gravar a pasta de saída:</value>
+  </data>
+	<data name="err_write_temp" xml:space="preserve">
+    <value>Erro ao gravar na pasta temporária.</value>
+  </data>
+	<data name="exc_dur" xml:space="preserve">
+    <value>excede a duração da fonte.</value>
+  </data>
+	<data name="ext_com_ok" xml:space="preserve">
+    <value>Comando externo executado com sucesso em</value>
+  </data>
+	<data name="files_long_t" xml:space="preserve">
+    <value>os arquivos podem demorar muito. Tem certeza?</value>
+  </data>
+	<data name="in_60" xml:space="preserve">
+    <value>em 60 segundos</value>
+  </data>
+	<data name="join_files" xml:space="preserve">
+    <value>Juntar arquivos</value>
+  </data>
+	<data name="logging_f" xml:space="preserve">
+    <value>Registrando para:</value>
+  </data>
+	<data name="missing_f" xml:space="preserve">
+    <value>Arquivos ausentes</value>
+  </data>
+	<data name="multi_drop" xml:space="preserve">
+    <value>Solte apenas um arquivo.</value>
+  </data>
+	<data name="multi_drop2" xml:space="preserve">
+    <value>Vários arquivos descartados</value>
+  </data>
+	<data name="not_deleted" xml:space="preserve">
+    <value>não pôde ser excluído.</value>
+  </data>
+	<data name="press_c" xml:space="preserve">
+    <value>Pressione para cancelar</value>
+  </data>
+	<data name="pre_ss" xml:space="preserve">
+    <value>Definir o parâmetro de busca de pré-entrada -ss</value>
+  </data>
+	<data name="too_many_files" xml:space="preserve">
+    <value>Muitos arquivos para serem analisados</value>
+  </data>
+	<data name="transfer_r" xml:space="preserve">
+    <value>Taxa de transferência:</value>
+  </data>
+	<data name="undef_dur_all" xml:space="preserve">
+    <value>O processamento não continuará após itens com duração indefinida (infinito).</value>
+  </data>
+	<data name="undef_seq" xml:space="preserve">
+    <value>Itens com duração indefinida</value>
+  </data>
+	<data name="url_down_c" xml:space="preserve">
+    <value>Download de URL concluído com sucesso</value>
+  </data>
+	<data name="url_down_c2" xml:space="preserve">
+    <value>Download de URL concluído</value>
+  </data>
+	<data name="warn_down" xml:space="preserve">
+    <value>Mensagens de aviso ocorreram durante o download:</value>
+  </data>
+	<data name="wrong_c_dur" xml:space="preserve">
+    <value>Duração de captura incorreta</value>
+  </data>
+</root>
