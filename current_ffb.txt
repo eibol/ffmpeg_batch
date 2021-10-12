@@ -11,63 +11,39 @@ EN
 
 ES
 • Traducción al chino simplificado disponible.
-
 • Nueva configuración del asistente de división de archivos por tamaño de archivo.
-
 • Corregidos algunos problemas al guardar varios streams en la pestaña Multiplex.
-
 • Corregido error de tiempo de ejecución de Multiplex con algunos archivos que indican una duración incorrecta.
-
 • Corregido error de tiempo de ejecución en el Asistente para división de archivos.
-
 • Corregido error al probar presets con parámetros de entrada y variables.
-
 • Corregido algunas traducciones incorrectas y otros problemas cosméticos menores.
 ----------------------------------------
 
 IT
 • Disponibile la traduzione cinese semplificata.
-
 • Nuova impostazione della procedura guidata di suddivisione dei file in base alla dimensione del file.
-
 • Risolti alcuni problemi durante il salvataggio di più flussi nella scheda Multiplex.
-
 • Corretto errore di runtime Multiplex con alcuni file che riportavano una durata errata.
-
 • Corretto errore di runtime in File Split Wizard.
-
 • Corretto errore durante il tentativo di preimpostazioni con parametri e variabili pre-input.
-
 • Risolte alcune traduzioni errate e altri problemi estetici minori.
 ----------------------------------------
 
 PT
 • Tradução para chinês simplificado disponível.
-
 • Nova configuração do assistente de divisão de arquivo por tamanho de arquivo.
-
 • Corrigidos alguns problemas ao salvar vários streams na guia Multiplex.
-
 • Corrigido erro de tempo de execução Multiplex com alguns arquivos relatando duração incorreta.
-
 • Corrigido erro de tempo de execução no File Split Wizard.
-
 • Corrigido erro ao tentar predefinições com parâmetros e variáveis de pré-entrada.
-
 • Corrigido algumas traduções erradas e outros pequenos problemas cosméticos.
 ----------------------------------------
 
 中文
 • 提供简体中文翻译。
-
 • 按文件大小新建文件拆分向导设置。
-
 • 修复了在多路复用选项卡中保存多个流的一些问题。
-
 • 修复了 Multiplex 运行时错误，某些文件报告了不正确的持续时间。
-
 • 修复了文件拆分向导中的运行时错误。
-
 • 修复了使用预输入参数和变量尝试预设时出错的问题。
-
 • 修正了一些错误的翻译和其他小问题。
