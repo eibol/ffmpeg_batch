@@ -349,19 +349,19 @@
     <value>Video: Resize 1280x720 H264-AAC</value>
   </data>
   <data name="pr09" xml:space="preserve">
-    <value>Video: Rotate 90 degress Clockwise to H264 + Source audio</value>
+    <value>Video: Rotate 90 degrees Clockwise to H264 + Source audio</value>
   </data>
   <data name="pr10" xml:space="preserve">
-    <value>Video: Rotate 90 degress CountercLockwise and Vertical Flip to H264 + Source audio</value>
+    <value>Video: Rotate 90 degrees CountercLockwise and Vertical Flip to H264 + Source audio</value>
   </data>
   <data name="pr11" xml:space="preserve">
-    <value>Video: Rotate 90 degress CounterClockwise to H264 + Source audio</value>
+    <value>Video: Rotate 90 degrees CounterClockwise to H264 + Source audio</value>
   </data>
   <data name="pr12" xml:space="preserve">
-    <value>Video: Rotate 90 degress Clockwise and Vertical Flip to H264 + Source audio</value>
+    <value>Video: Rotate 90 degrees Clockwise and Vertical Flip to H264 + Source audio</value>
   </data>
   <data name="pr13" xml:space="preserve">
-    <value>Video: Rotate 180 degress to H264 + Source audio</value>
+    <value>Video: Rotate 180 degrees to H264 + Source audio</value>
   </data>
   <data name="pr14" xml:space="preserve">
     <value>Video: Remove subtitles to MP4</value>
