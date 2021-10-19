@@ -577,7 +577,7 @@
     <value>Duplicated preset name found.</value>
   </data>
   <data name="dup_url" xml:space="preserve">
-    <value>The URL ouput name is duplicated:</value>
+    <value>The URL output name is duplicated:</value>
   </data>
   <data name="dur1" xml:space="preserve">
     <value>.Duration:</value>
@@ -712,7 +712,7 @@
     <value>Error obtaining keyframes. Input format is invalid.</value>
   </data>
   <data name="err_oc" xml:space="preserve">
-    <value>An error ocurred</value>
+    <value>An error occurred</value>
   </data>
   <data name="err_pars_ff" xml:space="preserve">
     <value>Error parsing ffmpeg version. File may be damaged.</value>
@@ -721,13 +721,13 @@
     <value>Portable settings folder could not be created on application path:</value>
   </data>
   <data name="err_proc_q" xml:space="preserve">
-    <value>An error ocurred during queue processing:</value>
+    <value>An error occurred during queue processing:</value>
   </data>
   <data name="err_qf" xml:space="preserve">
     <value>Error loading queue session. Unexpected file format.</value>
   </data>
   <data name="err_saving_pres" xml:space="preserve">
-    <value>An error ocurred saving presets file.</value>
+    <value>An error occurred saving presets file.</value>
   </data>
   <data name="err_set" xml:space="preserve">
     <value>An error occurred while saving settings.</value>
@@ -736,13 +736,13 @@
     <value>Error playing file. Only PCM wave files are supported.</value>
   </data>
   <data name="err_yt_2" xml:space="preserve">
-    <value>An error ocurred trying to update youtube-dl:</value>
+    <value>An error occurred trying to update youtube-dl:</value>
   </data>
   <data name="err_yt_u" xml:space="preserve">
     <value>Error checking youtube-dl updates.</value>
   </data>
   <data name="err_yt_up" xml:space="preserve">
-    <value>An error ocurred trying to update youtube-dl. You can try again, or download and copy the file to application path.</value>
+    <value>An error occurred trying to update youtube-dl. You can try again, or download and copy the file to application path.</value>
   </data>
   <data name="est_size" xml:space="preserve">
     <value>Estimated size:</value>
@@ -1096,7 +1096,7 @@
     <value>Jobs list is empty.</value>
   </data>
   <data name="jobs_reset" xml:space="preserve">
-    <value>Jobs list was already processed. Please reset status with botton at the top right corner to start it over.</value>
+    <value>Jobs list was already processed. Please reset status with button at the top right corner to start it over.</value>
   </data>
   <data name="keep" xml:space="preserve">
     <value>Keep</value>
@@ -1186,7 +1186,7 @@
     <value>The download list supports up to 2000 links.</value>
   </data>
   <data name="max_list" xml:space="preserve">
-    <value>Maximum list lenght reached</value>
+    <value>Maximum list length reached</value>
   </data>
   <data name="media_type" xml:space="preserve">
     <value>Media type</value>
@@ -1561,7 +1561,7 @@
     <value>Output name cannot be blank.</value>
   </data>
   <data name="out_conf" xml:space="preserve">
-    <value>Ouput folder not configured</value>
+    <value>Output folder not configured</value>
   </data>
   <data name="out_dup" xml:space="preserve">
     <value>Duplicated output found</value>
@@ -1642,7 +1642,7 @@
     <value>Parameters field is too short.</value>
   </data>
   <data name="param_in" xml:space="preserve">
-    <value>Parameter unncessary</value>
+    <value>Parameter unnecessary</value>
   </data>
   <data name="parsing" xml:space="preserve">
     <value>Parsing unknown files</value>
@@ -1780,7 +1780,7 @@
     <value>"Pre-input seeking selected in Batch processing tab is incorrect. Change it or reset it by double-clicking on it"</value>
   </data>
   <data name="pre_in_path" xml:space="preserve">
-    <value>An error ocurred while saving pre-input configuration. Please ensure you have path access rights .</value>
+    <value>An error occurred while saving pre-input configuration. Please ensure you have path access rights .</value>
   </data>
   <data name="processing" xml:space="preserve">
     <value>Processing</value>
@@ -2113,7 +2113,7 @@
     <value>Skipped</value>
   </data>
   <data name="skip_err" xml:space="preserve">
-    <value>An error ocurred skipping version:</value>
+    <value>An error occurred skipping version:</value>
   </data>
   <data name="soft_update" xml:space="preserve">
     <value>Software update</value>
@@ -2188,7 +2188,7 @@
     <value>Stream file</value>
   </data>
   <data name="stream_saved" xml:space="preserve">
-    <value>FFmpeg Batch stream saving succesfully completed</value>
+    <value>FFmpeg Batch stream saving successfully completed</value>
   </data>
   <data name="stream_saved2" xml:space="preserve">
     <value>Stream saving completed</value>
@@ -2209,7 +2209,7 @@
     <value>Subfolders enabled</value>
   </data>
   <data name="subs_help" xml:space="preserve">
-    <value>This feature searches for SRT, ASS or IDX files with the same name and on the same folder of the added video files. You can select a different folder for the subtitles using the browse button. Do not add subtitle files directly to the file list view, since subtitles are searched automatically based on video file names. In case the subtitle file name does not match the video name, you can add it by double-clicking on the file video item. MP4 comes with certain limitations (not posible to set a default subtitle track and VobSub subtitles not supported). For any language, recommended text subtitles are UTF-8 or Unicode.</value>
+    <value>This feature searches for SRT, ASS or IDX files with the same name and on the same folder of the added video files. You can select a different folder for the subtitles using the browse button. Do not add subtitle files directly to the file list view, since subtitles are searched automatically based on video file names. In case the subtitle file name does not match the video name, you can add it by double-clicking on the file video item. MP4 comes with certain limitations (not possible to set a default subtitle track and VobSub subtitles not supported). For any language, recommended text subtitles are UTF-8 or Unicode.</value>
   </data>
   <data name="subs_wrong1" xml:space="preserve">
     <value>Some subtitle file names contain conflicting characters with subtitles filter. Please ensure your subtitle file names do not contain characters like [ ]</value>
@@ -2329,7 +2329,7 @@
     <value>Trim start time time exceeds file duration.</value>
   </data>
   <data name="trim_z" xml:space="preserve">
-    <value>Trimming lenght is 0.</value>
+    <value>Trimming length is 0.</value>
   </data>
   <data name="trim_zero" xml:space="preserve">
     <value>Trim time can not be zero.</value>
@@ -2423,7 +2423,7 @@
     <value>- It is recommended to use -preset:v / -profile:v for video encoder tuning.</value>
   </data>
   <data name="two_tips" xml:space="preserve">
-    <value>Two pass enconding tips</value>
+    <value>Two pass encoding tips</value>
   </data>
   <data name="two_tip_12" xml:space="preserve">
     <value>NOTE: Some configurations could be considered valid but depending on parameters combination, first pass could useless or be ignored on second pass encoding. Choose carefully encoder parameters and review them before starting.</value>
@@ -2621,7 +2621,7 @@
     <value>FFmpeg Batch - Encoding complete with warning(s).</value>
   </data>
   <data name="wrong_chr" xml:space="preserve">
-    <value>Input filename contains caracter [ ]. Please remove those characters to avoid error when using -vf filter.</value>
+    <value>Input filename contains character [ ]. Please remove those characters to avoid error when using -vf filter.</value>
   </data>
   <data name="String" xml:space="preserve">
     <value />
