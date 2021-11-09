@@ -7540,9 +7540,6 @@ namespace FFBatch
 
                 //End delete one
 
-                //Add res col
-                add_col_start();
-
             }).Start();
         }
 
@@ -7593,6 +7590,14 @@ namespace FFBatch
                     listView1.Invoke(new MethodInvoker(delegate
                     {
                         ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings.v_bitr, 100, HorizontalAlignment.Center);
+                        listView1.Columns[0].Width = listView1.Columns[0].Width - 110;
+                    }));
+                }
+                if (str.Contains(FFBatch.Properties.Strings2.a_bitr))
+                {
+                    listView1.Invoke(new MethodInvoker(delegate
+                    {
+                        ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings2.a_bitr, 100, HorizontalAlignment.Center);
                         listView1.Columns[0].Width = listView1.Columns[0].Width - 110;
                     }));
                 }
@@ -8016,7 +8021,7 @@ namespace FFBatch
                         }
                     }
 
-                    if (listView1.Columns.Count <= 11 && listView1.Columns.Count >= 6)
+                    if (listView1.Columns.Count <= 12 && listView1.Columns.Count >= 6)
                     {
                         cti1_cols.Enabled = true;
                     }
@@ -9879,6 +9884,160 @@ namespace FFBatch
                            // if (size.Length == 9) size = (size.Substring(0, 1) + sep_th + size.Substring(1, size.Length - 1));                            
                         }
                         
+                        //if (bytes < 100000 && bytes > 10000) size = bytes / 1000 + " " + "Mb/s";
+                        if (bytes < 10000) size = bytes + " " + "Kb/s";
+
+                        //if (bytes > -1 && bytes < 1024) { size = (bytes) + " " + "b/s"; }
+                        item.SubItems[e.Column].Text = size;
+
+                        //End Format size view
+                    }
+                    this.Cursor = Cursors.Arrow;
+                    listView1.EndUpdate();
+                }
+
+                else if (listView1.Columns[e.Column].Text.Contains(Properties.Strings2.a_bitr))
+                {
+
+                    lvwColumnSorter_Full.SortColumn = listView1.Columns[e.Column].Index;
+                    if (size_sorted == false)
+                    {
+                        size_sorted = true;
+                        lvwColumnSorter_Full.Order = SortOrder.Descending;
+                    }
+                    else
+                    {
+                        size_sorted = false;
+                        lvwColumnSorter_Full.Order = SortOrder.Ascending;
+                    }
+
+                    if (listView1.Items.Count > 6000) this.Cursor = Cursors.WaitCursor;
+                    listView1.BeginUpdate();
+
+                    foreach (ListViewItem item in listView1.Items)
+                    {
+                        String filename = item.SubItems[1].Text + "\\" + item.Text;
+                        if (item.SubItems[e.Column].Text.Length < 1) item.SubItems[e.Column].Text = "-";
+                        String subit = "0";
+
+                        if (File.Exists(filename))
+                        {
+                            //Format size view
+
+                            subit = item.SubItems[e.Column].Text;
+
+                            Boolean has_dot = false;
+                            if (subit.Contains(".") || subit.Contains(","))
+                            {
+                                has_dot = true;
+                                subit = subit.Replace(".", separator);
+                                subit = subit.Replace(",", separator);
+                            }
+                            subit = Regex.Replace(subit, "[^.0-9]", "");
+
+                            int pad = 0;
+                            if (item.SubItems[e.Column].Text.ToLower().Contains("kb/s"))
+                            {
+                                pad = 16 - subit.Length;
+                                for (int ii = 0; ii < pad; ii++) subit = "0" + subit;
+
+                            }
+                            if (item.SubItems[e.Column].Text.ToLower().Contains("mb/s") || item.SubItems[e.Column].Text.ToLower().Contains("gb/s"))
+                            {
+                                if (has_dot == false) subit = subit + "000";
+                                else subit = (subit + "00");
+                                //subit = subit.Replace(sep_th, " ");
+                                pad = 16 - subit.Length;
+                                for (int ii = 0; ii < pad; ii++) subit = "0" + subit;
+                            }
+                            if (item.SubItems[e.Column].Text.ToLower().Contains("gb/s"))
+                            {
+                                if (has_dot == false) subit = subit + "0000";
+                                else subit = subit + "000";
+                                pad = 16 - subit.Length;
+                                for (int ii = 0; ii < pad; ii++) subit = "0" + subit;
+                            }
+                            item.SubItems[e.Column].Text = subit;
+                        }
+                        else
+                        {
+                            item.SubItems[e.Column].Text = "-";
+                        }
+
+                        if (item.SubItems[e.Column].Text == "-" || item.SubItems[e.Column].Text.Length == 0)
+                        {
+                            item.SubItems[e.Column].Text = "-";
+                        }
+
+                    }
+
+                    ColumnHeader new_sorting_column = listView1.Columns[e.Column];
+
+                    // Figure out the new sorting order.
+
+                    System.Data.SqlClient.SortOrder sort_order;
+                    if (SortingColumn == null)
+                    {
+                        // New column. Sort ascending.
+                        sort_order = System.Data.SqlClient.SortOrder.Ascending;
+                    }
+                    else
+                    {
+                        // See if this is the same column.
+                        if (new_sorting_column == SortingColumn)
+                        {
+                            // Same column. Switch the sort order.
+                            if (SortingColumn.Text.StartsWith("> "))
+                            {
+                                sort_order = System.Data.SqlClient.SortOrder.Descending;
+                            }
+                            else
+                            {
+                                sort_order = System.Data.SqlClient.SortOrder.Ascending;
+                            }
+                        }
+                        else
+                        {
+                            // New column. Sort ascending.
+                            sort_order = System.Data.SqlClient.SortOrder.Ascending;
+                        }
+
+                        // Remove the old sort indicator.
+                        SortingColumn.Text = SortingColumn.Text.Substring(2);
+                    }
+
+                    // Display the new sort order.
+                    SortingColumn = new_sorting_column;
+                    if (sort_order == System.Data.SqlClient.SortOrder.Ascending)
+                    {
+                        SortingColumn.Text = "> " + SortingColumn.Text;
+                    }
+                    else
+                    {
+                        SortingColumn.Text = "< " + SortingColumn.Text;
+                    }
+
+                    // Create a comparer.
+                    listView1.ListViewItemSorter =
+                        new ListViewComparer(e.Column, sort_order);
+
+                    // Sort.
+                    listView1.Sort();
+
+                    foreach (ListViewItem item in listView1.Items)
+                    {
+                        String size = "0";
+                        if (item.SubItems[e.Column].Text != "-" && item.SubItems[e.Column].Text != "0000000000000000") size = item.SubItems[e.Column].Text.TrimStart('0');
+
+                        Decimal bytes = Decimal.Parse(size);
+
+                        if (bytes > 10000000) size = (bytes / 1000000) + " " + "Gb/s";
+                        if (bytes >= 10000 && bytes < 10000000)
+                        {
+                            size = (bytes / 1000) + " " + "Mb/s";
+                            // if (size.Length == 9) size = (size.Substring(0, 1) + sep_th + size.Substring(1, size.Length - 1));                            
+                        }
+
                         //if (bytes < 100000 && bytes > 10000) size = bytes / 1000 + " " + "Mb/s";
                         if (bytes < 10000) size = bytes + " " + "Kb/s";
 
@@ -17456,7 +17615,7 @@ namespace FFBatch
 
                         String[] config_lines = new String[2];
                         config_lines[0] = "Video;%Width%" + "\\n" + "%Height%" + "\\n" + "%Format%" + "\\n" + "%Format_Profile%" + "\\n" + "%BitRate/String%" + "\\n";
-                        config_lines[1] = "Audio;%Format%" + "\\n";
+                        config_lines[1] = "Audio;%Format%" + "\\n" + "%BitRate/String%" + "\\n";
                         File.WriteAllLines(config_info, config_lines);
 
                         String ffprobe_frames = " " + "--Inform=file://" + config_info;
@@ -17468,16 +17627,16 @@ namespace FFBatch
                         {
                             lines_ouput.Add(get_frames.StandardOutput.ReadLine());
                         }
-
+                        //foreach (string str in lines_ouput) MessageBox.Show(str);
                         foreach (ColumnHeader col in listView1.Columns)
                         {
                             if (canceled_file_adding == true) break;
                             
                             Boolean is_v = false;
                             Boolean is_a = false;
-                            //MessageBox.Show(lines_ouput.Count.ToString());
+                            
                             if (lines_ouput.Count > 3) is_v = true;
-                            if (lines_ouput.Count <= 2) is_a = true;
+                            if (lines_ouput.Count <= 3) is_a = true;
                             get_frames.WaitForExit();
 
                             if (col.Text.Contains(FFBatch.Properties.Strings.width))
@@ -17573,6 +17732,36 @@ namespace FFBatch
                                 {
                                     itemsToAdd[n].SubItems.Add("-");
                                 }
+                                i++;
+                            }
+
+                            if (col.Text.Contains(FFBatch.Properties.Strings2.a_bitr))
+                            {
+                                i--;
+                                if (is_v == true)
+                                {
+                                    if (lines_ouput.Count > 6)
+                                    {
+                                        if (is_v == true && lines_ouput[6].Length > 0)
+                                        {
+                                            itemsToAdd[n].SubItems.Add(lines_ouput[6]);
+                                        }
+                                        else itemsToAdd[n].SubItems.Add("-");
+                                    }
+                                }
+                                else if (is_a == true)
+                                {
+                                    if (lines_ouput.Count > 1)
+                                    {
+                                        if (lines_ouput[1].Length > 0)
+                                        {
+                                            itemsToAdd[n].SubItems.Add(lines_ouput[1]);
+                                        }
+                                    }
+                                    else itemsToAdd[n].SubItems.Add("-");
+                                }
+                                else itemsToAdd[n].SubItems.Add("-");
+
                                 i++;
                             }
                         }
@@ -28468,7 +28657,7 @@ namespace FFBatch
 
             //Rectangle resolution = Screen.PrimaryScreen.Bounds;
 
-            int width_cols = 10 - listView1.Columns.Count;
+            int width_cols = 12 - listView1.Columns.Count;
             if (big_res == false)
             {
                 this.MinimumSize = new Size(1276, 590);
@@ -31636,6 +31825,8 @@ namespace FFBatch
                 foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings.height)) listView1.Columns.Remove(col);
                 foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings.Video_codec)) listView1.Columns.Remove(col);
                 foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings.Audio_codec)) listView1.Columns.Remove(col);
+                foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings.v_bitr)) listView1.Columns.Remove(col);
+                foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings2.a_bitr)) listView1.Columns.Remove(col);
                 resize();
             }
             catch { }
@@ -31767,6 +31958,8 @@ namespace FFBatch
                 foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings.height)) listView1.Columns.Remove(col);
                 foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings.Video_codec)) listView1.Columns.Remove(col);
                 foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings.Audio_codec)) listView1.Columns.Remove(col);
+                foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings.v_bitr)) listView1.Columns.Remove(col);
+                foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings2.a_bitr)) listView1.Columns.Remove(col);
                 resize();
             }
             catch { }
@@ -40857,6 +41050,7 @@ namespace FFBatch
             Boolean has_vid = false;
             Boolean has_aud = false;
             Boolean has_bit = false;
+            Boolean has_abit = false;
 
             foreach (ColumnHeader col in listView1.Columns)
             {
@@ -40864,11 +41058,13 @@ namespace FFBatch
                 if (col.Text == FFBatch.Properties.Strings.Video_codec) has_vid = true;
                 if (col.Text == FFBatch.Properties.Strings.Audio_codec) has_aud = true;
                 if (col.Text == FFBatch.Properties.Strings.v_bitr) has_bit = true;
+                if (col.Text == FFBatch.Properties.Strings2.a_bitr) has_abit = true;
             }
             if (has_res == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings.resolution);
             if (has_vid == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings.Video_codec);
             if (has_aud == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings.Audio_codec);
             if (has_bit == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings.v_bitr);
+            if (has_abit == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings2.a_bitr);
 
             frm_add_col.ShowDialog();
             if (frm_add_col.canceled == true) return;
@@ -40977,6 +41173,29 @@ namespace FFBatch
                     }
                 }
 
+                if (frm_add_col.cb_col.SelectedItem.ToString() == FFBatch.Properties.Strings2.a_bitr)
+                {
+                    Boolean already_vcodec = false;
+                    foreach (ColumnHeader head_col in listView1.Columns)
+                    {
+                        if (head_col.Text.Contains(FFBatch.Properties.Strings2.a_bitr))
+                        {
+                            already_vcodec = true;
+                            break;
+                        }
+                    }
+                    if (already_vcodec == false)
+                    {
+                        ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings2.a_bitr, 100, HorizontalAlignment.Center);
+                        listView1.Columns[0].Width = listView1.Columns[0].Width - 110;
+                    }
+                    if (already_vcodec == false)
+                    {
+                        pre_add_col();
+                        BG_Add_col_abit.RunWorkerAsync();
+                    }
+                }
+
                 list_cols();
             }
             else
@@ -40985,11 +41204,11 @@ namespace FFBatch
                 list_cols();
             }
 
-            if (listView1.Columns.Count >= 11)
+            if (listView1.Columns.Count >= 12)
             {
                 cti1_cols.Enabled = false;
             }
-            if (listView1.Columns.Count <= 11 && listView1.Columns.Count >= 6)
+            if (listView1.Columns.Count <= 12 && listView1.Columns.Count >= 6)
             {
                 cti1_cols.Enabled = true;
             }
@@ -41170,83 +41389,88 @@ namespace FFBatch
             this.InvokeEx(f => f.btn_cancel_add.Enabled = true);
             canceled_file_adding = false;
 
-            this.InvokeEx(f => f.listView1.BeginUpdate());
+
             int i = 0;
-
-
-            foreach (ListViewItem item in list_global_proc.Items)
+            listView1.Invoke(new MethodInvoker(delegate
             {
-                String itfull = item.SubItems[1].Text + "\\" + item.Text;
-                List<string> lines_ouput = new List<string>();
-
-                Boolean has_streams = false;
-                Boolean has_video = false;
-
-                if (canceled_file_adding == false)
+                listView1.BeginUpdate();
+                foreach (ListViewItem item in listView1.Items)
                 {
-                    Process ff_str = new Process();
-                    ff_str.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "ffmpeg.exe");
-                    ff_str.StartInfo.Arguments = " -i " + '\u0022' + itfull + '\u0022' + " -hide_banner";
+                    String itfull = item.SubItems[1].Text + "\\" + item.Text;
 
-                    ff_str.StartInfo.RedirectStandardOutput = true;
-                    ff_str.StartInfo.RedirectStandardError = true;
-                    ff_str.StartInfo.UseShellExecute = false;
-                    ff_str.StartInfo.CreateNoWindow = true;
-                    ff_str.EnableRaisingEvents = true;
-                    ff_str.Start();
-                    String stream = "";
-                    while (!ff_str.StandardError.EndOfStream)
-                    {
-                        stream = ff_str.StandardError.ReadLine();
-                        lines_ouput.Add(stream);
+                    Boolean has_streams = false;
+                    Boolean has_video = false;
 
-                    }
-                    ff_str.WaitForExit();
-                    String ff_frames = "";
-                    foreach (String line in lines_ouput)
+                    if (canceled_file_adding == false)
                     {
-                        if (line.ToLower().Contains("stream #") && line.ToLower().Contains("video"))
+                        String ff_frames = String.Empty;
+                        Process get_frames = new Process();
+                        get_frames.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "Mediainfo.exe");
+                        String ffprobe_frames = "--Inform=Video;%Format%" + "\\n";
+                        get_frames.StartInfo.Arguments = ffprobe_frames + " " + '\u0022' + itfull + '\u0022';
+                        get_frames.StartInfo.RedirectStandardOutput = true;
+                        get_frames.StartInfo.RedirectStandardError = true;
+                        get_frames.StartInfo.UseShellExecute = false;
+                        get_frames.StartInfo.CreateNoWindow = true;
+                        get_frames.EnableRaisingEvents = true;
+                        get_frames.Start();
+                        ff_frames = get_frames.StandardOutput.ReadLine();
+                        get_frames.WaitForExit();
+                        if (get_frames.ExitCode == 0)
                         {
-                            int n = line.Length - line.IndexOf("Video: ");
-                            int m = line.Length - line.IndexOf(",");
-                            ff_frames = line.Substring(line.IndexOf("Video: ") + 7, n - m - 7);
-                            ff_frames = av_col_v(ff_frames);
+                            if (ff_frames != null)
+                            {
+                                has_streams = true;
+                                if (ff_frames.Length == 0)
+                                {
+                                    ff_frames = "-";
+                                }
+                            }
+                            else
+                            {
+                                ff_frames = "-";
+                            }
                         }
+                        else
+                        {
+                            ff_frames = "-";
+                        }
+
+                        i++;
+
+                        if (ff_frames.Length > 1)
+                        {
+                            this.InvokeEx(f => listView1.Items[item.Index].SubItems.Add(ff_frames));
+
+                        }
+                        else
+                        {
+
+                            this.InvokeEx(f => listView1.Items[item.Index].SubItems.Add("-"));
+                        }
+                        //}                        
+
+                        this.InvokeEx(f => f.LB_Wait.Text = FFBatch.Properties.Strings.add_col1);
+                        this.InvokeEx(f => f.LB_Wait.Refresh());
+                        this.InvokeEx(f => f.pg_adding.Value = pg_adding.Value + 1);
+                        this.InvokeEx(f => f.pg_adding.Refresh());
+                        this.InvokeEx(f => f.txt_adding_p.Text = (i * 100 / pg_adding.Maximum).ToString() + "%");
+                        this.InvokeEx(f => TaskbarProgress.SetValue(this.Handle, i * 100 / pg_adding.Maximum, 100));
+                        this.InvokeEx(f => f.txt_adding_p.Refresh());
                     }
 
-                    i++;
-
-                    if (ff_frames.Length > 0)
-                    {
-                        this.InvokeEx(f => listView1.Items[item.Index].SubItems.Add(ff_frames));
-
-                    }
                     else
                     {
-                        this.InvokeEx(f => listView1.Items[item.Index].SubItems.Add("-"));
+                        timer_adding.Stop();
+                        this.InvokeEx(f => f.txt_add_remain.Text = String.Empty);
+                        this.InvokeEx(f => f.txt_add_remain.Visible = false);
+                        this.InvokeEx(f => f.txt_add_remain.Refresh());
+                        break;
                     }
-
-                    this.InvokeEx(f => f.LB_Wait.Text = FFBatch.Properties.Strings.add_col1);
-                    this.InvokeEx(f => f.LB_Wait.Refresh());
-
-                    this.InvokeEx(f => f.pg_adding.Value = pg_adding.Value + 1);
-                    this.InvokeEx(f => f.pg_adding.Refresh());
-                    this.InvokeEx(f => f.txt_adding_p.Text = (i * 100 / pg_adding.Maximum).ToString() + "%");
-                    this.InvokeEx(f => TaskbarProgress.SetValue(this.Handle, i * 100 / pg_adding.Maximum, 100));
-
-                    this.InvokeEx(f => f.txt_adding_p.Refresh());
                 }
+                this.InvokeEx(f => f.listView1.EndUpdate());
+            }));
 
-                else
-                {
-                    timer_adding.Stop();
-                    this.InvokeEx(f => f.txt_add_remain.Text = String.Empty);
-                    this.InvokeEx(f => f.txt_add_remain.Visible = false);
-                    this.InvokeEx(f => f.txt_add_remain.Refresh());
-                    break;
-                }
-            }
-            this.InvokeEx(f => f.listView1.EndUpdate());
             timer_adding.Stop();
             this.InvokeEx(f => f.txt_add_remain.Text = String.Empty);
             this.InvokeEx(f => f.txt_add_remain.Visible = false);
@@ -41302,98 +41526,94 @@ namespace FFBatch
             this.InvokeEx(f => f.btn_cancel_add.Enabled = true);
             canceled_file_adding = false;
 
-            this.InvokeEx(f => f.listView1.BeginUpdate());
+
             int i = 0;
-
-
-            foreach (ListViewItem item in list_global_proc.Items)
+            listView1.Invoke(new MethodInvoker(delegate
             {
-                String itfull = item.SubItems[1].Text + "\\" + item.Text;
-                List<string> lines_ouput = new List<string>();
-
-                Boolean has_streams = false;
-                Boolean has_video = false;
-
-                if (canceled_file_adding == false)
+                listView1.BeginUpdate();
+                foreach (ListViewItem item in listView1.Items)
                 {
-                    Process ff_str = new Process();
-                    ff_str.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "ffmpeg.exe");
-                    ff_str.StartInfo.Arguments = " -i " + '\u0022' + itfull + '\u0022' + " -hide_banner";
+                    String itfull = item.SubItems[1].Text + "\\" + item.Text;
 
-                    ff_str.StartInfo.RedirectStandardOutput = true;
-                    ff_str.StartInfo.RedirectStandardError = true;
-                    ff_str.StartInfo.UseShellExecute = false;
-                    ff_str.StartInfo.CreateNoWindow = true;
-                    ff_str.EnableRaisingEvents = true;
-                    ff_str.Start();
-                    String stream = "";
-                    while (!ff_str.StandardError.EndOfStream)
-                    {
-                        stream = ff_str.StandardError.ReadLine();
-                        lines_ouput.Add(stream);
+                    Boolean has_streams = false;
+                    Boolean has_video = false;
 
-                    }
-                    ff_str.WaitForExit();
-                    String ff_frames = "";
-                    foreach (String line in lines_ouput)
+                    if (canceled_file_adding == false)
                     {
-                        if (line.ToLower().Contains("stream #0:0") && line.ToLower().Contains("audio"))
+                        String ff_frames = String.Empty;
+                        Process get_frames = new Process();
+                        get_frames.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "Mediainfo.exe");
+                        String ffprobe_frames = "--Inform=Audio;%Format%" + "\\n";
+                        get_frames.StartInfo.Arguments = ffprobe_frames + " " + '\u0022' + itfull + '\u0022';                                                
+                        get_frames.StartInfo.RedirectStandardOutput = true;
+                        get_frames.StartInfo.RedirectStandardError = true;
+                        get_frames.StartInfo.UseShellExecute = false;
+                        get_frames.StartInfo.CreateNoWindow = true;
+                        get_frames.EnableRaisingEvents = true;
+                        get_frames.Start();
+                        ff_frames = get_frames.StandardOutput.ReadLine();
+                        get_frames.WaitForExit();
+                        if (get_frames.ExitCode == 0)
                         {
-                            int n = line.Length - line.IndexOf("Audio: ");
-                            int m = line.Length - line.IndexOf(",");
-                            ff_frames = line.Substring(line.IndexOf("Audio: ") + 7, n - m - 7);
-                            ff_frames = av_col(ff_frames);
+                            if (ff_frames != null)
+                            {
+                                has_streams = true;
+                                if (ff_frames.Length == 0)
+                                {
+                                    ff_frames = "-";
+                                }
+                            }
+                            else
+                            {
+                                ff_frames = "-";
+                            }
                         }
                         else
                         {
-                            if (line.ToLower().Contains("stream #0:1") && line.ToLower().Contains("audio"))
-                            {
-                                int n = line.Length - line.IndexOf("Audio: ");
-                                int m = line.Length - line.IndexOf(",");
-                                ff_frames = line.Substring(line.IndexOf("Audio: ") + 7, n - m - 7);
-                                ff_frames = av_col(ff_frames);
-                            }
+                            ff_frames = "-";
                         }
+
+                        i++;
+
+                        if (ff_frames.Length > 1)
+                        {
+                            this.InvokeEx(f => listView1.Items[item.Index].SubItems.Add(ff_frames));
+                            
+                        }
+                        else
+                        {
+
+                            this.InvokeEx(f => listView1.Items[item.Index].SubItems.Add("-"));
+                        }
+                        //}                        
+
+                        this.InvokeEx(f => f.LB_Wait.Text = FFBatch.Properties.Strings.add_col1);
+                        this.InvokeEx(f => f.LB_Wait.Refresh());
+                        this.InvokeEx(f => f.pg_adding.Value = pg_adding.Value + 1);
+                        this.InvokeEx(f => f.pg_adding.Refresh());
+                        this.InvokeEx(f => f.txt_adding_p.Text = (i * 100 / pg_adding.Maximum).ToString() + "%");
+                        this.InvokeEx(f => TaskbarProgress.SetValue(this.Handle, i * 100 / pg_adding.Maximum, 100));
+                        this.InvokeEx(f => f.txt_adding_p.Refresh());
                     }
 
-                    i++;
-
-                    if (ff_frames.Length > 0)
-                    {
-                        this.InvokeEx(f => listView1.Items[item.Index].SubItems.Add(ff_frames));
-
-                    }
                     else
                     {
-                        this.InvokeEx(f => listView1.Items[item.Index].SubItems.Add("-"));
+                        timer_adding.Stop();
+                        this.InvokeEx(f => f.txt_add_remain.Text = String.Empty);
+                        this.InvokeEx(f => f.txt_add_remain.Visible = false);
+                        this.InvokeEx(f => f.txt_add_remain.Refresh());
+                        break;
                     }
-
-                    this.InvokeEx(f => f.LB_Wait.Text = FFBatch.Properties.Strings.add_col1);
-                    this.InvokeEx(f => f.LB_Wait.Refresh());
-                    this.InvokeEx(f => f.pg_adding.Value = pg_adding.Value + 1);
-                    this.InvokeEx(f => f.pg_adding.Refresh());
-                    this.InvokeEx(f => f.txt_adding_p.Text = (i * 100 / pg_adding.Maximum).ToString() + "%");
-                    this.InvokeEx(f => TaskbarProgress.SetValue(this.Handle, i * 100 / pg_adding.Maximum, 100));
-                    this.InvokeEx(f => f.txt_adding_p.Refresh());
                 }
+                this.InvokeEx(f => f.listView1.EndUpdate());
+            }));
 
-                else
-                {
-                    timer_adding.Stop();
-                    this.InvokeEx(f => f.txt_add_remain.Text = String.Empty);
-                    this.InvokeEx(f => f.txt_add_remain.Visible = false);
-                    this.InvokeEx(f => f.txt_add_remain.Refresh());
-                    break;
-                }
-            }
-            this.InvokeEx(f => f.listView1.EndUpdate());
             timer_adding.Stop();
             this.InvokeEx(f => f.txt_add_remain.Text = String.Empty);
             this.InvokeEx(f => f.txt_add_remain.Visible = false);
             this.InvokeEx(f => f.txt_add_remain.Refresh());
             this.InvokeEx(f => f.LB_Wait.Text = "");
             this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
-
         }
 
         private void BG_Add_col_Acodec_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
@@ -42210,6 +42430,8 @@ namespace FFBatch
             Combo_def_sub_mux.Items.Add(Properties.Strings.no);
             Create_Tooltips();
             btn_update.Text = Properties.Strings2.version + " " + Application.ProductVersion;
+            //Add res col
+            add_col_start();
         }
 
         private void remember_tab()
@@ -44866,6 +45088,121 @@ namespace FFBatch
             this.BackColor = SystemColors.InactiveBorder;
         }
 
+        private void BG_Add_col_abit_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Disable_Controls();
+            this.InvokeEx(f => f.btn_abort_all.Enabled = false);
+            this.InvokeEx(f => f.btn_pause.Enabled = false);
+            this.InvokeEx(f => f.pg_adding.Value = 0);
+            this.InvokeEx(f => f.pg_adding.Maximum = listView1.Items.Count);
+            this.InvokeEx(f => f.pg_adding.Visible = true);
+            this.InvokeEx(f => f.pg_adding.Enabled = true);
+            this.InvokeEx(f => f.txt_adding_p.Visible = true);
+            this.InvokeEx(f => f.txt_adding_p.Enabled = true);
+            this.InvokeEx(f => f.txt_adding_p.Refresh());
+            this.InvokeEx(f => f.LB_Wait.Visible = true);
+            this.InvokeEx(f => f.LB_Wait.Enabled = true);
+            this.InvokeEx(f => f.pg_adding.Value = 0);
+            this.InvokeEx(f => f.pg_adding.Minimum = 0);
+            this.InvokeEx(f => f.pg_adding.Maximum = listView1.Items.Count);
+            this.InvokeEx(f => f.btn_cancel_add.Visible = true);
+            this.InvokeEx(f => f.btn_cancel_add.Enabled = true);
+            canceled_file_adding = false;
+
+
+            int i = 0;
+            listView1.Invoke(new MethodInvoker(delegate
+            {
+                listView1.BeginUpdate();
+                foreach (ListViewItem item in listView1.Items)
+                {
+                    String itfull = item.SubItems[1].Text + "\\" + item.Text;
+
+                    Boolean has_streams = false;
+                    Boolean has_video = false;
+
+                    if (canceled_file_adding == false)
+                    {
+                        String ff_frames = String.Empty;
+                        Process get_frames = new Process();
+                        get_frames.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "Mediainfo.exe");
+                        String ffprobe_frames = "--Inform=Audio;%BitRate/String%" + "\\n";
+                        get_frames.StartInfo.Arguments = ffprobe_frames + " " + '\u0022' + itfull + '\u0022';                                                
+                        get_frames.StartInfo.RedirectStandardOutput = true;
+                        get_frames.StartInfo.RedirectStandardError = true;
+                        get_frames.StartInfo.UseShellExecute = false;
+                        get_frames.StartInfo.CreateNoWindow = true;
+                        get_frames.EnableRaisingEvents = true;
+                        get_frames.Start();
+                        ff_frames = get_frames.StandardOutput.ReadLine();
+                        get_frames.WaitForExit();
+                        if (get_frames.ExitCode == 0)
+                        {
+                            if (ff_frames != null)
+                            {
+                                has_streams = true;
+                                if (ff_frames.Length == 0)
+                                {
+                                    ff_frames = "-";
+                                }
+                            }
+                            else
+                            {
+                                ff_frames = "-";
+                            }
+                        }
+                        else
+                        {
+                            ff_frames = "-";
+                        }
+
+                        i++;
+
+                        if (ff_frames.Length > 1)
+                        {
+                            this.InvokeEx(f => listView1.Items[item.Index].SubItems.Add(ff_frames));
+                            
+                        }
+                        else
+                        {
+
+                            this.InvokeEx(f => listView1.Items[item.Index].SubItems.Add("-"));
+                        }
+                        //}                        
+
+                        this.InvokeEx(f => f.LB_Wait.Text = FFBatch.Properties.Strings.add_col1);
+                        this.InvokeEx(f => f.LB_Wait.Refresh());
+                        this.InvokeEx(f => f.pg_adding.Value = pg_adding.Value + 1);
+                        this.InvokeEx(f => f.pg_adding.Refresh());
+                        this.InvokeEx(f => f.txt_adding_p.Text = (i * 100 / pg_adding.Maximum).ToString() + "%");
+                        this.InvokeEx(f => TaskbarProgress.SetValue(this.Handle, i * 100 / pg_adding.Maximum, 100));
+                        this.InvokeEx(f => f.txt_adding_p.Refresh());
+                    }
+
+                    else
+                    {
+                        timer_adding.Stop();
+                        this.InvokeEx(f => f.txt_add_remain.Text = String.Empty);
+                        this.InvokeEx(f => f.txt_add_remain.Visible = false);
+                        this.InvokeEx(f => f.txt_add_remain.Refresh());
+                        break;
+                    }
+                }
+                this.InvokeEx(f => f.listView1.EndUpdate());
+            }));
+
+            timer_adding.Stop();
+            this.InvokeEx(f => f.txt_add_remain.Text = String.Empty);
+            this.InvokeEx(f => f.txt_add_remain.Visible = false);
+            this.InvokeEx(f => f.txt_add_remain.Refresh());
+            this.InvokeEx(f => f.LB_Wait.Text = "");
+            this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
+        }
+
+        private void BG_Add_col_abit_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            end_bg_filters();
+        }
 
         private void dg1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
