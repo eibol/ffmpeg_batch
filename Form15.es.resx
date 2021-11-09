@@ -489,10 +489,10 @@
     <value>164, 31</value>
   </data>
   <data name="lbl_config.Size" type="System.Drawing.Size, System.Drawing">
-    <value>94, 13</value>
+    <value>93, 13</value>
   </data>
   <data name="lbl_config.Text" xml:space="preserve">
-    <value>Versión de presets</value>
+    <value>Versión de perfiles</value>
   </data>
   <data name="btn_save_backup.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2354,5 +2354,8 @@
         xRPuE8QT7hPCE+4TwBPuE74T7ha9Fu5Ax0CeAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>FFmpeg Batch AV Converter - Perfiles</value>
   </data>
 </root>

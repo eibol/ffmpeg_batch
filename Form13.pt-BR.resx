@@ -117,19 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btn_browse_path_m3u.Location" type="System.Drawing.Point, System.Drawing">
+    <value>457, 60</value>
+  </data>
   <data name="btn_browse_path_m3u.Text" xml:space="preserve">
     <value>Navegar...</value>
+  </data>
+  <data name="txt_path.Size" type="System.Drawing.Size, System.Drawing">
+    <value>372, 20</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>Executável</value>
   </data>
+  <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>453, 12</value>
+  </data>
   <data name="btn_cancel.Text" xml:space="preserve">
     <value>Cancelar</value>
+  </data>
+  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>376, 12</value>
+  </data>
+  <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>457, 99</value>
   </data>
   <data name="button3.Text" xml:space="preserve">
     <value>Navegar...</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txt_args.Size" type="System.Drawing.Size, System.Drawing">
+    <value>372, 20</value>
+  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 13</value>
   </data>
@@ -218,6 +236,12 @@
         Qs7Vq5DL5TQtg26LgNihv5ToJLVazY6vurqauWdVVRXr00onvx3oa1uEPqPjdAMK/T5wfCB0LS1Sh8Mx
         duBtERA7wWBwqMvlCqH5e1PQ+IKlv8hLD/4bMOQfYUDFVr76POUAAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>539, 50</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>537, 192</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

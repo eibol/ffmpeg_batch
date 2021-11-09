@@ -186,6 +186,12 @@
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>307, 25</value>
   </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 13</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Subpastas ativadas</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>435, 143</value>
   </data>

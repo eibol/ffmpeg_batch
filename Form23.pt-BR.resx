@@ -2069,14 +2069,23 @@
   <data name="lbl_d_v.Text" xml:space="preserve">
     <value>Baixando arquivo:</value>
   </data>
+  <data name="txt_get_url.Location" type="System.Drawing.Point, System.Drawing">
+    <value>59, 40</value>
+  </data>
+  <data name="txt_get_url.Size" type="System.Drawing.Size, System.Drawing">
+    <value>383, 47</value>
+  </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>61, 16</value>
+    <value>76, 16</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>342, 13</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>COMO OBTER UM LINK DE DOWNLOAD DO CANAL DO YOUTUBE</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>509, 93</value>
   </data>
   <data name="btn_clear_list.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2117,12 +2126,30 @@
   <data name="btn_clear_list.Text" xml:space="preserve">
     <value>Canal limpo</value>
   </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>509, 195</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lbl_down_time.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="lbl_down_time.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 16</value>
+  </data>
   <data name="lbl_down_time.Text" xml:space="preserve">
-    <value>Vel. / tempo est.</value>
+    <value>Velocidade / tempo estimado</value>
+  </data>
+  <data name="pg2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>491, 23</value>
+  </data>
+  <data name="Pg1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>491, 23</value>
+  </data>
+  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>509, 97</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>532, 408</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

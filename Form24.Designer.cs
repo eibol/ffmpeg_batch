@@ -45,7 +45,8 @@ namespace FFBatch
             "English",
             "Español",
             "Italiano",
-            "Português (BR)"});
+            "Português (BR)",
+            "中文"});
             this.combo_lang.Location = new System.Drawing.Point(146, 25);
             this.combo_lang.Name = "combo_lang";
             this.combo_lang.Size = new System.Drawing.Size(96, 21);

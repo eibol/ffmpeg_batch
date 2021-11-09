@@ -47,9 +47,38 @@ namespace FFBatch
                 RefreshResources(control, res); // recursion
             ctrl.ResumeLayout(false);
         }
+        public void UpdateColorDark(Control myControl)
+        {
+            myControl.BackColor = Color.FromArgb(255, 64, 64, 64);
+            myControl.ForeColor = Color.White;
+            foreach (Control subC in myControl.Controls)
+            {
+                UpdateColorDark(subC);
+            }
+        }
 
+        public void UpdateColorDefault(Control myControl)
+        {
+            myControl.BackColor = SystemColors.InactiveBorder;
+            myControl.ForeColor = Control.DefaultForeColor;
+            foreach (Control subC in myControl.Controls)
+            {
+                UpdateColorDefault(subC);
+            }
+        }
         private void Form22_Load(object sender, EventArgs e)
         {
+            if (Properties.Settings.Default.dark_mode == true)
+            {
+                foreach (Control c in this.Controls) UpdateColorDark(c);
+                this.BackColor = Color.FromArgb(255, 64, 64, 64);
+            }
+            else
+            {
+                foreach (Control c in this.Controls) UpdateColorDefault(c);
+                this.BackColor = SystemColors.InactiveBorder;
+            }
+
             String app_location = Application.StartupPath;
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
             if (File.Exists(portable_flag)) is_portable = true;

@@ -565,7 +565,7 @@
     <value>440, 431</value>
   </data>
   <data name="btn_save_backup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 84</value>
+    <value>79, 84</value>
   </data>
   <data name="btn_save_backup.Text" xml:space="preserve">
     <value>Predefinições de backup</value>

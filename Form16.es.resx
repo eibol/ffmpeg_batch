@@ -265,7 +265,7 @@
 </value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>194, 20</value>
+    <value>229, 24</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Tareas de multiplexado</value>

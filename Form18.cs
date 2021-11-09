@@ -57,11 +57,40 @@ namespace FFBatch
             }
 
         }
+        public void UpdateColorDark(Control myControl)
+        {
+            myControl.BackColor = Color.FromArgb(255, 64, 64, 64);
+            myControl.ForeColor = Color.White;
+            foreach (Control subC in myControl.Controls)
+            {
+                UpdateColorDark(subC);
+            }
+        }
 
+        public void UpdateColorDefault(Control myControl)
+        {
+            myControl.BackColor = SystemColors.InactiveBorder;
+            myControl.ForeColor = Control.DefaultForeColor;
+            foreach (Control subC in myControl.Controls)
+            {
+                UpdateColorDefault(subC);
+            }
+        }
         private void Form18_Load(object sender, EventArgs e)
         {
             refresh_lang();
-            this.Text = FFBatch.Properties.Strings.create_vid_img;            
+            this.Text = FFBatch.Properties.Strings.create_vid_img;
+            if (Properties.Settings.Default.dark_mode == true)
+            {
+                foreach (Control c in this.Controls) UpdateColorDark(c);
+                this.BackColor = Color.FromArgb(255, 64, 64, 64);
+            }
+            else
+            {
+                foreach (Control c in this.Controls) UpdateColorDefault(c);
+                this.BackColor = SystemColors.InactiveBorder;
+            }
+
         }
 
         private void refresh_lang()

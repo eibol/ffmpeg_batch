@@ -315,11 +315,11 @@ namespace FFBatch
 
                     if (total_videos > 0 && Directory.GetFiles(destino).Length == total_videos)
                     {
-                        MessageBox.Show("Download complete. " + Environment.NewLine + Environment.NewLine + total_videos.ToString() + " videos on destination folder.","Download complete",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Properties.Strings2.down_com + " " + Environment.NewLine + Environment.NewLine + total_videos.ToString() + " " + Properties.Strings2.vids_dest, Properties.Strings2.down_com, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                       if (Directory.GetFiles(destino).Length < total_videos) MessageBox.Show("Download complete. " + Environment.NewLine + Environment.NewLine + Directory.GetFiles(destino).Length.ToString() + " of " + total_videos.ToString() + " videos on destination folder." + Environment.NewLine + Environment.NewLine + "(Some videos maybe be unavailable, and live streaming events are skipped.)", "Download complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       if (Directory.GetFiles(destino).Length < total_videos) MessageBox.Show(Properties.Strings2.down_com + " " + Environment.NewLine + Environment.NewLine + Directory.GetFiles(destino).Length.ToString() + " " + Properties.Strings.of1 +  " " + total_videos.ToString() + " " + Properties.Strings2.vids_dest + Environment.NewLine + Environment.NewLine + Properties.Strings2.vids_unav, Properties.Strings2.down_com, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }                   
                 }
                     else
@@ -329,8 +329,8 @@ namespace FFBatch
 
                     String to_remove = "please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; type  youtube-dl -U  to update. Be sure to call youtube-dl with the --verbose flag and include its complete output.";
                     String remove2 = "Type youtube-dl --help to see a list of all options.";
-                    if (aborted_url == false &&  killed == false) MessageBox.Show("An error ocurred." + Environment.NewLine + Environment.NewLine + error_out.Replace(to_remove, "").Replace(remove2,"Check youtube-dl parameters and url."),FFBatch.Properties.Strings.error,MessageBoxButtons.OK,MessageBoxIcon.Error);
-                    if (killed == true) MessageBox.Show("Download was terminated by user.", "Aborted", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (aborted_url == false &&  killed == false) MessageBox.Show(Properties.Strings.error2 + Environment.NewLine + Environment.NewLine + error_out.Replace(to_remove, "").Replace(remove2,"Check youtube-dl parameters and url."),FFBatch.Properties.Strings.error,MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    if (killed == true) MessageBox.Show(Properties.Strings2.aborted2, Properties.Strings.aborted, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }                       
                         this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
@@ -504,10 +504,38 @@ namespace FFBatch
                 RefreshResources(control, res); // recursion
             ctrl.ResumeLayout(false);
         }
+        public void UpdateColorDark(Control myControl)
+        {
+            myControl.BackColor = Color.FromArgb(255, 64, 64, 64);
+            myControl.ForeColor = Color.White;
+            foreach (Control subC in myControl.Controls)
+            {
+                UpdateColorDark(subC);
+            }
+        }
 
+        public void UpdateColorDefault(Control myControl)
+        {
+            myControl.BackColor = SystemColors.InactiveBorder;
+            myControl.ForeColor = Control.DefaultForeColor;
+            foreach (Control subC in myControl.Controls)
+            {
+                UpdateColorDefault(subC);
+            }
+        }
         private void Form23_Load(object sender, EventArgs e)
-        {   
-            
+        {
+            if (Properties.Settings.Default.dark_mode == true)
+            {
+                foreach (Control c in this.Controls) UpdateColorDark(c);
+                this.BackColor = Color.FromArgb(255, 64, 64, 64);
+            }
+            else
+            {
+                foreach (Control c in this.Controls) UpdateColorDefault(c);
+                this.BackColor = SystemColors.InactiveBorder;
+            }
+
             working = false;
             Pg1.Text = "0%";
             pg2.Text = "0%";
@@ -547,7 +575,9 @@ namespace FFBatch
                     play_on_end = false;
                 }
             }
-            //End Read play sound   
+
+            if (FFBatch.Properties.Settings.Default.app_lang == "zh-Hans") this.Height = this.Height + 20;
+
         }
 
         private void abort_dl()

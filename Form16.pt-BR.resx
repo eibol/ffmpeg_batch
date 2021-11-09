@@ -286,10 +286,10 @@
     <value>411, 13</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>284, 20</value>
+    <value>278, 20</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Gerenciador de tarefas de junçãor</value>
+    <value>Gerenciador de tarefas de junção</value>
   </data>
   <data name="pic.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -134,10 +134,10 @@
     <value>Annulla</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>219, 13</value>
+    <value>202, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Scrivi o incolla il tuo percorso locale o di rete:</value>
+    <value>Digita o incolla il percorso locale o di rete:</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 54</value>
@@ -185,6 +185,12 @@
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>289, 25</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 13</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Sottocartelle abilitate</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>413, 143</value>
@@ -1978,5 +1984,8 @@
         xRPuE8QT7hPCE+4TwBPuE74T7ha9Fu5Ax0CeAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Selezione manuale percorso</value>
   </data>
 </root>

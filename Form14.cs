@@ -75,9 +75,37 @@ namespace FFBatch
             if (args != String.Empty) txt_args.Text = args;
             else txt_args.Enabled = false;
             refresh_lang();
-            this.Text = FFBatch.Properties.Strings.run_ext;           
+            this.Text = FFBatch.Properties.Strings.run_ext;
+            if (Properties.Settings.Default.dark_mode == true)
+            {
+                foreach (Control c in this.Controls) UpdateColorDark(c);
+                this.BackColor = Color.FromArgb(255, 64, 64, 64);
+            }
+            else
+            {
+                foreach (Control c in this.Controls) UpdateColorDefault(c);
+                this.BackColor = SystemColors.InactiveBorder;
+            }
+        }
+        public void UpdateColorDark(Control myControl)
+        {
+            myControl.BackColor = Color.FromArgb(255, 64, 64, 64);
+            myControl.ForeColor = Color.White;
+            foreach (Control subC in myControl.Controls)
+            {
+                UpdateColorDark(subC);
+            }
         }
 
+        public void UpdateColorDefault(Control myControl)
+        {
+            myControl.BackColor = SystemColors.InactiveBorder;
+            myControl.ForeColor = Control.DefaultForeColor;
+            foreach (Control subC in myControl.Controls)
+            {
+                UpdateColorDefault(subC);
+            }
+        }
         private void refresh_lang()
         {
             //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);

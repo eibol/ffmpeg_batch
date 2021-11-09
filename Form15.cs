@@ -44,12 +44,48 @@ namespace FFBatch
                 RefreshResources(control, res); // recursion
             ctrl.ResumeLayout(false);
         }
+        public void UpdateColorDark(Control myControl)
+        {
+            myControl.BackColor = Color.FromArgb(255, 64, 64, 64);
+            myControl.ForeColor = Color.White;
+            foreach (Control subC in myControl.Controls)
+            {
+                UpdateColorDark(subC);
+            }
+        }
 
+        public void UpdateColorDefault(Control myControl)
+        {
+            myControl.BackColor = SystemColors.InactiveBorder;
+            myControl.ForeColor = Control.DefaultForeColor;
+            foreach (Control subC in myControl.Controls)
+            {
+                UpdateColorDefault(subC);
+            }
+        }
         private void Form15_Load(object sender, EventArgs e)
         {            
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
             if (File.Exists(portable_flag)) is_portable = true;
-            else is_portable = false;            
+            else is_portable = false;
+
+            if (Properties.Settings.Default.dark_mode == true)
+            {
+                foreach (Control c in this.Controls) UpdateColorDark(c);
+                this.BackColor = Color.FromArgb(255, 64, 64, 64);
+                dg_pr.BackgroundColor = Color.Gray;
+                dg_pr.RowsDefaultCellStyle.BackColor = Color.Gray;
+                dg_pr.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(255, 79, 79, 99);
+                dg_pr.RowsDefaultCellStyle.BackColor = Color.Gray;
+            }
+            else
+            {
+                foreach (Control c in this.Controls) UpdateColorDefault(c);
+                this.BackColor = SystemColors.InactiveBorder;
+                dg_pr.BackgroundColor = SystemColors.InactiveBorder;
+                dg_pr.RowsDefaultCellStyle.BackColor = Color.White;
+                dg_pr.AlternatingRowsDefaultCellStyle.BackColor = Color.AliceBlue;
+            }
 
             dg_pr.RowHeadersWidth = 25;
             String path = "";
@@ -81,8 +117,13 @@ namespace FFBatch
             dg_pr.ClearSelection();
             
             refresh_lang();
-            
-                dg_pr.Columns[0].HeaderText = FFBatch.Properties.Strings.Name;
+            this.Text = Properties.Strings.presets.Replace(".", "");
+            char[] letters = this.Text.ToCharArray();
+            letters[0] = char.ToUpper(letters[0]);
+            this.Text = new string(letters);
+            // upper case the first char
+
+            dg_pr.Columns[0].HeaderText = FFBatch.Properties.Strings.Name;
                 dg_pr.Columns[1].HeaderText = FFBatch.Properties.Strings.ff_params;
                 dg_pr.Columns[2].HeaderText = FFBatch.Properties.Strings.Format;
             
@@ -588,6 +629,38 @@ namespace FFBatch
         private void btn_clear_Click(object sender, EventArgs e)
         {
             dg_pr.Rows.Clear();
+        }
+
+        private void Form15_Resize(object sender, EventArgs e)
+        {   
+            dg_pr.Width = this.Width - 59;
+            dg_pr.Height = this.Height - 198;
+            dg_pr.Columns[1].Width = dg_pr.Width - 354;
+            btn_add_pr.Top = this.Height - 135;
+            btn_remove_pr.Top = this.Height - 137;
+            btn_load.Top = this.Height - 135;
+            btn_load_bck.Top = this.Height - 135;
+            btn_save_backup.Top = this.Height - 136;
+            btn_cancel.Top = this.Height - 135;
+            btn_cancel.Left = this.Width - 157;
+            btn_save.Left = this.Width - 96;
+            btn_save.Top = this.Height - 135;
+            item_up.Left = this.Width - 63;
+            item_down.Left = this.Width - 86;
+            btn_decr_font.Left = this.Width - 131;
+            btn_inc_font.Left = this.Width - 153;            
+            
+            if (this.Width < 962)
+            {
+                this.Width = 962;
+                return;
+            }
+            if (this.Height < 567)
+            {
+                this.Height = 567;
+                return;
+            }
+
         }
     }
 }

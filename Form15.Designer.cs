@@ -230,10 +230,9 @@
             this.Controls.Add(this.btn_load);
             this.Controls.Add(this.btn_save);
             this.Controls.Add(this.dg_pr);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
             this.Name = "Form15";
             this.Load += new System.EventHandler(this.Form15_Load);
+            this.Resize += new System.EventHandler(this.Form15_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dg_pr)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

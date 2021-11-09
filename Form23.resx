@@ -139,9 +139,6 @@
   <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 301</value>
   </data>
-  <data name="&gt;&gt;pg2.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>152</value>
@@ -199,6 +196,9 @@
   </data>
   <data name="Pg1.Size" type="System.Drawing.Size, System.Drawing">
     <value>452, 23</value>
+  </data>
+  <data name="&gt;&gt;button1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txt_get_url.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -2540,7 +2540,7 @@
     <value>Downloading file:</value>
   </data>
   <data name="&gt;&gt;pg2.Type" xml:space="preserve">
-    <value>FFBatch.ProgressBarWithText, FFBatch, Version=2.4.2.0, Culture=neutral, PublicKeyToken=1e53f0e83fc1b3bc</value>
+    <value>FFBatch.ProgressBarWithText, FFBatch, Version=2.5.5.0, Culture=neutral, PublicKeyToken=1e53f0e83fc1b3bc</value>
   </data>
   <data name="lbl_down_time.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 16</value>
@@ -2588,7 +2588,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;Pg1.Type" xml:space="preserve">
-    <value>FFBatch.ProgressBarWithText, FFBatch, Version=2.4.2.0, Culture=neutral, PublicKeyToken=1e53f0e83fc1b3bc</value>
+    <value>FFBatch.ProgressBarWithText, FFBatch, Version=2.5.5.0, Culture=neutral, PublicKeyToken=1e53f0e83fc1b3bc</value>
   </data>
   <data name="btn_browse_path_m3u.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
@@ -2605,6 +2605,9 @@
   <data name="btn_clear_list.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
   </data>
+  <data name="txt_channel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;lbl_d_v.Name" xml:space="preserve">
     <value>lbl_d_v</value>
   </data>
@@ -2619,9 +2622,6 @@
   </data>
   <data name="btn_browse_path_m3u.Text" xml:space="preserve">
     <value>Browse...</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>161</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -2748,8 +2748,8 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="txt_channel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;pg2.ZOrder" xml:space="preserve">
+    <value>2</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Playlist/channel URL</value>
@@ -2775,8 +2775,8 @@
   <data name="btn_abort_all.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 88</value>
   </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>161</value>
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
@@ -2882,5 +2882,8 @@
   </metadata>
   <metadata name="notifyIcon1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>129, 17</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>it</value>
   </metadata>
 </root>

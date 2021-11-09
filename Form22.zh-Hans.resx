@@ -119,88 +119,97 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="radio_filter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>174, 17</value>
+    <value>133, 17</value>
   </data>
   <data name="radio_filter.Text" xml:space="preserve">
-    <value>Usa filtro video concatenazione</value>
+    <value>使用串联视频过滤器</value>
   </data>
   <data name="radio_demuxer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 17</value>
+    <value>133, 17</value>
   </data>
   <data name="radio_demuxer.Text" xml:space="preserve">
-    <value>Usa demuxer concatenazione</value>
+    <value>使用串联多路分配器</value>
   </data>
   <data name="chk_copy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 17</value>
+    <value>62, 17</value>
   </data>
   <data name="chk_copy.Text" xml:space="preserve">
-    <value>Copia stream</value>
+    <value>流复制</value>
   </data>
   <data name="chk_filter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 17</value>
+    <value>98, 17</value>
   </data>
   <data name="chk_filter.Text" xml:space="preserve">
-    <value>Usa impostazioni automatiche</value>
+    <value>使用自动设置</value>
+  </data>
+  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 144</value>
+  </data>
+  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>391, 44</value>
   </data>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>In questa modalità è possibile copiare lo stream audio/video dei file, purché condividano le qualità (dimensioni, codec, bitrate). NOTA: non tutti i contenitori sono supportati per la copia dello stream,, in tal caso è necessaria la ricodifica.</value>
+    <value>在这种模式下，音频/视频文件可以被流式复制，只要它们共享质量（大小、编解码器、比特率）。</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>Avvia</value>
+    <value>开始</value>
   </data>
   <data name="btn_cancel.Text" xml:space="preserve">
-    <value>Annulla</value>
+    <value>取消</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 13</value>
+    <value>55, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Parametri codifica</value>
+    <value>编码参数</value>
   </data>
   <data name="chk_batch_concat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 17</value>
+    <value>98, 17</value>
   </data>
   <data name="chk_batch_concat.Text" xml:space="preserve">
-    <value>Abilita concatenazione batch</value>
+    <value>启用批量连接</value>
   </data>
   <data name="txt_intro.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 1</value>
+    <value>64, 1</value>
   </data>
   <data name="txt_intro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>257, 20</value>
+    <value>259, 20</value>
   </data>
   <data name="txt_end.Location" type="System.Drawing.Point, System.Drawing">
-    <value>66, 29</value>
+    <value>64, 29</value>
   </data>
   <data name="txt_end.Size" type="System.Drawing.Size, System.Drawing">
-    <value>257, 20</value>
+    <value>259, 20</value>
   </data>
   <data name="txt_batch_concat.Text" xml:space="preserve">
-    <value>In questa modalità il file iniziale e/o finale verrà concatenato a ogni file nell'elenco, invece di concatenare tutti i file insieme.</value>
+    <value>在这种模式下，初始和/或结束文件将连接到列表中的每个文件，而不是将所有文件连接在一起。</value>
   </data>
   <data name="btn_end.Text" xml:space="preserve">
-    <value>Sfoglia...</value>
+    <value>浏览...</value>
   </data>
   <data name="btn_intro.Text" xml:space="preserve">
-    <value>Sfoglia...</value>
+    <value>浏览...</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 13</value>
+    <value>55, 13</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>File finale</value>
+    <value>结束文件</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 13</value>
+    <value>55, 13</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>File iniziale</value>
+    <value>初始文件</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>345, 49</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 13</value>
+    <value>31, 13</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>Formato</value>
+    <value>格式</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -489,11 +498,7 @@
         AAAAAAAHAAAAAAAAAA8AAAAAAAAAD4AAAAAAAAAfwAAAAAAAAD8=
 </value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Unisci file</value>
+    <value>合并文件</value>
   </data>
 </root>

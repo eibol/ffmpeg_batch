@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Globalization;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
+//using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,8 +17,9 @@ namespace FFBatch
     public partial class Form16 : Form
     {
         public String flnm, ff_params, output_flnm = String.Empty;
-        public Boolean start_jobs = false;
-        public Boolean view_logs = false;
+        public Boolean start_jobs = true;
+        public Boolean view_logs = true;
+        Boolean clearing = false;
 
 
         private void item_up_Click(object sender, EventArgs e)
@@ -104,7 +105,9 @@ namespace FFBatch
 
         private void btn_clear_list_Click(object sender, EventArgs e)
         {
+            clearing = true;
             dg_pr.Rows.Clear();
+            clearing = false;
         }
 
         private void dg_pr_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -112,7 +115,7 @@ namespace FFBatch
             if (e.ColumnIndex == 2)
             {
                 dg_pr.Rows[e.RowIndex].Cells[e.ColumnIndex].ReadOnly = false;
-                MessageBox.Show("FFMPEG PARAMETERS COPIED TO CLIPBOARD:" + Environment.NewLine + Environment.NewLine + dg_pr.Rows[e.RowIndex].Cells[2].Value.ToString());
+                MessageBox.Show(Properties.Strings2.ff_copied + Environment.NewLine + Environment.NewLine + dg_pr.Rows[e.RowIndex].Cells[2].Value.ToString());
                 Clipboard.SetText(dg_pr.Rows[e.RowIndex].Cells[2].Value.ToString());
             }
         }
@@ -124,12 +127,13 @@ namespace FFBatch
             toolT0z.InitialDelay = 750;
             toolT0z.ReshowDelay = 500;
             toolT0z.ShowAlways = true;
-            toolT0z.SetToolTip(this.requeue, "Reset jobs list status");
+            toolT0z.SetToolTip(this.requeue, Properties.Strings2.reset_m_jobs);
         }
 
         private void Form16_Load(object sender, EventArgs e)
         {
             start_jobs = false;
+            view_logs = false;
             tooltips();
             btn_jobs.Enabled = true;
             refresh_lang();
@@ -139,9 +143,41 @@ namespace FFBatch
                 dg_pr.Columns[3].HeaderText = FFBatch.Properties.Strings2.streams;
                 dg_pr.Columns[4].HeaderText = FFBatch.Properties.Strings.duration;
                 dg_pr.Columns[5].HeaderText = FFBatch.Properties.Strings.output;
-         
+            if (Properties.Settings.Default.dark_mode == true)
+            {
+                foreach (Control c in this.Controls) UpdateColorDark(c);
+                this.BackColor = Color.FromArgb(255, 64, 64, 64);
+                dg_pr.BackgroundColor = Color.Gray;
+                dg_pr.RowsDefaultCellStyle.BackColor = Color.Gray;
+            }
+            else
+            {
+                foreach (Control c in this.Controls) UpdateColorDefault(c);
+                this.BackColor = SystemColors.InactiveBorder;
+                dg_pr.BackgroundColor = SystemColors.InactiveBorder;
+                dg_pr.RowsDefaultCellStyle.BackColor = Color.White;
+            }
+
+        }
+        public void UpdateColorDark(Control myControl)
+        {
+            myControl.BackColor = Color.FromArgb(255, 64, 64, 64);
+            myControl.ForeColor = Color.White;
+            foreach (Control subC in myControl.Controls)
+            {
+                UpdateColorDark(subC);
+            }
         }
 
+        public void UpdateColorDefault(Control myControl)
+        {
+            myControl.BackColor = SystemColors.InactiveBorder;
+            myControl.ForeColor = Control.DefaultForeColor;
+            foreach (Control subC in myControl.Controls)
+            {
+                UpdateColorDefault(subC);
+            }
+        }
         private void refresh_lang()
         {
             //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
@@ -219,7 +255,7 @@ namespace FFBatch
             var duplicates = no_overw.GroupBy(s => s).SelectMany(grp => grp.Skip(1));
             int count = no_overw.Count;
             no_overw = no_overw.Distinct().ToList();
-            if (no_overw.Count < count)
+            if (no_overw.Count < count && clearing == false)
             {
                 MessageBox.Show(FFBatch.Properties.Strings.out_exists);             
             }
@@ -241,6 +277,33 @@ namespace FFBatch
         {
             view_logs = true;
             this.Close();
+        }
+
+        private void Form16_Resize(object sender, EventArgs e)
+        {            
+            dg_pr.Width = this.Width - 58;
+            dg_pr.Height = this.Height - 202;
+            dg_pr.Columns[5].Width = this.Width - 950;
+            label1.Left = (this.Width / 2) - (label1.Width / 2) - 7;
+
+            btn_clear_list.Left = label1.Left;
+            btn_cancel.Left = btn_clear_list.Left + btn_clear_list.Width + 5;
+            btn_jobs.Left = btn_cancel.Left + btn_cancel.Width + 5;
+            btn_logs_url.Left = btn_jobs.Left + btn_jobs.Width + 5;
+
+            btn_clear_list.Top = this.Height - 127;
+            btn_cancel.Top = this.Height - 127;            
+            btn_jobs.Top = this.Height - 131;
+            btn_logs_url.Top = this.Height - 132;
+
+            item_up.Left = this.Width - 73;
+            item_down.Left = this.Width - 96;
+            requeue.Left = this.Width - 121;
+            btn_decr_font.Left = this.Width - 146;
+            btn_inc_font.Left = this.Width - 168;
+
+            if (this.Width < 1113) this.Width = 1113;
+            if (this.Height < 571) this.Height = 571;
         }
 
         private void btn_cancel_Click(object sender, EventArgs e)

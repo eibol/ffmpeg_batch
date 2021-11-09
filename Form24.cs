@@ -22,8 +22,9 @@ namespace FFBatch
         private void Form24_Load(object sender, EventArgs e)
         {
             if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "es") combo_lang.SelectedIndex = 1;
-            else if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "it") combo_lang.SelectedIndex = 2;
+            else if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "it") combo_lang.SelectedIndex = 2;            
             else if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "pt") combo_lang.SelectedIndex = 3;
+            else if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "cn") combo_lang.SelectedIndex = 4;
             else combo_lang.SelectedIndex = 0;
             label1.TextAlign = HorizontalAlignment.Right;
         }
@@ -49,15 +50,34 @@ namespace FFBatch
             }
             if (combo_lang.SelectedIndex == 2)
             {
-                label1.Text = "Seleziona la lingua";
-                this.Text = "Seleziona la lingua dell'applicazione";
+                label1.Text = "Seleziona lingua";
+                this.Text = "Seleziona lingua applicazione";
                 button1.Text = "OK";
             }
+
             if (combo_lang.SelectedIndex == 3)
             {
-                label1.Text = "Selecione o língua";
-                this.Text = "Selecione o língua do aplicativo";
+                MessageBox.Show("Tłumaczenie w toku, jeszcze niedostępne.");
+                label1.Text = "Select language";
+                this.Text = "Application language";
                 button1.Text = "OK";
+                //label1.Text = "Wybierz język";
+                //this.Text = "Język aplikacji";
+                //button1.Text = "OK";
+            }
+
+            if (combo_lang.SelectedIndex == 4)
+            {
+                label1.Text = "Selecione o língua";
+                this.Text = "Idioma do aplicativo";
+                button1.Text = "OK";
+            }
+
+            if (combo_lang.SelectedIndex == 5)
+            {
+                label1.Text = "选择语言";
+                this.Text = "应用语言";
+                button1.Text = "确定";
             }
         }        
     }
