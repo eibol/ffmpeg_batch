@@ -1,0 +1,4 @@
+Multimedia streams
+FILE STREAMS INFORMATION
+Stream output
+Close window

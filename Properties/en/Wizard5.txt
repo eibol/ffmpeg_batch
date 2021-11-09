@@ -1,0 +1,17 @@
+Image extraction preset wizard
+Extract
+Every
+second(s)
+frame(s)
+Every frame
+Output format
+Resize image
+Relative output path
+Absolute output path
+Use source filename
+Browse
+Preset complete
+The image extraction preset wizard is ready.
+Save selected preset
+Press Finish to use preset, or Cancel to return to main tab.
+Press Start button to start image extraction immediately.

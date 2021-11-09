@@ -1,0 +1,13 @@
+Quick YouTube channel/playlist download
+
+HOW TO OBTAIN A YOUTUBE CHANNEL DOWNLOAD LINK
+Playlist/channel URL
+Additional parameters
+File destination path
+Browse
+Clear channel
+Start download
+Abort download
+Downloading file
+Speed/Estimated time
+

@@ -1,0 +1,8 @@
+FFmpeg Batch AV Converter for Windows
+This application is free and open source. It is licensed under the GNU Lesser General Public License (LGPL) 3.0+.
+Thanks for considering a supporting donation.
+Project site
+Help forum
+Donate
+Disclaimer
+OK

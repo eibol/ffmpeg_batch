@@ -1,0 +1,10 @@
+Name
+Presets version
+FFmpeg parameters
+Add preset
+Remove preset
+Load presets from file
+Backup presets
+Reload last backup
+Cancel edition
+Save and close

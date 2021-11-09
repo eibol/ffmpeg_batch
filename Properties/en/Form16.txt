@@ -1,0 +1,12 @@
+Multiplex jobs manager
+Number
+Filename
+FFmpeg parameters
+Streams
+Duration
+Output
+Clear list
+Close window
+Start mux jobs
+Display log file
+

@@ -1,0 +1,4 @@
+Output files naming
+Write the mask name for automatic naming:
+If first link is selected, all the list will be renamed sequentially (01,02..99.)
+You can also sequentially rename only a selections of cells.

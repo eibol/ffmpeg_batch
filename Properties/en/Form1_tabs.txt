@@ -1,0 +1,52 @@
+Total progress
+Clear tracks
+Add file tracks
+Default track
+Remove track
+Add as mux job
+View mux jobs
+Save track
+Mux all
+Items language
+Encoding parameters
+Jobs
+Tracks
+Set as default
+Reset
+Output path
+
+Clear list
+Multiplex subtitles
+Subtitles language
+Is default track?
+Burn subtitles
+Subtitles custom path
+
+Paste link here
+Clear URL list
+Add URLs from file
+Add YouTube URLS from file
+Validate URLs
+Stop validation
+Get URL streams
+Remove error rows
+Sequential download
+Multi URL download
+Download channel/playlist
+Skip current
+View log file
+
+Download speed limit
+Force best quality MP4
+Clear download cache
+Embed metadata
+Embed subtitles 
+Automatic subtitles
+Save subtitles
+Convert to SRT
+M3U parameters
+Output server url
+Concurrent downloads
+Format
+Time elapsed
+Time remaining

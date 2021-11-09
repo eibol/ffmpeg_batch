@@ -1,0 +1,13 @@
+Two pass video encoding wizard
+Select base preset for two pass video encoding:
+Presets
+Format
+Required parameters will be added on next step.
+
+Ready to start pass video encoding wizard
+The wizard is ready to start two pass video encoding:
+First pass
+Second pass
+Preset status
+Start
+Cancel

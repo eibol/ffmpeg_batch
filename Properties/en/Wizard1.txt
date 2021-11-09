@@ -1,0 +1,59 @@
+﻿FFmpeg Batch AV Converter Wizard
+Welcome to FFmpeg Batch AV Converter.  This wizard will guide you
+through the encoding process and application capabilities.
+Please add some files or folders to be encoded:
+
+Add folder
+Skip files
+Show this dialog on startup
+
+Select an encoding option
+Use an existing encoding preset
+Create an encoding video preset
+Create an encoding audio preset
+
+Two pass video wizard
+Silence detector wizard
+Images to video wizard
+Image extraction wizard
+File split wizard
+
+Video encoder settings
+Video encoder
+Reference
+Encoding mode
+Profile
+Pixel format
+Enable VP9 multi-thread
+Constant Quality CRF
+Frame rate
+
+Video filters
+Resize
+Crop
+Rotate
+None
+Rotate 90º clockwise
+Rotate 90º counter-clockwise
+Rotate 180º
+Horizontal flip
+Speed up/down
+
+Audio codec
+Sample rate
+Cut off
+Bitrate mode
+Lower quality
+Higher quality
+Chunk size
+Channels
+
+Use an existing encoding preset
+
+Select an encoding preset from the list below:
+Output container
+Container may not be suitable for selected codecs
+Include all file streams
+Stream copy subtitle streams
+Preset status
+Save preset

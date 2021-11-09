@@ -1,0 +1,21 @@
+[Messages]
+en.SetupWindowTitle=Install {#MyAppName} {#MyAppVersion} ({#MyAppPlatform})
+en.UninstallAppFullTitle=Uninstall {#MyAppName} {#MyAppVersion} ({#MyAppPlatform})
+en.WelcomeLabel1=Installation of {#MyAppName} ({#MyAppPlatform})
+en.WelcomeLabel2=This wizard will install {#MyAppName} {#MyAppVersion} ({#MyAppPlatform}) on this computer.%n%nIt is recommended that you close all other applications before continuing. %n%nNOTE: Remember to keep a backup of your current presets configuration before updating current version.
+
+
+[CustomMessages]
+en.InstallingLabel=Installing application files, please wait...
+en.AppCheckError=There was an error during the update. Setup will continue but application may not work until required .NET Framework is installed.
+en.AppCheckError2=Setup will continue, but application may not work without the required update.
+en.AppCheck1=is already installed.
+en.AppCheck2=It will be reinstalled preserving current configuration.
+en.AppCheck3=Setup found settings from a previous version. New version will be installed preserving existing settings.
+en.AppCheck4=Do not uninstall any old version (2.0.0 or earlier) unless you make a presets backup to restore them later.
+en.AppCheck5=Do you want to remove application settings?
+en.AppDescription=Run FFmpeg Batch AV Converter
+en.RequiresNet1=FFmpeg Batch A/V Converter requires Microsoft .NET Framework 4.6.1 or higher.
+en.RequiresNet2=Setup will continue after framework installation.%n\Internet access is required.
+en.RequiresNet3=Select 'YES' to launch .NET installer.
+en.RequiresNet4=Select 'NO' to skip .NET installation.

@@ -1,0 +1,5 @@
+Invalid A/V files found
+(files) added to the file list.
+(files) could not be parsed (Duration = 0 or N/A).
+You can remove these items with button 'Remove invalid items'.
+OK

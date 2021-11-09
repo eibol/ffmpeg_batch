@@ -1,0 +1,8 @@
+Manual path selection
+Write or paste your local or network path:
+Subfolders enabled
+Subfolders disabled
+Path
+OK
+Cancel 
+Browse

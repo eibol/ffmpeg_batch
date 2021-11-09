@@ -1,0 +1,19 @@
+Join files
+Encoding parameters
+Use concatenation demuxer
+Use concatenation video filter
+Stream copy
+Use automatic settings
+
+In this mode audio/video files can be stream copied, provided they share qualities (size, codec, bitrate). 
+NOTE: Not all containers are supported for stream copy. If playback issues occur or files are not joined, 
+re-encoding is required.
+
+Enable batch concatenation
+Initial file
+End file
+Browse
+
+In this mode initial and/or end file will be concatenated to every file on the list, instead of concatenating all files together.
+Start
+Cancel

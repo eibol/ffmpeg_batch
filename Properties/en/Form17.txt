@@ -1,0 +1,8 @@
+Add custom column
+Select column type
+(First audio stream found)
+Remove last column
+Add column
+Close window
+NOTE: Adding custom columns increases 
+required time to read and add files to list.
