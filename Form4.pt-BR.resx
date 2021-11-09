@@ -166,8 +166,11 @@
         AABJRU5ErkJggg==
 </value>
   </data>
+  <data name="btn_apply.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 77</value>
+  </data>
   <data name="btn_apply.Text" xml:space="preserve">
-    <value>Aplicar</value>
+    <value>Aplicar filtro</value>
   </data>
   <data name="btn_cancel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -223,10 +226,10 @@
 </value>
   </data>
   <data name="btn_cancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 64</value>
+    <value>57, 78</value>
   </data>
   <data name="btn_cancel.Text" xml:space="preserve">
-    <value>Cancelar</value>
+    <value>Cancelar filtro</value>
   </data>
   <data name="chk_invalid.Location" type="System.Drawing.Point, System.Drawing">
     <value>180, 175</value>
@@ -314,13 +317,13 @@
 </value>
   </data>
   <data name="btn_mediainfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 138</value>
+    <value>7, 138</value>
   </data>
   <data name="btn_mediainfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 63</value>
+    <value>89, 77</value>
   </data>
   <data name="btn_mediainfo.Text" xml:space="preserve">
-    <value>Info. do arquivo</value>
+    <value>Informações do arquivo</value>
   </data>
   <data name="btn_streams.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -397,15 +400,24 @@
   <data name="btn_streams.Location" type="System.Drawing.Point, System.Drawing">
     <value>98, 137</value>
   </data>
+  <data name="btn_streams.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 78</value>
+  </data>
   <data name="btn_streams.Text" xml:space="preserve">
-    <value>Fluxos</value>
+    <value>Fluxos do arquivo</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 131</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>553, 2</value>
   </data>
   <data name="img_streams.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABC
-        GAAAAk1TRnQBSQFMAgEBBgEAAbgBOAG4ATgBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        GAAAAk1TRnQBSQFMAgEBBgEAAcgBOAHIATgBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABIAMAAQEBAAEgBgABIBIAAykBPgNYAdEBcAFvAW0B/gNcAfgDYgH2A2IB9gNiAfYDYgH2A2IB9gNi
         AfYDYgH2A2IB9gNiAfYDYgH2AUIBQQFAAf4DYAHrCAADCgEOAycBOgMnAToDJwE6AycBOgMnAToDJwE6
         AycBOgMnAToDJwE6AyQBNQMYASIDBgEIhAADWgHTAtQB0QP/Af4B/wH8Af0B+QH/AfkB/AH2Af8B+gH9
@@ -510,6 +522,9 @@
         AcABAQHAAQECAAHxAfMBwAEBAv8CAAHwATMBwAEBAv8CAAHwAQMBwAEBAv8CAAHwAQMBwAEBAv8CAAHw
         AQMBwAEBAv8B8AEAAfABAwHAAQED/wGAAfwBAwHAAQEC/ws=
 </value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>571, 226</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

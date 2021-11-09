@@ -234,10 +234,10 @@
     <value>Registro delle modifiche</value>
   </data>
   <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 83</value>
+    <value>82, 85</value>
   </data>
   <data name="textBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 56</value>
+    <value>221, 42</value>
   </data>
   <data name="textBox2.Text" xml:space="preserve">
     <value>Questa applicazione è gratuita e open source. È concessa in licenza sotto la GNU Lesser General Public License (LGPL) 3.0+.</value>
@@ -247,6 +247,9 @@
   </data>
   <data name="linkLabel2.Text" xml:space="preserve">
     <value>Donare</value>
+  </data>
+  <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>319, 107</value>
   </data>
   <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 13</value>
@@ -266,14 +269,20 @@
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>432, 2</value>
   </data>
+  <data name="linkLabel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>319, 90</value>
+  </data>
   <data name="linkLabel4.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 13</value>
   </data>
   <data name="linkLabel4.Text" xml:space="preserve">
     <value>Sito del progetto</value>
   </data>
+  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 140</value>
+  </data>
   <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 25</value>
+    <value>221, 30</value>
   </data>
   <data name="textBox1.Text" xml:space="preserve">
     <value>Grazie per aver preso in considerazione una donazione per il supporto.</value>

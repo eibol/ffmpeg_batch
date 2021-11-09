@@ -3,8 +3,10 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FFBatch
@@ -18,15 +20,54 @@ namespace FFBatch
 
         public String stream_n = String.Empty;
         public String lv1_item = String.Empty;
+        public String dur_lv1 = String.Empty;
         public int Id = 0;
+        public int current_fr = 0;
+
+        public void UpdateColorDark(Control myControl)
+        {
+            myControl.BackColor = Color.FromArgb(255, 64, 64, 64);
+            myControl.ForeColor = Color.White;
+            foreach (Control subC in myControl.Controls)
+            {
+                UpdateColorDark(subC);
+            }
+        }
+
+        public void UpdateColorDefault(Control myControl)
+        {
+            myControl.BackColor = SystemColors.InactiveBorder;
+            myControl.ForeColor = Control.DefaultForeColor;
+            foreach (Control subC in myControl.Controls)
+            {
+                UpdateColorDefault(subC);
+            }
+        }
 
         private void Form5_Load(object sender, EventArgs e)
         {
             refresh_lang();
-          
-                this.Text = FFBatch.Properties.Strings.multi_streams;
-                dg_streams.Columns[2].HeaderText = FFBatch.Properties.Strings.str_ouput;
+            if (Properties.Settings.Default.dark_mode == true)
+            {
+                foreach (Control c in this.Controls) UpdateColorDark(c);
+                this.BackColor = Color.FromArgb(255, 64, 64, 64);
+                dg_streams.BackgroundColor = Color.Gray;
+                dg_streams.RowsDefaultCellStyle.BackColor = Color.Gray;
+            }
+            else
+            {
+                foreach (Control c in this.Controls) UpdateColorDefault(c);
+                this.BackColor = SystemColors.InactiveBorder;
+                dg_streams.BackgroundColor = SystemColors.InactiveBorder;
+                dg_streams.RowsDefaultCellStyle.BackColor = Color.White;
+            }
+
+            btn_close.Text = Properties.Strings.close_win;
+            this.Text = FFBatch.Properties.Strings.multi_streams;
+            dg_streams.Columns[2].HeaderText = FFBatch.Properties.Strings.str_ouput;
             this.Enabled = false;
+
+            pic_frame.Image = null;
 
             dg_streams.BackgroundColor = this.BackColor;
             dg_streams.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -37,7 +78,7 @@ namespace FFBatch
             dg_streams.Columns[2].ReadOnly = true;
             dg_streams.Rows.Clear();
             String filepath, name = "";
-            
+
 
             if (!lv1_item.ToLower().Contains("http"))
             {
@@ -50,70 +91,70 @@ namespace FFBatch
             }
             new System.Threading.Thread(() =>
             {
-            this.InvokeEx(f => txt_file.Text = name);
+                this.InvokeEx(f => txt_file.Text = name);
 
-            ff_str.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "ffmpeg.exe");
-            ff_str.StartInfo.Arguments = " -i " + '\u0022' + lv1_item + '\u0022';
-            ff_str.StartInfo.RedirectStandardOutput = true;
-            ff_str.StartInfo.RedirectStandardError = true;
-            ff_str.StartInfo.UseShellExecute = false;
-            ff_str.StartInfo.CreateNoWindow = true;
-            ff_str.EnableRaisingEvents = true;
-            ff_str.Start();
+                ff_str.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "ffmpeg.exe");
+                ff_str.StartInfo.Arguments = " -i " + '\u0022' + lv1_item + '\u0022';
+                ff_str.StartInfo.RedirectStandardOutput = true;
+                ff_str.StartInfo.RedirectStandardError = true;
+                ff_str.StartInfo.UseShellExecute = false;
+                ff_str.StartInfo.CreateNoWindow = true;
+                ff_str.EnableRaisingEvents = true;
+                ff_str.Start();
 
-            Form11 frm_prog = new Form11();
-            frm_prog.Refresh();
-            frm_prog.label1.Text = FFBatch.Properties.Strings.obt_strs;
-            frm_prog.label1.Refresh();
-
-            new System.Threading.Thread(() =>
-            {
-                System.Threading.Thread.CurrentThread.IsBackground = true;
-                frm_prog.ShowDialog();
+                Form11 frm_prog = new Form11();
                 frm_prog.Refresh();
+                frm_prog.label1.Text = FFBatch.Properties.Strings.obt_strs;
+                frm_prog.label1.Refresh();
 
-            }).Start();
-            frm_prog.procId = ff_str.Id;
-            String stream = "";
-            String sub_str = "";
-            int f_streams = -1;
-            Boolean has_stream = false;
-            int img = 0;
-            while (!ff_str.StandardError.EndOfStream)
-            {
-                stream = ff_str.StandardError.ReadLine();
-
-                if (stream.Contains("Stream #0:"))
+                new System.Threading.Thread(() =>
                 {
-                    has_stream = true;
-                    f_streams = f_streams + 1;
+                    System.Threading.Thread.CurrentThread.IsBackground = true;
+                    frm_prog.ShowDialog();
+                    frm_prog.Refresh();
 
-                    if (stream.Contains("Video")) img = 0;
-                    if (stream.Contains("Audio")) img = 1;
-                    if (stream.Contains("Subtitle")) img = 2;
+                }).Start();
+                frm_prog.procId = ff_str.Id;
+                String stream = "";
+                String sub_str = "";
+                int f_streams = -1;
+                Boolean has_stream = false;
+                int img = 0;
+                while (!ff_str.StandardError.EndOfStream)
+                {
+                    stream = ff_str.StandardError.ReadLine();
 
-                    if (stream.Substring(stream.IndexOf("#0:") + 4, 1) == "(")
+                    if (stream.Contains("Stream #0:"))
                     {
-                        if (stream.Substring(stream.IndexOf("#0:") + 4, 5) == "(und)" || stream.Substring(stream.IndexOf("#0:") + 4, 5) == "(unk)")
+                        has_stream = true;
+                        f_streams = f_streams + 1;
+
+                        if (stream.Contains("Video")) img = 0;
+                        if (stream.Contains("Audio")) img = 1;
+                        if (stream.Contains("Subtitle")) img = 2;
+
+                        if (stream.Substring(stream.IndexOf("#0:") + 4, 1) == "(")
                         {
+                            if (stream.Substring(stream.IndexOf("#0:") + 4, 5) == "(und)" || stream.Substring(stream.IndexOf("#0:") + 4, 5) == "(unk)")
+                            {
 
-                            stream_n = stream_n + 1;
-                            sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 11);
-                            this.InvokeEx(f => dg_streams.Rows.Add(img_streams.Images[img], "#0:" + f_streams.ToString(), stream.Substring((stream.LastIndexOf("#0:") + 11), (stream.Length - sub_str.Length))));
+                                stream_n = stream_n + 1;
+                                sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 11);
+                                this.InvokeEx(f => dg_streams.Rows.Add(img_streams.Images[img], "#0:" + f_streams.ToString(), stream.Substring((stream.LastIndexOf("#0:") + 11), (stream.Length - sub_str.Length))));
 
+                            }
+                            else
+                            {
+                                sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 4);
+                                this.InvokeEx(f => dg_streams.Rows.Add(img_streams.Images[img], "#0:" + f_streams.ToString(), stream.Substring((stream.LastIndexOf("#0:") + 4), (stream.Length - sub_str.Length))));
+
+                            }
                         }
                         else
                         {
-                            sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 4);
-                            this.InvokeEx(f => dg_streams.Rows.Add(img_streams.Images[img], "#0:" + f_streams.ToString(), stream.Substring((stream.LastIndexOf("#0:") + 4), (stream.Length - sub_str.Length))));
-
-                        }
-                    }
-                    else
-                    {
-                        if (stream.Contains("Video"))
-                        {
-                            sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 6);
+                            if (stream.Contains("Video"))
+                            {
+                                sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 6);
                                 String to_add = stream.Substring((stream.LastIndexOf("#0:") + 6), (stream.Length - sub_str.Length));
                                 to_add = Regex.Replace(to_add, @"\([^()]*\)", string.Empty);
                                 RegexOptions options = RegexOptions.None;
@@ -122,29 +163,29 @@ namespace FFBatch
 
                                 this.InvokeEx(f => dg_streams.Rows.Add(img_streams.Images[0], "#0:" + f_streams.ToString(), to_add));
                             }
-                                if (stream.Contains("Audio"))
-                                {
-                                    sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 6);
+                            if (stream.Contains("Audio"))
+                            {
+                                sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 6);
                                 String to_add = stream.Substring((stream.LastIndexOf("#0:") + 6), (stream.Length - sub_str.Length));
                                 to_add = Regex.Replace(to_add, @"\([^()]*\)", string.Empty);
                                 RegexOptions options = RegexOptions.None;
                                 Regex regex = new Regex("[ ]{2,}", options);
                                 to_add = regex.Replace(to_add, " ");
                                 this.InvokeEx(f => dg_streams.Rows.Add(img_streams.Images[1], "#0:" + f_streams.ToString(), to_add));
-                                }
-                                if (stream.Contains("Subtitle"))
-                                {
-                                    sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 6);
-                                    this.InvokeEx(f => dg_streams.Rows.Add(img_streams.Images[2], "#0:" + f_streams.ToString(), stream.Substring((stream.LastIndexOf("#0:") + 6), (stream.Length - sub_str.Length))));
-                                }
                             }
-                        }               
-                    
-                }                
-                    this.InvokeEx(f => this.Enabled = true);
-                    ff_str.WaitForExit(10000);
-                    this.InvokeEx(f => this.Enabled = true);                
-           
+                            if (stream.Contains("Subtitle"))
+                            {
+                                sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 6);
+                                this.InvokeEx(f => dg_streams.Rows.Add(img_streams.Images[2], "#0:" + f_streams.ToString(), stream.Substring((stream.LastIndexOf("#0:") + 6), (stream.Length - sub_str.Length))));
+                            }
+                        }
+                    }
+
+                }
+                this.InvokeEx(f => this.Enabled = true);
+                ff_str.WaitForExit(10000);
+                this.InvokeEx(f => this.Enabled = true);
+
                 try
                 {
                     frm_prog.Invoke(new MethodInvoker(delegate
@@ -154,51 +195,51 @@ namespace FFBatch
                 }
                 catch { }
 
-                    this.InvokeEx(f => this.Enabled = true);
-                    if (frm_prog.abort_validate == true)
-                    {
-                        this.InvokeEx(f => this.Close());
-                        return;
-                    }
-         
-            if (has_stream == false)
-            {
+                this.InvokeEx(f => this.Enabled = true);
+                if (frm_prog.abort_validate == true)
+                {
+                    this.InvokeEx(f => this.Close());
+                    return;
+                }
+
+                if (has_stream == false)
+                {
                     this.InvokeEx(f => dg_streams.Rows.Add(img_streams.Images[3], "0", FFBatch.Properties.Strings.no_str_f));
-            }
-            //if (dg_streams.Rows.Count <= 11)
-            //{
-            //        this.InvokeEx(f => this.Width = 516);
-            //        this.InvokeEx(f => f.dg_streams.Width = 473);
-            //        this.InvokeEx(f => f.txt_file.Width = 473);
-            //        this.InvokeEx(f => f.txt_name.Width = 473);
-            //        this.InvokeEx(f => f.btn_close.Width = 473);
-            //}
-            //else
-            //{
-            //        this.InvokeEx(f => this.Width = 533);
-            //        this.InvokeEx(f => dg_streams.Width = 490);
-            //        this.InvokeEx(f => txt_file.Width = 490);
-            //        this.InvokeEx(f => txt_name.Width = 490);
-            //        this.InvokeEx(f => btn_close.Width = 490);
-            //}
+                }
 
                 this.InvokeEx(f => dg_streams.ClearSelection());
                 this.InvokeEx(f => dg_streams.CurrentCell = null);
-                this.InvokeEx(f => btn_close.Focus());
-            try
-            {
-                frm_prog.Invoke(new MethodInvoker(delegate
+                
+                try
                 {
-                    frm_prog.Dispose();
-                }));
-            }
-            catch { }
-            }).Start();
-        }
+                    frm_prog.Invoke(new MethodInvoker(delegate
+                    {
+                        frm_prog.Dispose();
+                    }));
+                }
+                catch { }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
+                //Attempt to extract frame as image
+
+           
+                    DateTime time2;
+                    //Double seconds = 0;
+                    if (DateTime.TryParse(dur_lv1, out time2))
+                    {                    
+                    TimeSpan t1 = TimeSpan.FromSeconds((current_fr));
+                    String tx_1 = string.Format("{0:D2}:{1:D2}:{2:D2}",
+                        t1.Hours,
+                        t1.Minutes,
+                        t1.Seconds);
+
+                    this.InvokeEx(f => f.lbl_fr_time.Text = tx_1);
+                    //seconds = TimeSpan.Parse(dur_lv1).TotalSeconds;
+                    //if (seconds > 3) seconds = 3;
+                    //this.InvokeEx(f => f.lbl_fr_time.Text = "00:00:03");
+                }                    
+
+            }).Start();
+
         }
 
         private void ct1_Click(object sender, EventArgs e)
@@ -232,5 +273,218 @@ namespace FFBatch
                 RefreshResources(control, res); // recursion
             ctrl.ResumeLayout(false);
         }
+
+        private void btn_10_Click(object sender, EventArgs e)
+        {          
+                try
+                {
+                    if (current_fr <= 4) current_fr = 5;
+                    else if (current_fr == 5) current_fr = 10;
+                    else current_fr = current_fr + 10;
+
+                    DateTime time0 = new DateTime();
+                    Double seconds1 = 0;
+                    if (DateTime.TryParse(dur_lv1, out time0))
+                    {
+                        seconds1 = TimeSpan.Parse(dur_lv1).TotalSeconds;
+                    }
+
+                    Double t_to = (double)current_fr;
+                    if (t_to > seconds1)
+                    {
+                        t_to = seconds1;
+                        current_fr = (int)seconds1;
+                    }
+                    TimeSpan t1 = TimeSpan.FromSeconds((t_to));
+                    String tx_1 = string.Format("{0:D2}:{1:D2}:{2:D2}",
+                        t1.Hours,
+                        t1.Minutes,
+                        t1.Seconds);
+                    this.InvokeEx(f => f.lbl_fr_time.Text = tx_1);
+                }
+                catch
+                {
+                    
+                }
+        }
+
+        private void btn_minus10_Click(object sender, EventArgs e)
+        {
+              try
+                {
+                    current_fr = current_fr - 10;
+                    if (current_fr < 0) current_fr = 0;
+                    Double t_to = (double)current_fr;
+                    TimeSpan t1 = TimeSpan.FromSeconds((t_to));
+                    String tx_1 = string.Format("{0:D2}:{1:D2}:{2:D2}",
+                        t1.Hours,
+                        t1.Minutes,
+                        t1.Seconds);
+                    this.InvokeEx(f => f.lbl_fr_time.Text = tx_1);
+
+                } catch {  }
+        }
+
+        private void btn_fr_start_Click(object sender, EventArgs e)
+        {          
+             lbl_fr_time.Text = "00:00:00";
+        }
+
+        private void btn_fr_end_Click(object sender, EventArgs e)
+        {            
+                    DateTime time0 = new DateTime();
+                    
+                    if (DateTime.TryParse(dur_lv1, out time0))
+                    {
+                        lbl_fr_time.Text = dur_lv1;
+                    }
+                    else lbl_fr_time.Text = "00:00:00";               
+        }
+
+        private void lbl_fr_time_TextChanged(object sender, EventArgs e)
+        {
+            if (lbl_fr_time.Text.Contains(".") || lbl_fr_time.Text.Contains(",")) return;
+            DateTime time;
+            if (!DateTime.TryParse(lbl_fr_time.Text, out time))
+            {                
+                return;
+            }
+            else
+            {
+                Double seconds = TimeSpan.Parse(lbl_fr_time.Text).TotalSeconds;
+                Double seconds2 = TimeSpan.Parse(dur_lv1).TotalSeconds;
+                if (seconds > seconds2)
+                {
+                    lbl_fr_time.Text = dur_lv1;
+                }
+                get_frame();
+            }           
+        }
+
+        private void get_frame()
+        {
+            //Attempt to extract frame as image
+            try
+            {
+                DateTime time2;
+                Double seconds = 0;
+                if (!DateTime.TryParse(lbl_fr_time.Text, out time2))
+                {
+                    return;
+                }
+                seconds = TimeSpan.Parse(lbl_fr_time.Text).TotalSeconds;
+
+                Decimal time_frame = Math.Round((decimal)seconds, 0);
+                current_fr = (int)time_frame;
+
+                Process proc_img = new System.Diagnostics.Process();
+                String ffm_img = Path.Combine(Application.StartupPath, "ffmpeg.exe");
+
+                String file_img = Path.GetFullPath(lv1_item);
+                String fullPath_img = file_img;
+                String AppParam_img = "";
+
+                String destino = Path.Combine(Path.GetTempPath(), "FFBatch_test");
+                String extracted_img = destino + "\\" + System.IO.Path.GetFileNameWithoutExtension(file_img) + "_480_" + time_frame.ToString() + "." + "jpg";
+
+
+                if (File.Exists(extracted_img))
+                {
+                    this.InvokeEx(f => this.Width = 1116);
+                    Image img_tmp1;
+                    using (var bmpTemp = new Bitmap(extracted_img))
+                    {
+                        img_tmp1 = new Bitmap(bmpTemp);
+                        pic_frame.Image = img_tmp1;
+                        return;
+                    }                
+                }
+
+                AppParam_img = " -ss " + time_frame + " -i " + '\u0022' + file_img + '\u0022' + " -qscale:v 2" + " -vf scale=480:-1" + " -f image2 -y " + '\u0022' + destino + "\\" + System.IO.Path.GetFileNameWithoutExtension(file_img) + "_480_" + time_frame.ToString() + "." + "jpg" + '\u0022';
+
+                proc_img.StartInfo.RedirectStandardOutput = false;
+                proc_img.StartInfo.RedirectStandardError = false;
+                proc_img.StartInfo.UseShellExecute = true;
+                proc_img.StartInfo.CreateNoWindow = false;
+                proc_img.EnableRaisingEvents = false;
+                proc_img.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+
+                proc_img.StartInfo.FileName = ffm_img;
+                proc_img.StartInfo.Arguments = AppParam_img;
+
+                proc_img.Start();
+                proc_img.WaitForExit(2000);
+
+                this.InvokeEx(f => this.Width = 1116);
+                Image img_tmp;
+                using (var bmpTemp = new Bitmap(extracted_img))
+                {
+                    img_tmp = new Bitmap(bmpTemp);
+                    pic_frame.Image = img_tmp;
+                }
+                    //End extract frame as image
+                }
+            catch { }
+        }
+
+        private void btn_min1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                current_fr = current_fr - 1;
+                if (current_fr < 0) current_fr = 0;
+                Double t_to = (double)current_fr;
+                TimeSpan t1 = TimeSpan.FromSeconds((t_to));
+                String tx_1 = string.Format("{0:D2}:{1:D2}:{2:D2}",
+                    t1.Hours,
+                    t1.Minutes,
+                    t1.Seconds);
+                this.InvokeEx(f => f.lbl_fr_time.Text = tx_1);
+            }
+            catch { }
+        }
+
+        private void btn_plus1_Click(object sender, EventArgs e)
+        {
+            try
+            {   
+                current_fr = current_fr + 1;
+
+                DateTime time0 = new DateTime();
+                Double seconds1 = 0;
+                if (DateTime.TryParse(dur_lv1, out time0))
+                {
+                    seconds1 = TimeSpan.Parse(dur_lv1).TotalSeconds;
+                }
+
+                Double t_to = (double)current_fr;
+                if (t_to > seconds1)
+                {
+                    t_to = seconds1;
+                    current_fr = (int)seconds1;
+                }
+                TimeSpan t1 = TimeSpan.FromSeconds((t_to));
+                String tx_1 = string.Format("{0:D2}:{1:D2}:{2:D2}",
+                    t1.Hours,
+                    t1.Minutes,
+                    t1.Seconds);
+                this.InvokeEx(f => f.lbl_fr_time.Text = tx_1);
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void Form5_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            pic_frame.Image = null;
+        }
+
+        private void btn_close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
+
 }

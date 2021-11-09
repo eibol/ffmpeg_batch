@@ -60,7 +60,6 @@
             // 
             // cb_filterby
             // 
-            resources.ApplyResources(this.cb_filterby, "cb_filterby");
             this.cb_filterby.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_filterby.FormattingEnabled = true;
             this.cb_filterby.Items.AddRange(new object[] {
@@ -76,6 +75,7 @@
             resources.GetString("cb_filterby.Items9"),
             resources.GetString("cb_filterby.Items10"),
             resources.GetString("cb_filterby.Items11")});
+            resources.ApplyResources(this.cb_filterby, "cb_filterby");
             this.cb_filterby.Name = "cb_filterby";
             this.cb_filterby.SelectedIndexChanged += new System.EventHandler(this.cb_filterby_SelectedIndexChanged);
             // 
@@ -91,9 +91,9 @@
             // 
             // cb_value_f
             // 
-            resources.ApplyResources(this.cb_value_f, "cb_value_f");
             this.cb_value_f.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_value_f.FormattingEnabled = true;
+            resources.ApplyResources(this.cb_value_f, "cb_value_f");
             this.cb_value_f.Name = "cb_value_f";
             this.cb_value_f.SelectedIndexChanged += new System.EventHandler(this.cb_value_f_SelectedIndexChanged);
             this.cb_value_f.DropDownClosed += new System.EventHandler(this.cb_value_f_DropDownClosed);
@@ -106,36 +106,36 @@
             // 
             // cb_action
             // 
-            resources.ApplyResources(this.cb_action, "cb_action");
             this.cb_action.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_action.FormattingEnabled = true;
+            resources.ApplyResources(this.cb_action, "cb_action");
             this.cb_action.Name = "cb_action";
             this.cb_action.SelectedIndexChanged += new System.EventHandler(this.cb_action_SelectedIndexChanged);
             // 
             // btn_apply
             // 
-            resources.ApplyResources(this.btn_apply, "btn_apply");
             this.btn_apply.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_apply.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_apply, "btn_apply");
             this.btn_apply.Name = "btn_apply";
             this.btn_apply.UseVisualStyleBackColor = true;
             this.btn_apply.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_cancel
             // 
-            resources.ApplyResources(this.btn_cancel, "btn_cancel");
             this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_cancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_cancel.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_cancel, "btn_cancel");
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
             this.btn_cancel.Click += new System.EventHandler(this.button2_Click);
             // 
             // chk_invalid
             // 
-            resources.ApplyResources(this.chk_invalid, "chk_invalid");
             this.chk_invalid.Checked = true;
             this.chk_invalid.CheckState = System.Windows.Forms.CheckState.Checked;
+            resources.ApplyResources(this.chk_invalid, "chk_invalid");
             this.chk_invalid.Name = "chk_invalid";
             this.chk_invalid.UseVisualStyleBackColor = true;
             this.chk_invalid.CheckedChanged += new System.EventHandler(this.chk_invalid_CheckedChanged);
@@ -152,8 +152,8 @@
             // 
             // cb_streams
             // 
-            resources.ApplyResources(this.cb_streams, "cb_streams");
             this.cb_streams.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cb_streams, "cb_streams");
             this.cb_streams.FormattingEnabled = true;
             this.cb_streams.Name = "cb_streams";
             this.cb_streams.SelectedIndexChanged += new System.EventHandler(this.cb_streams_SelectedIndexChanged);
@@ -224,8 +224,8 @@
             // 
             // btn_mediainfo
             // 
-            resources.ApplyResources(this.btn_mediainfo, "btn_mediainfo");
             this.btn_mediainfo.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_mediainfo, "btn_mediainfo");
             this.btn_mediainfo.Name = "btn_mediainfo";
             this.btn_mediainfo.UseVisualStyleBackColor = true;
             this.btn_mediainfo.Click += new System.EventHandler(this.btn_mediainfo_Click);
@@ -237,23 +237,23 @@
             // 
             // btn_streams
             // 
-            resources.ApplyResources(this.btn_streams, "btn_streams");
             this.btn_streams.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_streams, "btn_streams");
             this.btn_streams.Name = "btn_streams";
             this.btn_streams.UseVisualStyleBackColor = true;
             this.btn_streams.Click += new System.EventHandler(this.btn_streams_Click_1);
             // 
             // label6
             // 
-            resources.ApplyResources(this.label6, "label6");
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
             // 
             // lbl_info_search
             // 
-            resources.ApplyResources(this.lbl_info_search, "lbl_info_search");
             this.lbl_info_search.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.lbl_info_search.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.lbl_info_search, "lbl_info_search");
             this.lbl_info_search.Name = "lbl_info_search";
             this.lbl_info_search.ReadOnly = true;
             // 

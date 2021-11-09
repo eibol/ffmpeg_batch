@@ -122,7 +122,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAQ
-        ogIAAk1TRnQBSQFMAgEBIAEAARABSgEQAUoBJwEAAScBAAT/ARkBAAj/AUIBTQE2BwABNgMAASgDAAGc
+        ogIAAk1TRnQBSQFMAgEBIAEAATQBTwE0AU8BJwEAAScBAAT/ARkBAAj/AUIBTQE2BwABNgMAASgDAAGc
         AwABXwEBAgABAQEAARgFAAGsAYEBAv8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
         /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
         /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wC5AEv+GwAD/wb+BP0C/AL9
@@ -3003,80 +3003,76 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btn_add_files.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 21</value>
+    <value>64, 24</value>
   </data>
   <data name="btn_add_files.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 78</value>
+    <value>63, 70</value>
   </data>
   <data name="btn_add_files.Text" xml:space="preserve">
-    <value>Añadir ficheros</value>
+    <value>添加文件</value>
   </data>
-  <data name="txt_format.Location" type="System.Drawing.Point, System.Drawing">
-    <value>593, 61</value>
+  <data name="btn_save_config.Location" type="System.Drawing.Point, System.Drawing">
+    <value>121, 143</value>
+  </data>
+  <data name="btn_save_config.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 84</value>
   </data>
   <data name="btn_save_config.Text" xml:space="preserve">
-    <value>Guardar ajustes</value>
-  </data>
-  <data name="btn_load_config.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 83</value>
+    <value>保存设置</value>
   </data>
   <data name="btn_load_config.Text" xml:space="preserve">
-    <value>Recargar ajustes</value>
+    <value>重新加载设置</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Parametros</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>547, 64</value>
+    <value>参数</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 13</value>
+    <value>31, 13</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Formato</value>
+    <value>格式</value>
   </data>
   <data name="btn_clear_list.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
-        RU5ErkJggg==
+        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
+        AABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btn_clear_list.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 24</value>
-  </data>
   <data name="btn_clear_list.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 75</value>
+    <value>63, 68</value>
   </data>
   <data name="btn_clear_list.Text" xml:space="preserve">
-    <value>Limpiar lista</value>
+    <value>清除列表</value>
   </data>
   <data name="ctm_add_files.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5023,44 +5019,20 @@
         9beAwREAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 18</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 13</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Perfiles</value>
-  </data>
   <data name="btn_add_folders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>128, 23</value>
-  </data>
-  <data name="Num_Shift.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 70</value>
-  </data>
-  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 44</value>
-  </data>
-  <data name="chk_vol.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 43</value>
+    <value>129, 24</value>
   </data>
   <data name="chk_vol.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 17</value>
+    <value>50, 17</value>
   </data>
   <data name="chk_vol.Text" xml:space="preserve">
-    <value>Volumen</value>
-  </data>
-  <data name="vol_ch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 41</value>
-  </data>
-  <data name="chk_shift.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 72</value>
+    <value>体积</value>
   </data>
   <data name="chk_shift.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 17</value>
+    <value>50, 17</value>
   </data>
   <data name="chk_shift.Text" xml:space="preserve">
-    <value>Ajustar</value>
+    <value>转移</value>
   </data>
   <data name="button22.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5109,26 +5081,14 @@
         Ko356itydXVdi7uKA3fi7u6nsiY4XVxnra2t9D/Xq63FH0PrvgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="button22.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 8</value>
-  </data>
-  <data name="button22.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 23</value>
-  </data>
   <data name="button22.Text" xml:space="preserve">
-    <value>Forma de onda</value>
+    <value>音频波形</value>
   </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>114, 72</value>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>19, 13</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>seg.</value>
-  </data>
-  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>242, 140</value>
-  </data>
-  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 94</value>
+    <value>秒</value>
   </data>
   <data name="btn_fix_pre.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5205,7 +5165,7 @@
 </value>
   </data>
   <data name="btn_save_queue.Text" xml:space="preserve">
-    <value>Guardar lista</value>
+    <value>保存队列</value>
   </data>
   <data name="btn_display_log.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5235,7 +5195,7 @@
 </value>
   </data>
   <data name="btn_display_log.Text" xml:space="preserve">
-    <value>Mostrar registro</value>
+    <value>查看上次日志</value>
   </data>
   <data name="btn_ref_dcd.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5260,10 +5220,10 @@
 </value>
   </data>
   <data name="lbl_gpu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 13</value>
+    <value>54, 13</value>
   </data>
   <data name="lbl_gpu.Text" xml:space="preserve">
-    <value>GPU decod.</value>
+    <value>GPU解码</value>
   </data>
   <data name="btn_save_preset.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5290,16 +5250,16 @@
 </value>
   </data>
   <data name="label22.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 13</value>
+    <value>43, 13</value>
   </data>
   <data name="label22.Text" xml:space="preserve">
-    <value>Pre-entrada</value>
+    <value>预输入</value>
   </data>
   <data name="lbl_pre_input.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 13</value>
+    <value>67, 13</value>
   </data>
   <data name="lbl_pre_input.Text" xml:space="preserve">
-    <value>Tiempo de inicio</value>
+    <value>预输入搜索</value>
   </data>
   <data name="btn_show_console.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5358,10 +5318,10 @@
     <value>174, 141</value>
   </data>
   <data name="btn_show_console.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 87</value>
+    <value>65, 87</value>
   </data>
   <data name="btn_show_console.Text" xml:space="preserve">
-    <value>Probar en consola</value>
+    <value>在控制台上尝试</value>
   </data>
   <data name="btn_try_pr.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5422,7 +5382,7 @@
 </value>
   </data>
   <data name="btn_try_pr.Text" xml:space="preserve">
-    <value>Probar preset</value>
+    <value>尝试预设</value>
   </data>
   <data name="btn_edit_presets.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5536,13 +5496,13 @@
 </value>
   </data>
   <data name="btn_wizard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 27</value>
+    <value>201, 27</value>
   </data>
   <data name="btn_wizard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 67</value>
+    <value>63, 67</value>
   </data>
   <data name="btn_wizard.Text" xml:space="preserve">
-    <value>Asistente</value>
+    <value>应用向导</value>
   </data>
   <data name="btn_edit_config.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5588,8 +5548,11 @@
         CdQfotPB+quQ63UfvNts4KX/D8H3Lhb7H3nFSObIvIlBAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="btn_edit_config.Location" type="System.Drawing.Point, System.Drawing">
+    <value>270, 24</value>
+  </data>
   <data name="btn_edit_config.Text" xml:space="preserve">
-    <value>Ajustes</value>
+    <value>设置</value>
   </data>
   <data name="btn_multiple_presets.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5648,21 +5611,18 @@
         HfrQzTffzHc6PMCrK/4LjnvR2fK7mt4AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btn_multiple_presets.Location" type="System.Drawing.Point, System.Drawing">
-    <value>149, 9</value>
-  </data>
   <data name="btn_multiple_presets.Text" xml:space="preserve">
-    <value>Perfiles múltiples</value>
+    <value>多个预设</value>
   </data>
   <data name="TB1.Text" xml:space="preserve">
-    <value>APAGADO AUTOMÁTICO ACTIVADO</value>
+    <value>启用自动关机</value>
   </data>
   <data name="img_list_4.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADy
-        GwAAAk1TRnQBSQFMAgEBAgEAAVABMgFQATIBGgEAARoBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFo
+        GwAAAk1TRnQBSQFMAgEBAgEAAXQBNwF0ATcBGgEAARoBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFo
         AwABGgMAAQEBAAEgBQABQAEqHgADMAFLA1ABnwJWAVcBuANWAbYDVQG0A1UBtANVAbQDVQG0A1UBtAJV
         AVYBtAJVAVYBtANVAbQDVQG0A1UBtANVAbQDVQG0A1UBtQNVAbcDUQGnAz8BbwMQARYUAAMwAUsDUAGf
         AlYBVwG4A1YBtgJVAVYBtAJVAVYBtAJVAVYBtAJVAVYBtAJVAVYBtAJVAVYBtAJVAVYBtANVAbQDVQG0
@@ -5785,13 +5745,13 @@
 </value>
   </data>
   <data name="chk_subfolders.Location" type="System.Drawing.Point, System.Drawing">
-    <value>120, 76</value>
+    <value>128, 76</value>
   </data>
   <data name="chk_subfolders.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 17</value>
+    <value>71, 17</value>
   </data>
   <data name="chk_subfolders.Text" xml:space="preserve">
-    <value>Subcarpetas</value>
+    <value>子文件夹</value>
   </data>
   <data name="button23.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5817,7 +5777,7 @@
 </value>
   </data>
   <data name="button23.Text" xml:space="preserve">
-    <value>Limpiar pistas</value>
+    <value>清除轨道</value>
   </data>
   <data name="btn_mux.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5867,23 +5827,23 @@
 </value>
   </data>
   <data name="btn_mux.Location" type="System.Drawing.Point, System.Drawing">
-    <value>557, 9</value>
+    <value>558, 9</value>
   </data>
   <data name="btn_mux.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 73</value>
+    <value>63, 73</value>
   </data>
   <data name="btn_mux.Text" xml:space="preserve">
-    <value>Multiplexar</value>
+    <value>多路复用</value>
   </data>
   <data name="btn_cancel_shut.Text" xml:space="preserve">
-    <value>Pulse para cancelar el apagado automático</value>
+    <value>按下取消关机 </value>
   </data>
   <data name="imageList2.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAD0
-        BQAAAk1TRnQBSQFMAwEBAAHwARsB8AEbARABAAEQAQAE/wEhAQAI/wFCAU0BNgcAATYDAAEoAwABQAMA
+        BQAAAk1TRnQBSQFMAwEBAAEUASEBFAEhARABAAEQAQAE/wEhAQAI/wFCAU0BNgcAATYDAAEoAwABQAMA
         ARADAAEBAQABIAYAARASAAP8Cf8D/AH/A/wF/wMAAf8DAAH/AwAB/wMABf8D/AX/A/4B/wP8Bf/AAAP8
         Cf8DAAH/AwAB/wMAAf8BtwGBAQAB/wHRAZABAAH/Aa0CAAH/AbYCAAH/AwAB/wMAAf8DAAH/A/wJ/8AA
         A/wJ/wPKAf8DvgH/A74B/wGYAgAB/wHfAZoBAAH/AwAB/wGVAgAB/wOrAf8DvgH/A6sB/wP8Cf/AAAP8
@@ -5985,8 +5945,14 @@
         gg==
 </value>
   </data>
+  <data name="lbl_tot_prog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>185, 29</value>
+  </data>
   <data name="lbl_tot_prog.Text" xml:space="preserve">
-    <value>Progreso total</value>
+    <value>总进度</value>
+  </data>
+  <data name="lbl_tot_prog.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
   <data name="notifyIcon1.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -7942,23 +7908,6 @@
         lR8KT6y/4opVumKVrlilK1bpilW6YpVu4P0C607rzBtIqg0AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="ct2_str.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABEAAAAPCAIAAACN07NGAAAABGdBTUEAALGeYUxB9wAAACBjSFJNAACH
-        EAAAjBIAAP1NAACBPgAAWesAARIPAAA85gAAGc66ySIyAAABK2lDQ1BQaG90b3Nob3AgSUNDIHByb2Zp
-        bGUAACjPY2BgMnB0cXJlEmBgyM0rKQpyd1KIiIxSYD/PwMbAzAAGicnFBY4BAT4gdl5+XioDBvh2jYER
-        RF/WBZnFQBrgSi4oKgHSf4DYKCW1OJmBgdEAyM4uLykAijPOAbJFkrLB7A0gdlFIkDOQfQTI5kuHsK+A
-        2EkQ9hMQuwjoCSD7C0h9OpjNxAE2B8KWAbFLUitA9jI45xdUFmWmZ5QoGFpaWio4puQnpSoEVxaXpOYW
-        K3jmJecXFeQXJZakpgDVQtwHBoIQhaAQ0wBqtNBkoDIAxQOE9TkQHL6MYmcQYgiQXFpUBmUyMhkT5iPM
-        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACxMAAAsT
-        AQCanBgAAACJSURBVDhPY/hPOgDpuXT9zuY9RzfuOrx8094jpy9BJPAAkB6gBggHCPrmrIaycAOQHqAN
-        QDKwORZINk5cDCSDUyrgCJML0gN0EpCEgMquuVAWbgDSc/nGPaCTgDYANRw5cwUigQdQ5p8bQiD28PGP
-        fuZ+IElL/wDTGNw/63cegUjgASA9pIH//wHzkKPoooK7LQAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="ct2_str.Text" xml:space="preserve">
-    <value>View file streams </value>
-  </data>
   <data name="ct2_save_allstreams.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAABGdBTUEAALGeYUxB9wAAACBjSFJNAACH
@@ -8492,7 +8441,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABA
-        FQAAAk1TRnQBSQFMAgEBBQEAAYABTAGAAUwBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        FQAAAk1TRnQBSQFMAgEBBQEAAaQBUQGkAVEBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABIAMAAQEBAAEgBgABIP8A/wAYAAMiATEDQQFyA0cBggNKAYoCSwFMAY8DTAGTAk0BTgGVAk0BTgGW
         A04BlAJLAUwBkANKAYsDRwGCA0IBdgMoATzEAAMnAToCAAGuAf8CAAGwAf8CAAGvAf8CAAGwAf8CAAGw
         Af8CAAGwAf8CAAGwAf8CAAGwAf8CAAGwAf8CAAGwAf8CAAGwAf8CAAGvAf8CAAGwAf8CAAGtAf8DLwFJ
@@ -8584,33 +8533,6 @@
         AgABgAEBAgABgAEBBgABiAERBgAB+AEfAgABBgEzAgAB+AEfAgABTgE/AgAB+AEfAgABhgE/AgAB+AEf
         AwABfwIAAfgBHwMAAf8CAAH4AR8CAAGHAf8CAAH4AR8BAAEBAc8B/wIAAv8L
 </value>
-  </data>
-  <data name="combo_prio.Items" xml:space="preserve">
-    <value>Alta</value>
-  </data>
-  <data name="combo_prio.Items1" xml:space="preserve">
-    <value>Encima de lo normal</value>
-  </data>
-  <data name="combo_prio.Items3" xml:space="preserve">
-    <value>Debajo de lo Normal</value>
-  </data>
-  <data name="combo_prio.Items4" xml:space="preserve">
-    <value>Baja</value>
-  </data>
-  <data name="File_C.Text" xml:space="preserve">
-    <value>     Flujo del fichero</value>
-  </data>
-  <data name="stream_type.Text" xml:space="preserve">
-    <value>Tipo de flujo</value>
-  </data>
-  <data name="stream_lang.Text" xml:space="preserve">
-    <value>Idioma</value>
-  </data>
-  <data name="stream_default.Text" xml:space="preserve">
-    <value>Por defecto</value>
-  </data>
-  <data name="stream_param.Text" xml:space="preserve">
-    <value>Parámetros</value>
   </data>
   <data name="ct3_default.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -8824,7 +8746,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABC
-        GAAAAk1TRnQBSQFMAgEBBgEAAdgBVQHYAVUBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        GAAAAk1TRnQBSQFMAgEBBgEAAfwBWgH8AVoBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABIAMAAQEBAAEgBgABIBIAAykBPgNYAdEBcAFvAW0B/gNcAfgDYgH2A2IB9gNiAfYDYgH2A2IB9gNi
         AfYDYgH2A2IB9gNiAfYDYgH2AUIBQQFAAf4DYAHrCAADCgEOAycBOgMnAToDJwE6AycBOgMnAToDJwE6
         AycBOgMnAToDJwE6AyQBNQMYASIDBgEIhAADWgHTAtQB0QP/Af4B/wH8Af0B+QH/AfkB/AH2Af8B+gH9
@@ -8931,31 +8853,25 @@
 </value>
   </data>
   <data name="lbl_mux_par.Size" type="System.Drawing.Size, System.Drawing">
-    <value>135, 13</value>
+    <value>55, 13</value>
   </data>
   <data name="lbl_mux_par.Text" xml:space="preserve">
-    <value>Parámetros de codificación</value>
+    <value>编码参数</value>
   </data>
   <data name="btn_set_track_param.Text" xml:space="preserve">
-    <value>Inicializar</value>
-  </data>
-  <data name="pic_encode_param.Location" type="System.Drawing.Point, System.Drawing">
-    <value>340, 10</value>
+    <value>重置</value>
   </data>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 13</value>
+    <value>55, 13</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
-    <value>Idioma de la pista</value>
-  </data>
-  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 19</value>
+    <value>项目语言</value>
   </data>
   <data name="label19.Text" xml:space="preserve">
-    <value>Formato</value>
+    <value>格式</value>
   </data>
   <data name="btn_set_mux_def.Text" xml:space="preserve">
-    <value>Por defecto</value>
+    <value>设为默认</value>
   </data>
   <data name="btn_add_tracks.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -9027,7 +8943,7 @@
 </value>
   </data>
   <data name="btn_add_tracks.Text" xml:space="preserve">
-    <value>Añadir pistas</value>
+    <value>添加文件轨道</value>
   </data>
   <data name="btn_save_prio.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -9137,14 +9053,11 @@
         9rOAuNXiFBHOBEw0dRHrm73Au1y9ev0DJzZbqqowqJ0AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="lbl_elapsed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>453, 57</value>
-  </data>
   <data name="lbl_elapsed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 13</value>
+    <value>134, 13</value>
   </data>
   <data name="lbl_elapsed.Text" xml:space="preserve">
-    <value>Tiempo total: 00h:00m:00s</value>
+    <value>时间过去了: 00h:00m:00s</value>
   </data>
   <data name="btn_pause.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -9238,26 +9151,11 @@
         n/0HBV9iEpypSUAAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="combo_shut.Items" xml:space="preserve">
-    <value>Apagar</value>
-  </data>
-  <data name="combo_shut.Items1" xml:space="preserve">
-    <value>Hibernar</value>
-  </data>
-  <data name="combo_shut.Items2" xml:space="preserve">
-    <value>Suspendes</value>
-  </data>
-  <data name="combo_shut.Items3" xml:space="preserve">
-    <value>Ejecutar al final</value>
-  </data>
-  <data name="combo_shut.Items4" xml:space="preserve">
-    <value>Ejecutar al fichero</value>
-  </data>
   <data name="txt_remain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 13</value>
+    <value>122, 13</value>
   </data>
   <data name="txt_remain.Text" xml:space="preserve">
-    <value>Tiempo estimado: 00h:00m:00s</value>
+    <value>剩余时间: 00h:00m:00s</value>
   </data>
   <data name="pic_warnings.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -9372,141 +9270,121 @@
         f7BlMg6uFBy0AAAAAElFTkSuQmCC
 </value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="chk_autor.ImageIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="img_autorun.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAC6
-        GQAAAk1TRnQBSQFMAgEBAgEAAUABAQFAAQEBGgEAARoBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFo
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACy
+        GAAAAk1TRnQBSQFMAgEBAgEAAXQBBAF0AQQBGgEAARoBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFo
         AwABGgMAAQEBAAEgBQABQAEqIgADCQEMA0oBjAJXAVUBtwMvAUkDEgEZAxoBJAMdASkDFwEgAxABFgML
         AQ8DBwEJAwQBBQMBAQIDAAEBMAADCQEMA0oBjAJVAVcBtwMvAUkDEgEZAxoBJAMdASkDFwEgAxABFgML
-        AQ8DBwEJAwQBBQMBAQIDAAEB/wABAAMLAQ8BWQJXAsIBqQGbAf8BaQFYAVAB+gNQAZ0DLAFEAx8BLAMh
-        ATADHQEqAxYBHwMQARYDCgEOAwUBBwMCAQMDAAEBAwABASgAAwsBDwJXAVkBwgErARMB+AH/AU0BLAFr
-        AfoDUAGdAywBRAMfASwDIQEwAx0BKgMWAR8DEAEWAwoBDgMFAQcDAgEDAwABAQMAAQHvAAEBAwIBAwgA
-        A1QCrgGKAV0B/wGuAYoBXQH/AbwBoAGTAf8DXwHgA0YBgQMlATcDIAEuAyABLwMbASYDFAEcAw4BEwMJ
-        AQwDBAEGAwIBAwMAAQEbAAEBAwIBAwgAA1QBrgEOAQQB1QH/AQ4BAQHQAf8BIAEQAfgB/wNfAeADRgGB
-        AyUBNwMgAS4DIAEvAxsBJgMUARwDDgETAwkBDAMEAQYDAgEDAwABAfAAAxoBJQNCAXYBWgJYAcABrwGM
-        AYIB/wGZAVUBTAH/AaIBggFVAf8BvQGgAZMB/wGzAZgBjAH/AVoCVwHFAzsBYwMhATEDIAEvAx8BLAMZ
-        ASMDEgEYAwwBEAMHAQoDBAEFAwEBAgMAAQEYAAMaASUDQgF2A1gBwAEQAQYB0AH/AQcBAAGgAf8BDgEA
-        Aa0B/wEhAQ4B+AH/AR4BDgHCAf8DVwHFAzsBYwMhATEDIAEvAx8BLAMZASMDEgEYAwwBEAMHAQoDBAEF
-        AwEBAgMAAQHoAAM7AWQBtwGbAZAB/wGFAkAB/QGkAYMBRQH9AZsBWAFPAf8BoQGDAVYB/wGiAYQBWAH/
-        AbQBlwGLAf8ByQG1AaUB/wNZAfUDUQGiAy0BRQMeASsDIAEvAx0BKQMWAR8DEAEVAwoBDgMGAQgDAwEE
-        AwABAQMAAQEQAAM7AWQBHwESAdUB/wJAAYAB/QJAAagB/QEIAQABowH/AQ8BAwGqAf8BEQEEAagB/wEc
-        AQsBygH/ATUBGgH4Af8BSgFCAVkB9QNRAaIDLQFFAx4BKwMgAS8DHQEpAxYBHwMQARUDCgEOAwYBCAMD
-        AQQDAAEBAwABAeAAAzcBWwGlAYQBWAH/AYcBSwFCAf8BpgGFAVgB/wGbAVgBTgH/AaEBgwFWAf8BpgGI
-        AVwB/wGnAYoBgAH/AaoBjgGDAf8BwwGrAZ0B/wHPAb8BrwH/A2EB5ANEAXsDJgE4Ax8BLQMgAS8DGwEm
-        AxQBHAMNARIDCAELAwUBBwMCAQMDAAEBDAADNwFbAQ4BBAGyAf8BBwEAAYUB/wEOAQMBtAH/AQcBAAGj
-        Af8BDwECAaoB/wEUAQYBrgH/ARYBBwGuAf8BGAEIAbMB/wEsARUB+AH/AT8BIwH4Af8CWgFhAeQDRAF7
-        AyYBOAMfAS0DIAEvAxsBJgMUARwDDQESAwgBCwMFAQcDAgEDAwABAdwAAzYBWQGjAYQBWAH/AYMBSAFA
-        Af8BpQGEAVcB/wGbAVcBTgH/AaEBggFWAf8BpAGGAVoB/wGoAYsBgAH/Aa0BkQGGAf8BrAGRAYYB/wG1
-        AZwBjwH/Ac4BvgGuAf8BxAG0AaYB/wFZAlcBvwM5AWADIQEwAyEBMAMfAS0DGQEjAxIBGAMMARADBwEJ
-        AwMBBAwAAzYBWQEPAQYBqwH/AQcBAAGAAf8BDQECAbQB/wEHAQABowH/AQ4BAgGpAf8BEwEFAasB/wEW
-        AQcBrwH/ARsBCwG0Af8BHAELAbIB/wEjAQ8BwgH/AT8BIAH4Af8BOwEgAcUB/wNXAb8DOQFgAyEBMAMh
-        ATADHwEtAxkBIwMSARgDDAEQAwcBCQMDAQTcAAM2AVkBogGDAVcB/wGDAUgBQAH/AaQBgwFXAf8BmgFX
-        AU0B/wGhAYIBVQH/AaMBhQFYAf8BpwGJAV0B/wGrAY8BhAH/Aa8BlAGIAf8BsQGYAYwB/wGwAZcBiwH/
-        AcQBrgGgAf8B1gHJAbkB/wFtAWcBXQH4A08BnAMuAUcDHgErAyABLwMdASkDFgEeAw8BFAMIAQsMAAM2
-        AVkBDwEFAasB/wEHAQABgAH/AQwBAgGzAf8BBwEAAaIB/wEOAQEBqQH/ARABBAGrAf8BFgEHAa4B/wEY
-        AQkBswH/AR0BDAG2Af8BIgEPAbgB/wEfAQ4BuAH/AS8BFwHjAf8BSwEoAfgB/wFcAT8BZwH4A08BnAMu
-        AUcDHgErAyABLwMdASkDFgEeAw8BFAMIAQvcAAM2AVkBogGDAVcB/wGDAUcBPwH/AaIBgAFUAf8BnwGA
-        AVYB/wHNAcABvQH/Ac0BwgG+Af8BpQGHAVsB/wGpAYsBgQH/AawBkAGFAf8BuQGjAZoB/wHVAcsBxgH/
-        AdEBxQHAAf8BtwGeAZEB/wHNAbwBrAH/AdMBxQG2Af8DYAHeA0UBfQMjATMDHwEsAx8BLAMYASEDDgET
-        DAADNgFZAQ8BBQGrAf8BBgEAAYAB/wEJAQABsgH/AQUBAAGhAf8BnAGZAcwB/wGpAaYB0QH/ATgBMAG3
-        Af8BFwEHAbAB/wEbAQsBswH/AR8BDgG3Af8BrgGpAdgB/wGuAakB1wH/ASUBEQHEAf8BPQEeAfgB/wFH
-        AScB+AH/AloBYAHeA0UBfQMjATMDHwEsAx8BLAMYASEDDgET3AADNgFZAaMBhAFYAf8BggFGAT4B/wGf
-        AVkBTwH/AZgBVAFKAf8B5gHjAeIB/wPwAf8BugGmAZ8B/wGmAYgBXAH/AaoBjgGDAf8B1gHNAcoB/wPw
-        Af8B0AHEAb8B/wG1AZ0BkQH/AbEBmAGMAf8BugGhAZQB/wHOAb0BrQH/AcEBrgGgAf8DVgG+AzcBWwMc
-        ASgDHQEpAxIBGQwAAzYBWQEPAQUBqgH/AQUBAAGAAf8BBgEAAa8B/wEEAQABoAH/AbMBsQHUAf8D8AH/
-        AZ4BmgHNAf8BFAEHAa4B/wEYAQkBsAH/AZUBkAHNAf8D8AH/AcsByQHiAf8BJQESAb0B/wEiAQ8BuAH/
-        AScBEgHKAf8BPgEfAfgB/wEzAR0BxwH/A1YBvgM3AVsDHAEoAx0BKQMSARncAAM2AVkBoAGAAVQB/wGI
-        AU8BRwH/AagBiAFdAf8BkQFJAUEB/wHLAb4BugH/A/AB/wPwAf8D8AH/A/AB/wPwAf8D8AH/Ab0BqQGh
-        Af8BsAGWAYoB/wGxAZgBjAH/AbMBmgGOAf8BrwGVAYkB/wG8AaMBlgH/Ac0BvAGsAf8DXwHzA0oBigMd
-        ASkDEgEYDAADNgFZAQwBAgGpAf8BDQEHAYIB/wERAQkBtgH/AgABnAH/AYEBWwG/Af8D8AH/A/AB/wPw
-        Af8D8AH/A/AB/wPwAf8BoQGcAdMB/wEfAQ4BtwH/ASIBDwG4Af8BIwEQAboB/wEeAQwBtwH/AScBEgHX
-        Af8BPAEfAfgB/wJMAV8B8wNKAYoDHQEpAxIBGNwAAzYBWQGfAVsBUgH/AYcBTgFGAf8BuQGhAZgB/wGf
-        AYEBVQH/AbEBmgGVAf8D8AH/AeYB4wHiAf8BogGEAVcB/wGwAZcBjwH/A/AB/wHnAeQB4wH/AawBkAGF
-        Af8BrQGSAYcB/wGuAZMBiAH/Aa8BlAGIAf8BrwGVAYkB/wGrAZEBhgH/AakBiQFdAf8BzgG+Aa0B/wNk
-        AewDKAE9AwkBDAwAAzYBWQEKAQABqAH/AQwBBgGBAf8BJwEfAcEB/wEPAQYBowH/AQEBAAGhAf8C5gHr
-        Af8D8AH/ATYBLgG0Af8BEgEFAa0B/wHeAd0B6AH/A/AB/wE9ATMBvAH/ARwBCwG0Af8BHQEMAbYB/wEd
-        AQwBtgH/AR4BDQG2Af8BHAEMAa8B/wETAQUBtwH/AT8BGwH4Af8BXQFZAWQB7AMoAT0DCQEM3AADNgFZ
-        AZsBVgFNAf8BhQFLAUMB/wG0AZoBkQH/AaoBkQGIAf8BqAGOAYUB/wHmAeMB4gH/A/AB/wGpAY0BhQH/
-        AcgBugG1Af8D8AH/AcsBvQG5Af8BqAGKAYAB/wGqAY4BgwH/AaoBjgGDAf8BqwGPAYQB/wGnAYoBgAH/
-        AaoBjAGBAf8BvgGjAZUB/wNcAeoDQQFzAxUBHQMNAREMAAM2AVkBBgEAAaUB/wEKAQMBgAH/ASMBGwG7
-        Af8BHgEVAakB/wEbAREBqgH/AbQBsgHUAf8D8AH/AY4BiwHGAf8BUwFOAb0B/wPwAf8BygHIAeAB/wEW
-        AQcBrwH/ARgBCAGwAf8BGAEJAbIB/wEbAQsBsgH/ARYBBwGtAf8BFgEGAbQB/wEjAREB+AH/AlUBXAHq
-        A0EBcwMVAR0DDQER3AADNgFZAaEBggFXAf8BgwFHAUAB/wGzAZkBkAH/AaMBiAGAAf8BqwGRAYgB/wHS
-        AcgBxQH/A/AB/wHJAbwBtwH/AdwB1gHUAf8D8AH/AbIBmwGTAf8BoQGCAVYB/wGkAYUBWQH/AaMBhAFY
-        Af8BpAGEAVgB/wGvAZEBhQH/Ab4BpQGYAf8DYAHUAysBQwMOARMDFAEcAwoBDgwAAzYBWQEPAQcBqQH/
-        AQcBAAFdAf8BIQEaAbsB/wEXAQ8BpAH/AR0BFQGrAf8BigGHAcUB/wPwAf8BygHIAd4B/wGcAZkBzAH/
-        A/AB/wGcAZkBzAH/AQ4BAAGqAf8BEgEDAa0B/wERAQMBqQH/AQ8BAgGvAf8BGAEIAb4B/wEnARYB4AH/
-        AlwBYAHUAysBQwMOARMDFAEcAwoBDtwAAzYBWQGwAZgBjwH/AYkBUQFKAf8BsAGWAY0B/wGjAYgBgAH/
-        AacBjAGDAf8BvQGrAaUB/wPwAf8B5AHgAd4B/wPwAf8B5wLkAf8BqAGMAYIB/wGkAYgBXAH/AaEBggFW
-        Af8BqgGKAYAB/wGyAZUBigH/AaUBjAGCAf8BsQGWAYoB/wG3AaMBlgH/AzQBVQMKAQ4DDQESAwYBCAwA
-        AzYBWQEjARsBsAH/AQ8BCgGCAf8BHwEXAbgB/wEWAQ8BpAH/ARkBEQGoAf8BGwESAakB/wLnAewB/wLn
-        AewB/wLeAegB/wPwAf8BOwEzAbcB/wEUAQgBqgH/AQ8BBAGmAf8BFAEHAbcB/wEdAQ4BwgH/ARsBDgGj
-        Af8BHQEOAb0B/wEtARcBtAH/AzQBVQMKAQ4DDQESAwYBCNwAAzYBWQGuAZQBjAH/AYsBVQFOAf8BsAGW
-        AY0B/wGjAYgBXQH/AaYBiwGDAf8BpwGMAYMB/wHnAuQB/wPwAf8D8AH/Ac4BwwG/Af8BqgGSAYkB/wGy
-        AZkBjwH/AbwBpwGcAf8BsgGdAZMB/wGfAYYBWgH/AbUBmAGMAf8BxQGuAaAB/wNaAb0DHgErAwgBCwMI
-        AQsDAwEEDAADNgFZAR8BGAGvAf8BFAEOAYIB/wEeARcBuAH/ARcBDwGjAf8BGAERAagB/wEZAREBqQH/
-        AbYBtAHVAf8D8AH/A/AB/wHMAcoB4AH/AR8BFQGpAf8BIgEXAbgB/wEsASABxQH/ASkBHAGtAf8BFwEL
-        AZsB/wEdAQwBywH/AS8BFwH4Af8CVwFaAb0DHgErAwgBCwMIAQsDAwEE3AADNgFZAa0BkwGLAf8BigFT
-        AUwB/wGwAZYBjQH/AaIBhwFdAf8BpgGLAYMB/wGnAYwBhAH/AdABxgHCAf8D8AH/A/AB/wG3AaMBnAH/
-        AbUBnAGSAf8BtAGeAZQB/wGgAYkBXQH/AaYBiAFbAf8BwAGnAZkB/wNhAeIDPQFqAwcBCgMGAQgDCgEN
-        AwQBBgMBAQIMAAM2AVkBHgEXAa4B/wESAQwBgQH/AR4BFwG3Af8BFgEPAaMB/wEZAREBpgH/ARkBEgGp
-        Af8BiAGFAcIB/wPwAf8D8AH/AaABnQHMAf8BIwEXAb0B/wEnARsBtgH/ARsBDgGbAf8BFAEFAa4B/wEn
-        AREB+AH/Al0BYQHiAz0BagMHAQoDBgEIAwoBDQMEAQYDAQEC3AADNgFZAawBkwGKAf8BiQFSAUwB/wGw
-        AZUBjQH/AaEBhgFcAf8BpQGJAYEB/wGmAYsBgwH/AaUBigGCAf8BowGIAYAB/wGuAZMBiQH/AbcBnwGV
-        Af8BpgGQAYcB/wGZAVoBUAH/AbcBmAGLAf8BvAGhAZQB/wNOAZgDFAEcBAADBwEKAwcBCQMDAQQDAQEC
-        EAADNgFZAR8BFwGtAf8BEQEMAYAB/wEeARcBtwH/ARYBDwGiAf8BFwERAaYB/wEZARIBqAH/ARgBEgGl
-        Af8BFwEPAaMB/wEcARMBtgH/ASYBHAG+Af8BIAEWAZ8B/wENAQEBmwH/ARkBCAHsAf8BJAETAd0B/wNO
-        AZgDFAEcBAADBwEKAwcBCQMDAQQDAQEC4AADNgFZAawBkgGKAf8BiQFSAUwB/wGwAZUBjQH/AaEBhQFb
-        Af8BpAGJAYEB/wGhAYYBXAH/AagBjQGEAf8BsgGXAY4B/wGsAZUBjAH/AaABiQGBAf8BuAGfAZQB/wHI
-        AbMBpgH/A1sBwwMpAT4EAAMDAQQDCAELAwQBBQMBAQIDAAEBFAADNgFZAR4BFwGtAf8BEQEMAYAB/wEe
-        ARcBtgH/ARUBDwGhAf8BFwERAaQB/wEWAQ8BoAH/ARoBEgGrAf8BHwEXAb0B/wEiARkBqgH/ARwBEwGa
-        Af8BJQEXAcIB/wE0ASIB+AH/AlkBWwHDAykBPgQAAwMBBAMIAQsDBAEFAwEBAgMAAQHkAAM2AVkBqwGR
-        AYkB/wGJAVEBSwH/AbABlQGNAf8BngGDAVkB/wGiAYcBXQH/Aa8BkwGKAf8BrAGQAYcB/wGbAYIBWAH/
-        AakBkAGHAf8BxgGvAaMB/wNfAegDPgFsAwgBCwQAAwoBDQMGAQgDAgEDAwABARwAAzYBWQEdARcBrQH/
-        AREBDAGAAf8BHgEZAbYB/wETAQ4BnQH/ARYBEAGiAf8BGwEVAbgB/wEaARMBswH/ARYBDgGXAf8BHQET
-        AakB/wEwASAB+AH/AlcBXwHoAz4BbAMIAQsEAAMKAQ0DBgEIAwIBAwMAAQHsAAM2AVkBqQGPAYcB/wGG
-        AU8BSQH/AawBkQGJAf8BpwGKAYIB/wGxAZYBjgH/AaEBhwFdAf8BmwGAAVYB/wHAAaYBmwH/AYEBdgFt
-        AfsDTgGZAxYBHgQAAwcBCgMHAQkDAwEEAwABASQAAzYBWQEcARYBqQH/AQ8BCwFbAf8BGwEWAbIB/wEX
-        ARIBqwH/AR8BGQG4Af8BFwERAZ8B/wERAQsBmgH/ASgBHAHsAf8BUQFEAYYB+wNOAZkDFgEeBAADBwEK
-        AwcBCQMDAQQDAAEB9AADNgFZAa4BlAGMAf8BjQFWAVAB/wG7AaMBmgH/AacBjQGFAf8BlgFdAVUB/wGx
-        AZYBjAH/AcYBrwGkAf8DXAHJAysBQwQAAwIBAwMIAQsDBAEFAwEBAiwAAzYBWQEeARgBsAH/ARQBDwGD
-        Af8BJwEiAccB/wEbARYBpQH/ARUBDwGPAf8BHgEWAboB/wEwASMB+AH/AlkBXAHJAysBQwQAAwIBAwMI
-        AQsDBAEFAwEBAvwAAzYBWQG8AaEBmAH/AZ0BhQFbAf8BnwGJAYEB/wGiAYgBgAH/Ab8BpAGZAf8DYQHm
-        Az8BbgMIAQsEAAMKAQ0DBgEIAwMBBAMAAQEwAAM2AVkBIwEeAdcB/wEXARABmAH/AR0BFgGWAf8BFwER
-        AaIB/wEkARsB+AH/AlgBYQHmAz8BbgMIAQsEAAMKAQ0DBgEIAwMBBAMAAQH/AAEAAzUBVgG6AZ8BlwH/
-        AaUBhwFdAf8BuAGcAZMB/wG7AaABlgH/AVECTwGcAxsBJgQAAwcBCgMHAQoDAwEEAwEBAjgAAzUBVgEj
-        AR4B1QH/ARMBDwGrAf8BHwEZAdUB/wEjARsB2gH/Ak8BUQGcAxsBJgQAAwcBCgMHAQoDAwEEAwEBAv8A
-        CQADOwFjAckBtAGpAf8BwgGpAZ4B/wNbAcQDJgE5BAADAgEDAwgBCwMEAQYDAQECQAADOwFjATQBKgH4
-        Af8BKQEhAfgB/wJZAVsBxAMmATkEAAMCAQMDCAELAwQBBgMBAQL/ABEAAykBPgNeAdgBPQI8AWcIAAMG
-        AQgDBgEIAwIBAwMAAQFEAAMpAT4CWgFeAdgCPAE9AWcIAAMGAQgDBgEIAwIBAwMAAQH/AAkAAUIBTQE+
-        BwABPgMAASgDAAFoAwABGgMAAQEBAAEBBQABoAEBFgAD/wEAAfABAAE/AfwBAAEPAfAJAAHwAQABDwH8
-        AQABAwHwCQABmAEAAQcB5gEAAQEB8AkAAeABAAEBAfgCAAFwCQAB4AIAAXgCAAEQCQAB4AIAATgMAAHg
+        AQ8DBwEJAwQBBQMBAQIDAAEB/wABAAMLAQ8BWQJXAsIBqQGbAf8DTQH6A1ABnQMsAUQDHwEsAyEBMAMd
+        ASoDFgEfAxABFgMKAQ4DBQEHAwIBAwMAAQEDAAEBKAADCwEPAlcBWQHCAQ8BAAH4Af8BTQEsAU0B+gNQ
+        AZ0DLAFEAx8BLAMhATADHQEqAxYBHwMQARYDCgEOAwUBBwMCAQMDAAEBAwABAe8AAQEDAgEDCAADVAKu
+        AYoBQQH/Aa4BigFBAf8BvAGgAZMB/wNfAeADRgGBAyUBNwMgAS4DIAEvAxsBJgMUARwDDgETAwkBDAME
+        AQYDAgEDAwABARsAAQEDAgEDCAADVAGuAgAB1QH/AgAB0AH/AQQBAAH4Af8DXwHgA0YBgQMlATcDIAEu
+        AyABLwMbASYDFAEcAw4BEwMJAQwDBAEGAwIBAwMAAQHwAAMaASUDQgF2AVoCWAHAAa8BjAGCAf8BmQE5
+        ATAB/wGiAYIBOQH/Ab0BoAGTAf8BswGYAYwB/wFaAlcBxQM7AWMDIQExAyABLwMfASwDGQEjAxIBGAMM
+        ARADBwEKAwQBBQMBAQIDAAEBGAADGgElA0IBdgNYAcACAAHQAf8CAAGgAf8CAAGtAf8BBQEAAfgB/wEC
+        AQABwgH/A1cBxQM7AWMDIQExAyABLwMfASwDGQEjAxIBGAMMARADBwEKAwQBBQMBAQIDAAEB6AADOwFk
+        AbcBmwGQAf8BhQJAAf0BpAGDAUAB/QGbATwBMwH/AaEBgwE6Af8BogGEATwB/wG0AZcBiwH/AckBtQGl
+        Af8DWQH1A1EBogMtAUUDHgErAyABLwMdASkDFgEfAxABFQMKAQ4DBgEIAwMBBAMAAQEDAAEBEAADOwFk
+        AQMBAAHVAf8CQAGAAf0CQAGoAf0CAAGjAf8CAAGqAf8CAAGoAf8CAAHKAf8BGQEAAfgB/wFKAUIBWQH1
+        A1EBogMtAUUDHgErAyABLwMdASkDFgEfAxABFQMKAQ4DBgEIAwMBBAMAAQEDAAEB4AADNwFbAaUBhAE8
+        Af8BhwEvASYB/wGmAYUBPAH/AZsBPAEyAf8BoQGDAToB/wGmAYgBQAH/AacBigGAAf8BqgGOAYMB/wHD
+        AasBnQH/Ac8BvwGvAf8DYQHkA0QBewMmATgDHwEtAyABLwMbASYDFAEcAw0BEgMIAQsDBQEHAwIBAwMA
+        AQEMAAM3AVsCAAGyAf8CAAGFAf8CAAG0Af8CAAGjAf8CAAGqAf8CAAGuAf8CAAGuAf8CAAGzAf8BEAEA
+        AfgB/wEjAQcB+AH/AloBYQHkA0QBewMmATgDHwEtAyABLwMbASYDFAEcAw0BEgMIAQsDBQEHAwIBAwMA
+        AQHcAAM2AVkBowGEATwB/wGDASwBJAH/AaUBhAE7Af8BmwE7ATIB/wGhAYIBOgH/AaQBhgE+Af8BqAGL
+        AYAB/wGtAZEBhgH/AawBkQGGAf8BtQGcAY8B/wHOAb4BrgH/AcQBtAGmAf8BWQJXAb8DOQFgAyEBMAMh
+        ATADHwEtAxkBIwMSARgDDAEQAwcBCQMDAQQMAAM2AVkCAAGrAf8CAAGAAf8CAAG0Af8CAAGjAf8CAAGp
+        Af8CAAGrAf8CAAGvAf8CAAG0Af8CAAGyAf8BBwEAAcIB/wEjAQQB+AH/AR8BBAHFAf8DVwG/AzkBYAMh
+        ATADIQEwAx8BLQMZASMDEgEYAwwBEAMHAQkDAwEE3AADNgFZAaIBgwE7Af8BgwEsASQB/wGkAYMBOwH/
+        AZoBOwExAf8BoQGCATkB/wGjAYUBPAH/AacBiQFBAf8BqwGPAYQB/wGvAZQBiAH/AbEBmAGMAf8BsAGX
+        AYsB/wHEAa4BoAH/AdYByQG5Af8DXAH4A08BnAMuAUcDHgErAyABLwMdASkDFgEeAw8BFAMIAQsMAAM2
+        AVkCAAGrAf8CAAGAAf8CAAGzAf8CAAGiAf8CAAGpAf8CAAGrAf8CAAGuAf8CAAGzAf8BAQEAAbYB/wEG
+        AQABuAH/AQMBAAG4Af8BEwEAAeMB/wEvAQwB+AH/AVwBPwFcAfgDTwGcAy4BRwMeASsDIAEvAx0BKQMW
+        AR4DDwEUAwgBC9wAAzYBWQGiAYMBOwH/AYMBKwEjAf8BogGAATgB/wGfAYABOgH/Ac0BwAG9Af8BzQHC
+        Ab4B/wGlAYcBPwH/AakBiwGBAf8BrAGQAYUB/wG5AaMBmgH/AdUBywHGAf8B0QHFAcAB/wG3AZ4BkQH/
+        Ac0BvAGsAf8B0wHFAbYB/wNgAd4DRQF9AyMBMwMfASwDHwEsAxgBIQMOARMMAAM2AVkCAAGrAf8CAAGA
+        Af8CAAGyAf8CAAGhAf8BnAGZAcwB/wGpAaYB0QH/ARwBFAG3Af8CAAGwAf8CAAGzAf8BAwEAAbcB/wGu
+        AakB2AH/Aa4BqQHXAf8BCQEAAcQB/wEhAQIB+AH/ASsBCwH4Af8CWgFgAd4DRQF9AyMBMwMfASwDHwEs
+        AxgBIQMOARPcAAM2AVkBowGEATwB/wGCASoBIgH/AZ8BPQEzAf8BmAE4AS4B/wHmAeMB4gH/A/AB/wG6
+        AaYBnwH/AaYBiAFAAf8BqgGOAYMB/wHWAc0BygH/A/AB/wHQAcQBvwH/AbUBnQGRAf8BsQGYAYwB/wG6
+        AaEBlAH/Ac4BvQGtAf8BwQGuAaAB/wNWAb4DNwFbAxwBKAMdASkDEgEZDAADNgFZAgABqgH/AgABgAH/
+        AgABrwH/AgABoAH/AbMBsQHUAf8D8AH/AZ4BmgHNAf8CAAGuAf8CAAGwAf8BlQGQAc0B/wPwAf8BywHJ
+        AeIB/wEJAQABvQH/AQYBAAG4Af8BCwEAAcoB/wEiAQMB+AH/ARcBAQHHAf8DVgG+AzcBWwMcASgDHQEp
+        AxIBGdwAAzYBWQGgAYABOAH/AYgBMwErAf8BqAGIAUEB/wGRAS0BJQH/AcsBvgG6Af8D8AH/A/AB/wPw
+        Af8D8AH/A/AB/wPwAf8BvQGpAaEB/wGwAZYBigH/AbEBmAGMAf8BswGaAY4B/wGvAZUBiQH/AbwBowGW
+        Af8BzQG8AawB/wNfAfMDSgGKAx0BKQMSARgMAAM2AVkCAAGpAf8CAAGCAf8CAAG2Af8CAAGcAf8BgQE/
+        Ab8B/wPwAf8D8AH/A/AB/wPwAf8D8AH/A/AB/wGhAZwB0wH/AQMBAAG3Af8BBgEAAbgB/wEHAQABugH/
+        AQIBAAG3Af8BCwEAAdcB/wEgAQMB+AH/AkwBXwHzA0oBigMdASkDEgEY3AADNgFZAZ8BPwE2Af8BhwEy
+        ASoB/wG5AaEBmAH/AZ8BgQE5Af8BsQGaAZUB/wPwAf8B5gHjAeIB/wGiAYQBOwH/AbABlwGPAf8D8AH/
+        AecB5AHjAf8BrAGQAYUB/wGtAZIBhwH/Aa4BkwGIAf8BrwGUAYgB/wGvAZUBiQH/AasBkQGGAf8BqQGJ
+        AUEB/wHOAb4BrQH/A2QB7AMoAT0DCQEMDAADNgFZAgABqAH/AgABgQH/AQsBAwHBAf8CAAGjAf8CAAGh
+        Af8C5gHrAf8D8AH/ARoBEgG0Af8CAAGtAf8B3gHdAegB/wPwAf8BIQEXAbwB/wIAAbQB/wEBAQABtgH/
+        AQEBAAG2Af8BAgEAAbYB/wIAAa8B/wIAAbcB/wEjAQAB+AH/AV0BWQFkAewDKAE9AwkBDNwAAzYBWQGb
+        AToBMQH/AYUBLwEnAf8BtAGaAZEB/wGqAZEBiAH/AagBjgGFAf8B5gHjAeIB/wPwAf8BqQGNAYUB/wHI
+        AboBtQH/A/AB/wHLAb0BuQH/AagBigGAAf8BqgGOAYMB/wGqAY4BgwH/AasBjwGEAf8BpwGKAYAB/wGq
+        AYwBgQH/Ab4BowGVAf8DXAHqA0EBcwMVAR0DDQERDAADNgFZAgABpQH/AgABgAH/AQcBAAG7Af8BAgEA
+        AakB/wIAAaoB/wG0AbIB1AH/A/AB/wGOAYsBxgH/ATcBMgG9Af8D8AH/AcoByAHgAf8CAAGvAf8CAAGw
+        Af8CAAGyAf8CAAGyAf8CAAGtAf8CAAG0Af8BBwEAAfgB/wJVAVwB6gNBAXMDFQEdAw0BEdwAAzYBWQGh
+        AYIBOwH/AYMBKwEkAf8BswGZAZAB/wGjAYgBgAH/AasBkQGIAf8B0gHIAcUB/wPwAf8ByQG8AbcB/wHc
+        AdYB1AH/A/AB/wGyAZsBkwH/AaEBggE6Af8BpAGFAT0B/wGjAYQBPAH/AaQBhAE8Af8BrwGRAYUB/wG+
+        AaUBmAH/A2AB1AMrAUMDDgETAxQBHAMKAQ4MAAM2AVkCAAGpAf8CAAFBAf8BBQEAAbsB/wIAAaQB/wEB
+        AQABqwH/AYoBhwHFAf8D8AH/AcoByAHeAf8BnAGZAcwB/wPwAf8BnAGZAcwB/wIAAaoB/wIAAa0B/wIA
+        AakB/wIAAa8B/wIAAb4B/wELAQAB4AH/AlwBYAHUAysBQwMOARMDFAEcAwoBDtwAAzYBWQGwAZgBjwH/
+        AYkBNQEuAf8BsAGWAY0B/wGjAYgBgAH/AacBjAGDAf8BvQGrAaUB/wPwAf8B5AHgAd4B/wPwAf8B5wLk
+        Af8BqAGMAYIB/wGkAYgBQAH/AaEBggE6Af8BqgGKAYAB/wGyAZUBigH/AaUBjAGCAf8BsQGWAYoB/wG3
+        AaMBlgH/AzQBVQMKAQ4DDQESAwYBCAwAAzYBWQEHAQABsAH/AgABggH/AQMBAAG4Af8CAAGkAf8CAAGo
+        Af8CAAGpAf8C5wHsAf8C5wHsAf8C3gHoAf8D8AH/AR8BFwG3Af8CAAGqAf8CAAGmAf8CAAG3Af8BAQEA
+        AcIB/wIAAaMB/wEBAQABvQH/AREBAAG0Af8DNAFVAwoBDgMNARIDBgEI3AADNgFZAa4BlAGMAf8BiwE5
+        ATIB/wGwAZYBjQH/AaMBiAFBAf8BpgGLAYMB/wGnAYwBgwH/AecC5AH/A/AB/wPwAf8BzgHDAb8B/wGq
+        AZIBiQH/AbIBmQGPAf8BvAGnAZwB/wGyAZ0BkwH/AZ8BhgE+Af8BtQGYAYwB/wHFAa4BoAH/A1oBvQMe
+        ASsDCAELAwgBCwMDAQQMAAM2AVkBAwEAAa8B/wIAAYIB/wECAQABuAH/AgABowH/AgABqAH/AgABqQH/
+        AbYBtAHVAf8D8AH/A/AB/wHMAcoB4AH/AQMBAAGpAf8BBgEAAbgB/wEQAQQBxQH/AQ0BAAGtAf8CAAGb
+        Af8BAQEAAcsB/wETAQAB+AH/AlcBWgG9Ax4BKwMIAQsDCAELAwMBBNwAAzYBWQGtAZMBiwH/AYoBNwEw
+        Af8BsAGWAY0B/wGiAYcBQQH/AaYBiwGDAf8BpwGMAYQB/wHQAcYBwgH/A/AB/wPwAf8BtwGjAZwB/wG1
+        AZwBkgH/AbQBngGUAf8BoAGJAUEB/wGmAYgBPwH/AcABpwGZAf8DYQHiAz0BagMHAQoDBgEIAwoBDQME
+        AQYDAQECDAADNgFZAQIBAAGuAf8CAAGBAf8BAgEAAbcB/wIAAaMB/wIAAaYB/wIAAakB/wGIAYUBwgH/
+        A/AB/wPwAf8BoAGdAcwB/wEHAQABvQH/AQsBAAG2Af8CAAGbAf8CAAGuAf8BCwEAAfgB/wJdAWEB4gM9
+        AWoDBwEKAwYBCAMKAQ0DBAEGAwEBAtwAAzYBWQGsAZMBigH/AYkBNgEwAf8BsAGVAY0B/wGhAYYBQAH/
+        AaUBiQGBAf8BpgGLAYMB/wGlAYoBggH/AaMBiAGAAf8BrgGTAYkB/wG3AZ8BlQH/AaYBkAGHAf8BmQE+
+        ATQB/wG3AZgBiwH/AbwBoQGUAf8DTgGYAxQBHAQAAwcBCgMHAQkDAwEEAwEBAhAAAzYBWQEDAQABrQH/
+        AgABgAH/AQIBAAG3Af8CAAGiAf8CAAGmAf8CAAGoAf8CAAGlAf8CAAGjAf8CAAG2Af8BCgEAAb4B/wEE
+        AQABnwH/AgABmwH/AgAB7AH/AQgBAAHdAf8DTgGYAxQBHAQAAwcBCgMHAQkDAwEEAwEBAuAAAzYBWQGs
+        AZIBigH/AYkBNgEwAf8BsAGVAY0B/wGhAYUBPwH/AaQBiQGBAf8BoQGGAUAB/wGoAY0BhAH/AbIBlwGO
+        Af8BrAGVAYwB/wGgAYkBgQH/AbgBnwGUAf8ByAGzAaYB/wNbAcMDKQE+BAADAwEEAwgBCwMEAQUDAQEC
+        AwABARQAAzYBWQECAQABrQH/AgABgAH/AQIBAAG2Af8CAAGhAf8CAAGkAf8CAAGgAf8CAAGrAf8BAwEA
+        Ab0B/wEGAQABqgH/AgABmgH/AQkBAAHCAf8BGAEGAfgB/wJZAVsBwwMpAT4EAAMDAQQDCAELAwQBBQMB
+        AQIDAAEB5AADNgFZAasBkQGJAf8BiQE1AS8B/wGwAZUBjQH/AZ4BgwE9Af8BogGHAUEB/wGvAZMBigH/
+        AawBkAGHAf8BmwGCATwB/wGpAZABhwH/AcYBrwGjAf8DXwHoAz4BbAMIAQsEAAMKAQ0DBgEIAwIBAwMA
+        AQEcAAM2AVkBAQEAAa0B/wIAAYAB/wECAQABtgH/AgABnQH/AgABogH/AgABuAH/AgABswH/AgABlwH/
+        AQEBAAGpAf8BFAEEAfgB/wJXAV8B6AM+AWwDCAELBAADCgENAwYBCAMCAQMDAAEB7AADNgFZAakBjwGH
+        Af8BhgEzAS0B/wGsAZEBiQH/AacBigGCAf8BsQGWAY4B/wGhAYcBQQH/AZsBgAE6Af8BwAGmAZsB/wNf
+        AfsDTgGZAxYBHgQAAwcBCgMHAQkDAwEEAwABASQAAzYBWQIAAakB/wIAAT8B/wIAAbIB/wIAAasB/wED
+        AQABuAH/AgABnwH/AgABmgH/AQwBAAHsAf8BUQFEAV8B+wNOAZkDFgEeBAADBwEKAwcBCQMDAQQDAAEB
+        9AADNgFZAa4BlAGMAf8BjQE6ATQB/wG7AaMBmgH/AacBjQGFAf8BlgFBATkB/wGxAZYBjAH/AcYBrwGk
+        Af8DXAHJAysBQwQAAwIBAwMIAQsDBAEFAwEBAiwAAzYBWQECAQABsAH/AgABgwH/AQsBBgHHAf8CAAGl
+        Af8CAAGPAf8BAgEAAboB/wEUAQcB+AH/AlkBXAHJAysBQwQAAwIBAwMIAQsDBAEFAwEBAvwAAzYBWQG8
+        AaEBmAH/AZ0BhQE/Af8BnwGJAYEB/wGiAYgBgAH/Ab8BpAGZAf8DYQHmAz8BbgMIAQsEAAMKAQ0DBgEI
+        AwMBBAMAAQEwAAM2AVkBBwECAdcB/wIAAZgB/wEBAQABlgH/AgABogH/AQgBAAH4Af8CWAFhAeYDPwFu
+        AwgBCwQAAwoBDQMGAQgDAwEEAwABAf8AAQADNQFWAboBnwGXAf8BpQGHAUEB/wG4AZwBkwH/AbsBoAGW
+        Af8BUQJPAZwDGwEmBAADBwEKAwcBCgMDAQQDAQECOAADNQFWAQcBAgHVAf8CAAGrAf8BAwEAAdUB/wEH
+        AQAB2gH/Ak8BUQGcAxsBJgQAAwcBCgMHAQoDAwEEAwEBAv8ACQADOwFjAckBtAGpAf8BwgGpAZ4B/wNb
+        AcQDJgE5BAADAgEDAwgBCwMEAQYDAQECQAADOwFjARgBDgH4Af8BDQEFAfgB/wJZAVsBxAMmATkEAAMC
+        AQMDCAELAwQBBgMBAQL/ABEAAykBPgNeAdgBPQI8AWcIAAMGAQgDBgEIAwIBAwMAAQFEAAMpAT4CWgFe
+        AdgCPAE9AWcIAAMGAQgDBgEIAwIBAwMAAQH/AAkAAUIBTQE+BwABPgMAASgDAAFoAwABGgMAAQEBAAEB
+        BQABoAEBFgAD/wEAAfABAAE/AfwBAAEPAfAJAAHwAQABDwH8AQABAwHwCQABmAEAAQcB5gEAAQEB8AkA
+        AeABAAEBAfgCAAFwCQAB4AIAAXgCAAEQCQAB4AIAATgMAAHgAgABOAwAAeACAAE4DAAB4AIAATgMAAHg
         AgABOAwAAeACAAE4DAAB4AIAATgMAAHgAgABOAwAAeACAAE4DAAB4AIAATgMAAHgAgABOAwAAeACAAE4
-        DAAB4AIAATgMAAHgAgABOAwAAeACAAE4DAAB4AEAAQgBeAEAAQIBEAkAAeABAAEgAfgBAAEIATAJAAHg
-        AQABQwH4AQABEAHwCQAB4AEBAQ8B+AEAAUMB8AkAAeABBAE/AfgBAQEPAfAJAAHgAQgBfwH4AQIBHwHw
-        CQAB4AEhAf8B+AEIAX8B8AkAAeABhwH/AfgBIQH/AfAJAAHjAQ8B/wH4AcMB/wHwCQAL
+        DAAB4AEAAQgBeAEAAQIBEAkAAeABAAEgAfgBAAEIATAJAAHgAQABQwH4AQABEAHwCQAB4AEBAQ8B+AEA
+        AUMB8AkAAeABBAE/AfgBAQEPAfAJAAHgAQgBfwH4AQIBHwHwCQAB4AEhAf8B+AEIAX8B8AkAAeABhwH/
+        AfgBIQH/AfAJAAHjAQ8B/wH4AcMB/wHwCQAL
 </value>
   </data>
-  <data name="btn_cancel_add.Location" type="System.Drawing.Point, System.Drawing">
-    <value>700, 101</value>
-  </data>
-  <data name="btn_cancel_add.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 22</value>
-  </data>
   <data name="btn_cancel_add.Text" xml:space="preserve">
-    <value>Cancelar</value>
-  </data>
-  <data name="pg_adding.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 15</value>
-  </data>
-  <data name="txt_adding_p.Location" type="System.Drawing.Point, System.Drawing">
-    <value>671, 106</value>
+    <value>取消</value>
   </data>
   <data name="pic_title.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -10262,47 +10140,35 @@
         qkiFwA/Cxh38/0bwFz2Op42RW7CnAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="lbl_lang_sub_mux.Location" type="System.Drawing.Point, System.Drawing">
-    <value>827, 15</value>
-  </data>
   <data name="lbl_lang_sub_mux.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 13</value>
+    <value>55, 13</value>
   </data>
   <data name="lbl_lang_sub_mux.Text" xml:space="preserve">
-    <value>Idioma de subtítulos</value>
-  </data>
-  <data name="Combo_ext_sub_mux.Location" type="System.Drawing.Point, System.Drawing">
-    <value>682, 12</value>
+    <value>字幕语言</value>
   </data>
   <data name="lbl_def_sub_mux.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1104, 16</value>
+    <value>1094, 16</value>
   </data>
   <data name="lbl_def_sub_mux.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 13</value>
+    <value>91, 13</value>
   </data>
   <data name="lbl_def_sub_mux.Text" xml:space="preserve">
-    <value>Pista por defecto</value>
-  </data>
-  <data name="lbl_sub_batch_ext.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 13</value>
-  </data>
-  <data name="lbl_sub_batch_ext.Text" xml:space="preserve">
-    <value>Formato</value>
+    <value>是默认轨道吗？</value>
   </data>
   <data name="button24.Text" xml:space="preserve">
-    <value>Examinar...</value>
+    <value>浏览...</value>
   </data>
   <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 13</value>
+    <value>91, 13</value>
   </data>
   <data name="label20.Text" xml:space="preserve">
-    <value>Ruta personalizada para subtítulos</value>
+    <value>字幕自定义路径</value>
   </data>
   <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 13</value>
+    <value>55, 13</value>
   </data>
   <data name="label21.Text" xml:space="preserve">
-    <value>Ruta de destino</value>
+    <value>输出路径</value>
   </data>
   <data name="btn_sub_mux.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -10387,28 +10253,25 @@
 </value>
   </data>
   <data name="btn_sub_mux.Text" xml:space="preserve">
-    <value>Multiplexar subtítulos</value>
+    <value>多路复用字幕</value>
   </data>
   <data name="button26.Location" type="System.Drawing.Point, System.Drawing">
-    <value>237, 15</value>
+    <value>239, 15</value>
   </data>
   <data name="button26.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 74</value>
+    <value>68, 73</value>
   </data>
   <data name="button26.Text" xml:space="preserve">
-    <value>Limpiar lista</value>
+    <value>清除列表</value>
   </data>
   <data name="chk_burn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 17</value>
+    <value>74, 17</value>
   </data>
   <data name="chk_burn.Text" xml:space="preserve">
-    <value>Subtítulos codificados</value>
+    <value>刻录字幕</value>
   </data>
   <data name="button25.Text" xml:space="preserve">
-    <value>Examinar...</value>
-  </data>
-  <data name="txt_help_subs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>613, 84</value>
+    <value>浏览...</value>
   </data>
   <data name="btn_update.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -10501,22 +10364,19 @@
 </value>
   </data>
   <data name="lbl_mux_jobs.Text" xml:space="preserve">
-    <value>Tareas: 0</value>
-  </data>
-  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 65</value>
+    <value>工作: 0</value>
   </data>
   <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 13</value>
+    <value>55, 13</value>
   </data>
   <data name="label14.Text" xml:space="preserve">
-    <value>Destino</value>
+    <value>输出路径</value>
   </data>
   <data name="button16.Text" xml:space="preserve">
-    <value>Examinar</value>
+    <value>浏览</value>
   </data>
   <data name="lbl_tr_n.Text" xml:space="preserve">
-    <value>Flujos: 0</value>
+    <value>轨道: 0</value>
   </data>
   <data name="btn_mux_show_jobs.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -10570,7 +10430,7 @@
 </value>
   </data>
   <data name="btn_mux_show_jobs.Text" xml:space="preserve">
-    <value>Ver lista de tareas</value>
+    <value>查看复用作业</value>
   </data>
   <data name="btn_mux_job.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -10628,8 +10488,14 @@
         /dQVhgnqPPV4ob3rb9wNPyHqsHrmCCknxP8A2ylSBCEZyv0AAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="btn_mux_job.Location" type="System.Drawing.Point, System.Drawing">
+    <value>273, 7</value>
+  </data>
+  <data name="btn_mux_job.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 79</value>
+  </data>
   <data name="btn_mux_job.Text" xml:space="preserve">
-    <value>Agregar a tareas</value>
+    <value>添加为复用作业</value>
   </data>
   <data name="btn_default_track.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -10692,7 +10558,7 @@
 </value>
   </data>
   <data name="btn_default_track.Text" xml:space="preserve">
-    <value>Pista por defecto</value>
+    <value>默认轨道</value>
   </data>
   <data name="btn_del_track.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -10748,7 +10614,7 @@
 </value>
   </data>
   <data name="btn_del_track.Text" xml:space="preserve">
-    <value>Eliminar pista</value>
+    <value>删除轨道</value>
   </data>
   <data name="btn_extract.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -10810,23 +10676,17 @@
         gg==
 </value>
   </data>
-  <data name="btn_extract.Location" type="System.Drawing.Point, System.Drawing">
-    <value>441, 8</value>
-  </data>
-  <data name="btn_extract.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 73</value>
-  </data>
   <data name="btn_extract.Text" xml:space="preserve">
-    <value>Salvar pista</value>
+    <value>保存轨道</value>
   </data>
   <data name="lbl_search_url.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1025, 104</value>
+    <value>1044, 104</value>
   </data>
   <data name="lbl_search_url.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 13</value>
+    <value>19, 13</value>
   </data>
   <data name="lbl_search_url.Text" xml:space="preserve">
-    <value>Buscar</value>
+    <value>找</value>
   </data>
   <data name="btn_help.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -10884,15 +10744,21 @@
         M9+3vzX3OXvV2GVruqGN/zYtPStPDY3R2uqPP7dJQOLP/49D479aiIBSleFnWAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="btn_help.Location" type="System.Drawing.Point, System.Drawing">
+    <value>325, 25</value>
+  </data>
+  <data name="btn_help.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 69</value>
+  </data>
   <data name="btn_help.Text" xml:space="preserve">
-    <value>Ayuda</value>
+    <value>用户指南</value>
   </data>
   <data name="img_abort.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAA8
-        FAAAAk1TRnQBSQFMAgEBAwEAARgBMQEYATEBFAEAARQBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFQ
+        FAAAAk1TRnQBSQFMAgEBAwEAATwBNgE8ATYBFAEAARQBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFQ
         AwABFAMAAQEBAAEgBgABGRYAAzQBVQNWAbsDVwHFA1kBxANZAcQDWQHEA1kBxANZAcQDWQHEA1kBxANZ
         AcQDWQHEA1kBxANZAcQDWQHEA1cBxQNWAbwDNwFaLAADEwEaAzoBYAM6AWArAAEBAwQBBgMmATkCSgFJ
         AYkCWgFXAcUCYQFdAeICYQFUAe4CXQFOAfACXwFYAeMCXAFaAc0CTwFOAZcDKAE8AwcBCQMBAQJcAAMu
@@ -11120,20 +10986,14 @@
         llY2b6ysbd9Qk76xtXMYt7axf+vq5vGgr6/PEwD3f7fLV7cCHTnDAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btn_concat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>420, 8</value>
-  </data>
   <data name="btn_concat.Text" xml:space="preserve">
-    <value>Unir ficheros</value>
-  </data>
-  <data name="btn_capture.Location" type="System.Drawing.Point, System.Drawing">
-    <value>354, 8</value>
+    <value>合并文件</value>
   </data>
   <data name="btn_capture.Text" xml:space="preserve">
-    <value>Capturar pantalla</value>
+    <value>录屏</value>
   </data>
   <data name="button21.Text" xml:space="preserve">
-    <value>Examinar</value>
+    <value>浏览</value>
   </data>
   <data name="btn_trim.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -11195,11 +11055,8 @@
         kw9TWbJWAebE/g3/LCnzFanukgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btn_trim.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 84</value>
-  </data>
   <data name="btn_trim.Text" xml:space="preserve">
-    <value>Cortar ficheros</value>
+    <value>修剪文件</value>
   </data>
   <data name="btn_seq.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -11248,14 +11105,8 @@
         QIAul6IAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btn_seq.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 8</value>
-  </data>
-  <data name="btn_seq.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 84</value>
-  </data>
   <data name="btn_seq.Text" xml:space="preserve">
-    <value>Codificación secuencial</value>
+    <value>顺序编码</value>
   </data>
   <data name="btn_reset_path.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -11335,14 +11186,8 @@
         l/K7U0+2/OZWB8Ay3Ec90+OFzIGjtOX8eQLlST2d8t+3OnX6P3c3b3jLP6iIAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btn_multi_m.Location" type="System.Drawing.Point, System.Drawing">
-    <value>75, 8</value>
-  </data>
-  <data name="btn_multi_m.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 84</value>
-  </data>
   <data name="btn_multi_m.Text" xml:space="preserve">
-    <value>Codificación multi-fichero</value>
+    <value>多个文件编码</value>
   </data>
   <data name="btn_save_path.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -11435,23 +11280,53 @@
         idTCyKQF3VjOeKcry4wfi0tY8i/4FahIypCo1wAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btn_skip_main.Location" type="System.Drawing.Point, System.Drawing">
-    <value>215, 8</value>
-  </data>
   <data name="btn_skip_main.Text" xml:space="preserve">
-    <value>Omitir actual</value>
+    <value>跳过当前</value>
+  </data>
+  <data name="chk_trim2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>525, 64</value>
   </data>
   <data name="chk_trim2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 17</value>
+    <value>79, 17</value>
   </data>
   <data name="chk_trim2.Text" xml:space="preserve">
-    <value>Inicio/fin</value>
+    <value>开始/结束</value>
   </data>
-  <data name="combo_vout_color.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 21</value>
+  <data name="label23.Size" type="System.Drawing.Size, System.Drawing">
+    <value>19, 13</value>
   </data>
-  <data name="combo_vin_col.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 21</value>
+  <data name="label23.Text" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>19, 13</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>秒</value>
+  </data>
+  <data name="fade_a_out.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 17</value>
+  </data>
+  <data name="fade_a_out.Text" xml:space="preserve">
+    <value>音频输出</value>
+  </data>
+  <data name="fade_a_in.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 17</value>
+  </data>
+  <data name="fade_a_in.Text" xml:space="preserve">
+    <value>音频输入</value>
+  </data>
+  <data name="fade_v_out.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 17</value>
+  </data>
+  <data name="fade_v_out.Text" xml:space="preserve">
+    <value>视频输出</value>
+  </data>
+  <data name="fade_v_in.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 17</value>
+  </data>
+  <data name="fade_v_in.Text" xml:space="preserve">
+    <value>视频输入</value>
   </data>
   <data name="btn_cust_path.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -11463,52 +11338,43 @@
 </value>
   </data>
   <data name="chk_delete_source.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 17</value>
+    <value>86, 17</value>
   </data>
   <data name="chk_delete_source.Text" xml:space="preserve">
-    <value>Borrar ficheros de origen</value>
+    <value>删除源文件</value>
   </data>
   <data name="chk_overw.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 17</value>
+    <value>86, 17</value>
   </data>
   <data name="chk_overw.Text" xml:space="preserve">
-    <value>Sobrescribir orígenes</value>
+    <value>覆盖源文件</value>
   </data>
-  <data name="lbl_multi_file.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbl_multi_file.Size" type="System.Drawing.Size, System.Drawing">
-    <value>45, 13</value>
+  <data name="lbl_multi_file.Text" xml:space="preserve">
+    <value>多个文件</value>
   </data>
   <data name="chk_try.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 17</value>
+    <value>86, 17</value>
   </data>
   <data name="chk_try.Text" xml:space="preserve">
-    <value>No probar preset</value>
-  </data>
-  <data name="txt_suffix.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 53</value>
-  </data>
-  <data name="txt_suffix.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 20</value>
+    <value>不使用预设</value>
   </data>
   <data name="chk_open_compl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 17</value>
+    <value>86, 17</value>
   </data>
   <data name="chk_open_compl.Text" xml:space="preserve">
-    <value>Abrir al completar</value>
+    <value>完成后打开</value>
   </data>
   <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 17</value>
+    <value>110, 17</value>
   </data>
   <data name="checkBox1.Text" xml:space="preserve">
-    <value>Recrear ruta del origen</value>
+    <value>重新创建源路径</value>
   </data>
   <data name="chk_suffix.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 17</value>
+    <value>86, 17</value>
   </data>
   <data name="chk_suffix.Text" xml:space="preserve">
-    <value>Renombrar</value>
+    <value>重命名输出</value>
   </data>
   <data name="btn_multimedia.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -11566,29 +11432,35 @@
         bqzJxHv4dvd9/Fj+nZGEt8Hb4m3ytqX67EbF/g2OGYEQYxJ/qQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btn_multimedia.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 84</value>
-  </data>
   <data name="btn_multimedia.Text" xml:space="preserve">
-    <value>Información multimedia</value>
+    <value>多媒体信息</value>
+  </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 125</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 13</value>
+    <value>55, 13</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>Ajuste rápido</value>
+    <value>快速设置</value>
   </data>
   <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 229</value>
+    <value>10, 229</value>
   </data>
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 13</value>
+    <value>55, 13</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
-    <value>Destino</value>
+    <value>输出路径</value>
+  </data>
+  <data name="lbl_fade.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 176</value>
+  </data>
+  <data name="lbl_fade.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
   </data>
   <data name="lbl_fade.Text" xml:space="preserve">
-    <value>Efecto fade</value>
+    <value>淡入/淡出</value>
   </data>
   <data name="item_up.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -11710,8 +11582,11 @@
         fC7v9/A1r/V1jx3qIfK8YEkxiSy6B027ucJbepl63g+e6+fB/Q+hkPbDf2EaRwAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="btn_exit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>387, 27</value>
+  </data>
   <data name="btn_exit.Text" xml:space="preserve">
-    <value>Salir</value>
+    <value>退出</value>
   </data>
   <data name="pic_frame.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -11834,23 +11709,23 @@
         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
-        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
+        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
 </value>
   </data>
   <data name="pic_frame.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -12197,8 +12072,14 @@
         AABJRU5ErkJggg==
 </value>
   </data>
+  <data name="btn_all_yt.Location" type="System.Drawing.Point, System.Drawing">
+    <value>754, 11</value>
+  </data>
+  <data name="btn_all_yt.Size" type="System.Drawing.Size, System.Drawing">
+    <value>84, 87</value>
+  </data>
   <data name="btn_all_yt.Text" xml:space="preserve">
-    <value>Descargar canal/lista</value>
+    <value>下载频道/播放列表</value>
   </data>
   <data name="btn_logs_url.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -12229,14 +12110,17 @@
         RU5ErkJggg==
 </value>
   </data>
+  <data name="btn_logs_url.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 88</value>
+  </data>
   <data name="btn_logs_url.Text" xml:space="preserve">
-    <value>Mostrar registro</value>
+    <value>查看日志文件</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>116, 13</value>
+    <value>55, 13</value>
   </data>
   <data name="label12.Text" xml:space="preserve">
-    <value>Descargas simultáneas</value>
+    <value>并发下载</value>
   </data>
   <data name="btn_save_downs.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -12263,6 +12147,15 @@
         57bjcm3tYnV19eKFCxccNNtramqsmRqNeeeOHSZ3NzfT/r0epk88PV0ee9zv/wsMiagEuRfR2AAAAABJ
         RU5ErkJggg==
 </value>
+  </data>
+  <data name="btn_save_downs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>120, 10</value>
+  </data>
+  <data name="n_downs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>70, 13</value>
+  </data>
+  <data name="group_downs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 41</value>
   </data>
   <data name="pic_noimg.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -12318,10 +12211,10 @@
 </value>
   </data>
   <data name="chk_auto_subs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 17</value>
+    <value>74, 17</value>
   </data>
   <data name="chk_auto_subs.Text" xml:space="preserve">
-    <value>Incluir transcritos</value>
+    <value>自动字幕</value>
   </data>
   <data name="pic_no_yt.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -12447,58 +12340,55 @@
 </value>
   </data>
   <data name="btn_update_yt.Text" xml:space="preserve">
-    <value>Actual.</value>
+    <value>更新</value>
   </data>
   <data name="txt_up_output.Text" xml:space="preserve">
-    <value>Actualización en curso, espere por favor...</value>
+    <value>正在更新中，请稍候...</value>
   </data>
   <data name="chk_best_yt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 17</value>
+    <value>129, 17</value>
   </data>
   <data name="chk_best_yt.Text" xml:space="preserve">
-    <value>Forzar mejor calidad en MP4</value>
+    <value>强制最佳质量的MP4</value>
   </data>
   <data name="chk_convert_srt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 17</value>
+    <value>87, 17</value>
   </data>
   <data name="chk_convert_srt.Text" xml:space="preserve">
-    <value>Convertir a SRT</value>
+    <value>转换为 SRT</value>
   </data>
   <data name="chk_save_subtitles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 17</value>
+    <value>74, 17</value>
   </data>
   <data name="chk_save_subtitles.Text" xml:space="preserve">
-    <value>Salvar subtitulos</value>
+    <value>保存字幕</value>
+  </data>
+  <data name="chk_embed_meta.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 17</value>
   </data>
   <data name="chk_embed_meta.Text" xml:space="preserve">
-    <value>Incluir metadatos</value>
+    <value>嵌入元数据</value>
   </data>
   <data name="chk_yout_subs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 17</value>
+    <value>74, 17</value>
   </data>
   <data name="chk_yout_subs.Text" xml:space="preserve">
-    <value>Incluir subtitulos</value>
+    <value>嵌入字幕</value>
   </data>
   <data name="chk_down_limit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 17</value>
+    <value>98, 17</value>
   </data>
   <data name="chk_down_limit.Text" xml:space="preserve">
-    <value>Límite de descarga</value>
+    <value>下载速度限制</value>
   </data>
   <data name="chk_cache_yt.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 17</value>
+    <value>98, 17</value>
   </data>
   <data name="chk_cache_yt.Text" xml:space="preserve">
-    <value>Limpiar caché de descarga</value>
-  </data>
-  <data name="label25.Location" type="System.Drawing.Point, System.Drawing">
-    <value>183, 25</value>
-  </data>
-  <data name="n_down_speed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>136, 22</value>
+    <value>清除下载缓存</value>
   </data>
   <data name="groupBox_yout.Text" xml:space="preserve">
-    <value>Configuración de YouTube</value>
+    <value>YouTube 设置</value>
   </data>
   <data name="btn_save_path_url.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -12613,11 +12503,14 @@
         /QQC1xhpymQ8LmBpzpsFgPd/0+AKgBQcGjgAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="btn_add_yts.Location" type="System.Drawing.Point, System.Drawing">
+    <value>142, 10</value>
+  </data>
   <data name="btn_add_yts.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 91</value>
+    <value>91, 91</value>
   </data>
   <data name="btn_add_yts.Text" xml:space="preserve">
-    <value>Añadir YouTube de fichero</value>
+    <value>从文件添加 YouTube 网址</value>
   </data>
   <data name="btn_n_urls.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -12675,8 +12568,14 @@
         l/K7U0+2/OZWB8Ay3Ec90+OFzIGjtOX8eQLlST2d8t+3OnX6P3c3b3jLP6iIAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="btn_n_urls.Location" type="System.Drawing.Point, System.Drawing">
+    <value>696, 11</value>
+  </data>
+  <data name="btn_n_urls.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 89</value>
+  </data>
   <data name="btn_n_urls.Text" xml:space="preserve">
-    <value>Descarga múltiple</value>
+    <value>多网址下载</value>
   </data>
   <data name="btn_url_info.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -12726,44 +12625,26 @@
         wfolrfgvHOCvsdeiczQAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btn_url_info.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 16</value>
-  </data>
-  <data name="btn_url_info.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 85</value>
-  </data>
   <data name="btn_url_info.Text" xml:space="preserve">
-    <value>Calidades de la URL</value>
-  </data>
-  <data name="btn_clean_errors.Location" type="System.Drawing.Point, System.Drawing">
-    <value>550, 16</value>
-  </data>
-  <data name="btn_clean_errors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 85</value>
+    <value>获取 URL 流</value>
   </data>
   <data name="btn_clean_errors.Text" xml:space="preserve">
-    <value>Eliminar filas inválidas</value>
-  </data>
-  <data name="chk_output_server.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 222</value>
+    <value>删除错误行</value>
   </data>
   <data name="chk_output_server.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 17</value>
   </data>
   <data name="chk_output_server.Text" xml:space="preserve">
-    <value>Servidor de salida</value>
+    <value>输出服务器地址</value>
   </data>
   <data name="btn_validate_url.Text" xml:space="preserve">
-    <value>Validar URLs</value>
-  </data>
-  <data name="btn_cancel_validate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 85</value>
+    <value>验证 URL</value>
   </data>
   <data name="btn_cancel_validate.Text" xml:space="preserve">
-    <value>Parar validación</value>
+    <value>停止验证</value>
   </data>
   <data name="btn_stop_m3u8.Text" xml:space="preserve">
-    <value>Omitir en curso</value>
+    <value>跳过当前</value>
   </data>
   <data name="btn_add_urls.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -12872,23 +12753,26 @@
         AABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btn_add_urls.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 91</value>
+  <data name="btn_add_urls.Location" type="System.Drawing.Point, System.Drawing">
+    <value>75, 10</value>
   </data>
   <data name="btn_add_urls.Text" xml:space="preserve">
-    <value>Añadir URLs de fichero</value>
+    <value>从文件添加 URL</value>
   </data>
   <data name="btn_browse_path_m3u.Text" xml:space="preserve">
-    <value>Examinar...</value>
+    <value>浏览...</value>
   </data>
   <data name="chk_m3u_params.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 17</value>
+    <value>73, 17</value>
   </data>
   <data name="chk_m3u_params.Text" xml:space="preserve">
-    <value>Parámetros M3U</value>
+    <value>M3U参数</value>
+  </data>
+  <data name="btn_clear_urls.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 86</value>
   </data>
   <data name="btn_clear_urls.Text" xml:space="preserve">
-    <value>Limpiar URLs</value>
+    <value>清除网址列表</value>
   </data>
   <data name="btn_start_m3u.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -12937,14 +12821,20 @@
         QIAul6IAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="btn_start_m3u.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 87</value>
+  </data>
   <data name="btn_start_m3u.Text" xml:space="preserve">
-    <value>Descarga secuencial</value>
+    <value>顺序下载</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 13</value>
+    <value>55, 13</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
-    <value>Ruta de destino</value>
+    <value>输出路径</value>
+  </data>
+  <data name="groupBox_m3u.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1254, 252</value>
   </data>
   <data name="pic_rec_cell.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -13816,62 +13706,23 @@
         4KQ2+vg7K/9bTP8DpV2pzTg5tUEAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="col1.Text" xml:space="preserve">
-    <value>      Fichero</value>
-  </data>
-  <data name="col_dir.Text" xml:space="preserve">
-    <value>Ruta</value>
-  </data>
-  <data name="col1_2.Text" xml:space="preserve">
-    <value>Tipo de fichero</value>
-  </data>
-  <data name="col2.Text" xml:space="preserve">
-    <value>Duración</value>
-  </data>
-  <data name="col3.Text" xml:space="preserve">
-    <value>Tamaño</value>
-  </data>
-  <data name="col4.Text" xml:space="preserve">
-    <value>Estado</value>
-  </data>
   <data name="tabPage1.Text" xml:space="preserve">
-    <value>Proceso por lotes   </value>
+    <value>批处理         </value>
   </data>
   <data name="tabPage2.Text" xml:space="preserve">
-    <value>Multiplexar flujos   </value>
+    <value>流多路复用         </value>
   </data>
   <data name="tabPage3.Text" xml:space="preserve">
-    <value>Subtitular   </value>
+    <value>批量字幕       </value>
   </data>
   <data name="txt_paste_links.Size" type="System.Drawing.Size, System.Drawing">
-    <value>191, 25</value>
+    <value>159, 25</value>
   </data>
   <data name="txt_paste_links.Text" xml:space="preserve">
-    <value>Pegue enlace aquí</value>
-  </data>
-  <data name="Column0.HeaderText" xml:space="preserve">
-    <value>Miniatura</value>
-  </data>
-  <data name="Duration1.HeaderText" xml:space="preserve">
-    <value>Duración</value>
-  </data>
-  <data name="Duration1.Width" type="System.Int32, mscorlib">
-    <value>87</value>
-  </data>
-  <data name="Capture_time1.HeaderText" xml:space="preserve">
-    <value>Capturar durante</value>
-  </data>
-  <data name="Capture_time1.Width" type="System.Int32, mscorlib">
-    <value>110</value>
-  </data>
-  <data name="Type1.HeaderText" xml:space="preserve">
-    <value>Fichero de salida</value>
-  </data>
-  <data name="Status1.HeaderText" xml:space="preserve">
-    <value>Estado</value>
+    <value>在这里粘贴链接</value>
   </data>
   <data name="tabPage4.Text" xml:space="preserve">
-    <value>Descargar URLs   </value>
+    <value>批量 URLs     </value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -14165,7 +14016,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACu
-        CQAAAk1TRnQBSQFMAgEBAgEAATABHwEwAR8BFAEAARQBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFQ
+        CQAAAk1TRnQBSQFMAgEBAgEAAVQBJAFUASQBFAEAARQBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFQ
         AwABFAMAAQEBAAEgBgABGUoAAwQBBSgAAwQBBf8AEQADBAEFAz0BaQMVAR0YAAMVAR0DPQFpAwQBBf8A
         FQADOgFhAlUBUwGwGAACVQFTAbADOgFh/wAdAAH1AakBAAH/AzwBZhAAAzwBZgH1AakBAAH//wAhAAJY
         AVYBvAMrAfwQAAMrAfwCWAFWAbz/ACEAAzMBUgH/AdkBAAH/AzcBWwgAAzcBWwH/AdkBAAH/AzMBUv8A
@@ -14214,7 +14065,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAi
-        WgAAAk1TRnQBSQFMAgEBAwEAAVgBHAFYARwBKAEAASgBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAGg
+        WgAAAk1TRnQBSQFMAgEBAwEAAXwBIQF8ASEBKAEAASgBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAGg
         AwABKAMAAQEBAAEgBgABZCIAAwEEAgEDAwIBAwMCAQMDAgEDAwIBAwMCAQMDAgEDAwIBAwMCAQMDAgED
         AwIBAwMCAQMDAgEDAwIBAwMCAQMDAgEDAwIBAwMCAQMDAgEDAwIBAwMCAQMDAgEDAwIBAwMCAQMDAgED
         AwIBAwMCAQMDAgEDAwIBAwMCAQMDAQECIAADAQQCAQMDAgEDAwIBAwMCAQMDAgEDAwIBAwMCAQMDAgED

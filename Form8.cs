@@ -57,9 +57,43 @@ namespace FFBatch
             ctrl.ResumeLayout(false);
         }
 
+        public void UpdateColorDark(Control myControl)
+        {
+            myControl.BackColor = Color.FromArgb(255, 64, 64, 64);
+            myControl.ForeColor = Color.White;
+            foreach (Control subC in myControl.Controls)
+            {
+                UpdateColorDark(subC);
+            }
+        }
+
+        public void UpdateColorDefault(Control myControl)
+        {
+            myControl.BackColor = SystemColors.InactiveBorder;
+            myControl.ForeColor = Control.DefaultForeColor;
+            foreach (Control subC in myControl.Controls)
+            {
+                UpdateColorDefault(subC);
+            }
+        }
+
         private void Form8_Load(object sender, EventArgs e)
         {            
             init_dg();
+            if (Properties.Settings.Default.dark_mode == true)
+            {
+                foreach (Control c in this.Controls) UpdateColorDark(c);
+                this.BackColor = Color.FromArgb(255, 64, 64, 64);
+                dg_streams.BackgroundColor = Color.Gray;
+                dg_streams.RowsDefaultCellStyle.BackColor = Color.Gray;
+            }
+            else
+            {
+                foreach (Control c in this.Controls) UpdateColorDefault(c);
+                this.BackColor = SystemColors.InactiveBorder;
+                dg_streams.BackgroundColor = SystemColors.InactiveBorder;
+                dg_streams.RowsDefaultCellStyle.BackColor = Color.White;
+            }
             btn_close.Focus();
 
             Process yt = new Process();
