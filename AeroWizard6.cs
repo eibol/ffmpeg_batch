@@ -1,4 +1,7 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Globalization;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace FFBatch
@@ -50,13 +53,13 @@ namespace FFBatch
             canceled = false;
             if (combo_ext.Text == String.Empty)
             {
-                MessageBox.Show("Output format extension cannot be blank.");
+                MessageBox.Show(FFBatch.Properties.Strings.out_blank);
                 e.Cancel = true;
                 return;
             }
             if (radio_absolute.Checked == true && txt_path.Text.Length == 0)
             {
-                MessageBox.Show("Absolute path cannot be blank.");
+                MessageBox.Show(FFBatch.Properties.Strings.abs_blank);
                 e.Cancel = true;
                 return;
             }           
@@ -83,9 +86,18 @@ namespace FFBatch
 
             //End
             String strcopy = "";
+            chk_save_preset.Enabled = true;
+            txt_preset_name.Enabled = true;
             if (chk_streamcopy.Checked == true) strcopy = " -c copy ";
-            pr_1st_params = "-f segment -segment_time " + combo_Seconds.Text + " " + "-reset_timestamps 1 ";            
-           pr_1st_params = pr_1st_params + strcopy + "-map 0 " + "\u0022" + out_path + "\u0022";
+            pr_1st_params = "-f segment -segment_time " + combo_Seconds.Text + " " + "-reset_timestamps 1 ";
+            pr_1st_params = pr_1st_params + strcopy + "-map 0 " + "\u0022" + out_path + "\u0022";
+            if (radio_size.Checked == true)
+            {
+                pr_1st_params = "-f segment -segment_time" + " (segment_size) " + "-reset_timestamps 1 ";
+                pr_1st_params = pr_1st_params + strcopy + "-map 0 " + "\u0022" + out_path + "\u0022";
+                chk_save_preset.Checked = false;
+                chk_save_preset.Enabled = false;
+            }
         }
 
         private void txt_path_main_TextChanged(object sender, EventArgs e)
@@ -97,14 +109,15 @@ namespace FFBatch
         {
             if (System.Text.RegularExpressions.Regex.IsMatch(combo_Seconds.Text, "[^0-9]"))
             {
-                MessageBox.Show("Please enter only numbers.");
+                MessageBox.Show(FFBatch.Properties.Strings.only_numbers);
                 combo_Seconds.Text = combo_Seconds.Text.Remove(combo_Seconds.Text.Length - 1);
             }
+            radio_time.Checked = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            fd1.Description = "Please select output folder";
+            fd1.Description = FFBatch.Properties.Strings.sel_out_f;
             fd1.ShowNewFolderButton = true;
             fd1.ShowDialog();
             if (fd1.SelectedPath.Length > 0) txt_path.Text = fd1.SelectedPath;
@@ -161,7 +174,7 @@ namespace FFBatch
         {
             if (chk_out_name.Checked == false)
             {
-                DialogResult a = MessageBox.Show("If file list contains more than one file and absolute path has been selected, overwriting will occur.", "Overwrite warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                DialogResult a = MessageBox.Show(FFBatch.Properties.Strings.abs_overw, FFBatch.Properties.Strings.warning, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (a == DialogResult.Cancel) chk_out_name.Checked = true;
                 else txt_naming.Enabled = true;
             }
@@ -175,7 +188,7 @@ namespace FFBatch
             if (chk_save_preset.Checked == true) save_preset = true;
             if (chk_save_preset.Checked == true && txt_preset_name.Text.Length < 5)
             {
-                    MessageBox.Show("Please select a preset name of at least 5 characters.");
+                    MessageBox.Show(FFBatch.Properties.Strings.name_5);
                     e.Cancel = true;
             }
 
@@ -194,7 +207,7 @@ namespace FFBatch
             if (chk_save_preset.Checked == true) save_preset = true;
             if (chk_save_preset.Checked == true && txt_preset_name.Text.Length < 5)
             {
-                MessageBox.Show("Please select a preset name of at least 5 characters.");
+                MessageBox.Show(FFBatch.Properties.Strings.name_5);
                 return;
             }
             pr1_first_params = pr_1st_params;
@@ -220,6 +233,47 @@ namespace FFBatch
                 btn_Start.Enabled = false;
                 label9.Visible = false;
             }
+        }
+
+        private void AeroWizard6_Load(object sender, EventArgs e)
+        {
+            refresh_lang();
+        }
+
+        private void refresh_lang()
+        {
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AeroWizard6));
+            RefreshResources(this, resources);
+        }
+        private void RefreshResources(Control ctrl, ComponentResourceManager res)
+        {
+            ctrl.SuspendLayout();
+            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
+            foreach (Control control in ctrl.Controls)
+                RefreshResources(control, res); // recursion
+            ctrl.ResumeLayout(false);
+        }
+
+        private void combo_Seconds_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            radio_time.Checked = true;
+        }
+
+        private void combo_size_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            radio_size.Checked = true;
+        }
+
+        private void combo_size_TextChanged(object sender, EventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(combo_size.Text, "[^0-9]"))
+            {
+                MessageBox.Show(FFBatch.Properties.Strings.only_numbers);
+                combo_size.Text = combo_size.Text.Remove(combo_size.Text.Length - 1);
+            }
+            radio_size.Checked = true;
         }
     }
 }

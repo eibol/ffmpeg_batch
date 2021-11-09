@@ -249,6 +249,9 @@
         1Ncr/wddAlRCYDg0BgAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="btn_abort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 74</value>
+  </data>
   <data name="btn_abort.Text" xml:space="preserve">
     <value>Cancelar</value>
   </data>

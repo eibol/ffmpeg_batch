@@ -264,26 +264,56 @@
         RK5CYII=
 </value>
   </data>
-  <data name="wz1.Text" xml:space="preserve">
-    <value>Partición de ficheros de Audio/Video</value>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>412, 15</value>
   </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>495, 92</value>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Nota: La división es aproximada, depende del formato del fichero de entrada.</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Salida</value>
+  <data name="txt_path.Location" type="System.Drawing.Point, System.Drawing">
+    <value>162, 102</value>
+  </data>
+  <data name="txt_naming.Location" type="System.Drawing.Point, System.Drawing">
+    <value>424, 69</value>
   </data>
   <data name="txt_naming.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 23</value>
   </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 29</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>101, 15</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Formato de salida</value>
+  </data>
+  <data name="chk_streamcopy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>386, 28</value>
+  </data>
+  <data name="chk_streamcopy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 19</value>
+  </data>
+  <data name="chk_streamcopy.Text" xml:space="preserve">
+    <value>Copiar flujos</value>
+  </data>
+  <data name="txt_path_main.Location" type="System.Drawing.Point, System.Drawing">
+    <value>162, 69</value>
+  </data>
+  <data name="combo_ext.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 26</value>
+  </data>
   <data name="chk_out_name.Location" type="System.Drawing.Point, System.Drawing">
-    <value>274, 26</value>
+    <value>271, 70</value>
   </data>
   <data name="chk_out_name.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 19</value>
   </data>
   <data name="chk_out_name.Text" xml:space="preserve">
     <value>Usar nombre de origen</value>
+  </data>
+  <data name="btn_browse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>424, 102</value>
   </data>
   <data name="btn_browse.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 22</value>
@@ -292,7 +322,7 @@
     <value>Examinar</value>
   </data>
   <data name="radio_absolute.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 59</value>
+    <value>17, 103</value>
   </data>
   <data name="radio_absolute.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 19</value>
@@ -301,7 +331,7 @@
     <value>Ruta absoluta de salida</value>
   </data>
   <data name="radio_relative.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 26</value>
+    <value>17, 70</value>
   </data>
   <data name="radio_relative.Size" type="System.Drawing.Size, System.Drawing">
     <value>139, 19</value>
@@ -309,17 +339,29 @@
   <data name="radio_relative.Text" xml:space="preserve">
     <value>Ruta relativa de salida</value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>495, 102</value>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 101</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Dividir</value>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>495, 138</value>
   </data>
-  <data name="chk_streamcopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 19</value>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Salida</value>
   </data>
-  <data name="chk_streamcopy.Text" xml:space="preserve">
-    <value>Copiar flujos</value>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>431, 30</value>
+  </data>
+  <data name="combo_size.Location" type="System.Drawing.Point, System.Drawing">
+    <value>359, 26</value>
+  </data>
+  <data name="radio_size.Location" type="System.Drawing.Point, System.Drawing">
+    <value>270, 27</value>
+  </data>
+  <data name="radio_size.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 19</value>
+  </data>
+  <data name="radio_size.Text" xml:space="preserve">
+    <value>Por tamaño</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 15</value>
@@ -333,14 +375,14 @@
   <data name="radio_time.Text" xml:space="preserve">
     <value>Cada</value>
   </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 15</value>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>495, 71</value>
   </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Formato de salida</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Dividir</value>
   </data>
-  <data name="combo_ext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>353, 28</value>
+  <data name="wz1.Text" xml:space="preserve">
+    <value>Partición de ficheros de Audio/Video</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>306, 15</value>

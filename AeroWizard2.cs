@@ -1,6 +1,9 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Globalization;
 using System.IO;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace FFBatch
@@ -86,7 +89,7 @@ namespace FFBatch
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
             if (File.Exists(portable_flag)) is_portable = true;
 
-            wz_mpresets.FinishButtonText = "Start encoding";
+            wz_mpresets.FinishButtonText = FFBatch.Properties.Strings.start_enc;
 
             if (wz_mpresets.SelectedPage == wzp1 && started == false)
 
@@ -121,10 +124,10 @@ namespace FFBatch
                 toolTip1.InitialDelay = 750;
                 toolTip1.ReshowDelay = 500;
                 toolTip1.ShowAlways = true;
-                toolTip1.SetToolTip(this.btn_clear, "Clear last preset");
+                toolTip1.SetToolTip(this.btn_clear, FFBatch.Properties.Strings.clear_l_pr);
 
                 cb_w_presets.Items.Clear();
-                cb_w_presets.Items.Add("Default parameters");
+                cb_w_presets.Items.Add(FFBatch.Properties.Strings.default_param);
                 String path, path_pr = "";
                                 
                 path_pr = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets.ini";
@@ -137,7 +140,7 @@ namespace FFBatch
 
                 int linea = 0;
 
-                cb_w_presets.SelectedIndex = cb_w_presets.FindString(("Default parameters"));
+                cb_w_presets.SelectedIndex = cb_w_presets.FindString((FFBatch.Properties.Strings.default_param));
                 
                 foreach (string line in File.ReadLines(path_pr))
                 {
@@ -149,7 +152,7 @@ namespace FFBatch
             }
             if (wz_mpresets.SelectedPage == wzp2)
             {
-                label1.Text = "The wizard is ready to start encoding files using the selected " + n_presets.ToString() + " presets.";
+                label1.Text = FFBatch.Properties.Strings.wiz_ready2 + " "  + n_presets.ToString() + " " + "presets.";
             }
         }
 
@@ -159,14 +162,14 @@ namespace FFBatch
 
             if (txt_pr_1.Text == String.Empty)
             {
-                MessageBox.Show("Preset 1 is empty.", "Preset empty", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(FFBatch.Properties.Strings.pr1_emp, FFBatch.Properties.Strings.pr_emp, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_pr_1.Focus();
                 e.Cancel = true;
                 return;
             }
             if (txt_pr_2.Text == String.Empty && txt_pr_3.Text != String.Empty)
             {
-                MessageBox.Show("Preset 2 is empty.", "Preset empty", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(FFBatch.Properties.Strings.pr2_emp, FFBatch.Properties.Strings.pr_emp, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_pr_2.Focus();
                 e.Cancel = true;
                 return;
@@ -174,14 +177,14 @@ namespace FFBatch
 
             if (txt_ext_2.Text == String.Empty && txt_pr_2.Text != String.Empty)
             {
-                MessageBox.Show("Please select output format for preset 2.", "Output format missing", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(FFBatch.Properties.Strings.sel_out1 + " " + " 2.", FFBatch.Properties.Strings.out_miss, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_ext_2.Focus();
                 e.Cancel = true;
                 return;
             }
             if (txt_ext_3.Text == String.Empty && txt_pr_3.Text != String.Empty)
             {
-                MessageBox.Show("Please select output format for preset 3.", "Output format missing", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(FFBatch.Properties.Strings.sel_out1 + " " + " 3.", FFBatch.Properties.Strings.out_miss, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_ext_3.Focus();
                 e.Cancel = true;
                 return;
@@ -189,21 +192,21 @@ namespace FFBatch
 
             if (txt_ext_1.Text == String.Empty && txt_pr_1.Text != String.Empty)
             {
-                MessageBox.Show("Please select output format for preset 1.", "Output format missing", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(FFBatch.Properties.Strings.sel_out1 + " " + " 1.", FFBatch.Properties.Strings.out_miss, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_ext_1.Focus();
                 e.Cancel = true;
                 return;
             }
             if (txt_ext_2.Text == String.Empty && txt_pr_2.Text != String.Empty)
             {
-                MessageBox.Show("Please select output format for preset 2.", "Output format missing", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(FFBatch.Properties.Strings.sel_out1 + " " + " 2.", FFBatch.Properties.Strings.out_miss, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_ext_2.Focus();
                 e.Cancel = true;
                 return;
             }
             if (txt_ext_3.Text == String.Empty && txt_pr_3.Text != String.Empty)
             {
-                MessageBox.Show("Please select output format for preset 3.", "Output format missing", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(FFBatch.Properties.Strings.sel_out1 + " " + " 3.", FFBatch.Properties.Strings.out_miss, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_ext_3.Focus();
                 e.Cancel = true;
                 return;
@@ -211,7 +214,7 @@ namespace FFBatch
 
             if (txt_ext_2.Text == String.Empty && txt_ext_3.Text == String.Empty)
             {
-                MessageBox.Show("Please select at least two presets to continue.", "At least two presets needed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(FFBatch.Properties.Strings.two_pr, FFBatch.Properties.Strings.information, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 e.Cancel = true;
             }
 
@@ -414,6 +417,28 @@ namespace FFBatch
         {
             cancelled = true;
             wz_mpresets.NextPage();
+        }
+
+        private void AeroWizard2_Load(object sender, EventArgs e)
+        {
+           
+            refresh_lang();
+        }
+
+        private void refresh_lang()
+        {
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AeroWizard2));
+            RefreshResources(this, resources);            
+        }
+        private void RefreshResources(Control ctrl, ComponentResourceManager res)
+        {
+            ctrl.SuspendLayout();
+            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
+            foreach (Control control in ctrl.Controls)
+                RefreshResources(control, res); // recursion
+            ctrl.ResumeLayout(false);
         }
     }
 }

@@ -2,7 +2,9 @@
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -28,7 +30,7 @@ namespace FFBatch
         Boolean started = false;
         Boolean valid = false;
         Boolean first_page_change = false;
-        String preset_status = "Pending";
+        String preset_status = FFBatch.Properties.Strings.pending;
         public String lv1_item = String.Empty;
 
         public String saved_pres
@@ -70,7 +72,7 @@ namespace FFBatch
         {            
             if (saved_pres.Length > 0)
             {
-                cb_w_presets.Text = "Last used preset";
+                cb_w_presets.Text = FFBatch.Properties.Strings.last_pr;
                 txt_pr_1.Text = saved_pres;
                 txt_ext_1.Text = saved_ext;    
                 saved_pres = "";
@@ -80,21 +82,7 @@ namespace FFBatch
             if (cb_w_presets.SelectedIndex == 0)
             {
                 String path = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch.ini";
-                if (is_portable == true) path = port_path + "ff_batch_portable.ini";
-                if (is_portable = false)
-                {
-                    if (!Directory.Exists(System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch")))
-                    {
-                        Directory.CreateDirectory(System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch"));
-                    }
-                }
-                else
-                {
-                    if (!Directory.Exists(System.IO.Path.Combine(Application.StartupPath, "settings")))
-                    {
-                        Directory.CreateDirectory(System.IO.Path.Combine(Application.StartupPath, "settings"));
-                    }
-                }
+                if (is_portable == true) path = port_path + "ff_batch_portable.ini";                
 
                 if (!File.Exists(path))
                 {
@@ -149,7 +137,7 @@ namespace FFBatch
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
             if (File.Exists(portable_flag)) is_portable = true;
 
-            wizard3.FinishButtonText = "Start encoding";
+            wizard3.FinishButtonText = FFBatch.Properties.Strings.start_enc;
 
             if (wizard3.SelectedPage.Name == "wz_two_end")
             {
@@ -163,7 +151,7 @@ namespace FFBatch
                 if (started == false)
                 {
                     cb_w_presets.Items.Clear();
-                    cb_w_presets.Items.Add("Default parameters");
+                    cb_w_presets.Items.Add(FFBatch.Properties.Strings.default_param);
                     String path, path_pr = "";
 
                     path_pr = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets.ini";
@@ -177,7 +165,7 @@ namespace FFBatch
                     String ext1 = "";
                     String pres1 = "";
 
-                    cb_w_presets.SelectedIndex = cb_w_presets.FindString("Default parameters");
+                    cb_w_presets.SelectedIndex = cb_w_presets.FindString(FFBatch.Properties.Strings.default_param);
                     foreach (string line in File.ReadLines(path))
                     {
                         if (linea == 0) pres1 = line;
@@ -202,12 +190,12 @@ namespace FFBatch
                 }
                 else
                 {
-                    if (preset_status == "Pending")
+                    if (preset_status == FFBatch.Properties.Strings.pending)
                     {
                         btn_start_multi.Enabled = false;
                         pic_status.Image = img_status.Images[0];
                     }
-                    if (preset_status == "Fail")
+                    if (preset_status == FFBatch.Properties.Strings.failed)
                     {
                         btn_start_multi.Enabled = false;
                         pic_status.Image = img_status.Images[2];
@@ -220,7 +208,7 @@ namespace FFBatch
                 }
                 if (saved_pres.Length > 0)
                 {
-                    cb_w_presets.Text = "Last used preset";
+                    cb_w_presets.Text = FFBatch.Properties.Strings.last_pr;
                     txt_pr_1.Text = saved_pres;
                     txt_ext_1.Text = saved_ext;
                 }
@@ -235,7 +223,7 @@ namespace FFBatch
 
             if (txt_pr_1.Text.Contains("h264_nvenc") || txt_pr_1.Text.Contains("hevc_nvenc"))
             {
-                DialogResult a = MessageBox.Show("Two pass video encoding is already implemented more efficiently in NVENC by using " + '\u0022' + "-preset slow" + '\u0022' + " in a standard preset.", "NVENC encoder detected", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                DialogResult a = MessageBox.Show(FFBatch.Properties.Strings.two_nvenc + " "  + '\u0022' + "-preset slow" + '\u0022' +  " " + FFBatch.Properties.Strings.std_pr,  " " + FFBatch.Properties.Strings.nvenc_det, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (a == DialogResult.Cancel)
                 {
                     cancelled = true;
@@ -245,21 +233,21 @@ namespace FFBatch
 
             if (txt_pr_1.Text == String.Empty)
             {
-                MessageBox.Show("Preset is empty.", "No parameters set", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(FFBatch.Properties.Strings.pr_emp, FFBatch.Properties.Strings.warning, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_pr_1.Focus();
                 e.Cancel = true;
                 return;
             }
             if (txt_ext_1.Text == String.Empty && txt_pr_1.Text != String.Empty)
             {
-                MessageBox.Show("Please select output format for preset 1.", "Output format missing", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(FFBatch.Properties.Strings.sel_format_pr + " " + "1.", FFBatch.Properties.Strings.out_miss, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_ext_1.Focus();
                 e.Cancel = true;
                 return;
             }
             if (txt_pr_1.Text.ToLower().Contains("-c:v copy") || txt_pr_1.Text.ToLower().Contains("-vcodec copy"))
             {
-                MessageBox.Show("Two pass encoding cannot be used with video stream copy.", "Video stream copy not suppored", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(FFBatch.Properties.Strings.two_str_c, FFBatch.Properties.Strings.strv_c_not, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txt_pr_1.Focus();
                 e.Cancel = true;
                 return;
@@ -310,7 +298,7 @@ namespace FFBatch
 
             if (!txt_pr_end_2.Text.ToLower().Contains("-pass 2"))
             {
-                MessageBox.Show("Parameter " + '\u0022' + "-pass 2" + '\u0022' + " was not found on second pass parameters.", "No first pass required parameter found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(FFBatch.Properties.Strings.Parameter + " "  + '\u0022' + "-pass 2" + '\u0022' + " was not found on second pass parameters.", "No first pass required parameter found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Cancel = true;
                 return;
             }
@@ -323,8 +311,8 @@ namespace FFBatch
         private void btn_tips_Click(object sender, EventArgs e)
         {
             Form frmInfo = new Form();
-            frmInfo.Name = "Two pass enconding tips";
-            frmInfo.Text = "Two pass enconding tips";
+            frmInfo.Name = FFBatch.Properties.Strings.two_tips;
+            frmInfo.Text = FFBatch.Properties.Strings.two_tips;
             frmInfo.Icon = this.Icon;
             frmInfo.Height = 396;
             frmInfo.Width = 550;
@@ -344,7 +332,7 @@ namespace FFBatch
             txt_tips.BorderStyle = BorderStyle.Fixed3D;
             txt_tips.TextAlign = HorizontalAlignment.Left;
             txt_tips.ReadOnly = true;
-            txt_tips.Text = "GENERAL: " + Environment.NewLine + "- You don't need to use this wizard for Nvidia h264_nvenc or hevc_nvenc. Two pass is included in the codec just by using -preset slow." + Environment.NewLine + Environment.NewLine + "FIRST PASS:" + Environment.NewLine + "- Do not include mapping (-map)." + Environment.NewLine + "- Do not include audio or subtitles encoding (-c:a or -c:s)." + Environment.NewLine + "- If you do not include -pass 1, video first pass will be useless." + Environment.NewLine + "- Parameter -f is required for first pass analysys." + Environment.NewLine + Environment.NewLine + "SECOND PASS:" + Environment.NewLine + "- If you do not include -pass 2, video analysis will not be used for encoding." + Environment.NewLine + "- It is recommended to use -preset:v / -profile:v for video encoder tuning." + Environment.NewLine + "- Use the same video codec tuning parameters on first and second pass (-preset:v, -profile:v -tune:v)." + Environment.NewLine + Environment.NewLine + "EXAMPLE:" + Environment.NewLine + "First pass: -c:v libx264 -preset:v fast -profile:v high -b:v 3000K -an -sn -f mp4 -pass 1" + Environment.NewLine + "Second pass: -map 0 -c:v libx264 -preset:v fast -profile:v high -b:v 3000K -c:a copy -c:s copy -pass 2" + Environment.NewLine + Environment.NewLine + "NOTE: Some configurations could be considered valid but depending on parameters combination, first pass could useless or be ignored on second pass encoding. Choose carefully encoder parameters and review them before starting.";
+            txt_tips.Text = FFBatch.Properties.Strings.General + " "  + Environment.NewLine + FFBatch.Properties.Strings.two_tip1 + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.two_tip2 + Environment.NewLine + FFBatch.Properties.Strings.two_tip3 + Environment.NewLine + FFBatch.Properties.Strings.two_tip4 + Environment.NewLine + FFBatch.Properties.Strings.two_tip5 + Environment.NewLine + FFBatch.Properties.Strings.two_tip6 + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.two_tip7 + Environment.NewLine + FFBatch.Properties.Strings.two_tip8 + Environment.NewLine + FFBatch.Properties.Strings.two_tip9 + Environment.NewLine + FFBatch.Properties.Strings.two_tip10 + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.two_tip11 + Environment.NewLine + FFBatch.Properties.Strings.first_p + " " + "-c:v libx264 -preset:v fast -profile:v high -b:v 3000K -an -sn -f mp4 -pass 1" + Environment.NewLine + FFBatch.Properties.Strings.second_p + " " + "-map 0 -c:v libx264 -preset:v fast -profile:v high -b:v 3000K -c:a copy -c:s copy -pass 2" + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.two_tip_12;
             txt_tips.TabIndex = 1;
 
             Button boton_ok_ff = new Button();
@@ -354,7 +342,7 @@ namespace FFBatch
             boton_ok_ff.Top = 320;
             boton_ok_ff.Width = 100;
             boton_ok_ff.Height = 25;
-            boton_ok_ff.Text = "Close";
+            boton_ok_ff.Text = FFBatch.Properties.Strings.close;
             boton_ok_ff.Click += new EventHandler(boton_ok_ff_Click);
             boton_ok_ff.TabIndex = 0;
 
@@ -370,8 +358,8 @@ namespace FFBatch
         private void button1_Click(object sender, EventArgs e)
         {
             Form frmInfo = new Form();
-            frmInfo.Name = "Two pass enconding tips";
-            frmInfo.Text = "Two pass enconding tips";
+            frmInfo.Name = FFBatch.Properties.Strings.two_tips;
+            frmInfo.Text = FFBatch.Properties.Strings.two_tips;
             frmInfo.Icon = this.Icon;
             frmInfo.Height = 356;
             frmInfo.Width = 550;
@@ -391,7 +379,7 @@ namespace FFBatch
             txt_tips.BorderStyle = BorderStyle.Fixed3D;
             txt_tips.TextAlign = HorizontalAlignment.Left;
             txt_tips.ReadOnly = true;
-            txt_tips.Text = "TWO PASS SUPPORT:" + Environment.NewLine + "- For Intel Quicksync (h264_qsv and hevc_qsv) two pass is not functional." + Environment.NewLine + "- For Nvidia NVENC, two pass is already implemented by using -preset slow." + Environment.NewLine + Environment.NewLine + "PARAMETERS:" + Environment.NewLine + "- Remember to include video bitrate on your preset (-b:v)." + Environment.NewLine + "- On first pass parameters, do not include mapping or other codecs information (-map, -c:a, -c:s)." + Environment.NewLine + Environment.NewLine + "WARNINGS:" + Environment.NewLine + "- Using libvpx-vp9, if you obtain low bitrates, you may need to multiply your target bitrate by 8 due to a wrong bitrate interpretation. For example, to obtain 1M target bitrate:" + Environment.NewLine + Environment.NewLine + "-c:v libvpx-vp9 -row-mt 1 -b:v 8M -minrate 8M -maxrate 8M";
+            txt_tips.Text = FFBatch.Properties.Strings.two_sup + Environment.NewLine + FFBatch.Properties.Strings.two_sup1 + Environment.NewLine + FFBatch.Properties.Strings.two_sup2 + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.parameters + Environment.NewLine + FFBatch.Properties.Strings.two_sup3 + Environment.NewLine + FFBatch.Properties.Strings.two_sup4 + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.warnings + Environment.NewLine + FFBatch.Properties.Strings.two_sup5 + Environment.NewLine + Environment.NewLine + "-c:v libvpx-vp9 -row-mt 1 -b:v 8M -minrate 8M -maxrate 8M";
             txt_tips.TabIndex = 1;
 
             Button boton_ok_ff = new Button();
@@ -401,7 +389,7 @@ namespace FFBatch
             boton_ok_ff.Top = 280;
             boton_ok_ff.Width = 100;
             boton_ok_ff.Height = 25;
-            boton_ok_ff.Text = "Close";
+            boton_ok_ff.Text = FFBatch.Properties.Strings.close;
             boton_ok_ff.Click += new EventHandler(boton_ok_ff_Click);
             boton_ok_ff.TabIndex = 0;
 
@@ -414,7 +402,7 @@ namespace FFBatch
             first_page_change = true;
             if (!txt_pr_1.Text.ToLower().Contains("-b:v") && !txt_pr_1.Text.ToLower().Contains("-vb"))
             {
-                lbl_advise_1.Text = "A target bitrate (-b:v or -vb) is required.";
+                lbl_advise_1.Text = FFBatch.Properties.Strings.two_sup6;
                 pic_warn_bitrate.Visible = true;
             }
             else
@@ -427,32 +415,32 @@ namespace FFBatch
         private void txt_pr_two_end_TextChanged(object sender, EventArgs e)
         {
             pic_status.Image = img_status.Images[0];
-            preset_status = "Pending";
+            preset_status = FFBatch.Properties.Strings.pending;
             btn_start_multi.Enabled = false;
             valid = false;
             if (!txt_pr_two_end.Text.ToLower().Contains("-pass 1"))
             {
-                txt_tip_1st.Text = "Parameter " + '\u0022' + "-pass 1" + '\u0022' + " is required for first pass.";
+                txt_tip_1st.Text = FFBatch.Properties.Strings.Parameter + " "  + '\u0022' + "-pass 1" + '\u0022' + " " + FFBatch.Properties.Strings.p_req_first;
                 pic_status.Image = img_status.Images[2];
                 btn_status.Enabled = false;
-                preset_status = "Fail";
+                preset_status = FFBatch.Properties.Strings.failed;
             }
             else
             {
                 if (!txt_pr_two_end.Text.ToLower().Contains(" -f "))
                 {
-                    txt_tip_1st.Text = "Parameter " + '\u0022' + "-f" + '\u0022' + " is required for first pass.";
+                    txt_tip_1st.Text = FFBatch.Properties.Strings.Parameter + " "  + '\u0022' + "-f" + '\u0022' + " " + FFBatch.Properties.Strings.p_req_first;
                     pic_status.Image = img_status.Images[2];
                     btn_status.Enabled = false;
-                    preset_status = "Fail";
+                    preset_status = FFBatch.Properties.Strings.failed;
                 }
                 else
                 {
                     if (!txt_pr_two_end.Text.ToLower().Contains(" -b:v ") && !txt_pr_two_end.Text.ToLower().Contains(" -vb "))
                     {
-                        txt_tip_1st.Text = "Parameter video bitrate -b:v or -vb is required.";
+                        txt_tip_1st.Text = FFBatch.Properties.Strings.two_sup6;
                         pic_status.Image = img_status.Images[2];
-                        preset_status = "Fail";
+                        preset_status = FFBatch.Properties.Strings.failed;
                         btn_status.Enabled = true;
                     }
 
@@ -460,7 +448,7 @@ namespace FFBatch
                     {
                         txt_tip_1st.Text = String.Empty;
                         pic_status.Image = img_status.Images[0];
-                        preset_status = "Pending";
+                        preset_status = FFBatch.Properties.Strings.pending;
                         btn_status.Enabled = true;
                     }
                 }
@@ -475,25 +463,25 @@ namespace FFBatch
             valid = false;
             if (!txt_pr_end_2.Text.ToLower().Contains("-pass 2"))
             {
-                txt_tip_2nd.Text = "Parameter " + '\u0022' + "-pass 2" + '\u0022' + " is required for second pass.";
+                txt_tip_2nd.Text = FFBatch.Properties.Strings.Parameter + " "  + '\u0022' + "-pass 2" + '\u0022' + " " + FFBatch.Properties.Strings.p_req_second;
                 pic_status.Image = img_status.Images[2];
-                preset_status = "Fail";
+                preset_status = FFBatch.Properties.Strings.failed;
                 btn_status.Enabled = false;
             }
             else
             {
                 if (!txt_pr_end_2.Text.ToLower().Contains(" -b:v ") && !txt_pr_end_2.Text.ToLower().Contains(" -vb "))
                 {
-                    txt_tip_2nd.Text = "Parameter video bitrate -b:v or -vb is required.";
+                    txt_tip_2nd.Text = FFBatch.Properties.Strings.two_sup6;
                     pic_status.Image = img_status.Images[2];
-                    preset_status = "Fail";
+                    preset_status = FFBatch.Properties.Strings.failed;
                     btn_status.Enabled = true;
                 }
                 else
                 {
                     txt_tip_2nd.Text = String.Empty;
                     pic_status.Image = img_status.Images[0];
-                    preset_status = "Pending";
+                    preset_status = FFBatch.Properties.Strings.pending;
                     btn_status.Enabled = true;
                 }
             }
@@ -531,7 +519,7 @@ namespace FFBatch
                     }
                     catch (System.Exception excpt)
                     {
-                        MessageBox.Show("Error: " + excpt.Message, "Error writing to folder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(FFBatch.Properties.Strings.error + " "  + excpt.Message, FFBatch.Properties.Strings.write_error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         this.InvokeEx(f => this.Cursor = Cursors.Arrow);
                         return;
                     }
@@ -624,8 +612,8 @@ namespace FFBatch
                             unsupported = true;
                         }
                     }
-                    if (unsupported == true) MessageBox.Show("Encoding test failed on first pass parameters: " + Environment.NewLine + Environment.NewLine + "Possibly unsupported encoder" + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + "Try preset for more error information", "Encoding test failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    else MessageBox.Show("Encoding test failed on first pass parameters: " + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + "Try preset for more error information", "Encoding test failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (unsupported == true) MessageBox.Show(FFBatch.Properties.Strings.enc_fail_first + " "  + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.unsup_enc + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.try_pr, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else MessageBox.Show(FFBatch.Properties.Strings.enc_fail_first + " "  + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.try_pr, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     this.InvokeEx(f => this.Cursor = Cursors.Arrow);
                     tried_ok = false;
@@ -684,7 +672,7 @@ namespace FFBatch
                     }
                     catch (System.Exception excpt)
                     {
-                        MessageBox.Show("Error: " + excpt.Message, "Error writing to folder", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(FFBatch.Properties.Strings.error + " "  + excpt.Message, FFBatch.Properties.Strings.write_error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         this.InvokeEx(f => this.Cursor = Cursors.Arrow);
                         return;
                     }
@@ -707,7 +695,7 @@ namespace FFBatch
                 {
                     if (file_prueba2.Contains("[") || file_prueba2.Contains("]"))
                     {
-                        MessageBox.Show("Input file name contains characters [ ]. Please remove them from input file name to avoid errors with -vf filter", "Conflicting characters in file name", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(FFBatch.Properties.Strings.conflict_char, FFBatch.Properties.Strings.conflict_char2, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         this.InvokeEx(f => this.Cursor = Cursors.Arrow);
                         tried_ok = false;
                         bad_chars = true;
@@ -807,8 +795,8 @@ namespace FFBatch
                         }
                     }
 
-                    if (unsupported == true) MessageBox.Show("Encoding test failed on second pass parameters: " + Environment.NewLine + Environment.NewLine + "Possibly unsupported encoder" + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + "Try preset for more error information", "Encoding test failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    else MessageBox.Show("Encoding test failed on second pass parameters: " + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + "Try preset for more error information", "Encoding test failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (unsupported == true) MessageBox.Show(FFBatch.Properties.Strings.enc_fail_second + " "  + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.unsup_enc + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.try_pr, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else MessageBox.Show(FFBatch.Properties.Strings.enc_fail_second + " "  + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.try_pr, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     this.InvokeEx(f => this.Cursor = Cursors.Arrow);
                     tried_ok = false;
@@ -912,6 +900,23 @@ namespace FFBatch
             String app_location = Application.StartupPath;
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
             if (File.Exists(portable_flag)) is_portable = true;
+            refresh_lang();
+        }
+
+        private void refresh_lang()
+        {
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AeroWizard3));
+            RefreshResources(this, resources);
+        }
+        private void RefreshResources(Control ctrl, ComponentResourceManager res)
+        {
+            ctrl.SuspendLayout();
+            this.InvokeEx(f => res.ApplyResources(ctrl, ctrl.Name, Thread.CurrentThread.CurrentUICulture));
+            foreach (Control control in ctrl.Controls)
+                RefreshResources(control, res); // recursion
+            ctrl.ResumeLayout(false);
         }
     }    
 }
