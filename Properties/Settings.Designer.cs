@@ -58,5 +58,17 @@ namespace FFBatch.Properties {
                 this["app_lang"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool dark_mode {
+            get {
+                return ((bool)(this["dark_mode"]));
+            }
+            set {
+                this["dark_mode"] = value;
+            }
+        }
     }
 }
