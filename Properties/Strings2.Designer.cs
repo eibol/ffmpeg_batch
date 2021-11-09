@@ -61,6 +61,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Audio bitrate.
+        /// </summary>
+        internal static string a_bitr {
+            get {
+                return ResourceManager.GetString("a_bitr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Abort screen capture.
         /// </summary>
         internal static string abort_cap {
@@ -79,11 +88,38 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Add exclusion for ffmpeg in Windows Security.
+        /// </summary>
+        internal static string add_excl_ws {
+            get {
+                return ResourceManager.GetString("add_excl_ws", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You will be requested for admin rights by command prompt..
+        /// </summary>
+        internal static string admin_cmd {
+            get {
+                return ResourceManager.GetString("admin_cmd", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Application window will be minimized 1 second before recording starts..
         /// </summary>
         internal static string app_min_1 {
             get {
                 return ResourceManager.GetString("app_min_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a This feature attempts to add an exclusion to Windows Security for current ffmpeg.exe..
+        /// </summary>
+        internal static string attempt_exc {
+            get {
+                return ResourceManager.GetString("attempt_exc", resourceCulture);
             }
         }
         
@@ -250,6 +286,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a FFmpeg.exe MD5 checksum is not stored yet..
+        /// </summary>
+        internal static string check_not_st {
+            get {
+                return ResourceManager.GetString("check_not_st", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Would you like to visit the project web site to check for new releases?.
         /// </summary>
         internal static string check_web_up {
@@ -358,6 +403,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Download complete..
+        /// </summary>
+        internal static string down_com {
+            get {
+                return ResourceManager.GetString("down_com", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Download is in progress. Do you want to force quit?.
         /// </summary>
         internal static string down_p_ab {
@@ -408,6 +462,24 @@ namespace FFBatch.Properties {
         internal static string drop_one {
             get {
                 return ResourceManager.GetString("drop_one", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enable day mode.
+        /// </summary>
+        internal static string en_day {
+            get {
+                return ResourceManager.GetString("en_day", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Enable night mode.
+        /// </summary>
+        internal static string en_night {
+            get {
+                return ResourceManager.GetString("en_night", resourceCulture);
             }
         }
         
@@ -493,6 +565,24 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Exclusion added.
+        /// </summary>
+        internal static string excl_add2 {
+            get {
+                return ResourceManager.GetString("excl_add2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Exclusion added to Windows Security. You can review it on next screen..
+        /// </summary>
+        internal static string excl_added {
+            get {
+                return ResourceManager.GetString("excl_added", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a External command returned an error on.
         /// </summary>
         internal static string ext_com_err {
@@ -507,6 +597,15 @@ namespace FFBatch.Properties {
         internal static string ext_com_ok {
             get {
                 return ResourceManager.GetString("ext_com_ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a FFMPEG PARAMETERS COPIED TO CLIPBOARD:.
+        /// </summary>
+        internal static string ff_copied {
+            get {
+                return ResourceManager.GetString("ff_copied", resourceCulture);
             }
         }
         
@@ -529,6 +628,24 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Image to video wizard.
+        /// </summary>
+        internal static string img_to_v {
+            get {
+                return ResourceManager.GetString("img_to_v", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Images.
+        /// </summary>
+        internal static string imgs {
+            get {
+                return ResourceManager.GetString("imgs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a in 60 seconds.
         /// </summary>
         internal static string in_60 {
@@ -543,6 +660,15 @@ namespace FFBatch.Properties {
         internal static string init_wait {
             get {
                 return ResourceManager.GetString("init_wait", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Integrated.
+        /// </summary>
+        internal static string integrated {
+            get {
+                return ResourceManager.GetString("integrated", resourceCulture);
             }
         }
         
@@ -601,6 +727,78 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Low space available.
+        /// </summary>
+        internal static string low_sp {
+            get {
+                return ResourceManager.GetString("low_sp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a FFmpeg.exe MD5 checksum failed..
+        /// </summary>
+        internal static string md5_fail {
+            get {
+                return ResourceManager.GetString("md5_fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a FFmpeg.exe MD5 checksum is not matching stored value. The file may have been corrupted or hacked..
+        /// </summary>
+        internal static string md5_fail1 {
+            get {
+                return ResourceManager.GetString("md5_fail1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Current MD5 checksum does not match stored value. Please click on Trust current ffmpeg before adding an exclusion..
+        /// </summary>
+        internal static string md5_not_match {
+            get {
+                return ResourceManager.GetString("md5_not_match", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a FFmpeg checksum not validated.
+        /// </summary>
+        internal static string md5_not_validated {
+            get {
+                return ResourceManager.GetString("md5_not_validated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Otherwise it may have been modified and the application should be reinstalled..
+        /// </summary>
+        internal static string md5_reinst {
+            get {
+                return ResourceManager.GetString("md5_reinst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a If you replaced it recently you can consider it trusted on Security settings..
+        /// </summary>
+        internal static string md5_trust {
+            get {
+                return ResourceManager.GetString("md5_trust", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a FFmpeg.exe MD5 checksum is valid..
+        /// </summary>
+        internal static string md5_valid {
+            get {
+                return ResourceManager.GetString("md5_valid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Missing files.
         /// </summary>
         internal static string missing_f {
@@ -655,6 +853,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a may not work with selected AMD amf encoder..
+        /// </summary>
+        internal static string not_amf {
+            get {
+                return ResourceManager.GetString("not_amf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a could not be deleted..
         /// </summary>
         internal static string not_deleted {
@@ -664,11 +871,38 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a may not work with selected NVIDIA nvenc encoder..
+        /// </summary>
+        internal static string not_nvenc {
+            get {
+                return ResourceManager.GetString("not_nvenc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a may not work with selected Intel QuickSync encoder..
+        /// </summary>
+        internal static string not_qsv {
+            get {
+                return ResourceManager.GetString("not_qsv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Please select only one file to add its streams..
         /// </summary>
         internal static string one_track {
             get {
                 return ResourceManager.GetString("one_track", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Automatic exclusion only supported in Windows 10/11.
+        /// </summary>
+        internal static string only_1011 {
+            get {
+                return ResourceManager.GetString("only_1011", resourceCulture);
             }
         }
         
@@ -871,6 +1105,24 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Video: Encode AMD-VCE H264 HQ + Source Audio.
+        /// </summary>
+        internal static string pr21_2 {
+            get {
+                return ResourceManager.GetString("pr21-2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Video: Encode AMD-VCE HEVC HQ + Source Audio.
+        /// </summary>
+        internal static string pr21_21 {
+            get {
+                return ResourceManager.GetString("pr21-21", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Record screen at 24 fps + Audio AAC to MKV.
         /// </summary>
         internal static string pr22 {
@@ -930,6 +1182,15 @@ namespace FFBatch.Properties {
         internal static string press_c {
             get {
                 return ResourceManager.GetString("press_c", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Do you want to proceed?.
+        /// </summary>
+        internal static string proceed1 {
+            get {
+                return ResourceManager.GetString("proceed1", resourceCulture);
             }
         }
         
@@ -1006,6 +1267,24 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a This automatic feature requires Windows 10/11. You may manually add a security exclusion in your antivirus software..
+        /// </summary>
+        internal static string req_w1011 {
+            get {
+                return ResourceManager.GetString("req_w1011", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Reset tasks status.
+        /// </summary>
+        internal static string reset_m_jobs {
+            get {
+                return ResourceManager.GetString("reset_m_jobs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Horizontal flip.
         /// </summary>
         internal static string rot_flip {
@@ -1042,6 +1321,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Save all file streams.
+        /// </summary>
+        internal static string save_all_str {
+            get {
+                return ResourceManager.GetString("save_all_str", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Screen capture.
         /// </summary>
         internal static string scr_cap {
@@ -1065,6 +1353,15 @@ namespace FFBatch.Properties {
         internal static string scsr_term {
             get {
                 return ResourceManager.GetString("scsr_term", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Security and performanace.
+        /// </summary>
+        internal static string sec_perf {
+            get {
+                return ResourceManager.GetString("sec_perf", resourceCulture);
             }
         }
         
@@ -1101,6 +1398,24 @@ namespace FFBatch.Properties {
         internal static string sort_before {
             get {
                 return ResourceManager.GetString("sort_before", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sort list before start?.
+        /// </summary>
+        internal static string sort_list {
+            get {
+                return ResourceManager.GetString("sort_list", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sort file list tip.
+        /// </summary>
+        internal static string sort_list2 {
+            get {
+                return ResourceManager.GetString("sort_list2", resourceCulture);
             }
         }
         
@@ -1173,6 +1488,60 @@ namespace FFBatch.Properties {
         internal static string subtitles {
             get {
                 return ResourceManager.GetString("subtitles", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Windows Security..
+        /// </summary>
+        internal static string tip_win_sec {
+            get {
+                return ResourceManager.GetString("tip_win_sec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a your current antivirus software..
+        /// </summary>
+        internal static string tip_your_av {
+            get {
+                return ResourceManager.GetString("tip_your_av", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a This application launches ffmpeg processes for encoding, muxing and demuxing, obtaining streams, etc..
+        /// </summary>
+        internal static string tip1 {
+            get {
+                return ResourceManager.GetString("tip1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Some antivirus software scans every ffmpeg process launched because it is not digitally signed . This can reduce performance for operations like reading and filtering streams, obtainins thumbnails , etc..
+        /// </summary>
+        internal static string tip2 {
+            get {
+                return ResourceManager.GetString("tip2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a If you experience sluggish performance, you can improve it by adding an exclusion to.
+        /// </summary>
+        internal static string tip3 {
+            get {
+                return ResourceManager.GetString("tip3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The included ffmpeg.exe in the application is safe and MD5 checksum is validated on every startup..
+        /// </summary>
+        internal static string tip4 {
+            get {
+                return ResourceManager.GetString("tip4", resourceCulture);
             }
         }
         
@@ -1258,11 +1627,38 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a videos on destination folder..
+        /// </summary>
+        internal static string vids_dest {
+            get {
+                return ResourceManager.GetString("vids_dest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a (Some videos maybe be unavailable, and live streaming events are skipped.).
+        /// </summary>
+        internal static string vids_unav {
+            get {
+                return ResourceManager.GetString("vids_unav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a There were warning messages during queue download:.
         /// </summary>
         internal static string warn_down {
             get {
                 return ResourceManager.GetString("warn_down", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Available space on destination drive is less than 500 MB, application may crash during encoding. Do you want to abort the current operation?.
+        /// </summary>
+        internal static string warn_sp {
+            get {
+                return ResourceManager.GetString("warn_sp", resourceCulture);
             }
         }
         
@@ -1308,6 +1704,15 @@ namespace FFBatch.Properties {
         internal static string wrong_c_dur {
             get {
                 return ResourceManager.GetString("wrong_c_dur", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Your system.
+        /// </summary>
+        internal static string your_sys {
+            get {
+                return ResourceManager.GetString("your_sys", resourceCulture);
             }
         }
         

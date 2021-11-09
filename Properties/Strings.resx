@@ -2,14 +2,14 @@
 <root>
   <!-- 
     Microsoft ResX Schema 
-    
+ 
     Version 2.0
     
     The primary goals of this format is to allow a simple XML format 
     that is mostly human readable. The generation and parsing of the 
     various data types are done through the TypeConverter classes 
     associated with the data types.
-    
+   
     Example:
     
     ... ado.net/XML headers & schema ...
@@ -2209,7 +2209,7 @@
     <value>Subfolders enabled</value>
   </data>
   <data name="subs_help" xml:space="preserve">
-    <value>This feature searches for SRT, ASS or IDX files with the same name and on the same folder of the added video files. You can select a different folder for the subtitles using the browse button. Do not add subtitle files directly to the file list view, since subtitles are searched automatically based on video file names. In case the subtitle file name does not match the video name, you can add it by double-clicking on the file video item. MP4 comes with certain limitations (not possible to set a default subtitle track and VobSub subtitles not supported). For any language, recommended text subtitles are UTF-8 or Unicode.</value>
+    <value>This feature searches for SRT, ASS or IDX files with the same name and on the same folder of the added video files. You can select a different folder for the subtitles using the browse button. Do not add subtitle files directly to the file list view, since subtitles are searched automatically based on video file names. In case the subtitle file name does not match the video name, you can add it by double-clicking on the file video item. MP4 comes with certain limitations (not posible to set a default subtitle track and VobSub subtitles not supported). For any language, recommended text subtitles are UTF-8 or Unicode.</value>
   </data>
   <data name="subs_wrong1" xml:space="preserve">
     <value>Some subtitle file names contain conflicting characters with subtitles filter. Please ensure your subtitle file names do not contain characters like [ ]</value>
@@ -2462,7 +2462,7 @@
     <value>Updating</value>
   </data>
   <data name="up_err" xml:space="preserve">
-    <value>Connection error finding updates</value>
+    <value>Connection error</value>
   </data>
   <data name="URL" xml:space="preserve">
     <value>URL</value>

@@ -540,4 +540,133 @@
   <data name="drop_one" xml:space="preserve">
     <value>Por favor, agregue un solo fichero.</value>
   </data>
+  <data name="down_com" xml:space="preserve">
+    <value>Descarga completada.</value>
+  </data>
+  <data name="vids_dest" xml:space="preserve">
+    <value>videos en la carpeta de destino.</value>
+  </data>
+  <data name="vids_unav" xml:space="preserve">
+    <value>(Algunos vídeos podrían no estar disponibles, y los eventos en directo se omiten.)</value>
+  </data>
+  <data name="ff_copied" xml:space="preserve">
+    <value>PARÁMETROS FFMPEG COPIADOS AL PORTAPAPELES:</value>
+  </data>
+  <data name="reset_m_jobs" xml:space="preserve">
+    <value>Reinicializar estado de las tareas</value>
+  </data>
+  <data name="img_to_v" xml:space="preserve">
+    <value>Asistente de imagen a vídeo</value>
+  </data>
+  <data name="imgs" xml:space="preserve">
+    <value>Imágenes</value>
+  </data>
+  <data name="low_sp" xml:space="preserve">
+    <value>Poco espacio en disco</value>
+  </data>
+  <data name="warn_sp" xml:space="preserve">
+    <value>El espacio disponible en la unidad de destino es inferior a 500 MB, la aplicación puede fallar durante la codificación. ¿Quiere abortar la operación actual?</value>
+  </data>
+  <data name="pr21-2" xml:space="preserve">
+    <value>Video: Codificar con AMD-VCE H264 HQ + Audio de origen</value>
+  </data>
+  <data name="pr21-21" xml:space="preserve">
+    <value>Video: Codificar AMD-VCE HEVC HQ + Audio de origen</value>
+  </data>
+  <data name="save_all_str" xml:space="preserve">
+    <value>Guardar todos los flujos</value>
+  </data>
+  <data name="add_excl_ws" xml:space="preserve">
+    <value>Add exclusion for ffmpeg in Windows Security</value>
+  </data>
+  <data name="admin_cmd" xml:space="preserve">
+    <value>Se le solicitarán permisos de administrador por parte de la consola de comandos.</value>
+  </data>
+  <data name="attempt_exc" xml:space="preserve">
+    <value>Va a agregar una exclusión a Seguridad de Windows para ffmpeg.exe.</value>
+  </data>
+  <data name="check_not_st" xml:space="preserve">
+    <value>La suma MD5 de FFmpeg.exe no ha sido guardada todavía.</value>
+  </data>
+  <data name="excl_add2" xml:space="preserve">
+    <value>Excepción agregada</value>
+  </data>
+  <data name="excl_added" xml:space="preserve">
+    <value>La escepción se ha agregado a Seguridad de Windows. Puede revisarla en la siguiente pantalla.</value>
+  </data>
+  <data name="md5_fail" xml:space="preserve">
+    <value>La suma MD5 de FFmpeg.exe no es válida.</value>
+  </data>
+  <data name="md5_fail1" xml:space="preserve">
+    <value>La suma MD5 de FFmpeg.exe no coincide con el valor almacenado. El fichero podría haber sido dañado o infectado.</value>
+  </data>
+  <data name="md5_trust" xml:space="preserve">
+    <value>Si reemplazó el fichero recientemente puede validarlo en la ventana de Seguridad y rendimiento.</value>
+  </data>
+  <data name="md5_valid" xml:space="preserve">
+    <value>La suma MD5 de FFmpeg.exe es válida.</value>
+  </data>
+  <data name="only_1011" xml:space="preserve">
+    <value>Exclusión automática solo admitida en Windows 10/11</value>
+  </data>
+  <data name="proceed1" xml:space="preserve">
+    <value>¿Desea continuar?</value>
+  </data>
+  <data name="req_w1011" xml:space="preserve">
+    <value>Esta función requiere versiones de Windows 10/11. Puede agregar manualmente una excepción en su software antivirus vigente.</value>
+  </data>
+  <data name="sec_perf" xml:space="preserve">
+    <value>Seguridad y rendimiento</value>
+  </data>
+  <data name="tip1" xml:space="preserve">
+    <value>Esta aplicación lanza procesos ffmpeg para codificar, multiplexar y demultiplexar, obtener información de flujos, miniaturas, etc.</value>
+  </data>
+  <data name="tip2" xml:space="preserve">
+    <value>Algunos programas antivirus analizan constantemente cada proceso lanzado porque ffmpeg.exe no está firmado digitalmente. Esto a veces puede reducir bastante el rendimiento de operaciones como analizar y filtrar flujos multimedia, obtener miniaturas, etc.</value>
+  </data>
+  <data name="tip3" xml:space="preserve">
+    <value>Si experimenta un rendimiento pobre, puede mejorarlo añadiendo una exclusión a</value>
+  </data>
+  <data name="tip4" xml:space="preserve">
+    <value>La versión de ffmpeg.exe incluída en la aplicación es segura y libre de virus, y la suma MD5 se valida en cada arranque.</value>
+  </data>
+  <data name="tip_win_sec" xml:space="preserve">
+    <value>Seguridad de Windows.</value>
+  </data>
+  <data name="tip_your_av" xml:space="preserve">
+    <value>su software antivirus actual.</value>
+  </data>
+  <data name="not_amf" xml:space="preserve">
+    <value>puede no funcionar con el codificador AMD amf elegido.</value>
+  </data>
+  <data name="not_nvenc" xml:space="preserve">
+    <value>podría no funcionar con el codificador NVIDIA nvenc elegido.</value>
+  </data>
+  <data name="not_qsv" xml:space="preserve">
+    <value>podría no funcionar con el codificador Intel QuickSync elegido.</value>
+  </data>
+  <data name="your_sys" xml:space="preserve">
+    <value>Su sistema</value>
+  </data>
+  <data name="md5_not_match" xml:space="preserve">
+    <value>La suma MD5 de ffmpeg no coincide con el valor verificado. Por favor, verifique que confía en la versión actual de ffmpeg antes de agregar una excepción de seguridad.</value>
+  </data>
+  <data name="sort_list" xml:space="preserve">
+    <value>¿Desea ordenar la lista antes de comenzar?</value>
+  </data>
+  <data name="sort_list2" xml:space="preserve">
+    <value>Consejo sobre rendimiento</value>
+  </data>
+  <data name="md5_reinst" xml:space="preserve">
+    <value>En caso contrario, el archivo ha sido modificado y debería reinstalar la aplicación.</value>
+  </data>
+  <data name="en_day" xml:space="preserve">
+    <value>Activar modo diurno</value>
+  </data>
+  <data name="en_night" xml:space="preserve">
+    <value>Activar modo nocturno</value>
+  </data>
+  <data name="a_bitr" xml:space="preserve">
+    <value>Tasa de bits de audio</value>
+  </data>
 </root>
