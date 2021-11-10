@@ -6591,10 +6591,8 @@ namespace FFBatch
                 }
             }
             else
-            {
-                new System.Threading.Thread(() =>
-                {
-                    System.Threading.Thread.CurrentThread.IsBackground = true;
+            {                
+                
                     Thread.Sleep(85);
                     for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
                     {
@@ -6604,8 +6602,6 @@ namespace FFBatch
                             break;
                         }
                     }
-
-                }).Start();
 
                 Form24 frm24 = new Form24();
                 frm24.ShowDialog();
