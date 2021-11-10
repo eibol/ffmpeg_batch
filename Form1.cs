@@ -286,7 +286,7 @@ namespace FFBatch
         private int warn_enc = 0;
         private string down_ver = "https://raw.githubusercontent.com/eibol/ffmpeg_batch/gh-pages/current_ffb.txt";
         private string down_ver2 = "https://ffmpeg-batch.sourceforge.io/current_ffb.txt";
-        String yl_latest = "https://youtube-dl.org/downloads/latest/youtube-dl.exe";
+        String yl_latest = "https://github.com/yt-dlp/yt-dlp/releases";
         private string proj_web = "https://ffmpeg-batch.sourceforge.io";
         Boolean images_v = false;
         String images_time = "5";
@@ -18794,7 +18794,7 @@ namespace FFBatch
 
         private void Validate_added_row_YT_PL()
         {
-            if (!File.Exists(System.IO.Path.Combine(Application.StartupPath, "youtube-dl.exe")))
+            if (!File.Exists(System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe")))
             {
                 MessageBox.Show(FFBatch.Properties.Strings.yt_not, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 release_datagrid();
@@ -18815,7 +18815,7 @@ namespace FFBatch
             Task t2 = Task.Run(() =>
             {
                 Process probe = new Process();
-                probe.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "youtube-dl.exe");
+                probe.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe");
                 probe.StartInfo.WorkingDirectory = Application.StartupPath;
                 probe.StartInfo.Arguments = "--flat-playlist --dump-json " + pl_url;
                 probe.StartInfo.RedirectStandardOutput = true;
@@ -18921,8 +18921,8 @@ namespace FFBatch
             cell_zoom();
 
             Process probe = new Process();
-            probe.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "youtube-dl.exe");
-            if (!File.Exists(System.IO.Path.Combine(Application.StartupPath, "youtube-dl.exe")))
+            probe.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe");
+            if (!File.Exists(System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe")))
             {
                 MessageBox.Show(FFBatch.Properties.Strings.yt_not, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 release_datagrid();
@@ -20133,7 +20133,7 @@ namespace FFBatch
 
                     if (file_prueba.ToLower().Contains("youtu.be") || file_prueba.ToLower().Contains("youtube.com"))
                     {
-                        process_glob.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "youtube-dl.exe");
+                        process_glob.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe");
                         if (m3u_params.Contains("-f "))
                         {
                             process_glob.StartInfo.Arguments = bestv_a + " " + Clear_cache + " " + m3u_params + " " + down_speed + " " + embed_subs + " " + auto_subs + " " + embed_meta + " " + write_subs + " " + convert_subs + " -o " + '\u0022' + destino + "\\" + dg1.Rows[list_index].Cells[4].Value.ToString() + "." + format_out + '\u0022' + " " + file;
@@ -20171,7 +20171,7 @@ namespace FFBatch
                     }
                     else this.InvokeEx(f => f.dg1.Rows[list_index].Cells[5].Value = FFBatch.Properties.Strings.processing);
 
-                    if (!File.Exists(System.IO.Path.Combine(Application.StartupPath, "youtube-dl.exe")))
+                    if (!File.Exists(System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe")))
                     {
                         quit = true;
                         cancel_queue = true;
@@ -20461,7 +20461,7 @@ namespace FFBatch
                     {
                         while (!process_glob.StandardError.EndOfStream)
                         {
-                            er.Add(process_glob.StandardError.ReadLine().Replace("youtube-dl.exe:", ""));
+                            er.Add(process_glob.StandardError.ReadLine().Replace("yt-dlp.exe:", ""));
                         }
                     }
 
@@ -20933,14 +20933,14 @@ namespace FFBatch
                 return;
             }
             System.Threading.Thread.Sleep(100);
-            Process[] localByName0 = Process.GetProcessesByName("youtube-dl");
+            Process[] localByName0 = Process.GetProcessesByName("yt-dlp");
             foreach (Process p0 in localByName0)
             {
                 p0.Kill();
             }
             System.Threading.Thread.Sleep(100);
 
-            Process[] localByName22 = Process.GetProcessesByName("youtube-dl");
+            Process[] localByName22 = Process.GetProcessesByName("yt-dlp");
             foreach (Process p3 in localByName22)
             {
                 p3.Kill();
@@ -21473,7 +21473,7 @@ namespace FFBatch
             }
             else
             {
-                if (!File.Exists(System.IO.Path.Combine(Application.StartupPath, "youtube-dl.exe")))
+                if (!File.Exists(System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe")))
                 {
                     this.Cursor = Cursors.Arrow;
                     release_datagrid();
@@ -21634,7 +21634,7 @@ namespace FFBatch
                         else
                         {
 
-                            Process[] localByName = Process.GetProcessesByName("youtube-dl");
+                            Process[] localByName = Process.GetProcessesByName("yt-dlp");
                             foreach (Process p in localByName)
                             {
                                 if (p.Id == procs["proc_urls_" + dg1.Rows[dg1.SelectedCells[0].RowIndex].Index.ToString()].Id)
@@ -21669,7 +21669,7 @@ namespace FFBatch
                         }
                         else
                         {
-                            Process[] localByName = Process.GetProcessesByName("youtube-dl");
+                            Process[] localByName = Process.GetProcessesByName("yt-dlp");
                             foreach (Process p in localByName)
                             {
                                 if (p.Id == process_glob.Id)
@@ -28495,7 +28495,7 @@ namespace FFBatch
             {
                 try
                 {
-                    File.Copy(Path.GetTempPath() + "\\" + "youtube-dl.exe", Application.StartupPath + "\\" + "youtube-dl.exe", true);
+                    File.Copy(Path.GetTempPath() + "\\" + "yt-dlp.exe", Application.StartupPath + "\\" + "yt-dlp.exe", true);
                 }
                 catch (Exception excp)
                 {
@@ -28506,7 +28506,7 @@ namespace FFBatch
             {
                 Process prc = new Process();
                 String path = "cmd.exe";
-                String param = "/C copy " + '\u0022' + Path.GetTempPath() + "youtube-dl.exe" + '\u0022' + " " + '\u0022' + Application.StartupPath + "\\" + "youtube-dl.exe" + '\u0022' + " /Y";
+                String param = "/C copy " + '\u0022' + Path.GetTempPath() + "yt-dlp.exe" + '\u0022' + " " + '\u0022' + Application.StartupPath + "\\" + "yt-dlp.exe" + '\u0022' + " /Y";
                 prc.StartInfo.FileName = path;
                 prc.StartInfo.Arguments = param;
 
@@ -28541,7 +28541,7 @@ namespace FFBatch
             {
                 try
                 {
-                    File.Delete(Path.GetTempPath() + "\\" + "youtube-dl.exe");
+                    File.Delete(Path.GetTempPath() + "\\" + "yt-dlp.exe");
                 }
                 catch { }
                 wc_dl.Dispose();
@@ -28554,7 +28554,7 @@ namespace FFBatch
                 youtube_dl_ver();
                 try
                 {
-                    File.Delete(Path.GetTempPath() + "\\" + "youtube-dl.exe");
+                    File.Delete(Path.GetTempPath() + "\\" + "yt-dlp.exe");
                 }
                 catch { }
             }
@@ -28660,7 +28660,7 @@ namespace FFBatch
             //this.InvokeEx(f => f.lbl_yl_name.Width = lbl_yl_name.Width + 75);
             this.InvokeEx(f => f.lbl_yl_name.Text = FFBatch.Properties.Strings.check_ytdl);
             //this.InvokeEx(f => f.lbl_yt_v.Visible = false);
-            if (!File.Exists(Path.Combine(Application.StartupPath, "youtube-dl.exe")))
+            if (!File.Exists(Path.Combine(Application.StartupPath, "yt-dlp.exe")))
             {
                 this.InvokeEx(f => f.lbl_yl_name.Text = FFBatch.Properties.Strings.yt_not);
                 this.InvokeEx(f => f.lbl_yl_name.Refresh());
@@ -35519,26 +35519,26 @@ namespace FFBatch
                 Boolean proc_exist = false;
                 if (m3u_single_running == false)
                 {
-                    Process[] localByName = Process.GetProcessesByName("youtube-dl");
+                    Process[] localByName = Process.GetProcessesByName("yt-dlp");
                     foreach (Process p in localByName)
                     {
                         foreach (DataGridViewRow row in dg1.Rows)
                         {
-                            try
-                            {
-                                if (p.Id == procs["proc_urls_" + row.Index.ToString()].Id)
-                                {
-                                    proc_exist = true;
-                                }
-                            }
-                            catch
-                            {
-                                proc_exist = false;
-                                continue;
-                            }
+                        //    try
+                        //    {
+                        //        if (p.Id == procs["proc_urls_" + row.Index.ToString()].Id)
+                        //        {
+                        //            proc_exist = true;
+                        //        }
+                        //    }
+                        //    catch
+                        //    {
+                        //        proc_exist = false;
+                        //        continue;
+                        //    }
 
-                            if (p.Id == procs["proc_urls_" + row.Index.ToString()].Id)
-                            {
+//                            if (p.Id == procs["proc_urls_" + row.Index.ToString()].Id)
+  //                          {
                                 //Live YouTube abort
                                 if (dg1.Rows[0].Cells[3].Value.ToString() == "Live")
                                 {
@@ -35559,7 +35559,7 @@ namespace FFBatch
                                     }
                                     catch { }
                                 }
-                            }
+                          //  }
                         }
                     }
                     //FFmpeg m3u running
@@ -35614,7 +35614,7 @@ namespace FFBatch
                     {
                         StreamWriter write_q2 = process_glob.StandardInput;
                         write_q2.Write("q");
-                        Process[] localByName = Process.GetProcessesByName("youtube-dl");
+                        Process[] localByName = Process.GetProcessesByName("yt-dlp");
                         foreach (Process p in localByName)
                         {
                             if (p.Id == process_glob.Id)
@@ -35638,7 +35638,14 @@ namespace FFBatch
 
             if (process_glob.StartInfo.Arguments != String.Empty)
             {
-                process_glob.Kill();
+                //process_glob.Kill();
+                Process[] localByName = Process.GetProcessesByName("yt-dlp");
+                foreach (Process p in localByName)
+                {
+                    
+                        try { p.Kill(); }
+                        catch { }                    
+                }
             }
             else
             {
@@ -35832,7 +35839,7 @@ namespace FFBatch
         private void btn_add_yts_Click(object sender, EventArgs e)
         {
             Pg1.Focus();
-            if (!File.Exists(System.IO.Path.Combine(Application.StartupPath, "youtube-dl.exe")))
+            if (!File.Exists(System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe")))
             {
                 MessageBox.Show(FFBatch.Properties.Strings.yt_not, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 release_datagrid();
@@ -36041,7 +36048,7 @@ namespace FFBatch
                     }
                     var tmp = procs["proc_urls_" + file_int.ToString()];
 
-                    tmp.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "youtube-dl.exe");
+                    tmp.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe");
                     tmp.StartInfo.Arguments = "--get-duration --get-title --get-thumbnail " + '\u0022' + dg1.Rows[file_int].Cells[1].Value.ToString() + '\u0022';
                     tmp.StartInfo.RedirectStandardOutput = true;
                     tmp.StartInfo.UseShellExecute = false;
@@ -37903,7 +37910,7 @@ namespace FFBatch
 
                     if (stop_validating_url == true) form_prog2.abort_validate = true;
 
-                    probe.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "youtube-dl.exe");
+                    probe.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe");
                     probe.StartInfo.WorkingDirectory = Application.StartupPath;
                     probe.StartInfo.Arguments = "--flat-playlist --dump-json " + dg1.Rows[ii].Cells[1].Value.ToString();
                     probe.StartInfo.RedirectStandardOutput = true;
@@ -38114,7 +38121,7 @@ namespace FFBatch
 
                     if (multi_dest.ToLower().Contains("youtu.be") || multi_dest.ToLower().Contains("youtube.com"))
                     {
-                        tmp.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "youtube-dl.exe");
+                        tmp.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe");
                         if (m3u_params_m.Contains("-f "))
                         {
                             tmp.StartInfo.Arguments = bestv_a + " " + Clear_cache + " " + m3u_params_m + " " + down_speed_m + " " + embed_subs_m + " " + auto_subs_m + " " + embed_meta_m + " " + write_subs_m + " " + convert_subs_m + " -o " + '\u0022' + destino + "\\" + tmp_row.Cells[4].Value.ToString() + "." + format_out_m + '\u0022' + " " + file;
@@ -38326,7 +38333,7 @@ namespace FFBatch
 
                     while (!tmp.StandardError.EndOfStream)
                     {
-                        er.Add(tmp.StandardError.ReadLine().Replace("youtube-dl.exe:", ""));
+                        er.Add(tmp.StandardError.ReadLine().Replace("yt-dlp.exe:", ""));
                     }
 
                     if (er.Count > 0)
@@ -38993,7 +39000,7 @@ namespace FFBatch
             t_out_yt = true;
             String ver = String.Empty;
             Process tmp = new Process();
-            tmp.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "youtube-dl.exe");
+            tmp.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe");
 
             tmp.StartInfo.Arguments = "--version";
             tmp.StartInfo.RedirectStandardOutput = true;
@@ -39021,17 +39028,15 @@ namespace FFBatch
 
             try
             {
-                WebClient client = new WebClientWithTimeout();
-                //String content = client.DownloadString("https://youtube-dl.org/");                
-                //string[] lines = content.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries);
-                String content = client.DownloadString("https://github.com/ytdl-org/youtube-dl/releases/latest");
+                WebClient client = new WebClientWithTimeout();                
+                String content = client.DownloadString(yl_latest);
                 String[] lines = content.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries);
                 String latest_v = "";
                 foreach (String line in lines)
                 {
-                    if (line.Contains("youtube-dl "))
+                    if (line.Contains("yt-dlp "))
                     {
-                        latest_v = line.Substring(line.IndexOf("youtube-dl ", 11)).Replace("youtube-dl ", "");
+                        latest_v = line.Substring(line.IndexOf("yt-dlp ", 11)).Replace("yt-dlp ", "");
                         latest_v = latest_v.Substring(0, 10);
                     }
 
@@ -39045,7 +39050,7 @@ namespace FFBatch
                 this.InvokeEx(f => f.pic_wait_1.Visible = false);
                 if (found_ver == true)
                 {
-                    this.InvokeEx(f => f.lbl_yl_name.Text = "Youtube-dl" + " " + Properties.Strings2.version.ToLower() + " " + ver);
+                    this.InvokeEx(f => f.lbl_yl_name.Text = "yt-dlp" + " " + Properties.Strings2.version.ToLower() + " " + ver);
 
                     this.InvokeEx(f => f.btn_update_yt.Visible = false);
                     this.InvokeEx(f => f.pic_ok.Visible = true);
@@ -39055,7 +39060,7 @@ namespace FFBatch
                 }
                 else
                 {
-                    this.InvokeEx(f => f.lbl_yl_name.Text = FFBatch.Properties.Strings.New + " " + "youtube-dl " + latest_v + " " + FFBatch.Properties.Strings.found);
+                    this.InvokeEx(f => f.lbl_yl_name.Text = FFBatch.Properties.Strings.New + " " + "yt-dlp " + latest_v + " " + FFBatch.Properties.Strings.found);
 
                     this.InvokeEx(f => f.btn_update_yt.Visible = true);
                     this.InvokeEx(f => f.pic_ok.Visible = false);
@@ -39103,8 +39108,8 @@ namespace FFBatch
             }));
 
             Process probe = new Process();
-            probe.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "youtube-dl.exe");
-            if (!File.Exists(System.IO.Path.Combine(Application.StartupPath, "youtube-dl.exe")))
+            probe.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe");
+            if (!File.Exists(System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe")))
             {
                 MessageBox.Show(FFBatch.Properties.Strings.yt_not, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 release_datagrid();
@@ -42169,7 +42174,7 @@ namespace FFBatch
 
 
 
-                String path = Path.Combine(Application.StartupPath, "youtube-dl.exe");
+                String path = Path.Combine(Application.StartupPath, "yt-dlp.exe");
                 String param = "-U";
                 Process ff_ext = new Process();
                 ff_ext.StartInfo.FileName = path;
@@ -42255,7 +42260,7 @@ namespace FFBatch
             pg_update_yl.Visible = true;
             txt_up_output.Visible = true;
 
-            vc_download = "youtube-dl.exe";
+            vc_download = "yt-dlp.exe";
             wc_dl.DownloadFileAsync(new System.Uri(yl_latest), Path.Combine(Path.GetTempPath(), vc_download));
 
         }

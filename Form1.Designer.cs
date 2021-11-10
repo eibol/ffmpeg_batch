@@ -3897,7 +3897,6 @@
             this.btn_stop_m3u8.FlatAppearance.BorderSize = 0;
             this.btn_stop_m3u8.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             resources.ApplyResources(this.btn_stop_m3u8, "btn_stop_m3u8");
-            this.btn_stop_m3u8.ImageList = this.imageList1;
             this.btn_stop_m3u8.Name = "btn_stop_m3u8";
             this.btn_stop_m3u8.UseVisualStyleBackColor = true;
             this.btn_stop_m3u8.Click += new System.EventHandler(this.btn_stop_m3u8_Click);
