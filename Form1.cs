@@ -6393,7 +6393,7 @@ namespace FFBatch
             Pg1.Parent = group_prog;
             Pg1.Value = 0;
             Pg1.Top = 30;
-            if (Properties.Settings.Default.app_lang == "es") Pg1.Top = group_prog.Height - 50;
+            //if (Properties.Settings.Default.app_lang == "es") Pg1.Top = group_prog.Height - 50;
             Pg1.Left = 261;
             Pg1.Width = 743;
             Pg1.Height = 21;
