@@ -17707,7 +17707,7 @@ namespace FFBatch
                                     }
                                     else if (is_a == true)
                                     {
-                                    if (lines_ouput[0].Length > 0)
+                                    if (lines_ouput[0].Length > 1)
                                     {
                                         lines_ouput[0] = lines_ouput[0].ToLower();
                                         if (lines_ouput[0].ToLower().Contains("mpeg audio") && Path.GetExtension(itfull) == ".mp3")
@@ -17716,6 +17716,7 @@ namespace FFBatch
                                         }                                        
                                         itemsToAdd[n].SubItems.Add(lines_ouput[0]);
                                     }
+                                    else itemsToAdd[n].SubItems.Add("-");
                                 }                                    
                                     else itemsToAdd[n].SubItems.Add("-");
                                 i++;
