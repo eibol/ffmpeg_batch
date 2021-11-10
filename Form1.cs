@@ -39235,6 +39235,22 @@ namespace FFBatch
                 }));
             }
 
+            if (duracion == null && filename != "")
+            {
+                dg1.Invoke(new MethodInvoker(delegate
+                {
+                    
+                   dg1.Rows[dg1.RowCount - 1].Cells[2].Value = "0";
+                   dg1.Rows[dg1.RowCount - 1].Cells[3].Value = "Live";
+                    
+                    dg1.Rows[dg1.RowCount - 1].Cells[4].Value = filename;
+                    //dg1.Rows[dg1.RowCount - 1].DefaultCellStyle.BackColor = dg1.DefaultCellStyle.BackColor;
+                    one_ok = true;
+                    dg1.Rows[dg1.RowCount - 1].Cells[5].Value = FFBatch.Properties.Strings.ready;
+                    this.InvokeEx(f => f.dg1.Rows[dg1.RowCount - 1].Cells[5].Style.BackColor = Color.LightGreen);
+                }));
+            }
+
             if (dg1.RowCount > 1)
             {
                 dg1.Invoke(new MethodInvoker(delegate
