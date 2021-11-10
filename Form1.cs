@@ -6393,6 +6393,7 @@ namespace FFBatch
             Pg1.Parent = group_prog;
             Pg1.Value = 0;
             Pg1.Top = 30;
+            if (Properties.Settings.Default.app_lang == "es") Pg1.Top = group_prog.Height - 50;
             Pg1.Left = 261;
             Pg1.Width = 743;
             Pg1.Height = 21;
@@ -28681,7 +28682,7 @@ namespace FFBatch
 
             //Rectangle resolution = Screen.PrimaryScreen.Bounds;
 
-            int width_cols = 12 - listView1.Columns.Count;
+            int width_cols = 12 - listView1.Columns.Count;            
             if (big_res == false)
             {
                 this.MinimumSize = new Size(1276, 590);
@@ -28693,8 +28694,8 @@ namespace FFBatch
 
                 tabControl1.Width = this.Width - 18;
                 listView1.Width = this.Width - 25;
-                listView1.Columns[0].Width = (listView1.Width / 2 - 4) - (4 - width_cols) * 37;
-                listView1.Columns[1].Width = (listView1.Width / 2 - 390) - (4 - width_cols) * 47;
+                listView1.Columns[0].Width = (listView1.Width / 2 - 5) - (4 - width_cols);
+                listView1.Columns[1].Width = (listView1.Width / 2 - 390) - (5 - width_cols) * 2;
 
 
                 listView2.Width = this.Width - 25;
@@ -28865,8 +28866,8 @@ namespace FFBatch
 
                 tabControl1.Width = this.Width - 45;
                 listView1.Width = this.Width - 50;
-                listView1.Columns[0].Width = (listView1.Width / 2 - 2) - (4 - width_cols) * 37;
-                listView1.Columns[1].Width = (listView1.Width / 2 - 392) - (4 - width_cols) * 47;
+                listView1.Columns[0].Width = (listView1.Width / 2 - 3) - (6 - width_cols);
+                listView1.Columns[1].Width = (listView1.Width / 2 - 390) - (3 - width_cols) * 2;
 
 
                 listView2.Width = this.Width - 50;
@@ -29024,8 +29025,7 @@ namespace FFBatch
                 txt_paste_links.Top = (dg1.Height / 2) - 10;
                 lbl_n_urls.Left = txt_search_url.Left - 100;
                 lbl_urls_time.Left = txt_search_url.Left - 183;
-                panel_thumb.Left = this.Width - 386;
-                if (FFBatch.Properties.Settings.Default.app_lang == "es") Pg1.Top = Pg1.Top + 1;
+                panel_thumb.Left = this.Width - 386;                
             }
         }
 
@@ -29758,7 +29758,7 @@ namespace FFBatch
                 yt_chk = true;
                 youtube_dl_ver();
             }
-            resize();
+            //resize();
        
         }
 
@@ -41089,10 +41089,11 @@ namespace FFBatch
                 if (col.Text == FFBatch.Properties.Strings.v_bitr) has_bit = true;
                 if (col.Text == FFBatch.Properties.Strings2.a_bitr) has_abit = true;
             }
-            if (has_res == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings.resolution);
+            
             if (has_vid == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings.Video_codec);
-            if (has_aud == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings.Audio_codec);
             if (has_bit == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings.v_bitr);
+            if (has_res == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings.resolution);
+            if (has_aud == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings.Audio_codec);            
             if (has_abit == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings2.a_bitr);
 
             frm_add_col.ShowDialog();
