@@ -6404,13 +6404,7 @@ namespace FFBatch
         private void Form1_Load(object sender, EventArgs e)
         {
             main_progress_bar();
-
-            if (Properties.Settings.Default.dark_mode == true)
-            {
-                foreach (Control c in this.Controls) UpdateColorDark(c);
-                post_dark();
-            }
-
+                        
             String app_location = Application.StartupPath;
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
             if (File.Exists(portable_flag))
@@ -6629,6 +6623,11 @@ namespace FFBatch
             }
             //End select language
             load_priority();
+            if (Properties.Settings.Default.dark_mode == true)
+            {
+                foreach (Control c in this.Controls) UpdateColorDark(c);
+                post_dark();
+            }
         }
 
         private void load_priority()
@@ -29035,6 +29034,11 @@ namespace FFBatch
             set_font_size();
 
             Pg1.Text = "0" + System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator + "0%";
+            if (Properties.Settings.Default.dark_mode == true)
+            {
+                pic_frame.Image = pic_Frame_Dark.Image;
+                pic_frame.InitialImage = pic_Frame_Dark.Image;
+            }
 
             new System.Threading.Thread(() =>
             {
