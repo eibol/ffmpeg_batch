@@ -9238,7 +9238,10 @@ namespace FFBatch
 
         private void listView1_DragDrop(object sender, DragEventArgs e)
         {
-            listView1.BackColor = SystemColors.Window;
+            if (Properties.Settings.Default.dark_mode == false) listView1.BackColor = SystemColors.Window;
+            else
+                listView1.BackColor = Color.FromArgb(255, 64, 64, 64);
+
             change_tab_1 = false;
             change_tab_2 = false;
 
@@ -9507,7 +9510,11 @@ namespace FFBatch
 
         private void listView1_DragEnter(object sender, DragEventArgs e)
         {
-            listView1.BackColor = Color.AliceBlue;
+            
+            if (Properties.Settings.Default.dark_mode == false) listView1.BackColor = Color.FromArgb(255,233,248,248);
+            else
+                listView1.BackColor = Color.FromArgb(255, 128, 128, 128);
+
             if (e.Data.GetDataPresent(DataFormats.FileDrop, false))
 
             {
@@ -10196,6 +10203,16 @@ namespace FFBatch
                 }
                 this.InvokeEx(f => f.btn_pause.Enabled = true);
             }
+            if (Properties.Settings.Default.dark_mode == true)
+            {
+                Bitmap bm = new Bitmap(listView1.ClientSize.Width, listView1.ClientSize.Height);
+                Graphics.FromImage(bm).Clear(listView1.BackColor);
+                this.InvokeEx(f => f.listView1.BackgroundImage = bm);
+
+                bm = new Bitmap(listView3.ClientSize.Width, listView3.ClientSize.Height);
+                Graphics.FromImage(bm).Clear(listView1.BackColor);
+                this.InvokeEx(f => f.listView3.BackgroundImage = bm);
+            }
 
             foreach (Control ct in groupBox_m3u.Controls)
             {
@@ -10239,11 +10256,17 @@ namespace FFBatch
                 this.InvokeEx(f => f.combo_shut.Enabled = true);
             }
 
-            
             this.InvokeEx(f => f.btn_pause.Enabled = true);
-            //this.InvokeEx(f => f.listView2.Enabled = false);
+            
+            this.InvokeEx(f => f.listView2.Enabled = false);
+            Bitmap bm2 = new Bitmap(listView2.ClientSize.Width, listView2.ClientSize.Height);
+            Graphics.FromImage(bm2).Clear(listView2.BackColor);
+            this.InvokeEx(f => f.listView2.BackgroundImage = bm2);
+            
             this.InvokeEx(f => f.list_tracks.Enabled = false);
-            this.InvokeEx(f => f.list_tracks.Enabled = true);
+            bm2 = new Bitmap(list_tracks.ClientSize.Width, list_tracks.ClientSize.Height);
+            Graphics.FromImage(bm2).Clear(list_tracks.BackColor);
+            this.InvokeEx(f => f.list_tracks.BackgroundImage = bm2);
             this.InvokeEx(f => f.btn_mux.Enabled = false);
 
             this.InvokeEx(f => f.listView1.Enabled = true);
@@ -17748,6 +17771,7 @@ namespace FFBatch
                                         }
                                         else itemsToAdd[n].SubItems.Add("-");
                                     }
+                                    else itemsToAdd[n].SubItems.Add("-");
                                 }
                                 else if (is_a == true)
                                 {
@@ -44899,7 +44923,9 @@ namespace FFBatch
 
         private void listView1_DragLeave(object sender, EventArgs e)
         {
-            listView1.BackColor = SystemColors.Window;
+            if (Properties.Settings.Default.dark_mode == false) listView1.BackColor = SystemColors.Window;
+            else 
+            listView1.BackColor = Color.FromArgb(255,64,64,64);
         }
 
         private void BG_add_VBitrate_col_DoWork(object sender, DoWorkEventArgs e)
