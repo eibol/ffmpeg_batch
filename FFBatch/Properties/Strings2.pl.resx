@@ -1,0 +1,555 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="aborted2" xml:space="preserve">
+    <value>URL download aborted by user.</value>
+  </data>
+  <data name="abort_cap" xml:space="preserve">
+    <value>Abort screen capture</value>
+  </data>
+  <data name="app_min_1" xml:space="preserve">
+    <value>Application window will be minimized 1 second before recording starts.</value>
+  </data>
+  <data name="Aud_wave" xml:space="preserve">
+    <value>Audio wave format</value>
+  </data>
+  <data name="autorun_dis" xml:space="preserve">
+    <value>Autorun is disabled</value>
+  </data>
+  <data name="autorun_en" xml:space="preserve">
+    <value>Autorun is enabled</value>
+  </data>
+  <data name="autoshut_en" xml:space="preserve">
+    <value>AUTOMATIC SHUTDOWN ENABLED</value>
+  </data>
+  <data name="autoshut_st" xml:space="preserve">
+    <value>COMPUTER SHUTDOWN LAUNCHED</value>
+  </data>
+  <data name="auto_ask" xml:space="preserve">
+    <value>Sequential encoding autorun is enabled. Do you want to keep this setting?</value>
+  </data>
+  <data name="auto_ask2" xml:space="preserve">
+    <value>Multi-file encoding autorun is enabled. Do you want to keep this setting?</value>
+  </data>
+  <data name="avoid_overw" xml:space="preserve">
+    <value>to avoid opossible overwritings.</value>
+  </data>
+  <data name="batch_concat_msg" xml:space="preserve">
+    <value>Batch concatenation is enabled, but no initial or end files were selected. Please choose either one of them or disable this setting.</value>
+  </data>
+  <data name="big_size" xml:space="preserve">
+    <value>Bigger size</value>
+  </data>
+  <data name="black" xml:space="preserve">
+    <value>Black</value>
+  </data>
+  <data name="browsing" xml:space="preserve">
+    <value>Browsing</value>
+  </data>
+  <data name="brow_page" xml:space="preserve">
+    <value>Browsing url contents: Page</value>
+  </data>
+  <data name="capt_1" xml:space="preserve">
+    <value>Capturing in 1 second</value>
+  </data>
+  <data name="capt_2" xml:space="preserve">
+    <value>Capturing in 2 seconds</value>
+  </data>
+  <data name="capt_3" xml:space="preserve">
+    <value>Capturing in 3 seconds</value>
+  </data>
+  <data name="capt_term" xml:space="preserve">
+    <value>Capturing terminated</value>
+  </data>
+  <data name="capt_virtual" xml:space="preserve">
+    <value>To capture audio playback, virtual audio driver is required.</value>
+  </data>
+  <data name="check_web_up" xml:space="preserve">
+    <value>Would you like to visit the project web site to check for new releases?</value>
+  </data>
+  <data name="computer_will" xml:space="preserve">
+    <value>Computer will</value>
+  </data>
+  <data name="concat_vid_help" xml:space="preserve">
+    <value>This filter allows to join videos with different qualities, it improves compatibility but it requires audio and video to be re-encoded. Parameters field can be left blank. NOTE: Only video files allowed.</value>
+  </data>
+  <data name="contin" xml:space="preserve">
+    <value>Continue?</value>
+  </data>
+  <data name="custom" xml:space="preserve">
+    <value>Custom</value>
+  </data>
+  <data name="deleting_f" xml:space="preserve">
+    <value>Deleting...</value>
+  </data>
+  <data name="deleting_files" xml:space="preserve">
+    <value>Deleting files...</value>
+  </data>
+  <data name="deleting_proc" xml:space="preserve">
+    <value>Deleting processed files...</value>
+  </data>
+  <data name="deleting_sourc" xml:space="preserve">
+    <value>Deleting source files...</value>
+  </data>
+  <data name="demuxer_help" xml:space="preserve">
+    <value>In this mode audio/video files can be stream copied, provided they share qualities (size, codec, bitrate). NOTE: Not all containers are supported for stream copy. If playback issues occur or files are not joined, re-encoding may be required.</value>
+  </data>
+  <data name="dest_not_empty" xml:space="preserve">
+    <value>Destination folder is not empty. Continue?</value>
+  </data>
+  <data name="dif_in_out_f" xml:space="preserve">
+    <value>Different input folders to single output folder</value>
+  </data>
+  <data name="download" xml:space="preserve">
+    <value>Download</value>
+  </data>
+  <data name="down_prog" xml:space="preserve">
+    <value>Download is in progress, please abort before closing window.</value>
+  </data>
+  <data name="down_prog2" xml:space="preserve">
+    <value>Download in progress</value>
+  </data>
+  <data name="down_p_ab" xml:space="preserve">
+    <value>Download is in progress. Do you want to force quit?</value>
+  </data>
+  <data name="drop_big" xml:space="preserve">
+    <value>Dropped file is too big. Only text files under 1 MB are supported.</value>
+  </data>
+  <data name="drop_one" xml:space="preserve">
+    <value>Please drop only one file.</value>
+  </data>
+  <data name="error_writing" xml:space="preserve">
+    <value>Error writing to destination folder. Please select another path, or ensure you have write permissions.</value>
+  </data>
+  <data name="err_clipb" xml:space="preserve">
+    <value>Error copying to clipboard.</value>
+  </data>
+  <data name="err_pl_vlc" xml:space="preserve">
+    <value>Error trying to play URL with VLC:</value>
+  </data>
+  <data name="err_save_qu" xml:space="preserve">
+    <value>There was an error saving queue file.</value>
+  </data>
+  <data name="err_save_track" xml:space="preserve">
+    <value>Error saving track</value>
+  </data>
+  <data name="err_test_temp" xml:space="preserve">
+    <value>Test folder could not be created at TEMP location.</value>
+  </data>
+  <data name="err_write_out" xml:space="preserve">
+    <value>Error writing output folder:</value>
+  </data>
+  <data name="err_write_temp" xml:space="preserve">
+    <value>Error writing to temp folder.</value>
+  </data>
+  <data name="exc_dur" xml:space="preserve">
+    <value>exceeds source duration.</value>
+  </data>
+  <data name="ext_com_err" xml:space="preserve">
+    <value>External command returned an error on</value>
+  </data>
+  <data name="ext_com_ok" xml:space="preserve">
+    <value>External command executed successfully on</value>
+  </data>
+  <data name="files_long_t" xml:space="preserve">
+    <value>files can take a long time. Are you sure?</value>
+  </data>
+  <data name="frame_size" xml:space="preserve">
+    <value>Frame size</value>
+  </data>
+  <data name="init_wait" xml:space="preserve">
+    <value>Initializing download, please wait...</value>
+  </data>
+  <data name="invalid_param" xml:space="preserve">
+    <value>Invalid parameters for screen capturing.</value>
+  </data>
+  <data name="invalid_p_2" xml:space="preserve">
+    <value>Invalid capturing parameters</value>
+  </data>
+  <data name="in_60" xml:space="preserve">
+    <value>in 60 seconds</value>
+  </data>
+  <data name="join_files" xml:space="preserve">
+    <value>Join files</value>
+  </data>
+  <data name="lang_corrupted" xml:space="preserve">
+    <value>Language configuration was corrupted, please reinstall application.</value>
+  </data>
+  <data name="logging_f" xml:space="preserve">
+    <value>Logging for:</value>
+  </data>
+  <data name="low_size" xml:space="preserve">
+    <value>Lower size</value>
+  </data>
+  <data name="missing_f" xml:space="preserve">
+    <value>Missing files</value>
+  </data>
+  <data name="multi_drop" xml:space="preserve">
+    <value>Please drop only one file.</value>
+  </data>
+  <data name="multi_drop2" xml:space="preserve">
+    <value>Multiple files dropped</value>
+  </data>
+  <data name="mux_jobs" xml:space="preserve">
+    <value>Multiplex Batch Jobs Manager</value>
+  </data>
+  <data name="none" xml:space="preserve">
+    <value>none</value>
+  </data>
+  <data name="not_deleted" xml:space="preserve">
+    <value>could not be deleted.</value>
+  </data>
+  <data name="no_concat_ef" xml:space="preserve">
+    <value>No initial or end files</value>
+  </data>
+  <data name="one_track" xml:space="preserve">
+    <value>Please select only one file to add its streams.</value>
+  </data>
+  <data name="outf_count" xml:space="preserve">
+    <value>Downloading. Total count not available. Output folder count:</value>
+  </data>
+  <data name="pr01" xml:space="preserve">
+    <value>Video: MP4 Stream copy</value>
+  </data>
+  <data name="pr02" xml:space="preserve">
+    <value>Video: Convert audio track to AAC HQ 2 channels</value>
+  </data>
+  <data name="pr03" xml:space="preserve">
+    <value>Video: Convert audio tracks to AC3 2 channels</value>
+  </data>
+  <data name="pr04" xml:space="preserve">
+    <value>Video: Convert to ProRes MKV</value>
+  </data>
+  <data name="pr05" xml:space="preserve">
+    <value>Video: Convert to H264 HQ + Source Audio</value>
+  </data>
+  <data name="pr06" xml:space="preserve">
+    <value>Video: Convert to H264 Ultrafast</value>
+  </data>
+  <data name="pr07" xml:space="preserve">
+    <value>Video: Convert to H265 HQ + Source Audio</value>
+  </data>
+  <data name="pr08" xml:space="preserve">
+    <value>Video: Resize 1280x720 H264-AAC</value>
+  </data>
+  <data name="pr09" xml:space="preserve">
+    <value>Video: Rotate 90 degress Clockwise to H264 + Source audio</value>
+  </data>
+  <data name="pr10" xml:space="preserve">
+    <value>Video: Rotate 90 degress CountercLockwise and Vertical Flip to H264 + Source audio</value>
+  </data>
+  <data name="pr11" xml:space="preserve">
+    <value>Video: Rotate 90 degress CounterClockwise to H264 + Source audio</value>
+  </data>
+  <data name="pr12" xml:space="preserve">
+    <value>Video: Rotate 90 degress Clockwise and Vertical Flip to H264 + Source audio</value>
+  </data>
+  <data name="pr13" xml:space="preserve">
+    <value>Video: Rotate 180 degress to H264 + Source audio</value>
+  </data>
+  <data name="pr14" xml:space="preserve">
+    <value>Video: Remove subtitles to MP4</value>
+  </data>
+  <data name="pr15" xml:space="preserve">
+    <value>Audio: Convert to FLAC 16/44,1KHz 2 channels</value>
+  </data>
+  <data name="pr16" xml:space="preserve">
+    <value>Audio: Convert to MP3 VBR HQ 2 ch embedded cover</value>
+  </data>
+  <data name="pr17" xml:space="preserve">
+    <value>Audio: Convert to MP3 VBR HQ 2 ch</value>
+  </data>
+  <data name="pr18" xml:space="preserve">
+    <value>Audio: Convert to MP3 CBR HQ 2 ch</value>
+  </data>
+  <data name="pr19" xml:space="preserve">
+    <value>Audio: Convert to WAV 16/44,1KHz 2 channels</value>
+  </data>
+  <data name="pr20" xml:space="preserve">
+    <value>Subtitle: Extract first subtitle track to SRT</value>
+  </data>
+  <data name="pr21" xml:space="preserve">
+    <value>Image: Extract frame as image</value>
+  </data>
+  <data name="pr22" xml:space="preserve">
+    <value>Record screen at 24 fps + Audio AAC to MKV</value>
+  </data>
+  <data name="pr23" xml:space="preserve">
+    <value>Record screen at 15 fps 1280x720 + Audio to MKV</value>
+  </data>
+  <data name="pr24" xml:space="preserve">
+    <value>Record screen at 30 fps Nvidia NVENC + Audio AAC to MKV</value>
+  </data>
+  <data name="pr25" xml:space="preserve">
+    <value>Record screen at 25 fps Intel QuickSync + Audio AAC to MKV</value>
+  </data>
+  <data name="pr26" xml:space="preserve">
+    <value>Join images at 1920px width to MP4 video</value>
+  </data>
+  <data name="press_c" xml:space="preserve">
+    <value>Press to cancel</value>
+  </data>
+  <data name="pre_ss" xml:space="preserve">
+    <value>Set pre-input seeking parameter -ss</value>
+  </data>
+  <data name="queue_not_f" xml:space="preserve">
+    <value>queue file(s) were not found.</value>
+  </data>
+  <data name="queue_warn" xml:space="preserve">
+    <value>File list successfully loaded.</value>
+  </data>
+  <data name="quick_yt1" xml:space="preserve">
+    <value>Quick YouTube channel/playlist download</value>
+  </data>
+  <data name="quick_yt2" xml:space="preserve">
+    <value>- Go to YouTube channel main url, and click on VIDEOS tab.</value>
+  </data>
+  <data name="quick_yt3" xml:space="preserve">
+    <value>- Copy the url and paste on channel field.</value>
+  </data>
+  <data name="quick_yt4" xml:space="preserve">
+    <value>- Example:</value>
+  </data>
+  <data name="rec_fail" xml:space="preserve">
+    <value>Recording test failed</value>
+  </data>
+  <data name="rem_from_list" xml:space="preserve">
+    <value>Remove selected items from list</value>
+  </data>
+  <data name="rotate1" xml:space="preserve">
+    <value>Rotate 90º clockwise</value>
+  </data>
+  <data name="rotate2" xml:space="preserve">
+    <value>Rotate 90º counter-clockwise</value>
+  </data>
+  <data name="rotate3" xml:space="preserve">
+    <value>Rotate 180º</value>
+  </data>
+  <data name="rot_flip" xml:space="preserve">
+    <value>Horizontal flip</value>
+  </data>
+  <data name="scr_cap" xml:space="preserve">
+    <value>Screen capture</value>
+  </data>
+  <data name="scr_fail" xml:space="preserve">
+    <value>Screen capture test failed.</value>
+  </data>
+  <data name="scsr_term" xml:space="preserve">
+    <value>Screen capturing terminated unexpectedly. File may be truncated.</value>
+  </data>
+  <data name="selc_dev" xml:space="preserve">
+    <value>Select audio capture device</value>
+  </data>
+  <data name="sel_lang" xml:space="preserve">
+    <value>Select language</value>
+  </data>
+  <data name="skip_from_list" xml:space="preserve">
+    <value>Skip selected items from encoding</value>
+  </data>
+  <data name="sort_before" xml:space="preserve">
+    <value>Sort list before start?</value>
+  </data>
+  <data name="sort_status" xml:space="preserve">
+    <value>Please sort and check file list for items marked with status</value>
+  </data>
+  <data name="source_not_deleted" xml:space="preserve">
+    <value>Source files that could not be deleted due to failed encoding or file in use:</value>
+  </data>
+  <data name="start_cap" xml:space="preserve">
+    <value>Start screen capture</value>
+  </data>
+  <data name="stop_any" xml:space="preserve">
+    <value>You can stop recording by pressing Control-Shift-P at any time.</value>
+  </data>
+  <data name="stop_capt" xml:space="preserve">
+    <value>Stop capturing</value>
+  </data>
+  <data name="stop_proc" xml:space="preserve">
+    <value>Stop processing</value>
+  </data>
+  <data name="streams" xml:space="preserve">
+    <value>Streams</value>
+  </data>
+  <data name="subtitles" xml:space="preserve">
+    <value>Subtitles</value>
+  </data>
+  <data name="too_many_files" xml:space="preserve">
+    <value>Too many files to be parsed</value>
+  </data>
+  <data name="total" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="transfer_r" xml:space="preserve">
+    <value>Transfer rate:</value>
+  </data>
+  <data name="try_scr_pr" xml:space="preserve">
+    <value>Try with a screen capture preset and check encoding parameters.</value>
+  </data>
+  <data name="undef_dur_all" xml:space="preserve">
+    <value>Processing will not continue after items with undefined duration (infinite).</value>
+  </data>
+  <data name="undef_seq" xml:space="preserve">
+    <value>Items with undefined duration</value>
+  </data>
+  <data name="url_down_c" xml:space="preserve">
+    <value>URL download successfully completed</value>
+  </data>
+  <data name="url_down_c2" xml:space="preserve">
+    <value>URL download complete</value>
+  </data>
+  <data name="version" xml:space="preserve">
+    <value>Version</value>
+  </data>
+  <data name="warnings_last_s" xml:space="preserve">
+    <value>warning(s) during last session</value>
+  </data>
+  <data name="warning_file" xml:space="preserve">
+    <value>WARNING: File</value>
+  </data>
+  <data name="warning_not_rep" xml:space="preserve">
+    <value>was NOT replaced</value>
+  </data>
+  <data name="warn_down" xml:space="preserve">
+    <value>There were warning messages during queue download:</value>
+  </data>
+  <data name="white" xml:space="preserve">
+    <value>White</value>
+  </data>
+  <data name="wrong_c_dur" xml:space="preserve">
+    <value>Incorrect capture duration</value>
+  </data>
+  <data name="yt_url_blank" xml:space="preserve">
+    <value>YouTube URL field is empty.</value>
+  </data>
+  <data name="yt_url_sh" xml:space="preserve">
+    <value>YouTube URL is too short.</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="down_com" xml:space="preserve">
+    <value>Download complete.</value>
+  </data>
+  <data name="vids_dest" xml:space="preserve">
+    <value>videos on destination folder.</value>
+  </data>
+  <data name="vids_unav" xml:space="preserve">
+    <value>(Some videos maybe be unavailable, and live streaming events are skipped.)</value>
+  </data>
+</root>
