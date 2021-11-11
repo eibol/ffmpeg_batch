@@ -115,7 +115,7 @@ namespace FFBatch
                     System.Threading.Thread.Sleep(50); //Allow kill process to send cancel_queue
 
                     String file = txt_channel.Text;                   
-                    String ffm = System.IO.Path.Combine(Application.StartupPath, "youtube-dl.exe");                    
+                    String ffm = System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe");
                     String destino = txt_path_main.Text;
 
                     if (!Directory.Exists(destino))
@@ -151,7 +151,7 @@ namespace FFBatch
                         AppParam = pre_params + " " + txt_parameters.Text + " " + " -o " + '\u0022' + destino + "\\" + "%(title)s.%(ext)s" + '\u0022' + " " + txt_channel.Text;
                         process_glob.StartInfo.Arguments = AppParam;
 
-                    if (!File.Exists(System.IO.Path.Combine(Application.StartupPath, "youtube-dl.exe")))
+                    if (!File.Exists(System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe")))
                     {                        
                         cancel_queue = true;
                         working = false;                       
@@ -586,7 +586,7 @@ namespace FFBatch
 
                     StreamWriter write_q2 = process_glob.StandardInput;
                     write_q2.Write("q");
-                    Process[] localByName = Process.GetProcessesByName("youtube-dl");
+                    Process[] localByName = Process.GetProcessesByName("yt-dlp");
                     foreach (Process p in localByName)
                     {
                         if (p.Id == process_glob.Id)
@@ -650,7 +650,7 @@ namespace FFBatch
                 if (a == DialogResult.No || a == DialogResult.Cancel) e.Cancel = true;
                 else
                 {
-                    Process[] localByName = Process.GetProcessesByName("youtube-dl");
+                    Process[] localByName = Process.GetProcessesByName("yt-dlp");
                     Process[] localByName2 = Process.GetProcessesByName("ffmpeg");
                     try
                     {

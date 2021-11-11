@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -52,16 +53,6 @@ namespace FFBatch
                 UpdateColorDark(subC);
             }
         }
-
-        public void UpdateColorDefault(Control myControl)
-        {
-            myControl.BackColor = SystemColors.InactiveBorder;
-            myControl.ForeColor = Control.DefaultForeColor;
-            foreach (Control subC in myControl.Controls)
-            {
-                UpdateColorDefault(subC);
-            }
-        }
         private void Form21_Load(object sender, EventArgs e)
         {
             String vers = lbl_ver.Text;
@@ -73,12 +64,7 @@ namespace FFBatch
                 foreach (Control c in this.Controls) UpdateColorDark(c);
                 this.BackColor = Color.FromArgb(255, 64, 64, 64);
             }
-            else
-            {
-                foreach (Control c in this.Controls) UpdateColorDefault(c);
-                this.BackColor = SystemColors.InactiveBorder;
-            }
-
+            btn_trans.Left = label1.Left + label1.Width + 10;
         }
 
         private void refresh_lang()
@@ -102,6 +88,11 @@ namespace FFBatch
             //526x323
             if (this.Width < 526) this.Width = 526;
             if (this.Height < 333) this.Height = 333;
+        }
+
+        private void btn_trans_Click(object sender, EventArgs e)
+        {
+            Process.Start("http://translate.google.com/#en|" + Properties.Settings.Default.app_lang + "|" + textBox1.Text);
         }
     }
 }

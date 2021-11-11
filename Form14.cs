@@ -80,12 +80,7 @@ namespace FFBatch
             {
                 foreach (Control c in this.Controls) UpdateColorDark(c);
                 this.BackColor = Color.FromArgb(255, 64, 64, 64);
-            }
-            else
-            {
-                foreach (Control c in this.Controls) UpdateColorDefault(c);
-                this.BackColor = SystemColors.InactiveBorder;
-            }
+            }            
         }
         public void UpdateColorDark(Control myControl)
         {
@@ -94,16 +89,6 @@ namespace FFBatch
             foreach (Control subC in myControl.Controls)
             {
                 UpdateColorDark(subC);
-            }
-        }
-
-        public void UpdateColorDefault(Control myControl)
-        {
-            myControl.BackColor = SystemColors.InactiveBorder;
-            myControl.ForeColor = Control.DefaultForeColor;
-            foreach (Control subC in myControl.Controls)
-            {
-                UpdateColorDefault(subC);
             }
         }
         private void refresh_lang()

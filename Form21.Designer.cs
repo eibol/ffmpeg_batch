@@ -38,6 +38,7 @@ namespace FFBatch
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_trans = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,8 +76,8 @@ namespace FFBatch
             // 
             // textBox1
             // 
-            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             // 
@@ -91,11 +92,21 @@ namespace FFBatch
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
+            // btn_trans
+            // 
+            this.btn_trans.FlatAppearance.BorderSize = 0;
+            this.btn_trans.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_trans, "btn_trans");
+            this.btn_trans.Name = "btn_trans";
+            this.btn_trans.UseVisualStyleBackColor = true;
+            this.btn_trans.Click += new System.EventHandler(this.btn_trans_Click);
+            // 
             // Form21
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Controls.Add(this.btn_trans);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.textBox1);
@@ -125,5 +136,6 @@ namespace FFBatch
         public System.Windows.Forms.Label lbl_ver;
         public System.Windows.Forms.TextBox textBox1;
         protected System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btn_trans;
     }
 }

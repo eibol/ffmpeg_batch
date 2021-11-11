@@ -810,7 +810,7 @@
     <value>NoControl</value>
   </data>
   <data name="pic_excl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>510, 421</value>
+    <value>510, 441</value>
   </data>
   <data name="pic_excl.Size" type="System.Drawing.Size, System.Drawing">
     <value>14, 14</value>
