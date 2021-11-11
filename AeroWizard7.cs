@@ -206,6 +206,12 @@ namespace FFBatch
         private void AeroWizard5_Load(object sender, EventArgs e)
         {
             refresh_lang();
+            if (Properties.Settings.Default.app_lang != "en" && Properties.Settings.Default.app_lang != "es")
+            {
+                wiz_img.NextButtonText = Properties.Strings2.next;
+                wiz_img.CancelButtonText = Properties.Strings.cancel;
+                wiz_img.FinishButtonText = Properties.Strings2.finish;
+            }
         }
 
         private void refresh_lang()

@@ -2296,54 +2296,62 @@ namespace FFBatch
         {
             String videocard = "";
             String cpu_info = "";
+            String hw_enc = video_encoder_param.ToLower();
 
-            ManagementObjectSearcher search = new ManagementObjectSearcher("SELECT * FROM Win32_VideoController");
-            foreach (ManagementObject mo in search.Get())
+            if (hw_enc.Contains("h264_amf") || hw_enc.Contains("hevc_amf") || hw_enc.Contains("h264_nvenc") || hw_enc.Contains("hevc_nvenc"))
+
             {
-                PropertyData currentBitsPerPixel = mo.Properties["CurrentBitsPerPixel"];
-                PropertyData description = mo.Properties["Description"];
-                if (currentBitsPerPixel != null && description != null)
+                ManagementObjectSearcher search = new ManagementObjectSearcher("SELECT * FROM Win32_VideoController");
+                foreach (ManagementObject mo in search.Get())
                 {
-                    if (currentBitsPerPixel.Value != null)
-                        videocard = videocard + (description.Value) + " ";
+                    PropertyData currentBitsPerPixel = mo.Properties["CurrentBitsPerPixel"];
+                    PropertyData description = mo.Properties["Description"];
+                    if (currentBitsPerPixel != null && description != null)
+                    {
+                        if (currentBitsPerPixel.Value != null)
+                            videocard = videocard + (description.Value) + " ";
+                    }
+                }
+
+                lbl_vcard.Text = "";
+                pic_warn2.Visible = false;
+                if (video_encoder_param.ToLower().Contains("h264_amf") || video_encoder_param.ToLower().Contains("hevc_amf"))
+                {
+                    if (!videocard.ToLower().Contains("radeon"))
+                    {
+                        pic_warn2.Visible = true;
+                        lbl_vcard.Text = videocard + Properties.Strings2.not_amf;
+                    }
+                }
+
+                if (video_encoder_param.ToLower().Contains("h264_nvenc") || video_encoder_param.ToLower().Contains("hevc_nvenc"))
+                {
+                    if (!videocard.ToLower().Contains("nvidia"))
+                    {
+                        pic_warn2.Visible = true;
+                        lbl_vcard.Text = videocard + Properties.Strings2.not_nvenc;
+                    }
                 }
             }
+            if (hw_enc.Contains("h264_qsv") || hw_enc.Contains("hevc_qsv"))
+            { 
 
-            lbl_vcard.Text = "";
-            pic_warn2.Visible = false;
-            if (video_encoder_param.ToLower().Contains("h264_amf") || video_encoder_param.ToLower().Contains("hevc_amf"))
-            {
-                if (!videocard.ToLower().Contains("radeon"))
+                ManagementObjectSearcher mosProcessor = new ManagementObjectSearcher("SELECT * FROM Win32_Processor");
+                string Procname = null;
+
+                foreach (ManagementObject moProcessor in mosProcessor.Get())
                 {
-                    pic_warn2.Visible = true;
-                    lbl_vcard.Text = videocard + Properties.Strings2.not_amf;
+                    if (moProcessor["name"] != null) cpu_info = moProcessor["name"].ToString();
+                    else cpu_info = Properties.Strings.unknown;
                 }
-            }
 
-            if (video_encoder_param.ToLower().Contains("h264_nvenc") || video_encoder_param.ToLower().Contains("hevc_nvenc"))
-            {
-                if (!videocard.ToLower().Contains("nvidia"))
+                if (video_encoder_param.ToLower().Contains("h264_qsv") || video_encoder_param.ToLower().Contains("hevc_qsv"))
                 {
-                    pic_warn2.Visible = true;
-                    lbl_vcard.Text = videocard + Properties.Strings2.not_nvenc;
-                }
-            }
-
-            ManagementObjectSearcher mosProcessor = new ManagementObjectSearcher("SELECT * FROM Win32_Processor");
-            string Procname = null;
-
-            foreach (ManagementObject moProcessor in mosProcessor.Get())
-            {
-                if (moProcessor["name"] != null) cpu_info = moProcessor["name"].ToString();
-                else cpu_info = Properties.Strings.unknown;
-            }
-
-            if (video_encoder_param.ToLower().Contains("h264_qsv") || video_encoder_param.ToLower().Contains("hevc_qsv"))
-            {
-                if (!cpu_info.ToLower().Contains("intel"))
-                {
-                    pic_warn2.Visible = true;
-                    lbl_vcard.Text = Properties.Strings2.your_sys + " " + Properties.Strings2.not_qsv;
+                    if (!cpu_info.ToLower().Contains("intel"))
+                    {
+                        pic_warn2.Visible = true;
+                        lbl_vcard.Text = Properties.Strings2.your_sys + " " + Properties.Strings2.not_qsv;
+                    }
                 }
             }
 
@@ -4626,6 +4634,12 @@ namespace FFBatch
         {
             refresh_lang();
             if (Properties.Settings.Default.app_lang == "zh-Hans") this.Height = this.Height + 35;
+            if (Properties.Settings.Default.app_lang != "en" && Properties.Settings.Default.app_lang != "es")
+            {
+                wizardControl1.NextButtonText = Properties.Strings2.next;
+                wizardControl1.CancelButtonText = Properties.Strings.cancel;
+                wizardControl1.FinishButtonText = Properties.Strings2.finish;
+            }
         }
 
         private void refresh_lang()
@@ -4722,5 +4736,6 @@ namespace FFBatch
                 return wr;
             }
         }
+
     }
 }

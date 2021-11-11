@@ -901,6 +901,12 @@ namespace FFBatch
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
             if (File.Exists(portable_flag)) is_portable = true;
             refresh_lang();
+            if (Properties.Settings.Default.app_lang != "en" && Properties.Settings.Default.app_lang != "es")
+            {
+                wizard3.NextButtonText = Properties.Strings2.next;
+                wizard3.CancelButtonText = Properties.Strings.cancel;
+                wizard3.FinishButtonText = Properties.Strings2.finish;
+            }
         }
 
         private void refresh_lang()

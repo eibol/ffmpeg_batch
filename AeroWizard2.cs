@@ -420,9 +420,14 @@ namespace FFBatch
         }
 
         private void AeroWizard2_Load(object sender, EventArgs e)
-        {
-           
+        {           
             refresh_lang();
+            if (Properties.Settings.Default.app_lang != "en" && Properties.Settings.Default.app_lang != "es")
+            {
+                wz_mpresets.NextButtonText = Properties.Strings2.next;
+                wz_mpresets.CancelButtonText = Properties.Strings.cancel;
+                wz_mpresets.FinishButtonText = Properties.Strings2.finish;
+            }
         }
 
         private void refresh_lang()
