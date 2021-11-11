@@ -42,7 +42,8 @@ namespace FFBatch
         delegate Boolean ConsoleCtrlDelegate(uint CtrlType);
 
         ProgressBarWithText Pg1 = new ProgressBarWithText();
-        int w_ff = 0;
+        Boolean show_est = false;
+        //int w_ff = 0;
         int current_fr = 4;
         Boolean warn_space = false;
         Decimal check_space = 1;
@@ -8010,7 +8011,20 @@ namespace FFBatch
                     else
                     {
                         ct1_paste_youtube.Visible = false;
-                        if (Clipboard.GetText().ToLower().Contains("http") == true) ct1_paste_m3u.Visible = true;
+
+                        if (Clipboard.GetText().ToLower().Contains("http") == true)
+                        {
+                            if (Clipboard.GetText().ToLower().Contains("m3u") == true)
+                            {
+                                ct1_paste_m3u.Visible = true;
+                                ct1_paste_m3u.Text = Properties.Strings.Paste_M3u_URL;
+                            }
+                            else
+                            {
+                                ct1_paste_m3u.Visible = true;
+                                ct1_paste_m3u.Text = Properties.Strings2.Paste_any_URL;
+                            }
+                        }
                         else
                         {
                             ct1_paste_m3u.Visible = false;
@@ -9786,10 +9800,15 @@ namespace FFBatch
 
                             int pad = 0;
                             if (item.SubItems[e.Column].Text.ToLower().Contains("kb/s"))
-                            {                                
+                            {
+                                if (has_dot == true)
+                                {
+                                    subit = subit.Substring(0, subit.Length - 1);
+                                }
+
                                 pad = 16 - subit.Length;
                                 for (int ii = 0; ii < pad; ii++) subit = "0" + subit;
-                                
+
                             }
                             if (item.SubItems[e.Column].Text.ToLower().Contains("mb/s") || item.SubItems[e.Column].Text.ToLower().Contains("gb/s"))
                             {                                
@@ -9941,6 +9960,11 @@ namespace FFBatch
                             int pad = 0;
                             if (item.SubItems[e.Column].Text.ToLower().Contains("kb/s"))
                             {
+                                if (has_dot == true)
+                                {
+                                    subit = subit.Substring(0, subit.Length - 1);
+                                }                                
+                                
                                 pad = 16 - subit.Length;
                                 for (int ii = 0; ii < pad; ii++) subit = "0" + subit;
 
@@ -9949,7 +9973,7 @@ namespace FFBatch
                             {
                                 if (has_dot == false) subit = subit + "000";
                                 else subit = (subit + "00");
-                                //subit = subit.Replace(sep_th, " ");
+                                
                                 pad = 16 - subit.Length;
                                 for (int ii = 0; ii < pad; ii++) subit = "0" + subit;
                             }
@@ -10135,7 +10159,7 @@ namespace FFBatch
 
                 foreach (ListViewItem n_a in lv_clean.Items)
                 {
-                    if (n_a.BackColor == Color.LightGoldenrodYellow || n_a.SubItems[3].Text == FFBatch.Properties.Strings.n_a || n_a.SubItems[3].Text == "0:00:00" || n_a.SubItems[3].Text == "00:00:00")
+                    if (n_a.SubItems[3].Text == FFBatch.Properties.Strings.n_a || n_a.SubItems[3].Text == "0:00:00" || n_a.SubItems[3].Text == "00:00:00" || n_a.SubItems[3].Text == "00:00:00.000")
                     {
                         n_a.Remove();
                     }
@@ -17590,7 +17614,12 @@ namespace FFBatch
                         if (f_ext == no_ext)
                         {
                             itemsToAdd[n].SubItems.Add("00:00:00");
-                            itemsToAdd[n].BackColor = Color.LightGoldenrodYellow;
+                            if (Properties.Settings.Default.dark_mode == true)
+                            {
+                                itemsToAdd[n].BackColor = Color.FromArgb(255, 128, 128, 128);
+                            }
+                            else itemsToAdd[n].BackColor = Color.LightGoldenrodYellow;
+                            
                             no_av = true;
                             invalids = invalids + 1;
                             break;
@@ -17774,10 +17803,15 @@ namespace FFBatch
                                 {
                                     if (lines_ouput.Count > 1)
                                     {
-                                        if (lines_ouput[1].Length > 0)
+                                        if (lines_ouput[1] != null)
                                         {
-                                            itemsToAdd[n].SubItems.Add(lines_ouput[1]);
+                                            if (lines_ouput[1].Length > 0)
+                                            {
+                                                itemsToAdd[n].SubItems.Add(lines_ouput[1]);
+                                            }
+                                            else itemsToAdd[n].SubItems.Add("-");
                                         }
+                                        else itemsToAdd[n].SubItems.Add("-");
                                     }
                                     else itemsToAdd[n].SubItems.Add("-");
                                 }
@@ -17931,7 +17965,11 @@ namespace FFBatch
                     catch (System.Exception)
                     {
                         item.SubItems[3].Text = FFBatch.Properties.Strings.n_a;
-                        item.BackColor = Color.LightGoldenrodYellow;
+                        if (Properties.Settings.Default.dark_mode == true)
+                        {
+                            item.BackColor = Color.FromArgb(255,128,128,128);
+                        }
+                        else item.BackColor = Color.LightGoldenrodYellow;
                     }
                 }
 
@@ -18710,8 +18748,172 @@ namespace FFBatch
             open_file_m3u.ShowDialog();
         }
 
+        private void validate_gen_link()
+        {
+            Boolean one_ok = false;
+
+            dg1.Rows[dg1.RowCount - 1].Cells[5].Value = FFBatch.Properties.Strings.var_url;
+
+            if (dg1.Rows[dg1.RowCount - 1].Cells[1].Value == null)
+            {
+                dg1.Rows[dg1.RowCount - 1].Cells[5].Value = String.Empty;
+                dg1.Rows[dg1.RowCount - 1].Cells[4].Value = String.Empty;
+                dg1.Rows[dg1.RowCount - 1].Cells[3].Value = String.Empty;
+                dg1.Rows[dg1.RowCount - 1].Cells[2].Value = String.Empty;
+                //dg1.Rows[dg1.RowCount - 1].DefaultCellStyle.BackColor = dg1.DefaultCellStyle.BackColor;
+                return;
+            }
+
+            if (dg1.Rows[dg1.RowCount - 1].Cells[1].Value.ToString().Contains("http") == false)
+            {
+                dg1.Rows[dg1.RowCount - 1].Cells[5].Value = FFBatch.Properties.Strings.error;
+                dg1.Rows[dg1.RowCount - 1].DefaultCellStyle.BackColor = Color.LightGoldenrodYellow;
+                return;
+            }
+
+            dg1.Refresh();
+            cell_zoom();
+
+            Process probe = new Process();
+            probe.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe");
+            if (!File.Exists(System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe")))
+            {
+                MessageBox.Show(FFBatch.Properties.Strings.yt_not, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                release_datagrid();
+                return;
+            }
+            probe.StartInfo.WorkingDirectory = Application.StartupPath;
+            probe.StartInfo.Arguments = "--get-duration --get-title --get-thumbnail " + dg1.Rows[dg1.RowCount - 1].Cells[1].Value.ToString();
+            probe.StartInfo.RedirectStandardOutput = true;
+            probe.StartInfo.UseShellExecute = false;
+            probe.StartInfo.CreateNoWindow = true;
+            probe.EnableRaisingEvents = true;
+            probe.Start();
+
+            String filename = "";
+            String out_thumb = "";
+            String duracion = "";
+
+            while (!probe.StandardOutput.EndOfStream)
+            {
+                filename = probe.StandardOutput.ReadLine();
+                out_thumb = probe.StandardOutput.ReadLine();
+                duracion = probe.StandardOutput.ReadLine();
+            }
+
+            PictureBox pic = new PictureBox();
+
+            if (out_thumb.Contains("http"))
+            {
+                try
+                {
+                    if (out_thumb.Contains("?")) out_thumb = out_thumb.Substring(0, out_thumb.IndexOf("?"));
+                    new System.Threading.Thread(() =>
+                    {
+                        System.Threading.Thread.CurrentThread.IsBackground = true;
+                        pic.Load(out_thumb);
+                        dg_thumbs[dg1.RowCount - 1] = pic.Image;
+                        dg1.Invoke(new MethodInvoker(delegate
+                        {
+                            dg1.Rows[dg1.RowCount - 1].Cells[0].Value = pic.Image;
+                        }));
+
+                    }).Start();
+                }
+                catch
+                {
+                    dg_thumbs[dg1.RowCount - 1] = pic_noimg.Image;
+                }
+            }
+            else
+            {
+                dg_thumbs[dg1.RowCount - 1] = pic_noimg.Image;
+            }
+            //cell_stretch();
+
+            probe.WaitForExit(10000);
+            probe.StartInfo.Arguments = "";
+
+            if (duracion == null || duracion == string.Empty)
+            {
+                dg1.Invoke(new MethodInvoker(delegate
+                {
+                    dg1.Rows[dg1.RowCount - 1].DefaultCellStyle.BackColor = Color.LightGoldenrodYellow;
+                    dg1.Rows[dg1.RowCount - 1].Cells[2].Value = Properties.Strings.n_a;
+                    dg1.Rows[dg1.RowCount - 1].Cells[3].Value = "\u221E";
+                    int index_length = dg1.Rows[dg1.RowCount - 1].Cells[1].Value.ToString().Length;
+
+                    if (dg1.Rows[dg1.RowCount - 1].Cells[1].Value.ToString().Substring(index_length - 1,1) == "/")
+                    {
+                        dg1.Rows[dg1.RowCount - 1].Cells[1].Value = dg1.Rows[dg1.RowCount - 1].Cells[1].Value.ToString().Substring(0, index_length - 1);
+                        index_length = index_length - 1;
+                    }
+
+                    int index_fn = dg1.Rows[dg1.RowCount - 1].Cells[1].Value.ToString().LastIndexOf("/");                    
+                    int ind_final = index_length - index_fn;
+                    String dest = dg1.Rows[dg1.RowCount - 1].Cells[1].Value.ToString().Substring(index_fn + 1, ind_final - 1);
+                    dg1.Rows[dg1.RowCount - 1].Cells[4].Value = dest;
+                    if (Properties.Settings.Default.dark_mode == false)
+                    {
+                        dg1.Rows[dg1.RowCount - 1].DefaultCellStyle.BackColor = dg1.DefaultCellStyle.BackColor;
+                    }
+                    else dg1.Rows[dg1.RowCount - 1].DefaultCellStyle.BackColor = Color.FromArgb(255,96,96,96);
+                    dg1.Rows[dg1.RowCount - 1].Cells[5].Value = FFBatch.Properties.Strings.ready;
+                    //this.InvokeEx(f => f.dg1.Rows[dg1.RowCount - 1].Cells[5].Style.BackColor = Color.LightGoldenrodYellow);
+
+                }));
+            }
+
+            if (duracion != null && filename != "")
+            {
+                dg1.Invoke(new MethodInvoker(delegate
+                {
+                    if (duracion == "0")
+                    {
+                        dg1.Rows[dg1.RowCount - 1].Cells[2].Value = duracion;
+                        dg1.Rows[dg1.RowCount - 1].Cells[3].Value = "Live";
+                    }
+                    else
+                    {
+                        if (duracion.Length < 6) duracion = "00:" + duracion;
+                        dg1.Rows[dg1.RowCount - 1].Cells[2].Value = duracion;
+                        dg1.Rows[dg1.RowCount - 1].Cells[3].Value = duracion;
+                    }
+                    dg1.Rows[dg1.RowCount - 1].Cells[4].Value = filename;
+                     if (Properties.Settings.Default.dark_mode == false)
+                    {
+                        dg1.Rows[dg1.RowCount - 1].DefaultCellStyle.BackColor = dg1.DefaultCellStyle.BackColor;
+                    }
+                    else dg1.Rows[dg1.RowCount - 1].DefaultCellStyle.BackColor = Color.FromArgb(255,96,96,96);
+                    one_ok = true;
+                    dg1.Rows[dg1.RowCount - 1].Cells[5].Value = FFBatch.Properties.Strings.ready;
+                    this.InvokeEx(f => f.dg1.Rows[dg1.RowCount - 1].Cells[5].Style.BackColor = Color.LightGreen);
+                }));
+            }
+
+            if (dg1.RowCount > 1)
+            {
+                dg1.ClearSelection();
+                dg1.Rows[dg1.RowCount - 1].Cells[1].Selected = true;
+                dg1.CurrentCell = dg1.Rows[dg1.RowCount - 1].Cells[1];
+            }
+            urls_duration();
+            if (one_ok == true)
+            {
+                chk_m3u_params.Left = 14;
+                chk_output_server.Enabled = false;
+                chk_m3u_params.Text = FFBatch.Properties.Strings.yt_params;
+            }
+            this.Enabled = true; release_datagrid();
+        }
         private void Validate_added_row()
         {
+
+            if (dg1.Rows[dg1.RowCount - 1].Cells[1].Value.ToString().ToLower().Contains("m3u") == false)
+            {
+                validate_gen_link();
+                return;
+            }
 
             dg1.Rows[dg1.RowCount - 1].Cells[5].Value = FFBatch.Properties.Strings.var_url;
 
@@ -18735,20 +18937,37 @@ namespace FFBatch
             dg1.Refresh();
 
             Process probe = new Process();
-            probe.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "MediaInfo.exe");
-            String ffprobe_frames1 = " " + '\u0022' + "--Inform=General;%Duration/String3%" + '\u0022';
-            probe.StartInfo.Arguments = ffprobe_frames1 + " " + '\u0022' + dg1.Rows[dg1.RowCount - 1].Cells[1].Value.ToString() + '\u0022';
+            List<string> lines_ouput = new List<string>();
+            String duracion = "00:00:00";
+            probe.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "ffmpeg.exe");            
+            probe.StartInfo.Arguments = "-i " + " " + '\u0022' + dg1.Rows[dg1.RowCount - 1].Cells[1].Value.ToString() + '\u0022';
 
             //probe.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "ffprobe.exe");
             //probe.StartInfo.Arguments = "-v error -show_entries format=duration -sexagesimal -of default=noprint_wrappers=1:nokey=1 -timeout 10000000" + " -i " + '\u0022' + dg1.Rows[dg1.RowCount - 1].Cells[1].Value.ToString() + '\u0022';
-            probe.StartInfo.RedirectStandardOutput = true;
+            probe.StartInfo.RedirectStandardError = true;
             probe.StartInfo.UseShellExecute = false;
             probe.StartInfo.CreateNoWindow = true;
             probe.EnableRaisingEvents = true;
 
             probe.Start();
 
-            String duracion = probe.StandardOutput.ReadLine();
+            while (!probe.StandardError.EndOfStream)
+            {
+            lines_ouput.Add(probe.StandardError.ReadLine());
+
+            }
+            foreach (string str in lines_ouput)
+            {
+                if (str.ToLower().Contains("duration:"))
+                {                    
+                    duracion = str.ToLower().Trim();
+                    break;
+                }
+            }
+            int dur_start = duracion.IndexOf("duration: ") + 10;
+            int dur_end = duracion.IndexOf(",") - 10;
+            duracion = duracion.Substring(dur_start,dur_end);
+            //MessageBox.Show(duracion);
 
             probe.WaitForExit(10000);
 
@@ -19166,104 +19385,123 @@ namespace FFBatch
                     this.InvokeEx(f => f.dg1.Refresh());
                     var tmp = procs["proc_urls_" + i.ToString()];
 
-                    tmp.StartInfo.RedirectStandardOutput = true;
-                    tmp.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "MediaInfo.exe");
-                    String ffprobe_frames = " " + '\u0022' + "--Inform=General;%Duration/String3%" + '\u0022';
-                    tmp.StartInfo.Arguments = ffprobe_frames + " " + '\u0022' + dg1.Rows[i].Cells[1].Value.ToString() + '\u0022';
-                    //tmp.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "ffprobe.exe");
-                    //tmp.StartInfo.Arguments = "-v error -show_entries format=duration -sexagesimal -of default=noprint_wrappers=1:nokey=1 -timeout 10000000" + " -i " + '\u0022' + dg1.Rows[i].Cells[1].Value.ToString() + '\u0022';
-                    tmp.StartInfo.RedirectStandardOutput = true;
-                    tmp.StartInfo.RedirectStandardError = true;
-                    tmp.StartInfo.UseShellExecute = false;
-                    tmp.StartInfo.CreateNoWindow = true;
-                    tmp.EnableRaisingEvents = true;
-
-                    String duracion = String.Empty;
-                    String std_out = String.Empty;
-
-                    if (cts.IsCancellationRequested == false)
+                    if (dg1.Rows[i].Cells[1].Value.ToString().ToLower().Contains("m3u"))
                     {
-                        tmp.Start();
 
-                        //Check
-                        duracion = tmp.StandardOutput.ReadLine();
-                        tmp.WaitForExit(10000);
+                        tmp.StartInfo.RedirectStandardOutput = true;
+                        tmp.StartInfo.FileName = Path.Combine(Application.StartupPath, "ffmpeg.exe");
+                        tmp.StartInfo.Arguments = "-i " + '\u0022' + dg1.Rows[i].Cells[1].Value.ToString() + '\u0022';
+                        tmp.StartInfo.RedirectStandardOutput = true;
+                        tmp.StartInfo.RedirectStandardError = true;
+                        tmp.StartInfo.UseShellExecute = false;
+                        tmp.StartInfo.CreateNoWindow = true;
+                        tmp.EnableRaisingEvents = true;
 
-                        if (duracion == null) duracion = FFBatch.Properties.Strings.n_a;
-                        else
+                        String duracion = String.Empty;
+                        String std_out = String.Empty;
+                        List<string> lines_ouput = new List<string>();
+
+                        if (cts.IsCancellationRequested == false)
                         {
-                            TimeSpan time = new TimeSpan();
-                            if (!TimeSpan.TryParse(duracion, out time))
+                            tmp.Start();
+
+                            //Check
+                            while (!tmp.StandardError.EndOfStream)
                             {
-                                duracion = FFBatch.Properties.Strings.n_a;
+                                lines_ouput.Add(tmp.StandardError.ReadLine());
+
                             }
-                        }
-                        tmp.StartInfo.Arguments = String.Empty;
-                    }
-                    else return;
-
-                    prog = prog + 1;
-
-                    form_prog2.Invoke(new MethodInvoker(delegate
-                    {
-
-                        if (form_prog2.progressBar1.Value < form_prog2.progressBar1.Maximum)
-                        {
-                            form_prog2.progressBar1.Value = form_prog2.progressBar1.Value + 1;
-                            this.InvokeEx(f => TaskbarProgress.SetValue(this.Handle, form_prog2.progressBar1.Value, form_prog2.progressBar1.Maximum));
-                        }
-                        form_prog2.progressBar1.Refresh();
-                        form_prog2.lab_count.Text = (prog).ToString() + "/" + dg1.Rows.Count;
-                        form_prog2.lab_count.Refresh();
-
-                    }));
-
-                    if (duracion == null || duracion == string.Empty)
-                    {
-                        this.InvokeEx(f => f.dg1.Rows[i].Cells[5].Value = FFBatch.Properties.Strings.error);
-                        this.InvokeEx(f => f.dg1.Rows[i].Cells[5].Style.BackColor = Color.LightGoldenrodYellow);
-                        errors = errors + 1;
-
-                    }
-
-                    if (duracion != null && cts.IsCancellationRequested == false)
-                    {
-                        TimeSpan time;
-                        if (TimeSpan.TryParse(duracion, out time))
-                        {
-
-                            this.InvokeEx(f => f.dg1.Rows[i].Cells[2].Value = duracion);
-                            this.InvokeEx(f => f.dg1.Rows[i].Cells[3].Value = duracion);
-                            this.InvokeEx(f => f.dg1.Rows[i].Cells[4].Value = dg1.Rows[i].Cells[4].Value.ToString() + "_FF" + (i + 1).ToString());
-                            this.InvokeEx(f => f.dg1.Rows[i].Cells[5].Value = FFBatch.Properties.Strings.ready);
-                            this.InvokeEx(f => f.dg1.Rows[i].DefaultCellStyle.BackColor = dg1.DefaultCellStyle.BackColor);
-                            this.InvokeEx(f => f.dg1.Rows[i].Cells[5].Style.BackColor = Color.LightGreen);
-
-                            if (duracion.Length >= 12)
+                            foreach (string str in lines_ouput)
                             {
-                                if (duracion.Substring(0, 11) == "0:00:00.000" || duracion.Substring(0, 12) == "00:00:00.000")
+                                if (str.ToLower().Contains("duration:"))
                                 {
-                                    this.InvokeEx(f => f.dg1.Rows[i].DefaultCellStyle.BackColor = dg1.DefaultCellStyle.BackColor);
-                                    this.InvokeEx(f => f.dg1.Rows[i].Cells[5].Value = FFBatch.Properties.Strings.ready);
-                                    Total_dur_urls = Total_dur_urls + TimeSpan.Parse(dg1.Rows[i].Cells[3].Value.ToString()).TotalSeconds;
-                                    this.InvokeEx(f => f.dg1.Rows[i].Cells[5].Style.BackColor = Color.LightGreen);
+                                    duracion = str.ToLower().Trim();
+                                    break;
                                 }
                             }
+                            int dur_start = duracion.IndexOf("duration: ") + 10;
+                            int dur_end = duracion.IndexOf(",") - 10;
+                            duracion = duracion.Substring(dur_start, dur_end);
+
+                            tmp.WaitForExit(10000);
+
+                            if (duracion == null) duracion = FFBatch.Properties.Strings.n_a;
+                            else
+                            {
+                                TimeSpan time = new TimeSpan();
+                                if (!TimeSpan.TryParse(duracion, out time))
+                                {
+                                    duracion = FFBatch.Properties.Strings.n_a;
+                                }
+                            }
+                            tmp.StartInfo.Arguments = String.Empty;
+                        }
+                        else return;
+
+                        prog = prog + 1;
+
+                        form_prog2.Invoke(new MethodInvoker(delegate
+                        {
+
+                            if (form_prog2.progressBar1.Value < form_prog2.progressBar1.Maximum)
+                            {
+                                form_prog2.progressBar1.Value = form_prog2.progressBar1.Value + 1;
+                                this.InvokeEx(f => TaskbarProgress.SetValue(this.Handle, form_prog2.progressBar1.Value, form_prog2.progressBar1.Maximum));
+                            }
+                            form_prog2.progressBar1.Refresh();
+                            form_prog2.lab_count.Text = (prog).ToString() + "/" + dg1.Rows.Count;
+                            form_prog2.lab_count.Refresh();
+
+                        }));
+
+                        if (duracion == null || duracion == string.Empty)
+                        {
+                            this.InvokeEx(f => f.dg1.Rows[i].Cells[5].Value = FFBatch.Properties.Strings.error);
+                            this.InvokeEx(f => f.dg1.Rows[i].Cells[5].Style.BackColor = Color.LightGoldenrodYellow);
+                            errors = errors + 1;
+
                         }
 
-                        if (duracion == FFBatch.Properties.Strings.n_a)
+                        if (duracion != null && cts.IsCancellationRequested == false)
                         {
-                            this.InvokeEx(f => f.dg1.Rows[i].Cells[2].Value = FFBatch.Properties.Strings.n_a);
-                            this.InvokeEx(f => f.dg1.Rows[i].Cells[3].Value = "\u221E");
-                            this.InvokeEx(f => f.dg1.Rows[i].Cells[4].Value = dg1.Rows[i].Cells[4].Value.ToString() + "_FF" + (i + 1).ToString());
-                            this.InvokeEx(f => f.dg1.Rows[i].DefaultCellStyle.BackColor = dg1.DefaultCellStyle.BackColor);
-                            this.InvokeEx(f => f.dg1.Rows[i].Cells[5].Value = FFBatch.Properties.Strings.ready);
-                            try
+                            TimeSpan time;
+                            if (TimeSpan.TryParse(duracion, out time))
                             {
-                                Total_dur_urls = Total_dur_urls + TimeSpan.Parse(dg1.Rows[i].Cells[3].Value.ToString()).TotalSeconds;
+
+                                this.InvokeEx(f => f.dg1.Rows[i].Cells[2].Value = duracion);
+                                this.InvokeEx(f => f.dg1.Rows[i].Cells[3].Value = duracion);
+                                this.InvokeEx(f => f.dg1.Rows[i].Cells[4].Value = dg1.Rows[i].Cells[4].Value.ToString() + "_FF" + (i + 1).ToString());
+                                this.InvokeEx(f => f.dg1.Rows[i].Cells[5].Value = FFBatch.Properties.Strings.ready);
+                                this.InvokeEx(f => f.dg1.Rows[i].DefaultCellStyle.BackColor = dg1.DefaultCellStyle.BackColor);
+                                this.InvokeEx(f => f.dg1.Rows[i].Cells[5].Style.BackColor = Color.LightGreen);
+
+                                if (duracion.Length >= 12)
+                                {
+                                    if (duracion.Substring(0, 11) == "0:00:00.000" || duracion.Substring(0, 12) == "00:00:00.000")
+                                    {
+                                        this.InvokeEx(f => f.dg1.Rows[i].DefaultCellStyle.BackColor = dg1.DefaultCellStyle.BackColor);
+                                        this.InvokeEx(f => f.dg1.Rows[i].Cells[5].Value = FFBatch.Properties.Strings.ready);
+                                        Total_dur_urls = Total_dur_urls + TimeSpan.Parse(dg1.Rows[i].Cells[3].Value.ToString()).TotalSeconds;
+                                        this.InvokeEx(f => f.dg1.Rows[i].Cells[5].Style.BackColor = Color.LightGreen);
+                                    }
+                                }
                             }
-                            catch { }
-                        }
+
+                            if (duracion == FFBatch.Properties.Strings.n_a)
+                            {
+                                this.InvokeEx(f => f.dg1.Rows[i].Cells[2].Value = FFBatch.Properties.Strings.n_a);
+                                this.InvokeEx(f => f.dg1.Rows[i].Cells[3].Value = "\u221E");
+                                this.InvokeEx(f => f.dg1.Rows[i].Cells[4].Value = dg1.Rows[i].Cells[4].Value.ToString() + "_FF" + (i + 1).ToString());
+                                this.InvokeEx(f => f.dg1.Rows[i].DefaultCellStyle.BackColor = dg1.DefaultCellStyle.BackColor);
+                                this.InvokeEx(f => f.dg1.Rows[i].Cells[5].Value = FFBatch.Properties.Strings.ready);
+                                try
+                                {
+                                    Total_dur_urls = Total_dur_urls + TimeSpan.Parse(dg1.Rows[i].Cells[3].Value.ToString()).TotalSeconds;
+                                }
+                                catch { }
+                            }
+                        }                             
+            
 
                         form_prog2.Invoke(new MethodInvoker(delegate
                         {
@@ -19278,8 +19516,131 @@ namespace FFBatch
                     }
                     else
                     {
-                        this.InvokeEx(f => f.dg1.Rows[i].Cells[5].Value = "");
-                    }
+                        //Generic link                            
+                        String filename = "";
+                        String out_thumb = "";
+                        String duracion2 = "";
+
+                        tmp.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe");
+                        if (!File.Exists(System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe")))
+                        {
+                            MessageBox.Show(FFBatch.Properties.Strings.yt_not, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            release_datagrid();
+                            return;
+                        }
+                        tmp.StartInfo.WorkingDirectory = Application.StartupPath;
+                        tmp.StartInfo.Arguments = "--get-duration --get-title --get-thumbnail " + dg1.Rows[i].Cells[1].Value.ToString();
+                        tmp.StartInfo.RedirectStandardOutput = true;
+                        tmp.StartInfo.UseShellExecute = false;
+                        tmp.StartInfo.CreateNoWindow = true;
+                        tmp.EnableRaisingEvents = true;
+                        if (cts.IsCancellationRequested == false)
+                        {
+
+                            tmp.Start();
+
+
+                            while (!tmp.StandardOutput.EndOfStream)
+                            {
+                                filename = tmp.StandardOutput.ReadLine();
+                                out_thumb = tmp.StandardOutput.ReadLine();
+                                duracion2 = tmp.StandardOutput.ReadLine();
+                            }
+
+                            PictureBox pic = new PictureBox();
+
+                            if (out_thumb.Contains("http"))
+                            {
+                                try
+                                {
+                                    if (out_thumb.Contains("?")) out_thumb = out_thumb.Substring(0, out_thumb.IndexOf("?"));
+                                    new System.Threading.Thread(() =>
+                                    {
+                                        System.Threading.Thread.CurrentThread.IsBackground = true;
+                                        pic.Load(out_thumb);
+                                        dg_thumbs[i] = pic.Image;
+                                        dg1.Invoke(new MethodInvoker(delegate
+                                        {
+                                            dg1.Rows[i].Cells[0].Value = pic.Image;
+                                        }));
+
+                                    }).Start();
+                                }
+                                catch
+                                {
+                                    dg_thumbs[i] = pic_noimg.Image;
+                                }
+                            }
+                            else
+                            {
+                                dg_thumbs[i] = pic_noimg.Image;
+                            }
+                            //cell_stretch();
+                        }
+                        else return;
+
+                        tmp.WaitForExit(10000);
+                        tmp.StartInfo.Arguments = "";
+
+                        if (duracion2 == null || duracion2 == string.Empty)
+                        {
+                            dg1.Invoke(new MethodInvoker(delegate
+                            {
+                                dg1.Rows[i].DefaultCellStyle.BackColor = Color.LightGoldenrodYellow;
+                                dg1.Rows[i].Cells[2].Value = Properties.Strings.n_a;
+                                dg1.Rows[i].Cells[3].Value = "\u221E";
+                                int index_length = dg1.Rows[i].Cells[1].Value.ToString().Length;
+
+                                if (dg1.Rows[i].Cells[1].Value.ToString().Substring(index_length - 1, 1) == "/")
+                                {
+                                    dg1.Rows[i].Cells[1].Value = dg1.Rows[i].Cells[1].Value.ToString().Substring(0, index_length - 1);
+                                    index_length = index_length - 1;
+                                }
+
+                                int index_fn = dg1.Rows[i].Cells[1].Value.ToString().LastIndexOf("/");
+                                int ind_final = index_length - index_fn;
+                                String dest = dg1.Rows[i].Cells[1].Value.ToString().Substring(index_fn + 1, ind_final - 1);
+                                dg1.Rows[i].Cells[4].Value = dest;
+                                if (Properties.Settings.Default.dark_mode == false)
+                                {
+                                    dg1.Rows[i].DefaultCellStyle.BackColor = dg1.DefaultCellStyle.BackColor;
+                                }
+                                else dg1.Rows[i].DefaultCellStyle.BackColor = Color.FromArgb(255, 96, 96, 96);
+                                dg1.Rows[i].Cells[5].Value = FFBatch.Properties.Strings.ready;
+                                //this.InvokeEx(f => f.dg1.Rows[dg1.RowCount - 1].Cells[5].Style.BackColor = Color.LightGoldenrodYellow);
+
+                            }));
+                        }
+
+                        if (duracion2 != null && filename != "")
+                        {
+                            dg1.Invoke(new MethodInvoker(delegate
+                            {
+                                if (duracion2 == "0")
+                                {
+                                    dg1.Rows[dg1.RowCount - 1].Cells[2].Value = duracion2;
+                                    dg1.Rows[dg1.RowCount - 1].Cells[3].Value = "Live";
+                                }
+                                else
+                                {
+                                    if (duracion2.Length < 6) duracion2 = "00:" + duracion2;
+                                    dg1.Rows[dg1.RowCount - 1].Cells[2].Value = duracion2;
+                                    dg1.Rows[dg1.RowCount - 1].Cells[3].Value = duracion2;
+                                }
+                                dg1.Rows[dg1.RowCount - 1].Cells[4].Value = filename;
+                                if (Properties.Settings.Default.dark_mode == false)
+                                {
+                                    dg1.Rows[dg1.RowCount - 1].DefaultCellStyle.BackColor = dg1.DefaultCellStyle.BackColor;
+                                }
+                                else dg1.Rows[dg1.RowCount - 1].DefaultCellStyle.BackColor = Color.FromArgb(255, 96, 96, 96);
+                                one_ok = true;
+                                dg1.Rows[dg1.RowCount - 1].Cells[5].Value = FFBatch.Properties.Strings.ready;
+                                this.InvokeEx(f => f.dg1.Rows[dg1.RowCount - 1].Cells[5].Style.BackColor = Color.LightGreen);
+                            }));
+                        }
+                    }              
+                
+                                
                 });
 
                 try
@@ -19467,7 +19828,9 @@ namespace FFBatch
                 {
                     ct.Enabled = false;
                 }
+
                 Validate_added_row();
+
                 foreach (DataGridViewRow row in dg1.Rows)
                 {
                     row.ReadOnly = false;
@@ -19611,11 +19974,586 @@ namespace FFBatch
 
         }
 
+        private void download_any()
+        { 
+            
+            List<string> list_lines = new List<string>();
+            List<string> list_err = new List<string>();
+            List<string> er = new List<string>();
+            int total_videos = dg1.RowCount;
+            int pending_urls = total_videos;
+            aborted_url = false;            
+            //pg2.Value = 0;            
+            Boolean killed = false;
+            Pg1.Value = 0;
+            Pg1.Maximum = 100;
+            Pg1.Text = "0%";
+            int pg2 = 0;
+            //pg2.Value = 0;
+            //pg2.Text = "0%";
+            Pg1.Refresh();
+            //pg2.Refresh();            
+
+            String format_out = combo_ext_m3u.SelectedItem.ToString();
+            String down_speed = "";
+
+            if (chk_best_yt.Checked) bestv_a = "-f bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio";
+            else bestv_a = String.Empty;
+
+            if (chk_down_limit.Checked == true) down_speed = "-r " + Convert.ToInt32(n_down_speed.Value).ToString() + "M";
+            String embed_subs = "";
+            if (chk_yout_subs.Checked == true) embed_subs = "--embed-subs --all-subs";
+            String auto_subs = "";
+            if (chk_auto_subs.Checked == true)
+            {
+                auto_subs = "--write-auto-sub --sub-lang en,es,it,pt,de,hi,ar,cn";
+                if (chk_yout_subs.Checked == true) embed_subs = "--embed-subs";
+            }
+            String embed_meta = "";
+            if (chk_embed_meta.Checked == true) embed_meta = "--add-metadata";
+            String write_subs = "";
+            if (chk_save_subtitles.Checked == true) embed_meta = "--write-sub";
+
+            String convert_subs = "";
+            if (chk_convert_srt.Checked == true) embed_meta = "--convert-subs=srt";
+            String m3u_params = txt_m3u_params.Text;
+
+            foreach (DataGridViewRow row in dg1.Rows)
+            {
+                if (row.Cells[4].Value.ToString().Contains("/") || row.Cells[4].Value.ToString().Contains(":") || row.Cells[4].Value.ToString().Contains("*") || row.Cells[4].Value.ToString().Contains("?") || row.Cells[4].Value.ToString().Contains("¿") || row.Cells[4].Value.ToString().Contains('\u0022') || row.Cells[4].Value.ToString().Contains("<") || row.Cells[4].Value.ToString().Contains(">") || row.Cells[4].Value.ToString().Contains("|") || row.Cells[4].Value.ToString().Contains("\\"))
+                {
+                    row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("/", "");
+                    row.Cells[4].Value = row.Cells[4].Value.ToString().Replace(":", "");
+                    row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("*", "");
+                    row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("?", "");
+                    row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("¿", "");
+                    row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("\u0022", "");
+                    row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("<", "");
+                    row.Cells[4].Value = row.Cells[4].Value.ToString().Replace(">", "");
+                    row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("|", "");
+                    row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("\\", "");
+                }
+            }
+
+            Disable_Controls();
+
+            new System.Threading.Thread(() =>
+            {
+            System.Threading.Thread.CurrentThread.IsBackground = true;
+
+            for (int list_index = 0; list_index < dg1.RowCount; list_index++)
+            {
+
+                System.Threading.Thread.Sleep(50); //Allow kill process to send cancel_queue
+                Boolean quit = false;
+
+                if (cancel_queue == true)
+                {
+                    working = false;
+                    m3u_running = false;
+                    m3u_single_running = false;
+                    timer2.Stop();
+                    timer_tasks.Stop();
+                    timer_est_size.Stop();
+                    cancelados_paralelos = false;
+                    aborted_url = false;
+                    Timer_display.Enabled = false;
+                    release_datagrid();
+
+                    this.InvokeEx(f => f.lbl_dw_speed.Text = "");
+                    Enable_Controls();
+                    this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
+
+                    MessageBox.Show(FFBatch.Properties.Strings.queue_abort, FFBatch.Properties.Strings.task_abort, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    return;
+                }
+
+
+                //Skip current
+                if (skip_current_url == true)
+                {
+                    skip_current_url = false;
+
+                    continue;
+                }
+
+                String file = "";
+                dg1.Invoke(new MethodInvoker(delegate
+                {
+                    file = dg1.Rows[list_index].Cells[1].Value.ToString();
+                }));
+
+                String ffm = System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe");
+                String destino = txt_path_m3u.Text;
+
+                if (!Directory.Exists(destino))
+                {
+                    try
+                    {
+                        Directory.CreateDirectory(destino);
+                    }
+                    catch (System.Exception excpt)
+                    {
+                        MessageBox.Show(FFBatch.Properties.Strings.write_error2 + " " + excpt.Message, FFBatch.Properties.Strings.write_error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.InvokeEx(f => this.Cursor = Cursors.Arrow);
+                        //this.InvokeEx(f => f.lbl_d_v.Text = "");
+                        return;
+                    }
+                }
+
+                //if (Directory.GetFiles(destino).Length > 0)
+                //{
+                //    DialogResult a = MessageBox.Show(FFBatch.Properties.Strings2.dest_not_empty, FFBatch.Properties.Strings.warning, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                //    if (a == DialogResult.No)
+                //    {
+                //        working = false;
+                //        //this.InvokeEx(f => f.lbl_d_v.Text = "");
+                //        this.InvokeEx(f => timer_yt.Stop());
+                //        Enable_Controls();
+                //        return;
+                //    }
+                //}
+
+                process_glob.StartInfo.FileName = ffm;
+                string replace_m3u_param = "-bsf:a aac_adtstoasc -c copy";
+                if (m3u_params.Contains("-f "))
+                {
+                    process_glob.StartInfo.Arguments = bestv_a + " " + Clear_cache + " " + m3u_params.Replace(replace_m3u_param, "") + " " + down_speed + " " + embed_subs + " " + auto_subs + " " + embed_meta + " " + write_subs + " " + convert_subs + " -o " + '\u0022' + destino + "\\" + dg1.Rows[list_index].Cells[4].Value.ToString() + "." + format_out + '\u0022' + " " + file;
+                }
+                else
+                {
+                    if (bestv_a.Length == 0)
+                    {
+                        process_glob.StartInfo.Arguments = Clear_cache + " -f " + format_out + " " + m3u_params.Replace(replace_m3u_param, "") + " " + down_speed + " " + embed_subs + " " + auto_subs + " " + embed_meta + " -o " + '\u0022' + destino + "\\" + dg1.Rows[list_index].Cells[4].Value.ToString() + "." + format_out + '\u0022' + " " + file;
+                    }
+                    else
+                    {
+                        process_glob.StartInfo.Arguments = bestv_a + " " + Clear_cache + " " + m3u_params.Replace(replace_m3u_param, "") + " " + down_speed + " " + embed_subs + " " + auto_subs + " " + embed_meta + " -o " + '\u0022' + destino + "\\" + dg1.Rows[list_index].Cells[4].Value.ToString() + "." + format_out + '\u0022' + " " + file;
+                    }
+                }
+                //MessageBox.Show(process_glob.StartInfo.Arguments );
+                process_glob.StartInfo.WorkingDirectory = Application.StartupPath;
+
+                if (!File.Exists(System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe")))
+                {
+                    cancel_queue = true;
+                    working = false;
+                    timer_tasks.Stop();
+                    Enable_Controls();
+                    this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
+                    this.InvokeEx(f => timer_yt.Stop());
+                    //this.InvokeEx(f => f.lbl_down_time.Text = "");
+                    MessageBox.Show(FFBatch.Properties.Strings.yt_not, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+
+                }
+
+                //this.InvokeEx(f => f.lbl_d_v.Text = FFBatch.Properties.Strings2.init_wait);
+                this.InvokeEx(f => timer_yt.Start());
+
+                process_glob.StartInfo.RedirectStandardOutput = true;
+                process_glob.StartInfo.StandardOutputEncoding = Encoding.UTF8;
+                process_glob.StartInfo.RedirectStandardInput = true;
+                process_glob.StartInfo.RedirectStandardError = true;
+                process_glob.StartInfo.StandardErrorEncoding = Encoding.UTF8;
+                process_glob.StartInfo.UseShellExecute = false;
+                process_glob.StartInfo.CreateNoWindow = true;
+                process_glob.EnableRaisingEvents = true;
+                process_glob.Start();
+
+                String err_txt = "";
+                String error_out = "";
+                String tr_speed = "";
+                Double interval = 0;
+                Decimal est_bitrate = 0;
+                Decimal est_size = 0;
+                Double sec_prog = 0;
+                    int progress = 0;
+                    //this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.Normal));
+                    String pl_title = "";
+
+                while (!process_glob.StandardOutput.EndOfStream)
+                {
+                    err_txt = process_glob.StandardOutput.ReadLine();
+                    list_lines.Add(err_txt);
+
+                    if (err_txt.Contains("[download] Downloading playlist: ")) pl_title = err_txt.Replace("[download] Downloading playlist: ", "");
+
+                    if (err_txt.Contains("[youtube:tab] Downloading page "))
+                    {
+                        lbl_speed.Invoke(new MethodInvoker(delegate
+                        {
+                            if (pl_title.Length == 0) lbl_speed.Text = FFBatch.Properties.Strings2.brow_page + " " + err_txt.Replace("[youtube:tab] Downloading page ", "");
+                            else lbl_speed.Text = FFBatch.Properties.Strings2.browsing + " " + "\u0022" + pl_title + "\u0022" + " Page " + err_txt.Replace("[youtube:tab] Downloading page ", "");
+                        }));
+                    }
+
+                    if (err_txt.Contains("[youtube:tab] playlist ") && err_txt.Contains("Downloading ") && err_txt.Contains("videos"))
+                    {
+                        int ind1 = err_txt.LastIndexOf("Downloading ");
+                        int ind2 = err_txt.Length;
+                        String n_vs = err_txt.Substring(ind1, ind2 - ind1).Replace("Downloading ", "").Replace("videos", "").Trim(); ;
+                        lbl_speed.Invoke(new MethodInvoker(delegate
+                        {
+                            lbl_speed.Text = FFBatch.Properties.Strings2.total + ": " + n_vs.Replace("Videos: Downloading ", "").Replace("videos", "").Trim();
+                                //lbl_d_v.Visible = true;
+                                //lbl_d_v.Text = "Starting downloads...";
+                                total_videos = Convert.ToInt32(n_vs.Replace("Videos: Downloading ", "").Replace("videos", "").Trim());
+                            Pg1.Maximum = total_videos * 100;
+                            this.InvokeEx(f => f.Pg1.Text = "0 of " + total_videos.ToString());
+
+                        }));
+                    }
+                    if (err_txt.Contains("[download] Destination: "))
+                    {
+                        lbl_speed.Invoke(new MethodInvoker(delegate
+                        {
+                            lbl_speed.Text = Path.GetFileName(err_txt.Replace("Downloading video: ", ""));
+                        }));
+                    }
+                    if (err_txt.Contains("[download] Downloading video ") && err_txt.Contains(total_videos.ToString()))
+                    {
+                        String prog = "";
+                        //Pg1.Invoke(new MethodInvoker(delegate
+                        //{
+                        //    try
+                        //    {
+                        //        prog = err_txt.Replace("[download] ", "");
+                        //        prog = prog.Replace("Downloading video ", "");
+                        //        prog = prog.Replace(" of " + total_videos.ToString(), "");
+                        //        Pg1.Value = Convert.ToInt32(prog);
+                        //        Pg1.Text = err_txt.Replace("[download] Downloading video ", "");
+                        //        this.InvokeEx(f => TaskbarProgress.SetValue(this.Handle, Pg1.Value, Pg1.Maximum));
+                        //    }
+                        //    catch
+                        //    {
+                        //        lbl_speed.Text = FFBatch.Properties.Strings2.outf_count + " " + Directory.GetFiles(destino).Length.ToString();
+                        //        lbl_speed.Refresh();
+                        //        total_videos = 0;
+                        //    }
+                        //}));
+                    }
+                    String prog_cell = "";                     
+
+                    if (err_txt.Contains("%"))
+                    {
+                        try
+                        {
+                            this.InvokeEx(f => f.lbl_speed.TextAlign = ContentAlignment.MiddleLeft);
+                            this.InvokeEx(f => f.lbl_speed.Width = 349);
+                            Double prog_y = Double.Parse(err_txt.Substring(err_txt.IndexOf("%") - 4, 4));
+                            prog_y = prog_y / 10;
+                            progress = Convert.ToInt32(prog_y);
+                            pg2 = progress;
+                            this.InvokeEx(f => f.dg1.Rows[list_index].Cells[5].Value = progress.ToString() + "%");
+                            prog_cell = progress.ToString() + "%";                            
+
+                            }
+                            catch { }
+                        }
+                        if (err_txt.Contains("ETA") && show_est == true)                        
+                        {
+                            try
+                            {
+                                int ind1 = err_txt.LastIndexOf("ETA");
+                                String unit = "";
+                                String est_time = err_txt.Substring(ind1, err_txt.Length - ind1).Replace("ETA", "").Trim();
+                                if (err_txt.ToLower().Contains("mib/s")) unit = " MB/s";
+                                if (err_txt.ToLower().Contains("kib/s")) unit = " KB/s";
+                                this.InvokeEx(f => f.txt_remain.Text = err_txt.Substring(err_txt.IndexOf("at ") + 3, 5) + " " + unit + " - " + est_time);
+                            }
+                            catch { }
+                        }
+                        //this.InvokeEx(f => f.Pg1.Value = progress);
+                        //this.InvokeEx(f => f.Pg1.Text = prog_cell);
+                        //this.InvokeEx(f => TaskbarProgress.SetValue(this.Handle, Pg1.Value, Pg1.Maximum));
+
+                        try
+                        {
+                            if ((progress / pending_urls) > Pg1.Value)
+                            {
+                                this.InvokeEx(f => f.Pg1.Value = progress / pending_urls);
+                                this.InvokeEx(f => f.Pg1.Text = Pg1.Value.ToString() + "%");
+                                this.InvokeEx(f => TaskbarProgress.SetValue(this.Handle, Pg1.Value, Pg1.Maximum));
+                            }
+                        }
+                        catch { }
+                       
+                    }
+
+                    while (!process_glob.StandardError.EndOfStream)
+                    {
+                        error_out = process_glob.StandardError.ReadLine();
+                    }
+                    process_glob.WaitForExit();
+                    
+                    pending_urls = pending_urls - 1;
+
+                    process_glob.StartInfo.Arguments = String.Empty;
+                    this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
+                    this.InvokeEx(f => timer_yt.Stop());
+
+                    this.InvokeEx(f => f.lbl_speed.Text = "");
+                    this.InvokeEx(f => f.txt_remain.Text = "");
+
+                    list_lines.Add("");
+                    list_lines.Add("---------End of download log---------");
+                    list_lines.Add("");
+
+                    if (process_glob.ExitCode == 0)
+
+                    {
+                        if (skipped == false && aborted_url == false)
+                        {
+                            this.InvokeEx(f => f.dg1.Rows[list_index].Cells[5].Value = FFBatch.Properties.Strings.success);
+                            //this.InvokeEx(f => f.dg1.Rows[list_index].Cells[5].Style.BackColor = Color.PaleGreen);
+                        }
+                        else
+                        {
+                            this.InvokeEx(f => f.dg1.Rows[list_index].Cells[5].Value = FFBatch.Properties.Strings.skipped);                            
+                            skipped = false;
+                        }
+                        if (aborted_url == true)
+                        {
+                            this.InvokeEx(f => f.dg1.Rows[list_index].Cells[5].Value = FFBatch.Properties.Strings.aborted);
+                            //this.InvokeEx(f => f.dg1.Rows[list_index].Cells[5].Style.BackColor = Color.PaleGoldenrod);
+                            aborted_url = false;
+                        }
+                        if (stopped_recording == true)
+                        {
+                            this.InvokeEx(f => f.dg1.Rows[list_index].Cells[5].Value = "Stopped");
+                            this.InvokeEx(f => f.dg1.Rows[list_index].Cells[5].Style.BackColor = Color.White);
+                        }
+                    }
+                    else
+                    {
+                        if (skipped == true)
+                        {
+                            this.InvokeEx(f => f.dg1.Rows[list_index].Cells[5].Value = FFBatch.Properties.Strings.skipped);                            
+                            skipped = false;
+                        }
+                        else
+                        {
+                            this.InvokeEx(f => f.dg1.Rows[list_index].Cells[5].Value = FFBatch.Properties.Strings.failed);
+                            errors_enc = errors_enc + 1;
+                            //this.InvokeEx(f => f.dg1.Rows[list_index].Cells[5].Style.BackColor = Color.PaleGoldenrod);
+                        }
+                    }                    
+
+                    if (list_index + 1 == total_videos || quit == true)
+                    {
+                        this.InvokeEx(f => f.Pg1.Style = ProgressBarStyle.Continuous);
+                        this.InvokeEx(f => f.pic_recording.Visible = false);
+                        this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
+                        this.InvokeEx(f => f.Pg1.Value = Pg1.Maximum);
+                        this.InvokeEx(f => f.Pg1.Text = "100%");
+                        timer2.Stop();
+                        this.InvokeEx(f => f.lbl_dw_speed.Text = "");
+                        this.InvokeEx(f => f.Timer_display.Enabled = false);
+
+                        m3u_single_running = false;
+                        working = false;
+                        m3u_running = false;
+                        cancelados_paralelos = false;
+                        release_datagrid();
+                        //Save log
+                        if (no_save_logs == false)
+                        {
+                            string[] array_err = list_lines.ToArray();
+
+                            String path = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch.log";
+                            if (is_portable == true) path = port_path + "ff_batch_portable.log";
+
+                            System.IO.StreamWriter SaveFile = new System.IO.StreamWriter(path);
+                            SaveFile.WriteLine("Batch log sesion: " + System.DateTime.Now);
+                            SaveFile.WriteLine("-----------------------");
+                            foreach (String item in array_err)
+                            {
+                                SaveFile.WriteLine(item);
+                            }
+                            String msg_er = String.Empty;
+                            if (er.Count > 0) SaveFile.WriteLine(msg_er);
+                            SaveFile.Close();
+
+                            File.AppendAllText(path, "-----------------------");
+                            File.AppendAllText(path, Environment.NewLine + FFBatch.Properties.Strings.end_log);
+                            System.IO.FileInfo fileInfo = new System.IO.FileInfo(path);
+
+                            var bytes = fileInfo.Length;
+
+                            var kilobytes = (double)bytes / 1024;
+                            var megabytes = kilobytes / 1024;
+                            var gigabytes = megabytes / 1024;
+
+                            //Format size view
+                            String size = "";
+                            String separator = ".";
+
+                            if (bytes > 1000000000)
+                            {
+                                if (gigabytes.ToString().Contains("."))
+                                {
+                                    separator = ".";
+                                }
+                                else
+                                {
+                                    separator = ",";
+                                }
+
+                                String gigas = gigabytes.ToString();
+                                if (gigas.Length >= 5)
+                                {
+                                    gigas = gigas.Substring(0, gigas.LastIndexOf(separator) + 3);
+                                    size = (gigas + " " + "GB");
+                                }
+                                else
+                                {
+                                    size = (gigas + " " + "GB");
+                                }
+                            }
+
+                            if (bytes >= 1048576 && bytes <= 1000000000)
+                            {
+                                if (megabytes.ToString().Contains("."))
+                                {
+                                    separator = ".";
+                                }
+                                else
+                                {
+                                    separator = ",";
+                                }
+                                String megas = megabytes.ToString();
+                                if (megas.Length > 5)
+                                {
+                                    megas = megas.Substring(0, megas.LastIndexOf(separator));
+                                    size = (megas + " " + "MB");
+                                }
+                                else
+                                {
+                                    size = (megas + " " + "MB");
+                                }
+                            }
+
+                            if (bytes >= 1024 && bytes < 1048576)
+
+                            {
+                                if (kilobytes.ToString().Contains("."))
+                                {
+                                    separator = ".";
+                                }
+                                else
+                                {
+                                    separator = ",";
+                                }
+
+                                String kbs = kilobytes.ToString();
+                                if (kbs.Length >= 5)
+                                {
+                                    kbs = kbs.Substring(0, kbs.LastIndexOf(separator));
+                                    size = (kbs + " " + "KB");
+                                }
+                                else
+                                {
+                                    size = (kbs + " " + "KB");
+                                }
+                            }
+                            if (bytes > -1 && bytes < 1024)
+                            {
+                                String bits = bytes.ToString();
+                                size = (bits + " Bytes");
+                            }
+
+                            //End Format size view
+                            File.AppendAllText(path, Environment.NewLine + FFBatch.Properties.Strings.log_size + " " + size);
+
+                            //End save log
+                        }
+                        this.Invoke(new MethodInvoker(delegate
+                        {
+                            toolT002.RemoveAll();
+                            if (errors_enc == 0) pic_no_errors.Visible = true;
+                            else
+                            {
+                                pic_no_errors.Visible = false;
+                                pic_recording.Visible = false;
+                                toolT002.SetToolTip(this.pic_warnings, FFBatch.Properties.Strings.there_w + " " + errors_enc.ToString() + " " + FFBatch.Properties.Strings.errors_se);
+                                pic_warnings.Visible = true;
+                            }
+                        }));
+
+                        //Automatic shutdown check
+                        if (chkshut.Checked && cancel_queue == false)
+                        {
+                            auto_shut();
+                            return;
+                        }
+                        //End shutdown check
+                        else
+                        {
+
+                            if (cancel_queue == false)
+                            {
+                                if (Form.ActiveForm == null)
+                                {
+                                    notifyIcon1.BalloonTipText = "FFmpeg Batch" + " - " + Properties.Strings2.url_down_c;
+                                    notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
+                                    notifyIcon1.BalloonTipTitle = Properties.Strings2.url_down_c2;
+                                    notifyIcon1.ShowBalloonTip(0);
+                                    if (play_on_end == true && er.Count == 0) play_end();
+                                    if (er.Count > 0)
+                                    {
+                                        String warnings = "";
+                                        foreach (String st in er) warnings = warnings + st;
+                                        MessageBox.Show(Properties.Strings2.warn_down + " " + Environment.NewLine + Environment.NewLine + warnings + Environment.NewLine + Environment.NewLine + Properties.Strings.check_log, Properties.Strings.warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    }
+                                }
+
+                                if (chk_open_compl.Checked)
+                                {
+                                    if (Directory.GetFiles(destino).Length != 0)
+                                    {
+                                        Process open_processed = new Process();
+                                        open_processed.StartInfo.FileName = "explorer.exe";
+                                        open_processed.StartInfo.Arguments = '\u0022' + destino + '\u0022';
+                                        open_processed.Start();
+                                    }
+                                    else
+                                    {
+                                        if (Directory.Exists(destino))
+                                        {
+                                            System.IO.Directory.Delete(destino);
+                                        }
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
+                                m3u_single_running = false;
+                                cancelados_paralelos = false;
+                                this.InvokeEx(f => f.Pg1.Value = Pg1.Maximum);
+                                this.InvokeEx(f => f.Pg1.Text = "100%");
+                                this.InvokeEx(f => f.lbl_dw_speed.Text = "");
+                                if (quit == false && stopped_recording == false) this.InvokeEx(f => MessageBox.Show(FFBatch.Properties.Strings.queue_abort, FFBatch.Properties.Strings.aborted, MessageBoxButtons.OK, MessageBoxIcon.Error));
+                                //if (stopped_recording == true) this.InvokeEx(f => MessageBox.Show(FFBatch.Properties.Strings.queue_abort, "Stopped", MessageBoxButtons.OK, MessageBoxIcon.Error));
+
+                            }
+                        }
+                    }
+                }
+
+                Enable_Controls();
+                //String borrar = destino_test + "\\" + System.IO.Path.GetFileNameWithoutExtension(file_prueba) + "." + txt_format.Text;
+            }).Start();
+        }
+
         private void btn_start_m3u_Click(object sender, EventArgs e)
-        {
+        {            
             cancel_queue = false;
             notifyIcon1.Visible = true;
             if (m3u_single_running == true) return;
+            Boolean unknown_link = false;
             Pg1.Text = "0" + System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator + "0%";
             foreach (DataGridViewRow row in dg1.Rows)
             {
@@ -19657,6 +20595,22 @@ namespace FFBatch
 
             get_mixed_urls();
             if (mixed_urls == true) return;
+
+            foreach (DataGridViewRow row in dg1.Rows)
+            {                
+                if (!row.Cells[1].Value.ToString().ToLower().Contains("youtu.be") && !row.Cells[1].Value.ToString().ToLower().Contains("youtube") && !row.Cells[1].Value.ToString().ToLower().Contains("m3u"))
+                {
+                    unknown_link = true;
+                    break;
+                }
+            }
+
+            if (unknown_link == true)
+            {
+                download_any();
+                return;
+            }
+
 
             if (!dg1.Rows[0].Cells[1].Value.ToString().ToLower().Contains("youtu.be") && !dg1.Rows[0].Cells[1].Value.ToString().ToLower().Contains("youtube.com"))
             {
@@ -19720,7 +20674,7 @@ namespace FFBatch
                 if (row.Cells[3].Value.ToString() == "\u221E")
                 {
                     MessageBox.Show(Properties.Strings2.undef_dur_all, Properties.Strings2.undef_seq, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
+                    //return;
                 }
             }
 
@@ -19762,7 +20716,7 @@ namespace FFBatch
 
                     Process consola_pre = new Process();
 
-                    consola_pre.StartInfo.FileName = "ffmpeg.exe";
+                    consola_pre.StartInfo.FileName = Application.StartupPath + "\\" + "ffmpeg.exe";
                     consola_pre.StartInfo.Arguments = " -i " + file_prueba + " -t 0.25 " + txt_m3u_params.Text + " -y " + '\u0022' + destino_test + "\\" + file_output + '\u0022';
                     consola_pre.StartInfo.CreateNoWindow = true;
                     consola_pre.StartInfo.RedirectStandardError = true;
@@ -20131,7 +21085,7 @@ namespace FFBatch
                         }
                     }
 
-                    if (file_prueba.ToLower().Contains("youtu.be") || file_prueba.ToLower().Contains("youtube.com"))
+                    if (file_prueba.ToLower().Contains("youtu.be") || file_prueba.ToLower().Contains("youtube.com") || !file_prueba.ToLower().Contains("m3u"))
                     {
                         process_glob.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe");
                         if (m3u_params.Contains("-f "))
@@ -20155,10 +21109,10 @@ namespace FFBatch
                     }
                     else
                     {
-                        process_glob.StartInfo.FileName = ffm;
+                        process_glob.StartInfo.FileName = ffm;                        
                         process_glob.StartInfo.Arguments = AppParam;
                     }
-
+                   
 
                     if (dg1.Rows[list_index].Cells[3].Value.ToString() == "Live")
                     {
@@ -20215,7 +21169,7 @@ namespace FFBatch
                     process_glob.StartInfo.CreateNoWindow = true;
                     process_glob.StartInfo.UseShellExecute = false;
                     process_glob.StartInfo.RedirectStandardInput = true;
-
+                    //MessageBox.Show(AppParam);
                     if (quit == false) process_glob.Start();
 
                     System.Threading.Thread.Sleep(0);
@@ -20303,64 +21257,68 @@ namespace FFBatch
                                     }
 
                                     //Estimated remaining time
-
-                                    remain_time = err_txt.Substring(err_txt.LastIndexOf("speed=") + 6, err_txt.Length - err_txt.LastIndexOf("speed=") - 6);
-                                    remain_time = remain_time.Replace("x", String.Empty);
-                                    Double timing1 = 0;
-
-                                    if (System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator == ",")
+                                    try
                                     {
-                                        timing1 = Math.Round(Double.Parse(remain_time.Replace(".", ",")), 2);
-                                    }
-                                    else
-                                    {
-                                        timing1 = Math.Round(Double.Parse(remain_time), 2);
-                                    }
 
-                                    Decimal timing = (decimal)timing1;
-                                    Decimal total_dur_dec = Convert.ToDecimal(total_duration);
-                                    Decimal total_prog_dec = Convert.ToDecimal(total_prog);
-                                    Decimal remain_secs = 0;
-                                    if (timing > 0)
-                                    {
-                                        remain_secs = (decimal)(total_dur_dec - total_prog_dec) / timing;
-                                    }
+                                        remain_time = err_txt.Substring(err_txt.LastIndexOf("speed=") + 6, err_txt.Length - err_txt.LastIndexOf("speed=") - 6);
+                                        remain_time = remain_time.Replace("x", String.Empty);
+                                        Double timing1 = 0;
 
-                                    if (remain_secs > 60)
-                                    {
-                                        remain_secs = remain_secs + 60;
-                                    }
+                                        if (System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator == ",")
+                                        {
+                                            timing1 = Math.Round(Double.Parse(remain_time.Replace(".", ",")), 2);
+                                        }
+                                        else
+                                        {
+                                            timing1 = Math.Round(Double.Parse(remain_time), 2);
+                                        }
 
-                                    String remain_from_secs = "";
+                                        Decimal timing = (decimal)timing1;
+                                        Decimal total_dur_dec = Convert.ToDecimal(total_duration);
+                                        Decimal total_prog_dec = Convert.ToDecimal(total_prog);
+                                        Decimal remain_secs = 0;
+                                        if (timing > 0)
+                                        {
+                                            remain_secs = (decimal)(total_dur_dec - total_prog_dec) / timing;
+                                        }
 
-                                    TimeSpan t = TimeSpan.FromSeconds(Convert.ToDouble(remain_secs));
-                                    remain_from_secs = string.Format("{0:D2}h:{1:D2}",
-                                       t.Hours,
-                                      t.Minutes);
+                                        if (remain_secs > 60)
+                                        {
+                                            remain_secs = remain_secs + 60;
+                                        }
 
-                                    if (remain_secs >= 43200)
-                                    {
-                                        this.InvokeEx(f => f.txt_remain.Text = FFBatch.Properties.Strings.remain_time + " " + Math.Round(remain_secs / 3600).ToString() + " " + FFBatch.Properties.Strings.hours);
-                                    }
+                                        String remain_from_secs = "";
 
-                                    if (remain_secs >= 3600 && remain_secs < 43200)
-                                    {
-                                        this.InvokeEx(f => f.txt_remain.Text = FFBatch.Properties.Strings.remain_time + " " + remain_from_secs + " " + FFBatch.Properties.Strings.minutes_abrev);
-                                    }
+                                        TimeSpan t = TimeSpan.FromSeconds(Convert.ToDouble(remain_secs));
+                                        remain_from_secs = string.Format("{0:D2}h:{1:D2}",
+                                           t.Hours,
+                                          t.Minutes);
 
-                                    if (remain_secs < 3600 && remain_secs >= 600)
-                                    {
-                                        this.InvokeEx(f => f.txt_remain.Text = FFBatch.Properties.Strings.remain_time + " " + remain_from_secs.Substring(remain_from_secs.LastIndexOf(":") + 1, 2) + " " + FFBatch.Properties.Strings.minutes);
-                                    }
-                                    if (remain_secs < 600 && remain_secs >= 120)
-                                    {
-                                        this.InvokeEx(f => f.txt_remain.Text = FFBatch.Properties.Strings.remain_time + " " + remain_from_secs.Substring(remain_from_secs.LastIndexOf(":") + 2, 1) + " " + FFBatch.Properties.Strings.minutes);
-                                    }
+                                        if (remain_secs >= 43200)
+                                        {
+                                            this.InvokeEx(f => f.txt_remain.Text = FFBatch.Properties.Strings.remain_time + " " + Math.Round(remain_secs / 3600).ToString() + " " + FFBatch.Properties.Strings.hours);
+                                        }
 
-                                    if (remain_secs <= 59)
-                                    {
-                                        this.InvokeEx(f => f.txt_remain.Text = FFBatch.Properties.Strings.remain_time + " " + Convert.ToInt16(remain_secs) + " " + FFBatch.Properties.Strings.seconds);
+                                        if (remain_secs >= 3600 && remain_secs < 43200)
+                                        {
+                                            this.InvokeEx(f => f.txt_remain.Text = FFBatch.Properties.Strings.remain_time + " " + remain_from_secs + " " + FFBatch.Properties.Strings.minutes_abrev);
+                                        }
+
+                                        if (remain_secs < 3600 && remain_secs >= 600)
+                                        {
+                                            this.InvokeEx(f => f.txt_remain.Text = FFBatch.Properties.Strings.remain_time + " " + remain_from_secs.Substring(remain_from_secs.LastIndexOf(":") + 1, 2) + " " + FFBatch.Properties.Strings.minutes);
+                                        }
+                                        if (remain_secs < 600 && remain_secs >= 120)
+                                        {
+                                            this.InvokeEx(f => f.txt_remain.Text = FFBatch.Properties.Strings.remain_time + " " + remain_from_secs.Substring(remain_from_secs.LastIndexOf(":") + 2, 1) + " " + FFBatch.Properties.Strings.minutes);
+                                        }
+
+                                        if (remain_secs <= 59)
+                                        {
+                                            this.InvokeEx(f => f.txt_remain.Text = FFBatch.Properties.Strings.remain_time + " " + Convert.ToInt16(remain_secs) + " " + FFBatch.Properties.Strings.seconds);
+                                        }
                                     }
+                                    catch { }
 
                                     //End remaining time
                                 }
@@ -20737,7 +21695,11 @@ namespace FFBatch
                                     {
                                         if (Directory.Exists(destino))
                                         {
-                                            System.IO.Directory.Delete(destino);
+                                            try
+                                            {
+                                                System.IO.Directory.Delete(destino);
+                                            }
+                                            catch { }
                                         }
                                     }
                                 }
@@ -20984,9 +21946,7 @@ namespace FFBatch
                 ct_paste_m3u.Enabled = false;
                 ct_paste_youtube.Enabled = false;
             }
-
-            else
-            {
+            
                 if (Clipboard.GetText().ToLower().Contains("youtu.be") == true || Clipboard.GetText().ToLower().Contains("youtube.com") == true)
                 {
                     ct_paste_youtube.Enabled = true;
@@ -20995,13 +21955,24 @@ namespace FFBatch
                 else
                 {
                     ct_paste_youtube.Enabled = false;
-                    if (Clipboard.GetText().ToLower().Contains("http") == true) ct_paste_m3u.Enabled = true;
-                    else
+                    if (Clipboard.GetText().ToLower().Contains("http") == true)
                     {
+                        if (Clipboard.GetText().ToLower().Contains("m3u") == true)
+                            { 
+                            ct_paste_m3u.Enabled = true;
+                            ct_paste_m3u.Text = Properties.Strings.Paste_M3u_URL;
+                            }
+                        else
+                        {
+                            ct_paste_m3u.Text = Properties.Strings2.Paste_any_URL;
+                        }
+                    }
+                    else
+                    {                        
                         ct_paste_m3u.Enabled = false;
                     }
                 }
-            }
+         
 
             if (dg1.RowCount == 0)
             {
@@ -28082,7 +29053,7 @@ namespace FFBatch
             Label texto = new Label();
             texto.Top = 20;
             texto.Height = 20;
-            texto.Left = 58;
+            texto.Left = 77;
             texto.Width = 195;
             texto.Parent = frm_custom_path;
             texto.Text = FFBatch.Properties.Strings.write_path;
@@ -28103,17 +29074,25 @@ namespace FFBatch
             texto2.Parent = frm_custom_path;
             texto2.Text = FFBatch.Properties.Strings.path2;
 
+            TextBox txt_ref = new TextBox();
+            txt_ref.Left = 58;
+            txt_ref.Top = 44;
+            txt_ref.Width = 16;
+            txt_ref.Text = ".\\";
+            txt_ref.Enabled = false;
+            txt_ref.Parent = frm_custom_path;
+
             path_txt.Parent = frm_custom_path;
             path_txt.Top = 44;
-            path_txt.Left = 58;
-            path_txt.Width = 425;
+            path_txt.Left = 79;
+            path_txt.Width = 400;
             path_txt.Focus();
             path_txt.TabIndex = 0;
             path_txt.KeyDown += new KeyEventHandler(path_txt_KeyDown);
 
             Button boton_user_source_path = new Button();
             boton_user_source_path.Parent = frm_panel;
-            boton_user_source_path.Left = 58;
+            boton_user_source_path.Left = 78;
             boton_user_source_path.Top = 15;
             boton_user_source_path.BackColor = Control.DefaultBackColor;
             boton_user_source_path.Width = 227;
@@ -36450,19 +37429,7 @@ namespace FFBatch
 
         private void dg1_CellMouseDoubleClick_1(object sender, DataGridViewCellMouseEventArgs e)
         {
-            try
-            {
-                if (dg1.Rows.Count > 0 && dg1.Rows[e.RowIndex].Cells[0].Selected == true && dg1.Rows[e.RowIndex].Cells[5].Value.ToString() != String.Empty && dg1.Rows.Count > 0)
-                {
-                    if (dg_thumbs[dg1.SelectedCells[0].RowIndex] != null && dg_thumbs[dg1.SelectedCells[0].RowIndex].Width > 160)
-                    {
-                        Form10 frm = new Form10();
-                        frm.pic_y.Image = dg_thumbs[dg1.SelectedCells[0].RowIndex];
-                        frm.ShowDialog();
-                    }
-                }
-            }
-            catch { }
+           
         }
 
         private void dg1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
@@ -38119,7 +39086,7 @@ namespace FFBatch
                     var tmp = procs["proc_urls_" + tmp_row.Index];
                     var n_logs = multi_logs["log_n_" + tmp_row.Index.ToString()];
 
-                    if (multi_dest.ToLower().Contains("youtu.be") || multi_dest.ToLower().Contains("youtube.com"))
+                    if (!multi_dest.ToLower().Contains("m3u"))
                     {
                         tmp.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe");
                         if (m3u_params_m.Contains("-f "))
@@ -38145,6 +39112,7 @@ namespace FFBatch
                         tmp.StartInfo.FileName = ffm;
                         tmp.StartInfo.Arguments = AppParam;
                     }
+
                     tmp.StartInfo.RedirectStandardInput = true;
                     tmp.StartInfo.RedirectStandardOutput = true;
                     tmp.StartInfo.RedirectStandardError = true;
@@ -38227,7 +39195,7 @@ namespace FFBatch
                     //REVIEW
                     multi_logs["log_n_" + tmp_row.Index.ToString()] = Properties.Strings2.logging_f + " " + tmp_row.Cells[4].Value.ToString() + Environment.NewLine;
 
-                    if (!file.ToLower().Contains("youtu.be") && !file.ToLower().Contains("youtube.com"))
+                    if (file.ToLower().Contains("m3u"))
                     {
                         while (!tmp.StandardError.EndOfStream)
                         {
@@ -45251,6 +46219,51 @@ namespace FFBatch
         private void BG_Add_col_abit_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             end_bg_filters();
+        }
+
+        private void timer_yt_Tick(object sender, EventArgs e)
+        {
+            show_est = !show_est;
+        }
+
+        private void dg1_CellMouseEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0) this.Cursor = Cursors.Hand;
+            else this.Cursor = Cursors.Arrow;
+        }
+
+        private void dg1_CellMouseLeave(object sender, DataGridViewCellEventArgs e)
+        {
+           
+           this.Cursor = Cursors.Arrow;
+        }
+            
+        private void dg1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                if (dg1.Rows.Count > 0 && dg1.Rows[e.RowIndex].Cells[0].Selected == true && dg1.Rows[e.RowIndex].Cells[5].Value.ToString() != String.Empty && dg1.Rows.Count > 0)
+                {
+                    if (dg_thumbs[dg1.SelectedCells[0].RowIndex] != null && dg_thumbs[dg1.SelectedCells[0].RowIndex].Width > 160)
+                    {
+                        Form10 frm = new Form10();
+                        frm.pic_y.Image = dg_thumbs[dg1.SelectedCells[0].RowIndex];
+                        frm.ShowDialog();
+                    }
+                }
+            }
+            catch { }
+        }
+
+        private void dg1_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex == 0) this.Cursor = Cursors.Hand;
+            else this.Cursor = Cursors.Arrow;
+        }
+
+        private void dg1_MouseLeave(object sender, EventArgs e)
+        {            
+            this.Cursor = Cursors.Arrow;
         }
 
         private void dg1_CellEndEdit(object sender, DataGridViewCellEventArgs e)

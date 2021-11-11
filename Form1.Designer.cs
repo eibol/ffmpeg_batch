@@ -512,6 +512,7 @@
             this.BG_add_VBitrate_col = new System.ComponentModel.BackgroundWorker();
             this.imageList3 = new System.Windows.Forms.ImageList(this.components);
             this.BG_Add_col_abit = new System.ComponentModel.BackgroundWorker();
+            this.timer_yt = new System.Windows.Forms.Timer(this.components);
             this.ctm1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -3514,8 +3515,12 @@
             this.dg1.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dg1_CellBeginEdit);
             this.dg1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg1_CellClick);
             this.dg1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg1_CellEndEdit);
+            this.dg1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dg1_CellMouseClick);
             this.dg1.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dg1_CellMouseDoubleClick_1);
             this.dg1.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dg1_CellMouseDown);
+            this.dg1.CellMouseEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg1_CellMouseEnter);
+            this.dg1.CellMouseLeave += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg1_CellMouseLeave);
+            this.dg1.CellMouseMove += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dg1_CellMouseMove);
             this.dg1.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dg1_CellPainting);
             this.dg1.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dg1_RowsAdded);
             this.dg1.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dg1_RowsRemoved);
@@ -3523,6 +3528,7 @@
             this.dg1.DragEnter += new System.Windows.Forms.DragEventHandler(this.dg1_DragEnter);
             this.dg1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dg1_KeyDown);
             this.dg1.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dg1_KeyUp);
+            this.dg1.MouseLeave += new System.EventHandler(this.dg1_MouseLeave);
             // 
             // Column0
             // 
@@ -3906,7 +3912,6 @@
             this.btn_cancel_validate.FlatAppearance.BorderSize = 0;
             this.btn_cancel_validate.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             resources.ApplyResources(this.btn_cancel_validate, "btn_cancel_validate");
-            this.btn_cancel_validate.ImageList = this.imageList1;
             this.btn_cancel_validate.Name = "btn_cancel_validate";
             this.btn_cancel_validate.UseVisualStyleBackColor = true;
             this.btn_cancel_validate.Click += new System.EventHandler(this.btn_cancel_validate_Click);
@@ -4368,6 +4373,11 @@
             // 
             this.BG_Add_col_abit.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BG_Add_col_abit_DoWork);
             this.BG_Add_col_abit.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BG_Add_col_abit_RunWorkerCompleted);
+            // 
+            // timer_yt
+            // 
+            this.timer_yt.Interval = 1000;
+            this.timer_yt.Tick += new System.EventHandler(this.timer_yt_Tick);
             // 
             // Form1
             // 
@@ -4992,6 +5002,7 @@
         private System.Windows.Forms.ImageList imageList3;
         private System.Windows.Forms.PictureBox pic_Frame_Dark;
         private System.ComponentModel.BackgroundWorker BG_Add_col_abit;
+        private System.Windows.Forms.Timer timer_yt;
     }
 }
 

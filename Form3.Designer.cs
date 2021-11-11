@@ -108,6 +108,7 @@
             // 
             // panel2
             // 
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Controls.Add(this.chk_non0);
             this.panel2.Controls.Add(this.btn_stop_play);
             this.panel2.Controls.Add(this.btn_browse_play);
@@ -121,7 +122,6 @@
             this.panel2.Controls.Add(this.check_open_output);
             this.panel2.Controls.Add(this.check_recreate);
             this.panel2.Controls.Add(this.chk_suffix);
-            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             this.panel2.TabStop = false;
             // 
@@ -134,9 +134,9 @@
             // 
             // btn_stop_play
             // 
+            resources.ApplyResources(this.btn_stop_play, "btn_stop_play");
             this.btn_stop_play.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_stop_play.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btn_stop_play, "btn_stop_play");
             this.btn_stop_play.Name = "btn_stop_play";
             this.btn_stop_play.UseVisualStyleBackColor = true;
             this.btn_stop_play.Click += new System.EventHandler(this.btn_stop_play_Click);
@@ -189,8 +189,8 @@
             // 
             // txt_suffix
             // 
-            this.txt_suffix.BackColor = System.Drawing.SystemColors.InactiveBorder;
             resources.ApplyResources(this.txt_suffix, "txt_suffix");
+            this.txt_suffix.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_suffix.Name = "txt_suffix";
             this.txt_suffix.TextChanged += new System.EventHandler(this.txt_suffix_TextChanged);
             // 
@@ -231,15 +231,16 @@
             // 
             // btn_save
             // 
+            resources.ApplyResources(this.btn_save, "btn_save");
             this.btn_save.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_save.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btn_save, "btn_save");
             this.btn_save.Name = "btn_save";
             this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.pic_auto_en);
             this.groupBox1.Controls.Add(this.pic_auto_dis);
             this.groupBox1.Controls.Add(this.chk_autor);
@@ -249,7 +250,6 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox1);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -267,9 +267,9 @@
             // 
             // chk_autor
             // 
+            resources.ApplyResources(this.chk_autor, "chk_autor");
             this.chk_autor.FlatAppearance.BorderSize = 0;
             this.chk_autor.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.chk_autor, "chk_autor");
             this.chk_autor.Name = "chk_autor";
             this.chk_autor.UseVisualStyleBackColor = true;
             this.chk_autor.Click += new System.EventHandler(this.chk_autor_Click);
@@ -312,16 +312,17 @@
             // 
             // btn_cancel
             // 
+            resources.ApplyResources(this.btn_cancel, "btn_cancel");
             this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_cancel.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_cancel.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btn_cancel, "btn_cancel");
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // groupBox2
             // 
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.pic_earth);
             this.groupBox2.Controls.Add(this.combo_lang);
             this.groupBox2.Controls.Add(this.label3);
@@ -334,7 +335,6 @@
             this.groupBox2.Controls.Add(this.chk_sort);
             this.groupBox2.Controls.Add(this.chk_auto_updates);
             this.groupBox2.Controls.Add(this.check_concat);
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
@@ -347,6 +347,7 @@
             // 
             // combo_lang
             // 
+            resources.ApplyResources(this.combo_lang, "combo_lang");
             this.combo_lang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_lang.FormattingEnabled = true;
             this.combo_lang.Items.AddRange(new object[] {
@@ -355,7 +356,6 @@
             resources.GetString("combo_lang.Items2"),
             resources.GetString("combo_lang.Items3"),
             resources.GetString("combo_lang.Items4")});
-            resources.ApplyResources(this.combo_lang, "combo_lang");
             this.combo_lang.Name = "combo_lang";
             this.combo_lang.SelectedIndexChanged += new System.EventHandler(this.combo_lang_SelectedIndexChanged);
             // 
@@ -434,18 +434,18 @@
             // 
             // btn_defaults
             // 
+            resources.ApplyResources(this.btn_defaults, "btn_defaults");
             this.btn_defaults.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_defaults.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btn_defaults, "btn_defaults");
             this.btn_defaults.Name = "btn_defaults";
             this.btn_defaults.UseVisualStyleBackColor = true;
             this.btn_defaults.Click += new System.EventHandler(this.btn_defaults_Click);
             // 
             // groupBox3
             // 
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Controls.Add(this.chk_cache_dialog);
             this.groupBox3.Controls.Add(this.chk_never_cache);
-            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 
@@ -465,18 +465,18 @@
             // 
             // btn_reset
             // 
+            resources.ApplyResources(this.btn_reset, "btn_reset");
             this.btn_reset.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_reset.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btn_reset, "btn_reset");
             this.btn_reset.Name = "btn_reset";
             this.btn_reset.UseVisualStyleBackColor = true;
             this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
             // btn_edit_presets_n
             // 
+            resources.ApplyResources(this.btn_edit_presets_n, "btn_edit_presets_n");
             this.btn_edit_presets_n.FlatAppearance.BorderSize = 0;
             this.btn_edit_presets_n.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_edit_presets_n, "btn_edit_presets_n");
             this.btn_edit_presets_n.Name = "btn_edit_presets_n";
             this.btn_edit_presets_n.UseVisualStyleBackColor = true;
             this.btn_edit_presets_n.Click += new System.EventHandler(this.btn_edit_presets_n_Click);
@@ -499,13 +499,13 @@
             // 
             // groupBox4
             // 
+            resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Controls.Add(this.pic_ff_ok);
             this.groupBox4.Controls.Add(this.pic_ver);
             this.groupBox4.Controls.Add(this.lbl_ff_latest);
             this.groupBox4.Controls.Add(this.label4);
             this.groupBox4.Controls.Add(this.btn_update);
             this.groupBox4.Controls.Add(this.lbl_ff_ver);
-            resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
             // 
@@ -535,9 +535,9 @@
             // 
             // btn_update
             // 
+            resources.ApplyResources(this.btn_update, "btn_update");
             this.btn_update.FlatAppearance.BorderSize = 0;
             this.btn_update.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_update, "btn_update");
             this.btn_update.Name = "btn_update";
             this.btn_update.UseVisualStyleBackColor = true;
             this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
@@ -549,18 +549,18 @@
             // 
             // btn_add_ex
             // 
+            resources.ApplyResources(this.btn_add_ex, "btn_add_ex");
             this.btn_add_ex.FlatAppearance.BorderSize = 0;
             this.btn_add_ex.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_add_ex, "btn_add_ex");
             this.btn_add_ex.Name = "btn_add_ex";
             this.btn_add_ex.UseVisualStyleBackColor = true;
             this.btn_add_ex.Click += new System.EventHandler(this.btn_add_ex_Click);
             // 
             // groupBox5
             // 
+            resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Controls.Add(this.chk_delete_one);
             this.groupBox5.Controls.Add(this.chk_delete_def);
-            resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.TabStop = false;
             // 
@@ -588,9 +588,9 @@
             // 
             // btn_dark
             // 
+            resources.ApplyResources(this.btn_dark, "btn_dark");
             this.btn_dark.FlatAppearance.BorderSize = 0;
             this.btn_dark.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_dark, "btn_dark");
             this.btn_dark.Name = "btn_dark";
             this.btn_dark.UseVisualStyleBackColor = true;
             this.btn_dark.Click += new System.EventHandler(this.btn_dark_Click);
