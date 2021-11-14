@@ -1,7 +1,0 @@
-Multiple presets wizard
-Multiple presets encoding
-Select up to 3 saved presets to be applied sequentially
-Output files will be renamed to avoid overwriting.
-Ready to start multiple encoding
-Start
-Cancel
