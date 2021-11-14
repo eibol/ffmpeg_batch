@@ -15,12 +15,13 @@ namespace FFBatch
     public partial class Form17 : Form
     {
         public Boolean canceled = true;
-        public Boolean to_remove = false;        
+        public Boolean to_remove = false;
 
         public Form17()
-        {            
-            InitializeComponent();            
-    }
+        {
+            InitializeComponent();
+        }
+
         public void UpdateColorDark(Control myControl)
         {
             myControl.BackColor = Color.FromArgb(255, 64, 64, 64);
@@ -40,6 +41,7 @@ namespace FFBatch
                 UpdateColorDefault(subC);
             }
         }
+
         private void Form17_Load(object sender, EventArgs e)
         {
             if (cb_col.Items.Count > 0)
@@ -61,7 +63,6 @@ namespace FFBatch
                 foreach (Control c in this.Controls) UpdateColorDefault(c);
                 this.BackColor = SystemColors.InactiveBorder;
             }
-
         }
 
         private void refresh_lang()
@@ -71,6 +72,7 @@ namespace FFBatch
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form17));
             RefreshResources(this, resources);
         }
+
         private void RefreshResources(Control ctrl, ComponentResourceManager res)
         {
             ctrl.SuspendLayout();
@@ -88,7 +90,7 @@ namespace FFBatch
         }
 
         private void btn_add_col_Click(object sender, EventArgs e)
-        {            
+        {
             canceled = false;
             to_remove = false;
             this.Close();
