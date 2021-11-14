@@ -21,52 +21,52 @@ namespace FFBatch
         }
 
         public String sel_preset = "";
-        Boolean presets_init = false;
-        Boolean internet_up = true;
+        private Boolean presets_init = false;
+        private Boolean internet_up = true;
         public Boolean start_no_files = false;
         public Boolean add_files = false;
         public Boolean add_folder = false;
-        Boolean preset_ok = false;
-        String port_path = System.IO.Path.Combine(Application.StartupPath, "settings") + "\\";
+        private Boolean preset_ok = false;
+        private String port_path = System.IO.Path.Combine(Application.StartupPath, "settings") + "\\";
         public Boolean is_portable = false;
-        Boolean started_video = false;
-        Boolean started_audio = false;
-        Boolean existing_preset = false;
-        String params_result = String.Empty;
-        String ext_result = String.Empty;
-        String preset_name = String.Empty;
-        Boolean is_max = false;
-        Boolean audio_preset = false;
-        Boolean video_preset = false;
-        Boolean save_preset = false;
-        String video_encoder_param = String.Empty;
-        String libx264_params = String.Empty;
-        String libx265_params = String.Empty;
-        String h264_qsv_params = String.Empty;
-        String hevc_qsv_params = String.Empty;
-        String h264_nvenc_params = String.Empty;
-        String hevc_nvenc_params = String.Empty;
-        String h264_amf_params = String.Empty;
-        String hevc_amf_params = String.Empty;
-        String libvpx_vp9_params = String.Empty;
-        String prores_ks_params = String.Empty;
-        String dnxhd_params = String.Empty;
-        String dnxhr_params = String.Empty;
-        String audio_encoder_param = String.Empty;
-        String pcm16_params = String.Empty;
-        String pcm24_params = String.Empty;
-        String flac_params = String.Empty;
-        String aac_params = String.Empty;
-        String ac3_params = String.Empty;
-        String eac3_params = String.Empty;
-        String mp3_params = String.Empty;
-        String vorbis_params = String.Empty;
-        String opus_params = String.Empty;
-        Boolean first_resize_rotate = false;
-        Boolean two_pass = false;
-        Boolean silence = false;
-        Boolean img_v = false;
-        Boolean tried_ok = false;
+        private Boolean started_video = false;
+        private Boolean started_audio = false;
+        private Boolean existing_preset = false;
+        private String params_result = String.Empty;
+        private String ext_result = String.Empty;
+        private String preset_name = String.Empty;
+        private Boolean is_max = false;
+        private Boolean audio_preset = false;
+        private Boolean video_preset = false;
+        private Boolean save_preset = false;
+        private String video_encoder_param = String.Empty;
+        private String libx264_params = String.Empty;
+        private String libx265_params = String.Empty;
+        private String h264_qsv_params = String.Empty;
+        private String hevc_qsv_params = String.Empty;
+        private String h264_nvenc_params = String.Empty;
+        private String hevc_nvenc_params = String.Empty;
+        private String h264_amf_params = String.Empty;
+        private String hevc_amf_params = String.Empty;
+        private String libvpx_vp9_params = String.Empty;
+        private String prores_ks_params = String.Empty;
+        private String dnxhd_params = String.Empty;
+        private String dnxhr_params = String.Empty;
+        private String audio_encoder_param = String.Empty;
+        private String pcm16_params = String.Empty;
+        private String pcm24_params = String.Empty;
+        private String flac_params = String.Empty;
+        private String aac_params = String.Empty;
+        private String ac3_params = String.Empty;
+        private String eac3_params = String.Empty;
+        private String mp3_params = String.Empty;
+        private String vorbis_params = String.Empty;
+        private String opus_params = String.Empty;
+        private Boolean first_resize_rotate = false;
+        private Boolean two_pass = false;
+        private Boolean silence = false;
+        private Boolean img_v = false;
+        private Boolean tried_ok = false;
         public String lv1_item = String.Empty;
         public Boolean no_two = false;
         public Boolean no_silence = false;
@@ -141,7 +141,6 @@ namespace FFBatch
                 cb_rotate.Items.Add(FFBatch.Properties.Strings2.rotate2);
                 cb_rotate.Items.Add(FFBatch.Properties.Strings2.rotate3);
                 cb_rotate.Items.Add(FFBatch.Properties.Strings2.rot_flip);
-
             }
             pic_rotate.Image = img_rotate.Images[0];
             started_video = true;
@@ -502,7 +501,6 @@ namespace FFBatch
                     n_crf.Value = 25;
                 }
 
-
                 if (Combo_encoders.SelectedItem.ToString() == "libx265")
                 {
                     txt_video_current.Text = "HEVC H.265";
@@ -799,7 +797,6 @@ namespace FFBatch
 
         private void combo_h264_mode_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             if (combo_crf_mode.SelectedIndex == 0)
             {
                 label14.Text = String.Empty;
@@ -823,7 +820,6 @@ namespace FFBatch
                 if (Combo_encoders.SelectedItem.ToString() == "hevc_nvenc") n_crf.Value = 25;
                 if (Combo_encoders.SelectedItem.ToString() == "h264_qsv") n_crf.Value = 20;
                 if (Combo_encoders.SelectedItem.ToString() == "hevc_qsv") n_crf.Value = 25;
-
 
                 n_crf.Increment = 1;
                 label3.Text = String.Empty;
@@ -943,7 +939,6 @@ namespace FFBatch
 
             if (cb_audio_encoder.SelectedItem.ToString() == "copy" || cb_audio_encoder.SelectedItem.ToString() == "none")
             {
-
                 label31.Visible = false;
                 label32.Visible = false;
                 n_speed2.Visible = false;
@@ -967,7 +962,6 @@ namespace FFBatch
                 cb_bitrate_mode.Visible = false;
                 track_bits_audio.Visible = false;
                 n_bit_audio.Visible = false;
-
             }
             if (cb_audio_encoder.SelectedItem.ToString() == "pcm16" || cb_audio_encoder.SelectedItem.ToString() == "pcm24" || cb_audio_encoder.SelectedItem.ToString() == "flac")
             {
@@ -1135,12 +1129,10 @@ namespace FFBatch
                     cb_cutoff.Items.Clear();
                     String[] audio_cutoff0 = new string[] { "none", "20KHz", "19KHz", "18KHz", "17KHz", "16KHz", "15KHz", "14KHz", "13KHz", "12KHz", "11KHz", "10KHz" };
                     foreach (String item in audio_cutoff0) cb_cutoff.Items.Add(item);
-
                 }
 
                 if (cb_audio_encoder.SelectedItem.ToString() == "ac3")
                 {
-
                     if (n_speed.Value == 0)
                     {
                         label31.Visible = true;
@@ -1171,7 +1163,6 @@ namespace FFBatch
                     cb_cutoff.Items.Clear();
                     String[] audio_cutoff_f = new string[] { "none", "20KHz", "19KHz", "18KHz", "17KHz", "16KHz", "15KHz", "14KHz", "13KHz", "12KHz", "11KHz", "10KHz" };
                     foreach (String item in audio_cutoff_f) cb_cutoff.Items.Add(item);
-
                 }
 
                 if (cb_audio_encoder.SelectedItem.ToString() == "aac")
@@ -1205,7 +1196,6 @@ namespace FFBatch
                 }
                 if (cb_audio_encoder.SelectedItem.ToString() == "mp3")
                 {
-
                     if (n_speed.Value == 0)
                     {
                         label31.Visible = true;
@@ -1239,7 +1229,6 @@ namespace FFBatch
                     cb_cutoff.Items.Clear();
                     String[] audio_cutoff2 = new string[] { "none", "20KHz", "19KHz", "18KHz", "17KHz", "16KHz", "15KHz", "14KHz", "13KHz", "12KHz", "11KHz", "10KHz" };
                     foreach (String item in audio_cutoff2) cb_cutoff.Items.Add(item);
-
                 }
                 if (cb_audio_encoder.SelectedItem.ToString() == "vorbis")
                 {
@@ -1311,7 +1300,6 @@ namespace FFBatch
                     track_bits_audio.Maximum = 32;
                     track_bits_audio.Value = 6;
                 }
-
             }
         }
 
@@ -1361,7 +1349,6 @@ namespace FFBatch
 
             if (cb_audio_encoder.SelectedIndex == 6)
             {
-
                 track_bits_audio.Value = Convert.ToInt32(n_bit_audio.Value) / 32;
 
                 if (n_bit_audio.Value == 288) n_bit_audio.Value = n_bit_audio.Value + 32;
@@ -1607,7 +1594,6 @@ namespace FFBatch
                 label13.Text = "";
             }
 
-
             if (cb_audio_encoder.SelectedItem.ToString() == "ac3")
             {
                 label10.Visible = true;
@@ -1687,11 +1673,9 @@ namespace FFBatch
                 n_bit_audio.Value = 4;
                 n_bit_audio.Increment = 1;
                 label13.Text = "";
-
             }
             if (cb_audio_encoder.SelectedItem.ToString() == "opus")
             {
-
                 label22.Visible = true;
                 cb_cutoff.Visible = true;
 
@@ -1704,7 +1688,6 @@ namespace FFBatch
                 track_bits_audio.Value = 6;
                 n_bit_audio.Increment = 16;
             }
-
         }
 
         private void wz0_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
@@ -1828,7 +1811,6 @@ namespace FFBatch
             wiz_ext = cb_container.Text;
         }
 
-
         private void wz1_1_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
         {
             String filters = String.Empty;
@@ -1859,7 +1841,6 @@ namespace FFBatch
                         if (cb_rotate.SelectedIndex == 2) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "transpose=cclock" + '\u0022';
                         if (cb_rotate.SelectedIndex == 3) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "vflip,hflip" + '\u0022';
                         if (cb_rotate.SelectedIndex == 4) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "hflip" + '\u0022';
-
                     }
 
                     if (cb_crop.SelectedIndex != -1 && cb_resize.SelectedIndex == -1 && (cb_rotate.SelectedIndex == -1 || cb_rotate.SelectedIndex == 0))
@@ -1998,9 +1979,7 @@ namespace FFBatch
                     }
                     video_encoder_param = video_encoder_param + " -filter_complex " + '\u0022' + "[0:v]setpts=" + v_sp.ToString().Replace(",", ".") + "*PTS[v];[0:a]atempo=" + a_sp.ToString().Replace(",", ".") + "[a]" + '\u0022' + " -map " + '\u0022' + "[v]" + '\u0022' + " -map " + '\u0022' + "[a]" + '\u0022' + " ";
                 }
-
             }
-
             else //Back and forth
             {
                 commit_video_1();
@@ -2028,7 +2007,6 @@ namespace FFBatch
                         if (cb_rotate.SelectedIndex == 2) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "transpose=cclock" + '\u0022';
                         if (cb_rotate.SelectedIndex == 3) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "vflip,hflip" + '\u0022';
                         if (cb_rotate.SelectedIndex == 4) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "hflip" + '\u0022';
-
                     }
 
                     if (cb_crop.SelectedIndex != -1 && cb_resize.SelectedIndex == -1 && (cb_rotate.SelectedIndex == -1 || cb_rotate.SelectedIndex == 0))
@@ -2161,10 +2139,8 @@ namespace FFBatch
                 n_framerate.Maximum = 60;
                 n_framerate.Value = 25;
                 n_framerate.PerformLayout();
-
             }
             else n_framerate.Enabled = false;
-
         }
 
         private void cb_profile_SelectedIndexChanged(object sender, EventArgs e)
@@ -2174,12 +2150,10 @@ namespace FFBatch
                 MessageBox.Show(FFBatch.Properties.Strings.onlye_basel, FFBatch.Properties.Strings.pr_limit, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cb_profile.SelectedIndex = 0;
             }
-
         }
 
         private void cb_preset_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             if (cb_preset.SelectedItem.ToString() == "lossless" || cb_preset.SelectedItem.ToString() == "losslesshp")
             {
                 track_q_v.Enabled = false;
@@ -2228,7 +2202,6 @@ namespace FFBatch
             else
             {
                 cb_opus_vbr.Enabled = false;
-
             }
         }
 
@@ -2261,7 +2234,6 @@ namespace FFBatch
             pic_1.Image = images.Images[0];
             wizardControl1.Pages[1].AllowNext = true;
         }
-
 
         private void cb_rotate_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -2334,8 +2306,7 @@ namespace FFBatch
                 }
             }
             if (hw_enc.Contains("h264_qsv") || hw_enc.Contains("hevc_qsv"))
-            { 
-
+            {
                 ManagementObjectSearcher mosProcessor = new ManagementObjectSearcher("SELECT * FROM Win32_Processor");
                 string Procname = null;
 
@@ -2404,27 +2375,35 @@ namespace FFBatch
                     case 2:
                         cb_container.SelectedIndex = 0;
                         break;
+
                     case 3:
                         cb_container.SelectedIndex = 0;
                         break;
+
                     case 4:
                         cb_container.SelectedIndex = 1;
                         break;
+
                     case 5:
                         cb_container.SelectedIndex = 2;
                         break;
+
                     case 6:
                         cb_container.SelectedIndex = 3;
                         break;
+
                     case 7:
                         cb_container.SelectedIndex = 4;
                         break;
+
                     case 8:
                         cb_container.SelectedIndex = 5;
                         break;
+
                     case 9:
                         cb_container.SelectedIndex = 6;
                         break;
+
                     case 10:
                         cb_container.SelectedIndex = 7;
                         break;
@@ -2560,7 +2539,6 @@ namespace FFBatch
                     lbl_container.Visible = false;
                     btn_status.PerformClick();
                 }
-
             }
 
             if (audio_preset == true)
@@ -2577,7 +2555,6 @@ namespace FFBatch
                     pic_warning.Visible = false;
                     lbl_container.Visible = false;
                     btn_status.PerformClick();
-
                 }
                 if (cb_audio_encoder.SelectedIndex == 3 && cb_container.SelectedIndex != 0)
                 {
@@ -2591,7 +2568,6 @@ namespace FFBatch
                     pic_warning.Visible = false;
                     lbl_container.Visible = false;
                     btn_status.PerformClick();
-
                 }
                 if (cb_audio_encoder.SelectedIndex == 4 && cb_container.SelectedIndex != 1)
                 {
@@ -2710,7 +2686,6 @@ namespace FFBatch
 
         private void reset_v_params()
         {
-
             video_encoder_param = String.Empty;
             libx264_params = String.Empty;
             libx265_params = String.Empty;
@@ -2782,7 +2757,6 @@ namespace FFBatch
                                     libx264_params = libx264_params + " -r " + cb_framerate.SelectedItem.ToString().Substring(0, 2);
                                     break;
                                 }
-
                         }
                     }
                 }
@@ -2838,9 +2812,7 @@ namespace FFBatch
                                     libx265_params = libx265_params + " -r " + cb_framerate.SelectedItem.ToString().Substring(0, 2);
                                     break;
                                 }
-
                         }
-
                     }
                 }
                 video_encoder_param = video_encoder_param + libx265_params;
@@ -2895,7 +2867,6 @@ namespace FFBatch
                                     h264_qsv_params = h264_qsv_params + " -r " + cb_framerate.SelectedItem.ToString().Substring(0, 2);
                                     break;
                                 }
-
                         }
                     }
                 }
@@ -2951,7 +2922,6 @@ namespace FFBatch
                                     hevc_qsv_params = hevc_qsv_params + " -r " + cb_framerate.SelectedItem.ToString().Substring(0, 2);
                                     break;
                                 }
-
                         }
                     }
                 }
@@ -3007,7 +2977,6 @@ namespace FFBatch
                                     h264_nvenc_params = h264_nvenc_params + " -r " + cb_framerate.SelectedItem.ToString().Substring(0, 2);
                                     break;
                                 }
-
                         }
                     }
                 }
@@ -3063,7 +3032,6 @@ namespace FFBatch
                                     hevc_nvenc_params = hevc_nvenc_params + " -r " + cb_framerate.SelectedItem.ToString().Substring(0, 2);
                                     break;
                                 }
-
                         }
                     }
                 }
@@ -3119,7 +3087,6 @@ namespace FFBatch
                                     h264_amf_params = h264_amf_params + " -r " + cb_framerate.SelectedItem.ToString().Substring(0, 2);
                                     break;
                                 }
-
                         }
                     }
                 }
@@ -3175,13 +3142,11 @@ namespace FFBatch
                                     hevc_amf_params = hevc_amf_params + " -r " + cb_framerate.SelectedItem.ToString().Substring(0, 2);
                                     break;
                                 }
-
                         }
                     }
                 }
                 video_encoder_param = video_encoder_param + hevc_amf_params;
             }
-
 
             if (Combo_encoders.SelectedIndex == Combo_encoders.FindString("libvpx-vp9"))
             {
@@ -3288,11 +3253,9 @@ namespace FFBatch
                                     dnxhd_params = dnxhd_params + " -r " + cb_framerate.SelectedItem.ToString().Substring(0, 2);
                                     break;
                                 }
-
                         }
                     }
                 }
-
 
                 video_encoder_param = video_encoder_param + dnxhd_params;
             }
@@ -3333,11 +3296,9 @@ namespace FFBatch
                                     dnxhr_params = dnxhr_params + " -r " + cb_framerate.SelectedItem.ToString().Substring(0, 2);
                                     break;
                                 }
-
                         }
                     }
                 }
-
 
                 video_encoder_param = video_encoder_param + dnxhr_params;
             }
@@ -3530,7 +3491,6 @@ namespace FFBatch
                     }
                 }
 
-
                 if (cb_cutoff.SelectedIndex != -1 && cb_cutoff.SelectedIndex != 0)
                 {
                     if (cb_cutoff.SelectedItem.ToString().Length == 5)
@@ -3541,7 +3501,6 @@ namespace FFBatch
                     {
                         opus_params = opus_params + " -cutoff " + cb_cutoff.SelectedItem.ToString().Substring(0, 2);
                     }
-
                 }
                 if (cb_sample_rate.SelectedIndex != 0) opus_params = opus_params + " -ar " + cb_sample_rate.SelectedItem.ToString();
                 if (cb_channels.SelectedIndex != -1 && cb_channels.SelectedIndex != 0)
@@ -3590,7 +3549,6 @@ namespace FFBatch
 
         private void btn_ref_Click(object sender, EventArgs e)
         {
-
             Form frmInfo = new Form();
             frmInfo.Name = "DNxHD supported parameters";
             frmInfo.Text = "DNxHD supported parameters";
@@ -3816,8 +3774,8 @@ namespace FFBatch
 
             frmInfo.StartPosition = FormStartPosition.CenterScreen;
             frmInfo.ShowDialog();
-
         }
+
         private void boton_ok_Click(object sender, System.EventArgs e)
         {
             Form.ActiveForm.Close();
@@ -3918,7 +3876,6 @@ namespace FFBatch
                 consola_pre.WaitForExit();
                 consola_pre.StartInfo.Arguments = String.Empty;
                 this.InvokeEx(f => this.Cursor = Cursors.Arrow);
-
             });
 
             if (!tt.Wait(1250) && consola_pre.StartInfo.Arguments != String.Empty)
@@ -4239,7 +4196,6 @@ namespace FFBatch
                 }
             }
 
-
             if (consola_pre.StartInfo.Arguments != String.Empty)
             {
                 consola_pre.Kill();
@@ -4475,7 +4431,6 @@ namespace FFBatch
 
         private void radio_existing_CheckedChanged(object sender, EventArgs e)
         {
-         
             audio_preset = false;
             video_preset = false;
             existing_preset = true;
@@ -4491,12 +4446,10 @@ namespace FFBatch
 
         private void txt_pr_1_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void cb_w_presets_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void combo_presets_ext_SelectedIndexChanged(object sender, EventArgs e)
@@ -4556,12 +4509,10 @@ namespace FFBatch
                     {
                         if (line.Substring(4, line.IndexOf("&") - 5) == combo_presets_ext.SelectedItem.ToString())
                         {
-
                             int cortar = line.LastIndexOf("%") - line.LastIndexOf("&");
 
                             txt_ext_format.Text = line.Substring(line.LastIndexOf("%") + 2);
                             txt_pr_1_ex.Text = line.Substring(line.LastIndexOf("&") + 2, cortar - 3);
-
                         }
                     }
                     i = i + 1;
@@ -4599,7 +4550,6 @@ namespace FFBatch
             {
                 txt_ext_1.Text = ext1;
                 txt_pr_1.Text = pres1;
-
             }
 
             foreach (string line in File.ReadLines(path_pr))
@@ -4622,7 +4572,6 @@ namespace FFBatch
         {
             video_encoder_param = txt_pr_1_ex.Text;
             sel_preset = combo_presets_ext.Text;
-
         }
 
         private void btn_skip_files_Click(object sender, EventArgs e)
@@ -4649,6 +4598,7 @@ namespace FFBatch
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AeroWizard1));
             RefreshResources(this, resources);
         }
+
         private void RefreshResources(Control ctrl, ComponentResourceManager res)
         {
             ctrl.SuspendLayout();
@@ -4687,7 +4637,7 @@ namespace FFBatch
             internet_up = true;
 
             System.Threading.Thread.CurrentThread.IsBackground = true;
-           
+
             String content2 = String.Empty;
             try
             {
@@ -4696,7 +4646,6 @@ namespace FFBatch
                 StreamReader reader = new StreamReader(stream);
                 String content = reader.ReadToEnd();
                 content2 = content;
-
             }
             catch
             {
@@ -4725,8 +4674,9 @@ namespace FFBatch
             if (Combo_encoders.SelectedItem.ToString() == "h264_nvenc") Process.Start("https://sourceforge.net/p/ffmpeg-batch/news/2021/10/nvidia-h264nvenc");
             if (Combo_encoders.SelectedItem.ToString() == "hevc_nvenc") Process.Start("https://sourceforge.net/p/ffmpeg-batch/news/2021/10/nvidia-hevcnvenc");
             if (Combo_encoders.SelectedItem.ToString() == "h264_amf") Process.Start("https://sourceforge.net/p/ffmpeg-batch/news/2021/09/amd-vce--h264amf-encoder-options");
-            if (Combo_encoders.SelectedItem.ToString() == "hevc_amf") Process.Start("https://sourceforge.net/p/ffmpeg-batch/news/2021/08/amd-vce--hevcamf-encoder-options");            
+            if (Combo_encoders.SelectedItem.ToString() == "hevc_amf") Process.Start("https://sourceforge.net/p/ffmpeg-batch/news/2021/08/amd-vce--hevcamf-encoder-options");
         }
+
         public class WebClientWithTimeout : WebClient
         {
             protected override WebRequest GetWebRequest(Uri address)
@@ -4736,6 +4686,5 @@ namespace FFBatch
                 return wr;
             }
         }
-
     }
 }

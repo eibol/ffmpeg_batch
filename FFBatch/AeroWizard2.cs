@@ -15,20 +15,20 @@ namespace FFBatch
             InitializeComponent();
         }
 
-        Form obj = new FFBatch.Form1();
-        Boolean is_portable = false;
-        String port_path = System.IO.Path.Combine(Application.StartupPath, "settings") + "\\";
-        String pr1_params = String.Empty;
-        String pr1_ext = String.Empty;
-        String pr2_params = String.Empty;
-        String pr2_ext = String.Empty;
-        String pr3_params = String.Empty;
-        String pr3_ext = String.Empty;
-        Boolean cancelled = false;
-        Boolean rename = false;
-        int n_presets = 2;
-        Boolean started = false;
-        Boolean quit = false;
+        private Form obj = new FFBatch.Form1();
+        private Boolean is_portable = false;
+        private String port_path = System.IO.Path.Combine(Application.StartupPath, "settings") + "\\";
+        private String pr1_params = String.Empty;
+        private String pr1_ext = String.Empty;
+        private String pr2_params = String.Empty;
+        private String pr2_ext = String.Empty;
+        private String pr3_params = String.Empty;
+        private String pr3_ext = String.Empty;
+        private Boolean cancelled = false;
+        private Boolean rename = false;
+        private int n_presets = 2;
+        private Boolean started = false;
+        private Boolean quit = false;
 
         public String pr1_string
         {
@@ -71,6 +71,7 @@ namespace FFBatch
             get { return cancelled; }
             set { cancelled = value; }
         }
+
         public Boolean rename_w
         {
             get { return rename; }
@@ -129,7 +130,7 @@ namespace FFBatch
                 cb_w_presets.Items.Clear();
                 cb_w_presets.Items.Add(FFBatch.Properties.Strings.default_param);
                 String path, path_pr = "";
-                                
+
                 path_pr = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets.ini";
                 path = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch.ini";
                 if (is_portable == true)
@@ -141,7 +142,7 @@ namespace FFBatch
                 int linea = 0;
 
                 cb_w_presets.SelectedIndex = cb_w_presets.FindString((FFBatch.Properties.Strings.default_param));
-                
+
                 foreach (string line in File.ReadLines(path_pr))
                 {
                     if (line.Contains("PR: "))
@@ -152,7 +153,7 @@ namespace FFBatch
             }
             if (wz_mpresets.SelectedPage == wzp2)
             {
-                label1.Text = FFBatch.Properties.Strings.wiz_ready2 + " "  + n_presets.ToString() + " " + "presets.";
+                label1.Text = FFBatch.Properties.Strings.wiz_ready2 + " " + n_presets.ToString() + " " + "presets.";
             }
         }
 
@@ -258,7 +259,7 @@ namespace FFBatch
                 String path = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch.ini";
                 if (is_portable == true)
                 {
-                    path = port_path + "ff_batch_portable.ini";                    
+                    path = port_path + "ff_batch_portable.ini";
                 }
                 else
                 {
@@ -270,7 +271,6 @@ namespace FFBatch
 
                 if (!File.Exists(path))
                 {
-
                     File.WriteAllText(path, "-c copy" + "\n" + "mp4" + "\n" + "yes" + "\n" + "Vs" + "\n" + "grid_yes" + "\n" + "keep_no" + "\n" + "subf_no");
                 }
 
@@ -278,20 +278,20 @@ namespace FFBatch
                 String ext1 = "";
                 String pres1 = "";
                 foreach (string line in File.ReadLines(path))
-                {                    
+                {
                     if (linea == 0) pres1 = line;
                     if (linea == 1) ext1 = line;
                     if (linea > 1) break;
                     linea = linea + 1;
-                }                 
-                        if (txt_pr_1.Text.Length == 0)
-                        {
-                            txt_ext_1.Text = ext1;
-                            pr1_ext = txt_ext_1.Text;
-                            txt_pr_1.Text = pres1;
-                            pr1_params = txt_pr_1.Text;
-                        return;
-                        }
+                }
+                if (txt_pr_1.Text.Length == 0)
+                {
+                    txt_ext_1.Text = ext1;
+                    pr1_ext = txt_ext_1.Text;
+                    txt_pr_1.Text = pres1;
+                    pr1_params = txt_pr_1.Text;
+                    return;
+                }
                 if (txt_pr_1.Text.Length != 0 && txt_pr_2.Text.Length == 0)
                 {
                     txt_ext_2.Text = ext1;
@@ -321,7 +321,6 @@ namespace FFBatch
                     {
                         if (line.Substring(4, line.IndexOf("&") - 5) == cb_w_presets.SelectedItem.ToString())
                         {
-
                             int cortar = line.LastIndexOf("%") - line.LastIndexOf("&");
                             if (txt_pr_1.Text == String.Empty)
                             {
@@ -339,7 +338,6 @@ namespace FFBatch
                                 txt_pr_2.Text = line.Substring(line.LastIndexOf("&") + 2, cortar - 3);
                                 pr2_params = txt_pr_2.Text;
                                 continue;
-
                             }
                             if (txt_pr_2.Text != String.Empty && txt_pr_3.Text == String.Empty)
                             {
@@ -384,7 +382,6 @@ namespace FFBatch
             }
         }
 
-
         private void wz_mpresets_Cancelling(object sender, System.ComponentModel.CancelEventArgs e)
         {
             pr1_params = String.Empty;
@@ -395,7 +392,6 @@ namespace FFBatch
             pr3_ext = String.Empty;
             cancelled = true;
             quit = true;
-
         }
 
         private void AeroWizard2_FormClosing(object sender, FormClosingEventArgs e)
@@ -420,7 +416,7 @@ namespace FFBatch
         }
 
         private void AeroWizard2_Load(object sender, EventArgs e)
-        {           
+        {
             refresh_lang();
             if (Properties.Settings.Default.app_lang != "en" && Properties.Settings.Default.app_lang != "es")
             {
@@ -435,8 +431,9 @@ namespace FFBatch
             //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AeroWizard2));
-            RefreshResources(this, resources);            
+            RefreshResources(this, resources);
         }
+
         private void RefreshResources(Control ctrl, ComponentResourceManager res)
         {
             ctrl.SuspendLayout();

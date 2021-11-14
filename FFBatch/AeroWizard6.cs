@@ -15,15 +15,14 @@ namespace FFBatch
 
         public Boolean save_preset = false;
         public int list_count = 0;
-        String pr_1st_params = String.Empty;
-        String out_path = "";
-        String out_format = "";
-        String jpg_q = "";
+        private String pr_1st_params = String.Empty;
+        private String out_path = "";
+        private String out_format = "";
+        private String jpg_q = "";
         public Boolean canceled = false;
         public Boolean start_enc = false;
-        
-        
-        Boolean  ok_images = false;
+
+        private Boolean ok_images = false;
 
         public String pr1_first_params
         {
@@ -38,7 +37,7 @@ namespace FFBatch
         }
 
         private void wizardControl1_SelectedPageChanged(object sender, EventArgs e)
-        {            
+        {
             combo_Seconds.SelectedIndex = 0;
             combo_ext.SelectedIndex = 0;
         }
@@ -49,7 +48,7 @@ namespace FFBatch
         }
 
         private void wz1_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
-        {            
+        {
             canceled = false;
             if (combo_ext.Text == String.Empty)
             {
@@ -62,7 +61,7 @@ namespace FFBatch
                 MessageBox.Show(FFBatch.Properties.Strings.abs_blank);
                 e.Cancel = true;
                 return;
-            }           
+            }
 
             //Output path
             if (radio_relative.Checked == true)
@@ -75,11 +74,11 @@ namespace FFBatch
             }
             if (chk_out_name.Checked == true)
             {
-                out_path = out_path + "%fn_%04d";                
+                out_path = out_path + "%fn_%04d";
             }
             if (chk_out_name.Checked == false)
-            {                
-                 out_path = out_path + txt_naming + "_%04d";
+            {
+                out_path = out_path + txt_naming + "_%04d";
             }
 
             out_path = out_path + "." + combo_ext.Text;
@@ -103,7 +102,7 @@ namespace FFBatch
         private void txt_path_main_TextChanged(object sender, EventArgs e)
         {
             if (txt_path_main.TextLength >= 3 && txt_path_main.Text.Substring(0, 2) != ".\\") MessageBox.Show("Please include .\\ on relative path.");
-        }      
+        }
 
         private void combo_Seconds_TextChanged(object sender, EventArgs e)
         {
@@ -122,11 +121,10 @@ namespace FFBatch
             fd1.ShowDialog();
             if (fd1.SelectedPath.Length > 0) txt_path.Text = fd1.SelectedPath;
             else radio_relative.Checked = true;
-
         }
 
         private void radio_absolute_CheckedChanged(object sender, EventArgs e)
-        {            
+        {
             txt_path.Enabled = true;
             txt_path_main.Enabled = false;
             btn_browse.Enabled = true;
@@ -137,9 +135,8 @@ namespace FFBatch
             txt_path.Enabled = false;
             txt_path_main.Enabled = true;
             btn_browse.Enabled = false;
-        }    
+        }
 
-    
         private void chk_save_pres_CheckedChanged_1(object sender, EventArgs e)
         {
             if (chk_save_pres.CheckState == CheckState.Checked)
@@ -181,15 +178,14 @@ namespace FFBatch
             else txt_naming.Enabled = false;
         }
 
-
         private void wz_end_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
         {
             start_enc = false;
             if (chk_save_preset.Checked == true) save_preset = true;
             if (chk_save_preset.Checked == true && txt_preset_name.Text.Length < 5)
             {
-                    MessageBox.Show(FFBatch.Properties.Strings.name_5);
-                    e.Cancel = true;
+                MessageBox.Show(FFBatch.Properties.Strings.name_5);
+                e.Cancel = true;
             }
 
             pr1_first_params = pr_1st_params;
@@ -253,6 +249,7 @@ namespace FFBatch
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AeroWizard6));
             RefreshResources(this, resources);
         }
+
         private void RefreshResources(Control ctrl, ComponentResourceManager res)
         {
             ctrl.SuspendLayout();

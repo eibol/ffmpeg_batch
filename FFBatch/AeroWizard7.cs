@@ -18,16 +18,16 @@ namespace FFBatch
         public Boolean one_to_one = false;
         public Boolean multi_to_one = false;
         public int list_count = 0;
-        String img_dur_prog = "0";
-        String pr_1st_params = String.Empty;
-        String pr_pre_prms = String.Empty;
-        String out_format = "";
-        String imgs_time = "5";
-        String img_aud= "";
+        private String img_dur_prog = "0";
+        private String pr_1st_params = String.Empty;
+        private String pr_pre_prms = String.Empty;
+        private String out_format = "";
+        private String imgs_time = "5";
+        private String img_aud = "";
         public Boolean canceled = true;
         public Boolean start_enc = false;
-        
-        Boolean  ok_images = false;
+
+        private Boolean ok_images = false;
 
         public String pr1_img_dur
         {
@@ -40,6 +40,7 @@ namespace FFBatch
             get { return img_aud; }
             set { img_aud = value; }
         }
+
         public String pr1_imgs_time
         {
             get { return imgs_time; }
@@ -51,6 +52,7 @@ namespace FFBatch
             get { return pr_1st_params; }
             set { pr_1st_params = value; }
         }
+
         public String pr1_pre_params
         {
             get { return pr_pre_prms; }
@@ -88,7 +90,7 @@ namespace FFBatch
             pr1_img_dur = t_to.ToString();
 
             String resize = "";
-            //"-vf scale=";            
+            //"-vf scale=";
             if (check_resize.Checked)
             {
                 if (chk_width1.Checked)
@@ -109,10 +111,8 @@ namespace FFBatch
             pr1_out_format = out_format;
             imgs_time = n_multiv_secs.Value.ToString();
             pr1_imgs_time = imgs_time;
-            
-        }        
+        }
 
-       
         private void check_resize_CheckedChanged(object sender, EventArgs e)
         {
             if (check_resize.Checked == true)
@@ -130,8 +130,7 @@ namespace FFBatch
                     combo_resize.Items.Add("800x480");
                     combo_resize.Items.Add("1024x640");
                     combo_resize.Items.Add("1280x720");
-                    combo_resize.Items.Add("1920x1080");                    
-
+                    combo_resize.Items.Add("1920x1080");
                 }
                 if (radio_4_3.Checked == true)
                 {
@@ -139,9 +138,9 @@ namespace FFBatch
                     combo_resize.Items.Add("320x240");
                     combo_resize.Items.Add("800x600");
                     combo_resize.Items.Add("1024x768");
-                    combo_resize.Items.Add("1280x1024");                    
+                    combo_resize.Items.Add("1280x1024");
                 }
-                
+
                 combo_resize.SelectedIndex = 0;
             }
             else
@@ -179,7 +178,8 @@ namespace FFBatch
                 combo_resize.Items.Add("1920x1080");
                 combo_resize.SelectedIndex = 0;
             }
-        }        
+        }
+
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             canceled = true;
@@ -187,20 +187,19 @@ namespace FFBatch
         }
 
         private void btn_Start_Click(object sender, EventArgs e)
-        {           
+        {
             this.Close();
         }
 
         private void wz_end_Rollback(object sender, AeroWizard.WizardPageConfirmEventArgs e)
         {
-            pr_1st_params = "";            
+            pr_1st_params = "";
             out_format = "";
-            pr1_img_aud = "";            
+            pr1_img_aud = "";
         }
 
         private void wz_end_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
         {
-          
         }
 
         private void AeroWizard5_Load(object sender, EventArgs e)
@@ -221,6 +220,7 @@ namespace FFBatch
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AeroWizard7));
             RefreshResources(this, resources);
         }
+
         private void RefreshResources(Control ctrl, ComponentResourceManager res)
         {
             ctrl.SuspendLayout();
@@ -271,7 +271,6 @@ namespace FFBatch
                     one_to_one = true;
                 }
             }
-
         }
 
         private void cb_framerate_TextChanged(object sender, EventArgs e)
@@ -291,7 +290,7 @@ namespace FFBatch
             pr_pre_prms = "-r 1/" + n_single_v_secs.Value.ToString();
             pr_1st_params = "-c:v libx264 -preset fast" + " " + "-pix_fmt " + cb_pixel2.SelectedItem.ToString() + " " + "-vf fps=" + cb_framerate2.Text;
             String resize = "";
-            //"-vf scale=";            
+            //"-vf scale=";
             if (check_resize2.Checked)
             {
                 if (chk_width2.Checked)
@@ -299,21 +298,20 @@ namespace FFBatch
                     if (chk_even2.Checked == false) resize = combo_resize2.Text.Substring(0, combo_resize2.Text.IndexOf("x")) + ":-1";
                     resize = combo_resize2.Text.Substring(0, combo_resize2.Text.IndexOf("x")) + ":-2";
                 }
-                else resize = combo_resize2.SelectedItem.ToString().Replace("x",":");
-                pr_1st_params = "-c:v libx264 -preset fast" + " " + "-pix_fmt " + cb_pixel2.SelectedItem.ToString() + " " + "-vf " + "\u0022" + "fps="  + cb_framerate2.Text + "," + "scale=" + resize + "\u0022";                
+                else resize = combo_resize2.SelectedItem.ToString().Replace("x", ":");
+                pr_1st_params = "-c:v libx264 -preset fast" + " " + "-pix_fmt " + cb_pixel2.SelectedItem.ToString() + " " + "-vf " + "\u0022" + "fps=" + cb_framerate2.Text + "," + "scale=" + resize + "\u0022";
             }
 
             if (chk_audio2.Checked && txt_audio2.Text.Length > 5)
             {
                 img_aud = txt_audio2.Text;
                 pr1_img_aud = img_aud;
-                pr_1st_params = " " + " -i " + "\u0022" + img_aud + "\u0022"  + " " + pr_1st_params + " " + "-c:a aac -b:a 128K";
-                
+                pr_1st_params = " " + " -i " + "\u0022" + img_aud + "\u0022" + " " + pr_1st_params + " " + "-c:a aac -b:a 128K";
             }
 
             out_format = combo_ext2.Text;
             pr1_out_format = out_format;
-        }   
+        }
 
         private void check_resize2_CheckedChanged(object sender, EventArgs e)
         {
@@ -333,7 +331,6 @@ namespace FFBatch
                     combo_resize2.Items.Add("1024x640");
                     combo_resize2.Items.Add("1280x720");
                     combo_resize2.Items.Add("1920x1080");
-
                 }
                 if (radio_4_3_2.Checked == true)
                 {
@@ -388,8 +385,8 @@ namespace FFBatch
             one_to_one = true;
             multi_to_one = false;
             if (list_count < 2)
-            {                
-                wz0.AllowNext = false;                
+            {
+                wz0.AllowNext = false;
             }
         }
 
@@ -400,7 +397,7 @@ namespace FFBatch
             multi_to_one = true;
             if (list_count < 1)
             {
-                wz0.AllowNext = false;                
+                wz0.AllowNext = false;
             }
         }
 
@@ -409,8 +406,9 @@ namespace FFBatch
             txt_audio_path.Text = openf.FileName;
             Process probe = new Process();
             String dur_hex = String.Empty;
-            probe.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "ffprobe.exe");
-            probe.StartInfo.Arguments = "-v error -show_entries format=duration -sexagesimal -of default=noprint_wrappers=1:nokey=1 " + " -i " + '\u0022' + openf.FileName + '\u0022';
+            probe.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "MediaInfo.exe");
+            String ffprobe_frames1 = " " + '\u0022' + "--Inform=General;%Duration/String3%" + '\u0022';
+            probe.StartInfo.Arguments = ffprobe_frames1 + " " + '\u0022' + openf.FileName + '\u0022';
             probe.StartInfo.RedirectStandardOutput = true;
             probe.StartInfo.UseShellExecute = false;
             probe.StartInfo.CreateNoWindow = true;
@@ -466,8 +464,9 @@ namespace FFBatch
 
             Process probe = new Process();
             String dur_hex = String.Empty;
-            probe.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "ffprobe.exe");
-            probe.StartInfo.Arguments = "-v error -show_entries format=duration -sexagesimal -of default=noprint_wrappers=1:nokey=1 " + " -i " + '\u0022' + openf2.FileName + '\u0022';
+            probe.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "MediaInfo.exe");
+            String ffprobe_frames1 = " " + '\u0022' + "--Inform=General;%Duration/String3%" + '\u0022';
+            probe.StartInfo.Arguments = ffprobe_frames1 + " " + '\u0022' + openf2.FileName + '\u0022';
             probe.StartInfo.RedirectStandardOutput = true;
             probe.StartInfo.UseShellExecute = false;
             probe.StartInfo.CreateNoWindow = true;
@@ -521,7 +520,7 @@ namespace FFBatch
         private void wz0_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
         {
             if (list_count < 2)
-            {                
+            {
                 wz0.AllowNext = false;
                 return;
             }

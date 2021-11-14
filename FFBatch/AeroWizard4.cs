@@ -14,7 +14,7 @@ namespace FFBatch
         }
 
         public Boolean ok_silence = true;
-        String pr_1st_params = String.Empty;
+        private String pr_1st_params = String.Empty;
 
         public String pr1_first_params
         {
@@ -27,8 +27,6 @@ namespace FFBatch
             get { return ok_silence; }
             set { ok_silence = value; }
         }
-
-      
 
         private void wizardControl1_Cancelling(object sender, System.ComponentModel.CancelEventArgs e)
         {
@@ -58,6 +56,7 @@ namespace FFBatch
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AeroWizard4));
             RefreshResources(this, resources);
         }
+
         private void RefreshResources(Control ctrl, ComponentResourceManager res)
         {
             ctrl.SuspendLayout();
