@@ -31505,12 +31505,15 @@ namespace FFBatch
 
             if (chk_open_compl.Checked) form3.check_open_output.Checked = true;
             else form3.check_open_output.Checked = false;
-            
+
+            Boolean current_dark = Properties.Settings.Default.dark_mode;
+
             form3.ShowDialog();
 
             if (form3.cancel == true)
             {
                 FFBatch.Properties.Settings.Default.app_lang = current_lang;
+                Properties.Settings.Default.dark_mode = current_dark;
                 FFBatch.Properties.Settings.Default.Save();               
                 return;
             }
