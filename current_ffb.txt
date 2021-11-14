@@ -14,7 +14,7 @@
 • Copy or save frames as image clicking on image thumbnail.
 • Added quick guide for hardware encoders wizard (nvenc/amf), and updated some output parameters.
 • Added new setting for "night mode".
-• Removed youtube-dl (appaerntly abandoned), replaced with yt-dpl fork. Fixed all non-working download features.
+• Removed youtube-dl apparently abandoned), replaced with yt-dpl fork. Fixed all non-working download features.
 
 • Now batch URL attempts to download any link supported by youtube-dl (yt.-dpl). 
   The list of supported sites:
