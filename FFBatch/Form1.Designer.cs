@@ -55,6 +55,7 @@
             this.ct1_paste_youtube = new System.Windows.Forms.ToolStripMenuItem();
             this.ct1_paste_m3u = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.ctm1_encode = new System.Windows.Forms.ToolStripMenuItem();
             this.cti2 = new System.Windows.Forms.ToolStripMenuItem();
             this.cti1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
@@ -422,6 +423,7 @@
             this.listView2 = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.pic_drag = new System.Windows.Forms.PictureBox();
             this.listView1 = new System.Windows.Forms.ListView();
             this.col1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.col_dir = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -507,12 +509,14 @@
             this.lbl_a_th = new System.Windows.Forms.Label();
             this.lbl_v_th = new System.Windows.Forms.Label();
             this.panel_thumb = new System.Windows.Forms.GroupBox();
-            this.pic_Frame_Dark = new System.Windows.Forms.PictureBox();
             this.lbl_gb_th = new System.Windows.Forms.Label();
             this.BG_add_VBitrate_col = new System.ComponentModel.BackgroundWorker();
             this.imageList3 = new System.Windows.Forms.ImageList(this.components);
             this.BG_Add_col_abit = new System.ComponentModel.BackgroundWorker();
             this.timer_yt = new System.Windows.Forms.Timer(this.components);
+            this.BG_Selected_items = new System.ComponentModel.BackgroundWorker();
+            this.timer_selecs = new System.Windows.Forms.Timer(this.components);
+            this.img_list_pic_thumb = new System.Windows.Forms.ImageList(this.components);
             this.ctm1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -549,6 +553,7 @@
             this.tabPage3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_drag)).BeginInit();
             this.tabControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_prog)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_success)).BeginInit();
@@ -570,7 +575,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_skip)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_frame)).BeginInit();
             this.panel_thumb.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Frame_Dark)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_add_files
@@ -691,6 +695,7 @@
             this.ct1_paste_youtube,
             this.ct1_paste_m3u,
             this.toolStripSeparator2,
+            this.ctm1_encode,
             this.cti2,
             this.cti1,
             this.toolStripSeparator8,
@@ -747,6 +752,12 @@
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+            // 
+            // ctm1_encode
+            // 
+            resources.ApplyResources(this.ctm1_encode, "ctm1_encode");
+            this.ctm1_encode.Name = "ctm1_encode";
+            this.ctm1_encode.Click += new System.EventHandler(this.ctm1_encode_Click);
             // 
             // cti2
             // 
@@ -1712,7 +1723,6 @@
             resources.ApplyResources(this.txt_track_param, "txt_track_param");
             this.txt_track_param.Name = "txt_track_param";
             this.txt_track_param.TextChanged += new System.EventHandler(this.txt_track_param_TextChanged);
-            this.txt_track_param.DoubleClick += new System.EventHandler(this.txt_track_param_DoubleClick);
             // 
             // lbl_mux_par
             // 
@@ -3673,6 +3683,7 @@
             this.listView2.SelectedIndexChanged += new System.EventHandler(this.listView2_SelectedIndexChanged);
             this.listView2.DragDrop += new System.Windows.Forms.DragEventHandler(this.listView2_DragDrop);
             this.listView2.DragEnter += new System.Windows.Forms.DragEventHandler(this.listView2_DragEnter);
+            this.listView2.DragLeave += new System.EventHandler(this.listView2_DragLeave);
             this.listView2.DoubleClick += new System.EventHandler(this.listView2_DoubleClick);
             // 
             // columnHeader1
@@ -3681,10 +3692,17 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.pic_drag);
             this.tabPage1.Controls.Add(this.listView1);
             resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // pic_drag
+            // 
+            resources.ApplyResources(this.pic_drag, "pic_drag");
+            this.pic_drag.Name = "pic_drag";
+            this.pic_drag.TabStop = false;
             // 
             // listView1
             // 
@@ -4333,7 +4351,6 @@
             // 
             // panel_thumb
             // 
-            this.panel_thumb.Controls.Add(this.pic_Frame_Dark);
             this.panel_thumb.Controls.Add(this.lbl_gb_th);
             this.panel_thumb.Controls.Add(this.lbl_s_th);
             this.panel_thumb.Controls.Add(this.pic_frame);
@@ -4344,13 +4361,6 @@
             resources.ApplyResources(this.panel_thumb, "panel_thumb");
             this.panel_thumb.Name = "panel_thumb";
             this.panel_thumb.TabStop = false;
-            // 
-            // pic_Frame_Dark
-            // 
-            this.pic_Frame_Dark.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.pic_Frame_Dark, "pic_Frame_Dark");
-            this.pic_Frame_Dark.Name = "pic_Frame_Dark";
-            this.pic_Frame_Dark.TabStop = false;
             // 
             // lbl_gb_th
             // 
@@ -4377,6 +4387,24 @@
             // 
             this.timer_yt.Interval = 1000;
             this.timer_yt.Tick += new System.EventHandler(this.timer_yt_Tick);
+            // 
+            // BG_Selected_items
+            // 
+            this.BG_Selected_items.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BG_Selected_items_DoWork);
+            this.BG_Selected_items.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BG_Selected_items_RunWorkerCompleted);
+            // 
+            // timer_selecs
+            // 
+            this.timer_selecs.Interval = 500;
+            this.timer_selecs.Tick += new System.EventHandler(this.timer_selecs_Tick);
+            // 
+            // img_list_pic_thumb
+            // 
+            this.img_list_pic_thumb.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("img_list_pic_thumb.ImageStream")));
+            this.img_list_pic_thumb.TransparentColor = System.Drawing.Color.Transparent;
+            this.img_list_pic_thumb.Images.SetKeyName(0, "No_Image_reading_64px.png");
+            this.img_list_pic_thumb.Images.SetKeyName(1, "No_Image_dark_2_64px.png");
+            this.img_list_pic_thumb.Images.SetKeyName(2, "No_Image_64px.png");
             // 
             // Form1
             // 
@@ -4494,6 +4522,7 @@
             this.tabPage3.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_drag)).EndInit();
             this.tabControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.img_prog)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_success)).EndInit();
@@ -4519,7 +4548,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_frame)).EndInit();
             this.panel_thumb.ResumeLayout(false);
             this.panel_thumb.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_Frame_Dark)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4999,9 +5027,13 @@
         private System.ComponentModel.BackgroundWorker BG_add_VBitrate_col;
         private System.Windows.Forms.Label lbl_gb_th;
         private System.Windows.Forms.ImageList imageList3;
-        private System.Windows.Forms.PictureBox pic_Frame_Dark;
         private System.ComponentModel.BackgroundWorker BG_Add_col_abit;
         private System.Windows.Forms.Timer timer_yt;
+        private System.Windows.Forms.PictureBox pic_drag;
+        private System.ComponentModel.BackgroundWorker BG_Selected_items;
+        private System.Windows.Forms.Timer timer_selecs;
+        private System.Windows.Forms.ToolStripMenuItem ctm1_encode;
+        private System.Windows.Forms.ImageList img_list_pic_thumb;
     }
 }
 
