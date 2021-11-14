@@ -17386,7 +17386,7 @@ namespace FFBatch
                         itemsToAdd[n].ImageIndex = 0;
                     }
                     itemsToAdd[n].SubItems.Add(Path.GetDirectoryName(files_to_add[n]));
-
+                   
                     Boolean no_av = false;
                     String videosLength = String.Empty;
 
@@ -17627,7 +17627,7 @@ namespace FFBatch
             else
             {
                 this.InvokeEx(f => f.listView1.Items.AddRange(itemsToAdd.ToArray()));
-            }
+            }            
         }
 
         public string av_col(string key)
@@ -18192,7 +18192,7 @@ namespace FFBatch
 
         private void add_to_tab_2()
         {
-            listView2.Clear();
+            listView2.Clear();            
             listView2.BeginUpdate();
             listView2.Columns.Add(FFBatch.Properties.Strings.filename, 450);
             listView2.SmallImageList = listView1.SmallImageList;
@@ -18222,7 +18222,7 @@ namespace FFBatch
                     elemento.ImageIndex = 0;
                 }
 
-                listView2.Items.Add(elemento);
+                listView2.Items.Add(elemento);               
             }
 
             foreach (ListViewItem item in listView2.Items)
@@ -18292,10 +18292,11 @@ namespace FFBatch
                 {
                     item.SubItems.Add(FFBatch.Properties.Strings.no_streams1);
                 }
-            }
-            listView2.EndUpdate();
-            this.Cursor = Cursors.Arrow;
+            }           
 
+            listView2.EndUpdate();            
+            this.Cursor = Cursors.Arrow;
+            
             if (listView2.Items.Count == 1)
             {
                 listView2.Items[0].Selected = true;
@@ -31517,18 +31518,26 @@ namespace FFBatch
                 FFBatch.Properties.Settings.Default.Save();               
                 return;
             }
-
+                        
             if (Properties.Settings.Default.dark_mode == true)
             {
                 foreach (Control c in this.Controls) UpdateColorDark(c);
                 this.BackColor = Color.FromArgb(255, 64, 64, 64);
                 post_dark();
+                
             }
             else
             {
                 foreach (Control c in this.Controls) UpdateColorDefault(c);
                 this.BackColor = SystemColors.InactiveBorder;
                 post_color_def();
+            }
+
+            if (Properties.Settings.Default.dark_mode != current_dark)
+            {
+                listView1.Items.Clear(); //Refresh issues
+                listView3.Items.Clear();
+                btn_refresh.PerformClick();
             }
 
             if (current_lang != form3.lang_set)
@@ -44702,13 +44711,23 @@ namespace FFBatch
                 lbl_v_th.Text = "-"; lbl_v_th.Refresh();
                 lbl_a_th.Text = "-"; lbl_a_th.Refresh();
                 pic_frame.Image = pic_frame.InitialImage;
+                lbl_gb_th.Text = "-"; lbl_gb_th.Refresh();
 
                 if (!File.Exists(lv1_item)) return;
 
                 if (!Directory.Exists(Path.Combine(Path.GetTempPath(), "FFBatch_Test"))) Directory.CreateDirectory(Path.Combine(Path.GetTempPath(), "FFBatch_Test"));
 
-                DateTime time2;
-                Decimal time_frame = Math.Round((decimal)current_fr, 0);
+                String time_frame = "";
+                Double t_to = (double)current_fr;
+                TimeSpan t1 = TimeSpan.FromMilliseconds((t_to));
+                String tx_1 = string.Format("{0:D2}:{1:D2}:{2:D2}.{3:D3}",
+                             (int)t1.TotalHours,
+                             t1.Minutes,
+                             t1.Seconds,
+                             t1.Milliseconds);
+                time_frame = tx_1;
+                String repl_frm = time_frame.Replace(",", "").Replace(".", "").Replace(":", "");
+
                 String ffm_img = Path.Combine(Application.StartupPath, "ffmpeg.exe");
                 String itfull = "";
 
@@ -44720,7 +44739,7 @@ namespace FFBatch
                 String AppParam_img = "";
                 String config_info = Path.Combine(Path.GetTempPath(), "FFBatch_Test") + "\\" + "mediaconfig.txt";
                 String rel_path = Path.GetDirectoryName(file_img).Replace(":", "_").Replace("\\", "_") + Path.GetExtension(file_img).Replace(".", "_");
-                String target_img = Path.GetTempPath() + "FFBatch_Test" + "\\" + Path.GetFileNameWithoutExtension(file_img) + "_480_" + rel_path + "_" + time_frame.ToString() + "." + "jpg";
+                String target_img = Path.GetTempPath() + "FFBatch_Test" + "\\" + Path.GetFileNameWithoutExtension(file_img) + "_480_" + rel_path + "_" + repl_frm + "." + "jpg";
                 String target_info = Path.GetTempPath() + "FFBatch_Test" + "\\" + Path.GetFileNameWithoutExtension(file_img) + rel_path + "_" + "." + "txt";
 
                 String m_info_path = System.IO.Path.Combine(Application.StartupPath, "MediaInfo.exe");
@@ -44733,97 +44752,100 @@ namespace FFBatch
 
                     this.Invoke(new MethodInvoker(delegate
                     {
-                        if (!File.Exists(target_info))
+                        try
                         {
-                            String[] config_lines = new String[3];
-                            config_lines[0] = "Video;%Format%" + "\\n" + "%Width%" + "\\n" + "%Height%" + "\\n" + "%DisplayAspectRatio/String%" + "\\n";
-                            config_lines[1] = "Audio;%Format%" + "\\n";
-                            config_lines[2] = "General;%OverallBitRate/String%" + "\\n";
-
-                            File.WriteAllLines(config_info, config_lines);
-                            get_frames.StartInfo.FileName = m_info_path;
-
-                            String ffprobe_frames = " " + "--Inform=file://" + config_info;
-                            get_frames.StartInfo.Arguments = ffprobe_frames + " " + '\u0022' + itfull + '\u0022';
-                            get_frames.StartInfo.RedirectStandardOutput = true;
-                            get_frames.StartInfo.UseShellExecute = false;
-                            get_frames.StartInfo.CreateNoWindow = true;
-                            get_frames.EnableRaisingEvents = true;
-
-                            get_frames.Start();
-
-                            while (!get_frames.StandardOutput.EndOfStream)
+                            if (!File.Exists(target_info))
                             {
-                                lines_ouput.Add(get_frames.StandardOutput.ReadLine());
-                            }
-                            //foreach (String str in lines_ouput) MessageBox.Show(str);
+                                String[] config_lines = new String[3];
+                                config_lines[0] = "Video;%Format%" + "\\n" + "%Width%" + "\\n" + "%Height%" + "\\n" + "%DisplayAspectRatio/String%" + "\\n";
+                                config_lines[1] = "Audio;%Format%" + "\\n";
+                                config_lines[2] = "General;%OverallBitRate/String%" + "\\n";
 
-                            get_frames.WaitForExit();
-                            if (get_frames.ExitCode == 0)
-                            {
-                                if (lines_ouput[1].ToLower().Contains("visual")) lines_ouput[1] = lines_ouput[1].Replace("Visual", "");
-                                try { lbl_v_th.Text = lines_ouput[1].Replace("Video", "") + "  " + lines_ouput[4]; } catch { }
-                                try { lbl_s_th.Text = lines_ouput[2] + "x" + lines_ouput[3]; } catch { }
+                                File.WriteAllLines(config_info, config_lines);
+                                get_frames.StartInfo.FileName = m_info_path;
 
-                                try { lbl_a_th.Text = lines_ouput[5].ToLower(); }
-                                catch
+                                String ffprobe_frames = " " + "--Inform=file://" + config_info;
+                                get_frames.StartInfo.Arguments = ffprobe_frames + " " + '\u0022' + itfull + '\u0022';
+                                get_frames.StartInfo.RedirectStandardOutput = true;
+                                get_frames.StartInfo.UseShellExecute = false;
+                                get_frames.StartInfo.CreateNoWindow = true;
+                                get_frames.EnableRaisingEvents = true;
+
+                                get_frames.Start();
+
+                                while (!get_frames.StandardOutput.EndOfStream)
                                 {
-                                    lbl_a_th.Text = lines_ouput[1].ToLower();
-                                    lbl_s_th.Text = "-";
-                                    lbl_v_th.Text = "-";
-                                    lbl_gb_th.Text = lines_ouput[0];
+                                    lines_ouput.Add(get_frames.StandardOutput.ReadLine());
                                 }
-                                String ext_a0 = Path.GetExtension(file_img);
+                                //foreach (String str in lines_ouput) MessageBox.Show(str);
 
-                                if (ext_a0 == ".flac" || ext_a0 == ".mp3" || ext_a0 == ".oga" || ext_a0 == ".ape" || ext_a0 == ".wav" || ext_a0 == ".aac" || ext_a0 == ".ac3" || ext_a0 == ".mpa" || ext_a0 == ".mka" || ext_a0 == ".wave" || ext_a0 == ".mp1" || ext_a0 == ".dsd" || ext_a0 == ".wma" || ext_a0 == ".amr" || ext_a0 == ".opus")
+                                get_frames.WaitForExit();
+                                if (get_frames.ExitCode == 0)
                                 {
-                                    lbl_v_th.Text = ext_a0.Replace(".", "");
-                                }
+                                    if (lines_ouput[1].ToLower().Contains("visual")) lines_ouput[1] = lines_ouput[1].Replace("Visual", "");
+                                    try { lbl_v_th.Text = lines_ouput[1].Replace("Video", "") + "  " + lines_ouput[4]; } catch { }
+                                    try { lbl_s_th.Text = lines_ouput[2] + "x" + lines_ouput[3]; } catch { }
 
-                                try
-                                {
-                                    if (lines_ouput[0].Length > 0)
+                                    try { lbl_a_th.Text = lines_ouput[5].ToLower(); }
+                                    catch
                                     {
-                                        System.Globalization.CultureInfo ci = System.Threading.Thread.CurrentThread.CurrentUICulture;
-                                        String sep_th = ci.NumberFormat.CurrencyGroupSeparator;
-                                        if (lines_ouput[0].Substring(1, 1) == " ")
-                                        {
-                                            lines_ouput[0] = lines_ouput[0].Substring(0, 1) + sep_th + lines_ouput[0].Substring(2, lines_ouput[0].Length - 2);
-                                        }
+                                        lbl_a_th.Text = lines_ouput[1].ToLower();
+                                        lbl_s_th.Text = "-";
+                                        lbl_v_th.Text = "-";
                                         lbl_gb_th.Text = lines_ouput[0];
                                     }
+                                    String ext_a0 = Path.GetExtension(file_img);
+
+                                    if (ext_a0 == ".flac" || ext_a0 == ".mp3" || ext_a0 == ".oga" || ext_a0 == ".ape" || ext_a0 == ".wav" || ext_a0 == ".aac" || ext_a0 == ".ac3" || ext_a0 == ".mpa" || ext_a0 == ".mka" || ext_a0 == ".wave" || ext_a0 == ".mp1" || ext_a0 == ".dsd" || ext_a0 == ".wma" || ext_a0 == ".amr" || ext_a0 == ".opus")
+                                    {
+                                        lbl_v_th.Text = ext_a0.Replace(".", "");
+                                    }
+
+                                    try
+                                    {
+                                        if (lines_ouput[0].Length > 0)
+                                        {
+                                            System.Globalization.CultureInfo ci = System.Threading.Thread.CurrentThread.CurrentUICulture;
+                                            String sep_th = ci.NumberFormat.CurrencyGroupSeparator;
+                                            if (lines_ouput[0].Substring(1, 1) == " ")
+                                            {
+                                                lines_ouput[0] = lines_ouput[0].Substring(0, 1) + sep_th + lines_ouput[0].Substring(2, lines_ouput[0].Length - 2);
+                                            }
+                                            lbl_gb_th.Text = lines_ouput[0];
+                                        }
+                                    }
+                                    catch { lbl_gb_th.Text = "-"; }
                                 }
-                                catch { lbl_gb_th.Text = "-"; }
+                                else
+                                {
+                                    lbl_s_th.Text = "-";
+                                    lbl_v_th.Text = "-";
+                                    lbl_a_th.Text = "-";
+                                    lbl_gb_th.Text = "-";
+                                }
+
+                                String info = lbl_v_th.Text + Environment.NewLine + lbl_a_th.Text + Environment.NewLine + lbl_s_th.Text + Environment.NewLine + lbl_gb_th.Text;
+                                File.WriteAllText(target_info, info);
                             }
                             else
                             {
-                                lbl_s_th.Text = "-";
-                                lbl_v_th.Text = "-";
-                                lbl_a_th.Text = "-";
-                                lbl_gb_th.Text = "-";
-                            }
+                                String[] lines = new String[4];
+                                int l = 0;
+                                foreach (String line in File.ReadLines(target_info))
+                                {
+                                    lines[l] = line;
+                                    l++;
+                                }
 
-                            String info = lbl_v_th.Text + Environment.NewLine + lbl_a_th.Text + Environment.NewLine + lbl_s_th.Text + Environment.NewLine + lbl_gb_th.Text;
-                            File.WriteAllText(target_info, info);
-                        }
-                        else
-                        {
-                            String[] lines = new String[4];
-                            int l = 0;
-                            foreach (String line in File.ReadLines(target_info))
-                            {
-                                lines[l] = line;
-                                l++;
+                                lbl_v_th.Text = lines[0];
+                                lbl_a_th.Text = lines[1];
+                                lbl_s_th.Text = lines[2];
+                                lbl_gb_th.Text = lines[3];
                             }
-
-                            lbl_v_th.Text = lines[0];
-                            lbl_a_th.Text = lines[1];
-                            lbl_s_th.Text = lines[2];
-                            lbl_gb_th.Text = lines[3];
                         }
+                        catch { }
                     }));
 
-                    //End Get Info
                     //End Get Info
 
                     if (File.Exists(target_img))
@@ -45413,8 +45435,8 @@ namespace FFBatch
             pic_frame.InitialImage = img_list_pic_thumb.Images[1];
             this.BackColor = Color.FromArgb(255, 64, 64, 64);
             listView1.BackColor = Color.FromArgb(255, 64, 64, 64); listView1.Refresh();
-            listView2.BackColor = Color.FromArgb(255, 64, 64, 64);
-            listView3.BackColor = Color.FromArgb(255, 64, 64, 64);
+            listView2.BackColor = Color.FromArgb(255, 64, 64, 64); listView2.Refresh();
+            listView3.BackColor = Color.FromArgb(255, 64, 64, 64); listView3.Refresh();
             dg1.BackgroundColor = Color.Gray;
             dg1.RowsDefaultCellStyle.BackColor = Color.Gray;
         }
@@ -45423,16 +45445,18 @@ namespace FFBatch
         {
             pic_frame.Image = img_list_pic_thumb.Images[2];
             pic_frame.InitialImage = img_list_pic_thumb.Images[2];
-            listView1.BackColor = Color.White; listView1.Refresh();
-            listView2.BackColor = Color.White;
-            list_tracks.BackColor = Color.White;
+            this.BackColor = SystemColors.InactiveBorder;
+            listView1.BackColor = SystemColors.Window;
+            listView1.Refresh();
+            listView2.BackColor = SystemColors.Window; listView2.Refresh();
+            listView3.BackColor = SystemColors.Window; listView3.Refresh();
+            list_tracks.BackColor = SystemColors.Window; 
             listView3.BackColor = Color.White;
             txt_parameters.BackColor = Color.White;
             combo_presets.BackColor = Color.White;
             dg1.BackgroundColor = SystemColors.InactiveBorder;
             dg1.RowsDefaultCellStyle.BackColor = Color.White;
-            main_menu.BackColor = SystemColors.InactiveBorder;
-            this.BackColor = SystemColors.InactiveBorder;
+            main_menu.BackColor = SystemColors.InactiveBorder;            
         }
 
         private void BG_Add_col_abit_DoWork(object sender, DoWorkEventArgs e)
