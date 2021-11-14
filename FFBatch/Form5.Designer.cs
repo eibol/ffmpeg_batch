@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dg_streams = new System.Windows.Forms.DataGridView();
             this.Column3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +41,9 @@
             this.img_streams = new System.Windows.Forms.ImageList(this.components);
             this.ff_str = new System.Diagnostics.Process();
             this.pic_frame = new System.Windows.Forms.PictureBox();
+            this.menu_Img = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ct_copy = new System.Windows.Forms.ToolStripMenuItem();
+            this.ct_save = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_10 = new System.Windows.Forms.Button();
             this.btn_minus10 = new System.Windows.Forms.Button();
             this.btn_fr_start = new System.Windows.Forms.Button();
@@ -49,11 +52,15 @@
             this.btn_min1 = new System.Windows.Forms.Button();
             this.btn_plus1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_copy = new System.Windows.Forms.Button();
+            this.btn_save = new System.Windows.Forms.Button();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.btn_close = new System.Windows.Forms.Button();
+            this.save_img = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dg_streams)).BeginInit();
             this.menu_grid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_frame)).BeginInit();
+            this.menu_Img.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -83,8 +90,8 @@
             // 
             // Column1
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
             resources.ApplyResources(this.Column1, "Column1");
             this.Column1.Name = "Column1";
             this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -139,9 +146,30 @@
             // 
             // pic_frame
             // 
+            this.pic_frame.ContextMenuStrip = this.menu_Img;
             resources.ApplyResources(this.pic_frame, "pic_frame");
             this.pic_frame.Name = "pic_frame";
             this.pic_frame.TabStop = false;
+            // 
+            // menu_Img
+            // 
+            this.menu_Img.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ct_copy,
+            this.ct_save});
+            this.menu_Img.Name = "menu_Img";
+            resources.ApplyResources(this.menu_Img, "menu_Img");
+            // 
+            // ct_copy
+            // 
+            resources.ApplyResources(this.ct_copy, "ct_copy");
+            this.ct_copy.Name = "ct_copy";
+            this.ct_copy.Click += new System.EventHandler(this.ct_copy_Click);
+            // 
+            // ct_save
+            // 
+            resources.ApplyResources(this.ct_save, "ct_save");
+            this.ct_save.Name = "ct_save";
+            this.ct_save.Click += new System.EventHandler(this.ct_save_Click);
             // 
             // btn_10
             // 
@@ -194,6 +222,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_copy);
+            this.groupBox1.Controls.Add(this.btn_save);
             this.groupBox1.Controls.Add(this.txt_file);
             this.groupBox1.Controls.Add(this.btn_plus1);
             this.groupBox1.Controls.Add(this.pic_frame);
@@ -206,6 +236,24 @@
             resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            // 
+            // btn_copy
+            // 
+            this.btn_copy.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btn_copy.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_copy, "btn_copy");
+            this.btn_copy.Name = "btn_copy";
+            this.btn_copy.UseVisualStyleBackColor = true;
+            this.btn_copy.Click += new System.EventHandler(this.btn_copy_Click);
+            // 
+            // btn_save
+            // 
+            this.btn_save.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btn_save.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_save, "btn_save");
+            this.btn_save.Name = "btn_save";
+            this.btn_save.UseVisualStyleBackColor = true;
+            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // txt_name
             // 
@@ -220,6 +268,10 @@
             this.btn_close.Name = "btn_close";
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
+            // 
+            // save_img
+            // 
+            this.save_img.FileOk += new System.ComponentModel.CancelEventHandler(this.save_img_FileOk);
             // 
             // Form5
             // 
@@ -239,6 +291,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dg_streams)).EndInit();
             this.menu_grid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_frame)).EndInit();
+            this.menu_Img.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -268,5 +321,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.PictureBox pic_frame;
+        private System.Windows.Forms.ContextMenuStrip menu_Img;
+        private System.Windows.Forms.ToolStripMenuItem ct_save;
+        private System.Windows.Forms.ToolStripMenuItem ct_copy;
+        private System.Windows.Forms.SaveFileDialog save_img;
+        private System.Windows.Forms.Button btn_copy;
+        private System.Windows.Forms.Button btn_save;
     }
 }

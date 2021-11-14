@@ -15,14 +15,13 @@ namespace FFBatch
 {
     public partial class Form15 : Form
     {
-
-        String port_path = Application.StartupPath + "\\" + "settings" + "\\";
-        Boolean is_portable = false;
+        private String port_path = Application.StartupPath + "\\" + "settings" + "\\";
+        private Boolean is_portable = false;
         private Rectangle dragBoxFromMouseDown;
         private int rowIndexFromMouseDown;
         private int rowIndexOfItemUnderMouseToDrop;
         public Boolean saved = false;
-        Boolean duplicates = false;
+        private Boolean duplicates = false;
 
         public Form15()
         {
@@ -36,6 +35,7 @@ namespace FFBatch
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form15));
             RefreshResources(this, resources);
         }
+
         private void RefreshResources(Control ctrl, ComponentResourceManager res)
         {
             ctrl.SuspendLayout();
@@ -44,6 +44,7 @@ namespace FFBatch
                 RefreshResources(control, res); // recursion
             ctrl.ResumeLayout(false);
         }
+
         public void UpdateColorDark(Control myControl)
         {
             myControl.BackColor = Color.FromArgb(255, 64, 64, 64);
@@ -63,8 +64,9 @@ namespace FFBatch
                 UpdateColorDefault(subC);
             }
         }
+
         private void Form15_Load(object sender, EventArgs e)
-        {            
+        {
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
             if (File.Exists(portable_flag)) is_portable = true;
             else is_portable = false;
@@ -95,17 +97,17 @@ namespace FFBatch
             }
             else
             {
-                path = port_path + "ff_presets_portable.ini";                
+                path = port_path + "ff_presets_portable.ini";
             }
 
             String path_log_backup = "";
             if (is_portable == false)
             {
-                path_log_backup = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets_bck.ini";                
+                path_log_backup = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets_bck.ini";
             }
             else
             {
-                path_log_backup = port_path + "ff_presets_bck_portable.ini";                
+                path_log_backup = port_path + "ff_presets_bck_portable.ini";
             }
 
             if (!File.Exists(path_log_backup) && File.Exists(path))
@@ -115,7 +117,7 @@ namespace FFBatch
             create_tips();
             read_presets();
             dg_pr.ClearSelection();
-            
+
             refresh_lang();
             this.Text = Properties.Strings.presets.Replace(".", "");
             char[] letters = this.Text.ToCharArray();
@@ -124,9 +126,8 @@ namespace FFBatch
             // upper case the first char
 
             dg_pr.Columns[0].HeaderText = FFBatch.Properties.Strings.Name;
-                dg_pr.Columns[1].HeaderText = FFBatch.Properties.Strings.ff_params;
-                dg_pr.Columns[2].HeaderText = FFBatch.Properties.Strings.Format;
-            
+            dg_pr.Columns[1].HeaderText = FFBatch.Properties.Strings.ff_params;
+            dg_pr.Columns[2].HeaderText = FFBatch.Properties.Strings.Format;
         }
 
         private void create_tips()
@@ -140,17 +141,17 @@ namespace FFBatch
         }
 
         private void read_presets()
-        {            
+        {
             string path_presets;
 
             if (is_portable == false)
-            {                
+            {
                 path_presets = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets.ini";
             }
             else
-            {                
+            {
                 path_presets = port_path + "ff_presets_portable.ini";
-            }            
+            }
 
             String param = "";
             String format = "";
@@ -178,7 +179,6 @@ namespace FFBatch
                     {
                         param = line.Substring(line.LastIndexOf("&") + 2, cortar - 3);
                         dg_pr.Rows.Add(line.Substring(4, line.LastIndexOf("&") - 5), param, format);
-
                     }
                     catch
                     {
@@ -252,7 +252,7 @@ namespace FFBatch
             {
                 path_log_backup = port_path + "ff_presets_bck_portable.ini";
                 path = port_path + "ff_presets_portable.ini";
-            }            
+            }
             if (!File.Exists(path)) File.WriteAllText(path, "");
             File.Copy(path, path_log_backup, true);
 
@@ -296,7 +296,6 @@ namespace FFBatch
                         param = line.Substring(line.LastIndexOf("&") + 2, cortar - 3);
 
                         dg_pr.Rows.Add(line.Substring(4, line.LastIndexOf("&") - 5), param, format);
-
                     }
                     catch
                     {
@@ -304,7 +303,6 @@ namespace FFBatch
                     }
                 }
             }
-
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -320,7 +318,6 @@ namespace FFBatch
 
         private void item_up_Click(object sender, EventArgs e)
         {
-
             if (dg_pr.SelectedCells.Count == 0 || dg_pr.SelectedCells.Count > 1) return;
             DataGridView dgv = dg_pr;
             try
@@ -371,8 +368,7 @@ namespace FFBatch
                 if (dragBoxFromMouseDown != Rectangle.Empty &&
                     !dragBoxFromMouseDown.Contains(e.X, e.Y))
                 {
-
-                    // Proceed with the drag and drop, passing in the list item.                    
+                    // Proceed with the drag and drop, passing in the list item.
                     DragDropEffects dropEffect = dg_pr.DoDragDrop(
                     dg_pr.Rows[rowIndexFromMouseDown],
                     DragDropEffects.Move);
@@ -386,9 +382,9 @@ namespace FFBatch
             rowIndexFromMouseDown = dg_pr.HitTest(e.X, e.Y).RowIndex;
             if (rowIndexFromMouseDown != -1)
             {
-                // Remember the point where the mouse down occurred. 
-                // The DragSize indicates the size that the mouse can move 
-                // before a drag event should be started.                
+                // Remember the point where the mouse down occurred.
+                // The DragSize indicates the size that the mouse can move
+                // before a drag event should be started.
                 Size dragSize = SystemInformation.DragSize;
 
                 // Create a rectangle using the DragSize, with the mouse position being
@@ -409,11 +405,11 @@ namespace FFBatch
 
         private void dg_pr_DragDrop(object sender, DragEventArgs e)
         {
-            // The mouse locations are relative to the screen, so they must be 
+            // The mouse locations are relative to the screen, so they must be
             // converted to client coordinates.
             Point clientPoint = dg_pr.PointToClient(new Point(e.X, e.Y));
 
-            // Get the row index of the item the mouse is below. 
+            // Get the row index of the item the mouse is below.
             rowIndexOfItemUnderMouseToDrop =
                 dg_pr.HitTest(clientPoint.X, clientPoint.Y).RowIndex;
 
@@ -424,7 +420,6 @@ namespace FFBatch
                     typeof(DataGridViewRow)) as DataGridViewRow;
                 dg_pr.Rows.RemoveAt(rowIndexFromMouseDown);
                 try { dg_pr.Rows.Insert(rowIndexOfItemUnderMouseToDrop, rowToMove); } catch { }
-
             }
         }
 
@@ -445,7 +440,6 @@ namespace FFBatch
             if (is_portable == false)
             {
                 path = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets_bck.ini";
-
             }
             else
             {
@@ -471,7 +465,6 @@ namespace FFBatch
                         param = line.Substring(line.LastIndexOf("&") + 2, cortar - 3);
 
                         dg_pr.Rows.Add(line.Substring(4, line.LastIndexOf("&") - 5), param, format);
-
                     }
                     catch
                     {
@@ -491,7 +484,6 @@ namespace FFBatch
                 }
                 catch
                 {
-
                 }
             }
         }
@@ -538,7 +530,7 @@ namespace FFBatch
         {
             FolderBrowserDialog folderBrowserDialog1 = new FolderBrowserDialog();
             folderBrowserDialog1.ShowNewFolderButton = true;
-            if (is_portable == false) folderBrowserDialog1.Description = FFBatch.Properties.Strings.sel_path_pres + " " +"(ff_presets.ini)";
+            if (is_portable == false) folderBrowserDialog1.Description = FFBatch.Properties.Strings.sel_path_pres + " " + "(ff_presets.ini)";
             else folderBrowserDialog1.Description = FFBatch.Properties.Strings.sel_path_pres + " " + "(ff_presets_portable.ini)";
 
             if (folderBrowserDialog1.ShowDialog() != DialogResult.OK)
@@ -632,7 +624,7 @@ namespace FFBatch
         }
 
         private void Form15_Resize(object sender, EventArgs e)
-        {   
+        {
             dg_pr.Width = this.Width - 59;
             dg_pr.Height = this.Height - 198;
             dg_pr.Columns[1].Width = dg_pr.Width - 354;
@@ -648,8 +640,8 @@ namespace FFBatch
             item_up.Left = this.Width - 63;
             item_down.Left = this.Width - 86;
             btn_decr_font.Left = this.Width - 131;
-            btn_inc_font.Left = this.Width - 153;            
-            
+            btn_inc_font.Left = this.Width - 153;
+
             if (this.Width < 962)
             {
                 this.Width = 962;
@@ -660,8 +652,6 @@ namespace FFBatch
                 this.Height = 567;
                 return;
             }
-
         }
     }
 }
-  

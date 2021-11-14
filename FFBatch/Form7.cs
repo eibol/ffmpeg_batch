@@ -32,16 +32,17 @@ namespace FFBatch
             {
                 UpdateColorDark(subC);
             }
-        }       
+        }
+
         private void Form7_Load(object sender, EventArgs e)
         {
-            refresh_lang();            
+            refresh_lang();
             this.Text = FFBatch.Properties.Strings.invalid_av;
             if (Properties.Settings.Default.dark_mode == true)
             {
                 foreach (Control c in this.Controls) UpdateColorDark(c);
                 this.BackColor = Color.FromArgb(255, 64, 64, 64);
-            }            
+            }
         }
 
         private void refresh_lang()
@@ -51,6 +52,7 @@ namespace FFBatch
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form7));
             RefreshResources(this, resources);
         }
+
         private void RefreshResources(Control ctrl, ComponentResourceManager res)
         {
             ctrl.SuspendLayout();

@@ -15,7 +15,7 @@ namespace FFBatch
 {
     public partial class Form12 : Form
     {
-        //public Dictionary<string, Process> procs_abort = new Dictionary<string, Process>();        
+        //public Dictionary<string, Process> procs_abort = new Dictionary<string, Process>();
 
         public Form12()
         {
@@ -24,7 +24,7 @@ namespace FFBatch
 
         private void Form12_Load(object sender, EventArgs e)
         {
-            btn_abort.Enabled = true;            
+            btn_abort.Enabled = true;
             pic.Enabled = true;
             refresh_lang();
             if (FFBatch.Properties.Settings.Default.app_lang == "zh-Hans") this.Height = this.Height + 20;
@@ -40,6 +40,7 @@ namespace FFBatch
                 this.BackColor = SystemColors.InactiveBorder;
             }
         }
+
         public void UpdateColorDark(Control myControl)
         {
             myControl.BackColor = Color.FromArgb(255, 64, 64, 64);
@@ -67,6 +68,7 @@ namespace FFBatch
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form12));
             RefreshResources(this, resources);
         }
+
         private void RefreshResources(Control ctrl, ComponentResourceManager res)
         {
             ctrl.SuspendLayout();
@@ -79,9 +81,9 @@ namespace FFBatch
         private void btn_abort_Click(object sender, EventArgs e)
         {
             btn_abort.Enabled = false;
-            pic.Enabled = false;            
+            pic.Enabled = false;
             Form1 frm1 = new Form1();
-            foreach (Process proc in  frm1.procs.Values)
+            foreach (Process proc in frm1.procs.Values)
             {
                 try
                 {
@@ -97,7 +99,7 @@ namespace FFBatch
             timer1.Stop();
             Process[] localByName = Process.GetProcessesByName("ffmpeg");
             if (localByName.Count() > 0) foreach (Process p in localByName) p.Kill();
-            Process[] localByName2 = Process.GetProcessesByName("youtube-dl");
+            Process[] localByName2 = Process.GetProcessesByName("yt-dlp");
             if (localByName2.Count() > 0) foreach (Process p in localByName2) p.Kill();
         }
     }

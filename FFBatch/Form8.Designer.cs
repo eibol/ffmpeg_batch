@@ -33,6 +33,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.btn_close = new System.Windows.Forms.Button();
             this.txt_file = new System.Windows.Forms.TextBox();
@@ -48,6 +51,8 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codec = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Res_p = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_bitrate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dg_streams)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_yout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_wait_1)).BeginInit();
@@ -55,30 +60,29 @@
             // 
             // txt_name
             // 
-            resources.ApplyResources(this.txt_name, "txt_name");
             this.txt_name.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            resources.ApplyResources(this.txt_name, "txt_name");
             this.txt_name.Name = "txt_name";
             this.txt_name.ReadOnly = true;
             // 
             // btn_close
             // 
-            resources.ApplyResources(this.btn_close, "btn_close");
             this.btn_close.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.btn_close, "btn_close");
             this.btn_close.Name = "btn_close";
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // txt_file
             // 
-            resources.ApplyResources(this.txt_file, "txt_file");
             this.txt_file.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_file.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_file, "txt_file");
             this.txt_file.Name = "txt_file";
             this.txt_file.ReadOnly = true;
             // 
             // dg_streams
             // 
-            resources.ApplyResources(this.dg_streams, "dg_streams");
             this.dg_streams.AllowUserToAddRows = false;
             this.dg_streams.AllowUserToDeleteRows = false;
             this.dg_streams.AllowUserToOrderColumns = true;
@@ -92,7 +96,10 @@
             this.Column1,
             this.Column2,
             this.Column4,
-            this.Codec});
+            this.Codec,
+            this.Res_p,
+            this.col_bitrate});
+            resources.ApplyResources(this.dg_streams, "dg_streams");
             this.dg_streams.MultiSelect = false;
             this.dg_streams.Name = "dg_streams";
             this.dg_streams.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -113,8 +120,8 @@
             // 
             // pic_yout
             // 
-            resources.ApplyResources(this.pic_yout, "pic_yout");
             this.pic_yout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.pic_yout, "pic_yout");
             this.pic_yout.Name = "pic_yout";
             this.pic_yout.TabStop = false;
             // 
@@ -167,8 +174,24 @@
             // 
             // Codec
             // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Codec.DefaultCellStyle = dataGridViewCellStyle4;
             resources.ApplyResources(this.Codec, "Codec");
             this.Codec.Name = "Codec";
+            // 
+            // Res_p
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Res_p.DefaultCellStyle = dataGridViewCellStyle5;
+            resources.ApplyResources(this.Res_p, "Res_p");
+            this.Res_p.Name = "Res_p";
+            // 
+            // col_bitrate
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.col_bitrate.DefaultCellStyle = dataGridViewCellStyle6;
+            resources.ApplyResources(this.col_bitrate, "col_bitrate");
+            this.col_bitrate.Name = "col_bitrate";
             // 
             // Form8
             // 
@@ -214,5 +237,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codec;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Res_p;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_bitrate;
     }
 }

@@ -21,6 +21,7 @@ namespace FFBatch
         {
             InitializeComponent();
         }
+
         public int procId = 0;
         public String reading = "";
 
@@ -44,6 +45,7 @@ namespace FFBatch
                 this.BackColor = SystemColors.InactiveBorder;
             }
         }
+
         public void UpdateColorDark(Control myControl)
         {
             myControl.BackColor = Color.FromArgb(255, 64, 64, 64);
@@ -71,6 +73,7 @@ namespace FFBatch
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form11));
             RefreshResources(this, resources);
         }
+
         private void RefreshResources(Control ctrl, ComponentResourceManager res)
         {
             ctrl.SuspendLayout();
@@ -82,7 +85,7 @@ namespace FFBatch
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Process[] localByName = Process.GetProcessesByName("youtube-dl");
+            Process[] localByName = Process.GetProcessesByName("yt-dlp");
             foreach (Process p in localByName)
             {
                 try { p.Kill(); }
@@ -100,7 +103,7 @@ namespace FFBatch
         }
 
         private void btn_abort_Click(object sender, EventArgs e)
-        {            
+        {
             abort_validate = true;
             btn_abort.Text = FFBatch.Properties.Strings.aborting;
             btn_abort.Enabled = false;
@@ -109,7 +112,7 @@ namespace FFBatch
             {
                 if (p.Id == procId)
                 {
-                    p.Kill();                  
+                    p.Kill();
                 }
             }
         }

@@ -16,10 +16,10 @@ using System.Windows.Forms;
 namespace FFBatch
 {
     public partial class Form9 : Form
-    {        
+    {
         public Form9()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
         public Boolean abort_validate = false;
@@ -32,40 +32,35 @@ namespace FFBatch
             this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
             Thread.Sleep(50);
             abort_validate = true;
-                label1.Text = "Aborting...";
-                label1.Refresh();
-                progressBar1.Style = ProgressBarStyle.Marquee;
-                progressBar1.Refresh();
-                btn_abort_pls.Enabled = false;                
+            label1.Text = "Aborting...";
+            label1.Refresh();
+            progressBar1.Style = ProgressBarStyle.Marquee;
+            progressBar1.Refresh();
+            btn_abort_pls.Enabled = false;
 
             foreach (Process proc in Process.GetProcesses())
             {
-                if (proc.ProcessName == "ffprobe" || proc.ProcessName == "youtube-dl")
-                        try { proc.Kill(); }
-                        catch { }
+                if (proc.ProcessName == "ffprobe" || proc.ProcessName == "yt-dlp")
+                    try { proc.Kill(); }
+                    catch { }
             }
-            //Process[] localByName = Process.GetProcessesByName("youtube-dl");
-            //foreach (Process p in localByName)
-            //{
-            //    try { p.Kill(); }
-            //    catch { }
-            //}
-            timer1.Start();      
+
+            timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            Process[] localByName = Process.GetProcessesByName("youtube-dl");
+            Process[] localByName = Process.GetProcessesByName("yt-dlp");
             foreach (Process p in localByName)
-            {               
+            {
                 try { p.Kill(); }
-                catch { }             
+                catch { }
             }
-            this.Close();           
+            this.Close();
         }
 
         private void Form9_Paint(object sender, PaintEventArgs e)
-        {         
+        {
             Rectangle borderRectangle = this.ClientRectangle;
             //borderRectangle.Inflate(-1, -1);
             ControlPaint.DrawBorder3D(e.Graphics, borderRectangle,
@@ -73,7 +68,7 @@ namespace FFBatch
         }
 
         private void Form9_Load(object sender, EventArgs e)
-        {            
+        {
             this.TopLevel = true;
             abort_validate = false;
             btn_abort_pls.Enabled = true;
@@ -113,7 +108,6 @@ namespace FFBatch
             }
         }
 
-
         private void refresh_lang()
         {
             //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
@@ -121,6 +115,7 @@ namespace FFBatch
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form9));
             RefreshResources(this, resources);
         }
+
         private void RefreshResources(Control ctrl, ComponentResourceManager res)
         {
             ctrl.SuspendLayout();
@@ -131,8 +126,8 @@ namespace FFBatch
         }
 
         private void Form9_FormClosing(object sender, FormClosingEventArgs e)
-        {            
-            lab_count.Text = "";                        
+        {
+            lab_count.Text = "";
             for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
             {
                 if (Application.OpenForms[i].Name == "Form1")

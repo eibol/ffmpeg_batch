@@ -15,9 +15,10 @@ namespace FFBatch
 {
     public partial class Form14 : Form
     {
-        int i = 5;
+        private int i = 5;
         public Process proc = new Process();
         public String args = String.Empty;
+
         public Form14()
         {
             InitializeComponent();
@@ -26,7 +27,7 @@ namespace FFBatch
         private void timer1_Tick(object sender, EventArgs e)
         {
             i--;
-            if (timer1.Interval == 1000) label8.Text = FFBatch.Properties.Strings.launch  + " " + i.ToString();
+            if (timer1.Interval == 1000) label8.Text = FFBatch.Properties.Strings.launch + " " + i.ToString();
             else label8.Text = FFBatch.Properties.Strings.start_app_enc;
             if (i == 0)
             {
@@ -34,13 +35,13 @@ namespace FFBatch
                 label8.Text = FFBatch.Properties.Strings.wait_finish;
                 label8.Refresh();
                 proc.StartInfo.FileName = txt_path.Text;
-                proc.StartInfo.Arguments = args;                
+                proc.StartInfo.Arguments = args;
 
                 try
                 {
                     Task t = Task.Run(() =>
                     {
-                        proc.Start();                        
+                        proc.Start();
                         proc.WaitForExit();
                     });
                     t.Wait();
@@ -62,7 +63,7 @@ namespace FFBatch
                 {
                     pic_error.Visible = true;
                     pic_success.Visible = false;
-                    label8.Text = FFBatch.Properties.Strings.app_err_code + " "  + proc.ExitCode.ToString();
+                    label8.Text = FFBatch.Properties.Strings.app_err_code + " " + proc.ExitCode.ToString();
                 }
                 if (timer1.Interval == 100) this.Close();
             }
@@ -80,8 +81,9 @@ namespace FFBatch
             {
                 foreach (Control c in this.Controls) UpdateColorDark(c);
                 this.BackColor = Color.FromArgb(255, 64, 64, 64);
-            }            
+            }
         }
+
         public void UpdateColorDark(Control myControl)
         {
             myControl.BackColor = Color.FromArgb(255, 64, 64, 64);
@@ -91,6 +93,7 @@ namespace FFBatch
                 UpdateColorDark(subC);
             }
         }
+
         private void refresh_lang()
         {
             //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
@@ -98,6 +101,7 @@ namespace FFBatch
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form14));
             RefreshResources(this, resources);
         }
+
         private void RefreshResources(Control ctrl, ComponentResourceManager res)
         {
             ctrl.SuspendLayout();
