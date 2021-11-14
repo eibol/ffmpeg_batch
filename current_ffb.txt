@@ -1,5 +1,4 @@
 ﻿2.7.0
-EN
 • FFmpeg 4.4.1 Essentials. (Backup your custom ffmpeg before proceeding).
 • Reduced installer size (ffprobe removed, switched from full to essential ffmpeg).
 • New security and performance setting: 
@@ -15,6 +14,11 @@ EN
 • Copy or save frames as image clicking on image thumbnail.
 • Added quick guide for hardware encoders wizard (nvenc/amf), and updated some output parameters.
 • Added new setting for "night mode".
+• Removed youtube-dl (appaerntly abandoned), replaced with yt-dpl fork. Fixed all non-working download features.
+
+• Now batch URL attempts to download any link supported by youtube-dl (yt.-dpl). 
+  The list of supported sites:
+https://ytdl-org.github.io/youtube-dl/supportedsites.html
 • Fixed random runtime errors in sequential encoding and batch joining.
 • Fixed bug with pre-input filed saving/loading.
 • Fixed bug adding all streams when selecting multiple files in Stream multiplex tab.
