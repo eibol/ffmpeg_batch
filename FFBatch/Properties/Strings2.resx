@@ -684,4 +684,19 @@
   <data name="next" xml:space="preserve">
     <value>Next</value>
   </data>
+  <data name="encode" xml:space="preserve">
+    <value>Encode</value>
+  </data>
+  <data name="img_copied" xml:space="preserve">
+    <value>Image was copied to the clipboard.</value>
+  </data>
+  <data name="saved_img" xml:space="preserve">
+    <value>Image was successfuly saved.</value>
+  </data>
+  <data name="save_img" xml:space="preserve">
+    <value>Save current frame</value>
+  </data>
+  <data name="bitrate" xml:space="preserve">
+    <value>Bitrate</value>
+  </data>
 </root>
