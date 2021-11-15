@@ -1,4 +1,0 @@
-Application language
-Select language
-Select application language
-OK

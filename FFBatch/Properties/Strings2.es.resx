@@ -678,4 +678,19 @@
   <data name="Paste_any_URL" xml:space="preserve">
     <value>Pegar enlace</value>
   </data>
+  <data name="encode" xml:space="preserve">
+    <value>Codificar</value>
+  </data>
+  <data name="img_copied" xml:space="preserve">
+    <value>La imagen se ha copiado al potapapeles.</value>
+  </data>
+  <data name="saved_img" xml:space="preserve">
+    <value>El fotograma se guardó con éxito.</value>
+  </data>
+  <data name="save_img" xml:space="preserve">
+    <value>Guardar fotograma</value>
+  </data>
+  <data name="bitrate" xml:space="preserve">
+    <value>Tasa de bits</value>
+  </data>
 </root>

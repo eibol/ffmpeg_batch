@@ -15,14 +15,14 @@ namespace FFBatch
 
         public Boolean save_preset = false;
         public int list_count = 0;
-        String pr_1st_params = String.Empty;
-        String out_path = "";
-        String out_format = "";
-        String jpg_q = "";
+        private String pr_1st_params = String.Empty;
+        private String out_path = "";
+        private String out_format = "";
+        private String jpg_q = "";
         public Boolean canceled = false;
         public Boolean start_enc = false;
-        
-        Boolean  ok_images = false;
+
+        private Boolean ok_images = false;
 
         public String pr1_first_params
         {
@@ -94,7 +94,7 @@ namespace FFBatch
 
             if (combo_ext.SelectedIndex == 0) jpg_q = "-q:v 6";
             if (combo_ext.SelectedIndex == 1) jpg_q = "-q:v 1";
-            if (combo_ext.SelectedIndex == 2) jpg_q = "-q:v 10";            
+            if (combo_ext.SelectedIndex == 2) jpg_q = "-q:v 10";
             pr_1st_params = pr_1st_params + " " + jpg_q + " ";
 
             //Output path
@@ -160,11 +160,10 @@ namespace FFBatch
             fd1.ShowDialog();
             if (fd1.SelectedPath.Length > 0) txt_path.Text = fd1.SelectedPath;
             else radio_relative.Checked = true;
-
         }
 
         private void radio_absolute_CheckedChanged(object sender, EventArgs e)
-        {            
+        {
             txt_path.Enabled = true;
             txt_path_main.Enabled = false;
             btn_browse.Enabled = true;
@@ -193,7 +192,7 @@ namespace FFBatch
                     combo_resize.Items.Add("800x480");
                     combo_resize.Items.Add("1024x640");
                     combo_resize.Items.Add("1280x720");
-                    combo_resize.Items.Add("1920x1080");                    
+                    combo_resize.Items.Add("1920x1080");
                 }
                 if (radio_4_3.Checked == true)
                 {
@@ -201,9 +200,9 @@ namespace FFBatch
                     combo_resize.Items.Add("320x240");
                     combo_resize.Items.Add("800x600");
                     combo_resize.Items.Add("1024x768");
-                    combo_resize.Items.Add("1280x1024");                    
+                    combo_resize.Items.Add("1280x1024");
                 }
-                
+
                 combo_resize.SelectedIndex = 0;
             }
             else
@@ -242,7 +241,6 @@ namespace FFBatch
             }
         }
 
-    
         private void chk_save_pres_CheckedChanged_1(object sender, EventArgs e)
         {
             if (chk_save_pres.CheckState == CheckState.Checked)
@@ -286,12 +284,10 @@ namespace FFBatch
 
         private void radio_time_CheckedChanged(object sender, EventArgs e)
         {
-            
         }
 
         private void wiz_img_Finished(object sender, EventArgs e)
-        {            
-            
+        {
         }
 
         private void wz_end_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
@@ -300,8 +296,8 @@ namespace FFBatch
             if (chk_save_preset.Checked == true) save_preset = true;
             if (chk_save_preset.Checked == true && txt_preset_name.Text.Length < 5)
             {
-                    MessageBox.Show(FFBatch.Properties.Strings.name_5);
-                    e.Cancel = true;
+                MessageBox.Show(FFBatch.Properties.Strings.name_5);
+                e.Cancel = true;
             }
 
             pr1_first_params = pr_1st_params;
@@ -365,6 +361,7 @@ namespace FFBatch
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AeroWizard5));
             RefreshResources(this, resources);
         }
+
         private void RefreshResources(Control ctrl, ComponentResourceManager res)
         {
             ctrl.SuspendLayout();

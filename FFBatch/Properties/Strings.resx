@@ -379,7 +379,7 @@
     <value>checkbox</value>
   </data>
   <data name="checking_y" xml:space="preserve">
-    <value>Checking youtube-dl latest version...</value>
+    <value>Checking yt-dl latest version...</value>
   </data>
   <data name="Check_for_updates" xml:space="preserve">
     <value>Check for updates</value>
@@ -397,7 +397,7 @@
     <value>Check URLs are ready for capture</value>
   </data>
   <data name="check_ytdl" xml:space="preserve">
-    <value>Checking youtube-dl version...</value>
+    <value>Checking yt-dl version...</value>
   </data>
   <data name="clear_list" xml:space="preserve">
     <value>Clear list</value>
@@ -700,13 +700,13 @@
     <value>Error creating destination file.</value>
   </data>
   <data name="err_down_u" xml:space="preserve">
-    <value>rror downloading the required update, please check your network connection.</value>
+    <value>Error downloading the required update, please check your network connection.</value>
   </data>
   <data name="err_ext_vid" xml:space="preserve">
     <value>Error extracting image from video track.</value>
   </data>
   <data name="err_int_yt" xml:space="preserve">
-    <value>Youtube-dl internal error</value>
+    <value>yt-dl internal error</value>
   </data>
   <data name="err_kf" xml:space="preserve">
     <value>Error obtaining keyframes. Input format is invalid.</value>
@@ -736,13 +736,13 @@
     <value>Error playing file. Only PCM wave files are supported.</value>
   </data>
   <data name="err_yt_2" xml:space="preserve">
-    <value>An error occurred trying to update youtube-dl:</value>
+    <value>An error occurred trying to update yt-dl:</value>
   </data>
   <data name="err_yt_u" xml:space="preserve">
-    <value>Error checking youtube-dl updates.</value>
+    <value>Error checking yt-dl updates.</value>
   </data>
   <data name="err_yt_up" xml:space="preserve">
-    <value>An error occurred trying to update youtube-dl. You can try again, or download and copy the file to application path.</value>
+    <value>An error occurred trying to update yt-dl. You can try again, or download and copy the file to application path.</value>
   </data>
   <data name="est_size" xml:space="preserve">
     <value>Estimated size:</value>
@@ -2597,16 +2597,16 @@
     <value>The pasted link may be a YouTube channel, please use the Download Channel/Playlist button instead.</value>
   </data>
   <data name="yt_not" xml:space="preserve">
-    <value>Youtube-dl was not found.</value>
+    <value>yt-dl was not found.</value>
   </data>
   <data name="yt_params" xml:space="preserve">
-    <value>Youtube-dl params</value>
+    <value>yt-dl params</value>
   </data>
   <data name="yt_pl" xml:space="preserve">
     <value>YouTube Playlist</value>
   </data>
   <data name="yt_req_err" xml:space="preserve">
-    <value>There was an error installing the youtube-dl requirement.</value>
+    <value>There was an error installing the yt-dl requirement.</value>
   </data>
   <data name="yt_str_av" xml:space="preserve">
     <value>YOUTUBE AVAILABLE STREAMS</value>

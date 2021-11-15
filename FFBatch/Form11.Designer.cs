@@ -52,8 +52,8 @@
             // 
             // btn_abort
             // 
-            resources.ApplyResources(this.btn_abort, "btn_abort");
             this.btn_abort.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            resources.ApplyResources(this.btn_abort, "btn_abort");
             this.btn_abort.Name = "btn_abort";
             this.btn_abort.UseVisualStyleBackColor = false;
             this.btn_abort.Click += new System.EventHandler(this.btn_abort_Click);

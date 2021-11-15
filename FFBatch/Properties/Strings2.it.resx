@@ -687,4 +687,19 @@
   <data name="Paste_any_URL" xml:space="preserve">
     <value>Incolla il link</value>
   </data>
+  <data name="encode" xml:space="preserve">
+    <value>Codificare</value>
+  </data>
+  <data name="img_copied" xml:space="preserve">
+    <value>L'immagine è stata copiata negli appunti.</value>
+  </data>
+  <data name="saved_img" xml:space="preserve">
+    <value>Il frame è stato salvato con successo.</value>
+  </data>
+  <data name="save_img" xml:space="preserve">
+    <value>Salva frame</value>
+  </data>
+  <data name="bitrate" xml:space="preserve">
+    <value>Bitrate</value>
+  </data>
 </root>

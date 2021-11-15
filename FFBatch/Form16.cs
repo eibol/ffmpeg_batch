@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Globalization;
 using System.Linq;
+
 //using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
@@ -19,8 +20,7 @@ namespace FFBatch
         public String flnm, ff_params, output_flnm = String.Empty;
         public Boolean start_jobs = true;
         public Boolean view_logs = true;
-        Boolean clearing = false;
-
+        private Boolean clearing = false;
 
         private void item_up_Click(object sender, EventArgs e)
         {
@@ -63,8 +63,7 @@ namespace FFBatch
                 dgv.Rows.Insert(rowIndex + 1, selectedRow);
                 dgv.ClearSelection();
                 dgv.Rows[rowIndex + 1].Cells[colIndex].Selected = true;
-                recount();     
-           
+                recount();
             }
             catch { }
         }
@@ -119,7 +118,7 @@ namespace FFBatch
                 Clipboard.SetText(dg_pr.Rows[e.RowIndex].Cells[2].Value.ToString());
             }
         }
-             
+
         private void tooltips()
         {
             ToolTip toolT0z = new ToolTip();
@@ -138,11 +137,11 @@ namespace FFBatch
             btn_jobs.Enabled = true;
             refresh_lang();
             this.Text = FFBatch.Properties.Strings2.mux_jobs;
-                dg_pr.Columns[1].HeaderText = FFBatch.Properties.Strings.filename;
-                dg_pr.Columns[2].HeaderText = FFBatch.Properties.Strings.ff_params;
-                dg_pr.Columns[3].HeaderText = FFBatch.Properties.Strings2.streams;
-                dg_pr.Columns[4].HeaderText = FFBatch.Properties.Strings.duration;
-                dg_pr.Columns[5].HeaderText = FFBatch.Properties.Strings.output;
+            dg_pr.Columns[1].HeaderText = FFBatch.Properties.Strings.filename;
+            dg_pr.Columns[2].HeaderText = FFBatch.Properties.Strings.ff_params;
+            dg_pr.Columns[3].HeaderText = FFBatch.Properties.Strings2.streams;
+            dg_pr.Columns[4].HeaderText = FFBatch.Properties.Strings.duration;
+            dg_pr.Columns[5].HeaderText = FFBatch.Properties.Strings.output;
             if (Properties.Settings.Default.dark_mode == true)
             {
                 foreach (Control c in this.Controls) UpdateColorDark(c);
@@ -157,8 +156,8 @@ namespace FFBatch
                 dg_pr.BackgroundColor = SystemColors.InactiveBorder;
                 dg_pr.RowsDefaultCellStyle.BackColor = Color.White;
             }
-
         }
+
         public void UpdateColorDark(Control myControl)
         {
             myControl.BackColor = Color.FromArgb(255, 64, 64, 64);
@@ -178,6 +177,7 @@ namespace FFBatch
                 UpdateColorDefault(subC);
             }
         }
+
         private void refresh_lang()
         {
             //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
@@ -185,6 +185,7 @@ namespace FFBatch
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form16));
             RefreshResources(this, resources);
         }
+
         private void RefreshResources(Control ctrl, ComponentResourceManager res)
         {
             ctrl.SuspendLayout();
@@ -211,7 +212,7 @@ namespace FFBatch
                 row.DefaultCellStyle.BackColor = Color.White;
             }
         }
-                
+
         private void btn_jobs_Click(object sender, EventArgs e)
         {
             view_logs = false;
@@ -238,7 +239,7 @@ namespace FFBatch
                 }
             }
             if (ret == true) return;
-            
+
             if (dg_pr.RowCount > 0)
             {
                 start_jobs = true;
@@ -257,7 +258,7 @@ namespace FFBatch
             no_overw = no_overw.Distinct().ToList();
             if (no_overw.Count < count && clearing == false)
             {
-                MessageBox.Show(FFBatch.Properties.Strings.out_exists);             
+                MessageBox.Show(FFBatch.Properties.Strings.out_exists);
             }
             if (dg_pr.RowCount > 0) btn_jobs.Enabled = true;
             else btn_jobs.Enabled = false;
@@ -280,7 +281,7 @@ namespace FFBatch
         }
 
         private void Form16_Resize(object sender, EventArgs e)
-        {            
+        {
             dg_pr.Width = this.Width - 58;
             dg_pr.Height = this.Height - 202;
             dg_pr.Columns[5].Width = this.Width - 950;
@@ -292,7 +293,7 @@ namespace FFBatch
             btn_logs_url.Left = btn_jobs.Left + btn_jobs.Width + 5;
 
             btn_clear_list.Top = this.Height - 127;
-            btn_cancel.Top = this.Height - 127;            
+            btn_cancel.Top = this.Height - 127;
             btn_jobs.Top = this.Height - 131;
             btn_logs_url.Top = this.Height - 132;
 
@@ -312,10 +313,10 @@ namespace FFBatch
             view_logs = false;
             this.Close();
         }
-        
+
         public Form16()
         {
-            InitializeComponent();            
-        }       
+            InitializeComponent();
+        }
     }
 }

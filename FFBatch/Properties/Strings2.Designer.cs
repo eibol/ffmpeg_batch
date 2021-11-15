@@ -214,6 +214,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Bitrate.
+        /// </summary>
+        internal static string bitrate {
+            get {
+                return ResourceManager.GetString("bitrate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Black.
         /// </summary>
         internal static string black {
@@ -484,6 +493,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Encode.
+        /// </summary>
+        internal static string encode {
+            get {
+                return ResourceManager.GetString("encode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Error copying to clipboard..
         /// </summary>
         internal static string err_clipb {
@@ -633,6 +651,15 @@ namespace FFBatch.Properties {
         internal static string frame_size {
             get {
                 return ResourceManager.GetString("frame_size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Image was copied to the clipboard..
+        /// </summary>
+        internal static string img_copied {
+            get {
+                return ResourceManager.GetString("img_copied", resourceCulture);
             }
         }
         
@@ -1353,6 +1380,24 @@ namespace FFBatch.Properties {
         internal static string save_all_str {
             get {
                 return ResourceManager.GetString("save_all_str", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Save current frame.
+        /// </summary>
+        internal static string save_img {
+            get {
+                return ResourceManager.GetString("save_img", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Image was successfuly saved..
+        /// </summary>
+        internal static string saved_img {
+            get {
+                return ResourceManager.GetString("saved_img", resourceCulture);
             }
         }
         

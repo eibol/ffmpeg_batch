@@ -25,10 +25,10 @@ namespace FFBatch
         }
 
         private void init_lang()
-        { 
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang);
-                System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-                RefreshResources(this, resources);
+        {
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
+            RefreshResources(this, resources);
         }
 
         private void Form2_Load(object sender, EventArgs e)

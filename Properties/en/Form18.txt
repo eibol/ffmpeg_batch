@@ -1,8 +1,0 @@
-Create video from still images
-Images display time:
-seconds
-(No progress information during encoding)
-Add audio track
-Browse
-OK
-Cancel

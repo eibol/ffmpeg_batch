@@ -15,7 +15,7 @@ namespace FFBatch
             Rectangle borderRectangle = this.ClientRectangle;
             //borderRectangle.Inflate(-2, -2);
             ControlPaint.DrawBorder3D(e.Graphics, borderRectangle,
-                Border3DStyle.Raised);            
+                Border3DStyle.Raised);
         }
     }
 }

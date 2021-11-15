@@ -17,6 +17,7 @@ namespace FFBatch
     {
         public String app_path = "";
         public Boolean cancel = true;
+
         public Form13()
         {
             InitializeComponent();
@@ -42,8 +43,8 @@ namespace FFBatch
                 foreach (Control c in this.Controls) UpdateColorDark(c);
                 this.BackColor = Color.FromArgb(255, 64, 64, 64);
             }
-            
         }
+
         public void UpdateColorDark(Control myControl)
         {
             myControl.BackColor = Color.FromArgb(255, 64, 64, 64);
@@ -53,6 +54,7 @@ namespace FFBatch
                 UpdateColorDark(subC);
             }
         }
+
         private void refresh_lang()
         {
             //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
@@ -60,6 +62,7 @@ namespace FFBatch
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form13));
             RefreshResources(this, resources);
         }
+
         private void RefreshResources(Control ctrl, ComponentResourceManager res)
         {
             ctrl.SuspendLayout();
@@ -96,15 +99,14 @@ namespace FFBatch
                     MessageBox.Show(FFBatch.Properties.Strings.exe_not_f);
                     return;
                 }
-                    
+
                 cancel = false;
                 this.Close();
             }
             else
             {
-                MessageBox.Show(FFBatch.Properties.Strings.app_p_empty);                
+                MessageBox.Show(FFBatch.Properties.Strings.app_p_empty);
             }
-            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -115,7 +117,7 @@ namespace FFBatch
 
         private void open_f2_FileOk(object sender, CancelEventArgs e)
         {
-            txt_args.Text = open_f2.FileName;            
+            txt_args.Text = open_f2.FileName;
         }
     }
 }

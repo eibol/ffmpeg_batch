@@ -8,7 +8,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace FFBatch
 {
     public partial class AeroWizard3 : Form
@@ -17,27 +16,29 @@ namespace FFBatch
         {
             InitializeComponent();
         }
-        String port_path = System.IO.Path.Combine(Application.StartupPath, "settings") + "\\";
-        Boolean is_portable = false;
-        String saved_pres1 = "";
-        String saved_ext1 = "";
-        Boolean tried_ok = false;
-        Boolean two_try_fail = false;
-        String pr1_params_two = String.Empty;
-        String pr1_ext_two = String.Empty;
-        String pr_1st_params = String.Empty;
-        Boolean cancelled = false;
-        Boolean started = false;
-        Boolean valid = false;
-        Boolean first_page_change = false;
-        String preset_status = FFBatch.Properties.Strings.pending;
+
+        private String port_path = System.IO.Path.Combine(Application.StartupPath, "settings") + "\\";
+        private Boolean is_portable = false;
+        private String saved_pres1 = "";
+        private String saved_ext1 = "";
+        private Boolean tried_ok = false;
+        private Boolean two_try_fail = false;
+        private String pr1_params_two = String.Empty;
+        private String pr1_ext_two = String.Empty;
+        private String pr_1st_params = String.Empty;
+        private Boolean cancelled = false;
+        private Boolean started = false;
+        private Boolean valid = false;
+        private Boolean first_page_change = false;
+        private String preset_status = FFBatch.Properties.Strings.pending;
         public String lv1_item = String.Empty;
 
         public String saved_pres
         {
             get { return saved_pres1; }
-            set { saved_pres1 = value; }        
+            set { saved_pres1 = value; }
         }
+
         public String saved_ext
         {
             get { return saved_ext1; }
@@ -69,12 +70,12 @@ namespace FFBatch
         }
 
         private void cb_w_presets_SelectedIndexChanged(object sender, EventArgs e)
-        {            
+        {
             if (saved_pres.Length > 0)
             {
                 cb_w_presets.Text = FFBatch.Properties.Strings.last_pr;
                 txt_pr_1.Text = saved_pres;
-                txt_ext_1.Text = saved_ext;    
+                txt_ext_1.Text = saved_ext;
                 saved_pres = "";
                 saved_ext = "";
                 return;
@@ -82,7 +83,7 @@ namespace FFBatch
             if (cb_w_presets.SelectedIndex == 0)
             {
                 String path = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch.ini";
-                if (is_portable == true) path = port_path + "ff_batch_portable.ini";                
+                if (is_portable == true) path = port_path + "ff_batch_portable.ini";
 
                 if (!File.Exists(path))
                 {
@@ -98,11 +99,11 @@ namespace FFBatch
                     if (linea == 1) ext1 = line;
                     if (linea > 1) break;
                     linea = linea + 1;
-                }                
-                    txt_ext_1.Text = ext1;
-                    pr1_ext_two = txt_ext_1.Text;
-                    txt_pr_1.Text = pres1;
-                    pr1_params_two = txt_pr_1.Text;                
+                }
+                txt_ext_1.Text = ext1;
+                pr1_ext_two = txt_ext_1.Text;
+                txt_pr_1.Text = pres1;
+                pr1_params_two = txt_pr_1.Text;
             }
             else
             {
@@ -116,14 +117,12 @@ namespace FFBatch
                     {
                         if (line.Substring(4, line.IndexOf("&") - 5) == cb_w_presets.SelectedItem.ToString())
                         {
-
                             int cortar = line.LastIndexOf("%") - line.LastIndexOf("&");
-                            
-                                txt_ext_1.Text = line.Substring(line.LastIndexOf("%") + 2);
-                                pr1_ext_two = txt_ext_1.Text;
-                                txt_pr_1.Text = line.Substring(line.LastIndexOf("&") + 2, cortar - 3);
-                                pr1_params_two = txt_pr_1.Text;                       
-                            
+
+                            txt_ext_1.Text = line.Substring(line.LastIndexOf("%") + 2);
+                            pr1_ext_two = txt_ext_1.Text;
+                            txt_pr_1.Text = line.Substring(line.LastIndexOf("&") + 2, cortar - 3);
+                            pr1_params_two = txt_pr_1.Text;
                         }
                     }
                     i = i + 1;
@@ -177,7 +176,7 @@ namespace FFBatch
                     {
                         txt_ext_1.Text = ext1;
                         txt_pr_1.Text = pres1;
-                        pr1_params_two = txt_pr_1.Text;                        
+                        pr1_params_two = txt_pr_1.Text;
                     }
 
                     foreach (string line in File.ReadLines(path_pr))
@@ -223,7 +222,7 @@ namespace FFBatch
 
             if (txt_pr_1.Text.Contains("h264_nvenc") || txt_pr_1.Text.Contains("hevc_nvenc"))
             {
-                DialogResult a = MessageBox.Show(FFBatch.Properties.Strings.two_nvenc + " "  + '\u0022' + "-preset slow" + '\u0022' +  " " + FFBatch.Properties.Strings.std_pr,  " " + FFBatch.Properties.Strings.nvenc_det, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                DialogResult a = MessageBox.Show(FFBatch.Properties.Strings.two_nvenc + " " + '\u0022' + "-preset slow" + '\u0022' + " " + FFBatch.Properties.Strings.std_pr, " " + FFBatch.Properties.Strings.nvenc_det, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 if (a == DialogResult.Cancel)
                 {
                     cancelled = true;
@@ -298,7 +297,7 @@ namespace FFBatch
 
             if (!txt_pr_end_2.Text.ToLower().Contains("-pass 2"))
             {
-                MessageBox.Show(FFBatch.Properties.Strings.Parameter + " "  + '\u0022' + "-pass 2" + '\u0022' + " was not found on second pass parameters.", "No first pass required parameter found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(FFBatch.Properties.Strings.Parameter + " " + '\u0022' + "-pass 2" + '\u0022' + " was not found on second pass parameters.", "No first pass required parameter found", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 e.Cancel = true;
                 return;
             }
@@ -332,7 +331,7 @@ namespace FFBatch
             txt_tips.BorderStyle = BorderStyle.Fixed3D;
             txt_tips.TextAlign = HorizontalAlignment.Left;
             txt_tips.ReadOnly = true;
-            txt_tips.Text = FFBatch.Properties.Strings.General + " "  + Environment.NewLine + FFBatch.Properties.Strings.two_tip1 + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.two_tip2 + Environment.NewLine + FFBatch.Properties.Strings.two_tip3 + Environment.NewLine + FFBatch.Properties.Strings.two_tip4 + Environment.NewLine + FFBatch.Properties.Strings.two_tip5 + Environment.NewLine + FFBatch.Properties.Strings.two_tip6 + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.two_tip7 + Environment.NewLine + FFBatch.Properties.Strings.two_tip8 + Environment.NewLine + FFBatch.Properties.Strings.two_tip9 + Environment.NewLine + FFBatch.Properties.Strings.two_tip10 + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.two_tip11 + Environment.NewLine + FFBatch.Properties.Strings.first_p + " " + "-c:v libx264 -preset:v fast -profile:v high -b:v 3000K -an -sn -f mp4 -pass 1" + Environment.NewLine + FFBatch.Properties.Strings.second_p + " " + "-map 0 -c:v libx264 -preset:v fast -profile:v high -b:v 3000K -c:a copy -c:s copy -pass 2" + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.two_tip_12;
+            txt_tips.Text = FFBatch.Properties.Strings.General + " " + Environment.NewLine + FFBatch.Properties.Strings.two_tip1 + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.two_tip2 + Environment.NewLine + FFBatch.Properties.Strings.two_tip3 + Environment.NewLine + FFBatch.Properties.Strings.two_tip4 + Environment.NewLine + FFBatch.Properties.Strings.two_tip5 + Environment.NewLine + FFBatch.Properties.Strings.two_tip6 + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.two_tip7 + Environment.NewLine + FFBatch.Properties.Strings.two_tip8 + Environment.NewLine + FFBatch.Properties.Strings.two_tip9 + Environment.NewLine + FFBatch.Properties.Strings.two_tip10 + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.two_tip11 + Environment.NewLine + FFBatch.Properties.Strings.first_p + " " + "-c:v libx264 -preset:v fast -profile:v high -b:v 3000K -an -sn -f mp4 -pass 1" + Environment.NewLine + FFBatch.Properties.Strings.second_p + " " + "-map 0 -c:v libx264 -preset:v fast -profile:v high -b:v 3000K -c:a copy -c:s copy -pass 2" + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.two_tip_12;
             txt_tips.TabIndex = 1;
 
             Button boton_ok_ff = new Button();
@@ -420,7 +419,7 @@ namespace FFBatch
             valid = false;
             if (!txt_pr_two_end.Text.ToLower().Contains("-pass 1"))
             {
-                txt_tip_1st.Text = FFBatch.Properties.Strings.Parameter + " "  + '\u0022' + "-pass 1" + '\u0022' + " " + FFBatch.Properties.Strings.p_req_first;
+                txt_tip_1st.Text = FFBatch.Properties.Strings.Parameter + " " + '\u0022' + "-pass 1" + '\u0022' + " " + FFBatch.Properties.Strings.p_req_first;
                 pic_status.Image = img_status.Images[2];
                 btn_status.Enabled = false;
                 preset_status = FFBatch.Properties.Strings.failed;
@@ -429,7 +428,7 @@ namespace FFBatch
             {
                 if (!txt_pr_two_end.Text.ToLower().Contains(" -f "))
                 {
-                    txt_tip_1st.Text = FFBatch.Properties.Strings.Parameter + " "  + '\u0022' + "-f" + '\u0022' + " " + FFBatch.Properties.Strings.p_req_first;
+                    txt_tip_1st.Text = FFBatch.Properties.Strings.Parameter + " " + '\u0022' + "-f" + '\u0022' + " " + FFBatch.Properties.Strings.p_req_first;
                     pic_status.Image = img_status.Images[2];
                     btn_status.Enabled = false;
                     preset_status = FFBatch.Properties.Strings.failed;
@@ -443,7 +442,6 @@ namespace FFBatch
                         preset_status = FFBatch.Properties.Strings.failed;
                         btn_status.Enabled = true;
                     }
-
                     else
                     {
                         txt_tip_1st.Text = String.Empty;
@@ -453,7 +451,6 @@ namespace FFBatch
                     }
                 }
             }
-
         }
 
         private void txt_pr_end_2_TextChanged(object sender, EventArgs e)
@@ -463,7 +460,7 @@ namespace FFBatch
             valid = false;
             if (!txt_pr_end_2.Text.ToLower().Contains("-pass 2"))
             {
-                txt_tip_2nd.Text = FFBatch.Properties.Strings.Parameter + " "  + '\u0022' + "-pass 2" + '\u0022' + " " + FFBatch.Properties.Strings.p_req_second;
+                txt_tip_2nd.Text = FFBatch.Properties.Strings.Parameter + " " + '\u0022' + "-pass 2" + '\u0022' + " " + FFBatch.Properties.Strings.p_req_second;
                 pic_status.Image = img_status.Images[2];
                 preset_status = FFBatch.Properties.Strings.failed;
                 btn_status.Enabled = false;
@@ -519,7 +516,7 @@ namespace FFBatch
                     }
                     catch (System.Exception excpt)
                     {
-                        MessageBox.Show(FFBatch.Properties.Strings.error + " "  + excpt.Message, FFBatch.Properties.Strings.write_error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(FFBatch.Properties.Strings.error + " " + excpt.Message, FFBatch.Properties.Strings.write_error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         this.InvokeEx(f => this.Cursor = Cursors.Arrow);
                         return;
                     }
@@ -612,8 +609,8 @@ namespace FFBatch
                             unsupported = true;
                         }
                     }
-                    if (unsupported == true) MessageBox.Show(FFBatch.Properties.Strings.enc_fail_first + " "  + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.unsup_enc + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.try_pr, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    else MessageBox.Show(FFBatch.Properties.Strings.enc_fail_first + " "  + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.try_pr, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (unsupported == true) MessageBox.Show(FFBatch.Properties.Strings.enc_fail_first + " " + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.unsup_enc + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.try_pr, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else MessageBox.Show(FFBatch.Properties.Strings.enc_fail_first + " " + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.try_pr, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     this.InvokeEx(f => this.Cursor = Cursors.Arrow);
                     tried_ok = false;
@@ -624,7 +621,6 @@ namespace FFBatch
 
             LB1_o.Items.Clear();
             consola_pre.Dispose();
-
         }
 
         private void BG_Try_1_RunWorkerCompleted(object sender, System.ComponentModel.RunWorkerCompletedEventArgs e)
@@ -672,7 +668,7 @@ namespace FFBatch
                     }
                     catch (System.Exception excpt)
                     {
-                        MessageBox.Show(FFBatch.Properties.Strings.error + " "  + excpt.Message, FFBatch.Properties.Strings.write_error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(FFBatch.Properties.Strings.error + " " + excpt.Message, FFBatch.Properties.Strings.write_error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         this.InvokeEx(f => this.Cursor = Cursors.Arrow);
                         return;
                     }
@@ -795,8 +791,8 @@ namespace FFBatch
                         }
                     }
 
-                    if (unsupported == true) MessageBox.Show(FFBatch.Properties.Strings.enc_fail_second + " "  + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.unsup_enc + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.try_pr, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    else MessageBox.Show(FFBatch.Properties.Strings.enc_fail_second + " "  + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.try_pr, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (unsupported == true) MessageBox.Show(FFBatch.Properties.Strings.enc_fail_second + " " + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.unsup_enc + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.try_pr, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else MessageBox.Show(FFBatch.Properties.Strings.enc_fail_second + " " + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.try_pr, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     this.InvokeEx(f => this.Cursor = Cursors.Arrow);
                     tried_ok = false;
@@ -916,6 +912,7 @@ namespace FFBatch
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AeroWizard3));
             RefreshResources(this, resources);
         }
+
         private void RefreshResources(Control ctrl, ComponentResourceManager res)
         {
             ctrl.SuspendLayout();
@@ -924,5 +921,5 @@ namespace FFBatch
                 RefreshResources(control, res); // recursion
             ctrl.ResumeLayout(false);
         }
-    }    
+    }
 }

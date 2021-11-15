@@ -1,4 +1,0 @@
-FFmpeg Batch silence detector
-Threshold
-Lenght
-Press finish to start silence detection

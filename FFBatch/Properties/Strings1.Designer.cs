@@ -889,7 +889,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Checking youtube-dl version....
+        ///   Busca una cadena traducida similar a Checking yt-dl version....
         /// </summary>
         internal static string check_ytdl {
             get {
@@ -907,7 +907,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Checking youtube-dl latest version....
+        ///   Busca una cadena traducida similar a Checking yt-dl latest version....
         /// </summary>
         internal static string checking_y {
             get {
@@ -1357,6 +1357,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Display multimedia information.
+        /// </summary>
+        internal static string Display_media_information {
+            get {
+                return ResourceManager.GetString("Display_media_information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Display multimedia file info.
         /// </summary>
         internal static string Display_multimedia_file_info {
@@ -1438,7 +1447,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a The URL ouput name is duplicated:.
+        ///   Busca una cadena traducida similar a The URL output name is duplicated:.
         /// </summary>
         internal static string dup_url {
             get {
@@ -1569,6 +1578,15 @@ namespace FFBatch.Properties {
         internal static string enc_test_fail {
             get {
                 return ResourceManager.GetString("enc_test_fail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a FFmpeg Batch - Encoding complete with warning(s)..
+        /// </summary>
+        internal static string enc_warm {
+            get {
+                return ResourceManager.GetString("enc_warm", resourceCulture);
             }
         }
         
@@ -1708,7 +1726,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a rror downloading the required update, please check your network connection..
+        ///   Busca una cadena traducida similar a Error downloading the required update, please check your network connection..
         /// </summary>
         internal static string err_down_u {
             get {
@@ -1726,7 +1744,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Youtube-dl internal error.
+        ///   Busca una cadena traducida similar a yt-dl internal error.
         /// </summary>
         internal static string err_int_yt {
             get {
@@ -1744,7 +1762,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a An error ocurred.
+        ///   Busca una cadena traducida similar a An error occurred.
         /// </summary>
         internal static string err_oc {
             get {
@@ -1771,7 +1789,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a An error ocurred during queue processing:.
+        ///   Busca una cadena traducida similar a An error occurred during queue processing:.
         /// </summary>
         internal static string err_proc_q {
             get {
@@ -1789,7 +1807,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a An error ocurred saving presets file..
+        ///   Busca una cadena traducida similar a An error occurred saving presets file..
         /// </summary>
         internal static string err_saving_pres {
             get {
@@ -1816,7 +1834,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a An error ocurred trying to update youtube-dl:.
+        ///   Busca una cadena traducida similar a An error occurred trying to update yt-dl:.
         /// </summary>
         internal static string err_yt_2 {
             get {
@@ -1825,7 +1843,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Error checking youtube-dl updates..
+        ///   Busca una cadena traducida similar a Error checking yt-dl updates..
         /// </summary>
         internal static string err_yt_u {
             get {
@@ -1834,7 +1852,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a An error ocurred trying to update youtube-dl. You can try again, or download and copy the file to application path..
+        ///   Busca una cadena traducida similar a An error occurred trying to update yt-dl. You can try again, or download and copy the file to application path..
         /// </summary>
         internal static string err_yt_up {
             get {
@@ -2257,7 +2275,8 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Selected file is not ffprobe.exe..
+        ///   Busca una cadena traducida similar a Selected file is not 
+        ///    ..
         /// </summary>
         internal static string ffp_not {
             get {
@@ -2995,7 +3014,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Jobs list was already processed. Please reset status with botton at the top right corner to start it over..
+        ///   Busca una cadena traducida similar a Jobs list was already processed. Please reset status with button at the top right corner to start it over..
         /// </summary>
         internal static string jobs_reset {
             get {
@@ -3265,7 +3284,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Maximum list lenght reached.
+        ///   Busca una cadena traducida similar a Maximum list length reached.
         /// </summary>
         internal static string max_list {
             get {
@@ -4372,7 +4391,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Ouput folder not configured.
+        ///   Busca una cadena traducida similar a Output folder not configured.
         /// </summary>
         internal static string out_conf {
             get {
@@ -4597,7 +4616,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Parameter unncessary.
+        ///   Busca una cadena traducida similar a Parameter unnecessary.
         /// </summary>
         internal static string param_in {
             get {
@@ -4939,7 +4958,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a An error ocurred while saving pre-input configuration. Please ensure you have path access rights ..
+        ///   Busca una cadena traducida similar a An error occurred while saving pre-input configuration. Please ensure you have path access rights ..
         /// </summary>
         internal static string pre_in_path {
             get {
@@ -5749,7 +5768,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Save this track.
+        ///   Busca una cadena traducida similar a Save this track(s).
         /// </summary>
         internal static string save_track {
             get {
@@ -6046,7 +6065,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a An error ocurred skipping version:.
+        ///   Busca una cadena traducida similar a An error occurred skipping version:.
         /// </summary>
         internal static string skip_err {
             get {
@@ -6280,7 +6299,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a FFmpeg Batch stream saving succesfully completed.
+        ///   Busca una cadena traducida similar a FFmpeg Batch stream saving successfully completed.
         /// </summary>
         internal static string stream_saved {
             get {
@@ -6312,6 +6331,15 @@ namespace FFBatch.Properties {
         internal static string streams_f {
             get {
                 return ResourceManager.GetString("streams_f", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a .
+        /// </summary>
+        internal static string String {
+            get {
+                return ResourceManager.GetString("String", resourceCulture);
             }
         }
         
@@ -6667,7 +6695,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Trimming lenght is 0..
+        ///   Busca una cadena traducida similar a Trimming length is 0..
         /// </summary>
         internal static string trim_z {
             get {
@@ -6982,7 +7010,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Two pass enconding tips.
+        ///   Busca una cadena traducida similar a Two pass encoding tips.
         /// </summary>
         internal static string two_tips {
             get {
@@ -7054,7 +7082,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Connection error finding updates.
+        ///   Busca una cadena traducida similar a Connection error.
         /// </summary>
         internal static string up_err {
             get {
@@ -7468,6 +7496,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Input filename contains character [ ]. Please remove those characters to avoid error when using -vf filter..
+        /// </summary>
+        internal static string wrong_chr {
+            get {
+                return ResourceManager.GetString("wrong_chr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Yes.
         /// </summary>
         internal static string yes {
@@ -7495,7 +7532,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Youtube-dl was not found..
+        ///   Busca una cadena traducida similar a yt-dl was not found..
         /// </summary>
         internal static string yt_not {
             get {
@@ -7504,7 +7541,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Youtube-dl params.
+        ///   Busca una cadena traducida similar a yt-dl params.
         /// </summary>
         internal static string yt_params {
             get {
@@ -7522,7 +7559,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a There was an error installing the youtube-dl requirement..
+        ///   Busca una cadena traducida similar a There was an error installing the yt-dl requirement..
         /// </summary>
         internal static string yt_req_err {
             get {

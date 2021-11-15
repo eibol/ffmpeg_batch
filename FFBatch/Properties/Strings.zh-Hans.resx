@@ -379,7 +379,7 @@
     <value>复选框</value>
   </data>
   <data name="checking_y" xml:space="preserve">
-    <value>检查youtube-dl最新版本...</value>
+    <value>检查yt-dll最新版本...</value>
   </data>
   <data name="Check_for_updates" xml:space="preserve">
     <value>检查更新</value>
@@ -397,7 +397,7 @@
     <value>检查URL是否已准备好捕获</value>
   </data>
   <data name="check_ytdl" xml:space="preserve">
-    <value>检查youtube-dl版本...</value>
+    <value>检查yt-dll版本...</value>
   </data>
   <data name="clear_list" xml:space="preserve">
     <value>清除列表</value>
@@ -706,7 +706,7 @@
     <value>从视频轨道中提取图像时出错。</value>
   </data>
   <data name="err_int_yt" xml:space="preserve">
-    <value>Youtube-dl内部错误</value>
+    <value>yt-dll内部错误</value>
   </data>
   <data name="err_kf" xml:space="preserve">
     <value>获取关键帧时出错，输入格式无效。</value>
@@ -736,13 +736,13 @@
     <value>播放文件时出错，仅支持PCM波形文件</value>
   </data>
   <data name="err_yt_2" xml:space="preserve">
-    <value>尝试更新youtube-dl时发生错误:</value>
+    <value>尝试更新yt-dll时发生错误:</value>
   </data>
   <data name="err_yt_u" xml:space="preserve">
-    <value>检查youtube-dl更新时出错</value>
+    <value>检查yt-dll更新时出错</value>
   </data>
   <data name="err_yt_up" xml:space="preserve">
-    <value>尝试更新youtube-dl时发生错误。您可以再试一次，或者下载并复制文件到应用程序路径。</value>
+    <value>尝试更新yt-dll时发生错误。您可以再试一次，或者下载并复制文件到应用程序路径。</value>
   </data>
   <data name="est_size" xml:space="preserve">
     <value>预估大小:</value>
@@ -2597,16 +2597,16 @@
     <value>粘贴的链接可能是YouTube频道，请改用下载频道/播放列表按钮。</value>
   </data>
   <data name="yt_not" xml:space="preserve">
-    <value>未找到Youtube-dl</value>
+    <value>未找到yt-dll</value>
   </data>
   <data name="yt_params" xml:space="preserve">
-    <value>Youtube-dl参数</value>
+    <value>yt-dll参数</value>
   </data>
   <data name="yt_pl" xml:space="preserve">
     <value>YouTube播放列表</value>
   </data>
   <data name="yt_req_err" xml:space="preserve">
-    <value>安装youtube-dl要求时出错</value>
+    <value>安装yt-dll要求时出错</value>
   </data>
   <data name="yt_str_av" xml:space="preserve">
     <value>YOUTUBE可用的流</value>

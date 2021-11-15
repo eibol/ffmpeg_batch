@@ -6,10 +6,10 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Net;
+using System.Security.Cryptography;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Security.Cryptography;
 
 namespace FFBatch
 {
@@ -19,18 +19,17 @@ namespace FFBatch
         {
             InitializeComponent();
         }
-
-        public Boolean dark = false;
+                
         public Boolean autorun = false;
         public Boolean automulti = false;
         public Boolean changed_lang = false;
         public String lang_set = "";
         public String ff_ver = String.Empty;
-        System.Media.SoundPlayer soundPl = new System.Media.SoundPlayer();
-        String port_path = System.IO.Path.Combine(Application.StartupPath, "settings") + "\\";
+        private System.Media.SoundPlayer soundPl = new System.Media.SoundPlayer();
+        private String port_path = System.IO.Path.Combine(Application.StartupPath, "settings") + "\\";
         public Boolean delete_def;
         public Boolean delete_one;
-        String new_ver = "";
+        private String new_ver = "";
         public Boolean edit_presets = false;
         private Boolean playing = false;
         private RichTextBox Rtxt = new RichTextBox();
@@ -48,7 +47,7 @@ namespace FFBatch
         public Boolean suffix;
         public Boolean try_preset;
         public String txt_suffix_str;
-        public Boolean cancel;
+        public Boolean cancel = false;
         public String txt_preset_str;
         public String txt_format_str;
         private Boolean is_portable = false;
@@ -149,7 +148,7 @@ namespace FFBatch
             if (File.Exists(portable_flag)) is_portable = true;
             else is_portable = false;
 
-            if (dark == true)
+            if (Properties.Settings.Default.dark_mode == true)
             {
                 foreach (Control c in this.Controls) UpdateColorDark(c);
                 this.BackColor = Color.FromArgb(255, 64, 64, 64);
@@ -173,7 +172,7 @@ namespace FFBatch
             edit_presets = false;
             browse_sound.InitialDirectory = Application.StartupPath;
 
-            //Read configuration            
+            //Read configuration
 
             String path_s = String.Empty;
             if (is_portable == false)
@@ -381,7 +380,6 @@ namespace FFBatch
                 chk_sleep.CheckState = CheckState.Unchecked;
                 to_sleep = false;
             }
-
 
             //End computer to sleep
 
@@ -768,7 +766,6 @@ namespace FFBatch
                 if (File.Exists(f_multi)) chk_auto_multi.Checked = true;
                 else chk_auto_multi.Checked = false;
             }
-
             else
             {
                 chk_auto_start.Checked = false;
@@ -780,14 +777,12 @@ namespace FFBatch
                 }
                 catch
                 {
-
                 }
             }
 
             //End autorun settings
 
             //FFmpeg latest version
-
 
             if (ff_ver == FFBatch.Properties.Strings.error)
             {
@@ -804,7 +799,6 @@ namespace FFBatch
                 pic_ver.Left = lbl_ff_latest.Left + lbl_ff_latest.Text.Length + 60;
                 pic_ff_ok.Visible = false;
                 new_ver = ff_ver;
-
             }
             else
             {
@@ -1228,7 +1222,6 @@ namespace FFBatch
             btn_save.Enabled = true;
             btn_stop_play.Visible = false;
             btn_play_sound.Visible = true;
-
         }
 
         private void chk_w_position_CheckedChanged(object sender, EventArgs e)
@@ -1323,6 +1316,7 @@ namespace FFBatch
             RefreshResources(this, resources);
             changed_lang = true;
         }
+
         private void RefreshResources(Control ctrl, ComponentResourceManager res)
         {
             ctrl.SuspendLayout();
@@ -1374,7 +1368,7 @@ namespace FFBatch
 
         private void btn_add_ex_Click(object sender, EventArgs e)
         {
-            //Check MD5 ffmpeg           
+            //Check MD5 ffmpeg
 
             Form25 frm25 = new Form25();
             frm25.crypt = false;
@@ -1404,18 +1398,12 @@ namespace FFBatch
             {
                 UpdateColorDefault(subC);
             }
-        }
-
-
-        private void Form3_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            //if (cancel == false) Properties.Settings.Default.Save();            
-        }
+        }       
 
         private void btn_dark_Click(object sender, EventArgs e)
         {
-            dark = !dark;
-            if (dark == true)
+            Properties.Settings.Default.dark_mode = !Properties.Settings.Default.dark_mode;
+            if (Properties.Settings.Default.dark_mode == true)
             {
                 foreach (Control c in this.Controls) UpdateColorDark(c);
                 this.BackColor = Color.FromArgb(255, 64, 64, 64);
@@ -1430,30 +1418,35 @@ namespace FFBatch
                 Properties.Settings.Default.dark_mode = false;
                 btn_dark.Image = pic_night.InitialImage;
                 btn_dark.Text = Properties.Strings2.en_night;
-            }            
+            }
+            Properties.Settings.Default.Save();
         }
 
         private void Form3_FormClosing_1(object sender, FormClosingEventArgs e)
         {
             if (cancel == true)
             {
-                if (dark == false)
-                {
-                    foreach (Control c in this.Controls) UpdateColorDark(c);
-                    this.BackColor = Color.FromArgb(255, 64, 64, 64);
-                    Properties.Settings.Default.dark_mode = true;
-                    btn_dark.Image = pic_night.Image;
-                    btn_dark.Text = Properties.Strings2.en_day;
-                }
-                else
-                {
-                    foreach (Control c in this.Controls) UpdateColorDefault(c);
-                    this.BackColor = SystemColors.InactiveBorder;
-                    Properties.Settings.Default.dark_mode = false;
-                    btn_dark.Image = pic_night.InitialImage;
-                    btn_dark.Text = Properties.Strings2.en_night;
-                }
+                Properties.Settings.Default.dark_mode = !Properties.Settings.Default.dark_mode;
+                Properties.Settings.Default.Save();
             }
+            //{
+                //if (dark == false)
+                //{
+                //    foreach (Control c in this.Controls) UpdateColorDark(c);
+                //    this.BackColor = Color.FromArgb(255, 64, 64, 64);
+                //    Properties.Settings.Default.dark_mode = true;
+                //    btn_dark.Image = pic_night.Image;
+                //    btn_dark.Text = Properties.Strings2.en_day;
+                //}
+                //else
+                //{
+                //    foreach (Control c in this.Controls) UpdateColorDefault(c);
+                //    this.BackColor = SystemColors.InactiveBorder;
+                //    Properties.Settings.Default.dark_mode = false;
+                //    btn_dark.Image = pic_night.InitialImage;
+                //    btn_dark.Text = Properties.Strings2.en_night;
+                //}
+            //}
         }
     }
 }

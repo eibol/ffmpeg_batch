@@ -9,6 +9,7 @@ using System.Linq;
 using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,7 +21,7 @@ namespace FFBatch
         public String url_dg_item = String.Empty;
         public String thumb_url_streams = String.Empty;
         public String format_ID = "";
-        Boolean working = true;
+        private Boolean working = true;
 
         public Form8()
         {
@@ -48,6 +49,7 @@ namespace FFBatch
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form8));
             RefreshResources(this, resources);
         }
+
         private void RefreshResources(Control ctrl, ComponentResourceManager res)
         {
             ctrl.SuspendLayout();
@@ -78,7 +80,7 @@ namespace FFBatch
         }
 
         private void Form8_Load(object sender, EventArgs e)
-        {            
+        {
             init_dg();
             if (Properties.Settings.Default.dark_mode == true)
             {
@@ -99,7 +101,7 @@ namespace FFBatch
             Process yt = new Process();
             Task t2 = Task.Run(() =>
             {
-                yt.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "youtube-dl.exe");
+                yt.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe");
                 yt.StartInfo.Arguments = "-F " + url_dg_item;
                 yt.StartInfo.RedirectStandardOutput = true;
                 yt.StartInfo.UseShellExecute = false;
@@ -111,28 +113,67 @@ namespace FFBatch
                 while (!yt.StandardOutput.EndOfStream)
                 {
                     stream = yt.StandardOutput.ReadLine();
+                    //MessageBox.Show(stream);
                     result = result + stream;
-                    if (stream != null && stream != String.Empty && !stream.ToLower().Contains("format code") && !stream.ToLower().Contains("downloading webpage") && !stream.ToLower().Contains("available formats") && !stream.ToLower().Contains("downloading mpd manifest") && !stream.ToLower().Contains("downloading m3u8 information"))
+                    if (stream != null && stream != String.Empty && !stream.ToLower().Contains("format code") && !stream.ToLower().Contains("downloading webpage") && !stream.ToLower().Contains("available formats") && !stream.ToLower().Contains("downloading mpd manifest") && !stream.ToLower().Contains("downloading m3u8 information") && !stream.ToLower().Contains("downloading android player api json") && !stream.ToLower().Contains("available formats") && !stream.ToLower().Contains("downloading mpd manifest") && !stream.ToLower().Contains("downloading m3u8 information") && !stream.ToLower().Contains("id  ext  resolution fps") && !stream.ToLower().Contains("--------"))
                     {
-                        dg_streams.Invoke(new MethodInvoker(delegate
+                        try
                         {
-                            String ext = stream.Substring(stream.IndexOf("          ") + 10, 4).Trim();
-                            int j = stream.Length - (stream.Length - stream.Substring(stream.LastIndexOf("       ") + 7).Length);
-                            j = j - stream.Substring(stream.LastIndexOf(" , ") - 6).Length;
-                            String res = stream.Substring(stream.LastIndexOf("       ") + 7, j);
-
-                            int i = stream.Length - (stream.Length - stream.Substring(stream.LastIndexOf(" , ") + 3).Length);
-                            String codec = UppercaseFirst(stream.Substring(stream.LastIndexOf(" , ") + 3, i));
-                            if (!stream.ToLower().Contains("audio only"))
+                            dg_streams.Invoke(new MethodInvoker(delegate
                             {
-                                dg_streams.Rows.Add(image_streams.Images[0], false, stream.Substring(0, stream.IndexOf("     ")).Trim(), ext, res, codec.Replace("MiB", " MB"));
-                            }
-                            else
-                            {
-                                dg_streams.Rows.Add(image_streams.Images[1], false, stream.Substring(0, stream.IndexOf("     ")).Trim(), ext, res.Replace("tiny", "   0p"), codec.Replace("MiB", " MB"));
-                            }                            
-                        }));
+                                String[] split = stream.Split(' ');
+                                String Bitrate = "";
+                                foreach (String str in split)
+                                {
+                                    if (str.Length > 0)
+                                    {
+                                        if (str.Substring(str.Length - 1, 1).ToLower() == "k")
+                                        {
+                                            Bitrate = str;
+                                            stream = stream.Replace(str, "");
+                                            break;
+                                        }
+                                    }
+                                }
 
+                                int start_c = stream.LastIndexOf("|") + 1;
+                                int str_l = stream.Length;
+                                int length = str_l - start_c;
+                                String codec = Regex.Replace(stream.Substring(start_c, length), " {2,}", " ").Replace("mp4_dash", "").Replace("webm_dash", "").Replace("m4a_dash", "").TrimEnd();
+                                if (codec.Substring(codec.Length - 1, 1) == ",")
+                                {
+                                    codec = codec.Substring(0, codec.Length - 1);
+                                }
+
+                                String[] split2 = codec.Split(' ');
+                                String resol = "";
+                                foreach (String str in split2)
+                                {
+                                    if (str.Length > 0)
+                                    {
+                                        if (str.Substring(str.Length - 1, 1).ToLower() == "p")
+                                        {
+                                            resol = str;
+                                            codec = codec.Replace(str, "");
+                                            break;
+                                        }
+                                    }
+                                }
+
+                                if (stream.ToLower().Contains("audio only"))
+                                {
+                                    dg_streams.Rows.Add(image_streams.Images[1], false, stream.Substring(0, 3).TrimEnd(), stream.Substring(4, 4).TrimEnd(), "Audio", codec, "-", Bitrate);
+                                }
+                                else
+                                {
+                                    dg_streams.Rows.Add(image_streams.Images[0], false, stream.Substring(0, 3).TrimEnd(), stream.Substring(4, 4).TrimEnd(), stream.Substring(9, 9).TrimEnd(), codec, resol, Bitrate);
+                                }
+                            }));
+                        }
+                        catch
+                        {
+                            dg_streams.Rows.Add(image_streams.Images[1], false, Properties.Strings.error, "-", "-");
+                        }
                     }
                 }
 
@@ -146,7 +187,7 @@ namespace FFBatch
 
                 dg_streams.Invoke(new MethodInvoker(delegate
                 { dg_streams.Visible = true; }));
-                                
+
                 txt_file.Invoke(new MethodInvoker(delegate
                 {
                     txt_file.Text = url_dg_item;
@@ -165,16 +206,13 @@ namespace FFBatch
                         btn_select.Enabled = false;
                         label1.Visible = true;
                     }));
-                    
-                    
                 }
                 else
                 {
                     this.Invoke(new MethodInvoker(delegate
                     {
-                        btn_close.Enabled = true;                        
+                        btn_close.Enabled = true;
                     }));
-
                 }
                 dg_streams.Invoke(new MethodInvoker(delegate
                 {
@@ -183,12 +221,14 @@ namespace FFBatch
             });
             dg_streams.Sort(dg_streams.Columns[4], ListSortDirection.Descending);
 
-            this.Text = FFBatch.Properties.Strings.yt_str_av2;                         
-                dg_streams.Columns[1].HeaderText = FFBatch.Properties.Strings.Use;
-                dg_streams.Columns[2].HeaderText = FFBatch.Properties.Strings.format_id;
-                dg_streams.Columns[3].HeaderText = FFBatch.Properties.Strings.extension;
-                dg_streams.Columns[4].HeaderText = FFBatch.Properties.Strings.resolution;
-                dg_streams.Columns[5].HeaderText = FFBatch.Properties.Strings.codec;            
+            this.Text = FFBatch.Properties.Strings.yt_str_av2;
+            dg_streams.Columns[1].HeaderText = FFBatch.Properties.Strings.Use;
+            dg_streams.Columns[2].HeaderText = FFBatch.Properties.Strings.format_id;
+            dg_streams.Columns[3].HeaderText = FFBatch.Properties.Strings.extension;
+            dg_streams.Columns[4].HeaderText = FFBatch.Properties.Strings.size;
+            dg_streams.Columns[5].HeaderText = FFBatch.Properties.Strings.codec;
+            dg_streams.Columns[6].HeaderText = FFBatch.Properties.Strings.resolution;
+            dg_streams.Columns[7].HeaderText = FFBatch.Properties.Strings2.bitrate;
         }
 
         private void btn_close_Click(object sender, EventArgs e)
@@ -204,7 +244,7 @@ namespace FFBatch
             Boolean mark = false;
 
             foreach (DataGridViewRow row1 in dg_streams.Rows)
-            {                
+            {
                 if (row1.Cells[1].Value.ToString().ToLower() == "true")
                 {
                     mark = true;
@@ -216,28 +256,27 @@ namespace FFBatch
                 MessageBox.Show(FFBatch.Properties.Strings.no_chk_str);
                 return;
             }
-            
-                foreach (DataGridViewRow row in dg_streams.Rows)
+
+            foreach (DataGridViewRow row in dg_streams.Rows)
             {
                 if (Convert.ToBoolean(row.Cells[1].Value) == true)
                 {
                     i = i + 1;
                     if (row.Cells[4].Value.ToString().ToLower().Contains("audio"))
                     {
-                        f_aud =row.Cells[2].Value.ToString();                        
+                        f_aud = row.Cells[2].Value.ToString();
                     }
                     else
                     {
-
                         f_vid = row.Cells[2].Value.ToString();
                     }
                     if (i > 2)
                     {
                         MessageBox.Show(FFBatch.Properties.Strings.two_comp_f);
-                        return;                        
+                        return;
                     }
                 }
-            }           
+            }
 
             if (f_vid == String.Empty) format_ID = f_aud;
             if (f_aud == String.Empty) format_ID = f_vid;
@@ -256,10 +295,10 @@ namespace FFBatch
             // Return char and concat substring.
             return char.ToUpper(text[0]) + text.Substring(1);
         }
-        
+
         private void Form8_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (working == true) e.Cancel = true;
-        }     
+        }
     }
 }
