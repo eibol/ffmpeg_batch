@@ -177,6 +177,7 @@ namespace FFBatch
         public Dictionary<string, Process> procs = new Dictionary<string, Process>();
         private Dictionary<string, Point> points = new Dictionary<string, Point>();
         private Dictionary<string, Size> sizes = new Dictionary<string, Size>();
+        private Dictionary<string, PictureBox> m_images = new Dictionary<string, PictureBox>();
         private Dictionary<string, String> multi_logs = new Dictionary<string, String>();
         private Dictionary<string, String> multi_params = new Dictionary<string, String>();
         public List<string> multi_speeds = new List<string>();
@@ -2862,7 +2863,7 @@ namespace FFBatch
             String f_out_color = combo_vout_color.SelectedIndex == 1 ? "White" : "Black";
 
             String in_color = combo_vin_col.SelectedIndex == 2 ? ":alpha=1" : ":color=" + f_in_color;
-            String out_color = combo_vout_color.SelectedIndex == 2 ":alpha=1" : ":color=" + f_out_color;
+            String out_color = combo_vout_color.SelectedIndex == 2 ? ":alpha=1" : ":color=" + f_out_color;
 
             int preset_run = 1;
             int to_go = n_multi_presets;
@@ -6484,24 +6485,29 @@ namespace FFBatch
 
                 Form24 frm24 = new Form24();
                 frm24.ShowDialog();
-                switch (frm24.combo_lang.SelectedIndex) {
+
+                switch (frm24.combo_lang.SelectedIndex)
+                {
+                    case 0:
+                        language = "en";
+                        break;
                     case 1:
                         language = "es";
                         break;
                     case 2:
                         language = "it";
                         break;
-                    case 4:
+                    case 3:
                         language = "pt-BR";
                         break;
-                    case 5:
+                    case 4:
                         language = "zh-Hans";
                         break;
-                    case 0:
-                    case 3:
                     default:
                         language = "en";
+                        break;
                 }
+
                 File.WriteAllText(f_lang, language);
                 FFBatch.Properties.Settings.Default.app_lang = language;
                 FFBatch.Properties.Settings.Default.Save();
@@ -7142,7 +7148,7 @@ namespace FFBatch
                     f_nologs = port_path + "ff_nologs_portable.ini";
                 }
 
-                no_save_logs = (File.Exists(f_nologs);
+                no_save_logs = (File.Exists(f_nologs));
                 //End do not save logs
 
                 //Verbose logs
@@ -16650,7 +16656,7 @@ namespace FFBatch
         private void chk_subfolders_CheckedChanged(object sender, EventArgs e)
         {
             add_subfs = chk_subfolders.Checked;
-            Boolean prev_state = chk_subfolders.CheckState == CheckState.Uncheckede;
+            Boolean prev_state = chk_subfolders.CheckState == CheckState.Unchecked;
 
             String path = String.Empty;
             if (is_portable == false)
@@ -36136,11 +36142,12 @@ namespace FFBatch
             this.InvokeEx(f => f.btn_cancel_validate.Enabled = true);
 
             procs.Clear();
+            m_images.Clear();
             for (int ii = 0; ii < dg1.RowCount; ii++)
             {
                 procs.Add("proc_urls_" + ii.ToString(), new Process());
+                m_images.Add("pics_" + ii.ToString(), new PictureBox());
             }
-
             clean_imgs();
 
             ParallelOptions par_op = new ParallelOptions();
@@ -36229,6 +36236,7 @@ namespace FFBatch
                         form_prog2.abort_validate = true;
                     }
                     var tmp = procs["proc_urls_" + file_int.ToString()];
+                    var imgs_th = m_images["pics_" + file_int.ToString()];
 
                     tmp.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe");
                     tmp.StartInfo.Arguments = "--get-duration --get-title --get-thumbnail " + '\u0022' + dg1.Rows[file_int].Cells[1].Value.ToString() + '\u0022';
@@ -36310,26 +36318,19 @@ namespace FFBatch
                             pr.WaitForExit();
 
                             Image img;
+
                             using (var bmpTemp = new Bitmap(Path.Combine(path_pic, "pic_ffb_" + thumbs_count.ToString() + ".jpg")))
                             {
                                 img = new Bitmap(bmpTemp);
-                                pic.Image = img;
+                                imgs_th.Image = img;
                             }
                         }
-                        else pic.Load(out_thumb);
-
-                        dg_thumbs[file_int] = pic.Image;
-                        pic_frame.Image = pic.Image;
-                        if (pic_frame.Image == null) pic_frame.Image = pic_frame.InitialImage;
-                        lbl_a_th.Text = "-";
-                        lbl_s_th.Text = "-";
-                        lbl_v_th.Text = "-";
-                        lbl_gb_th.Text = "-";
+                        else
+                        {
+                            imgs_th.Load(out_thumb);
+                        }
                     }
-                    catch
-                    {
-                        dg_thumbs[file_int] = pic_noimg.Image;
-                    }
+                    catch { imgs_th.Image = pic_noimg.Image; }
 
                     this.InvokeEx(f => f.dg1.Rows[file_int].Cells[0].Value = dg_thumbs[file_int]);
 
