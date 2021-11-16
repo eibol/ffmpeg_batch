@@ -17892,26 +17892,31 @@ namespace FFBatch
                         }                        
                             if (tbit_col != 0)
                             {
-                                try
-                                {
-                                    FileInfo fi = new FileInfo(listView1.Items[i].SubItems[1].Text + "\\" + listView1.Items[i].Text);
-                                    Double size = fi.Length;                                    
-                                    Double dur = TimeSpan.Parse(listView1.Items[i].SubItems[3].Text).TotalSeconds;
-                                    Double bytes = Math.Round((size / dur * 8 / 1000), 0);
-                                String subit = "0 Kb";
-                                if (bytes >= 1000000) subit = (bytes / 1000000).ToString("#,##0.0") + " " + "Gb/s";
-                                if (bytes >= 10000 && bytes < 1000000)
-                                {
-                                    subit = (bytes / 1000).ToString("#,##0.0") + " " + "Mb/s";
-                                    //if (size.Length == 9) size = (size.Substring(0, 1) + sep_th + size.Substring(1, size.Length - 1));
-                                }
+                            Double bytes = 0;
+                            try
+                            {                            
+                                 FileInfo fi = new FileInfo(listView1.Items[i].SubItems[1].Text + "\\" + listView1.Items[i].Text);
+                                 Double size = fi.Length;
+                                 Double dur = 0;
 
-                                ////if (bytes < 100000 && bytes > 10000) size = bytes / 1000 + " " + "Mb/s";
-                                if (bytes < 10000) subit = bytes.ToString("#,##0") + " " + "Kb/s";
+                                    TimeSpan time;
+                                if (TimeSpan.TryParse(listView1.Items[i].SubItems[3].Text, out time))
+                                {
+                                    dur = TimeSpan.Parse(listView1.Items[i].SubItems[3].Text).TotalSeconds;
+                                    if (dur > 0) bytes = Math.Round((size / dur * 8 / 1000), 0);
+                                    else bytes = 0;
+                                }  
+
+                                    String subit = "";
+                                    if (bytes >= 1000000) subit = (bytes / 1000000).ToString("#,##0.0") + " " + "Gb/s";
+                                    else if (bytes >= 10000 && bytes < 1000000)
+                                    subit = (bytes / 1000).ToString("#,##0.0") + " " + "Mb/s";
+                                    else if (bytes < 10000) subit = bytes.ToString("#,##0") + " " + "Kb/s";
+                                    else if (bytes == 0 || bytes > 100000000000000) subit = "0 Kb/s";
                                 listView1.Items[i].SubItems[tbit_col].Text = subit;
                             }
-                                catch { listView1.Items[i].SubItems[tbit_col].Text = "-"; }
-                            }
+                            catch { listView1.Items[i].SubItems[tbit_col].Text = "0 Kb/s"; }
+                        }
                      
                     }));                    
                 }
