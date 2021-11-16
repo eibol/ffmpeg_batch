@@ -508,7 +508,7 @@ namespace FFBatch
             Boolean is_audio = false;
             foreach (String str in audios)
             {
-                if (txt_file.Text.ToLower().Substring(txt_file.Text.Length - 3º1q   , 3).Contains(str))
+                if (txt_file.Text.ToLower().Substring(txt_file.Text.Length - 3, 3).Contains(str))
                     {
                     is_audio = true;
                     break;
