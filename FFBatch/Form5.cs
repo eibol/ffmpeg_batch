@@ -504,7 +504,18 @@ namespace FFBatch
 
         private void save_copy_img()
         {
-            if (txt_file.Text.ToLower().Substring(0, 4).Contains("http"))
+            String[] audios = new string[] { "lac", "lac", "aac", "ac3", "mp3", "oga", "mka", "opus" };
+            Boolean is_audio = false;
+            foreach (String str in audios)
+            {
+                if (txt_file.Text.ToLower().Substring(txt_file.Text.Length - 3º1q   , 3).Contains(str))
+                    {
+                    is_audio = true;
+                    break;
+                    }
+            }
+
+            if (txt_file.Text.ToLower().Substring(0, 4).Contains("http") || is_audio == true)
             {
                 if (copy_img == false)
                 {
