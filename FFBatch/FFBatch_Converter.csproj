@@ -447,9 +447,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.pl.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.pt-BR.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -722,9 +719,6 @@
     <EmbeddedResource Include="Form3.it.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.pl.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form3.pt-BR.resx">
       <DependentUpon>Form3.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -821,6 +815,7 @@
     <EmbeddedResource Include="Properties\Strings.es.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.es1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Strings.it.resx" />
     <EmbeddedResource Include="Properties\Strings.pt-BR.resx" />
