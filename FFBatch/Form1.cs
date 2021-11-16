@@ -7413,7 +7413,7 @@ namespace FFBatch
                         listView1.Columns[0].Width = listView1.Columns[0].Width - 110;
                     }));
                 }
-                if (str.Contains(FFBatch.Properties.Strings2.bitrate))
+                if (str.Contains(FFBatch.Properties.Strings2.bitrate) && !str.ToLower().Contains("video") && !str.ToLower().Contains("audio") && !str.ToLower().Contains("vídeo") && !str.ToLower().Contains("视频") && !str.ToLower().Contains("音"))
                 {
                     listView1.Invoke(new MethodInvoker(delegate
                     {
@@ -17356,25 +17356,21 @@ namespace FFBatch
                     itemsToAdd[n].SubItems.Add(videoSize);
                     itemsToAdd[n].SubItems.Add(FFBatch.Properties.Strings.queued);
 
-                    Boolean has_tbit = false;
+                    int has_tbit = 0;
                     foreach (ColumnHeader col in listView1.Columns)
                     {
-                        if (col.Text.Contains(Properties.Strings2.bitrate))
+                        if (col.Text.Contains(FFBatch.Properties.Strings2.bitrate) && !col.Text.ToLower().Contains("video") && !col.Text.ToLower().Contains("audio") && !col.Text.ToLower().Contains("vídeo") && !col.Text.ToLower().Contains("视频") && !col.Text.ToLower().Contains("音"))
                         {
-                            has_tbit = true;
+                            has_tbit = col.Index;
                             break;
                         }
                     }
-
-
-                        if (listView1.Columns.Count > 6)
-                    {
-                        if (listView1.Columns.Count == 7 && has_tbit == true)
-                        {
-                            itemsToAdd[n].SubItems.Add(Properties.Strings.pending);
-                        }
-                        
-                        else { 
+                    
+                   if (listView1.Columns.Count > 6)
+                   {
+                        if (listView1.Columns.Count == 7 && has_tbit == 6) itemsToAdd[n].SubItems.Add(Properties.Strings.pending);
+                                           
+                   else { 
                         Process get_frames = new Process();
                         get_frames.StartInfo.RedirectStandardOutput = true;
                         get_frames.StartInfo.RedirectStandardError = true;
@@ -17546,7 +17542,7 @@ namespace FFBatch
                                     i++;
                                 }
 
-                                if (col.Text.Contains(FFBatch.Properties.Strings2.bitrate))
+                                if (col.Text.Contains(FFBatch.Properties.Strings2.bitrate) && !col.Text.ToLower().Contains("video") && !col.Text.ToLower().Contains("audio") && !col.Text.ToLower().Contains("vídeo") && !col.Text.ToLower().Contains("视频") && !col.Text.ToLower().Contains("音"))
                                 {
                                     i--;
                                     itemsToAdd[n].SubItems.Add(Properties.Strings.pending);
@@ -17824,7 +17820,7 @@ namespace FFBatch
 
             foreach (ColumnHeader col in listView1.Columns)
             {
-                if (col.Text.Contains(Properties.Strings2.bitrate))
+                if (col.Text.Contains(FFBatch.Properties.Strings2.bitrate) && !col.Text.ToLower().Contains("video") && !col.Text.ToLower().Contains("audio") && !col.Text.ToLower().Contains("vídeo") && !col.Text.ToLower().Contains("视频") && !col.Text.ToLower().Contains("音"))
                 {
                     listView1.Invoke(new MethodInvoker(delegate
                     {
@@ -41441,21 +41437,21 @@ namespace FFBatch
 
             foreach (ColumnHeader col in listView1.Columns)
             {
-                if (col.Text == FFBatch.Properties.Strings.width) has_res = true;
-                if (col.Text == FFBatch.Properties.Strings.Video_codec) has_vid = true;
-                if (col.Text == FFBatch.Properties.Strings.Audio_codec) has_aud = true;
-                if (col.Text == FFBatch.Properties.Strings.v_bitr) has_bit = true;
-                if (col.Text == FFBatch.Properties.Strings2.a_bitr) has_abit = true;
-                if (col.Text == FFBatch.Properties.Strings2.bitrate) has_tbit = true;
+                if (col.Text.Contains(FFBatch.Properties.Strings.width)) has_res = true;
+                if (col.Text.Contains(FFBatch.Properties.Strings.Video_codec)) has_vid = true;
+                if (col.Text.Contains(FFBatch.Properties.Strings.Audio_codec)) has_aud = true;
+                if (col.Text.Contains(FFBatch.Properties.Strings.v_bitr)) has_bit = true;
+                if (col.Text.Contains(FFBatch.Properties.Strings2.a_bitr)) has_abit = true;
+                if (col.Text.Contains(FFBatch.Properties.Strings2.bitrate) && !col.Text.ToLower().Contains("video") && !col.Text.ToLower().Contains("audio") && !col.Text.ToLower().Contains("vídeo") && !col.Text.ToLower().Contains("视频") && !col.Text.ToLower().Contains("音")) has_tbit = true;
             }
 
-            if (has_abit == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings2.bitrate);
+            if (has_tbit == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings2.bitrate);
             if (has_vid == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings.Video_codec);
             if (has_bit == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings.v_bitr);
             if (has_res == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings.resolution);
             if (has_aud == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings.Audio_codec);
             if (has_abit == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings2.a_bitr);
-            
+
 
             frm_add_col.ShowDialog();
             if (frm_add_col.canceled == true) return;
@@ -41587,7 +41583,7 @@ namespace FFBatch
                     }
                 }
 
-                if (frm_add_col.cb_col.SelectedItem.ToString() == FFBatch.Properties.Strings2.bitrate)
+                if (frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains(FFBatch.Properties.Strings2.bitrate) && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("video") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("audio") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("vídeo") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("视频") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("音"))
                 {
                     Boolean already_vcodec = false;
                     foreach (ColumnHeader head_col in listView1.Columns)
@@ -41650,7 +41646,7 @@ namespace FFBatch
             String cols_lv = string.Empty;
             foreach (ColumnHeader col in listView1.Columns)
             {
-                cols_lv = cols_lv + col.Text.Trim() + Environment.NewLine;
+                cols_lv = cols_lv + col.Text.Trim().Replace(">","").Replace("2","") + Environment.NewLine;
             }
             File.WriteAllText(f_cols, cols_lv);
         }
