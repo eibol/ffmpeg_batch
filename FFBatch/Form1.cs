@@ -41444,12 +41444,13 @@ namespace FFBatch
                 if (col.Text == FFBatch.Properties.Strings2.bitrate) has_tbit = true;
             }
 
+            if (has_abit == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings2.bitrate);
             if (has_vid == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings.Video_codec);
             if (has_bit == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings.v_bitr);
             if (has_res == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings.resolution);
             if (has_aud == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings.Audio_codec);
             if (has_abit == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings2.a_bitr);
-            if (has_abit == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings2.bitrate);
+            
 
             frm_add_col.ShowDialog();
             if (frm_add_col.canceled == true) return;
