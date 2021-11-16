@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="aborted2" xml:space="preserve">
-    <value>Download terminated by user.</value>
+    <value>URL download interrotta dall'utente.</value>
   </data>
   <data name="abort_cap" xml:space="preserve">
     <value>Interrompi cattura schermo</value>
@@ -415,7 +415,7 @@
     <value>Caricamento elenco file completato.</value>
   </data>
   <data name="quick_yt1" xml:space="preserve">
-    <value>Download veloce link/playlist</value>
+    <value>Download veloce canale/playlist YouTube</value>
   </data>
   <data name="quick_yt2" xml:space="preserve">
     <value>- Vai alla URL principale del canale YouTube, e fai clic sulla scheda VIDEO.</value>
@@ -540,56 +540,50 @@
   <data name="yt_url_sh" xml:space="preserve">
     <value>Il campo URL YouTube è troppo corto.</value>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value />
-  </data>
-  <data name="try_d_again" xml:space="preserve">
-    <value>You can try again, or download and copy the file to application path.</value>
-  </data>
   <data name="down_com" xml:space="preserve">
-    <value>Download completato</value>
+    <value>Download complete.</value>
   </data>
   <data name="vids_dest" xml:space="preserve">
-    <value>video nella cartella di destinazione.</value>
+    <value>video nella cartella destinazione.</value>
   </data>
   <data name="vids_unav" xml:space="preserve">
-    <value>(Alcuni video potrebbero non essere disponibili e gli eventi in live streaming vengono saltati.)</value>
+    <value>(Alcuni video potrebbero non essere disponibili e gli eventi in live streaming verranno saltati.)</value>
   </data>
   <data name="ff_copied" xml:space="preserve">
     <value>PARAMETRI FFMPEG COPIATI NEGLI APPUNTI:</value>
   </data>
   <data name="reset_m_jobs" xml:space="preserve">
-    <value>Ripristina lo stato delle attività</value>
+    <value>Ripristina stato attività</value>
   </data>
   <data name="img_to_v" xml:space="preserve">
     <value>Procedura guidata da immagine a video</value>
   </data>
   <data name="imgs" xml:space="preserve">
-    <value>Immagini</value>
+    <value>Imaggini</value>
   </data>
   <data name="low_sp" xml:space="preserve">
-    <value>Spazio su disco insufficiente</value>
+    <value>Poco spazio disponibile</value>
   </data>
   <data name="warn_sp" xml:space="preserve">
-    <value>Lo spazio disponibile sull'unità di destinazione è inferiore a 500 MB, l'applicazione potrebbe bloccarsi durante la codifica. Vuoi interrompere l'operazione in corso?</value>
+    <value>Lo spazio disponibile nell'unità destinazione è inferiore a 500 MB. L'applicazione potrebbe bloccarsi durante la codifica. Vuoi interrompere l'operazione in corso?</value>
   </data>
   <data name="pr21-2" xml:space="preserve">
-    <value>Video: converti in AMD-VCE H264 HQ + audio sorgente</value>
+    <value>Video: codififica AMD-VCE H264 HQ + audio sorgente</value>
   </data>
   <data name="pr21-21" xml:space="preserve">
-    <value>Video: converti in AMD-VCE HEVC HQ + audio sorgente</value>
+    <value>Video: codifica AMD-VCE HEVC HQ + audiuo sorgente</value>
   </data>
   <data name="save_all_str" xml:space="preserve">
-    <value>Salva tutte le tracce dei file</value>
+    <value>Salva tutti i flussi file</value>
   </data>
   <data name="add_excl_ws" xml:space="preserve">
-    <value>Aggiungi esclusione per ffmpeg in Sicurezza di Windows</value>
+    <value>Aggiungi esclusione per ffmpeg in sicurezza di Windows</value>
   </data>
   <data name="admin_cmd" xml:space="preserve">
     <value>Ti verranno richiesti i diritti di amministratore dal prompt dei comandi.</value>
   </data>
   <data name="attempt_exc" xml:space="preserve">
-    <value>Questa funzionalità tenta di aggiungere un'esclusione a Sicurezza di Windows per l'attuale ffmpeg.exe.</value>
+    <value>Questa funzione tenta di aggiungere un'esclusione alla sicurezza di Windows per l'attuale ffmpeg.exe.</value>
   </data>
   <data name="check_not_st" xml:space="preserve">
     <value>Il checksum MD5 di FFmpeg.exe non è ancora stato memorizzato.</value>
@@ -598,16 +592,25 @@
     <value>Esclusione aggiunta</value>
   </data>
   <data name="excl_added" xml:space="preserve">
-    <value>Esclusione aggiunta a Sicurezza di Windows. Puoi rivederlo nella schermata successiva.</value>
+    <value>Esclusione aggiunta alla sicurezza di Windows. Puoi rivederlo nella schermata successiva.</value>
+  </data>
+  <data name="integrated" xml:space="preserve">
+    <value>Integrata</value>
   </data>
   <data name="md5_fail" xml:space="preserve">
-    <value>Checksum MD5 di FFmpeg.exe non riuscito.</value>
+    <value>Checksum MD5 di FFmpeg.exe non riuscita.</value>
   </data>
   <data name="md5_fail1" xml:space="preserve">
     <value>Il checksum MD5 di FFmpeg.exe non corrisponde al valore memorizzato. Il file potrebbe essere stato danneggiato o violato.</value>
   </data>
+  <data name="md5_not_match" xml:space="preserve">
+    <value>Il checksum MD5 attuale non corrisponde al valore memorizzato. Fai clic su 'Fidati di ffmpeg attuale' prima di aggiungere un'esclusione.</value>
+  </data>
+  <data name="md5_not_validated" xml:space="preserve">
+    <value>Checksum FFmpeg non convalidato</value>
+  </data>
   <data name="md5_trust" xml:space="preserve">
-    <value>Se lo hai sostituito di recente puoi considerarlo attendibile nelle impostazioni di sicurezza.</value>
+    <value>Se l'hai sostituito di recente puoi considerarlo attendibile nelle impostazioni di sicurezza.</value>
   </data>
   <data name="md5_valid" xml:space="preserve">
     <value>Il checksum MD5 di FFmpeg.exe è valido.</value>
@@ -625,10 +628,10 @@
     <value>Sicurezza e prestazioni</value>
   </data>
   <data name="tip1" xml:space="preserve">
-    <value>Questa applicazione avvia processi ffmpeg per la codifica, il muxing e il demuxing, l'ottenimento di flussi, etc.</value>
+    <value>Questa applicazione avvia i processi ffmpeg per la codifica, il muxing e il demuxing, l'ottenimento di flussi, ecc.</value>
   </data>
   <data name="tip2" xml:space="preserve">
-    <value>Alcuni programmi antivirus scansionano costantemente ogni processo avviato perché ffmpeg.exe non è firmato digitalmente. Ciò può ridurre le prestazioni di alcune operazioni, come l'analisi e il filtraggio del flusso, la generazione di miniature.</value>
+    <value>Alcuni software antivirus eseguono la scansione di ogni processo ffmpeg avviato perché non è firmato digitalmente. Ciò può ridurre le prestazioni per operazioni come la lettura e il filtraggio dei flussi, l'ottenimento di miniature, ecc.</value>
   </data>
   <data name="tip3" xml:space="preserve">
     <value>Se riscontri prestazioni lente, puoi migliorarle aggiungendo un'esclusione a</value>
@@ -637,40 +640,40 @@
     <value>Il file ffmpeg.exe incluso nell'applicazione è sicuro e il checksum MD5 viene convalidato ad ogni avvio.</value>
   </data>
   <data name="tip_win_sec" xml:space="preserve">
-    <value>Sicurezza di Windows.</value>
+    <value>Sicurezza Windows.</value>
   </data>
   <data name="tip_your_av" xml:space="preserve">
-    <value>il tuo attuale software antivirus.</value>
+    <value>tuo attuale software antivirus.</value>
   </data>
   <data name="not_amf" xml:space="preserve">
-    <value>potrebbe non funzionare con l'encoder amf AMD selezionato.</value>
+    <value>potrebbe non funzionare con l'encoder AMD AMF selezionato.</value>
   </data>
   <data name="not_nvenc" xml:space="preserve">
-    <value>potrebbe non funzionare con l'encoder NVIDIA nvenc selezionato.</value>
+    <value>potrebbe non funzionare con l'encoder NVIDIA NVENC selezionato.</value>
   </data>
   <data name="not_qsv" xml:space="preserve">
-    <value>potrebbe non funzionare con l'encoder  Intel QuickSync selezionato.</value>
+    <value>potrebbe non funzionare con l'encoder Intel QuickSync selezionato.</value>
   </data>
   <data name="your_sys" xml:space="preserve">
     <value>Il tuo sistema</value>
   </data>
-  <data name="md5_not_match" xml:space="preserve">
-    <value>Il checksum MD5 corrente non corrisponde al valore memorizzato. Fare clic su Fidati di ffmpeg corrente prima di aggiungere un'esclusione.</value>
-  </data>
   <data name="sort_list" xml:space="preserve">
-    <value>Ordina elenco prima di iniziare?</value>
+    <value>Vuoi ordinare l'elenco prima di iniziare?</value>
   </data>
   <data name="sort_list2" xml:space="preserve">
-    <value>Suggerimento</value>
+    <value>Suggerimento per ordinamento elenco file</value>
   </data>
   <data name="md5_reinst" xml:space="preserve">
-    <value>In caso contrario, potrebbe essere stato modificato e l'applicazione dovrebbe essere reinstallata.</value>
+    <value>Altrimenti potrebbe essere stato modificato e l'applicazione dovrebbe essere reinstallata.</value>
   </data>
   <data name="en_day" xml:space="preserve">
-    <value>Abilita la modalità giorno</value>
+    <value>Abilita modalità giorno</value>
   </data>
   <data name="en_night" xml:space="preserve">
-    <value>Abilita la modalità notturna</value>
+    <value>Abilita modalità notte</value>
+  </data>
+  <data name="try_d_again" xml:space="preserve">
+    <value>Puoi riprovare o scaricare e copiare il file nel percorso dell'applicazione.</value>
   </data>
   <data name="a_bitr" xml:space="preserve">
     <value>Bitrate audio</value>

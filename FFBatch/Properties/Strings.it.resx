@@ -340,7 +340,7 @@
     <value>Finestra copia S.O. abilitata</value>
   </data>
   <data name="cache_rec" xml:space="preserve">
-    <value>Ti consigliamo di memorizzare nella cache i file di rete per evitare problemi di latenza e affidabilità della rete. L'applicazione potrebbe bloccarsi se la connessione di rete viene persa durante la codifica.</value>  
+    <value>Ti consigliamo di memorizzare nella cache i file di rete per evitare problemi di latenza e affidabilità della rete. L'applicazione potrebbe bloccarsi se la connessione di rete viene persa durante la codifica.</value>
   </data>
   <data name="caching_f" xml:space="preserve">
     <value>Cache file rete</value>
@@ -2462,7 +2462,7 @@
     <value>Aggiornamento</value>
   </data>
   <data name="up_err" xml:space="preserve">
-    <value>Errore connessione</value>
+    <value>Errore connessione durante ricerca aggiornamenti</value>
   </data>
   <data name="URL" xml:space="preserve">
     <value>URL</value>
