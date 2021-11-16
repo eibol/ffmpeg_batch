@@ -517,6 +517,7 @@
             this.BG_Selected_items = new System.ComponentModel.BackgroundWorker();
             this.timer_selecs = new System.Windows.Forms.Timer(this.components);
             this.img_list_pic_thumb = new System.Windows.Forms.ImageList(this.components);
+            this.BG_add_col_bitr = new System.ComponentModel.BackgroundWorker();
             this.ctm1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -4406,6 +4407,11 @@
             this.img_list_pic_thumb.Images.SetKeyName(1, "No_Image_dark_2_64px.png");
             this.img_list_pic_thumb.Images.SetKeyName(2, "No_Image_64px.png");
             // 
+            // BG_add_col_bitr
+            // 
+            this.BG_add_col_bitr.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BG_add_col_bitr_DoWork);
+            this.BG_add_col_bitr.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BG_add_col_bitr_RunWorkerCompleted);
+            // 
             // Form1
             // 
             resources.ApplyResources(this, "$this");
@@ -5034,6 +5040,7 @@
         private System.Windows.Forms.Timer timer_selecs;
         private System.Windows.Forms.ToolStripMenuItem ctm1_encode;
         private System.Windows.Forms.ImageList img_list_pic_thumb;
+        private System.ComponentModel.BackgroundWorker BG_add_col_bitr;
     }
 }
 
