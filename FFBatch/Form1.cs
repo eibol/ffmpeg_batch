@@ -6289,7 +6289,7 @@ namespace FFBatch
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            main_progress_bar();
+            main_progress_bar();            
 
             String app_location = Application.StartupPath;
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
@@ -6521,6 +6521,7 @@ namespace FFBatch
                 foreach (Control c in this.Controls) UpdateColorDark(c);
                 post_dark();
             }
+            add_col_start();
         }
 
         private void load_priority()
@@ -7368,61 +7369,77 @@ namespace FFBatch
             }
 
             if (!File.Exists(f_cols)) return;
-            foreach (String str in File.ReadLines(f_cols))
+            String check = File.ReadAllText(f_cols); if (!check.Contains(";")) return;
+            int cur_w = 0;
+            listView1.Invoke(new MethodInvoker(delegate
             {
-                if (str.Contains(FFBatch.Properties.Strings.height))
+                foreach (String str in File.ReadLines(f_cols))
                 {
-                    listView1.Invoke(new MethodInvoker(delegate
-                    {
-                        ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings.width, 50, HorizontalAlignment.Center);
-                        ColumnHeader columnHeader2 = listView1.Columns.Add(FFBatch.Properties.Strings.height, 50, HorizontalAlignment.Center);
-                        listView1.Columns[0].Width = listView1.Columns[0].Width - 110;
-                    }));
-                }
+                    int ps = str.LastIndexOf(";") + 1;
+                    int width = Convert.ToInt32(str.Substring(ps, str.Length - ps));
 
-                if (str.Contains(FFBatch.Properties.Strings.Video_codec))
-                {
-                    listView1.Invoke(new MethodInvoker(delegate
-                    {
-                        ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings.Video_codec, 100, HorizontalAlignment.Left);
-                        listView1.Columns[0].Width = listView1.Columns[0].Width - 110;
-                    }));
-                }
-                if (str.Contains(FFBatch.Properties.Strings.Audio_codec))
-                {
-                    listView1.Invoke(new MethodInvoker(delegate
-                    {
-                        ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings.Audio_codec, 100, HorizontalAlignment.Center);
-                        listView1.Columns[0].Width = listView1.Columns[0].Width - 110;
-                    }));
-                }
+                    if (str.Contains(FFBatch.Properties.Strings.filename))
+                    {                        
+                        listView1.Columns[0].Width = width;
+                    }
 
-                if (str.Contains(FFBatch.Properties.Strings.v_bitr))
-                {
-                    listView1.Invoke(new MethodInvoker(delegate
+                    if (str.Contains(FFBatch.Properties.Strings.path))
                     {
-                        ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings.v_bitr, 100, HorizontalAlignment.Center);
-                        listView1.Columns[0].Width = listView1.Columns[0].Width - 110;
-                    }));
-                }
-                if (str.Contains(FFBatch.Properties.Strings2.a_bitr))
-                {
-                    listView1.Invoke(new MethodInvoker(delegate
+                        listView1.Columns[1].Width = width;
+                    }
+
+                    if (str.Contains(FFBatch.Properties.Strings.file_type))
                     {
-                        ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings2.a_bitr, 100, HorizontalAlignment.Center);
-                        listView1.Columns[0].Width = listView1.Columns[0].Width - 110;
-                    }));
-                }
-                if (str.Contains(FFBatch.Properties.Strings2.bitrate) && !str.ToLower().Contains("video") && !str.ToLower().Contains("audio") && !str.ToLower().Contains("vídeo") && !str.ToLower().Contains("视频") && !str.ToLower().Contains("音"))
-                {
-                    listView1.Invoke(new MethodInvoker(delegate
+                        listView1.Columns[2].Width = width;
+                    }
+
+                    if (str.Contains(FFBatch.Properties.Strings.duration))
                     {
-                        ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings2.bitrate, 100, HorizontalAlignment.Center);
-                        listView1.Columns[0].Width = listView1.Columns[0].Width - 110;
-                    }));
+                        listView1.Columns[3].Width = width;
+                    }
+                    if (str.Contains(FFBatch.Properties.Strings.size))
+                    {
+                        listView1.Columns[4].Width = width;
+                    }
+                    if (str.Contains(FFBatch.Properties.Strings.status))
+                    {
+                        listView1.Columns[5].Width = width;
+                    }
+
+
+                    if (str.Contains(FFBatch.Properties.Strings.height))
+                    {
+                        ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings.width, width, HorizontalAlignment.Center);
+                        ColumnHeader columnHeader2 = listView1.Columns.Add(FFBatch.Properties.Strings.height, width, HorizontalAlignment.Center);
+                    }
+
+                    if (str.Contains(FFBatch.Properties.Strings.Video_codec))
+                    {
+                        ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings.Video_codec, width, HorizontalAlignment.Left);
+                    }
+
+                    if (str.Contains(FFBatch.Properties.Strings.Audio_codec))
+                        {
+                            ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings.Audio_codec, width, HorizontalAlignment.Center);
+                        }
+
+                        if (str.Contains(FFBatch.Properties.Strings.v_bitr))
+                        {
+
+                            ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings.v_bitr, width, HorizontalAlignment.Center);
+                        }
+                        if (str.Contains(FFBatch.Properties.Strings2.a_bitr))
+                        {
+                            ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings2.a_bitr, width, HorizontalAlignment.Center);
+                        }
+
+                        if (str.Contains(FFBatch.Properties.Strings2.bitrate) && !str.ToLower().Contains("video") && !str.ToLower().Contains("audio") && !str.ToLower().Contains("vídeo") && !str.ToLower().Contains("视频") && !str.ToLower().Contains("音"))
+                        {
+                            ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings2.bitrate, width, HorizontalAlignment.Center);
+                        }                                    
                 }
-            }
-        }
+                }));
+            }        
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -11066,6 +11083,8 @@ namespace FFBatch
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            list_cols();
+            
             String f_autorun = String.Empty;
             String f_multi = String.Empty;
             if (is_portable == false)
@@ -16941,6 +16960,7 @@ namespace FFBatch
                 txt_suffix.Text = txt_suffix.Text.Replace("*", "");
                 txt_suffix.Text = txt_suffix.Text.Replace("?", "");
                 txt_suffix.Text = txt_suffix.Text.Replace("¿", "");
+                txt_suffix.Text = txt_suffix.Text.Replace("@", "");
                 txt_suffix.Text = txt_suffix.Text.Replace("\u0022", "");
                 txt_suffix.Text = txt_suffix.Text.Replace("<", "");
                 txt_suffix.Text = txt_suffix.Text.Replace(">", "");
@@ -19799,12 +19819,16 @@ namespace FFBatch
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("*", "");
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("?", "");
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("¿", "");
+                    row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("@", "");
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("\u0022", "");
+                    row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("@", "");
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("<", "");
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace(">", "");
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("|", "");
-                    row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("\\", "");
+                    row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("\\", "");                    
                 }
+
+                if (row.Cells[4].Value.ToString().Length > 224) row.Cells[4].Value = row.Cells[4].Value.ToString().Substring(0, 224);
             }
 
             Disable_Controls();
@@ -20365,6 +20389,7 @@ namespace FFBatch
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("*", "");
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("?", "");
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("¿", "");
+                    row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("@", "");
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("\u0022", "");
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("<", "");
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace(">", "");
@@ -21967,6 +21992,7 @@ namespace FFBatch
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("*", "");
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("?", "");
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("¿", "");
+                    row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("@", "");
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("\u0022", "");
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("<", "");
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace(">", "");
@@ -29244,9 +29270,6 @@ namespace FFBatch
 
                 tabControl1.Width = this.Width - 18;
                 listView1.Width = this.Width - 25;
-                //listView1.Columns[0].Width = (listView1.Width / 2 - 5) - (7 - width_cols);
-                //listView1.Columns[1].Width = (listView1.Width / 2 - 390) - (6 - width_cols) * 2;
-
                 listView2.Width = this.Width - 25;
                 listView3.Width = this.Width - 25;
 
@@ -29413,9 +29436,6 @@ namespace FFBatch
 
                 tabControl1.Width = this.Width - 45;
                 listView1.Width = this.Width - 50;
-                //listView1.Columns[0].Width = (listView1.Width / 2 - 3) - ((listView1.Columns.Count - 5) * 99);
-                //listView1.Columns[1].Width = (listView1.Width / 2 - ((listView1.Columns.Count - 4) * 99) - ((listView1.Columns.Count - 4) * 2));
-
                 listView2.Width = this.Width - 50;
                 listView3.Width = this.Width - 50;
 
@@ -32344,6 +32364,7 @@ namespace FFBatch
                 foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings.Audio_codec)) listView1.Columns.Remove(col);
                 foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings.v_bitr)) listView1.Columns.Remove(col);
                 foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings2.a_bitr)) listView1.Columns.Remove(col);
+                foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings2.bitrate)) listView1.Columns.Remove(col);
                 resize();
             }
             catch { }
@@ -32473,6 +32494,7 @@ namespace FFBatch
                 foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings.Audio_codec)) listView1.Columns.Remove(col);
                 foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings.v_bitr)) listView1.Columns.Remove(col);
                 foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings2.a_bitr)) listView1.Columns.Remove(col);
+                foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings2.bitrate)) listView1.Columns.Remove(col);
                 resize();
             }
             catch { }
@@ -36366,6 +36388,7 @@ namespace FFBatch
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("*", "");
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("?", "");
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("¿", "");
+                    row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("@", "");
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("\u0022", "");
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace("<", "");
                     row.Cells[4].Value = row.Cells[4].Value.ToString().Replace(">", "");
@@ -41475,8 +41498,7 @@ namespace FFBatch
                     if (already_added == false)
                     {
                         ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings.width, 50, HorizontalAlignment.Center);
-                        ColumnHeader columnHeader2 = listView1.Columns.Add(FFBatch.Properties.Strings.height, 50, HorizontalAlignment.Center);
-                        listView1.Columns[0].Width = listView1.Columns[0].Width - 110;
+                        ColumnHeader columnHeader2 = listView1.Columns.Add(FFBatch.Properties.Strings.height, 50, HorizontalAlignment.Center);                        
                     }
                     foreach (ColumnHeader head_col in listView1.Columns)
                     {
@@ -41506,7 +41528,7 @@ namespace FFBatch
                     if (already_vcodec == false)
                     {
                         ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings.Video_codec, 100, HorizontalAlignment.Left);
-                        listView1.Columns[0].Width = listView1.Columns[0].Width - 110;
+                        
                     }
                     if (already_vcodec == false)
                     {
@@ -41528,7 +41550,7 @@ namespace FFBatch
                     if (already_vcodec == false)
                     {
                         ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings.Audio_codec, 100, HorizontalAlignment.Center);
-                        listView1.Columns[0].Width = listView1.Columns[0].Width - 110;
+                        
                     }
                     if (already_vcodec == false)
                     {
@@ -41551,7 +41573,7 @@ namespace FFBatch
                     if (already_vcodec == false)
                     {
                         ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings.v_bitr, 100, HorizontalAlignment.Center);
-                        listView1.Columns[0].Width = listView1.Columns[0].Width - 110;
+                        
                     }
                     if (already_vcodec == false)
                     {
@@ -41574,7 +41596,7 @@ namespace FFBatch
                     if (already_vcodec == false)
                     {
                         ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings2.a_bitr, 100, HorizontalAlignment.Center);
-                        listView1.Columns[0].Width = listView1.Columns[0].Width - 110;
+                        
                     }
                     if (already_vcodec == false)
                     {
@@ -41583,29 +41605,12 @@ namespace FFBatch
                     }
                 }
 
-                if (frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains(FFBatch.Properties.Strings2.bitrate) && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("video") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("audio") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("vídeo") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("视频") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("音"))
-                {
-                    Boolean already_vcodec = false;
-                    foreach (ColumnHeader head_col in listView1.Columns)
-                    {
-                        if (head_col.Text.Contains(FFBatch.Properties.Strings2.bitrate))
-                        {
-                            already_vcodec = true;
-                            break;
-                        }
-                    }
-                    if (already_vcodec == false)
-                    {
-                        ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings2.bitrate, 100, HorizontalAlignment.Center);
-                        listView1.Columns[0].Width = listView1.Columns[0].Width - 110;
-                    }
-                    if (already_vcodec == false)
-                    {
+                if (!frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains(FFBatch.Properties.Strings2.bitrate) && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("video") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("audio") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("vídeo") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("视频") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("音"))
+                {                                    
+                        ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings2.bitrate, 100, HorizontalAlignment.Center);                    
                         pre_add_col();
-                        BG_add_col_bitr.RunWorkerAsync();
-                    }
+                        BG_add_col_bitr.RunWorkerAsync();                 
                 }
-
                 list_cols();
             }
             else
@@ -41646,7 +41651,7 @@ namespace FFBatch
             String cols_lv = string.Empty;
             foreach (ColumnHeader col in listView1.Columns)
             {
-                cols_lv = cols_lv + col.Text.Trim().Replace(">","").Replace("2","") + Environment.NewLine;
+                cols_lv = cols_lv + col.Text.Trim().Replace(">","").Replace("<","") +  ";" + col.Width.ToString() + Environment.NewLine;
             }
             File.WriteAllText(f_cols, cols_lv);
         }
@@ -42816,9 +42821,7 @@ namespace FFBatch
             Combo_def_sub_mux.Items.Add(Properties.Strings.yes);
             Combo_def_sub_mux.Items.Add(Properties.Strings.no);
             Create_Tooltips();
-            btn_update.Text = Properties.Strings2.version + " " + Application.ProductVersion;
-            //Add res col
-            add_col_start();
+            btn_update.Text = Properties.Strings2.version + " " + Application.ProductVersion;            
         }
 
         private void remember_tab()
@@ -47505,11 +47508,13 @@ namespace FFBatch
                         cell_out = cell_out.Replace("¿", "");
                         cell_out = cell_out.Replace("\u0022", "");
                         cell_out = cell_out.Replace("<", "");
+                        cell_out = cell_out.Replace("@", "");
                         cell_out = cell_out.Replace(">", "");
                         cell_out = cell_out.Replace("|", "");
                         cell_out = cell_out.Replace("\\", "");
-                        dg1.Rows[e.RowIndex].Cells[4].Value = cell_out.ToString();
+                        dg1.Rows[e.RowIndex].Cells[4].Value = cell_out;
                     }
+                    if (cell_out.Length > 224) dg1.Rows[e.RowIndex].Cells[4].Value = cell_out.Substring(0, 224);
                 }
             }
         }
