@@ -379,7 +379,7 @@
     <value>Caixa de seleção</value>
   </data>
 	<data name="checking_y" xml:space="preserve">
-    <value>Verificando a versão mais recente do youtube-dl...</value>
+    <value>Verificando a versão mais recente do yt-dl...</value>
   </data>
 	<data name="Check_for_updates" xml:space="preserve">
     <value>Verifique se há atualizações</value>
@@ -397,7 +397,7 @@
     <value>Verifique se os links estão prontos para captura</value>
   </data>
 	<data name="check_ytdl" xml:space="preserve">
-    <value>Verificando a versão do youtube-dl...</value>
+    <value>Verificando a versão do yt-dl...</value>
   </data>
 	<data name="clear_list" xml:space="preserve">
     <value>Limpar lista</value>
@@ -706,7 +706,7 @@
     <value>Erro ao extrair imagem da trilha de vídeo.</value>
   </data>
 	<data name="err_int_yt" xml:space="preserve">
-    <value>Erro interno do Youtube-dl</value>
+    <value>Erro interno do yt-dl</value>
   </data>
 	<data name="err_kf" xml:space="preserve">
     <value>Erro ao obter quadros-chave. O formato de entrada é inválido.</value>
@@ -736,13 +736,13 @@
     <value>Erro ao reproduzir o arquivo. Somente arquivos de onda PCM são suportados.</value>
   </data>
 	<data name="err_yt_2" xml:space="preserve">
-    <value>Ocorreu um erro ao tentar atualizar o youtube-dl:</value>
+    <value>Ocorreu um erro ao tentar atualizar o yt-dl:</value>
   </data>
 	<data name="err_yt_u" xml:space="preserve">
-    <value>Erro ao verificar as atualizações do youtube-dl.</value>
+    <value>Erro ao verificar as atualizações do yt-dl.</value>
   </data>
 	<data name="err_yt_up" xml:space="preserve">
-    <value>Ocorreu um erro ao tentar atualizar o youtube-dl. Você pode tentar novamente ou baixar e copiar o arquivo para o caminho do aplicativo.</value>
+    <value>Ocorreu um erro ao tentar atualizar o yt-dl. Você pode tentar novamente ou baixar e copiar o arquivo para o caminho do aplicativo.</value>
   </data>
 	<data name="est_size" xml:space="preserve">
     <value>Tamanho estimado:</value>
@@ -2597,16 +2597,16 @@
     <value>O link colado pode ser um canal do YouTube, use o botão Baixar canal/lista de reprodução.</value>
   </data>
 	<data name="yt_not" xml:space="preserve">
-    <value>Youtube-dl não foi encontrado.</value>
+    <value>yt-dl não foi encontrado.</value>
   </data>
 	<data name="yt_params" xml:space="preserve">
-    <value>Parâmetros Youtube-dl</value>
+    <value>Parâmetros yt-dl</value>
   </data>
 	<data name="yt_pl" xml:space="preserve">
     <value>Lista de reprodução do YouTube</value>
   </data>
 	<data name="yt_req_err" xml:space="preserve">
-    <value>Ocorreu um erro ao instalar o requisito youtube-dl.</value>
+    <value>Ocorreu um erro ao instalar o requisito yt-dl.</value>
   </data>
 	<data name="yt_str_av" xml:space="preserve">
     <value>FLUXOS DISPONÍVEIS DO YOUTUBE</value>

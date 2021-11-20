@@ -187,6 +187,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Velocidad promedio:.
+        /// </summary>
+        internal static string avgs {
+            get {
+                return ResourceManager.GetString("avgs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a to avoid opossible overwritings..
         /// </summary>
         internal static string avoid_overw {
@@ -498,6 +507,15 @@ namespace FFBatch.Properties {
         internal static string encode {
             get {
                 return ResourceManager.GetString("encode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a encoded.
+        /// </summary>
+        internal static string encoded {
+            get {
+                return ResourceManager.GetString("encoded", resourceCulture);
             }
         }
         

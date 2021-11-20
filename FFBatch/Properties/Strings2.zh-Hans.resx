@@ -156,6 +156,9 @@
   <data name="auto_ask2" xml:space="preserve">
     <value>多文件编码自动运行已启用。您要保留此设置吗？</value>
   </data>
+  <data name="avgs" xml:space="preserve">
+    <value>平均速度：</value>
+  </data>
   <data name="avoid_overw" xml:space="preserve">
     <value>为了避免可能的覆盖</value>
   </data>
@@ -256,6 +259,9 @@
     <value>请只删除一个文件</value>
   </data>
   <data name="encode" xml:space="preserve">
+    <value>编码</value>
+  </data>
+  <data name="encoded" xml:space="preserve">
     <value>编码</value>
   </data>
   <data name="en_day" xml:space="preserve">

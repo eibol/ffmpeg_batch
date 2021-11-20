@@ -1489,7 +1489,7 @@
     <value>NVENC encoder detected</value>
   </data>
   <data name="n_a" xml:space="preserve">
-    <value>"N/A"</value>
+    <value>N/A</value>
   </data>
   <data name="obt_strs" xml:space="preserve">
     <value>Obtaining streams information</value>

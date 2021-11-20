@@ -693,4 +693,10 @@
   <data name="bitrate" xml:space="preserve">
     <value>Tasa de bits</value>
   </data>
+  <data name="avgs" xml:space="preserve">
+    <value>Velocidad promedio:</value>
+  </data>
+  <data name="encoded" xml:space="preserve">
+    <value>codificado(s)</value>
+  </data>
 </root>

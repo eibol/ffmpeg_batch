@@ -379,7 +379,7 @@
     <value>casilla</value>
   </data>
   <data name="checking_y" xml:space="preserve">
-    <value>Buscando última versión de youtube-dl...</value>
+    <value>Buscando última versión de yt-dl...</value>
   </data>
   <data name="Check_for_updates" xml:space="preserve">
     <value>Buscar actualizaciones</value>
@@ -397,7 +397,7 @@
     <value>Verificar los enlaces de descarga</value>
   </data>
   <data name="check_ytdl" xml:space="preserve">
-    <value>Revisando versión de youtube-dl</value>
+    <value>Revisando versión de yt-dl</value>
   </data>
   <data name="clear_list" xml:space="preserve">
     <value>Limpiar lista</value>
@@ -700,7 +700,7 @@
     <value>Error extrayendo imagen desde la pista de vídeo.</value>
   </data>
   <data name="err_int_yt" xml:space="preserve">
-    <value>Error interno de youtube-dl</value>
+    <value>Error interno de yt-dl</value>
   </data>
   <data name="err_kf" xml:space="preserve">
     <value>Error al obtener los fotogramas clave. Formato de entrada incorrecto.</value>
@@ -730,13 +730,13 @@
     <value>Error al reproducir archivo. Solo ficheros de onda PCM están admitidos.</value>
   </data>
   <data name="err_yt_2" xml:space="preserve">
-    <value>Se produjo un error al intentar actualizar youtube-dl:</value>
+    <value>Se produjo un error al intentar actualizar yt-dl:</value>
   </data>
   <data name="err_yt_u" xml:space="preserve">
     <value>Error al buscar actualizaciones de yt-dl</value>
   </data>
   <data name="err_yt_up" xml:space="preserve">
-    <value>Se produjo un error al actualizar automáticamente youtube-dl. Puede probar de nuevo, o descargar y copiar el fichero manualmente en la carpeta de la aplicación.</value>
+    <value>Se produjo un error al actualizar automáticamente yt-dl. Puede probar de nuevo, o descargar y copiar el fichero manualmente en la carpeta de la aplicación.</value>
   </data>
   <data name="est_size" xml:space="preserve">
     <value>Tamaño estimado:</value>
@@ -847,7 +847,7 @@
     <value>PRUEBA FFMPEG CORRECTA</value>
   </data>
   <data name="file" xml:space="preserve">
-    <value>Fichero</value>
+    <value>Archivo</value>
   </data>
   <data name="filename" xml:space="preserve">
     <value>Fichero</value>
@@ -2564,7 +2564,7 @@
     <value>El enlace que ha copiado podría ser un canal completo de YouTube. Por favor, utilice en este caso el botón Descargar canal/lista.</value>
   </data>
   <data name="yt_not" xml:space="preserve">
-    <value>El fichero youtube-dl.exe no fue encontrado.</value>
+    <value>El fichero yt-dl.exe no fue encontrado.</value>
   </data>
   <data name="yt_params" xml:space="preserve">
     <value>Parámetros yt-dl</value>
@@ -2573,7 +2573,7 @@
     <value>Lista de YouTube</value>
   </data>
   <data name="yt_req_err" xml:space="preserve">
-    <value>Se produjo un error al instalar un requerimiento de youtube-dl</value>
+    <value>Se produjo un error al instalar un requerimiento de yt-dl</value>
   </data>
   <data name="yt_str_av" xml:space="preserve">
     <value>FLUJOS MULTIMEDIA DE YOUTUBE</value>
