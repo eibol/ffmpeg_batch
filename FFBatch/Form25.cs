@@ -187,8 +187,7 @@ namespace FFBatch
                         pic_1.Image = pic_excl.Image;
                         lbl_fail_ff.Text = Properties.Strings2.check_not_st;
                         btn_save_md5.Enabled = true;
-                    }
-                    if (txt_st_md5.Text == saved) pic_1.Image = pic_success.Image;
+                    }                    
                     if (code == saved)
                     {
                         pic_1.Image = pic_success.Image;
