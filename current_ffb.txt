@@ -1,27 +1,20 @@
-﻿2.7.0
-• FFmpeg 4.4.1 Essentials. (Backup your custom ffmpeg before proceeding).
-• Reduced installer size (ffprobe removed, switched from full to essential ffmpeg).
-• New security and performance setting: 
-•• Check ffmpeg.exe MD5 checksum integrity. 
-•• Add an exclusion for ffmpeg.exe in Windows 10 Security or your current antivirus.
-•• Detect current cpu/main graphics card to check compatibility with hardware encoders in Presets wizard.
-• New Images to video wizard.
-• New Stream multiplex batch demux (Save all selected files streams).
-• Workaround to allow adding new files during a multi-file encoding session (consecutive sessions).
-• Start encoding only a selection of list items.
-• Real-time monitoring of space running out on destination folder drive.
-• Thumbnail display and frame navigation clicking on thumbnail.
-• Copy or save frames as image clicking on image thumbnail.
-• Added quick guide for hardware encoders wizard (nvenc/amf), and updated some output parameters.
-• Added new setting for "night mode".
-• Removed youtube-dl (apparently abandoned), replaced with yt-dpl fork. Fixed all non-working download features.
-
-• Now batch URL attempts to download any link supported by youtube-dl (yt.-dpl). 
-  The list of supported sites:
-https://ytdl-org.github.io/youtube-dl/supportedsites.html
-• Fixed random runtime errors in sequential encoding and batch joining.
-• Fixed bug with pre-input filed saving/loading.
-• Fixed bug adding all streams when selecting multiple files in Stream multiplex tab.
-• Fixed bug with files without extension not reporting duration.
-• Fixed some issues with chinese GUI.
-• Fixed some wrong translations and other minor cosmetic issues.
+﻿2.7.2
+• Added basic support for AviSynth scripts.
+• Fixed Avisynth missing duration. 
+• New fast custom column for overall file bitrate.
+• Faster keyframe reading/extraction.
+• Accurate keyframe stream copy trim on video preview.
+• Columns layout and width saved on exit, no more auto-size.
+• For single file encodings, output summary displayed at the end.
+• Drop files anywhere on the main window, not only file list.
+• Clearer info on log files.
+• Added yadif deinterlace filter to preset wizard.
+• Fixed crash trimming some specific files.
+• Fixed bug, main output path not being saved.
+• Fixed average framerate speed when using pre-input time field.
+• Fixed erratic total progress for multi-file encoding on some languages.
+• Fixed some refresh issues switching to night mode.
+• Fixed copy/save image for audio files with embedded cover.
+• Fixed aborting Quick link/playlist download.
+• Fixed runtime error after adding exception to Windows Security.
+• Fixed some minor layout issues.
