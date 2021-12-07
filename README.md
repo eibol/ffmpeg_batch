@@ -1,7 +1,6 @@
 # FFmpeg Batch AV Converter
 
-FFmpeg Batch AV Converter is a front-end for Windows ffmpeg users, and for Linux via Wine that allows the use of the full potential of ffmpeg command line 
-with a few mouse clicks in a convenient GUI. Among other things, you can drag and drop, see progress information, change encoding priority, pause and 
+FFmpeg Batch AV Converter is a ffmepg gui, a front-end for Windows ffmpeg users, and for Linux via Wine that allows the use of the full potential of ffmpeg command line with a few mouse clicks in a convenient GUI. Among other things, you can drag and drop, see progress information, change encoding priority, pause and 
 resume, and set automatic shutdown. It is good for seasoned ffmpeg users as well as beginners.
 
 Downloads: https://ffmpeg-batch.sourceforge.io
@@ -37,7 +36,7 @@ To compile code, please follow these steps:
 - In folder bin/debug, you have to place ffmpeg.exe, mediainfo.exe y yt-dlp.exe.
 
 NOTES:
-- The application uses some nuget packages, Aerowizard is mandatory.
+- The application uses Aerowizard nuget package as mandatory.
 - You can find these packages at nuget package manager inside Visual Studio.
 - You need to create your own Code key for encryption, at menu Project -> Properties of FFBatch_Converter -> Signature, or disable code signing.
 - You may have to run Visual Studio 2019 with admin rights at least once, after key generation.
