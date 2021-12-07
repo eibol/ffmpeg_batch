@@ -70,5 +70,29 @@ namespace FFBatch.Properties {
                 this["dark_mode"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int wiz_vid {
+            get {
+                return ((int)(this["wiz_vid"]));
+            }
+            set {
+                this["wiz_vid"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int wiz_aud {
+            get {
+                return ((int)(this["wiz_aud"]));
+            }
+            set {
+                this["wiz_aud"] = value;
+            }
+        }
     }
 }

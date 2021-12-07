@@ -129,6 +129,9 @@
   <data name="admin_cmd" xml:space="preserve">
     <value>命令提示符将要求您提供管理员权限。</value>
   </data>
+  <data name="ansi_rec" xml:space="preserve">
+    <value>建议使用没有 BOM 文本编码的 ANSI 或 UTF。</value>
+  </data>
   <data name="app_min_1" xml:space="preserve">
     <value>应用程序窗口将在录制开始前1秒最小化</value>
   </data>
@@ -176,6 +179,9 @@
   </data>
   <data name="black" xml:space="preserve">
     <value>黑色</value>
+  </data>
+  <data name="browse" xml:space="preserve">
+    <value>浏览</value>
   </data>
   <data name="browsing" xml:space="preserve">
     <value>浏览</value>
@@ -321,6 +327,9 @@
   <data name="frame_size" xml:space="preserve">
     <value>帧的大小</value>
   </data>
+  <data name="get_prev" xml:space="preserve">
+    <value>获取帧</value>
+  </data>
   <data name="imgs" xml:space="preserve">
     <value>图片</value>
   </data>
@@ -342,8 +351,14 @@
   <data name="in_60" xml:space="preserve">
     <value>在60秒内</value>
   </data>
+  <data name="in_avis" xml:space="preserve">
+    <value>在 Avisynth 脚本中，文本编码</value>
+  </data>
   <data name="join_files" xml:space="preserve">
     <value>合并文件</value>
+  </data>
+  <data name="kf_no_a" xml:space="preserve">
+    <value>轨迹栏关键帧导航将不可用。 您仍然可以使用时间按钮。</value>
   </data>
   <data name="lang_corrupted" xml:space="preserve">
     <value>语言配置已损坏，请重新安装应用程序。</value>
@@ -393,6 +408,9 @@
   <data name="none" xml:space="preserve">
     <value>none</value>
   </data>
+  <data name="non_eng_rec" xml:space="preserve">
+    <value>注意：源文件名中的非英文字符可能会导致 ANSI 格式中的持续时间丢失。</value>
+  </data>
   <data name="not_amf" xml:space="preserve">
     <value>可能不适用于选定的 AMD amf 编码器。</value>
   </data>
@@ -405,6 +423,9 @@
   <data name="not_qsv" xml:space="preserve">
     <value>可能不适用于选定的 Intel QuickSync 编码器。</value>
   </data>
+  <data name="not_sup_bom" xml:space="preserve">
+    <value>如果 ffmpeg 包含 BOM（字节顺序标记），则可能不支持它。</value>
+  </data>
   <data name="no_concat_ef" xml:space="preserve">
     <value>没有初始或结束文件</value>
   </data>
@@ -416,6 +437,9 @@
   </data>
   <data name="outf_count" xml:space="preserve">
     <value>正在下载。总计数不可用。输出文件夹数:</value>
+  </data>
+  <data name="out_file" xml:space="preserve">
+    <value>输出文件</value>
   </data>
   <data name="Paste_any_URL" xml:space="preserve">
     <value>粘贴链接</value>
@@ -600,8 +624,14 @@
   <data name="source_not_deleted" xml:space="preserve">
     <value>由于编码失败或文件正在使用而无法删除的源文件:</value>
   </data>
+  <data name="speed_not comp" xml:space="preserve">
+    <value>速度设置与其他视频过滤器不兼容。</value>
+  </data>
   <data name="start_cap" xml:space="preserve">
     <value>开始截屏</value>
+  </data>
+  <data name="start_mark" xml:space="preserve">
+    <value>开始标记</value>
   </data>
   <data name="stop_any" xml:space="preserve">
     <value>您可以随时按 Control-Shift-P 停止录制.</value>
@@ -671,6 +701,9 @@
   </data>
   <data name="vids_unav" xml:space="preserve">
     <value>（某些视频可能不可用，并且会跳过直播活动。）</value>
+  </data>
+  <data name="vs_files_warn" xml:space="preserve">
+    <value>在 Avisynth 脚本中，源文件名中的非英文字符可能会导致非 UTF/Unicode 编码中的持续时间丢失。</value>
   </data>
   <data name="warnings_last_s" xml:space="preserve">
     <value>上次会议期间的警告</value>

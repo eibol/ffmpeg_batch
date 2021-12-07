@@ -1378,7 +1378,7 @@
     <value>are not required.</value>
   </data>
   <data name="not_subfolders" xml:space="preserve">
-    <value>Adding subfolders enabled</value>
+    <value>Adding subfolders disabled</value>
   </data>
   <data name="no_aerowiz" xml:space="preserve">
     <value>AeroWizard.dll was not found in application path. Reinstalling the application should fix it.</value>
@@ -2591,7 +2591,7 @@
     <value>Yes</value>
   </data>
   <data name="yes_subfolders" xml:space="preserve">
-    <value>Adding subfolders not enabled</value>
+    <value>Adding subfolders enabled</value>
   </data>
   <data name="yt_channel" xml:space="preserve">
     <value>The pasted link may be a YouTube channel, please use the Download Channel/Playlist button instead.</value>

@@ -711,4 +711,37 @@
   <data name="encoded" xml:space="preserve">
     <value>codificato (i)</value>
   </data>
+  <data name="browse" xml:space="preserve">
+    <value>Navigare</value>
+  </data>
+  <data name="ansi_rec" xml:space="preserve">
+    <value>Si consiglia ANSI o UTF senza codifica del testo BOM.</value>
+  </data>
+  <data name="in_avis" xml:space="preserve">
+    <value>Negli script Avisynth, codifica del testo</value>
+  </data>
+  <data name="non_eng_rec" xml:space="preserve">
+    <value>NOTE: Non-english characters in source filename may cause duration to be missing in ANSI format.</value>
+  </data>
+  <data name="not_sup_bom" xml:space="preserve">
+    <value>potrebbe non essere supportato da ffmpeg se contiene BOM (Byte order marker).</value>
+  </data>
+  <data name="vs_files_warn" xml:space="preserve">
+    <value>Negli script Avisynth, i caratteri non inglesi nel nome del file di origine possono far mancare la durata nelle codifiche non UTF/Unicode.</value>
+  </data>
+  <data name="get_prev" xml:space="preserve">
+    <value>Ottenere cornici</value>
+  </data>
+  <data name="start_mark" xml:space="preserve">
+    <value>Punto di partenza</value>
+  </data>
+  <data name="kf_no_a" xml:space="preserve">
+    <value>La navigazione con i fotogrammi chiave della trackbar non sarà disponibile. È ancora possibile utilizzare i pulsanti dell'ora.</value>
+  </data>
+  <data name="out_file" xml:space="preserve">
+    <value>File di uscita</value>
+  </data>
+  <data name="speed_not comp" xml:space="preserve">
+    <value>L'impostazione della velocità non è compatibile con altri filtri video.</value>
+  </data>
 </root>

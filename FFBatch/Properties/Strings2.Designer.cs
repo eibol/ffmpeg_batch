@@ -106,6 +106,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a ANSI or UTF without BOM text encoding is recommended..
+        /// </summary>
+        internal static string ansi_rec {
+            get {
+                return ResourceManager.GetString("ansi_rec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Application window will be minimized 1 second before recording starts..
         /// </summary>
         internal static string app_min_1 {
@@ -129,6 +138,15 @@ namespace FFBatch.Properties {
         internal static string Aud_wave {
             get {
                 return ResourceManager.GetString("Aud_wave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Audio.
+        /// </summary>
+        internal static string audio {
+            get {
+                return ResourceManager.GetString("audio", resourceCulture);
             }
         }
         
@@ -187,7 +205,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Velocidad promedio:.
+        ///   Busca una cadena traducida similar a Average speed:.
         /// </summary>
         internal static string avgs {
             get {
@@ -246,6 +264,15 @@ namespace FFBatch.Properties {
         internal static string brow_page {
             get {
                 return ResourceManager.GetString("brow_page", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Browse.
+        /// </summary>
+        internal static string browse {
+            get {
+                return ResourceManager.GetString("browse", resourceCulture);
             }
         }
         
@@ -673,6 +700,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Getting frames.
+        /// </summary>
+        internal static string get_prev {
+            get {
+                return ResourceManager.GetString("get_prev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Image was copied to the clipboard..
         /// </summary>
         internal static string img_copied {
@@ -705,6 +741,15 @@ namespace FFBatch.Properties {
         internal static string in_60 {
             get {
                 return ResourceManager.GetString("in_60", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a In Avisynth scripts, text encoding.
+        /// </summary>
+        internal static string in_avis {
+            get {
+                return ResourceManager.GetString("in_avis", resourceCulture);
             }
         }
         
@@ -750,6 +795,15 @@ namespace FFBatch.Properties {
         internal static string join_files {
             get {
                 return ResourceManager.GetString("join_files", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Trackbar keyframe navigation may not not be available. You can still use the time buttons..
+        /// </summary>
+        internal static string kf_no_a {
+            get {
+                return ResourceManager.GetString("kf_no_a", resourceCulture);
             }
         }
         
@@ -907,6 +961,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a NOTE: Non-english characters in source filename may cause duration to be missing in ANSI format..
+        /// </summary>
+        internal static string non_eng_rec {
+            get {
+                return ResourceManager.GetString("non_eng_rec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a none.
         /// </summary>
         internal static string none {
@@ -952,6 +1015,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a may not be supported by ffmpeg if it contains BOM (Byte order marker)..
+        /// </summary>
+        internal static string not_sup_bom {
+            get {
+                return ResourceManager.GetString("not_sup_bom", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Please select only one file to add its streams..
         /// </summary>
         internal static string one_track {
@@ -966,6 +1038,15 @@ namespace FFBatch.Properties {
         internal static string only_1011 {
             get {
                 return ResourceManager.GetString("only_1011", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Output file.
+        /// </summary>
+        internal static string out_file {
+            get {
+                return ResourceManager.GetString("out_file", resourceCulture);
             }
         }
         
@@ -1528,11 +1609,29 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Speed setting is not compatible with other video filters..
+        /// </summary>
+        internal static string speed_not_comp {
+            get {
+                return ResourceManager.GetString("speed_not comp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Start screen capture.
         /// </summary>
         internal static string start_cap {
             get {
                 return ResourceManager.GetString("start_cap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Start mark.
+        /// </summary>
+        internal static string start_mark {
+            get {
+                return ResourceManager.GetString("start_mark", resourceCulture);
             }
         }
         
@@ -1717,6 +1816,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Video.
+        /// </summary>
+        internal static string video {
+            get {
+                return ResourceManager.GetString("video", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a videos on destination folder..
         /// </summary>
         internal static string vids_dest {
@@ -1731,6 +1839,15 @@ namespace FFBatch.Properties {
         internal static string vids_unav {
             get {
                 return ResourceManager.GetString("vids_unav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a In Avisynth scripts, non-english characters in source filename may cause duration to be missing in non UTF/Unicode encodings..
+        /// </summary>
+        internal static string vs_files_warn {
+            get {
+                return ResourceManager.GetString("vs_files_warn", resourceCulture);
             }
         }
         
