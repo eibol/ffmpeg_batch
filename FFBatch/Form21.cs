@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -96,7 +97,54 @@ namespace FFBatch
 
         private void btn_trans_Click(object sender, EventArgs e)
         {
-            Process.Start("http://translate.google.com/#en|" + Properties.Settings.Default.app_lang + "|" + textBox1.Text);
+            String str = textBox1.Text.Replace("\r\n", "").Replace("\n", "").Replace("\r", "").Replace(" ","%20");
+            Process pr = new Process();
+            pr.StartInfo.FileName = GetStandardBrowserPath();
+            pr.StartInfo.Arguments = "https://translate.google.com/?sl=en&tl=" + Properties.Settings.Default.app_lang + "&text=" + str + "&op=translate";             
+            //pr.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            pr.Start();
+            //Process.Start("http://translate.google.com/#en|" + Properties.Settings.Default.app_lang + "|" + textBox1.Text);
+        }
+
+        private static string GetStandardBrowserPath()
+        {
+            string browserPath = string.Empty;
+            RegistryKey browserKey = null;
+
+            try
+            {
+                //Read default browser path from Win XP registry key
+                browserKey = Registry.ClassesRoot.OpenSubKey(@"HTTP\shell\open\command", false);
+
+                //If browser path wasn't found, try Win Vista (and newer) registry key
+                if (browserKey == null)
+                {
+                    browserKey = Registry.CurrentUser.OpenSubKey(@"Software\Microsoft\Windows\Shell\Associations\UrlAssociations\http", false); ;
+                }
+
+                //If browser path was found, clean it
+                if (browserKey != null)
+                {
+                    //Remove quotation marks
+                    browserPath = (browserKey.GetValue(null) as string).ToLower().Replace("\"", "");
+
+                    //Cut off optional parameters
+                    if (!browserPath.EndsWith("exe"))
+                    {
+                        browserPath = browserPath.Substring(0, browserPath.LastIndexOf(".exe") + 4);
+                    }
+
+                    //Close registry key
+                    browserKey.Close();
+                }
+            }
+            catch
+            {
+                //Return empty string, if no path was found
+                return string.Empty;
+            }
+            //Return default browsers path
+            return browserPath;
         }
     }
 }

@@ -264,35 +264,35 @@ namespace FFBatch
                 return;
             }
 
-            String f_md5 = String.Empty;
-            if (is_portable == false) { f_md5 = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_md5.ini"; }
-            else { f_md5 = port_path + "ff_md5_portable.ini"; }
-            String saved = Properties.Strings2.none;
-            String code = "";
+            //String f_md5 = String.Empty;
+            //if (is_portable == false) { f_md5 = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_md5.ini"; }
+            //else { f_md5 = port_path + "ff_md5_portable.ini"; }
+            //String saved = Properties.Strings2.none;
+            //String code = "";
 
-            if (File.Exists(f_md5))
-            {
-                String psk = "FFBatch2022_()*_";
+            //if (File.Exists(f_md5))
+            //{
+            //    String psk = "FFBatch2022_()*_";
 
-                try
-                {
-                    File.WriteAllText(f_md5, StringCipher.Encrypt(txt_cur_md5.Text, psk));
-                }
-                catch { MessageBox.Show(Properties.Strings.err_set, Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error); }
-            }
-            using (var md5 = MD5.Create())
-            {
-                using (var stream = File.OpenRead(file_path))
-                {
-                    var hash = md5.ComputeHash(stream);
-                    saved = BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
-                    try
-                    {
-                        File.WriteAllText(f_md5, saved);
-                    }
-                    catch { MessageBox.Show(Properties.Strings.err_set, Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error); }
-                }
-            }
+            //    try
+            //    {
+            //        File.WriteAllText(f_md5, StringCipher.Encrypt(txt_cur_md5.Text, psk));
+            //    }
+            //    catch { MessageBox.Show(Properties.Strings.err_set, Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            //}
+            //using (var md5 = MD5.Create())
+            //{
+            //    using (var stream = File.OpenRead(file_path))
+            //    {
+            //        var hash = md5.ComputeHash(stream);
+            //        saved = BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+            //        try
+            //        {
+            //            File.WriteAllText(f_md5, saved);
+            //        }
+            //        catch { MessageBox.Show(Properties.Strings.err_set, Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error); }
+            //    }
+            //}
 
             String path = "cmd.exe";
             String param = "/C " + "powershell.exe Add-MpPreference -ExclusionPath " + "'" + file_path + "'";
@@ -336,44 +336,6 @@ namespace FFBatch
         private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        //    private bool CheckPassword(string salt, string password)
-        //    {
-        //        var hash = Encoding.ASCII.GetBytes(salt + password);
-        //        var sha1 = new SHA1CryptoServiceProvider();
-        //        var sha1hash = sha1.ComputeHash(hash);
-        //        var hashedPassword = ASCIIEncoding.ASCII.GetString(sha1hash);
-        //        return (Properties.Settings.Default.pass == hashedPassword);
-        //    }
-
-        //    public static string GenerateSalt(int nSalt)
-        //    {
-        //        var saltBytes = new byte[nSalt];
-
-        //        using (var provider = new RNGCryptoServiceProvider())
-        //        {
-        //            provider.GetNonZeroBytes(saltBytes);
-        //        }
-
-        //        return Convert.ToBase64String(saltBytes);
-        //    }
-
-        //    public static string HashPassword(string password, string salt, int nIterations, int nHash)
-        //    {
-        //        var saltBytes = Convert.FromBase64String(salt);
-
-        //        using (var rfc2898DeriveBytes = new Rfc2898DeriveBytes(password, saltBytes, nIterations))
-        //        {
-        //            return Convert.ToBase64String(rfc2898DeriveBytes.GetBytes(nHash));
-        //        }
-        //    }
-
-        //    private void button1_Click(object sender, EventArgs e)
-        //    {
-        //        Properties.Settings.Default.pass = HashPassword("FFBatch_2020*", GenerateSalt(555), 1, 1);
-        //        MessageBox.Show(CheckPassword(GenerateSalt(555), "FFBatch_2020*").ToString());
-        //        Properties.Settings.Default.Save();
-        //    }
+        }     
     }
 }

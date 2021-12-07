@@ -8,6 +8,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -582,22 +583,44 @@ namespace FFBatch
         private void abort_dl()
         {
             if (working == false) return;
-
-            StreamWriter write_q2 = process_glob.StandardInput;
-            write_q2.Write("q");
-            Process[] localByName = Process.GetProcessesByName("yt-dlp");
-            foreach (Process p in localByName)
+            if (Send_CTRLC(process_glob) == false)
             {
-                if (p.Id == process_glob.Id)
+                Process[] localByName = Process.GetProcessesByName("yt-dlp");
+                foreach (Process p in localByName)
                 {
-                    try { p.Kill(); }
-                    catch { }
+                    if (p.Id == process_glob.Id)
+                    {
+                        try { p.Kill(); }
+                        catch { }
+                    }
                 }
             }
 
             aborted_url = true;
             cancel_queue = true;
         }
+
+        public Boolean Send_CTRLC(Process p)
+        {
+            if (AttachConsole((uint)p.Id))
+            {
+                SetConsoleCtrlHandler(null, true);
+                try
+                {
+                    if (!GenerateConsoleCtrlEvent(CTRL_C_EVENT, 0))
+                        return false;
+                    p.WaitForExit(10000);
+                }
+                finally
+                {
+                    FreeConsole();
+                    SetConsoleCtrlHandler(null, false);
+                }
+                return true;
+            }
+            return false;
+        }
+
 
         private void btn_abort_all_Click(object sender, EventArgs e)
         {
@@ -669,5 +692,22 @@ namespace FFBatch
         {
             show_est = !show_est;
         }
+
+        internal const int CTRL_C_EVENT = 0;
+
+        [DllImport("kernel32.dll")]
+        internal static extern bool GenerateConsoleCtrlEvent(uint dwCtrlEvent, uint dwProcessGroupId);
+
+        [DllImport("kernel32.dll", SetLastError = true)]
+        internal static extern bool AttachConsole(uint dwProcessId);
+
+        [DllImport("kernel32.dll", SetLastError = true, ExactSpelling = true)]
+        internal static extern bool FreeConsole();
+
+        [DllImport("kernel32.dll")]
+        private static extern bool SetConsoleCtrlHandler(ConsoleCtrlDelegate HandlerRoutine, bool Add);
+
+        // Delegate type to be used as the Handler Routine for SCCH
+        private delegate Boolean ConsoleCtrlDelegate(uint CtrlType);
     }
 }
