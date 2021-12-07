@@ -18,6 +18,7 @@ namespace FFBatch
 {
     public partial class Form8 : Form
     {
+        public String format_ext = String.Empty;
         public String url_dg_item = String.Empty;
         public String thumb_url_streams = String.Empty;
         public String format_ID = "";
@@ -261,7 +262,7 @@ namespace FFBatch
             {
                 if (Convert.ToBoolean(row.Cells[1].Value) == true)
                 {
-                    i = i + 1;
+                    i++;
                     if (row.Cells[4].Value.ToString().ToLower().Contains("audio"))
                     {
                         f_aud = row.Cells[2].Value.ToString();
@@ -269,6 +270,7 @@ namespace FFBatch
                     else
                     {
                         f_vid = row.Cells[2].Value.ToString();
+                        format_ext = row.Cells[3].Value.ToString();
                     }
                     if (i > 2)
                     {

@@ -37,7 +37,6 @@
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menu_grid = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ct1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.txt_file = new System.Windows.Forms.TextBox();
             this.img_streams = new System.Windows.Forms.ImageList(this.components);
             this.ff_str = new System.Diagnostics.Process();
             this.pic_frame = new System.Windows.Forms.PictureBox();
@@ -52,16 +51,39 @@
             this.btn_min1 = new System.Windows.Forms.Button();
             this.btn_plus1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.img_prog = new System.Windows.Forms.PictureBox();
+            this.lbl_lapse = new System.Windows.Forms.Label();
+            this.lbl_end = new System.Windows.Forms.Label();
+            this.lbl_start = new System.Windows.Forms.Label();
+            this.trim_right = new System.Windows.Forms.Button();
+            this.trim_left = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_cancel = new System.Windows.Forms.Button();
+            this.lbl_prog = new System.Windows.Forms.Label();
             this.btn_copy = new System.Windows.Forms.Button();
+            this.trackB = new System.Windows.Forms.TrackBar();
             this.btn_save = new System.Windows.Forms.Button();
+            this.btn_refresh = new System.Windows.Forms.Button();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.btn_close = new System.Windows.Forms.Button();
             this.save_img = new System.Windows.Forms.SaveFileDialog();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.BG_Keyframes = new System.ComponentModel.BackgroundWorker();
+            this.txt_file = new System.Windows.Forms.Label();
+            this.pic_cut = new System.Windows.Forms.PictureBox();
+            this.btn_k_m1 = new System.Windows.Forms.Button();
+            this.btn_kplus1 = new System.Windows.Forms.Button();
+            this.glassExtenderProvider1 = new Vanara.Interop.DesktopWindowManager.GlassExtenderProvider();
+            this.pg1 = new FFBatch.ProgressBarWithText();
             ((System.ComponentModel.ISupportInitialize)(this.dg_streams)).BeginInit();
             this.menu_grid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_frame)).BeginInit();
             this.menu_Img.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_prog)).BeginInit();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_cut)).BeginInit();
             this.SuspendLayout();
             // 
             // dg_streams
@@ -115,14 +137,6 @@
             this.ct1.Name = "ct1";
             resources.ApplyResources(this.ct1, "ct1");
             this.ct1.Click += new System.EventHandler(this.ct1_Click);
-            // 
-            // txt_file
-            // 
-            this.txt_file.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.txt_file.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.txt_file, "txt_file");
-            this.txt_file.Name = "txt_file";
-            this.txt_file.ReadOnly = true;
             // 
             // img_streams
             // 
@@ -222,9 +236,19 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_kplus1);
+            this.groupBox1.Controls.Add(this.btn_k_m1);
+            this.groupBox1.Controls.Add(this.pic_cut);
+            this.groupBox1.Controls.Add(this.img_prog);
+            this.groupBox1.Controls.Add(this.lbl_lapse);
+            this.groupBox1.Controls.Add(this.lbl_end);
+            this.groupBox1.Controls.Add(this.lbl_start);
+            this.groupBox1.Controls.Add(this.trim_right);
+            this.groupBox1.Controls.Add(this.trim_left);
+            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.btn_copy);
+            this.groupBox1.Controls.Add(this.trackB);
             this.groupBox1.Controls.Add(this.btn_save);
-            this.groupBox1.Controls.Add(this.txt_file);
             this.groupBox1.Controls.Add(this.btn_plus1);
             this.groupBox1.Controls.Add(this.pic_frame);
             this.groupBox1.Controls.Add(this.btn_min1);
@@ -237,6 +261,64 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
+            // img_prog
+            // 
+            resources.ApplyResources(this.img_prog, "img_prog");
+            this.img_prog.Name = "img_prog";
+            this.img_prog.TabStop = false;
+            // 
+            // lbl_lapse
+            // 
+            resources.ApplyResources(this.lbl_lapse, "lbl_lapse");
+            this.lbl_lapse.Name = "lbl_lapse";
+            // 
+            // lbl_end
+            // 
+            resources.ApplyResources(this.lbl_end, "lbl_end");
+            this.lbl_end.Name = "lbl_end";
+            // 
+            // lbl_start
+            // 
+            resources.ApplyResources(this.lbl_start, "lbl_start");
+            this.lbl_start.Name = "lbl_start";
+            // 
+            // trim_right
+            // 
+            resources.ApplyResources(this.trim_right, "trim_right");
+            this.trim_right.Name = "trim_right";
+            this.trim_right.UseVisualStyleBackColor = true;
+            this.trim_right.Click += new System.EventHandler(this.trim_right_Click);
+            // 
+            // trim_left
+            // 
+            resources.ApplyResources(this.trim_left, "trim_left");
+            this.trim_left.Name = "trim_left";
+            this.trim_left.UseVisualStyleBackColor = true;
+            this.trim_left.Click += new System.EventHandler(this.trim_left_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.pg1);
+            this.panel1.Controls.Add(this.btn_cancel);
+            this.panel1.Controls.Add(this.lbl_prog);
+            resources.ApplyResources(this.panel1, "panel1");
+            this.panel1.Name = "panel1";
+            // 
+            // btn_cancel
+            // 
+            resources.ApplyResources(this.btn_cancel, "btn_cancel");
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
+            // 
+            // lbl_prog
+            // 
+            this.lbl_prog.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.lbl_prog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.lbl_prog, "lbl_prog");
+            this.lbl_prog.Name = "lbl_prog";
+            // 
             // btn_copy
             // 
             this.btn_copy.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
@@ -246,6 +328,13 @@
             this.btn_copy.UseVisualStyleBackColor = true;
             this.btn_copy.Click += new System.EventHandler(this.btn_copy_Click);
             // 
+            // trackB
+            // 
+            resources.ApplyResources(this.trackB, "trackB");
+            this.trackB.LargeChange = 2;
+            this.trackB.Name = "trackB";
+            this.trackB.ValueChanged += new System.EventHandler(this.trackB_ValueChanged);
+            // 
             // btn_save
             // 
             this.btn_save.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
@@ -254,6 +343,14 @@
             this.btn_save.Name = "btn_save";
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // btn_refresh
+            // 
+            this.btn_refresh.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_refresh, "btn_refresh");
+            this.btn_refresh.Name = "btn_refresh";
+            this.btn_refresh.UseVisualStyleBackColor = true;
+            this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
             // 
             // txt_name
             // 
@@ -273,16 +370,59 @@
             // 
             this.save_img.FileOk += new System.ComponentModel.CancelEventHandler(this.save_img_FileOk);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // BG_Keyframes
+            // 
+            this.BG_Keyframes.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BG_Keyframes_DoWork);
+            this.BG_Keyframes.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BG_Keyframes_RunWorkerCompleted);
+            // 
+            // txt_file
+            // 
+            resources.ApplyResources(this.txt_file, "txt_file");
+            this.txt_file.Name = "txt_file";
+            // 
+            // pic_cut
+            // 
+            resources.ApplyResources(this.pic_cut, "pic_cut");
+            this.pic_cut.Name = "pic_cut";
+            this.pic_cut.TabStop = false;
+            // 
+            // btn_k_m1
+            // 
+            resources.ApplyResources(this.btn_k_m1, "btn_k_m1");
+            this.btn_k_m1.Name = "btn_k_m1";
+            this.btn_k_m1.UseVisualStyleBackColor = true;
+            this.btn_k_m1.Click += new System.EventHandler(this.btn_k_m1_Click);
+            // 
+            // btn_kplus1
+            // 
+            resources.ApplyResources(this.btn_kplus1, "btn_kplus1");
+            this.btn_kplus1.Name = "btn_kplus1";
+            this.btn_kplus1.UseVisualStyleBackColor = true;
+            this.btn_kplus1.Click += new System.EventHandler(this.btn_kplus1_Click);
+            // 
+            // pg1
+            // 
+            resources.ApplyResources(this.pg1, "pg1");
+            this.pg1.Name = "pg1";
+            // 
             // Form5
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Controls.Add(this.txt_file);
+            this.Controls.Add(this.btn_refresh);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.dg_streams);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txt_name);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.glassExtenderProvider1.SetGlassMargins(this, new System.Windows.Forms.Padding(0));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form5";
@@ -294,6 +434,10 @@
             this.menu_Img.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.img_prog)).EndInit();
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.trackB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_cut)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,7 +446,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dg_streams;
-        private System.Windows.Forms.TextBox txt_file;
         private System.Windows.Forms.ImageList img_streams;
         private System.Windows.Forms.ContextMenuStrip menu_grid;
         private System.Windows.Forms.ToolStripMenuItem ct1;
@@ -317,15 +460,34 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txt_name;
         private System.Windows.Forms.Button btn_close;
-        private System.Windows.Forms.DataGridViewImageColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.PictureBox pic_frame;
         private System.Windows.Forms.ContextMenuStrip menu_Img;
         private System.Windows.Forms.ToolStripMenuItem ct_save;
         private System.Windows.Forms.ToolStripMenuItem ct_copy;
         private System.Windows.Forms.SaveFileDialog save_img;
         private System.Windows.Forms.Button btn_copy;
         private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.TrackBar trackB;
+        private System.Windows.Forms.DataGridViewImageColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.Button btn_cancel;
+        private System.Windows.Forms.Label lbl_prog;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btn_refresh;
+        public System.Windows.Forms.PictureBox pic_frame;
+        private ProgressBarWithText pg1;
+        private System.Windows.Forms.Button trim_right;
+        private System.Windows.Forms.Button trim_left;
+        private System.ComponentModel.BackgroundWorker BG_Keyframes;
+        private System.Windows.Forms.Label lbl_lapse;
+        private System.Windows.Forms.Label lbl_end;
+        private System.Windows.Forms.Label lbl_start;
+        private System.Windows.Forms.PictureBox img_prog;
+        private System.Windows.Forms.Label txt_file;
+        private System.Windows.Forms.PictureBox pic_cut;
+        private System.Windows.Forms.Button btn_kplus1;
+        private System.Windows.Forms.Button btn_k_m1;
+        private Vanara.Interop.DesktopWindowManager.GlassExtenderProvider glassExtenderProvider1;
     }
 }
