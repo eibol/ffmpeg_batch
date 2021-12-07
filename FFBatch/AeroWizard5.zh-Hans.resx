@@ -268,7 +268,7 @@
     <value>338, 191</value>
   </data>
   <data name="chk_out_name.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 19</value>
+    <value>98, 19</value>
   </data>
   <data name="chk_out_name.Text" xml:space="preserve">
     <value>使用源文件名</value>
@@ -277,13 +277,13 @@
     <value>240, 29</value>
   </data>
   <data name="check_resize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 19</value>
+    <value>100, 19</value>
   </data>
   <data name="check_resize.Text" xml:space="preserve">
     <value>调整图像大小</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 15</value>
+    <value>56, 15</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>输出格式</value>
@@ -292,13 +292,13 @@
     <value>格式</value>
   </data>
   <data name="radio_absolute.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 19</value>
+    <value>100, 19</value>
   </data>
   <data name="radio_absolute.Text" xml:space="preserve">
     <value>绝对输出路径</value>
   </data>
   <data name="radio_relative.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 19</value>
+    <value>99, 19</value>
   </data>
   <data name="radio_relative.Text" xml:space="preserve">
     <value>相对输出路径</value>
@@ -319,19 +319,19 @@
     <value>124, 23</value>
   </data>
   <data name="radio_keys.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 19</value>
+    <value>86, 19</value>
   </data>
   <data name="radio_keys.Text" xml:space="preserve">
     <value>秒keyframe</value>
   </data>
   <data name="radio_all.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 19</value>
+    <value>62, 19</value>
   </data>
   <data name="radio_all.Text" xml:space="preserve">
     <value>每一帧</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 15</value>
+    <value>19, 15</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>秒</value>
@@ -343,13 +343,13 @@
     <value>帧</value>
   </data>
   <data name="radio_time.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 19</value>
+    <value>61, 19</value>
   </data>
   <data name="radio_time.Text" xml:space="preserve">
     <value>每一个</value>
   </data>
   <data name="radio_Frames.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 19</value>
+    <value>61, 19</value>
   </data>
   <data name="radio_Frames.Text" xml:space="preserve">
     <value>每一个</value>
@@ -361,19 +361,19 @@
     <value>图像提取预设向导</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 15</value>
+    <value>173, 15</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>按开始按钮立即开始图像提取。</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 15</value>
+    <value>231, 15</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>按完成使用预设，或按取消返回主选项卡。</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 15</value>
+    <value>177, 15</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>图像提取预设向导已准备就绪。</value>
@@ -385,7 +385,7 @@
     <value>342, 23</value>
   </data>
   <data name="chk_save_preset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 19</value>
+    <value>113, 19</value>
   </data>
   <data name="chk_save_preset.Text" xml:space="preserve">
     <value>保存选定的预设</value>

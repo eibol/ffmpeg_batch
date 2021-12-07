@@ -265,6 +265,12 @@
     <Compile Include="Form25.Designer.cs">
       <DependentUpon>Form25.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form26.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form26.Designer.cs">
+      <DependentUpon>Form26.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form3.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -712,6 +718,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form25.zh-Hans.resx">
       <DependentUpon>Form25.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form26.resx">
+      <DependentUpon>Form26.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form3.es.resx">
       <DependentUpon>Form3.cs</DependentUpon>

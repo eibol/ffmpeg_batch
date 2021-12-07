@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Management;
 using System.Net;
 using System.Threading;
@@ -30,7 +31,6 @@ namespace FFBatch
         private String port_path = System.IO.Path.Combine(Application.StartupPath, "settings") + "\\";
         public Boolean is_portable = false;
         private Boolean started_video = false;
-        private Boolean started_audio = false;
         private Boolean existing_preset = false;
         private String params_result = String.Empty;
         private String ext_result = String.Empty;
@@ -103,7 +103,7 @@ namespace FFBatch
                 cb_framerate.Items.Add("60");
                 String[] v_pixels = new string[] { "yuv420p", "yuv422p", "yuv444p", "yuyv422", "yuv422p10", "yuv422p10le", "yuv444p10", "yuv444p10le", "yuva444p10", "yuva444p10le", "rgb24", "rgb32", "rgb565", "rgb555", "nv12", "gray", "monow", "monob" };
                 foreach (String item in v_pixels) cb_pixel.Items.Add(item);
-                String[] sizes = new string[] { FFBatch.Properties.Strings2.custom, "1920x1080", "1920x800", "1440x1080", "1280x720", "1024x768", "1024x576", "800x600", "800x480", "720x576", "720x480", "640x480", "640x360" };
+                String[] sizes = new string[] { FFBatch.Properties.Strings2.custom, "1920x1080", "1920x800", "1440x1080", "1280x720", "1024x768", "1024x576", "960x540", "800x600", "800x480", "720x576", "720x540", "720x480", "640x480", "640x360" };
                 foreach (String v_sizes in sizes) cb_resize.Items.Add(v_sizes);
                 String[] crops = new string[] { FFBatch.Properties.Strings2.custom, "1:1", "4:3", "16:9", "1440x1080", "1280x720", "1024x768", "1024x576", "800x600", "800x480", "720x576", "720x480" };
                 foreach (String v_crops in crops) cb_crop.Items.Add(v_crops);
@@ -906,30 +906,24 @@ namespace FFBatch
 
         private void wz2_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
         {
-            if (started_audio == false)
-            {
-                cb_audio_encoder.Items.Clear();
-                String[] audio_encoders = new string[] { "copy", "none", "pcm16", "pcm24", "flac", "aac", "ac3", "e-ac3", "mp3", "vorbis", "opus" };
-                foreach (String item in audio_encoders) cb_audio_encoder.Items.Add(item);
-                cb_audio_encoder.SelectedIndex = 0;
-                cb_channels.Items.Clear();
-                cb_channels.Items.Add("Source");
-                cb_channels.Items.Add("Stereo");
-                cb_channels.Items.Add("Mono");
-                cb_channels.SelectedIndex = 0;
-                cb_sample_rate.Items.Add("Source");
-                cb_sample_rate.Items.Add("44.1K");
-                cb_sample_rate.Items.Add("48K");
-                cb_sample_rate.Items.Add("88.2K");
-                cb_sample_rate.Items.Add("96K");
-                cb_sample_rate.Items.Add("192K");
-                cb_sample_rate.SelectedIndex = 0;
-                String[] audio_cutoff = new string[] { "none", "20KHz", "19KHz", "18KHz", "17KHz", "16KHz", "15KHz", "14KHz", "13KHz", "12KHz", "11KHz", "10KHz" };
-                foreach (String item in audio_cutoff) cb_cutoff.Items.Add(item);
-                String[] opus_vbr = new string[] { "10 (HQ)", "9", "8", "7", "6", "5", "4", "3", "2", "1", "0 (LQ)" };
-                foreach (String item in opus_vbr) cb_opus_vbr.Items.Add(item);
-            }
-            started_audio = true;
+            try { cb_audio_encoder.SelectedIndex = Properties.Settings.Default.wiz_aud; } catch { }
+            cb_channels.Items.Clear();
+
+            cb_channels.Items.Add("Source");
+            cb_channels.Items.Add("Stereo");
+            cb_channels.Items.Add("Mono");
+            cb_channels.SelectedIndex = 0;
+            cb_sample_rate.Items.Add("Source");
+            cb_sample_rate.Items.Add("44.1K");
+            cb_sample_rate.Items.Add("48K");
+            cb_sample_rate.Items.Add("88.2K");
+            cb_sample_rate.Items.Add("96K");
+            cb_sample_rate.Items.Add("192K");
+            cb_sample_rate.SelectedIndex = 0;
+            String[] audio_cutoff = new string[] { "none", "20KHz", "19KHz", "18KHz", "17KHz", "16KHz", "15KHz", "14KHz", "13KHz", "12KHz", "11KHz", "10KHz" };
+            foreach (String item in audio_cutoff) cb_cutoff.Items.Add(item);
+            String[] opus_vbr = new string[] { "10 (HQ)", "9", "8", "7", "6", "5", "4", "3", "2", "1", "0 (LQ)" };
+            foreach (String item in opus_vbr) cb_opus_vbr.Items.Add(item);
         }
 
         private void cb_audio_encoder_SelectedIndexChanged(object sender, EventArgs e)
@@ -1813,321 +1807,455 @@ namespace FFBatch
 
         private void wz1_1_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
         {
+            if (Combo_encoders.SelectedIndex == Combo_encoders.FindString("copy")) return;
+
             String filters = String.Empty;
-
-            if (first_resize_rotate == false)
+            int n_fs = 0;
+            if (cb_resize.SelectedIndex != -1) n_fs++;
+            if (cb_crop.SelectedIndex != -1) n_fs++;
+            if (cb_deint.SelectedIndex != -1) n_fs++;
+            if (cb_rotate.SelectedIndex != -1 && cb_rotate.SelectedIndex != 0) n_fs++;
+            if (n_fs == 0 && n_speed.Value == 0) return;
+            if (n_fs == 1)
             {
-                first_resize_rotate = true;
-                if (Combo_encoders.SelectedIndex != Combo_encoders.FindString("copy"))
+                filters = " -vf " + '\u0022';
+                //Resize
+                if (cb_resize.SelectedIndex != -1)
                 {
-                    if (cb_resize.SelectedIndex != -1 && cb_crop.SelectedIndex == -1 && (cb_rotate.SelectedIndex == -1 || cb_rotate.SelectedIndex == 0))
+                    if (cb_resize.SelectedIndex == 0)
                     {
-                        //Resize only
-                        if (cb_resize.SelectedIndex == 0)
-                        {
-                            video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "scale=" + n_width.Value + ":" + n_height.Value + '\u0022';
-                        }
-                        else
-                        {
-                            String r_size = cb_resize.SelectedItem.ToString().Replace("x", ":");
-                            video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "scale=" + r_size + '\u0022';
-                        }
+                        filters = filters + "scale=" + n_width.Value + ":" + n_height.Value + '\u0022';
                     }
-
-                    if (cb_rotate.SelectedIndex != -1 && cb_rotate.SelectedIndex != 0 && cb_resize.SelectedIndex == -1 && cb_crop.SelectedIndex == -1)
+                    else
                     {
-                        //Rotate only
-                        if (cb_rotate.SelectedIndex == 1) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "transpose=clock" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 2) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "transpose=cclock" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 3) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "vflip,hflip" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 4) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "hflip" + '\u0022';
-                    }
-
-                    if (cb_crop.SelectedIndex != -1 && cb_resize.SelectedIndex == -1 && (cb_rotate.SelectedIndex == -1 || cb_rotate.SelectedIndex == 0))
-                    {
-                        //Crop only
-                        if (cb_crop.SelectedIndex == 0) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=in_w-" + (l_crop.Value + r_crop.Value).ToString() + ":" + "h=in_h-" + (u_crop.Value + d_crop.Value).ToString() + ":" + "x=" + l_crop.Value + ":" + "y=" + u_crop.Value + '\u0022';
-                        if (cb_crop.SelectedIndex == 1) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=in_h" + '\u0022';
-                        if (cb_crop.SelectedIndex == 2) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=ih/3*4:ih" + '\u0022';
-                        if (cb_crop.SelectedIndex == 3) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=ih/9*16:ih" + '\u0022';
-                        if (cb_crop.SelectedIndex == 4) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=1440:1080" + '\u0022';
-                        if (cb_crop.SelectedIndex == 5) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=1280:720" + '\u0022';
-                        if (cb_crop.SelectedIndex == 6) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=1024:768" + '\u0022';
-                        if (cb_crop.SelectedIndex == 7) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=1024:576" + '\u0022';
-                        if (cb_crop.SelectedIndex == 8) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=800:600" + '\u0022';
-                        if (cb_crop.SelectedIndex == 9) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=800:480" + '\u0022';
-                        if (cb_crop.SelectedIndex == 10) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=720:576" + '\u0022';
-                        if (cb_crop.SelectedIndex == 11) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=720:480" + '\u0022';
-                    }
-                    // All filters chained
-                    if (cb_crop.SelectedIndex != -1 && cb_resize.SelectedIndex != -1 && cb_rotate.SelectedIndex != -1 && cb_rotate.SelectedIndex != 0)
-                    {
-                        if (cb_resize.SelectedIndex == 0)
-                        {
-                            filters = " -vf " + '\u0022' + "scale=" + n_width.Value + ":" + n_height.Value + ", ";
-                        }
-                        else
-                        {
-                            String r_size = cb_resize.SelectedItem.ToString().Replace("x", ":");
-                            filters = " -vf " + '\u0022' + "scale=" + r_size + ", ";
-                        }
-                        if (cb_crop.SelectedIndex == 0) filters = filters + "crop=in_w-" + (l_crop.Value + r_crop.Value).ToString() + ":" + "h=in_h-" + (u_crop.Value + d_crop.Value).ToString() + ":" + "x=" + l_crop.Value + ":" + "y=" + u_crop.Value + ", ";
-                        if (cb_crop.SelectedIndex == 1) filters = filters + "crop=in_h" + ", ";
-                        if (cb_crop.SelectedIndex == 2) filters = filters + "crop=ih/3*4:ih" + ", ";
-                        if (cb_crop.SelectedIndex == 3) filters = filters + "crop=ih/9*16:ih" + ", ";
-                        if (cb_crop.SelectedIndex == 4) filters = filters + "crop=1440:1080" + ", ";
-                        if (cb_crop.SelectedIndex == 5) filters = filters + "crop=1280:720" + ", ";
-                        if (cb_crop.SelectedIndex == 6) filters = filters + "crop=1024:768" + ", ";
-                        if (cb_crop.SelectedIndex == 7) filters = filters + "crop=1024:576" + ", ";
-                        if (cb_crop.SelectedIndex == 8) filters = filters + "crop=800:600" + ", ";
-                        if (cb_crop.SelectedIndex == 9) filters = filters + "crop=800:480" + ", ";
-                        if (cb_crop.SelectedIndex == 10) filters = filters + "crop=720:576" + ", ";
-                        if (cb_crop.SelectedIndex == 11) filters = filters + "crop=720:480" + ", ";
-
-                        if (cb_rotate.SelectedIndex == 1) filters = filters + "transpose=clock" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 2) filters = filters + "transpose=cclock" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 3) filters = filters + "vflip,hflip" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 4) filters = filters + "hflip" + '\u0022';
-                        video_encoder_param = video_encoder_param + filters;
-                    }
-                    // Two filters, resize + crop
-                    if (cb_crop.SelectedIndex != -1 && cb_resize.SelectedIndex != -1 && (cb_rotate.SelectedIndex == -1 || cb_rotate.SelectedIndex == 0))
-                    {
-                        if (cb_resize.SelectedIndex == 0)
-                        {
-                            filters = " -vf " + '\u0022' + "scale=" + n_width.Value + ":" + n_height.Value + ", ";
-                        }
-                        else
-                        {
-                            String r_size = cb_resize.SelectedItem.ToString().Replace("x", ":");
-                            filters = " -vf " + '\u0022' + "scale=" + r_size + ", ";
-                        }
-                        if (cb_crop.SelectedIndex == 0) filters = filters + "crop=in_w-" + (l_crop.Value + r_crop.Value).ToString() + ":" + "h=in_h-" + (u_crop.Value + d_crop.Value).ToString() + ":" + "x=" + l_crop.Value + ":" + "y=" + u_crop.Value + '\u0022';
-                        if (cb_crop.SelectedIndex == 1) filters = filters + "crop=in_h" + '\u0022';
-                        if (cb_crop.SelectedIndex == 2) filters = filters + "crop=ih/3*4:ih" + '\u0022';
-                        if (cb_crop.SelectedIndex == 3) filters = filters + "crop=ih/9*16:ih" + '\u0022';
-                        if (cb_crop.SelectedIndex == 4) filters = filters + "crop=1440:1080" + '\u0022';
-                        if (cb_crop.SelectedIndex == 5) filters = filters + "crop=1280:720" + '\u0022';
-                        if (cb_crop.SelectedIndex == 6) filters = filters + "crop=1024:768" + '\u0022';
-                        if (cb_crop.SelectedIndex == 7) filters = filters + "crop=1024:576" + '\u0022';
-                        if (cb_crop.SelectedIndex == 8) filters = filters + "crop=800:600" + '\u0022';
-                        if (cb_crop.SelectedIndex == 9) filters = filters + "crop=800:480" + '\u0022';
-                        if (cb_crop.SelectedIndex == 10) filters = filters + "crop=720:576" + '\u0022';
-                        if (cb_crop.SelectedIndex == 11) filters = filters + "crop=720:480" + '\u0022';
-
-                        video_encoder_param = video_encoder_param + filters;
-                    }
-
-                    // Two filters, resize + rotate
-                    if (cb_crop.SelectedIndex == -1 && cb_resize.SelectedIndex != -1 && cb_rotate.SelectedIndex != -1 && cb_rotate.SelectedIndex != 0)
-                    {
-                        if (cb_resize.SelectedIndex == 0)
-                        {
-                            filters = " -vf " + '\u0022' + "scale=" + n_width.Value + ":" + n_height.Value + ", ";
-                        }
-                        else
-                        {
-                            String r_size = cb_resize.SelectedItem.ToString().Replace("x", ":");
-                            filters = " -vf " + '\u0022' + "scale=" + r_size + ", ";
-                        }
-                        if (cb_rotate.SelectedIndex == 1) filters = filters + "transpose=clock" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 2) filters = filters + "transpose=cclock" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 3) filters = filters + "vflip,hflip" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 4) filters = filters + "hflip" + '\u0022';
-
-                        video_encoder_param = video_encoder_param + filters;
-                    }
-                    // Two filters, crop + rotate
-                    if (cb_crop.SelectedIndex != -1 && cb_resize.SelectedIndex == -1 && cb_rotate.SelectedIndex != -1 && cb_rotate.SelectedIndex != 0)
-                    {
-                        if (cb_crop.SelectedIndex == 0) filters = " -vf " + '\u0022' + "crop=in_w-" + (l_crop.Value + r_crop.Value).ToString() + ":" + "h=in_h-" + (u_crop.Value + d_crop.Value).ToString() + ":" + "x=" + l_crop.Value + ":" + "y=" + u_crop.Value + ", ";
-                        if (cb_crop.SelectedIndex == 1) filters = " -vf " + '\u0022' + "crop=in_h" + ", ";
-                        if (cb_crop.SelectedIndex == 2) filters = " -vf " + '\u0022' + "crop=ih/3*4:ih" + ", ";
-                        if (cb_crop.SelectedIndex == 3) filters = " -vf " + '\u0022' + "crop=ih/9*16:ih" + ", ";
-                        if (cb_crop.SelectedIndex == 4) filters = " -vf " + '\u0022' + "crop=1440:1080" + ", ";
-                        if (cb_crop.SelectedIndex == 5) filters = " -vf " + '\u0022' + "crop=1280:720" + ", ";
-                        if (cb_crop.SelectedIndex == 6) filters = " -vf " + '\u0022' + "crop=1024:768" + ", ";
-                        if (cb_crop.SelectedIndex == 7) filters = " -vf " + '\u0022' + "crop=1024:576" + ", ";
-                        if (cb_crop.SelectedIndex == 8) filters = " -vf " + '\u0022' + "crop=800:600" + ", ";
-                        if (cb_crop.SelectedIndex == 9) filters = " -vf " + '\u0022' + "crop=800:480" + ", ";
-                        if (cb_crop.SelectedIndex == 10) filters = " -vf " + '\u0022' + "crop=720:576" + ", ";
-                        if (cb_crop.SelectedIndex == 11) filters = " -vf " + '\u0022' + "crop=720:480" + ", ";
-
-                        if (cb_rotate.SelectedIndex == 1) filters = filters + "transpose=clock" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 2) filters = filters + "transpose=cclock" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 3) filters = filters + "vflip,hflip" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 4) filters = filters + "hflip" + '\u0022';
-
-                        video_encoder_param = video_encoder_param + filters;
+                        String r_size = cb_resize.SelectedItem.ToString().Replace("x", ":");
+                        filters = filters + "scale=" + r_size + '\u0022';
                     }
                 }
-                Decimal v_sp = 0;
-                Decimal a_sp = 0;
-                Decimal const1 = 0.5M;
-                if (n_speed.Value != 0)
+                //Rotate
+                if (cb_rotate.SelectedIndex != -1 && cb_rotate.SelectedIndex != 0)
                 {
-                    if (n_speed.Value > 0)
-                    {
-                        v_sp = const1 + ((100 - n_speed.Value) / 200);
-                        a_sp = 1 + (n_speed.Value / 100);
-                    }
-
-                    if (n_speed.Value < 0)
-                    {
-                        v_sp = 1 + Math.Abs(n_speed.Value / 100);
-                        a_sp = const1 + (Math.Abs(-100 - n_speed.Value) / 200);
-                    }
-                    video_encoder_param = video_encoder_param + " -filter_complex " + '\u0022' + "[0:v]setpts=" + v_sp.ToString().Replace(",", ".") + "*PTS[v];[0:a]atempo=" + a_sp.ToString().Replace(",", ".") + "[a]" + '\u0022' + " -map " + '\u0022' + "[v]" + '\u0022' + " -map " + '\u0022' + "[a]" + '\u0022' + " ";
+                    if (cb_rotate.SelectedIndex == 1) filters = filters + "transpose=clock" + '\u0022';
+                    if (cb_rotate.SelectedIndex == 2) filters = filters + "transpose=cclock" + '\u0022';
+                    if (cb_rotate.SelectedIndex == 3) filters = filters + "vflip,hflip" + '\u0022';
+                    if (cb_rotate.SelectedIndex == 4) filters = filters + "hflip" + '\u0022';
                 }
+
+                //Crop
+                if (cb_crop.SelectedIndex != -1)
+                {
+                    if (cb_crop.SelectedIndex == 0) filters = filters + "crop=in_w-" + (l_crop.Value + r_crop.Value).ToString() + ":" + "h=in_h-" + (u_crop.Value + d_crop.Value).ToString() + ":" + "x=" + l_crop.Value + ":" + "y=" + u_crop.Value + '\u0022';
+                    if (cb_crop.SelectedIndex == 1) filters = filters + "crop=in_h" + '\u0022';
+                    if (cb_crop.SelectedIndex == 2) filters = filters + "crop=ih/3*4:ih" + '\u0022';
+                    if (cb_crop.SelectedIndex == 3) filters = filters + "crop=ih/9*16:ih" + '\u0022';
+                    if (cb_crop.SelectedIndex == 4) filters = filters + "crop=1440:1080" + '\u0022';
+                    if (cb_crop.SelectedIndex == 5) filters = filters + "crop=1280:720" + '\u0022';
+                    if (cb_crop.SelectedIndex == 6) filters = filters + "crop=1024:768" + '\u0022';
+                    if (cb_crop.SelectedIndex == 7) filters = filters + "crop=1024:576" + '\u0022';
+                    if (cb_crop.SelectedIndex == 8) filters = filters + "crop=800:600" + '\u0022';
+                    if (cb_crop.SelectedIndex == 9) filters = filters + "crop=800:480" + '\u0022';
+                    if (cb_crop.SelectedIndex == 10) filters = filters + "crop=720:576" + '\u0022';
+                    if (cb_crop.SelectedIndex == 11) filters = filters + "crop=720:480" + '\u0022';
+                }
+                if (cb_deint.SelectedIndex != -1)
+                {
+                    filters = filters + cb_deint.SelectedItem.ToString() + "=" + cb_de_mode.SelectedIndex.ToString() + ":" + cb_de_parity.SelectedIndex.ToString() + ":" + cb_de_deint.SelectedIndex.ToString() + '\u0022';
+                }
+
+                video_encoder_param = video_encoder_param + " " + filters;
             }
-            else //Back and forth
+
+            if (n_fs > 1) //Several filters combined
             {
-                commit_video_1();
-
-                if (Combo_encoders.SelectedIndex != Combo_encoders.FindString("copy"))
+                filters = " -vf " + '\u0022';
+                //Resize
+                if (cb_resize.SelectedIndex != -1)
                 {
-                    if (cb_resize.SelectedIndex != -1 && cb_crop.SelectedIndex == -1 && (cb_rotate.SelectedIndex == -1 || cb_rotate.SelectedIndex == 0))
+                    if (cb_resize.SelectedIndex == 0)
                     {
-                        //Resize only
-                        if (cb_resize.SelectedIndex == 0)
-                        {
-                            video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "scale=" + n_width.Value + ":" + n_height.Value + '\u0022';
-                        }
-                        else
-                        {
-                            String r_size = cb_resize.SelectedItem.ToString().Replace("x", ":");
-                            video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "scale=" + r_size + '\u0022';
-                        }
+                        filters = filters + "scale=" + n_width.Value + ":" + n_height.Value + ",";
                     }
-
-                    if (cb_rotate.SelectedIndex != -1 && cb_rotate.SelectedIndex != 0 && cb_resize.SelectedIndex == -1 && cb_crop.SelectedIndex == -1)
+                    else
                     {
-                        //Rotate only
-                        if (cb_rotate.SelectedIndex == 1) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "transpose=clock" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 2) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "transpose=cclock" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 3) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "vflip,hflip" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 4) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "hflip" + '\u0022';
-                    }
-
-                    if (cb_crop.SelectedIndex != -1 && cb_resize.SelectedIndex == -1 && (cb_rotate.SelectedIndex == -1 || cb_rotate.SelectedIndex == 0))
-                    {
-                        //Crop only
-                        if (cb_crop.SelectedIndex == 0) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=in_w-" + (l_crop.Value + r_crop.Value).ToString() + ":" + "h=in_h-" + (u_crop.Value + d_crop.Value).ToString() + ":" + "x=" + l_crop.Value + ":" + "y=" + u_crop.Value + '\u0022';
-                        if (cb_crop.SelectedIndex == 1) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=in_h" + '\u0022';
-                        if (cb_crop.SelectedIndex == 2) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=ih/3*4:ih" + '\u0022';
-                        if (cb_crop.SelectedIndex == 3) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=ih/9*16:ih" + '\u0022';
-                        if (cb_crop.SelectedIndex == 4) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=1440:1080" + '\u0022';
-                        if (cb_crop.SelectedIndex == 5) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=1280:720" + '\u0022';
-                        if (cb_crop.SelectedIndex == 6) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=1024:768" + '\u0022';
-                        if (cb_crop.SelectedIndex == 7) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=1024:576" + '\u0022';
-                        if (cb_crop.SelectedIndex == 8) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=800:600" + '\u0022';
-                        if (cb_crop.SelectedIndex == 9) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=800:480" + '\u0022';
-                        if (cb_crop.SelectedIndex == 10) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=720:576" + '\u0022';
-                        if (cb_crop.SelectedIndex == 11) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=720:480" + '\u0022';
-                    }
-                    // All filters chained
-                    if (cb_crop.SelectedIndex != -1 && cb_resize.SelectedIndex != -1 && cb_rotate.SelectedIndex != -1 && cb_rotate.SelectedIndex != 0)
-                    {
-                        if (cb_resize.SelectedIndex == 0)
-                        {
-                            filters = " -vf " + '\u0022' + "scale=" + n_width.Value + ":" + n_height.Value + ", ";
-                        }
-                        else
-                        {
-                            String r_size = cb_resize.SelectedItem.ToString().Replace("x", ":");
-                            filters = " -vf " + '\u0022' + "scale=" + r_size + ", ";
-                        }
-                        if (cb_crop.SelectedIndex == 0) filters = filters + "crop=in_w-" + (l_crop.Value + r_crop.Value).ToString() + ":" + "h=in_h-" + (u_crop.Value + d_crop.Value).ToString() + ":" + "x=" + l_crop.Value + ":" + "y=" + u_crop.Value + ", ";
-                        if (cb_crop.SelectedIndex == 1) filters = filters + "crop=in_h" + ", ";
-                        if (cb_crop.SelectedIndex == 2) filters = filters + "crop=ih/3*4:ih" + ", ";
-                        if (cb_crop.SelectedIndex == 3) filters = filters + "crop=ih/9*16:ih" + ", ";
-                        if (cb_crop.SelectedIndex == 4) filters = filters + "crop=1440:1080" + ", ";
-                        if (cb_crop.SelectedIndex == 5) filters = filters + "crop=1280:720" + ", ";
-                        if (cb_crop.SelectedIndex == 6) filters = filters + "crop=1024:768" + ", ";
-                        if (cb_crop.SelectedIndex == 7) filters = filters + "crop=1024:576" + ", ";
-                        if (cb_crop.SelectedIndex == 8) filters = filters + "crop=800:600" + ", ";
-                        if (cb_crop.SelectedIndex == 9) filters = filters + "crop=800:480" + ", ";
-                        if (cb_crop.SelectedIndex == 10) filters = filters + "crop=720:576" + ", ";
-                        if (cb_crop.SelectedIndex == 11) filters = filters + "crop=720:480" + ", ";
-
-                        if (cb_rotate.SelectedIndex == 1) filters = filters + "transpose=clock" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 2) filters = filters + "transpose=cclock" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 3) filters = filters + "vflip,hflip" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 4) filters = filters + "hflip" + '\u0022';
-                        video_encoder_param = video_encoder_param + filters;
-                    }
-                    // Two filters, resize + crop
-                    if (cb_crop.SelectedIndex != -1 && cb_resize.SelectedIndex != -1 && (cb_rotate.SelectedIndex == -1 || cb_rotate.SelectedIndex == 0))
-                    {
-                        if (cb_resize.SelectedIndex == 0)
-                        {
-                            filters = " -vf " + '\u0022' + "scale=" + n_width.Value + ":" + n_height.Value + ", ";
-                        }
-                        else
-                        {
-                            String r_size = cb_resize.SelectedItem.ToString().Replace("x", ":");
-                            filters = " -vf " + '\u0022' + "scale=" + r_size + ", ";
-                        }
-                        if (cb_crop.SelectedIndex == 0) filters = filters + "crop=in_w-" + (l_crop.Value + r_crop.Value).ToString() + ":" + "h=in_h-" + (u_crop.Value + d_crop.Value).ToString() + ":" + "x=" + l_crop.Value + ":" + "y=" + u_crop.Value + '\u0022';
-                        if (cb_crop.SelectedIndex == 1) filters = filters + "crop=in_h" + '\u0022';
-                        if (cb_crop.SelectedIndex == 2) filters = filters + "crop=ih/3*4:ih" + '\u0022';
-                        if (cb_crop.SelectedIndex == 3) filters = filters + "crop=ih/9*16:ih" + '\u0022';
-                        if (cb_crop.SelectedIndex == 4) filters = filters + "crop=1440:1080" + '\u0022';
-                        if (cb_crop.SelectedIndex == 5) filters = filters + "crop=1280:720" + '\u0022';
-                        if (cb_crop.SelectedIndex == 6) filters = filters + "crop=1024:768" + '\u0022';
-                        if (cb_crop.SelectedIndex == 7) filters = filters + "crop=1024:576" + '\u0022';
-                        if (cb_crop.SelectedIndex == 8) filters = filters + "crop=800:600" + '\u0022';
-                        if (cb_crop.SelectedIndex == 9) filters = filters + "crop=800:480" + '\u0022';
-                        if (cb_crop.SelectedIndex == 10) filters = filters + "crop=720:576" + '\u0022';
-                        if (cb_crop.SelectedIndex == 11) filters = filters + "crop=720:480" + '\u0022';
-
-                        video_encoder_param = video_encoder_param + filters;
-                    }
-
-                    // Two filters, resize + rotate
-                    if (cb_crop.SelectedIndex == -1 && cb_resize.SelectedIndex != -1 && cb_rotate.SelectedIndex != -1 && cb_rotate.SelectedIndex != 0)
-                    {
-                        if (cb_resize.SelectedIndex == 0)
-                        {
-                            filters = " -vf " + '\u0022' + "scale=" + n_width.Value + ":" + n_height.Value + ", ";
-                        }
-                        else
-                        {
-                            String r_size = cb_resize.SelectedItem.ToString().Replace("x", ":");
-                            filters = " -vf " + '\u0022' + "scale=" + r_size + ", ";
-                        }
-                        if (cb_rotate.SelectedIndex == 1) filters = filters + "transpose=clock" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 2) filters = filters + "transpose=cclock" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 3) filters = filters + "vflip,hflip" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 4) filters = filters + "hflip" + '\u0022';
-
-                        video_encoder_param = video_encoder_param + filters;
-                    }
-                    // Two filters, crop + rotate
-                    if (cb_crop.SelectedIndex != -1 && cb_resize.SelectedIndex == -1 && cb_rotate.SelectedIndex != -1 && cb_rotate.SelectedIndex != 0)
-                    {
-                        if (cb_crop.SelectedIndex == 0) filters = " -vf " + '\u0022' + "crop=in_w-" + (l_crop.Value + r_crop.Value).ToString() + ":" + "h=in_h-" + (u_crop.Value + d_crop.Value).ToString() + ":" + "x=" + l_crop.Value + ":" + "y=" + u_crop.Value + ", ";
-                        if (cb_crop.SelectedIndex == 1) filters = " -vf " + '\u0022' + "crop=in_h" + ", ";
-                        if (cb_crop.SelectedIndex == 2) filters = " -vf " + '\u0022' + "crop=ih/3*4:ih" + ", ";
-                        if (cb_crop.SelectedIndex == 3) filters = " -vf " + '\u0022' + "crop=ih/9*16:ih" + ", ";
-                        if (cb_crop.SelectedIndex == 4) filters = " -vf " + '\u0022' + "crop=1440:1080" + ", ";
-                        if (cb_crop.SelectedIndex == 5) filters = " -vf " + '\u0022' + "crop=1280:720" + ", ";
-                        if (cb_crop.SelectedIndex == 6) filters = " -vf " + '\u0022' + "crop=1024:768" + ", ";
-                        if (cb_crop.SelectedIndex == 7) filters = " -vf " + '\u0022' + "crop=1024:576" + ", ";
-                        if (cb_crop.SelectedIndex == 8) filters = " -vf " + '\u0022' + "crop=800:600" + ", ";
-                        if (cb_crop.SelectedIndex == 9) filters = " -vf " + '\u0022' + "crop=800:480" + ", ";
-                        if (cb_crop.SelectedIndex == 10) filters = " -vf " + '\u0022' + "crop=720:576" + ", ";
-                        if (cb_crop.SelectedIndex == 11) filters = " -vf " + '\u0022' + "crop=720:480" + ", ";
-
-                        if (cb_rotate.SelectedIndex == 1) filters = filters + "transpose=clock" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 2) filters = filters + "transpose=cclock" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 3) filters = filters + "vflip,hflip" + '\u0022';
-                        if (cb_rotate.SelectedIndex == 4) filters = filters + "hflip" + '\u0022';
-
-                        video_encoder_param = video_encoder_param + filters;
+                        String r_size = cb_resize.SelectedItem.ToString().Replace("x", ":");
+                        filters = filters + "scale=" + r_size + ",";
                     }
                 }
+                //Rotate
+                if (cb_rotate.SelectedIndex != -1 && cb_rotate.SelectedIndex != 0)
+                {
+                    if (cb_rotate.SelectedIndex == 1) filters = filters + "transpose=clock" + ",";
+                    if (cb_rotate.SelectedIndex == 2) filters = filters + "transpose=cclock" + ",";
+                    if (cb_rotate.SelectedIndex == 3) filters = filters + "vflip,hflip" + ",";
+                    if (cb_rotate.SelectedIndex == 4) filters = filters + "hflip" + ",";
+                }
+
+                //Crop
+                if (cb_crop.SelectedIndex != -1)
+                {
+                    if (cb_crop.SelectedIndex == 0) filters = filters + "crop=in_w-" + (l_crop.Value + r_crop.Value).ToString() + ":" + "h=in_h-" + (u_crop.Value + d_crop.Value).ToString() + ":" + "x=" + l_crop.Value + ":" + "y=" + u_crop.Value + ",";
+                    if (cb_crop.SelectedIndex == 1) filters = filters + "crop=in_h" + ",";
+                    if (cb_crop.SelectedIndex == 2) filters = filters + "crop=ih/3*4:ih" + ",";
+                    if (cb_crop.SelectedIndex == 3) filters = filters + "crop=ih/9*16:ih" + ",";
+                    if (cb_crop.SelectedIndex == 4) filters = filters + "crop=1440:1080" + ",";
+                    if (cb_crop.SelectedIndex == 5) filters = filters + "crop=1280:720" + ",";
+                    if (cb_crop.SelectedIndex == 6) filters = filters + "crop=1024:768" + ",";
+                    if (cb_crop.SelectedIndex == 7) filters = filters + "crop=1024:576" + ",";
+                    if (cb_crop.SelectedIndex == 8) filters = filters + "crop=800:600" + ",";
+                    if (cb_crop.SelectedIndex == 9) filters = filters + "crop=800:480" + ",";
+                    if (cb_crop.SelectedIndex == 10) filters = filters + "crop=720:576" + ",";
+                    if (cb_crop.SelectedIndex == 11) filters = filters + "crop=720:480" + ",";
+                }
+                if (cb_deint.SelectedIndex != -1)
+                {
+                    filters = filters + cb_deint.SelectedItem.ToString() + "=" + cb_de_mode.SelectedIndex.ToString() + ":" + cb_de_parity.SelectedIndex.ToString() + ":" + cb_de_deint.SelectedIndex.ToString() + ",";
+                }
+                filters = filters.Substring(0, filters.Length - 1);
+                video_encoder_param = video_encoder_param + " " + filters + '\u0022' + " ";
             }
+
+            Decimal v_sp = 0;
+            Decimal a_sp = 0;
+            Decimal const1 = 0.5M;
+            if (n_speed.Value != 0)
+            {
+                if (n_speed.Value > 0)
+                {
+                    v_sp = const1 + ((100 - n_speed.Value) / 200);
+                    a_sp = 1 + (n_speed.Value / 100);
+                }
+
+                if (n_speed.Value < 0)
+                {
+                    v_sp = 1 + Math.Abs(n_speed.Value / 100);
+                    a_sp = const1 + (Math.Abs(-100 - n_speed.Value) / 200);
+                }
+                video_encoder_param = video_encoder_param + " -filter_complex " + '\u0022' + "[0:v]setpts=" + v_sp.ToString().Replace(",", ".") + "*PTS[v];[0:a]atempo=" + a_sp.ToString().Replace(",", ".") + "[a]" + '\u0022' + " -map " + '\u0022' + "[v]" + '\u0022' + " -map " + '\u0022' + "[a]" + '\u0022' + " ";
+            }
+
+            //if (first_resize_rotate == false)
+            //{
+            //    first_resize_rotate = true;
+            //    if (Combo_encoders.SelectedIndex != Combo_encoders.FindString("copy"))
+            //    {
+            //        if (cb_resize.SelectedIndex != -1 && cb_crop.SelectedIndex == -1 && (cb_rotate.SelectedIndex == -1 || cb_rotate.SelectedIndex == 0))
+            //        {
+            //            //Resize only
+            //            if (cb_resize.SelectedIndex == 0)
+            //            {
+            //                video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "scale=" + n_width.Value + ":" + n_height.Value + '\u0022';
+            //            }
+            //            else
+            //            {
+            //                String r_size = cb_resize.SelectedItem.ToString().Replace("x", ":");
+            //                video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "scale=" + r_size + '\u0022';
+            //            }
+            //        }
+
+            //        if (cb_rotate.SelectedIndex != -1 && cb_rotate.SelectedIndex != 0 && cb_resize.SelectedIndex == -1 && cb_crop.SelectedIndex == -1)
+            //        {
+            //            //Rotate only
+            //            if (cb_rotate.SelectedIndex == 1) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "transpose=clock" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 2) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "transpose=cclock" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 3) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "vflip,hflip" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 4) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "hflip" + '\u0022';
+            //        }
+
+            //        if (cb_crop.SelectedIndex != -1 && cb_resize.SelectedIndex == -1 && (cb_rotate.SelectedIndex == -1 || cb_rotate.SelectedIndex == 0))
+            //        {
+            //            //Crop only
+            //            if (cb_crop.SelectedIndex == 0) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=in_w-" + (l_crop.Value + r_crop.Value).ToString() + ":" + "h=in_h-" + (u_crop.Value + d_crop.Value).ToString() + ":" + "x=" + l_crop.Value + ":" + "y=" + u_crop.Value + '\u0022';
+            //            if (cb_crop.SelectedIndex == 1) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=in_h" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 2) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=ih/3*4:ih" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 3) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=ih/9*16:ih" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 4) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=1440:1080" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 5) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=1280:720" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 6) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=1024:768" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 7) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=1024:576" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 8) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=800:600" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 9) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=800:480" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 10) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=720:576" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 11) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=720:480" + '\u0022';
+            //        }
+            //        if (cb_deint.SelectedIndex != 1 && cb_resize.SelectedIndex == -1 && (cb_rotate.SelectedIndex == -1 || cb_rotate.SelectedIndex == -1))
+            //        {
+            //            //Deinterlace only
+
+            //            video_encoder_param = video_encoder_param + " -vf " + '\u0022' + cb_deint.SelectedItem.ToString() + "=" + cb_de_mode.SelectedIndex.ToString() + ":" + cb_de_parity.SelectedIndex.ToString() + ":" + cb_de_deint.SelectedIndex.ToString() + '\u0022';
+
+            //        }
+            //        // All filters chained
+            //        if (cb_crop.SelectedIndex != -1 && cb_resize.SelectedIndex != -1 && cb_rotate.SelectedIndex != -1 && cb_rotate.SelectedIndex != 0 && cb_deint.SelectedIndex != -1)
+            //        {
+            //            if (cb_resize.SelectedIndex == 0)
+            //            {
+            //                filters = " -vf " + '\u0022' + "scale=" + n_width.Value + ":" + n_height.Value + ", ";
+            //            }
+            //            else
+            //            {
+            //                String r_size = cb_resize.SelectedItem.ToString().Replace("x", ":");
+            //                filters = " -vf " + '\u0022' + "scale=" + r_size + ", ";
+            //            }
+            //            if (cb_crop.SelectedIndex == 0) filters = filters + "crop=in_w-" + (l_crop.Value + r_crop.Value).ToString() + ":" + "h=in_h-" + (u_crop.Value + d_crop.Value).ToString() + ":" + "x=" + l_crop.Value + ":" + "y=" + u_crop.Value + ", ";
+            //            if (cb_crop.SelectedIndex == 1) filters = filters + "crop=in_h" + ", ";
+            //            if (cb_crop.SelectedIndex == 2) filters = filters + "crop=ih/3*4:ih" + ", ";
+            //            if (cb_crop.SelectedIndex == 3) filters = filters + "crop=ih/9*16:ih" + ", ";
+            //            if (cb_crop.SelectedIndex == 4) filters = filters + "crop=1440:1080" + ", ";
+            //            if (cb_crop.SelectedIndex == 5) filters = filters + "crop=1280:720" + ", ";
+            //            if (cb_crop.SelectedIndex == 6) filters = filters + "crop=1024:768" + ", ";
+            //            if (cb_crop.SelectedIndex == 7) filters = filters + "crop=1024:576" + ", ";
+            //            if (cb_crop.SelectedIndex == 8) filters = filters + "crop=800:600" + ", ";
+            //            if (cb_crop.SelectedIndex == 9) filters = filters + "crop=800:480" + ", ";
+            //            if (cb_crop.SelectedIndex == 10) filters = filters + "crop=720:576" + ", ";
+            //            if (cb_crop.SelectedIndex == 11) filters = filters + "crop=720:480" + ", ";
+
+            //            filters = filters + cb_deint.SelectedItem.ToString() + "=" + cb_de_mode.SelectedIndex.ToString() + ":" + cb_de_parity.SelectedIndex.ToString() + ":" + cb_de_deint.SelectedIndex.ToString() + ",";
+
+            //            if (cb_rotate.SelectedIndex == 1) filters = filters + "transpose=clock" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 2) filters = filters + "transpose=cclock" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 3) filters = filters + "vflip,hflip" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 4) filters = filters + "hflip" + '\u0022';
+
+            //            video_encoder_param = video_encoder_param + filters;
+            //        }
+            //        // Two filters, resize + crop
+            //        if (cb_crop.SelectedIndex != -1 && cb_resize.SelectedIndex != -1 && (cb_rotate.SelectedIndex == -1 || cb_rotate.SelectedIndex == 0))
+            //        {
+            //            if (cb_resize.SelectedIndex == 0)
+            //            {
+            //                filters = " -vf " + '\u0022' + "scale=" + n_width.Value + ":" + n_height.Value + ", ";
+            //            }
+            //            else
+            //            {
+            //                String r_size = cb_resize.SelectedItem.ToString().Replace("x", ":");
+            //                filters = " -vf " + '\u0022' + "scale=" + r_size + ", ";
+            //            }
+            //            if (cb_crop.SelectedIndex == 0) filters = filters + "crop=in_w-" + (l_crop.Value + r_crop.Value).ToString() + ":" + "h=in_h-" + (u_crop.Value + d_crop.Value).ToString() + ":" + "x=" + l_crop.Value + ":" + "y=" + u_crop.Value + '\u0022';
+            //            if (cb_crop.SelectedIndex == 1) filters = filters + "crop=in_h" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 2) filters = filters + "crop=ih/3*4:ih" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 3) filters = filters + "crop=ih/9*16:ih" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 4) filters = filters + "crop=1440:1080" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 5) filters = filters + "crop=1280:720" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 6) filters = filters + "crop=1024:768" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 7) filters = filters + "crop=1024:576" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 8) filters = filters + "crop=800:600" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 9) filters = filters + "crop=800:480" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 10) filters = filters + "crop=720:576" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 11) filters = filters + "crop=720:480" + '\u0022';
+
+            //            video_encoder_param = video_encoder_param + filters;
+            //        }
+
+            //        // Two filters, resize + rotate
+            //        if (cb_crop.SelectedIndex == -1 && cb_resize.SelectedIndex != -1 && cb_rotate.SelectedIndex != -1 && cb_rotate.SelectedIndex != 0)
+            //        {
+            //            if (cb_resize.SelectedIndex == 0)
+            //            {
+            //                filters = " -vf " + '\u0022' + "scale=" + n_width.Value + ":" + n_height.Value + ", ";
+            //            }
+            //            else
+            //            {
+            //                String r_size = cb_resize.SelectedItem.ToString().Replace("x", ":");
+            //                filters = " -vf " + '\u0022' + "scale=" + r_size + ", ";
+            //            }
+            //            if (cb_rotate.SelectedIndex == 1) filters = filters + "transpose=clock" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 2) filters = filters + "transpose=cclock" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 3) filters = filters + "vflip,hflip" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 4) filters = filters + "hflip" + '\u0022';
+
+            //            video_encoder_param = video_encoder_param + filters;
+            //        }
+            //        // Two filters, crop + rotate
+            //        if (cb_crop.SelectedIndex != -1 && cb_resize.SelectedIndex == -1 && cb_rotate.SelectedIndex != -1 && cb_rotate.SelectedIndex != 0)
+            //        {
+            //            if (cb_crop.SelectedIndex == 0) filters = " -vf " + '\u0022' + "crop=in_w-" + (l_crop.Value + r_crop.Value).ToString() + ":" + "h=in_h-" + (u_crop.Value + d_crop.Value).ToString() + ":" + "x=" + l_crop.Value + ":" + "y=" + u_crop.Value + ", ";
+            //            if (cb_crop.SelectedIndex == 1) filters = " -vf " + '\u0022' + "crop=in_h" + ", ";
+            //            if (cb_crop.SelectedIndex == 2) filters = " -vf " + '\u0022' + "crop=ih/3*4:ih" + ", ";
+            //            if (cb_crop.SelectedIndex == 3) filters = " -vf " + '\u0022' + "crop=ih/9*16:ih" + ", ";
+            //            if (cb_crop.SelectedIndex == 4) filters = " -vf " + '\u0022' + "crop=1440:1080" + ", ";
+            //            if (cb_crop.SelectedIndex == 5) filters = " -vf " + '\u0022' + "crop=1280:720" + ", ";
+            //            if (cb_crop.SelectedIndex == 6) filters = " -vf " + '\u0022' + "crop=1024:768" + ", ";
+            //            if (cb_crop.SelectedIndex == 7) filters = " -vf " + '\u0022' + "crop=1024:576" + ", ";
+            //            if (cb_crop.SelectedIndex == 8) filters = " -vf " + '\u0022' + "crop=800:600" + ", ";
+            //            if (cb_crop.SelectedIndex == 9) filters = " -vf " + '\u0022' + "crop=800:480" + ", ";
+            //            if (cb_crop.SelectedIndex == 10) filters = " -vf " + '\u0022' + "crop=720:576" + ", ";
+            //            if (cb_crop.SelectedIndex == 11) filters = " -vf " + '\u0022' + "crop=720:480" + ", ";
+
+            //            if (cb_rotate.SelectedIndex == 1) filters = filters + "transpose=clock" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 2) filters = filters + "transpose=cclock" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 3) filters = filters + "vflip,hflip" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 4) filters = filters + "hflip" + '\u0022';
+
+            //            video_encoder_param = video_encoder_param + filters;
+            //        }
+            //    }
+            //Decimal v_sp = 0;
+            //Decimal a_sp = 0;
+            //Decimal const1 = 0.5M;
+            //if (n_speed.Value != 0)
+            //{
+            //    if (n_speed.Value > 0)
+            //    {
+            //        v_sp = const1 + ((100 - n_speed.Value) / 200);
+            //        a_sp = 1 + (n_speed.Value / 100);
+            //    }
+
+            //    if (n_speed.Value < 0)
+            //    {
+            //        v_sp = 1 + Math.Abs(n_speed.Value / 100);
+            //        a_sp = const1 + (Math.Abs(-100 - n_speed.Value) / 200);
+            //    }
+            //    video_encoder_param = video_encoder_param + " -filter_complex " + '\u0022' + "[0:v]setpts=" + v_sp.ToString().Replace(",", ".") + "*PTS[v];[0:a]atempo=" + a_sp.ToString().Replace(",", ".") + "[a]" + '\u0022' + " -map " + '\u0022' + "[v]" + '\u0022' + " -map " + '\u0022' + "[a]" + '\u0022' + " ";
+            //}
+            //}
+            //else //Back and forth
+            //{
+            //    commit_video_1();
+
+            //    if (Combo_encoders.SelectedIndex != Combo_encoders.FindString("copy"))
+            //    {
+            //        if (cb_resize.SelectedIndex != -1 && cb_crop.SelectedIndex == -1 && (cb_rotate.SelectedIndex == -1 || cb_rotate.SelectedIndex == 0))
+            //        {
+            //            //Resize only
+            //            if (cb_resize.SelectedIndex == 0)
+            //            {
+            //                video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "scale=" + n_width.Value + ":" + n_height.Value + '\u0022';
+            //            }
+            //            else
+            //            {
+            //                String r_size = cb_resize.SelectedItem.ToString().Replace("x", ":");
+            //                video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "scale=" + r_size + '\u0022';
+            //            }
+            //        }
+
+            //        if (cb_rotate.SelectedIndex != -1 && cb_rotate.SelectedIndex != 0 && cb_resize.SelectedIndex == -1 && cb_crop.SelectedIndex == -1)
+            //        {
+            //            //Rotate only
+            //            if (cb_rotate.SelectedIndex == 1) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "transpose=clock" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 2) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "transpose=cclock" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 3) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "vflip,hflip" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 4) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "hflip" + '\u0022';
+            //        }
+
+            //        if (cb_crop.SelectedIndex != -1 && cb_resize.SelectedIndex == -1 && (cb_rotate.SelectedIndex == -1 || cb_rotate.SelectedIndex == 0))
+            //        {
+            //            //Crop only
+            //            if (cb_crop.SelectedIndex == 0) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=in_w-" + (l_crop.Value + r_crop.Value).ToString() + ":" + "h=in_h-" + (u_crop.Value + d_crop.Value).ToString() + ":" + "x=" + l_crop.Value + ":" + "y=" + u_crop.Value + '\u0022';
+            //            if (cb_crop.SelectedIndex == 1) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=in_h" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 2) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=ih/3*4:ih" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 3) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=ih/9*16:ih" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 4) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=1440:1080" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 5) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=1280:720" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 6) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=1024:768" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 7) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=1024:576" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 8) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=800:600" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 9) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=800:480" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 10) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=720:576" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 11) video_encoder_param = video_encoder_param + " -vf " + '\u0022' + "crop=720:480" + '\u0022';
+            //        }
+            //        // All filters chained
+            //        if (cb_crop.SelectedIndex != -1 && cb_resize.SelectedIndex != -1 && cb_rotate.SelectedIndex != -1 && cb_rotate.SelectedIndex != 0)
+            //        {
+            //            if (cb_resize.SelectedIndex == 0)
+            //            {
+            //                filters = " -vf " + '\u0022' + "scale=" + n_width.Value + ":" + n_height.Value + ", ";
+            //            }
+            //            else
+            //            {
+            //                String r_size = cb_resize.SelectedItem.ToString().Replace("x", ":");
+            //                filters = " -vf " + '\u0022' + "scale=" + r_size + ", ";
+            //            }
+            //            if (cb_crop.SelectedIndex == 0) filters = filters + "crop=in_w-" + (l_crop.Value + r_crop.Value).ToString() + ":" + "h=in_h-" + (u_crop.Value + d_crop.Value).ToString() + ":" + "x=" + l_crop.Value + ":" + "y=" + u_crop.Value + ", ";
+            //            if (cb_crop.SelectedIndex == 1) filters = filters + "crop=in_h" + ", ";
+            //            if (cb_crop.SelectedIndex == 2) filters = filters + "crop=ih/3*4:ih" + ", ";
+            //            if (cb_crop.SelectedIndex == 3) filters = filters + "crop=ih/9*16:ih" + ", ";
+            //            if (cb_crop.SelectedIndex == 4) filters = filters + "crop=1440:1080" + ", ";
+            //            if (cb_crop.SelectedIndex == 5) filters = filters + "crop=1280:720" + ", ";
+            //            if (cb_crop.SelectedIndex == 6) filters = filters + "crop=1024:768" + ", ";
+            //            if (cb_crop.SelectedIndex == 7) filters = filters + "crop=1024:576" + ", ";
+            //            if (cb_crop.SelectedIndex == 8) filters = filters + "crop=800:600" + ", ";
+            //            if (cb_crop.SelectedIndex == 9) filters = filters + "crop=800:480" + ", ";
+            //            if (cb_crop.SelectedIndex == 10) filters = filters + "crop=720:576" + ", ";
+            //            if (cb_crop.SelectedIndex == 11) filters = filters + "crop=720:480" + ", ";
+
+            //            if (cb_rotate.SelectedIndex == 1) filters = filters + "transpose=clock" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 2) filters = filters + "transpose=cclock" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 3) filters = filters + "vflip,hflip" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 4) filters = filters + "hflip" + '\u0022';
+            //            video_encoder_param = video_encoder_param + filters;
+            //        }
+            //        // Two filters, resize + crop
+            //        if (cb_crop.SelectedIndex != -1 && cb_resize.SelectedIndex != -1 && (cb_rotate.SelectedIndex == -1 || cb_rotate.SelectedIndex == 0))
+            //        {
+            //            if (cb_resize.SelectedIndex == 0)
+            //            {
+            //                filters = " -vf " + '\u0022' + "scale=" + n_width.Value + ":" + n_height.Value + ", ";
+            //            }
+            //            else
+            //            {
+            //                String r_size = cb_resize.SelectedItem.ToString().Replace("x", ":");
+            //                filters = " -vf " + '\u0022' + "scale=" + r_size + ", ";
+            //            }
+            //            if (cb_crop.SelectedIndex == 0) filters = filters + "crop=in_w-" + (l_crop.Value + r_crop.Value).ToString() + ":" + "h=in_h-" + (u_crop.Value + d_crop.Value).ToString() + ":" + "x=" + l_crop.Value + ":" + "y=" + u_crop.Value + '\u0022';
+            //            if (cb_crop.SelectedIndex == 1) filters = filters + "crop=in_h" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 2) filters = filters + "crop=ih/3*4:ih" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 3) filters = filters + "crop=ih/9*16:ih" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 4) filters = filters + "crop=1440:1080" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 5) filters = filters + "crop=1280:720" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 6) filters = filters + "crop=1024:768" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 7) filters = filters + "crop=1024:576" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 8) filters = filters + "crop=800:600" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 9) filters = filters + "crop=800:480" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 10) filters = filters + "crop=720:576" + '\u0022';
+            //            if (cb_crop.SelectedIndex == 11) filters = filters + "crop=720:480" + '\u0022';
+
+            //            video_encoder_param = video_encoder_param + filters;
+            //        }
+
+            //        // Two filters, resize + rotate
+            //        if (cb_crop.SelectedIndex == -1 && cb_resize.SelectedIndex != -1 && cb_rotate.SelectedIndex != -1 && cb_rotate.SelectedIndex != 0)
+            //        {
+            //            if (cb_resize.SelectedIndex == 0)
+            //            {
+            //                filters = " -vf " + '\u0022' + "scale=" + n_width.Value + ":" + n_height.Value + ", ";
+            //            }
+            //            else
+            //            {
+            //                String r_size = cb_resize.SelectedItem.ToString().Replace("x", ":");
+            //                filters = " -vf " + '\u0022' + "scale=" + r_size + ", ";
+            //            }
+            //            if (cb_rotate.SelectedIndex == 1) filters = filters + "transpose=clock" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 2) filters = filters + "transpose=cclock" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 3) filters = filters + "vflip,hflip" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 4) filters = filters + "hflip" + '\u0022';
+
+            //            video_encoder_param = video_encoder_param + filters;
+            //        }
+            //        // Two filters, crop + rotate
+            //        if (cb_crop.SelectedIndex != -1 && cb_resize.SelectedIndex == -1 && cb_rotate.SelectedIndex != -1 && cb_rotate.SelectedIndex != 0)
+            //        {
+            //            if (cb_crop.SelectedIndex == 0) filters = " -vf " + '\u0022' + "crop=in_w-" + (l_crop.Value + r_crop.Value).ToString() + ":" + "h=in_h-" + (u_crop.Value + d_crop.Value).ToString() + ":" + "x=" + l_crop.Value + ":" + "y=" + u_crop.Value + ", ";
+            //            if (cb_crop.SelectedIndex == 1) filters = " -vf " + '\u0022' + "crop=in_h" + ", ";
+            //            if (cb_crop.SelectedIndex == 2) filters = " -vf " + '\u0022' + "crop=ih/3*4:ih" + ", ";
+            //            if (cb_crop.SelectedIndex == 3) filters = " -vf " + '\u0022' + "crop=ih/9*16:ih" + ", ";
+            //            if (cb_crop.SelectedIndex == 4) filters = " -vf " + '\u0022' + "crop=1440:1080" + ", ";
+            //            if (cb_crop.SelectedIndex == 5) filters = " -vf " + '\u0022' + "crop=1280:720" + ", ";
+            //            if (cb_crop.SelectedIndex == 6) filters = " -vf " + '\u0022' + "crop=1024:768" + ", ";
+            //            if (cb_crop.SelectedIndex == 7) filters = " -vf " + '\u0022' + "crop=1024:576" + ", ";
+            //            if (cb_crop.SelectedIndex == 8) filters = " -vf " + '\u0022' + "crop=800:600" + ", ";
+            //            if (cb_crop.SelectedIndex == 9) filters = " -vf " + '\u0022' + "crop=800:480" + ", ";
+            //            if (cb_crop.SelectedIndex == 10) filters = " -vf " + '\u0022' + "crop=720:576" + ", ";
+            //            if (cb_crop.SelectedIndex == 11) filters = " -vf " + '\u0022' + "crop=720:480" + ", ";
+
+            //            if (cb_rotate.SelectedIndex == 1) filters = filters + "transpose=clock" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 2) filters = filters + "transpose=cclock" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 3) filters = filters + "vflip,hflip" + '\u0022';
+            //            if (cb_rotate.SelectedIndex == 4) filters = filters + "hflip" + '\u0022';
+
+            //            video_encoder_param = video_encoder_param + filters;
+            //        }
+            //    }
+            //}
         }
 
         private void cb_framerate_SelectedIndexChanged(object sender, EventArgs e)
@@ -2239,7 +2367,7 @@ namespace FFBatch
         {
             if (cb_rotate.SelectedIndex == 0)
             {
-                pic_rotate.Size = new System.Drawing.Size(221, 124);
+                pic_rotate.Size = new System.Drawing.Size(145, 81);
                 pic_rotate.Image = img_rotate.Images[0];
             }
             if (cb_rotate.SelectedIndex == 1)
@@ -2254,23 +2382,27 @@ namespace FFBatch
             }
             if (cb_rotate.SelectedIndex == 3)
             {
-                pic_rotate.Size = new System.Drawing.Size(221, 124);
+                pic_rotate.Size = new System.Drawing.Size(145, 81);
                 pic_rotate.Image = img_rotate.Images[3];
             }
             if (cb_rotate.SelectedIndex == 4)
             {
-                pic_rotate.Size = new System.Drawing.Size(221, 124);
+                pic_rotate.Size = new System.Drawing.Size(145, 81);
                 pic_rotate.Image = img_rotate.Images[4];
             }
         }
 
         private void wz_end_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
         {
+            Properties.Settings.Default.wiz_vid = Combo_encoders.SelectedIndex;
+            Properties.Settings.Default.wiz_aud = cb_audio_encoder.SelectedIndex;
+            Properties.Settings.Default.Save();
+
             String videocard = "";
             String cpu_info = "";
             String hw_enc = video_encoder_param.ToLower();
 
-            if (hw_enc.Contains("h264_amf") || hw_enc.Contains("hevc_amf") || hw_enc.Contains("h264_nvenc") || hw_enc.Contains("hevc_nvenc"))
+            if (hw_enc.Contains("h264_amf") || hw_enc.Contains("hevc_amf") || hw_enc.Contains("h264_nvenc") || hw_enc.Contains("hevc_nvenc") || cb_deint.SelectedIndex == 1)
 
             {
                 ManagementObjectSearcher search = new ManagementObjectSearcher("SELECT * FROM Win32_VideoController");
@@ -2287,12 +2419,18 @@ namespace FFBatch
 
                 lbl_vcard.Text = "";
                 pic_warn2.Visible = false;
-                if (video_encoder_param.ToLower().Contains("h264_amf") || video_encoder_param.ToLower().Contains("hevc_amf"))
+                if (video_encoder_param.ToLower().Contains("h264_amf") || video_encoder_param.ToLower().Contains("hevc_amf") || cb_deint.SelectedIndex == 1)
                 {
                     if (!videocard.ToLower().Contains("radeon"))
                     {
                         pic_warn2.Visible = true;
                         lbl_vcard.Text = videocard + Properties.Strings2.not_amf;
+                        if (cb_deint.SelectedIndex == 1) lbl_vcard.Text = videocard + Properties.Strings2.not_amf + " (yadif_cuda).";
+                        if (cb_deint.SelectedIndex == 1)
+                        {
+                            pic_warn2.Visible = true;
+                            lbl_vcard.Text = videocard + Properties.Strings2.not_amf + " (yadif_cuda).";
+                        }
                     }
                 }
 
@@ -2325,6 +2463,7 @@ namespace FFBatch
                     }
                 }
             }
+
 
             if (lv1_item != String.Empty)
             {
@@ -3943,7 +4082,7 @@ namespace FFBatch
                         }
                     }
                     if (unsupported == true) MessageBox.Show(FFBatch.Properties.Strings.test_fail1 + " " + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.unsup_enc + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + "Try preset for more error information", "FFmpeg command failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    else MessageBox.Show(FFBatch.Properties.Strings.test_fail1 + " " + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + "Try preset for more error information", "FFmpeg command failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else this.InvokeEx(f => MessageBox.Show(this, FFBatch.Properties.Strings.test_fail1 + " " + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + "Try preset for more error information", "FFmpeg command failed", MessageBoxButtons.OK, MessageBoxIcon.Error));
 
                     this.InvokeEx(f => this.Cursor = Cursors.Arrow);
                     tried_ok = false;
@@ -4685,6 +4824,50 @@ namespace FFBatch
                 wr.Timeout = 5000; // timeout in milliseconds (ms)
                 return wr;
             }
+        }
+
+        private void cb_deint_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cb_de_mode.SelectedIndex = 0;
+            cb_de_parity.SelectedIndex = 0;
+            cb_de_deint.SelectedIndex = 0;
+        }
+
+        private void n_speed_ValueChanged(object sender, EventArgs e)
+        {
+            if (n_speed.Value != 0)
+            {
+                foreach (Control ct in wz1_1.Controls) ct.Enabled = false;
+                n_speed.Enabled = true;
+                MessageBox.Show(Properties.Strings2.speed_not_comp);
+            }
+            else
+            {
+                foreach (Control ct in wz1_1.Controls) ct.Enabled = true;
+            }
+        }
+
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
+            foreach (var ct in wz1_1.Controls.OfType<ComboBox>())
+            {
+                ct.SelectedIndex = -1;
+            }
+            cb_de_mode.SelectedIndex = -1;
+            cb_de_parity.SelectedIndex = -1;
+            cb_de_deint.SelectedIndex = -1;
+            cb_rotate.SelectedIndex = 0;
+        }
+
+        private void wz1_1_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
+        {
+            video_encoder_param = String.Empty;
+            commit_video_1();
+        }
+
+        private void wz1_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
+        {
+            Combo_encoders.SelectedIndex = Properties.Settings.Default.wiz_vid;
         }
     }
 }
