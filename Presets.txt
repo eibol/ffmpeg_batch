@@ -1,5 +1,9 @@
 # Please add any preset with a basic description in one line, 
-# and ffmpeg parameters on the next lines. Example:
+# and ffmpeg parameters on the next lines. NOTE: Not all presets
+# could be supported by FFmpeg Batch AV Converter, or only using
+# a wizard (those that reuse input files on parameters field require
+# the use of variables like %1 or %fn).
+# Example:
 
 Description: Video: Convert video to rgb uncompressed avi (huge file).
 Pre-input:
