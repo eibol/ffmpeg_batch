@@ -1,0 +1,6 @@
+# Please add any preset with a basic description in one line, 
+# and ffmpeg parameters on the next line, with output format between {}. Example:
+
+Video: Convert video to rgb uncompressed avi (huge file).
+-c:v rawvideo -pix_fmt rgb24 {avi}
+
