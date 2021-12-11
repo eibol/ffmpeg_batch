@@ -10,3 +10,8 @@ Pre-input:
 Parameters: -c:v rawvideo -pix_fmt rgb24
 Format: avi
 
+Description: Generate keyframes report to txt file.
+Pre-input: -skip_frame nokey
+Parameters: -vstats_file C:\Datos\stats.txt -vf "select='eq(pict_type,PICT_TYPE_I)'" -vsync vfr -frame_pts true -f null -
+Format: nul
+
