@@ -5,13 +5,7 @@
 # the use of variables like %1 or %fn).
 # Example:
 
-Description: Video: Convert video to rgb uncompressed avi (huge file).
-Pre-input:
-Parameters: -c:v rawvideo -pix_fmt rgb24
-Format: avi
-
-Description: Generate keyframes report to txt file.
-Pre-input: -skip_frame nokey
-Parameters: -vstats_file C:\Datos\stats.txt -vf "select='eq(pict_type,PICT_TYPE_I)'" -vsync vfr -frame_pts true -f null -
-Format: nul
-
+| Description         | Pre-Input        | Parameters                                         | Format |
+| ------------------- | ---------------- | -------------------------------------------------- | ------ |
+| Convert video to rgb uncompressed avi (huge file) | Content Cell  | | -c:v rawvideo -pix_fmt rgb24 | avi |
+| Generate keyframes report to txt file. | -skip_frame nokey | -vstats_file C:\Reports\stats.txt -vf "select='eq(pict_type,PICT_TYPE_I)'" -vsync vfr -frame_pts true -f null - | nul
