@@ -8,4 +8,4 @@
 | Description         | Pre-Input        | Parameters                                         | Format |
 | ------------------- | ---------------- | -------------------------------------------------- | ------ |
 | Convert video to rgb uncompressed avi (huge file) | Content Cell  | | -c:v rawvideo -pix_fmt rgb24 | avi |
-| Generate keyframes report to txt file. | -skip_frame nokey | -vstats_file C:\Reports\stats.txt -vf "select='eq(pict_type,PICT_TYPE_I)'" -vsync vfr -frame_pts true -f null - | nul
+| Generate keyframes report to txt file | -skip_frame nokey | -vstats_file C:\Reports\stats.txt -vf "select='eq(pict_type,PICT_TYPE_I)'" -vsync vfr -frame_pts true -f null - | nul
