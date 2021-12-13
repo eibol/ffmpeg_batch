@@ -1,7 +1,9 @@
 # FFmpeg Batch AV Converter collaborative presets
 
+
 NOTE: Not all presets could be supported by FFmpeg Batch AV Converter, or only supported by using a wizard (those that reuse input files on parameters field require 
-the use of variables like %1 or %fn). Please follow the table format below:
+the use of variables like %1 or %fn). Due to table formatting, if a preset fails, please try loading it raw from the application. Please follow the table format below:
+
 
 | Description         | Pre-Input        | Parameters                                       |Format|
 | ------------------- | ---------------- | ------------------------------------------------ | ------ |
