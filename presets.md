@@ -14,5 +14,4 @@ the use of variables like %1 or %fn). Due to table formatting, if a preset fails
 | Convert vertical video with black sides, to video 16/9 with blurred background sides 1080p| |-c:v libx264 -crf 21 -vf "split[original][copy];[copy]scale=ih*16/9:-1,crop=h=iw*9/16,gblur=sigma=20[blurred];[blurred][original]overlay=(main_w-overlay_w)/2:(main_h-overlay_h)/2,scale=-2:1080" -c:a copy| mp4 |
 | Reverse video and audio (recommended only for short clips due to memory usage)| |-c:v libx264 -crf 23 -vf reverse -af areverse -c:a aac -b:a 160K|mp4 |
 | Create duplicated stereoscopic video output | |-c:v libx264 -crf 23 -vf stereo3d=al:sbsl -c:a copy |mp4|
-
 | Create a 4 videos mosaic into one video. (You need first to add video1 to file list and match video names in parameters) | | -i C:\Videos\v2.mp4 -i C:\Videos\v3.mp4 -i C:\Videos\v4.mp4 -c:v libx264 -preset fast -crf 23 -filter_complex "[0:v][1:v][2:v][3:v]xstack=inputs=4:layout=0_0\|w0_0\|0_h0\|w0_h0[v]" -map "[v]" |mp4|
