@@ -1,6 +1,6 @@
 2.7.3
 • Pre-input parameter linked to saved preset (only when using main tab save preset button).
-• New dynamic variable %ff to re-use input filename witout path in -vf filters (workaround for bug with Windows absolute paths).
+• New dynamic variable %ff to re-use input filename without path in -vf filters (workaround for bug with Windows absolute paths).
 • New dynamic variables %fdur and %fdur+1 to re-use input file duration in seconds in parameters field (or duration + 1 second). (Thanks Rajmond).
 • New feature to obtain presets online.
 • Opt-out of single encoding output result window.
