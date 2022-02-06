@@ -385,6 +385,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a In order to allow enabling file overwriting and delete source at simultaneously, delete source settings are now set to: Send to recycle bin and Delete one by one..
+        /// </summary>
+        internal static string del_overw2 {
+            get {
+                return ResourceManager.GetString("del_overw2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Deleting....
         /// </summary>
         internal static string deleting_f {
@@ -997,6 +1006,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Do not display again.
+        /// </summary>
+        internal static string not_display {
+            get {
+                return ResourceManager.GetString("not_display", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a may not work with selected NVIDIA nvenc encoder..
         /// </summary>
         internal static string not_nvenc {
@@ -1029,6 +1047,15 @@ namespace FFBatch.Properties {
         internal static string one_track {
             get {
                 return ResourceManager.GetString("one_track", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Online presets.
+        /// </summary>
+        internal static string online_pr {
+            get {
+                return ResourceManager.GetString("online_pr", resourceCulture);
             }
         }
         
@@ -1317,6 +1344,15 @@ namespace FFBatch.Properties {
         internal static string pr26 {
             get {
                 return ResourceManager.GetString("pr26", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Pre-input.
+        /// </summary>
+        internal static string pre_input {
+            get {
+                return ResourceManager.GetString("pre_input", resourceCulture);
             }
         }
         

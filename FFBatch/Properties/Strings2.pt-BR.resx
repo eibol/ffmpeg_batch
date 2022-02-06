@@ -735,4 +735,16 @@
   <data name="speed_not comp" xml:space="preserve">
     <value>A configuração de velocidade não é compatível com outros filtros de vídeo.</value>
   </data>
+  <data name="pre_input" xml:space="preserve">
+    <value>Pré-entrada</value>
+  </data>
+  <data name="online_pr" xml:space="preserve">
+    <value>Predefinição online</value>
+  </data>
+  <data name="not_display" xml:space="preserve">
+    <value>Não exibir novamente</value>
+  </data>
+  <data name="del_overw2" xml:space="preserve">
+    <value>Para permitir a ativação da substituição de arquivo e a exclusão da origem simultaneamente, as configurações de exclusão da origem agora estão definidas como: Enviar para a lixeira e Excluir um por um.</value>
+  </data>
 </root>

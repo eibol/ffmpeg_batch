@@ -732,4 +732,16 @@
   <data name="speed_not comp" xml:space="preserve">
     <value>El cambio de velocidad no es compatible con otros filtros de vídeo.</value>
   </data>
+  <data name="pre_input" xml:space="preserve">
+    <value>Pre-entrada</value>
+  </data>
+  <data name="online_pr" xml:space="preserve">
+    <value>Perfiles en internet</value>
+  </data>
+  <data name="not_display" xml:space="preserve">
+    <value>No mostrar de nuevo</value>
+  </data>
+  <data name="del_overw2" xml:space="preserve">
+    <value>Para habilitar las a la vez las opciones de sobrescribir y eliminar origen, las opciones de borrado se han establecido en: Enviar a la papelera y Eliminar de uno en uno.</value>
+  </data>
 </root>

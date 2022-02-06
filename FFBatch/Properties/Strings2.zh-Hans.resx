@@ -234,6 +234,9 @@
   <data name="deleting_sourc" xml:space="preserve">
     <value>正在删除源文件...</value>
   </data>
+  <data name="del_overw2" xml:space="preserve">
+    <value>为了允许同时启用文件覆盖和删除源，删除源设置现在设置为：发送到回收站和一一删除。</value>
+  </data>
   <data name="demuxer_help" xml:space="preserve">
     <value>在这种模式下，音频/视频文件可以被流式复制，只要它们共享质量（大小、编解码器、比特率）。注意：并非所有容器都支持流复制。如果出现播放问题或未合并文件，则可能需要重新编码。</value>
   </data>
@@ -417,6 +420,9 @@
   <data name="not_deleted" xml:space="preserve">
     <value>无法删除</value>
   </data>
+  <data name="not_display" xml:space="preserve">
+    <value>不再显示</value>
+  </data>
   <data name="not_nvenc" xml:space="preserve">
     <value>可能不适用于选定的 NVIDIA nvenc 编码器。</value>
   </data>
@@ -431,6 +437,9 @@
   </data>
   <data name="one_track" xml:space="preserve">
     <value>请仅选择一个文件以添加其流</value>
+  </data>
+  <data name="online_pr" xml:space="preserve">
+    <value>在线预设</value>
   </data>
   <data name="only_1011" xml:space="preserve">
     <value>仅在 Windows 10/11 中支持自动排除</value>
@@ -530,6 +539,9 @@
   </data>
   <data name="press_c" xml:space="preserve">
     <value>按取消</value>
+  </data>
+  <data name="pre_input" xml:space="preserve">
+    <value>预输入</value>
   </data>
   <data name="pre_ss" xml:space="preserve">
     <value>设置预输入搜索参数 -ss</value>

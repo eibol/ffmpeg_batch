@@ -744,4 +744,16 @@
   <data name="speed_not comp" xml:space="preserve">
     <value>Speed setting is not compatible with other video filters.</value>
   </data>
+  <data name="pre_input" xml:space="preserve">
+    <value>Pre-input</value>
+  </data>
+  <data name="online_pr" xml:space="preserve">
+    <value>Online presets</value>
+  </data>
+  <data name="not_display" xml:space="preserve">
+    <value>Do not display again</value>
+  </data>
+  <data name="del_overw2" xml:space="preserve">
+    <value>In order to allow enabling file overwriting and delete source at simultaneously, delete source settings are now set to: Send to recycle bin and Delete one by one.</value>
+  </data>
 </root>

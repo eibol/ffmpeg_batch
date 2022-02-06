@@ -744,4 +744,16 @@
   <data name="speed_not comp" xml:space="preserve">
     <value>L'impostazione della velocità non è compatibile con altri filtri video.</value>
   </data>
+  <data name="pre_input" xml:space="preserve">
+    <value>Pre-ingresso</value>
+  </data>
+  <data name="online_pr" xml:space="preserve">
+    <value>Preimpostazione online</value>
+  </data>
+  <data name="not_display" xml:space="preserve">
+    <value>Non visualizzare più</value>
+  </data>
+  <data name="del_overw2" xml:space="preserve">
+    <value>Per consentire l'abilitazione simultanea della sovrascrittura dei file e dell'eliminazione dell'origine, le impostazioni dell'eliminazione dell'origine sono ora impostate su: Invia al cestino ed Elimina uno per uno.</value>
+  </data>
 </root>
