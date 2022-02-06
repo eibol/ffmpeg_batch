@@ -18,22 +18,28 @@ FEATURES
 
    - Video encoding: AV1 / H264 / H265 / NVENC / QuickSync / ProRes / VP9 / Any other video format supported by ffmpeg.
    - Audio encoding: MP3 / AAC / AC3 / FLAC / WAV / Opus / Vorbis / Any other audio format supported by ffmpeg.
+   - Unlimited batch processing
    - Multi-file encode for thousands of files
-   - Automatic shutdown, with option to run post-encoding script
-   - Batch processing
+   - Dynamic variables for ffmpeg parameters.
+   - Automatic shutdown, with option to run post-encoding executables.   
    - Set encoding priority
    - Drag and drop
-   - Stream mapping and multiplex with jobs manager.
-   - Batch download YouTube and m3u8 urls
-   - FFmpeg parameters wizard
+   - Stream mapping and multiplex with jobs manager.   
+   - Batch mux and demux.
+   - FFmpeg presets wizard
    - Filter files using different criteria.
+   - File multimedia info and up to 12 properties columns.
    - Trim and concatenate files
    - Batch image thumbnail extraction
+   - Batch image to video creation.
+   - Batch audio silence detection
+   - Batch download YouTube and m3u8 urls
+   - Youtube-dl frontend for any supported URL.
 
 To compile code, please follow these steps:
 
 - Download all files to any folder.
-- In folder bin/debug, you have to place ffmpeg.exe, mediainfo.exe y yt-dlp.exe.
+- In folder bin/debug, you have to place ffmpeg.exe, mediainfo.exe and yt-dlp.exe.
 
 NOTES:
 - The application uses Aerowizard nuget package as mandatory.
