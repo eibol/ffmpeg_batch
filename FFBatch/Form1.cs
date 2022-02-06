@@ -43,6 +43,7 @@ namespace FFBatch
         // Delegate type to be used as the Handler Routine for SCCH
         private delegate Boolean ConsoleCtrlDelegate(uint CtrlType);
 
+        private Boolean no_output_pop = false;
         private List<string> already_scan = new List<string>();
         private String current_out = "";
         private List<int> selecs = new List<int>();
@@ -2174,63 +2175,67 @@ namespace FFBatch
                                     remain_time = remain_time.Replace("x", String.Empty);
                                     Double timing1 = 0;
 
-                                    if (System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator == ",")
+                                    if (!remain_time.Contains("N/A"))
                                     {
-                                        timing1 = Math.Round(Double.Parse(remain_time.Replace(".", ",")), 2);
-                                    }
-                                    else
-                                    {
-                                        timing1 = Math.Round(Double.Parse(remain_time), 2);
-                                    }
+                                        if (System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator == ",")
+                                        {
+                                            timing1 = Math.Round(Double.Parse(remain_time.Replace(".", ",")), 2);
+                                        }
+                                        else
+                                        {
+                                            timing1 = Math.Round(Double.Parse(remain_time), 2);
+                                        }
 
-                                    Decimal timing = (decimal)timing1;
-                                    Decimal total_dur_dec = Convert.ToDecimal(total_duration);
-                                    Decimal total_prog_dec = Convert.ToDecimal(total_prog);
-                                    Decimal remain_secs = 0;
 
-                                    if (timing > 0)
-                                    {
-                                        remain_secs = (decimal)(total_dur_dec - total_prog_dec) / timing;
-                                    }
+                                        Decimal timing = (decimal)timing1;
+                                        Decimal total_dur_dec = Convert.ToDecimal(total_duration);
+                                        Decimal total_prog_dec = Convert.ToDecimal(total_prog);
+                                        Decimal remain_secs = 0;
 
-                                    if (remain_secs > 60)
-                                    {
-                                        remain_secs = remain_secs + 60;
-                                    }
+                                        if (timing > 0)
+                                        {
+                                            remain_secs = (decimal)(total_dur_dec - total_prog_dec) / timing;
+                                        }
 
-                                    String remain_from_secs = String.Empty;
+                                        if (remain_secs > 60)
+                                        {
+                                            remain_secs = remain_secs + 60;
+                                        }
 
-                                    TimeSpan t = TimeSpan.FromSeconds(Convert.ToDouble(remain_secs));
-                                    remain_from_secs = string.Format("{0:D2}h:{1:D2}", t.Hours, t.Minutes);
+                                        String remain_from_secs = String.Empty;
 
-                                    if (remain_secs >= 43200)
-                                    {
-                                        this.InvokeEx(f => f.txt_remain.Text = FFBatch.Properties.Strings.remain_time + " " + Math.Round(remain_secs / 3600).ToString() + " " + FFBatch.Properties.Strings.hours);
-                                    }
+                                        TimeSpan t = TimeSpan.FromSeconds(Convert.ToDouble(remain_secs));
+                                        remain_from_secs = string.Format("{0:D2}h:{1:D2}", t.Hours, t.Minutes);
 
-                                    if (remain_secs >= 3600 && remain_secs < 43200)
-                                    {
-                                        this.InvokeEx(f => f.txt_remain.Text = FFBatch.Properties.Strings.remain_time + " " + remain_from_secs + " " + FFBatch.Properties.Strings.minutes_abrev);
-                                    }
+                                        if (remain_secs >= 43200)
+                                        {
+                                            this.InvokeEx(f => f.txt_remain.Text = FFBatch.Properties.Strings.remain_time + " " + Math.Round(remain_secs / 3600).ToString() + " " + FFBatch.Properties.Strings.hours);
+                                        }
 
-                                    if (remain_secs < 3600 && remain_secs >= 600)
-                                    {
-                                        this.InvokeEx(f => f.txt_remain.Text = FFBatch.Properties.Strings.remain_time + " " + remain_from_secs.Substring(remain_from_secs.LastIndexOf(":") + 1, 2) + " " + FFBatch.Properties.Strings.minutes);
-                                    }
+                                        if (remain_secs >= 3600 && remain_secs < 43200)
+                                        {
+                                            this.InvokeEx(f => f.txt_remain.Text = FFBatch.Properties.Strings.remain_time + " " + remain_from_secs + " " + FFBatch.Properties.Strings.minutes_abrev);
+                                        }
 
-                                    if (remain_secs < 600 && remain_secs >= 120)
-                                    {
-                                        this.InvokeEx(f => f.txt_remain.Text = FFBatch.Properties.Strings.remain_time + " " + remain_from_secs.Substring(remain_from_secs.LastIndexOf(":") + 2, 1) + " " + FFBatch.Properties.Strings.minutes);
-                                    }
+                                        if (remain_secs < 3600 && remain_secs >= 600)
+                                        {
+                                            this.InvokeEx(f => f.txt_remain.Text = FFBatch.Properties.Strings.remain_time + " " + remain_from_secs.Substring(remain_from_secs.LastIndexOf(":") + 1, 2) + " " + FFBatch.Properties.Strings.minutes);
+                                        }
 
-                                    if (remain_secs <= 59 && remain_secs != 0)
-                                    {
-                                        this.InvokeEx(f => f.txt_remain.Text = FFBatch.Properties.Strings.remain_time + " " + Convert.ToInt16(remain_secs) + " " + FFBatch.Properties.Strings.seconds);
-                                    }
+                                        if (remain_secs < 600 && remain_secs >= 120)
+                                        {
+                                            this.InvokeEx(f => f.txt_remain.Text = FFBatch.Properties.Strings.remain_time + " " + remain_from_secs.Substring(remain_from_secs.LastIndexOf(":") + 2, 1) + " " + FFBatch.Properties.Strings.minutes);
+                                        }
 
-                                    if (remain_secs == 0)
-                                    {
-                                        this.InvokeEx(f => f.txt_remain.Text = FFBatch.Properties.Strings.remain_time + " " + FFBatch.Properties.Strings.about_finish);
+                                        if (remain_secs <= 59 && remain_secs != 0)
+                                        {
+                                            this.InvokeEx(f => f.txt_remain.Text = FFBatch.Properties.Strings.remain_time + " " + Convert.ToInt16(remain_secs) + " " + FFBatch.Properties.Strings.seconds);
+                                        }
+
+                                        if (remain_secs == 0)
+                                        {
+                                            this.InvokeEx(f => f.txt_remain.Text = FFBatch.Properties.Strings.remain_time + " " + FFBatch.Properties.Strings.about_finish);
+                                        }
                                     }
                                 }
                                 //End remaining time
@@ -4978,7 +4983,7 @@ namespace FFBatch
 
                     if (line.Contains("PR: "))
                     {
-                        this.InvokeEx(f => f.combo_presets.Items.Add(line.Substring(4, line.LastIndexOf("&") - 5)));
+                        this.InvokeEx(f => f.combo_presets.Items.Add(line.Substring(4, line.LastIndexOf(" & ") - 4)));
                     }
                 }
             }
@@ -5032,6 +5037,21 @@ namespace FFBatch
                         }
                     }
                 }));
+
+                String no_out_pop = String.Empty;
+                if (is_portable == false)
+                {
+                    no_out_pop = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_pop_up.ini";
+                }
+                else
+                {
+                    no_out_pop = port_path + "ff_pop_up_portable.ini";
+                }
+
+                if (File.Exists(no_out_pop))
+                {
+                    no_output_pop = true;
+                }
 
                 String path_first = String.Empty;
                 if (is_portable == false)
@@ -5750,13 +5770,14 @@ namespace FFBatch
                             continue;
                         }
                     }
-                    if (line.Length > 4 && line.Substring(4, line.IndexOf("&") - 5) == combo_presets.SelectedItem.ToString())
+                    
+                    if (line.Length > 4 && line.Substring(4, line.IndexOf(" & ") - 4) == combo_presets.SelectedItem.ToString())
                     {
-                        int cortar = line.LastIndexOf("%") - line.LastIndexOf("&");
+                        int cortar = line.LastIndexOf("%") - line.LastIndexOf(" & ");
                         txt_format.Text = line.Substring(line.LastIndexOf("%") + 2);
                         try
                         {
-                            txt_parameters.Text = line.Substring(line.LastIndexOf("&") + 2, cortar - 3);
+                            txt_parameters.Text = line.Substring(line.LastIndexOf(" & ") + 3, cortar - 4);
                         }
                         catch
                         {
@@ -5767,11 +5788,24 @@ namespace FFBatch
                 }
             }
             btn_save_preset.Enabled = false;
+            String path_pr_pre = String.Empty;
+
+            if (is_portable == false)
+            {
+                path_pr_pre = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets_pre.ini";
+            }
+
+            else
+            {
+                path_pr_pre = port_path + "ff_presets_pre_portable.ini";
+            }
+
             //Read pre-input
 
             if (combo_presets.SelectedIndex == 0)
             {
                 String path_pre = String.Empty;
+                
                 if (is_portable == false)
                 {
                     path_pre = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch_pre.ini";
@@ -5792,6 +5826,14 @@ namespace FFBatch
                 if (fix_pre == false) txt_pre_input.Text = "";
             }
             //End read-pre-input
+
+            if (File.Exists(path_pr_pre))
+            {
+                foreach (string line in File.ReadLines(path_pr_pre))
+                {
+                    if (line.Length > 5) if (line.Substring(0, line.LastIndexOf("&&&") - 1) == combo_presets.Text) txt_pre_input.Text = line.Substring(line.LastIndexOf("&&&") + 4, line.Length - line.LastIndexOf("&&&") - 4);
+                }
+            }
         }
 
         private void cti1_Click(object sender, EventArgs e)
@@ -6965,10 +7007,10 @@ namespace FFBatch
                 {
                     if (line.Contains(combo_presets.Text))
                     {
-                        int cortar = line.LastIndexOf("%") - line.LastIndexOf("&");
+                        int cortar = line.LastIndexOf("%") - line.LastIndexOf(" & ");
 
                         txt_format.Text = line.Substring(line.LastIndexOf("%") + 2);
-                        txt_parameters.Text = line.Substring(line.LastIndexOf("&") + 2, cortar - 3);
+                        txt_parameters.Text = line.Substring(line.LastIndexOf(" & ") + 3, cortar - 3);
                     }
                 }
             }
@@ -9123,7 +9165,28 @@ namespace FFBatch
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            
             list_cols();
+
+            String path_pr, path_pre = "";
+            if (is_portable == false)
+            {
+                path_pr = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets.ini";
+                path_pre = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets_pre.ini";
+            }
+            else
+            {
+                path_pr = port_path + "ff_presets_portable.ini";
+                path_pre = port_path + "ff_presets_pre_portable.ini";
+            }
+            if (File.Exists(path_pr)) {
+                var lines = File.ReadAllLines(path_pr).Where(arg => !string.IsNullOrWhiteSpace(arg));
+                File.WriteAllLines(path_pr, lines);
+            }
+            if (File.Exists(path_pre)) {
+                var lines2 = File.ReadAllLines(path_pre).Where(arg => !string.IsNullOrWhiteSpace(arg));
+                File.WriteAllLines(path_pre, lines2);
+            }
 
             String f_autorun = String.Empty;
             String f_multi = String.Empty;
@@ -9207,22 +9270,26 @@ namespace FFBatch
 
                 System.IO.File.WriteAllText(f_remember, tabControl1.SelectedIndex.ToString());
             }
-
-            if (btn_save_config.ImageKey != "Save_settings_39.png")
+            if (combo_presets.Text.Length < 9) combo_presets.Text = "-----" + combo_presets.Text;
+            if (combo_presets.Text.Length > 9)
             {
-                String messg = FFBatch.Properties.Strings.setting_c;
-                if (combo_presets.Text == FFBatch.Properties.Strings.new_preset) messg = FFBatch.Properties.Strings.setting_pr_c;
-                var a = MessageBox.Show(messg, FFBatch.Properties.Strings.sett_not_s, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-                if (a == DialogResult.Cancel) e.Cancel = true;
-                else if (a == DialogResult.Yes)
+                if (btn_save_config.ImageKey != "Save_settings_39.png" || combo_presets.Text.Substring(combo_presets.Text.Length - 9, 9) == "-(online)")
                 {
-                    if (combo_presets.Text == FFBatch.Properties.Strings.new_preset)
+                    String messg = FFBatch.Properties.Strings.setting_c;
+                    if (combo_presets.Text == FFBatch.Properties.Strings.new_preset || combo_presets.Text.Substring(combo_presets.Text.Length - 9, 9) == "-(online)") messg = FFBatch.Properties.Strings.setting_pr_c;
+                    var a = MessageBox.Show(messg, FFBatch.Properties.Strings.sett_not_s, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                    if (a == DialogResult.Cancel) e.Cancel = true;
+                    if (a == DialogResult.Yes)
                     {
-                        combo_presets.Text = FFBatch.Properties.Strings.latest_preset;
-                        save_preset();
-                        Thread.Sleep(150);
+                        if (combo_presets.Text == FFBatch.Properties.Strings.new_preset || combo_presets.Text.Substring(combo_presets.Text.Length - 9, 9) == "-(online)")
+                        {
+                            if (combo_presets.Text == FFBatch.Properties.Strings.new_preset) combo_presets.Text = FFBatch.Properties.Strings.latest_preset;
+                            if (combo_presets.Text.Substring(combo_presets.Text.Length - 9, 9) == "-(online)") combo_presets.Text = combo_presets.Text.Substring(0, combo_presets.Text.Length - 9);
+                            save_preset();
+                            Thread.Sleep(150);
+                        }
+                        btn_save_config.PerformClick();
                     }
-                    btn_save_config.PerformClick();
                 }
             }
 
@@ -10911,17 +10978,20 @@ namespace FFBatch
                                 if (lines_ouput[2] != null && lines_ouput[2].Length > 0) dur = lines_ouput[2];
                             }));
 
-                            Form26 frm26 = new Form26();
-                            frm26.out_file = dest_mux;
-                            frm26.dur_file = dur;
-                            if (Properties.Settings.Default.dark_mode == false) frm26.pic_img = pic_reading.Image;
-                            else frm26.pic_img = pic_reading.InitialImage;
-                            frm26.tot_bit = lbl_bitrate.Text;
-                            frm26.out_size = lbl_est_size.Text;
-                            this.Invoke(new MethodInvoker(delegate
+                            if (no_output_pop == false)
                             {
-                                frm26.Show(this);
-                            }));
+                                Form26 frm26 = new Form26();
+                                frm26.out_file = dest_mux;
+                                frm26.dur_file = dur;
+                                if (Properties.Settings.Default.dark_mode == false) frm26.pic_img = pic_reading.Image;
+                                else frm26.pic_img = pic_reading.InitialImage;
+                                frm26.tot_bit = lbl_bitrate.Text;
+                                frm26.out_size = lbl_est_size.Text;
+                                this.Invoke(new MethodInvoker(delegate
+                                {
+                                    frm26.Show(this);
+                                }));
+                            }
 
                         }
 
@@ -12922,7 +12992,7 @@ namespace FFBatch
             {
                 if (Properties.Settings.Default.dark_mode == false) txt_pre_input.BackColor = Color.LightGoldenrodYellow;
                 else txt_pre_input.BackColor = Color.FromArgb(255, 128, 128, 128);
-                if (combo_presets.SelectedIndex == 0) btn_save_preset.Enabled = true;
+                if (combo_presets.SelectedIndex != 0) btn_save_preset.Enabled = true;
             }
         }
 
@@ -13702,7 +13772,8 @@ namespace FFBatch
             }
             else
             {
-                txt_fin.BackColor = Color.White;
+                if (Properties.Settings.Default.dark_mode == false) txt_fin.BackColor = SystemColors.Window;
+                else txt_fin.BackColor = Color.FromArgb(255, 96, 96, 96);
             }
 
             if (txt_fin.Text.Length > 12)
@@ -13725,14 +13796,16 @@ namespace FFBatch
 
         private void txt_ini_TextChanged(object sender, EventArgs e)
         {
-            DateTime time;
+            DateTime time;            
+
             if (!DateTime.TryParse(txt_ini.Text, out time))
             {
                 txt_ini.BackColor = Color.Orange;
             }
             else
             {
-                txt_ini.BackColor = Color.White;
+                if (Properties.Settings.Default.dark_mode == false) txt_ini.BackColor = SystemColors.Window;
+                else txt_ini.BackColor = Color.FromArgb(255, 96, 96, 96);
             }
 
             if (txt_ini.Text.Length > 12)
@@ -13745,7 +13818,8 @@ namespace FFBatch
         {
             if (txt_ini.Text == "0:00:00.000")
             {
-                txt_ini.BackColor = groupBox1.BackColor;
+                if (Properties.Settings.Default.dark_mode == false) txt_ini.BackColor = SystemColors.Window;
+                else txt_ini.BackColor = Color.FromArgb(255, 96, 96, 96);
                 return;
             }
 
@@ -13756,7 +13830,8 @@ namespace FFBatch
             }
             else
             {
-                txt_ini.BackColor = Color.White;
+                if (Properties.Settings.Default.dark_mode == false) txt_ini.BackColor = SystemColors.Window;
+                else txt_ini.BackColor = Color.FromArgb(255, 96, 96, 96);
             }
         }
 
@@ -13769,7 +13844,8 @@ namespace FFBatch
         {
             if (txt_fin.Text == "0:00:00.000")
             {
-                txt_fin.BackColor = groupBox1.BackColor;
+                if (Properties.Settings.Default.dark_mode == false) txt_fin.BackColor = SystemColors.Window;
+                else txt_fin.BackColor = Color.FromArgb(255, 96, 96, 96);
                 return;
             }
 
@@ -13780,7 +13856,8 @@ namespace FFBatch
             }
             else
             {
-                txt_fin.BackColor = Color.White;
+                if (Properties.Settings.Default.dark_mode == false) txt_fin.BackColor = SystemColors.Window;
+                else txt_fin.BackColor = Color.FromArgb(255, 96, 96, 96);
             }
         }
 
@@ -14707,7 +14784,7 @@ namespace FFBatch
                     int has_tbit = 0;
                     foreach (ColumnHeader col in listView1.Columns)
                     {
-                        if (col.Text.Contains(FFBatch.Properties.Strings2.bitrate) && !col.Text.ToLower().Contains("video") && !col.Text.ToLower().Contains("audio") && !col.Text.ToLower().Contains("vídeo") && !col.Text.ToLower().Contains("视频") && !col.Text.ToLower().Contains("音"))
+                        if (col.Text == FFBatch.Properties.Strings2.bitrate && !col.Text.ToLower().Contains("video") && !col.Text.ToLower().Contains("audio") && !col.Text.ToLower().Contains("vídeo") && !col.Text.ToLower().Contains("视频") && !col.Text.ToLower().Contains("音"))
                         {
                             has_tbit = col.Index;
                             break;
@@ -14890,7 +14967,7 @@ namespace FFBatch
                                     i++;
                                 }
 
-                                if (col.Text.Contains(FFBatch.Properties.Strings2.bitrate) && !col.Text.ToLower().Contains("video") && !col.Text.ToLower().Contains("audio") && !col.Text.ToLower().Contains("vídeo") && !col.Text.ToLower().Contains("视频") && !col.Text.ToLower().Contains("音"))
+                                if (col.Text == FFBatch.Properties.Strings2.bitrate && !col.Text.ToLower().Contains("video") && !col.Text.ToLower().Contains("audio") && !col.Text.ToLower().Contains("vídeo") && !col.Text.ToLower().Contains("视频") && !col.Text.ToLower().Contains("音"))
                                 {
                                     i--;
                                     itemsToAdd[n].SubItems.Add(Properties.Strings.pending);
@@ -15168,7 +15245,7 @@ namespace FFBatch
 
             foreach (ColumnHeader col in listView1.Columns)
             {
-                if (col.Text.Contains(FFBatch.Properties.Strings2.bitrate) && !col.Text.ToLower().Contains("video") && !col.Text.ToLower().Contains("audio") && !col.Text.ToLower().Contains("vídeo") && !col.Text.ToLower().Contains("视频") && !col.Text.ToLower().Contains("音"))
+                if (col.Text == FFBatch.Properties.Strings2.bitrate && !col.Text.ToLower().Contains("video") && !col.Text.ToLower().Contains("audio") && !col.Text.ToLower().Contains("vídeo") && !col.Text.ToLower().Contains("视频") && !col.Text.ToLower().Contains("音"))
                 {
                     listView1.Invoke(new MethodInvoker(delegate
                     {
@@ -17647,17 +17724,20 @@ namespace FFBatch
                                         if (lines_ouput[2] != null && lines_ouput[2].Length > 0) dur = lines_ouput[2];
                                     }));
 
-                                    Form26 frm26 = new Form26();
-                                    frm26.out_file = cur_out;
-                                    frm26.dur_file = dur;
-                                    if (Properties.Settings.Default.dark_mode == false) frm26.pic_img = pic_reading.Image;
-                                    else frm26.pic_img = pic_reading.InitialImage;
-                                    frm26.tot_bit = lbl_bitrate.Text;
-                                    frm26.out_size = lbl_est_size.Text;
-                                    this.Invoke(new MethodInvoker(delegate
+                                    if (no_output_pop == false)
                                     {
-                                        frm26.Show(this);
-                                    }));
+                                        Form26 frm26 = new Form26();
+                                        frm26.out_file = cur_out;
+                                        frm26.dur_file = dur;
+                                        if (Properties.Settings.Default.dark_mode == false) frm26.pic_img = pic_reading.Image;
+                                        else frm26.pic_img = pic_reading.InitialImage;
+                                        frm26.tot_bit = lbl_bitrate.Text;
+                                        frm26.out_size = lbl_est_size.Text;
+                                        this.Invoke(new MethodInvoker(delegate
+                                        {
+                                            frm26.Show(this);
+                                        }));
+                                    }
                                 }
 
                                 //End output single info
@@ -18568,8 +18648,8 @@ namespace FFBatch
                                 {
                                     if (display_eta == true)
                                     {
-                                        if (err_txt.ToLower().Contains("mib/s")) tr_speed = Properties.Strings2.transfer_r + " " + err_txt.Substring(err_txt.IndexOf("-> ") + 3, 5) + " MB/s";
-                                        if (err_txt.ToLower().Contains("kib/s")) tr_speed = Properties.Strings2.transfer_r + " " + err_txt.Substring(err_txt.IndexOf("-> ") + 3, 5) + " KB/s";
+                                        if (err_txt.ToLower().Contains("mib/s")) tr_speed = Properties.Strings2.transfer_r + " " + err_txt.Substring(err_txt.IndexOf("at ") + 3, 5) + " MB/s";
+                                        if (err_txt.ToLower().Contains("kib/s")) tr_speed = Properties.Strings2.transfer_r + " " + err_txt.Substring(err_txt.IndexOf("at ") + 3, 5) + " KB/s";
                                         this.InvokeEx(f => f.lbl_dw_speed.Text = tr_speed);
                                     }
                                 }
@@ -18685,7 +18765,7 @@ namespace FFBatch
                         {
                             this.InvokeEx(f => f.dg1.Rows[list_index].Cells[5].Value = FFBatch.Properties.Strings.failed);
                             errors_enc = errors_enc + 1;
-                            //this.InvokeEx(f => f.dg1.Rows[list_index].Cells[5].Style.BackColor = Color.PaleGoldenrod);
+                       
                         }
                     }
 
@@ -18892,17 +18972,20 @@ namespace FFBatch
                                             if (lines_ouput[2] != null && lines_ouput[2].Length > 0) dur = lines_ouput[2];
                                         }));
 
-                                        Form26 frm26 = new Form26();
-                                        frm26.out_file = cur_out;
-                                        frm26.dur_file = dur;
-                                        if (Properties.Settings.Default.dark_mode == false) frm26.pic_img = pic_reading.Image;
-                                        else frm26.pic_img = pic_reading.InitialImage;
-                                        frm26.tot_bit = lbl_bitrate.Text;
-                                        frm26.out_size = lbl_est_size.Text;
-                                        this.Invoke(new MethodInvoker(delegate
+                                        if (no_output_pop == false)
                                         {
-                                            frm26.Show(this);
-                                        }));
+                                            Form26 frm26 = new Form26();
+                                            frm26.out_file = cur_out;
+                                            frm26.dur_file = dur;
+                                            if (Properties.Settings.Default.dark_mode == false) frm26.pic_img = pic_reading.Image;
+                                            else frm26.pic_img = pic_reading.InitialImage;
+                                            frm26.tot_bit = lbl_bitrate.Text;
+                                            frm26.out_size = lbl_est_size.Text;
+                                            this.Invoke(new MethodInvoker(delegate
+                                            {
+                                                frm26.Show(this);
+                                            }));
+                                        }
                                     }
 
                                     //End output single info
@@ -19935,10 +20018,12 @@ namespace FFBatch
 
             Double size_dur = 0;
             Double file_size = 0;
+            Double dur_rpl = 0;
 
             listView1.Invoke(new MethodInvoker(delegate
             {
                 sel_test = listView1.Items[0].SubItems[1].Text + "\\" + listView1.Items[0].Text;
+                dur_rpl = TimeSpan.Parse(listView1.Items[0].SubItems[3].Text).TotalSeconds;
                 FileInfo fs = new FileInfo(sel_test);
                 file_size = fs.Length;
                 try
@@ -20018,6 +20103,32 @@ namespace FFBatch
                     }
                 }
 
+                while (textbox_params.Contains("%ff"))
+                {
+                    if (textbox_params.Contains("%ff"))
+                    {
+                        textbox_params = textbox_params.Replace("%ff", '\u0022' + Path.GetFileName(file_prueba) + '\u0022');
+                    }
+                }
+
+                String dur_secs = dur_rpl.ToString();
+                while (textbox_params.Contains("%fdur"))
+                {
+                    if (textbox_params.Contains("%fdur"))
+                    {
+                        textbox_params = textbox_params.Replace("%fdur", dur_secs);
+                    }
+                }
+
+                dur_secs = (dur_rpl + 1).ToString();
+                while (textbox_params.Contains("%fdur+1"))
+                {
+                    if (textbox_params.Contains("%fdur+1"))
+                    {
+                        textbox_params = textbox_params.Replace("%fdur+1", dur_secs);
+                    }
+                }
+
                 while (textbox_params.Contains("%fp"))
                 {
                     if (textbox_params.Contains("%fp"))
@@ -20094,6 +20205,7 @@ namespace FFBatch
                 consola_pre.StartInfo.UseShellExecute = false;
                 consola_pre.StartInfo.CreateNoWindow = true;
                 consola_pre.EnableRaisingEvents = true;
+                consola_pre.StartInfo.WorkingDirectory = Path.GetDirectoryName(file_prueba);
                 consola_pre.Start();
                 frm_prog.procId = consola_pre.Id;
 
@@ -20145,11 +20257,7 @@ namespace FFBatch
                         }
                     }
                 }
-
-                if (Directory.GetFiles(destino_test).Length == 0)
-                {
-                    System.IO.Directory.Delete(destino_test);
-                }
+                
                 LB1_o.Items.Clear();
                 tried_params.Add(txt_parameters.Text);
                 return;
@@ -20173,12 +20281,7 @@ namespace FFBatch
                                 {
                                 }
                             }
-                        }
-
-                        if (Directory.GetFiles(destino_test).Length == 0)
-                        {
-                            System.IO.Directory.Delete(destino_test);
-                        }
+                        }                      
 
                         this.InvokeEx(f => this.Cursor = Cursors.Arrow);
                         foreach (String lin in LB1_o.Items)
@@ -20270,24 +20373,14 @@ namespace FFBatch
                         }
                     }
 
-                    if (Directory.Exists(destino_test) && Directory.GetFiles(destino_test).Length == 0)
-                    {
-                        System.IO.Directory.Delete(destino_test);
-                    }
+                  
                     tried_params.Add(txt_parameters.Text);
                     tried_ok = true;
                 }
             }
             //END try preset
             this.InvokeEx(f => this.Cursor = Cursors.Arrow);
-
-            if (Directory.Exists(destino_test))
-            {
-                if (Directory.GetFiles(destino_test).Length == 0)
-                {
-                    System.IO.Directory.Delete(destino_test);
-                }
-            }
+           
             LB1_o.Items.Clear();
             consola_pre.Dispose();
         }
@@ -20295,7 +20388,6 @@ namespace FFBatch
         private void BG_Try_preset_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             String file_prueba = "";
-
             String sel_test = "";
             if (listView1.SelectedIndices.Count > 0) sel_test = listView1.SelectedItems[0].SubItems[1].Text + "\\" + listView1.SelectedItems[0].Text;
             else sel_test = listView1.Items[0].SubItems[1].Text + "\\" + listView1.Items[0].Text;
@@ -20305,25 +20397,7 @@ namespace FFBatch
 
             if (File.Exists(borrar))
             {
-                try
-                {
-                    File.Delete(borrar);
-                }
-                catch
-                {
-                }
-            }
-
-            if (Directory.Exists(destino) == true)
-            {
-                try
-                {
-                    if (Directory.GetFiles(destino).Length == 0)
-                    {
-                        System.IO.Directory.Delete(destino);
-                    }
-                }
-                catch { }
+                try { File.Delete(borrar); } catch { }
             }
 
             //Re-route to pressed button
@@ -20360,11 +20434,13 @@ namespace FFBatch
             Boolean failed = false;
             Double size_dur = 0;
             Double file_size = 0;
+            Double dur_rpl = 0;
             String sel_test = "";
             this.InvokeEx(f => f.btn_try_pr.Image = img_try.Images[0]);
             listView1.Invoke(new MethodInvoker(delegate
             {
                 sel_test = listView1.Items[0].SubItems[1].Text + "\\" + listView1.Items[0].Text;
+                dur_rpl = TimeSpan.Parse(listView1.Items[0].SubItems[3].Text).TotalSeconds;
                 FileInfo fs = new FileInfo(sel_test);
                 file_size = fs.Length;
                 try
@@ -20506,6 +20582,33 @@ namespace FFBatch
                     }
                 }
 
+                while (textbox_params.Contains("%ff"))
+                {
+                    if (textbox_params.Contains("%ff"))
+                    {
+                        textbox_params = textbox_params.Replace("%ff", '\u0022' + Path.GetFileName(file_prueba) + '\u0022');
+                    }
+                }
+
+
+                String dur_secs = dur_rpl.ToString();
+                while (textbox_params.Contains("%fdur"))
+                {
+                    if (textbox_params.Contains("%fdur"))
+                    {
+                        textbox_params = textbox_params.Replace("%fdur", dur_secs);
+                    }
+                }
+
+                dur_secs = (dur_rpl + 1).ToString();
+                while (textbox_params.Contains("%fdur+1"))
+                {
+                    if (textbox_params.Contains("%fdur+1"))
+                    {
+                        textbox_params = textbox_params.Replace("%fdur+1", dur_secs);
+                    }
+                }
+
                 while (textbox_params.Contains("%fp"))
                 {
                     if (textbox_params.Contains("%fp"))
@@ -20581,6 +20684,7 @@ namespace FFBatch
                 consola.StartInfo.UseShellExecute = false;
                 consola.StartInfo.CreateNoWindow = true;
                 consola.EnableRaisingEvents = true;
+                consola.StartInfo.WorkingDirectory = Path.GetDirectoryName(file_prueba);
                 consola.Start();
                 this.InvokeEx(f => boton_ok_ff.Text = FFBatch.Properties.Strings.close_win);
 
@@ -20613,16 +20717,9 @@ namespace FFBatch
 
                     if (File.Exists(borrar1))
                     {
-                        File.Delete(borrar1);
+                        try { File.Delete(borrar1); } catch { }
                     }
-                    if (Directory.Exists(destino))
-                    {
-                        if (Directory.GetFiles(destino).Length == 0)
-                        {
-                            System.IO.Directory.Delete(destino);
-                        }
-                    }
-
+                    
                     return;
                 }
                 else
@@ -20646,17 +20743,10 @@ namespace FFBatch
 
                         if (File.Exists(borrar2))
                         {
-                            File.Delete(borrar2);
-                        }
-                        if (Directory.Exists(destino))
-                        {
-                            if (Directory.GetFiles(destino).Length == 0)
-                            {
-                                System.IO.Directory.Delete(destino);
-                            }
+                            try { File.Delete(borrar2); } catch { }
+                        }                       
 
-                            return;
-                        }
+                         return;                       
                     }
                 }
             });
@@ -20674,8 +20764,7 @@ namespace FFBatch
                 this.InvokeEx(f => this.Cursor = Cursors.Arrow);
                 this.InvokeEx(f => f.btn_try_pr.Image = img_try.Images[1]);
                 this.InvokeEx(f => f.btn_try_pr.Enabled = true);
-                this.InvokeEx(f => this.Enabled = true);
-                //frm_output2.ShowDialog();
+                this.InvokeEx(f => this.Enabled = true);                
                 this.InvokeEx(f => frm_output2.Refresh());
             }
 
@@ -20688,14 +20777,7 @@ namespace FFBatch
                     File.Delete(borrar);
                 }
                 catch { }
-            }
-            if (Directory.Exists(destino))
-            {
-                if (Directory.GetFiles(destino).Length == 0)
-                {
-                    System.IO.Directory.Delete(destino);
-                }
-            }
+            }            
         }
 
         private void cti6_Click(object sender, EventArgs e)
@@ -23500,17 +23582,20 @@ namespace FFBatch
                                     if (lines_ouput[2] != null && lines_ouput[2].Length > 0) dur = lines_ouput[2];
                                 }));
 
-                                Form26 frm26 = new Form26();
-                                frm26.out_file = dest_demux;
-                                frm26.dur_file = dur;
-                                if (Properties.Settings.Default.dark_mode == false) frm26.pic_img = pic_reading.Image;
-                                else frm26.pic_img = pic_reading.InitialImage;
-                                frm26.tot_bit = lbl_bitrate.Text;
-                                frm26.out_size = lbl_est_size.Text;
-                                this.Invoke(new MethodInvoker(delegate
+                                if (no_output_pop == false)
                                 {
-                                    frm26.Show(this);
-                                }));
+                                    Form26 frm26 = new Form26();
+                                    frm26.out_file = dest_demux;
+                                    frm26.dur_file = dur;
+                                    if (Properties.Settings.Default.dark_mode == false) frm26.pic_img = pic_reading.Image;
+                                    else frm26.pic_img = pic_reading.InitialImage;
+                                    frm26.tot_bit = lbl_bitrate.Text;
+                                    frm26.out_size = lbl_est_size.Text;
+                                    this.Invoke(new MethodInvoker(delegate
+                                    {
+                                        frm26.Show(this);
+                                    }));
+                                }
                             }
                         }
 
@@ -23703,6 +23788,12 @@ namespace FFBatch
             if (is_portable == true) wizard1.is_portable = true;
             else wizard1.is_portable = true;
             wizard1.ShowDialog();
+
+            if (wizard1.online_pr == true)
+            {
+                presetsOnlineToolStripMenuItem.PerformClick();
+                return;
+            }
 
             if (wizard1.add_files == true)
             {
@@ -25404,18 +25495,20 @@ namespace FFBatch
                                 if (lines_ouput[2] != null && lines_ouput[2].Length > 0) dur = lines_ouput[2];
                             }));
 
-                            Form26 frm26 = new Form26();
-                            frm26.out_file = cur_out;
-                            frm26.dur_file = dur;
-                            if (Properties.Settings.Default.dark_mode == false) frm26.pic_img = pic_reading.Image;
-                            else frm26.pic_img = pic_reading.InitialImage;
-                            frm26.tot_bit = lbl_bitrate.Text;
-                            frm26.out_size = lbl_est_size.Text;
-                            this.Invoke(new MethodInvoker(delegate
+                            if (no_output_pop == false)
                             {
-                                frm26.ShowDialog(this);
-                            }));
-
+                                Form26 frm26 = new Form26();
+                                frm26.out_file = cur_out;
+                                frm26.dur_file = dur;
+                                if (Properties.Settings.Default.dark_mode == false) frm26.pic_img = pic_reading.Image;
+                                else frm26.pic_img = pic_reading.InitialImage;
+                                frm26.tot_bit = lbl_bitrate.Text;
+                                frm26.out_size = lbl_est_size.Text;
+                                this.Invoke(new MethodInvoker(delegate
+                                {
+                                    frm26.ShowDialog(this);
+                                }));
+                            }
                         }
                         //End output single info
 
@@ -26191,18 +26284,20 @@ namespace FFBatch
                             if (lines_ouput[2] != null && lines_ouput[2].Length > 0) dur = lines_ouput[2];
                         }));
 
-                        Form26 frm26 = new Form26();
-                        frm26.out_file = cur_out;
-                        frm26.dur_file = dur;
-                        if (Properties.Settings.Default.dark_mode == false) frm26.pic_img = pic_reading.Image;
-                        else frm26.pic_img = pic_reading.InitialImage;
-                        frm26.tot_bit = lbl_bitrate.Text;
-                        frm26.out_size = lbl_est_size.Text;
-                        this.Invoke(new MethodInvoker(delegate
+                        if (no_output_pop == false)
                         {
-                            frm26.ShowDialog(this);
-                        }));
-
+                            Form26 frm26 = new Form26();
+                            frm26.out_file = cur_out;
+                            frm26.dur_file = dur;
+                            if (Properties.Settings.Default.dark_mode == false) frm26.pic_img = pic_reading.Image;
+                            else frm26.pic_img = pic_reading.InitialImage;
+                            frm26.tot_bit = lbl_bitrate.Text;
+                            frm26.out_size = lbl_est_size.Text;
+                            this.Invoke(new MethodInvoker(delegate
+                            {
+                                frm26.ShowDialog(this);
+                            }));
+                        }
                     }
                     //End output single info
 
@@ -28493,11 +28588,13 @@ namespace FFBatch
 
             String path_d_pr = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets.ini";
             String path2_d_pr = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets2.txt";
+            String path_d_pr_pre = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets_pre.ini";
             if (is_portable == true)
             {
                 path_d_pr = port_path + "ff_presets_portable.ini";
+                path_d_pr_pre = port_path + "ff_presets_pre_portable.ini";
                 path2_d_pr = port_path + "ff_presets2.txt";
-            }
+            }            
 
             if (is_portable == false)
             {
@@ -28520,9 +28617,10 @@ namespace FFBatch
                     File.AppendAllText(path2_d_pr, linea_sin);
                 }
 
-                if (line.LastIndexOf("&") >= 0)
+                if (line.LastIndexOf(" & ") >= 0)
                 {
-                    if (line.Substring(4, line.LastIndexOf("&") - 5) != combo_presets.Text)
+                  
+                    if (line.Substring(4, line.LastIndexOf(" & ") - 4) != combo_presets.Text)
                     {
                         if (ind <= File.ReadLines(path_d_pr).Count() - 1)
                         {
@@ -28536,6 +28634,7 @@ namespace FFBatch
                     }
                 }
             }
+            
             File.Delete(path_d_pr);
             File.Copy(path2_d_pr, path_d_pr);
             File.Delete(path2_d_pr);
@@ -28546,8 +28645,38 @@ namespace FFBatch
             if (is_portable == true) path_pr = port_path + "ff_presets_portable.ini";
             else path_pr = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets.ini";
 
-            String createText = "PR: " + combo_presets.Text + " & " + txt_parameters.Text + " % " + txt_format.Text;
+            String parameters = Regex.Replace(txt_parameters.Text, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
+            String createText = "PR: " + combo_presets.Text + " & " + parameters + " % " + txt_format.Text;
             File.AppendAllText(path_pr, Environment.NewLine + createText);
+
+            String presets_txt = File.ReadAllText(path_pr);
+            String pres_blanks = Regex.Replace(presets_txt, @"^\s+$[\r\n]*", string.Empty, RegexOptions.Multiline);
+            File.WriteAllText(path_pr, pres_blanks);
+
+            if (txt_pre_input.Text.Length > 0)
+            {
+                File.AppendAllText(path_d_pr_pre, Environment.NewLine + combo_presets.Text + " &&& " + txt_pre_input.Text);
+            }
+            else
+            {
+                List<string> list_file = new List<string>();
+                if (File.Exists(path_d_pr_pre))
+                {
+                    foreach (String line in File.ReadLines(path_d_pr_pre))
+                    {
+                        if (line.Length > 5)
+                        {
+                            if (line.Substring(0, line.LastIndexOf("&&&") - 1) != combo_presets.Text)
+                            {
+                                list_file.Add(line);
+                            }
+                        }
+                    }
+                }
+
+                File.WriteAllText(path_d_pr_pre, String.Empty);
+                foreach (String line in list_file) File.AppendText(line);                
+            }
 
             combo_presets.Items.Clear();
             combo_presets.Items.Add(FFBatch.Properties.Strings.default_param);
@@ -28653,7 +28782,7 @@ namespace FFBatch
 
                     if (line.Length > 4 && line.Substring(0, 4) == "PR: ")
                     {
-                        this.InvokeEx(f => f.combo_presets.Items.Add(line.Substring(4, line.LastIndexOf("&") - 5)));
+                        this.InvokeEx(f => f.combo_presets.Items.Add(line.Substring(4, line.LastIndexOf(" & ") - 4)));
                     }
                 }
             }
@@ -28969,6 +29098,24 @@ namespace FFBatch
                 if (frm_pr.saved == true) btn_load_config.PerformClick();
                 return;
             }
+
+            if (form3.presets_online == true)
+            {
+                Form27 frm27 = new Form27();
+                frm27.StartPosition = FormStartPosition.CenterParent;
+                frm27.ShowDialog();
+                if (frm27.desc_pr.Length > 0)
+                {
+                    combo_presets.SelectedIndex = combo_presets.Items.Count - 1;
+                    combo_presets.Text = frm27.desc_pr;
+                    txt_pre_input.Text = frm27.pre_in_pr;
+                    txt_parameters.Text = frm27.params_pr;
+                    txt_format.Text = frm27.format_pr;
+                }
+                return;
+            }
+            
+
             if (form3.reset_asked == true)
             {
                 menu_reset.PerformClick();
@@ -29557,16 +29704,19 @@ namespace FFBatch
             String path = String.Empty;
             String path2 = String.Empty;
             String path_pr = String.Empty;
+            String path_pr_pre = String.Empty;
             if (is_portable == false)
             {
                 path = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch.ini";
                 path_pr = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets.ini";
+                path_pr_pre = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets_pre.ini";
                 path2 = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_hw_dcd";
             }
             else
             {
                 path = port_path + "ff_batch_portable.ini";
                 path_pr = port_path + "ff_presets_portable.ini";
+                path_pr_pre = port_path +"ff_presets_pre_portable.ini";
                 path2 = port_path + "ff_hw_dcd_portable";
             }
 
@@ -29582,6 +29732,11 @@ namespace FFBatch
             if (File.Exists(path2))
             {
                 File.Delete(path2);
+            }
+
+            if (File.Exists(path_pr_pre))
+            {
+                try { File.Delete(path_pr_pre); } catch { }
             }
 
             combo_prio.SelectedIndex = 2;
@@ -29600,6 +29755,23 @@ namespace FFBatch
                     File.Delete(f_md5);
                 }
                 catch { }
+            }
+
+            String no_out_pop = String.Empty;
+            if (is_portable == false)
+            {
+                no_out_pop = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_first.ini";
+            }
+            else
+            {
+                no_out_pop = port_path + "ff_first_portable.ini";
+            }
+            if (File.Exists(no_out_pop))
+            {
+                try
+                {
+                    File.Delete(no_out_pop);
+                } catch { }
             }
 
             String f_skip_ver = String.Empty;
@@ -29764,7 +29936,7 @@ namespace FFBatch
                 foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings.Audio_codec)) listView1.Columns.Remove(col);
                 foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings.v_bitr)) listView1.Columns.Remove(col);
                 foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings2.a_bitr)) listView1.Columns.Remove(col);
-                foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings2.bitrate)) listView1.Columns.Remove(col);
+                foreach (ColumnHeader col in listView1.Columns) if (col.Text == FFBatch.Properties.Strings2.bitrate) listView1.Columns.Remove(col);
                 resize();
             }
             catch { }
@@ -29894,7 +30066,7 @@ namespace FFBatch
                 foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings.Audio_codec)) listView1.Columns.Remove(col);
                 foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings.v_bitr)) listView1.Columns.Remove(col);
                 foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings2.a_bitr)) listView1.Columns.Remove(col);
-                foreach (ColumnHeader col in listView1.Columns) if (col.Text.Contains(FFBatch.Properties.Strings2.bitrate)) listView1.Columns.Remove(col);
+                foreach (ColumnHeader col in listView1.Columns) if (col.Text == FFBatch.Properties.Strings2.bitrate) listView1.Columns.Remove(col);
                 resize();
             }
             catch { }
@@ -29945,7 +30117,10 @@ namespace FFBatch
             }
             if (chk_delete_source.Checked == true && chk_overw.Checked == true)
             {
-                MessageBox.Show(FFBatch.Properties.Strings.del_overw);
+                delete_def = false;
+                delete_one = true;
+                rec_overw();
+                MessageBox.Show(FFBatch.Properties.Strings2.del_overw2);
             }
         }
 
@@ -33246,8 +33421,46 @@ namespace FFBatch
             }
             if (chk_delete_source.Checked == true && chk_overw.Checked == true)
             {
-                MessageBox.Show(FFBatch.Properties.Strings.del_overw);
+                delete_def = false;
+                delete_one = true;
+                rec_overw();
+                MessageBox.Show(FFBatch.Properties.Strings2.del_overw2);
             }
+        }
+
+        private void rec_overw()
+        {
+            String f_delete_one = String.Empty;
+            if (is_portable == false)
+            {
+                f_delete_one = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_delete_one.ini";
+            }
+            else
+            {
+                f_delete_one = port_path + "ff_delete_one_portable.ini";
+            }
+
+            try
+            {                
+                    File.WriteAllText(f_delete_one, "");                
+            }
+            catch { }
+            
+            //End delete one
+
+            // Delete full
+            String f_delete_full = String.Empty;
+            if (is_portable == false)
+            {
+                f_delete_full = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_delete_full.ini";
+            }
+            else
+            {
+                f_delete_full = port_path + "ff_delete_full_portable.ini";
+            }
+
+            try { File.WriteAllText(f_delete_full, ""); } catch { }
+            //End delete full
         }
 
         private void wiz_silence_menu_Click(object sender, EventArgs e)
@@ -34413,6 +34626,7 @@ namespace FFBatch
                             String fullPath = "";
                             Double total_prog = 0;
                             Double row_duration = 0;
+                            Double dur_rpl = 0;
                             Boolean valid_prog2 = false;
                             TimeSpan time2;
                             int space_timer = 0;
@@ -34424,6 +34638,7 @@ namespace FFBatch
                                 if (TimeSpan.TryParse(listView1.Items[Convert.ToInt32(file_int)].SubItems[3].Text, out time2))
                                 {
                                     row_duration = TimeSpan.Parse(listView1.Items[Convert.ToInt32(file_int)].SubItems[3].Text).TotalSeconds - TimeSpan.Parse(ss_time_input.Text).TotalSeconds;
+                                    dur_rpl = TimeSpan.Parse(listView1.Items[Convert.ToInt32(file_int)].SubItems[3].Text).TotalSeconds;
                                     valid_prog2 = true;
                                 }
                                 else
@@ -34605,6 +34820,35 @@ namespace FFBatch
                                     tmp_params = tmp_params.Replace("%fp", Path.GetDirectoryName(file2));
                                 }
                             }
+
+
+                            while (tmp_params.Contains("%ff"))
+                            {
+                                if (tmp_params.Contains("%ff"))
+                                {
+                                    tmp_params = tmp_params.Replace("%ff", '\u0022' + Path.GetFileName(file2) + '\u0022');
+                                }
+                            }
+
+                            String dur_secs = dur_rpl.ToString();
+
+                            while (tmp_params.Contains("%fdur"))
+                            {
+                                if (tmp_params.Contains("%fdur"))
+                                {
+                                    tmp_params = tmp_params.Replace("%fdur", dur_secs);
+                                }
+                            }
+
+                            dur_secs = (dur_rpl + 1).ToString();
+                            while (tmp_params.Contains("%fdur+1"))
+                            {
+                                if (tmp_params.Contains("%fdur+1"))
+                                {
+                                    tmp_params = tmp_params.Replace("%fdur+1", dur_secs);
+                                }
+                            }
+
 
                             while (tmp_params.Contains("%fd"))
                             {
@@ -34924,6 +35168,35 @@ namespace FFBatch
                                         if (File.Exists(fullPath) == true)
                                         {
                                             this.InvokeEx(f => f.listView1.Items[Convert.ToInt32(file_int)].SubItems[5].Text = FFBatch.Properties.Strings.success);
+                                            
+                                            if (chk_delete_source.CheckState == CheckState.Checked && delete_def == false && delete_one == true)
+                                            {
+                                                try
+                                                {
+                                                    FileSystem.DeleteFile(fullPath, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
+                                                    this.InvokeEx(f => f.listView1.Items[Convert.ToInt32(file_int)].SubItems[5].Text = FFBatch.Properties.Strings.recycled);
+                                                }
+                                                catch
+                                                {
+                                                    this.InvokeEx(f => f.listView1.Items[Convert.ToInt32(file_int)].SubItems[5].Text = FFBatch.Properties.Strings.not_recycled);
+                                                    warn_enc++;
+                                                }
+                                            }
+                                            if (chk_delete_source.CheckState == CheckState.Checked && delete_def == true && delete_one == true)
+                                            {
+                                                try
+                                                {
+                                                    FileInfo fs = new FileInfo(fullPath);
+                                                    if (fs.IsReadOnly == true) fs.IsReadOnly = false;
+                                                    File.Delete(fullPath);
+                                                    this.InvokeEx(f => f.listView1.Items[Convert.ToInt32(file_int)].SubItems[5].Text = FFBatch.Properties.Strings.deleted);
+                                                }
+                                                catch
+                                                {
+                                                    this.InvokeEx(f => f.listView1.Items[Convert.ToInt32(file_int)].SubItems[5].Text = FFBatch.Properties.Strings.not_deleted);
+                                                    warn_enc++;
+                                                }
+                                            }
 
                                             if (chk_overw.CheckState == CheckState.Checked)
                                             {
@@ -34968,35 +35241,6 @@ namespace FFBatch
                                                             }
                                                         }
                                                     }
-                                                }
-                                            }
-
-                                            if (chk_delete_source.CheckState == CheckState.Checked && delete_def == false && delete_one == true)
-                                            {
-                                                try
-                                                {
-                                                    FileSystem.DeleteFile(fullPath, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
-                                                    this.InvokeEx(f => f.listView1.Items[Convert.ToInt32(file_int)].SubItems[5].Text = FFBatch.Properties.Strings.recycled);
-                                                }
-                                                catch
-                                                {
-                                                    this.InvokeEx(f => f.listView1.Items[Convert.ToInt32(file_int)].SubItems[5].Text = FFBatch.Properties.Strings.not_recycled);
-                                                    warn_enc++;
-                                                }
-                                            }
-                                            if (chk_delete_source.CheckState == CheckState.Checked && delete_def == true && delete_one == true)
-                                            {
-                                                try
-                                                {
-                                                    FileInfo fs = new FileInfo(fullPath);
-                                                    if (fs.IsReadOnly == true) fs.IsReadOnly = false;
-                                                    File.Delete(fullPath);
-                                                    this.InvokeEx(f => f.listView1.Items[Convert.ToInt32(file_int)].SubItems[5].Text = FFBatch.Properties.Strings.deleted);
-                                                }
-                                                catch
-                                                {
-                                                    this.InvokeEx(f => f.listView1.Items[Convert.ToInt32(file_int)].SubItems[5].Text = FFBatch.Properties.Strings.not_deleted);
-                                                    warn_enc++;
                                                 }
                                             }
                                         }
@@ -35252,7 +35496,8 @@ namespace FFBatch
         private void BG_Multi_M_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             listView1.SelectedIndices.Clear();
-            clean_ffb_test();
+
+            try { clean_ffb_test(); } catch { }
 
             Boolean pending_item = false;
             foreach (ListViewItem item in listView1.Items)
@@ -36337,7 +36582,7 @@ namespace FFBatch
             Pg1.Style = ProgressBarStyle.Continuous;
             pic_recording.Visible = false;
 
-            clean_ffb_test();
+            try { clean_ffb_test(); } catch { }
 
             foreach (DataGridViewRow row1 in dg1.Rows)
             {
@@ -37073,6 +37318,20 @@ namespace FFBatch
             Form15 frm_pr = new Form15();
             frm_pr.ShowDialog();
             if (frm_pr.saved == true) btn_load_config.PerformClick();
+            if (frm_pr.online_pr == true)
+            {
+                Form27 frm27 = new Form27();
+                frm27.StartPosition = FormStartPosition.CenterParent;
+                frm27.ShowDialog();
+                if (frm27.desc_pr.Length > 0)
+                {
+                    combo_presets.SelectedIndex = combo_presets.Items.Count - 1;
+                    combo_presets.Text = frm27.desc_pr;
+                    txt_pre_input.Text = frm27.pre_in_pr;
+                    txt_parameters.Text = frm27.params_pr.Replace("\\*", "*").Replace("\\:",":");
+                    txt_format.Text = frm27.format_pr;
+                }
+            }
         }
 
         private void btn_del_preset_Click(object sender, EventArgs e)
@@ -37138,9 +37397,9 @@ namespace FFBatch
                         File.AppendAllText(path2, linea_sin);
                     }
 
-                    if (line.LastIndexOf("&") >= 0)
+                    if (line.LastIndexOf(" & ") >= 0)
                     {
-                        if (line.Substring(4, line.LastIndexOf("&") - 5) != combo_presets.SelectedItem.ToString())
+                        if (line.Substring(4, line.LastIndexOf(" & ") - 4) != combo_presets.SelectedItem.ToString())
                         {
                             if (ind <= File.ReadLines(path).Count() - 1)
                             {
@@ -37199,7 +37458,7 @@ namespace FFBatch
                     {
                         if (line.Contains("PR: "))
                         {
-                            combo_presets.Items.Add(line.Substring(4, line.LastIndexOf("&") - 5));
+                            combo_presets.Items.Add(line.Substring(4, line.LastIndexOf(" & ") - 4));
                         }
                     }
                 }
@@ -37218,7 +37477,7 @@ namespace FFBatch
 
                         if (line.Contains("PR: "))
                         {
-                            combo_presets.Items.Add(line.Substring(4, line.LastIndexOf("&") - 5));
+                            combo_presets.Items.Add(line.Substring(4, line.LastIndexOf(" & ") - 4));
                         }
                     }
                 }
@@ -38882,7 +39141,7 @@ namespace FFBatch
                 if (col.Text.Contains(FFBatch.Properties.Strings.Audio_codec)) has_aud = true;
                 if (col.Text.Contains(FFBatch.Properties.Strings.v_bitr)) has_bit = true;
                 if (col.Text.Contains(FFBatch.Properties.Strings2.a_bitr)) has_abit = true;
-                if (col.Text.Contains(FFBatch.Properties.Strings2.bitrate) && !col.Text.ToLower().Contains("video") && !col.Text.ToLower().Contains("audio") && !col.Text.ToLower().Contains("vídeo") && !col.Text.ToLower().Contains("视频") && !col.Text.ToLower().Contains("音")) has_tbit = true;
+                if (col.Text == FFBatch.Properties.Strings2.bitrate && !col.Text.ToLower().Contains("video") && !col.Text.ToLower().Contains("audio") && !col.Text.ToLower().Contains("vídeo") && !col.Text.ToLower().Contains("视频") && !col.Text.ToLower().Contains("音")) has_tbit = true;
             }
 
             if (has_tbit == false) frm_add_col.cb_col.Items.Add(FFBatch.Properties.Strings2.bitrate);
@@ -38915,7 +39174,7 @@ namespace FFBatch
                     if (already_added == false)
                     {
                         ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings.width, 50, HorizontalAlignment.Center);
-                        ColumnHeader columnHeader2 = listView1.Columns.Add(FFBatch.Properties.Strings.height, 50, HorizontalAlignment.Center);                        
+                        ColumnHeader columnHeader2 = listView1.Columns.Add(FFBatch.Properties.Strings.height, 50, HorizontalAlignment.Center);
                     }
                     foreach (ColumnHeader head_col in listView1.Columns)
                     {
@@ -39022,7 +39281,7 @@ namespace FFBatch
                     }
                 }
 
-                if (!frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains(FFBatch.Properties.Strings2.bitrate) && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("video") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("audio") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("vídeo") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("视频") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("音"))
+                if (frm_add_col.cb_col.SelectedItem.ToString().ToLower() != FFBatch.Properties.Strings2.bitrate && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("video") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("audio") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("vídeo") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("视频") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("音") && has_tbit == false)
                 {                                    
                         ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings2.bitrate, 100, HorizontalAlignment.Center);                    
                         pre_add_col();
@@ -40096,6 +40355,7 @@ namespace FFBatch
             main_f_5.Text = FFBatch.Properties.Strings.load_queue_file;
             main_f_4.Text = FFBatch.Properties.Strings.save_current_queue;
             main_f_exit.Text = FFBatch.Properties.Strings.exit;
+            presetsOnlineToolStripMenuItem.Text = Properties.Strings2.online_pr;
 
             menu_refresh.Text = FFBatch.Properties.Strings.Refresh_list;
             menu_invalid.Text = FFBatch.Properties.Strings.Remove_invalid_items;
@@ -40386,17 +40646,19 @@ namespace FFBatch
             combo_presets.Items.Clear();
             combo_presets.Items.Add(FFBatch.Properties.Strings.default_param);
             String path = String.Empty;
-            String path_pr, path_pre = String.Empty;
+            String path_pr, path_pre, path_pr_pre = String.Empty;
             if (is_portable == false)
             {
                 path = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch.ini";
                 path_pr = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets.ini";
+                path_pr_pre = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_presets_pre.ini";
                 path_pre = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch_pre.ini";
             }
             else
             {
                 path = port_path + "ff_batch_portable.ini";
                 path_pr = port_path + "ff_presets_portable.ini";
+                path_pr_pre = port_path + "ff_presets_pre_portable.ini";
                 path_pre = port_path + "ff_batch_portable_pre.ini";
             }
 
@@ -40497,7 +40759,7 @@ namespace FFBatch
 
                     if (line.Contains("PR: "))
                     {
-                        this.InvokeEx(f => f.combo_presets.Items.Add(line.Substring(4, line.LastIndexOf("&") - 5)));
+                        this.InvokeEx(f => f.combo_presets.Items.Add(line.Substring(4, line.LastIndexOf(" & ") - 4)));
                         continue;
                     }
                 }
@@ -40517,10 +40779,18 @@ namespace FFBatch
 
                     if (line.Contains("PR: "))
                     {
-                        this.InvokeEx(f => f.combo_presets.Items.Add(line.Substring(4, line.LastIndexOf("&") - 5)));
+                        this.InvokeEx(f => f.combo_presets.Items.Add(line.Substring(4, line.LastIndexOf(" & ") - 4)));
                     }
+                }                
+            }
+            if (File.Exists(path_pr_pre))
+            {
+                foreach (string line in File.ReadLines(path_pr_pre))
+                {
+                    if (line.Contains(combo_presets.Text)) txt_pre_input.Text = line.Substring(line.LastIndexOf("&&&"), line.Length - line.LastIndexOf("&&&)"));
                 }
             }
+
             btn_save_config.ImageKey = "Save_settings_39.png";
         }
 
@@ -41475,7 +41745,7 @@ namespace FFBatch
             multi_running = false;
             Enable_Controls();
 
-            clean_ffb_test();
+            try { clean_ffb_test(); } catch { } 
 
             if (cancelados_paralelos == false && fatal_parallel == false)
             {
@@ -42506,7 +42776,7 @@ namespace FFBatch
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             notifyIcon1.Dispose();
-            clean_ffb_test();
+            try { clean_ffb_test(); } catch { }
         }
 
         private void btn_min1_Click(object sender, EventArgs e)
@@ -43959,7 +44229,7 @@ namespace FFBatch
         private void BG_Selected_items_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             listView1.SelectedIndices.Clear();
-            clean_ffb_test();
+            try { clean_ffb_test(); } catch { }
 
             this.Text = "FFmpeg Batch AV Converter";
 
@@ -45403,10 +45673,18 @@ namespace FFBatch
 
                     Double size_dur = 0;
                     Double file_size = 0;
+                    Double dur_rpl = 0;
 
                     listView1.Invoke(new MethodInvoker(delegate
                     {
                         file = listView1.Items[list_index].SubItems[1].Text + "\\" + listView1.Items[list_index].Text;
+                        TimeSpan tme;
+                        if (TimeSpan.TryParse(listView1.Items[list_index].SubItems[3].Text, out tme))
+                        {
+                            dur_rpl = TimeSpan.Parse(listView1.Items[list_index].SubItems[3].Text).TotalSeconds;
+                        }
+                        else dur_rpl = 0;
+                        
                         if (file.Substring(file.Length - 3, 3).ToLower() == "avs")
                         {
                             avs_out = avs_output(file);
@@ -45692,7 +45970,35 @@ namespace FFBatch
                             textbox_params = textbox_params.Replace("%fn", Path.GetFileNameWithoutExtension(file));
                         }
                     }
-                    while (textbox_params.Contains("%fp"))
+
+                while (textbox_params.Contains("%ff"))
+                {
+                    if (textbox_params.Contains("%ff"))
+                    {
+                        textbox_params = textbox_params.Replace("%ff", '\u0022' + Path.GetFileName(file) + '\u0022');
+                    }
+                }
+
+                String dur_secs = dur_rpl.ToString();
+
+                while (textbox_params.Contains("%fdur"))
+                {
+                    if (textbox_params.Contains("%fdur"))
+                    {
+                        textbox_params = textbox_params.Replace("%fdur", dur_secs);
+                    }
+                }
+
+                dur_secs = (dur_rpl + 1).ToString();
+                while (textbox_params.Contains("%fdur+1"))
+                {
+                    if (textbox_params.Contains("%fdur+1"))
+                    {
+                        textbox_params = textbox_params.Replace("%fdur+1", dur_secs);
+                    }
+                }
+
+                while (textbox_params.Contains("%fp"))
                     {
                         if (textbox_params.Contains("%fp"))
                         {
@@ -45939,8 +46245,9 @@ namespace FFBatch
                     process_glob.StartInfo.StandardErrorEncoding = Encoding.UTF8;
                     process_glob.StartInfo.UseShellExecute = false;
                     process_glob.StartInfo.CreateNoWindow = true;
-                    process_glob.EnableRaisingEvents = true;                
-
+                    process_glob.EnableRaisingEvents = true;
+                    process_glob.StartInfo.WorkingDirectory = Path.GetDirectoryName(file);
+                                    
                     if (aborted == false) process_glob.Start();
 
                     System.Threading.Thread.Sleep(50);
@@ -46241,24 +46548,7 @@ namespace FFBatch
                         if (skipped == false)
                         {
                             this.InvokeEx(f => f.listView1.Items[list_index].SubItems[5].Text = FFBatch.Properties.Strings.success);
-                            if (chk_overw.CheckState == CheckState.Checked)
-                            {
-                                if (current_out == file)
-                                {
-                                    try
-                                    {
-                                        File.Delete(file);
-                                        FileSystem.RenameFile(destino + "\\" + System.IO.Path.GetFileNameWithoutExtension(file) + "_fftemp" + add_suffix + ext_output1, Path.GetFileNameWithoutExtension(file) + add_suffix + ext_output1);
-                                        this.InvokeEx(f => f.listView1.Items[list_index].SubItems[5].Text = FFBatch.Properties.Strings.replaced);
-                                        refresh_list = true;
-                                    }
-                                    catch
-                                    {
-                                        this.InvokeEx(f => f.listView1.Items[list_index].SubItems[5].Text = FFBatch.Properties.Strings.not_replaced);
-                                        warn_enc++;
-                                    }
-                                }
-                            }
+                            
                             if (chk_delete_source.Checked == true && delete_one == true && delete_def == false)
                             {
                                 try
@@ -46287,7 +46577,26 @@ namespace FFBatch
                                     warn_enc++;
                                 }
                             }
+
+                        if (chk_overw.CheckState == CheckState.Checked)
+                        {
+                            if (current_out == file)
+                            {
+                                try
+                                {
+                                    File.Delete(file);
+                                    FileSystem.RenameFile(destino + "\\" + System.IO.Path.GetFileNameWithoutExtension(file) + "_fftemp" + add_suffix + ext_output1, Path.GetFileNameWithoutExtension(file) + add_suffix + ext_output1);
+                                    this.InvokeEx(f => f.listView1.Items[list_index].SubItems[5].Text = FFBatch.Properties.Strings.replaced);
+                                    refresh_list = true;
+                                }
+                                catch
+                                {
+                                    this.InvokeEx(f => f.listView1.Items[list_index].SubItems[5].Text = FFBatch.Properties.Strings.not_replaced);
+                                    warn_enc++;
+                                }
+                            }
                         }
+                    }
                         else
                         {
                             this.InvokeEx(f => f.listView1.Items[list_index].SubItems[5].Text = FFBatch.Properties.Strings.skipped);
@@ -46933,14 +47242,17 @@ namespace FFBatch
                         if (lines_ouput[2] != null && lines_ouput[2].Length > 0) dur = lines_ouput[2];
                     }));
 
-                    Form26 frm26 = new Form26();
-                    frm26.out_file = current_out;
-                    frm26.dur_file = dur;
-                    if (Properties.Settings.Default.dark_mode == false) frm26.pic_img = pic_reading.Image;
-                    else frm26.pic_img = pic_reading.InitialImage;
-                    frm26.tot_bit = lbl_bitrate.Text;
-                    frm26.out_size = lbl_est_size.Text;
-                    frm26.Show(this);
+                    if (no_output_pop == false)
+                    {
+                        Form26 frm26 = new Form26();
+                        frm26.out_file = current_out;
+                        frm26.dur_file = dur;
+                        if (Properties.Settings.Default.dark_mode == false) frm26.pic_img = pic_reading.Image;
+                        else frm26.pic_img = pic_reading.InitialImage;
+                        frm26.tot_bit = lbl_bitrate.Text;
+                        frm26.out_size = lbl_est_size.Text;
+                        frm26.Show(this);
+                    }
                 }
 
                 //End output single info
@@ -47970,17 +48282,20 @@ namespace FFBatch
                                         if (lines_ouput[2] != null && lines_ouput[2].Length > 0) dur = lines_ouput[2];
                                     }));
 
-                                    Form26 frm26 = new Form26();
-                                    frm26.out_file = cur_out;
-                                    frm26.dur_file = dur;
-                                    if (Properties.Settings.Default.dark_mode == false) frm26.pic_img = pic_reading.Image;
-                                    else frm26.pic_img = pic_reading.InitialImage;
-                                    frm26.tot_bit = lbl_bitrate.Text;
-                                    frm26.out_size = lbl_est_size.Text;
-                                    this.Invoke(new MethodInvoker(delegate
+                                    if (no_output_pop == false)
                                     {
-                                        frm26.ShowDialog(this);
-                                    }));
+                                        Form26 frm26 = new Form26();
+                                        frm26.out_file = cur_out;
+                                        frm26.dur_file = dur;
+                                        if (Properties.Settings.Default.dark_mode == false) frm26.pic_img = pic_reading.Image;
+                                        else frm26.pic_img = pic_reading.InitialImage;
+                                        frm26.tot_bit = lbl_bitrate.Text;
+                                        frm26.out_size = lbl_est_size.Text;
+                                        this.Invoke(new MethodInvoker(delegate
+                                        {
+                                            frm26.ShowDialog(this);
+                                        }));
+                                    }
                                     
                                 }
                                 //End output single info
@@ -48073,6 +48388,21 @@ namespace FFBatch
             listView1.BackgroundImage = null;
             if (Properties.Settings.Default.dark_mode == false) listView1.BackColor = SystemColors.Window;
             else listView1.BackColor = Color.FromArgb(255, 64, 64, 64);
+        }
+
+        private void presetsOnlineToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form27 frm27 = new Form27();
+            frm27.StartPosition = FormStartPosition.CenterParent;
+            frm27.ShowDialog();
+            if (frm27.desc_pr.Length > 0)
+            {
+                combo_presets.SelectedIndex = combo_presets.Items.Count - 1;
+                combo_presets.Text = frm27.desc_pr;
+                txt_pre_input.Text = frm27.pre_in_pr;
+                txt_parameters.Text = frm27.params_pr.Replace("\\*", "*").Replace("\\:", ":"); ;
+                txt_format.Text = frm27.format_pr;
+            }
         }
 
         private void dg1_CellEndEdit(object sender, DataGridViewCellEventArgs e)

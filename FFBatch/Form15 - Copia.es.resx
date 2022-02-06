@@ -170,7 +170,7 @@
 </value>
   </data>
   <data name="btn_save.Text" xml:space="preserve">
-    <value>Guardar perfiles</value>
+    <value>Guardar presets</value>
   </data>
   <data name="btn_load.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -211,14 +211,11 @@
   <data name="btn_load.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="btn_load.Location" type="System.Drawing.Point, System.Drawing">
-    <value>379, 433</value>
-  </data>
   <data name="btn_load.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 82</value>
   </data>
   <data name="btn_load.Text" xml:space="preserve">
-    <value>Cargar perfiles de archivo</value>
+    <value>Cargar presets de archivo</value>
   </data>
   <data name="btn_cancel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -308,13 +305,13 @@
 </value>
   </data>
   <data name="btn_load_bck.Location" type="System.Drawing.Point, System.Drawing">
-    <value>533, 433</value>
+    <value>511, 432</value>
   </data>
   <data name="btn_load_bck.Size" type="System.Drawing.Size, System.Drawing">
     <value>84, 84</value>
   </data>
   <data name="btn_load_bck.Text" xml:space="preserve">
-    <value>Recargar últimos perfiles</value>
+    <value>Recargar últimos presets</value>
   </data>
   <data name="btn_decr_font.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -427,7 +424,7 @@
 </value>
   </data>
   <data name="btn_remove_pr.Text" xml:space="preserve">
-    <value>Eliminar perfil</value>
+    <value>Eliminar preset</value>
   </data>
   <data name="btn_add_pr.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -486,7 +483,7 @@
 </value>
   </data>
   <data name="btn_add_pr.Text" xml:space="preserve">
-    <value>Añadir perfil</value>
+    <value>Añadir preset</value>
   </data>
   <data name="txt_config_ver.Location" type="System.Drawing.Point, System.Drawing">
     <value>164, 31</value>
@@ -545,13 +542,13 @@
 </value>
   </data>
   <data name="btn_save_backup.Location" type="System.Drawing.Point, System.Drawing">
-    <value>469, 432</value>
+    <value>447, 431</value>
   </data>
   <data name="btn_save_backup.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 84</value>
   </data>
   <data name="btn_save_backup.Text" xml:space="preserve">
-    <value>Respaldar perfiles</value>
+    <value>Respaldar  presets</value>
   </data>
   <data name="btn_clear.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -567,41 +564,6 @@
         iURCxONxEYvFRDQaFZFIRPAhLEKhkAgGg4LPT8EnFJ79cjgcvg8O2d4BvATbHsBAjD8AAAAASUVORK5C
         YII=
 </value>
-  </data>
-  <data name="btn_online.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="btn_online.Location" type="System.Drawing.Point, System.Drawing">
-    <value>323, 432</value>
-  </data>
-  <data name="btn_online.Text" xml:space="preserve">
-    <value>Perfiles en línea</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

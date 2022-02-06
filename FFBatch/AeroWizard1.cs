@@ -21,6 +21,7 @@ namespace FFBatch
             InitializeComponent();
         }
 
+        public Boolean online_pr = false;
         public String sel_preset = "";
         private Boolean presets_init = false;
         private Boolean internet_up = true;
@@ -2317,6 +2318,60 @@ namespace FFBatch
             {
                 n_width.Enabled = false;
                 n_height.Enabled = false;
+            }
+
+            switch (cb_resize.SelectedIndex)
+            {
+                case 0:
+                    lbl_a_ratio.Text = Math.Round(n_width.Value / n_height.Value,2).ToString();
+                    break;
+                case 1:
+                    lbl_a_ratio.Text = "16:9";
+                    break;
+                case 2:
+                    lbl_a_ratio.Text = "2:40:1";
+                    break;
+                case 3:
+                    lbl_a_ratio.Text = "4:3";
+                    break;
+                case 4:
+                    lbl_a_ratio.Text = "16:9";
+                    break;
+                case 5:
+                    lbl_a_ratio.Text = "4:3";
+                    break;
+                case 6:
+                    lbl_a_ratio.Text = "16:9";
+                    break;
+                case 7:
+                    lbl_a_ratio.Text = "4:3";
+                    break;
+
+                case 8:
+                    lbl_a_ratio.Text = "4:3";
+                    break;
+                case 9:
+                    lbl_a_ratio.Text = "16:9";
+                    break;
+
+                case 10:
+                    lbl_a_ratio.Text = "PAL DV";
+                    break;
+                case 11:
+                    lbl_a_ratio.Text = "4:3";
+                    break;
+                case 12:
+                    lbl_a_ratio.Text = "NTCS";
+                    break;
+                case 13:
+                    lbl_a_ratio.Text = "VGA";
+                    break;
+                case 14:
+                    lbl_a_ratio.Text = "16:9";
+                    break;
+                default:
+                    lbl_a_ratio.Text = "";
+                    break;
             }
         }
 
@@ -4868,6 +4923,53 @@ namespace FFBatch
         private void wz1_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
         {
             Combo_encoders.SelectedIndex = Properties.Settings.Default.wiz_vid;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            online_pr = true;
+            this.Close();
+        }
+
+        private void n_width_ValueChanged(object sender, EventArgs e)
+        {
+            get_aspect();
+        }
+
+        private void n_height_ValueChanged(object sender, EventArgs e)
+        {
+            get_aspect();            
+        }
+
+        private void get_aspect()
+        {
+            if (n_width.Value == 0 || n_height.Value == 0)
+            {
+                lbl_a_ratio.Text = "";
+                return;
+            }
+            lbl_a_ratio.Text = Math.Round(n_width.Value / n_height.Value, 2).ToString();
+            Decimal r = Math.Round(n_width.Value / n_height.Value, 6);
+            Decimal r2 = Math.Round(n_width.Value / n_height.Value, 3);
+            Decimal pan = (decimal)1.777778;
+            Decimal box = (decimal)1.333333;
+            Decimal box2 = (decimal)1.250000;
+            Decimal box3 = (decimal)1.500000;
+            Decimal box4 = (decimal)1.666667;
+            Decimal pan_cine = (decimal)2.400000;
+            Decimal pan_pan = (decimal)2.350;
+            Decimal pan_us = (decimal)1.850;
+            Decimal wide = (decimal)2.000;
+
+            if (r == pan) lbl_a_ratio.Text = "16:9";
+            if (r == pan_cine) lbl_a_ratio.Text = "2:40:1";
+            if (r == box) lbl_a_ratio.Text = "4:3";
+            if (r == box2) lbl_a_ratio.Text = "5:4";
+            if (r == box3) lbl_a_ratio.Text = "3:2";
+            if (r == box4) lbl_a_ratio.Text = "5:3";
+            if (r2 == pan_pan) lbl_a_ratio.Text = "2:35:1";
+            if (r2 == pan_us) lbl_a_ratio.Text = "1:85:1";
+            if (r2 == wide) lbl_a_ratio.Text = "2:1";
         }
     }
 }
