@@ -1,20 +1,10 @@
-﻿2.7.2
-• Added basic support for AviSynth scripts.
-• Fixed Avisynth missing duration. 
-• New fast custom column for overall file bitrate.
-• Faster keyframe reading/extraction.
-• Accurate keyframe stream copy trim on video preview.
-• Columns layout and width saved on exit, no more auto-size.
-• For single file encodings, output summary displayed at the end.
-• Drop files anywhere on the main window, not only file list.
-• Clearer info on log files.
-• Added yadif deinterlace filter to preset wizard.
-• Fixed crash trimming some specific files.
-• Fixed bug, main output path not being saved.
-• Fixed average framerate speed when using pre-input time field.
-• Fixed erratic total progress for multi-file encoding on some languages.
-• Fixed some refresh issues switching to night mode.
-• Fixed copy/save image for audio files with embedded cover.
-• Fixed aborting Quick link/playlist download.
-• Fixed runtime error after adding exception to Windows Security.
-• Fixed some minor layout issues.
+﻿2.7.4
+• FFmpeg 5.0
+• All dynamic variables also available in multi-file encoding.
+• Overwrite source and delete source settings can now be enabled simultaneously. (Source files are recycled).
+• Fixed TEMP folder access error when trying preset.
+• Fixed bug with %ff variable (filename without path).
+• Fixed bug saving presets with some special characters or blank lines.
+• Fixed bug closing application when preset name is blank or too short.
+• Fixed bug duplicating File bitrate column when adding multiple custom columns.
+• Some other minor bugfixes.
