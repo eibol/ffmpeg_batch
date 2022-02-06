@@ -227,6 +227,9 @@
   <data name="label1.Text" xml:space="preserve">
     <value>FFmpeg Batch AV Converter per Windows</value>
   </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>(C) 2017-2022 Eibolsoft</value>
+  </data>
   <data name="linkLabel3.Size" type="System.Drawing.Size, System.Drawing">
     <value>119, 13</value>
   </data>
