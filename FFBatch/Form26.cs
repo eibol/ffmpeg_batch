@@ -28,6 +28,8 @@ namespace FFBatch
         public Image pic_img = null;
         public String tot_bit = "";
         public String out_size = "";
+        private Boolean is_portable = false;
+        private String port_path = Application.StartupPath + "\\" + "settings" + "\\";
         CultureInfo ci = System.Threading.Thread.CurrentThread.CurrentUICulture;        
 
         private void Form26_Load(object sender, EventArgs e)
@@ -49,6 +51,8 @@ namespace FFBatch
                 this.Text = Properties.Strings2.out_file;
                 btn_close.Text = Properties.Strings.close_win;
                 btn_browse.Text = Properties.Strings2.browse;
+                chk_no_popp.Text = Properties.Strings2.not_display;
+                btn_play.Text = Properties.Strings.Play_file;
                 int current_fr = 4000;
                 Process proc_img = new System.Diagnostics.Process();
                 
@@ -63,13 +67,13 @@ namespace FFBatch
 
             //Attempt to extract frame as image
             String dur_lv1 = "00:00:00.000";
-                String lv1_item = out_file;          
+                String lv1_item = out_file;
                 pic_frame.Image = pic_img;            
 
                 if (!File.Exists(lv1_item)) return;
                 lbl_name.Text = Path.GetFileName(out_file);
                 lbl_succ.Text = Properties.Strings.success;
-                pic_success.Left = lbl_succ.Left + lbl_succ.Width + 5;
+                //pic_success.Left = lbl_succ.Left + lbl_succ.Width + 5;
                 if (tot_bit != null && tot_bit.Length > 3) lbl_gb_th.Text = tot_bit.Substring(tot_bit.LastIndexOf(":") + 2, tot_bit.Length - tot_bit.LastIndexOf(":") - 2);
                 lbl_size.Text = out_size.Substring(out_size.LastIndexOf(":") + 2, out_size.Length - out_size.LastIndexOf(":") - 2);
 
@@ -343,6 +347,35 @@ namespace FFBatch
                 open_processed.StartInfo.Arguments = '\u0022' + Path.GetDirectoryName(out_file) + '\u0022';
                 open_processed.Start();
             }
+        }
+
+        private void chk_no_popp_CheckedChanged(object sender, EventArgs e)
+        {
+            String no_out_pop = String.Empty;
+            if (is_portable == false)
+            {
+                no_out_pop = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_pop_up.ini";
+            }
+            else
+            {
+                no_out_pop = port_path + "ff_pop_up_portable.ini";
+            }
+            if (chk_no_popp.CheckState == CheckState.Checked) File.WriteAllText(no_out_pop, String.Empty);
+            else
+            {
+                if (File.Exists(no_out_pop))
+                {
+                    try
+                    {
+                        File.Delete(no_out_pop);
+                    } catch { }
+                }
+            }
+        }
+
+        private void btn_play_Click(object sender, EventArgs e)
+        {
+            Process.Start(out_file);
         }
     }
 }

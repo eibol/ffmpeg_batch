@@ -31,6 +31,8 @@ namespace FFBatch
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form26));
             this.panel_thumb = new System.Windows.Forms.GroupBox();
+            this.lbl_succ = new System.Windows.Forms.Label();
+            this.btn_play = new System.Windows.Forms.Button();
             this.sep3 = new System.Windows.Forms.Label();
             this.sep2 = new System.Windows.Forms.Label();
             this.sep1 = new System.Windows.Forms.Label();
@@ -44,7 +46,6 @@ namespace FFBatch
             this.lbl_dur = new System.Windows.Forms.Label();
             this.btn_browse = new System.Windows.Forms.Button();
             this.lbl_size = new System.Windows.Forms.Label();
-            this.lbl_succ = new System.Windows.Forms.Label();
             this.pic_success = new System.Windows.Forms.PictureBox();
             this.lbl_gb_th = new System.Windows.Forms.Label();
             this.lbl_s_th = new System.Windows.Forms.Label();
@@ -52,6 +53,7 @@ namespace FFBatch
             this.lbl_a_th = new System.Windows.Forms.Label();
             this.lbl_name = new System.Windows.Forms.Label();
             this.btn_close = new System.Windows.Forms.Button();
+            this.chk_no_popp = new System.Windows.Forms.CheckBox();
             this.panel_thumb.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_success)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_frame)).BeginInit();
@@ -59,6 +61,8 @@ namespace FFBatch
             // 
             // panel_thumb
             // 
+            this.panel_thumb.Controls.Add(this.lbl_succ);
+            this.panel_thumb.Controls.Add(this.btn_play);
             this.panel_thumb.Controls.Add(this.sep3);
             this.panel_thumb.Controls.Add(this.sep2);
             this.panel_thumb.Controls.Add(this.sep1);
@@ -72,7 +76,6 @@ namespace FFBatch
             this.panel_thumb.Controls.Add(this.lbl_dur);
             this.panel_thumb.Controls.Add(this.btn_browse);
             this.panel_thumb.Controls.Add(this.lbl_size);
-            this.panel_thumb.Controls.Add(this.lbl_succ);
             this.panel_thumb.Controls.Add(this.pic_success);
             this.panel_thumb.Controls.Add(this.lbl_gb_th);
             this.panel_thumb.Controls.Add(this.lbl_s_th);
@@ -83,6 +86,26 @@ namespace FFBatch
             this.panel_thumb.Size = new System.Drawing.Size(594, 259);
             this.panel_thumb.TabIndex = 161;
             this.panel_thumb.TabStop = false;
+            // 
+            // lbl_succ
+            // 
+            this.lbl_succ.AutoSize = true;
+            this.lbl_succ.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_succ.Location = new System.Drawing.Point(458, 19);
+            this.lbl_succ.Name = "lbl_succ";
+            this.lbl_succ.Size = new System.Drawing.Size(0, 18);
+            this.lbl_succ.TabIndex = 165;
+            this.lbl_succ.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btn_play
+            // 
+            this.btn_play.Location = new System.Drawing.Point(428, 229);
+            this.btn_play.Name = "btn_play";
+            this.btn_play.Size = new System.Drawing.Size(77, 23);
+            this.btn_play.TabIndex = 178;
+            this.btn_play.Text = "Play";
+            this.btn_play.UseVisualStyleBackColor = true;
+            this.btn_play.Click += new System.EventHandler(this.btn_play_Click);
             // 
             // sep3
             // 
@@ -185,7 +208,7 @@ namespace FFBatch
             // 
             // btn_browse
             // 
-            this.btn_browse.Location = new System.Drawing.Point(508, 231);
+            this.btn_browse.Location = new System.Drawing.Point(507, 229);
             this.btn_browse.Name = "btn_browse";
             this.btn_browse.Size = new System.Drawing.Size(77, 23);
             this.btn_browse.TabIndex = 1;
@@ -202,21 +225,11 @@ namespace FFBatch
             this.lbl_size.TabIndex = 166;
             this.lbl_size.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lbl_succ
-            // 
-            this.lbl_succ.AutoSize = true;
-            this.lbl_succ.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_succ.Location = new System.Drawing.Point(456, 21);
-            this.lbl_succ.Name = "lbl_succ";
-            this.lbl_succ.Size = new System.Drawing.Size(0, 16);
-            this.lbl_succ.TabIndex = 165;
-            this.lbl_succ.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // pic_success
             // 
             this.pic_success.Image = ((System.Drawing.Image)(resources.GetObject("pic_success.Image")));
             this.pic_success.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pic_success.Location = new System.Drawing.Point(552, 16);
+            this.pic_success.Location = new System.Drawing.Point(432, 16);
             this.pic_success.Name = "pic_success";
             this.pic_success.Size = new System.Drawing.Size(26, 25);
             this.pic_success.TabIndex = 164;
@@ -265,7 +278,7 @@ namespace FFBatch
             // 
             // lbl_name
             // 
-            this.lbl_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_name.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.lbl_name.Location = new System.Drawing.Point(13, 9);
             this.lbl_name.Name = "lbl_name";
             this.lbl_name.Size = new System.Drawing.Size(603, 23);
@@ -276,18 +289,30 @@ namespace FFBatch
             // 
             this.btn_close.Location = new System.Drawing.Point(12, 297);
             this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(595, 30);
+            this.btn_close.Size = new System.Drawing.Size(417, 30);
             this.btn_close.TabIndex = 0;
             this.btn_close.Text = "Close window";
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // chk_no_popp
+            // 
+            this.chk_no_popp.AutoSize = true;
+            this.chk_no_popp.Location = new System.Drawing.Point(481, 305);
+            this.chk_no_popp.Name = "chk_no_popp";
+            this.chk_no_popp.Size = new System.Drawing.Size(122, 17);
+            this.chk_no_popp.TabIndex = 163;
+            this.chk_no_popp.Text = "Do not display again";
+            this.chk_no_popp.UseVisualStyleBackColor = true;
+            this.chk_no_popp.CheckedChanged += new System.EventHandler(this.chk_no_popp_CheckedChanged);
             // 
             // Form26
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.ClientSize = new System.Drawing.Size(619, 334);
+            this.ClientSize = new System.Drawing.Size(619, 336);
+            this.Controls.Add(this.chk_no_popp);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.lbl_name);
             this.Controls.Add(this.panel_thumb);
@@ -303,6 +328,7 @@ namespace FFBatch
             ((System.ComponentModel.ISupportInitialize)(this.pic_success)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_frame)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -330,5 +356,7 @@ namespace FFBatch
         private System.Windows.Forms.Label sep3;
         private System.Windows.Forms.Label sep2;
         private System.Windows.Forms.Label sep1;
+        public System.Windows.Forms.CheckBox chk_no_popp;
+        private System.Windows.Forms.Button btn_play;
     }
 }

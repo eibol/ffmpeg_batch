@@ -31,6 +31,7 @@ namespace FFBatch
         public Boolean delete_one;
         private String new_ver = "";
         public Boolean edit_presets = false;
+        public Boolean presets_online = false;
         private Boolean playing = false;
         private RichTextBox Rtxt = new RichTextBox();
         private Form frm_settings = new Form();
@@ -143,6 +144,8 @@ namespace FFBatch
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            edit_presets = false;
+            presets_online = false;
             String app_location = Application.StartupPath;
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
             if (File.Exists(portable_flag)) is_portable = true;
@@ -163,6 +166,8 @@ namespace FFBatch
                 Properties.Settings.Default.dark_mode = false;
                 btn_dark.Image = pic_night.InitialImage;
                 btn_dark.Text = Properties.Strings2.en_night;
+                textBox1.BackColor = SystemColors.Window;
+                txt_format.BackColor = SystemColors.Window;
             }
 
             toolTips();
@@ -1418,6 +1423,8 @@ namespace FFBatch
                 Properties.Settings.Default.dark_mode = false;
                 btn_dark.Image = pic_night.InitialImage;
                 btn_dark.Text = Properties.Strings2.en_night;
+                textBox1.BackColor = SystemColors.Window;
+                txt_format.BackColor = SystemColors.Window;
             }
             Properties.Settings.Default.Save();
         }
@@ -1428,25 +1435,14 @@ namespace FFBatch
             {
                 Properties.Settings.Default.dark_mode = !Properties.Settings.Default.dark_mode;
                 Properties.Settings.Default.Save();
-            }
-            //{
-                //if (dark == false)
-                //{
-                //    foreach (Control c in this.Controls) UpdateColorDark(c);
-                //    this.BackColor = Color.FromArgb(255, 64, 64, 64);
-                //    Properties.Settings.Default.dark_mode = true;
-                //    btn_dark.Image = pic_night.Image;
-                //    btn_dark.Text = Properties.Strings2.en_day;
-                //}
-                //else
-                //{
-                //    foreach (Control c in this.Controls) UpdateColorDefault(c);
-                //    this.BackColor = SystemColors.InactiveBorder;
-                //    Properties.Settings.Default.dark_mode = false;
-                //    btn_dark.Image = pic_night.InitialImage;
-                //    btn_dark.Text = Properties.Strings2.en_night;
-                //}
-            //}
+            }       
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            presets_online = true;
+            cancel = false;
+            this.Close();            
         }
     }
 }

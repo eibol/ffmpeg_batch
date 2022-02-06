@@ -22,7 +22,6 @@ namespace FFBatch
         private int rowIndexOfItemUnderMouseToDrop;
         public Boolean saved = false;
         private Boolean duplicates = false;
-        public Boolean online_pr = false;
 
         public Form15()
         {
@@ -174,12 +173,12 @@ namespace FFBatch
                 }
                 if (line.Contains("PR: "))
                 {
-                    int cortar = line.LastIndexOf("%") - line.LastIndexOf(" & ");
+                    int cortar = line.LastIndexOf("%") - line.LastIndexOf("&");
                     format = line.Substring(line.LastIndexOf("%") + 2);
                     try
                     {
-                        param = line.Substring(line.LastIndexOf(" & ") + 3, cortar - 4);
-                        dg_pr.Rows.Add(line.Substring(4, line.LastIndexOf(" & ") - 4), param, format);
+                        param = line.Substring(line.LastIndexOf("&") + 2, cortar - 3);
+                        dg_pr.Rows.Add(line.Substring(4, line.LastIndexOf("&") - 5), param, format);
                     }
                     catch
                     {
@@ -290,13 +289,13 @@ namespace FFBatch
             {
                 if (line.Contains("PR: "))
                 {
-                    int cortar = line.LastIndexOf("%") - line.LastIndexOf(" & ");
+                    int cortar = line.LastIndexOf("%") - line.LastIndexOf("&");
                     format = line.Substring(line.LastIndexOf("%") + 2);
                     try
                     {
-                        param = line.Substring(line.LastIndexOf(" & ") + 3, cortar - 4);
+                        param = line.Substring(line.LastIndexOf("&") + 2, cortar - 3);
 
-                        dg_pr.Rows.Add(line.Substring(4, line.LastIndexOf(" & ") - 4), param, format);
+                        dg_pr.Rows.Add(line.Substring(4, line.LastIndexOf("&") - 5), param, format);
                     }
                     catch
                     {
@@ -459,13 +458,13 @@ namespace FFBatch
             {
                 if (line.Contains("PR: "))
                 {
-                    int cortar = line.LastIndexOf("%") - line.LastIndexOf(" & ");
+                    int cortar = line.LastIndexOf("%") - line.LastIndexOf("&");
                     format = line.Substring(line.LastIndexOf("%") + 2);
                     try
                     {
-                        param = line.Substring(line.LastIndexOf(" & ") + 3, cortar - 4);
+                        param = line.Substring(line.LastIndexOf("&") + 2, cortar - 3);
 
-                        dg_pr.Rows.Add(line.Substring(4, line.LastIndexOf(" & ") - 4), param, format);
+                        dg_pr.Rows.Add(line.Substring(4, line.LastIndexOf("&") - 5), param, format);
                     }
                     catch
                     {
@@ -638,11 +637,6 @@ namespace FFBatch
             btn_cancel.Left = this.Width - 157;
             btn_save.Left = this.Width - 96;
             btn_save.Top = this.Height - 135;
-            btn_load.Left = this.Width / 2 - 105;
-            btn_load_bck.Left = btn_load.Left + 192;
-            btn_save_backup.Left = btn_load.Left + 115;
-            btn_online.Left = btn_load.Left - 55;
-            btn_online.Top = this.Height - 135;
             item_up.Left = this.Width - 63;
             item_down.Left = this.Width - 86;
             btn_decr_font.Left = this.Width - 131;
@@ -658,12 +652,6 @@ namespace FFBatch
                 this.Height = 567;
                 return;
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            online_pr = true;
-            this.Close();
         }
     }
 }

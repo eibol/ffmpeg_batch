@@ -567,8 +567,8 @@ namespace FFBatch
             String[] audios = new string[] { "alac", "flac", "aac", "ac3", "mp3", "oga", "mka", "opus", "wav", "ape", "m4a", "eac3", "wma", "dsd", "wave", "aiff" };
             Boolean is_audio = false;
             foreach (String str in audios)
-            {
-                if (lv1_item.ToLower().Substring(lv1_item.Length - 3, 3).Contains(str))
+            {                
+                if (lv1_item.ToLower().Substring(lv1_item.Length - 3, 3).Contains(str) || lv1_item.ToLower().Substring(lv1_item.Length - 4, 4).Contains(str))
                 {
                     is_audio = true;
                     break;
@@ -682,7 +682,7 @@ namespace FFBatch
             {
                 proc_img.Start();
                 proc_img.WaitForExit();
-                if (proc_img.ExitCode == 1)
+                if (proc_img.ExitCode == 1 || proc_img.ExitCode == 0)
                 {
                     if (copy_img == true)
                     {
@@ -764,6 +764,7 @@ namespace FFBatch
                 String pattern = "*.jpg*";
                 String path = Path.Combine(Path.GetTempPath(), "FFBatch_test") + "\\" + Path.GetFileNameWithoutExtension(lv1_item);
                 var dirInfo = new DirectoryInfo(path);
+                if (dirInfo.GetFiles(pattern).Count() == 0) return;
                 var file = (from f in dirInfo.GetFiles(pattern) orderby f.LastWriteTime descending select f).First();
                 String time_pos = get_time_pos(file.FullName);
 

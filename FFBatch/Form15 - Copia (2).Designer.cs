@@ -50,7 +50,6 @@
             this.lbl_config = new System.Windows.Forms.Label();
             this.btn_save_backup = new System.Windows.Forms.Button();
             this.btn_clear = new System.Windows.Forms.Button();
-            this.btn_online = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dg_pr)).BeginInit();
             this.SuspendLayout();
             // 
@@ -211,21 +210,11 @@
             this.btn_clear.UseVisualStyleBackColor = true;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
-            // btn_online
-            // 
-            resources.ApplyResources(this.btn_online, "btn_online");
-            this.btn_online.FlatAppearance.BorderSize = 0;
-            this.btn_online.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_online.Name = "btn_online";
-            this.btn_online.UseVisualStyleBackColor = true;
-            this.btn_online.Click += new System.EventHandler(this.button1_Click);
-            // 
             // Form15
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.Controls.Add(this.btn_online);
             this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.btn_save_backup);
             this.Controls.Add(this.txt_config_ver);
@@ -271,6 +260,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.Button btn_online;
     }
 }

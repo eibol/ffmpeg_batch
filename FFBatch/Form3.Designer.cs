@@ -92,6 +92,7 @@
             this.chk_delete_def = new System.Windows.Forms.CheckBox();
             this.pic_night = new System.Windows.Forms.PictureBox();
             this.btn_dark = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_auto_en)).BeginInit();
@@ -595,12 +596,22 @@
             this.btn_dark.UseVisualStyleBackColor = true;
             this.btn_dark.Click += new System.EventHandler(this.btn_dark_Click);
             // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form3
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.CancelButton = this.btn_cancel;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_dark);
             this.Controls.Add(this.pic_night);
             this.Controls.Add(this.btn_add_ex);
@@ -708,5 +719,6 @@
         private System.Windows.Forms.Button btn_add_ex;
         private System.Windows.Forms.PictureBox pic_night;
         private System.Windows.Forms.Button btn_dark;
+        private System.Windows.Forms.Button button1;
     }
 }
