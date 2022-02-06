@@ -1,6 +1,10 @@
-2.7.3
-• Pre-input parameter linked to saved preset (only when using main tab save preset button).
-• New dynamic variable %ff to re-use input filename without path in -vf filters (workaround for bug with Windows absolute paths).
-• New dynamic variables %fdur and %fdur+1 to re-use input file duration in seconds in parameters field (or duration + 1 second). (Thanks Rajmond).
-• New feature to obtain presets online.
-• Opt-out of single encoding output result window.
+2.7.4
+• FFmpeg 5.0
+• All dynamic variables also available in multi-file encoding.
+• Overwrite source and delete source settings can now be enabled simultaneously. (Source files are recycled).
+• Fixed TEMP folder access error when trying preset.
+• Fixed bug with %ff variable (filename without path).
+• Fixed bug saving presets with some special characters or blank lines.
+• Fixed bug closing application when preset name is blank or too short.
+• Fixed bug duplicating File bitrate column when adding multiple custom columns.
+• Some other minor bugfixes.
