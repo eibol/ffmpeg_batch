@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AeroWizard7));
             this.chk_save_pres = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -64,6 +65,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.wiz_img = new AeroWizard.WizardControl();
             this.wz0 = new AeroWizard.WizardPage();
+            this.pic_img_v = new System.Windows.Forms.PictureBox();
+            this.radio_img_aud = new System.Windows.Forms.RadioButton();
             this.radio_1_v = new System.Windows.Forms.RadioButton();
             this.radio_multi_v = new System.Windows.Forms.RadioButton();
             this.label10 = new System.Windows.Forms.Label();
@@ -88,6 +91,25 @@
             this.check_resize2 = new System.Windows.Forms.CheckBox();
             this.combo_ext2 = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.wz3 = new AeroWizard.WizardPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.chk_even3 = new System.Windows.Forms.CheckBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txt_image3 = new System.Windows.Forms.TextBox();
+            this.browse_img3 = new System.Windows.Forms.Button();
+            this.check_resize3 = new System.Windows.Forms.CheckBox();
+            this.combo_resize3 = new System.Windows.Forms.ComboBox();
+            this.chk_width3 = new System.Windows.Forms.CheckBox();
+            this.radio_16_9_3 = new System.Windows.Forms.RadioButton();
+            this.radio_4_3_3 = new System.Windows.Forms.RadioButton();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.aud_sc = new System.Windows.Forms.CheckBox();
+            this.cb_pixel3 = new System.Windows.Forms.ComboBox();
+            this.label21 = new System.Windows.Forms.Label();
+            this.cb_framerate3 = new System.Windows.Forms.ComboBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.combo_ext3 = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.wz_end = new AeroWizard.WizardPage();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_Start = new System.Windows.Forms.Button();
@@ -96,6 +118,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.openf = new System.Windows.Forms.OpenFileDialog();
             this.openf2 = new System.Windows.Forms.OpenFileDialog();
+            this.openf3 = new System.Windows.Forms.OpenFileDialog();
+            this.images = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pic_warn_two)).BeginInit();
             this.wz_final.SuspendLayout();
             this.wz1.SuspendLayout();
@@ -104,10 +128,14 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wiz_img)).BeginInit();
             this.wz0.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_img_v)).BeginInit();
             this.wz2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.n_single_v_secs)).BeginInit();
             this.groupBox3.SuspendLayout();
+            this.wz3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.wz_end.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -377,18 +405,34 @@
             this.wiz_img.Pages.Add(this.wz0);
             this.wiz_img.Pages.Add(this.wz1);
             this.wiz_img.Pages.Add(this.wz2);
+            this.wiz_img.Pages.Add(this.wz3);
             this.wiz_img.Pages.Add(this.wz_end);
             this.wiz_img.Cancelling += new System.ComponentModel.CancelEventHandler(this.wizardControl1_Cancelling);
             // 
             // wz0
             // 
             resources.ApplyResources(this.wz0, "wz0");
+            this.wz0.Controls.Add(this.pic_img_v);
+            this.wz0.Controls.Add(this.radio_img_aud);
             this.wz0.Controls.Add(this.radio_1_v);
             this.wz0.Controls.Add(this.radio_multi_v);
             this.wz0.Controls.Add(this.label10);
             this.wz0.Name = "wz0";
             this.wz0.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz0_Commit);
             this.wz0.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz0_Initialize);
+            // 
+            // pic_img_v
+            // 
+            resources.ApplyResources(this.pic_img_v, "pic_img_v");
+            this.pic_img_v.Name = "pic_img_v";
+            this.pic_img_v.TabStop = false;
+            // 
+            // radio_img_aud
+            // 
+            resources.ApplyResources(this.radio_img_aud, "radio_img_aud");
+            this.radio_img_aud.Name = "radio_img_aud";
+            this.radio_img_aud.UseVisualStyleBackColor = true;
+            this.radio_img_aud.CheckedChanged += new System.EventHandler(this.chk_img_aud_CheckedChanged);
             // 
             // radio_1_v
             // 
@@ -585,6 +629,156 @@
             resources.ApplyResources(this.label14, "label14");
             this.label14.Name = "label14";
             // 
+            // wz3
+            // 
+            resources.ApplyResources(this.wz3, "wz3");
+            this.wz3.Controls.Add(this.groupBox5);
+            this.wz3.Controls.Add(this.groupBox6);
+            this.wz3.Name = "wz3";
+            this.wz3.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz3_Commit);
+            this.wz3.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz3_Initialize);
+            // 
+            // groupBox5
+            // 
+            resources.ApplyResources(this.groupBox5, "groupBox5");
+            this.groupBox5.Controls.Add(this.chk_even3);
+            this.groupBox5.Controls.Add(this.label19);
+            this.groupBox5.Controls.Add(this.txt_image3);
+            this.groupBox5.Controls.Add(this.browse_img3);
+            this.groupBox5.Controls.Add(this.check_resize3);
+            this.groupBox5.Controls.Add(this.combo_resize3);
+            this.groupBox5.Controls.Add(this.chk_width3);
+            this.groupBox5.Controls.Add(this.radio_16_9_3);
+            this.groupBox5.Controls.Add(this.radio_4_3_3);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.TabStop = false;
+            // 
+            // chk_even3
+            // 
+            resources.ApplyResources(this.chk_even3, "chk_even3");
+            this.chk_even3.Name = "chk_even3";
+            this.chk_even3.UseVisualStyleBackColor = true;
+            // 
+            // label19
+            // 
+            resources.ApplyResources(this.label19, "label19");
+            this.label19.Name = "label19";
+            // 
+            // txt_image3
+            // 
+            resources.ApplyResources(this.txt_image3, "txt_image3");
+            this.txt_image3.Name = "txt_image3";
+            this.txt_image3.ReadOnly = true;
+            // 
+            // browse_img3
+            // 
+            resources.ApplyResources(this.browse_img3, "browse_img3");
+            this.browse_img3.Name = "browse_img3";
+            this.browse_img3.UseVisualStyleBackColor = true;
+            this.browse_img3.Click += new System.EventHandler(this.browse_img3_Click);
+            // 
+            // check_resize3
+            // 
+            resources.ApplyResources(this.check_resize3, "check_resize3");
+            this.check_resize3.Name = "check_resize3";
+            this.check_resize3.UseVisualStyleBackColor = true;
+            this.check_resize3.CheckedChanged += new System.EventHandler(this.check_resize3_CheckedChanged);
+            // 
+            // combo_resize3
+            // 
+            resources.ApplyResources(this.combo_resize3, "combo_resize3");
+            this.combo_resize3.FormattingEnabled = true;
+            this.combo_resize3.Name = "combo_resize3";
+            // 
+            // chk_width3
+            // 
+            resources.ApplyResources(this.chk_width3, "chk_width3");
+            this.chk_width3.Name = "chk_width3";
+            this.chk_width3.UseVisualStyleBackColor = true;
+            this.chk_width3.CheckedChanged += new System.EventHandler(this.chk_width3_CheckedChanged);
+            // 
+            // radio_16_9_3
+            // 
+            resources.ApplyResources(this.radio_16_9_3, "radio_16_9_3");
+            this.radio_16_9_3.Checked = true;
+            this.radio_16_9_3.Name = "radio_16_9_3";
+            this.radio_16_9_3.TabStop = true;
+            this.radio_16_9_3.UseVisualStyleBackColor = true;
+            // 
+            // radio_4_3_3
+            // 
+            resources.ApplyResources(this.radio_4_3_3, "radio_4_3_3");
+            this.radio_4_3_3.Name = "radio_4_3_3";
+            this.radio_4_3_3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            resources.ApplyResources(this.groupBox6, "groupBox6");
+            this.groupBox6.Controls.Add(this.aud_sc);
+            this.groupBox6.Controls.Add(this.cb_pixel3);
+            this.groupBox6.Controls.Add(this.label21);
+            this.groupBox6.Controls.Add(this.cb_framerate3);
+            this.groupBox6.Controls.Add(this.label18);
+            this.groupBox6.Controls.Add(this.combo_ext3);
+            this.groupBox6.Controls.Add(this.label22);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.TabStop = false;
+            // 
+            // aud_sc
+            // 
+            resources.ApplyResources(this.aud_sc, "aud_sc");
+            this.aud_sc.Name = "aud_sc";
+            this.aud_sc.UseVisualStyleBackColor = true;
+            // 
+            // cb_pixel3
+            // 
+            resources.ApplyResources(this.cb_pixel3, "cb_pixel3");
+            this.cb_pixel3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cb_pixel3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cb_pixel3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_pixel3.FormattingEnabled = true;
+            this.cb_pixel3.Name = "cb_pixel3";
+            // 
+            // label21
+            // 
+            resources.ApplyResources(this.label21, "label21");
+            this.label21.Name = "label21";
+            // 
+            // cb_framerate3
+            // 
+            resources.ApplyResources(this.cb_framerate3, "cb_framerate3");
+            this.cb_framerate3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cb_framerate3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cb_framerate3.FormattingEnabled = true;
+            this.cb_framerate3.Items.AddRange(new object[] {
+            resources.GetString("cb_framerate3.Items"),
+            resources.GetString("cb_framerate3.Items1"),
+            resources.GetString("cb_framerate3.Items2"),
+            resources.GetString("cb_framerate3.Items3"),
+            resources.GetString("cb_framerate3.Items4")});
+            this.cb_framerate3.Name = "cb_framerate3";
+            // 
+            // label18
+            // 
+            resources.ApplyResources(this.label18, "label18");
+            this.label18.Name = "label18";
+            // 
+            // combo_ext3
+            // 
+            resources.ApplyResources(this.combo_ext3, "combo_ext3");
+            this.combo_ext3.FormattingEnabled = true;
+            this.combo_ext3.Items.AddRange(new object[] {
+            resources.GetString("combo_ext3.Items"),
+            resources.GetString("combo_ext3.Items1"),
+            resources.GetString("combo_ext3.Items2"),
+            resources.GetString("combo_ext3.Items3")});
+            this.combo_ext3.Name = "combo_ext3";
+            // 
+            // label22
+            // 
+            resources.ApplyResources(this.label22, "label22");
+            this.label22.Name = "label22";
+            // 
             // wz_end
             // 
             resources.ApplyResources(this.wz_end, "wz_end");
@@ -634,15 +828,26 @@
             // 
             // openf
             // 
-            this.openf.FileName = "openFileDialog1";
             resources.ApplyResources(this.openf, "openf");
             this.openf.FileOk += new System.ComponentModel.CancelEventHandler(this.openf_FileOk);
             // 
             // openf2
             // 
-            this.openf2.FileName = "openFileDialog1";
             resources.ApplyResources(this.openf2, "openf2");
             this.openf2.FileOk += new System.ComponentModel.CancelEventHandler(this.openf2_FileOk);
+            // 
+            // openf3
+            // 
+            resources.ApplyResources(this.openf3, "openf3");
+            this.openf3.FileOk += new System.ComponentModel.CancelEventHandler(this.openf3_FileOk);
+            // 
+            // images
+            // 
+            this.images.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("images.ImageStream")));
+            this.images.TransparentColor = System.Drawing.Color.Transparent;
+            this.images.Images.SetKeyName(0, "Images_to_video1.png");
+            this.images.Images.SetKeyName(1, "Images_Wiz_64.png");
+            this.images.Images.SetKeyName(2, "Image_audio_to_video.png");
             // 
             // AeroWizard7
             // 
@@ -664,12 +869,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.wiz_img)).EndInit();
             this.wz0.ResumeLayout(false);
             this.wz0.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_img_v)).EndInit();
             this.wz2.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.n_single_v_secs)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.wz3.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.wz_end.ResumeLayout(false);
             this.wz_end.PerformLayout();
             this.ResumeLayout(false);
@@ -744,5 +955,28 @@
         private System.Windows.Forms.Label lbl_c;
         private System.Windows.Forms.CheckBox chk_even;
         private System.Windows.Forms.CheckBox chk_even2;
+        public System.Windows.Forms.RadioButton radio_img_aud;
+        private AeroWizard.WizardPage wz3;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.CheckBox chk_even3;
+        private System.Windows.Forms.Label label19;
+        public System.Windows.Forms.TextBox txt_image3;
+        private System.Windows.Forms.Button browse_img3;
+        private System.Windows.Forms.CheckBox check_resize3;
+        private System.Windows.Forms.ComboBox combo_resize3;
+        private System.Windows.Forms.CheckBox chk_width3;
+        private System.Windows.Forms.RadioButton radio_16_9_3;
+        private System.Windows.Forms.RadioButton radio_4_3_3;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.ComboBox cb_pixel3;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox cb_framerate3;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ComboBox combo_ext3;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.OpenFileDialog openf3;
+        private System.Windows.Forms.CheckBox aud_sc;
+        private System.Windows.Forms.PictureBox pic_img_v;
+        private System.Windows.Forms.ImageList images;
     }
 }

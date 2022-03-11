@@ -17,6 +17,7 @@ namespace FFBatch
         public Boolean save_preset = false;
         public Boolean one_to_one = false;
         public Boolean multi_to_one = false;
+        public Boolean image_to_audio = false;
         public int list_count = 0;
         private String img_dur_prog = "0";
         private String pr_1st_params = String.Empty;
@@ -233,8 +234,12 @@ namespace FFBatch
         private void wz0_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
         {
             String[] v_pixels = new string[] { "yuv420p", "yuv422p", "yuv444p", "yuyv422", "yuv422p10", "yuv422p10le", "yuv444p10", "yuv444p10le", "yuva444p10", "yuva444p10le", "rgb24", "rgb32", "rgb565", "rgb555", "nv12", "gray", "monow", "monob" };
-            foreach (String item in v_pixels) cb_pixel.Items.Add(item);
-            foreach (String item in v_pixels) cb_pixel2.Items.Add(item);
+            foreach (String item in v_pixels)
+            {
+                cb_pixel.Items.Add(item);
+                cb_pixel2.Items.Add(item);
+                cb_pixel3.Items.Add(item);
+            }
 
             if (radio_1_v.Checked)
             {
@@ -249,8 +254,11 @@ namespace FFBatch
                     wz0.AllowNext = true;
                     wz1.Suppress = true;
                     wz2.Suppress = false;
+                    wz3.Suppress = true;
                     multi_to_one = true;
                     one_to_one = false;
+                    image_to_audio = false;
+
                 }
             }
 
@@ -267,8 +275,31 @@ namespace FFBatch
                     wz0.AllowNext = true;
                     wz1.Suppress = false;
                     wz2.Suppress = true;
+                    wz3.Suppress = true;
                     multi_to_one = false;
                     one_to_one = true;
+                    image_to_audio = false;
+
+                }
+            }
+
+            if (radio_img_aud.Checked)
+            {
+                if (list_count < 1)
+                {
+                    MessageBox.Show(Properties.Strings.two_files);
+                    wz0.AllowNext = false;
+                    return;
+                }
+                else
+                {
+                    wz0.AllowNext = true;
+                    wz1.Suppress = true;
+                    wz2.Suppress = true;
+                    wz3.Suppress = false;
+                    multi_to_one = false;
+                    one_to_one = false;
+                    image_to_audio = true;
                 }
             }
         }
@@ -381,9 +412,11 @@ namespace FFBatch
 
         private void radio_multi_v_CheckedChanged(object sender, EventArgs e)
         {
+            pic_img_v.Image = images.Images[0];
             wz0.AllowNext = true;
             one_to_one = true;
             multi_to_one = false;
+            image_to_audio = false;
             if (list_count < 2)
             {
                 wz0.AllowNext = false;
@@ -392,9 +425,11 @@ namespace FFBatch
 
         private void radio_1_v_CheckedChanged(object sender, EventArgs e)
         {
+            pic_img_v.Image = images.Images[1];
             wz0.AllowNext = true;
             one_to_one = false;
             multi_to_one = true;
+            image_to_audio = false;
             if (list_count < 1)
             {
                 wz0.AllowNext = false;
@@ -519,6 +554,10 @@ namespace FFBatch
 
         private void wz0_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
         {
+            if (radio_multi_v.Checked) pic_img_v.Image = images.Images[0];
+            if (radio_1_v.Checked) pic_img_v.Image = images.Images[1];
+            if (radio_img_aud.Checked) pic_img_v.Image = images.Images[2];
+
             if (list_count < 2)
             {
                 wz0.AllowNext = false;
@@ -547,6 +586,117 @@ namespace FFBatch
         private void chk_width2_CheckedChanged(object sender, EventArgs e)
         {
             chk_even2.Enabled = !chk_even2.Enabled;
+        }
+
+        private void check_resize3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (check_resize3.Checked == true)
+            {
+                combo_resize3.Enabled = true;
+                radio_16_9_3.Enabled = true;
+                radio_4_3_3.Enabled = true;
+                chk_width3.Enabled = true;
+
+                if (radio_16_9_3.Checked == true)
+                {
+                    combo_resize3.Items.Clear();
+                    combo_resize3.Items.Add("320x180");
+                    combo_resize3.Items.Add("640x360");
+                    combo_resize3.Items.Add("800x480");
+                    combo_resize3.Items.Add("1024x640");
+                    combo_resize3.Items.Add("1280x720");
+                    combo_resize3.Items.Add("1920x1080");
+                }
+                if (radio_4_3_3.Checked == true)
+                {
+                    combo_resize3.Items.Clear();
+                    combo_resize3.Items.Add("320x240");
+                    combo_resize3.Items.Add("800x600");
+                    combo_resize3.Items.Add("1024x768");
+                    combo_resize3.Items.Add("1280x1024");
+                }
+
+                combo_resize3.SelectedIndex = 0;
+            }
+            else
+            {
+                combo_resize3.Enabled = false;
+                radio_16_9_3.Enabled = false;
+                radio_4_3_3.Enabled = false;
+                chk_width3.Enabled = false;
+            }
+        }
+
+        private void chk_img_aud_CheckedChanged(object sender, EventArgs e)
+        {
+            pic_img_v.Image = images.Images[2];
+            wz0.AllowNext = true;
+            one_to_one = false;
+            multi_to_one = false;
+            image_to_audio = true;
+            if (list_count < 1)
+            {
+                wz0.AllowNext = false;
+            }
+        }
+
+        private void browse_img3_Click(object sender, EventArgs e)
+        {
+            openf3.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
+            openf3.ShowDialog();
+        }
+
+        private void openf3_FileOk(object sender, CancelEventArgs e)
+        {
+            txt_image3.Text = openf3.FileName;
+            txt_image3.BackColor = Control.DefaultBackColor;
+        }
+
+        private void wz3_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
+        {
+            if (txt_image3.Text.Length == 0)
+            {
+                MessageBox.Show(Properties.Strings2.img_empty);
+                e.Cancel = true;
+                return;
+            }
+
+            Double t_to = (double)n_single_v_secs.Value;
+            pr1_img_dur = t_to.ToString();
+
+            pr_pre_prms = "-loop 1 -r 1/" + cb_framerate3.Text + " -i " + '\u0022' + txt_image3.Text + '\u0022';
+            pr_1st_params = "-map 0:v:0 -c:v libx264 -preset veryfast -tune stillimage" + " " + "-pix_fmt " + cb_pixel3.SelectedItem.ToString() + " " + "-r " + cb_framerate3.Text;
+            String resize = "";
+            //"-vf scale=";
+            if (check_resize3.Checked)
+            {
+                if (chk_width3.Checked)
+                {
+                    if (chk_even3.Checked == false) resize = combo_resize3.Text.Substring(0, combo_resize3.Text.IndexOf("x")) + ":-1";
+                    resize = combo_resize3.Text.Substring(0, combo_resize3.Text.IndexOf("x")) + ":-2";
+                }
+                else resize = combo_resize3.SelectedItem.ToString().Replace("x", ":");
+                pr_1st_params = "-map 0:v:0 -c:v libx264 -preset veryfast -tune stillimage" + " " + "-pix_fmt " + cb_pixel3.SelectedItem.ToString() + " " + "-vf " + "\u0022" + "fps=" + cb_framerate3.Text + "," + "scale=" + resize + "\u0022";
+            }
+
+            String audio_p = "-c:a aac -b:a 128K";
+            if (aud_sc.Checked) audio_p = "-c:a copy";
+            pr_1st_params = pr_1st_params + " -map 1:a:0 " + audio_p + " " + "-t %fdur";            
+
+            out_format = combo_ext3.Text;
+            pr1_out_format = out_format;
+        }
+
+        private void wz3_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
+        {
+            cb_framerate3.SelectedIndex = 0;
+            combo_ext3.SelectedIndex = 0;
+            cb_pixel3.SelectedIndex = 0;
+        }
+
+        private void chk_width3_CheckedChanged(object sender, EventArgs e)
+        {
+            chk_even3.Enabled = !chk_even3.Enabled;
         }
     }
 }
