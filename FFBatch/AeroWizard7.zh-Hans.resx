@@ -372,8 +372,17 @@
   <data name="wz1.Text" xml:space="preserve">
     <value>图片转视频</value>
   </data>
+  <data name="radio_img_aud.Location" type="System.Drawing.Point, System.Drawing">
+    <value>53, 135</value>
+  </data>
+  <data name="radio_img_aud.Size" type="System.Drawing.Size, System.Drawing">
+    <value>233, 19</value>
+  </data>
+  <data name="radio_img_aud.Text" xml:space="preserve">
+    <value>来自一个图像和一个音频文件的视频</value>
+  </data>
   <data name="radio_1_v.Location" type="System.Drawing.Point, System.Drawing">
-    <value>53, 98</value>
+    <value>53, 101</value>
   </data>
   <data name="radio_1_v.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 19</value>
@@ -408,6 +417,9 @@
   <data name="chk_audio2.Text" xml:space="preserve">
     <value>添加音轨</value>
   </data>
+  <data name="n_single_v_secs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>64, 32</value>
+  </data>
   <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
     <value>299, 35</value>
   </data>
@@ -416,6 +428,15 @@
   </data>
   <data name="label17.Text" xml:space="preserve">
     <value>帧率</value>
+  </data>
+  <data name="label13.Location" type="System.Drawing.Point, System.Drawing">
+    <value>118, 35</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 15</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>秒</value>
   </data>
   <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 15</value>
@@ -479,6 +500,72 @@
   </data>
   <data name="wz2.Text" xml:space="preserve">
     <value>从每个图像创建一个视频</value>
+  </data>
+  <data name="chk_even3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 19</value>
+  </data>
+  <data name="chk_even3.Text" xml:space="preserve">
+    <value>可被二整除</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>图像文件</value>
+  </data>
+  <data name="browse_img3.Text" xml:space="preserve">
+    <value>浏览...</value>
+  </data>
+  <data name="check_resize3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 19</value>
+  </data>
+  <data name="check_resize3.Text" xml:space="preserve">
+    <value>调整大小</value>
+  </data>
+  <data name="chk_width3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 19</value>
+  </data>
+  <data name="chk_width3.Text" xml:space="preserve">
+    <value>仅宽度</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>选</value>
+  </data>
+  <data name="aud_sc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>280, 67</value>
+  </data>
+  <data name="aud_sc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 19</value>
+  </data>
+  <data name="aud_sc.Text" xml:space="preserve">
+    <value>音频流复制</value>
+  </data>
+  <data name="cb_pixel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 63</value>
+  </data>
+  <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 15</value>
+  </data>
+  <data name="label21.Text" xml:space="preserve">
+    <value>像素格式</value>
+  </data>
+  <data name="cb_framerate3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>309, 27</value>
+  </data>
+  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 15</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>帧率</value>
+  </data>
+  <data name="combo_ext3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>83, 27</value>
+  </data>
+  <data name="label22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 15</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>输出格式</value>
+  </data>
+  <data name="wz3.Text" xml:space="preserve">
+    <value>从列表中的一个图像和音频文件创建视频</value>
   </data>
   <data name="btn_cancel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

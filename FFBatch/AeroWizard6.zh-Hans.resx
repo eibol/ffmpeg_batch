@@ -265,7 +265,7 @@
 </value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>328, 15</value>
+    <value>295, 15</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>注意：文件拆分是近似值，具体取决于源文件格式质量。</value>
@@ -277,13 +277,13 @@
     <value>294, 23</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 15</value>
+    <value>56, 15</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>输出格式</value>
   </data>
   <data name="chk_streamcopy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 19</value>
+    <value>62, 19</value>
   </data>
   <data name="chk_streamcopy.Text" xml:space="preserve">
     <value>流复制</value>
@@ -304,7 +304,7 @@
     <value>320, 62</value>
   </data>
   <data name="chk_out_name.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 19</value>
+    <value>98, 19</value>
   </data>
   <data name="chk_out_name.Text" xml:space="preserve">
     <value>使用源文件名</value>
@@ -313,13 +313,13 @@
     <value>浏览</value>
   </data>
   <data name="radio_absolute.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 19</value>
+    <value>100, 19</value>
   </data>
   <data name="radio_absolute.Text" xml:space="preserve">
     <value>绝对输出路径</value>
   </data>
   <data name="radio_relative.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 19</value>
+    <value>99, 19</value>
   </data>
   <data name="radio_relative.Text" xml:space="preserve">
     <value>相对输出路径</value>
@@ -328,19 +328,19 @@
     <value>输出</value>
   </data>
   <data name="radio_size.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 19</value>
+    <value>61, 19</value>
   </data>
   <data name="radio_size.Text" xml:space="preserve">
     <value>按尺寸</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 15</value>
+    <value>19, 15</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>秒</value>
   </data>
   <data name="radio_time.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 19</value>
+    <value>49, 19</value>
   </data>
   <data name="radio_time.Text" xml:space="preserve">
     <value>每个</value>
@@ -352,25 +352,25 @@
     <value>批处理 A/V 分割向导</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 15</value>
+    <value>172, 15</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>按开始按钮立即开始文件拆分。</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>250, 15</value>
+    <value>231, 15</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>按完成使用预设，或按取消返回主选项卡。</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 15</value>
+    <value>152, 15</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>分割预设向导已准备就绪。</value>
   </data>
   <data name="chk_save_preset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 19</value>
+    <value>113, 19</value>
   </data>
   <data name="chk_save_preset.Text" xml:space="preserve">
     <value>保存选定的预设</value>

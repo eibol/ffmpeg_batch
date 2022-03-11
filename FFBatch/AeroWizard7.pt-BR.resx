@@ -375,6 +375,12 @@
   <data name="wz1.Text" xml:space="preserve">
     <value>Crie um vídeo usando todas as imagens</value>
   </data>
+  <data name="radio_img_aud.Size" type="System.Drawing.Size, System.Drawing">
+    <value>375, 19</value>
+  </data>
+  <data name="radio_img_aud.Text" xml:space="preserve">
+    <value>Crie um vídeo a partir de uma imagem e arquivos de áudio na lista</value>
+  </data>
   <data name="radio_1_v.Size" type="System.Drawing.Size, System.Drawing">
     <value>190, 19</value>
   </data>
@@ -500,6 +506,96 @@
   </data>
   <data name="wz2.Text" xml:space="preserve">
     <value>Crie um vídeo de cada imagem</value>
+  </data>
+  <data name="chk_even3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 19</value>
+  </data>
+  <data name="chk_even3.Text" xml:space="preserve">
+    <value>Divisível por 2</value>
+  </data>
+  <data name="label19.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 15</value>
+  </data>
+  <data name="label19.Text" xml:space="preserve">
+    <value>Arquivo de imagem</value>
+  </data>
+  <data name="txt_image3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>131, 32</value>
+  </data>
+  <data name="txt_image3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>266, 23</value>
+  </data>
+  <data name="browse_img3.Text" xml:space="preserve">
+    <value>Navegar...</value>
+  </data>
+  <data name="check_resize3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>26, 80</value>
+  </data>
+  <data name="check_resize3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 19</value>
+  </data>
+  <data name="check_resize3.Text" xml:space="preserve">
+    <value>Redimensionar</value>
+  </data>
+  <data name="combo_resize3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>131, 78</value>
+  </data>
+  <data name="chk_width3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>275, 80</value>
+  </data>
+  <data name="chk_width3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 19</value>
+  </data>
+  <data name="chk_width3.Text" xml:space="preserve">
+    <value>Largura apenas</value>
+  </data>
+  <data name="radio_16_9_3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>219, 70</value>
+  </data>
+  <data name="radio_4_3_3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>219, 93</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Opções</value>
+  </data>
+  <data name="aud_sc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>151, 19</value>
+  </data>
+  <data name="aud_sc.Text" xml:space="preserve">
+    <value>Cópia de fluxo de áudio</value>
+  </data>
+  <data name="cb_pixel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>116, 61</value>
+  </data>
+  <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 15</value>
+  </data>
+  <data name="label21.Text" xml:space="preserve">
+    <value>Formato do pixel</value>
+  </data>
+  <data name="cb_framerate3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>369, 27</value>
+  </data>
+  <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 15</value>
+  </data>
+  <data name="label18.Text" xml:space="preserve">
+    <value>Taxa de quadros</value>
+  </data>
+  <data name="combo_ext3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>117, 27</value>
+  </data>
+  <data name="label22.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 15</value>
+  </data>
+  <data name="label22.Text" xml:space="preserve">
+    <value>Formato de saida</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Formato</value>
+  </data>
+  <data name="wz3.Text" xml:space="preserve">
+    <value>Crie um vídeo a partir de uma imagem e arquivos de áudio na lista</value>
   </data>
   <data name="btn_cancel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
