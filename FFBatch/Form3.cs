@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Security.Cryptography;
 using System.Threading;
@@ -58,6 +60,7 @@ namespace FFBatch
         public Boolean sort_multi;
         public Boolean send_params_console;
         public Boolean warn_successful;
+        public Boolean ignore_encoded;
         public Boolean no_warn_0;
         public Boolean reload_config;
         public Boolean subfolders;
@@ -141,6 +144,11 @@ namespace FFBatch
                 return wr;
             }
         }
+        public static bool is_startup()
+        {
+            RegistryKey winLogonKey = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+            return (winLogonKey.GetValueNames().Contains("FFBatch"));
+        }
 
         private void Form3_Load(object sender, EventArgs e)
         {
@@ -178,6 +186,9 @@ namespace FFBatch
             browse_sound.InitialDirectory = Application.StartupPath;
 
             //Read configuration
+
+            if (is_startup() == false) chk_run_st.Checked = false;
+            else chk_run_st.Checked = true;
 
             String path_s = String.Empty;
             if (is_portable == false)
@@ -434,6 +445,31 @@ namespace FFBatch
 
             //End send params to console
 
+            //Warn Ignore encoded items
+
+            String f_ignore_enc = String.Empty;
+            if (is_portable == false)
+            {
+                f_ignore_enc = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_ignore_enc.ini";
+            }
+            else
+            {
+                f_ignore_enc = port_path + "ff_ignore_enc_portable.ini";
+            }
+
+            if (File.Exists(f_ignore_enc))
+            {
+                chk_ignore_enc.CheckState = CheckState.Checked;
+                ignore_encoded = true;
+            }
+            else
+            {
+                chk_warn_successful.CheckState = CheckState.Unchecked;
+                ignore_encoded = false;
+            }
+
+            //End ignore encoded items
+
             //Warn successful items
 
             String f_warn_suc = String.Empty;
@@ -458,6 +494,23 @@ namespace FFBatch
             }
 
             //End warn sucessful items
+
+            String f_delay = String.Empty;
+            if (is_portable == false)
+            {
+                f_delay = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_delay.ini";
+            }
+            else
+            {
+                f_delay = port_path + "ff_delay_portable.ini";
+            }
+
+            if (File.Exists(f_delay))
+            {
+                n_delay.Value = Convert.ToInt32(File.ReadAllText(f_delay));
+            }
+            else n_delay.Value = 0;
+            //End startup delay
 
             //Warn 0 duration
 
@@ -969,7 +1022,7 @@ namespace FFBatch
         {
             if (chk_sort.CheckState == CheckState.Checked)
             {
-                sort_multi = true;
+                sort_multi = true;                
             }
             else
             {
@@ -1035,6 +1088,8 @@ namespace FFBatch
             chk_non0.Checked = false;
             chk_auto_start.Checked = false;
             chk_auto_multi.Checked = false;
+            chk_run_st.Checked = false;
+            n_delay.Value = 0;
         }
 
         private void chk_never_cache_CheckedChanged(object sender, EventArgs e)
@@ -1443,6 +1498,60 @@ namespace FFBatch
             presets_online = true;
             cancel = false;
             this.Close();            
+        }
+
+        private void chk_sort_Click(object sender, EventArgs e)
+        {
+            if (chk_sort.CheckState == CheckState.Checked)
+            {
+                sort_multi = true;
+                MessageBox.Show(Properties.Strings2.warn_sort);
+            }
+        }
+
+        private void chk_ignore_enc_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_ignore_enc.CheckState == CheckState.Checked) ignore_encoded = true;
+            else ignore_encoded = false;
+        }
+
+        private void chk_run_st_CheckedChanged(object sender, EventArgs e)
+        {
+            RegistryKey rk = Registry.CurrentUser.OpenSubKey
+        ("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+
+            if (chk_run_st.CheckState == CheckState.Unchecked) rk.DeleteValue("FFBatch", false);            
+            else rk.SetValue("FFBatch", Application.ExecutablePath);
+        }
+
+        private void chk_run_st_Click(object sender, EventArgs e)
+        {
+            if (chk_run_st.Checked)
+            {
+                chk_warn_successful.Checked = true;
+                chk_ignore_enc.Checked = true;
+                MessageBox.Show(Properties.Strings2.warn_run_enc);
+            }
+        }
+
+        private void n_delay_ValueChanged(object sender, EventArgs e)
+        {
+            String f_delay = String.Empty;
+            if (is_portable == false)
+            {
+                f_delay = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_delay.ini";
+            }
+            else
+            {
+                f_delay = port_path + "ff_delay_portable.ini";
+            }
+                        
+            try
+            {
+                if (n_delay.Value != 0) File.WriteAllText(f_delay, n_delay.Value.ToString());
+                else File.Delete(f_delay);
+
+            } catch { }            
         }
     }
 }

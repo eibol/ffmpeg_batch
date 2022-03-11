@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.panel2 = new System.Windows.Forms.GroupBox();
+            this.chk_ignore_enc = new System.Windows.Forms.CheckBox();
             this.chk_non0 = new System.Windows.Forms.CheckBox();
             this.btn_stop_play = new System.Windows.Forms.Button();
             this.btn_browse_play = new System.Windows.Forms.Button();
@@ -47,9 +48,12 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btn_save = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.chk_autor = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.n_delay = new System.Windows.Forms.NumericUpDown();
+            this.chk_run_st = new System.Windows.Forms.CheckBox();
             this.pic_auto_en = new System.Windows.Forms.PictureBox();
             this.pic_auto_dis = new System.Windows.Forms.PictureBox();
-            this.chk_autor = new System.Windows.Forms.Button();
             this.chk_auto_multi = new System.Windows.Forms.CheckBox();
             this.chk_auto_start = new System.Windows.Forms.CheckBox();
             this.txt_format = new System.Windows.Forms.TextBox();
@@ -95,6 +99,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.n_delay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_auto_en)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_auto_dis)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -110,6 +115,7 @@
             // panel2
             // 
             resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Controls.Add(this.chk_ignore_enc);
             this.panel2.Controls.Add(this.chk_non0);
             this.panel2.Controls.Add(this.btn_stop_play);
             this.panel2.Controls.Add(this.btn_browse_play);
@@ -125,6 +131,13 @@
             this.panel2.Controls.Add(this.chk_suffix);
             this.panel2.Name = "panel2";
             this.panel2.TabStop = false;
+            // 
+            // chk_ignore_enc
+            // 
+            resources.ApplyResources(this.chk_ignore_enc, "chk_ignore_enc");
+            this.chk_ignore_enc.Name = "chk_ignore_enc";
+            this.chk_ignore_enc.UseVisualStyleBackColor = true;
+            this.chk_ignore_enc.CheckedChanged += new System.EventHandler(this.chk_ignore_enc_CheckedChanged);
             // 
             // chk_non0
             // 
@@ -242,9 +255,12 @@
             // groupBox1
             // 
             resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.chk_autor);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.n_delay);
+            this.groupBox1.Controls.Add(this.chk_run_st);
             this.groupBox1.Controls.Add(this.pic_auto_en);
             this.groupBox1.Controls.Add(this.pic_auto_dis);
-            this.groupBox1.Controls.Add(this.chk_autor);
             this.groupBox1.Controls.Add(this.chk_auto_multi);
             this.groupBox1.Controls.Add(this.chk_auto_start);
             this.groupBox1.Controls.Add(this.txt_format);
@@ -253,6 +269,39 @@
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            // 
+            // chk_autor
+            // 
+            resources.ApplyResources(this.chk_autor, "chk_autor");
+            this.chk_autor.FlatAppearance.BorderSize = 0;
+            this.chk_autor.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.chk_autor.Name = "chk_autor";
+            this.chk_autor.UseVisualStyleBackColor = true;
+            this.chk_autor.Click += new System.EventHandler(this.chk_autor_Click);
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
+            // 
+            // n_delay
+            // 
+            resources.ApplyResources(this.n_delay, "n_delay");
+            this.n_delay.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.n_delay.Name = "n_delay";
+            this.n_delay.ValueChanged += new System.EventHandler(this.n_delay_ValueChanged);
+            // 
+            // chk_run_st
+            // 
+            resources.ApplyResources(this.chk_run_st, "chk_run_st");
+            this.chk_run_st.Name = "chk_run_st";
+            this.chk_run_st.UseVisualStyleBackColor = true;
+            this.chk_run_st.CheckedChanged += new System.EventHandler(this.chk_run_st_CheckedChanged);
+            this.chk_run_st.Click += new System.EventHandler(this.chk_run_st_Click);
             // 
             // pic_auto_en
             // 
@@ -265,15 +314,6 @@
             resources.ApplyResources(this.pic_auto_dis, "pic_auto_dis");
             this.pic_auto_dis.Name = "pic_auto_dis";
             this.pic_auto_dis.TabStop = false;
-            // 
-            // chk_autor
-            // 
-            resources.ApplyResources(this.chk_autor, "chk_autor");
-            this.chk_autor.FlatAppearance.BorderSize = 0;
-            this.chk_autor.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.chk_autor.Name = "chk_autor";
-            this.chk_autor.UseVisualStyleBackColor = true;
-            this.chk_autor.Click += new System.EventHandler(this.chk_autor_Click);
             // 
             // chk_auto_multi
             // 
@@ -408,6 +448,7 @@
             this.chk_sort.Name = "chk_sort";
             this.chk_sort.UseVisualStyleBackColor = true;
             this.chk_sort.CheckedChanged += new System.EventHandler(this.chk_sort_CheckedChanged);
+            this.chk_sort.Click += new System.EventHandler(this.chk_sort_Click);
             // 
             // chk_auto_updates
             // 
@@ -637,6 +678,7 @@
             this.panel2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.n_delay)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_auto_en)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_auto_dis)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -720,5 +762,9 @@
         private System.Windows.Forms.PictureBox pic_night;
         private System.Windows.Forms.Button btn_dark;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox chk_ignore_enc;
+        private System.Windows.Forms.CheckBox chk_run_st;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.NumericUpDown n_delay;
     }
 }
