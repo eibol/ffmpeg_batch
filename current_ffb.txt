@@ -1,10 +1,15 @@
-2.7.4
-• FFmpeg 5.0
-• All dynamic variables also available in multi-file encoding.
-• Overwrite source and delete source settings can now be enabled simultaneously. (Source files are recycled).
-• Fixed TEMP folder access error when trying preset.
-• Fixed bug with %ff variable (filename without path).
-• Fixed bug saving presets with some special characters or blank lines.
-• Fixed bug closing application when preset name is blank or too short.
-• Fixed bug duplicating File bitrate column when adding multiple custom columns.
-• Some other minor bugfixes.
+﻿2.7.5
+• Features:
+• New Image to video wizard feature: Batch create videos from one image and one audio file (static videoclip).
+• Load application on startup (after user login).
+• Automatically skip already encoded files (useful to resume crashed encoding sessions).
+• Queue state now saved periodically and reloaded later on if computer or application crashes.
+• Fixed bugs:
+• Using right-click menu to start encoding.
+• Refreshing file list with sorted custom columns.
+• New unsaved presets not saved on exit.
+• Error joining files when using compatiblity mode.
+• Error joining files when file or path contains single quotes.
+• Automatic auto-file not working in some cases.
+• %fdur+1 variable error on some scenarios.
+• Automatic check/update yt-dlp fixed.
