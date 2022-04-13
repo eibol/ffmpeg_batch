@@ -1,15 +1,11 @@
-﻿2.7.5
-• Features:
-• New Image to video wizard feature: Batch create videos from one image and one audio file (static videoclip).
-• Load application on startup (after user login).
-• Automatically skip already encoded files (useful to resume crashed encoding sessions).
-• Queue state now saved periodically and reloaded later on if computer or application crashes.
-• Fixed bugs:
-• Using right-click menu to start encoding.
-• Refreshing file list with sorted custom columns.
-• New unsaved presets not saved on exit.
-• Error joining files when using compatiblity mode.
-• Error joining files when file or path contains single quotes.
-• Automatic auto-file not working in some cases.
-• %fdur+1 variable error on some scenarios.
-• Automatic check/update yt-dlp fixed.
+﻿2.7.6
+• FFmpeg 5.0.1
+• New visual crop dialog.
+• Full screen frame preview on doubleclick.
+• Added audio normalize default filter to audio wizard.
+• Fixed bug downloading VK videos.
+• A few translation fixes.
+• Missing file warning can be disabled at settings (useful if they are only temporarily unavailable o removed afterwards).
+• Disabled automatic automatic queue saving for files shorter than 30 seconds, to avoid poor performance with big queues.
+• (Still queue saved every 60 seconds).
+• Encoding session tested up to 100000 files.
