@@ -7,5 +7,5 @@
 • A few translation fixes.
 • Missing file warning can be disabled at settings (useful if they are only temporarily unavailable o removed afterwards).
 • Disabled automatic automatic queue saving after encoding files shorter than 30 seconds, to avoid poor performance with big queues.
-• (Still queue saved every 60 seconds).
+• Queue stated saved every 60 seconds in any case.
 • Encoding session tested up to 100000 files. (Unknown results beyond that).
