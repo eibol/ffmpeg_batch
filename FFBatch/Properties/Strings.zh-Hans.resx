@@ -139,7 +139,7 @@
     <value>约一分钟</value>
   </data>
   <data name="about_don" xml:space="preserve">
-    <value>关于申请和捐赠</value>
+    <value>关于应用和捐赠</value>
   </data>
   <data name="about_finish" xml:space="preserve">
     <value>即将结束</value>
@@ -253,10 +253,10 @@
     <value>应用滤镜</value>
   </data>
   <data name="app_failed" xml:space="preserve">
-    <value>应用失败</value>
+    <value>失败</value>
   </data>
   <data name="app_ok" xml:space="preserve">
-    <value>应用请成功完成</value>
+    <value>应用成功完成</value>
   </data>
   <data name="app_p_empty" xml:space="preserve">
     <value>应用程序路径为空</value>
@@ -334,7 +334,7 @@
     <value>网络文件缓存已禁用</value>
   </data>
   <data name="cache_os" xml:space="preserve">
-    <value>操作系统操作系统复制对话框可以更快地缓存文件,尽管每次缓存新文件时它都会弹出.</value>
+    <value>操作系统复制对话框可以更快地缓存文件,尽管每次缓存新文件时它都会弹出.</value>
   </data>
   <data name="cache_os2" xml:space="preserve">
     <value>操作系统文件复制对话框已启用</value>
@@ -346,7 +346,7 @@
     <value>缓存网络文件</value>
   </data>
   <data name="calcul" xml:space="preserve">
-    <value>计算...</value>
+    <value>计算中...</value>
   </data>
   <data name="cancel" xml:space="preserve">
     <value>取消</value>
@@ -361,7 +361,7 @@
     <value>取消波形创建</value>
   </data>
   <data name="Capture_time" xml:space="preserve">
-    <value>捕捉时间</value>
+    <value>捕获时间</value>
   </data>
   <data name="capture_time2" xml:space="preserve">
     <value>项目的捕获时间</value>
@@ -379,7 +379,7 @@
     <value>复选框</value>
   </data>
   <data name="checking_y" xml:space="preserve">
-    <value>检查yt-dll最新版本...</value>
+    <value>检查yt-dl最新版本...</value>
   </data>
   <data name="Check_for_updates" xml:space="preserve">
     <value>检查更新</value>
@@ -397,7 +397,7 @@
     <value>检查URL是否已准备好捕获</value>
   </data>
   <data name="check_ytdl" xml:space="preserve">
-    <value>检查yt-dll版本...</value>
+    <value>检查yt-dl版本...</value>
   </data>
   <data name="clear_list" xml:space="preserve">
     <value>清除列表</value>
@@ -412,7 +412,7 @@
     <value>关闭</value>
   </data>
   <data name="close_win" xml:space="preserve">
-    <value>关闭窗口关闭</value>
+    <value>关闭窗口</value>
   </data>
   <data name="cl_tracks" xml:space="preserve">
     <value>清除轨道列表</value>
@@ -433,7 +433,7 @@
     <value>连接完成但有错误</value>
   </data>
   <data name="concat_failed" xml:space="preserve">
-    <value>串联失败。检查下面的输出错误，文件名中的某些字符也会导致错误。</value>
+    <value>连接失败。检查下面的输出错误，文件名中的某些字符也会导致错误。</value>
   </data>
   <data name="concat_fil" xml:space="preserve">
     <value>连接文件</value>
@@ -445,7 +445,7 @@
     <value>	此过滤器允许加入不同质量的视频，它提高了兼容性，但需要重新编码音频和视频。参数字段可以留空。注意：只允许使用视频文件。</value>
   </data>
   <data name="conc_comp" xml:space="preserve">
-    <value>串联完成</value>
+    <value>连接完成</value>
   </data>
   <data name="config_err" xml:space="preserve">
     <value>配置错误，重置配置。</value>
@@ -481,7 +481,7 @@
     <value>你要继续吗？</value>
   </data>
   <data name="cont_any" xml:space="preserve">
-    <value>您还想继续吗？</value>
+    <value>您仍然想继续吗？</value>
   </data>
   <data name="conv_utf8" xml:space="preserve">
     <value>转换为UTF-8</value>
@@ -586,7 +586,7 @@
     <value>持续时间</value>
   </data>
   <data name="dur_comp" xml:space="preserve">
-    <value>文件列表时长解析需要完成</value>
+    <value>文件列表时长需要被解析</value>
   </data>
   <data name="ebc_fail_ff" xml:space="preserve">
     <value>所选项目的编码测试失败。检查 FFmpeg 输出以获取更多信息。您可能需要设置不同的捕获参数。</value>
@@ -598,7 +598,7 @@
     <value>编辑预设列表</value>
   </data>
   <data name="elapsed" xml:space="preserve">
-    <value>时间过去了:</value>
+    <value>消耗时间:</value>
   </data>
   <data name="Encoding" xml:space="preserve">
     <value>编码</value>
@@ -685,13 +685,13 @@
     <value>互联网连接错误</value>
   </data>
   <data name="err_concat" xml:space="preserve">
-    <value>创建中间串联文件时出错</value>
+    <value>创建中间链接文件时出错</value>
   </data>
   <data name="err_connect" xml:space="preserve">
     <value>连接到 Internet 时出错。还是要继续？</value>
   </data>
   <data name="err_dec" xml:space="preserve">
-    <value>未知错误刷新解码器列表</value>
+    <value>未知错误，刷新解码器列表</value>
   </data>
   <data name="err_del_log" xml:space="preserve">
     <value>尝试删除最后一个日志文件时出错</value>
@@ -706,7 +706,7 @@
     <value>从视频轨道中提取图像时出错。</value>
   </data>
   <data name="err_int_yt" xml:space="preserve">
-    <value>yt-dll内部错误</value>
+    <value>yt-dl内部错误</value>
   </data>
   <data name="err_kf" xml:space="preserve">
     <value>获取关键帧时出错，输入格式无效。</value>
@@ -736,13 +736,13 @@
     <value>播放文件时出错，仅支持PCM波形文件</value>
   </data>
   <data name="err_yt_2" xml:space="preserve">
-    <value>尝试更新yt-dll时发生错误:</value>
+    <value>尝试更新yt-dl时发生错误:</value>
   </data>
   <data name="err_yt_u" xml:space="preserve">
-    <value>检查yt-dll更新时出错</value>
+    <value>检查yt-dl更新时出错</value>
   </data>
   <data name="err_yt_up" xml:space="preserve">
-    <value>尝试更新yt-dll时发生错误。您可以再试一次，或者下载并复制文件到应用程序路径。</value>
+    <value>尝试更新yt-dl时发生错误。您可以再试一次，或者下载并复制文件到应用程序路径。</value>
   </data>
   <data name="est_size" xml:space="preserve">
     <value>预估大小:</value>
@@ -757,10 +757,10 @@
     <value>找不到可执行文件</value>
   </data>
   <data name="exit" xml:space="preserve">
-    <value>编辑</value>
+    <value>退出</value>
   </data>
   <data name="extension" xml:space="preserve">
-    <value>延期</value>
+    <value>扩展名</value>
   </data>
   <data name="fade1" xml:space="preserve">
     <value>淡入时间比文件持续时间长</value>
@@ -1081,7 +1081,7 @@
     <value>找不到有效的YouTube网址</value>
   </data>
   <data name="items_alr" xml:space="preserve">
-    <value>已在作业列表中处理的项目</value>
+    <value>已在任务列表中处理的项目</value>
   </data>
   <data name="items_q" xml:space="preserve">
     <value>没有带状态的项目</value>
@@ -1090,13 +1090,13 @@
     <value>项目语言</value>
   </data>
   <data name="jobs" xml:space="preserve">
-    <value>工作:</value>
+    <value>任务:</value>
   </data>
   <data name="jobs_blank" xml:space="preserve">
-    <value>工作列表为空</value>
+    <value>任务列表为空</value>
   </data>
   <data name="jobs_reset" xml:space="preserve">
-    <value>工作列表已处理，请使用右上角的按钮重置状态以重新开始</value>
+    <value>任务列表已处理，请使用右上角的按钮重置状态以重新开始</value>
   </data>
   <data name="keep" xml:space="preserve">
     <value>保留</value>
@@ -1144,7 +1144,7 @@
     <value>文件列表为空</value>
   </data>
   <data name="live_end" xml:space="preserve">
-    <value>现场录音会议结束</value>
+    <value>在线录制结束</value>
   </data>
   <data name="loading1" xml:space="preserve">
     <value>加载中...</value>
@@ -1159,7 +1159,7 @@
     <value>无法保存日志记录选项，将为此会话启用日志记录。</value>
   </data>
   <data name="log_req" xml:space="preserve">
-    <value>需要记录来存储完全静音检测信息，您要启用它吗？</value>
+    <value>需要启用日志来完全存储静音检测信息，您要启用它吗？</value>
   </data>
   <data name="log_siz" xml:space="preserve">
     <value>日志大小为</value>
@@ -1180,7 +1180,7 @@
     <value>要解析的文件很多</value>
   </data>
   <data name="man_path" xml:space="preserve">
-    <value>手动输出路径选择</value>
+    <value>手动选择输出路径</value>
   </data>
   <data name="max_links" xml:space="preserve">
     <value>下载列表最多支持2000个链接。</value>
@@ -1216,7 +1216,7 @@
     <value>文件列表包含Youtube和其他类型链接的混合。请仅选择包含YouTube链接或其他类型URL的列表。</value>
   </data>
   <data name="move_down" xml:space="preserve">
-    <value>向下移动项目</value>
+    <value>下移项目</value>
   </data>
   <data name="Move_item_to_bottom" xml:space="preserve">
     <value>将项目移至底部</value>
@@ -1303,7 +1303,7 @@
     <value>名称</value>
   </data>
   <data name="names_overw" xml:space="preserve">
-    <value>文件具有相同的文件输出名称，并且会相互覆盖:</value>
+    <value>文件具有相同的文件输出名称，会相互覆盖:</value>
   </data>
   <data name="name_5" xml:space="preserve">
     <value>请选择至少5个字符的预设名称。</value>
@@ -1357,7 +1357,7 @@
     <value>不包括</value>
   </data>
   <data name="not_queued" xml:space="preserve">
-    <value>o处于排队状态的项目</value>
+    <value>无处于排队状态的项目</value>
   </data>
   <data name="not_recycled" xml:space="preserve">
     <value>不回收</value>
@@ -1372,7 +1372,7 @@
     <value>未重命名</value>
   </data>
   <data name="not_replaced" xml:space="preserve">
-    <value>没有_替换</value>
+    <value>未替换</value>
   </data>
   <data name="not_requ" xml:space="preserve">
     <value>不是必需的</value>
@@ -1624,7 +1624,7 @@
     <value>在此位置找到了另一个预设文件。你想覆盖它吗？</value>
   </data>
   <data name="Parameter" xml:space="preserve">
-    <value>范围</value>
+    <value>参数</value>
   </data>
   <data name="parameters" xml:space="preserve">
     <value>参数:</value>
@@ -1987,7 +1987,7 @@
     <value>在每个文件上运行</value>
   </data>
   <data name="r_fil" xml:space="preserve">
-    <value>重做应用滤镜</value>
+    <value>重做已应用滤镜</value>
   </data>
   <data name="same_name" xml:space="preserve">
     <value>找到具有不同扩展名的相同文件名</value>
@@ -2098,7 +2098,7 @@
     <value>静音检测完成</value>
   </data>
   <data name="silence_detect" xml:space="preserve">
-    <value>在一个或多个文件中发现沉默。请检查日志文件以获取更多详细信息。</value>
+    <value>在一个或多个文件中发现静音。请检查日志文件以获取更多详细信息。</value>
   </data>
   <data name="silence_found" xml:space="preserve">
     <value>发现静音</value>
@@ -2260,7 +2260,7 @@
     <value>时间格式错误。请使用00:00:00.000的时间格式。</value>
   </data>
   <data name="time_elapsed" xml:space="preserve">
-    <value>时间过去了:</value>
+    <value>消耗时间:</value>
   </data>
   <data name="time_err" xml:space="preserve">
     <value>时间格式错误</value>
@@ -2356,13 +2356,13 @@
     <value>请至少添加到要连接的文件</value>
   </data>
   <data name="two_nvenc" xml:space="preserve">
-    <value>通过使用，NVENC 中已经更有效地实现了两遍视频编码</value>
+    <value>通过使用，NVENC 中已经更有效地实现了2 pass编码</value>
   </data>
   <data name="Two_pass_encoding_wizard" xml:space="preserve">
     <value>2 pass编码向导</value>
   </data>
   <data name="two_pr" xml:space="preserve">
-    <value>请至少选择两个预设以继。</value>
+    <value>请至少选择两个预设以继续。</value>
   </data>
   <data name="two_str_c" xml:space="preserve">
     <value>2 pass编码不能与视频流复制一起使用</value>
@@ -2371,16 +2371,16 @@
     <value>2 pass支持:</value>
   </data>
   <data name="two_sup1" xml:space="preserve">
-    <value>- 对于 Intel Quicksync（h264_qsv 和 hevc_qsv），两个通道不起作用。</value>
+    <value>- 对于 Intel Quicksync（h264_qsv 和 hevc_qsv），2 pass不起作用。</value>
   </data>
   <data name="two_sup2" xml:space="preserve">
-    <value>- 对于 Nvidia NVENC，已经通过使用 -preset slow 实现了两遍。</value>
+    <value>- 对于 Nvidia NVENC，已经通过使用 -preset slow 实现了2 pass。</value>
   </data>
   <data name="two_sup3" xml:space="preserve">
     <value>- 请记住在预设中包含视频比特率 (-b:v).</value>
   </data>
   <data name="two_sup4" xml:space="preserve">
-    <value>- 在第一次传递参数时，不包括映射或其他编解码器信息 (-map, -c:a, -c:s).</value>
+    <value>- 在设置1 pass参数时，不能设置映射或其他编解码器信息 (-map, -c:a, -c:s).</value>
   </data>
   <data name="two_sup5" xml:space="preserve">
     <value>- 使用 libvpx-vp9，如果您获得低比特率，由于比特率解释错误，您可能需要将目标比特率乘以 8。例如获得1M目标码率:</value>
@@ -2389,7 +2389,7 @@
     <value>	需要目标比特率（-b:v 或 -vb）。</value>
   </data>
   <data name="two_tip1" xml:space="preserve">
-    <value>- 对于Nvidia h264_nvenc或hevc_nvenc，您不需要使用此向导。只需使用 -preset slow 即可将两遍包含在编解码器中。</value>
+    <value>- 对于Nvidia h264_nvenc或hevc_nvenc，您不需要使用此向导。只需使用 -preset slow 即可将2 pass包含在编解码器中。</value>
   </data>
   <data name="two_tip10" xml:space="preserve">
     <value>- 在第一遍和第二遍使用相同的视频编解码器调整参数（-preset:v、-profile:v -tune:v）。</value>
@@ -2597,16 +2597,16 @@
     <value>粘贴的链接可能是YouTube频道，请改用下载频道/播放列表按钮。</value>
   </data>
   <data name="yt_not" xml:space="preserve">
-    <value>未找到yt-dll</value>
+    <value>未找到yt-dl</value>
   </data>
   <data name="yt_params" xml:space="preserve">
-    <value>yt-dll参数</value>
+    <value>yt-dl参数</value>
   </data>
   <data name="yt_pl" xml:space="preserve">
     <value>YouTube播放列表</value>
   </data>
   <data name="yt_req_err" xml:space="preserve">
-    <value>安装yt-dll要求时出错</value>
+    <value>安装yt-dl要求时出错</value>
   </data>
   <data name="yt_str_av" xml:space="preserve">
     <value>YOUTUBE可用的流</value>
