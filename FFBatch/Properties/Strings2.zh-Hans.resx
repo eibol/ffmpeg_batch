@@ -219,8 +219,20 @@
   <data name="contin" xml:space="preserve">
     <value>继续？</value>
   </data>
+  <data name="crop1" xml:space="preserve">
+    <value>检测/裁剪视频黑条</value>
+  </data>
+  <data name="crop2" xml:space="preserve">
+    <value>在参数字段中找到了裁剪过滤器。 请确保删除任何以前的 -vf 裁剪实例。</value>
+  </data>
+  <data name="crop3" xml:space="preserve">
+    <value>添加了以下参数：</value>
+  </data>
   <data name="custom" xml:space="preserve">
     <value>惯例</value>
+  </data>
+  <data name="delay_act" xml:space="preserve">
+    <value>延迟</value>
   </data>
   <data name="deleting_f" xml:space="preserve">
     <value>正在删除...</value>
@@ -285,6 +297,9 @@
   <data name="err_clipb" xml:space="preserve">
     <value>复制到剪贴板时出错</value>
   </data>
+  <data name="err_crop" xml:space="preserve">
+    <value>创建裁剪预览时出错。 请检查大小/坐标参数不超过视频边界。</value>
+  </data>
   <data name="err_pl_vlc" xml:space="preserve">
     <value>尝试使用VLC播放URL时出错:</value>
   </data>
@@ -312,6 +327,9 @@
   <data name="exc_dur" xml:space="preserve">
     <value>超过源持续时间</value>
   </data>
+  <data name="exit_code" xml:space="preserve">
+    <value>退出代码</value>
+  </data>
   <data name="ext_com_err" xml:space="preserve">
     <value>外部命令返回错误</value>
   </data>
@@ -338,6 +356,9 @@
   </data>
   <data name="img_copied" xml:space="preserve">
     <value>图像已复制到剪贴板。</value>
+  </data>
+  <data name="img_empty" xml:space="preserve">
+    <value>未选择图像</value>
   </data>
   <data name="img_to_v" xml:space="preserve">
     <value>图像转视频向导</value>
@@ -708,6 +729,12 @@
   <data name="version" xml:space="preserve">
     <value>版本</value>
   </data>
+  <data name="vf_crop_multi" xml:space="preserve">
+    <value>在参数字段中发现了另一个视频过滤器实例。 您可以使用多个过滤器，在括号之间并用逗号分隔。 请相应地修改 -vf 过滤器。</value>
+  </data>
+  <data name="vf_crop_multi2" xml:space="preserve">
+    <value>例如： -vf "crop=50:50:0:10, yadif, format=gray"</value>
+  </data>
   <data name="vids_dest" xml:space="preserve">
     <value>目标文件夹中的视频。</value>
   </data>
@@ -726,8 +753,20 @@
   <data name="warning_not_rep" xml:space="preserve">
     <value>没有被替换</value>
   </data>
+  <data name="warn_colon" xml:space="preserve">
+    <value>文件名或路径包含不支持的连接字符：' （单引号）。</value>
+  </data>
+  <data name="warn_colon2" xml:space="preserve">
+    <value>请在继续之前相应地重命名文件或路径。</value>
+  </data>
   <data name="warn_down" xml:space="preserve">
     <value>队列下载期间出现警告消息:</value>
+  </data>
+  <data name="warn_run_enc" xml:space="preserve">
+    <value>设置“不要警告已编码的文件”和“跳过编码的文件”也已启用。</value>
+  </data>
+  <data name="warn_sort" xml:space="preserve">
+    <value>注意：不要在多文件编码过程中添加新文件或文件夹，因为如果启用此设置，其中一些可能会保持排队状态并且不会被处理。</value>
   </data>
   <data name="warn_sp" xml:space="preserve">
     <value>目标驱动器上的可用空间小于 500 MB，应用程序可能会在编码过程中崩溃。 您要中止当前操作吗？</value>

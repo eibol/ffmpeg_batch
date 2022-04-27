@@ -756,4 +756,46 @@
   <data name="del_overw2" xml:space="preserve">
     <value>In order to allow enabling file overwriting and delete source at simultaneously, delete source settings are now set to: Send to recycle bin and Delete one by one.</value>
   </data>
+  <data name="exit_code" xml:space="preserve">
+    <value>Exit code</value>
+  </data>
+  <data name="warn_sort" xml:space="preserve">
+    <value>NOTE: Do not add new files or folders during the multi-file encoding, as some of them may remain queued and not being processed if this setting is enabled.</value>
+  </data>
+  <data name="warn_run_enc" xml:space="preserve">
+    <value>Settings 'Do not warn about already encoded files' and 'Skip encoded files' have been enabled too.</value>
+  </data>
+  <data name="delay_act" xml:space="preserve">
+    <value>Delay activated</value>
+  </data>
+  <data name="img_empty" xml:space="preserve">
+    <value>Image field is empty.</value>
+  </data>
+  <data name="warn_colon" xml:space="preserve">
+    <value>Filename or path contains an unsupported character for concatenation: ' (single quote).</value>
+  </data>
+  <data name="warn_colon2" xml:space="preserve">
+    <value>Please rename file(s) or path(s) accordingly before proceeding.</value>
+  </data>
+  <data name="err_crop" xml:space="preserve">
+    <value>An error occurred creating crop preview. Please check size/coordinate parameters do not exceed video boundaries.</value>
+  </data>
+  <data name="crop1" xml:space="preserve">
+    <value>Detect/Crop video black bars</value>
+  </data>
+  <data name="crop2" xml:space="preserve">
+    <value>A crop filter was found in parameters field. Please ensure to remove any previous -vf crop instance.</value>
+  </data>
+  <data name="crop3" xml:space="preserve">
+    <value>The following parameter was added:</value>
+  </data>
+  <data name="err_size" xml:space="preserve">
+    <value>Error obtaining file resolution. Cropping preview cannot be displayed.</value>
+  </data>
+  <data name="vf_crop_multi" xml:space="preserve">
+    <value>Another video filter instance was found in parameters field. You can use multiple filters, between brackets and separated by commas. Please modify -vf filter accordingly.</value>
+  </data>
+  <data name="vf_crop_multi2" xml:space="preserve">
+    <value>For example: -vf "crop=50:50:0:10, yadif, format=gray"</value>
+  </data>
 </root>

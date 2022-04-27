@@ -685,7 +685,7 @@
     <value>Fine</value>
   </data>
   <data name="next" xml:space="preserve">
-    <value>Prossimo</value>
+    <value>Avanti</value>
   </data>
   <data name="Paste_any_URL" xml:space="preserve">
     <value>Incolla il link</value>
@@ -755,5 +755,44 @@
   </data>
   <data name="del_overw2" xml:space="preserve">
     <value>Per consentire l'abilitazione simultanea della sovrascrittura dei file e dell'eliminazione dell'origine, le impostazioni dell'eliminazione dell'origine sono ora impostate su: Invia al cestino ed Elimina uno per uno.</value>
+  </data>
+  <data name="exit_code" xml:space="preserve">
+    <value>Codice di uscita</value>
+  </data>
+  <data name="warn_sort" xml:space="preserve">
+    <value>NOTA: non aggiungere nuovi file o cartelle durante la codifica di più file, poiché alcuni di essi potrebbero rimanere in coda e non essere elaborati se questa impostazione è abilitata.</value>
+  </data>
+  <data name="warn_run_enc" xml:space="preserve">
+    <value>Anche le impostazioni "Non avvisare per file già codificati" e "Salta file codificati" sono state abilitate.</value>
+  </data>
+  <data name="delay_act" xml:space="preserve">
+    <value>Ritardo</value>
+  </data>
+  <data name="img_empty" xml:space="preserve">
+    <value>Nessuna immagine è stata selezionata</value>
+  </data>
+  <data name="warn_colon" xml:space="preserve">
+    <value>Il nome del file o il percorso contiene un carattere non supportato per la concatenazione: ' (virgolette singole).</value>
+  </data>
+  <data name="warn_colon2" xml:space="preserve">
+    <value>Rinomina i file o i percorsi senza quel carattere prima di procedere.</value>
+  </data>
+  <data name="err_crop" xml:space="preserve">
+    <value>Si è verificato un errore durante la creazione dell'anteprima del ritaglio. Si prega di verificare che i parametri delle dimensioni/coordinate non superino i limiti del video.</value>
+  </data>
+  <data name="crop1" xml:space="preserve">
+    <value>Rileva/ritaglia le barre nere del video</value>
+  </data>
+  <data name="crop2" xml:space="preserve">
+    <value>È stato trovato un filtro di ritaglio nel campo dei parametri. Assicurati di rimuovere qualsiasi istanza di ritaglio -vf precedente.</value>
+  </data>
+  <data name="crop3" xml:space="preserve">
+    <value>È stato aggiunto il seguente parametro:</value>
+  </data>
+  <data name="vf_crop_multi" xml:space="preserve">
+    <value>Un'altra istanza di filtro video è stata trovata nel campo dei parametri. Puoi utilizzare più filtri, tra parentesi e separati da virgole. Si prega di modificare il filtro -vf di conseguenza.</value>
+  </data>
+  <data name="vf_crop_multi2" xml:space="preserve">
+    <value>Per esempio: -vf "crop=50:50:0:10, yadif, format=gray"</value>
   </data>
 </root>

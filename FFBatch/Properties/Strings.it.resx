@@ -298,7 +298,7 @@
     <value>per evitare possibile sovrascritture.</value>
   </data>
   <data name="AV_split_wizard" xml:space="preserve">
-    <value>A/V_split_wizard</value>
+    <value>Procedura guidata divisione file A/V</value>
   </data>
   <data name="backup_suc" xml:space="preserve">
     <value>Caricamento backup completato.</value>
@@ -997,7 +997,7 @@
     <value>Aiuto</value>
   </data>
   <data name="Help_forum" xml:space="preserve">
-    <value>Forum assistenza</value>
+    <value>Forum supporto</value>
   </data>
   <data name="help_not" xml:space="preserve">
     <value>File non trovato. Potrebbe essere necessario reinstallare l'applicazione.</value>
@@ -1024,7 +1024,7 @@
     <value>Sono state trovate delle immagini nell'elenco dei file. Vuoi unire i file immagine al video?</value>
   </data>
   <data name="Images_extraction_wizard" xml:space="preserve">
-    <value>Proceuda guidata estrazione immagini</value>
+    <value>Procedura guidata estrazione immagini</value>
   </data>
   <data name="image_audio" xml:space="preserve">
     <value>Immagine per audio</value>
@@ -2570,7 +2570,7 @@
     <value>(Larghezza ed altezza)</value>
   </data>
   <data name="wiz_ready" xml:space="preserve">
-    <value>La procedura guidata è pronta. Aggiungi i file alla schermata principale e seleziona 'Avvia codifica sequenziale o multi-file'.</value>
+    <value>Procedura guidata completata. Aggiungi i file a schermata principale e seleziona 'Avvia codifica'.</value>
   </data>
   <data name="wiz_ready2" xml:space="preserve">
     <value>La procedura guidata è pronta per iniziare a codificare i file usando il </value>

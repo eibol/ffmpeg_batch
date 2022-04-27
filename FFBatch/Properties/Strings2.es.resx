@@ -744,4 +744,40 @@
   <data name="del_overw2" xml:space="preserve">
     <value>Para habilitar las a la vez las opciones de sobrescribir y eliminar origen, las opciones de borrado se han establecido en: Enviar a la papelera y Eliminar de uno en uno.</value>
   </data>
+  <data name="warn_sort" xml:space="preserve">
+    <value>NOTA: Al habilitar esta opción, no añada nuevos ficheros o carpetas durante la codificación multi-fichero, ya que dependiendo del orden en que se agreguen, podrían quedarse en cola sin procesar.</value>
+  </data>
+  <data name="warn_run_enc" xml:space="preserve">
+    <value>Los ajustes 'No avisar de ficheros ya codificados' e 'Ignorar ficheros codificados' han sido también habilitados.</value>
+  </data>
+  <data name="delay_act" xml:space="preserve">
+    <value>Retardo</value>
+  </data>
+  <data name="img_empty" xml:space="preserve">
+    <value>No se ha seleccionado una imagen.</value>
+  </data>
+  <data name="warn_colon" xml:space="preserve">
+    <value>El nombre de la la ruta o fichero contiene un carácter no admitido para concatenación: ' (comilla simple).</value>
+  </data>
+  <data name="warn_colon2" xml:space="preserve">
+    <value>Por favor, renombre los ficheros o rutas sin dicho caracter antes de concatenar.</value>
+  </data>
+  <data name="err_crop" xml:space="preserve">
+    <value>Se produjo un error al previsualizar el recorte. Revise que los parámetros de tamaño y coordenadas no exceden los límites del vídeo seleccionado.</value>
+  </data>
+  <data name="crop1" xml:space="preserve">
+    <value>Detectar/recortar barras negras de video</value>
+  </data>
+  <data name="crop2" xml:space="preserve">
+    <value>Se encontró un filtro de recorte en el campo de parámetros. Por favor, asegúrese de borrar cualquier instancia previa del filtro -vf crop.</value>
+  </data>
+  <data name="crop3" xml:space="preserve">
+    <value>El siguiente parámetro fue añadido:</value>
+  </data>
+  <data name="vf_crop_multi" xml:space="preserve">
+    <value>Se encontró otra instancia de filtro de vídeo en el campo de parámetros.. Puede usar múltiples filtros, entre comillas y separados por comas. Por favor modifique el filtro -vf.</value>
+  </data>
+  <data name="vf_crop_multi2" xml:space="preserve">
+    <value>Por ejemplo: -vf "crop=50:50:0:10, yadif, format=gray"</value>
+  </data>
 </root>

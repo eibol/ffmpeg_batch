@@ -376,6 +376,33 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Detect/Crop video black bars.
+        /// </summary>
+        internal static string crop1 {
+            get {
+                return ResourceManager.GetString("crop1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a A crop filter was found in parameters field. Please ensure to remove any previous -vf crop instance..
+        /// </summary>
+        internal static string crop2 {
+            get {
+                return ResourceManager.GetString("crop2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a The following parameter was added:.
+        /// </summary>
+        internal static string crop3 {
+            get {
+                return ResourceManager.GetString("crop3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Custom.
         /// </summary>
         internal static string custom {
@@ -390,6 +417,15 @@ namespace FFBatch.Properties {
         internal static string del_overw2 {
             get {
                 return ResourceManager.GetString("del_overw2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Delay activated.
+        /// </summary>
+        internal static string delay_act {
+            get {
+                return ResourceManager.GetString("delay_act", resourceCulture);
             }
         }
         
@@ -565,6 +601,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a An error occurred creating crop preview. Please check size/coordinate parameters do not exceed video boundaries..
+        /// </summary>
+        internal static string err_crop {
+            get {
+                return ResourceManager.GetString("err_crop", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Error trying to play URL with VLC:.
         /// </summary>
         internal static string err_pl_vlc {
@@ -588,6 +633,15 @@ namespace FFBatch.Properties {
         internal static string err_save_track {
             get {
                 return ResourceManager.GetString("err_save_track", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error obtaining file resolution. Cropping preview cannot be displayed..
+        /// </summary>
+        internal static string err_size {
+            get {
+                return ResourceManager.GetString("err_size", resourceCulture);
             }
         }
         
@@ -651,6 +705,15 @@ namespace FFBatch.Properties {
         internal static string excl_added {
             get {
                 return ResourceManager.GetString("excl_added", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Exit code.
+        /// </summary>
+        internal static string exit_code {
+            get {
+                return ResourceManager.GetString("exit_code", resourceCulture);
             }
         }
         
@@ -723,6 +786,15 @@ namespace FFBatch.Properties {
         internal static string img_copied {
             get {
                 return ResourceManager.GetString("img_copied", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Image field is empty..
+        /// </summary>
+        internal static string img_empty {
+            get {
+                return ResourceManager.GetString("img_empty", resourceCulture);
             }
         }
         
@@ -1852,6 +1924,24 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Another video filter instance was found in parameters field. You can use multiple filters, between brackets and separated by commas. Please modify -vf filter accordingly..
+        /// </summary>
+        internal static string vf_crop_multi {
+            get {
+                return ResourceManager.GetString("vf_crop_multi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a For example: -vf &quot;crop=50:50:0:10, yadif, format=gray&quot;.
+        /// </summary>
+        internal static string vf_crop_multi2 {
+            get {
+                return ResourceManager.GetString("vf_crop_multi2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Video.
         /// </summary>
         internal static string video {
@@ -1888,11 +1978,47 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Filename or path contains an unsupported character for concatenation: &apos; (single quote)..
+        /// </summary>
+        internal static string warn_colon {
+            get {
+                return ResourceManager.GetString("warn_colon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Please rename file(s) or path(s) accordingly before proceeding..
+        /// </summary>
+        internal static string warn_colon2 {
+            get {
+                return ResourceManager.GetString("warn_colon2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a There were warning messages during queue download:.
         /// </summary>
         internal static string warn_down {
             get {
                 return ResourceManager.GetString("warn_down", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Settings &apos;Do not warn about already encoded files&apos; and &apos;Skip encoded files&apos; have been enabled too..
+        /// </summary>
+        internal static string warn_run_enc {
+            get {
+                return ResourceManager.GetString("warn_run_enc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a NOTE: Do not add new files or folders during the multi-file encoding, as some of them may remain queued and not being processed if this setting is enabled..
+        /// </summary>
+        internal static string warn_sort {
+            get {
+                return ResourceManager.GetString("warn_sort", resourceCulture);
             }
         }
         

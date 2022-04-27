@@ -747,4 +747,43 @@
   <data name="del_overw2" xml:space="preserve">
     <value>Para permitir a ativação da substituição de arquivo e a exclusão da origem simultaneamente, as configurações de exclusão da origem agora estão definidas como: Enviar para a lixeira e Excluir um por um.</value>
   </data>
+  <data name="exit_code" xml:space="preserve">
+    <value>Código de saída</value>
+  </data>
+  <data name="warn_sort" xml:space="preserve">
+    <value>NOTA: Não adicione novos arquivos ou pastas durante a codificação de vários arquivos, pois alguns deles podem permanecer na fila e não serem processados se essa configuração estiver ativada.</value>
+  </data>
+  <data name="warn_run_enc" xml:space="preserve">
+    <value>As configurações 'Não avisar sobre arquivos já codificados' e 'Ignorar arquivos codificados' também foram habilitadas.</value>
+  </data>
+  <data name="delay_act" xml:space="preserve">
+    <value>Atraso</value>
+  </data>
+  <data name="img_empty" xml:space="preserve">
+    <value>Nenhuma imagem foi selecionada</value>
+  </data>
+  <data name="warn_colon" xml:space="preserve">
+    <value>O nome do arquivo ou caminho contém um caractere não suportado para concatenação: ' (aspas simples).</value>
+  </data>
+  <data name="warn_colon2" xml:space="preserve">
+    <value>Renomeie o(s) arquivo(s) ou caminho(s) sem esse caractere antes de continuar.</value>
+  </data>
+  <data name="err_crop" xml:space="preserve">
+    <value>Ocorreu um erro ao criar a visualização do recorte. Verifique se os parâmetros de tamanho/coordenada não excedem os limites do vídeo.</value>
+  </data>
+  <data name="crop1" xml:space="preserve">
+    <value>Detectar/cortar barras pretas de vídeo</value>
+  </data>
+  <data name="crop2" xml:space="preserve">
+    <value>Um filtro de corte foi encontrado no campo de parâmetros. Certifique-se de remover qualquer instância de -vf crop anterior.</value>
+  </data>
+  <data name="crop3" xml:space="preserve">
+    <value>O seguinte parâmetro foi adicionado:</value>
+  </data>
+  <data name="vf_crop_multi" xml:space="preserve">
+    <value>Outra instância de filtro de vídeo foi encontrada no campo de parâmetros. Você pode usar vários filtros, entre colchetes e separados por vírgulas. Por favor, modifique o filtro -vf de acordo.</value>
+  </data>
+  <data name="vf_crop_multi2" xml:space="preserve">
+    <value>Por exemplo: -vf "crop=50:50:0:10, yadif, format=gray"</value>
+  </data>
 </root>
