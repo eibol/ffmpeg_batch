@@ -52,5 +52,10 @@ namespace FFBatch
             }
             //End startup delay
         }
+
+        private void pic1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

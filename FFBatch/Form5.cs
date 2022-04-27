@@ -705,6 +705,67 @@ namespace FFBatch
             }
         }
 
+        private void get_fullscr()
+        {
+            DateTime time2;
+            Double seconds = 0;
+            if (!DateTime.TryParse(lbl_fr_time.Text, out time2))
+            {
+                return;
+            }
+            seconds = TimeSpan.Parse(lbl_fr_time.Text).TotalMilliseconds;
+
+            TimeSpan t = TimeSpan.FromMilliseconds(seconds);
+            String dur = string.Format("{0:D2}:{1:D2}:{2:D2}.{3:D3}",
+                         (int)t.TotalHours,
+                         t.Minutes,
+                         t.Seconds,
+                         t.Milliseconds);
+            String time_frame = dur;
+
+            Process proc_img = new System.Diagnostics.Process();
+            String ffm_img = Path.Combine(Application.StartupPath, "ffmpeg.exe");
+
+            String file_img = Path.GetFullPath(lv1_item);
+            String fullPath_img = file_img;
+            String AppParam_img = "";
+
+            String rel_path = Path.GetDirectoryName(file_img).Replace(":", "_").Replace("\\", "_") + Path.GetExtension(file_img).Replace(".", "_");
+            String target_img = Path.GetTempPath() + "FFBatch_Test" + "\\" + Path.GetFileNameWithoutExtension(file_img) + "_full_" + rel_path + "_" + current_fr + "." + "jpg";
+
+            String destino = Path.Combine(Path.GetTempPath(), "FFBatch_test");
+
+            AppParam_img = " -ss " + time_frame + " -i " + "" + '\u0022' + file_img + '\u0022' + " -qscale:v 0" + " -f image2 -y " + '\u0022' + target_img + '\u0022';
+
+            proc_img.StartInfo.RedirectStandardOutput = false;
+            proc_img.StartInfo.RedirectStandardError = false;
+            proc_img.StartInfo.UseShellExecute = true;
+            proc_img.StartInfo.CreateNoWindow = false;
+            proc_img.EnableRaisingEvents = false;
+            proc_img.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+
+            proc_img.StartInfo.FileName = ffm_img;
+            proc_img.StartInfo.Arguments = AppParam_img;
+            try
+            {
+                proc_img.Start();
+                proc_img.WaitForExit();
+                if (proc_img.ExitCode == 1 || proc_img.ExitCode == 0)
+                {                   
+                        Bitmap imageToAdd = new Bitmap(target_img);
+                        Clipboard.SetImage(imageToAdd);                                       
+                }
+                else
+                {
+                    MessageBox.Show(Properties.Strings.err_dest, Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.Message, Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
         private void ct_save_Click(object sender, EventArgs e)
         {
             copy_img = false;
@@ -1123,6 +1184,36 @@ namespace FFBatch
         private void btn_k_m1_Click(object sender, EventArgs e)
         {
             if (trackB.Value > trackB.Minimum) trackB.Value--;
+        }    
+
+        private void pic_frame_DoubleClick(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            get_fullscr();
+            Form6 frm6 = new Form6();
+            Rectangle resolution = Screen.PrimaryScreen.Bounds;
+            frm6.Top = 0; frm6.Left = 0;
+            frm6.Width = resolution.Width;
+            frm6.Height = resolution.Height;
+            frm6.pic1.Image = Clipboard.GetImage();
+            frm6.pic1.SizeMode = PictureBoxSizeMode.Zoom;
+            int width = 0;
+            int height = 0;
+            if (resolution.Width >= frm6.pic1.Image.Width)
+            {
+                width = (resolution.Width - frm6.pic1.Image.Width) / 2;
+                frm6.pic1.SizeMode = PictureBoxSizeMode.Normal;
+            }
+            if (resolution.Height >= frm6.pic1.Image.Height)
+            {
+                height = (resolution.Height - frm6.pic1.Image.Height) / 2;
+                frm6.pic1.SizeMode = PictureBoxSizeMode.Normal;
+            }
+            frm6.pic1.Top = height; frm6.pic1.Left = width;
+            frm6.pic1.Width = resolution.Width;
+            frm6.pic1.Height = resolution.Height;
+            this.Cursor = Cursors.Arrow;
+            frm6.ShowDialog();
         }
     }
 }

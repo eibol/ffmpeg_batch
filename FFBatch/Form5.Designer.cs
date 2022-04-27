@@ -51,6 +51,9 @@
             this.btn_min1 = new System.Windows.Forms.Button();
             this.btn_plus1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_kplus1 = new System.Windows.Forms.Button();
+            this.btn_k_m1 = new System.Windows.Forms.Button();
+            this.pic_cut = new System.Windows.Forms.PictureBox();
             this.img_prog = new System.Windows.Forms.PictureBox();
             this.lbl_lapse = new System.Windows.Forms.Label();
             this.lbl_end = new System.Windows.Forms.Label();
@@ -58,6 +61,7 @@
             this.trim_right = new System.Windows.Forms.Button();
             this.trim_left = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pg1 = new FFBatch.ProgressBarWithText();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.lbl_prog = new System.Windows.Forms.Label();
             this.btn_copy = new System.Windows.Forms.Button();
@@ -70,20 +74,16 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.BG_Keyframes = new System.ComponentModel.BackgroundWorker();
             this.txt_file = new System.Windows.Forms.Label();
-            this.pic_cut = new System.Windows.Forms.PictureBox();
-            this.btn_k_m1 = new System.Windows.Forms.Button();
-            this.btn_kplus1 = new System.Windows.Forms.Button();
             this.glassExtenderProvider1 = new Vanara.Interop.DesktopWindowManager.GlassExtenderProvider();
-            this.pg1 = new FFBatch.ProgressBarWithText();
             ((System.ComponentModel.ISupportInitialize)(this.dg_streams)).BeginInit();
             this.menu_grid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_frame)).BeginInit();
             this.menu_Img.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_cut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_prog)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_cut)).BeginInit();
             this.SuspendLayout();
             // 
             // dg_streams
@@ -164,6 +164,7 @@
             resources.ApplyResources(this.pic_frame, "pic_frame");
             this.pic_frame.Name = "pic_frame";
             this.pic_frame.TabStop = false;
+            this.pic_frame.DoubleClick += new System.EventHandler(this.pic_frame_DoubleClick);
             // 
             // menu_Img
             // 
@@ -261,6 +262,26 @@
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
+            // btn_kplus1
+            // 
+            resources.ApplyResources(this.btn_kplus1, "btn_kplus1");
+            this.btn_kplus1.Name = "btn_kplus1";
+            this.btn_kplus1.UseVisualStyleBackColor = true;
+            this.btn_kplus1.Click += new System.EventHandler(this.btn_kplus1_Click);
+            // 
+            // btn_k_m1
+            // 
+            resources.ApplyResources(this.btn_k_m1, "btn_k_m1");
+            this.btn_k_m1.Name = "btn_k_m1";
+            this.btn_k_m1.UseVisualStyleBackColor = true;
+            this.btn_k_m1.Click += new System.EventHandler(this.btn_k_m1_Click);
+            // 
+            // pic_cut
+            // 
+            resources.ApplyResources(this.pic_cut, "pic_cut");
+            this.pic_cut.Name = "pic_cut";
+            this.pic_cut.TabStop = false;
+            // 
             // img_prog
             // 
             resources.ApplyResources(this.img_prog, "img_prog");
@@ -304,6 +325,11 @@
             this.panel1.Controls.Add(this.lbl_prog);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
+            // 
+            // pg1
+            // 
+            resources.ApplyResources(this.pg1, "pg1");
+            this.pg1.Name = "pg1";
             // 
             // btn_cancel
             // 
@@ -385,31 +411,6 @@
             resources.ApplyResources(this.txt_file, "txt_file");
             this.txt_file.Name = "txt_file";
             // 
-            // pic_cut
-            // 
-            resources.ApplyResources(this.pic_cut, "pic_cut");
-            this.pic_cut.Name = "pic_cut";
-            this.pic_cut.TabStop = false;
-            // 
-            // btn_k_m1
-            // 
-            resources.ApplyResources(this.btn_k_m1, "btn_k_m1");
-            this.btn_k_m1.Name = "btn_k_m1";
-            this.btn_k_m1.UseVisualStyleBackColor = true;
-            this.btn_k_m1.Click += new System.EventHandler(this.btn_k_m1_Click);
-            // 
-            // btn_kplus1
-            // 
-            resources.ApplyResources(this.btn_kplus1, "btn_kplus1");
-            this.btn_kplus1.Name = "btn_kplus1";
-            this.btn_kplus1.UseVisualStyleBackColor = true;
-            this.btn_kplus1.Click += new System.EventHandler(this.btn_kplus1_Click);
-            // 
-            // pg1
-            // 
-            resources.ApplyResources(this.pg1, "pg1");
-            this.pg1.Name = "pg1";
-            // 
             // Form5
             // 
             resources.ApplyResources(this, "$this");
@@ -434,10 +435,10 @@
             this.menu_Img.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_cut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_prog)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.trackB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_cut)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
