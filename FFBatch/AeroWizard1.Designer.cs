@@ -97,6 +97,7 @@
             this.Combo_encoders = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.wz1_1 = new AeroWizard.WizardPage();
+            this.btn_crop_wiz = new System.Windows.Forms.Button();
             this.lbl_a_ratio = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
             this.btn_reset = new System.Windows.Forms.Button();
@@ -126,6 +127,7 @@
             this.n_width = new System.Windows.Forms.NumericUpDown();
             this.label18 = new System.Windows.Forms.Label();
             this.wz2 = new AeroWizard.WizardPage();
+            this.chk_normalize = new System.Windows.Forms.CheckBox();
             this.label31 = new System.Windows.Forms.Label();
             this.n_speed2 = new System.Windows.Forms.NumericUpDown();
             this.label32 = new System.Windows.Forms.Label();
@@ -775,6 +777,7 @@
             // 
             // wz1_1
             // 
+            this.wz1_1.Controls.Add(this.btn_crop_wiz);
             this.wz1_1.Controls.Add(this.lbl_a_ratio);
             this.wz1_1.Controls.Add(this.label47);
             this.wz1_1.Controls.Add(this.btn_reset);
@@ -807,6 +810,14 @@
             resources.ApplyResources(this.wz1_1, "wz1_1");
             this.wz1_1.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz1_1_Commit);
             this.wz1_1.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz1_1_Initialize);
+            // 
+            // btn_crop_wiz
+            // 
+            this.btn_crop_wiz.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveCaption;
+            resources.ApplyResources(this.btn_crop_wiz, "btn_crop_wiz");
+            this.btn_crop_wiz.Name = "btn_crop_wiz";
+            this.btn_crop_wiz.UseVisualStyleBackColor = true;
+            this.btn_crop_wiz.Click += new System.EventHandler(this.btn_crop_wiz_Click);
             // 
             // lbl_a_ratio
             // 
@@ -945,6 +956,7 @@
             0,
             0});
             this.d_crop.Name = "d_crop";
+            this.d_crop.ValueChanged += new System.EventHandler(this.d_crop_ValueChanged);
             // 
             // r_crop
             // 
@@ -955,6 +967,7 @@
             0,
             0});
             this.r_crop.Name = "r_crop";
+            this.r_crop.ValueChanged += new System.EventHandler(this.r_crop_ValueChanged);
             // 
             // l_crop
             // 
@@ -965,6 +978,7 @@
             0,
             0});
             this.l_crop.Name = "l_crop";
+            this.l_crop.ValueChanged += new System.EventHandler(this.l_crop_ValueChanged);
             // 
             // u_crop
             // 
@@ -975,6 +989,7 @@
             0,
             0});
             this.u_crop.Name = "u_crop";
+            this.u_crop.ValueChanged += new System.EventHandler(this.u_crop_ValueChanged);
             // 
             // cb_crop
             // 
@@ -1066,6 +1081,7 @@
             // 
             // wz2
             // 
+            this.wz2.Controls.Add(this.chk_normalize);
             this.wz2.Controls.Add(this.label31);
             this.wz2.Controls.Add(this.n_speed2);
             this.wz2.Controls.Add(this.label32);
@@ -1093,6 +1109,12 @@
             resources.ApplyResources(this.wz2, "wz2");
             this.wz2.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz2_Commit);
             this.wz2.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz2_Initialize);
+            // 
+            // chk_normalize
+            // 
+            resources.ApplyResources(this.chk_normalize, "chk_normalize");
+            this.chk_normalize.Name = "chk_normalize";
+            this.chk_normalize.UseVisualStyleBackColor = true;
             // 
             // label31
             // 
@@ -1738,5 +1760,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lbl_a_ratio;
         private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.CheckBox chk_normalize;
+        private System.Windows.Forms.Button btn_crop_wiz;
     }
 }

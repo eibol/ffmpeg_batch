@@ -654,7 +654,8 @@
     <value>11</value>
   </data>
   <data name="radio_16_9.Text" xml:space="preserve">
-    <value>16:9</value>
+    <value>
+    </value>
   </data>
   <data name="&gt;&gt;radio_16_9.Name" xml:space="preserve">
     <value>radio_16_9</value>

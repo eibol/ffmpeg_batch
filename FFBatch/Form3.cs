@@ -1517,9 +1517,7 @@ namespace FFBatch
 
         private void chk_run_st_CheckedChanged(object sender, EventArgs e)
         {
-            RegistryKey rk = Registry.CurrentUser.OpenSubKey
-        ("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-
+            RegistryKey rk = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
             if (chk_run_st.CheckState == CheckState.Unchecked) rk.DeleteValue("FFBatch", false);            
             else rk.SetValue("FFBatch", Application.ExecutablePath);
         }
@@ -1530,6 +1528,7 @@ namespace FFBatch
             {
                 chk_warn_successful.Checked = true;
                 chk_ignore_enc.Checked = true;
+                chk_non0.Checked = true;
                 MessageBox.Show(Properties.Strings2.warn_run_enc);
             }
         }

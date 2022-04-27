@@ -4236,7 +4236,7 @@ namespace FFBatch
                         }
                         catch (Exception exc)
                         {
-                            MessageBox.Show(FFBatch.Properties.Strings.error2 + " " + exc.Message + " " + FFBatch.Properties.Strings.some_procs, FFBatch.Properties.Strings.abort_inc, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            //MessageBox.Show(FFBatch.Properties.Strings.error2 + " " + exc.Message + " " + FFBatch.Properties.Strings.some_procs, FFBatch.Properties.Strings.abort_inc, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
@@ -4255,7 +4255,7 @@ namespace FFBatch
             }
             else
             {
-                MessageBox.Show(FFBatch.Properties.Strings.not_abort, FFBatch.Properties.Strings.abort_inc, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show(FFBatch.Properties.Strings.not_abort, FFBatch.Properties.Strings.abort_inc, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             cancel_queue = true;
             cancelados_paralelos = true;
@@ -4391,7 +4391,7 @@ namespace FFBatch
         {
             Pg1.Parent = group_prog;
             Pg1.Value = 0;
-            Pg1.Top = 30;
+            Pg1.Top = group_prog.Height / 2 - 8;
             //if (Properties.Settings.Default.app_lang == "es") Pg1.Top = group_prog.Height - 50;
             Pg1.Left = 261;
             Pg1.Width = 743;
@@ -4403,8 +4403,6 @@ namespace FFBatch
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            main_progress_bar();
-
             String app_location = Application.StartupPath;
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
             if (File.Exists(portable_flag))
@@ -4425,6 +4423,36 @@ namespace FFBatch
                 }
             }
             else is_portable = false;
+
+            //Warn successful items
+
+            String f_warn_suc = String.Empty;
+            if (is_portable == false)
+            {
+                f_warn_suc = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_warn_suc.ini";
+            }
+            else
+            {
+                f_warn_suc = port_path + "ff_warn_suc_portable.ini";
+            }
+
+            warn_success_items = !File.Exists(f_warn_suc);
+            //End warn sucessful items
+
+            //Warn 0
+
+            String f_warn_0 = String.Empty;
+            if (is_portable == false)
+            {
+                f_warn_0 = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_warn_0.ini";
+            }
+            else
+            {
+                f_warn_0 = port_path + "ff_warn_0_portable.ini";
+            }
+
+            no_warn_0_dur = File.Exists(f_warn_0);
+            //End warn 0
 
             //Startup delay
 
@@ -4655,6 +4683,7 @@ namespace FFBatch
                 post_dark();
             }
             add_col_start();
+            main_progress_bar();
         }
 
         private void load_priority()
@@ -5226,24 +5255,7 @@ namespace FFBatch
                 }
                 first_concat = false;
                 //End concat video filter
-
-
-
-                //Warn successful items
-
-                String f_warn_suc = String.Empty;
-                if (is_portable == false)
-                {
-                    f_warn_suc = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_warn_suc.ini";
-                }
-                else
-                {
-                    f_warn_suc = port_path + "ff_warn_suc_portable.ini";
-                }
-
-                warn_success_items = !File.Exists(f_warn_suc);
-                //End warn sucessful items
-
+                
                 //Ignore encoded items
 
                 String f_ignore_enc = String.Empty;
@@ -5258,22 +5270,7 @@ namespace FFBatch
 
                 ignore_encoded = File.Exists(f_ignore_enc);
                 //End ignore encoded items
-                                
-                //Warn 0
-
-                String f_warn_0 = String.Empty;
-                if (is_portable == false)
-                {
-                    f_warn_0 = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_warn_0.ini";
-                }
-                else
-                {
-                    f_warn_0 = port_path + "ff_warn_0_portable.ini";
-                }
-
-                no_warn_0_dur = File.Exists(f_warn_0);
-                //End warn 0
-
+               
                 //Do not save logs
 
                 String f_nologs = String.Empty;
@@ -7309,7 +7306,7 @@ namespace FFBatch
                     calc_total_dur();
                     lbl_items.Text = listView1.Items.Count.ToString() + " " + FFBatch.Properties.Strings.files;
 
-                    if (not_found > 0)
+                    if (not_found > 0 && no_warn_0_dur == false)
                     {
                         this.Cursor = Cursors.Arrow;
                         MessageBox.Show(FFBatch.Properties.Strings.queue_ok + Environment.NewLine + not_found.ToString() + " " + FFBatch.Properties.Strings2.queue_not_f + " " + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings2.sort_status + " " + '\u0022' + FFBatch.Properties.Strings.file_not_f + '\u0022' + ".", Properties.Strings2.missing_f, MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -14612,7 +14609,7 @@ namespace FFBatch
             else if (cts.IsCancellationRequested == false) fatal_parallel = true;
             else fatal_parallel = false;
             //End parallel
-            if (invalids > 0)
+            if (invalids > 0 && no_warn_0_dur)
             {
                 this.InvokeEx(f => this.Cursor = Cursors.Arrow);
                 Form7 form_added = new Form7();
@@ -15485,7 +15482,7 @@ namespace FFBatch
                                 else if (bytes == 0 || bytes > 100000000000000) subit = "0 Kb/s";
                                 listView1.Items[i].SubItems[tbit_col].Text = subit;
                             }
-                            catch { listView1.Items[i].SubItems[tbit_col].Text = "0 Kb/s"; }
+                            catch { try { listView1.Items[i].SubItems[tbit_col].Text = "0 Kb/s"; } catch { } }
                         }
 
                     }));
@@ -15604,6 +15601,7 @@ namespace FFBatch
             //END RESUME
             calc_total_dur();
             this.InvokeEx(f => this.Cursor = Cursors.Arrow);
+            
             if (pop_invalids == true && no_warn_0_dur == false)
             {
                 Form7 form_added = new Form7();
@@ -16131,7 +16129,7 @@ namespace FFBatch
                         new System.Threading.Thread(() =>
                         {
                             System.Threading.Thread.CurrentThread.IsBackground = true;
-                            pic.Load(out_thumb);
+                            try { pic.Load(out_thumb); } catch { }
                             dg_thumbs[dg1.RowCount - 1] = pic.Image;
                             dg1.Invoke(new MethodInvoker(delegate
                             {
@@ -21223,14 +21221,18 @@ namespace FFBatch
 
             cancelados_paralelos = false;
 
-            foreach (ListViewItem file in listView1.Items)
+            if (no_warn_0_dur == false)
             {
-                if (!File.Exists(file.SubItems[1].Text + "\\" + file.Text))
+                foreach (ListViewItem file in listView1.Items)
                 {
-                    MessageBox.Show(FFBatch.Properties.Strings.file_not_found + " " + file.Text, FFBatch.Properties.Strings.file_not_found2, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    if (!File.Exists(file.SubItems[1].Text + "\\" + file.Text))
+                    {
+                        MessageBox.Show(FFBatch.Properties.Strings.file_not_found + " " + file.Text, FFBatch.Properties.Strings.file_not_found2, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                 }
             }
+
             if (listView1.Items.Count == 0)
             {
                 MessageBox.Show(FFBatch.Properties.Strings.list_empty, FFBatch.Properties.Strings.no_files, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -23891,12 +23893,15 @@ namespace FFBatch
                 if (listView1.SelectedIndices.Count == 1)
                 {
                     wizard1.lv1_item = listView1.SelectedItems[0].SubItems[1].Text + "\\" + listView1.SelectedItems[0].Text;
+                    wizard1.lv1_dur = listView1.SelectedItems[0].SubItems[3].Text;
                 }
                 else
                 {
                     wizard1.lv1_item = listView1.Items[0].SubItems[1].Text + "\\" + listView1.Items[0].Text;
+                    wizard1.lv1_dur = listView1.Items[0].SubItems[3].Text;
                 }
             }
+            
             if (show_wiz_start == true) wizard1.start_no_files = true;
             else wizard1.start_no_files = false;
             if (is_portable == true) wizard1.is_portable = true;
@@ -27543,7 +27548,7 @@ namespace FFBatch
         private void Form1_Shown(object sender, EventArgs e)
         {
             Pg1.Text = "0" + System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator + "0%";
-            read_saved_path();
+            read_saved_path();            
 
             //Create presets if file not available
             String path_pr, path_pre = "";
@@ -27760,6 +27765,10 @@ namespace FFBatch
             btn_update.Text = Properties.Strings2.version + " " + Application.ProductVersion;
             remember_tab();
 
+            //Get dropped files
+
+            String[] arguments = Environment.GetCommandLineArgs();
+            String[] file_drop = arguments.Skip(1).ToArray();
 
             // Automatic queue recovery
 
@@ -27770,9 +27779,10 @@ namespace FFBatch
                         
             Boolean bad_queue = false;
             Boolean file_bad = false;
-
-            if (File.Exists(save_path_queue))
+            
+            if (File.Exists(save_path_queue) && file_drop.Count() == 0)
             {
+                
                 String q = File.ReadAllText(save_path_queue);
                 if (q != null && q.Length > 10)
                 {
@@ -27807,7 +27817,7 @@ namespace FFBatch
             }
             else
             {
-                if (File.Exists(save_path_queue0))
+                if (File.Exists(save_path_queue0) && file_drop.Count() == 0)
                 {
                     try
                     {
@@ -27820,7 +27830,7 @@ namespace FFBatch
                 }
             }
 
-            if (File.Exists(save_path_queue))
+            if (File.Exists(save_path_queue)  && file_drop.Count() == 0)
             {
                 int linea = 0;
                     int not_found = 0;
@@ -27934,7 +27944,7 @@ namespace FFBatch
                     //calc_total_dur();
                     lbl_items.Text = listView1.Items.Count.ToString() + " " + FFBatch.Properties.Strings.files;
 
-                    if (not_found > 0)
+                    if (not_found > 0 && no_warn_0_dur == false)
                     {
                         this.Cursor = Cursors.Arrow;
                         MessageBox.Show(FFBatch.Properties.Strings2.queue_warn + Environment.NewLine + not_found.ToString() + " " + FFBatch.Properties.Strings2.queue_not_f + " " + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings2.sort_status + ".", FFBatch.Properties.Strings.warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -27954,12 +27964,13 @@ namespace FFBatch
             //End program crashed
 
             //Sendto parameters
-
-            String[] arguments = Environment.GetCommandLineArgs();
-            String[] file_drop = arguments.Skip(1).ToArray();
+                        
             Boolean no_tab_change = false;
             if (file_drop.Count() != 0)
             {
+                if (File.Exists(save_path_queue)) try { File.Delete(save_path_queue); } catch { }
+                if (File.Exists(save_path_queue0)) try { File.Delete(save_path_queue0); } catch { }
+
                 show_wiz_start = false;
                 change_tab_1 = false;
                 change_tab_2 = false;
@@ -28079,7 +28090,7 @@ namespace FFBatch
                     calc_total_dur();
                     lbl_items.Text = listView1.Items.Count.ToString() + " " + FFBatch.Properties.Strings.files;
 
-                    if (not_found > 0)
+                    if (not_found > 0 && no_warn_0_dur == false)
                     {
                         this.Cursor = Cursors.Arrow;
                         MessageBox.Show(FFBatch.Properties.Strings.queue_ok + Environment.NewLine + not_found.ToString() + " " + FFBatch.Properties.Strings2.queue_not_f + " " + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings2.sort_status + " " + '\u0022' + FFBatch.Properties.Strings.file_not_f + '\u0022' + ".", Properties.Strings2.missing_f, MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -28144,7 +28155,7 @@ namespace FFBatch
                     calc_total_dur();
                     lbl_items.Text = listView1.Items.Count.ToString() + " " + FFBatch.Properties.Strings.files;
 
-                    if (not_found > 0)
+                    if (not_found > 0 && no_warn_0_dur == false)
                     {
                         this.Cursor = Cursors.Arrow;
                         MessageBox.Show(FFBatch.Properties.Strings2.queue_warn + Environment.NewLine + not_found.ToString() + " " + FFBatch.Properties.Strings2.queue_not_f + " " + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings2.sort_status + ".", FFBatch.Properties.Strings.warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -30598,7 +30609,7 @@ namespace FFBatch
                 }
                 lbl_items.Text = listView1.Items.Count.ToString() + " " + FFBatch.Properties.Strings.files;
 
-                if (not_found > 0)
+                if (not_found > 0 && no_warn_0_dur == false)
                 {
                     this.InvokeEx(f => this.Cursor = Cursors.Arrow);
                     MessageBox.Show(FFBatch.Properties.Strings2.queue_warn + Environment.NewLine + not_found.ToString() + " " + FFBatch.Properties.Strings2.queue_not_f + " " + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings2.sort_status + ".", FFBatch.Properties.Strings.warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -34879,7 +34890,7 @@ namespace FFBatch
                             Boolean status = false;
 
                             listView1.Invoke(new MethodInvoker(delegate
-                            {
+                            {                                
                                 if (listView1.Items[Convert.ToInt32(file_int)].SubItems[5].Text == FFBatch.Properties.Strings.skipped) skipped = true;
                                 if (listView1.Items[Convert.ToInt32(file_int)].SubItems[5].Text == FFBatch.Properties.Strings.success) status = true;
                                 else status = false;
@@ -34897,6 +34908,11 @@ namespace FFBatch
                                 }
                                 
                                 fullPath = listView1.Items[Convert.ToInt32(file_int)].SubItems[1].Text + "\\" + listView1.Items[Convert.ToInt32(file_int)].Text;
+                                if (!File.Exists(fullPath))
+                                {
+                                    listView1.Items[Convert.ToInt32(file_int)].SubItems[1].Text = Properties.Strings.file_not_f;
+                                    return;
+                                }
                                 if (fullPath.Substring(fullPath.Length - 3, 3).ToLower() == "avs")
                                 {
                                     avs_out = avs_output(fullPath);
@@ -35518,6 +35534,8 @@ namespace FFBatch
                                         aborted_url = false;
                                         skipped = false;
                                     }
+                                    
+                                    if (row_duration >= 30) save_queue();
 
                                     //Run on each file
                                     int index = 0;
@@ -35578,7 +35596,8 @@ namespace FFBatch
                                 list_failed_m.Add(fullPath);
                                 this.InvokeEx(f => multi_logs["log_n_" + file_int.ToString()] = multi_logs["log_n_" + file_int.ToString()] + Environment.NewLine + Properties.Strings2.exit_code + ": " + tmp.ExitCode.ToString());
                                 this.InvokeEx(f => multi_logs["log_n_" + file_int.ToString()] = multi_logs["log_n_" + file_int.ToString()] + Environment.NewLine + Properties.Strings.output + " " + current_out + " (" + Properties.Strings.failed.ToUpper() + ")");
-                                this.InvokeEx(f => f.listView1.Items[Convert.ToInt32(file_int)].SubItems[5].Text = FFBatch.Properties.Strings.failed);
+                                if (File.Exists(fullPath)) this.InvokeEx(f => f.listView1.Items[Convert.ToInt32(file_int)].SubItems[5].Text = FFBatch.Properties.Strings.failed);
+                                else this.InvokeEx(f => f.listView1.Items[Convert.ToInt32(file_int)].SubItems[5].Text = FFBatch.Properties.Strings.file_not_f);
                                 errors_enc = errors_enc + 1;
 
                             }
@@ -35760,7 +35779,7 @@ namespace FFBatch
 
             Boolean pending_item = false;
             foreach (ListViewItem item in listView1.Items)
-            {
+            {           
                 if (item.SubItems[5].Text == Properties.Strings.queued)
                 {
                     pending_item = true;
@@ -37084,7 +37103,7 @@ namespace FFBatch
                 }
                 else
                 {
-                    if (e.Item.SubItems[5].Text.Contains(FFBatch.Properties.Strings.aborted) || e.Item.SubItems[5].Text.Contains(FFBatch.Properties.Strings.failed) || e.Item.SubItems[5].Text.Contains(FFBatch.Properties.Strings.error))
+                    if (e.Item.SubItems[5].Text.Contains(FFBatch.Properties.Strings.aborted) || e.Item.SubItems[5].Text.Contains(FFBatch.Properties.Strings.failed) || e.Item.SubItems[5].Text.Contains(FFBatch.Properties.Strings.error) || e.Item.SubItems[5].Text.Contains(FFBatch.Properties.Strings.file_not_f))
                     {
                         Rectangle rect = new Rectangle();
                         rect.X = e.Item.SubItems[5].Bounds.X + e.Bounds.Width - 18;
@@ -40714,6 +40733,7 @@ namespace FFBatch
             cti5.Text = FFBatch.Properties.Strings.Set_as_trim_end_time;
             cti6.Text = FFBatch.Properties.Strings.Stop_task;
             ctm1_encode.Text = Properties.Strings2.encode;
+            ct1_crop.Text = Properties.Strings2.crop1;
 
             ct2_all.Text = FFBatch.Properties.Strings.add_all_str;
             ct2_v.Text = FFBatch.Properties.Strings.add_vtrack;
@@ -45075,14 +45095,19 @@ namespace FFBatch
 
             cancelados_paralelos = false;
 
-            foreach (ListViewItem file in listView1.SelectedItems)
+
+            if (no_warn_0_dur == false)
             {
-                if (!File.Exists(file.SubItems[1].Text + "\\" + file.Text))
+                foreach (ListViewItem file in listView1.SelectedItems)
                 {
-                    MessageBox.Show(FFBatch.Properties.Strings.file_not_found + " " + file.Text, FFBatch.Properties.Strings.file_not_found2, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    if (!File.Exists(file.SubItems[1].Text + "\\" + file.Text))
+                    {
+                        MessageBox.Show(FFBatch.Properties.Strings.file_not_found + " " + file.Text, FFBatch.Properties.Strings.file_not_found2, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                 }
             }
+
             if (listView1.SelectedItems.Count == 0)
             {
                 MessageBox.Show(FFBatch.Properties.Strings.no_f_sel, FFBatch.Properties.Strings.no_files, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -45541,14 +45566,17 @@ namespace FFBatch
                 listView1.Focus();
             }
 
-            String filename1 = "";
-            foreach (ListViewItem file2 in listView1.Items)
+            if (no_warn_0_dur == false)
             {
-                filename1 = file2.SubItems[1].Text + "\\" + file2.Text;
-                if (!File.Exists(filename1))
+                String filename1 = "";
+                foreach (ListViewItem file2 in listView1.Items)
                 {
-                    MessageBox.Show(FFBatch.Properties.Strings.file_not_found + " " + file2.Text, FFBatch.Properties.Strings.file_not_found2, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    filename1 = file2.SubItems[1].Text + "\\" + file2.Text;
+                    if (!File.Exists(filename1))
+                    {
+                        MessageBox.Show(FFBatch.Properties.Strings.file_not_found + " " + file2.Text, FFBatch.Properties.Strings.file_not_found2, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                 }
             }
 
@@ -45959,12 +45987,7 @@ namespace FFBatch
             }));            
 
             //Save session variables
-            //String save_path_queue = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "saved_queue_temp.ffq";
-            //if (is_portable == true) save_path_queue = port_path + "saved_queue_temp.ffq";
-            //String lista_queue = String.Empty;
-            //String queue_params = txt_parameters.Text + Environment.NewLine;
-            //String queue_ext = lista_queue + txt_format.Text;
-            //String checkbox1_state = Environment.NewLine + checkBox1.CheckState.ToString();
+            
             String chk_suffix_state = String.Empty;
             int warn_enc = 0;
 
@@ -45986,7 +46009,7 @@ namespace FFBatch
             Decimal tot_frames2 = 0;
             String avs_out = "";
             String status = "";
-            timer_queue.Enabled = true;            
+            timer_queue.Enabled = true;
 
             for (int list_index = 0; list_index < listView1.Items.Count; list_index++)
                 {
@@ -46000,29 +46023,38 @@ namespace FFBatch
                     {
                         status = listView1.Items[list_index].SubItems[5].Text;
                         file = listView1.Items[list_index].SubItems[1].Text + "\\" + listView1.Items[list_index].Text;
-                        TimeSpan tme;
-                        if (TimeSpan.TryParse(listView1.Items[list_index].SubItems[3].Text, out tme))
+                        if (File.Exists(file))
                         {
-                            dur_rpl = TimeSpan.Parse(listView1.Items[list_index].SubItems[3].Text).TotalSeconds;
-                        }
-                        else dur_rpl = 0;
-                        
-                        if (file.Substring(file.Length - 3, 3).ToLower() == "avs")
-                        {
-                            avs_out = avs_output(file);
-                            if (!File.Exists(avs_out)) avs_out = file;                            
-                        }
+                            TimeSpan tme;
+                            if (TimeSpan.TryParse(listView1.Items[list_index].SubItems[3].Text, out tme))
+                            {
+                                dur_rpl = TimeSpan.Parse(listView1.Items[list_index].SubItems[3].Text).TotalSeconds;
+                            }
+                            else dur_rpl = 0;
 
-                        FileInfo fs = new FileInfo(file);
-                        file_size = fs.Length;
-                        try
-                        {
-                            size_dur = TimeSpan.Parse(listView1.Items[list_index].SubItems[3].Text).TotalSeconds;
+                            if (file.Substring(file.Length - 3, 3).ToLower() == "avs")
+                            {
+                                avs_out = avs_output(file);
+                                if (!File.Exists(avs_out)) avs_out = file;
+                            }
+
+                            FileInfo fs = new FileInfo(file);
+                            file_size = fs.Length;
+                            try
+                            {
+                                size_dur = TimeSpan.Parse(listView1.Items[list_index].SubItems[3].Text).TotalSeconds;
+                            }
+                            catch { size_dur = 0; }
                         }
-                        catch { size_dur = 0; }
                     }));
 
-                    if (cancel_queue)
+                if (!File.Exists(file))
+                {
+                    this.InvokeEx(f => f.listView1.Items[list_index].SubItems[5].Text = Properties.Strings.file_not_f);
+                    continue;
+                }
+
+                if (cancel_queue)
                     {
                         this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
                         this.InvokeEx(f => this.Text = "FFmpeg Batch AV Converter");
@@ -46955,32 +46987,8 @@ namespace FFBatch
                 list_lines.Add("---------------------End of " + Path.GetFileName(file) + " log-------------------------------");
                     list_lines.Add("");
 
-                    //Save session
-                    //lista_queue = queue_params;
-                    //lista_queue = lista_queue + queue_ext;
-                    //lista_queue = lista_queue + checkbox1_state;
-                    //lista_queue = lista_queue + Environment.NewLine + chk_suffix_state;
-                    //lista_queue = lista_queue + Environment.NewLine + saved_path;
-                    //listView1.Invoke(new MethodInvoker(delegate
-                    //{
-                    //    foreach (ListViewItem item in listView1.Items)
-                    //    {
-                    //        lista_queue = lista_queue + Environment.NewLine + item.SubItems[1].Text + "\\" + item.Text + " --0 " + item.SubItems[2].Text + " --1 " + item.SubItems[3].Text + " --2 " + item.SubItems[4].Text + " --3 " + item.SubItems[5].Text;
-                    //    }
-                    //}));
-
-                    //if (file_is_network == true && cache_net == true && process_glob.ExitCode == 0)
-                    //{
-                    //    Thread.Sleep(500);
-                    //    try
-                    //    {
-                    //        File.Delete(file_cache.Replace("\\\\", "\\"));
-                    //    }
-                    //    catch { }
-                    //}
-                    //File.WriteAllText(save_path_queue, lista_queue);
-
-                    ////End save session
+                //Save session
+                if (dur_rpl >= 30) save_queue(); 
 
                     //Run on each file
                     int index = 0;
@@ -48730,40 +48738,41 @@ namespace FFBatch
             }
         }
 
-        private void timer_queue_Tick(object sender, EventArgs e)
+        private void save_queue()
         {
             if (working == false) return;
+            List<string> list_file = new List<string>();
 
             String save_path_queue = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "saved_queue_temp.ffq";
             if (is_portable == true) save_path_queue = port_path + "saved_queue_temp.ffq";
             String save_path_queue0 = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "saved_queue_temp0.ffq";
             if (is_portable == true) save_path_queue0 = port_path + "saved_queue_temp0.ffq";
-
-            String lista_queue = String.Empty;
+                        
             //Save session
-            lista_queue = txt_parameters.Text + Environment.NewLine;
-            lista_queue = lista_queue + txt_format.Text + Environment.NewLine;
-            lista_queue = lista_queue + checkBox1.CheckState;
-            lista_queue = lista_queue + Environment.NewLine + chk_suffix.CheckState;
+            list_file.Add(txt_parameters.Text);
+            list_file.Add(txt_format.Text);
+            list_file.Add(checkBox1.CheckState.ToString());
+            list_file.Add(chk_suffix.CheckState.ToString());
 
-            lista_queue = lista_queue + Environment.NewLine + txt_path_main.Text;
-            this.Invoke(new MethodInvoker(delegate
-            {
-                foreach (ListViewItem item in listView1.Items)
-                {
-                    lista_queue = lista_queue + Environment.NewLine + item.SubItems[1].Text + "\\" + item.Text + " --0 " + item.SubItems[2].Text + " --1 " + item.SubItems[3].Text + " --2 " + item.SubItems[4].Text + " --3 " + item.SubItems[5].Text;
-                }
-            }));
+            list_file.Add(txt_path_main.Text);
 
             Task t = Task.Run(() =>
             {
                 try
                 {
+                    listView1.Invoke(new MethodInvoker(delegate
+                    {
+                        foreach (ListViewItem item in listView1.Items)
+                        {
+                            list_file.Add(item.SubItems[1].Text + "\\" + item.Text + " --0 " + item.SubItems[2].Text + " --1 " + item.SubItems[3].Text + " --2 " + item.SubItems[4].Text + " --3 " + item.SubItems[5].Text);
+                        }
+                    }));
+
                     using (Stream fs = new FileStream(save_path_queue, FileMode.Create, FileAccess.Write, FileShare.None, 0x1000, FileOptions.WriteThrough))
                     using (StreamWriter shellConfigWriter = new StreamWriter(fs))
                     {
 
-                        shellConfigWriter.Write(lista_queue);
+                        shellConfigWriter.Write(string.Join(Environment.NewLine, list_file.ToArray()));
                         shellConfigWriter.Flush();
                         shellConfigWriter.BaseStream.Flush();
                     }
@@ -48772,21 +48781,84 @@ namespace FFBatch
                     using (StreamWriter shellConfigWriter = new StreamWriter(fs0))
                     {
                         Thread.Sleep(1000);
-                        shellConfigWriter.Write(lista_queue);
+                        shellConfigWriter.Write(string.Join(Environment.NewLine, list_file.ToArray()));
                         shellConfigWriter.Flush();
                         shellConfigWriter.BaseStream.Flush();
                     }
-                } catch { }
+                }
+                catch { }
 
             });
 
             //End save session            
         }
 
+        private void timer_queue_Tick(object sender, EventArgs e)
+        {
+            Task t = Task.Run(() =>
+            {
+                save_queue();
+            }); 
+        }
         private void pic_ok_Click(object sender, EventArgs e)
         {
             Process.Start("https://github.com/yt-dlp/yt-dlp/releases");
         }
+
+        private void ct1_crop_Click(object sender, EventArgs e)
+        {
+            String sel = "";
+            if (listView1.Items.Count > 0)
+            {
+                if (listView1.SelectedItems.Count == 0)
+                {
+                    listView1.Items[0].Selected = true; listView1.Select();
+                }
+            }
+            else
+            {
+                MessageBox.Show(Properties.Strings.no_item_sel);
+                return;
+            }
+
+            String dur_lv1 = listView1.SelectedItems[0].SubItems[3].Text;
+            sel = listView1.SelectedItems[0].SubItems[1].Text + "\\" + listView1.SelectedItems[0].Text;
+            Form28 frm28 = new Form28();
+            frm28.StartPosition = FormStartPosition.CenterParent;
+            frm28.item = sel;
+            frm28.dur = dur_lv1;
+            frm28.ShowDialog();
+            String str = String.Empty;
+            if (txt_parameters.Text.ToLower().Contains("-c copy") || txt_parameters.Text.ToLower().Contains("-c:v copy") || txt_parameters.Text.ToLower().Contains("-vcodec copy")) str = Environment.NewLine + Environment.NewLine + Properties.Strings.warning.ToUpper() + ":" + " " + Properties.Strings.strv_c_not + ".";
+
+            if (txt_parameters.Text.Contains(frm28.vf_crop))
+            {
+                return;
+            }
+            else
+            {
+
+                if (!txt_parameters.Text.Contains("-vf crop="))
+                {
+                    if (!txt_parameters.Text.Contains("-vf ") && !txt_parameters.Text.Contains("-vfilter ") && !txt_parameters.Text.Contains("-filter:v "))
+                    {
+                        txt_parameters.Text = txt_parameters.Text + frm28.vf_crop;
+                        MessageBox.Show(Properties.Strings2.crop3 + frm28.vf_crop + str, Properties.Strings.information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        txt_parameters.Text = txt_parameters.Text + frm28.vf_crop;
+                        MessageBox.Show(Properties.Strings2.vf_crop_multi + Environment.NewLine + Environment.NewLine + Properties.Strings2.vf_crop_multi2, Properties.Strings.information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    txt_parameters.Text = txt_parameters.Text + frm28.vf_crop;
+                    MessageBox.Show(Properties.Strings2.crop2 + Environment.NewLine + Environment.NewLine + frm28.vf_crop + str, Properties.Strings.information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+        }
+        
 
         private void dg1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {

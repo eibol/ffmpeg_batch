@@ -105,45 +105,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AeroWizard1.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="AeroWizard1.cs" />
     <Compile Include="AeroWizard1.Designer.cs">
       <DependentUpon>AeroWizard1.cs</DependentUpon>
     </Compile>
-    <Compile Include="AeroWizard2.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="AeroWizard2.cs" />
     <Compile Include="AeroWizard2.Designer.cs">
       <DependentUpon>AeroWizard2.cs</DependentUpon>
     </Compile>
-    <Compile Include="AeroWizard3.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="AeroWizard3.cs" />
     <Compile Include="AeroWizard3.Designer.cs">
       <DependentUpon>AeroWizard3.cs</DependentUpon>
     </Compile>
-    <Compile Include="AeroWizard7.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="AeroWizard7.cs" />
     <Compile Include="AeroWizard7.Designer.cs">
       <DependentUpon>AeroWizard7.cs</DependentUpon>
     </Compile>
-    <Compile Include="AeroWizard6.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="AeroWizard6.cs" />
     <Compile Include="AeroWizard6.Designer.cs">
       <DependentUpon>AeroWizard6.cs</DependentUpon>
     </Compile>
-    <Compile Include="AeroWizard5.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="AeroWizard5.cs" />
     <Compile Include="AeroWizard5.Designer.cs">
       <DependentUpon>AeroWizard5.cs</DependentUpon>
     </Compile>
-    <Compile Include="AeroWizard4.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="AeroWizard4.cs" />
     <Compile Include="AeroWizard4.Designer.cs">
       <DependentUpon>AeroWizard4.cs</DependentUpon>
     </Compile>
@@ -151,165 +137,119 @@
     <Compile Include="Class2.cs" />
     <Compile Include="Class3.cs" />
     <Compile Include="Class4.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form1.cs" />
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form10.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form10.cs" />
     <Compile Include="Form10.Designer.cs">
       <DependentUpon>Form10.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form11_2.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form11_2.cs" />
     <Compile Include="Form11_2.Designer.cs">
       <DependentUpon>Form11_2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form11.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form11.cs" />
     <Compile Include="Form11.Designer.cs">
       <DependentUpon>Form11.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form12.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form12.cs" />
     <Compile Include="Form12.Designer.cs">
       <DependentUpon>Form12.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form13.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form13.cs" />
     <Compile Include="Form13.Designer.cs">
       <DependentUpon>Form13.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form14.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form14.cs" />
     <Compile Include="Form14.Designer.cs">
       <DependentUpon>Form14.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form15.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Form27.cs" />
+    <Compile Include="Form27.Designer.cs">
+      <DependentUpon>Form27.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form15.cs" />
     <Compile Include="Form15.Designer.cs">
       <DependentUpon>Form15.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form16.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form16.cs" />
     <Compile Include="Form16.Designer.cs">
       <DependentUpon>Form16.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form17.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form17.cs" />
     <Compile Include="Form17.Designer.cs">
       <DependentUpon>Form17.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form18.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form18.cs" />
     <Compile Include="Form18.Designer.cs">
       <DependentUpon>Form18.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form19.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form19.cs" />
     <Compile Include="Form19.Designer.cs">
       <DependentUpon>Form19.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form2.cs" />
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form20.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form20.cs" />
     <Compile Include="Form20.Designer.cs">
       <DependentUpon>Form20.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form21.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form21.cs" />
     <Compile Include="Form21.Designer.cs">
       <DependentUpon>Form21.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form22.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form22.cs" />
     <Compile Include="Form22.Designer.cs">
       <DependentUpon>Form22.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form23.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form23.cs" />
     <Compile Include="Form23.Designer.cs">
       <DependentUpon>Form23.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form24.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form24.cs" />
     <Compile Include="Form24.Designer.cs">
       <DependentUpon>Form24.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form25.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form25.cs" />
     <Compile Include="Form25.Designer.cs">
       <DependentUpon>Form25.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form26.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form26.cs" />
     <Compile Include="Form26.Designer.cs">
       <DependentUpon>Form26.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form3.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Form28.cs" />
+    <Compile Include="Form28.Designer.cs">
+      <DependentUpon>Form28.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form3.cs" />
     <Compile Include="Form3.Designer.cs">
       <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form4.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form4.cs" />
     <Compile Include="Form4.Designer.cs">
       <DependentUpon>Form4.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form5.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form5.cs" />
     <Compile Include="Form5.Designer.cs">
       <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form6.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form6.cs" />
     <Compile Include="Form6.Designer.cs">
       <DependentUpon>Form6.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form7.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form7.cs" />
     <Compile Include="Form7.Designer.cs">
       <DependentUpon>Form7.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form8.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form8.cs" />
     <Compile Include="Form8.Designer.cs">
       <DependentUpon>Form8.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form9.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Form9.cs" />
     <Compile Include="Form9.Designer.cs">
       <DependentUpon>Form9.cs</DependentUpon>
     </Compile>
@@ -435,6 +375,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AeroWizard5.resx">
       <DependentUpon>AeroWizard5.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AeroWizard4.resx">
       <DependentUpon>AeroWizard4.cs</DependentUpon>
@@ -544,6 +485,24 @@
     <EmbeddedResource Include="Form14.zh-Hans.resx">
       <DependentUpon>Form14.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form26.es.resx">
+      <DependentUpon>Form26.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form27.es.resx">
+      <DependentUpon>Form27.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form27.it.resx">
+      <DependentUpon>Form27.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form27.pt-BR.resx">
+      <DependentUpon>Form27.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form27.resx">
+      <DependentUpon>Form27.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form27.zh-Hans.resx">
+      <DependentUpon>Form27.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form15.es.resx">
       <DependentUpon>Form15.cs</DependentUpon>
     </EmbeddedResource>
@@ -566,9 +525,6 @@
       <DependentUpon>Form16.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form16.pt-BR.resx">
-      <DependentUpon>Form16.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form16.pt.resx">
       <DependentUpon>Form16.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form16.resx">
@@ -722,6 +678,21 @@
     <EmbeddedResource Include="Form26.resx">
       <DependentUpon>Form26.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form28.es.resx">
+      <DependentUpon>Form28.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form28.it.resx">
+      <DependentUpon>Form28.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form28.pt-BR.resx">
+      <DependentUpon>Form28.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form28.resx">
+      <DependentUpon>Form28.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form28.zh-Hans.resx">
+      <DependentUpon>Form28.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form3.es.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
@@ -800,6 +771,9 @@
       <DependentUpon>Form8.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form8.resx">
+      <DependentUpon>Form8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form8.zh-Hans.resx">
       <DependentUpon>Form8.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form9.es.resx">
