@@ -1,7 +1,6 @@
 ﻿2.7.7
 • New setting to keep source file timestamps in destination file.
 • New setting to minimize to system tray.
-• New setting to minimize to system tray.
 • New custom column "Encoding parameters" to set individual ffmpeg parameters for queue item(s) via context menu.
 • More accurate progress info when using speed up/slow down filter (atempo).
 • Fixed: Prevent computer sleep setting not working properly.
