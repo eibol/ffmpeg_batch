@@ -1,11 +1,12 @@
-﻿2.7.6
-• FFmpeg 5.0.1
-• New visual crop dialog.
-• Full screen frame preview on doubleclick.
-• Added audio normalize default filter to audio wizard.
-• Fixed bug downloading VK videos.
-• A few translation fixes.
-• Missing file warning can be disabled at settings (useful if they are only temporarily unavailable o removed afterwards).
-• Disabled automatic automatic queue saving after encoding files shorter than 30 seconds, to avoid poor performance with big queues.
-• Queue stated saved every 60 seconds in any case.
-• Encoding session tested up to 100000 files. (Unknown results beyond that).
+﻿2.7.7
+• New setting to keep source file timestamps in destination file.
+• New setting to minimize to system tray.
+• New setting to minimize to system tray.
+• New custom column "Encoding parameters" to set individual ffmpeg parameters for queue item(s) via context menu.
+• More accurate progress info when using speed up/slow down filter (atempo).
+• Fixed: Prevent computer sleep setting not working properly.
+• Fixed: Pause hangs/fails during multi-file encoding of big queues.
+• Fixed: Decoder list sometimes not selecting item properly.
+• Fixed a few runtime errors when source files are missing.
+• Fixed slow down filter in audio/video preset wizard.
+• Minor bugfixes (main screen UI/loading queues/sent files/incomplete queues/chinese translation corrections/full screen audio covers, disable single file popup on portable version).
