@@ -1,11 +1,6 @@
-﻿2.7.7
-• New setting to keep source file timestamps in destination file.
-• New setting to minimize to system tray.
-• New custom column "Encoding parameters" to set individual ffmpeg parameters for queue item(s) via context menu.
-• More accurate progress info when using speed up/slow down filter (atempo).
-• Fixed: Prevent computer sleep setting not working properly.
-• Fixed: Pause hangs/fails during multi-file encoding of big queues.
-• Fixed: Decoder list sometimes not selecting item properly.
-• Fixed a few runtime errors when source files are missing.
-• Fixed slow down filter in audio/video preset wizard.
-• Minor bugfixes (main screen UI/loading queues/sent files/incomplete queues/chinese translation corrections/full screen audio covers, disable single file popup on portable version).
+﻿2.8.0
+• New quick file listing setting for >5000 items queues: 100x faster file list adding.
+(only individual progress, total queue time remaining not available).
+• New setting to prevent Ctrl-Shift-P keystroke captured for aborting queue.
+• Fixed runtime error in Windows Server OS preventing any encoding.
+• Other minor bugfixes.
