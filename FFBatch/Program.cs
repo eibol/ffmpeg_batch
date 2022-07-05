@@ -25,12 +25,12 @@ namespace FFBatch
 
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.EnableVisualStyles();
-                if (Environment.GetCommandLineArgs().Count() == 1)
-                {
+                //if (Environment.GetCommandLineArgs().Count() == 1)
+                //{
                     Form6 form_intro = new Form6();
                     form_intro.Show();
                     form_intro.Refresh();
-                }
+                //}
                 new SingleInstanceApp().Run(Environment.GetCommandLineArgs());
                 //Application.Run(new Form1());
             }
