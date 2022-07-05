@@ -1,6 +1,7 @@
 ﻿2.8.0
 • New quick file listing setting for >5000 items queues: 100x faster file list adding.
 (only individual progress, total queue time remaining not available).
+• Faster send to recycle bin feature all at once.
 • New setting to prevent Ctrl-Shift-P keystroke captured for aborting queue.
 • Fixed runtime error in Windows Server OS preventing any encoding.
 • Other minor bugfixes.
