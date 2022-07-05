@@ -591,6 +591,9 @@
   <data name="rec_fail" xml:space="preserve">
     <value>录音测试失败</value>
   </data>
+  <data name="rem_cust_p" xml:space="preserve">
+    <value>移除自定义参数</value>
+  </data>
   <data name="rem_from_list" xml:space="preserve">
     <value>从列表中删除所选项目</value>
   </data>
@@ -638,6 +641,9 @@
   </data>
   <data name="sel_lang" xml:space="preserve">
     <value>选择语言</value>
+  </data>
+  <data name="set_cust_p" xml:space="preserve">
+    <value>设置自定义参数</value>
   </data>
   <data name="skip_from_list" xml:space="preserve">
     <value>从编码中跳过所选项目</value>
@@ -708,6 +714,12 @@
   <data name="total" xml:space="preserve">
     <value>总计</value>
   </data>
+  <data name="to_tray1" xml:space="preserve">
+    <value>最小化为系统托盘图标</value>
+  </data>
+  <data name="to_tray2" xml:space="preserve">
+    <value>该应用程序在系统托盘中最小化为一个图标。</value>
+  </data>
   <data name="transfer_r" xml:space="preserve">
     <value>传输率:</value>
   </data>
@@ -761,6 +773,12 @@
   </data>
   <data name="warn_down" xml:space="preserve">
     <value>队列下载期间出现警告消息:</value>
+  </data>
+  <data name="warn_n_files" xml:space="preserve">
+    <value>添加数千个文件可能需要几分钟才能解析每个文件。 您可以在设置中启用快速文件列表以加快文件添加速度，但不会显示进度信息，只会显示成功/失败项目状态和日志信息。</value>
+  </data>
+  <data name="warn_n_files2" xml:space="preserve">
+    <value>你想继续吗？ 您可以随时取消文件添加。</value>
   </data>
   <data name="warn_run_enc" xml:space="preserve">
     <value>设置“不要警告已编码的文件”和“跳过编码的文件”也已启用。</value>

@@ -1519,6 +1519,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Remove custom parameters.
+        /// </summary>
+        internal static string rem_cust_p {
+            get {
+                return ResourceManager.GetString("rem_cust_p", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Remove selected items from list.
         /// </summary>
         internal static string rem_from_list {
@@ -1659,6 +1668,15 @@ namespace FFBatch.Properties {
         internal static string selc_dev {
             get {
                 return ResourceManager.GetString("selc_dev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Set custom parameters.
+        /// </summary>
+        internal static string set_cust_p {
+            get {
+                return ResourceManager.GetString("set_cust_p", resourceCulture);
             }
         }
         
@@ -1843,6 +1861,24 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Minimized to system tray.
+        /// </summary>
+        internal static string to_tray1 {
+            get {
+                return ResourceManager.GetString("to_tray1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Application was minimized to system tray icon.
+        /// </summary>
+        internal static string to_tray2 {
+            get {
+                return ResourceManager.GetString("to_tray2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Too many files to be parsed.
         /// </summary>
         internal static string too_many_files {
@@ -2001,6 +2037,24 @@ namespace FFBatch.Properties {
         internal static string warn_down {
             get {
                 return ResourceManager.GetString("warn_down", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Adding thousands of files can take a few minutes for each file to be parsed. You can enable Quick file listing at settings to speed up file adding, but no progress information will be displayed, only Success/Failed item status and log information..
+        /// </summary>
+        internal static string warn_n_files {
+            get {
+                return ResourceManager.GetString("warn_n_files", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Do you want to continue? You can cancel file adding at any time..
+        /// </summary>
+        internal static string warn_n_files2 {
+            get {
+                return ResourceManager.GetString("warn_n_files2", resourceCulture);
             }
         }
         

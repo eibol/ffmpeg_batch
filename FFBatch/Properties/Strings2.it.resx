@@ -795,4 +795,22 @@
   <data name="vf_crop_multi2" xml:space="preserve">
     <value>Per esempio: -vf "crop=50:50:0:10, yadif, format=gray"</value>
   </data>
+  <data name="to_tray1" xml:space="preserve">
+    <value>Ridotto a icona nella barra delle applicazioni</value>
+  </data>
+  <data name="to_tray2" xml:space="preserve">
+    <value>L'applicazione è ridotta a icona come icona nella barra delle applicazioni.</value>
+  </data>
+  <data name="set_cust_p" xml:space="preserve">
+    <value>Imposta parametri personalizzati</value>
+  </data>
+  <data name="rem_cust_p" xml:space="preserve">
+    <value>Rimuovere i parametri personalizzati</value>
+  </data>
+  <data name="warn_n_files" xml:space="preserve">
+    <value>L'aggiunta di migliaia di file può richiedere alcuni minuti per l'analisi di ogni file. È possibile abilitare l'elenco rapido dei file nelle impostazioni per accelerare l'aggiunta di file, ma non verranno visualizzate informazioni sullo stato di avanzamento, solo lo stato dell'elemento riuscito/non riuscito e le informazioni di registro.</value>
+  </data>
+  <data name="warn_n_files2" xml:space="preserve">
+    <value>Vuoi continuare? Puoi annullare l'aggiunta di file in qualsiasi momento.</value>
+  </data>
 </root>

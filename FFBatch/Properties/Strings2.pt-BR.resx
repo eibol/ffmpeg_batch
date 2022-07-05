@@ -786,4 +786,22 @@
   <data name="vf_crop_multi2" xml:space="preserve">
     <value>Por exemplo: -vf "crop=50:50:0:10, yadif, format=gray"</value>
   </data>
+  <data name="to_tray1" xml:space="preserve">
+    <value>Minimizado para o ícone da bandeja do sistema</value>
+  </data>
+  <data name="to_tray2" xml:space="preserve">
+    <value>O aplicativo é minimizado como um ícone na bandeja do sistema.</value>
+  </data>
+  <data name="set_cust_p" xml:space="preserve">
+    <value>Definir parâmetros personalizados</value>
+  </data>
+  <data name="rem_cust_p" xml:space="preserve">
+    <value>Remover parâmetros personalizados</value>
+  </data>
+  <data name="warn_n_files" xml:space="preserve">
+    <value>Adicionar milhares de arquivos pode levar alguns minutos para que cada arquivo seja analisado. Você pode habilitar a listagem rápida de arquivos nas configurações para acelerar a adição de arquivos, mas nenhuma informação de progresso será exibida, apenas o status do item com sucesso/falha e as informações de registro.</value>
+  </data>
+  <data name="warn_n_files2" xml:space="preserve">
+    <value>Você quer continuar? Você pode cancelar a adição de arquivos a qualquer momento.</value>
+  </data>
 </root>

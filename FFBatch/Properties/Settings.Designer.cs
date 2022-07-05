@@ -94,5 +94,41 @@ namespace FFBatch.Properties {
                 this["wiz_aud"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool to_tray {
+            get {
+                return ((bool)(this["to_tray"]));
+            }
+            set {
+                this["to_tray"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool no_ctrl_p {
+            get {
+                return ((bool)(this["no_ctrl_p"]));
+            }
+            set {
+                this["no_ctrl_p"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool quick_queue {
+            get {
+                return ((bool)(this["quick_queue"]));
+            }
+            set {
+                this["quick_queue"] = value;
+            }
+        }
     }
 }

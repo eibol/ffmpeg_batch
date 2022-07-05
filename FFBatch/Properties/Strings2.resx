@@ -798,4 +798,22 @@
   <data name="vf_crop_multi2" xml:space="preserve">
     <value>For example: -vf "crop=50:50:0:10, yadif, format=gray"</value>
   </data>
+  <data name="to_tray1" xml:space="preserve">
+    <value>Minimized to system tray</value>
+  </data>
+  <data name="to_tray2" xml:space="preserve">
+    <value>Application was minimized to system tray icon</value>
+  </data>
+  <data name="set_cust_p" xml:space="preserve">
+    <value>Set custom parameters</value>
+  </data>
+  <data name="rem_cust_p" xml:space="preserve">
+    <value>Remove custom parameters</value>
+  </data>
+  <data name="warn_n_files" xml:space="preserve">
+    <value>Adding thousands of files can take a few minutes for each file to be parsed. You can enable Quick file listing at settings to speed up file adding, but no progress information will be displayed, only Success/Failed item status and log information.</value>
+  </data>
+  <data name="warn_n_files2" xml:space="preserve">
+    <value>Do you want to continue? You can cancel file adding at any time.</value>
+  </data>
 </root>
