@@ -4416,7 +4416,7 @@ namespace FFBatch
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
+        {            
             String app_location = Application.StartupPath;
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
             if (File.Exists(portable_flag))
@@ -35814,12 +35814,13 @@ namespace FFBatch
                                             if (chk_delete_source.CheckState == CheckState.Checked && delete_def == false && delete_one == true)
                                             {
                                                 try
-                                                {
+                                                {                                                    
                                                     FileSystem.DeleteFile(fullPath, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
                                                     this.InvokeEx(f => f.listView1.Items[Convert.ToInt32(file_int)].SubItems[5].Text = FFBatch.Properties.Strings.recycled);
                                                 }
-                                                catch
+                                                catch (Exception exc)
                                                 {
+                                                    MessageBox.Show(exc.Message);
                                                     this.InvokeEx(f => f.listView1.Items[Convert.ToInt32(file_int)].SubItems[5].Text = FFBatch.Properties.Strings.not_recycled);
                                                     warn_enc++;
                                                 }
@@ -36251,46 +36252,59 @@ namespace FFBatch
                     int i = 0;
                     int err = 0;
 
-                    foreach (String item in list_successful_m)
+                    try
                     {
-                        try
+                        FileOperationAPIWrapper.SendToRecycleBin(list_successful_m, FileOperationAPIWrapper.FileOperationFlags.FOF_WANTNUKEWARNING);
+                        foreach (ListViewItem item in listView1.Items)
                         {
-                            FileSystem.DeleteFile(item, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
-                            pg_del.Value = i;
-                            i = i + 1;
-
-                            foreach (ListViewItem item2 in listView1.Items)
-                            {
-                                if (item2.Text == Path.GetFileName(item))
-                                {
-                                    item2.SubItems[5].Text = FFBatch.Properties.Strings.recycled;
-                                }
-                            }
-                        }
-                        catch
-                        {
-                            err = err + 1;
-                            listView1.Invoke(new MethodInvoker(delegate
-                            {
-                                foreach (ListViewItem item2 in listView1.Items)
-                                {
-                                    if (item2.Text == Path.GetFileName(item))
-                                    {
-                                        item2.SubItems[5].Text = FFBatch.Properties.Strings.not_recycled;
-                                    }
-                                }
-                            }));
-                        }
-                        prog_txt.Text = FFBatch.Properties.Strings.to_recycle + i.ToString() + " " + FFBatch.Properties.Strings.of1 + " " + list_global_proc.Items.Count;
-                        prog_txt.Refresh();
+                            item.SubItems[5].Text = FFBatch.Properties.Strings.recycled;
+                        }                    
                     }
+                    catch
+                    {
+                        MessageBox.Show(Properties.Strings.not_recycled3, Properties.Strings.warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+
+                    //foreach (String item in list_successful_m)
+                    //{
+                    //    try
+                    //    {
+                    //        FileSystem.DeleteFile(item, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
+                    //        pg_del.Value = i;
+                    //        i = i + 1;
+
+                    //        foreach (ListViewItem item2 in listView1.Items)
+                    //        {
+                    //            if (item2.Text == Path.GetFileName(item))
+                    //            {
+                    //                item2.SubItems[5].Text = FFBatch.Properties.Strings.recycled;
+                    //            }
+                    //        }
+                    //    }
+                    //    catch
+                    //    {
+                    //        err = err + 1;
+                    //        listView1.Invoke(new MethodInvoker(delegate
+                    //        {
+                    //            foreach (ListViewItem item2 in listView1.Items)
+                    //            {
+                    //                if (item2.Text == Path.GetFileName(item))
+                    //                {
+                    //                    item2.SubItems[5].Text = FFBatch.Properties.Strings.not_recycled;
+                    //                }
+                    //            }
+                    //        }));
+                    //    }
+                    //    prog_txt.Text = FFBatch.Properties.Strings.to_recycle + i.ToString() + " " + FFBatch.Properties.Strings.of1 + " " + list_global_proc.Items.Count;
+                    //    prog_txt.Refresh();
+                    //}
                     prog_txt.Visible = false;
                     prog_txt.Dispose();
                     pg_del.Visible = false;
                     pg_del.Dispose();
                     Enable_Controls();
 
-                    if (err > 0) MessageBox.Show(err.ToString() + " " + Properties.Strings.not_recycled2 + Properties.Strings.check_log, FFBatch.Properties.Strings.not_recycled3, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    //if (err > 0) MessageBox.Show(err.ToString() + " " + Properties.Strings.not_recycled2 + Properties.Strings.check_log, FFBatch.Properties.Strings.not_recycled3, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                     if (list_failed_m.Count > 0)
                     {
@@ -47808,50 +47822,63 @@ namespace FFBatch
                                     int i = 0;
                                     int err = 0;
 
-                                    foreach (String item in list_successful)
-                                    {
-                                        try
-                                        {
-                                            FileSystem.DeleteFile(item, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
-                                            this.InvokeEx(f => pg_del.Value = i);
-                                            i = i + 1;
-                                            listView1.Invoke(new MethodInvoker(delegate
-                                            {
-                                                foreach (ListViewItem item2 in listView1.Items)
-                                                {
-                                                    if (item2.Text == Path.GetFileName(item))
-                                                    {
-                                                        item2.SubItems[5].Text = FFBatch.Properties.Strings.recycled;
-                                                    }
-                                                }
-                                            }));
-                                        }
-                                        catch
-                                        {
-                                            err = err + 1;
-                                            list_failed.Add(item + " " + FFBatch.Properties.Strings2.not_deleted);
-                                            listView1.Invoke(new MethodInvoker(delegate
-                                            {
-                                                foreach (ListViewItem item2 in listView1.Items)
-                                                {
-                                                    if (item2.Text == Path.GetFileName(item))
-                                                    {
-                                                        item2.SubItems[5].Text = FFBatch.Properties.Strings.not_recycled;
-                                                    }
-                                                }
-                                            }));
-                                        }
 
-                                        this.InvokeEx(f => prog_txt.Text = FFBatch.Properties.Strings.to_recycle + i.ToString() + " " + FFBatch.Properties.Strings.of1 + " " + listView1.Items.Count);
-                                        this.InvokeEx(f => prog_txt.Refresh());
+                                try
+                                {
+                                    FileOperationAPIWrapper.SendToRecycleBin(list_successful_m, FileOperationAPIWrapper.FileOperationFlags.FOF_WANTNUKEWARNING);
+                                    foreach (ListViewItem item in listView1.Items)
+                                    {
+                                        item.SubItems[5].Text = FFBatch.Properties.Strings.recycled;
                                     }
-                                    this.InvokeEx(f => prog_txt.Visible = false);
+                                }
+                                catch
+                                {
+                                    MessageBox.Show(Properties.Strings.not_recycled3, Properties.Strings.warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
+                                //foreach (String item in list_successful)
+                                //{
+                                //    try
+                                //    {
+                                //        FileSystem.DeleteFile(item, UIOption.OnlyErrorDialogs, RecycleOption.SendToRecycleBin);
+                                //        this.InvokeEx(f => pg_del.Value = i);
+                                //        i = i + 1;
+                                //        listView1.Invoke(new MethodInvoker(delegate
+                                //        {
+                                //            foreach (ListViewItem item2 in listView1.Items)
+                                //            {
+                                //                if (item2.Text == Path.GetFileName(item))
+                                //                {
+                                //                    item2.SubItems[5].Text = FFBatch.Properties.Strings.recycled;
+                                //                }
+                                //            }
+                                //        }));
+                                //    }
+                                //    catch
+                                //    {
+                                //        err = err + 1;
+                                //        list_failed.Add(item + " " + FFBatch.Properties.Strings2.not_deleted);
+                                //        listView1.Invoke(new MethodInvoker(delegate
+                                //        {
+                                //            foreach (ListViewItem item2 in listView1.Items)
+                                //            {
+                                //                if (item2.Text == Path.GetFileName(item))
+                                //                {
+                                //                    item2.SubItems[5].Text = FFBatch.Properties.Strings.not_recycled;
+                                //                }
+                                //            }
+                                //        }));
+                                //    }
+
+                                //    this.InvokeEx(f => prog_txt.Text = FFBatch.Properties.Strings.to_recycle + i.ToString() + " " + FFBatch.Properties.Strings.of1 + " " + listView1.Items.Count);
+                                //    this.InvokeEx(f => prog_txt.Refresh());
+                                //}
+                                this.InvokeEx(f => prog_txt.Visible = false);
                                     this.InvokeEx(f => prog_txt.Dispose());
                                     this.InvokeEx(f => pg_del.Visible = false);
                                     this.InvokeEx(f => pg_del.Dispose());
                                     Enable_Controls();
 
-                                    if (err > 0) MessageBox.Show(err.ToString() + " " + Properties.Strings.not_recycled2 + " " + Properties.Strings.check_log, FFBatch.Properties.Strings.not_recycled3, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                    //if (err > 0) MessageBox.Show(err.ToString() + " " + Properties.Strings.not_recycled2 + " " + Properties.Strings.check_log, FFBatch.Properties.Strings.not_recycled3, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                                     Boolean all_ok = true;
                                 listView1.Invoke(new MethodInvoker(delegate
