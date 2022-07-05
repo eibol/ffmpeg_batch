@@ -734,9 +734,10 @@ namespace FFBatch
             String target_img = Path.GetTempPath() + "FFBatch_Test" + "\\" + Path.GetFileNameWithoutExtension(file_img) + "_full_" + rel_path + "_" + current_fr + "." + "jpg";
 
             String destino = Path.Combine(Path.GetTempPath(), "FFBatch_test");
-
-            AppParam_img = " -ss " + time_frame + " -i " + "" + '\u0022' + file_img + '\u0022' + " -qscale:v 0" + " -f image2 -y " + '\u0022' + target_img + '\u0022';
-
+            Boolean is_audio = is_audio_f();
+            if (is_audio == false) AppParam_img = " -ss " + time_frame + " -i " + "" + '\u0022' + file_img + '\u0022' + " -qscale:v 0" + " -f image2 -y " + '\u0022' + target_img + '\u0022';
+            else AppParam_img = " -i " + "" + '\u0022' + file_img + '\u0022' + " -qscale:v 0" + " -f image2 -y " + '\u0022' + target_img + '\u0022';
+            
             proc_img.StartInfo.RedirectStandardOutput = false;
             proc_img.StartInfo.RedirectStandardError = false;
             proc_img.StartInfo.UseShellExecute = true;
@@ -1189,31 +1190,35 @@ namespace FFBatch
         private void pic_frame_DoubleClick(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
-            get_fullscr();
+            get_fullscr();            
             Form6 frm6 = new Form6();
             Rectangle resolution = Screen.PrimaryScreen.Bounds;
-            frm6.Top = 0; frm6.Left = 0;
-            frm6.Width = resolution.Width;
-            frm6.Height = resolution.Height;
-            frm6.pic1.Image = Clipboard.GetImage();
-            frm6.pic1.SizeMode = PictureBoxSizeMode.Zoom;
-            int width = 0;
-            int height = 0;
-            if (resolution.Width >= frm6.pic1.Image.Width)
+            try
             {
-                width = (resolution.Width - frm6.pic1.Image.Width) / 2;
-                frm6.pic1.SizeMode = PictureBoxSizeMode.Normal;
+                frm6.Top = 0; frm6.Left = 0;
+                frm6.Width = resolution.Width;
+                frm6.Height = resolution.Height;
+                frm6.pic1.Image = Clipboard.GetImage();
+                frm6.pic1.SizeMode = PictureBoxSizeMode.Zoom;
+                int width = 0;
+                int height = 0;
+                if (resolution.Width >= frm6.pic1.Image.Width)
+                {
+                    width = (resolution.Width - frm6.pic1.Image.Width) / 2;
+                    frm6.pic1.SizeMode = PictureBoxSizeMode.Normal;
+                }
+                if (resolution.Height >= frm6.pic1.Image.Height)
+                {
+                    height = (resolution.Height - frm6.pic1.Image.Height) / 2;
+                    frm6.pic1.SizeMode = PictureBoxSizeMode.Normal;
+                }
+                frm6.pic1.Top = height; frm6.pic1.Left = width;
+                frm6.pic1.Width = resolution.Width;
+                frm6.pic1.Height = resolution.Height;
+                this.Cursor = Cursors.Arrow;
+                frm6.ShowDialog();
             }
-            if (resolution.Height >= frm6.pic1.Image.Height)
-            {
-                height = (resolution.Height - frm6.pic1.Image.Height) / 2;
-                frm6.pic1.SizeMode = PictureBoxSizeMode.Normal;
-            }
-            frm6.pic1.Top = height; frm6.pic1.Left = width;
-            frm6.pic1.Width = resolution.Width;
-            frm6.pic1.Height = resolution.Height;
-            this.Cursor = Cursors.Arrow;
-            frm6.ShowDialog();
+            catch { }
         }
     }
 }

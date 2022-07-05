@@ -56,9 +56,12 @@
             this.ct1_paste_m3u = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.ctm1_encode = new System.Windows.Forms.ToolStripMenuItem();
+            this.ct1_sep_cod = new System.Windows.Forms.ToolStripSeparator();
             this.cti2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cti1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ct1_params = new System.Windows.Forms.ToolStripMenuItem();
+            this.ct1_rem_param = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
+            this.cti1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cti3 = new System.Windows.Forms.ToolStripMenuItem();
             this.ctdel = new System.Windows.Forms.ToolStripMenuItem();
             this.ct_move_top = new System.Windows.Forms.ToolStripMenuItem();
@@ -524,6 +527,7 @@
             this.BG_add_col_bitr = new System.ComponentModel.BackgroundWorker();
             this.BG_Seq = new System.ComponentModel.BackgroundWorker();
             this.timer_queue = new System.Windows.Forms.Timer(this.components);
+            this.BG_Add_col_cust_p = new System.ComponentModel.BackgroundWorker();
             this.ctm1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -705,9 +709,12 @@
             this.ct1_paste_m3u,
             this.toolStripSeparator2,
             this.ctm1_encode,
+            this.ct1_sep_cod,
             this.cti2,
-            this.cti1,
+            this.ct1_params,
+            this.ct1_rem_param,
             this.toolStripSeparator8,
+            this.cti1,
             this.cti3,
             this.ctdel,
             this.ct_move_top,
@@ -768,22 +775,39 @@
             this.ctm1_encode.Name = "ctm1_encode";
             this.ctm1_encode.Click += new System.EventHandler(this.ctm1_encode_Click);
             // 
+            // ct1_sep_cod
+            // 
+            this.ct1_sep_cod.Name = "ct1_sep_cod";
+            resources.ApplyResources(this.ct1_sep_cod, "ct1_sep_cod");
+            // 
             // cti2
             // 
             resources.ApplyResources(this.cti2, "cti2");
             this.cti2.Name = "cti2";
             this.cti2.Click += new System.EventHandler(this.cti2_Click);
             // 
-            // cti1
+            // ct1_params
             // 
-            resources.ApplyResources(this.cti1, "cti1");
-            this.cti1.Name = "cti1";
-            this.cti1.Click += new System.EventHandler(this.cti1_Click);
+            resources.ApplyResources(this.ct1_params, "ct1_params");
+            this.ct1_params.Name = "ct1_params";
+            this.ct1_params.Click += new System.EventHandler(this.ct1_params_Click);
+            // 
+            // ct1_rem_param
+            // 
+            resources.ApplyResources(this.ct1_rem_param, "ct1_rem_param");
+            this.ct1_rem_param.Name = "ct1_rem_param";
+            this.ct1_rem_param.Click += new System.EventHandler(this.ct1_rem_param_Click);
             // 
             // toolStripSeparator8
             // 
             this.toolStripSeparator8.Name = "toolStripSeparator8";
             resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
+            // 
+            // cti1
+            // 
+            resources.ApplyResources(this.cti1, "cti1");
+            this.cti1.Name = "cti1";
+            this.cti1.Click += new System.EventHandler(this.cti1_Click);
             // 
             // cti3
             // 
@@ -1306,7 +1330,6 @@
             // 
             resources.ApplyResources(this.notifyIcon1, "notifyIcon1");
             this.notifyIcon1.BalloonTipClicked += new System.EventHandler(this.notifyIcon1_BalloonTipClicked);
-            this.notifyIcon1.BalloonTipClosed += new System.EventHandler(this.notifyIcon1_BalloonTipClosed);
             this.notifyIcon1.Click += new System.EventHandler(this.notifyIcon1_Click);
             // 
             // ctm2
@@ -2959,7 +2982,7 @@
             // 
             // Timer_idle
             // 
-            this.Timer_idle.Interval = 30000;
+            this.Timer_idle.Interval = 60000;
             this.Timer_idle.Tick += new System.EventHandler(this.Timer_idle_Tick);
             // 
             // item_up
@@ -4061,6 +4084,8 @@
             // chk_auto_subs
             // 
             resources.ApplyResources(this.chk_auto_subs, "chk_auto_subs");
+            this.chk_auto_subs.Checked = true;
+            this.chk_auto_subs.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chk_auto_subs.Name = "chk_auto_subs";
             this.chk_auto_subs.UseVisualStyleBackColor = true;
             // 
@@ -4458,6 +4483,11 @@
             // 
             this.timer_queue.Interval = 60000;
             this.timer_queue.Tick += new System.EventHandler(this.timer_queue_Tick);
+            // 
+            // BG_Add_col_cust_p
+            // 
+            this.BG_Add_col_cust_p.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BG_Add_col_cust_p_DoWork);
+            this.BG_Add_col_cust_p.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BG_Add_col_cust_p_RunWorkerCompleted);
             // 
             // Form1
             // 
@@ -5100,6 +5130,10 @@
         private System.Windows.Forms.Timer timer_queue;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator22;
         private System.Windows.Forms.ToolStripMenuItem ct1_crop;
+        private System.ComponentModel.BackgroundWorker BG_Add_col_cust_p;
+        private System.Windows.Forms.ToolStripMenuItem ct1_params;
+        private System.Windows.Forms.ToolStripMenuItem ct1_rem_param;
+        private System.Windows.Forms.ToolStripSeparator ct1_sep_cod;
     }
 }
 

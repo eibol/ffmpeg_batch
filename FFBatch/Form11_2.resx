@@ -253,10 +253,10 @@
     <value>17, 17</value>
   </metadata>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 80</value>
+    <value>59, 80</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+    <value>102, 23</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>

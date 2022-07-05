@@ -21,7 +21,9 @@ namespace FFBatch
         {
             InitializeComponent();
         }
-                
+
+        public Boolean keep_dates = false;
+        public Boolean totray = false;
         public Boolean autorun = false;
         public Boolean automulti = false;
         public Boolean changed_lang = false;
@@ -152,12 +154,17 @@ namespace FFBatch
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            pic_new.Top = chk_quick_q.Top - 2;
+            pic_new.Left = chk_quick_q.Left - 30;
             edit_presets = false;
             presets_online = false;
             String app_location = Application.StartupPath;
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
             if (File.Exists(portable_flag)) is_portable = true;
             else is_portable = false;
+
+            if (Properties.Settings.Default.to_tray == false) chk_tray.Checked = false;
+            else chk_tray.Checked = true;
 
             if (Properties.Settings.Default.dark_mode == true)
             {
@@ -186,6 +193,9 @@ namespace FFBatch
             browse_sound.InitialDirectory = Application.StartupPath;
 
             //Read configuration
+
+            if (Properties.Settings.Default.no_ctrl_p == false) chk_ctrl_p.Checked = false;
+            else chk_ctrl_p.Checked = true;
 
             if (is_startup() == false) chk_run_st.Checked = false;
             else chk_run_st.Checked = true;
@@ -289,7 +299,38 @@ namespace FFBatch
 
             //End read configuration
 
+            if (Properties.Settings.Default.no_ctrl_p == true) chk_ctrl_p.Checked = true;
+            else chk_ctrl_p.Checked = false;
+            if (Properties.Settings.Default.quick_queue == true) chk_quick_q.Checked = true;
+            else chk_quick_q.Checked = false;
+
             //Read auto-saved configuration
+
+            //Keep file dates
+
+            String f_dates = String.Empty;
+            if (is_portable == false)
+            {
+                f_dates = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_dates.ini";
+            }
+            else
+            {
+                f_dates = port_path + "ff_dates_portable.ini";
+            }
+
+            if (File.Exists(f_dates))
+            {
+                chk_dates.Checked = true;
+            }
+            else
+            {
+                chk_dates.Checked = false;
+            }
+
+            if (chk_try.CheckState == CheckState.Checked) try_preset = true;
+            else try_preset = false;
+
+            //End Keep dates
 
             //Disable try preset
 
@@ -1090,6 +1131,8 @@ namespace FFBatch
             chk_auto_multi.Checked = false;
             chk_run_st.Checked = false;
             n_delay.Value = 0;
+            chk_ctrl_p.Checked = false;
+            chk_quick_q.Checked = false;
         }
 
         private void chk_never_cache_CheckedChanged(object sender, EventArgs e)
@@ -1551,6 +1594,18 @@ namespace FFBatch
                 else File.Delete(f_delay);
 
             } catch { }            
+        }
+
+        private void chk_tray_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_tray.CheckState == CheckState.Checked) totray = true;
+            else totray = false;
+        }
+
+        private void ckk_dates_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_dates.CheckState == CheckState.Checked) keep_dates = true;
+            else keep_dates = false;
         }
     }
 }
