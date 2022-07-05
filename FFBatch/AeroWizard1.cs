@@ -21,6 +21,7 @@ namespace FFBatch
             InitializeComponent();
         }
 
+        private Boolean warn_spf = true;
         private String auto_crop = String.Empty;
         public Boolean online_pr = false;
         public String sel_preset = "";
@@ -1953,7 +1954,7 @@ namespace FFBatch
                 if (n_speed.Value < 0)
                 {
                     v_sp = 1 + Math.Abs(n_speed.Value / 100);
-                    a_sp = const1 + (Math.Abs(-100 - n_speed.Value) / 200);
+                    a_sp = Math.Round(1 / v_sp,3);
                 }
                 video_encoder_param = video_encoder_param + " -filter_complex " + '\u0022' + "[0:v]setpts=" + v_sp.ToString().Replace(",", ".") + "*PTS[v];[0:a]atempo=" + a_sp.ToString().Replace(",", ".") + "[a]" + '\u0022' + " -map " + '\u0022' + "[v]" + '\u0022' + " -map " + '\u0022' + "[a]" + '\u0022' + " ";
             }           
@@ -3422,7 +3423,7 @@ namespace FFBatch
 
                 if (n_speed2.Value < 0)
                 {
-                    a_sp = const1 + (Math.Abs(-100 - n_speed2.Value) / 200);
+                    a_sp = 1 - (Math.Abs((n_speed2.Value / 100)) / 2);
                 }
                 speed_a = "atempo=" + a_sp.ToString().Replace(",", ".");
                 if (chk_normalize.Checked)
@@ -4606,11 +4607,24 @@ namespace FFBatch
 
         private void n_speed_ValueChanged(object sender, EventArgs e)
         {
+            
             if (n_speed.Value != 0)
             {
-                foreach (Control ct in wz1_1.Controls) ct.Enabled = false;
+                foreach (Control ct in wz1_1.Controls)
+                    if (ct.Name != n_speed.Name) ct.Enabled = false;
+                cb_resize.SelectedIndex = -1;
+                cb_crop.SelectedIndex = -1;
+                cb_deint.SelectedIndex = -1;
+                cb_rotate.SelectedIndex = -1;
+                cb_de_mode.SelectedIndex = -1;
+                cb_de_parity.SelectedIndex = -1;
+                cb_de_deint.SelectedIndex = -1;
                 n_speed.Enabled = true;
-                MessageBox.Show(Properties.Strings2.speed_not_comp);
+                if (warn_spf == true)
+                {
+                    MessageBox.Show(Properties.Strings2.speed_not_comp);
+                    warn_spf = false;
+                }
             }
             else
             {
