@@ -158,13 +158,13 @@
     <value>Neste modo, os arquivos de áudio/vídeo podem ser copiados em fluxo, desde que compartilhem qualidades (tamanho, codec, taxa de bits). NOTA: Nem todos os contêineres têm suporte para cópia de fluxo. Se ocorrerem problemas de reprodução ou os arquivos não forem unidos, a recodificação é necessária.</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>284, 7</value>
+    <value>368, 7</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Começar</value>
   </data>
   <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>358, 7</value>
+    <value>294, 7</value>
   </data>
   <data name="btn_cancel.Text" xml:space="preserve">
     <value>Cancelar</value>

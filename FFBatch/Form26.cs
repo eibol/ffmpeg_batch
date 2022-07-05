@@ -23,6 +23,7 @@ namespace FFBatch
 
         public int top = 0;
         public int left = 0;
+        public Boolean no_pop = false;
         public String out_file = "";
         public String dur_file = "";
         public Image pic_img = null;
@@ -48,7 +49,31 @@ namespace FFBatch
                 this.BackColor = SystemColors.InactiveBorder;                
             }
 
-                this.Text = Properties.Strings2.out_file;
+            String app_location = Application.StartupPath;
+            String portable_flag = Application.StartupPath + "\\" + "portable.ini";
+            if (File.Exists(portable_flag)) is_portable = true;
+
+            String no_out_pop = "";
+            if (is_portable == false)
+            {
+                no_out_pop = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_pop_up.ini";
+            }
+            else
+            {
+                no_out_pop = port_path + "ff_pop_up_portable.ini";
+            }
+            if (File.Exists(no_out_pop))
+            {
+                chk_no_popp.Checked = true;
+                no_pop = true;
+            }
+            else
+            {
+                chk_no_popp.Checked = false;
+                no_pop = false;
+            }
+
+            this.Text = Properties.Strings2.out_file;
                 btn_close.Text = Properties.Strings.close_win;
                 btn_browse.Text = Properties.Strings2.browse;
                 chk_no_popp.Text = Properties.Strings2.not_display;
@@ -56,7 +81,7 @@ namespace FFBatch
                 int current_fr = 4000;
                 Process proc_img = new System.Diagnostics.Process();
                 
-            l_v.Text = Properties.Strings2.video + ":";
+                l_v.Text = Properties.Strings2.video + ":";
                 l_s.Text = Properties.Strings.resolution + ":";
                 l_a.Text = Properties.Strings2.audio + ":";
                 l_tb.Text = Properties.Strings2.bitrate + ":";
@@ -66,7 +91,7 @@ namespace FFBatch
             String sep_th = ci.NumberFormat.CurrencyGroupSeparator;
 
             //Attempt to extract frame as image
-            String dur_lv1 = "00:00:00.000";
+                String dur_lv1 = "00:00:00.000";
                 String lv1_item = out_file;
                 pic_frame.Image = pic_img;            
 
@@ -360,15 +385,21 @@ namespace FFBatch
             {
                 no_out_pop = port_path + "ff_pop_up_portable.ini";
             }
-            if (chk_no_popp.CheckState == CheckState.Checked) File.WriteAllText(no_out_pop, String.Empty);
+            if (chk_no_popp.CheckState == CheckState.Checked)
+            {
+                no_pop = true;
+                File.WriteAllText(no_out_pop, String.Empty);                
+            }
             else
             {
+                no_pop = false;
                 if (File.Exists(no_out_pop))
                 {
                     try
                     {
                         File.Delete(no_out_pop);
-                    } catch { }
+                    }
+                    catch { }
                 }
             }
         }

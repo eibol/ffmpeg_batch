@@ -93,73 +93,82 @@ namespace FFBatch
             if (FFBatch.Properties.Settings.Default.app_lang == "zh-Hans") this.Height = this.Height + 38;
 
             this.Text = Properties.Strings2.sec_perf;
-
-            ManagementObjectSearcher mosProcessor = new ManagementObjectSearcher("SELECT * FROM Win32_Processor");
-            string Procname = null;
-
-            foreach (ManagementObject moProcessor in mosProcessor.Get())
+            try
             {
-                if (moProcessor["name"] != null) cpu = moProcessor["name"].ToString();
-                else cpu = Properties.Strings.unknown;
-            }
+                ManagementObjectSearcher mosProcessor = new ManagementObjectSearcher("SELECT * FROM Win32_Processor");
+                string Procname = null;
 
-            lbl_cpu.Text = cpu;
-
-            ManagementObjectSearcher search = new ManagementObjectSearcher("SELECT * FROM Win32_VideoController");
-            foreach (ManagementObject mo in search.Get())
-            {
-                PropertyData currentBitsPerPixel = mo.Properties["CurrentBitsPerPixel"];
-                PropertyData description = mo.Properties["Description"];
-                if (currentBitsPerPixel != null && description != null)
+                foreach (ManagementObject moProcessor in mosProcessor.Get())
                 {
-                    if (currentBitsPerPixel.Value != null)
-                        videocard = videocard + (description.Value) + " ";
+                    if (moProcessor["name"] != null) cpu = moProcessor["name"].ToString();
+                    else cpu = Properties.Strings.unknown;
                 }
+
+                lbl_cpu.Text = cpu;
+
+                ManagementObjectSearcher search = new ManagementObjectSearcher("SELECT * FROM Win32_VideoController");
+                foreach (ManagementObject mo in search.Get())
+                {
+                    PropertyData currentBitsPerPixel = mo.Properties["CurrentBitsPerPixel"];
+                    PropertyData description = mo.Properties["Description"];
+                    if (currentBitsPerPixel != null && description != null)
+                    {
+                        if (currentBitsPerPixel.Value != null)
+                            videocard = videocard + (description.Value) + " ";
+                    }
+                }
+                if (videocard == null) videocard = Properties.Strings2.integrated;
+                if (videocard == String.Empty) videocard = Properties.Strings2.integrated;
+                lbl_vcard.Text = videocard;
+
+                String result = String.Empty;
+
+                ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem");
+                foreach (ManagementObject os in searcher.Get())
+                {
+                    result = os["Caption"].ToString();
+                    break;
+                }
+
+                lbl_os.Text = result;
+                if (product.ToLower().Contains("windows defender"))
+                {
+                    btn_add_ex.Enabled = true;
+                    txt_tip.Text = Properties.Strings2.tip1 + Environment.NewLine + Environment.NewLine + Properties.Strings2.tip2 + Environment.NewLine + Environment.NewLine + Properties.Strings2.tip3 + " " + Properties.Strings2.tip_win_sec + " " + Properties.Strings2.tip4;
+                }
+                else
+                {
+                    txt_tip.Text = Properties.Strings2.tip1 + Environment.NewLine + Environment.NewLine + Properties.Strings2.tip2 + Environment.NewLine + Environment.NewLine + Properties.Strings2.tip3 + " " + Properties.Strings2.tip_your_av + " " + Properties.Strings2.tip4;
+                }
+
+                //Antivirus
+                ManagementObjectSearcher wmiData = new ManagementObjectSearcher(@"root\SecurityCenter2", "SELECT * FROM AntiVirusProduct");
+                ManagementObjectCollection data = wmiData.Get();
+
+                int i = 0;
+                foreach (ManagementObject virusChecker in data)
+                {
+                    product = (virusChecker.GetPropertyValue("displayName").ToString());
+                    product_state = (virusChecker.GetPropertyValue("productState").ToString());
+                    vir_exe = (virusChecker.GetPropertyValue("pathToSignedProductExe").ToString());
+                    i++;
+                }
+                lbl_antivir.Text = product;
+
+                lbl_os.Width = groupBox3.Width - lbl_os.Left - 13;
+                lbl_cpu.Width = groupBox3.Width - lbl_cpu.Left - 13;
+                lbl_vcard.Width = groupBox3.Width - lbl_vcard.Left - 13;
+                lbl_antivir.Width = groupBox3.Width - lbl_antivir.Left - 13;
+
+                pic_2.Image = pic_excl.Image;
             }
-            if (videocard == null) videocard = Properties.Strings2.integrated;
-            if (videocard == String.Empty) videocard = Properties.Strings2.integrated;
-            lbl_vcard.Text = videocard;
-
-            String result = String.Empty;
-
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem");
-            foreach (ManagementObject os in searcher.Get())
+            catch
             {
-                result = os["Caption"].ToString();
-                break;
+                lbl_os.Text = "-";
+                lbl_cpu.Text = "-";
+                lbl_vcard.Text = "-";
+                lbl_antivir.Text = "-";
             }
-
-            lbl_os.Text = result;
-            if (product.ToLower().Contains("windows defender"))
-            {
-                btn_add_ex.Enabled = true;
-                txt_tip.Text = Properties.Strings2.tip1 + Environment.NewLine + Environment.NewLine + Properties.Strings2.tip2 + Environment.NewLine + Environment.NewLine + Properties.Strings2.tip3 + " " + Properties.Strings2.tip_win_sec + " " + Properties.Strings2.tip4;
-            }
-            else
-            {
-                txt_tip.Text = Properties.Strings2.tip1 + Environment.NewLine + Environment.NewLine + Properties.Strings2.tip2 + Environment.NewLine + Environment.NewLine + Properties.Strings2.tip3 + " " + Properties.Strings2.tip_your_av + " " + Properties.Strings2.tip4;
-            }
-
-            //Antivirus
-            ManagementObjectSearcher wmiData = new ManagementObjectSearcher(@"root\SecurityCenter2", "SELECT * FROM AntiVirusProduct");
-            ManagementObjectCollection data = wmiData.Get();
-
-            int i = 0;
-            foreach (ManagementObject virusChecker in data)
-            {
-                product = (virusChecker.GetPropertyValue("displayName").ToString());
-                product_state = (virusChecker.GetPropertyValue("productState").ToString());
-                vir_exe = (virusChecker.GetPropertyValue("pathToSignedProductExe").ToString());
-                i++;
-            }
-            lbl_antivir.Text = product;
-
-            lbl_os.Width = groupBox3.Width - lbl_os.Left - 13;
-            lbl_cpu.Width = groupBox3.Width - lbl_cpu.Left - 13;
-            lbl_vcard.Width = groupBox3.Width - lbl_vcard.Left - 13;
-            lbl_antivir.Width = groupBox3.Width - lbl_antivir.Left - 13;
-
-            pic_2.Image = pic_excl.Image;
 
             String f_md5 = String.Empty;
             if (is_portable == false) { f_md5 = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_md5.ini"; }

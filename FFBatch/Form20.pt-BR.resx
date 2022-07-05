@@ -137,10 +137,13 @@
     <value>315, 20</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>314, 9</value>
+    <value>390, 10</value>
   </data>
   <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>395, 9</value>
+    <value>298, 10</value>
+  </data>
+  <data name="btn_cancel.Text" xml:space="preserve">
+    <value>Cancelar</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>478, 50</value>

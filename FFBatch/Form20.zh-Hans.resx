@@ -130,8 +130,14 @@
   <data name="label2.Text" xml:space="preserve">
     <value>如果选择第一个链接，所有列表将依次重命名(01,02..99.)</value>
   </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>365, 9</value>
+  </data>
   <data name="button1.Text" xml:space="preserve">
     <value>确定</value>
+  </data>
+  <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>275, 9</value>
   </data>
   <data name="btn_cancel.Text" xml:space="preserve">
     <value>取消</value>

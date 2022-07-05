@@ -133,20 +133,20 @@
   <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>335, 20</value>
   </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 50</value>
-  </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>304, 9</value>
+    <value>385, 9</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Aceptar</value>
   </data>
   <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>385, 9</value>
+    <value>294, 9</value>
   </data>
   <data name="btn_cancel.Text" xml:space="preserve">
     <value>Cancelar</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>492, 50</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>231, 13</value>

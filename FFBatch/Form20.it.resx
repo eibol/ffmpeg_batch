@@ -131,10 +131,10 @@
     <value>Se viene selezionato il primo collegamento, tutto l'elenco verro rinominata in sequenza (01,02..99.)</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>361, 6</value>
+    <value>435, 6</value>
   </data>
   <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>442, 6</value>
+    <value>345, 6</value>
   </data>
   <data name="btn_cancel.Text" xml:space="preserve">
     <value>Annulla</value>
