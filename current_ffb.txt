@@ -1,5 +1,6 @@
-﻿2.8.2
-• FFmpeg 5.1.1
-• More than one application instance allowed (experimental).
-• Minor bugfixes using Quick file listing setting.
-• Minor bugfixes on Two Pass Video wizard.
+2.8.3
+• FFmpeg 5.1.2
+• Warning/automatic renaming of conflicting character in filenames when using filters.
+• Fade in/out available on the fly for trimming feature.
+• Schedule night/day mode or use operating system setting.
+• Sizable preview dialog.
