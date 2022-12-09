@@ -1,10 +1,9 @@
-﻿2.8.1
-• FFmpeg v5.1.
-• New setting at Two Pass Video wizard to batch encode with a target size in MBs (x264/x265) using one or two passes.
-• Encoded file count now displayed.
-• Fixed occasional encoding freezing due to source drive free space periodic check.
-• Fixed deleting many files from file list taking too long.
-• Fixed poor performance using quick file listing and multi-file encoding for lists above 10000 elements:
-Faster start without lagging, stream copy around 4000 files/minute.
-• A few cosmetic fixes for quick file listing mode and recycling source files.
-• Other minor bugfixes.
+﻿2.8.4
+• New setting to monitor and auto-pause on battery and resume on AC Power (useful for temporary power losses).
+• New setting to automatically filter invalid/zero duration files just after adding files to main list.
+• New YouTube setting to automatically split video in consecutive chapters (if available). 
+• NOTE: Do not enable if videos contain no chapters, since they will have to be processed twice.
+• YouTube settings now saved on exit.
+• Increased ffmpeg parameters text length on main tab.
+• Fixed cosmetic error in number of processed files during encoding.
+• Other minor bufixes.
