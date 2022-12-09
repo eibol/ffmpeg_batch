@@ -6,4 +6,4 @@
 • YouTube settings now saved on exit.
 • Increased ffmpeg parameters text length on main tab.
 • Fixed cosmetic error in number of processed files during encoding.
-• Other minor bufixes.
+• Other minor bugfixes.
