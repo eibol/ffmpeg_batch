@@ -31,10 +31,10 @@ namespace FFBatch
         public String out_size = "";
         private Boolean is_portable = false;
         private String port_path = Application.StartupPath + "\\" + "settings" + "\\";
-        CultureInfo ci = System.Threading.Thread.CurrentThread.CurrentUICulture;        
+        CultureInfo ci = System.Threading.Thread.CurrentThread.CurrentUICulture;
 
         private void Form26_Load(object sender, EventArgs e)
-        {            
+        {
             if (Owner != null) Location = new Point(Owner.Location.X + Owner.Width / 2 - Width / 2,
                     Owner.Location.Y + Owner.Height / 2 - Height / 2);
 
@@ -46,7 +46,7 @@ namespace FFBatch
             else
             {
                 foreach (Control c in this.Controls) UpdateColorDefault(c);
-                this.BackColor = SystemColors.InactiveBorder;                
+                this.BackColor = SystemColors.InactiveBorder;
             }
 
             String app_location = Application.StartupPath;
@@ -80,7 +80,7 @@ namespace FFBatch
                 btn_play.Text = Properties.Strings.Play_file;
                 int current_fr = 4000;
                 Process proc_img = new System.Diagnostics.Process();
-                
+
                 l_v.Text = Properties.Strings2.video + ":";
                 l_s.Text = Properties.Strings.resolution + ":";
                 l_a.Text = Properties.Strings2.audio + ":";
@@ -93,7 +93,7 @@ namespace FFBatch
             //Attempt to extract frame as image
                 String dur_lv1 = "00:00:00.000";
                 String lv1_item = out_file;
-                pic_frame.Image = pic_img;            
+                pic_frame.Image = pic_img;
 
                 if (!File.Exists(lv1_item)) return;
                 lbl_name.Text = Path.GetFileName(out_file);
@@ -114,9 +114,9 @@ namespace FFBatch
                              t11.Minutes,
                              t11.Seconds);
                 lbl_dur.Text = dur;
-                current_fr = (int)TimeSpan.Parse(dur_file).TotalMilliseconds / 2;                
+                current_fr = (int)TimeSpan.Parse(dur_file).TotalMilliseconds / 2;
             }
-            else current_fr = 0;    
+            else current_fr = 0;
                 if (current_fr < 1) current_fr = 1;
 
                 String time_frame = "";
@@ -130,14 +130,14 @@ namespace FFBatch
                 time_frame = tx_1;
                 String repl_frm = time_frame.Replace(",", "").Replace(".", "").Replace(":", "");
 
-                String ffm_img = Path.Combine(Application.StartupPath, "ffmpeg.exe");                
+                String ffm_img = Path.Combine(Application.StartupPath, "ffmpeg.exe");
 
                 String file_img = Path.GetFullPath(lv1_item);
                 String fullPath_img = file_img;
                 String AppParam_img = "";
                 String config_info = Path.Combine(Path.GetTempPath(), "FFBatch_Test") + "\\" + "mediaconfig.txt";
                 String rel_path = Path.GetDirectoryName(file_img).Replace(":", "_").Replace("\\", "_") + Path.GetExtension(file_img).Replace(".", "_");
-                String target_img = Path.GetTempPath() + "FFBatch_Test" + "\\" + Path.GetFileNameWithoutExtension(file_img) + "_480_" + rel_path + "_" + repl_frm + "." + "jpg";                
+                String target_img = Path.GetTempPath() + "FFBatch_Test" + "\\" + Path.GetFileNameWithoutExtension(file_img) + "_480_" + rel_path + "_" + repl_frm + "." + "jpg";
 
                 String m_info_path = System.IO.Path.Combine(Application.StartupPath, "MediaInfo.exe");
 
@@ -174,51 +174,51 @@ namespace FFBatch
                             }
 
                             get_frames.WaitForExit();
-                            
+
                             if (get_frames.ExitCode == 0)
                             {
                                 if (lines_ouput[1].ToLower().Contains("visual")) lines_ouput[1] = lines_ouput[1].Replace("Visual", "");
-                                try {  lbl_v_th.Text = lines_ouput[1].Replace("Video", "").Replace("AVC", "h264").ToLower() + " " + "(" + lines_ouput[5] + ")";                         
-                                    
+                                try {  lbl_v_th.Text = lines_ouput[1].Replace("Video", "").Replace("AVC", "h264").ToLower() + " " + "(" + lines_ouput[5] + ")";
+
                                 } catch {  }
 
                                 try { lbl_s_th.Text = lines_ouput[2] + "x" + lines_ouput[3] + " (" + lines_ouput[4] + ")";  } catch { }
 
-                                try { lbl_a_th.Text = lines_ouput[6].ToLower() + " (" + lines_ouput[7] + ")"; } 
+                                try { lbl_a_th.Text = lines_ouput[6].ToLower() + " (" + lines_ouput[7] + ")"; }
                                 catch {lbl_a_th.Text = lines_ouput[1].ToLower() + " (" + lines_ouput[2].ToLower() + ")";
 
                                     lbl_s_th.Text = "-";
-                                    lbl_v_th.Text = "-";                                
-                                }                            
-                                
+                                    lbl_v_th.Text = "-";
+                                }
+
                                 String ext_a0 = Path.GetExtension(file_img);
 
                                 if (ext_a0 == ".flac" || ext_a0 == ".mp3" || ext_a0 == ".oga" || ext_a0 == ".ape" || ext_a0 == ".wav" || ext_a0 == ".aac" || ext_a0 == ".ac3" || ext_a0 == ".mpa" || ext_a0 == ".mka" || ext_a0 == ".wave" || ext_a0 == ".mp1" || ext_a0 == ".dsd" || ext_a0 == ".wma" || ext_a0 == ".amr" || ext_a0 == ".opus")
                                 {
-                                    lbl_a_th.Text = lines_ouput[1].ToLower() + " (" + lines_ouput[2].ToLower() + ")";                                   
+                                    lbl_a_th.Text = lines_ouput[1].ToLower() + " (" + lines_ouput[2].ToLower() + ")";
                                 }
-                                
+
                                 if (lbl_v_th.Text.Contains("()")) lbl_v_th.Text = lbl_v_th.Text.Replace("()", "(vbr)");
                                 if (lbl_a_th.Text.Contains("()")) lbl_a_th.Text = lbl_a_th.Text.Replace("()", "(vbr)");
                                 lbl_v_th.Text = Regex.Replace(lbl_v_th.Text, @"(?<=\d)\p{Zs}(?=\d)", sep_th);
                                 lbl_a_th.Text = Regex.Replace(lbl_a_th.Text, @"(?<=\d)\p{Zs}(?=\d)", sep_th);
                             }
                             else
-                            {                                
+                            {
                                 lbl_v_th.Text = "-";
-                                lbl_a_th.Text = "-";                                
-                            }                           
+                                lbl_a_th.Text = "-";
+                            }
 
                         }
                         catch
-                        {                            
+                        {
                             lbl_v_th.Text = "-";
                             lbl_a_th.Text = "-";
-                        }                        
+                        }
 
                     }));
 
-                    //End Get Info                   
+                    //End Get Info
 
                     AppParam_img = " -ss " + time_frame + " -i " + "" + '\u0022' + file_img + '\u0022' + " -qscale:v 0" + " -vf scale=480:-1" + " -f image2 -y " + '\u0022' + target_img + '\u0022';
 
@@ -275,7 +275,7 @@ namespace FFBatch
                                 try
                                 {
                                     //if (lbl_a_th.Text != ext_a0.Replace(".", "")) lbl_v_th.Text = ext_a0.Replace(".", "");
-                                    //else lbl_v_th.Text = "Audio";                                    
+                                    //else lbl_v_th.Text = "Audio";
                                     PictureBox pic2 = new PictureBox();
                                     pic2.Image = pic_frame.ErrorImage;
                                     pic_frame.Image = pic2.Image;
@@ -290,7 +290,7 @@ namespace FFBatch
                             }));
                         }
 
-                        if (ext_a0 == ".jpg" || ext_a0 == ".jpeg" || ext_a0 == ".png" || ext_a0 == ".gif" || ext_a0 == ".tif" || ext_a0 == ".bmp" || ext_a0 == ".ico" || ext_a0 == ".bmp")
+                        if (ext_a0 == ".jpg" || ext_a0 == ".jpeg" || ext_a0 == ".png" || ext_a0 == ".gif" || ext_a0 == ".tif" || ext_a0 == ".bmp" || ext_a0 == ".ico")
                         {
                             pic_frame.Invoke(new MethodInvoker(delegate
                             {
@@ -335,7 +335,7 @@ namespace FFBatch
                         }
                     }
                 });
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -364,9 +364,9 @@ namespace FFBatch
         }
 
         private void btn_browse_Click(object sender, EventArgs e)
-        {            
+        {
             if (Directory.Exists(Path.GetDirectoryName(out_file)) && Directory.GetFiles(Path.GetDirectoryName(out_file)).Length != 0)
-            {                
+            {
                 Process open_processed = new Process();
                 open_processed.StartInfo.FileName = "explorer.exe";
                 open_processed.StartInfo.Arguments = '\u0022' + Path.GetDirectoryName(out_file) + '\u0022';
@@ -388,7 +388,7 @@ namespace FFBatch
             if (chk_no_popp.CheckState == CheckState.Checked)
             {
                 no_pop = true;
-                File.WriteAllText(no_out_pop, String.Empty);                
+                File.WriteAllText(no_out_pop, String.Empty);
             }
             else
             {

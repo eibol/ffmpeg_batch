@@ -191,12 +191,12 @@ namespace FFBatch
 
                     txt_st_md5.Text = saved;
                     txt_cur_md5.Text = code;
-                    if (txt_st_md5.Text == Properties.Strings2.none) ;
+                    if (txt_st_md5.Text == Properties.Strings2.none)
                     {
                         pic_1.Image = pic_excl.Image;
                         lbl_fail_ff.Text = Properties.Strings2.check_not_st;
                         btn_save_md5.Enabled = true;
-                    }                    
+                    }
                     if (code == saved)
                     {
                         pic_1.Image = pic_success.Image;
@@ -273,7 +273,7 @@ namespace FFBatch
                 return;
             }
 
-                        String path = "cmd.exe";
+            String path = "cmd.exe";
             String param = "/C " + "powershell.exe Add-MpPreference -ExclusionPath " + "'" + file_path + "'";
             Process ff_ext = new Process();
             ff_ext.StartInfo.FileName = path;
@@ -315,6 +315,6 @@ namespace FFBatch
         private void btn_close_Click(object sender, EventArgs e)
         {
             this.Close();
-        }     
+        }
     }
 }
