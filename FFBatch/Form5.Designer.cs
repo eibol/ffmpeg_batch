@@ -43,13 +43,6 @@
             this.menu_Img = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ct_copy = new System.Windows.Forms.ToolStripMenuItem();
             this.ct_save = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_10 = new System.Windows.Forms.Button();
-            this.btn_minus10 = new System.Windows.Forms.Button();
-            this.btn_fr_start = new System.Windows.Forms.Button();
-            this.btn_fr_end = new System.Windows.Forms.Button();
-            this.lbl_fr_time = new System.Windows.Forms.TextBox();
-            this.btn_min1 = new System.Windows.Forms.Button();
-            this.btn_plus1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_kplus1 = new System.Windows.Forms.Button();
             this.btn_k_m1 = new System.Windows.Forms.Button();
@@ -60,13 +53,20 @@
             this.lbl_start = new System.Windows.Forms.Label();
             this.trim_right = new System.Windows.Forms.Button();
             this.trim_left = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pg1 = new FFBatch.ProgressBarWithText();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.lbl_prog = new System.Windows.Forms.Label();
             this.btn_copy = new System.Windows.Forms.Button();
             this.trackB = new System.Windows.Forms.TrackBar();
             this.btn_save = new System.Windows.Forms.Button();
+            this.btn_plus1 = new System.Windows.Forms.Button();
+            this.btn_min1 = new System.Windows.Forms.Button();
+            this.btn_fr_start = new System.Windows.Forms.Button();
+            this.lbl_fr_time = new System.Windows.Forms.TextBox();
+            this.btn_fr_end = new System.Windows.Forms.Button();
+            this.btn_10 = new System.Windows.Forms.Button();
+            this.btn_minus10 = new System.Windows.Forms.Button();
             this.btn_refresh = new System.Windows.Forms.Button();
             this.txt_name = new System.Windows.Forms.TextBox();
             this.btn_close = new System.Windows.Forms.Button();
@@ -82,7 +82,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_cut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_prog)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackB)).BeginInit();
             this.SuspendLayout();
             // 
@@ -186,55 +186,6 @@
             this.ct_save.Name = "ct_save";
             this.ct_save.Click += new System.EventHandler(this.ct_save_Click);
             // 
-            // btn_10
-            // 
-            resources.ApplyResources(this.btn_10, "btn_10");
-            this.btn_10.Name = "btn_10";
-            this.btn_10.UseVisualStyleBackColor = true;
-            this.btn_10.Click += new System.EventHandler(this.btn_10_Click);
-            // 
-            // btn_minus10
-            // 
-            resources.ApplyResources(this.btn_minus10, "btn_minus10");
-            this.btn_minus10.Name = "btn_minus10";
-            this.btn_minus10.UseVisualStyleBackColor = true;
-            this.btn_minus10.Click += new System.EventHandler(this.btn_minus10_Click);
-            // 
-            // btn_fr_start
-            // 
-            resources.ApplyResources(this.btn_fr_start, "btn_fr_start");
-            this.btn_fr_start.Name = "btn_fr_start";
-            this.btn_fr_start.UseVisualStyleBackColor = true;
-            this.btn_fr_start.Click += new System.EventHandler(this.btn_fr_start_Click);
-            // 
-            // btn_fr_end
-            // 
-            resources.ApplyResources(this.btn_fr_end, "btn_fr_end");
-            this.btn_fr_end.Name = "btn_fr_end";
-            this.btn_fr_end.UseVisualStyleBackColor = true;
-            this.btn_fr_end.Click += new System.EventHandler(this.btn_fr_end_Click);
-            // 
-            // lbl_fr_time
-            // 
-            this.lbl_fr_time.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            resources.ApplyResources(this.lbl_fr_time, "lbl_fr_time");
-            this.lbl_fr_time.Name = "lbl_fr_time";
-            this.lbl_fr_time.TextChanged += new System.EventHandler(this.lbl_fr_time_TextChanged);
-            // 
-            // btn_min1
-            // 
-            resources.ApplyResources(this.btn_min1, "btn_min1");
-            this.btn_min1.Name = "btn_min1";
-            this.btn_min1.UseVisualStyleBackColor = true;
-            this.btn_min1.Click += new System.EventHandler(this.btn_min1_Click);
-            // 
-            // btn_plus1
-            // 
-            resources.ApplyResources(this.btn_plus1, "btn_plus1");
-            this.btn_plus1.Name = "btn_plus1";
-            this.btn_plus1.UseVisualStyleBackColor = true;
-            this.btn_plus1.Click += new System.EventHandler(this.btn_plus1_Click);
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btn_kplus1);
@@ -246,7 +197,7 @@
             this.groupBox1.Controls.Add(this.lbl_start);
             this.groupBox1.Controls.Add(this.trim_right);
             this.groupBox1.Controls.Add(this.trim_left);
-            this.groupBox1.Controls.Add(this.panel1);
+            this.groupBox1.Controls.Add(this.panel2);
             this.groupBox1.Controls.Add(this.btn_copy);
             this.groupBox1.Controls.Add(this.trackB);
             this.groupBox1.Controls.Add(this.btn_save);
@@ -317,14 +268,14 @@
             this.trim_left.UseVisualStyleBackColor = true;
             this.trim_left.Click += new System.EventHandler(this.trim_left_Click);
             // 
-            // panel1
+            // panel2
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.pg1);
-            this.panel1.Controls.Add(this.btn_cancel);
-            this.panel1.Controls.Add(this.lbl_prog);
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.pg1);
+            this.panel2.Controls.Add(this.btn_cancel);
+            this.panel2.Controls.Add(this.lbl_prog);
+            resources.ApplyResources(this.panel2, "panel2");
+            this.panel2.Name = "panel2";
             // 
             // pg1
             // 
@@ -369,6 +320,55 @@
             this.btn_save.Name = "btn_save";
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            // 
+            // btn_plus1
+            // 
+            resources.ApplyResources(this.btn_plus1, "btn_plus1");
+            this.btn_plus1.Name = "btn_plus1";
+            this.btn_plus1.UseVisualStyleBackColor = true;
+            this.btn_plus1.Click += new System.EventHandler(this.btn_plus1_Click);
+            // 
+            // btn_min1
+            // 
+            resources.ApplyResources(this.btn_min1, "btn_min1");
+            this.btn_min1.Name = "btn_min1";
+            this.btn_min1.UseVisualStyleBackColor = true;
+            this.btn_min1.Click += new System.EventHandler(this.btn_min1_Click);
+            // 
+            // btn_fr_start
+            // 
+            resources.ApplyResources(this.btn_fr_start, "btn_fr_start");
+            this.btn_fr_start.Name = "btn_fr_start";
+            this.btn_fr_start.UseVisualStyleBackColor = true;
+            this.btn_fr_start.Click += new System.EventHandler(this.btn_fr_start_Click);
+            // 
+            // lbl_fr_time
+            // 
+            this.lbl_fr_time.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            resources.ApplyResources(this.lbl_fr_time, "lbl_fr_time");
+            this.lbl_fr_time.Name = "lbl_fr_time";
+            this.lbl_fr_time.TextChanged += new System.EventHandler(this.lbl_fr_time_TextChanged);
+            // 
+            // btn_fr_end
+            // 
+            resources.ApplyResources(this.btn_fr_end, "btn_fr_end");
+            this.btn_fr_end.Name = "btn_fr_end";
+            this.btn_fr_end.UseVisualStyleBackColor = true;
+            this.btn_fr_end.Click += new System.EventHandler(this.btn_fr_end_Click);
+            // 
+            // btn_10
+            // 
+            resources.ApplyResources(this.btn_10, "btn_10");
+            this.btn_10.Name = "btn_10";
+            this.btn_10.UseVisualStyleBackColor = true;
+            this.btn_10.Click += new System.EventHandler(this.btn_10_Click);
+            // 
+            // btn_minus10
+            // 
+            resources.ApplyResources(this.btn_minus10, "btn_minus10");
+            this.btn_minus10.Name = "btn_minus10";
+            this.btn_minus10.UseVisualStyleBackColor = true;
+            this.btn_minus10.Click += new System.EventHandler(this.btn_minus10_Click);
             // 
             // btn_refresh
             // 
@@ -422,13 +422,12 @@
             this.Controls.Add(this.dg_streams);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txt_name);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.glassExtenderProvider1.SetGlassMargins(this, new System.Windows.Forms.Padding(0));
-            this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form5";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form5_FormClosing);
             this.Load += new System.EventHandler(this.Form5_Load);
+            this.Resize += new System.EventHandler(this.Form5_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dg_streams)).EndInit();
             this.menu_grid.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pic_frame)).EndInit();
@@ -437,7 +436,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_cut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.img_prog)).EndInit();
-            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.trackB)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -451,13 +450,6 @@
         private System.Windows.Forms.ContextMenuStrip menu_grid;
         private System.Windows.Forms.ToolStripMenuItem ct1;
         private System.Diagnostics.Process ff_str;
-        private System.Windows.Forms.Button btn_10;
-        private System.Windows.Forms.Button btn_minus10;
-        private System.Windows.Forms.Button btn_fr_end;
-        private System.Windows.Forms.Button btn_fr_start;
-        private System.Windows.Forms.TextBox lbl_fr_time;
-        private System.Windows.Forms.Button btn_plus1;
-        private System.Windows.Forms.Button btn_min1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txt_name;
         private System.Windows.Forms.Button btn_close;
@@ -465,30 +457,37 @@
         private System.Windows.Forms.ToolStripMenuItem ct_save;
         private System.Windows.Forms.ToolStripMenuItem ct_copy;
         private System.Windows.Forms.SaveFileDialog save_img;
-        private System.Windows.Forms.Button btn_copy;
-        private System.Windows.Forms.Button btn_save;
-        private System.Windows.Forms.TrackBar trackB;
         private System.Windows.Forms.DataGridViewImageColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.Button btn_cancel;
-        private System.Windows.Forms.Label lbl_prog;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Button btn_refresh;
         public System.Windows.Forms.PictureBox pic_frame;
-        private ProgressBarWithText pg1;
-        private System.Windows.Forms.Button trim_right;
-        private System.Windows.Forms.Button trim_left;
         private System.ComponentModel.BackgroundWorker BG_Keyframes;
+        private System.Windows.Forms.Label txt_file;
+        private Vanara.Interop.DesktopWindowManager.GlassExtenderProvider glassExtenderProvider1;
+        private System.Windows.Forms.Button btn_kplus1;
+        private System.Windows.Forms.Button btn_k_m1;
+        private System.Windows.Forms.PictureBox pic_cut;
+        private System.Windows.Forms.PictureBox img_prog;
         private System.Windows.Forms.Label lbl_lapse;
         private System.Windows.Forms.Label lbl_end;
         private System.Windows.Forms.Label lbl_start;
-        private System.Windows.Forms.PictureBox img_prog;
-        private System.Windows.Forms.Label txt_file;
-        private System.Windows.Forms.PictureBox pic_cut;
-        private System.Windows.Forms.Button btn_kplus1;
-        private System.Windows.Forms.Button btn_k_m1;
-        private Vanara.Interop.DesktopWindowManager.GlassExtenderProvider glassExtenderProvider1;
+        private System.Windows.Forms.Button trim_right;
+        private System.Windows.Forms.Button trim_left;
+        private System.Windows.Forms.Panel panel2;
+        private ProgressBarWithText pg1;
+        private System.Windows.Forms.Button btn_cancel;
+        private System.Windows.Forms.Label lbl_prog;
+        private System.Windows.Forms.Button btn_copy;
+        private System.Windows.Forms.TrackBar trackB;
+        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Button btn_plus1;
+        private System.Windows.Forms.Button btn_min1;
+        private System.Windows.Forms.Button btn_fr_start;
+        private System.Windows.Forms.TextBox lbl_fr_time;
+        private System.Windows.Forms.Button btn_fr_end;
+        private System.Windows.Forms.Button btn_10;
+        private System.Windows.Forms.Button btn_minus10;
     }
 }

@@ -22,6 +22,7 @@ namespace FFBatch
             InitializeComponent();
         }
 
+        private String thumb_scale = "-vf scale=480:-1";
         private Boolean working = false;
         public Boolean refresh = false;
         Double elapsed = 0;
@@ -43,7 +44,7 @@ namespace FFBatch
         public String lv1_item = String.Empty;
         public String dur_lv1 = String.Empty;
         public int Id = 0;
-        public int current_fr = 0;        
+        public int current_fr = 0;
         Process proc_img_0 = new System.Diagnostics.Process();
 
         public void UpdateColorDark(Control myControl)
@@ -69,13 +70,16 @@ namespace FFBatch
         private void Form5_Load(object sender, EventArgs e)
         {
             refresh_lang();
+
+            if (Properties.Settings.Default.large_th == true) thumb_scale = "-vf scale=1024:-1";
+
             cancel_keyfr = false;
             lbl_prog.Text = Properties.Strings2.get_prev;
             btn_cancel.Text = Properties.Strings.cancel;
             btn_close.Text = Properties.Strings.close_win;
             this.Text = FFBatch.Properties.Strings.multi_streams;
-            panel1.Parent = groupBox1;
-            panel1.BackColor = Color.Transparent;
+            panel2.Parent = groupBox1;
+            panel2.BackColor = Color.Transparent;
             ct1.Text = Properties.Strings.copy;
             ct_save.Text = Properties.Strings2.save_img;
             ct_copy.Text = Properties.Strings.copy;
@@ -263,12 +267,49 @@ namespace FFBatch
             if (ext_a0 == ".jpg" || ext_a0 == ".jpeg" || ext_a0 == ".png" || ext_a0 == ".gif" || ext_a0 == ".tif" || ext_a0 == ".bmp" || ext_a0 == ".ico" || ext_a0 == ".bmp")
             {
                 try { pic_frame.Load(lv1_item); } catch { }
-                panel1.Visible = false;
+                panel2.Visible = false;
                 return;
             }
-                                    
-            DateTime time2;
-            
+
+
+            //Duration not available yet
+
+            DateTime time1;
+            if (!DateTime.TryParse(dur_lv1, out time1))
+            {
+                Process probe = new Process();
+                probe.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "MediaInfo.exe");
+                String ffprobe_frames = " " + '\u0022' + "--Inform=General;%Duration/String3%" + '\u0022';
+                probe.StartInfo.Arguments = ffprobe_frames + " " + '\u0022' + lv1_item + '\u0022'; ;
+
+                probe.StartInfo.RedirectStandardOutput = true;
+                probe.StartInfo.UseShellExecute = false;
+                probe.StartInfo.CreateNoWindow = true;
+                probe.EnableRaisingEvents = true;
+                probe.Start();
+
+                String duracion = probe.StandardOutput.ReadLine();
+
+                probe.WaitForExit();
+
+                if (duracion != null)
+                {
+                    TimeSpan time0;
+                    if (TimeSpan.TryParse(duracion, out time0)) dur_lv1 = duracion;
+                    else dur_lv1 = "00:00:00";
+                }
+                else
+                {
+                    dur_lv1 = "00:00:00";
+                }
+
+                //End duration
+                txt_file.Text = name + " - " + dur_lv1;
+            }
+
+            //End duration not available yet
+
+            DateTime time2;            
             if (DateTime.TryParse(dur_lv1, out time2))
             {                
                 if (lv1_item.ToLower().Substring(0, 4).Contains("http")) return;
@@ -418,7 +459,7 @@ namespace FFBatch
                     lbl_fr_time.Text = dur_lv1;
                 }                
 
-                img_prog.Width = (int)(seconds * 480 / seconds2);                
+                img_prog.Width = (int)(seconds * (panel2.Width) / seconds2) + 1;
             }
         }
         private void get_frame()
@@ -468,7 +509,7 @@ namespace FFBatch
             Boolean is_audio = is_audio_f();
             String ss = " -ss " + time_frame;
             if (is_audio == true) ss = "";
-            AppParam_img = ss + " -i " + "" + '\u0022' + file_img + '\u0022' + " -qscale:v 0" + " -vf scale=480:-1" + " -f image2 -y " + '\u0022' + target_img + '\u0022';
+            AppParam_img = ss + " -i " + "" + '\u0022' + file_img + '\u0022' + " -qscale:v 0" + " " + thumb_scale + " -f image2 -y " + '\u0022' + target_img + '\u0022';
                         
             proc_img1.StartInfo.RedirectStandardOutput = false;
             proc_img1.StartInfo.RedirectStandardError = false;
@@ -876,7 +917,7 @@ namespace FFBatch
                 proc_img_0.Kill();
             }
             catch { }            
-            panel1.Visible = false;
+            panel2.Visible = false;
             timer1.Enabled = false;
             btn_refresh.Enabled = true;            
         }
@@ -1018,7 +1059,7 @@ namespace FFBatch
                     }
                     catch { }
                 }
-                pos.Add(dur_lv1, null);
+                try { pos.Add(dur_lv1, null); } catch { }
             }
 
             else timer1.Stop();
@@ -1123,7 +1164,7 @@ namespace FFBatch
                 String target_log = destino + "\\" + vstats_name + ".log";
 
 
-                AppParam_img = "-skip_frame nokey" + " -i " + "" + '\u0022' + file_img + '\u0022' + " -vsync 0 " + " -vf scale=480:-1 -frame_pts 1 -q:v 5 -y " + '\u0022' + target_img + "_" + "%d" + ".jpg" + '\u0022' + " -vstats -vstats_file " + '\u0022' + target_log + '\u0022';
+                AppParam_img = "-skip_frame nokey" + " -i " + "" + '\u0022' + file_img + '\u0022' + " -vsync 0 " + " " + thumb_scale + " -frame_pts 1 -q:v 5 -y " + '\u0022' + target_img + "_" + "%d" + ".jpg" + '\u0022' + " -vstats -vstats_file " + '\u0022' + target_log + '\u0022';
 
                 proc_img_0.StartInfo.RedirectStandardOutput = false;
                 proc_img_0.StartInfo.RedirectStandardError = false;
@@ -1161,7 +1202,7 @@ namespace FFBatch
                 working = false;    
                pg1.Value = pg1.Maximum;
                 timer1.Enabled = false;
-                panel1.Visible = false;
+                panel2.Visible = false;
                 btn_close.Enabled = true;
                 trackB.Enabled = true;
                 btn_kplus1.Enabled = true;
@@ -1219,6 +1260,49 @@ namespace FFBatch
                 frm6.ShowDialog();
             }
             catch { }
+        }
+
+        private void Form5_Resize(object sender, EventArgs e)
+        {
+            int d_w = 1086; int d_h = 522;
+            if (this.Width < d_w ) this.Width = d_w;
+            if (this.Height < d_h) this.Height = d_h;
+            groupBox1.Width = 511 + (this.Width - d_w);
+            groupBox1.Height = 379 + (this.Height - d_h);            
+            dg_streams.Height = 379 + (this.Height - d_h) - 7;
+            btn_close.Top = this.Height - 72;
+            pic_frame.Width =  480 + (this.Width - d_w);
+            pic_frame.Height = 270 + (this.Height - d_h);
+            panel2.Width = pic_frame.Width;
+            panel2.Top = groupBox1.Height - 25;
+            pg1.Width = panel2.Width - 215;
+            btn_cancel.Left = panel2.Width - 65;
+            img_prog.Top = pic_frame.Height + 18;
+            img_prog.Left = panel2.Left;            
+
+            //bar
+            btn_fr_start.Top = pic_frame.Height + 31;
+            trim_left.Top = pic_frame.Height + 31;
+            trim_right.Top = pic_frame.Height + 31;
+            btn_minus10.Top = pic_frame.Height + 31;
+            btn_min1.Top = pic_frame.Height + 31;
+            btn_plus1.Top = pic_frame.Height + 31;
+            btn_10.Top = pic_frame.Height + 31;
+            btn_fr_end.Top = pic_frame.Height + 31;
+
+            pic_cut.Top = pic_frame.Height + 32;
+            btn_save.Top = pic_frame.Height + 32;
+            lbl_fr_time.Top = pic_frame.Height + 33;
+
+            btn_kplus1.Top = pic_frame.Height + 60;
+            btn_kplus1.Left = pic_frame.Width - 3;
+            btn_k_m1.Top = pic_frame.Height + 60;
+            trackB.Top = pic_frame.Height + 63;
+            trackB.Width = pic_frame.Width - 39;
+            btn_close.Width = this.Width - 47;
+
+            btn_copy.Top = pic_frame.Height + 28;
+
         }
     }
 }

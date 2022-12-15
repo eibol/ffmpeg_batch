@@ -193,7 +193,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACy
-        FAAAAk1TRnQBSQFMAgEBBQEAAUABOwFAATsBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        FAAAAk1TRnQBSQFMAgEBBQEAAZgBOwGYATsBEAEAARABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABIAMAAQEBAAEgBgABIBIAAykBPgNYAdEBcAFvAW0B/gNcAfgDYgH2A2IB9gNiAfYDYgH2A2IB9gNi
         AfYDYgH2A2IB9gNiAfYDYgH2AUIBQQFAAf4DYAHrwAADWgHTAtQB0QP/Af4B/wH8Af0B+QH/AfkB/AH2
         Af8B+gH9AfcB/wH6Af0B9wH/AfoB/QH2Af8B+wH9AfkB/wH+Af8B/QP/Af4D/wH+Cf8BzgHNAcwB/wNM
@@ -745,10 +745,10 @@
     <value>pg1</value>
   </data>
   <data name="&gt;&gt;pg1.Type" xml:space="preserve">
-    <value>FFBatch.ProgressBarWithText, FFBatch, Version=2.7.6.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>FFBatch.ProgressBarWithText, FFBatch, Version=2.8.3.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pg1.Parent" xml:space="preserve">
-    <value>panel1</value>
+    <value>panel2</value>
   </data>
   <data name="&gt;&gt;pg1.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -778,7 +778,7 @@
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btn_cancel.Parent" xml:space="preserve">
-    <value>panel1</value>
+    <value>panel2</value>
   </data>
   <data name="&gt;&gt;btn_cancel.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -808,30 +808,30 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lbl_prog.Parent" xml:space="preserve">
-    <value>panel1</value>
+    <value>panel2</value>
   </data>
   <data name="&gt;&gt;lbl_prog.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="panel2.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 354</value>
   </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="panel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>480, 24</value>
   </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+  <data name="panel2.TabIndex" type="System.Int32, mscorlib">
     <value>79</value>
   </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;panel2.Name" xml:space="preserve">
+    <value>panel2</value>
   </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+  <data name="&gt;&gt;panel2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
+  <data name="&gt;&gt;panel2.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;panel2.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
   <data name="btn_copy.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
@@ -959,7 +959,7 @@
     <value>NoControl</value>
   </data>
   <data name="btn_save.Location" type="System.Drawing.Point, System.Drawing">
-    <value>416, 302</value>
+    <value>417, 302</value>
   </data>
   <data name="btn_save.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 20</value>
@@ -1282,7 +1282,7 @@
 </value>
   </data>
   <data name="pic_frame.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 16</value>
+    <value>14, 16</value>
   </data>
   <data name="pic_frame.Size" type="System.Drawing.Size, System.Drawing">
     <value>480, 270</value>
@@ -3390,7 +3390,7 @@
     <value>glassExtenderProvider1</value>
   </data>
   <data name="&gt;&gt;glassExtenderProvider1.Type" xml:space="preserve">
-    <value>Vanara.Interop.DesktopWindowManager.GlassExtenderProvider, AeroWizard, Version=2.2.9.0, Culture=neutral, PublicKeyToken=915e74f5d64b8f37</value>
+    <value>Vanara.Interop.DesktopWindowManager.GlassExtenderProvider, AeroWizard, Version=2.3.1.0, Culture=neutral, PublicKeyToken=915e74f5d64b8f37</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form5</value>
