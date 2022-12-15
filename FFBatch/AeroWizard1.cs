@@ -3238,6 +3238,7 @@ namespace FFBatch
                 e.Cancel = true;
             }
             reset_a_params();
+            if (cb_audio_encoder.SelectedItem == null) cb_audio_encoder.SelectedIndex = 0;
 
             if ((cb_audio_encoder.SelectedItem.ToString() == "none" || cb_audio_encoder.SelectedItem.ToString() == "copy") && audio_preset == true)
             {
@@ -4354,15 +4355,7 @@ namespace FFBatch
             pic_1.Image = images.Images[6];
             wizardControl1.Pages[1].AllowNext = true;
         }
-
-        private void txt_pr_1_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void cb_w_presets_SelectedIndexChanged(object sender, EventArgs e)
-        {
-        }
-
+                
         private void combo_presets_ext_SelectedIndexChanged(object sender, EventArgs e)
         {
             String app_location = Application.StartupPath;

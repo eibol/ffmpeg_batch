@@ -219,6 +219,30 @@ namespace FFBatch
             saved_pres = txt_pr_1.Text;
             saved_ext = txt_ext_1.Text;
             started = true;
+            txt_pr_two_end.Enabled = true;
+            txt_pr_end_2.Enabled = true;
+            pic_status.Visible = true;
+
+            String pass_format = "mp4";
+            if (txt_pr_1.Text.ToLower().Contains("libvpx-vp9")) pass_format = "webm";
+            txt_pr_two_end.Text = String.Empty;
+            txt_pr_two_end.Text = txt_pr_1.Text.Replace("-c:a copy", "") + " -pass 1 -an -sn -f " + pass_format;
+            txt_pr_ext_end.Text = String.Empty;
+            txt_pr_ext_end.Text = "nul";
+            txt_pr_end_2.Text = String.Empty;
+            txt_pr_end_2.Text = txt_pr_1.Text + " -pass 2";
+            txt_ext_end_2.Text = String.Empty;
+            txt_ext_end_2.Text = txt_ext_1.Text;
+
+            if (chk_target_size.Checked)
+            {
+                lbl_enabled_target.Text = Properties.Strings2.en_target_size + " " + n_target_size.Value.ToString() + " MB";
+                txt_pr_two_end.Enabled = false;
+                txt_pr_end_2.Enabled = false;
+                pic_status.Visible = false;
+                btn_start_multi.Enabled = true;
+                return;
+            }
 
             if (txt_pr_1.Text.Contains("h264_nvenc") || txt_pr_1.Text.Contains("hevc_nvenc"))
             {
@@ -253,21 +277,12 @@ namespace FFBatch
             }
 
             if (first_page_change == false) return;
-            String pass_format = "mp4";
-            if (txt_pr_1.Text.ToLower().Contains("libvpx-vp9")) pass_format = "webm";
-            txt_pr_two_end.Text = String.Empty;
-            txt_pr_two_end.Text = txt_pr_1.Text.Replace("-c:a copy", "") + " -pass 1 -an -sn -f " + pass_format;
-            txt_pr_ext_end.Text = String.Empty;
-            txt_pr_ext_end.Text = "nul";
-            txt_pr_end_2.Text = String.Empty;
-            txt_pr_end_2.Text = txt_pr_1.Text + " -pass 2";
-            txt_ext_end_2.Text = String.Empty;
-            txt_ext_end_2.Text = txt_ext_1.Text;
 
             this.Cursor = Cursors.WaitCursor;
             wizard3.Pages[0].AllowNext = false;
             e.Cancel = true;
             BG_Try_1.RunWorkerAsync();
+            
         }
 
         private void btn_abort_Click(object sender, EventArgs e)
@@ -398,6 +413,7 @@ namespace FFBatch
 
         private void txt_pr_1_TextChanged(object sender, EventArgs e)
         {
+            if (chk_target_size.Checked) return;
             first_page_change = true;
             if (!txt_pr_1.Text.ToLower().Contains("-b:v") && !txt_pr_1.Text.ToLower().Contains("-vb"))
             {
@@ -526,8 +542,16 @@ namespace FFBatch
 
                 //textbox_params = multi_1st_pass;
                 String templog = Path.GetTempPath() + "\\" + "FF_pass2.log";
+                String tempfile = Path.GetTempPath() + "\\" + "FF_pass2";
                 consola_pre.StartInfo.FileName = "ffmpeg.exe";
-                consola_pre.StartInfo.Arguments = " -y -i " + '\u0022' + file_prueba + '\u0022' + " -t 00:00:0.100 " + txt_pr_two_end.Text + " -passlogfile " + '\u0022' + templog + '\u0022' + " " + ext_output;
+
+                this.Invoke(new MethodInvoker(delegate
+                {
+                    if (chk_target_size.Checked) consola_pre.StartInfo.Arguments = " -y -i " + '\u0022' + file_prueba + '\u0022' + " -t 00:00:0.100 " + "-c:v " + combo_codec_t.SelectedItem.ToString() + " " + "-b:v 1000K " + "-c:a " + combo_audio_target.SelectedItem.ToString() + " -b:a " + num_aud_target.Value.ToString() + "K " + txt_pr_1.Text + " " + '\u0022' + tempfile + "." + txt_ext_end_2.Text + '\u0022';
+                    else consola_pre.StartInfo.Arguments = " -y -i " + '\u0022' + file_prueba + '\u0022' + " -t 00:00:0.100 " + txt_pr_two_end.Text + " -passlogfile " + '\u0022' + templog + '\u0022' + " " + ext_output;
+                    //MessageBox.Show(consola_pre.StartInfo.Arguments);
+                }));
+                                
                 consola_pre.StartInfo.RedirectStandardOutput = true;
                 consola_pre.StartInfo.RedirectStandardError = true;
                 consola_pre.StartInfo.UseShellExecute = false;
@@ -643,7 +667,16 @@ namespace FFBatch
         private void BG_Try_Two_Final_DoWork(object sender, DoWorkEventArgs e)
         {
             tried_ok = false;
-
+            if (chk_target_size.Checked)
+            {
+                tried_ok = true;
+                this.InvokeEx(f => this.Cursor = Cursors.Arrow);
+                this.InvokeEx(f => f.pic_status.Visible = true);
+                pic_status.Image = img_status.Images[1];
+                this.InvokeEx(f => f.btn_start_multi.Enabled = true);
+                return;
+            }
+            
             this.InvokeEx(f => this.Cursor = Cursors.WaitCursor);
             ListBox LB1_o = new ListBox();
             Process consola_pre = new Process();
@@ -893,6 +926,7 @@ namespace FFBatch
 
         private void AeroWizard3_Load(object sender, EventArgs e)
         {
+            //if (Properties.Settings.Default.quick_queue == true) chk_target_size.Enabled = false;
             String app_location = Application.StartupPath;
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
             if (File.Exists(portable_flag)) is_portable = true;
@@ -920,6 +954,45 @@ namespace FFBatch
             foreach (Control control in ctrl.Controls)
                 RefreshResources(control, res); // recursion
             ctrl.ResumeLayout(false);
+        }
+
+        private void chk_target_size_CheckedChanged(object sender, EventArgs e)
+        {
+            n_target_size.Enabled = chk_target_size.Checked;
+            if (chk_target_size.Checked)
+            {
+                chk_one_pass.Visible = true;
+                chk_one_pass.Enabled = true;
+                combo_codec_t.Enabled = true;
+                combo_codec_t.SelectedIndex = 0;
+                profile_target.Enabled = true;
+                profile_target.SelectedIndex = 2;
+                cb_w_presets.Enabled = false;
+                txt_pr_1.Text = "";
+                combo_audio_target.Visible = true;
+                combo_audio_target.SelectedIndex = 0;
+                num_aud_target.Visible = true;
+                label14.Visible = true; label16.Visible = true;
+                label10.Visible = false;
+                lbl_advise_1.Visible = false; pic_warn_bitrate.Visible = false;
+            }
+            else
+            {
+                chk_one_pass.Visible = false;
+                combo_codec_t.Enabled = false;
+                profile_target.Enabled = false;
+                combo_codec_t.SelectedIndex = -1;
+                profile_target.SelectedIndex = -1;
+                cb_w_presets.Enabled = true;
+                combo_audio_target.Visible = false;
+                num_aud_target.Visible = false;
+                label14.Visible = false; label16.Visible = false;
+                cb_w_presets.SelectedIndex = 1;
+                cb_w_presets.SelectedIndex = 0;
+                label10.Visible = true;
+                lbl_advise_1.Visible = true;
+                pic_warn_bitrate.Visible = false;
+            }
         }
     }
 }

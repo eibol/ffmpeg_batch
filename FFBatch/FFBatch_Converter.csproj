@@ -63,27 +63,25 @@
     <StartupObject>FFBatch.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>E23D8B35B0D00712361969788C9762812574BB73</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>748EB5105C62D955A2C59590A0C2B66578B9987D</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>FFBatch_2021_Key.pfx</ManifestKeyFile>
+    <ManifestKeyFile>Cert_FFbatch_2022.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>FFBatch_2021_Key.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Cert_FFbatch_2022.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup />
-  <PropertyGroup>
-    <NoWin32Manifest>true</NoWin32Manifest>
-  </PropertyGroup>
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="AeroWizard, Version=2.3.1.0, Culture=neutral, PublicKeyToken=915e74f5d64b8f37, processorArchitecture=MSIL">
       <HintPath>..\packages\AeroWizard.2.3.1\lib\net45\AeroWizard.dll</HintPath>
@@ -151,6 +149,7 @@
     <Compile Include="Class2.cs" />
     <Compile Include="Class3.cs" />
     <Compile Include="Class4.cs" />
+    <Compile Include="Class5.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +281,12 @@
     </Compile>
     <Compile Include="Form28.Designer.cs">
       <DependentUpon>Form28.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form29.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form29.Designer.cs">
+      <DependentUpon>Form29.cs</DependentUpon>
     </Compile>
     <Compile Include="Form3.cs">
       <SubType>Form</SubType>
@@ -771,6 +776,21 @@
     <EmbeddedResource Include="Form28.zh-Hans.resx">
       <DependentUpon>Form28.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form29.es.resx">
+      <DependentUpon>Form29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form29.it.resx">
+      <DependentUpon>Form29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form29.pt-BR.resx">
+      <DependentUpon>Form29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form29.resx">
+      <DependentUpon>Form29.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form29.zh-Hans.resx">
+      <DependentUpon>Form29.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form3.es.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
@@ -794,6 +814,9 @@
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form3.zh-Hans.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form3.zh-Hant.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form30.es.resx">
@@ -914,7 +937,7 @@
       <LastGenOutput>Strings2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Strings2.zh-Hans.resx" />
-    <None Include="FFBatch_2021_Key.pfx" />
+    <None Include="Cert_FFbatch_2022.pfx" />
     <None Include="FFBatch_Converter.ruleset" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

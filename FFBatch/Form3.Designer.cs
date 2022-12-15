@@ -31,6 +31,12 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             this.panel2 = new System.Windows.Forms.GroupBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.n_bat_l = new System.Windows.Forms.NumericUpDown();
+            this.chk_bat_level = new System.Windows.Forms.CheckBox();
+            this.pic_bat = new System.Windows.Forms.PictureBox();
+            this.chk_battery = new System.Windows.Forms.CheckBox();
+            this.chk_filter_zero = new System.Windows.Forms.CheckBox();
             this.chk_dates = new System.Windows.Forms.CheckBox();
             this.chk_ignore_enc = new System.Windows.Forms.CheckBox();
             this.chk_non0 = new System.Windows.Forms.CheckBox();
@@ -63,6 +69,14 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chk_thumb_big = new System.Windows.Forms.CheckBox();
+            this.chk_dark_win = new System.Windows.Forms.CheckBox();
+            this.n_sunrise = new System.Windows.Forms.DateTimePicker();
+            this.n_sunset = new System.Windows.Forms.DateTimePicker();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.chk_dark = new System.Windows.Forms.CheckBox();
+            this.pic_new = new System.Windows.Forms.PictureBox();
             this.chk_quick_q = new System.Windows.Forms.CheckBox();
             this.chk_ctrl_p = new System.Windows.Forms.CheckBox();
             this.chk_tray = new System.Windows.Forms.CheckBox();
@@ -87,13 +101,6 @@
             this.browse_sound = new System.Windows.Forms.OpenFileDialog();
             this.img_play = new System.Windows.Forms.ImageList(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.pic_ff_ok = new System.Windows.Forms.PictureBox();
-            this.pic_ver = new System.Windows.Forms.PictureBox();
-            this.lbl_ff_latest = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btn_update = new System.Windows.Forms.Button();
-            this.lbl_ff_ver = new System.Windows.Forms.Label();
             this.btn_add_ex = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.chk_delete_one = new System.Windows.Forms.CheckBox();
@@ -101,25 +108,40 @@
             this.pic_night = new System.Windows.Forms.PictureBox();
             this.btn_dark = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.pic_new = new System.Windows.Forms.PictureBox();
+            this.lbl_ff_ver = new System.Windows.Forms.Label();
+            this.btn_update = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.lbl_ff_latest = new System.Windows.Forms.Label();
+            this.pic_ver = new System.Windows.Forms.PictureBox();
+            this.pic_ff_ok = new System.Windows.Forms.PictureBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btn_add_sec = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.n_bat_l)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_bat)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.n_delay)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_auto_en)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_auto_dis)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_new)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_earth)).BeginInit();
             this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_ff_ok)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_ver)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_night)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_new)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_ver)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_ff_ok)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label8);
+            this.panel2.Controls.Add(this.n_bat_l);
+            this.panel2.Controls.Add(this.chk_bat_level);
+            this.panel2.Controls.Add(this.pic_bat);
+            this.panel2.Controls.Add(this.chk_battery);
+            this.panel2.Controls.Add(this.chk_filter_zero);
             this.panel2.Controls.Add(this.chk_dates);
             this.panel2.Controls.Add(this.chk_ignore_enc);
             this.panel2.Controls.Add(this.chk_non0);
@@ -138,6 +160,58 @@
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             this.panel2.TabStop = false;
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.Name = "label8";
+            // 
+            // n_bat_l
+            // 
+            resources.ApplyResources(this.n_bat_l, "n_bat_l");
+            this.n_bat_l.Maximum = new decimal(new int[] {
+            90,
+            0,
+            0,
+            0});
+            this.n_bat_l.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.n_bat_l.Name = "n_bat_l";
+            this.n_bat_l.Value = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.n_bat_l.ValueChanged += new System.EventHandler(this.n_bat_l_ValueChanged);
+            // 
+            // chk_bat_level
+            // 
+            resources.ApplyResources(this.chk_bat_level, "chk_bat_level");
+            this.chk_bat_level.Name = "chk_bat_level";
+            this.chk_bat_level.UseVisualStyleBackColor = true;
+            // 
+            // pic_bat
+            // 
+            resources.ApplyResources(this.pic_bat, "pic_bat");
+            this.pic_bat.Name = "pic_bat";
+            this.pic_bat.TabStop = false;
+            // 
+            // chk_battery
+            // 
+            resources.ApplyResources(this.chk_battery, "chk_battery");
+            this.chk_battery.Name = "chk_battery";
+            this.chk_battery.UseVisualStyleBackColor = true;
+            this.chk_battery.CheckedChanged += new System.EventHandler(this.chk_battery_CheckedChanged);
+            // 
+            // chk_filter_zero
+            // 
+            resources.ApplyResources(this.chk_filter_zero, "chk_filter_zero");
+            this.chk_filter_zero.Name = "chk_filter_zero";
+            this.chk_filter_zero.UseVisualStyleBackColor = true;
+            this.chk_filter_zero.CheckedChanged += new System.EventHandler(this.chk_filter_zero_CheckedChanged);
             // 
             // chk_dates
             // 
@@ -377,6 +451,13 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.chk_thumb_big);
+            this.groupBox2.Controls.Add(this.chk_dark_win);
+            this.groupBox2.Controls.Add(this.n_sunrise);
+            this.groupBox2.Controls.Add(this.n_sunset);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.chk_dark);
             this.groupBox2.Controls.Add(this.pic_new);
             this.groupBox2.Controls.Add(this.chk_quick_q);
             this.groupBox2.Controls.Add(this.chk_ctrl_p);
@@ -397,11 +478,63 @@
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
+            // chk_thumb_big
+            // 
+            resources.ApplyResources(this.chk_thumb_big, "chk_thumb_big");
+            this.chk_thumb_big.Name = "chk_thumb_big";
+            this.chk_thumb_big.UseVisualStyleBackColor = true;
+            // 
+            // chk_dark_win
+            // 
+            resources.ApplyResources(this.chk_dark_win, "chk_dark_win");
+            this.chk_dark_win.Name = "chk_dark_win";
+            this.chk_dark_win.UseVisualStyleBackColor = true;
+            this.chk_dark_win.CheckedChanged += new System.EventHandler(this.chk_dark_win_CheckedChanged);
+            // 
+            // n_sunrise
+            // 
+            resources.ApplyResources(this.n_sunrise, "n_sunrise");
+            this.n_sunrise.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.n_sunrise.Name = "n_sunrise";
+            this.n_sunrise.ShowUpDown = true;
+            // 
+            // n_sunset
+            // 
+            resources.ApplyResources(this.n_sunset, "n_sunset");
+            this.n_sunset.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.n_sunset.Name = "n_sunset";
+            this.n_sunset.ShowUpDown = true;
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.Name = "label6";
+            // 
+            // chk_dark
+            // 
+            resources.ApplyResources(this.chk_dark, "chk_dark");
+            this.chk_dark.Name = "chk_dark";
+            this.chk_dark.UseVisualStyleBackColor = true;
+            this.chk_dark.CheckedChanged += new System.EventHandler(this.chk_dark_CheckedChanged);
+            // 
+            // pic_new
+            // 
+            resources.ApplyResources(this.pic_new, "pic_new");
+            this.pic_new.Name = "pic_new";
+            this.pic_new.TabStop = false;
+            // 
             // chk_quick_q
             // 
             resources.ApplyResources(this.chk_quick_q, "chk_quick_q");
             this.chk_quick_q.Name = "chk_quick_q";
             this.chk_quick_q.UseVisualStyleBackColor = true;
+            this.chk_quick_q.CheckedChanged += new System.EventHandler(this.chk_quick_q_CheckedChanged);
+            this.chk_quick_q.Click += new System.EventHandler(this.chk_quick_q_Click);
             // 
             // chk_ctrl_p
             // 
@@ -576,56 +709,6 @@
             this.timer1.Interval = 8000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.pic_ff_ok);
-            this.groupBox4.Controls.Add(this.pic_ver);
-            this.groupBox4.Controls.Add(this.lbl_ff_latest);
-            this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.btn_update);
-            this.groupBox4.Controls.Add(this.lbl_ff_ver);
-            resources.ApplyResources(this.groupBox4, "groupBox4");
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.TabStop = false;
-            // 
-            // pic_ff_ok
-            // 
-            resources.ApplyResources(this.pic_ff_ok, "pic_ff_ok");
-            this.pic_ff_ok.Name = "pic_ff_ok";
-            this.pic_ff_ok.TabStop = false;
-            this.pic_ff_ok.Click += new System.EventHandler(this.pic_ff_ok_Click);
-            // 
-            // pic_ver
-            // 
-            resources.ApplyResources(this.pic_ver, "pic_ver");
-            this.pic_ver.Name = "pic_ver";
-            this.pic_ver.TabStop = false;
-            this.pic_ver.Click += new System.EventHandler(this.pic_ver_Click);
-            // 
-            // lbl_ff_latest
-            // 
-            resources.ApplyResources(this.lbl_ff_latest, "lbl_ff_latest");
-            this.lbl_ff_latest.Name = "lbl_ff_latest";
-            // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
-            // 
-            // btn_update
-            // 
-            this.btn_update.FlatAppearance.BorderSize = 0;
-            this.btn_update.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_update, "btn_update");
-            this.btn_update.Name = "btn_update";
-            this.btn_update.UseVisualStyleBackColor = true;
-            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
-            // 
-            // lbl_ff_ver
-            // 
-            resources.ApplyResources(this.lbl_ff_ver, "lbl_ff_ver");
-            this.lbl_ff_ver.Name = "lbl_ff_ver";
-            // 
             // btn_add_ex
             // 
             this.btn_add_ex.FlatAppearance.BorderSize = 0;
@@ -683,11 +766,65 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pic_new
+            // lbl_ff_ver
             // 
-            resources.ApplyResources(this.pic_new, "pic_new");
-            this.pic_new.Name = "pic_new";
-            this.pic_new.TabStop = false;
+            resources.ApplyResources(this.lbl_ff_ver, "lbl_ff_ver");
+            this.lbl_ff_ver.Name = "lbl_ff_ver";
+            // 
+            // btn_update
+            // 
+            this.btn_update.FlatAppearance.BorderSize = 0;
+            this.btn_update.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_update, "btn_update");
+            this.btn_update.Name = "btn_update";
+            this.btn_update.UseVisualStyleBackColor = true;
+            this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
+            // lbl_ff_latest
+            // 
+            resources.ApplyResources(this.lbl_ff_latest, "lbl_ff_latest");
+            this.lbl_ff_latest.Name = "lbl_ff_latest";
+            // 
+            // pic_ver
+            // 
+            resources.ApplyResources(this.pic_ver, "pic_ver");
+            this.pic_ver.Name = "pic_ver";
+            this.pic_ver.TabStop = false;
+            this.pic_ver.Click += new System.EventHandler(this.pic_ver_Click);
+            // 
+            // pic_ff_ok
+            // 
+            resources.ApplyResources(this.pic_ff_ok, "pic_ff_ok");
+            this.pic_ff_ok.Name = "pic_ff_ok";
+            this.pic_ff_ok.TabStop = false;
+            this.pic_ff_ok.Click += new System.EventHandler(this.pic_ff_ok_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.btn_add_sec);
+            this.groupBox4.Controls.Add(this.pic_ff_ok);
+            this.groupBox4.Controls.Add(this.pic_ver);
+            this.groupBox4.Controls.Add(this.lbl_ff_latest);
+            this.groupBox4.Controls.Add(this.label4);
+            this.groupBox4.Controls.Add(this.btn_update);
+            this.groupBox4.Controls.Add(this.lbl_ff_ver);
+            resources.ApplyResources(this.groupBox4, "groupBox4");
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.TabStop = false;
+            // 
+            // btn_add_sec
+            // 
+            this.btn_add_sec.FlatAppearance.BorderSize = 0;
+            this.btn_add_sec.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_add_sec, "btn_add_sec");
+            this.btn_add_sec.Name = "btn_add_sec";
+            this.btn_add_sec.UseVisualStyleBackColor = true;
+            this.btn_add_sec.Click += new System.EventHandler(this.btn_add_sec_Click);
             // 
             // Form3
             // 
@@ -719,6 +856,8 @@
             this.Shown += new System.EventHandler(this.Form3_Shown);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.n_bat_l)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_bat)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.n_delay)).EndInit();
@@ -726,17 +865,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_auto_dis)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_new)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_earth)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_ff_ok)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_ver)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_night)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_new)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_ver)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_ff_ok)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -781,13 +920,6 @@
         private System.Windows.Forms.Button btn_stop_play;
         private System.Windows.Forms.CheckBox chk_w_position;
         private System.Windows.Forms.CheckBox chk_non0;
-        private System.Windows.Forms.GroupBox groupBox4;
-        public System.Windows.Forms.Label lbl_ff_ver;
-        private System.Windows.Forms.Button btn_update;
-        public System.Windows.Forms.Label lbl_ff_latest;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox pic_ver;
-        private System.Windows.Forms.PictureBox pic_ff_ok;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.CheckBox chk_delete_one;
         private System.Windows.Forms.CheckBox chk_delete_def;
@@ -806,14 +938,35 @@
         private System.Windows.Forms.PictureBox pic_night;
         private System.Windows.Forms.Button btn_dark;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox chk_ignore_enc;
         private System.Windows.Forms.CheckBox chk_run_st;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown n_delay;
         private System.Windows.Forms.CheckBox chk_tray;
-        private System.Windows.Forms.CheckBox chk_dates;
         public System.Windows.Forms.CheckBox chk_ctrl_p;
         public System.Windows.Forms.CheckBox chk_quick_q;
         private System.Windows.Forms.PictureBox pic_new;
+        public System.Windows.Forms.Label lbl_ff_ver;
+        private System.Windows.Forms.Button btn_update;
+        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label lbl_ff_latest;
+        private System.Windows.Forms.PictureBox pic_ver;
+        private System.Windows.Forms.PictureBox pic_ff_ok;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button btn_add_sec;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.CheckBox chk_dark;
+        public System.Windows.Forms.DateTimePicker n_sunrise;
+        public System.Windows.Forms.DateTimePicker n_sunset;
+        public System.Windows.Forms.CheckBox chk_dark_win;
+        public System.Windows.Forms.CheckBox chk_thumb_big;
+        private System.Windows.Forms.PictureBox pic_bat;
+        private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.NumericUpDown n_bat_l;
+        public System.Windows.Forms.CheckBox chk_bat_level;
+        public System.Windows.Forms.CheckBox chk_battery;
+        public System.Windows.Forms.CheckBox chk_filter_zero;
+        private System.Windows.Forms.CheckBox chk_dates;
+        private System.Windows.Forms.CheckBox chk_ignore_enc;
     }
 }

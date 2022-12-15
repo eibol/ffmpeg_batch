@@ -370,7 +370,7 @@
             // 
             // wiz_img
             // 
-            this.wiz_img.BackColor = System.Drawing.Color.White;
+            //this.wiz_img.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.wiz_img, "wiz_img");
             this.wiz_img.Name = "wiz_img";
             this.wiz_img.Pages.Add(this.wz1);

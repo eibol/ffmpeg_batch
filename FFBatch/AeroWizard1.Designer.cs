@@ -221,7 +221,7 @@
             // 
             // wizardControl1
             // 
-            this.wizardControl1.BackColor = System.Drawing.Color.White;
+            //this.wizardControl1.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.wizardControl1, "wizardControl1");
             this.wizardControl1.Name = "wizardControl1";
             this.wizardControl1.Pages.Add(this.wz0_0);

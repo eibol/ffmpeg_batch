@@ -58,7 +58,7 @@
             // 
             // wz_mpresets
             // 
-            this.wz_mpresets.BackColor = System.Drawing.Color.White;
+            //this.wz_mpresets.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.wz_mpresets, "wz_mpresets");
             this.wz_mpresets.Name = "wz_mpresets";
             this.wz_mpresets.Pages.Add(this.wzp1);

@@ -132,6 +132,12 @@ namespace FFBatch
                 }
             }
 
+            if (n_sunset.Value >= n_sunrise.Value && chk_dark.Checked && chk_dark_win.Checked == false)
+            {
+                MessageBox.Show(Properties.Strings2.sunset1);
+                return;
+            }
+
             cancel = false;
             Properties.Settings.Default.Save();
             ActiveForm.Close();
@@ -166,6 +172,33 @@ namespace FFBatch
             if (Properties.Settings.Default.to_tray == false) chk_tray.Checked = false;
             else chk_tray.Checked = true;
 
+            if (Properties.Settings.Default.auto_dark == true)
+            {
+                chk_dark.Checked = true;
+                n_sunset.Enabled = true;
+                n_sunrise.Enabled = true;
+
+                n_sunset.Value = Properties.Settings.Default.dark_sunset;
+                n_sunrise.Value = Properties.Settings.Default.dark_sunrise;
+                if (Properties.Settings.Default.dark_os == true)
+                {
+                    chk_dark_win.Checked = true;
+                    n_sunset.Enabled = false;
+                    n_sunrise.Enabled = false;
+                }
+                else
+                {
+                    chk_dark_win.Checked = false;
+                    n_sunset.Enabled = true;
+                    n_sunrise.Enabled = true;
+                }
+
+            }
+            else
+            {
+                chk_dark.Checked = false;
+            }
+
             if (Properties.Settings.Default.dark_mode == true)
             {
                 foreach (Control c in this.Controls) UpdateColorDark(c);
@@ -193,6 +226,27 @@ namespace FFBatch
             browse_sound.InitialDirectory = Application.StartupPath;
 
             //Read configuration
+
+            if (Properties.Settings.Default.bat_level < 10) Properties.Settings.Default.bat_level = 20;
+            
+            n_bat_l.Value = Properties.Settings.Default.bat_level;
+
+            if (Properties.Settings.Default.pause_bat == true)
+            {
+                chk_battery.Checked = true;               
+            }
+            else
+            {
+                chk_battery.Checked = false;               
+            }
+            if (Properties.Settings.Default.if_bat_low == true)
+            {
+                chk_bat_level.Checked = true;
+            }
+            else
+            {
+                chk_bat_level.Checked = false;
+            }
 
             if (Properties.Settings.Default.no_ctrl_p == false) chk_ctrl_p.Checked = false;
             else chk_ctrl_p.Checked = true;
@@ -907,6 +961,10 @@ namespace FFBatch
             }
             if (chk_auto_start.Checked) chk_autor.Image = pic_auto_en.Image;
             else chk_autor.Image = pic_auto_dis.Image;
+
+            if (Properties.Settings.Default.large_th == true) chk_thumb_big.Checked = true;
+            else chk_thumb_big.Checked = false;
+                        
         }
 
         private void boton_load_bck_Click(object sender, System.EventArgs e)
@@ -1103,6 +1161,7 @@ namespace FFBatch
 
         private void btn_defaults_Click(object sender, EventArgs e)
         {
+            chk_filter_zero.Checked = false;
             chk_delete_one.CheckState = CheckState.Checked;
             chk_delete_def.CheckState = CheckState.Unchecked;
             chk_subf.CheckState = CheckState.Checked;
@@ -1133,6 +1192,10 @@ namespace FFBatch
             n_delay.Value = 0;
             chk_ctrl_p.Checked = false;
             chk_quick_q.Checked = false;
+            chk_thumb_big.Checked = false;
+            chk_dark.Checked = false;
+            chk_battery.Checked = false;
+            chk_dates.Checked = false;
         }
 
         private void chk_never_cache_CheckedChanged(object sender, EventArgs e)
@@ -1409,6 +1472,8 @@ namespace FFBatch
             FFBatch.Properties.Settings.Default.Save();
             refresh_lang();
             this.Text = FFBatch.Properties.Strings.Settings;
+            pic_new.Top = chk_quick_q.Top - 2;
+            pic_new.Left = chk_quick_q.Left - 30;
         }
 
         private void refresh_lang()
@@ -1606,6 +1671,87 @@ namespace FFBatch
         {
             if (chk_dates.CheckState == CheckState.Checked) keep_dates = true;
             else keep_dates = false;
+        }
+
+        private void btn_add_sec_Click(object sender, EventArgs e)
+        {
+            btn_add_ex.PerformClick();
+        }
+
+        private void chk_quick_q_Click(object sender, EventArgs e)
+        {
+            if (chk_quick_q.Checked) MessageBox.Show(Properties.Strings2.quick_f_m + Environment.NewLine + Environment.NewLine + Properties.Strings2.quick_f_m2 + Environment.NewLine + Environment.NewLine + Properties.Strings2.quick_f_m4 + Environment.NewLine + Environment.NewLine + Properties.Strings2.quick_f_m3, Properties.Strings.information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void chk_dark_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_dark.CheckState == CheckState.Checked)
+            {
+                chk_dark_win.Enabled = true;
+                n_sunset.Enabled = true;
+                n_sunrise.Enabled = true;
+            }
+            else
+            {
+                chk_dark_win.Enabled = false;
+                chk_dark_win.Checked = false;
+                n_sunset.Enabled = false;
+                n_sunrise.Enabled = false;
+            }
+        }
+
+        private void chk_dark_win_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_dark_win.Checked)
+            {
+                n_sunset.Enabled = false;
+                n_sunrise.Enabled = false;
+            }
+            else
+            {
+                n_sunset.Enabled = true;
+                n_sunrise.Enabled = true;
+            }
+        }
+
+        private void chk_filter_zero_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_filter_zero.CheckState == CheckState.Checked)
+            {
+                if (chk_quick_q.Checked)
+                {
+                    MessageBox.Show(Properties.Strings2.filter_quick_not);
+                    chk_filter_zero.Checked = false;
+                    Properties.Settings.Default.filter_zero = false;
+                    return;
+                }
+                else Properties.Settings.Default.filter_zero = true;
+            }
+            else Properties.Settings.Default.filter_zero = false;            
+        }
+
+        private void chk_battery_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_battery.Checked == true)
+            {
+                chk_bat_level.Enabled = true;
+                n_bat_l.Enabled = true;
+            }
+            else
+            {
+                chk_bat_level.Enabled = false;
+                n_bat_l.Enabled = false;
+            }
+        }
+
+        private void n_bat_l_ValueChanged(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.bat_level = n_bat_l.Value;
+        }
+
+        private void chk_quick_q_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_quick_q.CheckState == CheckState.Checked) chk_filter_zero.Checked = false;
         }
     }
 }

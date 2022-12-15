@@ -32,6 +32,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AeroWizard3));
             this.wizard3 = new AeroWizard.WizardControl();
             this.wz_mpresets = new AeroWizard.WizardPage();
+            this.chk_one_pass = new System.Windows.Forms.CheckBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.num_aud_target = new System.Windows.Forms.NumericUpDown();
+            this.label14 = new System.Windows.Forms.Label();
+            this.combo_audio_target = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.profile_target = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.combo_codec_t = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.n_target_size = new System.Windows.Forms.NumericUpDown();
+            this.chk_target_size = new System.Windows.Forms.CheckBox();
             this.pic_warn_bitrate = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.lbl_advise_1 = new System.Windows.Forms.Label();
@@ -43,6 +56,7 @@
             this.cb_w_presets = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.wz_two_end = new AeroWizard.WizardPage();
+            this.lbl_enabled_target = new System.Windows.Forms.Label();
             this.pic_status = new System.Windows.Forms.PictureBox();
             this.btn_status = new System.Windows.Forms.Button();
             this.txt_tip_2nd = new System.Windows.Forms.TextBox();
@@ -65,6 +79,8 @@
             this.BG_Try_Two_Final = new System.ComponentModel.BackgroundWorker();
             ((System.ComponentModel.ISupportInitialize)(this.wizard3)).BeginInit();
             this.wz_mpresets.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num_aud_target)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.n_target_size)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_warn_bitrate)).BeginInit();
             this.wz_two_end.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_status)).BeginInit();
@@ -73,7 +89,6 @@
             // wizard3
             // 
             resources.ApplyResources(this.wizard3, "wizard3");
-            this.wizard3.BackColor = System.Drawing.Color.White;
             this.wizard3.Name = "wizard3";
             this.wizard3.Pages.Add(this.wz_mpresets);
             this.wizard3.Pages.Add(this.wz_two_end);
@@ -83,6 +98,19 @@
             // wz_mpresets
             // 
             resources.ApplyResources(this.wz_mpresets, "wz_mpresets");
+            this.wz_mpresets.Controls.Add(this.chk_one_pass);
+            this.wz_mpresets.Controls.Add(this.label16);
+            this.wz_mpresets.Controls.Add(this.label15);
+            this.wz_mpresets.Controls.Add(this.num_aud_target);
+            this.wz_mpresets.Controls.Add(this.label14);
+            this.wz_mpresets.Controls.Add(this.combo_audio_target);
+            this.wz_mpresets.Controls.Add(this.label13);
+            this.wz_mpresets.Controls.Add(this.profile_target);
+            this.wz_mpresets.Controls.Add(this.label12);
+            this.wz_mpresets.Controls.Add(this.combo_codec_t);
+            this.wz_mpresets.Controls.Add(this.label11);
+            this.wz_mpresets.Controls.Add(this.n_target_size);
+            this.wz_mpresets.Controls.Add(this.chk_target_size);
             this.wz_mpresets.Controls.Add(this.pic_warn_bitrate);
             this.wz_mpresets.Controls.Add(this.label10);
             this.wz_mpresets.Controls.Add(this.lbl_advise_1);
@@ -96,6 +124,133 @@
             this.wz_mpresets.Name = "wz_mpresets";
             this.wz_mpresets.NextPage = this.wz_two_end;
             this.wz_mpresets.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wizardPage1_Commit);
+            // 
+            // chk_one_pass
+            // 
+            resources.ApplyResources(this.chk_one_pass, "chk_one_pass");
+            this.chk_one_pass.Name = "chk_one_pass";
+            this.chk_one_pass.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            resources.ApplyResources(this.label16, "label16");
+            this.label16.Name = "label16";
+            // 
+            // label15
+            // 
+            resources.ApplyResources(this.label15, "label15");
+            this.label15.Name = "label15";
+            // 
+            // num_aud_target
+            // 
+            resources.ApplyResources(this.num_aud_target, "num_aud_target");
+            this.num_aud_target.Increment = new decimal(new int[] {
+            32,
+            0,
+            0,
+            0});
+            this.num_aud_target.Maximum = new decimal(new int[] {
+            256,
+            0,
+            0,
+            0});
+            this.num_aud_target.Minimum = new decimal(new int[] {
+            32,
+            0,
+            0,
+            0});
+            this.num_aud_target.Name = "num_aud_target";
+            this.num_aud_target.Value = new decimal(new int[] {
+            64,
+            0,
+            0,
+            0});
+            // 
+            // label14
+            // 
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.Name = "label14";
+            // 
+            // combo_audio_target
+            // 
+            resources.ApplyResources(this.combo_audio_target, "combo_audio_target");
+            this.combo_audio_target.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_audio_target.FormattingEnabled = true;
+            this.combo_audio_target.Items.AddRange(new object[] {
+            resources.GetString("combo_audio_target.Items"),
+            resources.GetString("combo_audio_target.Items1"),
+            resources.GetString("combo_audio_target.Items2"),
+            resources.GetString("combo_audio_target.Items3"),
+            resources.GetString("combo_audio_target.Items4")});
+            this.combo_audio_target.Name = "combo_audio_target";
+            // 
+            // label13
+            // 
+            resources.ApplyResources(this.label13, "label13");
+            this.label13.Name = "label13";
+            // 
+            // profile_target
+            // 
+            resources.ApplyResources(this.profile_target, "profile_target");
+            this.profile_target.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.profile_target.FormattingEnabled = true;
+            this.profile_target.Items.AddRange(new object[] {
+            resources.GetString("profile_target.Items"),
+            resources.GetString("profile_target.Items1"),
+            resources.GetString("profile_target.Items2"),
+            resources.GetString("profile_target.Items3"),
+            resources.GetString("profile_target.Items4"),
+            resources.GetString("profile_target.Items5")});
+            this.profile_target.Name = "profile_target";
+            // 
+            // label12
+            // 
+            resources.ApplyResources(this.label12, "label12");
+            this.label12.Name = "label12";
+            // 
+            // combo_codec_t
+            // 
+            resources.ApplyResources(this.combo_codec_t, "combo_codec_t");
+            this.combo_codec_t.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.combo_codec_t.FormattingEnabled = true;
+            this.combo_codec_t.Items.AddRange(new object[] {
+            resources.GetString("combo_codec_t.Items"),
+            resources.GetString("combo_codec_t.Items1"),
+            resources.GetString("combo_codec_t.Items2"),
+            resources.GetString("combo_codec_t.Items3"),
+            resources.GetString("combo_codec_t.Items4"),
+            resources.GetString("combo_codec_t.Items5"),
+            resources.GetString("combo_codec_t.Items6"),
+            resources.GetString("combo_codec_t.Items7"),
+            resources.GetString("combo_codec_t.Items8")});
+            this.combo_codec_t.Name = "combo_codec_t";
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
+            // 
+            // n_target_size
+            // 
+            resources.ApplyResources(this.n_target_size, "n_target_size");
+            this.n_target_size.Minimum = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            this.n_target_size.Name = "n_target_size";
+            this.n_target_size.Value = new decimal(new int[] {
+            2,
+            0,
+            0,
+            0});
+            // 
+            // chk_target_size
+            // 
+            resources.ApplyResources(this.chk_target_size, "chk_target_size");
+            this.chk_target_size.Name = "chk_target_size";
+            this.chk_target_size.UseVisualStyleBackColor = true;
+            this.chk_target_size.CheckedChanged += new System.EventHandler(this.chk_target_size_CheckedChanged);
             // 
             // pic_warn_bitrate
             // 
@@ -159,6 +314,7 @@
             // wz_two_end
             // 
             resources.ApplyResources(this.wz_two_end, "wz_two_end");
+            this.wz_two_end.Controls.Add(this.lbl_enabled_target);
             this.wz_two_end.Controls.Add(this.pic_status);
             this.wz_two_end.Controls.Add(this.btn_status);
             this.wz_two_end.Controls.Add(this.txt_tip_2nd);
@@ -179,6 +335,11 @@
             this.wz_two_end.IsFinishPage = true;
             this.wz_two_end.Name = "wz_two_end";
             this.wz_two_end.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz_two_end_Commit);
+            // 
+            // lbl_enabled_target
+            // 
+            resources.ApplyResources(this.lbl_enabled_target, "lbl_enabled_target");
+            this.lbl_enabled_target.Name = "lbl_enabled_target";
             // 
             // pic_status
             // 
@@ -321,6 +482,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.wizard3)).EndInit();
             this.wz_mpresets.ResumeLayout(false);
             this.wz_mpresets.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.num_aud_target)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.n_target_size)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_warn_bitrate)).EndInit();
             this.wz_two_end.ResumeLayout(false);
             this.wz_two_end.PerformLayout();
@@ -364,5 +527,19 @@
         private System.Windows.Forms.PictureBox pic_warn_bitrate;
         public System.Windows.Forms.TextBox txt_ext_1;
         public System.Windows.Forms.TextBox txt_pr_1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lbl_enabled_target;
+        public System.Windows.Forms.NumericUpDown n_target_size;
+        public System.Windows.Forms.CheckBox chk_target_size;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        public System.Windows.Forms.ComboBox profile_target;
+        public System.Windows.Forms.ComboBox combo_codec_t;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        public System.Windows.Forms.NumericUpDown num_aud_target;
+        private System.Windows.Forms.Label label14;
+        public System.Windows.Forms.ComboBox combo_audio_target;
+        public System.Windows.Forms.CheckBox chk_one_pass;
     }
 }
