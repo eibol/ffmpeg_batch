@@ -73,7 +73,7 @@ namespace FFBatch
                 no_pop = false;
             }
 
-            this.Text = Properties.Strings2.out_file;
+                this.Text = Properties.Strings2.out_file;
                 btn_close.Text = Properties.Strings.close_win;
                 btn_browse.Text = Properties.Strings2.browse;
                 chk_no_popp.Text = Properties.Strings2.not_display;
@@ -104,7 +104,8 @@ namespace FFBatch
 
                 if (!Directory.Exists(Path.Combine(Path.GetTempPath(), "FFBatch_Test"))) Directory.CreateDirectory(Path.Combine(Path.GetTempPath(), "FFBatch_Test"));
 
-                DateTime time2;
+            
+            DateTime time2;
             if (DateTime.TryParse(dur_file, out time2))
             {
                 Double t_to1 = TimeSpan.Parse(dur_file).TotalSeconds;

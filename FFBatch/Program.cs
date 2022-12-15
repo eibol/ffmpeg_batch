@@ -19,9 +19,11 @@ namespace FFBatch
         {
             using (Mutex mutex = new Mutex(false, "Global\\" + appGuid))
             {
-                //if (!mutex.WaitOne(0, false))
-                //{
-                //}
+                if (!mutex.WaitOne(0, false))
+                {
+                    DialogResult a = MessageBox.Show(Properties.Strings2.multiple_inst, Properties.Strings2.multiple_inst_0, MessageBoxButtons.YesNo);
+                    if (a == DialogResult.No) return;                    
+                }
 
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.EnableVisualStyles();
@@ -31,8 +33,8 @@ namespace FFBatch
                     form_intro.Show();
                     form_intro.Refresh();
                 //}
-                new SingleInstanceApp().Run(Environment.GetCommandLineArgs());
-                //Application.Run(new Form1());
+                //new SingleInstanceApp().Run(Environment.GetCommandLineArgs());
+                Application.Run(new Form1());
             }
         }
 
