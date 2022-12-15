@@ -798,4 +798,64 @@
   <data name="warn_n_files2" xml:space="preserve">
     <value>¿Desea continuar? Puede cancelar la adición de archivos en cualquier momento.</value>
   </data>
+  <data name="quick_f_m" xml:space="preserve">
+    <value>El listado rápido de ficheros mejora en gran medida los tiempos de carga de ficheros, pero tiene algunas limitaciones:</value>
+  </data>
+  <data name="quick_f_m2" xml:space="preserve">
+    <value>El tiempo total restante no está disponible, y la barra de progreso solo indica el número de ficheros codificados respecto del total.</value>
+  </data>
+  <data name="quick_f_m3" xml:space="preserve">
+    <value>Las columnas adicionales no se cargan al inicio, aunque se pueden agregar después.</value>
+  </data>
+  <data name="quick_f_m4" xml:space="preserve">
+    <value>La información de los ficheros (duración, tamaño) solo se estiman durante la codificación. Si están disponibles, se muestra el progreso individual. Si no, solo se indica si la codificación fue exitosa o fallida al finalizar.</value>
+  </data>
+  <data name="en_target_size" xml:space="preserve">
+    <value>Tamaño de destino:</value>
+  </data>
+  <data name="quick_f_m5" xml:space="preserve">
+    <value>El asistente de codificación en dos pasos no está diponible.</value>
+  </data>
+  <data name="quick_f_m6" xml:space="preserve">
+    <value>Desvanecimiento no está soportado cuando se habilita el listado rápido de ficheros.</value>
+  </data>
+  <data name="multiple_inst" xml:space="preserve">
+    <value>Ya se está ejecutando otra instancia de la aplicación. Múltiples instancias pueden causar comportamientos inesperados. ¿Continuar?</value>
+  </data>
+  <data name="multiple_inst_0" xml:space="preserve">
+    <value>Múltiples instancias</value>
+  </data>
+  <data name="ren_chars1" xml:space="preserve">
+    <value>Se encontraron caracteres incompatibles [,'] para los filtros de ffmpeg en el nombre del fichero. Se podrían producir errores al utilizarlos.</value>
+  </data>
+  <data name="ren_chars2" xml:space="preserve">
+    <value>¿Desea renombrar dichos ficheros reemplazando los caracteres incompatibles?</value>
+  </data>
+  <data name="ren_chars3" xml:space="preserve">
+    <value>Caracteres incompatibles en los nombres de ficheros</value>
+  </data>
+  <data name="sunset1" xml:space="preserve">
+    <value>El atardecer no puede ser posterior al amanecer.</value>
+  </data>
+  <data name="trim_fade_n" xml:space="preserve">
+    <value>El efecto de desvanecimiento Fade in/out solo es compatible con el modo de recorte Inicio/Fin.</value>
+  </data>
+  <data name="filter_quick_not" xml:space="preserve">
+    <value>Esta opción no es compatible con el listado rápido de ficheros.</value>
+  </data>
+  <data name="on_battery1" xml:space="preserve">
+    <value>Equipo funcionando con batería.</value>
+  </data>
+  <data name="on_battery2" xml:space="preserve">
+    <value>La codificación está configurada para pausar en batería y reanudarse enchufado a la corriente eléctrica. ¿Desea desactivar esta función y reanudar la codificación?</value>
+  </data>
+  <data name="err_chap" xml:space="preserve">
+    <value>ERROR: El vídeo no contiene capítulos.</value>
+  </data>
+  <data name="pause_bat_ac" xml:space="preserve">
+    <value>Pausar con batería</value>
+  </data>
+  <data name="quick_zero_no" xml:space="preserve">
+    <value>Este ajuste no es compatible con el listado rápido de ficheros habilitado.</value>
+  </data>
 </root>

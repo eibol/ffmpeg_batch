@@ -130,5 +130,197 @@ namespace FFBatch.Properties {
                 this["quick_queue"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool auto_dark {
+            get {
+                return ((bool)(this["auto_dark"]));
+            }
+            set {
+                this["auto_dark"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2022-11-03")]
+        public global::System.DateTime dark_sunset {
+            get {
+                return ((global::System.DateTime)(this["dark_sunset"]));
+            }
+            set {
+                this["dark_sunset"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2022-11-03")]
+        public global::System.DateTime dark_sunrise {
+            get {
+                return ((global::System.DateTime)(this["dark_sunrise"]));
+            }
+            set {
+                this["dark_sunrise"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool dark_os {
+            get {
+                return ((bool)(this["dark_os"]));
+            }
+            set {
+                this["dark_os"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool large_th {
+            get {
+                return ((bool)(this["large_th"]));
+            }
+            set {
+                this["large_th"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool filter_zero {
+            get {
+                return ((bool)(this["filter_zero"]));
+            }
+            set {
+                this["filter_zero"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool pause_bat {
+            get {
+                return ((bool)(this["pause_bat"]));
+            }
+            set {
+                this["pause_bat"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool yt_chaps {
+            get {
+                return ((bool)(this["yt_chaps"]));
+            }
+            set {
+                this["yt_chaps"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool yt_limit {
+            get {
+                return ((bool)(this["yt_limit"]));
+            }
+            set {
+                this["yt_limit"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public decimal yt_limit_n {
+            get {
+                return ((decimal)(this["yt_limit_n"]));
+            }
+            set {
+                this["yt_limit_n"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool force_mp4_b {
+            get {
+                return ((bool)(this["force_mp4_b"]));
+            }
+            set {
+                this["force_mp4_b"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool yt_clear_c {
+            get {
+                return ((bool)(this["yt_clear_c"]));
+            }
+            set {
+                this["yt_clear_c"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool yt_embed_m {
+            get {
+                return ((bool)(this["yt_embed_m"]));
+            }
+            set {
+                this["yt_embed_m"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool w_max {
+            get {
+                return ((bool)(this["w_max"]));
+            }
+            set {
+                this["w_max"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool if_bat_low {
+            get {
+                return ((bool)(this["if_bat_low"]));
+            }
+            set {
+                this["if_bat_low"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("50")]
+        public decimal bat_level {
+            get {
+                return ((decimal)(this["bat_level"]));
+            }
+            set {
+                this["bat_level"] = value;
+            }
+        }
     }
 }

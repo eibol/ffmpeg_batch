@@ -816,4 +816,67 @@
   <data name="warn_n_files2" xml:space="preserve">
     <value>Do you want to continue? You can cancel file adding at any time.</value>
   </data>
+  <data name="quick_f_m" xml:space="preserve">
+    <value>Quick file listing dramatically improves file loading time, but it comes with some constraints:</value>
+  </data>
+  <data name="quick_f_m2" xml:space="preserve">
+    <value>Total remaining time is not available, and total progress displays only the encoded files count.</value>
+  </data>
+  <data name="quick_f_m3" xml:space="preserve">
+    <value>Custom columns are not stored, but you can add them later.</value>
+  </data>
+  <data name="quick_f_m4" xml:space="preserve">
+    <value>File features (duration, size) are only guessed during encoding. If they are available, individual progress is displayed. If not, only success/error status will be displayed at the end.</value>
+  </data>
+  <data name="en_target_size" xml:space="preserve">
+    <value>Enabled target size:</value>
+  </data>
+  <data name="target_size" xml:space="preserve">
+    <value>Target size:</value>
+  </data>
+  <data name="quick_f_m5" xml:space="preserve">
+    <value>Two pass encoding wizard cannot be used.</value>
+  </data>
+  <data name="quick_f_m6" xml:space="preserve">
+    <value>Fade in/out is not supported when quick file listing is enabled.</value>
+  </data>
+  <data name="multiple_inst" xml:space="preserve">
+    <value>Another application instance is already running. Multiple instances can cause unexpected behaviours. Continue?</value>
+  </data>
+  <data name="multiple_inst_0" xml:space="preserve">
+    <value>Multiple instances</value>
+  </data>
+  <data name="ren_chars1" xml:space="preserve">
+    <value>Incompatible characters [,'] for ffmpeg filter found in filename. Those filenames could cause errors.</value>
+  </data>
+  <data name="ren_chars2" xml:space="preserve">
+    <value>Would you like to rename them replacing conflicting characters?</value>
+  </data>
+  <data name="ren_chars3" xml:space="preserve">
+    <value>Incompatible characters in filename</value>
+  </data>
+  <data name="sunset1" xml:space="preserve">
+    <value>Sunset time cannot be later than sunrise.</value>
+  </data>
+  <data name="trim_fade_n" xml:space="preserve">
+    <value>Fade in/out is only compatible with Start/End trimming mode.</value>
+  </data>
+  <data name="filter_quick_not" xml:space="preserve">
+    <value>This feature cannot be used with Quick File listing enabled.</value>
+  </data>
+  <data name="on_battery1" xml:space="preserve">
+    <value>Computer running on battery</value>
+  </data>
+  <data name="on_battery2" xml:space="preserve">
+    <value>Encoding is set to pause on battery and resume on AC power. Would you like to disable this setting and force resume queue processing?</value>
+  </data>
+  <data name="err_chap" xml:space="preserve">
+    <value>ERROR: Video contains no chapters.</value>
+  </data>
+  <data name="pause_bat_ac" xml:space="preserve">
+    <value>Pause on battery</value>
+  </data>
+  <data name="quick_zero_no" xml:space="preserve">
+    <value>This feature cannot be used with Quick File listing enabled.</value>
+  </data>
 </root>

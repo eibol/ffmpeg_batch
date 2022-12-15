@@ -291,8 +291,14 @@
   <data name="en_night" xml:space="preserve">
     <value>开启夜间模式</value>
   </data>
+  <data name="en_target_size" xml:space="preserve">
+    <value>输出尺寸:</value>
+  </data>
   <data name="error_writing" xml:space="preserve">
     <value>写入目标文件夹时出错。请选择其他路径，或确保您具有写入权限。</value>
+  </data>
+  <data name="err_chap" xml:space="preserve">
+    <value>错误：视频不包含任何章节。</value>
   </data>
   <data name="err_clipb" xml:space="preserve">
     <value>复制到剪贴板时出错</value>
@@ -341,6 +347,9 @@
   </data>
   <data name="files_long_t" xml:space="preserve">
     <value>文件可能需要很长时间。你确定吗？</value>
+  </data>
+  <data name="filter_quick_not" xml:space="preserve">
+    <value>此功能不能在启用快速文件列表的情况下使用。</value>
   </data>
   <data name="finish" xml:space="preserve">
     <value>结束</value>
@@ -417,6 +426,12 @@
   <data name="missing_f" xml:space="preserve">
     <value>丢失文件</value>
   </data>
+  <data name="multiple_inst" xml:space="preserve">
+    <value>另一个应用程序实例已在运行。 多个实例可能会导致意外行为。 继续？</value>
+  </data>
+  <data name="multiple_inst_0" xml:space="preserve">
+    <value>多个实例</value>
+  </data>
   <data name="multi_drop" xml:space="preserve">
     <value>请只删除一个文件</value>
   </data>
@@ -465,6 +480,12 @@
   <data name="only_1011" xml:space="preserve">
     <value>仅在 Windows 10/11 中支持自动排除</value>
   </data>
+  <data name="on_battery1" xml:space="preserve">
+    <value>电脑靠电池运行</value>
+  </data>
+  <data name="on_battery2" xml:space="preserve">
+    <value>编码设置为使用电池暂停并使用交流电源恢复。 是否要禁用此设置并强制恢复编码？</value>
+  </data>
   <data name="outf_count" xml:space="preserve">
     <value>正在下载。总计数不可用。输出文件夹数:</value>
   </data>
@@ -473,6 +494,9 @@
   </data>
   <data name="Paste_any_URL" xml:space="preserve">
     <value>粘贴链接</value>
+  </data>
+  <data name="pause_bat_ac" xml:space="preserve">
+    <value>暂停电池</value>
   </data>
   <data name="pr01" xml:space="preserve">
     <value>视频: 复制流到MP4</value>
@@ -576,6 +600,24 @@
   <data name="queue_warn" xml:space="preserve">
     <value>文件列表加载成功.</value>
   </data>
+  <data name="quick_f_m" xml:space="preserve">
+    <value>快速文件列表显着缩短了文件加载时间，但它有一些限制：</value>
+  </data>
+  <data name="quick_f_m2" xml:space="preserve">
+    <value>总剩余时间不可用，总进度仅显示编码文件计数。</value>
+  </data>
+  <data name="quick_f_m3" xml:space="preserve">
+    <value>不存储自定义列，但您可以稍后添加它们。</value>
+  </data>
+  <data name="quick_f_m4" xml:space="preserve">
+    <value>文件特征（持续时间、大小）仅在编码期间被猜测。 如果它们可用，则会显示个人进度。 如果没有，最后只会显示成功/错误状态。</value>
+  </data>
+  <data name="quick_f_m5" xml:space="preserve">
+    <value>无法使用两遍编码向导</value>
+  </data>
+  <data name="quick_f_m6" xml:space="preserve">
+    <value>启用快速文件列表时不支持淡入/淡出。</value>
+  </data>
   <data name="quick_yt1" xml:space="preserve">
     <value>快速链接/播放列表下载</value>
   </data>
@@ -588,6 +630,9 @@
   <data name="quick_yt4" xml:space="preserve">
     <value>-例子:</value>
   </data>
+  <data name="quick_zero_no" xml:space="preserve">
+    <value>此设置与快速文件列表不兼容。</value>
+  </data>
   <data name="rec_fail" xml:space="preserve">
     <value>录音测试失败</value>
   </data>
@@ -596,6 +641,15 @@
   </data>
   <data name="rem_from_list" xml:space="preserve">
     <value>从列表中删除所选项目</value>
+  </data>
+  <data name="ren_chars1" xml:space="preserve">
+    <value>在文件名中发现 ffmpeg 过滤器的不兼容字符 [,']。 这些文件名可能会导致错误。</value>
+  </data>
+  <data name="ren_chars2" xml:space="preserve">
+    <value>您想重命名它们以替换冲突的字符吗？</value>
+  </data>
+  <data name="ren_chars3" xml:space="preserve">
+    <value>文件名中的字符不兼容</value>
   </data>
   <data name="req_w1011" xml:space="preserve">
     <value>此自动功能需要 Windows 10/11。 您可以在防病毒软件中手动添加安全排除。</value>
@@ -690,6 +744,9 @@
   <data name="subtitles" xml:space="preserve">
     <value>字幕</value>
   </data>
+  <data name="sunset1" xml:space="preserve">
+    <value>日落不能晚于日出。</value>
+  </data>
   <data name="tip1" xml:space="preserve">
     <value>此应用程序启动 ffmpeg 进程以进行编码、复用和解复用、获取流等。</value>
   </data>
@@ -722,6 +779,9 @@
   </data>
   <data name="transfer_r" xml:space="preserve">
     <value>传输率:</value>
+  </data>
+  <data name="trim_fade_n" xml:space="preserve">
+    <value>淡入/淡出仅与开始/结束修剪模式兼容。</value>
   </data>
   <data name="try_scr_pr" xml:space="preserve">
     <value>尝试使用屏幕截图预设并检查编码参数.</value>

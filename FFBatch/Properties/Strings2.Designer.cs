@@ -574,6 +574,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Enabled target size:.
+        /// </summary>
+        internal static string en_target_size {
+            get {
+                return ResourceManager.GetString("en_target_size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Encode.
         /// </summary>
         internal static string encode {
@@ -588,6 +597,15 @@ namespace FFBatch.Properties {
         internal static string encoded {
             get {
                 return ResourceManager.GetString("encoded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ERROR: Video contains no chapters..
+        /// </summary>
+        internal static string err_chap {
+            get {
+                return ResourceManager.GetString("err_chap", resourceCulture);
             }
         }
         
@@ -750,6 +768,15 @@ namespace FFBatch.Properties {
         internal static string files_long_t {
             get {
                 return ResourceManager.GetString("files_long_t", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a This feature cannot be used with Quick File listing enabled..
+        /// </summary>
+        internal static string filter_quick_not {
+            get {
+                return ResourceManager.GetString("filter_quick_not", resourceCulture);
             }
         }
         
@@ -1015,6 +1042,24 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Another application instance is already running. Multiple instances can cause unexpected behaviours. Continue?.
+        /// </summary>
+        internal static string multiple_inst {
+            get {
+                return ResourceManager.GetString("multiple_inst", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Multiple instances.
+        /// </summary>
+        internal static string multiple_inst_0 {
+            get {
+                return ResourceManager.GetString("multiple_inst_0", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Multiplex Batch Jobs Manager.
         /// </summary>
         internal static string mux_jobs {
@@ -1114,6 +1159,24 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Computer running on battery.
+        /// </summary>
+        internal static string on_battery1 {
+            get {
+                return ResourceManager.GetString("on_battery1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Encoding is set to pause on battery and resume on AC power. Would you like to disable this setting and force resume queue processing?.
+        /// </summary>
+        internal static string on_battery2 {
+            get {
+                return ResourceManager.GetString("on_battery2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Please select only one file to add its streams..
         /// </summary>
         internal static string one_track {
@@ -1164,6 +1227,15 @@ namespace FFBatch.Properties {
         internal static string Paste_any_URL {
             get {
                 return ResourceManager.GetString("Paste_any_URL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Pause on battery.
+        /// </summary>
+        internal static string pause_bat_ac {
+            get {
+                return ResourceManager.GetString("pause_bat_ac", resourceCulture);
             }
         }
         
@@ -1474,6 +1546,60 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Quick file listing dramatically improves file loading time, but it comes with some constraints:.
+        /// </summary>
+        internal static string quick_f_m {
+            get {
+                return ResourceManager.GetString("quick_f_m", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Total remaining time is not available, and total progress displays only the encoded files count..
+        /// </summary>
+        internal static string quick_f_m2 {
+            get {
+                return ResourceManager.GetString("quick_f_m2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Custom columns are not stored, but you can add them later..
+        /// </summary>
+        internal static string quick_f_m3 {
+            get {
+                return ResourceManager.GetString("quick_f_m3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a File features (duration, size) are only guessed during encoding. If they are available, individual progress is displayed. If not, only success/error status will be displayed at the end..
+        /// </summary>
+        internal static string quick_f_m4 {
+            get {
+                return ResourceManager.GetString("quick_f_m4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Two pass encoding wizard cannot be used..
+        /// </summary>
+        internal static string quick_f_m5 {
+            get {
+                return ResourceManager.GetString("quick_f_m5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fade in/out is not supported when quick file listing is enabled..
+        /// </summary>
+        internal static string quick_f_m6 {
+            get {
+                return ResourceManager.GetString("quick_f_m6", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Quick link/playlist download.
         /// </summary>
         internal static string quick_yt1 {
@@ -1510,6 +1636,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a This feature cannot be used with Quick File listing enabled..
+        /// </summary>
+        internal static string quick_zero_no {
+            get {
+                return ResourceManager.GetString("quick_zero_no", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Recording test failed.
         /// </summary>
         internal static string rec_fail {
@@ -1533,6 +1668,33 @@ namespace FFBatch.Properties {
         internal static string rem_from_list {
             get {
                 return ResourceManager.GetString("rem_from_list", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Incompatible characters [,&apos;] for ffmpeg filter found in filename. Those filenames could cause errors..
+        /// </summary>
+        internal static string ren_chars1 {
+            get {
+                return ResourceManager.GetString("ren_chars1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Would you like to rename them replacing conflicting characters?.
+        /// </summary>
+        internal static string ren_chars2 {
+            get {
+                return ResourceManager.GetString("ren_chars2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Incompatible characters in filename.
+        /// </summary>
+        internal static string ren_chars3 {
+            get {
+                return ResourceManager.GetString("ren_chars3", resourceCulture);
             }
         }
         
@@ -1807,6 +1969,24 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Sunset time cannot be later than sunrise..
+        /// </summary>
+        internal static string sunset1 {
+            get {
+                return ResourceManager.GetString("sunset1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Target size:.
+        /// </summary>
+        internal static string target_size {
+            get {
+                return ResourceManager.GetString("target_size", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Windows Security..
         /// </summary>
         internal static string tip_win_sec {
@@ -1902,6 +2082,15 @@ namespace FFBatch.Properties {
         internal static string transfer_r {
             get {
                 return ResourceManager.GetString("transfer_r", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fade in/out is only compatible with Start/End trimming mode..
+        /// </summary>
+        internal static string trim_fade_n {
+            get {
+                return ResourceManager.GetString("trim_fade_n", resourceCulture);
             }
         }
         

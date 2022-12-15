@@ -813,4 +813,64 @@
   <data name="warn_n_files2" xml:space="preserve">
     <value>Vuoi continuare? Puoi annullare l'aggiunta di file in qualsiasi momento.</value>
   </data>
+  <data name="quick_f_m" xml:space="preserve">
+    <value>L'elenco rapido dei file migliora notevolmente il tempo di caricamento dei file, ma presenta alcuni vincoli:</value>
+  </data>
+  <data name="quick_f_m2" xml:space="preserve">
+    <value>Il tempo rimanente totale non è disponibile e l'avanzamento totale mostra solo il conteggio dei file codificati.</value>
+  </data>
+  <data name="quick_f_m3" xml:space="preserve">
+    <value>Le colonne personalizzate non vengono memorizzate, ma puoi aggiungerle in un secondo momento.</value>
+  </data>
+  <data name="quick_f_m4" xml:space="preserve">
+    <value>Le caratteristiche del file (durata, dimensione) vengono ipotizzate solo durante la codifica. Se sono disponibili, viene visualizzato lo stato di avanzamento individuale. In caso contrario, alla fine verrà visualizzato solo lo stato di successo/errore.</value>
+  </data>
+  <data name="en_target_size" xml:space="preserve">
+    <value>Dimensione dell'obiettivo:</value>
+  </data>
+  <data name="quick_f_m5" xml:space="preserve">
+    <value>Non è possibile utilizzare la procedura guidata di codifica a due passaggi</value>
+  </data>
+  <data name="quick_f_m6" xml:space="preserve">
+    <value>La dissolvenza in apertura/chiusura non è supportata quando è abilitato l'elenco rapido dei file.</value>
+  </data>
+  <data name="multiple_inst" xml:space="preserve">
+    <value>Un'altra istanza dell'applicazione è già in esecuzione. Più istanze possono causare comportamenti imprevisti. Continua?</value>
+  </data>
+  <data name="multiple_inst_0" xml:space="preserve">
+    <value>Più istanze</value>
+  </data>
+  <data name="ren_chars1" xml:space="preserve">
+    <value>Sono stati trovati caratteri incompatibili [,'] per il filtro ffmpeg nel nome del file. Questi nomi di file potrebbero causare errori.</value>
+  </data>
+  <data name="ren_chars2" xml:space="preserve">
+    <value>Vorresti rinominarli sostituendo i caratteri in conflitto?</value>
+  </data>
+  <data name="ren_chars3" xml:space="preserve">
+    <value>Caratteri incompatibili nel nome del file</value>
+  </data>
+  <data name="sunset1" xml:space="preserve">
+    <value>Il tramonto non può essere successivo all'alba.</value>
+  </data>
+  <data name="trim_fade_n" xml:space="preserve">
+    <value>La dissolvenza in apertura/chiusura è compatibile solo con la modalità di ritaglio Inizio/Fine.</value>
+  </data>
+  <data name="filter_quick_not" xml:space="preserve">
+    <value>Questa funzione non può essere utilizzata con l'elenco file rapido abilitato.</value>
+  </data>
+  <data name="on_battery1" xml:space="preserve">
+    <value>Computer funzionante a batteria</value>
+  </data>
+  <data name="on_battery2" xml:space="preserve">
+    <value>La codifica è impostata per mettere in pausa la batteria e riprendere con l'alimentazione CA. Vuoi disabilitare questa impostazione e forzare la ripresa della codifica?</value>
+  </data>
+  <data name="err_chap" xml:space="preserve">
+    <value>Errore: il video non contiene capitoli.</value>
+  </data>
+  <data name="pause_bat_ac" xml:space="preserve">
+    <value>Pausa a batteria</value>
+  </data>
+  <data name="quick_zero_no" xml:space="preserve">
+    <value>Questa impostazione non è compatibile con l'elenco rapido dei file.</value>
+  </data>
 </root>
