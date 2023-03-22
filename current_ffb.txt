@@ -3,5 +3,5 @@
 • Added arabic language.
 • Fixed some issues with .avs scripts (output filename now equals script name, and duration in some cases).
 • Removed many files added warning.
-• Other minor cosmetic fixes and warnings when selecting hardwave video encoders: performance can vary depending
+• Other minor cosmetic fixes and warnings when selecting hardware video encoders: performance can vary depending
 on your ffmpeg.exe version.
