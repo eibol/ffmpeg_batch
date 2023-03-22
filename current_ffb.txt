@@ -1,12 +1,7 @@
-2.8.5
-• Fixed bug: Erratic progress bar behaviour in multi-file encoding.
-• Fixed bug: File list not cleared sometimes after closing application.
-• Fixed bug: Hardware decoders list and portable version issues.
-• Fixed bug: Batch subtitles parameters not preserved when switching tabs / UTF8 conversion menu failed.
-• Fixed bug: Runtime errors switching encoders at Presets wizard.
-• Added AV1 (libsvtav1 / av1_nvenc) settings to Presets Wizard. NOTE: They require full latest ffmpeg compilations, available for Windows at https://www.gyan.dev/ffmpeg/builds
-• Presets wizard checks if selected video encoder is supported by current ffmpeg.exe version.
-• Added a setting in Presets wizard to encode only output samples of specific seconds.
-• Output overwriting conflicts now selects automatically first conflicting file.
-• Other minor bugfixes.
-• .NET minimum requirement: 4.7.2
+2.8.6
+• FFmpeg 6.0
+• Added arabic language.
+• Fixed some issues with .avs scripts (output filename now equals script name, and duration in some cases).
+• Removed many files added warning.
+• Other minor cosmetic fixes and warnings when selecting hardwave video encoders: performance can vary depending
+on your ffmpeg.exe version.
