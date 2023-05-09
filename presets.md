@@ -19,4 +19,4 @@ the use of variables like %1 or %fn). Due to table formatting, if a preset fails
 | Burn subtitles from source file  (first subtitle stream) encoded as h264 and audio stream copy to MKV | |-c:v libx264 -crf 23 -vf subtitles=%ff:stream_index=0 -c:a copy -sn | mkv |
 | To use with trim button: Trim using streamcopy avoiding initial negative pts issue to MP4 | |-c copy -avoid_negative_ts make_zero | mp4 |
 | Batch create videos from a single image and audio file to MP4 | -loop 1 -r 1/1 -i "C:\yourfolder\YourImage.jpg" |-c:v libx264 -preset veryfast -vf fps=1 -crf 23 -tune stillimage -pix_fmt yuv420p -vf scale=1280:720 -c:a aac -shortest | mp4 |
-| Add a watermark at bottom right corner (replace with Test.png with our image) | | -i "C:\\\\Users\\\\Test\\\\Videos\\\\Test.png" -c:v libx264 -crf 23 -preset fast -filter_complex "overlay=x=(main_w-overlay_w)-20:y=(main_h-overlay_h)-20" -c:a copy | mp4 |
+| Add a watermark at bottom right corner (replace Test.png, tweak -20 parameters) | | -i "C:\\\\Users\\\\Test\\\\Videos\\\\Test.png" -c:v libx264 -crf 23 -preset fast -filter_complex "overlay=x=(main_w-overlay_w)-20:y=(main_h-overlay_h)-20" -c:a copy | mp4 |
