@@ -117,31 +117,242 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;dg_streams.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btn_select.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 655</value>
+  <data name="dg_streams.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 138</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>No streams found</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
   </data>
   <data name="btn_close.Text" xml:space="preserve">
     <value>Close window</value>
   </data>
+  <data name="&gt;&gt;Column1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btn_close.Size" type="System.Drawing.Size, System.Drawing">
+    <value>359, 25</value>
+  </data>
+  <data name="&gt;&gt;col_bitrate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_close.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Column4.Width" type="System.Int32, mscorlib">
+    <value>112</value>
+  </data>
+  <data name="&gt;&gt;pic_wait_1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;dg_streams.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txt_name.Parent" xml:space="preserve">
-    <value>$this</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txt_file.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
-  <data name="&gt;&gt;txt_file.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="btn_select.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;txt_name.Name" xml:space="preserve">
+    <value>txt_name</value>
+  </data>
+  <data name="txt_name.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="&gt;&gt;btn_close.Name" xml:space="preserve">
+    <value>btn_close</value>
+  </data>
+  <data name="Codec.Width" type="System.Int32, mscorlib">
+    <value>247</value>
+  </data>
+  <data name="&gt;&gt;btn_close.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="&gt;&gt;pic_yout.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="image_streams.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACy
+        DgAAAk1TRnQBSQFMAgEBAgEAAUgBAQFQAQEBFAEAARQBAAT/ASEBEAj/AUIBTQE2BwABNgMAASgDAAFQ
+        AwABFAMAAQEBAAEgBgABGRIAAfsD/wH9BP8B/gP/Af0D/wH8Af0D/wH+A/8B/gH/AfwB/wH7Av8B/gP/
+        Af4G/wH8Af8B/QH/AfwB/wH7Af8B+wH/Af4B/wH7A/8B+wP/AfwB/QL/Af0F/wH+A/8B/AH/BAADDAEP
+        AzQBVANdAdwBWgJDAfUDWQHGAy8BSQMEAQUQAAQCAwgBCgMJAQsDAwEEsAAB/wH7Av8B/gH9A/8B/gH9
+        A/8B+wP/AfsC/wH9AfwC/wH7A/8B+wT/AfwD/wH8A/8B/gP/Af4C/wH+A/8B/gP/Af0D/wH+BP8B+wL/
+        Af4D/wH+Av8B+gH+Av8EAANEAXkDYAHgAVIBDgEAAf8BSwELAQAB/wFOAQwBAAH/A10B1AMnAToEAQgA
+        AwIBAwMkATQDRgF/A0oBigMxAU4DDQERrAAB/wH7AfwC/wH+Av8B/QP/AfcB/AL/AfgD/wH6A/8B/AH/
+        Af0D/wH8Af8B+wH/AfwB/wH8Af8B/QH/AfwB/gP/Af4D/wH+A/8B/gH6A/8B+QP/AfcB/wH7A/8B+AH/
+        AfYB/wH9Af8B+QL/Af4C/wQAA0gBhAFgAlgB6AFWARUBAAH/AUcBCgEAAf8BRgEJAQAB/wFFAQkBAAH/
+        AzoBYgMFAQYIAAMZASMDXQHUATUCAAH/ATQCAAH/A14B7QNCAXQDDAEPqAAC/wHyAf8B+AH1Av8BwQHA
+        Av8CWgH3Af8CMAH7Af8BGwEcAv8BCwEMAv8CBgH9Af8CAAL/AgAC/wIAAv8CAAL/AQUBAwL/Ag0B/gH/
+        ARoBHAL/ASUBKgL/AVgBUQL/AbUBugL/AfoB/AP/Af4C/wQAAycBOgFRAlABnwGXATcBFAH/AYMBIwED
+        Af8BVAEVAQAB/wFKAQ0BAAH/AUACPwFuAwgBCggAAzECTQETAQAB/wE6AQMBAAH/ATQCAAH/ATkCAAH/
+        A1oBzwMkATWoAAHxA/8BSQFNAv8CAAH0Af8CAAH4Af8CAAL/AgAB+gH/AgAB+gH/AgAC/wIAAfYB/wIA
+        AfkB/wIAAfgB/wIAAf4B/wIAAv8CAAH2Af8CAAL/AgAB+wH/AgAC/wIAAf0B/wFGAUEC/wH6Af8B+QH/
+        BAADAgEDAyMBMgNRAZ4CXQFaAckBXgJbAdMBZQJUAfEDQAFxAwkBCwgAAyIBMQFlAlQB8QFLARQBAAH/
+        ATsBBgEAAf8BOQEBAQAB/wNYAegDKwFBqAABqQGmAv8BCQEAAfEB/wIAAfsB/wIAAv8CAAH9Af8CAAH8
+        Af8CAAL/AgAB+QH/AgAB+AH/AgAC/wIAAv8CAAH4Af8CAAH8Af8CAAH9Af8CAAH6Af8CAAH1Af8CAAH6
+        Af8CAAH+Af8CAAHtAf8BnwGeAv8IAAQCAxIBGAMnAToDOQFeAV0CWgHMAUICQQFzAwkBDAgAAwkBCwNM
+        AY4BYwJNAfoBUQEcAQQB/wFDAQ8BAAH/A1kB6QMrAUKoAAFAATQC/wIAAfUB/wIAAfsB/wIAAv8CAAH8
+        Af8CAAH8Af8CAAL/AgAB/QH/AgAB/gH/AgAB+wH/AgAC/wIAAfsB/wIAAf0B/wIAAv8CAAH8Af8CAAL/
+        AgAB+AH/AgAB/QH/AgAB+wH/AR0BHAL/FAADIAEtAVoCWAG9A0QBeQMKAQ0IAAQBAxQBGwM3AVoDPgFr
+        A1ABmgFgAlgB6AMuAUioAAEdARwC/wIAAv8CAAL/AgAB/QH/AgAB/AH/AgAB+gH/AgAB/AH/AgAC/wGW
+        AZ0C/wEyATAB/gH/AgAB+QH/AgAB+QH/AgAC/wIAAfsB/wIAAfwB/wIAAv8CAAH+Af8CAAH9Af8CAAL/
+        AQQBCgL/FAADIAEtAVoCWAG9A0UBfAMLAQ4QAAMEAQUDBwEJAzwBZgFhAlkB6QMxAU2oAAEOARcB+QH/
+        AgAC/wIAAv8CAAH8Af8CAAL/AgAB/AH/AgAB/gH/AgAB/gH/AfEB7gL/Ae8D/wGOAZQB8wH/AQkBAQH5
+        Af8CAAH9Af8CAAH1Af8CAAH2Af8CAAH8Af8CAAH+Af8CAAH8Af8CAAH6Af8BCQEQAf0B/xQAAyABLQFa
+        AlgBvQNFAXwDCwEOGAADOwFkAWECWQHpAzEBTagAAQsBEgH8Af8CAAL/AgAB+wH/AgAB/QH/AgAC/wIA
+        Af0B/wIAAv8CAAH8Af8BxwHPAe0B/wL8AfYD/wHyAf8B9wH2Av8BXgFcAv8CAAL/AgAC/wIAAfIB/wIA
+        Af4B/wIAAfsB/wIAAv8BBgEEAfoB/xQAAyABLQFaAlgBvQNFAXwDCwEOGAADOwFkAWMCWQHpAzEBTagA
+        ARABFAL/AgAC/wIAAf0B/wIAAfoB/wIAAv8CAAH+Af8CAAH7Af8CAAL/AcEBxwH8Af8B9QHxA/8B/AL/
+        Ae0B8AH+Af8BUgFPAfwB/wIAAfwB/wIAAv8CAAL/AgAC/wIAAfwB/wIAAf4B/wEDAQUB/QH/FAADIAEt
+        AVoCWAG9A0UBfAMLAQ4YAAM7AWQBYwJZAekDMQFNqAABFQEXAfoB/wIAAfcB/wIAAv8CAAH+Af8CAAH9
+        Af8CAAH4Af8CAAH5Af8CAAL/AfgB9AH6Af8B8wH8Av8BXAFbAv8CAAHqAf8CAAL/AgAC/wIAAfMB/wIA
+        AfoB/wIAAv8CAAL/AgAB+wH/AQIBDgH5Af8UAAMgAS0BWgJYAb0DRQF8AwsBDhgAAzsBZAFjAlkB6QMx
+        AU2oAAEhASIB+QH/AgAB+AH/AgAC/wIAAfgB/wIAAfwB/wIAAfwB/wIAAfgB/wIAAv8BXgGWAv8BIAEr
+        AfQB/wIAAfEB/wIAAfoB/wIAAv8CAAH6Af8CAAH3Af8CAAH7Af8CAAH5Af8CAAL/AgAB/QH/ARIBDwH8
+        Af8UAAMgAS0BWgJYAb0DSgGJAxIBFwQCFAADOwFkAWMCWQHpAzEBTagAATEBLwL/AgAB/AH/AgAB/AH/
+        AgAB9gH/AgAB+wH/AgAC/wIAAf4B/wIAAf4B/wIAAfQB/wIAAfoB/wIAAfwB/wIAAv8CAAL/AgAB/AH/
+        AgAB/QH/AgAB/gH/AgAB+wH/AgAB/gH/AgAC/wEhARkC/xQAAyABLQFYAlcBvAFcAlkBywFHAkYBgQM7
+        AWUDMwFQAyoBQAMgAS4DFQEcAwkBCwM7AWMBYAJYAegDMQFNqAABowG2Av8CAAHrAf8CAAH0Af8CAAL/
+        AgAB9wH/AgAB/QH/AgAB/QH/AgAC/wIAAv8CAAL/AgAC/wIAAfgB/wIAAfQB/wIAAfkB/wIAAv8CAAH6
+        Af8CAAH7Af8CAAH+Af8CAAH1Af8BowGvAf0B/xQAAx8BLAFYAlcBvAGVAR8BAAH/AY8BHQEAAf8BXAI/
+        AfgBYAJZAeMBXQJaAc8BWQJXAbkBUgJRAaMDSgGJAVYCVAGrAWECWgHrAy8BSagAAe0D/wGJAYQC/wIA
+        AfcB/wIAAfkB/wIAAv8CAAH5Af8CAAL/AgAB+wH/AgAB/gH/AgAB/AH/AgAB/AH/AgAC/wIAAv8CAAH8
+        Af8CAAH5Af8CAAH6Af8CAAL/AgAB9gH/AVsBXQL/AfcB/QL/FAADHwEsAVgCVwG8AZ0BJwEAAf8BmAEi
+        AQAB/wGXASMBAAH/AZQBIgEAAf8BkAEfAQAB/wGJARsBAAH/AYIBFwEAAf8BXwEyASEB+wFNATMBKgH6
+        AWECWgHrAywBQ6gAAv8B8QH/AfIB+AL/Ab8BzQH+Af8BjgGcAfwB/wFOAVEC/wI2Af0B/wIiAfUB/wEV
+        AQ8B+QH/AQsBBgH4Af8BCAECAfYB/wEKAQQB+gH/ARABCgL/ARYBEQL/AR0BHAH3Af8BMAEyAfcB/wFD
+        AUkC/wKIAv8BvgHPAfoB/wH0BP8B/QH+Af8UAAMfASwCWAFXAbwBqAEvAQAB/wGiAS8BAAH/AZ8BLgEA
+        Af8BnAEtAQAB/wGYASsBAAH/AZIBJgEAAf8BjAEiAQAB/wGHARwBAAH/AYEBFwEAAf8BYwJZAekDKwFC
+        qAAB/wH6BP8B+wP/AfcB/wH4Af4C/wHyAfcC/wHzAf8B+AH/AfYB/wHyAf8B9gP/AfoD/wH6A/8B9wH8
+        Af0B/wH4AfsC/wH9Af4D/wH+BP8B+wP/AfgB/wL7BP8B9wL/AfsB/AX/FAADGQEjA1YBtQHAAUABBwH/
+        Ab8BQQEIAf8BuQE9AQcB/wGxATgBBQH/AaYBMgEDAf8BnAEtAQEB/wGXASsBAAH/AZIBKQEAAf8BjgEl
+        AQAB/wFdAlYB6gMrAUKoAAL/AfgD/wH+Av8B/AP/AfcD/wH8BP8B9wL/AfoB9wL/AfcC/wH1AfwB+QH/
+        AfoD/wH7A/8B+wP/Af0D/wH7A/8B+gH8Av8C+gP/AvwD/wH4A/8B+QH/Af0B/wH2Af8UAAMCAQMDIwEz
+        AUACPwFuA00BkgNWAbYBYgJcAeEBogE1AQYB/wGqATkBCAH/AaoBOAEIAf8BqAE2AQcB/wGkATQBBQH/
+        AWECWgHrAywBQ6gAAfQB/wH9Af8B+gP/AfsB/AH6A/8B+AH/Af0B/wH5Af8B+wP/AfoD/wH4Af8B/gP/
+        Af4C/wH9A/8B+gP/AfwD/wH+BP8B+wH/Af4B/QH5B/8B/gH/AfoB/AL/AfsB/gP/Af4C/ywAAxUBHQMt
+        AUUDPwFsA04BlQFdAlkB0QFcAlsBzQMkATWoAAFCAU0BPgcAAT4DAAEoAwABUAMAARQDAAEBAQABAQUA
+        AfAXAAP/AwABCAIPCQABCAEGAQcJAAEIAQYBAwkAAQgBBgEDCQABCAEGAQMJAAEMAQYBAwkAAQ8BhgED
+        CQABDwGHAYMJAAEPAYcB4wkAAQ8BhwHjCQABDwGHAeMJAAEPAYcB4wkAAQ8BgwHjCQABDwGAAQMJAAEP
+        AYABAwkAAQ8BgAEDCQABDwGAAQMJAAEPAYABAwkAAQ8BgAEDCQABDwH+AQMdAAs=
+</value>
+  </data>
+  <data name="&gt;&gt;pic_wait_1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pic_yout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="&gt;&gt;Res_p.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;btn_select.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pic_wait_1.TabIndex" type="System.Int32, mscorlib">
-    <value>146</value>
+  <data name="btn_select.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 655</value>
+  </data>
+  <data name="&gt;&gt;txt_file.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txt_name.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="dg_streams.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 18pt</value>
+  </data>
+  <data name="&gt;&gt;pic_yout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_close.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txt_name.Size" type="System.Drawing.Size, System.Drawing">
+    <value>746, 20</value>
+  </data>
+  <data name="pic_wait_1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 35</value>
   </data>
   <data name="Column3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -182,161 +393,137 @@
         +l4vF/urf//Z
 </value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;dg_streams.Name" xml:space="preserve">
-    <value>dg_streams</value>
-  </data>
-  <data name="pic_yout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>119, 67</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form8</value>
-  </data>
-  <data name="btn_close.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;Column1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_close.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="txt_name.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="txt_name.Text" xml:space="preserve">
-    <value>OBTAINING YOUTUBE STREAMS...</value>
-  </data>
-  <data name="Column4.Width" type="System.Int32, mscorlib">
-    <value>112</value>
-  </data>
-  <data name="Column1.Width" type="System.Int32, mscorlib">
-    <value>75</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="txt_name.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;Res_p.Name" xml:space="preserve">
-    <value>Res_p</value>
-  </data>
-  <data name="pic_wait_1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>375, 56</value>
-  </data>
-  <data name="Column1.HeaderText" xml:space="preserve">
-    <value>Format ID</value>
-  </data>
-  <data name="&gt;&gt;pic_yout.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;txt_name.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="btn_select.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="image_streams.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
-        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADe
-        DgAAAk1TRnQBSQFMAgEBAgEAASwBAQE8AQEBFAEAARQBAAT/ASEBEAj/AUIBTQE2BwABNgMAASgDAAFQ
-        AwABFAMAAQEBAAEgBgABGRIAAfsD/wH9BP8B/gP/Af0D/wH8Af0D/wH+A/8B/gH/AfwB/wH7Av8B/gP/
-        Af4G/wH8Af8B/QH/AfwB/wH7Af8B+wH/Af4B/wH7A/8B+wP/AfwB/QL/Af0F/wH+A/8B/AH/BAADCwEP
-        AzQBVANcAdwBWQJCAfUDWAHGAy8BSQMEAQUQAAMBAQIDBwEKAwgBCwMDAQSwAAH/AfsC/wH+Af0D/wH+
-        Af0D/wH7A/8B+wL/Af0B/AL/AfsD/wH7BP8B/AP/AfwD/wH+A/8B/gL/Af4D/wH+A/8B/QP/Af4E/wH7
-        Av8B/gP/Af4C/wH6Af4C/wQAA0QBeQNfAeABUgEOAQAB/wFLAQsBAAH/AU4BDAEAAf8DXAHUAycBOgMA
-        AQEIAAMCAQMDIwE0A0UBfwNKAYoDMQFOAw0BEawAAf8B+wH8Av8B/gL/Af0D/wH3AfwC/wH4A/8B+gP/
-        AfwB/wH9A/8B/AH/AfsB/wH8Af8B/AH/Af0B/wH8Af4D/wH+A/8B/gP/Af4B+gP/AfkD/wH3Af8B+wP/
-        AfgB/wH2Af8B/QH/AfkC/wH+Av8EAANIAYQBXwJXAegBVgEVAQAB/wFHAQoBAAH/AUYBCQEAAf8BRQEJ
-        AQAB/wM6AWIDBAEGCAADGQEjA1wB1AE1AgAB/wE0AgAB/wNdAe0DQgF0AwsBD6gAAv8B8gH/AfgB9QL/
-        AcEBwAL/AloB9wH/AjAB+wH/ARsBHAL/AQsBDAL/AgYB/QH/AgAC/wIAAv8CAAL/AgAC/wEFAQMC/wIN
-        Af4B/wEaARwC/wElASoC/wFYAVEC/wG1AboC/wH6AfwD/wH+Av8EAAMnAToBUQJQAZ8BlwE3ARQB/wGD
-        ASMBAwH/AVQBFQEAAf8BSgENAQAB/wFAAj8BbgMHAQoIAAMxAk0BEwEAAf8BOgEDAQAB/wE0AgAB/wE5
-        AgAB/wNZAc8DJAE1qAAB8QP/AUkBTQL/AgAB9AH/AgAB+AH/AgAC/wIAAfoB/wIAAfoB/wIAAv8CAAH2
-        Af8CAAH5Af8CAAH4Af8CAAH+Af8CAAL/AgAB9gH/AgAC/wIAAfsB/wIAAv8CAAH9Af8BRgFBAv8B+gH/
-        AfkB/wQAAwIBAwMiATIDUAGeAlwBWQHJAV0CWgHTAWQCUwHxA0ABcQMIAQsIAAMiATEBZAJTAfEBSwEU
-        AQAB/wE7AQYBAAH/ATkBAQEAAf8DVwHoAyoBQagAAakBpgL/AQkBAAHxAf8CAAH7Af8CAAL/AgAB/QH/
-        AgAB/AH/AgAC/wIAAfkB/wIAAfgB/wIAAv8CAAL/AgAB+AH/AgAB/AH/AgAB/QH/AgAB+gH/AgAB9QH/
-        AgAB+gH/AgAB/gH/AgAB7QH/AZ8BngL/CAADAQECAxIBGAMnAToDOAFeAVwCWQHMAUICQQFzAwkBDAgA
-        AwgBCwNLAY4BZAJNAfoBUQEcAQQB/wFDAQ8BAAH/A1gB6QMrAUKoAAFAATQC/wIAAfUB/wIAAfsB/wIA
-        Av8CAAH8Af8CAAH8Af8CAAL/AgAB/QH/AgAB/gH/AgAB+wH/AgAC/wIAAfsB/wIAAf0B/wIAAv8CAAH8
-        Af8CAAL/AgAB+AH/AgAB/QH/AgAB+wH/AR0BHAL/FAADHwEtAVoCVwG9A0QBeQMKAQ0LAAEBAxQBGwM3
-        AVoDPgFrA1ABmgFfAlcB6AMuAUioAAEdARwC/wIAAv8CAAL/AgAB/QH/AgAB/AH/AgAB+gH/AgAB/AH/
-        AgAC/wGWAZ0C/wEyATAB/gH/AgAB+QH/AgAB+QH/AgAC/wIAAfsB/wIAAfwB/wIAAv8CAAH+Af8CAAH9
-        Af8CAAL/AQQBCgL/FAADHwEtAVoCVwG9AUUCRAF8AwoBDhAAAwQBBQMHAQkDPAFmAWACWAHpATECMAFN
-        qAABDgEXAfkB/wIAAv8CAAL/AgAB/AH/AgAC/wIAAfwB/wIAAf4B/wIAAf4B/wHxAe4C/wHvA/8BjgGU
-        AfMB/wEJAQEB+QH/AgAB/QH/AgAB9QH/AgAB9gH/AgAB/AH/AgAB/gH/AgAB/AH/AgAB+gH/AQkBEAH9
-        Af8UAAMfAS0BWgJXAb0BRQJEAXwDCgEOGAADOwFkAWACWAHpATECMAFNqAABCwESAfwB/wIAAv8CAAH7
-        Af8CAAH9Af8CAAL/AgAB/QH/AgAC/wIAAfwB/wHHAc8B7QH/AvwB9gP/AfIB/wH3AfYC/wFeAVwC/wIA
-        Av8CAAL/AgAB8gH/AgAB/gH/AgAB+wH/AgAC/wEGAQQB+gH/FAADHwEtAVoCVwG9AUUCRAF8AwoBDhgA
-        AzsBZAFiAlgB6QExAjABTagAARABFAL/AgAC/wIAAf0B/wIAAfoB/wIAAv8CAAH+Af8CAAH7Af8CAAL/
-        AcEBxwH8Af8B9QHxA/8B/AL/Ae0B8AH+Af8BUgFPAfwB/wIAAfwB/wIAAv8CAAL/AgAC/wIAAfwB/wIA
-        Af4B/wEDAQUB/QH/FAADHwEtAVoCVwG9AUUCRAF8AwoBDhgAAzsBZAFiAlgB6QExAjABTagAARUBFwH6
-        Af8CAAH3Af8CAAL/AgAB/gH/AgAB/QH/AgAB+AH/AgAB+QH/AgAC/wH4AfQB+gH/AfMB/AL/AVwBWwL/
-        AgAB6gH/AgAC/wIAAv8CAAHzAf8CAAH6Af8CAAL/AgAC/wIAAfsB/wECAQ4B+QH/FAADHwEtAVoCVwG9
-        AUUCRAF8AwoBDhgAAzsBZAFiAlgB6QExAjABTagAASEBIgH5Af8CAAH4Af8CAAL/AgAB+AH/AgAB/AH/
-        AgAB/AH/AgAB+AH/AgAC/wFeAZYC/wEgASsB9AH/AgAB8QH/AgAB+gH/AgAC/wIAAfoB/wIAAfcB/wIA
-        AfsB/wIAAfkB/wIAAv8CAAH9Af8BEgEPAfwB/xQAAx8BLQFaAlcBvQFKAkkBiQMRARcDAQECFAADOwFk
-        AWICWAHpATECMAFNqAABMQEvAv8CAAH8Af8CAAH8Af8CAAH2Af8CAAH7Af8CAAL/AgAB/gH/AgAB/gH/
-        AgAB9AH/AgAB+gH/AgAB/AH/AgAC/wIAAv8CAAH8Af8CAAH9Af8CAAH+Af8CAAH7Af8CAAH+Af8CAAL/
-        ASEBGQL/FAADHwEtAVgCVgG8AVsCWAHLAUcCRgGBAzsBZQMyAVADKgFAAyABLgMUARwDCAELAzsBYwFf
-        AlcB6AExAjABTagAAaMBtgL/AgAB6wH/AgAB9AH/AgAC/wIAAfcB/wIAAf0B/wIAAf0B/wIAAv8CAAL/
-        AgAC/wIAAv8CAAH4Af8CAAH0Af8CAAH5Af8CAAL/AgAB+gH/AgAB+wH/AgAB/gH/AgAB9QH/AaMBrwH9
-        Af8UAAMfASwBWAJWAbwBlQEfAQAB/wGPAR0BAAH/AVwCPgH4AV8CWAHjAVwCWQHPAVgCVgG5AVICUAGj
-        AUoCSQGJAVYCVAGrAWACWQHrAy8BSagAAe0D/wGJAYQC/wIAAfcB/wIAAfkB/wIAAv8CAAH5Af8CAAL/
-        AgAB+wH/AgAB/gH/AgAB/AH/AgAB/AH/AgAC/wIAAv8CAAH8Af8CAAH5Af8CAAH6Af8CAAL/AgAB9gH/
-        AVsBXQL/AfcB/QL/FAADHwEsAVgCVgG8AZ0BJwEAAf8BmAEiAQAB/wGXASMBAAH/AZQBIgEAAf8BkAEf
-        AQAB/wGJARsBAAH/AYIBFwEAAf8BXwEyASEB+wFNATIBKQH6AWACWQHrAiwBKwFDqAAC/wHxAf8B8gH4
-        Av8BvwHNAf4B/wGOAZwB/AH/AU4BUQL/AjYB/QH/AiIB9QH/ARUBDwH5Af8BCwEGAfgB/wEIAQIB9gH/
-        AQoBBAH6Af8BEAEKAv8BFgERAv8BHQEcAfcB/wEwATIB9wH/AUMBSQL/AogC/wG+Ac8B+gH/AfQE/wH9
-        Af4B/xQAAx8BLAJYAVYBvAGoAS8BAAH/AaIBLwEAAf8BnwEuAQAB/wGcAS0BAAH/AZgBKwEAAf8BkgEm
-        AQAB/wGMASIBAAH/AYcBHAEAAf8BgQEXAQAB/wFiAlgB6QMrAUKoAAH/AfoE/wH7A/8B9wH/AfgB/gL/
-        AfIB9wL/AfMB/wH4Af8B9gH/AfIB/wH2A/8B+gP/AfoD/wH3AfwB/QH/AfgB+wL/Af0B/gP/Af4E/wH7
-        A/8B+AH/AvsE/wH3Av8B+wH8Bf8UAAMZASMDVQG1AcABQAEHAf8BvwFBAQgB/wG5AT0BBwH/AbEBOAEF
-        Af8BpgEyAQMB/wGcAS0BAQH/AZcBKwEAAf8BkgEpAQAB/wGOASUBAAH/AVwCVQHqAysBQqgAAv8B+AP/
-        Af4C/wH8A/8B9wP/AfwE/wH3Av8B+gH3Av8B9wL/AfUB/AH5Af8B+gP/AfsD/wH7A/8B/QP/AfsD/wH6
-        AfwC/wL6A/8C/AP/AfgD/wH5Af8B/QH/AfYB/xQAAwIBAwMjATMBQAI/AW4DTAGSA1YBtgFhAlsB4QGi
-        ATUBBgH/AaoBOQEIAf8BqgE4AQgB/wGoATYBBwH/AaQBNAEFAf8BYAJZAesCLAErAUOoAAH0Af8B/QH/
-        AfoD/wH7AfwB+gP/AfgB/wH9Af8B+QH/AfsD/wH6A/8B+AH/Af4D/wH+Av8B/QP/AfoD/wH8A/8B/gT/
-        AfsB/wH+Af0B+Qf/Af4B/wH6AfwC/wH7Af4D/wH+Av8sAAMVAR0DLQFFAT8CPgFsAU4CTQGVAVwCWAHR
-        AVwCWgHNAyQBNagAAUIBTQE+BwABPgMAASgDAAFQAwABFAMAAQEBAAEBBQAB8BcAA/8DAAEIAg8JAAEI
-        AQYBBwkAAQgBBgEDCQABCAEGAQMJAAEIAQYBAwkAAQwBBgEDCQABDwGGAQMJAAEPAYcBgwkAAQ8BhwHj
-        CQABDwGHAeMJAAEPAYcB4wkAAQ8BhwHjCQABDwGDAeMJAAEPAYABAwkAAQ8BgAEDCQABDwGAAQMJAAEP
-        AYABAwkAAQ8BgAEDCQABDwGAAQMJAAEPAf4BAx0ACw==
-</value>
-  </data>
-  <data name="&gt;&gt;Column4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>147</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 29</value>
+  <data name="&gt;&gt;Column1.Name" xml:space="preserve">
+    <value>Column1</value>
   </data>
   <data name="&gt;&gt;Column2.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="pic_yout.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;col_bitrate.Name" xml:space="preserve">
+    <value>col_bitrate</value>
+  </data>
+  <data name="btn_select.Text" xml:space="preserve">
+    <value>Use selected format ID</value>
+  </data>
+  <data name="txt_name.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="Column3.HeaderText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 29</value>
+  </data>
+  <data name="pic_yout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>332, 61</value>
+  </data>
+  <data name="Column2.HeaderText" xml:space="preserve">
+    <value>Extension</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>YOUTUBE AVAILABLE QUALITY STREAMS</value>
+  </data>
+  <data name="&gt;&gt;dg_streams.Name" xml:space="preserve">
+    <value>dg_streams</value>
+  </data>
   <data name="&gt;&gt;txt_name.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Column6.Width" type="System.Int32, mscorlib">
-    <value>30</value>
+  <data name="&gt;&gt;txt_file.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>257, 267</value>
+  </data>
+  <data name="&gt;&gt;Column3.Name" xml:space="preserve">
+    <value>Column3</value>
+  </data>
+  <data name="label1.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;Res_p.Name" xml:space="preserve">
+    <value>Res_p</value>
+  </data>
+  <data name="btn_close.Location" type="System.Drawing.Point, System.Drawing">
+    <value>402, 655</value>
+  </data>
+  <data name="dg_streams.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="dg_streams.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="pic_yout.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>StretchImage</value>
+  </data>
+  <data name="&gt;&gt;btn_select.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pic_yout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 67</value>
+  </data>
+  <data name="&gt;&gt;txt_file.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="Column2.Width" type="System.Int32, mscorlib">
     <value>65</value>
   </data>
-  <data name="&gt;&gt;txt_file.Name" xml:space="preserve">
-    <value>txt_file</value>
+  <data name="&gt;&gt;Column6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;Codec.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_name.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="txt_file.Size" type="System.Drawing.Size, System.Drawing">
+    <value>744, 13</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="txt_name.Text" xml:space="preserve">
+    <value>OBTAINING YOUTUBE STREAMS...</value>
+  </data>
+  <data name="txt_name.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 10</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;dg_streams.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;Codec.Name" xml:space="preserve">
+    <value>Codec</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pic_wait_1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>375, 56</value>
+  </data>
+  <data name="btn_close.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;pic_yout.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txt_name.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>147</value>
+  </data>
+  <data name="&gt;&gt;Column4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="pic_wait_1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -396,26 +583,14 @@
         5B8TgRwSRKIHQtaLCwg1RAAAOwAAAAAAAAAAAA==
 </value>
   </data>
-  <data name="txt_name.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  <data name="txt_file.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="Codec.Width" type="System.Int32, mscorlib">
-    <value>247</value>
+  <data name="Column6.HeaderText" xml:space="preserve">
+    <value>Use</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="dg_streams.Size" type="System.Drawing.Size, System.Drawing">
-    <value>747, 511</value>
-  </data>
-  <data name="btn_select.Size" type="System.Drawing.Size, System.Drawing">
-    <value>349, 25</value>
-  </data>
-  <data name="&gt;&gt;btn_select.Name" xml:space="preserve">
-    <value>btn_select</value>
-  </data>
-  <data name="Codec.HeaderText" xml:space="preserve">
-    <value>Codec</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form8</value>
   </data>
   <data name="&gt;&gt;Column3.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewImageColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -423,166 +598,80 @@
   <data name="pic_yout.TabIndex" type="System.Int32, mscorlib">
     <value>127</value>
   </data>
-  <data name="txt_file.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;Res_p.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="pic_yout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="&gt;&gt;dg_streams.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btn_select.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="pic_yout.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>773, 687</value>
   </data>
-  <data name="&gt;&gt;txt_file.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="&gt;&gt;image_streams.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pic_wait_1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;Codec.Name" xml:space="preserve">
+  <data name="Codec.HeaderText" xml:space="preserve">
     <value>Codec</value>
   </data>
-  <data name="txt_file.Size" type="System.Drawing.Size, System.Drawing">
-    <value>744, 13</value>
+  <data name="&gt;&gt;Column2.Name" xml:space="preserve">
+    <value>Column2</value>
   </data>
-  <data name="label1.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="pic_yout.Location" type="System.Drawing.Point, System.Drawing">
-    <value>332, 61</value>
-  </data>
-  <data name="dg_streams.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;txt_name.Name" xml:space="preserve">
-    <value>txt_name</value>
-  </data>
-  <data name="&gt;&gt;txt_file.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txt_name.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 10</value>
+  <data name="txt_file.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 37</value>
   </data>
   <data name="&gt;&gt;pic_wait_1.Name" xml:space="preserve">
     <value>pic_wait_1</value>
   </data>
-  <data name="btn_close.Size" type="System.Drawing.Size, System.Drawing">
-    <value>359, 25</value>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="Column6.HeaderText" xml:space="preserve">
-    <value>Use</value>
+  <data name="pic_wait_1.TabIndex" type="System.Int32, mscorlib">
+    <value>146</value>
   </data>
-  <data name="btn_close.Location" type="System.Drawing.Point, System.Drawing">
-    <value>402, 655</value>
+  <data name="Res_p.HeaderText" xml:space="preserve">
+    <value>Resolution</value>
   </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 18pt</value>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Column6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewCheckBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="Column6.Width" type="System.Int32, mscorlib">
+    <value>30</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;pic_yout.Name" xml:space="preserve">
+    <value>pic_yout</value>
   </data>
-  <data name="txt_name.Size" type="System.Drawing.Size, System.Drawing">
-    <value>746, 20</value>
+  <data name="Column1.HeaderText" xml:space="preserve">
+    <value>Format ID</value>
   </data>
-  <data name="dg_streams.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="txt_file.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
-  <data name="&gt;&gt;btn_select.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;txt_file.Name" xml:space="preserve">
+    <value>txt_file</value>
   </data>
-  <data name="&gt;&gt;col_bitrate.Name" xml:space="preserve">
-    <value>col_bitrate</value>
+  <data name="col_bitrate.HeaderText" xml:space="preserve">
+    <value>Bitrate</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dg_streams.Size" type="System.Drawing.Size, System.Drawing">
+    <value>747, 511</value>
+  </data>
+  <data name="&gt;&gt;Column4.Name" xml:space="preserve">
+    <value>Column4</value>
+  </data>
+  <data name="Column1.Width" type="System.Int32, mscorlib">
+    <value>75</value>
+  </data>
+  <data name="Column4.HeaderText" xml:space="preserve">
+    <value>Resolution</value>
   </data>
   <data name="&gt;&gt;image_streams.Name" xml:space="preserve">
     <value>image_streams</value>
   </data>
-  <data name="&gt;&gt;Column1.Name" xml:space="preserve">
-    <value>Column1</value>
+  <data name="&gt;&gt;btn_select.Name" xml:space="preserve">
+    <value>btn_select</value>
   </data>
-  <data name="Column2.HeaderText" xml:space="preserve">
-    <value>Extension</value>
-  </data>
-  <data name="dg_streams.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
-    <value>Vertical</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btn_select.Text" xml:space="preserve">
-    <value>Use selected format ID</value>
+  <data name="Res_p.Width" type="System.Int32, mscorlib">
+    <value>80</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2374,139 +2463,49 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
-  <data name="&gt;&gt;btn_close.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;Column6.Name" xml:space="preserve">
+    <value>Column6</value>
   </data>
-  <data name="&gt;&gt;col_bitrate.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_close.Name" xml:space="preserve">
-    <value>btn_close</value>
-  </data>
-  <data name="&gt;&gt;dg_streams.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;image_streams.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txt_file.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 37</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>257, 267</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>YOUTUBE AVAILABLE QUALITY STREAMS</value>
-  </data>
-  <data name="Column3.HeaderText" xml:space="preserve">
-    <value />
-  </data>
-  <data name="Res_p.HeaderText" xml:space="preserve">
-    <value>Resolution</value>
-  </data>
-  <data name="txt_file.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="pic_yout.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>StretchImage</value>
-  </data>
-  <data name="&gt;&gt;Column2.Name" xml:space="preserve">
-    <value>Column2</value>
-  </data>
-  <data name="&gt;&gt;Codec.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pic_yout.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;Column4.Name" xml:space="preserve">
-    <value>Column4</value>
-  </data>
-  <data name="col_bitrate.HeaderText" xml:space="preserve">
-    <value>Bitrate</value>
-  </data>
-  <data name="dg_streams.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 138</value>
-  </data>
-  <data name="txt_file.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="Res_p.Width" type="System.Int32, mscorlib">
-    <value>80</value>
-  </data>
-  <data name="&gt;&gt;pic_yout.Name" xml:space="preserve">
-    <value>pic_yout</value>
+  <data name="btn_select.Size" type="System.Drawing.Size, System.Drawing">
+    <value>349, 25</value>
   </data>
   <data name="&gt;&gt;pic_wait_1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btn_select.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;Column6.Name" xml:space="preserve">
-    <value>Column6</value>
-  </data>
-  <data name="&gt;&gt;btn_close.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>773, 687</value>
-  </data>
-  <data name="Column4.HeaderText" xml:space="preserve">
-    <value>Resolution</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;pic_wait_1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="pic_wait_1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 35</value>
-  </data>
-  <data name="&gt;&gt;Column3.Name" xml:space="preserve">
-    <value>Column3</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>No streams found</value>
-  </data>
-  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="image_streams.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="Column6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Codec.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="col_bitrate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>es</value>
-  </metadata>
-  <metadata name="Res_p.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="image_streams.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>ar-EG</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>
-  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="col_bitrate.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Codec.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Res_p.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
 </root>
