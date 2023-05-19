@@ -126,6 +126,12 @@
   <data name="add_excl_ws" xml:space="preserve">
     <value>在 Windows 安全中心为 ffmpeg 添加排除项</value>
   </data>
+  <data name="add_input" xml:space="preserve">
+    <value>将输入文件添加到参数</value>
+  </data>
+  <data name="add_variable" xml:space="preserve">
+    <value>Add variable to parameters</value>
+  </data>
   <data name="admin_cmd" xml:space="preserve">
     <value>命令提示符将要求您提供管理员权限。</value>
   </data>
@@ -285,6 +291,15 @@
   <data name="encoded" xml:space="preserve">
     <value>编码</value>
   </data>
+  <data name="enc_not_sup1" xml:space="preserve">
+    <value>您当前的 ffmpeg.exe 版本不支持所选编码器。</value>
+  </data>
+  <data name="enc_not_sup2" xml:space="preserve">
+    <value>您可以在设置 -&gt; 搜索其他 ffmpeg 版本中尝试更新的完整版本。</value>
+  </data>
+  <data name="enc_not_sup3" xml:space="preserve">
+    <value>不支持编码器</value>
+  </data>
   <data name="en_day" xml:space="preserve">
     <value>启用日间模式</value>
   </data>
@@ -359,6 +374,12 @@
   </data>
   <data name="get_prev" xml:space="preserve">
     <value>获取帧</value>
+  </data>
+  <data name="hw_ff_1" xml:space="preserve">
+    <value>硬件视频编码器的编码性能可能因您的 ffmpeg.exe 版本而异。</value>
+  </data>
+  <data name="Hw_ff_2" xml:space="preserve">
+    <value>如果您的性能不佳，请在 gyan.dev（可在应用程序设置中找到）检查最新的 ffmpeg git master 版本以替换当前的 ffmpeg.exe 版本。</value>
   </data>
   <data name="imgs" xml:space="preserve">
     <value>图片</value>

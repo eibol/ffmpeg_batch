@@ -873,4 +873,28 @@
   <data name="quick_zero_no" xml:space="preserve">
     <value>Questa impostazione non è compatibile con l'elenco rapido dei file.</value>
   </data>
+  <data name="enc_not_sup1" xml:space="preserve">
+    <value>Il codificatore selezionato non è supportato dalla versione corrente di ffmpeg.exe.</value>
+  </data>
+  <data name="enc_not_sup2" xml:space="preserve">
+    <value>Puoi provare una versione completa aggiornata in Impostazioni -&gt; Cerca altre versioni di ffmpeg.</value>
+  </data>
+  <data name="enc_not_sup3" xml:space="preserve">
+    <value>Codificatore non supportato</value>
+  </data>
+  <data name="encoded2" xml:space="preserve">
+    <value>completato con successo</value>
+  </data>
+  <data name="hw_ff_1" xml:space="preserve">
+    <value>Le prestazioni di codifica con i codificatori video hardware possono variare a seconda della versione di ffmpeg.exe.</value>
+  </data>
+  <data name="Hw_ff_2" xml:space="preserve">
+    <value>Se riscontri scarse prestazioni, controlla le ultime build master git di ffmpeg su gyan.dev (disponibile nelle impostazioni dell'applicazione) per sostituire la versione corrente di ffmpeg.exe.</value>
+  </data>
+  <data name="add_input" xml:space="preserve">
+    <value>Aggiungi file di input ai parametri</value>
+  </data>
+  <data name="add_variable" xml:space="preserve">
+    <value>Aggiungi variabile ai parametri</value>
+  </data>
 </root>

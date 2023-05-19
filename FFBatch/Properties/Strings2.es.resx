@@ -577,7 +577,7 @@
     <value>Guardar todos los flujos</value>
   </data>
   <data name="add_excl_ws" xml:space="preserve">
-    <value>Add exclusion for ffmpeg in Windows Security</value>
+    <value>Agregar exclusión para ffmpeg en Seguridad de Windows</value>
   </data>
   <data name="admin_cmd" xml:space="preserve">
     <value>Se le solicitarán permisos de administrador por parte de la consola de comandos.</value>
@@ -857,5 +857,32 @@
   </data>
   <data name="quick_zero_no" xml:space="preserve">
     <value>Este ajuste no es compatible con el listado rápido de ficheros habilitado.</value>
+  </data>
+  <data name="enc_not_sup1" xml:space="preserve">
+    <value>El codificador seleccionado no está disponible en su versión actual de ffmpeg.exe.</value>
+  </data>
+  <data name="enc_not_sup2" xml:space="preserve">
+    <value>Puede probar una versión más completa (full) en Ajustes -&gt; Buscar otras versiones de ffmpeg.</value>
+  </data>
+  <data name="enc_not_sup3" xml:space="preserve">
+    <value>Codificador no soportado</value>
+  </data>
+  <data name="encoded2" xml:space="preserve">
+    <value>Codificado(s)</value>
+  </data>
+  <data name="hw_ff_1" xml:space="preserve">
+    <value>El rendimiento con codificadores hardware de video puede variar según la versión de ffmpeg.exe que utilice.</value>
+  </data>
+  <data name="Hw_ff_2" xml:space="preserve">
+    <value>Si experimenta un bajo rendimiento, verifique las últimas compilaciones git master de ffmpeg en gyan.dev (disponible en la configuración de la aplicación) para reemplazar la versión actual de ffmpeg.exe.</value>
+  </data>
+  <data name="add_input" xml:space="preserve">
+    <value>Añadir fichero de entrada a los parámetros</value>
+  </data>
+  <data name="String" xml:space="preserve">
+    <value />
+  </data>
+  <data name="add_variable" xml:space="preserve">
+    <value>Agregar variable a los parámetros</value>
   </data>
 </root>

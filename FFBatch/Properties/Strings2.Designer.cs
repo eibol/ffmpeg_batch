@@ -19,7 +19,7 @@ namespace FFBatch.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Strings2 {
@@ -93,6 +93,24 @@ namespace FFBatch.Properties {
         internal static string add_excl_ws {
             get {
                 return ResourceManager.GetString("add_excl_ws", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Add input file to parameters.
+        /// </summary>
+        internal static string add_input {
+            get {
+                return ResourceManager.GetString("add_input", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Add variable to parameters.
+        /// </summary>
+        internal static string add_variable {
+            get {
+                return ResourceManager.GetString("add_variable", resourceCulture);
             }
         }
         
@@ -583,6 +601,33 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Selected encoder is not supported by your current ffmpeg.exe version..
+        /// </summary>
+        internal static string enc_not_sup1 {
+            get {
+                return ResourceManager.GetString("enc_not_sup1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You can try an updated full version at Settings -&gt; Search for other ffmpeg versions..
+        /// </summary>
+        internal static string enc_not_sup2 {
+            get {
+                return ResourceManager.GetString("enc_not_sup2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Encoder not supported.
+        /// </summary>
+        internal static string enc_not_sup3 {
+            get {
+                return ResourceManager.GetString("enc_not_sup3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Encode.
         /// </summary>
         internal static string encode {
@@ -597,6 +642,15 @@ namespace FFBatch.Properties {
         internal static string encoded {
             get {
                 return ResourceManager.GetString("encoded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Successfull.
+        /// </summary>
+        internal static string encoded2 {
+            get {
+                return ResourceManager.GetString("encoded2", resourceCulture);
             }
         }
         
@@ -804,6 +858,24 @@ namespace FFBatch.Properties {
         internal static string get_prev {
             get {
                 return ResourceManager.GetString("get_prev", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Encoding performance with hardware video encoders can vary depending on your ffmpeg.exe version..
+        /// </summary>
+        internal static string hw_ff_1 {
+            get {
+                return ResourceManager.GetString("hw_ff_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a If you experience poor performance, check for latest ffmpeg git master builds at gyab.dev (Available at application Settings) to replace current ffmpeg.exe version..
+        /// </summary>
+        internal static string Hw_ff_2 {
+            get {
+                return ResourceManager.GetString("Hw_ff_2", resourceCulture);
             }
         }
         
@@ -1312,7 +1384,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Video: Rotate 90 degress Clockwise to H264 + Source audio.
+        ///   Busca una cadena traducida similar a Video: Rotate 90 degrees Clockwise to H264 + Source audio.
         /// </summary>
         internal static string pr09 {
             get {
@@ -1321,7 +1393,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Video: Rotate 90 degress CountercLockwise and Vertical Flip to H264 + Source audio.
+        ///   Busca una cadena traducida similar a Video: Rotate 90 degrees CountercLockwise and Vertical Flip to H264 + Source audio.
         /// </summary>
         internal static string pr10 {
             get {
@@ -1330,7 +1402,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Video: Rotate 90 degress CounterClockwise to H264 + Source audio.
+        ///   Busca una cadena traducida similar a Video: Rotate 90 degrees CounterClockwise to H264 + Source audio.
         /// </summary>
         internal static string pr11 {
             get {
@@ -1339,7 +1411,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Video: Rotate 90 degress Clockwise and Vertical Flip to H264 + Source audio.
+        ///   Busca una cadena traducida similar a Video: Rotate 90 degrees Clockwise and Vertical Flip to H264 + Source audio.
         /// </summary>
         internal static string pr12 {
             get {
@@ -1348,7 +1420,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Video: Rotate 180 degress to H264 + Source audio.
+        ///   Busca una cadena traducida similar a Video: Rotate 180 degrees to H264 + Source audio.
         /// </summary>
         internal static string pr13 {
             get {
@@ -1956,6 +2028,15 @@ namespace FFBatch.Properties {
         internal static string streams {
             get {
                 return ResourceManager.GetString("streams", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a .
+        /// </summary>
+        internal static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
             }
         }
         

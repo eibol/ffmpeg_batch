@@ -19,7 +19,7 @@ namespace FFBatch.Properties {
     // a través de una herramienta como ResGen o Visual Studio.
     // Para agregar o quitar un miembro, edite el archivo .ResX y, a continuación, vuelva a ejecutar ResGen
     // con la opción /str o recompile su proyecto de VS.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Strings {
@@ -2275,8 +2275,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Selected file is not 
-        ///    ..
+        ///   Busca una cadena traducida similar a Selected file is not ffprobe.exe..
         /// </summary>
         internal static string ffp_not {
             get {
@@ -3626,7 +3625,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a &quot;N/A&quot;.
+        ///   Busca una cadena traducida similar a N/A.
         /// </summary>
         internal static string n_a {
             get {
@@ -4166,7 +4165,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Adding subfolders enabled.
+        ///   Busca una cadena traducida similar a Adding subfolders disabled.
         /// </summary>
         internal static string not_subfolders {
             get {
@@ -7514,7 +7513,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Adding subfolders not enabled.
+        ///   Busca una cadena traducida similar a Adding subfolders enabled.
         /// </summary>
         internal static string yes_subfolders {
             get {

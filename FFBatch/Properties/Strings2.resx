@@ -349,19 +349,19 @@
     <value>Video: Resize 1280x720 H264-AAC</value>
   </data>
   <data name="pr09" xml:space="preserve">
-    <value>Video: Rotate 90 degress Clockwise to H264 + Source audio</value>
+    <value>Video: Rotate 90 degrees Clockwise to H264 + Source audio</value>
   </data>
   <data name="pr10" xml:space="preserve">
-    <value>Video: Rotate 90 degress CountercLockwise and Vertical Flip to H264 + Source audio</value>
+    <value>Video: Rotate 90 degrees CountercLockwise and Vertical Flip to H264 + Source audio</value>
   </data>
   <data name="pr11" xml:space="preserve">
-    <value>Video: Rotate 90 degress CounterClockwise to H264 + Source audio</value>
+    <value>Video: Rotate 90 degrees CounterClockwise to H264 + Source audio</value>
   </data>
   <data name="pr12" xml:space="preserve">
-    <value>Video: Rotate 90 degress Clockwise and Vertical Flip to H264 + Source audio</value>
+    <value>Video: Rotate 90 degrees Clockwise and Vertical Flip to H264 + Source audio</value>
   </data>
   <data name="pr13" xml:space="preserve">
-    <value>Video: Rotate 180 degress to H264 + Source audio</value>
+    <value>Video: Rotate 180 degrees to H264 + Source audio</value>
   </data>
   <data name="pr14" xml:space="preserve">
     <value>Video: Remove subtitles to MP4</value>
@@ -878,5 +878,32 @@
   </data>
   <data name="quick_zero_no" xml:space="preserve">
     <value>This feature cannot be used with Quick File listing enabled.</value>
+  </data>
+  <data name="enc_not_sup1" xml:space="preserve">
+    <value>Selected encoder is not supported by your current ffmpeg.exe version.</value>
+  </data>
+  <data name="enc_not_sup2" xml:space="preserve">
+    <value>You can try an updated full version at Settings -&gt; Search for other ffmpeg versions.</value>
+  </data>
+  <data name="enc_not_sup3" xml:space="preserve">
+    <value>Encoder not supported</value>
+  </data>
+  <data name="encoded2" xml:space="preserve">
+    <value>Successfull</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
+  <data name="hw_ff_1" xml:space="preserve">
+    <value>Encoding performance with hardware video encoders can vary depending on your ffmpeg.exe version.</value>
+  </data>
+  <data name="Hw_ff_2" xml:space="preserve">
+    <value>If you experience poor performance, check for latest ffmpeg git master builds at gyab.dev (Available at application Settings) to replace current ffmpeg.exe version.</value>
+  </data>
+  <data name="add_input" xml:space="preserve">
+    <value>Add input file to parameters</value>
+  </data>
+  <data name="add_variable" xml:space="preserve">
+    <value>Add variable to parameters</value>
   </data>
 </root>

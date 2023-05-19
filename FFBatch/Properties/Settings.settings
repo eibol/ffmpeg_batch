@@ -77,5 +77,8 @@
     <Setting Name="bat_level" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">50</Value>
     </Setting>
+    <Setting Name="no_dest_overw" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
