@@ -65,8 +65,8 @@ namespace FFBatch
             // 
             // btn_clear
             // 
-            this.btn_clear.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.btn_clear, "btn_clear");
+            this.btn_clear.FlatAppearance.BorderSize = 0;
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.UseVisualStyleBackColor = true;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);

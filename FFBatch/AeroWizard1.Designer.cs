@@ -160,6 +160,9 @@
             this.combo_presets_ext = new System.Windows.Forms.ComboBox();
             this.label43 = new System.Windows.Forms.Label();
             this.wz_end = new AeroWizard.WizardPage();
+            this.label48 = new System.Windows.Forms.Label();
+            this.n_t_samples = new System.Windows.Forms.NumericUpDown();
+            this.chk_samples = new System.Windows.Forms.CheckBox();
             this.pic_warn2 = new System.Windows.Forms.PictureBox();
             this.lbl_vcard = new System.Windows.Forms.Label();
             this.lbl_help = new System.Windows.Forms.Label();
@@ -213,6 +216,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.track_bits_audio)).BeginInit();
             this.wz_0_1.SuspendLayout();
             this.wz_end.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.n_t_samples)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_warn2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_status)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_warning)).BeginInit();
@@ -221,7 +225,6 @@
             // 
             // wizardControl1
             // 
-            //this.wizardControl1.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.wizardControl1, "wizardControl1");
             this.wizardControl1.Name = "wizardControl1";
             this.wizardControl1.Pages.Add(this.wz0_0);
@@ -1359,6 +1362,9 @@
             // 
             // wz_end
             // 
+            this.wz_end.Controls.Add(this.label48);
+            this.wz_end.Controls.Add(this.n_t_samples);
+            this.wz_end.Controls.Add(this.chk_samples);
             this.wz_end.Controls.Add(this.pic_warn2);
             this.wz_end.Controls.Add(this.lbl_vcard);
             this.wz_end.Controls.Add(this.lbl_help);
@@ -1378,6 +1384,33 @@
             resources.ApplyResources(this.wz_end, "wz_end");
             this.wz_end.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz_end_Commit);
             this.wz_end.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz_end_Initialize);
+            // 
+            // label48
+            // 
+            resources.ApplyResources(this.label48, "label48");
+            this.label48.Name = "label48";
+            // 
+            // n_t_samples
+            // 
+            resources.ApplyResources(this.n_t_samples, "n_t_samples");
+            this.n_t_samples.Maximum = new decimal(new int[] {
+            120,
+            0,
+            0,
+            0});
+            this.n_t_samples.Name = "n_t_samples";
+            this.n_t_samples.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+            // 
+            // chk_samples
+            // 
+            resources.ApplyResources(this.chk_samples, "chk_samples");
+            this.chk_samples.Name = "chk_samples";
+            this.chk_samples.UseVisualStyleBackColor = true;
+            this.chk_samples.CheckedChanged += new System.EventHandler(this.chk_samples_CheckedChanged);
             // 
             // pic_warn2
             // 
@@ -1595,6 +1628,7 @@
             this.wz_0_1.PerformLayout();
             this.wz_end.ResumeLayout(false);
             this.wz_end.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.n_t_samples)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_warn2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_status)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_warning)).EndInit();
@@ -1762,5 +1796,8 @@
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.CheckBox chk_normalize;
         private System.Windows.Forms.Button btn_crop_wiz;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.NumericUpDown n_t_samples;
+        private System.Windows.Forms.CheckBox chk_samples;
     }
 }

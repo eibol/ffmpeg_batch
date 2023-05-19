@@ -407,7 +407,8 @@ namespace FFBatch
 
         private void btn_play_Click(object sender, EventArgs e)
         {
-            Process.Start(out_file);
+            if (File.Exists(out_file)) Process.Start(out_file);
+            else MessageBox.Show(Properties.Strings.file_not_f);
         }
     }
 }

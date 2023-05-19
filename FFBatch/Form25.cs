@@ -8,6 +8,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Management;
+using System.Security.Authentication.ExtendedProtection;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
@@ -23,6 +24,7 @@ namespace FFBatch
             InitializeComponent();
         }
 
+        public Boolean check_ff = false;
         private Boolean is_portable = false;
         private String port_path = System.IO.Path.Combine(Application.StartupPath, "settings") + "\\";
         private String code = "";
@@ -302,14 +304,18 @@ namespace FFBatch
 
             try
             {
-                File.WriteAllText(f_md5, StringCipher.Encrypt(txt_cur_md5.Text, psk));
+                File.WriteAllText(f_md5, StringCipher.Encrypt(txt_cur_md5.Text, psk));                
             }
             catch { MessageBox.Show(Properties.Strings.err_set, Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error); }
 
             txt_st_md5.Text = txt_cur_md5.Text;
             pic_2.Image = pic_success.Image;
-            if (txt_cur_md5.Text == txt_st_md5.Text) pic_1.Image = pic_success.Image;
-            lbl_fail_ff.Text = Properties.Strings2.md5_valid;
+            if (txt_cur_md5.Text == txt_st_md5.Text)
+            {
+                pic_1.Image = pic_success.Image;
+                lbl_fail_ff.Text = Properties.Strings2.md5_valid;
+                check_ff = true;
+            }            
         }
 
         private void btn_close_Click(object sender, EventArgs e)

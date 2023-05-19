@@ -25,6 +25,7 @@ namespace FFBatch
             else if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "it") combo_lang.SelectedIndex = 2;
             else if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "pt") combo_lang.SelectedIndex = 3;
             else if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "cn") combo_lang.SelectedIndex = 4;
+            else if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "ar") combo_lang.SelectedIndex = 5;
             else combo_lang.SelectedIndex = 0;
             label1.TextAlign = HorizontalAlignment.Right;
         }
@@ -54,30 +55,26 @@ namespace FFBatch
                 this.Text = "Seleziona lingua applicazione";
                 button1.Text = "OK";
             }
+            
 
             if (combo_lang.SelectedIndex == 3)
-            {
-                MessageBox.Show("Tłumaczenie w toku, jeszcze niedostępne.");
-                label1.Text = "Select language";
-                this.Text = "Application language";
-                button1.Text = "OK";
-                //label1.Text = "Wybierz język";
-                //this.Text = "Język aplikacji";
-                //button1.Text = "OK";
-            }
-
-            if (combo_lang.SelectedIndex == 4)
             {
                 label1.Text = "Selecione o língua";
                 this.Text = "Idioma do aplicativo";
                 button1.Text = "OK";
             }
 
-            if (combo_lang.SelectedIndex == 5)
+            if (combo_lang.SelectedIndex == 4)
             {
                 label1.Text = "选择语言";
                 this.Text = "应用语言";
                 button1.Text = "确定";
+            }
+            if (combo_lang.SelectedIndex == 5)
+            {
+                label1.Text = "اختار اللغة";
+                this.Text = "لغة التطبيق";
+                button1.Text = "نعم";
             }
         }
     }

@@ -72,8 +72,8 @@ namespace FFBatch
             // 
             // btn_cancel
             // 
-            this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.btn_cancel, "btn_cancel");
+            this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
             this.btn_cancel.Click += new System.EventHandler(this.button2_Click);
@@ -106,6 +106,7 @@ namespace FFBatch
             // openf
             // 
             this.openf.FileName = "openFileDialog1";
+            resources.ApplyResources(this.openf, "openf");
             this.openf.FileOk += new System.ComponentModel.CancelEventHandler(this.openf_FileOk);
             // 
             // Form18

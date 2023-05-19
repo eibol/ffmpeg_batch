@@ -83,6 +83,8 @@
             this.btn_add_folders = new System.Windows.Forms.Button();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pic_add_variable = new System.Windows.Forms.PictureBox();
+            this.pic_file_add_input = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.Num_Shift = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
@@ -315,7 +317,7 @@
             this.panel2 = new System.Windows.Forms.GroupBox();
             this.txt_suffix = new System.Windows.Forms.TextBox();
             this.chk_open_compl = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chk_recreate = new System.Windows.Forms.CheckBox();
             this.chk_suffix = new System.Windows.Forms.CheckBox();
             this.btn_multimedia = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -534,6 +536,8 @@
             this.pic_batt = new System.Windows.Forms.PictureBox();
             this.ctm1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_add_variable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_file_add_input)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Num_Shift)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vol_ch)).BeginInit();
@@ -656,8 +660,8 @@
             // 
             // txt_format
             // 
-            resources.ApplyResources(this.txt_format, "txt_format");
             this.txt_format.BackColor = System.Drawing.SystemColors.Window;
+            resources.ApplyResources(this.txt_format, "txt_format");
             this.txt_format.Name = "txt_format";
             this.txt_format.Click += new System.EventHandler(this.textBox2_Click);
             this.txt_format.TextChanged += new System.EventHandler(this.txt_format_TextChanged);
@@ -666,9 +670,9 @@
             // 
             // btn_save_config
             // 
-            resources.ApplyResources(this.btn_save_config, "btn_save_config");
             this.btn_save_config.FlatAppearance.BorderSize = 0;
             this.btn_save_config.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_save_config, "btn_save_config");
             this.btn_save_config.ImageList = this.imageList1;
             this.btn_save_config.Name = "btn_save_config";
             this.btn_save_config.UseVisualStyleBackColor = true;
@@ -676,9 +680,9 @@
             // 
             // btn_load_config
             // 
-            resources.ApplyResources(this.btn_load_config, "btn_load_config");
             this.btn_load_config.FlatAppearance.BorderSize = 0;
             this.btn_load_config.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_load_config, "btn_load_config");
             this.btn_load_config.ImageList = this.imageList1;
             this.btn_load_config.Name = "btn_load_config";
             this.btn_load_config.UseVisualStyleBackColor = true;
@@ -696,16 +700,15 @@
             // 
             // btn_clear_list
             // 
-            resources.ApplyResources(this.btn_clear_list, "btn_clear_list");
             this.btn_clear_list.FlatAppearance.BorderSize = 0;
             this.btn_clear_list.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_clear_list, "btn_clear_list");
             this.btn_clear_list.Name = "btn_clear_list";
             this.btn_clear_list.UseVisualStyleBackColor = true;
             this.btn_clear_list.Click += new System.EventHandler(this.button5_Click);
             // 
             // ctm1
             // 
-            resources.ApplyResources(this.ctm1, "ctm1");
             this.ctm1.ImageScalingSize = new System.Drawing.Size(18, 18);
             this.ctm1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ctm_add_files,
@@ -737,6 +740,7 @@
             this.cti5,
             this.cti6});
             this.ctm1.Name = "ctm1";
+            resources.ApplyResources(this.ctm1, "ctm1");
             this.ctm1.Opening += new System.ComponentModel.CancelEventHandler(this.ctm1_Opening);
             // 
             // ctm_add_files
@@ -771,8 +775,8 @@
             // 
             // toolStripSeparator2
             // 
-            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             this.toolStripSeparator2.Name = "toolStripSeparator2";
+            resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
             // 
             // ctm1_encode
             // 
@@ -782,8 +786,8 @@
             // 
             // ct1_sep_cod
             // 
-            resources.ApplyResources(this.ct1_sep_cod, "ct1_sep_cod");
             this.ct1_sep_cod.Name = "ct1_sep_cod";
+            resources.ApplyResources(this.ct1_sep_cod, "ct1_sep_cod");
             // 
             // cti2
             // 
@@ -805,8 +809,8 @@
             // 
             // toolStripSeparator8
             // 
-            resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
             this.toolStripSeparator8.Name = "toolStripSeparator8";
+            resources.ApplyResources(this.toolStripSeparator8, "toolStripSeparator8");
             // 
             // cti1
             // 
@@ -846,8 +850,8 @@
             // 
             // toolStripSeparator1
             // 
-            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             this.toolStripSeparator1.Name = "toolStripSeparator1";
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // cti4
             // 
@@ -869,8 +873,8 @@
             // 
             // toolStripSeparator15
             // 
-            resources.ApplyResources(this.toolStripSeparator15, "toolStripSeparator15");
             this.toolStripSeparator15.Name = "toolStripSeparator15";
+            resources.ApplyResources(this.toolStripSeparator15, "toolStripSeparator15");
             // 
             // cti1_cols
             // 
@@ -904,8 +908,8 @@
             // 
             // combo_presets
             // 
-            resources.ApplyResources(this.combo_presets, "combo_presets");
             this.combo_presets.FormattingEnabled = true;
+            resources.ApplyResources(this.combo_presets, "combo_presets");
             this.combo_presets.Name = "combo_presets";
             this.combo_presets.DropDown += new System.EventHandler(this.comboBox1_DropDown);
             this.combo_presets.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
@@ -931,13 +935,10 @@
             this.btn_add_folders.Click += new System.EventHandler(this.button6_Click);
             this.btn_add_folders.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btn_add_folders_MouseDown);
             // 
-            // folderBrowserDialog1
-            // 
-            resources.ApplyResources(this.folderBrowserDialog1, "folderBrowserDialog1");
-            // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.pic_add_variable);
+            this.groupBox1.Controls.Add(this.pic_file_add_input);
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.btn_fix_pre);
             this.groupBox1.Controls.Add(this.btn_save_queue);
@@ -966,12 +967,28 @@
             this.groupBox1.Controls.Add(this.combo_presets);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
+            // pic_add_variable
+            // 
+            this.pic_add_variable.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.pic_add_variable, "pic_add_variable");
+            this.pic_add_variable.Name = "pic_add_variable";
+            this.pic_add_variable.TabStop = false;
+            this.pic_add_variable.Click += new System.EventHandler(this.pic_add_variable_Click);
+            // 
+            // pic_file_add_input
+            // 
+            this.pic_file_add_input.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.pic_file_add_input, "pic_file_add_input");
+            this.pic_file_add_input.Name = "pic_file_add_input";
+            this.pic_file_add_input.TabStop = false;
+            this.pic_file_add_input.Click += new System.EventHandler(this.pic_file_add_input_Click);
+            // 
             // groupBox3
             // 
-            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Controls.Add(this.Num_Shift);
             this.groupBox3.Controls.Add(this.label15);
             this.groupBox3.Controls.Add(this.chk_vol);
@@ -980,13 +997,14 @@
             this.groupBox3.Controls.Add(this.button22);
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 
             // Num_Shift
             // 
-            resources.ApplyResources(this.Num_Shift, "Num_Shift");
             this.Num_Shift.DecimalPlaces = 3;
+            resources.ApplyResources(this.Num_Shift, "Num_Shift");
             this.Num_Shift.Increment = new decimal(new int[] {
             1,
             0,
@@ -1042,10 +1060,10 @@
             // 
             // button22
             // 
-            resources.ApplyResources(this.button22, "button22");
             this.button22.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.button22.FlatAppearance.BorderSize = 0;
             this.button22.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.button22, "button22");
             this.button22.Name = "button22";
             this.button22.UseVisualStyleBackColor = false;
             this.button22.Click += new System.EventHandler(this.button22_Click);
@@ -1065,26 +1083,26 @@
             // 
             // btn_save_queue
             // 
-            resources.ApplyResources(this.btn_save_queue, "btn_save_queue");
             this.btn_save_queue.FlatAppearance.BorderSize = 0;
             this.btn_save_queue.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_save_queue, "btn_save_queue");
             this.btn_save_queue.Name = "btn_save_queue";
             this.btn_save_queue.UseVisualStyleBackColor = true;
             this.btn_save_queue.Click += new System.EventHandler(this.btn_save_queue_Click);
             // 
             // btn_display_log
             // 
-            resources.ApplyResources(this.btn_display_log, "btn_display_log");
             this.btn_display_log.FlatAppearance.BorderSize = 0;
             this.btn_display_log.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_display_log, "btn_display_log");
             this.btn_display_log.Name = "btn_display_log";
             this.btn_display_log.UseVisualStyleBackColor = true;
             this.btn_display_log.Click += new System.EventHandler(this.btn_display_log_Click);
             // 
             // txt_config_ver
             // 
-            resources.ApplyResources(this.txt_config_ver, "txt_config_ver");
             this.txt_config_ver.BackColor = System.Drawing.SystemColors.Window;
+            resources.ApplyResources(this.txt_config_ver, "txt_config_ver");
             this.txt_config_ver.Name = "txt_config_ver";
             // 
             // lbl_config
@@ -1099,19 +1117,19 @@
             // 
             // cb_hwdecode
             // 
-            resources.ApplyResources(this.cb_hwdecode, "cb_hwdecode");
             this.cb_hwdecode.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_hwdecode.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_hwdecode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cb_hwdecode, "cb_hwdecode");
             this.cb_hwdecode.FormattingEnabled = true;
             this.cb_hwdecode.Name = "cb_hwdecode";
             this.cb_hwdecode.SelectedIndexChanged += new System.EventHandler(this.cb_hwdecode_SelectedIndexChanged_1);
             // 
             // btn_ref_dcd
             // 
-            resources.ApplyResources(this.btn_ref_dcd, "btn_ref_dcd");
             this.btn_ref_dcd.FlatAppearance.BorderSize = 0;
             this.btn_ref_dcd.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_ref_dcd, "btn_ref_dcd");
             this.btn_ref_dcd.Name = "btn_ref_dcd";
             this.btn_ref_dcd.UseVisualStyleBackColor = true;
             this.btn_ref_dcd.Click += new System.EventHandler(this.btn_ref_dcd_Click);
@@ -1123,8 +1141,8 @@
             // 
             // ss_time_input
             // 
-            resources.ApplyResources(this.ss_time_input, "ss_time_input");
             this.ss_time_input.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            resources.ApplyResources(this.ss_time_input, "ss_time_input");
             this.ss_time_input.Name = "ss_time_input";
             this.ss_time_input.TextChanged += new System.EventHandler(this.ss_time_input_TextChanged);
             this.ss_time_input.DoubleClick += new System.EventHandler(this.ss_time_input_DoubleClick);
@@ -1150,8 +1168,8 @@
             // 
             // txt_pre_input
             // 
-            resources.ApplyResources(this.txt_pre_input, "txt_pre_input");
             this.txt_pre_input.BackColor = System.Drawing.SystemColors.Window;
+            resources.ApplyResources(this.txt_pre_input, "txt_pre_input");
             this.txt_pre_input.Name = "txt_pre_input";
             this.txt_pre_input.Click += new System.EventHandler(this.txt_pre_input_Click);
             this.txt_pre_input.TextChanged += new System.EventHandler(this.txt_pre_input_TextChanged);
@@ -1159,8 +1177,8 @@
             // 
             // btn_del_preset
             // 
-            resources.ApplyResources(this.btn_del_preset, "btn_del_preset");
             this.btn_del_preset.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_del_preset, "btn_del_preset");
             this.btn_del_preset.ImageList = this.imageList1;
             this.btn_del_preset.Name = "btn_del_preset";
             this.btn_del_preset.UseVisualStyleBackColor = true;
@@ -1168,63 +1186,63 @@
             // 
             // btn_show_console
             // 
-            resources.ApplyResources(this.btn_show_console, "btn_show_console");
             this.btn_show_console.FlatAppearance.BorderSize = 0;
             this.btn_show_console.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_show_console, "btn_show_console");
             this.btn_show_console.Name = "btn_show_console";
             this.btn_show_console.UseVisualStyleBackColor = true;
             this.btn_show_console.Click += new System.EventHandler(this.button13_Click);
             // 
             // btn_try_pr
             // 
-            resources.ApplyResources(this.btn_try_pr, "btn_try_pr");
             this.btn_try_pr.FlatAppearance.BorderSize = 0;
             this.btn_try_pr.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_try_pr, "btn_try_pr");
             this.btn_try_pr.Name = "btn_try_pr";
             this.btn_try_pr.UseVisualStyleBackColor = true;
             this.btn_try_pr.Click += new System.EventHandler(this.btn_try_pr_Click);
             // 
             // btn_edit_presets
             // 
-            resources.ApplyResources(this.btn_edit_presets, "btn_edit_presets");
             this.btn_edit_presets.FlatAppearance.BorderSize = 0;
             this.btn_edit_presets.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_edit_presets, "btn_edit_presets");
             this.btn_edit_presets.Name = "btn_edit_presets";
             this.btn_edit_presets.UseVisualStyleBackColor = true;
             this.btn_edit_presets.Click += new System.EventHandler(this.btn_edit_presets_Click);
             // 
             // btn_wizard
             // 
-            resources.ApplyResources(this.btn_wizard, "btn_wizard");
             this.btn_wizard.FlatAppearance.BorderSize = 0;
             this.btn_wizard.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_wizard, "btn_wizard");
             this.btn_wizard.Name = "btn_wizard";
             this.btn_wizard.UseVisualStyleBackColor = true;
             this.btn_wizard.Click += new System.EventHandler(this.btn_wizard_Click);
             // 
             // btn_edit_config
             // 
-            resources.ApplyResources(this.btn_edit_config, "btn_edit_config");
             this.btn_edit_config.FlatAppearance.BorderSize = 0;
             this.btn_edit_config.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_edit_config, "btn_edit_config");
             this.btn_edit_config.Name = "btn_edit_config";
             this.btn_edit_config.UseVisualStyleBackColor = true;
             this.btn_edit_config.Click += new System.EventHandler(this.btn_edit_config_Click);
             // 
             // btn_multiple_presets
             // 
-            resources.ApplyResources(this.btn_multiple_presets, "btn_multiple_presets");
             this.btn_multiple_presets.FlatAppearance.BorderSize = 0;
             this.btn_multiple_presets.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_multiple_presets, "btn_multiple_presets");
             this.btn_multiple_presets.Name = "btn_multiple_presets";
             this.btn_multiple_presets.UseVisualStyleBackColor = true;
             this.btn_multiple_presets.Click += new System.EventHandler(this.multiple_presets_Click);
             // 
             // TB1
             // 
-            resources.ApplyResources(this.TB1, "TB1");
             this.TB1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.TB1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.TB1, "TB1");
             this.TB1.ForeColor = System.Drawing.Color.DarkRed;
             this.TB1.Name = "TB1";
             this.TB1.ReadOnly = true;
@@ -1257,26 +1275,26 @@
             // 
             // button23
             // 
-            resources.ApplyResources(this.button23, "button23");
             this.button23.FlatAppearance.BorderSize = 0;
             this.button23.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.button23, "button23");
             this.button23.Name = "button23";
             this.button23.UseVisualStyleBackColor = true;
             this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // btn_mux
             // 
-            resources.ApplyResources(this.btn_mux, "btn_mux");
             this.btn_mux.FlatAppearance.BorderSize = 0;
             this.btn_mux.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_mux, "btn_mux");
             this.btn_mux.Name = "btn_mux";
             this.btn_mux.UseVisualStyleBackColor = true;
             this.btn_mux.Click += new System.EventHandler(this.btn_mux_Click);
             // 
             // btn_cancel_shut
             // 
-            resources.ApplyResources(this.btn_cancel_shut, "btn_cancel_shut");
             this.btn_cancel_shut.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.btn_cancel_shut, "btn_cancel_shut");
             this.btn_cancel_shut.Name = "btn_cancel_shut";
             this.btn_cancel_shut.UseVisualStyleBackColor = false;
             this.btn_cancel_shut.Click += new System.EventHandler(this.button10_Click);
@@ -1288,9 +1306,9 @@
             // 
             // listBox4
             // 
-            resources.ApplyResources(this.listBox4, "listBox4");
             this.listBox4.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.listBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.listBox4, "listBox4");
             this.listBox4.FormattingEnabled = true;
             this.listBox4.Items.AddRange(new object[] {
             resources.GetString("listBox4.Items"),
@@ -1312,8 +1330,8 @@
             // 
             // btn_clean_list
             // 
-            resources.ApplyResources(this.btn_clean_list, "btn_clean_list");
             this.btn_clean_list.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_clean_list, "btn_clean_list");
             this.btn_clean_list.Name = "btn_clean_list";
             this.btn_clean_list.UseVisualStyleBackColor = true;
             this.btn_clean_list.Click += new System.EventHandler(this.button12_Click);
@@ -1343,7 +1361,6 @@
             // 
             // ctm2
             // 
-            resources.ApplyResources(this.ctm2, "ctm2");
             this.ctm2.ImageScalingSize = new System.Drawing.Size(18, 18);
             this.ctm2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ct2_all,
@@ -1359,6 +1376,7 @@
             this.ct2_str,
             this.ct2_save_allstreams});
             this.ctm2.Name = "ctm2";
+            resources.ApplyResources(this.ctm2, "ctm2");
             this.ctm2.Opening += new System.ComponentModel.CancelEventHandler(this.ctm2_Opening_1);
             // 
             // ct2_all
@@ -1369,8 +1387,8 @@
             // 
             // toolStripSeparator3
             // 
-            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             this.toolStripSeparator3.Name = "toolStripSeparator3";
+            resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
             // 
             // ct2_v
             // 
@@ -1392,12 +1410,11 @@
             // 
             // toolStripSeparator5
             // 
-            resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
             this.toolStripSeparator5.Name = "toolStripSeparator5";
+            resources.ApplyResources(this.toolStripSeparator5, "toolStripSeparator5");
             // 
             // combo_def_und_lang
             // 
-            resources.ApplyResources(this.combo_def_und_lang, "combo_def_und_lang");
             this.combo_def_und_lang.Items.AddRange(new object[] {
             resources.GetString("combo_def_und_lang.Items"),
             resources.GetString("combo_def_und_lang.Items1"),
@@ -1418,14 +1435,15 @@
             resources.GetString("combo_def_und_lang.Items16"),
             resources.GetString("combo_def_und_lang.Items17")});
             this.combo_def_und_lang.Name = "combo_def_und_lang";
+            resources.ApplyResources(this.combo_def_und_lang, "combo_def_und_lang");
             this.combo_def_und_lang.DropDown += new System.EventHandler(this.combo_def_und_lang_DropDown);
             this.combo_def_und_lang.SelectedIndexChanged += new System.EventHandler(this.combo_def_und_lang_SelectedIndexChanged);
             this.combo_def_und_lang.Click += new System.EventHandler(this.combo_def_und_lang_Click);
             // 
             // toolStripSeparator25
             // 
-            resources.ApplyResources(this.toolStripSeparator25, "toolStripSeparator25");
             this.toolStripSeparator25.Name = "toolStripSeparator25";
+            resources.ApplyResources(this.toolStripSeparator25, "toolStripSeparator25");
             // 
             // ct2_del
             // 
@@ -1435,13 +1453,13 @@
             // 
             // toolStripSeparator28
             // 
-            resources.ApplyResources(this.toolStripSeparator28, "toolStripSeparator28");
             this.toolStripSeparator28.Name = "toolStripSeparator28";
+            resources.ApplyResources(this.toolStripSeparator28, "toolStripSeparator28");
             // 
             // ct2_str
             // 
-            resources.ApplyResources(this.ct2_str, "ct2_str");
             this.ct2_str.Name = "ct2_str";
+            resources.ApplyResources(this.ct2_str, "ct2_str");
             this.ct2_str.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
             // 
             // ct2_save_allstreams
@@ -1452,7 +1470,6 @@
             // 
             // ctm4
             // 
-            resources.ApplyResources(this.ctm4, "ctm4");
             this.ctm4.ImageScalingSize = new System.Drawing.Size(18, 18);
             this.ctm4.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ct4_browse,
@@ -1462,6 +1479,7 @@
             this.toolStripSeparator9,
             this.Combo_single_subs_lang});
             this.ctm4.Name = "ctm2";
+            resources.ApplyResources(this.ctm4, "ctm4");
             this.ctm4.Opening += new System.ComponentModel.CancelEventHandler(this.ctm4_Opening);
             // 
             // ct4_browse
@@ -1478,8 +1496,8 @@
             // 
             // toolStripSeparator6
             // 
-            resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
             this.toolStripSeparator6.Name = "toolStripSeparator6";
+            resources.ApplyResources(this.toolStripSeparator6, "toolStripSeparator6");
             // 
             // ct4_conv
             // 
@@ -1489,19 +1507,18 @@
             // 
             // toolStripSeparator9
             // 
-            resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
             this.toolStripSeparator9.Name = "toolStripSeparator9";
+            resources.ApplyResources(this.toolStripSeparator9, "toolStripSeparator9");
             // 
             // Combo_single_subs_lang
             // 
-            resources.ApplyResources(this.Combo_single_subs_lang, "Combo_single_subs_lang");
             this.Combo_single_subs_lang.Name = "Combo_single_subs_lang";
+            resources.ApplyResources(this.Combo_single_subs_lang, "Combo_single_subs_lang");
             this.Combo_single_subs_lang.DropDown += new System.EventHandler(this.Combo_single_subs_lang_DropDown);
             this.Combo_single_subs_lang.SelectedIndexChanged += new System.EventHandler(this.Combo_single_subs_lang_SelectedIndexChanged);
             // 
             // ctm_m3u
             // 
-            resources.ApplyResources(this.ctm_m3u, "ctm_m3u");
             this.ctm_m3u.ImageScalingSize = new System.Drawing.Size(18, 18);
             this.ctm_m3u.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ct_paste_youtube,
@@ -1518,6 +1535,7 @@
             this.toolStripSeparator12,
             this.ctm_stop_url});
             this.ctm_m3u.Name = "ctm_m3u";
+            resources.ApplyResources(this.ctm_m3u, "ctm_m3u");
             this.ctm_m3u.Opening += new System.ComponentModel.CancelEventHandler(this.ctm_m3u_Opening);
             // 
             // ct_paste_youtube
@@ -1534,8 +1552,8 @@
             // 
             // toolStripSeparator10
             // 
-            resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
             this.toolStripSeparator10.Name = "toolStripSeparator10";
+            resources.ApplyResources(this.toolStripSeparator10, "toolStripSeparator10");
             // 
             // ct3_ready
             // 
@@ -1569,8 +1587,8 @@
             // 
             // toolStripSeparator11
             // 
-            resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
             this.toolStripSeparator11.Name = "toolStripSeparator11";
+            resources.ApplyResources(this.toolStripSeparator11, "toolStripSeparator11");
             // 
             // ct_show_urls
             // 
@@ -1586,8 +1604,8 @@
             // 
             // toolStripSeparator12
             // 
-            resources.ApplyResources(this.toolStripSeparator12, "toolStripSeparator12");
             this.toolStripSeparator12.Name = "toolStripSeparator12";
+            resources.ApplyResources(this.toolStripSeparator12, "toolStripSeparator12");
             // 
             // ctm_stop_url
             // 
@@ -1607,7 +1625,6 @@
             // 
             // combo_prio
             // 
-            resources.ApplyResources(this.combo_prio, "combo_prio");
             this.combo_prio.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.combo_prio.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.combo_prio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -1618,13 +1635,13 @@
             resources.GetString("combo_prio.Items2"),
             resources.GetString("combo_prio.Items3"),
             resources.GetString("combo_prio.Items4")});
+            resources.ApplyResources(this.combo_prio, "combo_prio");
             this.combo_prio.Name = "combo_prio";
             this.combo_prio.SelectedIndexChanged += new System.EventHandler(this.combo_prio_SelectedIndexChanged);
             this.combo_prio.Click += new System.EventHandler(this.combo_prio_Click);
             // 
             // list_tracks
             // 
-            resources.ApplyResources(this.list_tracks, "list_tracks");
             this.list_tracks.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.list_tracks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.File_C,
@@ -1636,6 +1653,7 @@
             this.list_tracks.ContextMenuStrip = this.ctm3;
             this.list_tracks.FullRowSelect = true;
             this.list_tracks.HideSelection = false;
+            resources.ApplyResources(this.list_tracks, "list_tracks");
             this.list_tracks.Name = "list_tracks";
             this.list_tracks.ShowItemToolTips = true;
             this.list_tracks.SmallImageList = this.img_streams;
@@ -1671,7 +1689,6 @@
             // 
             // ctm3
             // 
-            resources.ApplyResources(this.ctm3, "ctm3");
             this.ctm3.ImageScalingSize = new System.Drawing.Size(18, 18);
             this.ctm3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ct3_default,
@@ -1686,6 +1703,7 @@
             this.toolStripSeparator7,
             this.ct3_save_track});
             this.ctm3.Name = "ctm2";
+            resources.ApplyResources(this.ctm3, "ctm3");
             this.ctm3.Opening += new System.ComponentModel.CancelEventHandler(this.ctm3_Opening);
             // 
             // ct3_default
@@ -1714,8 +1732,8 @@
             // 
             // toolStripSeparator14
             // 
-            resources.ApplyResources(this.toolStripSeparator14, "toolStripSeparator14");
             this.toolStripSeparator14.Name = "toolStripSeparator14";
+            resources.ApplyResources(this.toolStripSeparator14, "toolStripSeparator14");
             // 
             // ct3_default_enc
             // 
@@ -1731,22 +1749,22 @@
             // 
             // toolStripSeparator4
             // 
-            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
             this.toolStripSeparator4.Name = "toolStripSeparator4";
+            resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
             // 
             // ct3_combo_language
             // 
-            resources.ApplyResources(this.ct3_combo_language, "ct3_combo_language");
             this.ct3_combo_language.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.ct3_combo_language.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.ct3_combo_language.Name = "ct3_combo_language";
+            resources.ApplyResources(this.ct3_combo_language, "ct3_combo_language");
             this.ct3_combo_language.DropDown += new System.EventHandler(this.ct3_combo_language_DropDown);
             this.ct3_combo_language.SelectedIndexChanged += new System.EventHandler(this.ct3_combo_language_SelectedIndexChanged);
             // 
             // toolStripSeparator7
             // 
-            resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
             this.toolStripSeparator7.Name = "toolStripSeparator7";
+            resources.ApplyResources(this.toolStripSeparator7, "toolStripSeparator7");
             // 
             // ct3_save_track
             // 
@@ -1767,8 +1785,8 @@
             // 
             // txt_track_param
             // 
-            resources.ApplyResources(this.txt_track_param, "txt_track_param");
             this.txt_track_param.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.txt_track_param, "txt_track_param");
             this.txt_track_param.Name = "txt_track_param";
             this.txt_track_param.TextChanged += new System.EventHandler(this.txt_track_param_TextChanged);
             // 
@@ -1792,12 +1810,12 @@
             // 
             // combo_item_lang_2
             // 
-            resources.ApplyResources(this.combo_item_lang_2, "combo_item_lang_2");
             this.combo_item_lang_2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.combo_item_lang_2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.combo_item_lang_2.BackColor = System.Drawing.SystemColors.Window;
             this.combo_item_lang_2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_item_lang_2.FormattingEnabled = true;
+            resources.ApplyResources(this.combo_item_lang_2, "combo_item_lang_2");
             this.combo_item_lang_2.Name = "combo_item_lang_2";
             this.combo_item_lang_2.SelectedIndexChanged += new System.EventHandler(this.combo_item_lang_2_SelectedIndexChanged);
             // 
@@ -1813,7 +1831,6 @@
             // 
             // combo_ext
             // 
-            resources.ApplyResources(this.combo_ext, "combo_ext");
             this.combo_ext.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.combo_ext.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.combo_ext.BackColor = System.Drawing.SystemColors.Window;
@@ -1828,6 +1845,7 @@
             resources.GetString("combo_ext.Items5"),
             resources.GetString("combo_ext.Items6"),
             resources.GetString("combo_ext.Items7")});
+            resources.ApplyResources(this.combo_ext, "combo_ext");
             this.combo_ext.Name = "combo_ext";
             this.combo_ext.SelectedIndexChanged += new System.EventHandler(this.combo_ext_SelectedIndexChanged);
             // 
@@ -1851,9 +1869,9 @@
             // 
             // btn_add_tracks
             // 
-            resources.ApplyResources(this.btn_add_tracks, "btn_add_tracks");
             this.btn_add_tracks.FlatAppearance.BorderSize = 0;
             this.btn_add_tracks.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_add_tracks, "btn_add_tracks");
             this.btn_add_tracks.Name = "btn_add_tracks";
             this.btn_add_tracks.UseVisualStyleBackColor = true;
             this.btn_add_tracks.Click += new System.EventHandler(this.btn_add_tracks_Click);
@@ -1865,7 +1883,6 @@
             // 
             // group_prog
             // 
-            resources.ApplyResources(this.group_prog, "group_prog");
             this.group_prog.Controls.Add(this.btn_cancel_shut);
             this.group_prog.Controls.Add(this.lbl_dw_speed);
             this.group_prog.Controls.Add(this.TB1);
@@ -1887,6 +1904,7 @@
             this.group_prog.Controls.Add(this.pic_no_errors);
             this.group_prog.Controls.Add(this.pic_recording);
             this.group_prog.Controls.Add(this.chk_autor);
+            resources.ApplyResources(this.group_prog, "group_prog");
             this.group_prog.Name = "group_prog";
             this.group_prog.TabStop = false;
             // 
@@ -1906,9 +1924,9 @@
             // 
             // btn_abort_all
             // 
-            resources.ApplyResources(this.btn_abort_all, "btn_abort_all");
             this.btn_abort_all.FlatAppearance.BorderSize = 0;
             this.btn_abort_all.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_abort_all, "btn_abort_all");
             this.btn_abort_all.Name = "btn_abort_all";
             this.btn_abort_all.UseVisualStyleBackColor = true;
             this.btn_abort_all.Click += new System.EventHandler(this.btn_abort_all_Click);
@@ -1931,19 +1949,19 @@
             // 
             // btn_pause
             // 
-            resources.ApplyResources(this.btn_pause, "btn_pause");
             this.btn_pause.FlatAppearance.BorderSize = 0;
             this.btn_pause.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_pause, "btn_pause");
             this.btn_pause.Name = "btn_pause";
             this.btn_pause.UseVisualStyleBackColor = true;
             this.btn_pause.Click += new System.EventHandler(this.btn_pause_Click);
             // 
             // combo_shut
             // 
-            resources.ApplyResources(this.combo_shut, "combo_shut");
             this.combo_shut.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.combo_shut.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.combo_shut.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.combo_shut, "combo_shut");
             this.combo_shut.FormattingEnabled = true;
             this.combo_shut.Items.AddRange(new object[] {
             resources.GetString("combo_shut.Items"),
@@ -1991,9 +2009,9 @@
             // 
             // chk_autor
             // 
-            resources.ApplyResources(this.chk_autor, "chk_autor");
             this.chk_autor.FlatAppearance.BorderSize = 0;
             this.chk_autor.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.chk_autor, "chk_autor");
             this.chk_autor.ImageList = this.img_autorun;
             this.chk_autor.Name = "chk_autor";
             this.chk_autor.UseVisualStyleBackColor = true;
@@ -2022,9 +2040,9 @@
             // 
             // txt_adding_p
             // 
-            resources.ApplyResources(this.txt_adding_p, "txt_adding_p");
             this.txt_adding_p.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_adding_p.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_adding_p, "txt_adding_p");
             this.txt_adding_p.Name = "txt_adding_p";
             // 
             // openFileDialog3
@@ -2034,8 +2052,8 @@
             // 
             // pic_title
             // 
-            resources.ApplyResources(this.pic_title, "pic_title");
             this.pic_title.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.pic_title, "pic_title");
             this.pic_title.Name = "pic_title";
             this.pic_title.TabStop = false;
             this.pic_title.Click += new System.EventHandler(this.pic_title_Click);
@@ -2043,15 +2061,14 @@
             // 
             // btn_refresh
             // 
-            resources.ApplyResources(this.btn_refresh, "btn_refresh");
             this.btn_refresh.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_refresh, "btn_refresh");
             this.btn_refresh.Name = "btn_refresh";
             this.btn_refresh.UseVisualStyleBackColor = true;
             this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
             // 
             // Combo_sub_lang_mux
             // 
-            resources.ApplyResources(this.Combo_sub_lang_mux, "Combo_sub_lang_mux");
             this.Combo_sub_lang_mux.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Combo_sub_lang_mux.FormattingEnabled = true;
             this.Combo_sub_lang_mux.Items.AddRange(new object[] {
@@ -2115,6 +2132,7 @@
             resources.GetString("Combo_sub_lang_mux.Items57"),
             resources.GetString("Combo_sub_lang_mux.Items58"),
             resources.GetString("Combo_sub_lang_mux.Items59")});
+            resources.ApplyResources(this.Combo_sub_lang_mux, "Combo_sub_lang_mux");
             this.Combo_sub_lang_mux.Name = "Combo_sub_lang_mux";
             this.Combo_sub_lang_mux.SelectedIndexChanged += new System.EventHandler(this.Combo_sub_lang_mux_SelectedIndexChanged);
             // 
@@ -2125,7 +2143,6 @@
             // 
             // Combo_ext_sub_mux
             // 
-            resources.ApplyResources(this.Combo_ext_sub_mux, "Combo_ext_sub_mux");
             this.Combo_ext_sub_mux.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.Combo_ext_sub_mux.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.Combo_ext_sub_mux.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -2133,12 +2150,12 @@
             this.Combo_ext_sub_mux.Items.AddRange(new object[] {
             resources.GetString("Combo_ext_sub_mux.Items"),
             resources.GetString("Combo_ext_sub_mux.Items1")});
+            resources.ApplyResources(this.Combo_ext_sub_mux, "Combo_ext_sub_mux");
             this.Combo_ext_sub_mux.Name = "Combo_ext_sub_mux";
             this.Combo_ext_sub_mux.SelectedIndexChanged += new System.EventHandler(this.Combo_ext_sub_mux_SelectedIndexChanged);
             // 
             // Combo_def_sub_mux
             // 
-            resources.ApplyResources(this.Combo_def_sub_mux, "Combo_def_sub_mux");
             this.Combo_def_sub_mux.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.Combo_def_sub_mux.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.Combo_def_sub_mux.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -2146,6 +2163,7 @@
             this.Combo_def_sub_mux.Items.AddRange(new object[] {
             resources.GetString("Combo_def_sub_mux.Items"),
             resources.GetString("Combo_def_sub_mux.Items1")});
+            resources.ApplyResources(this.Combo_def_sub_mux, "Combo_def_sub_mux");
             this.Combo_def_sub_mux.Name = "Combo_def_sub_mux";
             this.Combo_def_sub_mux.SelectedIndexChanged += new System.EventHandler(this.Combo_def_sub_mux_SelectedIndexChanged);
             // 
@@ -2161,16 +2179,16 @@
             // 
             // txt_folder_subs
             // 
-            resources.ApplyResources(this.txt_folder_subs, "txt_folder_subs");
             this.txt_folder_subs.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            resources.ApplyResources(this.txt_folder_subs, "txt_folder_subs");
             this.txt_folder_subs.Name = "txt_folder_subs";
             this.txt_folder_subs.ReadOnly = true;
             // 
             // button24
             // 
-            resources.ApplyResources(this.button24, "button24");
             this.button24.FlatAppearance.BorderSize = 0;
             this.button24.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.button24, "button24");
             this.button24.Name = "button24";
             this.button24.UseVisualStyleBackColor = true;
             this.button24.Click += new System.EventHandler(this.button24_Click_1);
@@ -2187,25 +2205,25 @@
             // 
             // btn_sub_mux
             // 
-            resources.ApplyResources(this.btn_sub_mux, "btn_sub_mux");
             this.btn_sub_mux.FlatAppearance.BorderSize = 0;
             this.btn_sub_mux.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_sub_mux, "btn_sub_mux");
             this.btn_sub_mux.Name = "btn_sub_mux";
             this.btn_sub_mux.UseVisualStyleBackColor = true;
             this.btn_sub_mux.Click += new System.EventHandler(this.btn_sub_mux_Click);
             // 
             // groupBox17
             // 
-            resources.ApplyResources(this.groupBox17, "groupBox17");
             this.groupBox17.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.groupBox17, "groupBox17");
             this.groupBox17.Name = "groupBox17";
             this.groupBox17.TabStop = false;
             // 
             // button26
             // 
-            resources.ApplyResources(this.button26, "button26");
             this.button26.FlatAppearance.BorderSize = 0;
             this.button26.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.button26, "button26");
             this.button26.ImageList = this.imageList1;
             this.button26.Name = "button26";
             this.button26.UseVisualStyleBackColor = true;
@@ -2225,31 +2243,30 @@
             // 
             // txt_output_subs
             // 
-            resources.ApplyResources(this.txt_output_subs, "txt_output_subs");
             this.txt_output_subs.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            resources.ApplyResources(this.txt_output_subs, "txt_output_subs");
             this.txt_output_subs.Name = "txt_output_subs";
             this.txt_output_subs.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             this.txt_output_subs.DoubleClick += new System.EventHandler(this.textBox8_DoubleClick);
             // 
             // button25
             // 
-            resources.ApplyResources(this.button25, "button25");
             this.button25.FlatAppearance.BorderSize = 0;
             this.button25.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.button25, "button25");
             this.button25.Name = "button25";
             this.button25.UseVisualStyleBackColor = true;
             this.button25.Click += new System.EventHandler(this.button25_Click);
             // 
             // txt_help_subs
             // 
-            resources.ApplyResources(this.txt_help_subs, "txt_help_subs");
             this.txt_help_subs.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_help_subs.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_help_subs, "txt_help_subs");
             this.txt_help_subs.Name = "txt_help_subs";
             // 
             // group_subs
             // 
-            resources.ApplyResources(this.group_subs, "group_subs");
             this.group_subs.Controls.Add(this.button26);
             this.group_subs.Controls.Add(this.txt_help_subs);
             this.group_subs.Controls.Add(this.button25);
@@ -2268,6 +2285,7 @@
             this.group_subs.Controls.Add(this.Combo_ext_sub_mux);
             this.group_subs.Controls.Add(this.lbl_lang_sub_mux);
             this.group_subs.Controls.Add(this.Combo_sub_lang_mux);
+            resources.ApplyResources(this.group_subs, "group_subs");
             this.group_subs.Name = "group_subs";
             this.group_subs.TabStop = false;
             // 
@@ -2299,7 +2317,6 @@
             // 
             // folderBrowser_m3u
             // 
-            resources.ApplyResources(this.folderBrowser_m3u, "folderBrowser_m3u");
             this.folderBrowser_m3u.RootFolder = System.Environment.SpecialFolder.MyComputer;
             // 
             // BG_Try_preset
@@ -2313,16 +2330,15 @@
             // 
             // btn_update
             // 
-            resources.ApplyResources(this.btn_update, "btn_update");
             this.btn_update.FlatAppearance.BorderSize = 0;
             this.btn_update.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_update, "btn_update");
             this.btn_update.Name = "btn_update";
             this.btn_update.UseVisualStyleBackColor = true;
             this.btn_update.Click += new System.EventHandler(this.btn_update_Click);
             // 
             // groupBox2
             // 
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.btn_track_down);
             this.groupBox2.Controls.Add(this.btn_track_up);
             this.groupBox2.Controls.Add(this.lbl_mux_jobs);
@@ -2340,21 +2356,22 @@
             this.groupBox2.Controls.Add(this.label17);
             this.groupBox2.Controls.Add(this.btn_set_mux_def);
             this.groupBox2.Controls.Add(this.btn_set_track_param);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
             // btn_track_down
             // 
-            resources.ApplyResources(this.btn_track_down, "btn_track_down");
             this.btn_track_down.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_track_down, "btn_track_down");
             this.btn_track_down.Name = "btn_track_down";
             this.btn_track_down.UseVisualStyleBackColor = true;
             this.btn_track_down.Click += new System.EventHandler(this.btn_track_down_Click);
             // 
             // btn_track_up
             // 
-            resources.ApplyResources(this.btn_track_up, "btn_track_up");
             this.btn_track_up.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_track_up, "btn_track_up");
             this.btn_track_up.Name = "btn_track_up";
             this.btn_track_up.UseVisualStyleBackColor = true;
             this.btn_track_up.Click += new System.EventHandler(this.btn_track_up_Click);
@@ -2366,8 +2383,8 @@
             // 
             // txt_mux_type
             // 
-            resources.ApplyResources(this.txt_mux_type, "txt_mux_type");
             this.txt_mux_type.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.txt_mux_type, "txt_mux_type");
             this.txt_mux_type.Name = "txt_mux_type";
             this.txt_mux_type.ReadOnly = true;
             this.txt_mux_type.Enter += new System.EventHandler(this.txt_mux_type_Enter);
@@ -2379,17 +2396,17 @@
             // 
             // button16
             // 
-            resources.ApplyResources(this.button16, "button16");
             this.button16.FlatAppearance.BorderSize = 0;
             this.button16.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.button16, "button16");
             this.button16.Name = "button16";
             this.button16.UseVisualStyleBackColor = true;
             this.button16.Click += new System.EventHandler(this.button16_Click_3);
             // 
             // txt_path_mux
             // 
-            resources.ApplyResources(this.txt_path_mux, "txt_path_mux");
             this.txt_path_mux.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            resources.ApplyResources(this.txt_path_mux, "txt_path_mux");
             this.txt_path_mux.Name = "txt_path_mux";
             this.txt_path_mux.TextChanged += new System.EventHandler(this.txt_path_mux_TextChanged);
             this.txt_path_mux.DoubleClick += new System.EventHandler(this.textBox9_DoubleClick);
@@ -2401,7 +2418,6 @@
             // 
             // groupBox9
             // 
-            resources.ApplyResources(this.groupBox9, "groupBox9");
             this.groupBox9.Controls.Add(this.btn_mux_show_jobs);
             this.groupBox9.Controls.Add(this.btn_mux_job);
             this.groupBox9.Controls.Add(this.txt_track_format);
@@ -2415,6 +2431,7 @@
             this.groupBox9.Controls.Add(this.btn_extract);
             this.groupBox9.Controls.Add(this.btn_add_tracks);
             this.groupBox9.Controls.Add(this.btn_mux);
+            resources.ApplyResources(this.groupBox9, "groupBox9");
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.TabStop = false;
             // 
@@ -2429,70 +2446,70 @@
             // 
             // btn_mux_job
             // 
-            resources.ApplyResources(this.btn_mux_job, "btn_mux_job");
             this.btn_mux_job.FlatAppearance.BorderSize = 0;
             this.btn_mux_job.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_mux_job, "btn_mux_job");
             this.btn_mux_job.Name = "btn_mux_job";
             this.btn_mux_job.UseVisualStyleBackColor = true;
             this.btn_mux_job.Click += new System.EventHandler(this.btn_mux_job_Click);
             // 
             // txt_track_format
             // 
-            resources.ApplyResources(this.txt_track_format, "txt_track_format");
             this.txt_track_format.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.txt_track_format, "txt_track_format");
             this.txt_track_format.Name = "txt_track_format";
             // 
             // groupBox7
             // 
-            resources.ApplyResources(this.groupBox7, "groupBox7");
             this.groupBox7.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.groupBox7, "groupBox7");
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.TabStop = false;
             // 
             // groupBox8
             // 
-            resources.ApplyResources(this.groupBox8, "groupBox8");
             this.groupBox8.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.groupBox8, "groupBox8");
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.TabStop = false;
             // 
             // groupBox11
             // 
-            resources.ApplyResources(this.groupBox11, "groupBox11");
             this.groupBox11.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.groupBox11, "groupBox11");
             this.groupBox11.Name = "groupBox11";
             this.groupBox11.TabStop = false;
             // 
             // groupBox6
             // 
-            resources.ApplyResources(this.groupBox6, "groupBox6");
             this.groupBox6.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.groupBox6, "groupBox6");
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.TabStop = false;
             // 
             // btn_default_track
             // 
-            resources.ApplyResources(this.btn_default_track, "btn_default_track");
             this.btn_default_track.FlatAppearance.BorderSize = 0;
             this.btn_default_track.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_default_track, "btn_default_track");
             this.btn_default_track.Name = "btn_default_track";
             this.btn_default_track.UseVisualStyleBackColor = true;
             this.btn_default_track.Click += new System.EventHandler(this.btn_default_track_Click);
             // 
             // btn_del_track
             // 
-            resources.ApplyResources(this.btn_del_track, "btn_del_track");
             this.btn_del_track.FlatAppearance.BorderSize = 0;
             this.btn_del_track.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_del_track, "btn_del_track");
             this.btn_del_track.Name = "btn_del_track";
             this.btn_del_track.UseVisualStyleBackColor = true;
             this.btn_del_track.Click += new System.EventHandler(this.btn_del_track_Click);
             // 
             // btn_extract
             // 
-            resources.ApplyResources(this.btn_extract, "btn_extract");
             this.btn_extract.FlatAppearance.BorderSize = 0;
             this.btn_extract.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_extract, "btn_extract");
             this.btn_extract.Name = "btn_extract";
             this.btn_extract.UseVisualStyleBackColor = true;
             this.btn_extract.Click += new System.EventHandler(this.btn_extract_Click);
@@ -2515,9 +2532,9 @@
             // 
             // LB_Wait
             // 
-            resources.ApplyResources(this.LB_Wait, "LB_Wait");
             this.LB_Wait.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.LB_Wait.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.LB_Wait, "LB_Wait");
             this.LB_Wait.Name = "LB_Wait";
             this.LB_Wait.ReadOnly = true;
             // 
@@ -2528,9 +2545,9 @@
             // 
             // btn_help
             // 
-            resources.ApplyResources(this.btn_help, "btn_help");
             this.btn_help.FlatAppearance.BorderSize = 0;
             this.btn_help.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_help, "btn_help");
             this.btn_help.Name = "btn_help";
             this.btn_help.UseVisualStyleBackColor = true;
             this.btn_help.Click += new System.EventHandler(this.btn_help_Click);
@@ -2549,9 +2566,9 @@
             // 
             // btn_concat
             // 
-            resources.ApplyResources(this.btn_concat, "btn_concat");
             this.btn_concat.FlatAppearance.BorderSize = 0;
             this.btn_concat.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_concat, "btn_concat");
             this.btn_concat.ForeColor = System.Drawing.Color.Black;
             this.btn_concat.Name = "btn_concat";
             this.btn_concat.UseVisualStyleBackColor = true;
@@ -2559,9 +2576,9 @@
             // 
             // btn_capture
             // 
-            resources.ApplyResources(this.btn_capture, "btn_capture");
             this.btn_capture.FlatAppearance.BorderSize = 0;
             this.btn_capture.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_capture, "btn_capture");
             this.btn_capture.ImageList = this.imageList1;
             this.btn_capture.Name = "btn_capture";
             this.btn_capture.UseVisualStyleBackColor = true;
@@ -2569,26 +2586,26 @@
             // 
             // button21
             // 
-            resources.ApplyResources(this.button21, "button21");
             this.button21.FlatAppearance.BorderSize = 0;
             this.button21.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.button21, "button21");
             this.button21.Name = "button21";
             this.button21.UseVisualStyleBackColor = true;
             this.button21.Click += new System.EventHandler(this.button21_Click_1);
             // 
             // txt_path_main
             // 
-            resources.ApplyResources(this.txt_path_main, "txt_path_main");
             this.txt_path_main.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            resources.ApplyResources(this.txt_path_main, "txt_path_main");
             this.txt_path_main.Name = "txt_path_main";
             this.txt_path_main.TextChanged += new System.EventHandler(this.txt_path_main_TextChanged);
             this.txt_path_main.DoubleClick += new System.EventHandler(this.textBox3_DoubleClick);
             // 
             // btn_trim
             // 
-            resources.ApplyResources(this.btn_trim, "btn_trim");
             this.btn_trim.FlatAppearance.BorderSize = 0;
             this.btn_trim.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_trim, "btn_trim");
             this.btn_trim.ForeColor = System.Drawing.Color.Black;
             this.btn_trim.Name = "btn_trim";
             this.btn_trim.UseVisualStyleBackColor = true;
@@ -2601,9 +2618,9 @@
             // 
             // btn_seq
             // 
-            resources.ApplyResources(this.btn_seq, "btn_seq");
             this.btn_seq.FlatAppearance.BorderSize = 0;
             this.btn_seq.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_seq, "btn_seq");
             this.btn_seq.Name = "btn_seq";
             this.btn_seq.UseVisualStyleBackColor = true;
             this.btn_seq.Click += new System.EventHandler(this.btn_seq_Click);
@@ -2615,8 +2632,8 @@
             // 
             // txt_ini
             // 
-            resources.ApplyResources(this.txt_ini, "txt_ini");
             this.txt_ini.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            resources.ApplyResources(this.txt_ini, "txt_ini");
             this.txt_ini.Name = "txt_ini";
             this.txt_ini.TextChanged += new System.EventHandler(this.txt_ini_TextChanged);
             this.txt_ini.DoubleClick += new System.EventHandler(this.txt_ini_DoubleClick);
@@ -2624,18 +2641,18 @@
             // 
             // btn_reset_path
             // 
-            resources.ApplyResources(this.btn_reset_path, "btn_reset_path");
             this.btn_reset_path.BackColor = System.Drawing.Color.Transparent;
             this.btn_reset_path.FlatAppearance.BorderSize = 0;
             this.btn_reset_path.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_reset_path, "btn_reset_path");
             this.btn_reset_path.Name = "btn_reset_path";
             this.btn_reset_path.UseVisualStyleBackColor = false;
             this.btn_reset_path.Click += new System.EventHandler(this.btn_reset_path_Click);
             // 
             // txt_fin
             // 
-            resources.ApplyResources(this.txt_fin, "txt_fin");
             this.txt_fin.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            resources.ApplyResources(this.txt_fin, "txt_fin");
             this.txt_fin.Name = "txt_fin";
             this.txt_fin.TextChanged += new System.EventHandler(this.txt_fin_TextChanged);
             this.txt_fin.DoubleClick += new System.EventHandler(this.txt_fin_DoubleClick_1);
@@ -2643,9 +2660,9 @@
             // 
             // btn_multi_m
             // 
-            resources.ApplyResources(this.btn_multi_m, "btn_multi_m");
             this.btn_multi_m.FlatAppearance.BorderSize = 0;
             this.btn_multi_m.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_multi_m, "btn_multi_m");
             this.btn_multi_m.Name = "btn_multi_m";
             this.btn_multi_m.UseVisualStyleBackColor = true;
             this.btn_multi_m.Click += new System.EventHandler(this.btn_multi_m_Click);
@@ -2657,18 +2674,18 @@
             // 
             // btn_save_path
             // 
-            resources.ApplyResources(this.btn_save_path, "btn_save_path");
             this.btn_save_path.FlatAppearance.BorderSize = 0;
             this.btn_save_path.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_save_path, "btn_save_path");
             this.btn_save_path.Name = "btn_save_path";
             this.btn_save_path.UseVisualStyleBackColor = true;
             this.btn_save_path.Click += new System.EventHandler(this.btn_save_path_Click);
             // 
             // btn_skip_main
             // 
-            resources.ApplyResources(this.btn_skip_main, "btn_skip_main");
             this.btn_skip_main.FlatAppearance.BorderSize = 0;
             this.btn_skip_main.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_skip_main, "btn_skip_main");
             this.btn_skip_main.Name = "btn_skip_main";
             this.btn_skip_main.UseVisualStyleBackColor = true;
             this.btn_skip_main.Click += new System.EventHandler(this.btn_skip_main_Click);
@@ -2719,10 +2736,10 @@
             // 
             // combo_vout_color
             // 
-            resources.ApplyResources(this.combo_vout_color, "combo_vout_color");
             this.combo_vout_color.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.combo_vout_color.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.combo_vout_color.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.combo_vout_color, "combo_vout_color");
             this.combo_vout_color.FormattingEnabled = true;
             this.combo_vout_color.Items.AddRange(new object[] {
             resources.GetString("combo_vout_color.Items"),
@@ -2732,8 +2749,8 @@
             // 
             // num_v_out
             // 
-            resources.ApplyResources(this.num_v_out, "num_v_out");
             this.num_v_out.DecimalPlaces = 1;
+            resources.ApplyResources(this.num_v_out, "num_v_out");
             this.num_v_out.Increment = new decimal(new int[] {
             1,
             0,
@@ -2749,10 +2766,10 @@
             // 
             // combo_vin_col
             // 
-            resources.ApplyResources(this.combo_vin_col, "combo_vin_col");
             this.combo_vin_col.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.combo_vin_col.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.combo_vin_col.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.combo_vin_col, "combo_vin_col");
             this.combo_vin_col.FormattingEnabled = true;
             this.combo_vin_col.Items.AddRange(new object[] {
             resources.GetString("combo_vin_col.Items"),
@@ -2762,8 +2779,8 @@
             // 
             // num_v_in
             // 
-            resources.ApplyResources(this.num_v_in, "num_v_in");
             this.num_v_in.DecimalPlaces = 1;
+            resources.ApplyResources(this.num_v_in, "num_v_in");
             this.num_v_in.Increment = new decimal(new int[] {
             1,
             0,
@@ -2811,7 +2828,6 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Controls.Add(this.btn_cust_path);
             this.panel1.Controls.Add(this.groupBox4);
             this.panel1.Controls.Add(this.panel2);
@@ -2838,26 +2854,27 @@
             this.panel1.Controls.Add(this.btn_capture);
             this.panel1.Controls.Add(this.btn_concat);
             this.panel1.Controls.Add(this.lbl_fade);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             this.panel1.TabStop = false;
             // 
             // btn_cust_path
             // 
-            resources.ApplyResources(this.btn_cust_path, "btn_cust_path");
             this.btn_cust_path.FlatAppearance.BorderSize = 0;
             this.btn_cust_path.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_cust_path, "btn_cust_path");
             this.btn_cust_path.Name = "btn_cust_path";
             this.btn_cust_path.UseVisualStyleBackColor = true;
             this.btn_cust_path.Click += new System.EventHandler(this.button7_Click_2);
             // 
             // groupBox4
             // 
-            resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Controls.Add(this.chk_delete_source);
             this.groupBox4.Controls.Add(this.chk_overw);
             this.groupBox4.Controls.Add(this.lbl_multi_file);
             this.groupBox4.Controls.Add(this.chk_try);
             this.groupBox4.Controls.Add(this.n_threads);
+            resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
             // 
@@ -2889,18 +2906,18 @@
             // 
             // panel2
             // 
-            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Controls.Add(this.txt_suffix);
             this.panel2.Controls.Add(this.chk_open_compl);
-            this.panel2.Controls.Add(this.checkBox1);
+            this.panel2.Controls.Add(this.chk_recreate);
             this.panel2.Controls.Add(this.chk_suffix);
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             this.panel2.TabStop = false;
             // 
             // txt_suffix
             // 
-            resources.ApplyResources(this.txt_suffix, "txt_suffix");
             this.txt_suffix.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            resources.ApplyResources(this.txt_suffix, "txt_suffix");
             this.txt_suffix.Name = "txt_suffix";
             this.txt_suffix.TextChanged += new System.EventHandler(this.txt_suffix_TextChanged);
             this.txt_suffix.Leave += new System.EventHandler(this.txt_suffix_Leave);
@@ -2912,12 +2929,12 @@
             this.chk_open_compl.UseVisualStyleBackColor = true;
             this.chk_open_compl.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
-            // checkBox1
+            // chk_recreate
             // 
-            resources.ApplyResources(this.checkBox1, "checkBox1");
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            resources.ApplyResources(this.chk_recreate, "chk_recreate");
+            this.chk_recreate.Name = "chk_recreate";
+            this.chk_recreate.UseVisualStyleBackColor = true;
+            this.chk_recreate.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // chk_suffix
             // 
@@ -2928,9 +2945,9 @@
             // 
             // btn_multimedia
             // 
-            resources.ApplyResources(this.btn_multimedia, "btn_multimedia");
             this.btn_multimedia.FlatAppearance.BorderSize = 0;
             this.btn_multimedia.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_multimedia, "btn_multimedia");
             this.btn_multimedia.Name = "btn_multimedia";
             this.btn_multimedia.UseVisualStyleBackColor = true;
             this.btn_multimedia.Click += new System.EventHandler(this.btn_multimedia_Click);
@@ -2947,7 +2964,6 @@
             // 
             // grp_fade
             // 
-            resources.ApplyResources(this.grp_fade, "grp_fade");
             this.grp_fade.Controls.Add(this.label23);
             this.grp_fade.Controls.Add(this.label18);
             this.grp_fade.Controls.Add(this.num_a_out);
@@ -2960,6 +2976,7 @@
             this.grp_fade.Controls.Add(this.fade_a_in);
             this.grp_fade.Controls.Add(this.fade_v_out);
             this.grp_fade.Controls.Add(this.fade_v_in);
+            resources.ApplyResources(this.grp_fade, "grp_fade");
             this.grp_fade.Name = "grp_fade";
             this.grp_fade.TabStop = false;
             // 
@@ -3013,32 +3030,32 @@
             // 
             // item_up
             // 
-            resources.ApplyResources(this.item_up, "item_up");
             this.item_up.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.item_up, "item_up");
             this.item_up.Name = "item_up";
             this.item_up.UseVisualStyleBackColor = true;
             this.item_up.Click += new System.EventHandler(this.item_up_Click);
             // 
             // item_down
             // 
-            resources.ApplyResources(this.item_down, "item_down");
             this.item_down.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.item_down, "item_down");
             this.item_down.Name = "item_down";
             this.item_down.UseVisualStyleBackColor = true;
             this.item_down.Click += new System.EventHandler(this.item_down_Click);
             // 
             // requeue
             // 
-            resources.ApplyResources(this.requeue, "requeue");
             this.requeue.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.requeue, "requeue");
             this.requeue.Name = "requeue";
             this.requeue.UseVisualStyleBackColor = true;
             this.requeue.Click += new System.EventHandler(this.requeue_Click);
             // 
             // change_ff
             // 
-            resources.ApplyResources(this.change_ff, "change_ff");
             this.change_ff.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.change_ff, "change_ff");
             this.change_ff.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.change_ff.Name = "change_ff";
             this.change_ff.UseVisualStyleBackColor = true;
@@ -3046,9 +3063,9 @@
             // 
             // btn_exit
             // 
-            resources.ApplyResources(this.btn_exit, "btn_exit");
             this.btn_exit.FlatAppearance.BorderSize = 0;
             this.btn_exit.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_exit, "btn_exit");
             this.btn_exit.Name = "btn_exit";
             this.btn_exit.UseVisualStyleBackColor = true;
             this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
@@ -3061,14 +3078,13 @@
             // 
             // lbl_updates
             // 
-            resources.ApplyResources(this.lbl_updates, "lbl_updates");
             this.lbl_updates.Cursor = System.Windows.Forms.Cursors.Default;
+            resources.ApplyResources(this.lbl_updates, "lbl_updates");
             this.lbl_updates.Name = "lbl_updates";
             this.lbl_updates.Click += new System.EventHandler(this.lbl_updates_Click);
             // 
             // main_menu
             // 
-            resources.ApplyResources(this.main_menu, "main_menu");
             this.main_menu.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.main_menu.ImageScalingSize = new System.Drawing.Size(18, 18);
             this.main_menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -3076,11 +3092,11 @@
             this.main_12,
             this.main_2,
             this.main_3});
+            resources.ApplyResources(this.main_menu, "main_menu");
             this.main_menu.Name = "main_menu";
             // 
             // main_1
             // 
-            resources.ApplyResources(this.main_1, "main_1");
             this.main_1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.main_f_1,
             this.toolStripSeparator16,
@@ -3092,6 +3108,7 @@
             this.toolStripSeparator13,
             this.main_f_exit});
             this.main_1.Name = "main_1";
+            resources.ApplyResources(this.main_1, "main_1");
             // 
             // main_f_1
             // 
@@ -3101,13 +3118,13 @@
             // 
             // toolStripSeparator16
             // 
-            resources.ApplyResources(this.toolStripSeparator16, "toolStripSeparator16");
             this.toolStripSeparator16.Name = "toolStripSeparator16";
+            resources.ApplyResources(this.toolStripSeparator16, "toolStripSeparator16");
             // 
             // main_f_2
             // 
-            resources.ApplyResources(this.main_f_2, "main_f_2");
             this.main_f_2.Name = "main_f_2";
+            resources.ApplyResources(this.main_f_2, "main_f_2");
             this.main_f_2.Click += new System.EventHandler(this.main_f_2_Click);
             // 
             // main_f_3
@@ -3118,8 +3135,8 @@
             // 
             // toolStripSeparator17
             // 
-            resources.ApplyResources(this.toolStripSeparator17, "toolStripSeparator17");
             this.toolStripSeparator17.Name = "toolStripSeparator17";
+            resources.ApplyResources(this.toolStripSeparator17, "toolStripSeparator17");
             // 
             // main_f_5
             // 
@@ -3129,14 +3146,14 @@
             // 
             // main_f_4
             // 
-            resources.ApplyResources(this.main_f_4, "main_f_4");
             this.main_f_4.Name = "main_f_4";
+            resources.ApplyResources(this.main_f_4, "main_f_4");
             this.main_f_4.Click += new System.EventHandler(this.main_f_4_Click);
             // 
             // toolStripSeparator13
             // 
-            resources.ApplyResources(this.toolStripSeparator13, "toolStripSeparator13");
             this.toolStripSeparator13.Name = "toolStripSeparator13";
+            resources.ApplyResources(this.toolStripSeparator13, "toolStripSeparator13");
             // 
             // main_f_exit
             // 
@@ -3146,7 +3163,6 @@
             // 
             // main_12
             // 
-            resources.ApplyResources(this.main_12, "main_12");
             this.main_12.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menu_refresh,
             this.menu_invalid,
@@ -3159,6 +3175,7 @@
             this.presetsOnlineToolStripMenuItem,
             this.menu_wizards});
             this.main_12.Name = "main_12";
+            resources.ApplyResources(this.main_12, "main_12");
             // 
             // menu_refresh
             // 
@@ -3180,13 +3197,13 @@
             // 
             // toolStripSeparator24
             // 
-            resources.ApplyResources(this.toolStripSeparator24, "toolStripSeparator24");
             this.toolStripSeparator24.Name = "toolStripSeparator24";
+            resources.ApplyResources(this.toolStripSeparator24, "toolStripSeparator24");
             // 
             // menu_try
             // 
-            resources.ApplyResources(this.menu_try, "menu_try");
             this.menu_try.Name = "menu_try";
+            resources.ApplyResources(this.menu_try, "menu_try");
             this.menu_try.Click += new System.EventHandler(this.tryCurrentPresetToolStripMenuItem_Click);
             // 
             // menu_console
@@ -3197,14 +3214,14 @@
             // 
             // menu_logs
             // 
-            resources.ApplyResources(this.menu_logs, "menu_logs");
             this.menu_logs.Name = "menu_logs";
+            resources.ApplyResources(this.menu_logs, "menu_logs");
             this.menu_logs.Click += new System.EventHandler(this.main_m_logs_Click);
             // 
             // toolStripSeparator21
             // 
-            resources.ApplyResources(this.toolStripSeparator21, "toolStripSeparator21");
             this.toolStripSeparator21.Name = "toolStripSeparator21";
+            resources.ApplyResources(this.toolStripSeparator21, "toolStripSeparator21");
             // 
             // presetsOnlineToolStripMenuItem
             // 
@@ -3220,7 +3237,6 @@
             // 
             // main_2
             // 
-            resources.ApplyResources(this.main_2, "main_2");
             this.main_2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menu_reload_settings,
             this.menu_save_settings,
@@ -3242,6 +3258,7 @@
             this.toolStripSeparator27,
             this.menu_settings});
             this.main_2.Name = "main_2";
+            resources.ApplyResources(this.main_2, "main_2");
             // 
             // menu_reload_settings
             // 
@@ -3257,8 +3274,8 @@
             // 
             // toolStripSeparator19
             // 
-            resources.ApplyResources(this.toolStripSeparator19, "toolStripSeparator19");
             this.toolStripSeparator19.Name = "toolStripSeparator19";
+            resources.ApplyResources(this.toolStripSeparator19, "toolStripSeparator19");
             // 
             // menu_reset
             // 
@@ -3268,14 +3285,14 @@
             // 
             // menu_ffm
             // 
-            resources.ApplyResources(this.menu_ffm, "menu_ffm");
             this.menu_ffm.Name = "menu_ffm";
+            resources.ApplyResources(this.menu_ffm, "menu_ffm");
             this.menu_ffm.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // toolStripSeparator26
             // 
-            resources.ApplyResources(this.toolStripSeparator26, "toolStripSeparator26");
             this.toolStripSeparator26.Name = "toolStripSeparator26";
+            resources.ApplyResources(this.toolStripSeparator26, "toolStripSeparator26");
             // 
             // menu_media_info
             // 
@@ -3291,8 +3308,8 @@
             // 
             // toolStripSeparator20
             // 
-            resources.ApplyResources(this.toolStripSeparator20, "toolStripSeparator20");
             this.toolStripSeparator20.Name = "toolStripSeparator20";
+            resources.ApplyResources(this.toolStripSeparator20, "toolStripSeparator20");
             // 
             // menu_presets
             // 
@@ -3332,8 +3349,8 @@
             // 
             // toolStripSeparator22
             // 
-            resources.ApplyResources(this.toolStripSeparator22, "toolStripSeparator22");
             this.toolStripSeparator22.Name = "toolStripSeparator22";
+            resources.ApplyResources(this.toolStripSeparator22, "toolStripSeparator22");
             // 
             // ct1_crop
             // 
@@ -3343,8 +3360,8 @@
             // 
             // toolStripSeparator27
             // 
-            resources.ApplyResources(this.toolStripSeparator27, "toolStripSeparator27");
             this.toolStripSeparator27.Name = "toolStripSeparator27";
+            resources.ApplyResources(this.toolStripSeparator27, "toolStripSeparator27");
             // 
             // menu_settings
             // 
@@ -3354,7 +3371,6 @@
             // 
             // main_3
             // 
-            resources.ApplyResources(this.main_3, "main_3");
             this.main_3.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menu_guide,
             this.toolStripSeparator18,
@@ -3364,6 +3380,7 @@
             this.toolStripSeparator23,
             this.menu_about});
             this.main_3.Name = "main_3";
+            resources.ApplyResources(this.main_3, "main_3");
             // 
             // menu_guide
             // 
@@ -3373,31 +3390,31 @@
             // 
             // toolStripSeparator18
             // 
-            resources.ApplyResources(this.toolStripSeparator18, "toolStripSeparator18");
             this.toolStripSeparator18.Name = "toolStripSeparator18";
+            resources.ApplyResources(this.toolStripSeparator18, "toolStripSeparator18");
             // 
             // menu_news
             // 
-            resources.ApplyResources(this.menu_news, "menu_news");
             this.menu_news.Name = "menu_news";
+            resources.ApplyResources(this.menu_news, "menu_news");
             this.menu_news.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
             // menu_forum
             // 
-            resources.ApplyResources(this.menu_forum, "menu_forum");
             this.menu_forum.Name = "menu_forum";
+            resources.ApplyResources(this.menu_forum, "menu_forum");
             this.menu_forum.Click += new System.EventHandler(this.helpForumToolStripMenuItem_Click);
             // 
             // menu_updates
             // 
-            resources.ApplyResources(this.menu_updates, "menu_updates");
             this.menu_updates.Name = "menu_updates";
+            resources.ApplyResources(this.menu_updates, "menu_updates");
             this.menu_updates.Click += new System.EventHandler(this.checkForUpdateToolStripMenuItem_Click);
             // 
             // toolStripSeparator23
             // 
-            resources.ApplyResources(this.toolStripSeparator23, "toolStripSeparator23");
             this.toolStripSeparator23.Name = "toolStripSeparator23";
+            resources.ApplyResources(this.toolStripSeparator23, "toolStripSeparator23");
             // 
             // menu_about
             // 
@@ -3407,8 +3424,8 @@
             // 
             // btn_filter
             // 
-            resources.ApplyResources(this.btn_filter, "btn_filter");
             this.btn_filter.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_filter, "btn_filter");
             this.btn_filter.Name = "btn_filter";
             this.btn_filter.UseVisualStyleBackColor = true;
             this.btn_filter.Click += new System.EventHandler(this.btn_filter_Click);
@@ -3455,9 +3472,9 @@
             // 
             // txt_add_remain
             // 
-            resources.ApplyResources(this.txt_add_remain, "txt_add_remain");
             this.txt_add_remain.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_add_remain.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_add_remain, "txt_add_remain");
             this.txt_add_remain.Name = "txt_add_remain";
             // 
             // timer_adding
@@ -3512,16 +3529,16 @@
             // 
             // btn_inc_font
             // 
-            resources.ApplyResources(this.btn_inc_font, "btn_inc_font");
             this.btn_inc_font.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_inc_font, "btn_inc_font");
             this.btn_inc_font.Name = "btn_inc_font";
             this.btn_inc_font.UseVisualStyleBackColor = true;
             this.btn_inc_font.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // btn_decr_font
             // 
-            resources.ApplyResources(this.btn_decr_font, "btn_decr_font");
             this.btn_decr_font.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_decr_font, "btn_decr_font");
             this.btn_decr_font.Name = "btn_decr_font";
             this.btn_decr_font.UseVisualStyleBackColor = true;
             this.btn_decr_font.Click += new System.EventHandler(this.button5_Click_1);
@@ -3543,9 +3560,9 @@
             // 
             // tabPage4
             // 
-            resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Controls.Add(this.txt_paste_links);
             this.tabPage4.Controls.Add(this.dg1);
+            resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
@@ -3559,7 +3576,6 @@
             // 
             // dg1
             // 
-            resources.ApplyResources(this.dg1, "dg1");
             this.dg1.AllowDrop = true;
             this.dg1.AllowUserToAddRows = false;
             this.dg1.BackgroundColor = System.Drawing.SystemColors.Window;
@@ -3588,6 +3604,7 @@
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dg1.DefaultCellStyle = dataGridViewCellStyle7;
+            resources.ApplyResources(this.dg1, "dg1");
             this.dg1.Name = "dg1";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
@@ -3676,13 +3693,12 @@
             // 
             // tabPage3
             // 
-            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Controls.Add(this.listView3);
+            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
             // 
             // listView3
             // 
-            resources.ApplyResources(this.listView3, "listView3");
             this.listView3.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.listView3.AllowDrop = true;
             this.listView3.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -3696,6 +3712,7 @@
             this.listView3.FullRowSelect = true;
             this.listView3.GridLines = true;
             this.listView3.HideSelection = false;
+            resources.ApplyResources(this.listView3, "listView3");
             this.listView3.MultiSelect = false;
             this.listView3.Name = "listView3";
             this.listView3.ShowItemToolTips = true;
@@ -3737,14 +3754,13 @@
             // 
             // tabPage2
             // 
-            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Controls.Add(this.listView2);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // listView2
             // 
-            resources.ApplyResources(this.listView2, "listView2");
             this.listView2.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.listView2.AllowDrop = true;
             this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
@@ -3753,6 +3769,7 @@
             this.listView2.FullRowSelect = true;
             this.listView2.GridLines = true;
             this.listView2.HideSelection = false;
+            resources.ApplyResources(this.listView2, "listView2");
             this.listView2.Name = "listView2";
             this.listView2.ShowItemToolTips = true;
             this.listView2.UseCompatibleStateImageBehavior = false;
@@ -3769,9 +3786,9 @@
             // 
             // tabPage1
             // 
-            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.pic_drag);
             this.tabPage1.Controls.Add(this.listView1);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -3783,7 +3800,6 @@
             // 
             // listView1
             // 
-            resources.ApplyResources(this.listView1, "listView1");
             this.listView1.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.listView1.AllowDrop = true;
             this.listView1.BackColor = System.Drawing.SystemColors.Window;
@@ -3799,6 +3815,7 @@
             this.listView1.GridLines = true;
             this.listView1.HideSelection = false;
             this.listView1.LabelEdit = true;
+            resources.ApplyResources(this.listView1, "listView1");
             this.listView1.Name = "listView1";
             this.listView1.ShowItemToolTips = true;
             this.listView1.UseCompatibleStateImageBehavior = false;
@@ -3841,12 +3858,12 @@
             // 
             // tabControl1
             // 
-            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.ImageList = this.img_tabc;
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
@@ -3916,7 +3933,6 @@
             // 
             // combo_ext_m3u
             // 
-            resources.ApplyResources(this.combo_ext_m3u, "combo_ext_m3u");
             this.combo_ext_m3u.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.combo_ext_m3u.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.combo_ext_m3u.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -3928,6 +3944,7 @@
             resources.GetString("combo_ext_m3u.Items3"),
             resources.GetString("combo_ext_m3u.Items4"),
             resources.GetString("combo_ext_m3u.Items5")});
+            resources.ApplyResources(this.combo_ext_m3u, "combo_ext_m3u");
             this.combo_ext_m3u.Name = "combo_ext_m3u";
             this.combo_ext_m3u.SelectedIndexChanged += new System.EventHandler(this.combo_ext_m3u_SelectedIndexChanged);
             // 
@@ -3938,18 +3955,18 @@
             // 
             // btn_start_m3u
             // 
-            resources.ApplyResources(this.btn_start_m3u, "btn_start_m3u");
             this.btn_start_m3u.FlatAppearance.BorderSize = 0;
             this.btn_start_m3u.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_start_m3u, "btn_start_m3u");
             this.btn_start_m3u.Name = "btn_start_m3u";
             this.btn_start_m3u.UseVisualStyleBackColor = true;
             this.btn_start_m3u.Click += new System.EventHandler(this.btn_start_m3u_Click);
             // 
             // btn_clear_urls
             // 
-            resources.ApplyResources(this.btn_clear_urls, "btn_clear_urls");
             this.btn_clear_urls.FlatAppearance.BorderSize = 0;
             this.btn_clear_urls.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_clear_urls, "btn_clear_urls");
             this.btn_clear_urls.ImageList = this.imageList1;
             this.btn_clear_urls.Name = "btn_clear_urls";
             this.btn_clear_urls.UseVisualStyleBackColor = true;
@@ -3969,51 +3986,51 @@
             // 
             // txt_path_m3u
             // 
-            resources.ApplyResources(this.txt_path_m3u, "txt_path_m3u");
             this.txt_path_m3u.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            resources.ApplyResources(this.txt_path_m3u, "txt_path_m3u");
             this.txt_path_m3u.Name = "txt_path_m3u";
             // 
             // btn_browse_path_m3u
             // 
-            resources.ApplyResources(this.btn_browse_path_m3u, "btn_browse_path_m3u");
             this.btn_browse_path_m3u.FlatAppearance.BorderSize = 0;
             this.btn_browse_path_m3u.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_browse_path_m3u, "btn_browse_path_m3u");
             this.btn_browse_path_m3u.Name = "btn_browse_path_m3u";
             this.btn_browse_path_m3u.UseVisualStyleBackColor = true;
             this.btn_browse_path_m3u.Click += new System.EventHandler(this.button16_Click_1);
             // 
             // btn_add_urls
             // 
-            resources.ApplyResources(this.btn_add_urls, "btn_add_urls");
             this.btn_add_urls.FlatAppearance.BorderSize = 0;
             this.btn_add_urls.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_add_urls, "btn_add_urls");
             this.btn_add_urls.Name = "btn_add_urls";
             this.btn_add_urls.UseVisualStyleBackColor = true;
             this.btn_add_urls.Click += new System.EventHandler(this.button31_Click);
             // 
             // btn_stop_m3u8
             // 
-            resources.ApplyResources(this.btn_stop_m3u8, "btn_stop_m3u8");
             this.btn_stop_m3u8.FlatAppearance.BorderSize = 0;
             this.btn_stop_m3u8.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_stop_m3u8, "btn_stop_m3u8");
             this.btn_stop_m3u8.Name = "btn_stop_m3u8";
             this.btn_stop_m3u8.UseVisualStyleBackColor = true;
             this.btn_stop_m3u8.Click += new System.EventHandler(this.btn_stop_m3u8_Click);
             // 
             // btn_cancel_validate
             // 
-            resources.ApplyResources(this.btn_cancel_validate, "btn_cancel_validate");
             this.btn_cancel_validate.FlatAppearance.BorderSize = 0;
             this.btn_cancel_validate.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_cancel_validate, "btn_cancel_validate");
             this.btn_cancel_validate.Name = "btn_cancel_validate";
             this.btn_cancel_validate.UseVisualStyleBackColor = true;
             this.btn_cancel_validate.Click += new System.EventHandler(this.btn_cancel_validate_Click);
             // 
             // btn_validate_url
             // 
-            resources.ApplyResources(this.btn_validate_url, "btn_validate_url");
             this.btn_validate_url.FlatAppearance.BorderSize = 0;
             this.btn_validate_url.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_validate_url, "btn_validate_url");
             this.btn_validate_url.ImageList = this.imageList1;
             this.btn_validate_url.Name = "btn_validate_url";
             this.btn_validate_url.UseVisualStyleBackColor = true;
@@ -4033,9 +4050,9 @@
             // 
             // btn_clean_errors
             // 
-            resources.ApplyResources(this.btn_clean_errors, "btn_clean_errors");
             this.btn_clean_errors.FlatAppearance.BorderSize = 0;
             this.btn_clean_errors.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_clean_errors, "btn_clean_errors");
             this.btn_clean_errors.ImageList = this.imageList1;
             this.btn_clean_errors.Name = "btn_clean_errors";
             this.btn_clean_errors.UseVisualStyleBackColor = true;
@@ -4043,33 +4060,33 @@
             // 
             // btn_url_info
             // 
-            resources.ApplyResources(this.btn_url_info, "btn_url_info");
             this.btn_url_info.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_url_info, "btn_url_info");
             this.btn_url_info.Name = "btn_url_info";
             this.btn_url_info.UseVisualStyleBackColor = true;
             this.btn_url_info.Click += new System.EventHandler(this.btn_url_info_Click);
             // 
             // btn_n_urls
             // 
-            resources.ApplyResources(this.btn_n_urls, "btn_n_urls");
             this.btn_n_urls.FlatAppearance.BorderSize = 0;
             this.btn_n_urls.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_n_urls, "btn_n_urls");
             this.btn_n_urls.Name = "btn_n_urls";
             this.btn_n_urls.UseVisualStyleBackColor = true;
             this.btn_n_urls.Click += new System.EventHandler(this.btn_n_urls_Click);
             // 
             // groupBox5
             // 
-            resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.BackColor = System.Drawing.SystemColors.Control;
+            resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.TabStop = false;
             // 
             // btn_add_yts
             // 
-            resources.ApplyResources(this.btn_add_yts, "btn_add_yts");
             this.btn_add_yts.FlatAppearance.BorderSize = 0;
             this.btn_add_yts.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_add_yts, "btn_add_yts");
             this.btn_add_yts.Name = "btn_add_yts";
             this.btn_add_yts.UseVisualStyleBackColor = true;
             this.btn_add_yts.Click += new System.EventHandler(this.btn_add_yts_Click);
@@ -4085,7 +4102,6 @@
             // 
             // groupBox_yout
             // 
-            resources.ApplyResources(this.groupBox_yout, "groupBox_yout");
             this.groupBox_yout.Controls.Add(this.chk_auto_subs);
             this.groupBox_yout.Controls.Add(this.pic_no_yt);
             this.groupBox_yout.Controls.Add(this.pic_ok);
@@ -4103,6 +4119,7 @@
             this.groupBox_yout.Controls.Add(this.chk_cache_yt);
             this.groupBox_yout.Controls.Add(this.label25);
             this.groupBox_yout.Controls.Add(this.n_down_speed);
+            resources.ApplyResources(this.groupBox_yout, "groupBox_yout");
             this.groupBox_yout.Name = "groupBox_yout";
             this.groupBox_yout.TabStop = false;
             // 
@@ -4122,8 +4139,8 @@
             // 
             // pic_ok
             // 
-            resources.ApplyResources(this.pic_ok, "pic_ok");
             this.pic_ok.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.pic_ok, "pic_ok");
             this.pic_ok.Name = "pic_ok";
             this.pic_ok.TabStop = false;
             this.pic_ok.Click += new System.EventHandler(this.pic_ok_Click);
@@ -4142,9 +4159,9 @@
             // 
             // lbl_yl_name
             // 
-            resources.ApplyResources(this.lbl_yl_name, "lbl_yl_name");
             this.lbl_yl_name.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.lbl_yl_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.lbl_yl_name, "lbl_yl_name");
             this.lbl_yl_name.Name = "lbl_yl_name";
             this.lbl_yl_name.ReadOnly = true;
             // 
@@ -4157,9 +4174,9 @@
             // 
             // txt_up_output
             // 
-            resources.ApplyResources(this.txt_up_output, "txt_up_output");
             this.txt_up_output.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_up_output.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_up_output, "txt_up_output");
             this.txt_up_output.Name = "txt_up_output";
             // 
             // chk_best_yt
@@ -4233,18 +4250,18 @@
             // 
             // pic_noimg
             // 
-            resources.ApplyResources(this.pic_noimg, "pic_noimg");
             this.pic_noimg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.pic_noimg, "pic_noimg");
             this.pic_noimg.Name = "pic_noimg";
             this.pic_noimg.TabStop = false;
             // 
             // group_downs
             // 
-            resources.ApplyResources(this.group_downs, "group_downs");
             this.group_downs.Controls.Add(this.chk_yt_chapt);
             this.group_downs.Controls.Add(this.label12);
             this.group_downs.Controls.Add(this.btn_save_downs);
             this.group_downs.Controls.Add(this.n_downs);
+            resources.ApplyResources(this.group_downs, "group_downs");
             this.group_downs.Name = "group_downs";
             this.group_downs.TabStop = false;
             // 
@@ -4287,16 +4304,15 @@
             // 
             // btn_logs_url
             // 
-            resources.ApplyResources(this.btn_logs_url, "btn_logs_url");
             this.btn_logs_url.FlatAppearance.BorderSize = 0;
             this.btn_logs_url.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_logs_url, "btn_logs_url");
             this.btn_logs_url.Name = "btn_logs_url";
             this.btn_logs_url.UseVisualStyleBackColor = true;
             this.btn_logs_url.Click += new System.EventHandler(this.btn_logs_url_Click);
             // 
             // groupBox_m3u
             // 
-            resources.ApplyResources(this.groupBox_m3u, "groupBox_m3u");
             this.groupBox_m3u.Controls.Add(this.btn_all_yt);
             this.groupBox_m3u.Controls.Add(this.btn_logs_url);
             this.groupBox_m3u.Controls.Add(this.group_downs);
@@ -4322,22 +4338,23 @@
             this.groupBox_m3u.Controls.Add(this.btn_start_m3u);
             this.groupBox_m3u.Controls.Add(this.label8);
             this.groupBox_m3u.Controls.Add(this.combo_ext_m3u);
+            resources.ApplyResources(this.groupBox_m3u, "groupBox_m3u");
             this.groupBox_m3u.Name = "groupBox_m3u";
             this.groupBox_m3u.TabStop = false;
             // 
             // btn_all_yt
             // 
-            resources.ApplyResources(this.btn_all_yt, "btn_all_yt");
             this.btn_all_yt.FlatAppearance.BorderSize = 0;
             this.btn_all_yt.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_all_yt, "btn_all_yt");
             this.btn_all_yt.Name = "btn_all_yt";
             this.btn_all_yt.UseVisualStyleBackColor = true;
             this.btn_all_yt.Click += new System.EventHandler(this.btn_all_yt_Click);
             // 
             // btn_add_col
             // 
-            resources.ApplyResources(this.btn_add_col, "btn_add_col");
             this.btn_add_col.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_add_col, "btn_add_col");
             this.btn_add_col.Name = "btn_add_col";
             this.btn_add_col.UseVisualStyleBackColor = true;
             this.btn_add_col.Click += new System.EventHandler(this.btn_add_col_Click);
@@ -4403,24 +4420,24 @@
             // 
             // pic_frame
             // 
-            resources.ApplyResources(this.pic_frame, "pic_frame");
             this.pic_frame.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.pic_frame, "pic_frame");
             this.pic_frame.Name = "pic_frame";
             this.pic_frame.TabStop = false;
             this.pic_frame.Click += new System.EventHandler(this.pic_frame_Click);
             // 
             // btn_min1
             // 
-            resources.ApplyResources(this.btn_min1, "btn_min1");
             this.btn_min1.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_min1, "btn_min1");
             this.btn_min1.Name = "btn_min1";
             this.btn_min1.UseVisualStyleBackColor = true;
             this.btn_min1.Click += new System.EventHandler(this.btn_min1_Click);
             // 
             // btn_plus1
             // 
-            resources.ApplyResources(this.btn_plus1, "btn_plus1");
             this.btn_plus1.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_plus1, "btn_plus1");
             this.btn_plus1.Name = "btn_plus1";
             this.btn_plus1.UseVisualStyleBackColor = true;
             this.btn_plus1.Click += new System.EventHandler(this.btn_plus1_Click);
@@ -4442,7 +4459,6 @@
             // 
             // panel_thumb
             // 
-            resources.ApplyResources(this.panel_thumb, "panel_thumb");
             this.panel_thumb.Controls.Add(this.pic_reading);
             this.panel_thumb.Controls.Add(this.pic_dark);
             this.panel_thumb.Controls.Add(this.lbl_gb_th);
@@ -4452,20 +4468,21 @@
             this.panel_thumb.Controls.Add(this.btn_plus1);
             this.panel_thumb.Controls.Add(this.lbl_v_th);
             this.panel_thumb.Controls.Add(this.btn_min1);
+            resources.ApplyResources(this.panel_thumb, "panel_thumb");
             this.panel_thumb.Name = "panel_thumb";
             this.panel_thumb.TabStop = false;
             // 
             // pic_reading
             // 
-            resources.ApplyResources(this.pic_reading, "pic_reading");
             this.pic_reading.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.pic_reading, "pic_reading");
             this.pic_reading.Name = "pic_reading";
             this.pic_reading.TabStop = false;
             // 
             // pic_dark
             // 
-            resources.ApplyResources(this.pic_dark, "pic_dark");
             this.pic_dark.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.pic_dark, "pic_dark");
             this.pic_dark.Name = "pic_dark";
             this.pic_dark.TabStop = false;
             // 
@@ -4539,10 +4556,11 @@
             // 
             // Form1
             // 
-            resources.ApplyResources(this, "$this");
             this.AllowDrop = true;
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Controls.Add(this.btn_wizard);
             this.Controls.Add(this.pic_batt);
             this.Controls.Add(this.lbl_updates);
             this.Controls.Add(this.panel_thumb);
@@ -4587,7 +4605,6 @@
             this.Controls.Add(this.btn_clean_list);
             this.Controls.Add(this.item_down);
             this.Controls.Add(this.item_up);
-            this.Controls.Add(this.btn_wizard);
             this.Controls.Add(this.btn_help);
             this.Controls.Add(this.LB_Wait);
             this.Controls.Add(this.txt_adding_p);
@@ -4613,6 +4630,8 @@
             this.ctm1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_add_variable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_file_add_input)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Num_Shift)).EndInit();
@@ -4911,7 +4930,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.CheckBox chk_open_compl;
         private System.Windows.Forms.CheckBox chk_delete_source;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chk_recreate;
         private System.Windows.Forms.TextBox txt_suffix;
         private System.Windows.Forms.CheckBox chk_suffix;
         private System.Windows.Forms.Button btn_multiple_presets;
@@ -4926,7 +4945,6 @@
         private System.Windows.Forms.Button requeue;
         private System.Windows.Forms.CheckBox chk_try;
         private System.Windows.Forms.GroupBox grp_fade;
-        private System.Windows.Forms.Button change_ff;
         private System.Windows.Forms.Button btn_exit;
         private System.Windows.Forms.Button btn_ref_dcd;
         private System.Windows.Forms.ToolStripMenuItem cti4_2;
@@ -5188,6 +5206,9 @@
         private System.Windows.Forms.PictureBox pic_batt;
         private System.Windows.Forms.CheckBox chk_yt_chapt;
         private System.Windows.Forms.ToolStripMenuItem ct3_ready;
+        public System.Windows.Forms.Button change_ff;
+        private System.Windows.Forms.PictureBox pic_file_add_input;
+        private System.Windows.Forms.PictureBox pic_add_variable;
     }
 }
 

@@ -1,8 +1,11 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Deployment.Application;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
+using System.Runtime.InteropServices;
+using System.Runtime.Versioning;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -34,6 +37,7 @@ namespace FFBatch
         private void Form2_Load(object sender, EventArgs e)
         {
             init_lang();
+            lbl_framew.Text = RuntimeInformation.FrameworkDescription;            
             label2.Text = "Version " + Application.ProductVersion;
             this.Text = FFBatch.Properties.Strings.About + " " + Application.ProductName;
             if (Properties.Settings.Default.dark_mode == true)
@@ -100,5 +104,5 @@ namespace FFBatch
         {
             Process.Start("https://sourceforge.net/projects/ffmpeg-batch/");
         }
-    }
+    } 
 }

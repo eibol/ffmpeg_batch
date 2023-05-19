@@ -8,9 +8,11 @@ using System.IO;
 using System.Linq;
 using System.Management;
 using System.Net;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace FFBatch
 {
@@ -21,11 +23,13 @@ namespace FFBatch
             InitializeComponent();
         }
 
+        public String curr_ff = String.Empty;
+        private Boolean encoder_supp = true;
         private Boolean warn_spf = true;
         private String auto_crop = String.Empty;
         public Boolean online_pr = false;
         public String sel_preset = "";
-        private Boolean presets_init = false;
+        private Boolean started_v = false;
         private Boolean internet_up = true;
         public Boolean start_no_files = false;
         public Boolean add_files = false;
@@ -44,11 +48,13 @@ namespace FFBatch
         private Boolean save_preset = false;
         private String video_encoder_param = String.Empty;
         private String libx264_params = String.Empty;
+        private String libsvtav1_params = String.Empty;        
         private String libx265_params = String.Empty;
         private String h264_qsv_params = String.Empty;
         private String hevc_qsv_params = String.Empty;
         private String h264_nvenc_params = String.Empty;
         private String hevc_nvenc_params = String.Empty;
+        private String av1_nvenc_params = String.Empty;
         private String h264_amf_params = String.Empty;
         private String hevc_amf_params = String.Empty;
         private String libvpx_vp9_params = String.Empty;
@@ -91,7 +97,7 @@ namespace FFBatch
 
             if (started_video == false)
             {
-                String[] video_encoders = new string[] { "copy", "libx264", "libx265", "h264_qsv", "hevc_qsv", "h264_nvenc", "hevc_nvenc", "h264_amf", "hevc_amf", "libvpx-vp9", "prores_ks", "dnxhd", "dnxhr" };
+                String[] video_encoders = new string[] { "copy", "libx264", "libx265", "libsvtav1", "h264_qsv", "hevc_qsv", "h264_nvenc", "hevc_nvenc", "av1_nvenc", "h264_amf", "hevc_amf", "libvpx-vp9", "prores_ks", "dnxhd", "dnxhr" };
                 foreach (String item in video_encoders) Combo_encoders.Items.Add(item);
 
                 combo_crf_mode.Items.Add("Constant Rate Factor");
@@ -155,6 +161,7 @@ namespace FFBatch
             btn_tips_1.Visible = false;
             lbl_amd.Visible = false;
             cb_q_amd.Visible = false;
+            label3.Text = "";
 
             if (Combo_encoders.SelectedItem.ToString() == "dnxhd")
             {
@@ -353,7 +360,7 @@ namespace FFBatch
                 btn_ref.Visible = false;
             }
 
-            if (Combo_encoders.SelectedItem.ToString() == "libx264" || Combo_encoders.SelectedItem.ToString() == "libx265" || Combo_encoders.SelectedItem.ToString() == "h264_nvenc" || Combo_encoders.SelectedItem.ToString() == "hevc_nvenc" || Combo_encoders.SelectedItem.ToString() == "h264_qsv" || Combo_encoders.SelectedItem.ToString() == "hevc_qsv" || Combo_encoders.SelectedItem.ToString() == "h264_amf" || Combo_encoders.SelectedItem.ToString() == "hevc_amf")
+            if (Combo_encoders.SelectedItem.ToString() == "libx264" || Combo_encoders.SelectedItem.ToString() == "libx265" || Combo_encoders.SelectedItem.ToString() == "h264_nvenc" || Combo_encoders.SelectedItem.ToString() == "hevc_nvenc" || Combo_encoders.SelectedItem.ToString() == "h264_qsv" || Combo_encoders.SelectedItem.ToString() == "hevc_qsv" || Combo_encoders.SelectedItem.ToString() == "h264_amf" || Combo_encoders.SelectedItem.ToString() == "hevc_amf" || Combo_encoders.SelectedItem.ToString() == "av1_nvenc" || Combo_encoders.SelectedItem.ToString() == "libsvtav1")
             {
                 track_q_v.Enabled = true;
                 label6.Text = FFBatch.Properties.Strings.hrq;
@@ -374,6 +381,8 @@ namespace FFBatch
                 cb_bits_prores.Visible = false;
                 combo_crf_mode.Visible = true;
                 n_crf.Visible = true;
+                n_crf.Minimum = 1;
+                n_crf.Maximum = 51;
                 label23.Visible = false;
                 cb_cq_vp9.Visible = false;
                 label16.Visible = true;
@@ -410,9 +419,58 @@ namespace FFBatch
                     foreach (String item in h264_levels) cb_level.Items.Add(item);
                     cb_preset.Items.Clear();
                     String[] h264_presets = new string[] { "ultrafast", "veryfast", "faster", "fast", "medium", "slow", "slower", "veryslow" };
-                    foreach (String item in h264_presets) cb_preset.Items.Add(item);
+                    foreach (String item in h264_presets) cb_preset.Items.Add(item);                    
                     n_crf.Value = 23;
                 }
+
+                if (Combo_encoders.SelectedItem.ToString() == "libsvtav1")
+                {                    
+                    cb_pixel.Items.Clear();
+                    btn_tips_1.Visible = true;
+                    txt_video_current.Text = "Aomedia SVT-AV1";
+                    String[] v_pixels = new string[] { "yuv420p", "yuv422p", "yuv444p", "yuyv422", "yuv420p10le", "yuv422p10", "yuv422p10le", "yuv444p10", "yuv444p10le", "yuva444p10", "yuva444p10le", "rgb24", "rgb32", "rgb565", "rgb555", "nv12", "gray", "monow", "monob" };
+                    foreach (String item in v_pixels) cb_pixel.Items.Add(item);                    
+                    String[] h264_tunes = new string[] { "none", "film", "animation", "grain", "stillimage", "fastdecode", "zerolatency" };
+                    cb_tune.Items.Clear();
+
+                    foreach (String item in h264_tunes) cb_tune.Items.Add(item);
+                    String[] h264_profiles = new string[] { "main", "high", "professional" };
+                    cb_profile.Items.Clear();
+                    foreach (String item in h264_profiles) cb_profile.Items.Add(item);
+                    String[] h264_levels = new string[] { "2.0", "2.1", "2.2", "3.0", "3.1", "3.2", "3.3", "4", "4.1", "4.2", "4.3", "5.1", "5.2", "5.3", "6.0", "6.1", "6.2", "6.3", "7.1", "7.2", "7.3" };
+                    cb_level.Items.Clear();
+                    foreach (String item in h264_levels) cb_level.Items.Add(item);
+                    cb_preset.Items.Clear();
+                    String[] h264_presets = new string[] { "1 (slow)", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12 (fast)" };
+                    foreach (String item in h264_presets) cb_preset.Items.Add(item);
+                    n_crf.Value = 28;
+                }
+
+                if (Combo_encoders.SelectedItem.ToString() == "av1_nvenc")
+                {
+                    btn_tips_1.Visible = true;
+                    txt_video_current.Text = "Video 1 (AV1 Nvidia NVENC)";
+                    label14.Visible = false;
+                    label15.Visible = false;
+                    cb_pixel.Items.Clear();
+                    String[] v_pixels = new string[] { "yuv420p", "nv12", "p010le", "yuv444p", "yuv444p16le", "bgr0", "rgb0", "cuda" };
+                    foreach (String item in v_pixels) cb_pixel.Items.Add(item);
+
+                    String[] h264_tunes = new string[] { "none", "film", "animation", "grain", "stillimage", "fastdecode", "zerolatency" };
+                    cb_tune.Items.Clear();
+                    foreach (String item in h264_tunes) cb_tune.Items.Add(item);
+                    String[] h264_profiles = new string[] { "baseline", "main", "high", "high444p" };
+                    cb_profile.Items.Clear();
+                    foreach (String item in h264_profiles) cb_profile.Items.Add(item);
+                    String[] h264_levels = new string[] { "1", "1.1", "1.2", "1.3", "2", "2.1", "2.2", "3", "3.1", "3.2", "4", "4.1", "4.2", "5", "5.1" };
+                    cb_level.Items.Clear();
+                    foreach (String item in h264_levels) cb_level.Items.Add(item);
+                    cb_preset.Items.Clear();
+                    String[] h264_presets = new string[] { "fast", "medium", "slow", "hp", "bd", "ll", "llhq", "llhp", "lossless", "losslesshp" };
+                    foreach (String item in h264_presets) cb_preset.Items.Add(item);
+                    n_crf.Value = 28;
+                }
+
                 if (Combo_encoders.SelectedItem.ToString() == "h264_nvenc")
                 {
                     btn_tips_1.Visible = true;
@@ -627,8 +685,8 @@ namespace FFBatch
         }
 
         private void track_q_v_Scroll(object sender, EventArgs e)
-        {
-            if (Combo_encoders.SelectedIndex == 9)
+        {            
+            if (Combo_encoders.SelectedIndex == Combo_encoders.FindString("libvpx-vp9"))
             {
                 if (track_q_v.Value <= 36)
                 {
@@ -796,6 +854,8 @@ namespace FFBatch
 
         private void n_crf_ValueChanged(object sender, EventArgs e)
         {
+            track_q_v.Minimum = (int)n_crf.Minimum;
+            track_q_v.Maximum = (int)n_crf.Maximum;
             track_q_v.Value = Convert.ToInt32(n_crf.Value);
         }
 
@@ -806,14 +866,14 @@ namespace FFBatch
                 label14.Text = String.Empty;
                 label15.Text = String.Empty;
                 track_q_v.Width = 437;
+                n_crf.Minimum = 1;
+                n_crf.Maximum = 51;
                 track_q_v.Minimum = 1;
                 track_q_v.Maximum = 51;
                 track_q_v.TickFrequency = 1;
                 track_q_v.Value = 23;
                 n_crf.Width = 40;
-                n_crf.Left = 442;
-                n_crf.Minimum = 1;
-                n_crf.Maximum = 51;
+                n_crf.Left = 442;                
                 cb_cq_vp9.Visible = false;
                 label23.Visible = false;
 
@@ -824,6 +884,8 @@ namespace FFBatch
                 if (Combo_encoders.SelectedItem.ToString() == "hevc_nvenc") n_crf.Value = 25;
                 if (Combo_encoders.SelectedItem.ToString() == "h264_qsv") n_crf.Value = 20;
                 if (Combo_encoders.SelectedItem.ToString() == "hevc_qsv") n_crf.Value = 25;
+                if (Combo_encoders.SelectedItem.ToString() == "libsvtav1") n_crf.Value = 30;
+                if (Combo_encoders.SelectedItem.ToString() == "av1_nvenc") n_crf.Value = 30;
 
                 n_crf.Increment = 1;
                 label3.Text = String.Empty;
@@ -835,14 +897,14 @@ namespace FFBatch
             if (combo_crf_mode.SelectedIndex == 1)
             {
                 track_q_v.Width = 422;
+                n_crf.Minimum = 100;
+                n_crf.Maximum = 50000;
                 track_q_v.Minimum = 100;
                 track_q_v.Maximum = 50000;
                 track_q_v.TickFrequency = 1000;
                 track_q_v.Value = 1000;
                 n_crf.Width = 60;
-                n_crf.Left = 428;
-                n_crf.Minimum = 100;
-                n_crf.Maximum = 50000;
+                n_crf.Left = 428;                
                 n_crf.Value = 1000;
                 label3.Text = "Kbps";
                 label6.Text = String.Empty;
@@ -854,6 +916,8 @@ namespace FFBatch
                 if (Combo_encoders.SelectedItem.ToString() == "hevc_nvenc") n_crf.Value = 3000;
                 if (Combo_encoders.SelectedItem.ToString() == "h264_qsv") n_crf.Value = 6000;
                 if (Combo_encoders.SelectedItem.ToString() == "hevc_qsv") n_crf.Value = 3000;
+                if (Combo_encoders.SelectedItem.ToString() == "libsvtav1") n_crf.Value = 2000;
+                if (Combo_encoders.SelectedItem.ToString() == "av1_nvenc") n_crf.Value = 2000;
                 if (Combo_encoders.SelectedItem.ToString() == "libvpx-vp9")
                 {
                     n_crf.Value = 2000;
@@ -1807,6 +1871,11 @@ namespace FFBatch
                 wiz_params = wiz_params + " -c:s copy";
             }
 
+            if (chk_samples.CheckState == CheckState.Checked)
+            {
+                wiz_params = wiz_params + " -t " + n_t_samples.Value.ToString(); ;
+            }
+
             if (chk_save_pres.CheckState == CheckState.Checked && txt_preset_name.Text != String.Empty)
             {
                 wiz_preset = txt_preset_name.Text;
@@ -2148,8 +2217,48 @@ namespace FFBatch
             }
         }
 
+        private void get_ff_encoders()
+        {
+            //Read hardware decoders
+            encoder_supp = true;
+            Process consola_hw = new Process();
+
+            consola_hw.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "ffmpeg.exe");
+            consola_hw.StartInfo.Arguments = " -h encoder=" + Combo_encoders.SelectedItem.ToString();
+            consola_hw.StartInfo.RedirectStandardOutput = true;
+            consola_hw.StartInfo.RedirectStandardError = true;
+            consola_hw.StartInfo.UseShellExecute = false;
+            consola_hw.StartInfo.CreateNoWindow = true;
+            consola_hw.EnableRaisingEvents = true;
+
+            String duracion = String.Empty;
+            List<string> std_out = new List<string>();
+            consola_hw.Start();            
+
+            while (!consola_hw.StandardOutput.EndOfStream)
+            {
+                std_out.Add(consola_hw.StandardOutput.ReadLine());                
+            }
+            consola_hw.WaitForExit();
+            consola_hw.Close();
+            foreach (String str in std_out)
+            {
+                if (str.ToLower().Contains("is not recognized by ffmpeg"))
+                {                    
+                    MessageBox.Show(Properties.Strings2.enc_not_sup1 + curr_ff.Replace("FFmpeg version", "") + Environment.NewLine + Environment.NewLine + Properties.Strings2.enc_not_sup2, Properties.Strings2.enc_not_sup3, MessageBoxButtons.OK, MessageBoxIcon.Error) ;
+                    encoder_supp = false;
+                    break;
+                }
+            }            
+        }
+
         private void wz_end_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
         {
+
+            lbl_vcard.Text = "";
+            lbl_help.Text = "";
+            pic_warn2.Visible = false;            
+
             Properties.Settings.Default.wiz_vid = Combo_encoders.SelectedIndex;
             Properties.Settings.Default.wiz_aud = cb_audio_encoder.SelectedIndex;
             Properties.Settings.Default.Save();
@@ -2158,7 +2267,7 @@ namespace FFBatch
             String cpu_info = "";
             String hw_enc = video_encoder_param.ToLower();
 
-            if (hw_enc.Contains("h264_amf") || hw_enc.Contains("hevc_amf") || hw_enc.Contains("h264_nvenc") || hw_enc.Contains("hevc_nvenc") || cb_deint.SelectedIndex == 1)
+            if (hw_enc.Contains("h264_amf") || hw_enc.Contains("hevc_amf") || hw_enc.Contains("h264_nvenc") || hw_enc.Contains("hevc_nvenc") || hw_enc.Contains("av1_nvenc") || cb_deint.SelectedIndex == 1)
 
             {
                 ManagementObjectSearcher search = new ManagementObjectSearcher("SELECT * FROM Win32_VideoController");
@@ -2190,7 +2299,7 @@ namespace FFBatch
                     }
                 }
 
-                if (video_encoder_param.ToLower().Contains("h264_nvenc") || video_encoder_param.ToLower().Contains("hevc_nvenc"))
+                if (video_encoder_param.ToLower().Contains("h264_nvenc") || video_encoder_param.ToLower().Contains("hevc_nvenc") || video_encoder_param.ToLower().Contains("av1_nvenc"))
                 {
                     if (!videocard.ToLower().Contains("nvidia"))
                     {
@@ -2581,7 +2690,7 @@ namespace FFBatch
 
         private void reset_v_params()
         {
-            video_encoder_param = String.Empty;
+            video_encoder_param = String.Empty;            
             libx264_params = String.Empty;
             libx265_params = String.Empty;
             h264_qsv_params = String.Empty;
@@ -2592,6 +2701,8 @@ namespace FFBatch
             prores_ks_params = String.Empty;
             dnxhd_params = String.Empty;
             dnxhr_params = String.Empty;
+            libsvtav1_params = String.Empty;
+            av1_nvenc_params = String.Empty;
         }
 
         private void commit_video_1()
@@ -2656,6 +2767,61 @@ namespace FFBatch
                     }
                 }
                 video_encoder_param = video_encoder_param + libx264_params;
+            }
+
+            if (Combo_encoders.SelectedIndex == Combo_encoders.FindString("libsvtav1"))
+            {
+                video_encoder_param = "-c:v libsvtav1";                
+                if (cb_preset.SelectedIndex != -1) libsvtav1_params = " -preset " + cb_preset.SelectedItem.ToString().Replace(" (slow)", "").Replace(" (fast)", "");
+                if (cb_profile.SelectedIndex != -1) libsvtav1_params = libsvtav1_params + " -profile " + cb_profile.SelectedItem.ToString();
+                if (cb_level.SelectedIndex != -1) libsvtav1_params = libsvtav1_params + " -level " + cb_level.SelectedItem.ToString();
+                if (cb_tune.SelectedIndex != -1 && cb_tune.SelectedIndex != 0) libsvtav1_params = libsvtav1_params + " -tune " + cb_tune.SelectedItem.ToString();
+
+                if (combo_crf_mode.SelectedIndex == 0)
+                {
+                    libsvtav1_params = libsvtav1_params + " -crf " + n_crf.Value.ToString();
+                }
+                if (combo_crf_mode.SelectedIndex == 1)
+                {
+                    libsvtav1_params = libsvtav1_params + " -b:v " + (Math.Round(n_crf.Value * 1024 / 1000)).ToString() + "K" + " -minrate " + (Math.Round(n_crf.Value * 1024 / 1000)).ToString() + "K" + " -maxrate " + (Math.Round(n_crf.Value * 1024 / 1000)).ToString() + "K" + " -bufsize " + (Math.Round(n_crf.Value * 1024 / 1000 * 2)).ToString() + "K" + " -nal-hrd cbr";
+                }
+
+                if (cb_pixel.SelectedIndex != -1) libsvtav1_params = libsvtav1_params + " -pix_fmt " + cb_pixel.SelectedItem.ToString();
+
+                if (cb_framerate.SelectedIndex != -1)
+                {
+                    if (cb_framerate.SelectedIndex == 0)
+                    {
+                        libsvtav1_params = libsvtav1_params + " -r " + n_framerate.Value.ToString();
+                    }
+                    else
+                    {
+                        switch (cb_framerate.SelectedIndex)
+                        {
+                            case 1:
+                                {
+                                    libsvtav1_params = libsvtav1_params + " -r " + "24000/1001";
+                                    break;
+                                }
+                            case 3:
+                                {
+                                    libsvtav1_params = libsvtav1_params + " -r " + "30000/1001";
+                                    break;
+                                }
+                            case 6:
+                                {
+                                    libsvtav1_params = libsvtav1_params + " -r " + "60000/1001";
+                                    break;
+                                }
+                            default:
+                                {
+                                    libsvtav1_params = libsvtav1_params + " -r " + cb_framerate.SelectedItem.ToString().Substring(0, 2);
+                                    break;
+                                }
+                        }
+                    }
+                }
+                video_encoder_param = video_encoder_param + libsvtav1_params;
             }
 
             if (Combo_encoders.SelectedIndex == Combo_encoders.FindString("libx265"))
@@ -2876,6 +3042,61 @@ namespace FFBatch
                     }
                 }
                 video_encoder_param = video_encoder_param + h264_nvenc_params;
+            }
+
+            if (Combo_encoders.SelectedIndex == Combo_encoders.FindString("av1_nvenc"))
+            {
+                video_encoder_param = "-c:v av1_nvenc";
+                if (cb_preset.SelectedIndex != -1) av1_nvenc_params = " -preset " + cb_preset.SelectedItem.ToString();
+                if (cb_profile.SelectedIndex != -1) av1_nvenc_params = av1_nvenc_params + " -profile:v " + cb_profile.SelectedItem.ToString();
+                if (cb_level.SelectedIndex != -1) av1_nvenc_params = av1_nvenc_params + " -level " + cb_level.SelectedItem.ToString();
+                if (cb_tune.SelectedIndex != -1 && cb_tune.SelectedIndex != 0) av1_nvenc_params = av1_nvenc_params + " -tune " + cb_tune.SelectedItem.ToString();
+
+                if (combo_crf_mode.SelectedIndex == 0 && cb_preset.SelectedIndex != cb_preset.FindString("lossless") && cb_preset.SelectedIndex != cb_preset.FindString("losslesshp"))
+                {
+                    av1_nvenc_params = av1_nvenc_params + " -rc constqp -qp " + n_crf.Value.ToString();
+                }
+                if (combo_crf_mode.SelectedIndex == 1 && cb_preset.SelectedIndex != cb_preset.FindString("lossless") && cb_preset.SelectedIndex != cb_preset.FindString("losslesshp"))
+                {
+                    av1_nvenc_params = av1_nvenc_params + " -b:v " + (Math.Round(n_crf.Value * 1024 / 1000)).ToString() + "K";
+                }
+
+                if (cb_pixel.SelectedIndex != -1) av1_nvenc_params = av1_nvenc_params + " -pix_fmt " + cb_pixel.SelectedItem.ToString();
+
+                if (cb_framerate.SelectedIndex != -1)
+                {
+                    if (cb_framerate.SelectedIndex == 0)
+                    {
+                        av1_nvenc_params = av1_nvenc_params + " -r " + n_framerate.Value.ToString();
+                    }
+                    else
+                    {
+                        switch (cb_framerate.SelectedIndex)
+                        {
+                            case 1:
+                                {
+                                    av1_nvenc_params = av1_nvenc_params + " -r " + "24000/1001";
+                                    break;
+                                }
+                            case 3:
+                                {
+                                    av1_nvenc_params = av1_nvenc_params + " -r " + "30000/1001";
+                                    break;
+                                }
+                            case 6:
+                                {
+                                    av1_nvenc_params = av1_nvenc_params + " -r " + "60000/1001";
+                                    break;
+                                }
+                            default:
+                                {
+                                    av1_nvenc_params = av1_nvenc_params + " -r " + cb_framerate.SelectedItem.ToString().Substring(0, 2);
+                                    break;
+                                }
+                        }
+                    }
+                }
+                video_encoder_param = video_encoder_param + av1_nvenc_params;
             }
 
             if (Combo_encoders.SelectedIndex == Combo_encoders.FindString("hevc_nvenc"))
@@ -3201,6 +3422,20 @@ namespace FFBatch
 
         private void wz1_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
         {
+            if (Combo_encoders.SelectedIndex != 0)
+            {
+                get_ff_encoders();
+                if (encoder_supp == false)
+                {
+                    e.Cancel = true;
+                    return;
+                }
+            }
+            if (curr_ff.ToLower().Contains("essential")) 
+            {
+                if (Combo_encoders.SelectedItem.ToString().Contains("nvenc") || Combo_encoders.SelectedItem.ToString().Contains("amf"))
+                    MessageBox.Show(Properties.Strings2.hw_ff_1 + Environment.NewLine + Environment.NewLine + Properties.Strings2.Hw_ff_2, Properties.Strings.information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             commit_video_1();
         }
 
@@ -3843,7 +4078,7 @@ namespace FFBatch
 
                     if (Directory.GetFiles(destino_test).Length == 0)
                     {
-                        System.IO.Directory.Delete(destino_test);
+                        try { System.IO.Directory.Delete(destino_test); } catch { }
                     }
 
                     this.InvokeEx(f => this.Cursor = Cursors.Arrow);
@@ -3854,7 +4089,7 @@ namespace FFBatch
                             unsupported = true;
                         }
                     }
-                    if (unsupported == true) MessageBox.Show(FFBatch.Properties.Strings.test_fail1 + " " + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.unsup_enc + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + "Try preset for more error information", "FFmpeg command failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (unsupported == true) MessageBox.Show(FFBatch.Properties.Strings.test_fail1 + " " + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.unsup_enc + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + Properties.Strings.try_pr, Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     else this.InvokeEx(f => MessageBox.Show(this, FFBatch.Properties.Strings.test_fail1 + " " + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + "Try preset for more error information", "FFmpeg command failed", MessageBoxButtons.OK, MessageBoxIcon.Error));
 
                     this.InvokeEx(f => this.Cursor = Cursors.Arrow);
@@ -4462,14 +4697,7 @@ namespace FFBatch
                 {
                     combo_presets_ext.Items.Add(line.Substring(4, line.LastIndexOf("&") - 5));
                 }
-            }
-
-            if (presets_init = true)
-            {
-                try { combo_presets_ext.SelectedIndex = combo_presets_ext.FindString(sel_preset); }
-                catch { }
-            }
-            presets_init = true;
+            }            
         }
 
         private void wz_0_1_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
@@ -4493,6 +4721,7 @@ namespace FFBatch
                 wizardControl1.CancelButtonText = Properties.Strings.cancel;
                 wizardControl1.FinishButtonText = Properties.Strings2.finish;
             }
+            
         }
 
         private void refresh_lang()
@@ -4579,6 +4808,8 @@ namespace FFBatch
             if (Combo_encoders.SelectedItem.ToString() == "hevc_nvenc") Process.Start("https://sourceforge.net/p/ffmpeg-batch/news/2021/10/nvidia-hevcnvenc");
             if (Combo_encoders.SelectedItem.ToString() == "h264_amf") Process.Start("https://sourceforge.net/p/ffmpeg-batch/news/2021/09/amd-vce--h264amf-encoder-options");
             if (Combo_encoders.SelectedItem.ToString() == "hevc_amf") Process.Start("https://sourceforge.net/p/ffmpeg-batch/news/2021/08/amd-vce--hevcamf-encoder-options");
+            if (Combo_encoders.SelectedItem.ToString() == "av1_nvenc") Process.Start("https://docs.nvidia.com/video-technologies/video-codec-sdk/ffmpeg-with-nvidia-gpu/");
+            if (Combo_encoders.SelectedItem.ToString() == "libsvtav1") Process.Start("https://gitlab.com/AOMediaCodec/SVT-AV1/-/blob/master/Docs/Parameters.md");            
         }
 
         public class WebClientWithTimeout : WebClient
@@ -4645,9 +4876,9 @@ namespace FFBatch
 
         private void wz1_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
         {
-            Combo_encoders.SelectedIndex = Properties.Settings.Default.wiz_vid;
+            if (started_v == false) Combo_encoders.SelectedIndex = Properties.Settings.Default.wiz_vid;
+            started_v = true;
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             online_pr = true;
@@ -4735,6 +4966,16 @@ namespace FFBatch
         {
             auto_crop = String.Empty;
             btn_crop_wiz.BackColor = Color.White;
+        }
+
+        private void chk_samples_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_samples.CheckState == CheckState.Checked) n_t_samples.Enabled = true;
+            else n_t_samples.Enabled = false;
+            pic_status.Image = img_status.Images[0];
+            preset_ok = false;
+            if (lv1_item != String.Empty) BG1.RunWorkerAsync();
+
         }
     }
 }

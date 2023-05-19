@@ -58,7 +58,6 @@
             // 
             // wz_mpresets
             // 
-            //this.wz_mpresets.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.wz_mpresets, "wz_mpresets");
             this.wz_mpresets.Name = "wz_mpresets";
             this.wz_mpresets.Pages.Add(this.wzp1);
@@ -69,6 +68,7 @@
             // 
             // wzp1
             // 
+            resources.ApplyResources(this.wzp1, "wzp1");
             this.wzp1.Controls.Add(this.label9);
             this.wzp1.Controls.Add(this.btn_clear);
             this.wzp1.Controls.Add(this.txt_ext_3);
@@ -83,7 +83,6 @@
             this.wzp1.Controls.Add(this.cb_w_presets);
             this.wzp1.Controls.Add(this.label3);
             this.wzp1.Name = "wzp1";
-            resources.ApplyResources(this.wzp1, "wzp1");
             this.wzp1.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wzp1_Commit);
             // 
             // label9
@@ -93,16 +92,16 @@
             // 
             // btn_clear
             // 
-            this.btn_clear.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.btn_clear, "btn_clear");
+            this.btn_clear.FlatAppearance.BorderSize = 0;
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.UseVisualStyleBackColor = true;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // txt_ext_3
             // 
-            this.txt_ext_3.BackColor = System.Drawing.SystemColors.Info;
             resources.ApplyResources(this.txt_ext_3, "txt_ext_3");
+            this.txt_ext_3.BackColor = System.Drawing.SystemColors.Info;
             this.txt_ext_3.Name = "txt_ext_3";
             // 
             // label7
@@ -117,8 +116,8 @@
             // 
             // txt_ext_2
             // 
-            this.txt_ext_2.BackColor = System.Drawing.SystemColors.Info;
             resources.ApplyResources(this.txt_ext_2, "txt_ext_2");
+            this.txt_ext_2.BackColor = System.Drawing.SystemColors.Info;
             this.txt_ext_2.Name = "txt_ext_2";
             // 
             // label5
@@ -133,8 +132,8 @@
             // 
             // txt_ext_1
             // 
-            this.txt_ext_1.BackColor = System.Drawing.SystemColors.Info;
             resources.ApplyResources(this.txt_ext_1, "txt_ext_1");
+            this.txt_ext_1.BackColor = System.Drawing.SystemColors.Info;
             this.txt_ext_1.Name = "txt_ext_1";
             // 
             // label2
@@ -149,8 +148,8 @@
             // 
             // cb_w_presets
             // 
-            this.cb_w_presets.FormattingEnabled = true;
             resources.ApplyResources(this.cb_w_presets, "cb_w_presets");
+            this.cb_w_presets.FormattingEnabled = true;
             this.cb_w_presets.Name = "cb_w_presets";
             this.cb_w_presets.SelectedIndexChanged += new System.EventHandler(this.cb_w_presets_SelectedIndexChanged);
             // 
@@ -161,6 +160,7 @@
             // 
             // wzp2
             // 
+            resources.ApplyResources(this.wzp2, "wzp2");
             this.wzp2.Controls.Add(this.btn_abort);
             this.wzp2.Controls.Add(this.btn_start_multi);
             this.wzp2.Controls.Add(this.pic_warning);
@@ -168,22 +168,21 @@
             this.wzp2.Controls.Add(this.label1);
             this.wzp2.IsFinishPage = true;
             this.wzp2.Name = "wzp2";
-            resources.ApplyResources(this.wzp2, "wzp2");
             // 
             // btn_abort
             // 
+            resources.ApplyResources(this.btn_abort, "btn_abort");
             this.btn_abort.FlatAppearance.BorderSize = 0;
             this.btn_abort.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_abort, "btn_abort");
             this.btn_abort.Name = "btn_abort";
             this.btn_abort.UseVisualStyleBackColor = true;
             this.btn_abort.Click += new System.EventHandler(this.btn_abort_Click);
             // 
             // btn_start_multi
             // 
+            resources.ApplyResources(this.btn_start_multi, "btn_start_multi");
             this.btn_start_multi.FlatAppearance.BorderSize = 0;
             this.btn_start_multi.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_start_multi, "btn_start_multi");
             this.btn_start_multi.Name = "btn_start_multi";
             this.btn_start_multi.UseVisualStyleBackColor = true;
             this.btn_start_multi.Click += new System.EventHandler(this.btn_start_m3u_Click);

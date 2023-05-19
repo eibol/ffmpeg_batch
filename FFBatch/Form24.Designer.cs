@@ -39,66 +39,51 @@ namespace FFBatch
             // 
             // combo_lang
             // 
+            resources.ApplyResources(this.combo_lang, "combo_lang");
             this.combo_lang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_lang.FormattingEnabled = true;
             this.combo_lang.Items.AddRange(new object[] {
-            "English",
-            "Español",
-            "Italiano",
-            "Português (BR)",
-            "中文"});
-            this.combo_lang.Location = new System.Drawing.Point(146, 25);
+            resources.GetString("combo_lang.Items"),
+            resources.GetString("combo_lang.Items1"),
+            resources.GetString("combo_lang.Items2"),
+            resources.GetString("combo_lang.Items3"),
+            resources.GetString("combo_lang.Items4"),
+            resources.GetString("combo_lang.Items5")});
             this.combo_lang.Name = "combo_lang";
-            this.combo_lang.Size = new System.Drawing.Size(96, 21);
-            this.combo_lang.TabIndex = 157;
             this.combo_lang.SelectedIndexChanged += new System.EventHandler(this.combo_lang_SelectedIndexChanged);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(249, 24);
+            resources.ApplyResources(this.button1, "button1");
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(70, 23);
-            this.button1.TabIndex = 159;
-            this.button1.Text = "OK";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pic_earth
             // 
-            this.pic_earth.Image = ((System.Drawing.Image)(resources.GetObject("pic_earth.Image")));
-            this.pic_earth.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pic_earth.Location = new System.Drawing.Point(12, 24);
+            resources.ApplyResources(this.pic_earth, "pic_earth");
             this.pic_earth.Name = "pic_earth";
-            this.pic_earth.Size = new System.Drawing.Size(24, 24);
-            this.pic_earth.TabIndex = 160;
             this.pic_earth.TabStop = false;
             // 
             // label1
             // 
+            resources.ApplyResources(this.label1, "label1");
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.label1.Location = new System.Drawing.Point(49, 29);
             this.label1.Name = "label1";
             this.label1.ReadOnly = true;
-            this.label1.Size = new System.Drawing.Size(90, 13);
-            this.label1.TabIndex = 161;
-            this.label1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Form24
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(325, 67);
             this.Controls.Add(this.pic_earth);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.combo_lang);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form24";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Application language";
             this.Load += new System.EventHandler(this.Form24_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_earth)).EndInit();
             this.ResumeLayout(false);

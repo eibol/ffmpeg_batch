@@ -76,8 +76,8 @@ namespace FFBatch
             // 
             // textBox1
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(this.textBox1, "textBox1");
+            this.textBox1.BackColor = System.Drawing.Color.White;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             // 
@@ -94,9 +94,9 @@ namespace FFBatch
             // 
             // btn_trans
             // 
+            resources.ApplyResources(this.btn_trans, "btn_trans");
             this.btn_trans.FlatAppearance.BorderSize = 0;
             this.btn_trans.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_trans, "btn_trans");
             this.btn_trans.Name = "btn_trans";
             this.btn_trans.UseVisualStyleBackColor = true;
             this.btn_trans.Click += new System.EventHandler(this.btn_trans_Click);

@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using FFBatch.Properties;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,8 @@ namespace FFBatch
             InitializeComponent();
         }
 
+        public Boolean no_dest_overwrite = false;
+        public Boolean change_ff_ver = false;
         public Boolean keep_dates = false;
         public Boolean totray = false;
         public Boolean autorun = false;
@@ -159,9 +162,7 @@ namespace FFBatch
         }
 
         private void Form3_Load(object sender, EventArgs e)
-        {
-            pic_new.Top = chk_quick_q.Top - 2;
-            pic_new.Left = chk_quick_q.Left - 30;
+        {            
             edit_presets = false;
             presets_online = false;
             String app_location = Application.StartupPath;
@@ -226,6 +227,8 @@ namespace FFBatch
             browse_sound.InitialDirectory = Application.StartupPath;
 
             //Read configuration
+            if (Properties.Settings.Default.no_dest_overw == true) chk_no_overw.Checked = true;
+            else chk_no_overw.Checked = false;
 
             if (Properties.Settings.Default.bat_level < 10) Properties.Settings.Default.bat_level = 20;
             
@@ -1468,12 +1471,15 @@ namespace FFBatch
                 lang_set = "zh-Hans";
                 FFBatch.Properties.Settings.Default.app_lang = "zh-Hans";
             }
+            if (combo_lang.SelectedIndex == 5)
+            {
+                lang_set = "zh-Hans";
+                FFBatch.Properties.Settings.Default.app_lang = "ar-EG";
+            }
 
             FFBatch.Properties.Settings.Default.Save();
             refresh_lang();
-            this.Text = FFBatch.Properties.Strings.Settings;
-            pic_new.Top = chk_quick_q.Top - 2;
-            pic_new.Left = chk_quick_q.Left - 30;
+            this.Text = FFBatch.Properties.Strings.Settings;            
         }
 
         private void refresh_lang()
@@ -1752,6 +1758,19 @@ namespace FFBatch
         private void chk_quick_q_CheckedChanged(object sender, EventArgs e)
         {
             if (chk_quick_q.CheckState == CheckState.Checked) chk_filter_zero.Checked = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            change_ff_ver = true;
+            cancel = false;
+            this.Close();
+        }
+
+        private void chk_no_overw_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_no_overw.CheckState == CheckState.Checked) no_dest_overwrite = true;
+            else no_dest_overwrite = false;            
         }
     }
 }

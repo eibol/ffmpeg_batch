@@ -17,6 +17,8 @@
             //
         }
 
+        public bool no_dest_overw { get; internal set; }
+
         private void SettingChangingEventHandler(object sender, System.Configuration.SettingChangingEventArgs e)
         {
             // Agregar código para administrar aquí el evento SettingChangingEvent.

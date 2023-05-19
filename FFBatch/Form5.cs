@@ -84,7 +84,7 @@ namespace FFBatch
             ct_save.Text = Properties.Strings2.save_img;
             ct_copy.Text = Properties.Strings.copy;
 
-            frs = get_frate();            
+            frs = get_frate();
 
             if (Properties.Settings.Default.dark_mode == true)
             {
@@ -153,7 +153,7 @@ namespace FFBatch
                     {
                         frm_prog.ShowDialog(this);
                         frm_prog.Refresh();
-                    }));                    
+                    }));
                 }).Start();
                 frm_prog.procId = ff_str.Id;
                 String stream = "";
@@ -309,7 +309,7 @@ namespace FFBatch
 
             //End duration not available yet
 
-            DateTime time2;            
+            DateTime time2;
             if (DateTime.TryParse(dur_lv1, out time2))
             {                
                 if (lv1_item.ToLower().Substring(0, 4).Contains("http")) return;
@@ -321,12 +321,12 @@ namespace FFBatch
                          t1.Seconds,
                          t1.Milliseconds);
 
-                lbl_fr_time.Text = tx_1;                
-                get_frame();                
+                lbl_fr_time.Text = tx_1;
+                get_frame();
                                 
                 trackB.Minimum = 0;
                 timer1.Enabled = true;
-                BG_Keyframes.RunWorkerAsync();                
+                BG_Keyframes.RunWorkerAsync();
             }
         }
 
@@ -540,7 +540,7 @@ namespace FFBatch
             try
             {
                 current_fr = current_fr - 100;
-                if (current_fr < 0) current_fr = 0;              
+                if (current_fr < 0) current_fr = 0;
 
                 Double t_to = (double)current_fr;
                 TimeSpan t1 = TimeSpan.FromMilliseconds((t_to));
@@ -559,7 +559,7 @@ namespace FFBatch
         {
             try
             {
-                current_fr = current_fr + 100;                
+                current_fr = current_fr + 100;
              
                 DateTime time0 = new DateTime();
                 Double miliseconds1 = 0;
@@ -795,7 +795,7 @@ namespace FFBatch
                 if (proc_img.ExitCode == 1 || proc_img.ExitCode == 0)
                 {                   
                         Bitmap imageToAdd = new Bitmap(target_img);
-                        Clipboard.SetImage(imageToAdd);                                       
+                        Clipboard.SetImage(imageToAdd);
                 }
                 else
                 {
@@ -880,7 +880,7 @@ namespace FFBatch
                     prog = TimeSpan.Parse(time_pos).TotalSeconds;
                 }
 
-                try { pic_frame.Load(file.FullName); } catch { }              
+                try { pic_frame.Load(file.FullName); } catch { }
 
                 this.Invoke(new MethodInvoker(delegate
                 {
@@ -994,7 +994,7 @@ namespace FFBatch
         private void sort_frames2()
         {
             pos.Clear();
-            file_kf.Clear();            
+            file_kf.Clear();
 
             String destino0 = Path.Combine(Path.GetTempPath(), "FFBatch_test");
             String vstats_name = Regex.Replace("vstats_" + Path.GetFileNameWithoutExtension(lv1_item), @"[^\u0000-\u007F]+", string.Empty);
@@ -1019,7 +1019,7 @@ namespace FFBatch
                     if (Double.TryParse(it, out test))
                     {
                         if (CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator == ".") test = Double.Parse(it) * 1000;
-                        else test = Double.Parse(it);                        
+                        else test = Double.Parse(it);
                         file_kf.Add(test.ToString());
                     }
                     else file_kf.Add("00:00:00.000");
@@ -1090,7 +1090,7 @@ namespace FFBatch
                          (int)t1.TotalHours,
                          t1.Minutes,
                          t1.Seconds,
-                         t1.Milliseconds);                
+                         t1.Milliseconds);
                 lbl_start.Text = "[[  " + trim_start;
                 lbl_end.Text = trim_end + " ]]";
                 lbl_lapse.Text = "[[  " + tx_1 + "  ]]";
@@ -1207,7 +1207,7 @@ namespace FFBatch
                 trackB.Enabled = true;
                 btn_kplus1.Enabled = true;
                 btn_k_m1.Enabled = true;
-                trackB.Value = trackB.Minimum;            
+                trackB.Value = trackB.Minimum;
                 
             sort_frames2();
             try
@@ -1231,7 +1231,7 @@ namespace FFBatch
         private void pic_frame_DoubleClick(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
-            get_fullscr();            
+            get_fullscr();
             Form6 frm6 = new Form6();
             Rectangle resolution = Screen.PrimaryScreen.Bounds;
             try
@@ -1268,7 +1268,7 @@ namespace FFBatch
             if (this.Width < d_w ) this.Width = d_w;
             if (this.Height < d_h) this.Height = d_h;
             groupBox1.Width = 511 + (this.Width - d_w);
-            groupBox1.Height = 379 + (this.Height - d_h);            
+            groupBox1.Height = 379 + (this.Height - d_h);
             dg_streams.Height = 379 + (this.Height - d_h) - 7;
             btn_close.Top = this.Height - 72;
             pic_frame.Width =  480 + (this.Width - d_w);
@@ -1278,7 +1278,7 @@ namespace FFBatch
             pg1.Width = panel2.Width - 215;
             btn_cancel.Left = panel2.Width - 65;
             img_prog.Top = pic_frame.Height + 18;
-            img_prog.Left = panel2.Left;            
+            img_prog.Left = panel2.Left;
 
             //bar
             btn_fr_start.Top = pic_frame.Height + 31;

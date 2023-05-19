@@ -32,9 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dg_pr = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_load = new System.Windows.Forms.Button();
             this.open_file = new System.Windows.Forms.OpenFileDialog();
@@ -51,6 +48,9 @@
             this.btn_save_backup = new System.Windows.Forms.Button();
             this.btn_clear = new System.Windows.Forms.Button();
             this.btn_online = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dg_pr)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,23 +73,6 @@
             this.dg_pr.DragOver += new System.Windows.Forms.DragEventHandler(this.dg_pr_DragOver);
             this.dg_pr.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dg_pr_MouseDown);
             this.dg_pr.MouseMove += new System.Windows.Forms.MouseEventHandler(this.dg_pr_MouseMove);
-            // 
-            // Column1
-            // 
-            resources.ApplyResources(this.Column1, "Column1");
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            resources.ApplyResources(this.Column2, "Column2");
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle2;
-            resources.ApplyResources(this.Column3, "Column3");
-            this.Column3.Name = "Column3";
             // 
             // btn_save
             // 
@@ -220,6 +203,23 @@
             this.btn_online.UseVisualStyleBackColor = true;
             this.btn_online.Click += new System.EventHandler(this.button1_Click);
             // 
+            // Column1
+            // 
+            resources.ApplyResources(this.Column1, "Column1");
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            resources.ApplyResources(this.Column2, "Column2");
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle2;
+            resources.ApplyResources(this.Column3, "Column3");
+            this.Column3.Name = "Column3";
+            // 
             // Form15
             // 
             resources.ApplyResources(this, "$this");
@@ -268,9 +268,9 @@
         private System.Windows.Forms.Label lbl_config;
         private System.Windows.Forms.Button btn_save_backup;
         private System.Windows.Forms.Button btn_clear;
+        private System.Windows.Forms.Button btn_online;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.Button btn_online;
     }
 }
