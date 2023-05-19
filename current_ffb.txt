@@ -1,9 +1,6 @@
-﻿2.8.4
-• New setting to monitor and auto-pause on battery and resume on AC Power (useful for temporary power losses).
-• New setting to automatically filter invalid/zero duration files just after adding files to main list.
-• New YouTube setting to automatically split video in consecutive chapters (if available). 
-• NOTE: Do not enable if videos contain no chapters, since they will have to be processed twice.
-• YouTube settings now saved on exit.
-• Increased ffmpeg parameters text length on main tab.
-• Fixed cosmetic error in number of processed files during encoding.
-• Other minor bufixes.
+﻿2.8.7
+• New setting to never overwrite an already existing output file.
+• Fixed a filename characters warning wrongly displayed.
+• Fixed some typos and wrong parameters on default presets.
+• Added buttons to add input files and variables to parameters field.
+• Added online presets to add watermarks.
