@@ -117,148 +117,78 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pic_earth.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="radio_filter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 17</value>
+  </data>
+  <data name="radio_filter.Text" xml:space="preserve">
+    <value>استخدم مرشح فيديو التسلسل</value>
+  </data>
+  <data name="radio_demuxer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>123, 17</value>
+  </data>
+  <data name="radio_demuxer.Text" xml:space="preserve">
+    <value>استخدم مزيل السلاسل</value>
+  </data>
+  <data name="chk_copy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 17</value>
+  </data>
+  <data name="chk_copy.Text" xml:space="preserve">
+    <value>نسخة تيار</value>
+  </data>
+  <data name="chk_filter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 17</value>
+  </data>
+  <data name="chk_filter.Text" xml:space="preserve">
+    <value>استخدم الإعدادات التلقائية</value>
+  </data>
+  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>391, 51</value>
+  </data>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>في هذا الوضع ، يمكن نسخ ملفات الصوت / الفيديو ، بشرط أن تشترك في الصفات (الحجم ، الترميز ، معدل البت).</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>يبدأ</value>
+  </data>
+  <data name="btn_cancel.Text" xml:space="preserve">
+    <value>يلغي</value>
+  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 13</value>
+    <value>70, 13</value>
   </data>
-  <data name="combo_lang.Items" xml:space="preserve">
-    <value>English</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>معلمات الترميز</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>159</value>
+  <data name="chk_batch_concat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 17</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>49, 29</value>
+  <data name="chk_batch_concat.Text" xml:space="preserve">
+    <value>تفعيل تسلسل الدُفعات</value>
   </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="txt_batch_concat.Text" xml:space="preserve">
+    <value>في هذا الوضع ، سيتم ربط الملف الأولي و / أو الملف النهائي بكل ملف في القائمة ، بدلاً من تجميع جميع الملفات معًا.</value>
   </data>
-  <data name="pic_earth.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
+  <data name="btn_end.Text" xml:space="preserve">
+    <value>تصفح</value>
   </data>
-  <data name="&gt;&gt;combo_lang.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="btn_intro.Text" xml:space="preserve">
+    <value>تصفح</value>
   </data>
-  <data name="&gt;&gt;combo_lang.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 13</value>
   </data>
-  <data name="combo_lang.Location" type="System.Drawing.Point, System.Drawing">
-    <value>146, 25</value>
+  <data name="label3.Text" xml:space="preserve">
+    <value>ملف النهاية</value>
   </data>
-  <data name="label1.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 13</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Application language</value>
-  </data>
-  <data name="&gt;&gt;pic_earth.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form24</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>161</value>
-  </data>
-  <data name="&gt;&gt;pic_earth.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 23</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>الملف الأولي</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>325, 67</value>
-  </data>
-  <data name="&gt;&gt;combo_lang.Name" xml:space="preserve">
-    <value>combo_lang</value>
-  </data>
-  <data name="&gt;&gt;button1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="pic_earth.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        BJOLAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="&gt;&gt;pic_earth.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="pic_earth.TabIndex" type="System.Int32, mscorlib">
-    <value>160</value>
-  </data>
-  <data name="combo_lang.Items3" xml:space="preserve">
-    <value>Português (BR)</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="pic_earth.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 24</value>
-  </data>
-  <data name="combo_lang.Items4" xml:space="preserve">
-    <value>中文</value>
-  </data>
-  <data name="combo_lang.Items5" xml:space="preserve">
-    <value>اللغة العربية</value>
-  </data>
-  <data name="combo_lang.Items2" xml:space="preserve">
-    <value>Italiano</value>
-  </data>
-  <data name="&gt;&gt;pic_earth.Name" xml:space="preserve">
-    <value>pic_earth</value>
+    <value>436, 297</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -547,40 +477,7 @@
         AAAAAAAHAAAAAAAAAA8AAAAAAAAAD4AAAAAAAAAfwAAAAAAAAD8=
 </value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>انضمام ملفات</value>
   </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="combo_lang.TabIndex" type="System.Int32, mscorlib">
-    <value>157</value>
-  </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
-  <data name="combo_lang.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 21</value>
-  </data>
-  <data name="&gt;&gt;combo_lang.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>249, 24</value>
-  </data>
-  <data name="combo_lang.Items1" xml:space="preserve">
-    <value>Español</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ar-EG</value>
-  </metadata>
 </root>
