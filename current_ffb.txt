@@ -1,7 +1,6 @@
-2.8.6
-• FFmpeg 6.0
-• Added arabic language.
-• Fixed some issues with .avs scripts (output filename now equals script name, and duration in some cases).
-• Removed many files added warning.
-• Other minor cosmetic fixes and warnings when selecting hardware video encoders: performance can vary depending
-on your ffmpeg.exe version.
+2.8.7
+• New setting to never overwrite an already existing output file.
+• Fixed a filename characters warning wrongly displayed.
+• Fixed some typos and wrong parameters on default presets.
+• Added buttons to add input files and variables to parameters field.
+• Added online presets to add watermarks.
