@@ -63,24 +63,24 @@
     <StartupObject>FFBatch.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>748EB5105C62D955A2C59590A0C2B66578B9987D</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>69699E5BEB77B4BE56886122000CE5DAC3FFE261</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Cert_FFbatch_2022.pfx</ManifestKeyFile>
+    <ManifestKeyFile>FFBatch_2023_Key.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>FFBatch_2023_Key.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup />
   <PropertyGroup />
   <PropertyGroup />
@@ -1053,6 +1053,7 @@
     <EmbeddedResource Include="Properties\Strings.pt-BR.resx" />
     <EmbeddedResource Include="Properties\Strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings3.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Strings.zh-Hans.resx" />
     <EmbeddedResource Include="Properties\Strings2.ar-EG.resx" />
@@ -1064,7 +1065,10 @@
       <LastGenOutput>Strings2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Strings2.zh-Hans.resx" />
+    <None Include="FFBatch_2023_Key.pfx" />
     <None Include="FFBatch_Converter.ruleset" />
+    <None Include="FFBatch_Converter_2023.pfx" />
+    <None Include="FFBatch_Converter_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
