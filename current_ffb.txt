@@ -1,6 +1,6 @@
-﻿2.8.7
-• New setting to never overwrite an already existing output file.
-• Fixed a filename characters warning wrongly displayed.
-• Fixed some typos and wrong parameters on default presets.
-• Added buttons to add input files and variables to parameters field.
-• Added online presets to add watermarks.
+﻿2.8.8
+• New experimental setting for automatic folder monitoring and encoding (Sequential encoding only).
+• Fixed rare unintended source overwriting with matching lower/upper case extensions being considered different files.
+• Fixed some bugs refreshing custom columns.
+• Fixed an error in video preview copying/saving frames.
+• Fixed some missing translations.
