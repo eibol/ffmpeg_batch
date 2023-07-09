@@ -23,6 +23,8 @@ namespace FFBatch
             InitializeComponent();
         }
 
+        public String main_out_path = String.Empty;
+        public Boolean monitor_folder = false;
         public Boolean no_dest_overwrite = false;
         public Boolean change_ff_ver = false;
         public Boolean keep_dates = false;
@@ -140,6 +142,22 @@ namespace FFBatch
                 MessageBox.Show(Properties.Strings2.sunset1);
                 return;
             }
+            if (txt_monitor.Text == main_out_path)
+            {               
+                    MessageBox.Show(Properties.Strings2.mon_path_equal);
+                    return;
+            }
+
+            if (chk_monitor.Checked == true && !Directory.Exists(txt_monitor.Text))
+            {
+                if (txt_monitor.Text.Length == 0)
+                {
+                    MessageBox.Show(Properties.Strings.path_empty);
+                }
+                else MessageBox.Show(Properties.Strings.path_not);                
+
+                return;
+            }
 
             cancel = false;
             Properties.Settings.Default.Save();
@@ -162,7 +180,7 @@ namespace FFBatch
         }
 
         private void Form3_Load(object sender, EventArgs e)
-        {            
+        {   
             edit_presets = false;
             presets_online = false;
             String app_location = Application.StartupPath;
@@ -358,6 +376,7 @@ namespace FFBatch
 
             if (Properties.Settings.Default.no_ctrl_p == true) chk_ctrl_p.Checked = true;
             else chk_ctrl_p.Checked = false;
+
             if (Properties.Settings.Default.quick_queue == true) chk_quick_q.Checked = true;
             else chk_quick_q.Checked = false;
 
@@ -967,7 +986,14 @@ namespace FFBatch
 
             if (Properties.Settings.Default.large_th == true) chk_thumb_big.Checked = true;
             else chk_thumb_big.Checked = false;
-                        
+            
+            txt_monitor.Text = Properties.Settings.Default.fd_monitored;
+            
+            if (Properties.Settings.Default.monitor_fd == true) chk_monitor.Checked = true;
+            else chk_monitor.Checked = false;
+            chk_w_subs.Checked = Properties.Settings.Default.mon_fd_subs;            
+            n_monitor.Value = Properties.Settings.Default.mon_int;
+
         }
 
         private void boton_load_bck_Click(object sender, System.EventArgs e)
@@ -1164,6 +1190,9 @@ namespace FFBatch
 
         private void btn_defaults_Click(object sender, EventArgs e)
         {
+            chk_ignore_enc.Checked = false;
+            chk_monitor.Checked = false;
+            chk_w_subs.Checked = false;
             chk_filter_zero.Checked = false;
             chk_delete_one.CheckState = CheckState.Checked;
             chk_delete_def.CheckState = CheckState.Unchecked;
@@ -1771,6 +1800,41 @@ namespace FFBatch
         {
             if (chk_no_overw.CheckState == CheckState.Checked) no_dest_overwrite = true;
             else no_dest_overwrite = false;            
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_monitor.CheckState == CheckState.Checked)
+            {
+                monitor_folder = true;
+                txt_monitor.Enabled = true;
+                btn_br_mon.Enabled = true;
+                chk_w_subs.Enabled = true;
+                n_monitor.Enabled = true;
+                chk_warn_successful.Checked = true;
+                chk_ignore_enc.Checked = true;
+                chk_non0.Checked = true;
+                chk_no_overw.Checked = true;
+            }
+            else
+            {
+                monitor_folder = false;
+                txt_monitor.Enabled = false;
+                btn_br_mon.Enabled = false;
+                chk_w_subs.Enabled = false;
+                n_monitor.Enabled = false;
+            }
+        }
+
+        private void btn_br_mon_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog fdd = new FolderBrowserDialog();
+            fdd.RootFolder = Environment.SpecialFolder.Desktop;
+            if (fdd.ShowDialog() == DialogResult.OK)
+            {
+                txt_monitor.Text = fdd.SelectedPath;
+            }
+
         }
     }
 }

@@ -534,6 +534,8 @@
             this.BG_Add_col_cust_p = new System.ComponentModel.BackgroundWorker();
             this.timer_battery = new System.Windows.Forms.Timer(this.components);
             this.pic_batt = new System.Windows.Forms.PictureBox();
+            this.timer_watch = new System.Windows.Forms.Timer(this.components);
+            this.pic_mon = new System.Windows.Forms.PictureBox();
             this.ctm1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_add_variable)).BeginInit();
@@ -597,6 +599,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_reading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_dark)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_batt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_mon)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_add_files
@@ -661,6 +664,7 @@
             // txt_format
             // 
             this.txt_format.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_format.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             resources.ApplyResources(this.txt_format, "txt_format");
             this.txt_format.Name = "txt_format";
             this.txt_format.Click += new System.EventHandler(this.textBox2_Click);
@@ -4554,12 +4558,24 @@
             this.pic_batt.Name = "pic_batt";
             this.pic_batt.TabStop = false;
             // 
+            // timer_watch
+            // 
+            this.timer_watch.Interval = 10000;
+            this.timer_watch.Tick += new System.EventHandler(this.timer_watch_Tick);
+            // 
+            // pic_mon
+            // 
+            resources.ApplyResources(this.pic_mon, "pic_mon");
+            this.pic_mon.Name = "pic_mon";
+            this.pic_mon.TabStop = false;
+            // 
             // Form1
             // 
             this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Controls.Add(this.pic_mon);
             this.Controls.Add(this.btn_wizard);
             this.Controls.Add(this.pic_batt);
             this.Controls.Add(this.lbl_updates);
@@ -4706,6 +4722,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_reading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_dark)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_batt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_mon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5209,6 +5226,8 @@
         public System.Windows.Forms.Button change_ff;
         private System.Windows.Forms.PictureBox pic_file_add_input;
         private System.Windows.Forms.PictureBox pic_add_variable;
+        private System.Windows.Forms.Timer timer_watch;
+        private System.Windows.Forms.PictureBox pic_mon;
     }
 }
 
