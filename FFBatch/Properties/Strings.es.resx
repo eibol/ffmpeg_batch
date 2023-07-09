@@ -2623,4 +2623,7 @@
   <data name="Paste_any_URL" xml:space="preserve">
     <value>Pegar enlace</value>
   </data>
+  <data name="mon_ing" xml:space="preserve">
+    <value>Monitorizando cambios en: </value>
+  </data>
 </root>

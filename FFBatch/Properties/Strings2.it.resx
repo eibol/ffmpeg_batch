@@ -897,4 +897,13 @@
   <data name="add_variable" xml:space="preserve">
     <value>Aggiungi variabile ai parametri</value>
   </data>
+  <data name="mon_no_rel" xml:space="preserve">
+    <value>Non è possibile utilizzare un percorso principale relativo con il monitoraggio delle sottocartelle, utilizzare un percorso assoluto.</value>
+  </data>
+  <data name="mon_path_equal" xml:space="preserve">
+    <value>La cartella monitorata è la stessa della cartella di output principale, selezionare un altro percorso di destinazione o utilizzare un percorso relativo.</value>
+  </data>
+  <data name="mon_ing" xml:space="preserve">
+    <value>Cartella di monitoraggio</value>
+  </data>
 </root>

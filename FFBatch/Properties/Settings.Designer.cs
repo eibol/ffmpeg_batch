@@ -12,7 +12,7 @@ namespace FFBatch.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.5.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.6.0.0")]
     public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -321,6 +321,78 @@ namespace FFBatch.Properties {
             set {
                 this["bat_level"] = value;
             }
-        }        
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool monitor_fd {
+            get {
+                return ((bool)(this["monitor_fd"]));
+            }
+            set {
+                this["monitor_fd"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string fd_monitored {
+            get {
+                return ((string)(this["fd_monitored"]));
+            }
+            set {
+                this["fd_monitored"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("60")]
+        public decimal mon_int {
+            get {
+                return ((decimal)(this["mon_int"]));
+            }
+            set {
+                this["mon_int"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool no_dest_overw {
+            get {
+                return ((bool)(this["no_dest_overw"]));
+            }
+            set {
+                this["no_dest_overw"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool mon_fd_subs {
+            get {
+                return ((bool)(this["mon_fd_subs"]));
+            }
+            set {
+                this["mon_fd_subs"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ignore_alr_enc {
+            get {
+                return ((bool)(this["ignore_alr_enc"]));
+            }
+            set {
+                this["ignore_alr_enc"] = value;
+            }
+        }
     }
 }

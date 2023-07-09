@@ -888,4 +888,13 @@
   <data name="add_variable" xml:space="preserve">
     <value>Adicionar variável aos parâmetros</value>
   </data>
+  <data name="mon_no_rel" xml:space="preserve">
+    <value>Um caminho relativo não pode ser usado ao monitorar subpastas, use um caminho absoluto ou desative as subpastas.</value>
+  </data>
+  <data name="mon_path_equal" xml:space="preserve">
+    <value>A pasta monitorada é a mesma que a pasta de saída principal, selecione outro caminho de destino ou use um caminho relativo.</value>
+  </data>
+  <data name="mon_ing" xml:space="preserve">
+    <value>Pasta de monitoramento</value>
+  </data>
 </root>

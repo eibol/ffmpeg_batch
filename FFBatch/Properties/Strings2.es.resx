@@ -885,4 +885,13 @@
   <data name="add_variable" xml:space="preserve">
     <value>Agregar variable a los parámetros</value>
   </data>
+  <data name="mon_no_rel" xml:space="preserve">
+    <value>Una ruta relativa no se puede usar monitorizando subcarpetas, por favor utilice una ruta absoluta, o deshabilite las subcarpetas.</value>
+  </data>
+  <data name="mon_path_equal" xml:space="preserve">
+    <value>La carpeta monitorizada es la misma que la carpeta pirncipal de salida, por favor seleccione otra ruta de destino, o utilice una ruta relativa.</value>
+  </data>
+  <data name="mon_ing" xml:space="preserve">
+    <value>Monitorizando carpeta</value>
+  </data>
 </root>

@@ -447,6 +447,15 @@
   <data name="missing_f" xml:space="preserve">
     <value>丢失文件</value>
   </data>
+  <data name="mon_ing" xml:space="preserve">
+    <value>监控文件夹</value>
+  </data>
+  <data name="mon_no_rel" xml:space="preserve">
+    <value>监控子文件夹时不能使用相对路径，请使用绝对路径，或禁用子文件夹。</value>
+  </data>
+  <data name="mon_path_equal" xml:space="preserve">
+    <value>监控的文件夹与主输出文件夹相同，请选择其他目标路径，或使用相对路径。</value>
+  </data>
   <data name="multiple_inst" xml:space="preserve">
     <value>另一个应用程序实例已在运行。 多个实例可能会导致意外行为。 继续？</value>
   </data>

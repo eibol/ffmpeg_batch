@@ -1096,6 +1096,33 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Monitoring folder.
+        /// </summary>
+        internal static string mon_ing {
+            get {
+                return ResourceManager.GetString("mon_ing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a A relative main path cannot be used with subfolders monitoring, please use an absolute path..
+        /// </summary>
+        internal static string mon_no_rel {
+            get {
+                return ResourceManager.GetString("mon_no_rel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Monitored folder and main output path are the same. Please select another destination path at main tab, or use a relative output path..
+        /// </summary>
+        internal static string mon_path_equal {
+            get {
+                return ResourceManager.GetString("mon_path_equal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Please drop only one file..
         /// </summary>
         internal static string multi_drop {
