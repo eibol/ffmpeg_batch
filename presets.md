@@ -22,4 +22,4 @@ the use of variables like %1 or %fn). Due to table formatting, if a preset fails
 | Watermark at bottom right corner (replace Test.png, tweak -20 parameters) | | -i "C:\\Users\\Test\\Videos\\Test.png" -c:v libx264 -crf 23 -preset fast -filter_complex "overlay=x=(main_w-overlay_w)-20:y=(main_h-overlay_h)-20" -c:a copy | mp4 |
 | Watermark resized at bottom left corner (replace Test.png, tweak parameters) | | -i "C:\\Users\\Test\\Videos\\Test.png"  -c:v libx264 -crf 23 -preset ultrafast -filter_complex "[1:v]scale=150:-2[v1];[0:v][v1]overlay=10:main_h-overlay_h-10[outv]" -map "[outv]" -c:a copy | mp4 |
 | Watermark resized at bottom right corner (replace Test.png, tweak parameters) | | -i "C:\\Users\\Test\\Videos\\Test.png" -c:v libx264 -crf 23 -preset ultrafast -filter_complex "[1:v]scale=150:-2[v1];[0:v][v1]overlay=x=(main_w-overlay_w)-20:y=(main_h-overlay_h)-20[outv]" -map "[outv]" -c:a copy -c:a copy | mp4 |
-
+| Trailer from input video, 1 second sequence every 13 seconds) | | -vf select='lt(mod(t,13),1)',setpts=N/FRAME_RATE/TB -af aselect='lt(mod(t,13),1)',asetpts=N/SR/TB -c:v libx264 -preset fast -crf 23 -c:a aac -ab 128K | mp4 |
