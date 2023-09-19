@@ -1,6 +1,18 @@
-2.8.8
-• New experimental setting for automatic folder monitoring and encoding (Sequential encoding only).
-• Fixed rare unintended source overwriting with matching lower/upper case extensions being considered different files.
-• Fixed some bugs refreshing custom columns.
-• Fixed an error in video preview copying/saving frames.
-• Fixed some missing translations.
+﻿3.0.0
+• New trailer (preview clip) wizard.
+• New variable and wizard [[split_chapters]] to split files using input chapter markers or manual timestamps sheet.
+• New variable: file bitrate (%fbitr).
+• New variable: target output size [[target_size=100MB-audio_bit_rate] (automatic video bitrate calculation).
+• Variables sent to console and copied to clipboard for testing purposes.
+• Improved Two pass/Target size wizard: increased target file size to 10 GB.
+• New custom selectable column from other mediainfo fields.
+• New file types exclusion list.
+• New feature to quick select a preset for a selection of list items (Encoding parameters column).
+• Fixed bugs:
+• Refreshing custom columns in some use cases.
+• Changing language caused file lists columns being cleared.
+• Wrong %fd variable parsing.
+• Some variables were not available in pre-input field.
+• Wrong estimated output file size for two pass wizard.
+• Some settings not enabled after queue encoding.
+• Other minor bugfixes and translation fixes.
