@@ -63,10 +63,10 @@
     <StartupObject>FFBatch.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>748EB5105C62D955A2C59590A0C2B66578B9987D</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>69699E5BEB77B4BE56886122000CE5DAC3FFE261</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>Cert_FFbatch_2022.pfx</ManifestKeyFile>
+    <ManifestKeyFile>FFBatch_2023_Key.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -78,9 +78,9 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>
-    </AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>FFBatch_2023_Key.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup />
   <PropertyGroup />
   <PropertyGroup />
@@ -308,6 +308,12 @@
     <Compile Include="Form31.Designer.cs">
       <DependentUpon>Form31.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form32.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form32.Designer.cs">
+      <DependentUpon>Form32.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form4.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -356,11 +362,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Strings.es1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Strings.es.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Strings2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -408,7 +409,13 @@
     <EmbeddedResource Include="AeroWizard3.ar-EG.resx">
       <DependentUpon>AeroWizard3.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AeroWizard3.ar.resx">
+      <DependentUpon>AeroWizard3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AeroWizard3.es.resx">
+      <DependentUpon>AeroWizard3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AeroWizard3.ibb.resx">
       <DependentUpon>AeroWizard3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AeroWizard3.it.resx">
@@ -623,6 +630,9 @@
       <DependentUpon>Form16.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form17.ar-EG.resx">
+      <DependentUpon>Form17.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form17.bin.resx">
       <DependentUpon>Form17.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form18.ar-EG.resx">
@@ -942,8 +952,32 @@
     <EmbeddedResource Include="Form31.resx">
       <DependentUpon>Form31.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form31.zh-CHS.resx">
+      <DependentUpon>Form31.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form31.zh-Hans.resx">
       <DependentUpon>Form31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form32.ar-AE.resx">
+      <DependentUpon>Form32.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form32.ar-EG.resx">
+      <DependentUpon>Form32.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form32.es.resx">
+      <DependentUpon>Form32.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form32.it.resx">
+      <DependentUpon>Form32.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form32.pt-BR.resx">
+      <DependentUpon>Form32.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form32.resx">
+      <DependentUpon>Form32.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form32.zh-Hans.resx">
+      <DependentUpon>Form32.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form4.ar-EG.resx">
       <DependentUpon>Form4.cs</DependentUpon>
@@ -1045,14 +1079,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Strings.ar-EG.resx" />
     <EmbeddedResource Include="Properties\Strings.es.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings.es1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Strings.it.resx" />
     <EmbeddedResource Include="Properties\Strings.pt-BR.resx" />
     <EmbeddedResource Include="Properties\Strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings3.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Strings.zh-Hans.resx" />
     <EmbeddedResource Include="Properties\Strings2.ar-EG.resx" />
@@ -1064,6 +1096,7 @@
       <LastGenOutput>Strings2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Strings2.zh-Hans.resx" />
+    <None Include="FFBatch_2023_Key.pfx" />
     <None Include="FFBatch_Converter.ruleset" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
