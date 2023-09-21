@@ -17,6 +17,7 @@ namespace FFBatch
             InitializeComponent();
         }
 
+        public Boolean is_target = false;
         private String port_path = System.IO.Path.Combine(Application.StartupPath, "settings") + "\\";
         private Boolean is_portable = false;
         private String saved_pres1 = "";
@@ -71,6 +72,9 @@ namespace FFBatch
 
         private void cb_w_presets_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txt_pr_1.Clear();
+            txt_ext_1.Clear();
+
             if (saved_pres.Length > 0)
             {
                 cb_w_presets.Text = FFBatch.Properties.Strings.last_pr;
@@ -211,6 +215,11 @@ namespace FFBatch
                     txt_pr_1.Text = saved_pres;
                     txt_ext_1.Text = saved_ext;
                 }
+                if (is_target == true)
+                {
+                    txt_pr_1.Clear();
+                    txt_ext_1.Text = Path.GetExtension(lv1_item).Remove(0,1);
+                }
             }
         }
 
@@ -234,13 +243,17 @@ namespace FFBatch
             txt_ext_end_2.Text = String.Empty;
             txt_ext_end_2.Text = txt_ext_1.Text;
 
-            if (chk_target_size.Checked)
+            if (is_target == true)
             {
                 lbl_enabled_target.Text = Properties.Strings2.en_target_size + " " + n_target_size.Value.ToString() + " MB";
                 txt_pr_two_end.Enabled = false;
                 txt_pr_end_2.Enabled = false;
                 pic_status.Visible = false;
                 btn_start_multi.Enabled = true;
+                this.Cursor = Cursors.WaitCursor;
+                wizard3.Pages[0].AllowNext = false;
+                e.Cancel = true;
+                BG_Try_1.RunWorkerAsync();
                 return;
             }
 
@@ -413,7 +426,7 @@ namespace FFBatch
 
         private void txt_pr_1_TextChanged(object sender, EventArgs e)
         {
-            if (chk_target_size.Checked) return;
+            if (is_target == true) return;
             first_page_change = true;
             if (!txt_pr_1.Text.ToLower().Contains("-b:v") && !txt_pr_1.Text.ToLower().Contains("-vb"))
             {
@@ -547,7 +560,7 @@ namespace FFBatch
 
                 this.Invoke(new MethodInvoker(delegate
                 {
-                    if (chk_target_size.Checked) consola_pre.StartInfo.Arguments = " -y -i " + '\u0022' + file_prueba + '\u0022' + " -t 00:00:0.100 " + "-c:v " + combo_codec_t.SelectedItem.ToString() + " " + "-b:v 1000K " + "-c:a " + combo_audio_target.SelectedItem.ToString() + " -b:a " + num_aud_target.Value.ToString() + "K " + txt_pr_1.Text + " " + '\u0022' + tempfile + "." + txt_ext_end_2.Text + '\u0022';
+                    if (is_target == true) consola_pre.StartInfo.Arguments = " -y -i " + '\u0022' + file_prueba + '\u0022' + " -t 00:00:0.100 " + "-c:v " + combo_codec_t.SelectedItem.ToString() + " " + "-b:v 1000K " + "-c:a " + combo_audio_target.SelectedItem.ToString() + " -b:a " + num_aud_target.Value.ToString() + "K " + txt_pr_1.Text + " " + '\u0022' + tempfile + "." + txt_ext_end_2.Text + '\u0022';
                     else consola_pre.StartInfo.Arguments = " -y -i " + '\u0022' + file_prueba + '\u0022' + " -t 00:00:0.100 " + txt_pr_two_end.Text + " -passlogfile " + '\u0022' + templog + '\u0022' + " " + ext_output;
                     //MessageBox.Show(consola_pre.StartInfo.Arguments);
                 }));
@@ -667,7 +680,7 @@ namespace FFBatch
         private void BG_Try_Two_Final_DoWork(object sender, DoWorkEventArgs e)
         {
             tried_ok = false;
-            if (chk_target_size.Checked)
+            if (is_target == true)
             {
                 tried_ok = true;
                 this.InvokeEx(f => this.Cursor = Cursors.Arrow);
@@ -956,10 +969,22 @@ namespace FFBatch
             ctrl.ResumeLayout(false);
         }
 
-        private void chk_target_size_CheckedChanged(object sender, EventArgs e)
+        private void wizardPage1_Commit_1(object sender, AeroWizard.WizardPageConfirmEventArgs e)
         {
-            n_target_size.Enabled = chk_target_size.Checked;
-            if (chk_target_size.Checked)
+            if (radio_target.Checked) {
+                is_target = true;
+                gr_targ.Visible = true;
+                combo_size.SelectedIndex = 0;
+            } 
+            else { 
+                is_target = false;
+                gr_targ.Visible = false;                
+            } 
+        }
+
+        private void wz_mpresets_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
+        {
+            if (is_target == true)
             {
                 chk_one_pass.Visible = true;
                 chk_one_pass.Enabled = true;
@@ -967,14 +992,18 @@ namespace FFBatch
                 combo_codec_t.SelectedIndex = 0;
                 profile_target.Enabled = true;
                 profile_target.SelectedIndex = 2;
-                cb_w_presets.Enabled = false;
-                txt_pr_1.Text = "";
+                txt_pr_1.Clear();
+                txt_ext_1.Clear();
+                txt_ext_1.Text = Path.GetExtension(lv1_item).Remove(0, 1);
+                cb_w_presets.Enabled = false;             
                 combo_audio_target.Visible = true;
                 combo_audio_target.SelectedIndex = 0;
                 num_aud_target.Visible = true;
-                label14.Visible = true; label16.Visible = true;
+                label14.Visible = true; lbl_bitrate.Visible = true;
                 label10.Visible = false;
-                lbl_advise_1.Visible = false; pic_warn_bitrate.Visible = false;
+                lbl_advise_1.Visible = false;
+                pic_warn_bitrate.Visible = false;
+                label9.Visible = false;             
             }
             else
             {
@@ -986,13 +1015,35 @@ namespace FFBatch
                 cb_w_presets.Enabled = true;
                 combo_audio_target.Visible = false;
                 num_aud_target.Visible = false;
-                label14.Visible = false; label16.Visible = false;
-                cb_w_presets.SelectedIndex = 1;
-                cb_w_presets.SelectedIndex = 0;
+                label14.Visible = false; lbl_bitrate.Visible = false;               
                 label10.Visible = true;
                 lbl_advise_1.Visible = true;
-                pic_warn_bitrate.Visible = false;
+                pic_warn_bitrate.Visible = true;
+                label9.Visible = true;
             }
+        }
+
+        private void combo_size_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (combo_size.SelectedIndex == 0)
+            {
+                n_target_size.Maximum = 1000;
+                n_target_size.Minimum = 1;
+                n_target_size.Increment = 10;
+
+            }
+            else
+            {
+                n_target_size.Value = 1;
+                n_target_size.Minimum = 1;
+                n_target_size.Maximum = 10;
+                n_target_size.Increment = 1;
+            }
+        }
+
+        private void n_target_size_ValueChanged(object sender, EventArgs e)
+        {
+            if (n_target_size.Value == 11) n_target_size.Value = 10;
         }
     }
 }

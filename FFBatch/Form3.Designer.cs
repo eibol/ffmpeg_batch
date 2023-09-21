@@ -35,7 +35,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.n_bat_l = new System.Windows.Forms.NumericUpDown();
             this.chk_bat_level = new System.Windows.Forms.CheckBox();
-            this.pic_bat = new System.Windows.Forms.PictureBox();
             this.chk_battery = new System.Windows.Forms.CheckBox();
             this.chk_filter_zero = new System.Windows.Forms.CheckBox();
             this.chk_dates = new System.Windows.Forms.CheckBox();
@@ -53,6 +52,7 @@
             this.check_open_output = new System.Windows.Forms.CheckBox();
             this.check_recreate = new System.Windows.Forms.CheckBox();
             this.chk_suffix = new System.Windows.Forms.CheckBox();
+            this.pic_bat = new System.Windows.Forms.PictureBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btn_save = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -117,6 +117,16 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_add_sec = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.btn_excl = new System.Windows.Forms.Button();
+            this.chk_w_subs = new System.Windows.Forms.CheckBox();
+            this.pic_mon = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.n_monitor = new System.Windows.Forms.NumericUpDown();
+            this.txt_monitor = new System.Windows.Forms.TextBox();
+            this.btn_br_mon = new System.Windows.Forms.Button();
+            this.chk_monitor = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.n_bat_l)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_bat)).BeginInit();
@@ -132,6 +142,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_ver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ff_ok)).BeginInit();
             this.groupBox4.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_mon)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.n_monitor)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -141,7 +154,6 @@
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.n_bat_l);
             this.panel2.Controls.Add(this.chk_bat_level);
-            this.panel2.Controls.Add(this.pic_bat);
             this.panel2.Controls.Add(this.chk_battery);
             this.panel2.Controls.Add(this.chk_filter_zero);
             this.panel2.Controls.Add(this.chk_dates);
@@ -200,12 +212,6 @@
             resources.ApplyResources(this.chk_bat_level, "chk_bat_level");
             this.chk_bat_level.Name = "chk_bat_level";
             this.chk_bat_level.UseVisualStyleBackColor = true;
-            // 
-            // pic_bat
-            // 
-            resources.ApplyResources(this.pic_bat, "pic_bat");
-            this.pic_bat.Name = "pic_bat";
-            this.pic_bat.TabStop = false;
             // 
             // chk_battery
             // 
@@ -331,6 +337,12 @@
             this.chk_suffix.Name = "chk_suffix";
             this.chk_suffix.UseVisualStyleBackColor = true;
             this.chk_suffix.CheckedChanged += new System.EventHandler(this.chk_suffix_CheckedChanged);
+            // 
+            // pic_bat
+            // 
+            resources.ApplyResources(this.pic_bat, "pic_bat");
+            this.pic_bat.Name = "pic_bat";
+            this.pic_bat.TabStop = false;
             // 
             // checkBox1
             // 
@@ -838,12 +850,102 @@
             this.btn_add_sec.UseVisualStyleBackColor = true;
             this.btn_add_sec.Click += new System.EventHandler(this.btn_add_sec_Click);
             // 
+            // groupBox6
+            // 
+            resources.ApplyResources(this.groupBox6, "groupBox6");
+            this.groupBox6.Controls.Add(this.btn_excl);
+            this.groupBox6.Controls.Add(this.chk_w_subs);
+            this.groupBox6.Controls.Add(this.pic_mon);
+            this.groupBox6.Controls.Add(this.label10);
+            this.groupBox6.Controls.Add(this.label9);
+            this.groupBox6.Controls.Add(this.pic_bat);
+            this.groupBox6.Controls.Add(this.n_monitor);
+            this.groupBox6.Controls.Add(this.txt_monitor);
+            this.groupBox6.Controls.Add(this.btn_br_mon);
+            this.groupBox6.Controls.Add(this.chk_monitor);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.TabStop = false;
+            // 
+            // btn_excl
+            // 
+            resources.ApplyResources(this.btn_excl, "btn_excl");
+            this.btn_excl.FlatAppearance.BorderSize = 0;
+            this.btn_excl.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_excl.Name = "btn_excl";
+            this.btn_excl.UseVisualStyleBackColor = true;
+            this.btn_excl.Click += new System.EventHandler(this.btn_excl_Click);
+            // 
+            // chk_w_subs
+            // 
+            resources.ApplyResources(this.chk_w_subs, "chk_w_subs");
+            this.chk_w_subs.Name = "chk_w_subs";
+            this.chk_w_subs.UseVisualStyleBackColor = true;
+            // 
+            // pic_mon
+            // 
+            resources.ApplyResources(this.pic_mon, "pic_mon");
+            this.pic_mon.Name = "pic_mon";
+            this.pic_mon.TabStop = false;
+            // 
+            // label10
+            // 
+            resources.ApplyResources(this.label10, "label10");
+            this.label10.Name = "label10";
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.Name = "label9";
+            // 
+            // n_monitor
+            // 
+            resources.ApplyResources(this.n_monitor, "n_monitor");
+            this.n_monitor.Maximum = new decimal(new int[] {
+            3600,
+            0,
+            0,
+            0});
+            this.n_monitor.Minimum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.n_monitor.Name = "n_monitor";
+            this.n_monitor.Value = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            // 
+            // txt_monitor
+            // 
+            resources.ApplyResources(this.txt_monitor, "txt_monitor");
+            this.txt_monitor.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_monitor.Name = "txt_monitor";
+            // 
+            // btn_br_mon
+            // 
+            resources.ApplyResources(this.btn_br_mon, "btn_br_mon");
+            this.btn_br_mon.FlatAppearance.BorderSize = 0;
+            this.btn_br_mon.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btn_br_mon.Name = "btn_br_mon";
+            this.btn_br_mon.UseVisualStyleBackColor = true;
+            this.btn_br_mon.Click += new System.EventHandler(this.btn_br_mon_Click);
+            // 
+            // chk_monitor
+            // 
+            resources.ApplyResources(this.chk_monitor, "chk_monitor");
+            this.chk_monitor.Name = "chk_monitor";
+            this.chk_monitor.UseVisualStyleBackColor = true;
+            this.chk_monitor.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            // 
             // Form3
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.CancelButton = this.btn_cancel;
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_dark);
             this.Controls.Add(this.pic_night);
@@ -887,6 +989,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_ff_ok)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_mon)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.n_monitor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -979,6 +1085,16 @@
         private System.Windows.Forms.CheckBox chk_dates;
         private System.Windows.Forms.CheckBox chk_ignore_enc;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox chk_no_overw;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button btn_br_mon;
+        public System.Windows.Forms.TextBox txt_monitor;
+        public System.Windows.Forms.CheckBox chk_monitor;
+        public System.Windows.Forms.CheckBox chk_no_overw;
+        private System.Windows.Forms.Label label9;
+        public System.Windows.Forms.NumericUpDown n_monitor;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.PictureBox pic_mon;
+        public System.Windows.Forms.CheckBox chk_w_subs;
+        private System.Windows.Forms.Button btn_excl;
     }
 }

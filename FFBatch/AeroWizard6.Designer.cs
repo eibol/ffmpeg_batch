@@ -62,6 +62,15 @@
             this.combo_Seconds = new System.Windows.Forms.ComboBox();
             this.radio_time = new System.Windows.Forms.RadioButton();
             this.wiz_split = new AeroWizard.WizardControl();
+            this.wz0 = new AeroWizard.WizardPage();
+            this.radio_chapters = new System.Windows.Forms.RadioButton();
+            this.radio_time_size = new System.Windows.Forms.RadioButton();
+            this.wz01 = new AeroWizard.WizardPage();
+            this.txt_chaps = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btn_load_chap = new System.Windows.Forms.Button();
+            this.radio_chap_man = new System.Windows.Forms.RadioButton();
+            this.radio_by_chap = new System.Windows.Forms.RadioButton();
             this.wz_end = new AeroWizard.WizardPage();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -76,8 +85,15 @@
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wiz_split)).BeginInit();
+            this.wz0.SuspendLayout();
+            this.wz01.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.wz_end.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // fd1
+            // 
+            resources.ApplyResources(this.fd1, "fd1");
             // 
             // chk_save_pres
             // 
@@ -101,17 +117,17 @@
             // 
             // btn_start_multi
             // 
+            resources.ApplyResources(this.btn_start_multi, "btn_start_multi");
             this.btn_start_multi.FlatAppearance.BorderSize = 0;
             this.btn_start_multi.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_start_multi, "btn_start_multi");
             this.btn_start_multi.Name = "btn_start_multi";
             this.btn_start_multi.UseVisualStyleBackColor = true;
             // 
             // btn_abort
             // 
+            resources.ApplyResources(this.btn_abort, "btn_abort");
             this.btn_abort.FlatAppearance.BorderSize = 0;
             this.btn_abort.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_abort, "btn_abort");
             this.btn_abort.Name = "btn_abort";
             this.btn_abort.UseVisualStyleBackColor = true;
             // 
@@ -141,6 +157,7 @@
             // 
             // wz_final
             // 
+            resources.ApplyResources(this.wz_final, "wz_final");
             this.wz_final.Controls.Add(this.textBox1);
             this.wz_final.Controls.Add(this.check_name);
             this.wz_final.Controls.Add(this.pic_warn_two);
@@ -153,15 +170,14 @@
             this.wz_final.Controls.Add(this.chk_save_pres);
             this.wz_final.IsFinishPage = true;
             this.wz_final.Name = "wz_final";
-            resources.ApplyResources(this.wz_final, "wz_final");
             // 
             // wz1
             // 
+            resources.ApplyResources(this.wz1, "wz1");
             this.wz1.Controls.Add(this.label10);
             this.wz1.Controls.Add(this.groupBox2);
             this.wz1.Controls.Add(this.groupBox1);
             this.wz1.Name = "wz1";
-            resources.ApplyResources(this.wz1, "wz1");
             this.wz1.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz1_Commit);
             // 
             // label10
@@ -171,6 +187,7 @@
             // 
             // groupBox2
             // 
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.txt_path);
             this.groupBox2.Controls.Add(this.txt_naming);
             this.groupBox2.Controls.Add(this.label3);
@@ -181,14 +198,13 @@
             this.groupBox2.Controls.Add(this.btn_browse);
             this.groupBox2.Controls.Add(this.radio_absolute);
             this.groupBox2.Controls.Add(this.radio_relative);
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
             // txt_path
             // 
-            this.txt_path.BackColor = System.Drawing.SystemColors.InactiveBorder;
             resources.ApplyResources(this.txt_path, "txt_path");
+            this.txt_path.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_path.Name = "txt_path";
             this.txt_path.ReadOnly = true;
             // 
@@ -213,13 +229,14 @@
             // 
             // txt_path_main
             // 
-            this.txt_path_main.BackColor = System.Drawing.SystemColors.InactiveBorder;
             resources.ApplyResources(this.txt_path_main, "txt_path_main");
+            this.txt_path_main.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_path_main.Name = "txt_path_main";
             this.txt_path_main.TextChanged += new System.EventHandler(this.txt_path_main_TextChanged);
             // 
             // combo_ext
             // 
+            resources.ApplyResources(this.combo_ext, "combo_ext");
             this.combo_ext.FormattingEnabled = true;
             this.combo_ext.Items.AddRange(new object[] {
             resources.GetString("combo_ext.Items"),
@@ -228,7 +245,6 @@
             resources.GetString("combo_ext.Items3"),
             resources.GetString("combo_ext.Items4"),
             resources.GetString("combo_ext.Items5")});
-            resources.ApplyResources(this.combo_ext, "combo_ext");
             this.combo_ext.Name = "combo_ext";
             // 
             // chk_out_name
@@ -267,13 +283,13 @@
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.combo_size);
             this.groupBox1.Controls.Add(this.radio_size);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.combo_Seconds);
             this.groupBox1.Controls.Add(this.radio_time);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -284,6 +300,7 @@
             // 
             // combo_size
             // 
+            resources.ApplyResources(this.combo_size, "combo_size");
             this.combo_size.FormattingEnabled = true;
             this.combo_size.Items.AddRange(new object[] {
             resources.GetString("combo_size.Items"),
@@ -293,7 +310,6 @@
             resources.GetString("combo_size.Items4"),
             resources.GetString("combo_size.Items5"),
             resources.GetString("combo_size.Items6")});
-            resources.ApplyResources(this.combo_size, "combo_size");
             this.combo_size.Name = "combo_size";
             this.combo_size.SelectedIndexChanged += new System.EventHandler(this.combo_size_SelectedIndexChanged);
             this.combo_size.TextChanged += new System.EventHandler(this.combo_size_TextChanged);
@@ -313,6 +329,7 @@
             // 
             // combo_Seconds
             // 
+            resources.ApplyResources(this.combo_Seconds, "combo_Seconds");
             this.combo_Seconds.FormattingEnabled = true;
             this.combo_Seconds.Items.AddRange(new object[] {
             resources.GetString("combo_Seconds.Items"),
@@ -322,7 +339,6 @@
             resources.GetString("combo_Seconds.Items4"),
             resources.GetString("combo_Seconds.Items5"),
             resources.GetString("combo_Seconds.Items6")});
-            resources.ApplyResources(this.combo_Seconds, "combo_Seconds");
             this.combo_Seconds.Name = "combo_Seconds";
             this.combo_Seconds.SelectedIndexChanged += new System.EventHandler(this.combo_Seconds_SelectedIndexChanged);
             this.combo_Seconds.TextChanged += new System.EventHandler(this.combo_Seconds_TextChanged);
@@ -339,12 +355,84 @@
             // 
             resources.ApplyResources(this.wiz_split, "wiz_split");
             this.wiz_split.Name = "wiz_split";
+            this.wiz_split.Pages.Add(this.wz0);
+            this.wiz_split.Pages.Add(this.wz01);
             this.wiz_split.Pages.Add(this.wz1);
             this.wiz_split.Pages.Add(this.wz_end);
             this.wiz_split.Cancelling += new System.ComponentModel.CancelEventHandler(this.wizardControl1_Cancelling);
             // 
+            // wz0
+            // 
+            resources.ApplyResources(this.wz0, "wz0");
+            this.wz0.Controls.Add(this.radio_chapters);
+            this.wz0.Controls.Add(this.radio_time_size);
+            this.wz0.Name = "wz0";
+            this.wz0.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz0_Commit);
+            // 
+            // radio_chapters
+            // 
+            resources.ApplyResources(this.radio_chapters, "radio_chapters");
+            this.radio_chapters.Name = "radio_chapters";
+            this.radio_chapters.UseVisualStyleBackColor = true;
+            // 
+            // radio_time_size
+            // 
+            resources.ApplyResources(this.radio_time_size, "radio_time_size");
+            this.radio_time_size.Checked = true;
+            this.radio_time_size.Name = "radio_time_size";
+            this.radio_time_size.TabStop = true;
+            this.radio_time_size.UseVisualStyleBackColor = true;
+            // 
+            // wz01
+            // 
+            resources.ApplyResources(this.wz01, "wz01");
+            this.wz01.Controls.Add(this.txt_chaps);
+            this.wz01.Controls.Add(this.groupBox3);
+            this.wz01.Name = "wz01";
+            this.wz01.NextPage = this.wz_end;
+            this.wz01.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz01_Commit);
+            this.wz01.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz01_Initialize);
+            // 
+            // txt_chaps
+            // 
+            resources.ApplyResources(this.txt_chaps, "txt_chaps");
+            this.txt_chaps.Name = "txt_chaps";
+            // 
+            // groupBox3
+            // 
+            resources.ApplyResources(this.groupBox3, "groupBox3");
+            this.groupBox3.Controls.Add(this.btn_load_chap);
+            this.groupBox3.Controls.Add(this.radio_chap_man);
+            this.groupBox3.Controls.Add(this.radio_by_chap);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.TabStop = false;
+            // 
+            // btn_load_chap
+            // 
+            resources.ApplyResources(this.btn_load_chap, "btn_load_chap");
+            this.btn_load_chap.Name = "btn_load_chap";
+            this.btn_load_chap.UseVisualStyleBackColor = true;
+            this.btn_load_chap.Click += new System.EventHandler(this.btn_load_chap_Click);
+            // 
+            // radio_chap_man
+            // 
+            resources.ApplyResources(this.radio_chap_man, "radio_chap_man");
+            this.radio_chap_man.Name = "radio_chap_man";
+            this.radio_chap_man.UseVisualStyleBackColor = true;
+            this.radio_chap_man.CheckedChanged += new System.EventHandler(this.radio_chap_man_CheckedChanged);
+            // 
+            // radio_by_chap
+            // 
+            resources.ApplyResources(this.radio_by_chap, "radio_by_chap");
+            this.radio_by_chap.Checked = true;
+            this.radio_by_chap.Name = "radio_by_chap";
+            this.radio_by_chap.TabStop = true;
+            this.radio_by_chap.UseVisualStyleBackColor = true;
+            this.radio_by_chap.CheckedChanged += new System.EventHandler(this.radio_by_chap_CheckedChanged);
+            // 
             // wz_end
             // 
+            resources.ApplyResources(this.wz_end, "wz_end");
             this.wz_end.Controls.Add(this.label9);
             this.wz_end.Controls.Add(this.label8);
             this.wz_end.Controls.Add(this.label7);
@@ -354,7 +442,6 @@
             this.wz_end.Controls.Add(this.btn_Start);
             this.wz_end.IsFinishPage = true;
             this.wz_end.Name = "wz_end";
-            resources.ApplyResources(this.wz_end, "wz_end");
             this.wz_end.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz_end_Commit);
             this.wz_end.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz_end_Initialize);
             this.wz_end.Rollback += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz_end_Rollback);
@@ -388,18 +475,18 @@
             // 
             // btn_cancel
             // 
+            resources.ApplyResources(this.btn_cancel, "btn_cancel");
             this.btn_cancel.FlatAppearance.BorderSize = 0;
             this.btn_cancel.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_cancel, "btn_cancel");
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // btn_Start
             // 
+            resources.ApplyResources(this.btn_Start, "btn_Start");
             this.btn_Start.FlatAppearance.BorderSize = 0;
             this.btn_Start.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_Start, "btn_Start");
             this.btn_Start.Name = "btn_Start";
             this.btn_Start.UseVisualStyleBackColor = true;
             this.btn_Start.Click += new System.EventHandler(this.btn_Start_Click);
@@ -422,6 +509,12 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.wiz_split)).EndInit();
+            this.wz0.ResumeLayout(false);
+            this.wz0.PerformLayout();
+            this.wz01.ResumeLayout(false);
+            this.wz01.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.wz_end.ResumeLayout(false);
             this.wz_end.PerformLayout();
             this.ResumeLayout(false);
@@ -470,5 +563,14 @@
         public System.Windows.Forms.ComboBox combo_size;
         private System.Windows.Forms.RadioButton radio_size;
         private System.Windows.Forms.Label label10;
+        private AeroWizard.WizardPage wz0;
+        private System.Windows.Forms.RadioButton radio_chapters;
+        private System.Windows.Forms.RadioButton radio_time_size;
+        private AeroWizard.WizardPage wz01;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.RadioButton radio_by_chap;
+        private System.Windows.Forms.Button btn_load_chap;
+        public System.Windows.Forms.RadioButton radio_chap_man;
+        public System.Windows.Forms.TextBox txt_chaps;
     }
 }

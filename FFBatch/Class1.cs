@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Windows.Forms;
 
 /// <summary>
@@ -101,5 +102,5 @@ public class ListViewColumnSorter : IComparer
             return OrderOfSort;
         }
     }
-
 }
+

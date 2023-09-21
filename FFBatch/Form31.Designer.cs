@@ -37,10 +37,27 @@
             this.radio_fn = new System.Windows.Forms.RadioButton();
             this.radio_fn_ext = new System.Windows.Forms.RadioButton();
             this.radio_fd = new System.Windows.Forms.RadioButton();
-            this.radio_fdur = new System.Windows.Forms.RadioButton();
             this.radio_fdur_1 = new System.Windows.Forms.RadioButton();
             this.btn_copy = new System.Windows.Forms.Button();
             this.txt_pre = new System.Windows.Forms.TextBox();
+            this.radio_nul = new System.Windows.Forms.RadioButton();
+            this.txt_operator_dur = new System.Windows.Forms.TextBox();
+            this.radio_chaps = new System.Windows.Forms.RadioButton();
+            this.radio_bitr = new System.Windows.Forms.RadioButton();
+            this.txt_operator_bitr = new System.Windows.Forms.TextBox();
+            this.radio_target_size = new System.Windows.Forms.RadioButton();
+            this.txt_size = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.num_aud_target = new System.Windows.Forms.NumericUpDown();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            ((System.ComponentModel.ISupportInitialize)(this.num_aud_target)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // btn_add
@@ -106,14 +123,6 @@
             this.radio_fd.UseVisualStyleBackColor = true;
             this.radio_fd.CheckedChanged += new System.EventHandler(this.radio_fd_CheckedChanged);
             // 
-            // radio_fdur
-            // 
-            resources.ApplyResources(this.radio_fdur, "radio_fdur");
-            this.radio_fdur.Name = "radio_fdur";
-            this.radio_fdur.TabStop = true;
-            this.radio_fdur.UseVisualStyleBackColor = true;
-            this.radio_fdur.CheckedChanged += new System.EventHandler(this.radio_fdur_CheckedChanged);
-            // 
             // radio_fdur_1
             // 
             resources.ApplyResources(this.radio_fdur_1, "radio_fdur_1");
@@ -136,28 +145,157 @@
             this.txt_pre.ReadOnly = true;
             this.txt_pre.TextChanged += new System.EventHandler(this.txt_pre_TextChanged);
             // 
+            // radio_nul
+            // 
+            resources.ApplyResources(this.radio_nul, "radio_nul");
+            this.radio_nul.Name = "radio_nul";
+            this.radio_nul.TabStop = true;
+            this.radio_nul.UseVisualStyleBackColor = true;
+            this.radio_nul.CheckedChanged += new System.EventHandler(this.radio_nul_CheckedChanged);
+            // 
+            // txt_operator_dur
+            // 
+            resources.ApplyResources(this.txt_operator_dur, "txt_operator_dur");
+            this.txt_operator_dur.Name = "txt_operator_dur";
+            this.txt_operator_dur.TextChanged += new System.EventHandler(this.txt_operator_TextChanged);
+            // 
+            // radio_chaps
+            // 
+            resources.ApplyResources(this.radio_chaps, "radio_chaps");
+            this.radio_chaps.Name = "radio_chaps";
+            this.radio_chaps.TabStop = true;
+            this.radio_chaps.UseVisualStyleBackColor = true;
+            this.radio_chaps.CheckedChanged += new System.EventHandler(this.radio_chaps_CheckedChanged);
+            // 
+            // radio_bitr
+            // 
+            resources.ApplyResources(this.radio_bitr, "radio_bitr");
+            this.radio_bitr.Name = "radio_bitr";
+            this.radio_bitr.TabStop = true;
+            this.radio_bitr.UseVisualStyleBackColor = true;
+            this.radio_bitr.CheckedChanged += new System.EventHandler(this.radio_bitr_CheckedChanged);
+            // 
+            // txt_operator_bitr
+            // 
+            resources.ApplyResources(this.txt_operator_bitr, "txt_operator_bitr");
+            this.txt_operator_bitr.Name = "txt_operator_bitr";
+            this.txt_operator_bitr.TextChanged += new System.EventHandler(this.txt_operator_bitr_TextChanged);
+            // 
+            // radio_target_size
+            // 
+            resources.ApplyResources(this.radio_target_size, "radio_target_size");
+            this.radio_target_size.Name = "radio_target_size";
+            this.radio_target_size.TabStop = true;
+            this.radio_target_size.UseVisualStyleBackColor = true;
+            this.radio_target_size.CheckedChanged += new System.EventHandler(this.radio_target_size_CheckedChanged);
+            // 
+            // txt_size
+            // 
+            resources.ApplyResources(this.txt_size, "txt_size");
+            this.txt_size.Name = "txt_size";
+            this.txt_size.TextChanged += new System.EventHandler(this.txt_size_TextChanged);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // label16
+            // 
+            resources.ApplyResources(this.label16, "label16");
+            this.label16.Name = "label16";
+            // 
+            // label15
+            // 
+            resources.ApplyResources(this.label15, "label15");
+            this.label15.Name = "label15";
+            // 
+            // num_aud_target
+            // 
+            resources.ApplyResources(this.num_aud_target, "num_aud_target");
+            this.num_aud_target.Increment = new decimal(new int[] {
+            32,
+            0,
+            0,
+            0});
+            this.num_aud_target.Maximum = new decimal(new int[] {
+            512,
+            0,
+            0,
+            0});
+            this.num_aud_target.Minimum = new decimal(new int[] {
+            32,
+            0,
+            0,
+            0});
+            this.num_aud_target.Name = "num_aud_target";
+            this.num_aud_target.Value = new decimal(new int[] {
+            128,
+            0,
+            0,
+            0});
+            this.num_aud_target.ValueChanged += new System.EventHandler(this.num_aud_target_ValueChanged);
+            // 
+            // groupBox1
+            // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.radio_fn);
+            this.groupBox1.Controls.Add(this.radio_inputfn);
+            this.groupBox1.Controls.Add(this.radio_input_fn_noext);
+            this.groupBox1.Controls.Add(this.radio_fn_path);
+            this.groupBox1.Controls.Add(this.radio_fn_ext);
+            this.groupBox1.Controls.Add(this.radio_fd);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Controls.Add(this.radio_fdur_1);
+            this.groupBox2.Controls.Add(this.radio_bitr);
+            this.groupBox2.Controls.Add(this.label16);
+            this.groupBox2.Controls.Add(this.txt_operator_bitr);
+            this.groupBox2.Controls.Add(this.label15);
+            this.groupBox2.Controls.Add(this.txt_operator_dur);
+            this.groupBox2.Controls.Add(this.num_aud_target);
+            this.groupBox2.Controls.Add(this.radio_target_size);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.txt_size);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.TabStop = false;
+            // 
+            // groupBox3
+            // 
+            resources.ApplyResources(this.groupBox3, "groupBox3");
+            this.groupBox3.Controls.Add(this.radio_chaps);
+            this.groupBox3.Controls.Add(this.radio_nul);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.TabStop = false;
+            // 
             // Form31
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.CancelButton = this.btn_cancel;
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txt_pre);
             this.Controls.Add(this.btn_copy);
-            this.Controls.Add(this.radio_fdur_1);
-            this.Controls.Add(this.radio_fdur);
-            this.Controls.Add(this.radio_fd);
-            this.Controls.Add(this.radio_fn_ext);
-            this.Controls.Add(this.radio_fn);
-            this.Controls.Add(this.radio_fn_path);
-            this.Controls.Add(this.radio_input_fn_noext);
-            this.Controls.Add(this.radio_inputfn);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_add);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.Name = "Form31";
             this.Load += new System.EventHandler(this.Form31_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.num_aud_target)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,9 +311,22 @@
         private System.Windows.Forms.RadioButton radio_fn;
         private System.Windows.Forms.RadioButton radio_fn_ext;
         private System.Windows.Forms.RadioButton radio_fd;
-        private System.Windows.Forms.RadioButton radio_fdur;
         private System.Windows.Forms.RadioButton radio_fdur_1;
         private System.Windows.Forms.Button btn_copy;
         private System.Windows.Forms.TextBox txt_pre;
+        private System.Windows.Forms.RadioButton radio_nul;
+        private System.Windows.Forms.TextBox txt_operator_dur;
+        public System.Windows.Forms.RadioButton radio_chaps;
+        private System.Windows.Forms.RadioButton radio_bitr;
+        private System.Windows.Forms.TextBox txt_operator_bitr;
+        private System.Windows.Forms.RadioButton radio_target_size;
+        private System.Windows.Forms.TextBox txt_size;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        public System.Windows.Forms.NumericUpDown num_aud_target;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }

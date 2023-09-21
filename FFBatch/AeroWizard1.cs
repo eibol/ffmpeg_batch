@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
@@ -23,7 +24,13 @@ namespace FFBatch
             InitializeComponent();
         }
 
+        private String fdur_txt = String.Empty;
+        private String trailer_filters = String.Empty;
+        private String temp_dur = String.Empty;
         public String curr_ff = String.Empty;
+        public String trailer_vparam = String.Empty;
+        public String trailer_aparam = String.Empty;
+        public String pre_input = String.Empty;
         private Boolean encoder_supp = true;
         private Boolean warn_spf = true;
         private String auto_crop = String.Empty;
@@ -992,6 +999,11 @@ namespace FFBatch
             foreach (String item in audio_cutoff) cb_cutoff.Items.Add(item);
             String[] opus_vbr = new string[] { "10 (HQ)", "9", "8", "7", "6", "5", "4", "3", "2", "1", "0 (LQ)" };
             foreach (String item in opus_vbr) cb_opus_vbr.Items.Add(item);
+            if (trailer_aparam.Length > 0 && chk_no_aud_tr.Checked)
+            {
+                cb_audio_encoder.SelectedItem = cb_audio_encoder.FindString("none");
+                wizardControl1.NextPage();
+            }
         }
 
         private void cb_audio_encoder_SelectedIndexChanged(object sender, EventArgs e)
@@ -1766,6 +1778,8 @@ namespace FFBatch
 
         private void wz0_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
         {
+            wizardControl1.Pages[2].Suppress = true;
+
             if (radio_existing.Checked == true)
             {
                 wz1.Suppress = true;
@@ -1856,12 +1870,19 @@ namespace FFBatch
                 wizardControl1.Visible = false;
                 ActiveForm.Close();
             }
+
+            if (radio_trailer.Checked == true)
+            {
+                wizardControl1.Pages[2].Suppress = false;
+            }
         }
 
         private void wizardControl1_Finished(object sender, EventArgs e)
         {
             if (audio_preset == true) video_encoder_param = "-vn";
+
             wiz_params = video_encoder_param + " " + audio_encoder_param;
+                        
             if (chk_mapall.CheckState == CheckState.Checked)
             {
                 wiz_params = "-map 0 " + wiz_params;
@@ -1900,7 +1921,8 @@ namespace FFBatch
             if (cb_crop.SelectedIndex != -1) n_fs++;
             if (cb_deint.SelectedIndex != -1) n_fs++;
             if (cb_rotate.SelectedIndex != -1 && cb_rotate.SelectedIndex != 0) n_fs++;
-            if (n_fs == 0 && n_speed.Value == 0) return;
+            if (n_fs == 0 && n_speed.Value == 0 && trailer_vparam.Length == 0) return;
+            if (trailer_vparam.Length > 0) n_fs++;
             if (n_fs == 1)
             {
                 filters = " -vf " + '\u0022';
@@ -1952,6 +1974,8 @@ namespace FFBatch
                 {
                     filters = filters + cb_deint.SelectedItem.ToString() + "=" + cb_de_mode.SelectedIndex.ToString() + ":" + cb_de_parity.SelectedIndex.ToString() + ":" + cb_de_deint.SelectedIndex.ToString() + '\u0022';
                 }
+                
+                if (trailer_vparam.Length > 0) filters = filters + trailer_vparam + '\u0022';
 
                 video_encoder_param = video_encoder_param + " " + filters;
             }
@@ -2005,8 +2029,10 @@ namespace FFBatch
                 {
                     filters = filters + cb_deint.SelectedItem.ToString() + "=" + cb_de_mode.SelectedIndex.ToString() + ":" + cb_de_parity.SelectedIndex.ToString() + ":" + cb_de_deint.SelectedIndex.ToString() + ",";
                 }
+                if (trailer_vparam.Length > 0) filters = filters + trailer_vparam + ",";
+                
                 filters = filters.Substring(0, filters.Length - 1);
-                video_encoder_param = video_encoder_param + " " + filters + '\u0022' + " ";
+                video_encoder_param = video_encoder_param + " " + filters + '\u0022' + " ";                
             }
 
             Decimal v_sp = 0;
@@ -2025,8 +2051,9 @@ namespace FFBatch
                     v_sp = 1 + Math.Abs(n_speed.Value / 100);
                     a_sp = Math.Round(1 / v_sp,3);
                 }
-                video_encoder_param = video_encoder_param + " -filter_complex " + '\u0022' + "[0:v]setpts=" + v_sp.ToString().Replace(",", ".") + "*PTS[v];[0:a]atempo=" + a_sp.ToString().Replace(",", ".") + "[a]" + '\u0022' + " -map " + '\u0022' + "[v]" + '\u0022' + " -map " + '\u0022' + "[a]" + '\u0022' + " ";
-            }           
+                
+                video_encoder_param = video_encoder_param + trailer_vparam + " -filter_complex " + '\u0022' + "[0:v]setpts=" + v_sp.ToString().Replace(",", ".") + "*PTS[v];[0:a]atempo=" + a_sp.ToString().Replace(",", ".") + "[a]" + '\u0022' + " -map " + '\u0022' + "[v]" + '\u0022' + " -map " + '\u0022' + "[a]" + '\u0022' + " ";                
+            }            
         }
 
         private void cb_framerate_SelectedIndexChanged(object sender, EventArgs e)
@@ -2254,7 +2281,6 @@ namespace FFBatch
 
         private void wz_end_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
         {
-
             lbl_vcard.Text = "";
             lbl_help.Text = "";
             pic_warn2.Visible = false;            
@@ -2689,7 +2715,7 @@ namespace FFBatch
         }
 
         private void reset_v_params()
-        {
+        {            
             video_encoder_param = String.Empty;            
             libx264_params = String.Empty;
             libx265_params = String.Empty;
@@ -2711,7 +2737,7 @@ namespace FFBatch
             if (Combo_encoders.SelectedIndex == Combo_encoders.FindString("copy"))
             {
                 video_encoder_param = "-c:v copy";
-                wz1_1.Suppress = true;
+                wz1_1.Suppress = true;                
             }
             else wz2.Suppress = false;
             if (Combo_encoders.SelectedIndex == Combo_encoders.FindString("libx264"))
@@ -3151,7 +3177,7 @@ namespace FFBatch
                         }
                     }
                 }
-                video_encoder_param = video_encoder_param + hevc_nvenc_params;
+                video_encoder_param = video_encoder_param;
             }
 
             if (Combo_encoders.SelectedIndex == Combo_encoders.FindString("h264_amf"))
@@ -3417,7 +3443,7 @@ namespace FFBatch
                 }
 
                 video_encoder_param = video_encoder_param + dnxhr_params;
-            }
+            }            
         }
 
         private void wz1_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
@@ -3431,11 +3457,19 @@ namespace FFBatch
                     return;
                 }
             }
+
+            if (trailer_vparam.Length > 0 && Combo_encoders.SelectedItem.ToString() == "copy")
+            {
+                MessageBox.Show(Properties.Strings.stream + " " + Properties.Strings.copy + " " + Properties.Strings.errors1);
+                e.Cancel = true;
+            }
+
             if (curr_ff.ToLower().Contains("essential")) 
             {
                 if (Combo_encoders.SelectedItem.ToString().Contains("nvenc") || Combo_encoders.SelectedItem.ToString().Contains("amf"))
                     MessageBox.Show(Properties.Strings2.hw_ff_1 + Environment.NewLine + Environment.NewLine + Properties.Strings2.Hw_ff_2, Properties.Strings.information, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
             commit_video_1();
         }
 
@@ -3467,6 +3501,18 @@ namespace FFBatch
 
         private void wz2_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
         {
+            if (trailer_aparam.Length > 0 && chk_no_aud_tr.Checked)
+            {
+                audio_encoder_param = "-an";
+                return;
+            }
+
+            if (trailer_aparam.Length > 0 && cb_audio_encoder.SelectedItem.ToString() == "copy" && !chk_no_aud_tr.Checked)
+            {
+                MessageBox.Show(FFBatch.Properties.Strings.none_copy);
+                e.Cancel = true;
+            }
+
             if (n_speed.Value != 0 && cb_audio_encoder.SelectedItem.ToString() == "copy")
             {
                 MessageBox.Show(FFBatch.Properties.Strings.speed_copy);
@@ -3665,7 +3711,7 @@ namespace FFBatch
                 if (chk_normalize.Checked)
                 {   
                     normalize = "loudnorm";
-                    speed_a = '\u0022' + speed_a + "," + normalize + '\u0022';
+                    speed_a = '\u0022' + speed_a + "," + normalize + "," + '\u0022';
                     afilter = afilter + speed_a;
                 }
                 else afilter = afilter + speed_a;             
@@ -3673,10 +3719,14 @@ namespace FFBatch
             else if (chk_normalize.Checked)
             {
                 normalize = "loudnorm";
-                afilter = " -filter:a " + normalize;
-            }            
+                afilter = " -filter:a " + normalize + "," + trailer_aparam + ",";
+            }
+            else
+            {
+                afilter = " -filter:a " + trailer_aparam;
+            }
 
-            audio_encoder_param = audio_encoder_param + afilter + " ";
+            audio_encoder_param = audio_encoder_param + " " + afilter + " ";
         }
 
         private void cb_crop_SelectedIndexChanged(object sender, EventArgs e)
@@ -3956,6 +4006,16 @@ namespace FFBatch
             }
         }
 
+        Boolean IsDigitsOnly(String str)
+        {
+            foreach (char c in str)
+            {
+                if ((c < '0' || c > '9') && c != '.')
+                    return false;
+            }
+
+            return true;
+        }
         private void BG1_DoWork(object sender, DoWorkEventArgs e)
         {
             this.InvokeEx(f => this.Cursor = Cursors.WaitCursor);
@@ -3966,6 +4026,9 @@ namespace FFBatch
             String file_prueba = "";
             String sel_test = "";
             sel_test = lv1_item;
+            Double dur_secs = 0;
+            if (lv1_dur.Length > 1) dur_secs = TimeSpan.Parse(lv1_dur).TotalSeconds;
+
             file_prueba = sel_test;
             String destino_test = Path.GetTempPath() + "\\" + "FFBatch_test";
             Boolean bad_chars = false;
@@ -3994,18 +4057,120 @@ namespace FFBatch
 
                 String textbox_params = wiz_params;
                 String file_prueba2 = file_prueba;
-                if (textbox_params.Contains("%1"))
+                
+                while (textbox_params.Contains("%fn"))
                 {
-                    if (file_prueba2.Contains("[") || file_prueba2.Contains("]"))
+                    if (textbox_params.Contains("%fn"))
                     {
-                        MessageBox.Show(FFBatch.Properties.Strings.conflict_char, FFBatch.Properties.Strings.conflict_char2, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        this.InvokeEx(f => this.Cursor = Cursors.Arrow);
-                        bad_chars = true;
-                        return;
+                        textbox_params = textbox_params.Replace("%fn", Path.GetFileNameWithoutExtension(file_prueba));
                     }
-                    file_prueba2 = file_prueba2.Replace("\\", "\\\\\\\\");
-                    file_prueba2 = file_prueba2.Replace(":", "\\\\" + ":");
-                    textbox_params = textbox_params.Replace("%1", file_prueba2);
+                }
+
+                while (textbox_params.Contains("%ff"))
+                {
+                    if (textbox_params.Contains("%ff"))
+                    {
+                        textbox_params = textbox_params.Replace("%ff", Path.GetFileName(file_prueba));
+                    }
+                }
+                                
+                String to_replace = String.Empty;
+                int addit = 0;
+
+                while (textbox_params.Contains("%fdur"))
+                {
+                    if (textbox_params.Contains("%fdur"))
+                    {
+
+                        to_replace = "";
+                        addit = 0;
+
+                        String operation = "";
+                        if (textbox_params.Substring(textbox_params.LastIndexOf("%fdur") + 5, 1) == "+")
+                        {
+                            operation = "+";
+                        }
+                        else if (textbox_params.Substring(textbox_params.LastIndexOf("%fdur") + 5, 1) == "-")
+                        {
+                            operation = "-";
+                        }
+                        else if (textbox_params.Substring(textbox_params.LastIndexOf("%fdur") + 5, 1) == "*")
+                        {
+                            operation = "*";
+                        }
+                        else if (textbox_params.Substring(textbox_params.LastIndexOf("%fdur") + 5, 1) == "/")
+                        {
+                            operation = "/";
+                        }
+
+                        else operation = String.Empty;
+
+                        if (operation != String.Empty)
+                        {
+                            int operador = textbox_params.LastIndexOf("%fdur") + 5;
+                            int length = 0;
+                            int limit = textbox_params.Length - operador - 1;
+
+                            for (int ii = 1; ii < limit + 1; ii++)
+                            {
+                                if (IsDigitsOnly(textbox_params.Substring(operador + ii, 1)))
+                                {
+                                    length = ii;
+                                }
+                                else break;
+                            }
+
+                            addit = Convert.ToInt32(textbox_params.Substring(operador + 1, length).Replace(",", CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator).Replace(".", CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator));
+
+                            if (operation == "+") addit = (int)dur_secs + addit;
+                            if (operation == "-") addit = (int)dur_secs - addit;
+                            if (operation == "*") addit = (int)dur_secs * addit;
+                            if (operation == "/") addit = (int)dur_secs / addit;
+
+                            to_replace = textbox_params.Substring(textbox_params.LastIndexOf("%fdur"), 6 + length);
+                        }
+
+                        //END %fdur variable operations
+                        if (operation == String.Empty) textbox_params = textbox_params.Replace("%fdur", dur_secs.ToString());
+                        else textbox_params = textbox_params.Replace(to_replace, addit.ToString());
+                    }
+                }
+
+                while (textbox_params.Contains("%fp"))
+                {
+                    if (textbox_params.Contains("%fp"))
+                    {
+                        textbox_params = textbox_params.Replace("%fp", Path.GetDirectoryName(file_prueba));
+                    }
+                }
+
+                while (textbox_params.Contains("%fd"))
+                {
+                    if (textbox_params.Contains("%fd"))
+                    {
+                        var dirName = new DirectoryInfo(Path.GetDirectoryName(file_prueba)).Name;
+                        textbox_params = textbox_params.Replace("%fd", dirName);
+                    }
+                }
+
+                while (textbox_params.Contains("%1"))
+                {
+                    if (textbox_params.Contains("%1"))
+                    {
+                        file_prueba2 = file_prueba2.Replace("\\", "\\\\\\\\");
+                        file_prueba2 = file_prueba2.Replace(":", ":" + "\\\\");
+                        textbox_params = textbox_params.Replace("%1", '\u0022' + file_prueba2 + '\u0022');
+                    }
+                }
+
+                while (textbox_params.Contains("%2"))
+                {
+                    if (textbox_params.Contains("%2"))
+                    {
+                        file_prueba2 = file_prueba2.Replace("\\", "\\\\\\\\");
+                        file_prueba2 = file_prueba2.Replace(":", ":" + "\\\\");
+                        textbox_params = textbox_params.Replace("%2", '\u0022' + Path.Combine(System.IO.Path.GetDirectoryName(file_prueba2), Path.GetFileNameWithoutExtension(file_prueba2)) + '\u0022');
+                    }
                 }
 
                 consola_pre.StartInfo.FileName = "ffmpeg.exe";
@@ -4721,7 +4886,7 @@ namespace FFBatch
                 wizardControl1.CancelButtonText = Properties.Strings.cancel;
                 wizardControl1.FinishButtonText = Properties.Strings2.finish;
             }
-            
+            temp_dur = lv1_dur;            
         }
 
         private void refresh_lang()
@@ -4876,6 +5041,7 @@ namespace FFBatch
 
         private void wz1_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
         {
+            wz_0_1.Suppress = true;
             if (started_v == false) Combo_encoders.SelectedIndex = Properties.Settings.Default.wiz_vid;
             started_v = true;
         }
@@ -4976,6 +5142,347 @@ namespace FFBatch
             preset_ok = false;
             if (lv1_item != String.Empty) BG1.RunWorkerAsync();
 
+        }
+
+        private void radio_trailer_CheckedChanged(object sender, EventArgs e)
+        {
+            audio_preset = false;
+            video_preset = true;
+            existing_preset = false;
+            lbl_two.Text = String.Empty;
+            lbl_img_v.Text = String.Empty;
+            lbl_silence.Text = String.Empty;
+            pic_warn_two.Visible = false;
+            pic_warn_silence.Visible = false;
+            pic_warn_img_v.Visible = false;
+            pic_1.Image = images.Images[0];            
+            wizardControl1.Pages[1].AllowNext = true;            
+        }
+
+        private void wz_trailer_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
+        {
+            if (lbl_dur.Text == "0" && lv1_item.Length > 0) e.Cancel = true;
+            
+            String ss_t = "";
+            String to_t = "";
+                        
+            if (check_enable_trailer_start.Enabled && check_enable_trailer_start.Checked)
+            {
+                ss_t = "-ss " + txt_trailer_init.Text;
+                if (chk_init_trailer_time.Enabled && chk_init_trailer_time.Checked)
+                {
+                    ss_t = "-ss %fdur" + txt_init_trailer_dur.Text;
+                }
+            }
+            if (check_enable_trailer_end.Enabled && check_enable_trailer_end.Checked)
+            {
+                String to_time = "%fdur-" + (TimeSpan.Parse(txt_trailer_final.Text).TotalSeconds).ToString();
+                to_t = "-to " + to_time;
+                if (chk_dur_trail_end.Enabled && chk_dur_trail_end .Checked)
+                {
+                    to_t = "-to %fdur" + txt_trailer_end_dur.Text;
+                }
+            }
+            trailer_vparam = "select='lt(mod(t," + n_interval_secs.Value.ToString() + ")," + n_fragment_secs.Value.ToString().Replace(",", ".") + ")',setpts=N/FRAME_RATE/TB";
+            if (!chk_no_aud_tr.Checked) trailer_aparam = "aselect='lt(mod(t," + n_interval_secs.Value.ToString() + ")," + n_fragment_secs.Value.ToString().Replace(",", ".") + ")',asetpts=N/SR/TB";
+            else trailer_aparam = "-an";
+            
+            pre_input = ss_t + " " + to_t;
+
+            if (chk_trailer_dur.Checked)
+            {
+                trailer_vparam = "select='lt(mod(t,%fdur/" + n_trailer_secs.Value.ToString() + ")," + n_fragment_secs.Value.ToString().Replace(",", ".") + ")',setpts=N/FRAME_RATE/TB"; 
+                trailer_aparam = "aselect='lt(mod(t,%fdur/" + n_trailer_secs.Value.ToString() + ")," + n_fragment_secs.Value.ToString().Replace(",", ".") + ")',asetpts=N/SR/TB" + " -t " + n_trailer_secs.Value.ToString() + " ";
+            }
+        }
+
+        private void wz_trailer_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
+        {            
+            trailer_vparam = String.Empty;
+            trailer_aparam = String.Empty;
+            pre_input = String.Empty;
+            if (lv1_item.Length > 0) lbl_file_tr.Text = Path.GetFileName(lv1_item);
+            get_trailer_info();
+        }
+
+        private void get_fdur()
+        {            
+            String dur_secs = lv1_dur.ToString();
+            int length = 0;
+            String dur_2 = String.Empty;
+            Double result_init = 0;
+            Double result_end = 0;
+
+            if (chk_init_trailer_time.Enabled && chk_init_trailer_time.Checked)
+            {
+                try
+                { //Init
+
+                    int limit = txt_init_trailer_dur.Text.Length - 1;
+
+                    for (int ii = 0; ii < limit; ii++)
+                    {
+                        if (IsDigitsOnly(txt_init_trailer_dur.Text.Substring(ii, 1)))
+                        {
+                            length = ii + 1;
+                        }
+                        else break;
+                    }
+
+                    dur_2 = TimeSpan.Parse(dur_secs).TotalSeconds.ToString();
+                    result_init = Convert.ToDouble(new DataTable().Compute(dur_2 + txt_init_trailer_dur.Text, null));
+                    
+                    TimeSpan t = TimeSpan.FromSeconds(result_init);
+                    String tx_elapsed = string.Format("{0:D2}:{1:D2}:{2:D2}",
+                        t.Hours,
+                        t.Minutes,
+                        t.Seconds);
+                    
+                    txt_trailer_init.Text = tx_elapsed;
+                }
+                catch { 
+                    
+                    txt_trailer_init.Text = "00:00:00";
+                    result_init = 0;
+                };
+            }
+            
+            if (chk_dur_trail_end.Enabled && chk_dur_trail_end.Checked)
+            {
+                try //End
+                {
+
+                    length = 0;
+                    int limit = txt_trailer_end_dur.Text.Length - 1;
+
+                    for (int ii = 0; ii < limit; ii++)
+                    {
+                        if (IsDigitsOnly(txt_trailer_end_dur.Text.Substring(ii, 1)))
+                        {
+                            length = ii + 1;
+                        }
+                        else break;
+                    }
+
+                    dur_2 = TimeSpan.Parse(dur_secs).TotalSeconds.ToString();
+                    result_end = Convert.ToDouble(new DataTable().Compute(dur_2 + txt_trailer_end_dur.Text, null));
+                    //lbl_end_trailer.Text = Math.Round(result).ToString();
+                    result_end = TimeSpan.Parse(lv1_dur).TotalSeconds - result_end;
+                                        
+                    TimeSpan t = TimeSpan.FromSeconds(result_end);
+
+                    String tx_elapsed = string.Format("{0:D2}:{1:D2}:{2:D2}",
+                        t.Hours,
+                        t.Minutes,
+                        t.Seconds);                    
+                        txt_trailer_final.Text = tx_elapsed;
+                }
+
+                catch {
+                    
+                    txt_trailer_final.Text = "00:00:00";
+                    result_end = 0;
+                }
+            }            
+    }
+
+        private void get_trailer_info()
+        {
+            if (lv1_dur.Length > 0 && n_fragment_secs.Value > 0)
+            {
+                Double dur_secs = TimeSpan.Parse(lv1_dur).TotalSeconds;                
+                Decimal dur_secs_d = Convert.ToDecimal(dur_secs);
+                Double temp_secs = 0;
+                Decimal dur_start = 0;
+                Decimal dur_end = 0;
+                Double init_time = 0;
+                Double end_time = 0;
+                Decimal fragments = dur_secs_d / n_interval_secs.Value;
+                Decimal length = fragments * Convert.ToDecimal(n_fragment_secs.Value.ToString());
+
+                if (check_enable_trailer_start.Checked || check_enable_trailer_end.Checked)
+                {
+                    try
+                    {
+
+                        init_time = TimeSpan.Parse(txt_trailer_init.Text).TotalSeconds;
+                        fragments = (dur_secs_d - (decimal)init_time) / n_interval_secs.Value;
+                        length = fragments * Convert.ToDecimal(n_fragment_secs.Value.ToString());
+
+                    }
+                    catch { length = 0; }
+
+
+                    if (check_enable_trailer_end.Checked)
+                    {
+                        try
+                        {
+                            end_time = TimeSpan.Parse(txt_trailer_final.Text).TotalSeconds;
+                            fragments = (dur_secs_d - (decimal)end_time) / n_interval_secs.Value;
+                            length = fragments * Convert.ToDecimal(n_fragment_secs.Value.ToString());
+                        }
+                        catch { length = 0; }
+
+                    }
+
+                    if (check_enable_trailer_start.Checked && check_enable_trailer_end.Checked)
+                    {
+                        init_time = TimeSpan.Parse(txt_trailer_init.Text).TotalSeconds;
+                        end_time = TimeSpan.Parse(txt_trailer_final.Text).TotalSeconds;
+                        Decimal dur2 = (dur_secs_d - (decimal)init_time - (decimal)end_time);
+                        if (dur2 <= 0) dur2 = 0;
+                        fragments = ((dur_secs_d - (decimal)init_time - (decimal)end_time)) / n_interval_secs.Value;
+                        length = fragments * Convert.ToDecimal(n_fragment_secs.Value.ToString());
+                    }
+                }
+
+                if (chk_trailer_dur.Checked == false)
+                {                 
+                    if (length <= 0) length = 0;
+                    lbl_dur.Text = Math.Ceiling(length).ToString();
+                }
+                else
+                {
+                    //fragments = n_trailer_secs.Value / n_fragment_secs.Value;                    
+                    //lbl_dur.Text = Math.Ceiling(fragments).ToString();
+                    lbl_dur.Text = n_trailer_secs.Value.ToString();
+                    Double dur = 0;
+                    if (lv1_dur.Length > 0)
+                    {
+                        
+                            dur = TimeSpan.Parse(lv1_dur).TotalSeconds;
+                            n_interval_secs.Value = Math.Round((decimal)dur / n_fragment_secs.Value / n_trailer_secs.Value);                       
+                    }
+                }
+            }
+        }
+
+        private void n_fragment_secs_ValueChanged(object sender, EventArgs e)
+        {
+            get_trailer_info();
+        }
+
+        private void n_interval_secs_ValueChanged(object sender, EventArgs e)
+        {
+            get_trailer_info();
+        }
+
+        private void n_trailer_secs_ValueChanged(object sender, EventArgs e)
+        {
+            get_trailer_info();
+        }
+
+        private void chk_dur_trail_end_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_dur_trail_end.Checked == true)
+            {
+                txt_trailer_end_dur.Enabled = true;
+                txt_trailer_final.Enabled = false;
+                get_fdur();
+                
+            }
+            else
+            {
+                txt_trailer_end_dur.Enabled = false;
+                txt_trailer_final.Enabled = true;                
+            }
+            get_trailer_info();
+        }
+
+        private void check_enable_trailer_start_CheckedChanged(object sender, EventArgs e)
+        {           
+                if (check_enable_trailer_start.Checked)
+                {
+                    txt_trailer_init.Enabled = true;
+                    chk_init_trailer_time.Enabled = true;                 
+                    DateTime t = new DateTime();
+                    if (DateTime.TryParse(txt_trailer_init.Text, out t))
+                    {
+                        get_trailer_info();
+                    }
+            }
+                else
+                {
+                    chk_init_trailer_time.Enabled = false;
+                    chk_init_trailer_time.Checked = false;
+                    txt_trailer_init.Enabled = false;
+                    get_trailer_info();                                 
+                }                   
+        }
+
+        private void check_enable_trailer_end_CheckedChanged(object sender, EventArgs e)
+        {
+            if (check_enable_trailer_end.Checked)
+            {
+                chk_dur_trail_end.Enabled = true;
+                txt_trailer_final.Enabled = true;
+            }
+            else
+            {
+                chk_dur_trail_end.Enabled = false;
+                chk_dur_trail_end.Checked = false;
+                txt_trailer_end_dur.Enabled = false;                
+            }
+            get_trailer_info();
+
+        }
+
+        private void chk_init_trailer_time_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_init_trailer_time.Checked)
+            {
+                txt_init_trailer_dur.Enabled = true;
+                txt_trailer_init.Enabled = false;
+            }
+            else
+            {
+                txt_init_trailer_dur.Enabled = false;
+                txt_trailer_init.Enabled = true;                
+            }
+            get_fdur();
+            get_trailer_info();
+        }
+
+        private void txt_init_trailer_dur_TextChanged(object sender, EventArgs e)
+        {
+            get_fdur();            
+        }
+
+        private void txt_trailer_end_dur_TextChanged(object sender, EventArgs e)
+        {
+            get_fdur();
+            
+        }
+
+        private void txt_trailer_init_TextChanged(object sender, EventArgs e)
+        {
+            DateTime t = new DateTime();
+            if (DateTime.TryParse(txt_trailer_init.Text, out t))
+            {
+                get_trailer_info();
+            }
+        }
+        private void txt_trailer_final_TextChanged(object sender, EventArgs e)
+        {
+            DateTime t = new DateTime();
+            if (DateTime.TryParse(txt_trailer_final.Text, out t)) get_trailer_info();
+        }
+
+        private void chk_trailer_dur_CheckedChanged(object sender, EventArgs e)
+        {
+            n_trailer_secs.Enabled = chk_trailer_dur.Checked;
+            n_interval_secs.Enabled = !chk_trailer_dur.Checked;
+            get_trailer_info();
+        }
+
+        private void txt_trailer_init_DoubleClick(object sender, EventArgs e)
+        {
+            txt_trailer_init.Text = "00:00:00";
+        }
+
+        private void txt_trailer_final_DoubleClick(object sender, EventArgs e)
+        {
+            txt_trailer_final.Text = "00:00:00";
         }
     }
 }

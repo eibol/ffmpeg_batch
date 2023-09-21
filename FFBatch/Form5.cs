@@ -708,8 +708,8 @@ namespace FFBatch
                 target_img = save_img.FileName;
             }
 
-            AppParam_img = " -ss " + time_frame + " -i " + "" + '\u0022' + file_img + '\u0022' + " -qscale:v 0" + " -f image2 -y " + '\u0022' + target_img + '\u0022';
-
+            AppParam_img = " -ss " + time_frame + " -i " + "" + '\u0022' + file_img + '\u0022' + " -qscale:v 0" + " -frames:v 1 -y " + '\u0022' + target_img + '\u0022';
+            
             proc_img.StartInfo.RedirectStandardOutput = false;
             proc_img.StartInfo.RedirectStandardError = false;
             proc_img.StartInfo.UseShellExecute = true;
@@ -776,9 +776,9 @@ namespace FFBatch
 
             String destino = Path.Combine(Path.GetTempPath(), "FFBatch_test");
             Boolean is_audio = is_audio_f();
-            if (is_audio == false) AppParam_img = " -ss " + time_frame + " -i " + "" + '\u0022' + file_img + '\u0022' + " -qscale:v 0" + " -f image2 -y " + '\u0022' + target_img + '\u0022';
-            else AppParam_img = " -i " + "" + '\u0022' + file_img + '\u0022' + " -qscale:v 0" + " -f image2 -y " + '\u0022' + target_img + '\u0022';
-            
+            if (is_audio == false) AppParam_img = " -ss " + time_frame + " -i " + "" + '\u0022' + file_img + '\u0022' + " -frames:v 1 -qscale:v 0" + " -y " + '\u0022' + target_img + '\u0022';
+            else AppParam_img = " -i " + "" + '\u0022' + file_img + '\u0022' + " -frames:v 1 -qscale:v 0" + " -y " + '\u0022' + target_img + '\u0022';
+            Clipboard.SetText(AppParam_img);
             proc_img.StartInfo.RedirectStandardOutput = false;
             proc_img.StartInfo.RedirectStandardError = false;
             proc_img.StartInfo.UseShellExecute = true;
@@ -799,7 +799,13 @@ namespace FFBatch
                 }
                 else
                 {
-                    MessageBox.Show(Properties.Strings.err_dest, Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                     FileInfo fi = new FileInfo(target_img);
+                    if (File.Exists(target_img) && fi.Length > 1)
+                    {
+                        Bitmap imageToAdd = new Bitmap(target_img);
+                        Clipboard.SetImage(imageToAdd);
+                    }
+                    else MessageBox.Show(Properties.Strings.err_dest, Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception exc)

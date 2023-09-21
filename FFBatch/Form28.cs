@@ -47,7 +47,7 @@ namespace FFBatch
         }
 
         private void Form28_Load(object sender, EventArgs e)
-        {
+        {            
             this.Text = Properties.Strings2.crop1;
 
             if (Properties.Settings.Default.dark_mode == true)

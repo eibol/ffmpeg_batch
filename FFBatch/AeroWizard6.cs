@@ -1,8 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Globalization;
+using System.IO;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FFBatch
 {
@@ -13,6 +18,12 @@ namespace FFBatch
             InitializeComponent();
         }
 
+        int ch_count = 0;
+        public List<string[]> list_chaps_w = new List<string[]>();
+        public Boolean by_int_chaps = false;
+        public Boolean manual_chaps = false;
+        public List<string> list_files = new List<string>();
+        //public String lv1_item = String.Empty;
         public Boolean save_preset = false;
         public int list_count = 0;
         private String pr_1st_params = String.Empty;
@@ -101,7 +112,7 @@ namespace FFBatch
 
         private void txt_path_main_TextChanged(object sender, EventArgs e)
         {
-            if (txt_path_main.TextLength >= 3 && txt_path_main.Text.Substring(0, 2) != ".\\") MessageBox.Show("Please include .\\ on relative path.");
+            if (txt_path_main.TextLength >= 3 && txt_path_main.Text.Substring(0, 2) != ".\\") MessageBox.Show(Properties.Strings2.pls_include + ".\\ " + Properties.Strings2.on_rel_path);
         }
 
         private void combo_Seconds_TextChanged(object sender, EventArgs e)
@@ -277,6 +288,239 @@ namespace FFBatch
                 combo_size.Text = combo_size.Text.Remove(combo_size.Text.Length - 1);
             }
             radio_size.Checked = true;
+        }
+
+        private void wz0_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
+        {
+            if (radio_time_size.Checked)
+            {
+                wz0.NextPage = wiz_split.Pages[2];
+            }
+            else
+            {
+                wz0.NextPage = wiz_split.Pages[1];
+            }
+        }
+
+        private String safe_out_ffname(String outf)
+        {
+            outf = outf.Replace("/", "_");
+            outf = outf.Replace(":", "_");
+            outf = outf.Replace("*", "_");
+            outf = outf.Replace("?", "_");
+            outf = outf.Replace("¿", "_");
+            outf = outf.Replace("@", "_");
+            outf = outf.Replace("\u0022", "_");
+            outf = outf.Replace("<", "_");
+            outf = outf.Replace(">", "_");
+            outf = outf.Replace("|", "_");
+            outf = outf.Replace(";", "_");
+            outf = outf.Replace("\\", "_");
+            outf = outf.Replace("(", "_");
+            outf = outf.Replace(")", "_");
+            return outf;
+        }
+
+        private void get_chapters_w()
+        {
+            Task t = Task.Run(() =>
+             {                
+            foreach (String lv1_it in list_files)
+            {
+                String ff_frames = String.Empty;
+                int f_l = Path.GetFileName(lv1_it).Length;
+                String dots = String.Empty;
+                if (f_l > 64) { f_l = 64; dots = ".."; }
+                Process get_chap = new Process();
+                String args = " -an -vn -sn -f ffmetadata ";
+                String output = Path.Combine(Path.GetTempPath(), "FFBatch_test") + "\\" + ch_count.ToString() + "_" + Path.GetFileNameWithoutExtension(safe_out_ffname(lv1_it)) + ".txt";
+                get_chap.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "ffmpeg.exe");
+                get_chap.StartInfo.Arguments = "-i " + '\u0022' + lv1_it + '\u0022' + args + " -y " + '\u0022' + output + '\u0022';
+                get_chap.StartInfo.CreateNoWindow = true;
+                get_chap.EnableRaisingEvents = true;
+                get_chap.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+                get_chap.Start();
+                get_chap.WaitForExit();
+                ch_count++;
+                String chaps_file = String.Empty;
+
+                if (File.Exists(output)) chaps_file = File.ReadAllText(output);
+                else
+                {
+                    txt_chaps.Invoke(new MethodInvoker(delegate
+                    {
+                        txt_chaps.AppendText(ch_count.ToString() + ". " + Path.GetFileName(lv1_it).Substring(0, f_l) + dots + " | 0 " + Properties.Strings2.chapters  + Environment.NewLine);
+                        return;
+                    }));
+                }
+
+                Boolean titles = false;
+
+                if (chaps_file.Contains("title=")) titles = true;
+
+                String[] chaps = chaps_file.Split(new[] { "[CHAPTER]", "\n", "\r" }, StringSplitOptions.RemoveEmptyEntries);
+                String tb = String.Empty;
+                Double tbd = 0;
+                String tst = String.Empty;
+                Double tstd = 0;
+                String tstend = String.Empty;
+                Double tsendd = 0;
+                String tsttit = String.Empty;
+                list_chaps_w.Clear();
+
+
+                if (titles == true)
+                {
+                    foreach (String chap in chaps)
+                    {
+                        if (chap.Contains("TIMEBASE=1/"))
+                        {
+                            int tbase = chap.LastIndexOf("TIMEBASE=1/");
+                            tb = chap.Substring(tbase + 11, (chap.Length - tbase - 11));
+                            tbd = Convert.ToDouble(tb);
+                            //MessageBox.Show("Base: " + tb);
+                        }
+                        if (chap.Contains("START="))
+                        {
+                            int tstart = chap.LastIndexOf("START=");
+                            tst = chap.Substring(tstart + 6, chap.Length - tstart - 6);
+                            tstd = Convert.ToDouble(tst);
+                        }
+                        if (chap.Contains("END="))
+                        {
+                            int tsend = chap.LastIndexOf("END=");
+                            tstend = chap.Substring(tsend + 4, chap.Length - tsend - 4);
+                            tsendd = Convert.ToDouble(tstend);
+                        }
+
+                        if (chap.Contains("title="))
+                        {
+                            int tstitle = chap.LastIndexOf("title=");
+                            tsttit = chap.Substring(tstitle + 6, chap.Length - tstitle - 6);
+                            String[] sstt = new String[] { "-ss " + (tstd / tbd).ToString().Replace(",", "."), "-to " + (tsendd / tbd).ToString().Replace(",", "."), tsttit };
+                            list_chaps_w.Add(sstt);
+                        }
+                    }
+                }
+                else
+                {
+                    foreach (String chap in chaps)
+                    {
+                        if (chap.Contains("TIMEBASE=1/"))
+                        {
+                            int tbase = chap.LastIndexOf("TIMEBASE=1/");
+                            tb = chap.Substring(tbase + 11, (chap.Length - tbase - 11));
+                            tbd = Convert.ToDouble(tb);
+                            //MessageBox.Show("Base: " + tb);
+                        }
+                        if (chap.Contains("START="))
+                        {
+                            int tstart = chap.LastIndexOf("START=");
+                            tst = chap.Substring(tstart + 6, chap.Length - tstart - 6);
+                            tstd = Convert.ToDouble(tst);
+                        }
+                        if (chap.Contains("END="))
+                        {
+                            int tsend = chap.LastIndexOf("END=");
+                            tstend = chap.Substring(tsend + 4, chap.Length - tsend - 4);
+                            tsendd = Convert.ToDouble(tstend);
+                            String[] sstt = new String[] { "-ss " + (tstd / tbd).ToString().Replace(",", "."), "-to " + (tsendd / tbd).ToString().Replace(",", "."), tsttit };
+                            list_chaps_w.Add(sstt);
+                        }
+                    }
+                }
+
+                txt_chaps.Invoke(new MethodInvoker(delegate
+                {
+                    txt_chaps.AppendText(ch_count.ToString() + ". " + Path.GetFileName(lv1_it).Substring(0, f_l) + dots + " | " + list_chaps_w.Count.ToString() + " " + Properties.Strings2.chapters + Environment.NewLine);
+                }));          
+               }
+             });
+        }
+
+        private void radio_by_chap_CheckedChanged(object sender, EventArgs e)
+        {
+            wiz_split.Pages[1].AllowNext = true;            
+            if (radio_by_chap.Checked)
+            {
+                txt_chaps.Clear();                
+                ch_count = 0;
+                btn_load_chap.Enabled = false;
+                get_chapters_w();                
+            }
+            else
+            {
+                if (txt_chaps.Text == Properties.Strings.file_big) wiz_split.Pages[1].AllowNext = false;                
+                btn_load_chap.Enabled = true;                
+            }
+        }
+
+        private void btn_load_chap_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog browse_file = new OpenFileDialog();
+            String file_path = String.Empty;
+            browse_file.Filter = "*.txt |*.txt";
+            if (browse_file.ShowDialog() == DialogResult.OK)
+            {
+                file_path = browse_file.FileName;
+                long size = new FileInfo(file_path).Length;
+                if (size > 1000000)
+                {
+                    txt_chaps.Text = Properties.Strings.file_big;
+                    wiz_split.Pages[1].AllowNext = false;
+                    return;
+                }
+                else
+                {
+
+                    try
+                    {
+                        txt_chaps.Text = File.ReadAllText(file_path);
+                        wiz_split.Pages[1].AllowNext = true;
+                    }
+                    catch
+                    {
+
+                    }
+                }
+            } 
+        }
+        
+        private void wz01_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
+        {
+            if (radio_by_chap.Checked) by_int_chaps = true;
+            if (radio_chap_man.Checked)
+            {
+                if (list_count > 1)
+                {
+                    DialogResult a = MessageBox.Show(Properties.Strings2.chapters_all, Properties.Strings.question, MessageBoxButtons.OKCancel);
+                    if (a == DialogResult.Cancel)
+                    {
+                        e.Cancel = true;
+                    }
+                }
+                        
+                manual_chaps = true;
+            }
+        }
+
+        private void wz01_Initialize(object sender, AeroWizard.WizardPageInitEventArgs e)
+        {
+            by_int_chaps = false;
+            manual_chaps = false;
+            ch_count = 0;
+            txt_chaps.Clear();            
+            if (radio_by_chap.Checked)
+            {   
+             get_chapters_w();             
+            }
+        }
+
+        private void radio_chap_man_CheckedChanged(object sender, EventArgs e)
+        {
+            txt_chaps.Clear();            
+            txt_chaps.Text = "-ss 00:00:00.000 -to 00:00:01.500";
+            ch_count = 0;
         }
     }
 }

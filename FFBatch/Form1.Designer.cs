@@ -58,11 +58,14 @@
             this.ctm1_encode = new System.Windows.Forms.ToolStripMenuItem();
             this.ct1_sep_cod = new System.Windows.Forms.ToolStripSeparator();
             this.cti2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.ct1_params = new System.Windows.Forms.ToolStripMenuItem();
             this.ct1_rem_param = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.cti1 = new System.Windows.Forms.ToolStripMenuItem();
             this.cti3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator29 = new System.Windows.Forms.ToolStripSeparator();
+            this.ct1_params = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctm1_excl = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator30 = new System.Windows.Forms.ToolStripSeparator();
             this.ctdel = new System.Windows.Forms.ToolStripMenuItem();
             this.ct_move_top = new System.Windows.Forms.ToolStripMenuItem();
             this.ct_move_bottom = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,6 +78,7 @@
             this.cti1_cols = new System.Windows.Forms.ToolStripMenuItem();
             this.cti_remove_col = new System.Windows.Forms.ToolStripMenuItem();
             this.cti4_2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.sep29 = new System.Windows.Forms.ToolStripSeparator();
             this.cti5 = new System.Windows.Forms.ToolStripMenuItem();
             this.cti6 = new System.Windows.Forms.ToolStripMenuItem();
             this.combo_presets = new System.Windows.Forms.ComboBox();
@@ -200,8 +204,11 @@
             this.btn_add_tracks = new System.Windows.Forms.Button();
             this.lbl_size = new System.Windows.Forms.Label();
             this.group_prog = new System.Windows.Forms.GroupBox();
+            this.lbl_after_enc = new System.Windows.Forms.Label();
+            this.lbl_cpu_pr = new System.Windows.Forms.Label();
             this.lbl_dw_speed = new System.Windows.Forms.Label();
             this.btn_save_prio = new System.Windows.Forms.Button();
+            this.lbl_multip = new System.Windows.Forms.Label();
             this.btn_abort_all = new System.Windows.Forms.Button();
             this.pic_resume = new System.Windows.Forms.PictureBox();
             this.lbl_elapsed = new System.Windows.Forms.Label();
@@ -321,7 +328,6 @@
             this.chk_suffix = new System.Windows.Forms.CheckBox();
             this.btn_multimedia = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.lbl_multip = new System.Windows.Forms.Label();
             this.grp_fade = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
             this.lbl_fade = new System.Windows.Forms.Label();
@@ -534,6 +540,9 @@
             this.BG_Add_col_cust_p = new System.ComponentModel.BackgroundWorker();
             this.timer_battery = new System.Windows.Forms.Timer(this.components);
             this.pic_batt = new System.Windows.Forms.PictureBox();
+            this.timer_watch = new System.Windows.Forms.Timer(this.components);
+            this.pic_mon = new System.Windows.Forms.PictureBox();
+            this.BG_Add_col_cust_med = new System.ComponentModel.BackgroundWorker();
             this.ctm1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_add_variable)).BeginInit();
@@ -597,6 +606,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_reading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_dark)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_batt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_mon)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_add_files
@@ -661,6 +671,7 @@
             // txt_format
             // 
             this.txt_format.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_format.CharacterCasing = System.Windows.Forms.CharacterCasing.Lower;
             resources.ApplyResources(this.txt_format, "txt_format");
             this.txt_format.Name = "txt_format";
             this.txt_format.Click += new System.EventHandler(this.textBox2_Click);
@@ -720,11 +731,14 @@
             this.ctm1_encode,
             this.ct1_sep_cod,
             this.cti2,
-            this.ct1_params,
             this.ct1_rem_param,
             this.toolStripSeparator8,
             this.cti1,
             this.cti3,
+            this.toolStripSeparator29,
+            this.ct1_params,
+            this.ctm1_excl,
+            this.toolStripSeparator30,
             this.ctdel,
             this.ct_move_top,
             this.ct_move_bottom,
@@ -737,6 +751,7 @@
             this.cti1_cols,
             this.cti_remove_col,
             this.cti4_2,
+            this.sep29,
             this.cti5,
             this.cti6});
             this.ctm1.Name = "ctm1";
@@ -795,12 +810,6 @@
             this.cti2.Name = "cti2";
             this.cti2.Click += new System.EventHandler(this.cti2_Click);
             // 
-            // ct1_params
-            // 
-            resources.ApplyResources(this.ct1_params, "ct1_params");
-            this.ct1_params.Name = "ct1_params";
-            this.ct1_params.Click += new System.EventHandler(this.ct1_params_Click);
-            // 
             // ct1_rem_param
             // 
             resources.ApplyResources(this.ct1_rem_param, "ct1_rem_param");
@@ -823,6 +832,28 @@
             resources.ApplyResources(this.cti3, "cti3");
             this.cti3.Name = "cti3";
             this.cti3.Click += new System.EventHandler(this.cti3_Click);
+            // 
+            // toolStripSeparator29
+            // 
+            this.toolStripSeparator29.Name = "toolStripSeparator29";
+            resources.ApplyResources(this.toolStripSeparator29, "toolStripSeparator29");
+            // 
+            // ct1_params
+            // 
+            resources.ApplyResources(this.ct1_params, "ct1_params");
+            this.ct1_params.Name = "ct1_params";
+            this.ct1_params.Click += new System.EventHandler(this.ct1_params_Click);
+            // 
+            // ctm1_excl
+            // 
+            resources.ApplyResources(this.ctm1_excl, "ctm1_excl");
+            this.ctm1_excl.Name = "ctm1_excl";
+            this.ctm1_excl.Click += new System.EventHandler(this.ctm1_excl_Click);
+            // 
+            // toolStripSeparator30
+            // 
+            this.toolStripSeparator30.Name = "toolStripSeparator30";
+            resources.ApplyResources(this.toolStripSeparator30, "toolStripSeparator30");
             // 
             // ctdel
             // 
@@ -893,6 +924,11 @@
             resources.ApplyResources(this.cti4_2, "cti4_2");
             this.cti4_2.Name = "cti4_2";
             this.cti4_2.Click += new System.EventHandler(this.cti4_2_Click);
+            // 
+            // sep29
+            // 
+            this.sep29.Name = "sep29";
+            resources.ApplyResources(this.sep29, "sep29");
             // 
             // cti5
             // 
@@ -1884,10 +1920,13 @@
             // group_prog
             // 
             this.group_prog.Controls.Add(this.btn_cancel_shut);
+            this.group_prog.Controls.Add(this.lbl_after_enc);
+            this.group_prog.Controls.Add(this.lbl_cpu_pr);
             this.group_prog.Controls.Add(this.lbl_dw_speed);
             this.group_prog.Controls.Add(this.TB1);
             this.group_prog.Controls.Add(this.combo_prio);
             this.group_prog.Controls.Add(this.btn_save_prio);
+            this.group_prog.Controls.Add(this.lbl_multip);
             this.group_prog.Controls.Add(this.btn_abort_all);
             this.group_prog.Controls.Add(this.chkshut);
             this.group_prog.Controls.Add(this.pic_resume);
@@ -1908,6 +1947,16 @@
             this.group_prog.Name = "group_prog";
             this.group_prog.TabStop = false;
             // 
+            // lbl_after_enc
+            // 
+            resources.ApplyResources(this.lbl_after_enc, "lbl_after_enc");
+            this.lbl_after_enc.Name = "lbl_after_enc";
+            // 
+            // lbl_cpu_pr
+            // 
+            resources.ApplyResources(this.lbl_cpu_pr, "lbl_cpu_pr");
+            this.lbl_cpu_pr.Name = "lbl_cpu_pr";
+            // 
             // lbl_dw_speed
             // 
             resources.ApplyResources(this.lbl_dw_speed, "lbl_dw_speed");
@@ -1921,6 +1970,11 @@
             this.btn_save_prio.Name = "btn_save_prio";
             this.btn_save_prio.UseVisualStyleBackColor = true;
             this.btn_save_prio.Click += new System.EventHandler(this.btn_save_prio_Click);
+            // 
+            // lbl_multip
+            // 
+            resources.ApplyResources(this.lbl_multip, "lbl_multip");
+            this.lbl_multip.Name = "lbl_multip";
             // 
             // btn_abort_all
             // 
@@ -2000,6 +2054,7 @@
             resources.ApplyResources(this.pic_no_errors, "pic_no_errors");
             this.pic_no_errors.Name = "pic_no_errors";
             this.pic_no_errors.TabStop = false;
+            this.pic_no_errors.Click += new System.EventHandler(this.pic_no_errors_Click);
             // 
             // pic_recording
             // 
@@ -2833,7 +2888,6 @@
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.btn_multimedia);
             this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.lbl_multip);
             this.panel1.Controls.Add(this.btn_multiple_presets);
             this.panel1.Controls.Add(this.grp_fade);
             this.panel1.Controls.Add(this.chk_trim2);
@@ -2956,11 +3010,6 @@
             // 
             resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
-            // 
-            // lbl_multip
-            // 
-            resources.ApplyResources(this.lbl_multip, "lbl_multip");
-            this.lbl_multip.Name = "lbl_multip";
             // 
             // grp_fade
             // 
@@ -4554,12 +4603,29 @@
             this.pic_batt.Name = "pic_batt";
             this.pic_batt.TabStop = false;
             // 
+            // timer_watch
+            // 
+            this.timer_watch.Interval = 10000;
+            this.timer_watch.Tick += new System.EventHandler(this.timer_watch_Tick);
+            // 
+            // pic_mon
+            // 
+            resources.ApplyResources(this.pic_mon, "pic_mon");
+            this.pic_mon.Name = "pic_mon";
+            this.pic_mon.TabStop = false;
+            // 
+            // BG_Add_col_cust_med
+            // 
+            this.BG_Add_col_cust_med.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BG_Add_col_cust_med_DoWork);
+            this.BG_Add_col_cust_med.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BG_Add_col_cust_med_RunWorkerCompleted);
+            // 
             // Form1
             // 
             this.AllowDrop = true;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Controls.Add(this.pic_mon);
             this.Controls.Add(this.btn_wizard);
             this.Controls.Add(this.pic_batt);
             this.Controls.Add(this.lbl_updates);
@@ -4706,6 +4772,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_reading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_dark)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_batt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_mon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5209,6 +5276,15 @@
         public System.Windows.Forms.Button change_ff;
         private System.Windows.Forms.PictureBox pic_file_add_input;
         private System.Windows.Forms.PictureBox pic_add_variable;
+        private System.Windows.Forms.Timer timer_watch;
+        private System.Windows.Forms.PictureBox pic_mon;
+        private System.ComponentModel.BackgroundWorker BG_Add_col_cust_med;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator29;
+        private System.Windows.Forms.ToolStripMenuItem ctm1_excl;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator30;
+        private System.Windows.Forms.ToolStripSeparator sep29;
+        private System.Windows.Forms.Label lbl_after_enc;
+        private System.Windows.Forms.Label lbl_cpu_pr;
     }
 }
 

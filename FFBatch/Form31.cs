@@ -10,7 +10,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Diagnostics;
 
 namespace FFBatch
 {
@@ -20,6 +22,7 @@ namespace FFBatch
         public String file;
         public String dur;
         public Boolean canceled = false;
+        private List<string[]> list_chaps_w = new List<string[]>();
         public Form31()
         {
             InitializeComponent();
@@ -40,19 +43,179 @@ namespace FFBatch
             RefreshResources(this, resources);
         }
 
+        public void UpdateColorDark(Control myControl)
+        {
+            myControl.BackColor = Color.FromArgb(255, 64, 64, 64);
+            myControl.ForeColor = Color.White;
+            foreach (Control subC in myControl.Controls)
+            {
+                UpdateColorDark(subC);
+            }
+        }
+
+        public void UpdateColorDefault(Control myControl)
+        {
+            myControl.BackColor = SystemColors.InactiveBorder;
+            myControl.ForeColor = Control.DefaultForeColor;
+            foreach (Control subC in myControl.Controls)
+            {
+                UpdateColorDefault(subC);                
+            }
+            
+            foreach (Control subC in Controls.OfType<System.Windows.Forms.GroupBox>())
+            {
+                foreach (Control subC2 in subC.Controls.OfType<System.Windows.Forms.TextBox>())
+                {
+                    { subC2.BackColor = SystemColors.Window; }
+                }                
+            }
+        }
+
+        private String safe_out_ffname(String outf)
+        {
+            outf = outf.Replace("/", "_");
+            outf = outf.Replace(":", "_");
+            outf = outf.Replace("*", "_");
+            outf = outf.Replace("?", "_");
+            outf = outf.Replace("¿", "_");
+            outf = outf.Replace("@", "_");
+            outf = outf.Replace("\u0022", "_");
+            outf = outf.Replace("<", "_");
+            outf = outf.Replace(">", "_");
+            outf = outf.Replace("|", "_");
+            outf = outf.Replace(";", "_");
+            outf = outf.Replace("\\", "_");
+            outf = outf.Replace("(", "_");
+            outf = outf.Replace(")", "_");
+            return outf;
+        }
+
+        private void get_chapters()
+        {
+            String ff_frames = String.Empty;
+            Process get_chap = new Process();
+            String args = " -an -vn -sn -f ffmetadata ";
+            
+            String output = Path.Combine(Path.GetTempPath(), "FFBatch_test") + "\\" + Path.GetFileNameWithoutExtension(safe_out_ffname(file)) + "_chapters" + ".txt";
+            get_chap.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "ffmpeg.exe");
+            get_chap.StartInfo.Arguments = "-i " + '\u0022' + file + '\u0022' + args + " -y " + '\u0022' + output + '\u0022';
+            get_chap.StartInfo.CreateNoWindow = true;
+            get_chap.EnableRaisingEvents = true;
+            get_chap.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            get_chap.Start();
+            get_chap.WaitForExit();
+            String chaps_file = String.Empty;
+
+            if (File.Exists(output)) chaps_file = File.ReadAllText(output);
+            else
+            {
+                txt_pre.Text = Properties.Strings2.no_chaps;
+                return;
+            }
+            Boolean titles = false;
+            if (chaps_file.Contains("title=")) titles = true;
+
+            String[] chaps = chaps_file.Split(new[] { "[CHAPTER]", "\n", "\r" }, StringSplitOptions.RemoveEmptyEntries);
+            String tb = String.Empty;
+            Double tbd = 0;
+            String tst = String.Empty;
+            Double tstd = 0;
+            String tstend = String.Empty;
+            Double tsendd = 0;
+            String tsttit = String.Empty;
+            list_chaps_w.Clear();
+
+            if (titles == true)
+            {
+                foreach (String chap in chaps)
+                {
+                    if (chap.Contains("TIMEBASE=1/"))
+                    {
+                        int tbase = chap.LastIndexOf("TIMEBASE=1/");
+                        tb = chap.Substring(tbase + 11, (chap.Length - tbase - 11));
+                        tbd = Convert.ToDouble(tb);
+                        //MessageBox.Show("Base: " + tb);
+                    }
+                    if (chap.Contains("START="))
+                    {
+                        int tstart = chap.LastIndexOf("START=");
+                        tst = chap.Substring(tstart + 6, chap.Length - tstart - 6);
+                        tstd = Convert.ToDouble(tst);
+                    }
+                    if (chap.Contains("END="))
+                    {
+                        int tsend = chap.LastIndexOf("END=");
+                        tstend = chap.Substring(tsend + 4, chap.Length - tsend - 4);
+                        tsendd = Convert.ToDouble(tstend);
+                    }
+
+                    if (chap.Contains("title="))
+                    {
+                        int tstitle = chap.LastIndexOf("title=");
+                        tsttit = chap.Substring(tstitle + 6, chap.Length - tstitle - 6);
+                        String[] sstt = new String[] { "-ss " + (tstd / tbd).ToString().Replace(",", "."), "-to " + (tsendd / tbd).ToString().Replace(",", "."), tsttit };
+                        list_chaps_w.Add(sstt);
+                    }
+                }
+            }
+            else
+            {
+                foreach (String chap in chaps)
+                {
+                    if (chap.Contains("TIMEBASE=1/"))
+                    {
+                        int tbase = chap.LastIndexOf("TIMEBASE=1/");
+                        tb = chap.Substring(tbase + 11, (chap.Length - tbase - 11));
+                        tbd = Convert.ToDouble(tb);
+                        //MessageBox.Show("Base: " + tb);
+                    }
+                    if (chap.Contains("START="))
+                    {
+                        int tstart = chap.LastIndexOf("START=");
+                        tst = chap.Substring(tstart + 6, chap.Length - tstart - 6);
+                        tstd = Convert.ToDouble(tst);
+                    }
+                    if (chap.Contains("END="))
+                    {
+                        int tsend = chap.LastIndexOf("END=");
+                        tstend = chap.Substring(tsend + 4, chap.Length - tsend - 4);
+                        tsendd = Convert.ToDouble(tstend);
+                        String[] sstt = new String[] { "-ss " + (tstd / tbd).ToString().Replace(",", "."), "-to " + (tsendd / tbd).ToString().Replace(",", "."), tsttit };
+                        list_chaps_w.Add(sstt);
+                    }
+                }
+            }
+
+            txt_pre.Text = list_chaps_w.Count.ToString() + " " + Properties.Strings2.chaps_f;
+        }
+
         private void Form31_Load(object sender, EventArgs e)
         {
+            if (Properties.Settings.Default.dark_mode == true)
+            {
+                foreach (Control c in this.Controls) UpdateColorDark(c);
+                this.BackColor = Color.FromArgb(255, 64, 64, 64);
+            }
+            else
+            {
+                foreach (Control c in this.Controls) UpdateColorDefault(c);
+                this.BackColor = SystemColors.InactiveBorder;
+            }
+
             refresh_lang();
             variab = "";
         }
 
         private Boolean selected()
         {
-            foreach (var pb in this.Controls.OfType<RadioButton>())
+            foreach (var pb in this.Controls.OfType<GroupBox>())
             {
-                if (pb.Checked == true)
+                foreach (var pb2 in pb.Controls.OfType<RadioButton>())
                 {
-                    return true;
+                    if (pb2.Checked == true)
+                    {
+                        return true;
+                    }
                 }
             }
             return false;
@@ -64,9 +227,12 @@ namespace FFBatch
             if (radio_fn_path.Checked == true) variab = "%fp";
             if (radio_fn.Checked == true) variab = "%fn";
             if (radio_fn_ext.Checked == true) variab = "%ff";
-            if (radio_fd.Checked == true) variab = "%fd";
-            if (radio_fdur.Checked == true) variab = "%fdur";
-            if (radio_fdur_1.Checked == true) variab = "%fdur+1";
+            if (radio_fd.Checked == true) variab = "%fd";            
+            if (radio_fdur_1.Checked == true) variab = "%fdur" + txt_operator_dur.Text;
+            if (radio_bitr.Checked == true) variab = "%fbitr" + txt_operator_bitr.Text;
+            if (radio_nul.Checked == true) variab = "nul";
+            if (radio_chaps.Checked == true) variab = "[[split_chapters]]";
+            if (radio_target_size.Checked == true) variab = " [[target_size=" + txt_size.Text + "MB-" + num_aud_target.Value.ToString() + "Kbps]] ";
         } 
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -134,27 +300,76 @@ namespace FFBatch
         private void radio_fd_CheckedChanged(object sender, EventArgs e)
         {
             txt_pre.Text = "";
-            if (file.Length > 4) txt_pre.Text = Path.GetDirectoryName(file);
+            if (file.Length > 4)
+            {
+                txt_pre.Text = new DirectoryInfo(Path.GetDirectoryName(file)).Name;
+            }
             else txt_pre.Text = "";
         }
 
-        private void radio_fdur_CheckedChanged(object sender, EventArgs e)
+        public Double get_bitrate(String file, String dur_file)
+        {
+            Double bytes = 0;
+            try
+            {
+                FileInfo fi = new FileInfo(file);
+                Double size = fi.Length;
+                Double dur = 0;
+
+                TimeSpan time;
+                if (TimeSpan.TryParse(dur_file, out time))
+                {
+                    dur = TimeSpan.Parse(dur_file).TotalSeconds;
+                    if (dur > 0) bytes = Math.Round((size / dur * 8 / 1000 * 0.998), 0);
+                    else bytes = 0;
+                }
+                return bytes;                               
+            }
+            catch { return 0; }
+        }
+
+        private void get_fdur()
         {
             try
             {
-                txt_pre.Text = TimeSpan.Parse(dur).TotalSeconds.ToString();
+                Double dur_rpl = TimeSpan.Parse(dur).TotalSeconds;
+                String dur_secs = dur.ToString();
+
+                int length = 0;
+                int limit = txt_operator_dur.Text.Length - 1;
+
+                for (int ii = 0; ii < limit; ii++)
+                {
+                    if (IsDigitsOnly(txt_operator_dur.Text.Substring(ii, 1)))
+                    {
+                        length = ii + 1;
+                    }
+                    else break;
+                }
+                                
+                String dur_2 = TimeSpan.Parse(dur_secs).TotalSeconds.ToString();
+                Double result = Convert.ToDouble(new DataTable().Compute(dur_2 + txt_operator_dur.Text, null));
+                txt_pre.Text = Math.Round(result).ToString();
             }
-            catch { txt_pre.Text = Properties.Strings.error; }
+
+            catch { txt_pre.Text = ""; }
         }
 
         private void radio_fdur_1_CheckedChanged(object sender, EventArgs e)
         {
-            try
+            get_fdur();
+        }
+        Boolean IsDigitsOnly(String str)
+        {
+            foreach (char c in str)
             {
-                Double t = TimeSpan.Parse(dur).TotalSeconds + 1;
-                txt_pre.Text = Math.Round(t,0).ToString();
+                if ((c < '0' || c > '9') && c != '.')
+                {
+                    return false;
+                }
             }
-            catch { txt_pre.Text = Properties.Strings.error; }
+
+            return true;
         }
 
         private void txt_pre_TextChanged(object sender, EventArgs e)
@@ -162,6 +377,100 @@ namespace FFBatch
             txt_pre.SelectionStart = txt_pre.TextLength;
             txt_pre.ScrollToCaret();
          
+        }
+
+        private void radio_nul_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radio_nul.Checked)
+            {
+                txt_pre.Text = "";
+                btn_copy.Enabled = false;
+            }
+            else
+            {
+                btn_copy.Enabled = true;
+            }
+        }
+
+        private void txt_operator_TextChanged(object sender, EventArgs e)
+        {
+            if (radio_fdur_1.Checked) get_fdur();
+        }
+
+        private void radio_chaps_CheckedChanged(object sender, EventArgs e)
+        {
+            if (file.Length > 0)
+            {
+                if (radio_chaps.Checked) get_chapters();
+            }
+            else txt_pre.Text = "";
+
+        }
+
+        private void radio_bitr_CheckedChanged(object sender, EventArgs e)
+        {
+            txt_pre.Text =  get_bitrate(file, dur).ToString() + "K";
+        }
+
+        private void txt_operator_bitr_TextChanged(object sender, EventArgs e)
+        {
+            if (radio_bitr.Checked)
+            {
+                try
+                {
+                    Double result = Convert.ToDouble(new DataTable().Compute(get_bitrate(file, dur) + txt_operator_bitr.Text, null));
+                    txt_pre.Text = Math.Round(result).ToString() + "K";
+                }
+                catch { txt_pre.Text = ""; }
+            }
+        }
+
+        private void get_bitrate(Double target_mb)
+        {
+            Double bitr = target_mb * 8 * 1024 / TimeSpan.Parse(dur).TotalSeconds;
+            bitr = Math.Round(bitr * 0.99, 0) - (double)num_aud_target.Value;
+            if (bitr < 100) bitr = 100;
+            String bitrs = bitr.ToString() + "K";
+            txt_pre.Text = "-vb " + bitrs + " [[target_size=" + txt_size.Text + "MB-" + num_aud_target.Value.ToString() + "Kbps]] ";
+        }
+        private void txt_size_TextChanged(object sender, EventArgs e)
+        {            
+            if (System.Text.RegularExpressions.Regex.IsMatch(txt_size.Text, "[^0-9]"))
+            {
+                txt_size.Text = txt_size.Text.Remove(txt_size.Text.Length - 1);
+            }
+            else
+            {
+                if (file.Length > 0 && txt_size.Text.Length > 0)
+                {
+                    get_bitrate(Convert.ToDouble(txt_size.Text));
+                }                
+            }
+        }
+
+        private void radio_target_size_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radio_target_size.Checked)
+            {
+                txt_pre.Text = "";
+                txt_size.Enabled = true;
+                if (file.Length > 0 && txt_size.Text.Length > 0)
+                {
+                    get_bitrate(Convert.ToDouble(txt_size.Text));
+                }
+            }
+            else
+            {
+                txt_size.Enabled = false;
+            }
+        }
+
+        private void num_aud_target_ValueChanged(object sender, EventArgs e)
+        {
+            if (file.Length > 0 && txt_size.Text.Length > 0)
+            {
+                get_bitrate(Convert.ToDouble(txt_size.Text));
+            }
         }
     }
 }
