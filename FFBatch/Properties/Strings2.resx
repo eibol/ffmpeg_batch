@@ -805,7 +805,7 @@
     <value>Application was minimized to system tray icon</value>
   </data>
   <data name="set_cust_p" xml:space="preserve">
-    <value>Set custom parameters</value>
+    <value>Set custom preset</value>
   </data>
   <data name="rem_cust_p" xml:space="preserve">
     <value>Remove custom parameters</value>
@@ -905,5 +905,44 @@
   </data>
   <data name="add_variable" xml:space="preserve">
     <value>Add variable to parameters</value>
+  </data>
+  <data name="mon_no_rel" xml:space="preserve">
+    <value>A relative main path cannot be used with subfolders monitoring, please use an absolute path.</value>
+  </data>
+  <data name="mon_path_equal" xml:space="preserve">
+    <value>Monitored folder and main output path are the same. Please select another destination path at main tab, or use a relative output path.</value>
+  </data>
+  <data name="mon_ing" xml:space="preserve">
+    <value>Monitoring folder</value>
+  </data>
+  <data name="excl_list" xml:space="preserve">
+    <value>Exclusion list</value>
+  </data>
+  <data name="chapters" xml:space="preserve">
+    <value>chapters</value>
+  </data>
+  <data name="chapters_all" xml:space="preserve">
+    <value>Manual chapters layout will be applied to all list files. Are you sure?</value>
+  </data>
+  <data name="on_rel_path" xml:space="preserve">
+    <value>on relative path.</value>
+  </data>
+  <data name="pls_include" xml:space="preserve">
+    <value>Please include</value>
+  </data>
+  <data name="trailer_zero" xml:space="preserve">
+    <value>Trailer configuration leads to zero duration.</value>
+  </data>
+  <data name="add_cust_param" xml:space="preserve">
+    <value>Please add custom parameters column to add specific presets for single/multiple files.</value>
+  </data>
+  <data name="chaps_f" xml:space="preserve">
+    <value>chapters found.</value>
+  </data>
+  <data name="no_chaps" xml:space="preserve">
+    <value>No chapters found in current file.</value>
+  </data>
+  <data name="time_out_url" xml:space="preserve">
+    <value>Timeout trying to process url</value>
   </data>
 </root>

@@ -888,4 +888,43 @@
   <data name="add_variable" xml:space="preserve">
     <value>Adicionar variável aos parâmetros</value>
   </data>
+  <data name="mon_no_rel" xml:space="preserve">
+    <value>Um caminho relativo não pode ser usado ao monitorar subpastas, use um caminho absoluto ou desative as subpastas.</value>
+  </data>
+  <data name="mon_path_equal" xml:space="preserve">
+    <value>A pasta monitorada é a mesma que a pasta de saída principal, selecione outro caminho de destino ou use um caminho relativo.</value>
+  </data>
+  <data name="mon_ing" xml:space="preserve">
+    <value>Pasta de monitoramento</value>
+  </data>
+  <data name="excl_list" xml:space="preserve">
+    <value>Lista de exclusão de tipos de arquivo</value>
+  </data>
+  <data name="chapters" xml:space="preserve">
+    <value>capítulos</value>
+  </data>
+  <data name="chapters_all" xml:space="preserve">
+    <value>O layout manual dos capítulos será aplicado a todos os arquivos de lista. Tem certeza?</value>
+  </data>
+  <data name="on_rel_path" xml:space="preserve">
+    <value>no caminho relativo</value>
+  </data>
+  <data name="pls_include" xml:space="preserve">
+    <value>Porfavor inclua</value>
+  </data>
+  <data name="trailer_zero" xml:space="preserve">
+    <value>A configuração do trailer do filme leva à duração zero.</value>
+  </data>
+  <data name="add_cust_param" xml:space="preserve">
+    <value>Adicione uma coluna de parâmetros personalizados para adicionar predefinições específicas para arquivos únicos/múltiplos.</value>
+  </data>
+  <data name="chaps_f" xml:space="preserve">
+    <value>capítulos encontrados.</value>
+  </data>
+  <data name="no_chaps" xml:space="preserve">
+    <value>Nenhum capítulo encontrado no arquivo atual.</value>
+  </data>
+  <data name="time_out_url" xml:space="preserve">
+    <value>Tempo limite ao tentar processar o URL</value>
+  </data>
 </root>

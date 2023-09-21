@@ -12,7 +12,7 @@ namespace FFBatch.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.5.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.7.0.0")]
     public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -321,6 +321,117 @@ namespace FFBatch.Properties {
             set {
                 this["bat_level"] = value;
             }
-        }        
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool monitor_fd {
+            get {
+                return ((bool)(this["monitor_fd"]));
+            }
+            set {
+                this["monitor_fd"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string fd_monitored {
+            get {
+                return ((string)(this["fd_monitored"]));
+            }
+            set {
+                this["fd_monitored"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("60")]
+        public decimal mon_int {
+            get {
+                return ((decimal)(this["mon_int"]));
+            }
+            set {
+                this["mon_int"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool no_dest_overw {
+            get {
+                return ((bool)(this["no_dest_overw"]));
+            }
+            set {
+                this["no_dest_overw"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool mon_fd_subs {
+            get {
+                return ((bool)(this["mon_fd_subs"]));
+            }
+            set {
+                this["mon_fd_subs"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ignore_alr_enc {
+            get {
+                return ((bool)(this["ignore_alr_enc"]));
+            }
+            set {
+                this["ignore_alr_enc"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string cust_med_col {
+            get {
+                return ((string)(this["cust_med_col"]));
+            }
+            set {
+                this["cust_med_col"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int cust_med_col_t {
+            get {
+                return ((int)(this["cust_med_col_t"]));
+            }
+            set {
+                this["cust_med_col_t"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("<?xml version=\"1.0\" encoding=\"utf-16\"?>\r\n<ArrayOfString xmlns:xsd=\"http://www.w3." +
+            "org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r\n  <s" +
+            "tring>exe</string>\r\n  <string>srt</string>\r\n  <string>tmp</string>\r\n</ArrayOfStr" +
+            "ing>")]
+        public global::System.Collections.Specialized.StringCollection excl_list {
+            get {
+                return ((global::System.Collections.Specialized.StringCollection)(this["excl_list"]));
+            }
+            set {
+                this["excl_list"] = value;
+            }
+        }
     }
 }

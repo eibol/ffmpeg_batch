@@ -903,4 +903,43 @@
   <data name="add_variable" xml:space="preserve">
     <value>أضف متغيرًا إلى المعلمات</value>
   </data>
+  <data name="mon_no_rel" xml:space="preserve">
+    <value>لا يمكن استخدام المسار النسبي عند مراقبة المجلدات الفرعية ، يرجى استخدام مسار مطلق أو تعطيل المجلدات الفرعية.</value>
+  </data>
+  <data name="mon_path_equal" xml:space="preserve">
+    <value>المجلد المراقب هو نفسه مجلد الإخراج الرئيسي ، يرجى تحديد مسار وجهة آخر ، أو استخدام مسار نسبي.</value>
+  </data>
+  <data name="mon_ing" xml:space="preserve">
+    <value>مجلد المراقبة</value>
+  </data>
+  <data name="excl_list" xml:space="preserve">
+    <value>قائمة استبعاد أنواع الملفات</value>
+  </data>
+  <data name="chapters" xml:space="preserve">
+    <value>فصول</value>
+  </data>
+  <data name="chapters_all" xml:space="preserve">
+    <value>سيتم تطبيق تخطيط الفصول اليدوية على جميع ملفات القائمة. هل أنت متأكد؟</value>
+  </data>
+  <data name="on_rel_path" xml:space="preserve">
+    <value>على المسار النسبي</value>
+  </data>
+  <data name="pls_include" xml:space="preserve">
+    <value>يرجى تضمين</value>
+  </data>
+  <data name="trailer_zero" xml:space="preserve">
+    <value>يؤدي تكوين المقطع الدعائي للفيلم إلى عدم وجود مدة.</value>
+  </data>
+  <data name="add_cust_param" xml:space="preserve">
+    <value>الرجاء إضافة عمود المعلمات المخصصة لإضافة إعدادات مسبقة محددة للملفات الفردية/المتعددة.</value>
+  </data>
+  <data name="chaps_f" xml:space="preserve">
+    <value>تم العثور على الفصول.</value>
+  </data>
+  <data name="no_chaps" xml:space="preserve">
+    <value>لم يتم العثور على فصول في الملف الحالي.</value>
+  </data>
+  <data name="time_out_url" xml:space="preserve">
+    <value>انتهت المهلة في محاولة معالجة عنوان url</value>
+  </data>
 </root>
