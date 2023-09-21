@@ -117,71 +117,374 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
-  <data name="&gt;&gt;btn_del_col.Name" xml:space="preserve">
-    <value>btn_del_col</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>433, 235</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Select column type</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>158</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_del_col.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btn_add_col.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAUSSURBVDhPfdR7UJRVGMfx5333
+        3WXZZXfZXdhdUC6CqGAIAtIIYxca00nHUgnRFZOrCKQCKjqichW5CZIOqWSgaWaiKViYMSZ5G29pU9bY
+        dJmpZmqyy2TjruXrr+dd0pFs/OM755+znzln33MOmRvUZNskkWOzihyt/6lZpfbfKnWYOqnXtIN6DB3U
+        a21WddorRa2tRqQHc9SLZK1QkU+eisjSIJFfoxdZW7hNQ1OVi9bx/aHYjVfwGlqxF+2IPxYGcbkQaNng
+        Rfer4/lNXuS7Sk2GPJHRRolsdRry36ghv4ahURmZJ/ZHuq7gNM7jJK7iDJL6omRaSnZrlYY8VfNc/r2Z
+        QWO+RMbF/6L+9RoP7LeBJ9VLZN04GK0k84S+CNcJ9KIH+/AOrznucJhMSxit4LmVg6iFQVOBRKbC/0Nr
+        eFKtmqx1jHK0gtGjEa53sR97bm/DLmxFbHeoLCro+kFUAc1FDL7M8fgwWssTPVtiuEYioZTMvDLXPuzA
+        tj+b0H63HtH7g2SpiNF1DJYxuFTyZFryKJS3M7g1NamKiWIOhtzqQAuaf6tEo2stovYGyqpC0lhWMraM
+        Kx4ch6DWejWpy8girCCLuJwrIQtjFmkpWSiDwsK6LO7Nd6pR/dNKVNwsQeh2X5nm0GhtDlm8c8mi41FJ
+        m8njQrIY85WVtkgdcX2h7qT3It0JvSPdcYdHuGMPhbrHHQh2jeh0uCf1R6P6lxUo+24xSn/IRfyRcAS0
+        +rpHtFtcIVt83cFtvu6gFqN7eIvB7WjQuU1F4k4yttOpLj6HZ/EB3sZO/r5bsf1uM9r+rkHj7XJU3CjB
+        sq+ysPhLJ7KvpSLneioWfv080r+YilmfPo3pV5Ix5cIETL6YgMSTI2EoFj4iYxv1tN2u4eOyB6/ebETr
+        79XYeGMNKn4sxervC1H8bTYWXU9H5rVZcF6dhrSPp2DWxRRMP5eMZ08l4qkTsUg+PhYTj0ci+vBwGIqE
+        HjK10UATyvEW35nNf9Wg/tYaVP7B4K+FKP05GwXfOJHxyQykX5mKmedT8MLlpzD9ahImX0jAk2dikDQQ
+        icT+kYjvD8OYI3b4FAoDZK6SOqO6A+XYA6Hy2DeHyZFvBMijuxxyxOu2O0FbzHJMdwicn03DTF7djEuT
+        MKrLBv9anRxQr79j36CT7TXesq1SK/tXeMmWcrXskyXuIkOxWtQsI4dQQA5VAdlV+WSX8siuziU7pdJo
+        e6PWnfr5M3jubBKmXEoEXxBZmEGPaZ1k95pHdm36YN5p5NCliQ6DU1CRYTk/KJX8IJTzYV7DZ24VV8aV
+        SKTLIgpqNd2adjkJKR/G4YnT4+Co08kMSga+54Y8LofL5rK4TC5DoIdRzrdYxfdYRd4LyTysyceVci4O
+        Se9H4fETo2Cr9pa1c8nuwXK5R6F+axldx2AJg4tEMvHN0C0gM/93ruSBKMQfDcf4vhD4r/eSvecIdg+i
+        pIAK/BBaxSg/DgpozGFQQflm6DPIbK/VuRKOhyP6YBCijgSAdyTrXmT0JQbupWAK/iDqrzy0pXxvMwUy
+        5TLID62S3klmW5XWFXMsGGMOOBBxyA/m1WpZP5u3v0Ck+2Vwmfx9sviR9qD8UazKa8OgmUEzY/cyzRes
+        /LcgvNuK4E4jhu/Ww1Sqgs9sIdADPdh8Tlm1gppWq0nPgHo2kWaeMLS5gobP3U5DvtDrkyP0+GQLvfr5
+        4i4pTdBK6QINKU0gL6dIxgUi/QOq6B87V6beXQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="cb_custom_med.Items12" xml:space="preserve">
+    <value>Bit depth</value>
+  </data>
+  <data name="&gt;&gt;btn_add_col.Name" xml:space="preserve">
+    <value>btn_add_col</value>
+  </data>
+  <data name="&gt;&gt;btn_exit.Name" xml:space="preserve">
+    <value>btn_exit</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_exit.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="cb_custom_med.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 44</value>
+  </data>
+  <data name="&gt;&gt;cb_col.Name" xml:space="preserve">
+    <value>cb_col</value>
   </data>
   <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btn_add_col.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="btn_add_col.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="btn_exit.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
   </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+  <data name="btn_exit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="btn_exit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 79</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;btn_exit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btn_exit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>132, 101</value>
+  </data>
+  <data name="cb_custom_med.Items8" xml:space="preserve">
+    <value>Frame rate mode</value>
+  </data>
+  <data name="&gt;&gt;cb_custom_med.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_del_col.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="cb_col.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cb_col.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-1, 192</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btn_add_col.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Select column type</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form17</value>
+  </data>
+  <data name="&gt;&gt;btn_add_col.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>required time to read and add files to list.</value>
   </data>
+  <data name="cb_custom_med.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 21</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btn_exit.Text" xml:space="preserve">
+    <value>Close window</value>
+  </data>
+  <data name="&gt;&gt;cb_col.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_custom_med.Name" xml:space="preserve">
+    <value>cb_custom_med</value>
+  </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 68</value>
+    <value>49, 68</value>
   </data>
-  <data name="&gt;&gt;btn_add_col.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="btn_del_col.Text" xml:space="preserve">
-    <value>Remove last column</value>
+  <data name="label3.Text" xml:space="preserve">
+    <value>(First audio stream found)</value>
   </data>
-  <data name="btn_add_col.Text" xml:space="preserve">
-    <value>Add column</value>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
   </data>
-  <data name="btn_add_col.Location" type="System.Drawing.Point, System.Drawing">
-    <value>102, 98</value>
+  <data name="&gt;&gt;btn_del_col.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 23</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btn_exit.TabIndex" type="System.Int32, mscorlib">
-    <value>152</value>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="btn_exit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 79</value>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>159</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 13</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btn_del_col.Parent" xml:space="preserve">
+  <data name="btn_exit.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>154</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Add custom column</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btn_del_col.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="cb_custom_med.Items7" xml:space="preserve">
+    <value>Display aspect ratio</value>
+  </data>
+  <data name="btn_del_col.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btn_del_col.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 96</value>
+  </data>
+  <data name="cb_custom_med.Items9" xml:space="preserve">
+    <value>Frame rate</value>
+  </data>
+  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
+    <value>156</value>
+  </data>
+  <data name="btn_add_col.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btn_del_col.Text" xml:space="preserve">
+    <value>Remove last column</value>
+  </data>
+  <data name="&gt;&gt;btn_add_col.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cb_col.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="btn_add_col.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 27</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="btn_add_col.TabIndex" type="System.Int32, mscorlib">
+    <value>159</value>
+  </data>
+  <data name="label3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="cb_custom_med.Items30" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="cb_col.Items" xml:space="preserve">
+    <value />
+  </data>
+  <data name="cb_custom_med.Items32" xml:space="preserve">
+    <value>Subtitles</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>253, 45</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 21</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>196, 13</value>
+  </data>
+  <data name="btn_add_col.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 40</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 13</value>
+  </data>
+  <data name="&gt;&gt;cb_custom_med.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="cb_custom_med.Items5" xml:space="preserve">
+    <value>Codec ID</value>
+  </data>
+  <data name="cb_col.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 21</value>
+  </data>
+  <data name="btn_del_col.TabIndex" type="System.Int32, mscorlib">
+    <value>155</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="cb_custom_med.Items6" xml:space="preserve">
+    <value>Maximum bitrate</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 4</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>258, 23</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btn_exit.TabIndex" type="System.Int32, mscorlib">
+    <value>152</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 13</value>
+  </data>
+  <data name="cb_custom_med.Items3" xml:space="preserve">
+    <value>Format profile</value>
+  </data>
+  <data name="cb_custom_med.Items31" xml:space="preserve">
+    <value>-----------------</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1973,127 +2276,8 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
-  <data name="&gt;&gt;btn_del_col.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;cb_col.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="btn_del_col.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 83</value>
-  </data>
-  <data name="&gt;&gt;btn_add_col.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btn_exit.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-1, 192</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 13</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>NOTE: Adding custom columns increases </value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>196, 13</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 4</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 21</value>
-  </data>
-  <data name="&gt;&gt;btn_add_col.Name" xml:space="preserve">
-    <value>btn_add_col</value>
-  </data>
-  <data name="btn_add_col.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 82</value>
-  </data>
-  <data name="cb_col.Items" xml:space="preserve">
-    <value />
-  </data>
-  <data name="btn_del_col.TabIndex" type="System.Int32, mscorlib">
-    <value>155</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>159</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 13</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Add custom column</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 23</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 17</value>
-  </data>
-  <data name="btn_del_col.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
-  </data>
-  <data name="btn_exit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="&gt;&gt;btn_exit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btn_exit.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
   </data>
   <data name="btn_del_col.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2103,7 +2287,7 @@
         xUAa4EouKCoB0n+A2CgltTiZgYHRAMjOLi8pAIozzgGyRZKywewNIHZRSJAzkH0EyOZLh7CvgNhJEPYT
         ELsI6Akg+wtIfTqYzcQBNgfClgGxS1IrQPYyOOcXVBZlpmeUKBhaWloqOKbkJ6UqBFcWl6TmFit45iXn
         FxXkFyWWpKYA1ULcBwaCEIWgENMAarTQZKAyAMUDhPU5EBy+jGJnEGIIkFxaVAZlMjIZE+YjzJgjwcDg
-        v5SBgeUPQsykl4FhgQ4DA/9UhJiaIQODgD4Dw745AMDGT/0ZOjZcAAAACXBIWXMAAAsQAAALEAGtI711
+        v5SBgeUPQsykl4FhgQ4DA/9UhJiaIQODgD4Dw745AMDGT/0ZOjZcAAAACXBIWXMAAAsMAAALDAE/QCLI
         AAADMklEQVRYR9WUSVeTWRRFHZVliOloFKURiYASkFZCbEAlgIo9qAhGwSp/1v2nWdvzSFC/qlurdHYd
         nMF3Bslee537zgC/Vdwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwy
         ctwycv5VTBWL1fbBgdFqGW/fGq93jRcvjGfPjJ0dY3vbaDaNhw+N+/eNe/eM27eNet24dctYXDTm5ozZ
@@ -2121,195 +2305,124 @@
         YII=
 </value>
   </data>
-  <data name="btn_exit.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="cb_custom_med.Items18" xml:space="preserve">
+    <value>-----------------</value>
   </data>
-  <data name="&gt;&gt;cb_col.Name" xml:space="preserve">
-    <value>cb_col</value>
+  <data name="cb_custom_med.Items19" xml:space="preserve">
+    <value>Audio</value>
   </data>
-  <data name="btn_exit.Text" xml:space="preserve">
-    <value>Close window</value>
+  <data name="cb_custom_med.Items14" xml:space="preserve">
+    <value>Color range</value>
   </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="cb_custom_med.Items15" xml:space="preserve">
+    <value>Color primaries</value>
   </data>
-  <data name="btn_del_col.Location" type="System.Drawing.Point, System.Drawing">
-    <value>32, 96</value>
+  <data name="cb_custom_med.Items16" xml:space="preserve">
+    <value>Writing library</value>
   </data>
-  <data name="&gt;&gt;btn_exit.Name" xml:space="preserve">
-    <value>btn_exit</value>
+  <data name="cb_custom_med.Items17" xml:space="preserve">
+    <value>Language</value>
   </data>
-  <data name="&gt;&gt;btn_exit.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="cb_custom_med.Items10" xml:space="preserve">
+    <value>Color space</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>248, 235</value>
+  <data name="cb_custom_med.Items11" xml:space="preserve">
+    <value>Chroma subsampling</value>
   </data>
-  <data name="&gt;&gt;panel1.Name" xml:space="preserve">
-    <value>panel1</value>
+  <data name="btn_del_col.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 83</value>
   </data>
-  <data name="cb_col.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 21</value>
+  <data name="cb_custom_med.Items13" xml:space="preserve">
+    <value>Scan type</value>
   </data>
-  <data name="btn_del_col.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>NOTE: Adding custom columns increases </value>
   </data>
-  <data name="&gt;&gt;cb_col.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="cb_custom_med.Items28" xml:space="preserve">
+    <value>Compression mode</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="cb_custom_med.Items29" xml:space="preserve">
+    <value>Writing library</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>(First audio stream found)</value>
-  </data>
-  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btn_add_col.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="&gt;&gt;cb_col.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;btn_del_col.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>154</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form17</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="btn_exit.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="btn_del_col.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
   </data>
-  <data name="cb_col.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="cb_custom_med.Items24" xml:space="preserve">
+    <value>Channel(s)</value>
   </data>
-  <data name="&gt;&gt;panel1.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="cb_custom_med.Items25" xml:space="preserve">
+    <value>Channel layout</value>
   </data>
-  <data name="btn_add_col.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
+  <data name="cb_custom_med.Items26" xml:space="preserve">
+    <value>Sampling rate</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="cb_custom_med.Items27" xml:space="preserve">
+    <value>Bit depth</value>
   </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="cb_custom_med.Items20" xml:space="preserve">
+    <value>-----------------</value>
   </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="cb_custom_med.Items21" xml:space="preserve">
+    <value>Format/Info</value>
   </data>
-  <data name="btn_del_col.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="cb_custom_med.Items22" xml:space="preserve">
+    <value>Codec ID</value>
   </data>
-  <data name="btn_exit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 101</value>
-  </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>156</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>158</value>
+  <data name="cb_custom_med.Items23" xml:space="preserve">
+    <value>Bit rate mode</value>
   </data>
   <data name="cb_col.Location" type="System.Drawing.Point, System.Drawing">
     <value>43, 44</value>
   </data>
-  <data name="btn_exit.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 17</value>
   </data>
-  <data name="btn_add_col.TabIndex" type="System.Int32, mscorlib">
-    <value>151</value>
+  <data name="&gt;&gt;btn_del_col.Name" xml:space="preserve">
+    <value>btn_del_col</value>
   </data>
-  <data name="btn_add_col.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="cb_custom_med.Items" xml:space="preserve">
+    <value>Video</value>
   </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>253, 45</value>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="cb_custom_med.Items4" xml:space="preserve">
+    <value>Format settings</value>
+  </data>
+  <data name="&gt;&gt;btn_exit.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="cb_custom_med.TabIndex" type="System.Int32, mscorlib">
+    <value>158</value>
+  </data>
+  <data name="&gt;&gt;btn_add_col.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Select mediainfo field</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>157</value>
+  </data>
+  <data name="cb_custom_med.Items1" xml:space="preserve">
+    <value>-----------------</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;cb_custom_med.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="cb_custom_med.Items2" xml:space="preserve">
+    <value>Format/Info</value>
+  </data>
+  <data name="&gt;&gt;panel1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ar-EG</value>
   </metadata>
 </root>

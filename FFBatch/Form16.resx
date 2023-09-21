@@ -130,14 +130,11 @@
   <data name="btn_cancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 82</value>
   </data>
-  <data name="&gt;&gt;requeue.Name" xml:space="preserve">
-    <value>requeue</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Multiplex Jobs manager</value>
   </data>
   <data name="column4.HeaderText" xml:space="preserve">
     <value>Nr</value>
-  </data>
-  <data name="btn_logs_url.Text" xml:space="preserve">
-    <value>View log file</value>
   </data>
   <data name="&gt;&gt;pic.ZOrder" xml:space="preserve">
     <value>4</value>
@@ -159,8 +156,11 @@
   <data name="Column3.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
-  <data name="&gt;&gt;btn_jobs.Name" xml:space="preserve">
-    <value>btn_jobs</value>
+  <data name="Column7.MinimumWidth" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="&gt;&gt;requeue.Name" xml:space="preserve">
+    <value>requeue</value>
   </data>
   <data name="btn_decr_font.Location" type="System.Drawing.Point, System.Drawing">
     <value>967, 36</value>
@@ -179,9 +179,6 @@
   </data>
   <data name="&gt;&gt;btn_jobs.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Column5.HeaderText" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;item_up.Name" xml:space="preserve">
     <value>item_up</value>
@@ -252,8 +249,8 @@
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
-  <data name="&gt;&gt;btn_decr_font.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;btn_jobs.Name" xml:space="preserve">
+    <value>btn_jobs</value>
   </data>
   <data name="Column6.Width" type="System.Int32, mscorlib">
     <value>55</value>
@@ -279,7 +276,7 @@
   <data name="btn_inc_font.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAAAJxSURBVDhPlZI5iJNBFMeHrXZZ
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAAAJxSURBVDhPlZI5iJNBFMeHrXZZ
         42IXQ8AEcxCSkPsgKSxslLCwYCxS5UBhA0lMYQ5yJ5jLkIAgaGGhwcq1sRBcCwsF0W0sbIOVkFJYhWUb
         x/8b5gtZF5dY/Phm3jfvN+/NDOOcs0AgsMDr9X5wu92HQOXxeBjhcrkW0Nxqte7b7fanTqeTORwOgRAp
         CSACAYeMY3wPY0b4fD6B3+9nNputCgGXXFM2ECJlgqS3EByCz+AYQqpQbEJfJG5rNBo+nU55o9HgarX6
@@ -293,6 +290,9 @@
         WSgUAiH2B6ZYniu82CKTAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="&gt;&gt;btn_clear.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="pic.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAABGdBTUEAALGeYUxB9wAAACBjSFJNAACH
@@ -301,7 +301,7 @@
         xUAa4EouKCoB0n+A2CgltTiZgYHRAMjOLi8pAIozzgGyRZKywewNIHZRSJAzkH0EyOZLh7CvgNhJEPYT
         ELsI6Akg+wtIfTqYzcQBNgfClgGxS1IrQPYyOOcXVBZlpmeUKBhaWloqOKbkJ6UqBFcWl6TmFit45iXn
         FxXkFyWWpKYA1ULcBwaCEIWgENMAarTQZKAyAMUDhPU5EBy+jGJnEGIIkFxaVAZlMjIZE+YjzJgjwcDg
-        v5SBgeUPQsykl4FhgQ4DA/9UhJiaIQODgD4Dw745AMDGT/0ZOjZcAAAACXBIWXMAAAsQAAALEAGtI711
+        v5SBgeUPQsykl4FhgQ4DA/9UhJiaIQODgD4Dw745AMDGT/0ZOjZcAAAACXBIWXMAAAsPAAALDwGS+QOl
         AAADZklEQVQ4TyWRfUxbZRjFnzmYwmhLB23Btb0tZSNTKaTptvbe21sowhZxIpumy4RlkEqBBSqRERbZ
         4qZjQmQUcQ5K9+GWuUaMm07NQvxK/CJKJCqKIAtDCqG6qdusIqM5vtU/Tt73n995nucc8iQl0B6iVaP9
         L30+3HH4Qp1CTqVEVM5UkyajU7yF+kUr+Xc8RB+VFJz8NCN9uFEjkzdp04mqV96VNNJ55DPMjAFXv8Yn
@@ -337,7 +337,7 @@
   <data name="btn_clear_list.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACYAAAAjCAYAAAD48HgdAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABS
-        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACxAAAAsQAa0jvXUAAAPySURBVFhHzZfJT9tAFIe5VaqC
+        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACw8AAAsPAZL5A6UAAAPySURBVFhHzZfJT9tAFIe5VaqC
         VIV9kThVPSE1RYEUQiFiFUScuCNBIGHfCVyQ+Au6/Fu9gDDikAth35cQIASS6fs9ZVI7DoqzuOqTPnk8
         djxfnmfxFAkhNFgslndDQ0ODVBaPj4+R+/v7UC6Ew+HQy8tL/PX1NTw4OPitKEOoHYCuoq6u7vP6+vp3
         KhcsSFC43W5XwiFt0G0adBU1NTVf1tbWflJZxGKxnIlGo+Lp6UlcXl5yGXIdHR3OhIcu1A5AV0FittXV
@@ -360,8 +360,8 @@
   <data name="requeue.TabIndex" type="System.Int32, mscorlib">
     <value>163</value>
   </data>
-  <data name="&gt;&gt;btn_clear_list.Name" xml:space="preserve">
-    <value>btn_clear_list</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Multiplex jobs manager</value>
   </data>
   <data name="&gt;&gt;Column3.Name" xml:space="preserve">
     <value>Column3</value>
@@ -378,7 +378,7 @@
   <data name="btn_decr_font.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAAAKrSURBVDhPjZM9aNNBGMZfSqHF
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAAAKrSURBVDhPjZM9aNNBGMZfSqHF
         RaVihGTIB61Jkzb556OFNKGbg4YsJdBQyRAwEEmHQEkxX21Ck9A2idYPgrioi0jBTQcdBFEcuoighYjg
         aAZRqYgIcj7veYlBSu3wcPe/vM/vnvfuQkIImp6e7snr9T5zu92foRGPx0MYyefz0czMDPn9fjmi7rbL
         5SpNTk6S0+mUkiA2KIVhFIAJzMsMYWmaRjBKsUnV7Pb5/oC6xRifYPE7xEVfUMwJpboGJQnipF31QNBJ
@@ -408,6 +408,9 @@
   <data name="&gt;&gt;dg_pr.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
+  <data name="btn_cancel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
   <data name="&gt;&gt;dg_pr.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -417,7 +420,7 @@
   <data name="btn_clear.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABS
-        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACxAAAAsQAa0jvXUAAAHgSURBVDhPnZTJiiJBEIY9+A7C
+        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACw8AAAsPAZL5A6UAAAHgSURBVDhPnZTJiiJBEIY9+A7C
         PEgjgruiomIzB/EozMXT0LcGEQRTEEW9eJhbzzyZB0UR933X6PizOwerKp2W+eEnoravIiMXGxFJO53O
         p8Fg0OGcVqvVUufNZrPG83K5XLCZBAb8NwmHw8+n04nTf+t6vcqYy+VePllSfMsIDAQCqf1+zynR5XKx
         GCDEyWRCXKl8L5vN/vzkWYF+vz+12+04vQ+Eh8Mh9ft9+R6UTqd//BcQhrbbLXU6Hep2uzKHPB7Pdw5G
@@ -434,6 +437,9 @@
   </data>
   <data name="btn_decr_font.TabIndex" type="System.Int32, mscorlib">
     <value>152</value>
+  </data>
+  <data name="item_up.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <data name="&gt;&gt;btn_logs_url.Parent" xml:space="preserve">
     <value>$this</value>
@@ -452,8 +458,8 @@
         RF/WBZnFQBrgSi4oKgHSf4DYKCW1OJmBgdEAyM4uLykAijPOAbJFkrLB7A0gdlFIkDOQfQTI5kuHsK+A
         2EkQ9hMQuwjoCSD7C0h9OpjNxAE2B8KWAbFLUitA9jI45xdUFmWmZ5QoGFpaWio4puQnpSoEVxaXpOYW
         K3jmJecXFeQXJZakpgDVQtwHBoIQhaAQ0wBqtNBkoDIAxQOE9TkQHL6MYmcQYgiQXFpUBmUyMhkT5iPM
-        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACxAAAAsQ
-        Aa0jvXUAAAPmSURBVFhHxZe5T1tBEMaXpEhLkz+FDkoKeioKKiokaEBIaaigwBISSk2FAKWIBEgcKZAx
+        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACw8AAAsP
+        AZL5A6UAAAPmSURBVFhHxZe5T1tBEMaXpEhLkz+FDkoKeioKKiokaEBIaaigwBISSk2FAKWIBEgcKZAx
         Nzb4wDbmvu8bxohDSEzmG1jHOFYizHvG0k/7jt2db459uzbn5+dfhe8XFxfDTnJ1dTV8e3vr7erq+hmJ
         RAouLy/NysqK2dzcNNvb22ZnZ8fs7u4aCJiSznx9fc1onYKIGL+amhouLy8PJZPJL2dnZ2Ztbe21AFHG
         QF6yiHEMiYIKaGtr48LCQm5oaAg+PDwUQMTGxsarCCQzBzuBFdDe3s5lZWVcVFTEjY2NAYiQ92Zraysl
@@ -485,7 +491,7 @@
   <data name="btn_jobs.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxAAAAsQAa0jvXUAAAuzSURBVFhHxZgHUNRnGsYFwWDJ
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAAAuzSURBVFhHxZgHUNRnGsYFwWDJ
         Rc9czpZTcwkiFqQsVYrAsixFigjCIkWxIBhFKSqIBUXFDmouUVGJwVyadxuTy2U0N3MXY+4yTsYoFqom
         YgmWjGdLLvrc8/53V4qLaEbNN/PMUnb3/9vnfd73+/7bCcB9ktV/eHRI5IKvPh/kGDOFvz5DWVMW8r9f
         dZkDtrTsYqVNf+/g3HeBKX8CfJN3/sPmN/3G8Ondqc7UrwduFrjzM10CJ5Xvi197C/5zqpC8CdCtuYqh
@@ -543,12 +549,6 @@
   </data>
   <data name="btn_clear.Location" type="System.Drawing.Point, System.Drawing">
     <value>-50, -19</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Multiplex jobs manager</value>
-  </data>
-  <data name="&gt;&gt;requeue.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btn_inc_font.Parent" xml:space="preserve">
     <value>$this</value>
@@ -2343,9 +2343,6 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
-  <data name="column4.Width" type="System.Int32, mscorlib">
-    <value>35</value>
-  </data>
   <data name="&gt;&gt;pic.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -2357,6 +2354,9 @@
   </data>
   <data name="&gt;&gt;btn_inc_font.ZOrder" xml:space="preserve">
     <value>8</value>
+  </data>
+  <data name="btn_jobs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 87</value>
   </data>
   <data name="btn_logs_url.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopCenter</value>
@@ -2381,9 +2381,6 @@
   </data>
   <data name="btn_decr_font.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 27</value>
-  </data>
-  <data name="&gt;&gt;item_down.Name" xml:space="preserve">
-    <value>item_down</value>
   </data>
   <data name="pic.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2433,31 +2430,6 @@
   <data name="&gt;&gt;column4.Name" xml:space="preserve">
     <value>column4</value>
   </data>
-  <data name="item_down.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABS
-        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACxAAAAsQAa0jvXUAAAQ7SURBVDhPldR7TJV1GAfwb0Zx
-        5HYO58o5cokWF7k5tbys1mxjbm4Sf9QgrloWAzNEwAMhIBcPl0SgTVAupQwMEcJN0zYiIK56MKngnIBz
-        4XK4CRyghhZz9vQ7HLIx3Fp/fPf+99n3fd7nfSDM020IV6GFa9FI0IHqsRnuKfX3ttnaJknlXJP42sMx
-        t/T+XO/jPdia2LshEOboN4SbrYdzwUj2wVoD8T5Vk03GEDlUzpG4/hF5ZPT3+sZ1w/ukckMgyNFAoFgf
-        btYwpPm68oCrEyRMU5N1OsPKZkjY+Cd5ZKk022K74cOamOLN4iu/h23JPwL8vGHw81nyNODnmmOnGIZD
-        nq4kkGGidIalDpG03IStMEy9DtvBEI/jd+AU1QE4ymchTpuE/VntU9CWYazZ+cA6UzMVWaf8StKKB2vN
-        1Bo/E5bQi+1J9+AZr4Q4ohW8oO8A59hlCKKMsE5UQXDOBGrXMC3DJs1Ysoo1W4+ZIPc4JTghbRCGtUAS
-        3gK4JDAsZh4WET2wS/6JgXrY5qxiJWaMvWbSP9gKuTNsV3wPvBKU2BzeDovgVkgiWUyYczzDPjbihffv
-        ghPWBrvEX8At1MOhUFsYWMuwVIbJB1YxEcP8FIMar2Nd4HzQCcvQH8AJbYN4HXbUiBePKGF1uBOcoHZw
-        PumDrGi04O2bkyQ4tYaVmZv55AwOvxTTBTDIhkGWwS3ghbaAG9wMOMUuy3lHjBWbwu+kWR3qOG0Z0pGG
-        gKYUSZBW8179A3LIVZNV4gBtKZ8lq5plOlShmfeT389EeOfnmyO7SiyD28t9Yzrr957oToa7YqHZOXqB
-        +GmzJLo0RZKicbIv1JEgbpQ8MsfITqEiHvsAsoszZHN5iQ7c/p1eqZkjUbWRJFVGev7GHxRUbaDsUtXP
-        2NlgtHj91kKQz/XfSHZliYQVsyS9ME3C0lHiKDRklzTA5jZADqVTJK1aJNuGx+TYTeSqJJJNEgUQ0Zul
-        o9GS/d+K8NrXi9j9zQKklVPBrhenWYNp4haMk/jsKAlzdGSfMkD8VBVJLswwbIGc65bJsfEJifqJ9hme
-        kF9kR6Ll9mvYtLMOeLVhEXsZJvliGvZFhjDPsilyKpkk27wREuZqiZ/S/xSTXTaSQ/UjEt0n8p8m2hrV
-        EQtuCduvS4DXFTO2h2GyL6fBKzJAfG482LdsgpyKR8n6jAkzN5OymYnK54nfTPSWnsj9cNuHcKkEfBni
-        /RV71v6LSRnGL56AoMDA/lXdQZ/SMdpSMEIcef/q4orPTxHv+grt6/uL3KO7PoJnDbCLAasYy7MwcaEB
-        3Dx2hs5oIryLR0h2epAs2Z5xq5ZoT+tjcj9x9yQbNPBGI7D76n9j/M/0sMlm5yhrKOzlTDWJ8vW048ZD
-        ckvpOwb/m4D/rf+Hma6tfcYQrJL7Q9wKdOSSPnAU77bguXfYpu+//QysFn8DhISmmzngcX4AAAAASUVO
-        RK5CYII=
-</value>
-  </data>
   <data name="&gt;&gt;item_up.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -2470,10 +2442,13 @@
   <data name="&gt;&gt;Column1.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;btn_decr_font.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="btn_cancel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABS
-        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACxAAAAsQAa0jvXUAAAjkSURBVFhHnZd5UJT3GcffJKZV
+        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACw8AAAsPAZL5A6UAAAjkSURBVFhHnZd5UJT3GcffJKZV
         YZEbdkFcBJQYL+5dFny1pkZTk3gmarUGlkOuBZGbgAoixJNoFI0W0cQjajzazOTQ6bTTTMamWqMJsArs
         fQCrgLczTvrt83sBWRDQ6R+PwPLyfj7P9XtfuVw/DyHy/b24NLfRXNxvOdF3mamXf9y62Zzj4xobN5Lj
         CsZ7P73uRaNA6sUl0P1yJvjG/i1orOmkt/PlZD8PUQb9Lt/uOuGfXvgKjhN9X7BODbMWaNPDfOhTpDmP
@@ -2517,7 +2492,7 @@
   <data name="item_up.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABS
-        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACxAAAAsQAa0jvXUAAAQxSURBVDhPldR5UNRlHAbwb0bt
+        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACw8AAAsPAZL5A6UAAAQxSURBVDhPldR5UNRlHAbwb0bt
         yrXL3rsKRBOHXI6a19Q0NuM444zkHzUQp5bFgBki4EIIyOHCkgg0IyhHKQOGCOKMps0QAXEqmFR7BOwu
         LMcCckkNWo5jTy+XhdZM/fHM+/71mef9/t73R+RTSeR1ga0sWy8SvV5LtOsGPfd2PdE7DeScoj3ommOC
         dYIm0CG1l3gqIwk+7SdJ7jAJ8kdI/sUYbftqhl6tuUf/jO28znKNXBO7D228eh/i7H68nKaHML032DbD
@@ -2547,6 +2522,9 @@
   <data name="&gt;&gt;btn_clear_list.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="&gt;&gt;btn_decr_font.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;btn_logs_url.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
@@ -2567,9 +2545,6 @@
   </data>
   <data name="btn_jobs.Location" type="System.Drawing.Point, System.Drawing">
     <value>540, 440</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Multiplex Jobs manager</value>
   </data>
   <data name="btn_cancel.TabIndex" type="System.Int32, mscorlib">
     <value>147</value>
@@ -2598,8 +2573,8 @@
   <data name="&gt;&gt;Column7.Name" xml:space="preserve">
     <value>Column7</value>
   </data>
-  <data name="item_down.TabIndex" type="System.Int32, mscorlib">
-    <value>150</value>
+  <data name="btn_logs_url.Text" xml:space="preserve">
+    <value>View log file</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -2609,6 +2584,9 @@
   </data>
   <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>480, 444</value>
+  </data>
+  <data name="&gt;&gt;btn_clear_list.Name" xml:space="preserve">
+    <value>btn_clear_list</value>
   </data>
   <data name="Column1.Width" type="System.Int32, mscorlib">
     <value>153</value>
@@ -2621,8 +2599,8 @@
         RF/WBZnFQBrgSi4oKgHSf4DYKCW1OJmBgdEAyM4uLykAijPOAbJFkrLB7A0gdlFIkDOQfQTI5kuHsK+A
         2EkQ9hMQuwjoCSD7C0h9OpjNxAE2B8KWAbFLUitA9jI45xdUFmWmZ5QoGFpaWio4puQnpSoEVxaXpOYW
         K3jmJecXFeQXJZakpgDVQtwHBoIQhaAQ0wBqtNBkoDIAxQOE9TkQHL6MYmcQYgiQXFpUBmUyMhkT5iPM
-        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACxAAAAsQ
-        Aa0jvXUAAANoSURBVDhPrdRvSBNhHAfwAzWtLPujZUelaaUYhHGBkJZS+qooEikzu0Z//Ft5Zk2nrt3m
+        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACw8AAAsP
+        AZL5A6UAAANoSURBVDhPrdRvSBNhHAfwAzWtLPujZUelaaUYhHGBkJZS+qooEikzu0Z//Ft5Zk2nrt3m
         SvPSTW2bU5waUdD/orTopRXhRDvKFzoIclLkNrutvfBP8fS7Z5PMSkJ68eG5557te789vz1HIISIGqv0
         VcFAGl9iocFRvhhGqSWTPz+YyZ+zZPBFlnQY0/lCy0FwgGdAwWAadgbkD+znT1lS+epP0jIcGPN6KSLa
         CeR7l0B+s5jn5T+Dzy24f4dAu/tiH+HApLfR7mW3CbSuMwBFAHH8Zx0BaM1jXxT2xA9lvNvVhgPj+iLw
@@ -2640,8 +2618,8 @@
         gg==
 </value>
   </data>
-  <data name="&gt;&gt;btn_decr_font.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="item_down.TabIndex" type="System.Int32, mscorlib">
+    <value>150</value>
   </data>
   <data name="&gt;&gt;item_up.ZOrder" xml:space="preserve">
     <value>10</value>
@@ -2652,11 +2630,33 @@
   <data name="&gt;&gt;Column3.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btn_cancel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
+  <data name="item_down.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABS
+        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACw8AAAsPAZL5A6UAAAQ7SURBVDhPldR7TJV1GAfwb0Zx
+        5HYO58o5cokWF7k5tbys1mxjbm4Sf9QgrloWAzNEwAMhIBcPl0SgTVAupQwMEcJN0zYiIK56MKngnIBz
+        4XK4CRyghhZz9vQ7HLIx3Fp/fPf+99n3fd7nfSDM020IV6GFa9FI0IHqsRnuKfX3ttnaJknlXJP42sMx
+        t/T+XO/jPdia2LshEOboN4SbrYdzwUj2wVoD8T5Vk03GEDlUzpG4/hF5ZPT3+sZ1w/ukckMgyNFAoFgf
+        btYwpPm68oCrEyRMU5N1OsPKZkjY+Cd5ZKk022K74cOamOLN4iu/h23JPwL8vGHw81nyNODnmmOnGIZD
+        nq4kkGGidIalDpG03IStMEy9DtvBEI/jd+AU1QE4ymchTpuE/VntU9CWYazZ+cA6UzMVWaf8StKKB2vN
+        1Bo/E5bQi+1J9+AZr4Q4ohW8oO8A59hlCKKMsE5UQXDOBGrXMC3DJs1Ysoo1W4+ZIPc4JTghbRCGtUAS
+        3gK4JDAsZh4WET2wS/6JgXrY5qxiJWaMvWbSP9gKuTNsV3wPvBKU2BzeDovgVkgiWUyYczzDPjbihffv
+        ghPWBrvEX8At1MOhUFsYWMuwVIbJB1YxEcP8FIMar2Nd4HzQCcvQH8AJbYN4HXbUiBePKGF1uBOcoHZw
+        PumDrGi04O2bkyQ4tYaVmZv55AwOvxTTBTDIhkGWwS3ghbaAG9wMOMUuy3lHjBWbwu+kWR3qOG0Z0pGG
+        gKYUSZBW8179A3LIVZNV4gBtKZ8lq5plOlShmfeT389EeOfnmyO7SiyD28t9Yzrr957oToa7YqHZOXqB
+        +GmzJLo0RZKicbIv1JEgbpQ8MsfITqEiHvsAsoszZHN5iQ7c/p1eqZkjUbWRJFVGev7GHxRUbaDsUtXP
+        2NlgtHj91kKQz/XfSHZliYQVsyS9ME3C0lHiKDRklzTA5jZADqVTJK1aJNuGx+TYTeSqJJJNEgUQ0Zul
+        o9GS/d+K8NrXi9j9zQKklVPBrhenWYNp4haMk/jsKAlzdGSfMkD8VBVJLswwbIGc65bJsfEJifqJ9hme
+        kF9kR6Ll9mvYtLMOeLVhEXsZJvliGvZFhjDPsilyKpkk27wREuZqiZ/S/xSTXTaSQ/UjEt0n8p8m2hrV
+        EQtuCduvS4DXFTO2h2GyL6fBKzJAfG482LdsgpyKR8n6jAkzN5OymYnK54nfTPSWnsj9cNuHcKkEfBni
+        /RV71v6LSRnGL56AoMDA/lXdQZ/SMdpSMEIcef/q4orPTxHv+grt6/uL3KO7PoJnDbCLAasYy7MwcaEB
+        3Dx2hs5oIryLR0h2epAs2Z5xq5ZoT+tjcj9x9yQbNPBGI7D76n9j/M/0sMlm5yhrKOzlTDWJ8vW048ZD
+        ckvpOwb/m4D/rf+Hma6tfcYQrJL7Q9wKdOSSPnAU77bguXfYpu+//QysFn8DhISmmzngcX4AAAAASUVO
+        RK5CYII=
+</value>
   </data>
-  <data name="item_up.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="column4.Width" type="System.Int32, mscorlib">
+    <value>35</value>
   </data>
   <data name="dg_pr.Size" type="System.Drawing.Size, System.Drawing">
     <value>1055, 369</value>
@@ -2667,11 +2667,11 @@
   <data name="Column1.HeaderText" xml:space="preserve">
     <value>Filename</value>
   </data>
-  <data name="Column7.MinimumWidth" type="System.Int32, mscorlib">
-    <value>70</value>
+  <data name="Column5.HeaderText" xml:space="preserve">
+    <value />
   </data>
-  <data name="&gt;&gt;btn_clear.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;requeue.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
@@ -2679,8 +2679,8 @@
   <data name="&gt;&gt;item_down.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
-  <data name="btn_jobs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 87</value>
+  <data name="&gt;&gt;item_down.Name" xml:space="preserve">
+    <value>item_down</value>
   </data>
   <data name="btn_clear_list.Size" type="System.Drawing.Size, System.Drawing">
     <value>43, 82</value>
@@ -2688,13 +2688,10 @@
   <data name="Column2.HeaderText" xml:space="preserve">
     <value>FFmpeg parameters</value>
   </data>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ar-EG</value>
-  </metadata>
-  <metadata name="column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="Column7.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -2703,7 +2700,7 @@
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

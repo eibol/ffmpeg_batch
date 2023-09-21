@@ -148,6 +148,9 @@
   <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
   <data name="btn_abort.Size" type="System.Drawing.Size, System.Drawing">
     <value>62, 23</value>
   </data>
@@ -158,21 +161,11 @@
   <data name="btn_abort.Text" xml:space="preserve">
     <value>Abort</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
-  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form11_2</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="btn_abort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>80, 107</value>
-  </data>
-  <data name="pic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 33</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Reading playlist contents</value>
@@ -192,8 +185,11 @@
   <data name="&gt;&gt;btn_abort.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>59, 80</value>
+  </data>
+  <data name="btn_abort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>80, 107</value>
   </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -213,11 +209,12 @@
   <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>59, 80</value>
+  <data name="pic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 33</value>
   </data>
-  <data name="&gt;&gt;pic.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
   <data name="pic.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -277,6 +274,9 @@
         5B8TgRwSRKIHQtaLCwg1RAAAOwAAAAAAAAAAAA==
 </value>
   </data>
+  <data name="&gt;&gt;pic.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="pic.Location" type="System.Drawing.Point, System.Drawing">
     <value>93, 34</value>
   </data>
@@ -300,8 +300,5 @@
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ar-EG</value>
   </metadata>
 </root>
