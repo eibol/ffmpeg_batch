@@ -121,7 +121,7 @@
   <data name="btn_start_multi.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxMAAAsTAQCanBgAAAlvSURBVFhHzZl5UFXnGcZFicEY
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAlvSURBVFhHzZl5UFXnGcZFicEY
         TGw1xFoTFxbBBVCQTeDChQsXFYyI1oDi1UrAuCugXpBFEKwa4542mtStk3R0MpPpdDqdSfuPU2v+6CRB
         2Te3uFutUad1efq855y7oOe6RTDfzDN34dxzfjzv873fd+7tBuAhyfDs5+3Ts1ffN/jUTdNPY+gB9x8c
         lpD7W2B6Wd2dgQHJS3mYJ9WTevHgesAjYvOscwg8teoacj8GEnIOtXp4DjDz8Fcpd+rFgesB+4ZlWrO3
@@ -168,7 +168,7 @@
   <data name="btn_abort.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxMAAAsTAQCanBgAAA6fSURBVFhHrZgHVFVX2oaPBhsg
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxIAAAsSAdLdfvwAAA6fSURBVFhHrZgHVFVX2oaPBhsg
         qKCxYSExMTF1lomuiWaiiTGxZCwJ6tiNJo5GYzeKLXYTzWgsQUWjNOlNBRWDCoh0BO4FBJQqXHq5Uq/w
         /u/eeCkRM5mZ/6z1XQ6n7P2sr39Haaivb1PQ0FIaGgVoFJ4Xhd0ert6zzfrmxDGe3oPM4lwMlbwLHRXt
         hU6K1sVI0XgPMo+/OeEDL9WuLVsKQ4NGyDVbvN8o+rXbZhDS5kUhreCeLFyTrzGP37Z+p0cvo9yzigLH
@@ -242,8 +242,8 @@
         RF/WBZnFQBrgSi4oKgHSf4DYKCW1OJmBgdEAyM4uLykAijPOAbJFkrLB7A0gdlFIkDOQfQTI5kuHsK+A
         2EkQ9hMQuwjoCSD7C0h9OpjNxAE2B8KWAbFLUitA9jI45xdUFmWmZ5QoGFpaWio4puQnpSoEVxaXpOYW
         K3jmJecXFeQXJZakpgDVQtwHBoIQhaAQ0wBqtNBkoDIAxQOE9TkQHL6MYmcQYgiQXFpUBmUyMhkT5iPM
-        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAAEnQAABJ0
-        Ad5mH3gAAAQgSURBVDhPfZNZbBtVFIZv0oasEgSBQklYCg8sFUFURWxqQW0jQpFoERKIsCio4oFAA5Sm
+        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAAEnMAABJz
+        AYwiuQcAAAQgSURBVDhPfZNZbBtVFIZv0oasEgSBQklYCg8sFUFURWxqQW0jQpFoERKIsCio4oFAA5Sm
         gIAnnhA8gBAVRWokpJSlKd3iNk1rZ69jO7E9XjJje7yM7VnsjB0vsbOnP3fckBK58PBppDnn/vec859L
         fD4fCQaDJBAIFBEKBbV4pckcDk1YwyZZFomqThFFUUgsFltHPB4nsiwT4na7idPpLMLlchGGsROrXT6S
         VDuhyMfhcKrfSWKERCL/zQ3FNBwOTUy60+93AUs7gOV9YFkeXu9UnaLIJBqN3pBCJcU4id3OEJabO5tP
@@ -351,6 +351,39 @@
   <data name="wz1.Text" xml:space="preserve">
     <value>批处理 A/V 分割向导</value>
   </data>
+  <data name="radio_chapters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 19</value>
+  </data>
+  <data name="radio_chapters.Text" xml:space="preserve">
+    <value>按章节划分</value>
+  </data>
+  <data name="radio_time_size.Size" type="System.Drawing.Size, System.Drawing">
+    <value>141, 19</value>
+  </data>
+  <data name="radio_time_size.Text" xml:space="preserve">
+    <value>按持续时间/大小划分</value>
+  </data>
+  <data name="wz0.Text" xml:space="preserve">
+    <value>批处理 A/V 分割向导</value>
+  </data>
+  <data name="btn_load_chap.Text" xml:space="preserve">
+    <value>加载文件</value>
+  </data>
+  <data name="radio_chap_man.Location" type="System.Drawing.Point, System.Drawing">
+    <value>222, 27</value>
+  </data>
+  <data name="radio_chap_man.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 19</value>
+  </data>
+  <data name="radio_chap_man.Text" xml:space="preserve">
+    <value>手动</value>
+  </data>
+  <data name="radio_by_chap.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 19</value>
+  </data>
+  <data name="radio_by_chap.Text" xml:space="preserve">
+    <value>使用源文件章节</value>
+  </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>172, 15</value>
   </data>
@@ -378,7 +411,7 @@
   <data name="btn_cancel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxMAAAsTAQCanBgAAA6fSURBVFhHrZgHVFVX2oaPBhsg
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxIAAAsSAdLdfvwAAA6fSURBVFhHrZgHVFVX2oaPBhsg
         qKCxYSExMTF1lomuiWaiiTGxZCwJ6tiNJo5GYzeKLXYTzWgsQUWjNOlNBRWDCoh0BO4FBJQqXHq5Uq/w
         /u/eeCkRM5mZ/6z1XQ6n7P2sr39Haaivb1PQ0FIaGgVoFJ4Xhd0ert6zzfrmxDGe3oPM4lwMlbwLHRXt
         hU6K1sVI0XgPMo+/OeEDL9WuLVsKQ4NGyDVbvN8o+rXbZhDS5kUhreCeLFyTrzGP37Z+p0cvo9yzigLH
@@ -450,7 +483,7 @@
   <data name="btn_Start.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxMAAAsTAQCanBgAAAlvSURBVFhHzZl5UFXnGcZFicEY
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAlvSURBVFhHzZl5UFXnGcZFicEY
         TGw1xFoTFxbBBVCQTeDChQsXFYyI1oDi1UrAuCugXpBFEKwa4542mtStk3R0MpPpdDqdSfuPU2v+6CRB
         2Te3uFutUad1efq855y7oOe6RTDfzDN34dxzfjzv873fd+7tBuAhyfDs5+3Ts1ffN/jUTdNPY+gB9x8c
         lpD7W2B6Wd2dgQHJS3mYJ9WTevHgesAjYvOscwg8teoacj8GEnIOtXp4DjDz8Fcpd+rFgesB+4ZlWrO3
@@ -499,6 +532,9 @@
   </data>
   <data name="wz_end.Text" xml:space="preserve">
     <value>预设完成</value>
+  </data>
+  <data name="wz01.Text" xml:space="preserve">
+    <value>批处理 A/V 分割向导</value>
   </data>
   <data name="wiz_split.Title" xml:space="preserve">
     <value>FFmpeg 批处理 A/V 分割向导</value>

@@ -1113,7 +1113,7 @@
     <value>527, 261</value>
   </data>
   <data name="wz1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="wz1.Text" xml:space="preserve">
     <value>Batch A/V Split Wizard</value>
@@ -1126,6 +1126,222 @@
   </data>
   <data name="wiz_split.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
+  </data>
+  <data name="radio_chapters.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radio_chapters.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radio_chapters.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 75</value>
+  </data>
+  <data name="radio_chapters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 19</value>
+  </data>
+  <data name="radio_chapters.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="radio_chapters.Text" xml:space="preserve">
+    <value>Split by chapters</value>
+  </data>
+  <data name="&gt;&gt;radio_chapters.Name" xml:space="preserve">
+    <value>radio_chapters</value>
+  </data>
+  <data name="&gt;&gt;radio_chapters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radio_chapters.Parent" xml:space="preserve">
+    <value>wz0</value>
+  </data>
+  <data name="&gt;&gt;radio_chapters.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="radio_time_size.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radio_time_size.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radio_time_size.Location" type="System.Drawing.Point, System.Drawing">
+    <value>54, 41</value>
+  </data>
+  <data name="radio_time_size.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 19</value>
+  </data>
+  <data name="radio_time_size.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="radio_time_size.Text" xml:space="preserve">
+    <value>Split by duration/size</value>
+  </data>
+  <data name="&gt;&gt;radio_time_size.Name" xml:space="preserve">
+    <value>radio_time_size</value>
+  </data>
+  <data name="&gt;&gt;radio_time_size.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radio_time_size.Parent" xml:space="preserve">
+    <value>wz0</value>
+  </data>
+  <data name="&gt;&gt;radio_time_size.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="wz0.Size" type="System.Drawing.Size, System.Drawing">
+    <value>527, 261</value>
+  </data>
+  <data name="wz0.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="wz0.Text" xml:space="preserve">
+    <value>Batch A/V Split Wizard</value>
+  </data>
+  <data name="&gt;&gt;wz0.Name" xml:space="preserve">
+    <value>wz0</value>
+  </data>
+  <data name="&gt;&gt;wz0.Type" xml:space="preserve">
+    <value>AeroWizard.WizardPage, AeroWizard, Version=2.3.1.0, Culture=neutral, PublicKeyToken=915e74f5d64b8f37</value>
+  </data>
+  <data name="txt_chaps.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 107</value>
+  </data>
+  <data name="txt_chaps.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txt_chaps.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Both</value>
+  </data>
+  <data name="txt_chaps.Size" type="System.Drawing.Size, System.Drawing">
+    <value>491, 139</value>
+  </data>
+  <data name="txt_chaps.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;txt_chaps.Name" xml:space="preserve">
+    <value>txt_chaps</value>
+  </data>
+  <data name="&gt;&gt;txt_chaps.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_chaps.Parent" xml:space="preserve">
+    <value>wz01</value>
+  </data>
+  <data name="&gt;&gt;txt_chaps.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btn_load_chap.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btn_load_chap.Location" type="System.Drawing.Point, System.Drawing">
+    <value>278, 26</value>
+  </data>
+  <data name="btn_load_chap.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="btn_load_chap.TabIndex" type="System.Int32, mscorlib">
+    <value>139</value>
+  </data>
+  <data name="btn_load_chap.Text" xml:space="preserve">
+    <value>Load file</value>
+  </data>
+  <data name="&gt;&gt;btn_load_chap.Name" xml:space="preserve">
+    <value>btn_load_chap</value>
+  </data>
+  <data name="&gt;&gt;btn_load_chap.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_load_chap.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;btn_load_chap.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="radio_chap_man.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radio_chap_man.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radio_chap_man.Location" type="System.Drawing.Point, System.Drawing">
+    <value>198, 27</value>
+  </data>
+  <data name="radio_chap_man.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 19</value>
+  </data>
+  <data name="radio_chap_man.TabIndex" type="System.Int32, mscorlib">
+    <value>138</value>
+  </data>
+  <data name="radio_chap_man.Text" xml:space="preserve">
+    <value>Manually</value>
+  </data>
+  <data name="radio_chap_man.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;radio_chap_man.Name" xml:space="preserve">
+    <value>radio_chap_man</value>
+  </data>
+  <data name="&gt;&gt;radio_chap_man.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radio_chap_man.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;radio_chap_man.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="radio_by_chap.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radio_by_chap.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radio_by_chap.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 27</value>
+  </data>
+  <data name="radio_by_chap.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 19</value>
+  </data>
+  <data name="radio_by_chap.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="radio_by_chap.Text" xml:space="preserve">
+    <value>Using source file chapters</value>
+  </data>
+  <data name="&gt;&gt;radio_by_chap.Name" xml:space="preserve">
+    <value>radio_by_chap</value>
+  </data>
+  <data name="&gt;&gt;radio_by_chap.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radio_by_chap.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;radio_by_chap.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>18, 26</value>
+  </data>
+  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>491, 75</value>
+  </data>
+  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Split</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
+    <value>wz01</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1451,7 +1667,7 @@
     <value>527, 261</value>
   </data>
   <data name="wz_end.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="wz_end.Text" xml:space="preserve">
     <value>Preset complete</value>
@@ -1460,6 +1676,21 @@
     <value>wz_end</value>
   </data>
   <data name="&gt;&gt;wz_end.Type" xml:space="preserve">
+    <value>AeroWizard.WizardPage, AeroWizard, Version=2.3.1.0, Culture=neutral, PublicKeyToken=915e74f5d64b8f37</value>
+  </data>
+  <data name="wz01.Size" type="System.Drawing.Size, System.Drawing">
+    <value>527, 261</value>
+  </data>
+  <data name="wz01.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="wz01.Text" xml:space="preserve">
+    <value>Batch A/V Split Wizard</value>
+  </data>
+  <data name="&gt;&gt;wz01.Name" xml:space="preserve">
+    <value>wz01</value>
+  </data>
+  <data name="&gt;&gt;wz01.Type" xml:space="preserve">
     <value>AeroWizard.WizardPage, AeroWizard, Version=2.3.1.0, Culture=neutral, PublicKeyToken=915e74f5d64b8f37</value>
   </data>
   <data name="wiz_split.Size" type="System.Drawing.Size, System.Drawing">
