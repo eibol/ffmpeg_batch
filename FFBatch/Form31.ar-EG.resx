@@ -160,20 +160,53 @@
   <data name="radio_fd.Text" xml:space="preserve">
     <value>اسم دليل المصدر</value>
   </data>
-  <data name="radio_fdur.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 17</value>
-  </data>
-  <data name="radio_fdur.Text" xml:space="preserve">
-    <value>مدة الملف المصدر بالثواني (fdur</value>
-  </data>
   <data name="radio_fdur_1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 17</value>
+    <value>170, 17</value>
   </data>
   <data name="radio_fdur_1.Text" xml:space="preserve">
-    <value>مدة الملف المصدر بالثواني </value>
+    <value>مدة الملف المصدر بالثواني %fdur</value>
   </data>
   <data name="btn_copy.Text" xml:space="preserve">
     <value>نسخ إلى الحافظة</value>
+  </data>
+  <data name="radio_nul.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 17</value>
+  </data>
+  <data name="radio_nul.Text" xml:space="preserve">
+    <value>تجاوز تحديد الإخراج التلقائي (Format=nul)</value>
+  </data>
+  <data name="txt_operator_dur.Location" type="System.Drawing.Point, System.Drawing">
+    <value>204, 27</value>
+  </data>
+  <data name="radio_bitr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>279, 17</value>
+  </data>
+  <data name="radio_bitr.Text" xml:space="preserve">
+    <value>إجمالي معدل البت لملف الإدخال مع عوامل التشغيل: %fbitr</value>
+  </data>
+  <data name="txt_operator_bitr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>312, 54</value>
+  </data>
+  <data name="radio_target_size.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 17</value>
+  </data>
+  <data name="radio_target_size.Text" xml:space="preserve">
+    <value>هدف حجم إخراج الفيديو</value>
+  </data>
+  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 87</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 13</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>إذا كان معدل البت الصوتي</value>
+  </data>
+  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>425, 88</value>
+  </data>
+  <data name="num_aud_target.Location" type="System.Drawing.Point, System.Drawing">
+    <value>371, 84</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

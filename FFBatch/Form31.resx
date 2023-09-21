@@ -117,209 +117,482 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="radio_fd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 17</value>
-  </data>
-  <data name="&gt;&gt;txt_pre.Name" xml:space="preserve">
-    <value>txt_pre</value>
-  </data>
-  <data name="radio_fn_ext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 122</value>
-  </data>
-  <data name="&gt;&gt;btn_add.Name" xml:space="preserve">
-    <value>btn_add</value>
-  </data>
-  <data name="&gt;&gt;radio_fdur.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;radio_fn_path.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="radio_fdur.Text" xml:space="preserve">
-    <value>Input file duration, in seconds (%fdur)</value>
-  </data>
-  <data name="&gt;&gt;radio_fdur_1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="radio_inputfn.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="radio_fn.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="radio_input_fn_noext.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="radio_fdur.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 168</value>
-  </data>
-  <data name="radio_fn_ext.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="radio_fdur_1.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;radio_inputfn.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;radio_fn.Type" xml:space="preserve">
+  <data name="&gt;&gt;radio_chaps.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;radio_fn_ext.Type" xml:space="preserve">
+  <data name="&gt;&gt;radio_target_size.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btn_copy.Text" xml:space="preserve">
-    <value>Copy to clipboard</value>
+  <data name="&gt;&gt;radio_inputfn.Parent" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
-  <data name="&gt;&gt;radio_fd.Name" xml:space="preserve">
-    <value>radio_fd</value>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
+  <data name="&gt;&gt;radio_bitr.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
-  <data name="radio_fdur_1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="radio_fdur.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;radio_fn_ext.Name" xml:space="preserve">
-    <value>radio_fn_ext</value>
-  </data>
-  <data name="radio_inputfn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 30</value>
-  </data>
-  <data name="&gt;&gt;radio_input_fn_noext.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_copy.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="radio_fn_path.Size" type="System.Drawing.Size, System.Drawing">
-    <value>179, 17</value>
-  </data>
-  <data name="radio_fn_path.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;radio_fn_path.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;txt_pre.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btn_add.Text" xml:space="preserve">
-    <value>Add variable</value>
-  </data>
-  <data name="&gt;&gt;btn_cancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="radio_fdur.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="radio_fd.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="radio_input_fn_noext.Text" xml:space="preserve">
-    <value>Input filename with full path without extension  (%2)</value>
-  </data>
-  <data name="radio_fdur_1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 17</value>
-  </data>
-  <data name="&gt;&gt;radio_fdur.Name" xml:space="preserve">
-    <value>radio_fdur</value>
-  </data>
-  <data name="txt_pre.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 226</value>
-  </data>
-  <data name="&gt;&gt;radio_fdur_1.Name" xml:space="preserve">
-    <value>radio_fdur_1</value>
-  </data>
-  <data name="&gt;&gt;radio_fd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="radio_inputfn.Text" xml:space="preserve">
-    <value>Input filename with full path (%1)</value>
-  </data>
-  <data name="radio_fd.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="radio_fdur.Size" type="System.Drawing.Size, System.Drawing">
-    <value>198, 17</value>
+  <data name="&gt;&gt;radio_fd.Parent" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;txt_pre.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="radio_fn_path.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 76</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 298</value>
   </data>
-  <data name="radio_fd.Text" xml:space="preserve">
-    <value>Input file folder (%fd)</value>
+  <data name="btn_cancel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
-  <data name="radio_input_fn_noext.Size" type="System.Drawing.Size, System.Drawing">
-    <value>264, 17</value>
+  <data name="txt_operator_dur.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 27</value>
   </data>
-  <data name="radio_fn_ext.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 17</value>
+  <data name="radio_fn_ext.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 113</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Insert variable</value>
+  <data name="btn_add.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 431</value>
   </data>
-  <data name="&gt;&gt;radio_fn.Name" xml:space="preserve">
-    <value>radio_fn</value>
+  <data name="&gt;&gt;radio_fn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btn_copy.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;txt_size.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txt_operator_dur.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;label15.Name" xml:space="preserve">
+    <value>label15</value>
+  </data>
+  <data name="radio_chaps.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>113</value>
+  </data>
+  <data name="&gt;&gt;txt_operator_dur.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 13</value>
+  </data>
+  <data name="&gt;&gt;txt_size.Name" xml:space="preserve">
+    <value>txt_size</value>
+  </data>
+  <data name="radio_inputfn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 21</value>
+  </data>
+  <data name="label15.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="radio_bitr.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;radio_nul.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;radio_fd.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
+    <value>groupBox2</value>
   </data>
-  <data name="radio_inputfn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>176, 17</value>
+  <data name="&gt;&gt;num_aud_target.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btn_cancel.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="btn_add.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 23</value>
   </data>
-  <data name="&gt;&gt;radio_fd.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 13</value>
   </data>
-  <data name="btn_copy.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
+  <data name="&gt;&gt;radio_target_size.Parent" xml:space="preserve">
+    <value>groupBox2</value>
   </data>
-  <data name="radio_fdur_1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 191</value>
+  <data name="radio_target_size.Text" xml:space="preserve">
+    <value>Output video size target</value>
   </data>
-  <data name="&gt;&gt;radio_inputfn.Name" xml:space="preserve">
-    <value>radio_inputfn</value>
-  </data>
-  <data name="&gt;&gt;btn_cancel.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="btn_copy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 23</value>
-  </data>
-  <data name="&gt;&gt;radio_input_fn_noext.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="txt_size.Location" type="System.Drawing.Point, System.Drawing">
+    <value>169, 83</value>
   </data>
   <data name="&gt;&gt;btn_add.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;radio_fn_ext.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="btn_cancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="label15.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="radio_bitr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>220, 17</value>
+  </data>
+  <data name="radio_nul.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
   </data>
   <data name="btn_copy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>134, 265</value>
+    <value>134, 431</value>
+  </data>
+  <data name="radio_chaps.Size" type="System.Drawing.Size, System.Drawing">
+    <value>234, 17</value>
+  </data>
+  <data name="radio_fn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>284, 17</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radio_bitr.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="radio_bitr.Text" xml:space="preserve">
+    <value>Input file total bitrate with operators: %fbitr</value>
+  </data>
+  <data name="btn_copy.Text" xml:space="preserve">
+    <value>Copy to clipboard</value>
+  </data>
+  <data name="&gt;&gt;radio_input_fn_noext.Name" xml:space="preserve">
+    <value>radio_input_fn_noext</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form31</value>
+  </data>
+  <data name="&gt;&gt;num_aud_target.Name" xml:space="preserve">
+    <value>num_aud_target</value>
+  </data>
+  <data name="radio_input_fn_noext.Text" xml:space="preserve">
+    <value>Input filename with full path without extension  (%2)</value>
+  </data>
+  <data name="radio_target_size.Size" type="System.Drawing.Size, System.Drawing">
+    <value>137, 17</value>
+  </data>
+  <data name="&gt;&gt;radio_bitr.Name" xml:space="preserve">
+    <value>radio_bitr</value>
+  </data>
+  <data name="&gt;&gt;btn_add.Name" xml:space="preserve">
+    <value>btn_add</value>
+  </data>
+  <data name="radio_nul.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radio_fd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 17</value>
+  </data>
+  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btn_copy.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="radio_bitr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 55</value>
+  </data>
+  <data name="radio_inputfn.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="radio_chaps.Text" xml:space="preserve">
+    <value>Split file by chapter markers [[split_chapters]]</value>
+  </data>
+  <data name="&gt;&gt;btn_cancel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>210, 87</value>
+  </data>
+  <data name="num_aud_target.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="radio_fn_path.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;radio_fn_ext.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;btn_add.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="radio_fn_path.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 67</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 181</value>
+  </data>
+  <data name="&gt;&gt;btn_cancel.Name" xml:space="preserve">
+    <value>btn_cancel</value>
+  </data>
+  <data name="radio_input_fn_noext.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 17</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="radio_fn_path.Size" type="System.Drawing.Size, System.Drawing">
+    <value>179, 17</value>
+  </data>
+  <data name="&gt;&gt;radio_fdur_1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txt_size.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 13</value>
+  </data>
+  <data name="radio_bitr.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;radio_fn_path.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="radio_nul.Text" xml:space="preserve">
+    <value>Override automatic output selection (Format=nul)</value>
+  </data>
+  <data name="&gt;&gt;txt_operator_bitr.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;radio_bitr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_operator_bitr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btn_copy.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>423, 266</value>
+  <data name="label16.Text" xml:space="preserve">
+    <value>for audio bitrate</value>
+  </data>
+  <data name="radio_fdur_1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>207, 17</value>
+  </data>
+  <data name="&gt;&gt;num_aud_target.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="radio_fn_ext.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>236, 87</value>
+  </data>
+  <data name="&gt;&gt;radio_fn.Name" xml:space="preserve">
+    <value>radio_fn</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Input/output features</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;txt_operator_dur.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;txt_pre.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radio_inputfn.Name" xml:space="preserve">
+    <value>radio_inputfn</value>
+  </data>
+  <data name="label16.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radio_nul.Size" type="System.Drawing.Size, System.Drawing">
+    <value>253, 17</value>
+  </data>
+  <data name="&gt;&gt;radio_input_fn_noext.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="btn_add.Text" xml:space="preserve">
+    <value>Add variable</value>
+  </data>
+  <data name="&gt;&gt;radio_fn.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;radio_inputfn.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btn_add.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txt_operator_bitr.Name" xml:space="preserve">
+    <value>txt_operator_bitr</value>
+  </data>
+  <data name="radio_input_fn_noext.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 44</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 12</value>
+  </data>
+  <data name="&gt;&gt;num_aud_target.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="radio_bitr.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radio_inputfn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 17</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>465, 81</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;radio_inputfn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="num_aud_target.TabIndex" type="System.Int32, mscorlib">
+    <value>108</value>
+  </data>
+  <data name="radio_fd.Text" xml:space="preserve">
+    <value>Input file folder (%fd)</value>
+  </data>
+  <data name="num_aud_target.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 20</value>
+  </data>
+  <data name="radio_fn.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="txt_size.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
+  </data>
+  <data name="label15.TabIndex" type="System.Int32, mscorlib">
+    <value>109</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="radio_fn.Text" xml:space="preserve">
+    <value>Input filename without path and without extension (%fn)</value>
+  </data>
+  <data name="&gt;&gt;btn_copy.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>465, 163</value>
+  </data>
+  <data name="radio_fdur_1.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="txt_pre.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 392</value>
+  </data>
+  <data name="radio_fdur_1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 28</value>
+  </data>
+  <data name="radio_fn.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radio_inputfn.Text" xml:space="preserve">
+    <value>Input filename with full path (%1)</value>
+  </data>
+  <data name="&gt;&gt;txt_size.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Other variables</value>
+  </data>
+  <data name="&gt;&gt;btn_add.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="txt_pre.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txt_operator_dur.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>112</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txt_pre.Name" xml:space="preserve">
+    <value>txt_pre</value>
+  </data>
+  <data name="&gt;&gt;btn_cancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="radio_fn_path.Text" xml:space="preserve">
+    <value>Input filename full path only (%fp)</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>111</value>
+  </data>
+  <data name="&gt;&gt;label15.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>518, 467</value>
+  </data>
+  <data name="&gt;&gt;radio_fdur_1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="radio_fd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 145</value>
+    <value>30, 136</value>
+  </data>
+  <data name="&gt;&gt;label16.Name" xml:space="preserve">
+    <value>label16</value>
+  </data>
+  <data name="txt_operator_bitr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>252, 54</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radio_chaps.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 29</value>
+  </data>
+  <data name="radio_fn_ext.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 17</value>
+  </data>
+  <data name="&gt;&gt;radio_chaps.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="radio_chaps.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;radio_nul.Name" xml:space="preserve">
+    <value>radio_nul</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;radio_fn_ext.Name" xml:space="preserve">
+    <value>radio_fn_ext</value>
+  </data>
+  <data name="txt_operator_bitr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
+  </data>
+  <data name="&gt;&gt;radio_fn.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="radio_inputfn.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2111,131 +2384,197 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
-  <data name="&gt;&gt;radio_fdur.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radio_fn.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btn_add.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btn_cancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="btn_add.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 23</value>
-  </data>
-  <data name="radio_fn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 99</value>
-  </data>
-  <data name="txt_pre.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;btn_add.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;radio_fn.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;radio_fdur_1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;radio_input_fn_noext.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;radio_input_fn_noext.Name" xml:space="preserve">
-    <value>radio_input_fn_noext</value>
-  </data>
-  <data name="&gt;&gt;radio_inputfn.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btn_copy.Name" xml:space="preserve">
-    <value>btn_copy</value>
+  <data name="txt_operator_dur.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 20</value>
   </data>
   <data name="radio_fdur_1.Text" xml:space="preserve">
-    <value>Input file duration + 1, in seconds  (%fdur+1)</value>
+    <value>Input file duration with operators: %fdur</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form31</value>
-  </data>
-  <data name="radio_input_fn_noext.AutoSize" type="System.Boolean, mscorlib">
+  <data name="radio_target_size.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;radio_fdur_1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btn_cancel.Name" xml:space="preserve">
-    <value>btn_cancel</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>518, 301</value>
+  <data name="&gt;&gt;radio_fdur_1.Name" xml:space="preserve">
+    <value>radio_fdur_1</value>
   </data>
   <data name="txt_pre.Size" type="System.Drawing.Size, System.Drawing">
     <value>465, 20</value>
   </data>
+  <data name="&gt;&gt;radio_target_size.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="radio_nul.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 52</value>
+  </data>
+  <data name="&gt;&gt;radio_fd.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Kbps</value>
+  </data>
+  <data name="label16.TabIndex" type="System.Int32, mscorlib">
+    <value>110</value>
+  </data>
+  <data name="&gt;&gt;btn_copy.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radio_input_fn_noext.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;radio_fd.Name" xml:space="preserve">
+    <value>radio_fd</value>
+  </data>
   <data name="radio_fn_path.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
+  </data>
+  <data name="&gt;&gt;radio_input_fn_noext.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="radio_fn_ext.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radio_target_size.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 84</value>
+  </data>
+  <data name="&gt;&gt;label16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radio_chaps.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Insert variable</value>
+  </data>
+  <data name="&gt;&gt;radio_fn_path.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;radio_target_size.Name" xml:space="preserve">
+    <value>radio_target_size</value>
+  </data>
+  <data name="&gt;&gt;radio_chaps.Name" xml:space="preserve">
+    <value>radio_chaps</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>MB</value>
+  </data>
+  <data name="&gt;&gt;txt_size.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;btn_cancel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="radio_target_size.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;radio_fn_ext.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;btn_copy.Name" xml:space="preserve">
+    <value>btn_copy</value>
+  </data>
+  <data name="&gt;&gt;txt_operator_dur.Name" xml:space="preserve">
+    <value>txt_operator_dur</value>
+  </data>
+  <data name="txt_operator_bitr.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;txt_pre.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="radio_fdur_1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radio_fn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 90</value>
+  </data>
+  <data name="&gt;&gt;txt_operator_bitr.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>423, 432</value>
   </data>
   <data name="&gt;&gt;radio_fn_path.Name" xml:space="preserve">
     <value>radio_fn_path</value>
   </data>
-  <data name="radio_fn_path.Text" xml:space="preserve">
-    <value>Input filename full path only (%fp)</value>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btn_cancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Input filename</value>
   </data>
-  <data name="radio_fn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>284, 17</value>
+  <data name="&gt;&gt;label15.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btn_add.ZOrder" xml:space="preserve">
-    <value>11</value>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>465, 111</value>
   </data>
-  <data name="btn_cancel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;radio_fn_ext.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;radio_fn_path.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="radio_fn_ext.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;radio_fdur.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="radio_fn.Text" xml:space="preserve">
-    <value>Input filename without path and without extension (%fn)</value>
-  </data>
-  <data name="radio_fn.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="btn_add.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 265</value>
-  </data>
-  <data name="radio_inputfn.AutoSize" type="System.Boolean, mscorlib">
+  <data name="radio_input_fn_noext.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="radio_input_fn_noext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 53</value>
-  </data>
-  <data name="&gt;&gt;txt_pre.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="num_aud_target.Location" type="System.Drawing.Point, System.Drawing">
+    <value>318, 84</value>
   </data>
   <data name="radio_fn_ext.Text" xml:space="preserve">
     <value>Input filename without path, with extension (%ff)</value>
   </data>
-  <data name="&gt;&gt;radio_inputfn.Type" xml:space="preserve">
+  <data name="radio_target_size.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>374, 88</value>
+  </data>
+  <data name="&gt;&gt;radio_fd.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radio_nul.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="radio_input_fn_noext.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;radio_fn_path.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="radio_fd.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="radio_chaps.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="radio_nul.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btn_cancel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;radio_nul.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;radio_fn_ext.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radio_fdur_1.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="radio_fd.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="btn_copy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>97, 23</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

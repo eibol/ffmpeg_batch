@@ -117,12 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btn_add.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 422</value>
+  </data>
+  <data name="btn_add.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 23</value>
+  </data>
   <data name="btn_add.Text" xml:space="preserve">
     <value>Insertar variable</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>423, 265</value>
+    <value>423, 422</value>
   </data>
   <data name="btn_cancel.Text" xml:space="preserve">
     <value>Cancelar</value>
@@ -163,20 +169,14 @@
   <data name="radio_fd.Text" xml:space="preserve">
     <value>Carpeta del fichero de origen (%fd)</value>
   </data>
-  <data name="radio_fdur.Size" type="System.Drawing.Size, System.Drawing">
-    <value>269, 17</value>
-  </data>
-  <data name="radio_fdur.Text" xml:space="preserve">
-    <value>Duración del fichero de origen, en segundos (%fdur)</value>
-  </data>
   <data name="radio_fdur_1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>299, 17</value>
+    <value>279, 17</value>
   </data>
   <data name="radio_fdur_1.Text" xml:space="preserve">
-    <value>Duración del fichero de origen + 1, en segundos (%fdur+1)</value>
+    <value>Duración del fichero de origen, con operadores: %fdur</value>
   </data>
   <data name="btn_copy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>134, 265</value>
+    <value>138, 422</value>
   </data>
   <data name="btn_copy.Size" type="System.Drawing.Size, System.Drawing">
     <value>139, 23</value>
@@ -184,8 +184,65 @@
   <data name="btn_copy.Text" xml:space="preserve">
     <value>Copiar al portapapeles</value>
   </data>
+  <data name="radio_nul.Size" type="System.Drawing.Size, System.Drawing">
+    <value>215, 17</value>
+  </data>
+  <data name="radio_nul.Text" xml:space="preserve">
+    <value>No usar destino automático (Format=nul)</value>
+  </data>
+  <data name="txt_operator_dur.Location" type="System.Drawing.Point, System.Drawing">
+    <value>311, 27</value>
+  </data>
+  <data name="radio_chaps.Size" type="System.Drawing.Size, System.Drawing">
+    <value>299, 17</value>
+  </data>
+  <data name="radio_chaps.Text" xml:space="preserve">
+    <value>Dividir origen por marcadores de capítulo [[split_chapters]]</value>
+  </data>
+  <data name="radio_bitr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>293, 17</value>
+  </data>
+  <data name="radio_bitr.Text" xml:space="preserve">
+    <value>Tasa de bits del fichero de origen, con operadores: %fbitr</value>
+  </data>
+  <data name="txt_operator_bitr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>326, 53</value>
+  </data>
+  <data name="radio_target_size.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 17</value>
+  </data>
+  <data name="radio_target_size.Text" xml:space="preserve">
+    <value>Fijar tamaño de destino</value>
+  </data>
+  <data name="txt_size.Location" type="System.Drawing.Point, System.Drawing">
+    <value>167, 83</value>
+  </data>
+  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>239, 86</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 13</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>para un audio de</value>
+  </data>
+  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>383, 87</value>
+  </data>
+  <data name="num_aud_target.Location" type="System.Drawing.Point, System.Drawing">
+    <value>329, 83</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Fichero de origen</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Características de origen/destino</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Otras variables</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>518, 300</value>
+    <value>518, 457</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

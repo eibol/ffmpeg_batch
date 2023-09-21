@@ -117,13 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btn_add.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 421</value>
+  </data>
   <data name="btn_add.Text" xml:space="preserve">
     <value>添加变量</value>
+  </data>
+  <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>423, 421</value>
   </data>
   <data name="btn_cancel.Text" xml:space="preserve">
     <value>取消</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="radio_inputfn.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 17</value>
   </data>
@@ -160,20 +166,77 @@
   <data name="radio_fd.Text" xml:space="preserve">
     <value>源目录名 (%fd)</value>
   </data>
-  <data name="radio_fdur.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 17</value>
-  </data>
-  <data name="radio_fdur.Text" xml:space="preserve">
-    <value>以秒为单位的源文件持续时间 (%fdur)</value>
-  </data>
   <data name="radio_fdur_1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>246, 17</value>
+    <value>210, 17</value>
   </data>
   <data name="radio_fdur_1.Text" xml:space="preserve">
-    <value>以秒为单位的源文件持续时间 + 1 (%fdur+1)</value>
+    <value>以秒为单位的源文件持续时间 %fdur</value>
+  </data>
+  <data name="btn_copy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>134, 421</value>
   </data>
   <data name="btn_copy.Text" xml:space="preserve">
     <value>复制到剪贴板</value>
+  </data>
+  <data name="radio_nul.Size" type="System.Drawing.Size, System.Drawing">
+    <value>182, 17</value>
+  </data>
+  <data name="radio_nul.Text" xml:space="preserve">
+    <value>覆盖自动输出选择 (Format=nul)</value>
+  </data>
+  <data name="txt_operator_dur.Location" type="System.Drawing.Point, System.Drawing">
+    <value>241, 27</value>
+  </data>
+  <data name="radio_chaps.Size" type="System.Drawing.Size, System.Drawing">
+    <value>213, 17</value>
+  </data>
+  <data name="radio_chaps.Text" xml:space="preserve">
+    <value>按章节标记拆分文件 [[split_chapters]]</value>
+  </data>
+  <data name="radio_bitr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 17</value>
+  </data>
+  <data name="radio_bitr.Text" xml:space="preserve">
+    <value>带有运算符的输入文件总比特率 %fbitr</value>
+  </data>
+  <data name="txt_operator_bitr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>253, 53</value>
+  </data>
+  <data name="radio_target_size.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 17</value>
+  </data>
+  <data name="radio_target_size.Text" xml:space="preserve">
+    <value>输出视频目标尺寸</value>
+  </data>
+  <data name="txt_size.Location" type="System.Drawing.Point, System.Drawing">
+    <value>153, 83</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>197, 87</value>
+  </data>
+  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>231, 87</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 13</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>如果音频比特率为</value>
+  </data>
+  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>390, 88</value>
+  </data>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 13</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>千比特每秒</value>
+  </data>
+  <data name="num_aud_target.Location" type="System.Drawing.Point, System.Drawing">
+    <value>338, 85</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>518, 456</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

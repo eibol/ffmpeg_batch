@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btn_add.Location" type="System.Drawing.Point, System.Drawing">
+    <value>33, 421</value>
+  </data>
   <data name="btn_add.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 23</value>
   </data>
@@ -125,7 +128,7 @@
     <value>Adicionar variável</value>
   </data>
   <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>419, 265</value>
+    <value>491, 421</value>
   </data>
   <data name="btn_cancel.Text" xml:space="preserve">
     <value>Cancelar</value>
@@ -166,20 +169,14 @@
   <data name="radio_fd.Text" xml:space="preserve">
     <value>Nome do diretório de origem (%fd)</value>
   </data>
-  <data name="radio_fdur.Size" type="System.Drawing.Size, System.Drawing">
-    <value>269, 17</value>
-  </data>
-  <data name="radio_fdur.Text" xml:space="preserve">
-    <value>Duração do arquivo de origem em segundos (%fdur)</value>
-  </data>
   <data name="radio_fdur_1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>299, 17</value>
+    <value>348, 17</value>
   </data>
   <data name="radio_fdur_1.Text" xml:space="preserve">
-    <value>Duração do arquivo de origem em segundos + 1 (%fdur+1)</value>
+    <value>Duração do arquivo de origem em segundos, com operadores: %fdur</value>
   </data>
   <data name="btn_copy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>157, 265</value>
+    <value>157, 421</value>
   </data>
   <data name="btn_copy.Size" type="System.Drawing.Size, System.Drawing">
     <value>182, 23</value>
@@ -188,7 +185,73 @@
     <value>Copiar para área de transferência</value>
   </data>
   <data name="txt_pre.Size" type="System.Drawing.Size, System.Drawing">
-    <value>461, 20</value>
+    <value>533, 20</value>
+  </data>
+  <data name="radio_nul.Size" type="System.Drawing.Size, System.Drawing">
+    <value>278, 17</value>
+  </data>
+  <data name="radio_nul.Text" xml:space="preserve">
+    <value>Substituir a seleção de saída automática (Format=nul)</value>
+  </data>
+  <data name="txt_operator_dur.Location" type="System.Drawing.Point, System.Drawing">
+    <value>380, 27</value>
+  </data>
+  <data name="radio_chaps.Size" type="System.Drawing.Size, System.Drawing">
+    <value>305, 17</value>
+  </data>
+  <data name="radio_chaps.Text" xml:space="preserve">
+    <value>Dividir arquivo por marcadores de capítulo [[split_chapters]]</value>
+  </data>
+  <data name="radio_bitr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>323, 17</value>
+  </data>
+  <data name="radio_bitr.Text" xml:space="preserve">
+    <value>Taxa de bits total do arquivo de entrada com operadores: %fbitr</value>
+  </data>
+  <data name="txt_operator_bitr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>361, 217</value>
+  </data>
+  <data name="radio_target_size.Location" type="System.Drawing.Point, System.Drawing">
+    <value>30, 83</value>
+  </data>
+  <data name="radio_target_size.Size" type="System.Drawing.Size, System.Drawing">
+    <value>218, 17</value>
+  </data>
+  <data name="radio_target_size.Text" xml:space="preserve">
+    <value>Destino do tamanho do arquivo de saída</value>
+  </data>
+  <data name="txt_size.Location" type="System.Drawing.Point, System.Drawing">
+    <value>250, 82</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>293, 85</value>
+  </data>
+  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>322, 85</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 13</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>se taxa de bits de áudio</value>
+  </data>
+  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>493, 86</value>
+  </data>
+  <data name="num_aud_target.Location" type="System.Drawing.Point, System.Drawing">
+    <value>444, 82</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>533, 163</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>533, 111</value>
+  </data>
+  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>533, 81</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>582, 458</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

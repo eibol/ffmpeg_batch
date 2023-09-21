@@ -117,20 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 13</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Parâmetros específicos do ffmpeg</value>
-  </data>
   <data name="button2.Text" xml:space="preserve">
     <value>Cancelar</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btn_clear.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABsAAAAZCAYAAADAHFVeAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABS
-        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACxMAAAsTAQCanBgAAAMASURBVEhLvZbbS2JRFMZ76GEi
+        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAMASURBVEhLvZbbS2JRFMZ76GEi
         gspKE7WyHqKhl3k6vWlEEQoR2YC+zMMwLzN/Rf9MEBhBgQhRUMjQW8OAXXYqZpSmXcxudrE969vjFstz
         7FjQBx8ujpz9O2vttfY5dZzzkjs6OgyRSOQvxfzy8jL3mq+urnKPj4+F29vb7ODgoL1OQ3L9Z7D+/v6h
         +/t7CmtXKpXK9/T02IrrPxP9XQnr6+sbur6+ppDzQqFQ1U9PT+KXsuKZTEbcE4vF0iaTyVJklER/VcJ6
@@ -146,8 +140,11 @@
         pg8cb2trq3BLS4u3ubnZR/GP+vr6z7Tkp//r87p/BK+FcxkL/oYAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="txt_f.Location" type="System.Drawing.Point, System.Drawing">
+    <value>410, 74</value>
+  </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>378, 29</value>
+    <value>364, 77</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
