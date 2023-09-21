@@ -1219,7 +1219,7 @@
     <value>Subtítulos MP4 no admitidos en formato de salida MKV</value>
   </data>
   <data name="mp4_warn" xml:space="preserve">
-    <value>Algunas funcionalidades no funcionarán con el formato de salida MP4. Los subtítulos admitidos son solo los de formato mov_text.</value>
+    <value>Algunas funcionalidades no están disponibles con el formato de salida MP4. Los subtítulos admitidos son solo los de formato mov_text.</value>
   </data>
   <data name="mp4_warn2" xml:space="preserve">
     <value>Limitaciones del formato MP4</value>
@@ -2597,7 +2597,7 @@
     <value>min.</value>
   </data>
   <data name="mov_warn" xml:space="preserve">
-    <value>Algunas funcionalidades pueden no funcinoar en formato mov. El único formato de subtítulos de texto admitido es mov_text.</value>
+    <value>Algunas funcionalidades pueden no estar disponibles en formato mov. El único formato de subtítulos de texto admitido es mov_text.</value>
   </data>
   <data name="mov_warn2" xml:space="preserve">
     <value>Limitaciones del formato MOV</value>
@@ -2622,5 +2622,8 @@
   </data>
   <data name="Paste_any_URL" xml:space="preserve">
     <value>Pegar enlace</value>
+  </data>
+  <data name="mon_ing" xml:space="preserve">
+    <value>Monitorizando cambios en: </value>
   </data>
 </root>

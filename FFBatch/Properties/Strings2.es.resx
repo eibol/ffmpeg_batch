@@ -787,7 +787,7 @@
     <value>La aplicación está minimizada como icono en la bandeja del sistema.</value>
   </data>
   <data name="set_cust_p" xml:space="preserve">
-    <value>Establecer parámetros</value>
+    <value>Establecer preajuste / parámetros</value>
   </data>
   <data name="rem_cust_p" xml:space="preserve">
     <value>Borrar parámetros personalizados</value>
@@ -884,5 +884,44 @@
   </data>
   <data name="add_variable" xml:space="preserve">
     <value>Agregar variable a los parámetros</value>
+  </data>
+  <data name="mon_no_rel" xml:space="preserve">
+    <value>Una ruta relativa no se puede usar monitorizando subcarpetas, por favor utilice una ruta absoluta, o deshabilite las subcarpetas.</value>
+  </data>
+  <data name="mon_path_equal" xml:space="preserve">
+    <value>La carpeta monitorizada es la misma que la carpeta pirncipal de salida, por favor seleccione otra ruta de destino, o utilice una ruta relativa.</value>
+  </data>
+  <data name="mon_ing" xml:space="preserve">
+    <value>Monitorizando carpeta</value>
+  </data>
+  <data name="excl_list" xml:space="preserve">
+    <value>Lista de exclusión</value>
+  </data>
+  <data name="chapters" xml:space="preserve">
+    <value>capítulos</value>
+  </data>
+  <data name="chapters_all" xml:space="preserve">
+    <value>La configuración manual de capítulos se aplicará a todos los ficheros de la lista. ¿Desea continuar?</value>
+  </data>
+  <data name="on_rel_path" xml:space="preserve">
+    <value>en la ruta relativa.</value>
+  </data>
+  <data name="pls_include" xml:space="preserve">
+    <value>Por favor incluya</value>
+  </data>
+  <data name="trailer_zero" xml:space="preserve">
+    <value>Trailer configuration leads to zero duration.</value>
+  </data>
+  <data name="add_cust_param" xml:space="preserve">
+    <value>Por favor agregue primero la columna de Parámetros de codificación para poder agregar preajustes a uno o varios ficheros seleccionados.</value>
+  </data>
+  <data name="chaps_f" xml:space="preserve">
+    <value>capítulos encontrados.</value>
+  </data>
+  <data name="no_chaps" xml:space="preserve">
+    <value>No se encontraron capítulos en el fichero seleccionado.</value>
+  </data>
+  <data name="time_out_url" xml:space="preserve">
+    <value>Tiempo de espera agotado intentando acceder a la url</value>
   </data>
 </root>

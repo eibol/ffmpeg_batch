@@ -88,6 +88,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Please add custom parameters column to add specific presets for single/multiple files..
+        /// </summary>
+        internal static string add_cust_param {
+            get {
+                return ResourceManager.GetString("add_cust_param", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Add exclusion for ffmpeg in Windows Security.
         /// </summary>
         internal static string add_excl_ws {
@@ -345,6 +354,33 @@ namespace FFBatch.Properties {
         internal static string capt_virtual {
             get {
                 return ResourceManager.GetString("capt_virtual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a chapters found..
+        /// </summary>
+        internal static string chaps_f {
+            get {
+                return ResourceManager.GetString("chaps_f", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a chapters.
+        /// </summary>
+        internal static string chapters {
+            get {
+                return ResourceManager.GetString("chapters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Manual chapters layout will be applied to all list files. Are you sure?.
+        /// </summary>
+        internal static string chapters_all {
+            get {
+                return ResourceManager.GetString("chapters_all", resourceCulture);
             }
         }
         
@@ -781,6 +817,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Exclusion list.
+        /// </summary>
+        internal static string excl_list {
+            get {
+                return ResourceManager.GetString("excl_list", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Exit code.
         /// </summary>
         internal static string exit_code {
@@ -1096,6 +1141,33 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Monitoring folder.
+        /// </summary>
+        internal static string mon_ing {
+            get {
+                return ResourceManager.GetString("mon_ing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a A relative main path cannot be used with subfolders monitoring, please use an absolute path..
+        /// </summary>
+        internal static string mon_no_rel {
+            get {
+                return ResourceManager.GetString("mon_no_rel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Monitored folder and main output path are the same. Please select another destination path at main tab, or use a relative output path..
+        /// </summary>
+        internal static string mon_path_equal {
+            get {
+                return ResourceManager.GetString("mon_path_equal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Please drop only one file..
         /// </summary>
         internal static string multi_drop {
@@ -1146,6 +1218,15 @@ namespace FFBatch.Properties {
         internal static string next {
             get {
                 return ResourceManager.GetString("next", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a No chapters found in current file..
+        /// </summary>
+        internal static string no_chaps {
+            get {
+                return ResourceManager.GetString("no_chaps", resourceCulture);
             }
         }
         
@@ -1249,6 +1330,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a on relative path..
+        /// </summary>
+        internal static string on_rel_path {
+            get {
+                return ResourceManager.GetString("on_rel_path", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Please select only one file to add its streams..
         /// </summary>
         internal static string one_track {
@@ -1308,6 +1398,15 @@ namespace FFBatch.Properties {
         internal static string pause_bat_ac {
             get {
                 return ResourceManager.GetString("pause_bat_ac", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Please include.
+        /// </summary>
+        internal static string pls_include {
+            get {
+                return ResourceManager.GetString("pls_include", resourceCulture);
             }
         }
         
@@ -1906,7 +2005,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Set custom parameters.
+        ///   Busca una cadena traducida similar a Set custom preset.
         /// </summary>
         internal static string set_cust_p {
             get {
@@ -2068,6 +2167,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Timeout trying to process url.
+        /// </summary>
+        internal static string time_out_url {
+            get {
+                return ResourceManager.GetString("time_out_url", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Windows Security..
         /// </summary>
         internal static string tip_win_sec {
@@ -2154,6 +2262,15 @@ namespace FFBatch.Properties {
         internal static string total {
             get {
                 return ResourceManager.GetString("total", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Trailer configuration leads to zero duration..
+        /// </summary>
+        internal static string trailer_zero {
+            get {
+                return ResourceManager.GetString("trailer_zero", resourceCulture);
             }
         }
         

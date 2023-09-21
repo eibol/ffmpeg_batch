@@ -123,6 +123,9 @@
   <data name="abort_cap" xml:space="preserve">
     <value>中止屏幕捕获</value>
   </data>
+  <data name="add_cust_param" xml:space="preserve">
+    <value>请添加自定义参数列，为单个/多个文件添加特定预设。</value>
+  </data>
   <data name="add_excl_ws" xml:space="preserve">
     <value>在 Windows 安全中心为 ffmpeg 添加排除项</value>
   </data>
@@ -209,6 +212,15 @@
   </data>
   <data name="capt_virtual" xml:space="preserve">
     <value>要捕获音频播放，需要虚拟音频驱动程序。</value>
+  </data>
+  <data name="chaps_f" xml:space="preserve">
+    <value>找到的章节。</value>
+  </data>
+  <data name="chapters" xml:space="preserve">
+    <value>章节</value>
+  </data>
+  <data name="chapters_all" xml:space="preserve">
+    <value>手动章节布局将应用于所有列表文件。 你确定吗？</value>
   </data>
   <data name="check_not_st" xml:space="preserve">
     <value>FFmpeg.exe MD5 校验和尚未存储。</value>
@@ -345,6 +357,9 @@
   <data name="excl_added" xml:space="preserve">
     <value>排除添加到 Windows 安全。 您可以在下一个屏幕上查看它。</value>
   </data>
+  <data name="excl_list" xml:space="preserve">
+    <value>文件类型排除列表</value>
+  </data>
   <data name="exc_dur" xml:space="preserve">
     <value>超过源持续时间</value>
   </data>
@@ -447,6 +462,15 @@
   <data name="missing_f" xml:space="preserve">
     <value>丢失文件</value>
   </data>
+  <data name="mon_ing" xml:space="preserve">
+    <value>监控文件夹</value>
+  </data>
+  <data name="mon_no_rel" xml:space="preserve">
+    <value>监控子文件夹时不能使用相对路径，请使用绝对路径，或禁用子文件夹。</value>
+  </data>
+  <data name="mon_path_equal" xml:space="preserve">
+    <value>监控的文件夹与主输出文件夹相同，请选择其他目标路径，或使用相对路径。</value>
+  </data>
   <data name="multiple_inst" xml:space="preserve">
     <value>另一个应用程序实例已在运行。 多个实例可能会导致意外行为。 继续？</value>
   </data>
@@ -489,6 +513,9 @@
   <data name="not_sup_bom" xml:space="preserve">
     <value>如果 ffmpeg 包含 BOM（字节顺序标记），则可能不支持它。</value>
   </data>
+  <data name="no_chaps" xml:space="preserve">
+    <value>当前文件中未找到章节。</value>
+  </data>
   <data name="no_concat_ef" xml:space="preserve">
     <value>没有初始或结束文件</value>
   </data>
@@ -507,6 +534,9 @@
   <data name="on_battery2" xml:space="preserve">
     <value>编码设置为使用电池暂停并使用交流电源恢复。 是否要禁用此设置并强制恢复编码？</value>
   </data>
+  <data name="on_rel_path" xml:space="preserve">
+    <value>在相对路径上</value>
+  </data>
   <data name="outf_count" xml:space="preserve">
     <value>正在下载。总计数不可用。输出文件夹数:</value>
   </data>
@@ -518,6 +548,9 @@
   </data>
   <data name="pause_bat_ac" xml:space="preserve">
     <value>暂停电池</value>
+  </data>
+  <data name="pls_include" xml:space="preserve">
+    <value>请包括</value>
   </data>
   <data name="pr01" xml:space="preserve">
     <value>视频: 复制流到MP4</value>
@@ -768,6 +801,9 @@
   <data name="sunset1" xml:space="preserve">
     <value>日落不能晚于日出。</value>
   </data>
+  <data name="time_out_url" xml:space="preserve">
+    <value>尝试处理 url 超时</value>
+  </data>
   <data name="tip1" xml:space="preserve">
     <value>此应用程序启动 ffmpeg 进程以进行编码、复用和解复用、获取流等。</value>
   </data>
@@ -797,6 +833,9 @@
   </data>
   <data name="to_tray2" xml:space="preserve">
     <value>该应用程序在系统托盘中最小化为一个图标。</value>
+  </data>
+  <data name="trailer_zero" xml:space="preserve">
+    <value>电影预告片配置导致零时长。</value>
   </data>
   <data name="transfer_r" xml:space="preserve">
     <value>传输率:</value>

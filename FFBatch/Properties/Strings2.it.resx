@@ -897,4 +897,43 @@
   <data name="add_variable" xml:space="preserve">
     <value>Aggiungi variabile ai parametri</value>
   </data>
+  <data name="mon_no_rel" xml:space="preserve">
+    <value>Non è possibile utilizzare un percorso principale relativo con il monitoraggio delle sottocartelle, utilizzare un percorso assoluto.</value>
+  </data>
+  <data name="mon_path_equal" xml:space="preserve">
+    <value>La cartella monitorata è la stessa della cartella di output principale, selezionare un altro percorso di destinazione o utilizzare un percorso relativo.</value>
+  </data>
+  <data name="mon_ing" xml:space="preserve">
+    <value>Cartella di monitoraggio</value>
+  </data>
+  <data name="excl_list" xml:space="preserve">
+    <value>Elenco di esclusione dei tipi di file</value>
+  </data>
+  <data name="chapters" xml:space="preserve">
+    <value>capitoli</value>
+  </data>
+  <data name="chapters_all" xml:space="preserve">
+    <value>Il layout manuale dei capitoli verrà applicato a tutti i file di elenco. Sei sicuro?</value>
+  </data>
+  <data name="on_rel_path" xml:space="preserve">
+    <value>sul percorso relativo</value>
+  </data>
+  <data name="pls_include" xml:space="preserve">
+    <value>Per favore includere</value>
+  </data>
+  <data name="trailer_zero" xml:space="preserve">
+    <value>La configurazione del trailer del film porta a una durata pari a zero.</value>
+  </data>
+  <data name="add_cust_param" xml:space="preserve">
+    <value>Aggiungi la colonna dei parametri personalizzati per aggiungere preimpostazioni specifiche per file singoli/multipli.</value>
+  </data>
+  <data name="chaps_f" xml:space="preserve">
+    <value>capitoli trovati.</value>
+  </data>
+  <data name="no_chaps" xml:space="preserve">
+    <value>Nessun capitolo trovato nel file corrente.</value>
+  </data>
+  <data name="time_out_url" xml:space="preserve">
+    <value>Timeout nel tentativo di elaborare l'URL</value>
+  </data>
 </root>
