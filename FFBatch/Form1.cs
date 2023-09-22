@@ -29283,6 +29283,7 @@ namespace FFBatch
                         err_txt = err_txt.Replace("_build-www.gyan.dev", "");
                         err_txt = err_txt.Replace("-full", " Full");
                         err_txt = err_txt.Replace("-essentials", " Essentials");
+                        if (err_txt.ToLower().Contains("-git")) err_txt = err_txt.Substring(0, err_txt.IndexOf("-git"));
 
                         if (err_txt.Length >= 42)
                         {
@@ -30086,6 +30087,7 @@ namespace FFBatch
                 err_txt = err_txt.Replace("_build-www.gyan.dev", "");
                 err_txt = err_txt.Replace("-full", " Full");
                 err_txt = err_txt.Replace("-essentials", " Essentials");
+                if (err_txt.ToLower().Contains("-git")) err_txt = err_txt.Substring(0, err_txt.IndexOf("-git"));
 
                 //err_txt = err_txt.Replace("gyan.dev", "");
                 if (err_txt.Length >= 42)
