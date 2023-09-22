@@ -1978,4 +1978,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Crea video da immagini fisse</value>
   </data>
+  <data name="chk_audio.Text" xml:space="preserve">
+    <value>Aggiungi traccia audio</value>
+  </data>
 </root>

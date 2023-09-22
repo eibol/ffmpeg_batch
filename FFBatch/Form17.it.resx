@@ -2075,4 +2075,82 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Aggiungi colonna personalizzata</value>
   </data>
+  <data name="cb_custom_med.Items12" xml:space="preserve">
+    <value>Bit profondità</value>
+  </data>
+  <data name="cb_custom_med.Items8" xml:space="preserve">
+    <value>Modo freq. fotogrammi</value>
+  </data>
+  <data name="cb_custom_med.Items7" xml:space="preserve">
+    <value>Visualizza proporzioni</value>
+  </data>
+  <data name="cb_custom_med.Items9" xml:space="preserve">
+    <value>Freq. fotogrammi</value>
+  </data>
+  <data name="cb_custom_med.Items32" xml:space="preserve">
+    <value>Sottotitoli</value>
+  </data>
+  <data name="cb_custom_med.Items5" xml:space="preserve">
+    <value>ID  codec</value>
+  </data>
+  <data name="cb_custom_med.Items6" xml:space="preserve">
+    <value>Bitrate max</value>
+  </data>
+  <data name="cb_custom_med.Items3" xml:space="preserve">
+    <value>Prrfilo formato</value>
+  </data>
+  <data name="cb_custom_med.Items14" xml:space="preserve">
+    <value>Intervallo colore</value>
+  </data>
+  <data name="cb_custom_med.Items15" xml:space="preserve">
+    <value>Colori primari</value>
+  </data>
+  <data name="cb_custom_med.Items16" xml:space="preserve">
+    <value>Scrittura libreria</value>
+  </data>
+  <data name="cb_custom_med.Items17" xml:space="preserve">
+    <value>Lingua</value>
+  </data>
+  <data name="cb_custom_med.Items10" xml:space="preserve">
+    <value>Spazio colore</value>
+  </data>
+  <data name="cb_custom_med.Items11" xml:space="preserve">
+    <value>Sottocampionamento crominanza</value>
+  </data>
+  <data name="cb_custom_med.Items13" xml:space="preserve">
+    <value>Tipo scansione</value>
+  </data>
+  <data name="cb_custom_med.Items28" xml:space="preserve">
+    <value>Modo compressione</value>
+  </data>
+  <data name="cb_custom_med.Items29" xml:space="preserve">
+    <value>Scrittura libreria</value>
+  </data>
+  <data name="cb_custom_med.Items24" xml:space="preserve">
+    <value>Canale/i</value>
+  </data>
+  <data name="cb_custom_med.Items25" xml:space="preserve">
+    <value>Layout canali</value>
+  </data>
+  <data name="cb_custom_med.Items26" xml:space="preserve">
+    <value>Freq. campionamento</value>
+  </data>
+  <data name="cb_custom_med.Items27" xml:space="preserve">
+    <value>Bit profondità</value>
+  </data>
+  <data name="cb_custom_med.Items21" xml:space="preserve">
+    <value>Formato/info</value>
+  </data>
+  <data name="cb_custom_med.Items22" xml:space="preserve">
+    <value>ID codec</value>
+  </data>
+  <data name="cb_custom_med.Items23" xml:space="preserve">
+    <value>Modo bitrate</value>
+  </data>
+  <data name="cb_custom_med.Items4" xml:space="preserve">
+    <value>Impostazioni formato</value>
+  </data>
+  <data name="cb_custom_med.Items2" xml:space="preserve">
+    <value>Formato/info</value>
+  </data>
 </root>

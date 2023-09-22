@@ -4594,4 +4594,7 @@
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Profilo</value>
+  </data>
 </root>

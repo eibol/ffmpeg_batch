@@ -2234,4 +2234,13 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Sicurezza e prestazioni</value>
+  </data>
+  <data name="lbl_vcard.Text" xml:space="preserve">
+    <value>scheda video</value>
+  </data>
+  <data name="lbl_fail_ff.Text" xml:space="preserve">
+    <value>Stato</value>
+  </data>
 </root>
