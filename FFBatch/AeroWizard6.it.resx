@@ -424,7 +424,7 @@
     <value>Utilizzo dei capitoli del file sorgente</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
-    <value>Diviso</value>
+    <value>Dividi</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>351, 15</value>
@@ -2376,5 +2376,29 @@
         xRPuE8QT7hPCE+4TwBPuE74T7ha9Fu5Ax0CeAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>La procedura guidata per l'estrazione delle preimpostazioni delle immagini è pronta.</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Seleziona 'Fine' o 'Chiudi' per tornare alla scheda principale.</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Seleziona 'Avvia' per avviare la codifica con il profilo attuale.</value>
+  </data>
+  <data name="btn_start_multi.Text" xml:space="preserve">
+    <value>Avvia</value>
+  </data>
+  <data name="btn_abort.Text" xml:space="preserve">
+    <value>Chiudi</value>
+  </data>
+  <data name="lbl_warn.Text" xml:space="preserve">
+    <value>Il percorso assoluto può portare alla sovrascrittura</value>
+  </data>
+  <data name="check_name.Text" xml:space="preserve">
+    <value>Usa nome file sorgente per la destinazione</value>
+  </data>
+  <data name="wz_final.Text" xml:space="preserve">
+    <value>Profilo completato</value>
   </data>
 </root>

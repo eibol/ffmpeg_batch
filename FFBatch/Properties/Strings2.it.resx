@@ -559,7 +559,7 @@
     <value>Procedura guidata da immagine a video</value>
   </data>
   <data name="imgs" xml:space="preserve">
-    <value>Imaggini</value>
+    <value>Immagini</value>
   </data>
   <data name="low_sp" xml:space="preserve">
     <value>Poco spazio disponibile</value>
@@ -679,7 +679,7 @@
     <value>Bitrate audio</value>
   </data>
   <data name="String" xml:space="preserve">
-    <value>Incolla il link</value>
+    <value>Incolla il collgemanto</value>
   </data>
   <data name="finish" xml:space="preserve">
     <value>Fine</value>
@@ -730,7 +730,7 @@
     <value>Negli script Avisynth, i caratteri non inglesi nel nome del file di origine possono far mancare la durata nelle codifiche non UTF/Unicode.</value>
   </data>
   <data name="get_prev" xml:space="preserve">
-    <value>Ottenere cornici</value>
+    <value>Richiedi cornici</value>
   </data>
   <data name="start_mark" xml:space="preserve">
     <value>Punto di partenza</value>
@@ -739,7 +739,7 @@
     <value>La navigazione con i fotogrammi chiave della trackbar non sarà disponibile. È ancora possibile utilizzare i pulsanti dell'ora.</value>
   </data>
   <data name="out_file" xml:space="preserve">
-    <value>File di uscita</value>
+    <value>File destinaizone</value>
   </data>
   <data name="speed_not comp" xml:space="preserve">
     <value>L'impostazione della velocità non è compatibile con altri filtri video.</value>
@@ -790,7 +790,8 @@
     <value>È stato aggiunto il seguente parametro:</value>
   </data>
   <data name="vf_crop_multi" xml:space="preserve">
-    <value>Un'altra istanza di filtro video è stata trovata nel campo dei parametri. Puoi utilizzare più filtri, tra parentesi e separati da virgole. Si prega di modificare il filtro -vf di conseguenza.</value>
+    <value>È stata trovata  un'altra istanza del filtro video nel campo dei parametri. 
+Puoi utilizzare più filtri, tra parentesi e separati da virgole. Si prega di modificare il filtro -vf di conseguenza.</value>
   </data>
   <data name="vf_crop_multi2" xml:space="preserve">
     <value>Per esempio: -vf "crop=50:50:0:10, yadif, format=gray"</value>
@@ -805,13 +806,14 @@
     <value>Imposta parametri personalizzati</value>
   </data>
   <data name="rem_cust_p" xml:space="preserve">
-    <value>Rimuovere i parametri personalizzati</value>
+    <value>Rimuovi parametri personalizzati</value>
   </data>
   <data name="warn_n_files" xml:space="preserve">
     <value>L'aggiunta di migliaia di file può richiedere alcuni minuti per l'analisi di ogni file. È possibile abilitare l'elenco rapido dei file nelle impostazioni per accelerare l'aggiunta di file, ma non verranno visualizzate informazioni sullo stato di avanzamento, solo lo stato dell'elemento riuscito/non riuscito e le informazioni di registro.</value>
   </data>
   <data name="warn_n_files2" xml:space="preserve">
-    <value>Vuoi continuare? Puoi annullare l'aggiunta di file in qualsiasi momento.</value>
+    <value>Vuoi continuare? 
+Puoi annullare l'aggiunta di file in qualsiasi momento.</value>
   </data>
   <data name="quick_f_m" xml:space="preserve">
     <value>L'elenco rapido dei file migliora notevolmente il tempo di caricamento dei file, ma presenta alcuni vincoli:</value>
@@ -829,7 +831,7 @@
     <value>Dimensione dell'obiettivo:</value>
   </data>
   <data name="quick_f_m5" xml:space="preserve">
-    <value>Non è possibile utilizzare la procedura guidata di codifica a due passaggi</value>
+    <value>Non è possibile usare la procedura guidata di codifica a due passaggi</value>
   </data>
   <data name="quick_f_m6" xml:space="preserve">
     <value>La dissolvenza in apertura/chiusura non è supportata quando è abilitato l'elenco rapido dei file.</value>
@@ -935,5 +937,12 @@
   </data>
   <data name="time_out_url" xml:space="preserve">
     <value>Timeout nel tentativo di elaborare l'URL</value>
+  </data>
+  <data name="err_size" xml:space="preserve">
+    <value>Errore durante l'ottenimento della risoluzione del file. 
+Non è possibile visualizzare l'anteprima del ritaglio.</value>
+  </data>
+  <data name="target_size" xml:space="preserve">
+    <value>Dim. destinazione:</value>
   </data>
 </root>

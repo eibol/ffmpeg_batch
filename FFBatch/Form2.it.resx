@@ -234,7 +234,7 @@
     <value>119, 13</value>
   </data>
   <data name="linkLabel3.Text" xml:space="preserve">
-    <value>Registro delle modifiche</value>
+    <value>Elenco novità</value>
   </data>
   <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>82, 85</value>
@@ -258,7 +258,7 @@
     <value>99, 13</value>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
-    <value>Forum di assistenza</value>
+    <value>Forum supporto</value>
   </data>
   <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 184</value>
@@ -279,7 +279,7 @@
     <value>84, 13</value>
   </data>
   <data name="linkLabel4.Text" xml:space="preserve">
-    <value>Sito del progetto</value>
+    <value>Sito web progetto</value>
   </data>
   <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>82, 140</value>
@@ -2082,5 +2082,8 @@
         xRPuE8QT7hPCE+4TwBPuE74T7ha9Fu5Ax0CeAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Info su FFmpeg Batch AV Converter</value>
   </data>
 </root>

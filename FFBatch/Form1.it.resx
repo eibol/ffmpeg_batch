@@ -9325,7 +9325,7 @@
     <value>89, 13</value>
   </data>
   <data name="lbl_cpu_pr.Text" xml:space="preserve">
-    <value>Priorità della CPU</value>
+    <value>Priorità CPU</value>
   </data>
   <data name="btn_save_prio.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -11795,7 +11795,7 @@
     <value>99, 17</value>
   </data>
   <data name="chk_overw.Text" xml:space="preserve">
-    <value>Sovrascrivi i file</value>
+    <value>Sovrascrivi file sorgenti</value>
   </data>
   <data name="chk_try.Size" type="System.Drawing.Size, System.Drawing">
     <value>116, 17</value>
@@ -13358,10 +13358,10 @@
 </value>
   </data>
   <data name="btn_update_yt.Text" xml:space="preserve">
-    <value>Aggiornare</value>
+    <value>Aggiorna</value>
   </data>
   <data name="txt_up_output.Text" xml:space="preserve">
-    <value>Aggiornamento in corso, attendere...</value>
+    <value>Aggiornamento in corso, attendi...</value>
   </data>
   <data name="chk_best_yt.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 47</value>
@@ -15827,5 +15827,638 @@
         AYADAAEBBQABgAMAAQEBgAMAAQEBgAMAAQEFAAGAAwABAQGAAwABAQGAAwABAQUAAYADAAEBAYADAAEB
         AYADAAEBBQABwAMAAQMBwAMAAQMBwAMAAQMFAAHgAwABBwHgAwABBwHgAwABBwUAD/8FAA//BQAL
 </value>
+  </data>
+  <data name="openFileDialog1.Filter" xml:space="preserve">
+    <value>Audio e video | *.mp4;*.mkv;*.mp3;*.wav; *.flac; *.avi;*.mts;*.flv;*.alac;*.aac;*.mpg;*.mp2;*.mpe;*.ogv;*.webm;*.aiff;*.vob;*. wma;*.wmv;*.mov;*.mka;*.srt;*.m2ts;*.idx;*.ac3;*.ass | Tutti i file (*.*) | *.*</value>
+  </data>
+  <data name="ctm_add_files.Text" xml:space="preserve">
+    <value>Aggiungi file</value>
+  </data>
+  <data name="ctm_add_folder.Text" xml:space="preserve">
+    <value>Aggiungi cartella</value>
+  </data>
+  <data name="ctm_paste_path.Text" xml:space="preserve">
+    <value>Incolla/salva percorso</value>
+  </data>
+  <data name="ct1_paste_youtube.Text" xml:space="preserve">
+    <value>Incolla URL YouTube</value>
+  </data>
+  <data name="ct1_paste_m3u.Text" xml:space="preserve">
+    <value>Inolla URL M3u</value>
+  </data>
+  <data name="ctm1_encode.Text" xml:space="preserve">
+    <value>Codifica file</value>
+  </data>
+  <data name="cti2.Text" xml:space="preserve">
+    <value>Riproduci file</value>
+  </data>
+  <data name="ct1_rem_param.Text" xml:space="preserve">
+    <value>Rimuovi parametri personalizzati</value>
+  </data>
+  <data name="cti1.Text" xml:space="preserve">
+    <value>Apri percorso file</value>
+  </data>
+  <data name="cti3.Text" xml:space="preserve">
+    <value>Apri cartella destinazione:</value>
+  </data>
+  <data name="ct1_params.Text" xml:space="preserve">
+    <value>Imposta profilo personalizzato</value>
+  </data>
+  <data name="ctm1_excl.Text" xml:space="preserve">
+    <value>Elenco escusione file</value>
+  </data>
+  <data name="ctdel.Text" xml:space="preserve">
+    <value>Elimina file dall'elenco</value>
+  </data>
+  <data name="ct_move_top.Text" xml:space="preserve">
+    <value>Sposta elemento in alto</value>
+  </data>
+  <data name="ct_move_bottom.Text" xml:space="preserve">
+    <value>Sposta elementoi in basso</value>
+  </data>
+  <data name="ctm1_queue.Text" xml:space="preserve">
+    <value>Reimposta stato elemento a 'In coda'</value>
+  </data>
+  <data name="cti4.Text" xml:space="preserve">
+    <value>Visualizza info file multimediale</value>
+  </data>
+  <data name="ct1_streams.Text" xml:space="preserve">
+    <value>Visualizza stream file</value>
+  </data>
+  <data name="ct1_total_frames.Text" xml:space="preserve">
+    <value>Richeidi info secondi/fotogrammi</value>
+  </data>
+  <data name="cti1_cols.Text" xml:space="preserve">
+    <value>Aggiungi colonna personalizzata</value>
+  </data>
+  <data name="cti_remove_col.Text" xml:space="preserve">
+    <value>Rimuovi ultima colonna personalizzata</value>
+  </data>
+  <data name="cti4_2.Text" xml:space="preserve">
+    <value>Visualizza/nascondi griglia</value>
+  </data>
+  <data name="cti5.Text" xml:space="preserve">
+    <value>Imposta come punto finale del taglio</value>
+  </data>
+  <data name="cti6.Text" xml:space="preserve">
+    <value>Stop attività</value>
+  </data>
+  <data name="listBox4.Items2" xml:space="preserve">
+    <value>Destinazione standard FFmpeg</value>
+  </data>
+  <data name="notifyIcon1.Text" xml:space="preserve">
+    <value>Batch FFmpeg</value>
+  </data>
+  <data name="ct2_all.Text" xml:space="preserve">
+    <value>Aggiungi tutti gli stream</value>
+  </data>
+  <data name="ct2_v.Text" xml:space="preserve">
+    <value>Aggiungi traccia video</value>
+  </data>
+  <data name="ct2_a.Text" xml:space="preserve">
+    <value>Aggiungi tracce audio</value>
+  </data>
+  <data name="ct2_s.Text" xml:space="preserve">
+    <value>Aggiungi tracce sottotitoli</value>
+  </data>
+  <data name="combo_def_und_lang.Items" xml:space="preserve">
+    <value>Non definita (und)</value>
+  </data>
+  <data name="combo_def_und_lang.Items1" xml:space="preserve">
+    <value>Inglese: (eng)</value>
+  </data>
+  <data name="combo_def_und_lang.Items2" xml:space="preserve">
+    <value>Tedesca: (ger)</value>
+  </data>
+  <data name="combo_def_und_lang.Items3" xml:space="preserve">
+    <value>Farncese: (fra)</value>
+  </data>
+  <data name="combo_def_und_lang.Items4" xml:space="preserve">
+    <value>Spagnola: (spa)</value>
+  </data>
+  <data name="combo_def_und_lang.Items5" xml:space="preserve">
+    <value>Italiana: (ita)</value>
+  </data>
+  <data name="combo_def_und_lang.Items6" xml:space="preserve">
+    <value>Portoghese (por)</value>
+  </data>
+  <data name="combo_def_und_lang.Items7" xml:space="preserve">
+    <value>Olandese: (dut)</value>
+  </data>
+  <data name="combo_def_und_lang.Items8" xml:space="preserve">
+    <value>Danese: (dan)</value>
+  </data>
+  <data name="combo_def_und_lang.Items9" xml:space="preserve">
+    <value>Norvegese: (nno)</value>
+  </data>
+  <data name="combo_def_und_lang.Items10" xml:space="preserve">
+    <value>Svedese: (swe)</value>
+  </data>
+  <data name="combo_def_und_lang.Items11" xml:space="preserve">
+    <value>Tumeno: (rum)</value>
+  </data>
+  <data name="combo_def_und_lang.Items12" xml:space="preserve">
+    <value>Ungherese: (hun)</value>
+  </data>
+  <data name="combo_def_und_lang.Items13" xml:space="preserve">
+    <value>Ceco: (cze)</value>
+  </data>
+  <data name="combo_def_und_lang.Items14" xml:space="preserve">
+    <value>Catalana: (cat)</value>
+  </data>
+  <data name="combo_def_und_lang.Items15" xml:space="preserve">
+    <value>Basca: (baq)</value>
+  </data>
+  <data name="combo_def_und_lang.Items16" xml:space="preserve">
+    <value>Galiziana: (glg)</value>
+  </data>
+  <data name="combo_def_und_lang.Items17" xml:space="preserve">
+    <value>Araba: (ara)</value>
+  </data>
+  <data name="combo_def_und_lang.Text" xml:space="preserve">
+    <value>Imposta lingua per tracce non definite</value>
+  </data>
+  <data name="ct2_del.Text" xml:space="preserve">
+    <value>Rimuovi dall'elenco</value>
+  </data>
+  <data name="ct2_save_allstreams.Text" xml:space="preserve">
+    <value>Salva tutti gli stremam del file</value>
+  </data>
+  <data name="ct4_browse.Text" xml:space="preserve">
+    <value>Sfoglia sottotitoli</value>
+  </data>
+  <data name="ct4_del.Text" xml:space="preserve">
+    <value>Rimuovi elemento</value>
+  </data>
+  <data name="ct4_conv.Text" xml:space="preserve">
+    <value>Converti in UTF-8</value>
+  </data>
+  <data name="Combo_single_subs_lang.Text" xml:space="preserve">
+    <value>Imposta lingua sottotitoli</value>
+  </data>
+  <data name="ct_paste_youtube.Text" xml:space="preserve">
+    <value>Incolla URL YouTube</value>
+  </data>
+  <data name="ct_paste_m3u.Text" xml:space="preserve">
+    <value>Incolla URL m3u</value>
+  </data>
+  <data name="ct3_ready.Text" xml:space="preserve">
+    <value>Imposta come pronto</value>
+  </data>
+  <data name="ct_remove_url.Text" xml:space="preserve">
+    <value>Rimuovi riga selezionata</value>
+  </data>
+  <data name="ct_del_m3u.Text" xml:space="preserve">
+    <value>Rimuovi righe vuote</value>
+  </data>
+  <data name="ct_validate_url.Text" xml:space="preserve">
+    <value>Rimuovi righe con errori</value>
+  </data>
+  <data name="ct_ren_urls.Text" xml:space="preserve">
+    <value>Rinomina nomi file destinazione</value>
+  </data>
+  <data name="ct_show_urls.Text" xml:space="preserve">
+    <value>Visualizza URL stream</value>
+  </data>
+  <data name="ct_play_vlc.Text" xml:space="preserve">
+    <value>Riproduci con VLC</value>
+  </data>
+  <data name="ctm_stop_url.Text" xml:space="preserve">
+    <value>Stop stream selezionato</value>
+  </data>
+  <data name="combo_prio.Items" xml:space="preserve">
+    <value>Alta</value>
+  </data>
+  <data name="combo_prio.Items1" xml:space="preserve">
+    <value>Superiore al normale</value>
+  </data>
+  <data name="combo_prio.Items2" xml:space="preserve">
+    <value>Normale</value>
+  </data>
+  <data name="combo_prio.Items3" xml:space="preserve">
+    <value>Inferiore a normale</value>
+  </data>
+  <data name="combo_prio.Items4" xml:space="preserve">
+    <value>In attesa</value>
+  </data>
+  <data name="File_C.Text" xml:space="preserve">
+    <value>     Traccia file</value>
+  </data>
+  <data name="stream_type.Text" xml:space="preserve">
+    <value>Tipo</value>
+  </data>
+  <data name="stream_lang.Text" xml:space="preserve">
+    <value>Lingua</value>
+  </data>
+  <data name="stream_default.Text" xml:space="preserve">
+    <value>Traccia predefinita</value>
+  </data>
+  <data name="stream_param.Text" xml:space="preserve">
+    <value>Parametri codifica</value>
+  </data>
+  <data name="ct3_default.Text" xml:space="preserve">
+    <value>Modifica stato predefinito</value>
+  </data>
+  <data name="ct3_del.Text" xml:space="preserve">
+    <value>Rimuovi elemento</value>
+  </data>
+  <data name="ct3_up.Text" xml:space="preserve">
+    <value>Sposta elemento su</value>
+  </data>
+  <data name="ct3_down.Text" xml:space="preserve">
+    <value>Sposta elemento giù</value>
+  </data>
+  <data name="ct3_default_enc.Text" xml:space="preserve">
+    <value>Imposta questa codifica traccia come predefinita</value>
+  </data>
+  <data name="ct3_encode_default.Text" xml:space="preserve">
+    <value>Ripristina codifica predefinita</value>
+  </data>
+  <data name="ct3_combo_language.Text" xml:space="preserve">
+    <value>Lingua elemento</value>
+  </data>
+  <data name="ct3_save_track.Text" xml:space="preserve">
+    <value>Salva questa traccia</value>
+  </data>
+  <data name="openFileDialog2.Filter" xml:space="preserve">
+    <value>Sottotitoli |*.srt;*.idx;*.ass| Tutti i file (*.*) | *.*</value>
+  </data>
+  <data name="combo_shut.Items" xml:space="preserve">
+    <value>Spegni il computer</value>
+  </data>
+  <data name="combo_shut.Items1" xml:space="preserve">
+    <value>Iberna il computer</value>
+  </data>
+  <data name="combo_shut.Items2" xml:space="preserve">
+    <value>Manda il computer in sospensione</value>
+  </data>
+  <data name="combo_shut.Items3" xml:space="preserve">
+    <value>Esegui tutto alla fine</value>
+  </data>
+  <data name="combo_shut.Items4" xml:space="preserve">
+    <value>Esegui per ogni file</value>
+  </data>
+  <data name="combo_shut.Items5" xml:space="preserve">
+    <value>Pausa in modo batteria</value>
+  </data>
+  <data name="openFileDialog3.Filter" xml:space="preserve">
+    <value>Audio e video | *.mp4;*.mkv;*.mp3;*.wav; *.flac; *.avi;*.mts;*.flv;*.alac;*.aac;*.mpg;*.mp2;*.mpe;*.ogv;*.webm;*.aiff;*.vob;*. wma;*.wmv;*.mov;*.mka;*.srt;*.m2ts;*.idx;*.ac3;*.ass | Tutti i file (*.*) | *.*</value>
+  </data>
+  <data name="open_file_m3u.Filter" xml:space="preserve">
+    <value>Elenchi URL M3U | *.m3u; *.m3u8; *.txt| Tutti i file (*.*) | *.*</value>
+  </data>
+  <data name="combo_vout_color.Items" xml:space="preserve">
+    <value>Nero</value>
+  </data>
+  <data name="combo_vout_color.Items1" xml:space="preserve">
+    <value>Bianco</value>
+  </data>
+  <data name="combo_vout_color.Items2" xml:space="preserve">
+    <value>Alfa</value>
+  </data>
+  <data name="combo_vin_col.Items" xml:space="preserve">
+    <value>Nero</value>
+  </data>
+  <data name="combo_vin_col.Items1" xml:space="preserve">
+    <value>Bianco</value>
+  </data>
+  <data name="combo_vin_col.Items2" xml:space="preserve">
+    <value>Alfa</value>
+  </data>
+  <data name="lbl_multi_file.Text" xml:space="preserve">
+    <value>Multi file</value>
+  </data>
+  <data name="chk_recreate.Text" xml:space="preserve">
+    <value>Ricrea percorso sorgente</value>
+  </data>
+  <data name="check_concat.Text" xml:space="preserve">
+    <value>Concat FV</value>
+  </data>
+  <data name="chk_auto_updates.Text" xml:space="preserve">
+    <value>Controlla aggiornamenti</value>
+  </data>
+  <data name="btn_browse_path_m3u.Text" xml:space="preserve">
+    <value>Sfoglia...</value>
+  </data>
+  <data name="main_f_1.Text" xml:space="preserve">
+    <value>Axxera elenco</value>
+  </data>
+  <data name="main_f_2.Text" xml:space="preserve">
+    <value>Aggiungi file</value>
+  </data>
+  <data name="ct1_crop.Text" xml:space="preserve">
+    <value>Rilevamento ritaglio barre nere</value>
+  </data>
+  <data name="menu_settings.Text" xml:space="preserve">
+    <value>Impostazioni</value>
+  </data>
+  <data name="main_2.Text" xml:space="preserve">
+    <value>Strumenti</value>
+  </data>
+  <data name="menu_guide.Text" xml:space="preserve">
+    <value>Guida rapida</value>
+  </data>
+  <data name="menu_news.Text" xml:space="preserve">
+    <value>Novità progetto</value>
+  </data>
+  <data name="menu_forum.Text" xml:space="preserve">
+    <value>Forum supporto</value>
+  </data>
+  <data name="menu_updates.Text" xml:space="preserve">
+    <value>Controlla aggiornamenti</value>
+  </data>
+  <data name="menu_about.Text" xml:space="preserve">
+    <value>Info programma</value>
+  </data>
+  <data name="main_3.Text" xml:space="preserve">
+    <value>Aiuto</value>
+  </data>
+  <data name="col1.Text" xml:space="preserve">
+    <value>      Nome file</value>
+  </data>
+  <data name="col_dir.Text" xml:space="preserve">
+    <value>Percorso</value>
+  </data>
+  <data name="col1_2.Text" xml:space="preserve">
+    <value>Tipo media</value>
+  </data>
+  <data name="col2.Text" xml:space="preserve">
+    <value>Durata</value>
+  </data>
+  <data name="col3.Text" xml:space="preserve">
+    <value>Dimensione</value>
+  </data>
+  <data name="col4.Text" xml:space="preserve">
+    <value>Stato</value>
+  </data>
+  <data name="columnHeader3.Text" xml:space="preserve">
+    <value>Sottotitoli</value>
+  </data>
+  <data name="columnHeader6.Text" xml:space="preserve">
+    <value>Lingua</value>
+  </data>
+  <data name="columnHeader4.Text" xml:space="preserve">
+    <value>Codifica</value>
+  </data>
+  <data name="columnHeader5.Text" xml:space="preserve">
+    <value>Predefinito</value>
+  </data>
+  <data name="columnHeader7.Text" xml:space="preserve">
+    <value>Stato</value>
+  </data>
+  <data name="Column0.HeaderText" xml:space="preserve">
+    <value>Miniatura</value>
+  </data>
+  <data name="Duration1.HeaderText" xml:space="preserve">
+    <value>Durata URL</value>
+  </data>
+  <data name="Capture_time1.HeaderText" xml:space="preserve">
+    <value>Durata cattura</value>
+  </data>
+  <data name="Type1.HeaderText" xml:space="preserve">
+    <value>Nome destinazione</value>
+  </data>
+  <data name="Status1.HeaderText" xml:space="preserve">
+    <value>Stato</value>
+  </data>
+  <data name="ct2_str.Text" xml:space="preserve">
+    <value>Visualizza stream file</value>
+  </data>
+  <data name="main_f_3.Text" xml:space="preserve">
+    <value>Aggiungi cartella</value>
+  </data>
+  <data name="main_f_5.Text" xml:space="preserve">
+    <value>Carica file coda</value>
+  </data>
+  <data name="main_f_4.Text" xml:space="preserve">
+    <value>Salva coda attuale</value>
+  </data>
+  <data name="main_f_exit.Text" xml:space="preserve">
+    <value>Esci</value>
+  </data>
+  <data name="menu_refresh.Text" xml:space="preserve">
+    <value>Aggiorna elenco</value>
+  </data>
+  <data name="menu_invalid.Text" xml:space="preserve">
+    <value>Rimuovi elementi non validi</value>
+  </data>
+  <data name="menu_queue.Text" xml:space="preserve">
+    <value>Reimposta elementi elenco in coda</value>
+  </data>
+  <data name="menu_try.Text" xml:space="preserve">
+    <value>Prova profilo attuale</value>
+  </data>
+  <data name="menu_console.Text" xml:space="preserve">
+    <value>Apri console FFmpeg</value>
+  </data>
+  <data name="menu_logs.Text" xml:space="preserve">
+    <value>Visualizza ultimo registro eventi</value>
+  </data>
+  <data name="presetsOnlineToolStripMenuItem.Text" xml:space="preserve">
+    <value>Profili online</value>
+  </data>
+  <data name="menu_wizards.Text" xml:space="preserve">
+    <value>Procedura guidata profilo</value>
+  </data>
+  <data name="main_12.Text" xml:space="preserve">
+    <value>Modifica</value>
+  </data>
+  <data name="menu_reload_settings.Text" xml:space="preserve">
+    <value>Ricarica impostazioni</value>
+  </data>
+  <data name="menu_save_settings.Text" xml:space="preserve">
+    <value>Salva impostazioni</value>
+  </data>
+  <data name="menu_reset.Text" xml:space="preserve">
+    <value>Ripristina ai valori predefiniti</value>
+  </data>
+  <data name="menu_ffm.Text" xml:space="preserve">
+    <value>Sostituisci ffmpeg</value>
+  </data>
+  <data name="menu_media_info.Text" xml:space="preserve">
+    <value>Visualizza info media</value>
+  </data>
+  <data name="main_menu_streams.Text" xml:space="preserve">
+    <value>Visualizza stream file</value>
+  </data>
+  <data name="menu_presets.Text" xml:space="preserve">
+    <value>Profili multipli</value>
+  </data>
+  <data name="menu_two_pass_wizard.Text" xml:space="preserve">
+    <value>Procedura guidata due passaggi</value>
+  </data>
+  <data name="wiz_silence_menu.Text" xml:space="preserve">
+    <value>Procedura guidata rilevamento silenzio</value>
+  </data>
+  <data name="menu_img_v.Text" xml:space="preserve">
+    <value>Procedura guidata da immagini a video</value>
+  </data>
+  <data name="menu_extract_images.Text" xml:space="preserve">
+    <value>Procedura guidata estrazione immagini</value>
+  </data>
+  <data name="menu_split.Text" xml:space="preserve">
+    <value>Procedura guidata divisione A/V</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items" xml:space="preserve">
+    <value>Inglese (eng)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items1" xml:space="preserve">
+    <value>Cinese (chi)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items2" xml:space="preserve">
+    <value>Spagnolo (spa)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items3" xml:space="preserve">
+    <value>Arabo (ara)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items4" xml:space="preserve">
+    <value>Armeno (arm)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items5" xml:space="preserve">
+    <value>Basco (baq)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items7" xml:space="preserve">
+    <value>Bosniaco (bos)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items8" xml:space="preserve">
+    <value>Catalano (cat)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items9" xml:space="preserve">
+    <value>Cinese (zho)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items10" xml:space="preserve">
+    <value>Cinese (yue)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items11" xml:space="preserve">
+    <value>Croato (hrv)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items12" xml:space="preserve">
+    <value>Ceco (cze)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items13" xml:space="preserve">
+    <value>Danese (dan)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items14" xml:space="preserve">
+    <value>Olandese (dut)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items15" xml:space="preserve">
+    <value>Francese (fra)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items16" xml:space="preserve">
+    <value>Finnico (fin)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items17" xml:space="preserve">
+    <value>Galiziano (glg)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items18" xml:space="preserve">
+    <value>Tedesco (ger)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items19" xml:space="preserve">
+    <value>Greco (gre)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items20" xml:space="preserve">
+    <value>Ebraico (heb)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items22" xml:space="preserve">
+    <value>Ungherese (hun)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items23" xml:space="preserve">
+    <value>Islandese (ice)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items24" xml:space="preserve">
+    <value>Indonesiano (ind)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items25" xml:space="preserve">
+    <value>Italiano (ita)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items26" xml:space="preserve">
+    <value>Giappomese (jpn)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items27" xml:space="preserve">
+    <value>Coreano (kor)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items28" xml:space="preserve">
+    <value>Malese (may)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items29" xml:space="preserve">
+    <value>Macedone (mac)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items30" xml:space="preserve">
+    <value>Norvegese (nno)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items31" xml:space="preserve">
+    <value>Polacco (pol)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items32" xml:space="preserve">
+    <value>Portoghese (por)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items33" xml:space="preserve">
+    <value>Rumeno (rum)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items34" xml:space="preserve">
+    <value>Russo (rus)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items35" xml:space="preserve">
+    <value>Serbo (srp)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items36" xml:space="preserve">
+    <value>Svedese (swe)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items38" xml:space="preserve">
+    <value>Turco (tur)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items39" xml:space="preserve">
+    <value>Vietnamita (vie)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items41" xml:space="preserve">
+    <value>Ungherese (hun)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items42" xml:space="preserve">
+    <value>islandese (ice)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items43" xml:space="preserve">
+    <value>Indonesiano (ind)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items44" xml:space="preserve">
+    <value>Italiano (ita)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items45" xml:space="preserve">
+    <value>Giapponese (jpn)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items46" xml:space="preserve">
+    <value>Coreano (kor)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items47" xml:space="preserve">
+    <value>Malese (may)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items48" xml:space="preserve">
+    <value>Macedone (mac)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items49" xml:space="preserve">
+    <value>Norvegese (nno)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items50" xml:space="preserve">
+    <value>Polacco (pol)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items51" xml:space="preserve">
+    <value>Portoghese (por)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items52" xml:space="preserve">
+    <value>Rumeno (rum)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items53" xml:space="preserve">
+    <value>Russo (rus)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items54" xml:space="preserve">
+    <value>Serbo (srp)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items55" xml:space="preserve">
+    <value>Svedese (swe)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items57" xml:space="preserve">
+    <value>Turco (tur)</value>
+  </data>
+  <data name="Combo_sub_lang_mux.Items58" xml:space="preserve">
+    <value>Vietnamita (vie)</value>
   </data>
 </root>

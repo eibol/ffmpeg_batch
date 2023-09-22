@@ -149,7 +149,7 @@
     <value>229, 17</value>
   </data>
   <data name="radio_fn_path.Text" xml:space="preserve">
-    <value>Nome file sorgente percorso completo (%fp)</value>
+    <value>Nome percorso completo file sorgente (%fp)</value>
   </data>
   <data name="radio_fn.Location" type="System.Drawing.Point, System.Drawing">
     <value>33, 122</value>
@@ -173,13 +173,13 @@
     <value>192, 17</value>
   </data>
   <data name="radio_fd.Text" xml:space="preserve">
-    <value>Nome della directory di origine (%fd)</value>
+    <value>Nome cartella sorgente (%fd)</value>
   </data>
   <data name="radio_fdur_1.Size" type="System.Drawing.Size, System.Drawing">
     <value>295, 17</value>
   </data>
   <data name="radio_fdur_1.Text" xml:space="preserve">
-    <value>Durata del file sorgente in secondi con gli operatori: %fdur</value>
+    <value>Durata file sorgente in secondi con gli operatori: %fdur</value>
   </data>
   <data name="btn_copy.Location" type="System.Drawing.Point, System.Drawing">
     <value>149, 421</value>
@@ -197,7 +197,7 @@
     <value>278, 17</value>
   </data>
   <data name="radio_nul.Text" xml:space="preserve">
-    <value>Ignora la selezione automatica dell'uscita (Format=nul)</value>
+    <value>Ignora selezione automatica destinazione (Formato=nul)</value>
   </data>
   <data name="txt_operator_dur.Location" type="System.Drawing.Point, System.Drawing">
     <value>327, 27</value>
@@ -206,7 +206,7 @@
     <value>299, 17</value>
   </data>
   <data name="radio_chaps.Text" xml:space="preserve">
-    <value>Dividi il file in base ai marcatori di capitolo [[split_chapters]]</value>
+    <value>Dividi il file in base ai marcatori capitolo [[split_chapters]]</value>
   </data>
   <data name="radio_bitr.Size" type="System.Drawing.Size, System.Drawing">
     <value>244, 17</value>
@@ -221,7 +221,7 @@
     <value>225, 17</value>
   </data>
   <data name="radio_target_size.Text" xml:space="preserve">
-    <value>Obiettivo della dimensione del file di output</value>
+    <value>Dimensione video destinazione</value>
   </data>
   <data name="txt_size.Location" type="System.Drawing.Point, System.Drawing">
     <value>256, 83</value>
@@ -248,13 +248,13 @@
     <value>504, 163</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Inserisci il nome del file</value>
+    <value>Inserisci nome file</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>504, 111</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
-    <value>Funzionalità di ingresso/uscita</value>
+    <value>Funzionalità ingresso/uscita</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>504, 81</value>
@@ -2056,6 +2056,6 @@
 </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>inserire variabile</value>
+    <value>inserisci variabile</value>
   </data>
 </root>

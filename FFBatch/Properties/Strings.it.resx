@@ -2623,7 +2623,10 @@
   <data name="wrong_chr" xml:space="preserve">
     <value>Il nome file sorgente contiene caratteri [ ]. Rimuovi questi caratteri per evitare errori usando il filtro -vf.</value>
   </data>
-  <data name="String" xml:space="preserve">
-    <value />
+  <data name="Paste_any_URL" xml:space="preserve">
+    <value>Incolla collegamento</value>
+  </data>
+  <data name="mon_ing" xml:space="preserve">
+    <value>Monitoraggio modifiche in:</value>
   </data>
 </root>
