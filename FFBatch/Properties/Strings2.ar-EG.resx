@@ -942,4 +942,7 @@
   <data name="time_out_url" xml:space="preserve">
     <value>انتهت المهلة في محاولة معالجة عنوان url</value>
   </data>
+  <data name="libr" xml:space="preserve">
+    <value>المكتبات</value>
+  </data>
 </root>

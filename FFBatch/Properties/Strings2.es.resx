@@ -924,4 +924,7 @@
   <data name="time_out_url" xml:space="preserve">
     <value>Tiempo de espera agotado intentando acceder a la url</value>
   </data>
+  <data name="libr" xml:space="preserve">
+    <value>Biblioteca</value>
+  </data>
 </root>

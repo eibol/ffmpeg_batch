@@ -1042,6 +1042,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Libraries.
+        /// </summary>
+        internal static string libr {
+            get {
+                return ResourceManager.GetString("libr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Logging for:.
         /// </summary>
         internal static string logging_f {

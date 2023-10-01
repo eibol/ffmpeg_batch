@@ -432,6 +432,9 @@
   <data name="lang_corrupted" xml:space="preserve">
     <value>语言配置已损坏，请重新安装应用程序。</value>
   </data>
+  <data name="libr" xml:space="preserve">
+    <value>图书馆</value>
+  </data>
   <data name="logging_f" xml:space="preserve">
     <value>正在日志记录:</value>
   </data>

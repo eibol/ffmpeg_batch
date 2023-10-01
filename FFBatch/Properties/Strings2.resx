@@ -945,4 +945,7 @@
   <data name="time_out_url" xml:space="preserve">
     <value>Timeout trying to process url</value>
   </data>
+  <data name="libr" xml:space="preserve">
+    <value>Libraries</value>
+  </data>
 </root>
