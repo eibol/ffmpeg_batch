@@ -2204,6 +2204,8 @@ namespace FFBatch
         {
             audio_preset = false;
             video_preset = true;
+            trailer_vparam = String.Empty;
+            trailer_aparam = String.Empty;
             existing_preset = false;
             lbl_two.Text = String.Empty;
             lbl_img_v.Text = String.Empty;
@@ -3501,12 +3503,21 @@ namespace FFBatch
 
         private void wz2_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
         {
-            if (trailer_aparam.Length > 0 && chk_no_aud_tr.Checked)
-            {
-                audio_encoder_param = "-an";
-                return;
+            if (trailer_vparam.Length > 0 && chk_no_aud_tr.Checked)
+            {            
+                    audio_encoder_param = "-an";
+                    return;
             }
 
+            
+
+            if (trailer_vparam.Length > 0 && !chk_no_aud_tr.Checked && cb_audio_encoder.SelectedItem.ToString() == "none")
+            {
+                MessageBox.Show(FFBatch.Properties.Strings.none_copy, "Audio preset", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                e.Cancel = true;
+                return;
+            }
+                        
             if (trailer_aparam.Length > 0 && cb_audio_encoder.SelectedItem.ToString() == "copy" && !chk_no_aud_tr.Checked)
             {
                 MessageBox.Show(FFBatch.Properties.Strings.none_copy);
@@ -3719,11 +3730,12 @@ namespace FFBatch
             else if (chk_normalize.Checked)
             {
                 normalize = "loudnorm";
-                afilter = " -filter:a " + normalize + "," + trailer_aparam + ",";
+                if (trailer_aparam.Length > 0) afilter = " -filter:a " + normalize + "," + trailer_aparam + ",";
+                else afilter = " -filter:a " + normalize;
             }
             else
             {
-                afilter = " -filter:a " + trailer_aparam;
+                if (trailer_aparam.Length > 0 ) afilter = " -filter:a " + trailer_aparam;
             }
 
             audio_encoder_param = audio_encoder_param + " " + afilter + " ";
@@ -4175,12 +4187,12 @@ namespace FFBatch
 
                 consola_pre.StartInfo.FileName = "ffmpeg.exe";
                 consola_pre.StartInfo.Arguments = " -i " + "" + '\u0022' + file_prueba + '\u0022' + "" + " -y " + textbox_params + " " + '\u0022' + destino_test + "\\" + System.IO.Path.GetFileNameWithoutExtension(file_prueba) + "." + ext_output + '\u0022';
+                //MessageBox.Show(consola_pre.StartInfo.Arguments);
                 consola_pre.StartInfo.RedirectStandardOutput = true;
                 consola_pre.StartInfo.RedirectStandardError = true;
                 consola_pre.StartInfo.UseShellExecute = false;
                 consola_pre.StartInfo.CreateNoWindow = true;
-                consola_pre.EnableRaisingEvents = true;
-                //MessageBox.Show(consola_pre.StartInfo.Arguments);
+                consola_pre.EnableRaisingEvents = true;                
                 consola_pre.Start();
 
                 while (!consola_pre.StandardError.EndOfStream)
