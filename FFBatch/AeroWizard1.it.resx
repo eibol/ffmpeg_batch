@@ -645,7 +645,7 @@
     <value>267, 19</value>
   </data>
   <data name="radio_existing.Text" xml:space="preserve">
-    <value>Usa un profilo predefinito di codifica esistente</value>
+    <value>Usa profilo codifica predefinito esistente</value>
   </data>
   <data name="pic_1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3899,7 +3899,7 @@
     <value>172, 19</value>
   </data>
   <data name="radio_silence.Text" xml:space="preserve">
-    <value>Assistente rilevatore silenzio</value>
+    <value>Procedura rilevazione silenzio</value>
   </data>
   <data name="pic_warn_two.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3941,7 +3941,7 @@
     <value>232, 19</value>
   </data>
   <data name="radio_2pass.Text" xml:space="preserve">
-    <value>Video in due passaggi / dimensione file</value>
+    <value>Procedura due passaggi/dimensione file video</value>
   </data>
   <data name="radio_audio.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 19</value>
@@ -4046,7 +4046,7 @@
     <value>113, 15</value>
   </data>
   <data name="label49.Text" xml:space="preserve">
-    <value>Durata dei segmenti</value>
+    <value>Durata segmenti</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Impostazioni Trailer</value>
@@ -4186,10 +4186,10 @@
     <value>Encoder video</value>
   </data>
   <data name="wz1.Text" xml:space="preserve">
-    <value>Impostazioni encoder video</value>
+    <value>Impostazioni codifica video</value>
   </data>
   <data name="wz_trailer.Text" xml:space="preserve">
-    <value>Crea trailer del film</value>
+    <value>Crea videoclip (trailer)</value>
   </data>
   <data name="btn_crop_wiz.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -4318,7 +4318,7 @@
     <value>95, 19</value>
   </data>
   <data name="chk_normalize.Text" xml:space="preserve">
-    <value>Normalizzare</value>
+    <value>Normalizza</value>
   </data>
   <data name="label31.Location" type="System.Drawing.Point, System.Drawing">
     <value>338, 209</value>
@@ -4605,7 +4605,7 @@
     <value>Profilo completato</value>
   </data>
   <data name="wz_0_1.Text" xml:space="preserve">
-    <value>Usa un profilo predefinito di codifica esistente</value>
+    <value>Usa profilo codifica predefinito esistente</value>
   </data>
   <data name="wizardControl1.Title" xml:space="preserve">
     <value>Procedura guidata FFmpeg Batch AV Converter</value>
@@ -12055,5 +12055,71 @@
         xRPuE8QT7hPCE+4TwBPuE74T7ha9Fu5Ax0CeAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Profilo</value>
+  </data>
+  <data name="label37.Text" xml:space="preserve">
+    <value>Profilo base codifica video in due passaggi:</value>
+  </data>
+  <data name="label38.Text" xml:space="preserve">
+    <value>Formato</value>
+  </data>
+  <data name="wizardPage1.Text" xml:space="preserve">
+    <value>Seleziona profilo codifica salvato</value>
+  </data>
+  <data name="label44.Text" xml:space="preserve">
+    <value>Modo</value>
+  </data>
+  <data name="label39.Text" xml:space="preserve">
+    <value>Profili</value>
+  </data>
+  <data name="cb_audio_encoder.Items" xml:space="preserve">
+    <value>copia</value>
+  </data>
+  <data name="cb_de_parity.Items" xml:space="preserve">
+    <value>Automatica</value>
+  </data>
+  <data name="cb_de_deint.Items1" xml:space="preserve">
+    <value>interlacciato</value>
+  </data>
+  <data name="label45.Text" xml:space="preserve">
+    <value>Parità</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Profilo</value>
+  </data>
+  <data name="cb_audio_encoder.Items1" xml:space="preserve">
+    <value>nessuno</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Sintonizza</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>Produttore</value>
+  </data>
+  <data name="cb_q_amd.Items" xml:space="preserve">
+    <value>blianciato</value>
+  </data>
+  <data name="cb_de_deint.Items" xml:space="preserve">
+    <value>Tutti</value>
+  </data>
+  <data name="label36.Text" xml:space="preserve">
+    <value>I parametri richiesti verranno aggiunti nel passaggio successivo.</value>
+  </data>
+  <data name="cb_de_parity.Items2" xml:space="preserve">
+    <value>Campo inferiore</value>
+  </data>
+  <data name="cb_de_parity.Items1" xml:space="preserve">
+    <value>Campo superiore</value>
+  </data>
+  <data name="label47.Text" xml:space="preserve">
+    <value>Proporzioni:</value>
+  </data>
+  <data name="cb_q_amd.Items2" xml:space="preserve">
+    <value>qualità</value>
+  </data>
+  <data name="cb_q_amd.Items1" xml:space="preserve">
+    <value>velocità</value>
   </data>
 </root>

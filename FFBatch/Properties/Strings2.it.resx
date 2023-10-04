@@ -679,7 +679,7 @@
     <value>Bitrate audio</value>
   </data>
   <data name="String" xml:space="preserve">
-    <value>Incolla il collgemanto</value>
+    <value>Incolla collegamento</value>
   </data>
   <data name="finish" xml:space="preserve">
     <value>Fine</value>
@@ -944,5 +944,8 @@ Non è possibile visualizzare l'anteprima del ritaglio.</value>
   </data>
   <data name="target_size" xml:space="preserve">
     <value>Dim. destinazione:</value>
+  </data>
+  <data name="libr" xml:space="preserve">
+    <value>Librerie</value>
   </data>
 </root>
