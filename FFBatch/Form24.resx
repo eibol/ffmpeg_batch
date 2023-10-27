@@ -194,8 +194,8 @@
         RF/WBZnFQBrgSi4oKgHSf4DYKCW1OJmBgdEAyM4uLykAijPOAbJFkrLB7A0gdlFIkDOQfQTI5kuHsK+A
         2EkQ9hMQuwjoCSD7C0h9OpjNxAE2B8KWAbFLUitA9jI45xdUFmWmZ5QoGFpaWio4puQnpSoEVxaXpOYW
         K3jmJecXFeQXJZakpgDVQtwHBoIQhaAQ0wBqtNBkoDIAxQOE9TkQHL6MYmcQYgiQXFpUBmUyMhkT5iPM
-        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACxAAAAsQ
-        Aa0jvXUAAAa+SURBVEhLddNpUNPXGgbw47Xehk0BZZclCWvAIEhIAkqBpBFZyipILQWlqUhEUZQqRNAA
+        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACwwAAAsM
+        AT9AIsgAAAa+SURBVEhLddNpUNPXGgbw47Xehk0BZZclCWvAIEhIAkqBpBFZyipILQWlqUhEUZQqRNAA
         VVbFhUXZEWSH2LLLVnYUrAi2iiiUxdbqlLbqdOxMn/u/4yc77Ydn3k/nN8+85xzCc2MTB09b4nYgjLhJ
         U8hmcTxhhXxBczyRY2LiJ0nixZf0Ome2zolyOp+7Zje/4Moq58wlWb1awpAUw8BYUw3nYNr7HDGh7wgi
         XH8GMdumRZh8bfIOLIpLJtbiBIaNWJq/q6Tr5eGuKST09ELa3IC91d34qPQWthffAj/nDqzODoMuKXml
@@ -250,9 +250,6 @@
   </data>
   <data name="combo_lang.Items4" xml:space="preserve">
     <value>中文</value>
-  </data>
-  <data name="combo_lang.Items5" xml:space="preserve">
-    <value>اللغة العربية</value>
   </data>
   <data name="combo_lang.Items2" xml:space="preserve">
     <value>Italiano</value>
@@ -562,6 +559,9 @@
   <data name="button1.Text" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="combo_lang.Items5" xml:space="preserve">
+    <value>اللغة العربية</value>
+  </data>
   <data name="combo_lang.Size" type="System.Drawing.Size, System.Drawing">
     <value>96, 21</value>
   </data>
@@ -579,8 +579,5 @@
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ar-EG</value>
   </metadata>
 </root>

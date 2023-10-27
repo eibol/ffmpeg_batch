@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>71, 20</value>
+    <value>54, 20</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>114, 13</value>
@@ -128,12 +128,12 @@
     <value>Seleziona tipo colonna</value>
   </data>
   <data name="cb_col.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 41</value>
+    <value>57, 41</value>
   </data>
   <data name="btn_exit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABS
-        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACw8AAAsPAZL5A6UAAAjkSURBVFhHnZd5UJT3GcffJKZV
+        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAjkSURBVFhHnZd5UJT3GcffJKZV
         YZEbdkFcBJQYL+5dFny1pkZTk3gmarUGlkOuBZGbgAoixJNoFI0W0cQjajzazOTQ6bTTTMamWqMJsArs
         fQCrgLczTvrt83sBWRDQ6R+PwPLyfj7P9XtfuVw/DyHy/b24NLfRXNxvOdF3mamXf9y62Zzj4xobN5Lj
         CsZ7P73uRaNA6sUl0P1yJvjG/i1orOmkt/PlZD8PUQb9Lt/uOuGfXvgKjhN9X7BODbMWaNPDfOhTpDmP
@@ -175,13 +175,13 @@
 </value>
   </data>
   <data name="btn_exit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>171, 98</value>
+    <value>154, 98</value>
   </data>
   <data name="btn_exit.Text" xml:space="preserve">
     <value>Chiudi finestra</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 65</value>
+    <value>57, 65</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>(Rilevato primo stream audio)</value>
@@ -194,7 +194,7 @@
         xUAa4EouKCoB0n+A2CgltTiZgYHRAMjOLi8pAIozzgGyRZKywewNIHZRSJAzkH0EyOZLh7CvgNhJEPYT
         ELsI6Akg+wtIfTqYzcQBNgfClgGxS1IrQPYyOOcXVBZlpmeUKBhaWloqOKbkJ6UqBFcWl6TmFit45iXn
         FxXkFyWWpKYA1ULcBwaCEIWgENMAarTQZKAyAMUDhPU5EBy+jGJnEGIIkFxaVAZlMjIZE+YjzJgjwcDg
-        v5SBgeUPQsykl4FhgQ4DA/9UhJiaIQODgD4Dw745AMDGT/0ZOjZcAAAACXBIWXMAAAsPAAALDwGS+QOl
+        v5SBgeUPQsykl4FhgQ4DA/9UhJiaIQODgD4Dw745AMDGT/0ZOjZcAAAACXBIWXMAAAsNAAALDQHtB8As
         AAADMklEQVRYR9WUSVeTWRRFHZVliOloFKURiYASkFZCbEAlgIo9qAhGwSp/1v2nWdvzSFC/qlurdHYd
         nMF3Bslee537zgC/Vdwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwy
         ctwycv5VTBWL1fbBgdFqGW/fGq93jRcvjGfPjJ0dY3vbaDaNhw+N+/eNe/eM27eNet24dctYXDTm5ozZ
@@ -213,7 +213,7 @@
 </value>
   </data>
   <data name="btn_del_col.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 93</value>
+    <value>61, 93</value>
   </data>
   <data name="btn_del_col.Size" type="System.Drawing.Size, System.Drawing">
     <value>83, 83</value>
@@ -222,13 +222,19 @@
     <value>Rimuovi ultima colonna</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>316, 45</value>
+    <value>283, 45</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 21</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>277, 13</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>tempo necessario per leggere e aggiungere file all'elenco.</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 4</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>261, 13</value>
@@ -237,7 +243,7 @@
     <value>NOTA: l'aggiunta di colonne personalizzate aumenta il</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>328, 20</value>
+    <value>273, 20</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 13</value>
@@ -246,7 +252,10 @@
     <value>Seleziona campo</value>
   </data>
   <data name="cb_custom_med.Location" type="System.Drawing.Point, System.Drawing">
-    <value>331, 41</value>
+    <value>276, 41</value>
+  </data>
+  <data name="cb_custom_med.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 21</value>
   </data>
   <data name="btn_add_col.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -277,10 +286,10 @@
 </value>
   </data>
   <data name="btn_add_col.Location" type="System.Drawing.Point, System.Drawing">
-    <value>232, 38</value>
+    <value>215, 38</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>486, 235</value>
+    <value>465, 235</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2074,83 +2083,5 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Aggiungi colonna personalizzata</value>
-  </data>
-  <data name="cb_custom_med.Items12" xml:space="preserve">
-    <value>Bit profondità</value>
-  </data>
-  <data name="cb_custom_med.Items8" xml:space="preserve">
-    <value>Modo freq. fotogrammi</value>
-  </data>
-  <data name="cb_custom_med.Items7" xml:space="preserve">
-    <value>Visualizza proporzioni</value>
-  </data>
-  <data name="cb_custom_med.Items9" xml:space="preserve">
-    <value>Freq. fotogrammi</value>
-  </data>
-  <data name="cb_custom_med.Items32" xml:space="preserve">
-    <value>Sottotitoli</value>
-  </data>
-  <data name="cb_custom_med.Items5" xml:space="preserve">
-    <value>ID  codec</value>
-  </data>
-  <data name="cb_custom_med.Items6" xml:space="preserve">
-    <value>Bitrate max</value>
-  </data>
-  <data name="cb_custom_med.Items3" xml:space="preserve">
-    <value>Prrfilo formato</value>
-  </data>
-  <data name="cb_custom_med.Items14" xml:space="preserve">
-    <value>Intervallo colore</value>
-  </data>
-  <data name="cb_custom_med.Items15" xml:space="preserve">
-    <value>Colori primari</value>
-  </data>
-  <data name="cb_custom_med.Items16" xml:space="preserve">
-    <value>Scrittura libreria</value>
-  </data>
-  <data name="cb_custom_med.Items17" xml:space="preserve">
-    <value>Lingua</value>
-  </data>
-  <data name="cb_custom_med.Items10" xml:space="preserve">
-    <value>Spazio colore</value>
-  </data>
-  <data name="cb_custom_med.Items11" xml:space="preserve">
-    <value>Sottocampionamento crominanza</value>
-  </data>
-  <data name="cb_custom_med.Items13" xml:space="preserve">
-    <value>Tipo scansione</value>
-  </data>
-  <data name="cb_custom_med.Items28" xml:space="preserve">
-    <value>Modo compressione</value>
-  </data>
-  <data name="cb_custom_med.Items29" xml:space="preserve">
-    <value>Scrittura libreria</value>
-  </data>
-  <data name="cb_custom_med.Items24" xml:space="preserve">
-    <value>Canale/i</value>
-  </data>
-  <data name="cb_custom_med.Items25" xml:space="preserve">
-    <value>Layout canali</value>
-  </data>
-  <data name="cb_custom_med.Items26" xml:space="preserve">
-    <value>Freq. campionamento</value>
-  </data>
-  <data name="cb_custom_med.Items27" xml:space="preserve">
-    <value>Bit profondità</value>
-  </data>
-  <data name="cb_custom_med.Items21" xml:space="preserve">
-    <value>Formato/info</value>
-  </data>
-  <data name="cb_custom_med.Items22" xml:space="preserve">
-    <value>ID codec</value>
-  </data>
-  <data name="cb_custom_med.Items23" xml:space="preserve">
-    <value>Modo bitrate</value>
-  </data>
-  <data name="cb_custom_med.Items4" xml:space="preserve">
-    <value>Impostazioni formato</value>
-  </data>
-  <data name="cb_custom_med.Items2" xml:space="preserve">
-    <value>Formato/info</value>
   </data>
 </root>
