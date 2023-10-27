@@ -99,6 +99,15 @@ namespace FFBatch
             }
             btn_close.Focus();
 
+            this.Text = FFBatch.Properties.Strings.yt_str_av2;
+            dg_streams.Columns[1].HeaderText = FFBatch.Properties.Strings.Use;
+            dg_streams.Columns[2].HeaderText = FFBatch.Properties.Strings.format_id;
+            dg_streams.Columns[3].HeaderText = FFBatch.Properties.Strings.extension;
+            dg_streams.Columns[4].HeaderText = FFBatch.Properties.Strings.size;
+            dg_streams.Columns[5].HeaderText = FFBatch.Properties.Strings.codec;
+            dg_streams.Columns[6].HeaderText = FFBatch.Properties.Strings.resolution;
+            dg_streams.Columns[7].HeaderText = FFBatch.Properties.Strings2.bitrate;
+
             Process yt = new Process();
             Task t2 = Task.Run(() =>
             {
@@ -116,7 +125,7 @@ namespace FFBatch
                     stream = yt.StandardOutput.ReadLine();
                     //MessageBox.Show(stream);
                     result = result + stream;
-                    if (stream != null && stream != String.Empty && !stream.ToLower().Contains("format code") && !stream.ToLower().Contains("downloading webpage") && !stream.ToLower().Contains("available formats") && !stream.ToLower().Contains("downloading mpd manifest") && !stream.ToLower().Contains("downloading m3u8 information") && !stream.ToLower().Contains("downloading android player api json") && !stream.ToLower().Contains("available formats") && !stream.ToLower().Contains("downloading mpd manifest") && !stream.ToLower().Contains("downloading m3u8 information") && !stream.ToLower().Contains("id  ext  resolution fps") && !stream.ToLower().Contains("--------"))
+                    if (stream != null && stream != String.Empty && !stream.ToLower().Contains("format code") && !stream.ToLower().Contains("downloading webpage") && !stream.ToLower().Contains("available formats") && !stream.ToLower().Contains("downloading mpd manifest") && !stream.ToLower().Contains("downloading m3u8 information") && !stream.ToLower().Contains("downloading android player api json") && !stream.ToLower().Contains("available formats") && !stream.ToLower().Contains("downloading mpd manifest") && !stream.ToLower().Contains("downloading m3u8 information") && !stream.ToLower().Contains("id  ext  resolution fps") && !stream.ToLower().Contains("--------") && !stream.ToLower().Contains("[youtube]") && !stream.Contains("VCODEC"))
                     {
                         try
                         {
@@ -124,10 +133,12 @@ namespace FFBatch
                             {
                                 String[] split = stream.Split(' ');
                                 String Bitrate = "";
+                                String resol = "";
                                 foreach (String str in split)
                                 {
                                     if (str.Length > 0)
                                     {
+                                        if (str.Contains("x")) resol = str;
                                         if (str.Substring(str.Length - 1, 1).ToLower() == "k")
                                         {
                                             Bitrate = str;
@@ -147,27 +158,35 @@ namespace FFBatch
                                 }
 
                                 String[] split2 = codec.Split(' ');
-                                String resol = "";
+                                
                                 foreach (String str in split2)
                                 {
                                     if (str.Length > 0)
-                                    {
+                                    {                                        
                                         if (str.Substring(str.Length - 1, 1).ToLower() == "p")
+                                        {                                            
+                                            codec = codec.Replace(str, "");
+                                            break;
+                                        }
+                                        if (str.Substring(str.Length - 3, 1).ToLower() == "p")
                                         {
-                                            resol = str;
+                                            //resol = str;
                                             codec = codec.Replace(str, "");
                                             break;
                                         }
                                     }
                                 }
+                                if (codec.Contains("avc1")) codec = "AV1";
+                                if (codec.Contains("av01")) codec = "AV1";
+                                if (codec.Contains("vp09")) codec = "VP9";
 
                                 if (stream.ToLower().Contains("audio only"))
                                 {
-                                    dg_streams.Rows.Add(image_streams.Images[1], false, stream.Substring(0, 3).TrimEnd(), stream.Substring(4, 4).TrimEnd(), "Audio", codec, "-", Bitrate);
+                                    dg_streams.Rows.Add(image_streams.Images[1], false, stream.Substring(0, 3).TrimEnd(), stream.Substring(4, 4).TrimEnd(), "Audio", codec.Replace("audio only", "").TrimStart(' '), "-", Bitrate);
                                 }
                                 else
                                 {
-                                    dg_streams.Rows.Add(image_streams.Images[0], false, stream.Substring(0, 3).TrimEnd(), stream.Substring(4, 4).TrimEnd(), stream.Substring(9, 9).TrimEnd(), codec, resol, Bitrate);
+                                    dg_streams.Rows.Add(image_streams.Images[0], false, stream.Substring(0, 3).TrimEnd(), stream.Substring(4, 4).TrimEnd(), stream.Substring(9, 10).TrimEnd(), codec.Replace("video only", "").TrimStart(' '), resol.Substring(resol.LastIndexOf("x") + 1, resol.Length - resol.LastIndexOf("x") - 1) + "p", Bitrate);
                                 }
                             }));
                         }
@@ -221,15 +240,7 @@ namespace FFBatch
                 }));
             });
             dg_streams.Sort(dg_streams.Columns[4], ListSortDirection.Descending);
-
-            this.Text = FFBatch.Properties.Strings.yt_str_av2;
-            dg_streams.Columns[1].HeaderText = FFBatch.Properties.Strings.Use;
-            dg_streams.Columns[2].HeaderText = FFBatch.Properties.Strings.format_id;
-            dg_streams.Columns[3].HeaderText = FFBatch.Properties.Strings.extension;
-            dg_streams.Columns[4].HeaderText = FFBatch.Properties.Strings.size;
-            dg_streams.Columns[5].HeaderText = FFBatch.Properties.Strings.codec;
-            dg_streams.Columns[6].HeaderText = FFBatch.Properties.Strings.resolution;
-            dg_streams.Columns[7].HeaderText = FFBatch.Properties.Strings2.bitrate;
+                        
         }
 
         private void btn_close_Click(object sender, EventArgs e)

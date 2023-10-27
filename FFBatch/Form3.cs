@@ -14,6 +14,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace FFBatch
 {
     public partial class Form3 : Form
@@ -23,6 +24,7 @@ namespace FFBatch
             InitializeComponent();
         }
 
+        public List<string> ff_ena = new List<string>();
         public String main_out_path = String.Empty;
         public Boolean monitor_folder = false;
         public Boolean no_dest_overwrite = false;
@@ -966,9 +968,22 @@ namespace FFBatch
                 pic_ff_ok.Visible = false;
                 return;
             }
+            String ff_Date = "";
 
             lbl_ff_latest.Text = "FFmpeg " + ff_ver;
-            if (!lbl_ff_ver.Text.Contains(ff_ver))
+            try
+            {
+                ff_Date = lbl_ff_ver.Text.Substring(lbl_ff_ver.Text.IndexOf(Properties.Strings2.version) + Properties.Strings2.version.Length, 11);
+            }
+            catch
+            {
+                Thread.Sleep(1000);
+                ff_Date = lbl_ff_ver.Text.Substring(lbl_ff_ver.Text.IndexOf(Properties.Strings2.version) + Properties.Strings2.version.Length, 11);
+            }
+            
+            DateTime test = new DateTime();
+            
+            if (!lbl_ff_ver.Text.Contains(ff_ver) && DateTime.TryParse(ff_Date, out test) == false)
             {
                 pic_ver.Visible = true;
                 pic_ver.Left = lbl_ff_latest.Left + lbl_ff_latest.Text.Length + 60;
@@ -1849,6 +1864,71 @@ namespace FFBatch
                     if (row.Cells[0].Value.ToString().Length > 0) Properties.Settings.Default.excl_list.Add(row.Cells[0].Value.ToString());
                 }
             }
+        }
+
+        private void show_libs()
+        {
+            Form frmInfo = new Form();
+            frmInfo.Name = "FFmpeg " + FFBatch.Properties.Strings2.libr;
+            frmInfo.Text = "FFmpeg " + FFBatch.Properties.Strings2.libr;
+            frmInfo.Icon = this.Icon;
+            frmInfo.Height = 478;
+            frmInfo.Width = 366;
+            frmInfo.FormBorderStyle = FormBorderStyle.Fixed3D;
+            frmInfo.MaximizeBox = false;
+            frmInfo.MinimizeBox = false;
+            frmInfo.BackColor = this.BackColor;
+
+            ListView lstv = new ListView();
+            lstv.Columns.Add(Properties.Strings2.libr, 80);
+            lstv.Columns.Add(Properties.Strings.information, 180);
+            lstv.Parent = frmInfo;
+            lstv.View = View.Details;
+            lstv.Top = 30;
+            lstv.Left = 30;
+            lstv.Height = 378;
+            lstv.Width = 290;
+
+
+            foreach (String str in ff_ena)
+            {
+                ListViewItem item = new ListViewItem(str);
+                if (str.Contains("amf")) item.SubItems.Add("AMD Hardware encoder");
+                else if (str.Contains("nvenc")) item.SubItems.Add("NVIDIA Hardware encoder");
+                else if (str.Contains("nvdec")) item.SubItems.Add("NVIDIA Hardware decoder");
+                else if (str.Contains("cuvid")) item.SubItems.Add("NVIDIA");
+                else if (str.Contains("cuda")) item.SubItems.Add("NVIDIA");
+                else if (str.Contains("libopus")) item.SubItems.Add("OPUS audio codec");
+                else if (str.Contains("libvorbis")) item.SubItems.Add("VORBIS audio codec");
+                else if (str.Contains("libmp3lame")) item.SubItems.Add("MP3 audio codec");
+                else if (str.Contains("libtheora")) item.SubItems.Add("THEORA video codec");
+                else if (str.Contains("libvpx")) item.SubItems.Add("VPx video codec");
+                else if (str.Contains("libx264")) item.SubItems.Add("AVC H264 video encoder");
+                else if (str.Contains("libx265")) item.SubItems.Add("HEVC H265 video encder");
+                else if (str.Contains("libxvid")) item.SubItems.Add("XVID video encoder");
+                else if (str.Contains("librav1e")) item.SubItems.Add("AV1 video encoder");
+                else if (str.Contains("libdav1d")) item.SubItems.Add("AV1 video decoder");
+                
+                else item.SubItems.Add("-");
+                lstv.Items.Add(item);
+            }
+
+            lstv.GridLines = true;
+            lstv.Sorting = SortOrder.Ascending;
+            lstv.Sort();
+
+            frmInfo.StartPosition = FormStartPosition.CenterParent;
+            frmInfo.ShowDialog();
+        }
+
+        private void lbl_ff_ver_Click(object sender, EventArgs e)
+        {
+            show_libs();
+        }
+
+        private void pic_info2_Click(object sender, EventArgs e)
+        {
+            show_libs();
         }
     }
 }

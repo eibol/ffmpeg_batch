@@ -2301,8 +2301,7 @@
             this.txt_output_subs.BackColor = System.Drawing.SystemColors.InactiveBorder;
             resources.ApplyResources(this.txt_output_subs, "txt_output_subs");
             this.txt_output_subs.Name = "txt_output_subs";
-            this.txt_output_subs.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
-            this.txt_output_subs.DoubleClick += new System.EventHandler(this.textBox8_DoubleClick);
+            this.txt_output_subs.DoubleClick += new System.EventHandler(this.txt_output_subs_DoubleClick);
             // 
             // button25
             // 
@@ -3762,7 +3761,6 @@
             this.listView3.GridLines = true;
             this.listView3.HideSelection = false;
             resources.ApplyResources(this.listView3, "listView3");
-            this.listView3.MultiSelect = false;
             this.listView3.Name = "listView3";
             this.listView3.ShowItemToolTips = true;
             this.listView3.Sorting = System.Windows.Forms.SortOrder.Ascending;

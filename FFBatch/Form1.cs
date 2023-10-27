@@ -25,7 +25,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using static System.Net.Mime.MediaTypeNames;
+
 
 namespace FFBatch
 {
@@ -368,7 +368,7 @@ namespace FFBatch
         public Form1()
         {
             InitializeComponent();
-
+            
             String app_location = Application.StartupPath;
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
             if (File.Exists(portable_flag))
@@ -1385,7 +1385,7 @@ namespace FFBatch
                     //this.InvokeEx(f => f.pg_current.Value = 0);
                     //this.InvokeEx(f => f.pg_current.Refresh());
 
-                    process_glob.StartInfo.RedirectStandardOutput = true;
+                    
                     process_glob.StartInfo.RedirectStandardInput = true;
                     process_glob.StartInfo.RedirectStandardError = true;
                     process_glob.StartInfo.UseShellExecute = false;
@@ -2185,7 +2185,7 @@ namespace FFBatch
                     valid_prog = false;
                     this.InvokeEx(f => f.listView1.Items[list_index].SubItems[5].Text = FFBatch.Properties.Strings.processing);
 
-                    process_glob.StartInfo.RedirectStandardOutput = true;
+                    
                     process_glob.StartInfo.RedirectStandardInput = true;
                     process_glob.StartInfo.RedirectStandardError = true;
                     process_glob.StartInfo.UseShellExecute = false;
@@ -3279,7 +3279,7 @@ namespace FFBatch
 
                     if (preset_run == 1) this.InvokeEx(f => f.listView1.Items[list_index].SubItems[5].Text = FFBatch.Properties.Strings.processing);
 
-                    process_glob.StartInfo.RedirectStandardOutput = true;
+                    
                     process_glob.StartInfo.RedirectStandardInput = true;
                     process_glob.StartInfo.RedirectStandardError = true;
                     process_glob.StartInfo.UseShellExecute = false;
@@ -11322,7 +11322,7 @@ namespace FFBatch
                 //this.InvokeEx(f => f.pg_current.Value = 0);
                 //this.InvokeEx(f => f.pg_current.Refresh());
 
-                process_glob.StartInfo.RedirectStandardOutput = true;
+                
                 process_glob.StartInfo.RedirectStandardError = true;
                 process_glob.StartInfo.RedirectStandardInput = true;
                 process_glob.StartInfo.UseShellExecute = false;
@@ -13056,7 +13056,7 @@ namespace FFBatch
                     this.InvokeEx(f => f.listView3.Items[list_index].SubItems[5].Text = FFBatch.Properties.Strings.processing);
 
 
-                    process_glob.StartInfo.RedirectStandardOutput = true;
+                    
                     process_glob.StartInfo.RedirectStandardError = true;
                     process_glob.StartInfo.RedirectStandardInput = true;
                     process_glob.StartInfo.UseShellExecute = false;
@@ -18413,7 +18413,7 @@ namespace FFBatch
                     //this.InvokeEx(f => f.lbl_d_v.Text = FFBatch.Properties.Strings2.init_wait);
                     this.InvokeEx(f => timer_yt.Start());
 
-                    process_glob.StartInfo.RedirectStandardOutput = true;
+                    
                     process_glob.StartInfo.StandardOutputEncoding = Encoding.UTF8;
                     process_glob.StartInfo.RedirectStandardInput = true;
                     process_glob.StartInfo.RedirectStandardError = true;
@@ -19499,7 +19499,7 @@ namespace FFBatch
                     else
                     {
                         this.InvokeEx(f => f.Pg1.Style = ProgressBarStyle.Continuous);
-                        process_glob.StartInfo.RedirectStandardOutput = true;
+                        
                         process_glob.StartInfo.RedirectStandardError = true;
                         process_glob.StartInfo.StandardOutputEncoding = Encoding.UTF8;
                         process_glob.StartInfo.StandardErrorEncoding = Encoding.UTF8;
@@ -21455,13 +21455,14 @@ namespace FFBatch
                 if (consola_pre.StartInfo.Arguments.Contains("[[split_chapters]]")) consola_pre.StartInfo.Arguments = consola_pre.StartInfo.Arguments.Replace("[[split_chapters]]", "");
 
                 if (ext_output == "nul") consola_pre.StartInfo.Arguments = pre_i + " " + hw_decode_glob + " -loglevel warning -stats" + " -i " + "" + '\u0022' + file_prueba + '\u0022' + " " + textbox_params;
-
-                consola_pre.StartInfo.RedirectStandardOutput = true;
+                
                 consola_pre.StartInfo.RedirectStandardError = true;
+                consola_pre.StartInfo.StandardErrorEncoding = Encoding.UTF8;
                 consola_pre.StartInfo.UseShellExecute = false;
                 consola_pre.StartInfo.CreateNoWindow = true;
                 consola_pre.EnableRaisingEvents = true;
-                consola_pre.StartInfo.WorkingDirectory = Path.GetDirectoryName(file_prueba);
+                consola_pre.StartInfo.WorkingDirectory = Application.StartupPath;
+
                 consola_pre.Start();
                 frm_prog.procId = consola_pre.Id;
 
@@ -21813,9 +21814,7 @@ namespace FFBatch
             frm_output2.FormClosing += frm_output2_FormClosing;
 
             Task tt = Task.Run(() =>
-            {
-                consola.StartInfo.FileName = "ffmpeg.exe";
-
+            {                
                 String fichero = Path.GetFileName(file_prueba);
                 TextBox titulo2 = new TextBox();
                 titulo2.Parent = frm_output2;
@@ -22138,6 +22137,7 @@ namespace FFBatch
                     }
                 }
 
+                consola.StartInfo.FileName = "ffmpeg.exe";
                 consola.StartInfo.Arguments = pre_i + " " + hw_decode_glob + " -i " + "" + '\u0022' + file_prueba + '\u0022' + " -t 0.2" + " -y " + textbox_params + " " + '\u0022' + destino + "\\" + System.IO.Path.GetFileNameWithoutExtension(file_prueba) + ext_output + '\u0022' + " -loglevel warning -stats";
 
                 if (textbox_params.Contains("[[split_chapters]]")) consola.StartInfo.Arguments = consola.StartInfo.Arguments.Replace("[[split_chapters]]", "");
@@ -22145,12 +22145,13 @@ namespace FFBatch
 
                 String test = consola.StartInfo.Arguments;
                 if (ext_output == "nul") consola.StartInfo.Arguments = pre_i + " " + hw_decode_glob + " -loglevel warning -stats" + " -i " + '\u0022' + file_prueba + '\u0022' + " -y " + textbox_params;
-                consola.StartInfo.RedirectStandardOutput = true;
+                                
                 consola.StartInfo.RedirectStandardError = true;
+                consola.StartInfo.StandardErrorEncoding = Encoding.UTF8;
                 consola.StartInfo.UseShellExecute = false;
                 consola.StartInfo.CreateNoWindow = true;
                 consola.EnableRaisingEvents = true;
-                consola.StartInfo.WorkingDirectory = Path.GetDirectoryName(file_prueba);
+                consola.StartInfo.WorkingDirectory = Application.StartupPath;
                 consola.Start();
                 this.InvokeEx(f => boton_ok_ff.Text = FFBatch.Properties.Strings.close_win);
 
@@ -23524,7 +23525,7 @@ namespace FFBatch
                     //this.InvokeEx(f => f.pg_current.Value = 0);
                     //this.InvokeEx(f => f.pg_current.Refresh());
 
-                    process_glob.StartInfo.RedirectStandardOutput = true;
+                    
                     process_glob.StartInfo.RedirectStandardError = true;
                     process_glob.StartInfo.RedirectStandardInput = true;
                     process_glob.StartInfo.UseShellExecute = false;
@@ -24907,7 +24908,7 @@ namespace FFBatch
                 //this.InvokeEx(f => f.pg_current.Value = 0);
                 //this.InvokeEx(f => f.pg_current.Refresh());
 
-                process_glob.StartInfo.RedirectStandardOutput = true;
+                
                 process_glob.StartInfo.RedirectStandardError = true;
                 process_glob.StartInfo.RedirectStandardInput = true;
                 process_glob.StartInfo.UseShellExecute = false;
@@ -26938,7 +26939,7 @@ namespace FFBatch
                     //thread.Join(); //Wait for the thread to end
                     process_glob.StartInfo.FileName = ffm;
                     process_glob.StartInfo.Arguments = AppParam;
-                    process_glob.StartInfo.RedirectStandardOutput = true;
+                    
                     process_glob.StartInfo.RedirectStandardError = true;
                     process_glob.StartInfo.RedirectStandardInput = true;
                     process_glob.StartInfo.UseShellExecute = false;
@@ -27891,7 +27892,7 @@ namespace FFBatch
 
                 process_glob.StartInfo.FileName = ffm;
                 process_glob.StartInfo.Arguments = AppParam;
-                process_glob.StartInfo.RedirectStandardOutput = true;
+                
                 process_glob.StartInfo.RedirectStandardError = true;
                 process_glob.StartInfo.RedirectStandardInput = true;
                 process_glob.StartInfo.UseShellExecute = false;
@@ -37753,7 +37754,7 @@ namespace FFBatch
 
                                             tmp.StartInfo.FileName = ffm;
                                             tmp.StartInfo.RedirectStandardInput = true;
-                                            tmp.StartInfo.RedirectStandardOutput = true;
+                                            //tmp.StartInfo.RedirectStandardOutput = true;
                                             tmp.StartInfo.RedirectStandardError = true;
                                             tmp.StartInfo.UseShellExecute = false;
                                             tmp.StartInfo.CreateNoWindow = true;
@@ -38170,7 +38171,7 @@ namespace FFBatch
 
                                 tmp.StartInfo.FileName = ffm;
                                 tmp.StartInfo.RedirectStandardInput = true;
-                                tmp.StartInfo.RedirectStandardOutput = true;
+                                //tmp.StartInfo.RedirectStandardOutput = true;
                                 tmp.StartInfo.RedirectStandardError = true;
                                 tmp.StartInfo.UseShellExecute = false;
                                 tmp.StartInfo.CreateNoWindow = true;
@@ -41860,7 +41861,7 @@ namespace FFBatch
                     valid_prog = false;
                     process_glob.StartInfo.FileName = ffm;
                     process_glob.StartInfo.Arguments = AppParam + " " + row.Cells[5].Value.ToString();
-                    process_glob.StartInfo.RedirectStandardOutput = true;
+                    
                     process_glob.StartInfo.RedirectStandardError = true;
                     process_glob.StartInfo.RedirectStandardInput = true;
                     process_glob.StartInfo.UseShellExecute = false;
@@ -42587,7 +42588,7 @@ namespace FFBatch
 
                 //End custom media info
 
-                if (frm_add_col.cb_col.SelectedItem.ToString().ToLower() != FFBatch.Properties.Strings2.bitrate && frm_add_col.cb_col.SelectedItem.ToString().ToLower() != FFBatch.Properties.Strings.resolution.ToLower() && frm_add_col.cb_col.SelectedItem.ToString().ToLower() != FFBatch.Properties.Strings.Encoding_parameters.ToLower() && frm_add_col.cb_col.SelectedItem.ToString().ToLower() != FFBatch.Properties.Strings2.custom.ToLower() && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("video") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("audio") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("vídeo") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("视频") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("音") && has_tbit == false)
+                if (frm_add_col.cb_col.SelectedItem.ToString() == FFBatch.Properties.Strings2.bitrate && frm_add_col.cb_col.SelectedItem.ToString().ToLower() != FFBatch.Properties.Strings.resolution.ToLower() && frm_add_col.cb_col.SelectedItem.ToString().ToLower() != FFBatch.Properties.Strings.Encoding_parameters.ToLower() && frm_add_col.cb_col.SelectedItem.ToString().ToLower() != FFBatch.Properties.Strings2.custom.ToLower() && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("video") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("audio") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("vídeo") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("视频") && !frm_add_col.cb_col.SelectedItem.ToString().ToLower().Contains("音") && has_tbit == false)
                 {
                     ColumnHeader columnHeader = listView1.Columns.Add(FFBatch.Properties.Strings2.bitrate, 100, HorizontalAlignment.Center);
                     pre_add_col();
@@ -50345,6 +50346,8 @@ namespace FFBatch
 
                 list_lines.Add("---------------------Start of " + Path.GetFileName(file) + " log-------------------------------");
                 list_lines.Add("");
+                if (verbose_logs == true) list_lines.Add(process_glob.StartInfo.Arguments + Environment.NewLine);
+                
                 valid_prog = false;
 
                 //Duration for quick file listing
@@ -50414,15 +50417,15 @@ namespace FFBatch
 
                             //Process every chapter
 
-                            process_glob.StartInfo.RedirectStandardOutput = true;
-                            process_glob.StartInfo.StandardOutputEncoding = Encoding.UTF8;
+                            //
+                            //process_glob.StartInfo.StandardOutputEncoding = Encoding.UTF8;
                             process_glob.StartInfo.RedirectStandardInput = true;
                             process_glob.StartInfo.RedirectStandardError = true;
                             process_glob.StartInfo.StandardErrorEncoding = Encoding.UTF8;
                             process_glob.StartInfo.UseShellExecute = false;
                             process_glob.StartInfo.CreateNoWindow = true;
                             process_glob.EnableRaisingEvents = true;
-                            process_glob.StartInfo.WorkingDirectory = Path.GetDirectoryName(file);
+                            process_glob.StartInfo.WorkingDirectory = Application.StartupPath;
                             if (ignore_encoded == true && status == Properties.Strings.success) continue;
 
                             if (Properties.Settings.Default.no_dest_overw == true && File.Exists(current_out))
@@ -50835,15 +50838,15 @@ namespace FFBatch
                     }
                 }
 
-                process_glob.StartInfo.RedirectStandardOutput = true;
-                process_glob.StartInfo.StandardOutputEncoding = Encoding.UTF8;
+                //
+                //process_glob.StartInfo.StandardOutputEncoding = Encoding.UTF8;
                 process_glob.StartInfo.RedirectStandardInput = true;
                 process_glob.StartInfo.RedirectStandardError = true;
                 process_glob.StartInfo.StandardErrorEncoding = Encoding.UTF8;
                 process_glob.StartInfo.UseShellExecute = false;
                 process_glob.StartInfo.CreateNoWindow = true;
                 process_glob.EnableRaisingEvents = true;
-                process_glob.StartInfo.WorkingDirectory = Path.GetDirectoryName(file);
+                process_glob.StartInfo.WorkingDirectory = Application.StartupPath;
                 if (ignore_encoded == true && status == Properties.Strings.success) continue;
 
                 if (Properties.Settings.Default.no_dest_overw == true && File.Exists(current_out))
@@ -50856,7 +50859,7 @@ namespace FFBatch
                 if (aborted == false && !textbox_params.Contains("[[split_chapters]]"))
                 {
                     System.Threading.Thread.Sleep(50); //Allow kill process to send aborted signal
-                    process_glob.Start();
+                    process_glob.Start();                    
                 }
 
                 this.InvokeEx(f => f.listView1.Items[list_index].SubItems[5].Text = FFBatch.Properties.Strings.processing);
@@ -50921,7 +50924,8 @@ namespace FFBatch
                                 this.InvokeEx(f => durat_n = TimeSpan.Parse(listView1.Items[list_index].SubItems[3].Text).TotalSeconds - TimeSpan.Parse(ss_time_input.Text).TotalSeconds);
                                 durat_n = durat_n / atemp;
                                 int start_time_index = err_txt.IndexOf("time=") + 5;
-                                sec_prog = TimeSpan.Parse(err_txt.Substring(start_time_index, 8)).TotalSeconds;
+                            try { sec_prog = TimeSpan.Parse(err_txt.Substring(start_time_index, 8)).TotalSeconds; }
+                            catch { sec_prog = 0; }
 
                                 Double percent = (sec_prog * 100 / durat_n);
 
@@ -52665,7 +52669,7 @@ namespace FFBatch
 
                     process_glob.StartInfo.FileName = ffm2;
                     process_glob.StartInfo.Arguments = AppParam;
-                    process_glob.StartInfo.RedirectStandardOutput = true;
+                    
                     process_glob.StartInfo.RedirectStandardInput = true;
                     process_glob.StartInfo.RedirectStandardError = true;
                     process_glob.StartInfo.UseShellExecute = false;

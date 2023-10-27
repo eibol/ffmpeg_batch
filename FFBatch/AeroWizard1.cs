@@ -640,7 +640,7 @@ namespace FFBatch
                     String[] h264_tunes = new string[] { "grain", "fastdecode", "zerolatency" };
                     cb_tune.Items.Clear();
                     foreach (String item in h264_tunes) cb_tune.Items.Add(item);
-                    String[] h264_profiles = new string[] { "main" };
+                    String[] h264_profiles = new string[] { "main" , "high" };
                     cb_profile.Items.Clear();
                     foreach (String item in h264_profiles) cb_profile.Items.Add(item);
                     String[] h264_levels = new string[] { "1", "2", "2.1", "3", "3.1", "4", "4.1", "5", "5.1", "5.2", "6", "6.1", "6.2" };
@@ -695,157 +695,157 @@ namespace FFBatch
         {            
             if (Combo_encoders.SelectedIndex == Combo_encoders.FindString("libvpx-vp9"))
             {
-                if (track_q_v.Value <= 36)
-                {
-                    n_crf.Value = 36;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
+            //    if (track_q_v.Value <= 36)
+            //    {
+            //        n_crf.Value = 36;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
 
-                if (track_q_v.Value > 36 && track_q_v.Value <= 42)
-                {
-                    n_crf.Value = 42;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
-                if (track_q_v.Value > 42 && track_q_v.Value <= 45)
-                {
-                    n_crf.Value = 45;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
-                if (track_q_v.Value > 45 && track_q_v.Value <= 60)
-                {
-                    n_crf.Value = 60;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
-                if (track_q_v.Value > 45 && track_q_v.Value <= 60)
-                {
-                    n_crf.Value = 60;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
-                if (track_q_v.Value > 60 && track_q_v.Value <= 63)
-                {
-                    n_crf.Value = 63;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
-                if (track_q_v.Value > 63 && track_q_v.Value <= 75)
-                {
-                    n_crf.Value = 75;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
-                if (track_q_v.Value > 75 && track_q_v.Value <= 80)
-                {
-                    n_crf.Value = 80;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
-                if (track_q_v.Value > 80 && track_q_v.Value <= 84)
-                {
-                    n_crf.Value = 84;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
-                if (track_q_v.Value > 84 && track_q_v.Value <= 90)
-                {
-                    n_crf.Value = 90;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
-                if (track_q_v.Value > 90 && track_q_v.Value <= 110)
-                {
-                    n_crf.Value = 110;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
-                if (track_q_v.Value > 110 && track_q_v.Value <= 115)
-                {
-                    n_crf.Value = 115;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
-                if (track_q_v.Value > 115 && track_q_v.Value <= 120)
-                {
-                    n_crf.Value = 120;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
-                if (track_q_v.Value > 120 && track_q_v.Value <= 145)
-                {
-                    n_crf.Value = 145;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
-                if (track_q_v.Value > 145 && track_q_v.Value <= 175)
-                {
-                    n_crf.Value = 175;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
-                if (track_q_v.Value > 175 && track_q_v.Value <= 185)
-                {
-                    n_crf.Value = 185;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
-                if (track_q_v.Value > 185 && track_q_v.Value <= 220)
-                {
-                    n_crf.Value = 220;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
-                if (track_q_v.Value > 220 && track_q_v.Value <= 240)
-                {
-                    n_crf.Value = 240;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
-                if (track_q_v.Value > 240 && track_q_v.Value <= 290)
-                {
-                    n_crf.Value = 290;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
-                if (track_q_v.Value > 290 && track_q_v.Value <= 350)
-                {
-                    n_crf.Value = 350;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
-                if (track_q_v.Value > 350 && track_q_v.Value <= 365)
-                {
-                    n_crf.Value = 365;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
-                if (track_q_v.Value > 365 && track_q_v.Value <= 390)
-                {
-                    n_crf.Value = 390;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
-                if (track_q_v.Value > 390 && track_q_v.Value <= 440)
-                {
-                    n_crf.Value = 440;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
-                if (track_q_v.Value > 440 && track_q_v.Value <= 730)
-                {
-                    n_crf.Value = 730;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
-                if (track_q_v.Value > 730 && track_q_v.Value <= 880)
-                {
-                    n_crf.Value = 880;
-                    track_q_v.Value = Convert.ToInt32(n_crf.Value);
-                    return;
-                }
+            //    if (track_q_v.Value > 36 && track_q_v.Value <= 42)
+            //    {
+            //        n_crf.Value = 42;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
+            //    if (track_q_v.Value > 42 && track_q_v.Value <= 45)
+            //    {
+            //        n_crf.Value = 45;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
+            //    if (track_q_v.Value > 45 && track_q_v.Value <= 60)
+            //    {
+            //        n_crf.Value = 60;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
+            //    if (track_q_v.Value > 45 && track_q_v.Value <= 60)
+            //    {
+            //        n_crf.Value = 60;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
+            //    if (track_q_v.Value > 60 && track_q_v.Value <= 63)
+            //    {
+            //        n_crf.Value = 63;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
+            //    if (track_q_v.Value > 63 && track_q_v.Value <= 75)
+            //    {
+            //        n_crf.Value = 75;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
+            //    if (track_q_v.Value > 75 && track_q_v.Value <= 80)
+            //    {
+            //        n_crf.Value = 80;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
+            //    if (track_q_v.Value > 80 && track_q_v.Value <= 84)
+            //    {
+            //        n_crf.Value = 84;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
+            //    if (track_q_v.Value > 84 && track_q_v.Value <= 90)
+            //    {
+            //        n_crf.Value = 90;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
+            //    if (track_q_v.Value > 90 && track_q_v.Value <= 110)
+            //    {
+            //        n_crf.Value = 110;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
+            //    if (track_q_v.Value > 110 && track_q_v.Value <= 115)
+            //    {
+            //        n_crf.Value = 115;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
+            //    if (track_q_v.Value > 115 && track_q_v.Value <= 120)
+            //    {
+            //        n_crf.Value = 120;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
+            //    if (track_q_v.Value > 120 && track_q_v.Value <= 145)
+            //    {
+            //        n_crf.Value = 145;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
+            //    if (track_q_v.Value > 145 && track_q_v.Value <= 175)
+            //    {
+            //        n_crf.Value = 175;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
+            //    if (track_q_v.Value > 175 && track_q_v.Value <= 185)
+            //    {
+            //        n_crf.Value = 185;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
+            //    if (track_q_v.Value > 185 && track_q_v.Value <= 220)
+            //    {
+            //        n_crf.Value = 220;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
+            //    if (track_q_v.Value > 220 && track_q_v.Value <= 240)
+            //    {
+            //        n_crf.Value = 240;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
+            //    if (track_q_v.Value > 240 && track_q_v.Value <= 290)
+            //    {
+            //        n_crf.Value = 290;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
+            //    if (track_q_v.Value > 290 && track_q_v.Value <= 350)
+            //    {
+            //        n_crf.Value = 350;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
+            //    if (track_q_v.Value > 350 && track_q_v.Value <= 365)
+            //    {
+            //        n_crf.Value = 365;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
+            //    if (track_q_v.Value > 365 && track_q_v.Value <= 390)
+            //    {
+            //        n_crf.Value = 390;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
+            //    if (track_q_v.Value > 390 && track_q_v.Value <= 440)
+            //    {
+            //        n_crf.Value = 440;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
+            //    if (track_q_v.Value > 440 && track_q_v.Value <= 730)
+            //    {
+            //        n_crf.Value = 730;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
+            //    if (track_q_v.Value > 730 && track_q_v.Value <= 880)
+            //    {
+            //        n_crf.Value = 880;
+            //        track_q_v.Value = Convert.ToInt32(n_crf.Value);
+            //        return;
+            //    }
             }
 
             if (combo_crf_mode.SelectedIndex == 1)
@@ -4187,9 +4187,8 @@ namespace FFBatch
 
                 consola_pre.StartInfo.FileName = "ffmpeg.exe";
                 consola_pre.StartInfo.Arguments = " -i " + "" + '\u0022' + file_prueba + '\u0022' + "" + " -y " + textbox_params + " " + '\u0022' + destino_test + "\\" + System.IO.Path.GetFileNameWithoutExtension(file_prueba) + "." + ext_output + '\u0022';
-                //MessageBox.Show(consola_pre.StartInfo.Arguments);
-                consola_pre.StartInfo.RedirectStandardOutput = true;
                 consola_pre.StartInfo.RedirectStandardError = true;
+                consola_pre.StartInfo.StandardErrorEncoding = Encoding.UTF8;
                 consola_pre.StartInfo.UseShellExecute = false;
                 consola_pre.StartInfo.CreateNoWindow = true;
                 consola_pre.EnableRaisingEvents = true;                
@@ -4206,7 +4205,7 @@ namespace FFBatch
                 this.InvokeEx(f => this.Cursor = Cursors.Arrow);
             });
 
-            if (!tt.Wait(1250) && consola_pre.StartInfo.Arguments != String.Empty)
+            if (!tt.Wait(1500) && consola_pre.StartInfo.Arguments != String.Empty)
             {
                 consola_pre.Kill();
                 pic_status.Image = img_status.Images[1];
