@@ -1,6 +1,13 @@
-﻿2.8.7
-• New setting to never overwrite an already existing output file.
-• Fixed a filename characters warning wrongly displayed.
-• Fixed some typos and wrong parameters on default presets.
-• Added buttons to add input files and variables to parameters field.
-• Added online presets to add watermarks.
+3.0.1
+• Fixed some issues with latest ffmpeg.exe builds, not displaying any progress and never finishing encodings.
+• Fixed error with some filters using its own custom files.
+• Fixed error recording YouTube Live sessions in sequential mode.
+• Fixed network path error saving queue file.
+• Fixed some garbage info in YouTube available streams.
+• Fixed bitrate column not being added in some languages.
+• Latest ffmpeg build october 2023 included.
+• More accurate total progress information when using seeking pre-input parameters (-ss, -to, -t).
+• User variables included in Join files routine.
+• Subtitles tab allows multiple items selection.
+• Subtitles file language automatically detected using subs filenames 'input_file.eng.srt', 'input_file.spa.ass', etc.
+• Other minor bugfixes using trailer and presets wizard.
