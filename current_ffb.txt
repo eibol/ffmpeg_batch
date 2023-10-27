@@ -1,19 +1,13 @@
-﻿3.0.0
-• Replaced ffmpeg.exe with latest 2023-07-09 build, due to hevc_nvenc broken support.
-• New trailer (preview clip) wizard.
-• New variable and wizard [[split_chapters]] to split files using input chapter markers or manual timestamps sheet.
-• New variable: file bitrate (%fbitr).
-• New variable: target output size [[target_size=100MB-audio_bit_rate] (automatic video bitrate calculation).
-• Variables sent to console and copied to clipboard for testing purposes.
-• Improved Two pass/Target size wizard: increased target file size to 10 GB.
-• New custom selectable column from other mediainfo fields.
-• New file types exclusion list.
-• New feature to quick select a preset for a selection of list items (Encoding parameters column).
-• Fixed bugs:
-• Refreshing custom columns in some use cases.
-• Changing language caused file lists columns being cleared.
-• Wrong %fd variable parsing.
-• Some variables were not available in pre-input field.
-• Wrong estimated output file size for two pass wizard.
-• Some settings not enabled after queue encoding.
-• Other minor bugfixes and translation fixes.
+3.0.1
+• Fixed some issues with latest ffmpeg.exe builds, not displaying any progress and never finishing encodings.
+• Fixed error with some filters using its own custom files.
+• Fixed error recording YouTube Live sessions in sequential mode.
+• Fixed network path error saving queue file.
+• Fixed some garbage info in YouTube available streams.
+• Fixed bitrate column not being added in some languages.
+• Latest ffmpeg build october 2023 included.
+• More accurate total progress information when using seeking pre-input parameters (-ss, -to, -t).
+• User variables included in Join files routine.
+• Subtitles tab allows multiple items selection.
+• Subtitles file language automatically detected using subs filenames 'input_file.eng.srt', 'input_file.spa.ass', etc.
+• Other minor bugfixes using trailer and presets wizard.
