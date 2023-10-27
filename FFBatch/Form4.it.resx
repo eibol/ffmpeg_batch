@@ -2283,43 +2283,4 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Filtro elenco file</value>
   </data>
-  <data name="cb_filterby.Items6" xml:space="preserve">
-    <value>Codec audio</value>
-  </data>
-  <data name="cb_filterby.Items8" xml:space="preserve">
-    <value>Dim. fotogramma</value>
-  </data>
-  <data name="cb_filterby.Items3" xml:space="preserve">
-    <value>Bitrate file</value>
-  </data>
-  <data name="cb_filterby.Items7" xml:space="preserve">
-    <value>Freq. fotogrammi</value>
-  </data>
-  <data name="cb_filterby.Items1" xml:space="preserve">
-    <value>Estensione file</value>
-  </data>
-  <data name="cb_filterby.Items2" xml:space="preserve">
-    <value>Dim. file</value>
-  </data>
-  <data name="cb_filterby.Items5" xml:space="preserve">
-    <value>Bitrate video</value>
-  </data>
-  <data name="cb_filterby.Items" xml:space="preserve">
-    <value>Stato</value>
-  </data>
-  <data name="cb_filterby.Items9" xml:space="preserve">
-    <value>Stringa personalizzata (FF)</value>
-  </data>
-  <data name="cb_filterby.Items11" xml:space="preserve">
-    <value>Metadati</value>
-  </data>
-  <data name="cb_filterby.Items10" xml:space="preserve">
-    <value>Stringa personalizzata (MI)</value>
-  </data>
-  <data name="cb_filterby.Items4" xml:space="preserve">
-    <value>Codec video</value>
-  </data>
-  <data name="lb_of.Text" xml:space="preserve">
-    <value>di</value>
-  </data>
 </root>

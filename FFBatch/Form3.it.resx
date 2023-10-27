@@ -143,7 +143,7 @@
     <value>117, 17</value>
   </data>
   <data name="chk_filter_zero.Text" xml:space="preserve">
-    <value>Filtra file durata zero</value>
+    <value>Filtra i file non validi</value>
   </data>
   <data name="chk_dates.Location" type="System.Drawing.Point, System.Drawing">
     <value>343, 80</value>
@@ -161,7 +161,7 @@
     <value>122, 17</value>
   </data>
   <data name="chk_ignore_enc.Text" xml:space="preserve">
-    <value>Ignora elementi già codificati</value>
+    <value>Ignora già codificato</value>
   </data>
   <data name="chk_non0.Size" type="System.Drawing.Size, System.Drawing">
     <value>285, 17</value>
@@ -236,7 +236,7 @@
     <value>178, 17</value>
   </data>
   <data name="chk_warn_successful.Text" xml:space="preserve">
-    <value>Non avvisare per file già codificati</value>
+    <value>Non avvisare di file già codificati</value>
   </data>
   <data name="chk_sleep.Size" type="System.Drawing.Size, System.Drawing">
     <value>209, 17</value>
@@ -372,7 +372,7 @@
 </value>
   </data>
   <data name="btn_save.Text" xml:space="preserve">
-    <value>Salva modifiche</value>
+    <value>Salva le modifiche</value>
   </data>
   <data name="chk_autor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -430,7 +430,7 @@
     <value>108, 17</value>
   </data>
   <data name="chk_run_st.Text" xml:space="preserve">
-    <value>Esegui all'avvio</value>
+    <value>Eseguire all'avvio</value>
   </data>
   <data name="pic_auto_en.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -605,7 +605,7 @@
     <value>137, 17</value>
   </data>
   <data name="chk_dark_win.Text" xml:space="preserve">
-    <value>Usa impostazione sistema</value>
+    <value>Impostazione di sistema</value>
   </data>
   <data name="n_sunrise.Location" type="System.Drawing.Point, System.Drawing">
     <value>374, 231</value>
@@ -629,7 +629,7 @@
     <value>31, 13</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Avvia</value>
+    <value>Inizio</value>
   </data>
   <data name="chk_dark.Location" type="System.Drawing.Point, System.Drawing">
     <value>331, 157</value>
@@ -638,7 +638,7 @@
     <value>154, 17</value>
   </data>
   <data name="chk_dark.Text" xml:space="preserve">
-    <value>Pianifica modalità scura</value>
+    <value>Pianifica la modalità oscura</value>
   </data>
   <data name="chk_quick_q.Location" type="System.Drawing.Point, System.Drawing">
     <value>331, 30</value>
@@ -647,7 +647,7 @@
     <value>149, 17</value>
   </data>
   <data name="chk_quick_q.Text" xml:space="preserve">
-    <value>Usa elenco rapido file</value>
+    <value>Usa l'elenco rapido dei file</value>
   </data>
   <data name="chk_ctrl_p.Location" type="System.Drawing.Point, System.Drawing">
     <value>331, 54</value>
@@ -745,7 +745,7 @@
     <value>300, 17</value>
   </data>
   <data name="chk_console_params.Text" xml:space="preserve">
-    <value>Non inviare nome file e parametri alla console</value>
+    <value>Do not send Non inviare nome file e parametri alla console</value>
   </data>
   <data name="chk_subf.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 17</value>
@@ -962,7 +962,7 @@
     <value>Non chiedere di memorizzare file in rete nella cache</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
-    <value>Cache file in rete</value>
+    <value>Memorizzazione nella cache dei file di rete</value>
   </data>
   <data name="btn_reset.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1184,7 +1184,7 @@
     <value>145, 17</value>
   </data>
   <data name="chk_delete_one.Text" xml:space="preserve">
-    <value>Rimuovi file uno per uno</value>
+    <value>Rimuovi i file uno per uno</value>
   </data>
   <data name="chk_delete_def.Location" type="System.Drawing.Point, System.Drawing">
     <value>315, 26</value>
@@ -1451,7 +1451,7 @@
     <value>96, 82</value>
   </data>
   <data name="btn_dark.Text" xml:space="preserve">
-    <value>Abilita modalità scura</value>
+    <value>Abilita la modalità notturna</value>
   </data>
   <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1541,7 +1541,7 @@
     <value>139, 28</value>
   </data>
   <data name="btn_update.Text" xml:space="preserve">
-    <value>Sfoglia build</value>
+    <value>Sfoglia le ultime build</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>343, 18</value>
@@ -1626,7 +1626,7 @@
     <value>78, 28</value>
   </data>
   <data name="button2.Text" xml:space="preserve">
-    <value>Sostituisci</value>
+    <value>Sostituire</value>
   </data>
   <data name="btn_add_sec.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1703,7 +1703,7 @@
     <value>152, 28</value>
   </data>
   <data name="btn_add_sec.Text" xml:space="preserve">
-    <value>Migliora prestazione</value>
+    <value>Migliorare la prestazione</value>
   </data>
   <data name="btn_excl.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1795,7 +1795,7 @@
     <value>130, 17</value>
   </data>
   <data name="chk_w_subs.Text" xml:space="preserve">
-    <value>Includi sottocartelle</value>
+    <value>Includere sottocartelle</value>
   </data>
   <data name="pic_mon.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1872,7 +1872,7 @@
     <value>Abilita il monitoraggio delle cartelle</value>
   </data>
   <data name="groupBox6.Text" xml:space="preserve">
-    <value>Monitoraggio cartelle</value>
+    <value>Monitoraggio delle cartelle</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3663,17 +3663,5 @@
         xRPuE8QT7hPCE+4TwBPuE74T7ha9Fu5Ax0CeAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
-  </data>
-  <data name="combo_lang.Items" xml:space="preserve">
-    <value>Inglese</value>
-  </data>
-  <data name="combo_lang.Items2" xml:space="preserve">
-    <value>Italiano</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Impostazioni</value>
-  </data>
-  <data name="browse_sound.Filter" xml:space="preserve">
-    <value>File audio wave | *.wav| Tutti i file (*.*) | *.*</value>
   </data>
 </root>

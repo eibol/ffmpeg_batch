@@ -125,7 +125,7 @@
     <value>455, 16</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>Puoi rimuovere questi elementi selezionando "Rimuovi elementi non validi"</value>
+    <value>Puoi rimuovere questi elementi con il pulsante "Rimuovi elementi non validi"</value>
   </data>
   <data name="pic1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
