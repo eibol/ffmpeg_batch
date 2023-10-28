@@ -15656,7 +15656,7 @@ namespace FFBatch
                                 else is_a = true;
                                 get_frames.WaitForExit();
 
-                                if (col.Text.Contains(FFBatch.Properties.Strings.width))
+                                if (col.Text == Properties.Strings.width)
                                 {
                                     i--;
                                     if (is_v == true)
@@ -15674,7 +15674,7 @@ namespace FFBatch
                                     i++;
                                 }
 
-                                if (col.Text.Contains(FFBatch.Properties.Strings.Video_codec))
+                                if (col.Text == Properties.Strings.Video_codec)
                                 {
                                     i--;
                                     if (is_v == true && lines_ouput[2].Length > 0)
@@ -15691,7 +15691,8 @@ namespace FFBatch
                                     }
                                     i++;
                                 }
-                                if (col.Text.Contains(FFBatch.Properties.Strings.Audio_codec))
+
+                                if (col.Text == Properties.Strings.Audio_codec)
                                 {
                                     i--;
                                     if (is_v == true)
@@ -15737,7 +15738,7 @@ namespace FFBatch
                                     i++;
                                 }
 
-                                if (col.Text.Contains(FFBatch.Properties.Strings.v_bitr))
+                                if (col.Text == Properties.Strings.v_bitr)
                                 {
                                     i--;
                                     if (is_v == true && lines_ouput[4].Length > 0)
@@ -15751,7 +15752,7 @@ namespace FFBatch
                                     i++;
                                 }
 
-                                if (col.Text.Contains(FFBatch.Properties.Strings2.a_bitr))
+                                if (col.Text == Properties.Strings2.a_bitr)
                                 {
                                     i--;
                                     if (is_v == true)
