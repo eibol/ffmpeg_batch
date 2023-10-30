@@ -3664,4 +3664,19 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="txt_suffix.Text" xml:space="preserve">
+    <value>_FFB</value>
+  </data>
+  <data name="browse_sound.Filter" xml:space="preserve">
+    <value>Wave audio | *.wav| Tutti i file (*.*) | *.*</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>FFmpeg</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Impostazioni</value>
+  </data>
 </root>

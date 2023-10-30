@@ -2162,4 +2162,25 @@
   <data name="$this.Text" xml:space="preserve">
     <value>STREAM DI QUALITÀ DISPONIBILI SU YOUTUBE</value>
   </data>
+  <data name="Column6.HeaderText" xml:space="preserve">
+    <value>Usa</value>
+  </data>
+  <data name="Column1.HeaderText" xml:space="preserve">
+    <value>ID formato</value>
+  </data>
+  <data name="Column2.HeaderText" xml:space="preserve">
+    <value>Estensione</value>
+  </data>
+  <data name="Column4.HeaderText" xml:space="preserve">
+    <value>Risoluzione</value>
+  </data>
+  <data name="Codec.HeaderText" xml:space="preserve">
+    <value>Codec</value>
+  </data>
+  <data name="Res_p.HeaderText" xml:space="preserve">
+    <value>Risoluzione</value>
+  </data>
+  <data name="col_bitrate.HeaderText" xml:space="preserve">
+    <value>Bitrate</value>
+  </data>
 </root>
