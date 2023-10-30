@@ -7,6 +7,7 @@
 • Fixed bitrate column not being added in some languages.
 • Latest ffmpeg build october 2023 included.
 • More accurate total progress information when using seeking pre-input parameters (-ss, -to, -t).
+• Faster Try preset.
 • User variables included in Join files routine.
 • Subtitles tab allows multiple items selection.
 • Subtitles file language automatically detected using subs filenames 'input_file.eng.srt', 'input_file.spa.ass', etc.
