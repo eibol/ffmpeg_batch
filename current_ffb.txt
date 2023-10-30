@@ -6,6 +6,7 @@
 • Fixed some garbage info in YouTube available streams.
 • Fixed bitrate column not being added in some languages.
 • Latest ffmpeg build october 2023 included.
+• Faster Try preset.
 • More accurate total progress information when using seeking pre-input parameters (-ss, -to, -t).
 • User variables included in Join files routine.
 • Subtitles tab allows multiple items selection.
