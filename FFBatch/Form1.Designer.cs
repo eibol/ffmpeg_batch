@@ -89,6 +89,9 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pic_add_variable = new System.Windows.Forms.PictureBox();
             this.pic_file_add_input = new System.Windows.Forms.PictureBox();
+            this.ct_paths_param = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ct_path_input = new System.Windows.Forms.ToolStripMenuItem();
+            this.ct_path_vf = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.Num_Shift = new System.Windows.Forms.NumericUpDown();
             this.label15 = new System.Windows.Forms.Label();
@@ -517,7 +520,6 @@
             this.pic_skip = new System.Windows.Forms.PictureBox();
             this.BG_Concat_one = new System.ComponentModel.BackgroundWorker();
             this.Timer_display = new System.Windows.Forms.Timer(this.components);
-            this.BG_Pending_M = new System.ComponentModel.BackgroundWorker();
             this.pic_frame = new System.Windows.Forms.PictureBox();
             this.btn_min1 = new System.Windows.Forms.Button();
             this.btn_plus1 = new System.Windows.Forms.Button();
@@ -547,6 +549,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_add_variable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_file_add_input)).BeginInit();
+            this.ct_paths_param.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Num_Shift)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vol_ch)).BeginInit();
@@ -1017,11 +1020,32 @@
             // 
             // pic_file_add_input
             // 
+            this.pic_file_add_input.ContextMenuStrip = this.ct_paths_param;
             this.pic_file_add_input.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.pic_file_add_input, "pic_file_add_input");
             this.pic_file_add_input.Name = "pic_file_add_input";
             this.pic_file_add_input.TabStop = false;
-            this.pic_file_add_input.Click += new System.EventHandler(this.pic_file_add_input_Click);
+            this.pic_file_add_input.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pic_file_add_input_MouseClick);
+            // 
+            // ct_paths_param
+            // 
+            this.ct_paths_param.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ct_path_input,
+            this.ct_path_vf});
+            this.ct_paths_param.Name = "ct_paths_param";
+            resources.ApplyResources(this.ct_paths_param, "ct_paths_param");
+            // 
+            // ct_path_input
+            // 
+            this.ct_path_input.Name = "ct_path_input";
+            resources.ApplyResources(this.ct_path_input, "ct_path_input");
+            this.ct_path_input.Click += new System.EventHandler(this.ct_path_input_Click);
+            // 
+            // ct_path_vf
+            // 
+            this.ct_path_vf.Name = "ct_path_vf";
+            resources.ApplyResources(this.ct_path_vf, "ct_path_vf");
+            this.ct_path_vf.Click += new System.EventHandler(this.ct_path_vf_Click);
             // 
             // groupBox3
             // 
@@ -4173,8 +4197,6 @@
             // chk_auto_subs
             // 
             resources.ApplyResources(this.chk_auto_subs, "chk_auto_subs");
-            this.chk_auto_subs.Checked = true;
-            this.chk_auto_subs.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chk_auto_subs.Name = "chk_auto_subs";
             this.chk_auto_subs.UseVisualStyleBackColor = true;
             // 
@@ -4460,11 +4482,6 @@
             this.Timer_display.Interval = 1000;
             this.Timer_display.Tick += new System.EventHandler(this.Timer_display_Tick);
             // 
-            // BG_Pending_M
-            // 
-            this.BG_Pending_M.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BG_Pending_M_DoWork);
-            this.BG_Pending_M.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BG_Pending_M_RunWorkerCompleted);
-            // 
             // pic_frame
             // 
             this.pic_frame.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -4696,6 +4713,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_add_variable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_file_add_input)).EndInit();
+            this.ct_paths_param.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Num_Shift)).EndInit();
@@ -5233,8 +5251,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Type1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Status1;
         private System.Windows.Forms.ToolStripMenuItem menu_img_v;
-        //private ProgressBarWithText Pg1;
-        private System.ComponentModel.BackgroundWorker BG_Pending_M;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator28;
         private System.Windows.Forms.ToolStripMenuItem ct2_save_allstreams;
         private System.Windows.Forms.PictureBox pic_frame;
@@ -5283,6 +5299,9 @@
         private System.Windows.Forms.ToolStripSeparator sep29;
         private System.Windows.Forms.Label lbl_after_enc;
         private System.Windows.Forms.Label lbl_cpu_pr;
+        private System.Windows.Forms.ContextMenuStrip ct_paths_param;
+        private System.Windows.Forms.ToolStripMenuItem ct_path_input;
+        private System.Windows.Forms.ToolStripMenuItem ct_path_vf;
     }
 }
 

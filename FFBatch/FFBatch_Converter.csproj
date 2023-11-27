@@ -72,10 +72,10 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>FFBatch_2023_Key.pfx</AssemblyOriginatorKeyFile>
@@ -656,17 +656,8 @@
     <EmbeddedResource Include="Form23.ar-EG.resx">
       <DependentUpon>Form23.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form24.ar-EG.resx">
-      <DependentUpon>Form24.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form25.ar-EG.resx">
       <DependentUpon>Form25.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form26.ar-EG.resx">
-      <DependentUpon>Form26.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form26.es.resx">
-      <DependentUpon>Form26.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form27.ar-EG.resx">
       <DependentUpon>Form27.cs</DependentUpon>
@@ -1079,6 +1070,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Strings.ar-EG.resx" />
     <EmbeddedResource Include="Properties\Strings.es.resx">
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Strings.it.resx" />
     <EmbeddedResource Include="Properties\Strings.pt-BR.resx" />

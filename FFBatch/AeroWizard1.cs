@@ -5359,10 +5359,13 @@ namespace FFBatch
                     lbl_dur.Text = n_trailer_secs.Value.ToString();
                     Double dur = 0;
                     if (lv1_dur.Length > 0)
-                    {
-                        
-                            dur = TimeSpan.Parse(lv1_dur).TotalSeconds;
-                            n_interval_secs.Value = Math.Round((decimal)dur / n_fragment_secs.Value / n_trailer_secs.Value);                       
+                    {                        
+                        dur = TimeSpan.Parse(lv1_dur).TotalSeconds;
+                        if ((decimal)dur > n_trailer_secs.Value) n_interval_secs.Value = Math.Round((decimal)dur / n_fragment_secs.Value / n_trailer_secs.Value);
+                        else
+                        {
+                            n_trailer_secs.Value = (decimal)dur;
+                        }                        
                     }
                 }
             }

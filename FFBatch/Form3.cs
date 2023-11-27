@@ -1899,6 +1899,7 @@ namespace FFBatch
                 else if (str.Contains("cuvid")) item.SubItems.Add("NVIDIA");
                 else if (str.Contains("cuda")) item.SubItems.Add("NVIDIA");
                 else if (str.Contains("libopus")) item.SubItems.Add("OPUS audio codec");
+                else if (str.Contains("libaom")) item.SubItems.Add("AV1 AOMedia video codec");
                 else if (str.Contains("libvorbis")) item.SubItems.Add("VORBIS audio codec");
                 else if (str.Contains("libmp3lame")) item.SubItems.Add("MP3 audio codec");
                 else if (str.Contains("libtheora")) item.SubItems.Add("THEORA video codec");
