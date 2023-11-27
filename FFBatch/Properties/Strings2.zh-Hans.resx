@@ -549,6 +549,12 @@
   <data name="Paste_any_URL" xml:space="preserve">
     <value>粘贴链接</value>
   </data>
+  <data name="path_iparam" xml:space="preserve">
+    <value>将输入文件添加到参数</value>
+  </data>
+  <data name="path_i_add" xml:space="preserve">
+    <value>在 a/v 过滤器中添加文件路径</value>
+  </data>
   <data name="pause_bat_ac" xml:space="preserve">
     <value>暂停电池</value>
   </data>

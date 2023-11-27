@@ -930,4 +930,10 @@
   <data name="libr" xml:space="preserve">
     <value>Bibliotecas</value>
   </data>
+  <data name="path_i_add" xml:space="preserve">
+    <value>Adicione o caminho do arquivo dentro do filtro a/v</value>
+  </data>
+  <data name="path_iparam" xml:space="preserve">
+    <value>Adicionar arquivo de entrada aos parâmetros</value>
+  </data>
 </root>

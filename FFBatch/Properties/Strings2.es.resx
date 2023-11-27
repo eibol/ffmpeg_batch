@@ -927,4 +927,13 @@
   <data name="libr" xml:space="preserve">
     <value>Biblioteca</value>
   </data>
+  <data name="path_i_add" xml:space="preserve">
+    <value>Añadir ruta de fichero para af/vf filter</value>
+  </data>
+  <data name="path_iparam" xml:space="preserve">
+    <value>Añadir fichero de entrada</value>
+  </data>
+  <data name="path_iparam1" xml:space="preserve">
+    <value>Add input file to parameters</value>
+  </data>
 </root>

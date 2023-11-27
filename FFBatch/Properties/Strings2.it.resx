@@ -945,4 +945,10 @@ Non è possibile visualizzare l'anteprima del ritaglio.</value>
   <data name="target_size" xml:space="preserve">
     <value>Dim. destinazione:</value>
   </data>
+  <data name="path_i_add" xml:space="preserve">
+    <value>Aggiungi il percorso del file di input all'interno del filtro a/v</value>
+  </data>
+  <data name="path_iparam" xml:space="preserve">
+    <value>Aggiungi il file di input ai parametri</value>
+  </data>
 </root>

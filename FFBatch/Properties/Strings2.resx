@@ -948,4 +948,10 @@
   <data name="libr" xml:space="preserve">
     <value>Libraries</value>
   </data>
+  <data name="path_i_add" xml:space="preserve">
+    <value>Add input file inside a/v filter</value>
+  </data>
+  <data name="path_iparam" xml:space="preserve">
+    <value>Add input file to parameters</value>
+  </data>
 </root>

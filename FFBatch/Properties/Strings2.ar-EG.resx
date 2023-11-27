@@ -945,4 +945,10 @@
   <data name="libr" xml:space="preserve">
     <value>المكتبات</value>
   </data>
+  <data name="path_i_add" xml:space="preserve">
+    <value>أضف مسار ملف الإدخال داخل مرشح a/v</value>
+  </data>
+  <data name="path_iparam" xml:space="preserve">
+    <value>إضافة ملف الإدخال إلى المعلمات</value>
+  </data>
 </root>

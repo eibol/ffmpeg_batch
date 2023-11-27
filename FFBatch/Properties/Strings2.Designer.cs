@@ -1402,6 +1402,24 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Add input file inside a/v filter.
+        /// </summary>
+        internal static string path_i_add {
+            get {
+                return ResourceManager.GetString("path_i_add", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Add input file to parameters.
+        /// </summary>
+        internal static string path_iparam {
+            get {
+                return ResourceManager.GetString("path_iparam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Pause on battery.
         /// </summary>
         internal static string pause_bat_ac {
