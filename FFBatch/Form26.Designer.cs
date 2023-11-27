@@ -61,7 +61,6 @@ namespace FFBatch
             // 
             // panel_thumb
             // 
-            resources.ApplyResources(this.panel_thumb, "panel_thumb");
             this.panel_thumb.Controls.Add(this.lbl_succ);
             this.panel_thumb.Controls.Add(this.btn_play);
             this.panel_thumb.Controls.Add(this.sep3);
@@ -82,6 +81,7 @@ namespace FFBatch
             this.panel_thumb.Controls.Add(this.lbl_s_th);
             this.panel_thumb.Controls.Add(this.pic_frame);
             this.panel_thumb.Controls.Add(this.lbl_a_th);
+            resources.ApplyResources(this.panel_thumb, "panel_thumb");
             this.panel_thumb.Name = "panel_thumb";
             this.panel_thumb.TabStop = false;
             // 
@@ -99,20 +99,20 @@ namespace FFBatch
             // 
             // sep3
             // 
-            resources.ApplyResources(this.sep3, "sep3");
             this.sep3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.sep3, "sep3");
             this.sep3.Name = "sep3";
             // 
             // sep2
             // 
-            resources.ApplyResources(this.sep2, "sep2");
             this.sep2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.sep2, "sep2");
             this.sep2.Name = "sep2";
             // 
             // sep1
             // 
-            resources.ApplyResources(this.sep1, "sep1");
             this.sep1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.sep1, "sep1");
             this.sep1.Name = "sep1";
             // 
             // lbl_v_th
@@ -185,8 +185,8 @@ namespace FFBatch
             // 
             // pic_frame
             // 
-            resources.ApplyResources(this.pic_frame, "pic_frame");
             this.pic_frame.Cursor = System.Windows.Forms.Cursors.Default;
+            resources.ApplyResources(this.pic_frame, "pic_frame");
             this.pic_frame.Name = "pic_frame";
             this.pic_frame.TabStop = false;
             // 

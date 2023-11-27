@@ -49,7 +49,12 @@ namespace FFBatch
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_clear_list = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cb_res = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cb_codec = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lbl_vcount = new System.Windows.Forms.Label();
             this.lbl_down_time = new System.Windows.Forms.Label();
             this.pg2 = new FFBatch.ProgressBarWithText();
             this.Pg1 = new FFBatch.ProgressBarWithText();
@@ -63,6 +68,7 @@ namespace FFBatch
             // 
             resources.ApplyResources(this.txt_channel, "txt_channel");
             this.txt_channel.Name = "txt_channel";
+            this.txt_channel.TextChanged += new System.EventHandler(this.txt_channel_TextChanged);
             // 
             // label1
             // 
@@ -82,9 +88,9 @@ namespace FFBatch
             // 
             // button1
             // 
-            resources.ApplyResources(this.button1, "button1");
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.button1, "button1");
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -96,15 +102,15 @@ namespace FFBatch
             // 
             // txt_path_main
             // 
-            resources.ApplyResources(this.txt_path_main, "txt_path_main");
             this.txt_path_main.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(this.txt_path_main, "txt_path_main");
             this.txt_path_main.Name = "txt_path_main";
             // 
             // btn_browse_path_m3u
             // 
-            resources.ApplyResources(this.btn_browse_path_m3u, "btn_browse_path_m3u");
             this.btn_browse_path_m3u.FlatAppearance.BorderSize = 0;
             this.btn_browse_path_m3u.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_browse_path_m3u, "btn_browse_path_m3u");
             this.btn_browse_path_m3u.Name = "btn_browse_path_m3u";
             this.btn_browse_path_m3u.UseVisualStyleBackColor = true;
             this.btn_browse_path_m3u.Click += new System.EventHandler(this.btn_browse_path_m3u_Click);
@@ -119,9 +125,9 @@ namespace FFBatch
             // 
             // btn_abort_all
             // 
-            resources.ApplyResources(this.btn_abort_all, "btn_abort_all");
             this.btn_abort_all.FlatAppearance.BorderSize = 0;
             this.btn_abort_all.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_abort_all, "btn_abort_all");
             this.btn_abort_all.Name = "btn_abort_all";
             this.btn_abort_all.UseVisualStyleBackColor = true;
             this.btn_abort_all.Click += new System.EventHandler(this.btn_abort_all_Click);
@@ -132,15 +138,11 @@ namespace FFBatch
             this.lbl_d_v.Name = "lbl_d_v";
             this.lbl_d_v.TextChanged += new System.EventHandler(this.lbl_d_v_TextChanged);
             // 
-            // fd1
-            // 
-            resources.ApplyResources(this.fd1, "fd1");
-            // 
             // txt_get_url
             // 
-            resources.ApplyResources(this.txt_get_url, "txt_get_url");
             this.txt_get_url.BackColor = System.Drawing.Color.White;
             this.txt_get_url.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.txt_get_url, "txt_get_url");
             this.txt_get_url.Name = "txt_get_url";
             this.txt_get_url.ReadOnly = true;
             this.txt_get_url.TabStop = false;
@@ -152,18 +154,18 @@ namespace FFBatch
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.BackColor = System.Drawing.Color.White;
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txt_get_url);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
             // btn_clear_list
             // 
-            resources.ApplyResources(this.btn_clear_list, "btn_clear_list");
             this.btn_clear_list.FlatAppearance.BorderSize = 0;
             this.btn_clear_list.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_clear_list, "btn_clear_list");
             this.btn_clear_list.Name = "btn_clear_list";
             this.btn_clear_list.Tag = "";
             this.btn_clear_list.UseVisualStyleBackColor = true;
@@ -171,8 +173,11 @@ namespace FFBatch
             // 
             // groupBox2
             // 
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.cb_res);
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.cb_codec);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.btn_clear_list);
             this.groupBox2.Controls.Add(this.txt_channel);
@@ -183,19 +188,63 @@ namespace FFBatch
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.btn_abort_all);
             this.groupBox2.Controls.Add(this.btn_browse_path_m3u);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.Name = "label6";
+            // 
+            // cb_res
+            // 
+            this.cb_res.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_res.FormattingEnabled = true;
+            this.cb_res.Items.AddRange(new object[] {
+            resources.GetString("cb_res.Items"),
+            resources.GetString("cb_res.Items1"),
+            resources.GetString("cb_res.Items2"),
+            resources.GetString("cb_res.Items3"),
+            resources.GetString("cb_res.Items4"),
+            resources.GetString("cb_res.Items5")});
+            resources.ApplyResources(this.cb_res, "cb_res");
+            this.cb_res.Name = "cb_res";
+            this.cb_res.SelectedIndexChanged += new System.EventHandler(this.cb_res_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
+            // 
+            // cb_codec
+            // 
+            this.cb_codec.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_codec.FormattingEnabled = true;
+            this.cb_codec.Items.AddRange(new object[] {
+            resources.GetString("cb_codec.Items"),
+            resources.GetString("cb_codec.Items1"),
+            resources.GetString("cb_codec.Items2")});
+            resources.ApplyResources(this.cb_codec, "cb_codec");
+            this.cb_codec.Name = "cb_codec";
+            this.cb_codec.SelectedIndexChanged += new System.EventHandler(this.cb_codec_SelectedIndexChanged);
+            // 
             // groupBox3
             // 
-            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.BackColor = System.Drawing.Color.White;
+            this.groupBox3.Controls.Add(this.lbl_vcount);
             this.groupBox3.Controls.Add(this.lbl_d_v);
             this.groupBox3.Controls.Add(this.lbl_down_time);
             this.groupBox3.Controls.Add(this.pg2);
             this.groupBox3.Controls.Add(this.Pg1);
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
+            // 
+            // lbl_vcount
+            // 
+            resources.ApplyResources(this.lbl_vcount, "lbl_vcount");
+            this.lbl_vcount.Name = "lbl_vcount";
             // 
             // lbl_down_time
             // 
@@ -264,5 +313,10 @@ namespace FFBatch
         public System.Windows.Forms.TextBox txt_channel;
         private System.Windows.Forms.Label lbl_down_time;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lbl_vcount;
+        private System.Windows.Forms.Label label6;
+        public System.Windows.Forms.ComboBox cb_res;
+        private System.Windows.Forms.Label label5;
+        public System.Windows.Forms.ComboBox cb_codec;
     }
 }

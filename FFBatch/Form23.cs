@@ -23,6 +23,7 @@ namespace FFBatch
             InitializeComponent();
         }
 
+        private int v_count = 0;
         private Boolean cancel_queue = false;
         private Boolean working = false;
         private Boolean aborted_url = false;
@@ -136,18 +137,18 @@ namespace FFBatch
                     }
                 }
 
-                if (Directory.GetFiles(destino).Length > 0)
-                {
-                    DialogResult a = MessageBox.Show(FFBatch.Properties.Strings2.dest_not_empty, FFBatch.Properties.Strings.warning, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (a == DialogResult.No)
-                    {
-                        working = false;
-                        this.InvokeEx(f => f.lbl_d_v.Text = "");
-                        this.InvokeEx(f => timer1.Stop());
-                        Enable_Controls();
-                        return;
-                    }
-                }
+                //if (Directory.GetFiles(destino).Length > 0)
+                //{
+                //    DialogResult a = MessageBox.Show(FFBatch.Properties.Strings2.dest_not_empty, FFBatch.Properties.Strings.warning, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                //    if (a == DialogResult.No)
+                //    {
+                //        working = false;
+                //        this.InvokeEx(f => f.lbl_d_v.Text = "");
+                //        this.InvokeEx(f => timer1.Stop());
+                //        Enable_Controls();
+                //        return;
+                //    }
+                //}
 
                 String AppParam = txt_parameters.Text;
                 process_glob.StartInfo.FileName = ffm;
@@ -183,10 +184,12 @@ namespace FFBatch
                 String err_txt = "";
                 String error_out = "";
                 String tr_speed = "";
+                int n_vid = 0;
                 Double interval = 0;
                 Decimal est_bitrate = 0;
                 Decimal est_size = 0;
                 Double sec_prog = 0;
+                String n_vs = "";
                 //this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.Normal));
                 String pl_title = "";
 
@@ -195,7 +198,8 @@ namespace FFBatch
                     err_txt = process_glob.StandardOutput.ReadLine();
                     list_lines.Add(err_txt);
 
-                    if (err_txt.Contains("[download] Downloading playlist: ")) pl_title = err_txt.Replace("[download] Downloading playlist: ", "");
+                    if (err_txt.Contains("[download] Downloading playlist: ")) 
+                        pl_title = err_txt.Replace("[download] Downloading playlist: ", "");
 
                     if (err_txt.Contains("[youtube:tab] Downloading page "))
                     {
@@ -206,21 +210,37 @@ namespace FFBatch
                         }));
                     }
 
-                    if (err_txt.Contains("[youtube:tab] playlist ") && err_txt.Contains("Downloading ") && err_txt.Contains("videos"))
+                    if (err_txt.Contains("[download] Downloading item ") && err_txt.Contains(" of "))
                     {
-                        int ind1 = err_txt.LastIndexOf("Downloading ");
-                        int ind2 = err_txt.Length;
-                        String n_vs = err_txt.Substring(ind1, ind2 - ind1).Replace("Downloading ", "").Replace("videos", "").Trim(); ;
-                        lbl_d_v.Invoke(new MethodInvoker(delegate
+                        n_vid++;
+                        int start_c = err_txt.LastIndexOf("[download] Downloading item ") + 28;
+                        int end_c = err_txt.Length - start_c;
+                        n_vs = err_txt.Substring(start_c, end_c).Replace("[download] Downloading item ", "").Replace("of ", "");
+                        n_vs = n_vs.Substring(n_vs.LastIndexOf(" "), n_vs.Length - n_vs.LastIndexOf(" "));
+                        total_videos = Convert.ToInt32(n_vs);
+                        Pg1.Invoke(new MethodInvoker(delegate
                         {
-                            lbl_d_v.Text = FFBatch.Properties.Strings2.total + ": " + n_vs.Replace("Videos: Downloading ", "").Replace("videos", "").Trim();
-                            //lbl_d_v.Visible = true;
-                            //lbl_d_v.Text = "Starting downloads...";
-                            total_videos = Convert.ToInt32(n_vs.Replace("Videos: Downloading ", "").Replace("videos", "").Trim());
                             Pg1.Maximum = total_videos;
-                            this.InvokeEx(f => f.Pg1.Text = "0 of " + total_videos.ToString());
+                            Pg1.Value = n_vid;
+                            Pg1.Text = n_vid +  " of " + total_videos.ToString();
                         }));
                     }
+            
+                    //if (err_txt.Contains("[youtube:tab] playlist ") && err_txt.Contains("Downloading ") && err_txt.Contains("videos"))
+                    //{
+                    //    int ind1 = err_txt.LastIndexOf("Downloading ");
+                    //    int ind2 = err_txt.Length;
+                    //    n_vs = err_txt.Substring(ind1, ind2 - ind1).Replace("Downloading ", "").Replace("videos", "").Trim(); ;
+                    //    lbl_d_v.Invoke(new MethodInvoker(delegate
+                    //    {
+                    //        lbl_d_v.Text = FFBatch.Properties.Strings2.total + ": " + n_vs.Replace("Videos: Downloading ", "").Replace("videos", "").Trim();
+                    //        //lbl_d_v.Visible = true;
+                    //        //lbl_d_v.Text = "Starting downloads...";
+                    //        total_videos = Convert.ToInt32(n_vs.Replace("Videos: Downloading ", "").Replace("videos", "").Trim());
+                    //        Pg1.Maximum = total_videos;
+                    //        this.InvokeEx(f => f.Pg1.Text = "0 of " + total_videos.ToString());
+                    //    }));
+                    //}
                     if (err_txt.Contains("[download] Destination: "))
                     {
                         lbl_d_v.Invoke(new MethodInvoker(delegate
@@ -228,28 +248,28 @@ namespace FFBatch
                             lbl_d_v.Text = Path.GetFileName(err_txt.Replace("Downloading video: ", ""));
                         }));
                     }
-                    if (err_txt.Contains("[download] Downloading video ") && err_txt.Contains(total_videos.ToString()))
-                    {
-                        String prog = "";
-                        Pg1.Invoke(new MethodInvoker(delegate
-                        {
-                            try
-                            {
-                                prog = err_txt.Replace("[download] ", "");
-                                prog = prog.Replace("Downloading video ", "");
-                                prog = prog.Replace(" of " + total_videos.ToString(), "");
-                                Pg1.Value = Convert.ToInt32(prog);
-                                Pg1.Text = err_txt.Replace("[download] Downloading video ", "");
-                                this.InvokeEx(f => TaskbarProgress.SetValue(this.Handle, Pg1.Value, Pg1.Maximum));
-                            }
-                            catch
-                            {
-                                lbl_d_v.Text = FFBatch.Properties.Strings2.outf_count + " " + Directory.GetFiles(destino).Length.ToString();
-                                lbl_d_v.Refresh();
-                                total_videos = 0;
-                            }
-                        }));
-                    }
+                    //if (err_txt.Contains("[download] Downloading video ") && err_txt.Contains(total_videos.ToString()))
+                    //{
+                    //    String prog = "";
+                    //    Pg1.Invoke(new MethodInvoker(delegate
+                    //    {
+                    //        try
+                    //        {
+                    //            prog = err_txt.Replace("[download] ", "");
+                    //            prog = prog.Replace("Downloading video ", "");
+                    //            prog = prog.Replace(" of " + total_videos.ToString(), "");
+                    //            Pg1.Value = Convert.ToInt32(prog);
+                    //            Pg1.Text = err_txt.Replace("[download] Downloading video ", "");
+                    //            this.InvokeEx(f => TaskbarProgress.SetValue(this.Handle, Pg1.Value, Pg1.Maximum));
+                    //        }
+                    //        catch
+                    //        {
+                    //            lbl_d_v.Text = FFBatch.Properties.Strings2.outf_count + " " + Directory.GetFiles(destino).Length.ToString();
+                    //            lbl_d_v.Refresh();
+                    //            total_videos = 0;
+                    //        }
+                    //    }));
+                    //}
                     if (err_txt.Contains("%"))
                     {
                         try
@@ -268,12 +288,28 @@ namespace FFBatch
                     {
                         try
                         {
-                            int ind1 = err_txt.LastIndexOf("ETA");
-                            String unit = "";
+                            int ind1 = err_txt.LastIndexOf("ETA");                            
                             String est_time = err_txt.Substring(ind1, err_txt.Length - ind1).Replace("ETA", "").Trim();
-                            if (err_txt.ToLower().Contains("mib/s")) unit = " MB/s";
-                            if (err_txt.ToLower().Contains("kib/s")) unit = " KB/s";
-                            this.InvokeEx(f => f.lbl_down_time.Text = err_txt.Substring(err_txt.IndexOf("at ") + 3, 5) + " " + unit + " - " + est_time);
+                            
+                            String tr_r = "";
+                            if (err_txt.ToLower().Contains("mib/s"))
+                            {
+                                int ind_tr = err_txt.ToLower().IndexOf("at ") + 3;
+                                int ind_tr_e = err_txt.ToLower().IndexOf("mib/s");
+                                int leng = ind_tr_e - ind_tr;
+                                tr_r = err_txt.Substring(ind_tr, leng);
+                                tr_speed = tr_r.Trim(' ') + " MB/s";
+                            }
+                            if (err_txt.ToLower().Contains("kib/s"))
+                            {
+                                int ind_tr = err_txt.ToLower().IndexOf("at ") + 3;
+                                int ind_tr_e = err_txt.ToLower().IndexOf("kib/s");
+                                int leng = ind_tr_e - ind_tr;
+                                tr_r = err_txt.Substring(ind_tr, leng);
+                                tr_speed = tr_r.Trim(' ') + " KB/s";
+                            }
+
+                            this.InvokeEx(f => f.lbl_down_time.Text = tr_speed + " - " + est_time);
                         }
                         catch { }
                     }
@@ -634,15 +670,19 @@ namespace FFBatch
 
         private void lbl_d_v_TextChanged(object sender, EventArgs e)
         {
-            if (lbl_d_v.Text.Length > 69)
+            if (lbl_d_v.Text.Length > 109)
             {
-                lbl_d_v.Text = lbl_d_v.Text.Substring(0, 66) + "...";
+                lbl_d_v.Text = lbl_d_v.Text.Substring(0, 106) + "...";
             }
         }
 
         private void btn_clear_list_Click(object sender, EventArgs e)
         {
+            cb_codec.SelectedIndex = -1;
+            cb_res.SelectedIndex = -1;
             lbl_d_v.Text = "";
+            lbl_vcount.Text = "";
+            txt_parameters.Text = "";
             lbl_d_v.TextAlign = ContentAlignment.MiddleLeft;
             lbl_down_time.Text = "";
             txt_channel.Text = "";
@@ -709,5 +749,143 @@ namespace FFBatch
 
         // Delegate type to be used as the Handler Routine for SCCH
         private delegate Boolean ConsoleCtrlDelegate(uint CtrlType);
+
+        private void get_v_count()
+        {
+            new System.Threading.Thread(() =>
+            {
+                System.Threading.Thread.CurrentThread.IsBackground = true;
+
+                System.Threading.Thread.Sleep(50); //Allow kill process to send cancel_queue
+
+                String file = txt_channel.Text;
+                String ffm = System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe");
+                String destino = txt_path_main.Text;
+                String err_txt = "";
+
+                if (!Directory.Exists(destino))
+                {
+                    try
+                    {
+                        Directory.CreateDirectory(destino);
+                    }
+                    catch (System.Exception excpt)
+                    {
+                        MessageBox.Show(FFBatch.Properties.Strings.write_error2 + " " + excpt.Message, FFBatch.Properties.Strings.write_error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        this.InvokeEx(f => this.Cursor = Cursors.Arrow);
+                        this.InvokeEx(f => f.lbl_d_v.Text = "");
+                        return;
+                    }
+                }
+
+                this.Invoke(new MethodInvoker(delegate
+                {
+                    lbl_vcount.Text = Properties.Strings.init1;
+                    button1.Enabled = false;
+                    txt_channel.Enabled = false;
+                    btn_clear_list.Enabled = false;
+                }));
+
+                //if (Directory.GetFiles(destino).Length > 0)
+                //{
+                //    DialogResult a = MessageBox.Show(FFBatch.Properties.Strings2.dest_not_empty, FFBatch.Properties.Strings.warning, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                //    if (a == DialogResult.No)
+                //    {
+                //        working = false;
+                //        this.InvokeEx(f => f.lbl_d_v.Text = "");
+                //        this.InvokeEx(f => timer1.Stop());
+                //        Enable_Controls();
+                //        return;
+                //    }
+                //}
+
+                String AppParam = txt_parameters.Text;
+                process_glob.StartInfo.FileName = ffm;
+                AppParam = "--flat-play --get-id " + txt_channel.Text;
+                process_glob.StartInfo.Arguments = AppParam;
+
+                if (!File.Exists(System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe")))
+                {
+                    cancel_queue = true;
+                    working = false;
+                    timer_tasks.Stop();
+                    Enable_Controls();
+                    this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
+                    this.InvokeEx(f => timer1.Stop());
+                    this.InvokeEx(f => f.lbl_down_time.Text = "");
+                    MessageBox.Show(FFBatch.Properties.Strings.yt_not, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                                
+                this.InvokeEx(f => timer1.Start());
+
+                List<string> list_lines = new List<string>();
+
+                process_glob.StartInfo.RedirectStandardOutput = true;
+                process_glob.StartInfo.StandardOutputEncoding = Encoding.UTF8;
+                process_glob.StartInfo.RedirectStandardInput = true;
+                process_glob.StartInfo.RedirectStandardError = true;
+                process_glob.StartInfo.StandardErrorEncoding = Encoding.UTF8;
+                process_glob.StartInfo.UseShellExecute = false;
+                process_glob.StartInfo.CreateNoWindow = true;
+                process_glob.EnableRaisingEvents = true;
+                process_glob.Start();
+
+                while (!process_glob.StandardOutput.EndOfStream)
+                {
+                    err_txt = process_glob.StandardOutput.ReadLine();
+                    list_lines.Add(err_txt);
+                }
+                this.Invoke(new MethodInvoker(delegate
+                {
+                    lbl_vcount.Text = "Videos" + ": " + list_lines.Count;
+                    Pg1.Text = "0 " + Properties.Strings.of1 +  " " + list_lines.Count;
+                    Pg1.Refresh();
+                    button1.Enabled = true;
+                    btn_clear_list.Enabled = true;
+                    txt_channel.Enabled = true;
+                }));
+                
+                v_count = list_lines.Count();
+
+
+            }).Start();
+        }
+            
+
+        private void txt_channel_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_channel.Text.Contains("youtube") || txt_channel.Text.Contains("youtu.be"))
+            {
+                // Code order: -S res,codec:av1,codec:h264,codec:vp9
+                get_v_count();
+            }
+        }
+
+        private void cb_codec_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_codec.SelectedIndex == -1) return;
+            txt_parameters.Text = "";
+            String param = "-S +codec:" + cb_codec.SelectedItem.ToString();
+            
+            if (cb_res.SelectedIndex != -1)
+            {
+                param = "-S res:" + cb_res.SelectedItem.ToString().Replace("p", "")  + ",+codec:" + cb_codec.SelectedItem.ToString();
+            }
+            txt_parameters.Text = param;
+        }
+
+        private void cb_res_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_res.SelectedIndex == -1) return;
+            txt_parameters.Text = "";
+            String param = "-S res:" + cb_res.SelectedItem.ToString().Replace("p", "");
+
+            if (cb_codec.SelectedIndex != -1)
+            {
+                param = "-S res:" + cb_res.SelectedItem.ToString().Replace("p", "") + ",+codec:" + cb_codec.SelectedItem.ToString();
+            }
+            txt_parameters.Text = param;
+        }
     }
 }
