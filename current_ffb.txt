@@ -1,14 +1,12 @@
-3.0.1
-• Fixed some issues with latest ffmpeg.exe builds, not displaying any progress and never finishing encodings.
-• Fixed error with some filters using its own custom files.
-• Fixed error recording YouTube Live sessions in sequential mode.
-• Fixed network path error saving queue file.
-• Fixed some garbage info in YouTube available streams.
-• Fixed bitrate column not being added in some languages.
-• Latest ffmpeg build october 2023 included.
-• Faster Try preset.
-• More accurate total progress information when using seeking pre-input parameters (-ss, -to, -t).
-• User variables included in Join files routine.
-• Subtitles tab allows multiple items selection.
-• Subtitles file language automatically detected using subs filenames 'input_file.eng.srt', 'input_file.spa.ass', etc.
-• Other minor bugfixes using trailer and presets wizard.
+﻿3.0.2
+• FFmpeg 6.1
+• Improved multi-file encoding reliability and fixed issues: no more excess/lost threads, diminishing threads concurrency and encoding order not preserved.
+• Fixed issue with sequential YouTube download.
+• Fixed issue with video/audio codec info not displayed when adding new files.
+• Fixed erratic behaviour trimming some files.
+• Fixed progress information not displayed in some configurations.
+• Added menu to add input file inside af/vf filters in parameters field, properly escaping some characters.
+• Reminder: a/v filter must be included inside "quotes" if filter file path contains spaces.
+• Displayed YouTube download file size and transfer rate info.
+• Temporary download files automatically deleted if YouTube download is aborted.
+• Not necessary now to click twice to abort YouTube download.
