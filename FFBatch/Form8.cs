@@ -176,7 +176,7 @@ namespace FFBatch
                                         }
                                     }
                                 }
-                                if (codec.Contains("avc1")) codec = "AV1";
+                                if (codec.Contains("avc1")) codec = "H264";
                                 if (codec.Contains("av01")) codec = "AV1";
                                 if (codec.Contains("vp09")) codec = "VP9";
 
