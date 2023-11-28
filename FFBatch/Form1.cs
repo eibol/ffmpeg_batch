@@ -50,8 +50,7 @@ namespace FFBatch
 
         // Delegate type to be used as the Handler Routine for SCCH
         private delegate Boolean ConsoleCtrlDelegate(uint CtrlType);
-
-        private Boolean new_multis = false;
+                
         public List<string> ff_ena = new List<string>();
         Boolean ss_to = false;
         private Double total_prog = 0;
@@ -5478,17 +5477,8 @@ namespace FFBatch
 
                 //Ignore encoded items
 
-                String f_ignore_enc = String.Empty;
-                if (is_portable == false)
-                {
-                    f_ignore_enc = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_ignore_enc.ini";
-                }
-                else
-                {
-                    f_ignore_enc = port_path + "ff_ignore_enc_portable.ini";
-                }
+                ignore_encoded = get_ingnorenc();
 
-                ignore_encoded = File.Exists(f_ignore_enc);
                 //End ignore encoded items
 
                 //Do not save logs
@@ -5733,6 +5723,21 @@ namespace FFBatch
 
             }).Start();
 
+        }
+
+        private Boolean get_ingnorenc()
+        {
+            String f_ignore_enc = String.Empty;
+            if (is_portable == false)
+            {
+                f_ignore_enc = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_ignore_enc.ini";
+            }
+            else
+            {
+                f_ignore_enc = port_path + "ff_ignore_enc_portable.ini";
+            }
+
+            return File.Exists(f_ignore_enc);
         }
 
         private void add_col_start()
@@ -15912,9 +15917,7 @@ namespace FFBatch
             {
                 this.InvokeEx(f => f.listView1.Items.AddRange(itemsToAdd.ToArray()));
             }
-
-            new_multis = false;
-            if (itemsToAdd.Count() > 0) new_multis = true;
+            
         }
 
         public string av_col(string key)
@@ -15954,7 +15957,8 @@ namespace FFBatch
         }
 
         private void BG_Files_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
-        {
+        {            
+
             if (Properties.Settings.Default.quick_queue == false)
             {
                 calc_list_size();
@@ -22649,7 +22653,7 @@ namespace FFBatch
 
         {
             Pg1.Focus();
-
+            
             lbl_est_size.Text = "";
             lbl_bitrate.Text = "";
 
@@ -37161,8 +37165,7 @@ namespace FFBatch
 
         private void BG_Multi_M_DoWork(object sender, DoWorkEventArgs e)
         {
-            warn_enc = 0;
-            new_multis = false;
+            warn_enc = 0;            
             String hw_decode = String.Empty;
 
             cb_hwdecode.Invoke(new MethodInvoker(delegate
@@ -37897,7 +37900,8 @@ namespace FFBatch
                                             tmp.StartInfo.CreateNoWindow = true;
                                             tmp.StartInfo.WorkingDirectory = Path.GetDirectoryName(fullPath);
                                             tmp.EnableRaisingEvents = true;
-                                            if (new_multis == true && listView1.Items[Convert.ToInt32(file_int)].SubItems[5].Text == Properties.Strings.queued) return;
+                                        
+                                            
                                             tmp.Start();
                                             this.InvokeEx(f => f.listView1.Items[Convert.ToInt32(file_int)].SubItems[5].Text = Properties.Strings.processing);
 
@@ -38314,9 +38318,7 @@ namespace FFBatch
                                 tmp.StartInfo.CreateNoWindow = true;
                                 tmp.StartInfo.WorkingDirectory = Path.GetDirectoryName(fullPath);
                                 tmp.EnableRaisingEvents = true;
-
-
-                        if (new_multis == true && listView1.Items[Convert.ToInt32(file_int)].SubItems[5].Text == Properties.Strings.queued) return;
+                            
 
                         if (!tmp.StartInfo.Arguments.Contains("[[split_chapters]]"))
                                 {
@@ -38733,9 +38735,7 @@ namespace FFBatch
             {
                 fatal_parallel_msg = exc.Message;
                 fatal_parallel = true;
-            }
-
-
+            }            
             if (result.IsCompleted == true) fatal_parallel = false;
             else
             {
@@ -38898,27 +38898,22 @@ namespace FFBatch
 
             try { clean_ffb_test(); } catch { }
 
-            //Boolean pending_item = false;
-            //foreach (ListViewItem item in listView1.Items)
-            //{
-            //    if (item.SubItems[5].Text == Properties.Strings.queued)
-            //    {
-            //        pending_item = true;
-            //        break;
-            //    }
-            //}
-            //if (pending_item == true && aborted == false)
-            //{
-            //    BG_Multi_M.RunWorkerAsync();
-            //    return;
-            //}
-
-            if (new_multis == true)
+            Boolean pending_item = false;
+            foreach (ListViewItem item in listView1.Items)
             {
+                if (item.SubItems[5].Text == Properties.Strings.queued)
+                {
+                    pending_item = true;
+                    break;
+                }
+            }
+            if (pending_item == true && aborted == false)
+            {
+                ignore_encoded = true;
                 BG_Multi_M.RunWorkerAsync();
-                new_multis = false;
                 return;
             }
+            else ignore_encoded = get_ingnorenc();
 
             this.Text = "FFmpeg Batch AV Converter";
 
