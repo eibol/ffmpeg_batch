@@ -1,12 +1,22 @@
-3.0.2
-• FFmpeg 6.1
-• Faster and more reliable multi-file encoding, fixed issues: lost threads, diminishing threads concurrency and encoding order not preserved.
-• Fixed issue with sequential YouTube download.
-• Fixed issue with video/audio codec info not displayed when adding new files.
-• Fixed erratic behaviour trimming some files.
-• Fixed progress information not displayed in some configurations.
-• Added menu to add input file inside af/vf filters in parameters field, properly escaping some characters.
-• Reminder: a/v filter must be included inside "quotes" if filter file path contains spaces.
-• Displayed YouTube download file size and transfer rate info.
-• Temporary download files automatically deleted if YouTube download is aborted.
-• Not necessary now to click twice to abort YouTube download.
+﻿3.0.3
+• Best wishes and a happy new year.
+• Some code refactoring and optimization for slightly faster startup.
+• Faster more responsive custom columns reading .
+• Faster file list filtering .
+• Slightly faster video preview, depending on video format (gpu decoding enabled). 
+• Note: Aomedia AV1 video keyframes are not properly read in essential ffmpeg fuilds (libaom), ffmpeg full builds read them right (dav1d).
+• Variable nominal framerate available for video preview and video frame statistics.
+• Aborted files are by default gracefully closed so file could be readable.
+• Fixed multi-file issues: New files added during multi-file encoding were not processed. Previously skipped files were processed again.
+• Fixed crash in Batch subtitles muxing.
+• Fixed pause and resume not working in some cases.
+• Fixed issue stopping screen recordings, if any other encoding session was started previously.
+• Fixed network share files not asked to be cached before encoding (sequential mode).
+• Fixed network files not displaying individual progress when quick queue file adding is enabled.
+• Fixed network file OS caching not working.
+• Fixed trying preset with network files and quick queue file adding enabled, 
+• Note: For slow networks quick queue file adding is recommended.
+• Fixed progress issues in Two pass/target size wizard.
+• Fixed minor issues and faster preview with autocrop at Tools/Wizard.
+• Added warnings for some cases of too long paths and filenames (>255 characters).
+• Other minor cosmetic bugfixes.
