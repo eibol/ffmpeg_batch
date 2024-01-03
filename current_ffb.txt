@@ -1,12 +1,6 @@
-﻿3.0.2
-• FFmpeg 6.1
-• Improved multi-file encoding reliability and fixed issues: no more excess/lost threads, diminishing threads concurrency and encoding order not preserved.
-• Fixed issue with sequential YouTube download.
-• Fixed issue with video/audio codec info not displayed when adding new files.
-• Fixed erratic behaviour trimming some files.
-• Fixed progress information not displayed in some configurations.
-• Added menu to add input file inside af/vf filters in parameters field, properly escaping some characters.
-• Reminder: a/v filter must be included inside "quotes" if filter file path contains spaces.
-• Displayed YouTube download file size and transfer rate info.
-• Temporary download files automatically deleted if YouTube download is aborted.
-• Not necessary now to click twice to abort YouTube download.
+﻿3.0.4
+• FFmpeg 6.1.1
+• Fixed crash joining files.
+• Added Stream mapping selection button.
+• Added forced aspect ratio padding in video preset wizard filters.
+• Other minor cosmetic bugfixes.
