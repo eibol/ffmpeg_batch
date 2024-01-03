@@ -10309,16 +10309,7 @@ namespace FFBatch
                 btn_set_track_param.Visible = false;
                 group_subs.Visible = true;
                 TB1.Visible = false;
-                if (Combo_single_subs_lang.Items.Count == 0)
-                {
-                    foreach (String item in Combo_sub_lang_mux.Items)
-                    {
-                        Combo_single_subs_lang.Items.Add(item);
-                        ct3_combo_language.Items.Add(item);
-                        combo_item_lang_2.Items.Add(item);
-                    }
-                }
-
+                
                 int list_int = 0;
 
                 if (listView1.Items.Count == listView3.Items.Count)
@@ -29190,6 +29181,13 @@ namespace FFBatch
             frm33.pic_vid.Image = img_streams.Images[0];
             frm33.pic_aud.Image = img_streams.Images[1];
             frm33.pic_subs.Image = img_streams.Images[2];
+
+            foreach (String item in Combo_sub_lang_mux.Items)
+            {
+                Combo_single_subs_lang.Items.Add(item);
+                ct3_combo_language.Items.Add(item);
+                combo_item_lang_2.Items.Add(item);
+            }
 
             //Christmas tree
             DateTime season = new DateTime(2024, 1, 8, 0, 0, 0);
