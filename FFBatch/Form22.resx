@@ -135,8 +135,8 @@
   <data name="txt_batch_concat.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
-    <value>panel1</value>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>panel_batch</value>
   </data>
   <data name="&gt;&gt;chk_copy.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -163,9 +163,6 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btn_end.Parent" xml:space="preserve">
-    <value>panel_batch</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
     <value>panel_batch</value>
   </data>
   <data name="&gt;&gt;txt_intro.Type" xml:space="preserve">
@@ -791,6 +788,9 @@
   <data name="btn_end.Text" xml:space="preserve">
     <value>Browse...</value>
   </data>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>panel1</value>
+  </data>
   <data name="&gt;&gt;radio_filter.Name" xml:space="preserve">
     <value>radio_filter</value>
   </data>
@@ -958,8 +958,5 @@
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ar-EG</value>
   </metadata>
 </root>

@@ -117,9 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;txt_path.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -133,20 +130,23 @@
   <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;pic_success.Name" xml:space="preserve">
-    <value>pic_success</value>
+  <data name="&gt;&gt;txt_path.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;btn_abort.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;label8.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;txt_args.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
     <value>79, 92</value>
+  </data>
+  <data name="&gt;&gt;pic_success.Name" xml:space="preserve">
+    <value>pic_success</value>
   </data>
   <data name="pic_success.Location" type="System.Drawing.Point, System.Drawing">
     <value>371, 92</value>
@@ -164,45 +164,6 @@
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pic_error.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="&gt;&gt;txt_args.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="btn_abort.Text" xml:space="preserve">
-    <value>Abort</value>
-  </data>
-  <data name="&gt;&gt;pic_error.Name" xml:space="preserve">
-    <value>pic_error</value>
-  </data>
-  <data name="&gt;&gt;txt_args.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="pic_error.Location" type="System.Drawing.Point, System.Drawing">
-    <value>371, 92</value>
-  </data>
-  <data name="&gt;&gt;txt_args.Name" xml:space="preserve">
-    <value>txt_args</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>2, 124</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 13</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Arguments</value>
-  </data>
-  <data name="txt_path.Size" type="System.Drawing.Size, System.Drawing">
-    <value>308, 20</value>
-  </data>
-  <data name="btn_abort.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="pic_error.TabIndex" type="System.Int32, mscorlib">
-    <value>150</value>
-  </data>
-  <data name="&gt;&gt;pic_error.Parent" xml:space="preserve">
-    <value>$this</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1994,6 +1955,45 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
+  <data name="btn_abort.Text" xml:space="preserve">
+    <value>Abort</value>
+  </data>
+  <data name="&gt;&gt;pic_error.Name" xml:space="preserve">
+    <value>pic_error</value>
+  </data>
+  <data name="&gt;&gt;txt_args.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pic_error.Location" type="System.Drawing.Point, System.Drawing">
+    <value>371, 92</value>
+  </data>
+  <data name="&gt;&gt;txt_args.Name" xml:space="preserve">
+    <value>txt_args</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>2, 124</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 13</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Arguments</value>
+  </data>
+  <data name="txt_path.Size" type="System.Drawing.Size, System.Drawing">
+    <value>308, 20</value>
+  </data>
+  <data name="btn_abort.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="pic_error.TabIndex" type="System.Int32, mscorlib">
+    <value>150</value>
+  </data>
+  <data name="&gt;&gt;pic_error.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="btn_abort.TabIndex" type="System.Int32, mscorlib">
     <value>104</value>
   </data>
@@ -2023,8 +2023,8 @@
         RF/WBZnFQBrgSi4oKgHSf4DYKCW1OJmBgdEAyM4uLykAijPOAbJFkrLB7A0gdlFIkDOQfQTI5kuHsK+A
         2EkQ9hMQuwjoCSD7C0h9OpjNxAE2B8KWAbFLUitA9jI45xdUFmWmZ5QoGFpaWio4puQnpSoEVxaXpOYW
         K3jmJecXFeQXJZakpgDVQtwHBoIQhaAQ0wBqtNBkoDIAxQOE9TkQHL6MYmcQYgiQXFpUBmUyMhkT5iPM
-        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACw8AAAsP
-        AZL5A6UAAALVSURBVDhPpZNZSJRRGIa/SEEyii4suvOmKFAw1IQwF8yyFIcUFUPCxH0bLVzGyRXJJc21
+        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACw0AAAsN
+        Ae0HwCwAAALVSURBVDhPpZNZSJRRGIa/SEEyii4suvOmKFAw1IQwF8yyFIcUFUPCxH0bLVzGyRXJJc21
         MpcyxZIkoch1UEuzWZx9/nHMlFFyxnEyw8zwQnibGckKvRC6eODAOe9zOLzfIQD/BQnkAuLxeTTAH6AJ
         5QRJlVISK8QkUUos69+Y92amZqj3fe/Bwp7CJEbF0OzU7N4E5rWCUZBuSkecVxxuaG/oRvmbcpZOo/sj
         4Al4JFaKdxWo1Cpa065R/LP4VNYgC2ObY3DscER6Z3owjcvGSSAW0IhgZL9Go7EctggUEotEopLQwtQC
@@ -2099,7 +2099,7 @@
   <data name="pic_error.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAAAI9SURBVDhPVVJdTxNBFJ0nlTdj
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAI9SURBVDhPVVJdTxNBFJ0nlTdj
         1JSWirQFWhCxdGe3tfjR7ZZtI8HE8N+M0RhfND7og/4EDYpEUEwDhUCKYIxfUZnZ2TR1d693bkuik9zJ
         7M09O+ecOQwYY+HAceZfLzDlGkzVrHlVtW57VbPl2eaWqvI7yuYLfr3EfLdAsxpDmy6/ys95VeOFLE+B
         51iAwF7ViiAvX8QeX/LneCrqzzNInmRhJh6TFeO3sHI4NAWyMApevUwlZzKgfyasLEiby3AkmYTBM4x1
@@ -2201,8 +2201,5 @@
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ar-EG</value>
   </metadata>
 </root>
