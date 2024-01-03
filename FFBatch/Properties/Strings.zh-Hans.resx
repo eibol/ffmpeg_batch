@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -120,8 +120,14 @@
   <data name="aborted" xml:space="preserve">
     <value>中止</value>
   </data>
+  <data name="aborted2" xml:space="preserve">
+    <value>用户已中止URL下载</value>
+  </data>
   <data name="aborting" xml:space="preserve">
     <value>正在中止</value>
+  </data>
+  <data name="abort_cap" xml:space="preserve">
+    <value>中止屏幕捕获</value>
   </data>
   <data name="abort_current" xml:space="preserve">
     <value>中止当前任务并继续</value>
@@ -177,6 +183,12 @@
   <data name="Add_custom_column" xml:space="preserve">
     <value>添加自定义列</value>
   </data>
+  <data name="add_cust_param" xml:space="preserve">
+    <value>请添加自定义参数列，为单个/多个文件添加特定预设。</value>
+  </data>
+  <data name="add_excl_ws" xml:space="preserve">
+    <value>在 Windows 安全中心为 ffmpeg 添加排除项</value>
+  </data>
   <data name="add_file" xml:space="preserve">
     <value>添加文件</value>
   </data>
@@ -185,6 +197,9 @@
   </data>
   <data name="add_folder" xml:space="preserve">
     <value>新增文件夹</value>
+  </data>
+  <data name="add_input" xml:space="preserve">
+    <value>将输入文件添加到参数</value>
   </data>
   <data name="add_strack" xml:space="preserve">
     <value>添加字幕流</value>
@@ -198,11 +213,20 @@
   <data name="add_txt_out" xml:space="preserve">
     <value>将文本添加到输出文件名</value>
   </data>
+  <data name="add_variable" xml:space="preserve">
+    <value>Add variable to parameters</value>
+  </data>
   <data name="add_vtrack" xml:space="preserve">
     <value>添加视频流</value>
   </data>
+  <data name="admin_cmd" xml:space="preserve">
+    <value>命令提示符将要求您提供管理员权限。</value>
+  </data>
   <data name="adm_req" xml:space="preserve">
     <value>接下来需要管理员权限</value>
+  </data>
+  <data name="all" xml:space="preserve">
+    <value>全部</value>
   </data>
   <data name="allow_adm" xml:space="preserve">
     <value>请允许命令提示符管理员权限替换当前的ffmpeg</value>
@@ -231,6 +255,9 @@
   <data name="alr_track" xml:space="preserve">
     <value>列表已包含视频轨道</value>
   </data>
+  <data name="ansi_rec" xml:space="preserve">
+    <value>建议使用没有 BOM 文本编码的 ANSI 或 UTF。</value>
+  </data>
   <data name="any_str" xml:space="preserve">
     <value>任何流</value>
   </data>
@@ -255,6 +282,9 @@
   <data name="app_failed" xml:space="preserve">
     <value>失败</value>
   </data>
+  <data name="app_min_1" xml:space="preserve">
+    <value>应用程序窗口将在录制开始前1秒最小化</value>
+  </data>
   <data name="app_ok" xml:space="preserve">
     <value>应用成功完成</value>
   </data>
@@ -264,14 +294,38 @@
   <data name="as_sub" xml:space="preserve">
     <value>ASS字幕可用</value>
   </data>
+  <data name="attempt_exc" xml:space="preserve">
+    <value>此功能尝试为当前 ffmpeg.exe 添加一个排除项到 Windows 安全中心。</value>
+  </data>
   <data name="Audio_codec" xml:space="preserve">
     <value>音频编解码器</value>
   </data>
   <data name="aud_str_c" xml:space="preserve">
     <value>音频流复制</value>
   </data>
+  <data name="Aud_wave" xml:space="preserve">
+    <value>音频波形格式</value>
+  </data>
+  <data name="autorun_dis" xml:space="preserve">
+    <value>自动运行被禁用</value>
+  </data>
+  <data name="autorun_en" xml:space="preserve">
+    <value>自动运行已启用</value>
+  </data>
   <data name="autosh" xml:space="preserve">
     <value>连接时禁用自动关机</value>
+  </data>
+  <data name="autoshut_en" xml:space="preserve">
+    <value>启用自动关机</value>
+  </data>
+  <data name="autoshut_st" xml:space="preserve">
+    <value>电脑关机启动</value>
+  </data>
+  <data name="auto_ask" xml:space="preserve">
+    <value>顺序编码自动运行已启用。您要保留此设置吗？</value>
+  </data>
+  <data name="auto_ask2" xml:space="preserve">
+    <value>多文件编码自动运行已启用。您要保留此设置吗？</value>
   </data>
   <data name="auto_sh" xml:space="preserve">
     <value>完成后自动关机</value>
@@ -279,8 +333,17 @@
   <data name="av" xml:space="preserve">
     <value>音频和视频</value>
   </data>
+  <data name="av1_noslide" xml:space="preserve">
+    <value>仅时间搜索按钮可用。</value>
+  </data>
+  <data name="av1_w" xml:space="preserve">
+    <value>AV1 视频关键帧滑块不能与当前 ffmpeg.exe 基本版本一起使用。 请在设置中浏览完整版本。</value>
+  </data>
   <data name="available" xml:space="preserve">
     <value>可用的</value>
+  </data>
+  <data name="avgs" xml:space="preserve">
+    <value>平均速度：</value>
   </data>
   <data name="avg_bit" xml:space="preserve">
     <value>平均比特率:</value>
@@ -297,8 +360,14 @@
   <data name="avoid_overw" xml:space="preserve">
     <value>避免可能的覆盖</value>
   </data>
+  <data name="avoid_overw1" xml:space="preserve">
+    <value>为了避免可能的覆盖</value>
+  </data>
   <data name="AV_split_wizard" xml:space="preserve">
     <value>A/V分割向导</value>
+  </data>
+  <data name="a_bitr" xml:space="preserve">
+    <value>音频比特率</value>
   </data>
   <data name="backup_suc" xml:space="preserve">
     <value>备份文件加载成功</value>
@@ -312,6 +381,9 @@
   <data name="batch_concat_msg" xml:space="preserve">
     <value>启用了批量连接，但未选择初始文件或结束文件，请选择其中之一或禁用此设置.</value>
   </data>
+  <data name="batch_concat_msg1" xml:space="preserve">
+    <value>启用了批量连接，但未选择初始文件或结束文件。请选择其中之一或禁用此设置。</value>
+  </data>
   <data name="batch_mux" xml:space="preserve">
     <value>批处理作业多路复用成功完成</value>
   </data>
@@ -320,6 +392,24 @@
   </data>
   <data name="Below_normal" xml:space="preserve">
     <value>低于一般</value>
+  </data>
+  <data name="big_size" xml:space="preserve">
+    <value>更大的尺寸</value>
+  </data>
+  <data name="bitrate" xml:space="preserve">
+    <value>比特率</value>
+  </data>
+  <data name="black" xml:space="preserve">
+    <value>黑色</value>
+  </data>
+  <data name="browse" xml:space="preserve">
+    <value>浏览</value>
+  </data>
+  <data name="browsing" xml:space="preserve">
+    <value>浏览</value>
+  </data>
+  <data name="brow_page" xml:space="preserve">
+    <value>浏览网址内容：页面</value>
   </data>
   <data name="brow_sub" xml:space="preserve">
     <value>浏览字幕</value>
@@ -366,11 +456,35 @@
   <data name="capture_time2" xml:space="preserve">
     <value>项目的捕获时间</value>
   </data>
+  <data name="capt_1" xml:space="preserve">
+    <value>1秒捕捉</value>
+  </data>
+  <data name="capt_2" xml:space="preserve">
+    <value>2秒内捕获</value>
+  </data>
+  <data name="capt_3" xml:space="preserve">
+    <value>3秒内捕获</value>
+  </data>
   <data name="capt_params" xml:space="preserve">
     <value>m3u的捕获参数字段不能为空</value>
   </data>
+  <data name="capt_term" xml:space="preserve">
+    <value>捕获终止</value>
+  </data>
+  <data name="capt_virtual" xml:space="preserve">
+    <value>要捕获音频播放，需要虚拟音频驱动程序。</value>
+  </data>
   <data name="change_def" xml:space="preserve">
     <value>更改默认状态</value>
+  </data>
+  <data name="chaps_f" xml:space="preserve">
+    <value>找到的章节。</value>
+  </data>
+  <data name="chapters" xml:space="preserve">
+    <value>章节</value>
+  </data>
+  <data name="chapters_all" xml:space="preserve">
+    <value>手动章节布局将应用于所有列表文件。 你确定吗？</value>
   </data>
   <data name="characters" xml:space="preserve">
     <value>字符.</value>
@@ -387,6 +501,9 @@
   <data name="check_log" xml:space="preserve">
     <value>您可以在主选项卡上检查日志文件以获取更多错误信息</value>
   </data>
+  <data name="check_not_st" xml:space="preserve">
+    <value>FFmpeg.exe MD5 校验和尚未存储。</value>
+  </data>
   <data name="check_trim1" xml:space="preserve">
     <value>选中此项以修剪在开始/结束字段中选择的时间量</value>
   </data>
@@ -395,6 +512,9 @@
   </data>
   <data name="check_urls" xml:space="preserve">
     <value>检查URL是否已准备好捕获</value>
+  </data>
+  <data name="check_web_up" xml:space="preserve">
+    <value>您想访问项目网站以检查新版本吗？</value>
   </data>
   <data name="check_ytdl" xml:space="preserve">
     <value>检查yt-dl版本...</value>
@@ -423,6 +543,9 @@
   <data name="codec_params" xml:space="preserve">
     <value>编解码器类型参数，如</value>
   </data>
+  <data name="computer_will" xml:space="preserve">
+    <value>电脑会</value>
+  </data>
   <data name="concat_abort" xml:space="preserve">
     <value>连接被用户中止</value>
   </data>
@@ -443,6 +566,9 @@
   </data>
   <data name="concat_vid_help" xml:space="preserve">
     <value>	此过滤器允许加入不同质量的视频，它提高了兼容性，但需要重新编码音频和视频。参数字段可以留空。注意：只允许使用视频文件。</value>
+  </data>
+  <data name="concat_vid_help1" xml:space="preserve">
+    <value>此滤镜允许合并不同质量的视频，它提高了兼容性，但需要重新编码音频和视频。参数字段可以留空。注意：只允许使用视频文件。</value>
   </data>
   <data name="conc_comp" xml:space="preserve">
     <value>连接完成</value>
@@ -477,6 +603,9 @@
   <data name="container1" xml:space="preserve">
     <value>不支持容器</value>
   </data>
+  <data name="contin" xml:space="preserve">
+    <value>继续？</value>
+  </data>
   <data name="continu" xml:space="preserve">
     <value>你要继续吗？</value>
   </data>
@@ -491,6 +620,18 @@
   </data>
   <data name="create_vid_img" xml:space="preserve">
     <value>从静止图像创建视频</value>
+  </data>
+  <data name="crop1" xml:space="preserve">
+    <value>检测/裁剪视频黑条</value>
+  </data>
+  <data name="crop2" xml:space="preserve">
+    <value>在参数字段中找到了裁剪过滤器。 请确保删除任何以前的 -vf 裁剪实例。</value>
+  </data>
+  <data name="crop3" xml:space="preserve">
+    <value>添加了以下参数：</value>
+  </data>
+  <data name="custom" xml:space="preserve">
+    <value>惯例</value>
   </data>
   <data name="custom_rel" xml:space="preserve">
     <value>自定义相对路径</value>
@@ -510,11 +651,29 @@
   <data name="Default_track" xml:space="preserve">
     <value>默认轨道</value>
   </data>
+  <data name="def_mapping" xml:space="preserve">
+    <value>默认情况下，仅选择每种类型的第一个流</value>
+  </data>
   <data name="def_rn" xml:space="preserve">
     <value>无法删除默认预设</value>
   </data>
+  <data name="delay_act" xml:space="preserve">
+    <value>延迟</value>
+  </data>
   <data name="deleted" xml:space="preserve">
     <value>已删除</value>
+  </data>
+  <data name="deleting_f" xml:space="preserve">
+    <value>正在删除...</value>
+  </data>
+  <data name="deleting_files" xml:space="preserve">
+    <value>正在删除文件...</value>
+  </data>
+  <data name="deleting_proc" xml:space="preserve">
+    <value>正在删除已处理的文件...</value>
+  </data>
+  <data name="deleting_sourc" xml:space="preserve">
+    <value>正在删除源文件...</value>
   </data>
   <data name="del_file" xml:space="preserve">
     <value>删除文件</value>
@@ -525,23 +684,38 @@
   <data name="del_overw" xml:space="preserve">
     <value>无法同时覆盖和删除源。请确保两个设置未同时启用。</value>
   </data>
+  <data name="del_overw2" xml:space="preserve">
+    <value>为了允许同时启用文件覆盖和删除源，删除源设置现在设置为：发送到回收站和一一删除。</value>
+  </data>
   <data name="del_pres" xml:space="preserve">
     <value>删除当前预设</value>
   </data>
   <data name="demuxer_help" xml:space="preserve">
     <value>在这种模式下，音频/视频文件可以被流式复制，只要它们共享质量（大小、编解码器、比特率）。注意：并非所有容器都支持流复制。如果出现播放问题或未合并文件，则可能需要重新编码。</value>
   </data>
+  <data name="demuxer_help1" xml:space="preserve">
+    <value>在这种模式下，音频/视频文件可以被流式复制，只要它们共享质量（大小、编解码器、比特率）。注意：并非所有容器都支持流复制。如果出现播放问题或未合并文件，则可能需要重新编码。</value>
+  </data>
   <data name="dest_err" xml:space="preserve">
     <value>无法创建目标文件夹，确保它是可写路径。</value>
   </data>
+  <data name="dest_not_empty" xml:space="preserve">
+    <value>目标文件夹不为空。继续？</value>
+  </data>
   <data name="Detect_silence_wizard" xml:space="preserve">
     <value>检测静音向导</value>
+  </data>
+  <data name="dif_in_out_f" xml:space="preserve">
+    <value>不同的输入文件夹到单个输出文件夹</value>
   </data>
   <data name="Display_file_streams" xml:space="preserve">
     <value>显示文件流</value>
   </data>
   <data name="Display_last_log" xml:space="preserve">
     <value>显示上一次的日志</value>
+  </data>
+  <data name="Display_media_information" xml:space="preserve">
+    <value>显示多媒体信息</value>
   </data>
   <data name="Display_multimedia_file_info" xml:space="preserve">
     <value>显示多媒体文件信息</value>
@@ -552,8 +726,14 @@
   <data name="dis_url_streams" xml:space="preserve">
     <value>显示URL流</value>
   </data>
+  <data name="download" xml:space="preserve">
+    <value>下载</value>
+  </data>
   <data name="Downloading" xml:space="preserve">
     <value>下载中</value>
+  </data>
+  <data name="down_com" xml:space="preserve">
+    <value>下载完成</value>
   </data>
   <data name="down_empty" xml:space="preserve">
     <value>下载列表为空。</value>
@@ -564,11 +744,26 @@
   <data name="down_multi" xml:space="preserve">
     <value>开始捕获所有网址</value>
   </data>
+  <data name="down_prog" xml:space="preserve">
+    <value>下载正在进行中，请在关闭窗口前中止。</value>
+  </data>
+  <data name="down_prog2" xml:space="preserve">
+    <value>正在下载</value>
+  </data>
+  <data name="down_p_ab" xml:space="preserve">
+    <value>正在下载，你想强制退出吗？</value>
+  </data>
   <data name="down_up" xml:space="preserve">
     <value>下载更新</value>
   </data>
   <data name="drag1" xml:space="preserve">
     <value>将文件或文件夹拖放到此处</value>
+  </data>
+  <data name="drop_big" xml:space="preserve">
+    <value>丢弃的文件太大，仅支持1MB以下的文本文件。</value>
+  </data>
+  <data name="drop_one" xml:space="preserve">
+    <value>请只删除一个文件</value>
   </data>
   <data name="dup_not" xml:space="preserve">
     <value>不允许重复值</value>
@@ -597,8 +792,17 @@
   <data name="edit_pres" xml:space="preserve">
     <value>编辑预设列表</value>
   </data>
+  <data name="eighth" xml:space="preserve">
+    <value>第八</value>
+  </data>
   <data name="elapsed" xml:space="preserve">
     <value>消耗时间:</value>
+  </data>
+  <data name="encode" xml:space="preserve">
+    <value>编码</value>
+  </data>
+  <data name="encoded" xml:space="preserve">
+    <value>编码</value>
   </data>
   <data name="Encoding" xml:space="preserve">
     <value>编码</value>
@@ -621,11 +825,23 @@
   <data name="enc_fail_second" xml:space="preserve">
     <value>第二次参数的编码测试失败:</value>
   </data>
+  <data name="enc_not_sup1" xml:space="preserve">
+    <value>您当前的 ffmpeg.exe 版本不支持所选编码器。</value>
+  </data>
+  <data name="enc_not_sup2" xml:space="preserve">
+    <value>您可以在设置 -&gt; 搜索其他 ffmpeg 版本中尝试更新的完整版本。</value>
+  </data>
+  <data name="enc_not_sup3" xml:space="preserve">
+    <value>不支持编码器</value>
+  </data>
   <data name="enc_preset" xml:space="preserve">
     <value>编码预设</value>
   </data>
   <data name="enc_test_fail" xml:space="preserve">
     <value>编码测试失败，检查上面的输出</value>
+  </data>
+  <data name="enc_warm" xml:space="preserve">
+    <value>FFmpeg Batch - 编码完成并带有警告</value>
   </data>
   <data name="enc_warns" xml:space="preserve">
     <value>FFmpeg批量编码完成并出现警告</value>
@@ -638,6 +854,15 @@
   </data>
   <data name="end_short" xml:space="preserve">
     <value>结束时间比开始时间短</value>
+  </data>
+  <data name="en_day" xml:space="preserve">
+    <value>启用日间模式</value>
+  </data>
+  <data name="en_night" xml:space="preserve">
+    <value>开启夜间模式</value>
+  </data>
+  <data name="en_target_size" xml:space="preserve">
+    <value>输出尺寸:</value>
   </data>
   <data name="error" xml:space="preserve">
     <value>错误</value>
@@ -672,11 +897,20 @@
   <data name="error_test_f" xml:space="preserve">
     <value>写入测试文件时出错</value>
   </data>
+  <data name="error_writing" xml:space="preserve">
+    <value>写入目标文件夹时出错。请选择其他路径，或确保您具有写入权限。</value>
+  </data>
   <data name="err_bck" xml:space="preserve">
     <value>创建备份时出错，请选择其他位置</value>
   </data>
+  <data name="err_chap" xml:space="preserve">
+    <value>错误：视频不包含任何章节。</value>
+  </data>
   <data name="err_check" xml:space="preserve">
     <value>检查更新时出错</value>
+  </data>
+  <data name="err_clipb" xml:space="preserve">
+    <value>复制到剪贴板时出错</value>
   </data>
   <data name="err_close_procs" xml:space="preserve">
     <value>关闭过程时出错:</value>
@@ -689,6 +923,9 @@
   </data>
   <data name="err_connect" xml:space="preserve">
     <value>连接到 Internet 时出错。还是要继续？</value>
+  </data>
+  <data name="err_crop" xml:space="preserve">
+    <value>创建裁剪预览时出错。 请检查大小/坐标参数不超过视频边界。</value>
   </data>
   <data name="err_dec" xml:space="preserve">
     <value>未知错误，刷新解码器列表</value>
@@ -711,11 +948,17 @@
   <data name="err_kf" xml:space="preserve">
     <value>获取关键帧时出错，输入格式无效。</value>
   </data>
+  <data name="err_long_path" xml:space="preserve">
+    <value>某些元素的组合路径或文件名长度太长。 请将其减少到 255 个字符以下。</value>
+  </data>
   <data name="err_oc" xml:space="preserve">
     <value>发生错误</value>
   </data>
   <data name="err_pars_ff" xml:space="preserve">
     <value>解析ffmpeg版本时出错，文件可能已损坏。</value>
+  </data>
+  <data name="err_pl_vlc" xml:space="preserve">
+    <value>尝试使用VLC播放URL时出错:</value>
   </data>
   <data name="err_port" xml:space="preserve">
     <value>无法在应用程序路径上创建便携式设置文件夹:</value>
@@ -726,14 +969,29 @@
   <data name="err_qf" xml:space="preserve">
     <value>加载队列会话时出错，意外的文件格式</value>
   </data>
+  <data name="err_save_qu" xml:space="preserve">
+    <value>保存队列文件时出错</value>
+  </data>
+  <data name="err_save_track" xml:space="preserve">
+    <value>保存轨道时出错</value>
+  </data>
   <data name="err_saving_pres" xml:space="preserve">
     <value>保存预设文件时出错</value>
   </data>
   <data name="err_set" xml:space="preserve">
     <value>保存设置时出错</value>
   </data>
+  <data name="err_test_temp" xml:space="preserve">
+    <value>无法在TEMP位置创建测试文件夹</value>
+  </data>
   <data name="err_wavs" xml:space="preserve">
     <value>播放文件时出错，仅支持PCM波形文件</value>
+  </data>
+  <data name="err_write_out" xml:space="preserve">
+    <value>写入输出文件夹时出错:</value>
+  </data>
+  <data name="err_write_temp" xml:space="preserve">
+    <value>写入临时文件夹时出错</value>
   </data>
   <data name="err_yt_2" xml:space="preserve">
     <value>尝试更新yt-dl时发生错误:</value>
@@ -747,8 +1005,20 @@
   <data name="est_size" xml:space="preserve">
     <value>预估大小:</value>
   </data>
+  <data name="excl_add2" xml:space="preserve">
+    <value>添加了排除</value>
+  </data>
+  <data name="excl_added" xml:space="preserve">
+    <value>排除添加到 Windows 安全。 您可以在下一个屏幕上查看它。</value>
+  </data>
+  <data name="excl_list" xml:space="preserve">
+    <value>文件类型排除列表</value>
+  </data>
   <data name="exc_aud" xml:space="preserve">
     <value>排除音频流</value>
+  </data>
+  <data name="exc_dur" xml:space="preserve">
+    <value>超过源持续时间</value>
   </data>
   <data name="exe_files" xml:space="preserve">
     <value>可执行文件</value>
@@ -759,8 +1029,17 @@
   <data name="exit" xml:space="preserve">
     <value>退出</value>
   </data>
+  <data name="exit_code" xml:space="preserve">
+    <value>退出代码</value>
+  </data>
   <data name="extension" xml:space="preserve">
     <value>扩展名</value>
+  </data>
+  <data name="ext_com_err" xml:space="preserve">
+    <value>外部命令返回错误</value>
+  </data>
+  <data name="ext_com_ok" xml:space="preserve">
+    <value>外部命令成功执行</value>
   </data>
   <data name="fade1" xml:space="preserve">
     <value>淡入时间比文件持续时间长</value>
@@ -822,6 +1101,9 @@
   <data name="ffs" xml:space="preserve">
     <value>检测到正在运行的FFmpeg进程</value>
   </data>
+  <data name="ff_copied" xml:space="preserve">
+    <value>FFMPEG 参数复制到剪贴板：</value>
+  </data>
   <data name="ff_del" xml:space="preserve">
     <value>FFmpeg可执行文件被删除，应用程序将不起作用</value>
   </data>
@@ -852,6 +1134,9 @@
   <data name="ff_test_ok" xml:space="preserve">
     <value>FFMPEG测试成功</value>
   </data>
+  <data name="fifth" xml:space="preserve">
+    <value>第五</value>
+  </data>
   <data name="file" xml:space="preserve">
     <value>文件</value>
   </data>
@@ -860,6 +1145,9 @@
   </data>
   <data name="files" xml:space="preserve">
     <value>文件</value>
+  </data>
+  <data name="files_long_t" xml:space="preserve">
+    <value>文件可能需要很长时间。你确定吗？</value>
   </data>
   <data name="files_time" xml:space="preserve">
     <value>文件可能需要一些时间，继续？</value>
@@ -918,6 +1206,12 @@
   <data name="filter_meta" xml:space="preserve">
     <value>搜索文件元数据</value>
   </data>
+  <data name="filter_not_qfl" xml:space="preserve">
+    <value>如果没有获取文件持续时间，则过滤器不可用。</value>
+  </data>
+  <data name="filter_quick_not" xml:space="preserve">
+    <value>此功能不能在启用快速文件列表的情况下使用。</value>
+  </data>
   <data name="filter_rate" xml:space="preserve">
     <value>按视频帧率过滤</value>
   </data>
@@ -936,6 +1230,12 @@
   <data name="find_dups" xml:space="preserve">
     <value>寻找重复...</value>
   </data>
+  <data name="finish" xml:space="preserve">
+    <value>结束</value>
+  </data>
+  <data name="first" xml:space="preserve">
+    <value>第一的</value>
+  </data>
   <data name="first_audio" xml:space="preserve">
     <value>(找到第一个音频流)</value>
   </data>
@@ -951,6 +1251,9 @@
   <data name="folder_empty" xml:space="preserve">
     <value>文件夹为空</value>
   </data>
+  <data name="forced" xml:space="preserve">
+    <value>被迫</value>
+  </data>
   <data name="Format" xml:space="preserve">
     <value>格式</value>
   </data>
@@ -965,6 +1268,12 @@
   </data>
   <data name="found" xml:space="preserve">
     <value>找到</value>
+  </data>
+  <data name="fourth" xml:space="preserve">
+    <value>第四</value>
+  </data>
+  <data name="frame_size" xml:space="preserve">
+    <value>帧的大小</value>
   </data>
   <data name="fr_rate" xml:space="preserve">
     <value>帧率</value>
@@ -984,8 +1293,14 @@
   <data name="get_cont" xml:space="preserve">
     <value>获取内容</value>
   </data>
+  <data name="get_prev" xml:space="preserve">
+    <value>获取帧</value>
+  </data>
   <data name="Get_total_seconds_frames" xml:space="preserve">
     <value>获取总秒数/帧</value>
+  </data>
+  <data name="happy_y" xml:space="preserve">
+    <value>新年快乐</value>
   </data>
   <data name="header_fail" xml:space="preserve">
     <value>无法写入标题</value>
@@ -1014,6 +1329,12 @@
   <data name="hrq" xml:space="preserve">
     <value>更高质量</value>
   </data>
+  <data name="hw_ff_1" xml:space="preserve">
+    <value>硬件视频编码器的编码性能可能因您的 ffmpeg.exe 版本而异。</value>
+  </data>
+  <data name="Hw_ff_2" xml:space="preserve">
+    <value>如果您的性能不佳，请在 gyan.dev（可在应用程序设置中找到）检查最新的 ffmpeg git master 版本以替换当前的 ffmpeg.exe 版本。</value>
+  </data>
   <data name="Idle" xml:space="preserve">
     <value>闲置</value>
   </data>
@@ -1029,14 +1350,32 @@
   <data name="image_audio" xml:space="preserve">
     <value>音频图像</value>
   </data>
+  <data name="imgs" xml:space="preserve">
+    <value>图片</value>
+  </data>
+  <data name="img_copied" xml:space="preserve">
+    <value>图像已复制到剪贴板。</value>
+  </data>
+  <data name="img_empty" xml:space="preserve">
+    <value>未选择图像</value>
+  </data>
+  <data name="img_to_v" xml:space="preserve">
+    <value>图像转视频向导</value>
+  </data>
   <data name="inc_font" xml:space="preserve">
     <value>增加列表字体大小</value>
   </data>
   <data name="information" xml:space="preserve">
     <value>信息</value>
   </data>
+  <data name="init0" xml:space="preserve">
+    <value>初始化</value>
+  </data>
   <data name="init1" xml:space="preserve">
     <value>安装中</value>
+  </data>
+  <data name="init_wait" xml:space="preserve">
+    <value>正在初始化下载，请稍候...</value>
   </data>
   <data name="inst_err" xml:space="preserve">
     <value>安装错误</value>
@@ -1068,17 +1407,29 @@
   <data name="invalid_p" xml:space="preserve">
     <value>预设无效，可能需要检查编码参数或输出容器</value>
   </data>
+  <data name="invalid_param" xml:space="preserve">
+    <value>屏幕捕获参数无效</value>
+  </data>
   <data name="invalid_path" xml:space="preserve">
     <value>所选路径无效</value>
   </data>
   <data name="invalid_pres" xml:space="preserve">
     <value>发现无效的预设数据</value>
   </data>
+  <data name="invalid_p_2" xml:space="preserve">
+    <value>无效的捕获参数</value>
+  </data>
   <data name="invalid_rem" xml:space="preserve">
     <value>检测到并删除了无效字符</value>
   </data>
   <data name="invalid_yt" xml:space="preserve">
     <value>找不到有效的YouTube网址</value>
+  </data>
+  <data name="in_60" xml:space="preserve">
+    <value>在60秒内</value>
+  </data>
+  <data name="in_avis" xml:space="preserve">
+    <value>在 Avisynth 脚本中，文本编码</value>
   </data>
   <data name="items_alr" xml:space="preserve">
     <value>已在任务列表中处理的项目</value>
@@ -1098,11 +1449,20 @@
   <data name="jobs_reset" xml:space="preserve">
     <value>任务列表已处理，请使用右上角的按钮重置状态以重新开始</value>
   </data>
+  <data name="join_files" xml:space="preserve">
+    <value>合并文件</value>
+  </data>
   <data name="keep" xml:space="preserve">
     <value>保留</value>
   </data>
+  <data name="kf_no_a" xml:space="preserve">
+    <value>轨迹栏关键帧导航将不可用。 您仍然可以使用时间按钮。</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>语言</value>
+  </data>
+  <data name="lang_corrupted" xml:space="preserve">
+    <value>语言配置已损坏，请重新安装应用程序。</value>
   </data>
   <data name="lang_tracks" xml:space="preserve">
     <value>为未定义的轨道设置语言</value>
@@ -1134,6 +1494,9 @@
   <data name="less_one" xml:space="preserve">
     <value>1分钟</value>
   </data>
+  <data name="libr" xml:space="preserve">
+    <value>图书馆</value>
+  </data>
   <data name="links" xml:space="preserve">
     <value>网址列表</value>
   </data>
@@ -1152,6 +1515,9 @@
   <data name="load_queue_file" xml:space="preserve">
     <value>加载队列文件</value>
   </data>
+  <data name="logging_f" xml:space="preserve">
+    <value>正在日志记录:</value>
+  </data>
   <data name="log_dis" xml:space="preserve">
     <value>日志被禁用</value>
   </data>
@@ -1166,6 +1532,12 @@
   </data>
   <data name="log_size" xml:space="preserve">
     <value>日志大小:</value>
+  </data>
+  <data name="low_size" xml:space="preserve">
+    <value>较小的尺寸</value>
+  </data>
+  <data name="low_sp" xml:space="preserve">
+    <value>磁盘空间不足</value>
   </data>
   <data name="lrq" xml:space="preserve">
     <value>低质量</value>
@@ -1182,11 +1554,50 @@
   <data name="man_path" xml:space="preserve">
     <value>手动选择输出路径</value>
   </data>
+  <data name="map" xml:space="preserve">
+    <value>绘制地图</value>
+  </data>
+  <data name="mapp_all_str" xml:space="preserve">
+    <value>映射所有流</value>
+  </data>
+  <data name="map_all_a" xml:space="preserve">
+    <value>映射所有音频流</value>
+  </data>
+  <data name="map_all_s" xml:space="preserve">
+    <value>映射所有字幕流</value>
+  </data>
+  <data name="map_all_v" xml:space="preserve">
+    <value>映射所有视频流</value>
+  </data>
+  <data name="map_str" xml:space="preserve">
+    <value>地图流</value>
+  </data>
+  <data name="map_strs" xml:space="preserve">
+    <value>地图流</value>
+  </data>
   <data name="max_links" xml:space="preserve">
     <value>下载列表最多支持2000个链接。</value>
   </data>
   <data name="max_list" xml:space="preserve">
     <value>已达到最大列表长度</value>
+  </data>
+  <data name="md5_fail" xml:space="preserve">
+    <value>FFmpeg.exe MD5 校验和失败。</value>
+  </data>
+  <data name="md5_fail1" xml:space="preserve">
+    <value>FFmpeg.exe MD5 校验和与存储值不匹配。 该文件可能已损坏或被黑客入侵。</value>
+  </data>
+  <data name="md5_not_match" xml:space="preserve">
+    <value>当前 MD5 校验和与存储值不匹配。 在添加排除项之前，请单击信任当前 ffmpeg。</value>
+  </data>
+  <data name="md5_reinst" xml:space="preserve">
+    <value>否则，它可能已被修改，应重新安装应用程序。</value>
+  </data>
+  <data name="md5_trust" xml:space="preserve">
+    <value>如果您最近更换了它，您可以认为它在安全设置上受信任。</value>
+  </data>
+  <data name="md5_valid" xml:space="preserve">
+    <value>FFmpeg.exe MD5 校验和有效。</value>
   </data>
   <data name="media_type" xml:space="preserve">
     <value>媒体类型</value>
@@ -1209,11 +1620,23 @@
   <data name="missing1" xml:space="preserve">
     <value>列表中缺少文件</value>
   </data>
+  <data name="missing_f" xml:space="preserve">
+    <value>丢失文件</value>
+  </data>
   <data name="mix_urls" xml:space="preserve">
     <value>不支持在列表中混合使用YouTube和其他类型的URL</value>
   </data>
   <data name="mix_urls2" xml:space="preserve">
     <value>文件列表包含Youtube和其他类型链接的混合。请仅选择包含YouTube链接或其他类型URL的列表。</value>
+  </data>
+  <data name="mon_ing" xml:space="preserve">
+    <value>监控文件夹</value>
+  </data>
+  <data name="mon_no_rel" xml:space="preserve">
+    <value>监控子文件夹时不能使用相对路径，请使用绝对路径，或禁用子文件夹。</value>
+  </data>
+  <data name="mon_path_equal" xml:space="preserve">
+    <value>监控的文件夹与主输出文件夹相同，请选择其他目标路径，或使用相对路径。</value>
   </data>
   <data name="move_down" xml:space="preserve">
     <value>下移项目</value>
@@ -1251,11 +1674,23 @@
   <data name="multiple_folders" xml:space="preserve">
     <value>多个文件夹到单个输出文件夹可能会导致覆盖。您可以启用</value>
   </data>
+  <data name="multiple_inst" xml:space="preserve">
+    <value>另一个应用程序实例已在运行。 多个实例可能会导致意外行为。 继续？</value>
+  </data>
+  <data name="multiple_inst_0" xml:space="preserve">
+    <value>多个实例</value>
+  </data>
   <data name="Multiple_presets_wizard" xml:space="preserve">
     <value>多个预设向导</value>
   </data>
   <data name="multiple_tr" xml:space="preserve">
     <value>选择了多个轨道</value>
+  </data>
+  <data name="multi_drop" xml:space="preserve">
+    <value>请只删除一个文件</value>
+  </data>
+  <data name="multi_drop2" xml:space="preserve">
+    <value>删除了多个文件</value>
   </data>
   <data name="multi_full" xml:space="preserve">
     <value>多媒体信息（完整报告）</value>
@@ -1289,6 +1724,9 @@
   </data>
   <data name="mux_jobs" xml:space="preserve">
     <value>多重工作管理</value>
+  </data>
+  <data name="mux_jobs1" xml:space="preserve">
+    <value>多路复用批处理作业管理器</value>
   </data>
   <data name="mux_ok" xml:space="preserve">
     <value>FFmpeg批量复用成功完成</value>
@@ -1329,11 +1767,23 @@
   <data name="next" xml:space="preserve">
     <value>下一个 --&gt;</value>
   </data>
+  <data name="next1" xml:space="preserve">
+    <value>下一个</value>
+  </data>
+  <data name="nineth" xml:space="preserve">
+    <value>第九</value>
+  </data>
   <data name="no" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="none" xml:space="preserve">
+    <value>none</value>
+  </data>
   <data name="none_copy" xml:space="preserve">
     <value>您不能为音频预设选择无或复制</value>
+  </data>
+  <data name="non_eng_rec" xml:space="preserve">
+    <value>注意：源文件名中的非英文字符可能会导致 ANSI 格式中的持续时间丢失。</value>
   </data>
   <data name="non_utf1" xml:space="preserve">
     <value>在列表中找到non-UTF字幕。非英语语言可能会显示不正确的字符。继续？</value>
@@ -1347,14 +1797,29 @@
   <data name="not_abort" xml:space="preserve">
     <value>某些进程无法中止，按确定重试</value>
   </data>
+  <data name="not_amf" xml:space="preserve">
+    <value>可能不适用于选定的 AMD amf 编码器。</value>
+  </data>
   <data name="not_deleted" xml:space="preserve">
     <value>未删除</value>
+  </data>
+  <data name="not_deleted1" xml:space="preserve">
+    <value>无法删除</value>
+  </data>
+  <data name="not_display" xml:space="preserve">
+    <value>不再显示</value>
   </data>
   <data name="not_found1" xml:space="preserve">
     <value>没有找到，请删除它或刷新列表</value>
   </data>
   <data name="not_include" xml:space="preserve">
     <value>不包括</value>
+  </data>
+  <data name="not_nvenc" xml:space="preserve">
+    <value>可能不适用于选定的 NVIDIA nvenc 编码器。</value>
+  </data>
+  <data name="not_qsv" xml:space="preserve">
+    <value>可能不适用于选定的 Intel QuickSync 编码器。</value>
   </data>
   <data name="not_queued" xml:space="preserve">
     <value>无处于排队状态的项目</value>
@@ -1380,6 +1845,9 @@
   <data name="not_subfolders" xml:space="preserve">
     <value>添加子文件夹已启用</value>
   </data>
+  <data name="not_sup_bom" xml:space="preserve">
+    <value>如果 ffmpeg 包含 BOM（字节顺序标记），则可能不支持它。</value>
+  </data>
   <data name="no_aerowiz" xml:space="preserve">
     <value>在应用程序路径中未找到 AeroWizard.dll，重新安装应用程序应该可以修复它</value>
   </data>
@@ -1398,10 +1866,16 @@
   <data name="no_bck" xml:space="preserve">
     <value>尚未创建备份文件</value>
   </data>
+  <data name="no_chaps" xml:space="preserve">
+    <value>当前文件中未找到章节。</value>
+  </data>
   <data name="no_chk_str" xml:space="preserve">
     <value>没有检查流以供选择</value>
   </data>
   <data name="no_concat_ef" xml:space="preserve">
+    <value>没有初始或结束文件</value>
+  </data>
+  <data name="no_concat_ef1" xml:space="preserve">
     <value>没有初始或结束文件</value>
   </data>
   <data name="no_ffmpeg" xml:space="preserve">
@@ -1503,11 +1977,20 @@
   <data name="one_track" xml:space="preserve">
     <value>请仅选择一条轨道以更改其默认状态</value>
   </data>
+  <data name="one_track1" xml:space="preserve">
+    <value>请仅选择一个文件以添加其流</value>
+  </data>
   <data name="one_try" xml:space="preserve">
     <value>添加至少一个文件以进行尝试</value>
   </data>
+  <data name="online_pr" xml:space="preserve">
+    <value>在线预设</value>
+  </data>
   <data name="onlye_basel" xml:space="preserve">
     <value>超快预设中仅支持基线配置文件</value>
+  </data>
+  <data name="only_1011" xml:space="preserve">
+    <value>仅在 Windows 10/11 中支持自动排除</value>
   </data>
   <data name="only_numbers" xml:space="preserve">
     <value>请只输入数字</value>
@@ -1517,6 +2000,15 @@
   </data>
   <data name="only_qu" xml:space="preserve">
     <value>只能移动处于排队状态的项目</value>
+  </data>
+  <data name="on_battery1" xml:space="preserve">
+    <value>电脑靠电池运行</value>
+  </data>
+  <data name="on_battery2" xml:space="preserve">
+    <value>编码设置为使用电池暂停并使用交流电源恢复。 是否要禁用此设置并强制恢复编码？</value>
+  </data>
+  <data name="on_rel_path" xml:space="preserve">
+    <value>在相对路径上</value>
   </data>
   <data name="open_comp" xml:space="preserve">
     <value>在队列完成时打开应用程序</value>
@@ -1551,6 +2043,9 @@
   <data name="orphan2" xml:space="preserve">
     <value>发现孤立进程</value>
   </data>
+  <data name="outf_count" xml:space="preserve">
+    <value>正在下载。总计数不可用。输出文件夹数:</value>
+  </data>
   <data name="output" xml:space="preserve">
     <value>输出</value>
   </data>
@@ -1571,6 +2066,9 @@
   </data>
   <data name="out_ext" xml:space="preserve">
     <value>输出文件扩展名。留空以使用源文件扩展名</value>
+  </data>
+  <data name="out_file" xml:space="preserve">
+    <value>输出文件</value>
   </data>
   <data name="out_files_naming" xml:space="preserve">
     <value>输出文件命名</value>
@@ -1659,6 +2157,9 @@
   <data name="pass2" xml:space="preserve">
     <value>2 pass:编码文件</value>
   </data>
+  <data name="Paste_any_URL" xml:space="preserve">
+    <value>粘贴链接</value>
+  </data>
   <data name="Paste_M3u_URL" xml:space="preserve">
     <value>粘贴M3u网址</value>
   </data>
@@ -1680,6 +2181,12 @@
   <data name="path_empty" xml:space="preserve">
     <value>路径字段为空</value>
   </data>
+  <data name="path_iparam" xml:space="preserve">
+    <value>将输入文件添加到参数</value>
+  </data>
+  <data name="path_i_add" xml:space="preserve">
+    <value>在 a/v 过滤器中添加文件路径</value>
+  </data>
   <data name="path_not" xml:space="preserve">
     <value>未找到所选路径</value>
   </data>
@@ -1694,6 +2201,9 @@
   </data>
   <data name="paused2" xml:space="preserve">
     <value>编码暂停</value>
+  </data>
+  <data name="pause_bat_ac" xml:space="preserve">
+    <value>暂停电池</value>
   </data>
   <data name="pending" xml:space="preserve">
     <value>待办的</value>
@@ -1716,6 +2226,9 @@
   <data name="please_not" xml:space="preserve">
     <value>请不要开始</value>
   </data>
+  <data name="pls_include" xml:space="preserve">
+    <value>请包括</value>
+  </data>
   <data name="pl_contents" xml:space="preserve">
     <value>获取播放列表内容...</value>
   </data>
@@ -1725,14 +2238,101 @@
   <data name="Power_off" xml:space="preserve">
     <value>关机</value>
   </data>
+  <data name="pr01" xml:space="preserve">
+    <value>视频: 复制流到MP4</value>
+  </data>
+  <data name="pr02" xml:space="preserve">
+    <value>视频: 将音轨转换为AAC HQ 2声道</value>
+  </data>
+  <data name="pr03" xml:space="preserve">
+    <value>视频: 将音轨转换为AC3 2通道</value>
+  </data>
+  <data name="pr04" xml:space="preserve">
+    <value>视频: 转换为ProRes MKV</value>
+  </data>
+  <data name="pr05" xml:space="preserve">
+    <value>视频: 转换为H264 HQ + 源音频</value>
+  </data>
+  <data name="pr06" xml:space="preserve">
+    <value>视频: 转换为H264超快</value>
+  </data>
+  <data name="pr07" xml:space="preserve">
+    <value>视频: 转换为 H265 HQ + 源音频</value>
+  </data>
+  <data name="pr08" xml:space="preserve">
+    <value>视频: 调整 1280x720 H264-AAC</value>
+  </data>
+  <data name="pr09" xml:space="preserve">
+    <value>视频: 顺时针旋转90度到 H264 + 源音频</value>
+  </data>
+  <data name="pr10" xml:space="preserve">
+    <value>视频: 逆时针旋转90度和垂直翻转到 H264 + 源音频</value>
+  </data>
+  <data name="pr11" xml:space="preserve">
+    <value>视频: 逆时针旋转90度到 H264 + 源音频</value>
+  </data>
+  <data name="pr12" xml:space="preserve">
+    <value>视频: 顺时针旋转90度和垂直翻转到 H264 + 源音频</value>
+  </data>
+  <data name="pr13" xml:space="preserve">
+    <value>视频: 旋转180度到 H264 + 源音频</value>
+  </data>
+  <data name="pr14" xml:space="preserve">
+    <value>视频: 删除字幕到MP4</value>
+  </data>
+  <data name="pr15" xml:space="preserve">
+    <value>音频: 转换为 FLAC 16/44,1KHz 2 通道</value>
+  </data>
+  <data name="pr16" xml:space="preserve">
+    <value>音频: 转换为 MP3 VBR HQ 2 ch 嵌入式封面</value>
+  </data>
+  <data name="pr17" xml:space="preserve">
+    <value>音频: 转换为 MP3 VBR HQ 2 ch</value>
+  </data>
+  <data name="pr18" xml:space="preserve">
+    <value>音频: 转换为 MP3 CBR HQ 2 ch</value>
+  </data>
+  <data name="pr19" xml:space="preserve">
+    <value>音频: 转换为 WAV 16/44,1KHz 2 通道</value>
+  </data>
   <data name="pr1_emp" xml:space="preserve">
     <value>预设1为空</value>
+  </data>
+  <data name="pr20" xml:space="preserve">
+    <value>字幕: 将第一个字幕轨道提取到SRT</value>
+  </data>
+  <data name="pr21" xml:space="preserve">
+    <value>图像: 将帧提取为图像</value>
+  </data>
+  <data name="pr21-2" xml:space="preserve">
+    <value>视频: 转换为AMD-VCE H264 HQ + 源音频</value>
+  </data>
+  <data name="pr21-21" xml:space="preserve">
+    <value>视频: 转换为AMD-VCE HEVC HQ + 源音频</value>
+  </data>
+  <data name="pr22" xml:space="preserve">
+    <value>以 24 fps + 音频 AAC 录制屏幕到 MKV</value>
+  </data>
+  <data name="pr23" xml:space="preserve">
+    <value>以 15 fps 1280x720 + 音频到 MKV 录制屏幕</value>
+  </data>
+  <data name="pr24" xml:space="preserve">
+    <value>以 30 fps 的速度录制屏幕 Nvidia NVENC + 音频 AAC 到 MKV</value>
+  </data>
+  <data name="pr25" xml:space="preserve">
+    <value>以 25 fps Intel QuickSync + 音频 AAC 到 MKV 录制屏幕</value>
+  </data>
+  <data name="pr26" xml:space="preserve">
+    <value>将1920像素宽度的图像加入MP4视频</value>
   </data>
   <data name="pr2_emp" xml:space="preserve">
     <value>预设2为空</value>
   </data>
   <data name="presets" xml:space="preserve">
     <value>预设</value>
+  </data>
+  <data name="press_c" xml:space="preserve">
+    <value>按取消</value>
   </data>
   <data name="pres_empt" xml:space="preserve">
     <value>预设说明不能为空</value>
@@ -1758,7 +2358,7 @@
   <data name="pres_saved" xml:space="preserve">
     <value>新预设已保存</value>
   </data>
-  <data name="prev" xml:space="preserve">
+  <data name="prev0" xml:space="preserve">
     <value>&lt;-- 上一页 </value>
   </data>
   <data name="prevent_dis" xml:space="preserve">
@@ -1766,6 +2366,9 @@
   </data>
   <data name="prevent_en" xml:space="preserve">
     <value>防止计算机进入睡眠状态已启用</value>
+  </data>
+  <data name="pre_input" xml:space="preserve">
+    <value>预输入</value>
   </data>
   <data name="pre_input1" xml:space="preserve">
     <value>预输入搜索格式不正确。通过双击更改或重置它。</value>
@@ -1781,6 +2384,12 @@
   </data>
   <data name="pre_in_path" xml:space="preserve">
     <value>保存预输入配置时发生错误。请确保您具有路径访问权限。</value>
+  </data>
+  <data name="pre_ss" xml:space="preserve">
+    <value>设置预输入搜索参数 -ss</value>
+  </data>
+  <data name="proceed1" xml:space="preserve">
+    <value>您要继续吗？</value>
   </data>
   <data name="processing" xml:space="preserve">
     <value>处理中</value>
@@ -1821,6 +2430,9 @@
   <data name="queue_net" xml:space="preserve">
     <value>队列包含来自网络共享的文件。您想在编码前将文件缓存到临时文件夹吗？</value>
   </data>
+  <data name="queue_not_f" xml:space="preserve">
+    <value>未找到队列文件。</value>
+  </data>
   <data name="queue_ok" xml:space="preserve">
     <value>队列列表加载成功</value>
   </data>
@@ -1829,6 +2441,42 @@
   </data>
   <data name="queue_temp" xml:space="preserve">
     <value>发现队列临时会话文件</value>
+  </data>
+  <data name="queue_warn" xml:space="preserve">
+    <value>文件列表加载成功.</value>
+  </data>
+  <data name="quick_f_m" xml:space="preserve">
+    <value>快速文件列表显着缩短了文件加载时间，但它有一些限制：</value>
+  </data>
+  <data name="quick_f_m2" xml:space="preserve">
+    <value>总剩余时间不可用，总进度仅显示编码文件计数。</value>
+  </data>
+  <data name="quick_f_m3" xml:space="preserve">
+    <value>不存储自定义列，但您可以稍后添加它们。</value>
+  </data>
+  <data name="quick_f_m4" xml:space="preserve">
+    <value>文件特征（持续时间、大小）仅在编码期间被猜测。 如果它们可用，则会显示个人进度。 如果没有，最后只会显示成功/错误状态。</value>
+  </data>
+  <data name="quick_f_m5" xml:space="preserve">
+    <value>无法使用两遍编码向导</value>
+  </data>
+  <data name="quick_f_m6" xml:space="preserve">
+    <value>启用快速文件列表时不支持淡入/淡出。</value>
+  </data>
+  <data name="quick_yt1" xml:space="preserve">
+    <value>快速链接/播放列表下载</value>
+  </data>
+  <data name="quick_yt2" xml:space="preserve">
+    <value>- 转到YouTube频道主网址，然后单击 VIDEOS 选项卡.</value>
+  </data>
+  <data name="quick_yt3" xml:space="preserve">
+    <value>-复制网址并粘贴到频道字段上</value>
+  </data>
+  <data name="quick_yt4" xml:space="preserve">
+    <value>-例子:</value>
+  </data>
+  <data name="quick_zero_no" xml:space="preserve">
+    <value>此设置与快速文件列表不兼容。</value>
   </data>
   <data name="q_abort" xml:space="preserve">
     <value>队列处理正在进行中。请在退出应用程序之前中止队列。</value>
@@ -1865,6 +2513,9 @@
   </data>
   <data name="recycled" xml:space="preserve">
     <value>回收</value>
+  </data>
+  <data name="rec_fail" xml:space="preserve">
+    <value>录音测试失败</value>
   </data>
   <data name="rec_screen" xml:space="preserve">
     <value>使用gdigrab一键录制屏幕</value>
@@ -1911,8 +2562,17 @@
   <data name="rem_blanks" xml:space="preserve">
     <value>移除空白行</value>
   </data>
+  <data name="rem_cust_p" xml:space="preserve">
+    <value>移除自定义参数</value>
+  </data>
   <data name="rem_err_rows" xml:space="preserve">
     <value>移除错误行</value>
+  </data>
+  <data name="rem_from_list" xml:space="preserve">
+    <value>从列表中删除所选项目</value>
+  </data>
+  <data name="rem_img" xml:space="preserve">
+    <value>删除图像？</value>
   </data>
   <data name="rem_pres" xml:space="preserve">
     <value>是否要移除当前预设？</value>
@@ -1922,6 +2582,15 @@
   </data>
   <data name="renamed" xml:space="preserve">
     <value>重命名</value>
+  </data>
+  <data name="ren_chars1" xml:space="preserve">
+    <value>在文件名中发现 ffmpeg 过滤器的不兼容字符 [,']。 这些文件名可能会导致错误。</value>
+  </data>
+  <data name="ren_chars2" xml:space="preserve">
+    <value>您想重命名它们以替换冲突的字符吗？</value>
+  </data>
+  <data name="ren_chars3" xml:space="preserve">
+    <value>文件名中的字符不兼容</value>
   </data>
   <data name="ren_out" xml:space="preserve">
     <value>重命名输出</value>
@@ -1941,6 +2610,9 @@
   <data name="required_file" xml:space="preserve">
     <value>未找到所需文件</value>
   </data>
+  <data name="req_w1011" xml:space="preserve">
+    <value>此自动功能需要 Windows 10/11。 您可以在防病毒软件中手动添加安全排除。</value>
+  </data>
   <data name="reset_default" xml:space="preserve">
     <value>所有自定义设置和预设都将被删除。你要继续吗？</value>
   </data>
@@ -1952,6 +2624,9 @@
   </data>
   <data name="Reset_list_items_to_queued" xml:space="preserve">
     <value>将列表项重置为排队</value>
+  </data>
+  <data name="reset_m_jobs" xml:space="preserve">
+    <value>重置任务状态</value>
   </data>
   <data name="reset_out" xml:space="preserve">
     <value>双击重置默认输出文件夹</value>
@@ -1970,6 +2645,18 @@
   </data>
   <data name="right_man_path" xml:space="preserve">
     <value>右键单击以手动写入/粘贴路径</value>
+  </data>
+  <data name="rotate1" xml:space="preserve">
+    <value>顺时针旋转90º</value>
+  </data>
+  <data name="rotate2" xml:space="preserve">
+    <value>逆时针旋转90º</value>
+  </data>
+  <data name="rotate3" xml:space="preserve">
+    <value>旋转180º</value>
+  </data>
+  <data name="rot_flip" xml:space="preserve">
+    <value>水平翻转</value>
   </data>
   <data name="runcom2" xml:space="preserve">
     <value>选择要在每个编码文件上执行的应用程序</value>
@@ -1998,14 +2685,23 @@
   <data name="saved" xml:space="preserve">
     <value>已保存</value>
   </data>
+  <data name="saved_img" xml:space="preserve">
+    <value>该帧已成功保存。</value>
+  </data>
   <data name="saved_qu" xml:space="preserve">
     <value>程序在文件编码过程中被中断。是否要加载上次保存的队列状态文件？</value>
+  </data>
+  <data name="save_all_str" xml:space="preserve">
+    <value>保存所有文件轨道</value>
   </data>
   <data name="save_current_queue" xml:space="preserve">
     <value>保存当前队列</value>
   </data>
   <data name="save_def" xml:space="preserve">
     <value>将当前参数保存为默认值</value>
+  </data>
+  <data name="save_img" xml:space="preserve">
+    <value>保存帧</value>
   </data>
   <data name="save_pres" xml:space="preserve">
     <value>保存当前预设</value>
@@ -2019,11 +2715,29 @@
   <data name="save_track" xml:space="preserve">
     <value>保存此轨道</value>
   </data>
+  <data name="scr_cap" xml:space="preserve">
+    <value>屏幕截图</value>
+  </data>
+  <data name="scr_fail" xml:space="preserve">
+    <value>屏幕截图测试失败.</value>
+  </data>
+  <data name="scsr_term" xml:space="preserve">
+    <value>屏幕捕获意外终止。文件可能被截断.</value>
+  </data>
+  <data name="second" xml:space="preserve">
+    <value>第二</value>
+  </data>
   <data name="seconds" xml:space="preserve">
     <value>秒</value>
   </data>
   <data name="second_p" xml:space="preserve">
     <value>2 pass</value>
+  </data>
+  <data name="sec_perf" xml:space="preserve">
+    <value>安全和性能</value>
+  </data>
+  <data name="selc_dev" xml:space="preserve">
+    <value>选择音频捕获设备</value>
   </data>
   <data name="select_out" xml:space="preserve">
     <value>请选择一个输出文件夹</value>
@@ -2039,6 +2753,9 @@
   </data>
   <data name="sel_format_pr" xml:space="preserve">
     <value>请选择预设的输出格式</value>
+  </data>
+  <data name="sel_lang" xml:space="preserve">
+    <value>选择语言</value>
   </data>
   <data name="sel_out1" xml:space="preserve">
     <value>请选择预设的输出格式</value>
@@ -2073,6 +2790,9 @@
   <data name="Set_as_trim_end_time" xml:space="preserve">
     <value>设置为修剪结束时间</value>
   </data>
+  <data name="set_cust_p" xml:space="preserve">
+    <value>设置自定义参数</value>
+  </data>
   <data name="set_del" xml:space="preserve">
     <value>点击设置回收站或删除源文件</value>
   </data>
@@ -2084,6 +2804,9 @@
   </data>
   <data name="set_st" xml:space="preserve">
     <value>设置为开始时间</value>
+  </data>
+  <data name="seventh" xml:space="preserve">
+    <value>第七</value>
   </data>
   <data name="shift_n" xml:space="preserve">
     <value>移位的音频不可用于串联。</value>
@@ -2106,6 +2829,9 @@
   <data name="silence_start" xml:space="preserve">
     <value>发现静音。开始:</value>
   </data>
+  <data name="sixth" xml:space="preserve">
+    <value>第六</value>
+  </data>
   <data name="size" xml:space="preserve">
     <value>大小</value>
   </data>
@@ -2114,6 +2840,9 @@
   </data>
   <data name="skip_err" xml:space="preserve">
     <value>跳过版本发生错误:</value>
+  </data>
+  <data name="skip_from_list" xml:space="preserve">
+    <value>从编码中跳过所选项目</value>
   </data>
   <data name="soft_update" xml:space="preserve">
     <value>软件更新</value>
@@ -2127,14 +2856,29 @@
   <data name="some_time" xml:space="preserve">
     <value>文件可能需要一些时间。继续？</value>
   </data>
+  <data name="sort_before" xml:space="preserve">
+    <value>开始前排序列表？</value>
+  </data>
   <data name="sort_list" xml:space="preserve">
     <value>排序列表</value>
+  </data>
+  <data name="sort_list1" xml:space="preserve">
+    <value>开始前排序列表？</value>
   </data>
   <data name="sort_list2" xml:space="preserve">
     <value>按降序对文件列表进行排序可以减少总的多文件编码时间。您可以在配置上更改此设置。</value>
   </data>
+  <data name="sort_list21" xml:space="preserve">
+    <value>排序文件列表提示</value>
+  </data>
+  <data name="sort_status" xml:space="preserve">
+    <value>请对标有状态的项目进行排序和检查文件列表</value>
+  </data>
   <data name="source_mov_text" xml:space="preserve">
     <value>源文件包含mkv容器不支持的mov_text字幕。切换到mp4容器或从源文件中删除mov_text字幕。</value>
+  </data>
+  <data name="source_not_deleted" xml:space="preserve">
+    <value>由于编码失败或文件正在使用而无法删除的源文件:</value>
   </data>
   <data name="source_overw" xml:space="preserve">
     <value>源文件和目标文件相同，但未启用覆盖。</value>
@@ -2145,14 +2889,23 @@
   <data name="speed_copy" xml:space="preserve">
     <value>加速/减速滤镜不能与音频流复制一起使用。</value>
   </data>
+  <data name="speed_not comp" xml:space="preserve">
+    <value>速度设置与其他视频过滤器不兼容。</value>
+  </data>
   <data name="srt_sub" xml:space="preserve">
     <value>SRT字幕可用</value>
   </data>
   <data name="start_app_enc" xml:space="preserve">
     <value>在编码文件上启动应用程序</value>
   </data>
+  <data name="start_cap" xml:space="preserve">
+    <value>开始截屏</value>
+  </data>
   <data name="start_enc" xml:space="preserve">
     <value>开始编码</value>
+  </data>
+  <data name="start_mark" xml:space="preserve">
+    <value>开始标记</value>
   </data>
   <data name="start_one" xml:space="preserve">
     <value>开始顺序捕获(一个接着一个)</value>
@@ -2172,6 +2925,15 @@
   <data name="stopping2" xml:space="preserve">
     <value>正在停止流录制，请稍候...</value>
   </data>
+  <data name="stop_any" xml:space="preserve">
+    <value>您可以随时按 Control-Shift-P 停止录制.</value>
+  </data>
+  <data name="stop_capt" xml:space="preserve">
+    <value>停止捕捉</value>
+  </data>
+  <data name="stop_proc" xml:space="preserve">
+    <value>停止处理</value>
+  </data>
   <data name="Stop_task" xml:space="preserve">
     <value>停止任务</value>
   </data>
@@ -2179,6 +2941,9 @@
     <value>流</value>
   </data>
   <data name="streams" xml:space="preserve">
+    <value>流</value>
+  </data>
+  <data name="streams1" xml:space="preserve">
     <value>流</value>
   </data>
   <data name="streams_f" xml:space="preserve">
@@ -2193,11 +2958,20 @@
   <data name="stream_saved2" xml:space="preserve">
     <value>流保存完成</value>
   </data>
+  <data name="String" xml:space="preserve">
+    <value>粘贴链接</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
   <data name="strv_c_not" xml:space="preserve">
     <value>不支持视频流复制</value>
   </data>
   <data name="str_abort" xml:space="preserve">
     <value>流保存中止</value>
+  </data>
+  <data name="str_map" xml:space="preserve">
+    <value>流映射</value>
   </data>
   <data name="str_ouput" xml:space="preserve">
     <value>流输出</value>
@@ -2217,6 +2991,9 @@
   <data name="subtitle" xml:space="preserve">
     <value>字幕</value>
   </data>
+  <data name="subtitles" xml:space="preserve">
+    <value>字幕</value>
+  </data>
   <data name="Subtitle_file" xml:space="preserve">
     <value>字幕文件</value>
   </data>
@@ -2226,6 +3003,9 @@
   <data name="success" xml:space="preserve">
     <value>成功</value>
   </data>
+  <data name="sunset1" xml:space="preserve">
+    <value>日落不能晚于日出。</value>
+  </data>
   <data name="Suspend" xml:space="preserve">
     <value>暂停</value>
   </data>
@@ -2234,6 +3014,9 @@
   </data>
   <data name="task_abort" xml:space="preserve">
     <value>任务中止</value>
+  </data>
+  <data name="tenth" xml:space="preserve">
+    <value>第十</value>
   </data>
   <data name="test_err" xml:space="preserve">
     <value>所选文件的编码测试失败。尝试预设以获取更多错误信息。</value>
@@ -2249,6 +3032,9 @@
   </data>
   <data name="the_files" xml:space="preserve">
     <value>文件:</value>
+  </data>
+  <data name="third" xml:space="preserve">
+    <value>第三</value>
   </data>
   <data name="three_pres" xml:space="preserve">
     <value>编码应用多达三个预设</value>
@@ -2268,11 +3054,38 @@
   <data name="time_load" xml:space="preserve">
     <value>加载可能需要一些时间，继续？</value>
   </data>
+  <data name="time_out_url" xml:space="preserve">
+    <value>尝试处理 url 超时</value>
+  </data>
   <data name="time_wrong" xml:space="preserve">
     <value>时间格式错误。请检查时间字段。</value>
   </data>
+  <data name="tip1" xml:space="preserve">
+    <value>此应用程序启动 ffmpeg 进程以进行编码、复用和解复用、获取流等。</value>
+  </data>
+  <data name="tip2" xml:space="preserve">
+    <value>由于 ffmpeg.exe 未进行数字签名，因此某些防病毒程序会不断扫描启动的每个进程。 这有时会显着降低诸如分析和过滤媒体流、获取缩略图等操作的性能。</value>
+  </data>
+  <data name="tip3" xml:space="preserve">
+    <value>如果您遇到性能缓慢的情况，您可以通过添加排除项来改进它</value>
+  </data>
+  <data name="tip4" xml:space="preserve">
+    <value>应用程序中包含的 ffmpeg.exe 是安全的，并且每次启动时都会验证 MD5 校验和。</value>
+  </data>
+  <data name="tip_win_sec" xml:space="preserve">
+    <value>视窗安全。</value>
+  </data>
+  <data name="tip_your_av" xml:space="preserve">
+    <value>您当前的防病毒软件。</value>
+  </data>
   <data name="tools" xml:space="preserve">
     <value>工具</value>
+  </data>
+  <data name="too_many_files" xml:space="preserve">
+    <value>要解析的文件太多</value>
+  </data>
+  <data name="total" xml:space="preserve">
+    <value>总计</value>
   </data>
   <data name="total_sec" xml:space="preserve">
     <value>总秒数</value>
@@ -2282,6 +3095,12 @@
   </data>
   <data name="to_recycle" xml:space="preserve">
     <value>将处理后的文件发送到回收站...</value>
+  </data>
+  <data name="to_tray1" xml:space="preserve">
+    <value>最小化为系统托盘图标</value>
+  </data>
+  <data name="to_tray2" xml:space="preserve">
+    <value>该应用程序在系统托盘中最小化为一个图标。</value>
   </data>
   <data name="tracks" xml:space="preserve">
     <value>轨道:</value>
@@ -2304,6 +3123,12 @@
   <data name="track_up" xml:space="preserve">
     <value>向上移动轨道</value>
   </data>
+  <data name="trailer_zero" xml:space="preserve">
+    <value>电影预告片配置导致零时长。</value>
+  </data>
+  <data name="transfer_r" xml:space="preserve">
+    <value>传输率:</value>
+  </data>
   <data name="trim1" xml:space="preserve">
     <value>您是否希望将修剪应用到</value>
   </data>
@@ -2324,6 +3149,9 @@
   </data>
   <data name="trim_f" xml:space="preserve">
     <value>修剪结束时间超过文件持续时间</value>
+  </data>
+  <data name="trim_fade_n" xml:space="preserve">
+    <value>淡入/淡出仅与开始/结束修剪模式兼容。</value>
   </data>
   <data name="trim_i" xml:space="preserve">
     <value>修剪开始时间超过文件持续时间</value>
@@ -2348,6 +3176,9 @@
   </data>
   <data name="try_pr" xml:space="preserve">
     <value>尝试预设以获取更多错误信息</value>
+  </data>
+  <data name="try_scr_pr" xml:space="preserve">
+    <value>尝试使用屏幕截图预设并检查编码参数.</value>
   </data>
   <data name="two_comp_f" xml:space="preserve">
     <value>请选择仅两种兼容格式</value>
@@ -2434,6 +3265,12 @@
   <data name="Type" xml:space="preserve">
     <value>类型</value>
   </data>
+  <data name="undef_dur_all" xml:space="preserve">
+    <value>未定义持续时间（无限）的项目后处理将不会继续.</value>
+  </data>
+  <data name="undef_seq" xml:space="preserve">
+    <value>未定义持续时间</value>
+  </data>
   <data name="undo_fil" xml:space="preserve">
     <value>撤消应用的滤镜</value>
   </data>
@@ -2479,6 +3316,12 @@
   <data name="url_comp2" xml:space="preserve">
     <value>URL下载完成</value>
   </data>
+  <data name="url_down_c" xml:space="preserve">
+    <value>URL下载成功完成</value>
+  </data>
+  <data name="url_down_c2" xml:space="preserve">
+    <value>网址下载完成</value>
+  </data>
   <data name="url_out" xml:space="preserve">
     <value>URL响应超时</value>
   </data>
@@ -2512,11 +3355,26 @@
   <data name="var_url" xml:space="preserve">
     <value>验证URL</value>
   </data>
+  <data name="version" xml:space="preserve">
+    <value>版本</value>
+  </data>
   <data name="ver_ff_u" xml:space="preserve">
     <value>FFmpeg未知版本</value>
   </data>
+  <data name="vf_crop_multi" xml:space="preserve">
+    <value>在参数字段中发现了另一个视频过滤器实例。 您可以使用多个过滤器，在括号之间并用逗号分隔。 请相应地修改 -vf 过滤器。</value>
+  </data>
+  <data name="vf_crop_multi2" xml:space="preserve">
+    <value>例如： -vf "crop=50:50:0:10, yadif, format=gray"</value>
+  </data>
   <data name="Video_codec" xml:space="preserve">
     <value>视频编解码器</value>
+  </data>
+  <data name="vids_dest" xml:space="preserve">
+    <value>目标文件夹中的视频。</value>
+  </data>
+  <data name="vids_unav" xml:space="preserve">
+    <value>（某些视频可能不可用，并且会跳过直播活动。）</value>
   </data>
   <data name="vid_req" xml:space="preserve">
     <value>多路复用需要一个视频轨道</value>
@@ -2533,6 +3391,9 @@
   <data name="vob_unsupport" xml:space="preserve">
     <value>mp4容器不支持VobSub字幕</value>
   </data>
+  <data name="vs_files_warn" xml:space="preserve">
+    <value>在 Avisynth 脚本中，源文件名中的非英文字符可能会导致非 UTF/Unicode 编码中的持续时间丢失。</value>
+  </data>
   <data name="v_bitr" xml:space="preserve">
     <value>视频比特率</value>
   </data>
@@ -2548,6 +3409,39 @@
   <data name="warnings" xml:space="preserve">
     <value>警告:</value>
   </data>
+  <data name="warnings_last_s" xml:space="preserve">
+    <value>上次会议期间的警告</value>
+  </data>
+  <data name="warning_file" xml:space="preserve">
+    <value>警告：文件</value>
+  </data>
+  <data name="warning_not_rep" xml:space="preserve">
+    <value>没有被替换</value>
+  </data>
+  <data name="warn_colon" xml:space="preserve">
+    <value>文件名或路径包含不支持的连接字符：' （单引号）。</value>
+  </data>
+  <data name="warn_colon2" xml:space="preserve">
+    <value>请在继续之前相应地重命名文件或路径。</value>
+  </data>
+  <data name="warn_down" xml:space="preserve">
+    <value>队列下载期间出现警告消息:</value>
+  </data>
+  <data name="warn_n_files" xml:space="preserve">
+    <value>添加数千个文件可能需要几分钟才能解析每个文件。 您可以在设置中启用快速文件列表以加快文件添加速度，但不会显示进度信息，只会显示成功/失败项目状态和日志信息。</value>
+  </data>
+  <data name="warn_n_files2" xml:space="preserve">
+    <value>你想继续吗？ 您可以随时取消文件添加。</value>
+  </data>
+  <data name="warn_run_enc" xml:space="preserve">
+    <value>设置“不要警告已编码的文件”和“跳过编码的文件”也已启用。</value>
+  </data>
+  <data name="warn_sort" xml:space="preserve">
+    <value>注意：不要在多文件编码过程中添加新文件或文件夹，因为如果启用此设置，其中一些可能会保持排队状态并且不会被处理。</value>
+  </data>
+  <data name="warn_sp" xml:space="preserve">
+    <value>目标驱动器上的可用空间小于 500 MB，应用程序可能会在编码过程中崩溃。 您要中止当前操作吗？</value>
+  </data>
   <data name="was_rest" xml:space="preserve">
     <value>已成功恢复</value>
   </data>
@@ -2562,6 +3456,9 @@
   </data>
   <data name="webm_warn2" xml:space="preserve">
     <value>WEBM容器限制</value>
+  </data>
+  <data name="white" xml:space="preserve">
+    <value>白色</value>
   </data>
   <data name="width" xml:space="preserve">
     <value>宽度</value>
@@ -2587,11 +3484,20 @@
   <data name="write_path" xml:space="preserve">
     <value>在您的自定义相对路径下方写下</value>
   </data>
+  <data name="wrong_chr" xml:space="preserve">
+    <value>输入文件名包含字符 [ ]。 请删除这些字符以避免在使用 -vf 过滤器时出错。</value>
+  </data>
+  <data name="wrong_c_dur" xml:space="preserve">
+    <value>不正确的捕获持续时间</value>
+  </data>
   <data name="yes" xml:space="preserve">
     <value>Yes</value>
   </data>
   <data name="yes_subfolders" xml:space="preserve">
     <value>未启用添加子文件夹</value>
+  </data>
+  <data name="your_sys" xml:space="preserve">
+    <value>你的系统</value>
   </data>
   <data name="yt_channel" xml:space="preserve">
     <value>粘贴的链接可能是YouTube频道，请改用下载频道/播放列表按钮。</value>
@@ -2614,13 +3520,10 @@
   <data name="yt_str_av2" xml:space="preserve">
     <value>YOUTUBE可用的质量流</value>
   </data>
-  <data name="Display_media_information" xml:space="preserve">
-    <value>显示多媒体信息</value>
+  <data name="yt_url_blank" xml:space="preserve">
+    <value>YouTube网址字段为空</value>
   </data>
-  <data name="enc_warm" xml:space="preserve">
-    <value>FFmpeg Batch - 编码完成并带有警告</value>
-  </data>
-  <data name="wrong_chr" xml:space="preserve">
-    <value>输入文件名包含字符 [ ]。 请删除这些字符以避免在使用 -vf 过滤器时出错。</value>
+  <data name="yt_url_sh" xml:space="preserve">
+    <value>YouTube网址太短</value>
   </data>
 </root>

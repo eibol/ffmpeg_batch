@@ -120,8 +120,14 @@
   <data name="aborted" xml:space="preserve">
     <value>أجهضت</value>
   </data>
+  <data name="aborted2" xml:space="preserve">
+    <value>تم إحباط تنزيل URL من قبل المستخدم.</value>
+  </data>
   <data name="aborting" xml:space="preserve">
     <value>إجهاض</value>
+  </data>
+  <data name="abort_cap" xml:space="preserve">
+    <value>إحباط التقاط الشاشة</value>
   </data>
   <data name="abort_current" xml:space="preserve">
     <value>إحباط المهمة الحالية والمتابعة</value>
@@ -177,6 +183,12 @@
   <data name="Add_custom_column" xml:space="preserve">
     <value>أضف عمودًا مخصصًا</value>
   </data>
+  <data name="add_cust_param" xml:space="preserve">
+    <value>الرجاء إضافة عمود المعلمات المخصصة لإضافة إعدادات مسبقة محددة للملفات الفردية/المتعددة.</value>
+  </data>
+  <data name="add_excl_ws" xml:space="preserve">
+    <value>إضافة استثناء لـ ffmpeg في أمن Windows</value>
+  </data>
   <data name="add_file" xml:space="preserve">
     <value>إضافة ملفات</value>
   </data>
@@ -185,6 +197,9 @@
   </data>
   <data name="add_folder" xml:space="preserve">
     <value>أضف المجلد</value>
+  </data>
+  <data name="add_input" xml:space="preserve">
+    <value>إضافة ملف الإدخال إلى المعلمات</value>
   </data>
   <data name="add_strack" xml:space="preserve">
     <value>إضافة تيارات الترجمة</value>
@@ -198,11 +213,20 @@
   <data name="add_txt_out" xml:space="preserve">
     <value>إضافة نص إلى اسم الملف الناتج</value>
   </data>
+  <data name="add_variable" xml:space="preserve">
+    <value>أضف متغيرًا إلى المعلمات</value>
+  </data>
   <data name="add_vtrack" xml:space="preserve">
     <value>إضافة تدفقات الفيديو</value>
   </data>
+  <data name="admin_cmd" xml:space="preserve">
+    <value>سيُطلب منك حقوق المسؤول عن طريق موجه الأوامر.</value>
+  </data>
   <data name="adm_req" xml:space="preserve">
     <value>حقوق المسؤول المطلوبة بعد ذلك</value>
+  </data>
+  <data name="all" xml:space="preserve">
+    <value>لكى يفعل</value>
   </data>
   <data name="allow_adm" xml:space="preserve">
     <value>يُرجى السماح بحقوق مسؤول موجه الأوامر لاستبدال ffmpeg الحالي.</value>
@@ -231,6 +255,9 @@
   <data name="alr_track" xml:space="preserve">
     <value>تحتوي القائمة بالفعل على مسار فيديو.</value>
   </data>
+  <data name="ansi_rec" xml:space="preserve">
+    <value>يوصى باستخدام ANSI أو UTF بدون تشفير نص BOM.</value>
+  </data>
   <data name="any_str" xml:space="preserve">
     <value>أي تيار</value>
   </data>
@@ -255,6 +282,9 @@
   <data name="app_failed" xml:space="preserve">
     <value>فشل التطبيق.</value>
   </data>
+  <data name="app_min_1" xml:space="preserve">
+    <value>سيتم تصغير نافذة التطبيق بمقدار ثانية واحدة قبل بدء التسجيل.</value>
+  </data>
   <data name="app_ok" xml:space="preserve">
     <value>تم الانتهاء من التطبيق بنجاح.</value>
   </data>
@@ -264,14 +294,41 @@
   <data name="as_sub" xml:space="preserve">
     <value>الترجمة ASS المتاحة</value>
   </data>
+  <data name="attempt_exc" xml:space="preserve">
+    <value>تحاول هذه الميزة إضافة استثناء إلى أمان Windows لـ ffmpeg.exe الحالي.</value>
+  </data>
+  <data name="audio" xml:space="preserve">
+    <value>صوتي</value>
+  </data>
   <data name="Audio_codec" xml:space="preserve">
     <value>ترميز الصوت</value>
   </data>
   <data name="aud_str_c" xml:space="preserve">
     <value>نسخة دفق الصوت</value>
   </data>
+  <data name="Aud_wave" xml:space="preserve">
+    <value>تنسيق الموجة الصوتية</value>
+  </data>
+  <data name="autorun_dis" xml:space="preserve">
+    <value>تم تعطيل "التشغيل التلقائي"</value>
+  </data>
+  <data name="autorun_en" xml:space="preserve">
+    <value>تم تمكين التشغيل التلقائي</value>
+  </data>
   <data name="autosh" xml:space="preserve">
     <value>تم تعطيل إيقاف التشغيل التلقائي للتسلسل.</value>
+  </data>
+  <data name="autoshut_en" xml:space="preserve">
+    <value>تم تمكين الإيقاف التلقائي</value>
+  </data>
+  <data name="autoshut_st" xml:space="preserve">
+    <value>تم إيقاف تشغيل الكمبيوتر</value>
+  </data>
+  <data name="auto_ask" xml:space="preserve">
+    <value>تم تمكين التشغيل التلقائي للترميز المتسلسل. هل تريد الاحتفاظ بهذا الإعداد؟</value>
+  </data>
+  <data name="auto_ask2" xml:space="preserve">
+    <value>تم تمكين التشغيل التلقائي لترميز الملفات المتعددة. هل تريد الاحتفاظ بهذا الإعداد؟</value>
   </data>
   <data name="auto_sh" xml:space="preserve">
     <value>الاغلاق التلقائي عند الانتهاء</value>
@@ -279,8 +336,17 @@
   <data name="av" xml:space="preserve">
     <value>صوت و فيديو</value>
   </data>
+  <data name="av1_noslide" xml:space="preserve">
+    <value>تتوفر فقط أزرار البحث عن الوقت.</value>
+  </data>
+  <data name="av1_w" xml:space="preserve">
+    <value>لا يمكن استخدام شريط تمرير الإطارات الرئيسية للفيديو AV1 مع الإصدار الأساسي الحالي من ffmpeg.exe. يرجى تصفح النسخة الكاملة في الإعدادات.</value>
+  </data>
   <data name="available" xml:space="preserve">
     <value>متاح</value>
+  </data>
+  <data name="avgs" xml:space="preserve">
+    <value>متوسط ​​السرعة:</value>
   </data>
   <data name="avg_bit" xml:space="preserve">
     <value>متوسط معدل البت:</value>
@@ -297,8 +363,14 @@
   <data name="avoid_overw" xml:space="preserve">
     <value>لتجنب إمكانية الكتابة فوقها.</value>
   </data>
+  <data name="avoid_overw1" xml:space="preserve">
+    <value>لتجنب إمكانية الكتابة فوقها.</value>
+  </data>
   <data name="AV_split_wizard" xml:space="preserve">
     <value>A / V_split_wizard</value>
+  </data>
+  <data name="a_bitr" xml:space="preserve">
+    <value>معدل البت الصوت</value>
   </data>
   <data name="backup_suc" xml:space="preserve">
     <value>تم تحميل ملف النسخ الاحتياطي بنجاح.</value>
@@ -312,6 +384,9 @@
   <data name="batch_concat_msg" xml:space="preserve">
     <value>تم تمكين تسلسل الدُفعات ، لكن لم يتم تحديد ملفات أولية أو ملفات نهائية. الرجاء اختيار أحدهما أو تعطيل هذا الإعداد.</value>
   </data>
+  <data name="batch_concat_msg1" xml:space="preserve">
+    <value>تم تمكين تسلسل الدُفعات ، لكن لم يتم تحديد ملفات أولية أو ملفات نهائية. الرجاء اختيار أحدهما أو تعطيل هذا الإعداد.</value>
+  </data>
   <data name="batch_mux" xml:space="preserve">
     <value>تم إكمال مضاعفة مهام الدُفعات بنجاح</value>
   </data>
@@ -320,6 +395,24 @@
   </data>
   <data name="Below_normal" xml:space="preserve">
     <value>أقل من المعتاد</value>
+  </data>
+  <data name="big_size" xml:space="preserve">
+    <value>حجم أكبر</value>
+  </data>
+  <data name="bitrate" xml:space="preserve">
+    <value>معدل البت</value>
+  </data>
+  <data name="black" xml:space="preserve">
+    <value>أسود</value>
+  </data>
+  <data name="browse" xml:space="preserve">
+    <value>تصفح</value>
+  </data>
+  <data name="browsing" xml:space="preserve">
+    <value>التصفح</value>
+  </data>
+  <data name="brow_page" xml:space="preserve">
+    <value>تصفح محتويات عنوان url: الصفحة</value>
   </data>
   <data name="brow_sub" xml:space="preserve">
     <value>تصفح للحصول على ترجمات</value>
@@ -366,11 +459,35 @@
   <data name="capture_time2" xml:space="preserve">
     <value>وقت الالتقاط للعنصر</value>
   </data>
+  <data name="capt_1" xml:space="preserve">
+    <value>التقاط في 1 ثانية</value>
+  </data>
+  <data name="capt_2" xml:space="preserve">
+    <value>الالتقاط في ثانيتين</value>
+  </data>
+  <data name="capt_3" xml:space="preserve">
+    <value>التقاط في 3 ثوان</value>
+  </data>
   <data name="capt_params" xml:space="preserve">
     <value>لا يمكن ترك حقل معلمات الالتقاط لـ m3u فارغًا.</value>
   </data>
+  <data name="capt_term" xml:space="preserve">
+    <value>تم إنهاء الالتقاط</value>
+  </data>
+  <data name="capt_virtual" xml:space="preserve">
+    <value>لالتقاط تشغيل الصوت ، يلزم وجود برنامج تشغيل صوت افتراضي.</value>
+  </data>
   <data name="change_def" xml:space="preserve">
     <value>تغيير الوضع الافتراضي</value>
+  </data>
+  <data name="chaps_f" xml:space="preserve">
+    <value>تم العثور على الفصول.</value>
+  </data>
+  <data name="chapters" xml:space="preserve">
+    <value>فصول</value>
+  </data>
+  <data name="chapters_all" xml:space="preserve">
+    <value>سيتم تطبيق تخطيط الفصول اليدوية على جميع ملفات القائمة. هل أنت متأكد؟</value>
   </data>
   <data name="characters" xml:space="preserve">
     <value>الشخصيات.</value>
@@ -387,6 +504,9 @@
   <data name="check_log" xml:space="preserve">
     <value>يمكنك التحقق من ملف السجل في علامة التبويب الرئيسية لمزيد من معلومات الخطأ.</value>
   </data>
+  <data name="check_not_st" xml:space="preserve">
+    <value>لم يتم تخزين المجموع الاختباري لـ FFmpeg.exe MD5 حتى الآن.</value>
+  </data>
   <data name="check_trim1" xml:space="preserve">
     <value>حدد هذا لتقليص مقدار الوقت المحدد في حقول البداية / النهاية.</value>
   </data>
@@ -395,6 +515,9 @@
   </data>
   <data name="check_urls" xml:space="preserve">
     <value>تحقق من عناوين URL جاهزة للقبض عليها</value>
+  </data>
+  <data name="check_web_up" xml:space="preserve">
+    <value>هل ترغب في زيارة موقع المشروع للتحقق من الإصدارات الجديدة؟</value>
   </data>
   <data name="check_ytdl" xml:space="preserve">
     <value>جارٍ التحقق من إصدار yt-dl ...</value>
@@ -423,6 +546,9 @@
   <data name="codec_params" xml:space="preserve">
     <value>وسيطات نوع الترميز مثل</value>
   </data>
+  <data name="computer_will" xml:space="preserve">
+    <value>إرادة الكمبيوتر</value>
+  </data>
   <data name="concat_abort" xml:space="preserve">
     <value>تم إحباط التسلسل من قبل المستخدم</value>
   </data>
@@ -442,6 +568,9 @@
     <value>قم بالتبديل بين concat muxer و video filter muxer.</value>
   </data>
   <data name="concat_vid_help" xml:space="preserve">
+    <value>يسمح هذا الفلتر بضم مقاطع الفيديو ذات الصفات المختلفة ، ويحسن التوافق ولكنه يتطلب إعادة تشفير الصوت والفيديو. يمكن ترك حقل المعلمات فارغًا. ملاحظة: يسمح فقط بملفات الفيديو.</value>
+  </data>
+  <data name="concat_vid_help1" xml:space="preserve">
     <value>يسمح هذا الفلتر بضم مقاطع الفيديو ذات الصفات المختلفة ، ويحسن التوافق ولكنه يتطلب إعادة تشفير الصوت والفيديو. يمكن ترك حقل المعلمات فارغًا. ملاحظة: يسمح فقط بملفات الفيديو.</value>
   </data>
   <data name="conc_comp" xml:space="preserve">
@@ -477,6 +606,9 @@
   <data name="container1" xml:space="preserve">
     <value>الحاوية غير مدعومة</value>
   </data>
+  <data name="contin" xml:space="preserve">
+    <value>يكمل؟</value>
+  </data>
   <data name="continu" xml:space="preserve">
     <value>هل تريد الاستمرار؟</value>
   </data>
@@ -491,6 +623,18 @@
   </data>
   <data name="create_vid_img" xml:space="preserve">
     <value>إنشاء فيديو من الصور الثابتة</value>
+  </data>
+  <data name="crop1" xml:space="preserve">
+    <value>كشف / قص أشرطة الفيديو السوداء</value>
+  </data>
+  <data name="crop2" xml:space="preserve">
+    <value>تم العثور على مرشح المحاصيل في حقل المعلمات. يرجى التأكد من إزالة أي مثيل اقتصاص سابق -vf.</value>
+  </data>
+  <data name="crop3" xml:space="preserve">
+    <value>تمت إضافة المعلمة التالية:</value>
+  </data>
+  <data name="custom" xml:space="preserve">
+    <value>مخصص</value>
   </data>
   <data name="custom_rel" xml:space="preserve">
     <value>مسار نسبي مخصص</value>
@@ -510,11 +654,29 @@
   <data name="Default_track" xml:space="preserve">
     <value>المسار الافتراضي</value>
   </data>
+  <data name="def_mapping" xml:space="preserve">
+    <value>افتراضيًا، يتم تحديد الدفق الأول فقط من كل نوع</value>
+  </data>
   <data name="def_rn" xml:space="preserve">
     <value>لا يمكن إزالة الضبط المسبق الافتراضي.</value>
   </data>
+  <data name="delay_act" xml:space="preserve">
+    <value>تم تفعيل التأخير</value>
+  </data>
   <data name="deleted" xml:space="preserve">
     <value>تم الحذف</value>
+  </data>
+  <data name="deleting_f" xml:space="preserve">
+    <value>جارٍ الحذف ...</value>
+  </data>
+  <data name="deleting_files" xml:space="preserve">
+    <value>جاري حذف الملفات ...</value>
+  </data>
+  <data name="deleting_proc" xml:space="preserve">
+    <value>جارٍ حذف الملفات المعالجة ...</value>
+  </data>
+  <data name="deleting_sourc" xml:space="preserve">
+    <value>جارٍ حذف ملفات المصدر ...</value>
   </data>
   <data name="del_file" xml:space="preserve">
     <value>حذف ملف</value>
@@ -525,23 +687,38 @@
   <data name="del_overw" xml:space="preserve">
     <value>لا يمكن الكتابة فوق المصدر وحذفه في نفس الوقت. يرجى التأكد من عدم تمكين كلا الإعدادين في نفس الوقت.</value>
   </data>
+  <data name="del_overw2" xml:space="preserve">
+    <value>للسماح بتمكين الكتابة فوق الملف وحذف المصدر في وقت واحد ، تم الآن تعيين إعدادات حذف المصدر على: إرسال إلى سلة المحذوفات وحذف واحدًا تلو الآخر.</value>
+  </data>
   <data name="del_pres" xml:space="preserve">
     <value>قم بإزالة الإعداد المسبق الحالي</value>
   </data>
   <data name="demuxer_help" xml:space="preserve">
     <value>في هذا الوضع ، يمكن نسخ ملفات الصوت / الفيديو ، بشرط أن تشترك في الصفات (الحجم ، الترميز ، معدل البت). ملاحظة: لا يتم دعم جميع الحاويات لنسخ الدفق. إذا حدثت مشكلات في التشغيل أو لم يتم ضم الملفات ، فقد يلزم إعادة الترميز.</value>
   </data>
+  <data name="demuxer_help1" xml:space="preserve">
+    <value>في هذا الوضع ، يمكن نسخ ملفات الصوت / الفيديو ، بشرط أن تشترك في الصفات (الحجم ، الترميز ، معدل البت). ملاحظة: لا يتم دعم جميع الحاويات لنسخ الدفق. إذا حدثت مشكلات في التشغيل أو لم يتم ضم الملفات ، فقد يلزم إعادة الترميز.</value>
+  </data>
   <data name="dest_err" xml:space="preserve">
     <value>تعذر إنشاء مجلد الوجهة. تأكد من أنه مسار قابل للكتابة.</value>
   </data>
+  <data name="dest_not_empty" xml:space="preserve">
+    <value>مجلد الوجهة ليس فارغًا. يكمل؟</value>
+  </data>
   <data name="Detect_silence_wizard" xml:space="preserve">
     <value>معالج كشف الصمت</value>
+  </data>
+  <data name="dif_in_out_f" xml:space="preserve">
+    <value>مجلدات الإدخال المختلفة لمجلد الإخراج الفردي</value>
   </data>
   <data name="Display_file_streams" xml:space="preserve">
     <value>عرض تدفقات الملف</value>
   </data>
   <data name="Display_last_log" xml:space="preserve">
     <value>عرض السجل الأخير</value>
+  </data>
+  <data name="Display_media_information" xml:space="preserve">
+    <value>عرض معلومات الوسائط المتعددة</value>
   </data>
   <data name="Display_multimedia_file_info" xml:space="preserve">
     <value>عرض معلومات ملف الوسائط المتعددة</value>
@@ -552,8 +729,14 @@
   <data name="dis_url_streams" xml:space="preserve">
     <value>عرض تدفقات عنوان URL</value>
   </data>
+  <data name="download" xml:space="preserve">
+    <value>تحميل</value>
+  </data>
   <data name="Downloading" xml:space="preserve">
     <value>جارى التحميل</value>
+  </data>
+  <data name="down_com" xml:space="preserve">
+    <value>تم التحميل.</value>
   </data>
   <data name="down_empty" xml:space="preserve">
     <value>قائمة التنزيل فارغة.</value>
@@ -564,11 +747,26 @@
   <data name="down_multi" xml:space="preserve">
     <value>ابدأ في التقاط جميع عناوين url</value>
   </data>
+  <data name="down_prog" xml:space="preserve">
+    <value>التنزيل قيد التقدم ، يرجى الإلغاء قبل إغلاق النافذة.</value>
+  </data>
+  <data name="down_prog2" xml:space="preserve">
+    <value>التنزيل قيد التقدم</value>
+  </data>
+  <data name="down_p_ab" xml:space="preserve">
+    <value>التحميل قيد التقدم. هل تريد أن تجبر على الإقلاع عن التدخين؟</value>
+  </data>
   <data name="down_up" xml:space="preserve">
     <value>تحميل التحديث</value>
   </data>
   <data name="drag1" xml:space="preserve">
     <value>قم بسحب وإسقاط الملفات أو المجلدات هنا</value>
+  </data>
+  <data name="drop_big" xml:space="preserve">
+    <value>الملف المسقط كبير جدًا. يتم دعم الملفات النصية التي يقل حجمها عن 1 ميغا بايت فقط.</value>
+  </data>
+  <data name="drop_one" xml:space="preserve">
+    <value>الرجاء إسقاط ملف واحد فقط.</value>
   </data>
   <data name="dup_not" xml:space="preserve">
     <value>القيمة المكررة غير مسموح بها</value>
@@ -597,8 +795,20 @@
   <data name="edit_pres" xml:space="preserve">
     <value>تحرير قائمة الإعدادات المسبقة</value>
   </data>
+  <data name="eighth" xml:space="preserve">
+    <value>ثامن</value>
+  </data>
   <data name="elapsed" xml:space="preserve">
     <value>الوقت المنقضي:</value>
+  </data>
+  <data name="encode" xml:space="preserve">
+    <value>تشفير</value>
+  </data>
+  <data name="encoded" xml:space="preserve">
+    <value>مشفر</value>
+  </data>
+  <data name="encoded2" xml:space="preserve">
+    <value>النجاح</value>
   </data>
   <data name="Encoding" xml:space="preserve">
     <value>التشفير</value>
@@ -621,11 +831,23 @@
   <data name="enc_fail_second" xml:space="preserve">
     <value>فشل اختبار الترميز في معاملات المرور الثانية:</value>
   </data>
+  <data name="enc_not_sup1" xml:space="preserve">
+    <value>لا يدعم إصدار ffmpeg.exe الحالي برنامج التشفير المحدد.</value>
+  </data>
+  <data name="enc_not_sup2" xml:space="preserve">
+    <value>يمكنك تجربة إصدار كامل محدث في الإعدادات -&gt; البحث عن إصدارات ffmpeg الأخرى.</value>
+  </data>
+  <data name="enc_not_sup3" xml:space="preserve">
+    <value>التشفير غير مدعوم</value>
+  </data>
   <data name="enc_preset" xml:space="preserve">
     <value>ترميز مسبق</value>
   </data>
   <data name="enc_test_fail" xml:space="preserve">
     <value>فشل اختبار الترميز. تحقق من الإخراج أعلاه</value>
+  </data>
+  <data name="enc_warm" xml:space="preserve">
+    <value>FFmpeg Batch - تشفير كامل مع تحذير (تحذيرات).</value>
   </data>
   <data name="enc_warns" xml:space="preserve">
     <value>اكتمل تشفير دفعة FFmpeg مع التحذيرات</value>
@@ -638,6 +860,15 @@
   </data>
   <data name="end_short" xml:space="preserve">
     <value>وقت الانتهاء أقصر من وقت البدء.</value>
+  </data>
+  <data name="en_day" xml:space="preserve">
+    <value>تفعيل وضع اليوم</value>
+  </data>
+  <data name="en_night" xml:space="preserve">
+    <value>تفعيل الوضع الليلي</value>
+  </data>
+  <data name="en_target_size" xml:space="preserve">
+    <value>حجم الهدف الممكّن:</value>
   </data>
   <data name="error" xml:space="preserve">
     <value>خطأ</value>
@@ -672,11 +903,20 @@
   <data name="error_test_f" xml:space="preserve">
     <value>خطأ في كتابة ملف الاختبار.</value>
   </data>
+  <data name="error_writing" xml:space="preserve">
+    <value>خطأ في الكتابة إلى مجلد الوجهة. الرجاء تحديد مسار آخر ، أو التأكد من أن لديك أذونات الكتابة.</value>
+  </data>
   <data name="err_bck" xml:space="preserve">
     <value>خطأ في إنشاء نسخة احتياطية. الرجاء تحديد موقع آخر.</value>
   </data>
+  <data name="err_chap" xml:space="preserve">
+    <value>خطأ: لا يحتوي الفيديو على فصول.</value>
+  </data>
   <data name="err_check" xml:space="preserve">
     <value>كان هناك خطأ في التحقق من وجود تحديثات.</value>
+  </data>
+  <data name="err_clipb" xml:space="preserve">
+    <value>خطأ في النسخ إلى الحافظة.</value>
   </data>
   <data name="err_close_procs" xml:space="preserve">
     <value>عملية إغلاق الخطأ:</value>
@@ -689,6 +929,9 @@
   </data>
   <data name="err_connect" xml:space="preserve">
     <value>حدث خطأ في الاتصال بالإنترنت. هل تريد الاستمرار على أي حال؟</value>
+  </data>
+  <data name="err_crop" xml:space="preserve">
+    <value>حدث خطأ أثناء إنشاء معاينة المحصول. يرجى التحقق من عدم تجاوز معلمات الحجم / التنسيق حدود الفيديو.</value>
   </data>
   <data name="err_dec" xml:space="preserve">
     <value>خطأ غير معروف في تحديث قائمة وحدات فك التشفير.</value>
@@ -711,11 +954,17 @@
   <data name="err_kf" xml:space="preserve">
     <value>خطأ في الحصول على الإطارات الرئيسية. تنسيق الإدخال غير صالح.</value>
   </data>
+  <data name="err_long_path" xml:space="preserve">
+    <value>المسار المدمج أو طول اسم الملف لبعض العناصر طويل جدًا. يرجى تقليله إلى أقل من 255 حرفًا.</value>
+  </data>
   <data name="err_oc" xml:space="preserve">
     <value>حدث خطأ</value>
   </data>
   <data name="err_pars_ff" xml:space="preserve">
     <value>خطأ في تحليل نسخة ffmpeg. قد يكون الملف تالفًا.</value>
+  </data>
+  <data name="err_pl_vlc" xml:space="preserve">
+    <value>خطأ أثناء محاولة تشغيل URL باستخدام VLC:</value>
   </data>
   <data name="err_port" xml:space="preserve">
     <value>تعذر إنشاء مجلد الإعدادات المحمولة في مسار التطبيق:</value>
@@ -726,14 +975,32 @@
   <data name="err_qf" xml:space="preserve">
     <value>خطأ في تحميل جلسة قائمة الانتظار. تنسيق ملف غير متوقع.</value>
   </data>
+  <data name="err_save_qu" xml:space="preserve">
+    <value>حدث خطأ أثناء حفظ ملف قائمة الانتظار.</value>
+  </data>
+  <data name="err_save_track" xml:space="preserve">
+    <value>خطأ في حفظ المسار</value>
+  </data>
   <data name="err_saving_pres" xml:space="preserve">
     <value>حدث خطأ أثناء حفظ ملف الإعدادات المسبقة.</value>
   </data>
   <data name="err_set" xml:space="preserve">
     <value>حدث خطأ أثناء حفظ الإعدادات.</value>
   </data>
+  <data name="err_size" xml:space="preserve">
+    <value>خطأ في الحصول على تحليل الملف. لا يمكن عرض معاينة الاقتصاص.</value>
+  </data>
+  <data name="err_test_temp" xml:space="preserve">
+    <value>تعذر إنشاء مجلد الاختبار في موقع TEMP.</value>
+  </data>
   <data name="err_wavs" xml:space="preserve">
     <value>خطأ في تشغيل الملف. يتم دعم ملفات PCM wave فقط.</value>
+  </data>
+  <data name="err_write_out" xml:space="preserve">
+    <value>خطأ في كتابة مجلد الإخراج:</value>
+  </data>
+  <data name="err_write_temp" xml:space="preserve">
+    <value>خطأ في الكتابة إلى المجلد المؤقت.</value>
   </data>
   <data name="err_yt_2" xml:space="preserve">
     <value>حدث خطأ أثناء محاولة تحديث yt-dl:</value>
@@ -747,8 +1014,20 @@
   <data name="est_size" xml:space="preserve">
     <value>الحجم المقدر:</value>
   </data>
+  <data name="excl_add2" xml:space="preserve">
+    <value>تمت إضافة الاستبعاد</value>
+  </data>
+  <data name="excl_added" xml:space="preserve">
+    <value>تمت إضافة الاستبعاد إلى أمان Windows. يمكنك مراجعته في الشاشة التالية.</value>
+  </data>
+  <data name="excl_list" xml:space="preserve">
+    <value>قائمة استبعاد أنواع الملفات</value>
+  </data>
   <data name="exc_aud" xml:space="preserve">
     <value>استبعاد دفق الصوت</value>
+  </data>
+  <data name="exc_dur" xml:space="preserve">
+    <value>يتجاوز مدة المصدر.</value>
   </data>
   <data name="exe_files" xml:space="preserve">
     <value>الملفات القابلة للتنفيذ</value>
@@ -759,8 +1038,17 @@
   <data name="exit" xml:space="preserve">
     <value>مخرج</value>
   </data>
+  <data name="exit_code" xml:space="preserve">
+    <value>كود الخروج</value>
+  </data>
   <data name="extension" xml:space="preserve">
     <value>امتداد</value>
+  </data>
+  <data name="ext_com_err" xml:space="preserve">
+    <value>أعاد الأمر الخارجي خطأ في</value>
+  </data>
+  <data name="ext_com_ok" xml:space="preserve">
+    <value>تم تنفيذ الأمر الخارجي بنجاح في</value>
   </data>
   <data name="fade1" xml:space="preserve">
     <value>التلاشي في الوقت المناسب أطول مدة هذا الملف.</value>
@@ -822,6 +1110,9 @@
   <data name="ffs" xml:space="preserve">
     <value>تم الكشف عن عمليات FFmpeg قيد التشغيل.</value>
   </data>
+  <data name="ff_copied" xml:space="preserve">
+    <value>تم نسخ معلمات FFMPEG إلى الحافظة:</value>
+  </data>
   <data name="ff_del" xml:space="preserve">
     <value>تم حذف الملف القابل للتنفيذ FFmpeg. التطبيق لن يعمل.</value>
   </data>
@@ -852,6 +1143,9 @@
   <data name="ff_test_ok" xml:space="preserve">
     <value>نجح اختبار FFMPEG</value>
   </data>
+  <data name="fifth" xml:space="preserve">
+    <value>الخامس</value>
+  </data>
   <data name="file" xml:space="preserve">
     <value>ملف</value>
   </data>
@@ -860,6 +1154,9 @@
   </data>
   <data name="files" xml:space="preserve">
     <value>ملف (ملفات)</value>
+  </data>
+  <data name="files_long_t" xml:space="preserve">
+    <value>يمكن أن تستغرق الملفات وقتًا طويلاً. هل أنت متأكد؟</value>
   </data>
   <data name="files_time" xml:space="preserve">
     <value>قد تستغرق الملفات بعض الوقت. يكمل؟</value>
@@ -918,6 +1215,12 @@
   <data name="filter_meta" xml:space="preserve">
     <value>ابحث عن البيانات الوصفية للملف</value>
   </data>
+  <data name="filter_not_qfl" xml:space="preserve">
+    <value>لا يتوفر عامل التصفية دون الحصول على مدة الملف.</value>
+  </data>
+  <data name="filter_quick_not" xml:space="preserve">
+    <value>لا يمكن استخدام هذه الميزة مع تمكين قائمة الملفات السريعة.</value>
+  </data>
   <data name="filter_rate" xml:space="preserve">
     <value>تصفية حسب معدل إطارات الفيديو</value>
   </data>
@@ -936,6 +1239,12 @@
   <data name="find_dups" xml:space="preserve">
     <value>جارٍ البحث عن التكرارات ...</value>
   </data>
+  <data name="finish" xml:space="preserve">
+    <value>ينهي</value>
+  </data>
+  <data name="first" xml:space="preserve">
+    <value>أولاً</value>
+  </data>
   <data name="first_audio" xml:space="preserve">
     <value>(تم العثور على أول بث صوتي)</value>
   </data>
@@ -951,6 +1260,9 @@
   <data name="folder_empty" xml:space="preserve">
     <value>مجلد فارغ.</value>
   </data>
+  <data name="forced" xml:space="preserve">
+    <value>قسري</value>
+  </data>
   <data name="Format" xml:space="preserve">
     <value>شكل</value>
   </data>
@@ -965,6 +1277,12 @@
   </data>
   <data name="found" xml:space="preserve">
     <value>وجد</value>
+  </data>
+  <data name="fourth" xml:space="preserve">
+    <value>الرابع</value>
+  </data>
+  <data name="frame_size" xml:space="preserve">
+    <value>حجم الاطار</value>
   </data>
   <data name="fr_rate" xml:space="preserve">
     <value>معدل الإطار</value>
@@ -984,8 +1302,14 @@
   <data name="get_cont" xml:space="preserve">
     <value>الحصول على المحتوى</value>
   </data>
+  <data name="get_prev" xml:space="preserve">
+    <value>الحصول على الإطارات</value>
+  </data>
   <data name="Get_total_seconds_frames" xml:space="preserve">
     <value>احصل على إجمالي الثواني / الإطارات</value>
+  </data>
+  <data name="happy_y" xml:space="preserve">
+    <value>سنة جديدة سعيدة</value>
   </data>
   <data name="header_fail" xml:space="preserve">
     <value>تعذر كتابة العنوان</value>
@@ -1014,6 +1338,12 @@
   <data name="hrq" xml:space="preserve">
     <value>جودة أعلى</value>
   </data>
+  <data name="hw_ff_1" xml:space="preserve">
+    <value>يمكن أن يختلف أداء الترميز باستخدام برامج تشفير الفيديو للأجهزة وفقًا لإصدار ffmpeg.exe لديك.</value>
+  </data>
+  <data name="Hw_ff_2" xml:space="preserve">
+    <value>إذا كنت تعاني من ضعف الأداء ، فتحقق من أحدث إصدارات ffmpeg git master في gyan.dev (متوفر في إعدادات التطبيق) لاستبدال إصدار ffmpeg.exe الحالي.</value>
+  </data>
   <data name="Idle" xml:space="preserve">
     <value>عاطل</value>
   </data>
@@ -1029,17 +1359,38 @@
   <data name="image_audio" xml:space="preserve">
     <value>صورة للصوت</value>
   </data>
+  <data name="imgs" xml:space="preserve">
+    <value>الصور</value>
+  </data>
+  <data name="img_copied" xml:space="preserve">
+    <value>تم نسخ الصورة إلى الحافظة.</value>
+  </data>
+  <data name="img_empty" xml:space="preserve">
+    <value>حقل الصورة فارغ.</value>
+  </data>
+  <data name="img_to_v" xml:space="preserve">
+    <value>معالج الصورة إلى الفيديو</value>
+  </data>
   <data name="inc_font" xml:space="preserve">
     <value>زيادة حجم خط القائمة</value>
   </data>
   <data name="information" xml:space="preserve">
     <value>معلومة</value>
   </data>
+  <data name="init0" xml:space="preserve">
+    <value>تهيئة</value>
+  </data>
   <data name="init1" xml:space="preserve">
     <value>جار تهيئة</value>
   </data>
+  <data name="init_wait" xml:space="preserve">
+    <value>جاري بدء التنزيل ، الرجاء الانتظار ...</value>
+  </data>
   <data name="inst_err" xml:space="preserve">
     <value>خطأ في التثبيت</value>
+  </data>
+  <data name="integrated" xml:space="preserve">
+    <value>مدمج</value>
   </data>
   <data name="interval" xml:space="preserve">
     <value>فاصلة</value>
@@ -1068,17 +1419,29 @@
   <data name="invalid_p" xml:space="preserve">
     <value>الإعداد المسبق غير صالح. قد يتطلب الأمر مراجعة معلمات الترميز أو حاوية الإخراج.</value>
   </data>
+  <data name="invalid_param" xml:space="preserve">
+    <value>معلمات غير صالحة لالتقاط الشاشة.</value>
+  </data>
   <data name="invalid_path" xml:space="preserve">
     <value>المسار المحدد غير صالح.</value>
   </data>
   <data name="invalid_pres" xml:space="preserve">
     <value>تم العثور على بيانات معدة مسبقًا غير صالحة.</value>
   </data>
+  <data name="invalid_p_2" xml:space="preserve">
+    <value>معلمات الالتقاط غير صالحة</value>
+  </data>
   <data name="invalid_rem" xml:space="preserve">
     <value>تم الكشف عن الأحرف غير الصالحة وإزالتها.</value>
   </data>
   <data name="invalid_yt" xml:space="preserve">
     <value>لم يتم العثور على عنوان URL صالح على YouTube.</value>
+  </data>
+  <data name="in_60" xml:space="preserve">
+    <value>في 60 ثانية</value>
+  </data>
+  <data name="in_avis" xml:space="preserve">
+    <value>في البرامج النصية Avisynth ، ترميز النص</value>
   </data>
   <data name="items_alr" xml:space="preserve">
     <value>العناصر التي تمت معالجتها بالفعل في قوائم الوظائف</value>
@@ -1098,11 +1461,20 @@
   <data name="jobs_reset" xml:space="preserve">
     <value>تمت معالجة قائمة الوظائف بالفعل. يرجى إعادة تعيين الحالة باستخدام الزر في الزاوية اليمنى العليا لبدء تشغيلها من جديد.</value>
   </data>
+  <data name="join_files" xml:space="preserve">
+    <value>انضمام ملفات</value>
+  </data>
   <data name="keep" xml:space="preserve">
     <value>يحفظ</value>
   </data>
+  <data name="kf_no_a" xml:space="preserve">
+    <value>قد لا يكون التنقل في الإطار الرئيسي لشريط التتبع متاحًا. لا يزال بإمكانك استخدام أزرار الوقت.</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>لغة</value>
+  </data>
+  <data name="lang_corrupted" xml:space="preserve">
+    <value>تم إتلاف تكوين اللغة ، يرجى إعادة تثبيت التطبيق.</value>
   </data>
   <data name="lang_tracks" xml:space="preserve">
     <value>ضبط اللغة للمسارات غير المحددة</value>
@@ -1134,6 +1506,9 @@
   <data name="less_one" xml:space="preserve">
     <value>&lt;1 دقيقة</value>
   </data>
+  <data name="libr" xml:space="preserve">
+    <value>المكتبات</value>
+  </data>
   <data name="links" xml:space="preserve">
     <value>قوائم عناوين URL</value>
   </data>
@@ -1152,6 +1527,9 @@
   <data name="load_queue_file" xml:space="preserve">
     <value>تحميل ملف قائمة الانتظار</value>
   </data>
+  <data name="logging_f" xml:space="preserve">
+    <value>التسجيل لـ:</value>
+  </data>
   <data name="log_dis" xml:space="preserve">
     <value>تم تعطيل التسجيل</value>
   </data>
@@ -1166,6 +1544,12 @@
   </data>
   <data name="log_size" xml:space="preserve">
     <value>حجم السجل:</value>
+  </data>
+  <data name="low_size" xml:space="preserve">
+    <value>حجم صغير</value>
+  </data>
+  <data name="low_sp" xml:space="preserve">
+    <value>مساحة منخفضة متاحة</value>
   </data>
   <data name="lrq" xml:space="preserve">
     <value>أقل جودة</value>
@@ -1182,11 +1566,53 @@
   <data name="man_path" xml:space="preserve">
     <value>اختيار مسار الإخراج اليدوي</value>
   </data>
+  <data name="map" xml:space="preserve">
+    <value>الى الخريطة</value>
+  </data>
+  <data name="mapp_all_str" xml:space="preserve">
+    <value>خريطة كافة التدفقات</value>
+  </data>
+  <data name="map_all_a" xml:space="preserve">
+    <value>خريطة كافة التدفقات الصوتية</value>
+  </data>
+  <data name="map_all_s" xml:space="preserve">
+    <value>خريطة كافة تيارات الترجمة</value>
+  </data>
+  <data name="map_all_v" xml:space="preserve">
+    <value>رسم خريطة لجميع تدفقات الفيديو</value>
+  </data>
+  <data name="map_str" xml:space="preserve">
+    <value>تيار الخريطة</value>
+  </data>
+  <data name="map_strs" xml:space="preserve">
+    <value>تيارات الخريطة</value>
+  </data>
   <data name="max_links" xml:space="preserve">
     <value>تدعم قائمة التنزيل ما يصل إلى 2000 رابط.</value>
   </data>
   <data name="max_list" xml:space="preserve">
     <value>تم بلوغ الحد الأقصى لطول القائمة</value>
+  </data>
+  <data name="md5_fail" xml:space="preserve">
+    <value>فشل المجموع الاختباري لـ FFmpeg.exe MD5.</value>
+  </data>
+  <data name="md5_fail1" xml:space="preserve">
+    <value>لا يتطابق المجموع الاختباري لـ FFmpeg.exe MD5 مع القيمة المخزنة. قد يكون الملف تالفًا أو تم اختراقه.</value>
+  </data>
+  <data name="md5_not_match" xml:space="preserve">
+    <value>لا يتطابق المجموع الاختباري MD5 الحالي مع القيمة المخزنة. الرجاء النقر فوق الثقة ffmpeg الحالي قبل إضافة استثناء.</value>
+  </data>
+  <data name="md5_not_validated" xml:space="preserve">
+    <value>لم يتم التحقق من صحة المجموع الاختباري لـ FFmpeg</value>
+  </data>
+  <data name="md5_reinst" xml:space="preserve">
+    <value>وإلا فقد يكون قد تم تعديله ويجب إعادة تثبيت التطبيق.</value>
+  </data>
+  <data name="md5_trust" xml:space="preserve">
+    <value>إذا قمت باستبداله مؤخرًا ، فيمكنك اعتباره موثوقًا به في إعدادات الأمان.</value>
+  </data>
+  <data name="md5_valid" xml:space="preserve">
+    <value>المجموع الاختباري لـ FFmpeg.exe MD5 صالح.</value>
   </data>
   <data name="media_type" xml:space="preserve">
     <value>نوع الوسائط</value>
@@ -1209,11 +1635,23 @@
   <data name="missing1" xml:space="preserve">
     <value>ملف مفقود في القائمة</value>
   </data>
+  <data name="missing_f" xml:space="preserve">
+    <value>الملفات المفقودة</value>
+  </data>
   <data name="mix_urls" xml:space="preserve">
     <value>لا يتم دعم خلط YouTube وأنواع أخرى من عناوين URL في القائمة.</value>
   </data>
   <data name="mix_urls2" xml:space="preserve">
     <value>تحتوي قائمة الملفات على مزيج من Youtube وأنواع أخرى من الروابط. يرجى تحديد القوائم التي تحتوي على روابط YouTube أو أي نوع آخر من عناوين URL فقط.</value>
+  </data>
+  <data name="mon_ing" xml:space="preserve">
+    <value>مجلد المراقبة</value>
+  </data>
+  <data name="mon_no_rel" xml:space="preserve">
+    <value>لا يمكن استخدام المسار النسبي عند مراقبة المجلدات الفرعية ، يرجى استخدام مسار مطلق أو تعطيل المجلدات الفرعية.</value>
+  </data>
+  <data name="mon_path_equal" xml:space="preserve">
+    <value>المجلد المراقب هو نفسه مجلد الإخراج الرئيسي ، يرجى تحديد مسار وجهة آخر ، أو استخدام مسار نسبي.</value>
   </data>
   <data name="move_down" xml:space="preserve">
     <value>تحريك العنصر لأسفل</value>
@@ -1251,11 +1689,23 @@
   <data name="multiple_folders" xml:space="preserve">
     <value>قد تؤدي المجلدات المتعددة إلى مجلد الإخراج الفردي إلى الكتابة فوقها. يمكنك تمكين</value>
   </data>
+  <data name="multiple_inst" xml:space="preserve">
+    <value>مثيل تطبيق آخر قيد التشغيل بالفعل. يمكن أن تسبب حالات متعددة سلوكيات غير متوقعة. يكمل؟</value>
+  </data>
+  <data name="multiple_inst_0" xml:space="preserve">
+    <value>حالات متعددة</value>
+  </data>
   <data name="Multiple_presets_wizard" xml:space="preserve">
     <value>معالج إعدادات مسبقة متعددة</value>
   </data>
   <data name="multiple_tr" xml:space="preserve">
     <value>تم تحديد مسارات متعددة</value>
+  </data>
+  <data name="multi_drop" xml:space="preserve">
+    <value>الرجاء إسقاط ملف واحد فقط.</value>
+  </data>
+  <data name="multi_drop2" xml:space="preserve">
+    <value>تم إسقاط عدة ملفات</value>
   </data>
   <data name="multi_full" xml:space="preserve">
     <value>معلومات الوسائط المتعددة (تقرير كامل)</value>
@@ -1289,6 +1739,9 @@
   </data>
   <data name="mux_jobs" xml:space="preserve">
     <value>مدير وظائف Multiplex</value>
+  </data>
+  <data name="mux_jobs1" xml:space="preserve">
+    <value>مدير وظائف الدُفعات المتعددة</value>
   </data>
   <data name="mux_ok" xml:space="preserve">
     <value>تم إكمال مضاعفة دفعة FFmpeg بنجاح</value>
@@ -1329,11 +1782,23 @@
   <data name="next" xml:space="preserve">
     <value>التالي -&gt;</value>
   </data>
+  <data name="next1" xml:space="preserve">
+    <value>التالي</value>
+  </data>
+  <data name="nineth" xml:space="preserve">
+    <value>التاسع</value>
+  </data>
   <data name="no" xml:space="preserve">
     <value>لا</value>
   </data>
+  <data name="none" xml:space="preserve">
+    <value>لا أحد</value>
+  </data>
   <data name="none_copy" xml:space="preserve">
     <value>لا يمكنك تحديد أي شيء أو نسخه للإعداد الصوتي المسبق.</value>
+  </data>
+  <data name="non_eng_rec" xml:space="preserve">
+    <value>ملاحظة: قد تتسبب الأحرف غير الإنجليزية في اسم الملف المصدر في فقد المدة بتنسيق ANSI.</value>
   </data>
   <data name="non_utf1" xml:space="preserve">
     <value>تم العثور على ترجمات غير UTF في القائمة. قد تظهر اللغات غير الإنجليزية أحرفًا غير صحيحة. يكمل؟</value>
@@ -1347,14 +1812,29 @@
   <data name="not_abort" xml:space="preserve">
     <value>لا يمكن إحباط بعض العمليات. اضغط على "موافق" لإعادة المحاولة.</value>
   </data>
+  <data name="not_amf" xml:space="preserve">
+    <value>قد لا يعمل مع برنامج تشفير AMD amf المحدد.</value>
+  </data>
   <data name="not_deleted" xml:space="preserve">
     <value>غير محذوف</value>
+  </data>
+  <data name="not_deleted1" xml:space="preserve">
+    <value>لا يمكن حذفه.</value>
+  </data>
+  <data name="not_display" xml:space="preserve">
+    <value>لا تعرض مرة أخرى</value>
   </data>
   <data name="not_found1" xml:space="preserve">
     <value>لم يتم العثور على. يرجى إزالته أو تحديث القائمة.</value>
   </data>
   <data name="not_include" xml:space="preserve">
     <value>لا يشمل</value>
+  </data>
+  <data name="not_nvenc" xml:space="preserve">
+    <value>قد لا يعمل مع برنامج تشفير NVIDIA nvenc المحدد.</value>
+  </data>
+  <data name="not_qsv" xml:space="preserve">
+    <value>قد لا يعمل مع برنامج تشفير Intel QuickSync المحدد.</value>
   </data>
   <data name="not_queued" xml:space="preserve">
     <value>o العناصر ذات الوضع في قائمة الانتظار</value>
@@ -1380,6 +1860,9 @@
   <data name="not_subfolders" xml:space="preserve">
     <value>إضافة المجلدات الفرعية معطلة</value>
   </data>
+  <data name="not_sup_bom" xml:space="preserve">
+    <value>قد لا يكون مدعومًا بواسطة ffmpeg إذا كان يحتوي على BOM (علامة ترتيب البايت).</value>
+  </data>
   <data name="no_aerowiz" xml:space="preserve">
     <value>لم يتم العثور على AeroWizard.dll في مسار التطبيق. يجب أن تؤدي إعادة تثبيت التطبيق إلى إصلاحه.</value>
   </data>
@@ -1398,10 +1881,16 @@
   <data name="no_bck" xml:space="preserve">
     <value>لم يتم إنشاء ملف النسخ الاحتياطي حتى الآن</value>
   </data>
+  <data name="no_chaps" xml:space="preserve">
+    <value>لم يتم العثور على فصول في الملف الحالي.</value>
+  </data>
   <data name="no_chk_str" xml:space="preserve">
     <value>لم يتم فحص أي تيار للاختيار.</value>
   </data>
   <data name="no_concat_ef" xml:space="preserve">
+    <value>لا توجد ملفات أولية أو ملفات نهائية</value>
+  </data>
+  <data name="no_concat_ef1" xml:space="preserve">
     <value>لا توجد ملفات أولية أو ملفات نهائية</value>
   </data>
   <data name="no_ffmpeg" xml:space="preserve">
@@ -1503,11 +1992,20 @@
   <data name="one_track" xml:space="preserve">
     <value>الرجاء تحديد مسار واحد فقط لتغيير حالته الافتراضية.</value>
   </data>
+  <data name="one_track1" xml:space="preserve">
+    <value>الرجاء تحديد ملف واحد فقط لإضافة التدفقات الخاصة به.</value>
+  </data>
   <data name="one_try" xml:space="preserve">
     <value>أضف ملفًا واحدًا على الأقل للمحاولة.</value>
   </data>
+  <data name="online_pr" xml:space="preserve">
+    <value>الإعدادات المسبقة عبر الإنترنت</value>
+  </data>
   <data name="onlye_basel" xml:space="preserve">
     <value>يتم دعم ملف التعريف الأساسي فقط في الإعداد المسبق فائق السرعة.</value>
+  </data>
+  <data name="only_1011" xml:space="preserve">
+    <value>الاستبعاد التلقائي مدعوم فقط في Windows 10/11</value>
   </data>
   <data name="only_numbers" xml:space="preserve">
     <value>الرجاء إدخال أرقام فقط.</value>
@@ -1517,6 +2015,15 @@
   </data>
   <data name="only_qu" xml:space="preserve">
     <value>يمكن فقط نقل العناصر الموجودة في قائمة الانتظار.</value>
+  </data>
+  <data name="on_battery1" xml:space="preserve">
+    <value>كمبيوتر يعمل بالبطارية</value>
+  </data>
+  <data name="on_battery2" xml:space="preserve">
+    <value>تم ضبط الترميز على الإيقاف المؤقت للبطارية والاستئناف على طاقة التيار المتردد. هل ترغب في تعطيل هذا الإعداد وفرض استئناف معالجة قائمة الانتظار؟</value>
+  </data>
+  <data name="on_rel_path" xml:space="preserve">
+    <value>على المسار النسبي</value>
   </data>
   <data name="open_comp" xml:space="preserve">
     <value>افتح التطبيق عند اكتمال قائمة الانتظار</value>
@@ -1551,6 +2058,9 @@
   <data name="orphan2" xml:space="preserve">
     <value>تم العثور على عمليات يتيمة</value>
   </data>
+  <data name="outf_count" xml:space="preserve">
+    <value>جارى التحميل. العدد الإجمالي غير متوفر. عدد مجلد الإخراج:</value>
+  </data>
   <data name="output" xml:space="preserve">
     <value>انتاج |</value>
   </data>
@@ -1571,6 +2081,9 @@
   </data>
   <data name="out_ext" xml:space="preserve">
     <value>ملحق ملف الإخراج. اتركه فارغا لاستخدام امتداد الملف المصدر</value>
+  </data>
+  <data name="out_file" xml:space="preserve">
+    <value>ملف إلاخراج</value>
   </data>
   <data name="out_files_naming" xml:space="preserve">
     <value>تسمية ملفات الإخراج</value>
@@ -1659,6 +2172,9 @@
   <data name="pass2" xml:space="preserve">
     <value>التمرير الثاني: ملف ترميز</value>
   </data>
+  <data name="Paste_any_URL" xml:space="preserve">
+    <value>الصق رابط الإنترنت</value>
+  </data>
   <data name="Paste_M3u_URL" xml:space="preserve">
     <value>قم بلصق عنوان URL الخاص بـ M3u</value>
   </data>
@@ -1680,6 +2196,12 @@
   <data name="path_empty" xml:space="preserve">
     <value>حقل المسار فارغ.</value>
   </data>
+  <data name="path_iparam" xml:space="preserve">
+    <value>إضافة ملف الإدخال إلى المعلمات</value>
+  </data>
+  <data name="path_i_add" xml:space="preserve">
+    <value>أضف مسار ملف الإدخال داخل مرشح a/v</value>
+  </data>
   <data name="path_not" xml:space="preserve">
     <value>لم يتم العثور على المسار المحدد.</value>
   </data>
@@ -1694,6 +2216,9 @@
   </data>
   <data name="paused2" xml:space="preserve">
     <value>توقف التشفير مؤقتًا</value>
+  </data>
+  <data name="pause_bat_ac" xml:space="preserve">
+    <value>توقف مؤقتًا على البطارية</value>
   </data>
   <data name="pending" xml:space="preserve">
     <value>قيد الانتظار</value>
@@ -1716,6 +2241,9 @@
   <data name="please_not" xml:space="preserve">
     <value>من فضلك لا تبدأ ب</value>
   </data>
+  <data name="pls_include" xml:space="preserve">
+    <value>يرجى تضمين</value>
+  </data>
   <data name="pl_contents" xml:space="preserve">
     <value>الحصول على محتويات قائمة التشغيل ...</value>
   </data>
@@ -1725,14 +2253,101 @@
   <data name="Power_off" xml:space="preserve">
     <value>انقطاع التيار الكهربائي</value>
   </data>
+  <data name="pr01" xml:space="preserve">
+    <value>الفيديو: MP4 Stream copy</value>
+  </data>
+  <data name="pr02" xml:space="preserve">
+    <value>الفيديو: تحويل مسار الصوت إلى قنوات AAC HQ 2</value>
+  </data>
+  <data name="pr03" xml:space="preserve">
+    <value>الفيديو: تحويل المسارات الصوتية إلى قنوات AC3 2</value>
+  </data>
+  <data name="pr04" xml:space="preserve">
+    <value>الفيديو: التحويل إلى ProRes MKV</value>
+  </data>
+  <data name="pr05" xml:space="preserve">
+    <value>الفيديو: التحويل إلى H264 HQ + Source Audio</value>
+  </data>
+  <data name="pr06" xml:space="preserve">
+    <value>فيديو: قم بالتحويل إلى H264 Ultrafast</value>
+  </data>
+  <data name="pr07" xml:space="preserve">
+    <value>الفيديو: قم بالتحويل إلى H265 HQ + Source Audio</value>
+  </data>
+  <data name="pr08" xml:space="preserve">
+    <value>الفيديو: تغيير الحجم 1280x720 H264-AAC</value>
+  </data>
+  <data name="pr09" xml:space="preserve">
+    <value>الفيديو: قم بتدوير 90 درجة باتجاه عقارب الساعة إلى H264 + مصدر الصوت</value>
+  </data>
+  <data name="pr10" xml:space="preserve">
+    <value>الفيديو: قم بتدوير 90 degrees CountercLockwise و Vertical Flip إلى H264 + Source audio</value>
+  </data>
+  <data name="pr11" xml:space="preserve">
+    <value>فيديو: تدوير 90 درجة عكس اتجاه عقارب الساعة إلى H264 + مصدر الصوت</value>
+  </data>
+  <data name="pr12" xml:space="preserve">
+    <value>الفيديو: قم بتدوير 90 درجة في اتجاه عقارب الساعة والانعكاس الرأسي إلى H264 + صوت المصدر</value>
+  </data>
+  <data name="pr13" xml:space="preserve">
+    <value>الفيديو: قم بتدوير 180 درجة إلى H264 + صوت المصدر</value>
+  </data>
+  <data name="pr14" xml:space="preserve">
+    <value>الفيديو: إزالة الترجمات من MP4</value>
+  </data>
+  <data name="pr15" xml:space="preserve">
+    <value>الصوت: قم بالتحويل إلى قنوات FLAC 16 / 44،1KHz 2</value>
+  </data>
+  <data name="pr16" xml:space="preserve">
+    <value>الصوت: قم بالتحويل إلى غطاء مدمج بتنسيق MP3 VBR HQ 2 ch</value>
+  </data>
+  <data name="pr17" xml:space="preserve">
+    <value>الصوت: قم بالتحويل إلى MP3 VBR HQ 2 ch</value>
+  </data>
+  <data name="pr18" xml:space="preserve">
+    <value>الصوت: قم بالتحويل إلى MP3 CBR HQ 2 ch</value>
+  </data>
+  <data name="pr19" xml:space="preserve">
+    <value>الصوت: قم بالتحويل إلى قنوات WAV 16 / 44،1KHz 2</value>
+  </data>
   <data name="pr1_emp" xml:space="preserve">
     <value>الإعداد المسبق 1 فارغ.</value>
+  </data>
+  <data name="pr20" xml:space="preserve">
+    <value>العنوان الفرعي: استخراج مسار الترجمة الأول إلى SRT</value>
+  </data>
+  <data name="pr21" xml:space="preserve">
+    <value>الصورة: استخراج الإطار كصورة</value>
+  </data>
+  <data name="pr21-2" xml:space="preserve">
+    <value>الفيديو: تشفير AMD-VCE H264 HQ + مصدر الصوت</value>
+  </data>
+  <data name="pr21-21" xml:space="preserve">
+    <value>الفيديو: تشفير AMD-VCE HEVC HQ + صوت المصدر</value>
+  </data>
+  <data name="pr22" xml:space="preserve">
+    <value>سجل الشاشة بمعدل 24 إطارًا في الثانية + صوت AAC إلى MKV</value>
+  </data>
+  <data name="pr23" xml:space="preserve">
+    <value>تسجيل الشاشة بمعدل 15 إطارًا في الثانية بدقة 1280 × 720 + صوت إلى MKV</value>
+  </data>
+  <data name="pr24" xml:space="preserve">
+    <value>سجل الشاشة بمعدل 30 إطارًا في الثانية Nvidia NVENC + Audio AAC إلى MKV</value>
+  </data>
+  <data name="pr25" xml:space="preserve">
+    <value>سجل الشاشة بمعدل 25 إطارًا في الثانية Intel QuickSync + Audio AAC إلى MKV</value>
+  </data>
+  <data name="pr26" xml:space="preserve">
+    <value>ضم صورًا بعرض 1920 بكسل إلى فيديو MP4</value>
   </data>
   <data name="pr2_emp" xml:space="preserve">
     <value>الإعداد المسبق 2 فارغ.</value>
   </data>
   <data name="presets" xml:space="preserve">
     <value>المسبقة.</value>
+  </data>
+  <data name="press_c" xml:space="preserve">
+    <value>اضغط للإلغاء</value>
   </data>
   <data name="pres_empt" xml:space="preserve">
     <value>لا يمكن أن يكون وصف الإعداد المسبق فارغًا.</value>
@@ -1758,7 +2373,7 @@
   <data name="pres_saved" xml:space="preserve">
     <value>تم حفظ الإعداد المسبق الجديد.</value>
   </data>
-  <data name="prev" xml:space="preserve">
+  <data name="prev0" xml:space="preserve">
     <value>&lt;- السابق</value>
   </data>
   <data name="prevent_dis" xml:space="preserve">
@@ -1766,6 +2381,9 @@
   </data>
   <data name="prevent_en" xml:space="preserve">
     <value>تم تمكين منع الكمبيوتر من النوم</value>
+  </data>
+  <data name="pre_input" xml:space="preserve">
+    <value>قبل الإدخال</value>
   </data>
   <data name="pre_input1" xml:space="preserve">
     <value>تنسيق البحث عن الإدخال المسبق غير صحيح. قم بتغييره أو إعادة تعيينه بالنقر المزدوج عليه.</value>
@@ -1781,6 +2399,12 @@
   </data>
   <data name="pre_in_path" xml:space="preserve">
     <value>حدث خطأ أثناء حفظ التكوين المسبق للإدخال. يرجى التأكد من أن لديك حقوق الوصول إلى المسار.</value>
+  </data>
+  <data name="pre_ss" xml:space="preserve">
+    <value>قم بتعيين معلمة البحث عن الإدخال المسبق -ss</value>
+  </data>
+  <data name="proceed1" xml:space="preserve">
+    <value>هل تريد المتابعة؟</value>
   </data>
   <data name="processing" xml:space="preserve">
     <value>يعالج</value>
@@ -1821,6 +2445,9 @@
   <data name="queue_net" xml:space="preserve">
     <value>قائمة الانتظار تحتوي على ملفات من مشاركة عبر شبكة. هل تريد تخزين الملفات مؤقتًا في مجلد مؤقت قبل الترميز؟</value>
   </data>
+  <data name="queue_not_f" xml:space="preserve">
+    <value>لم يتم العثور على ملف (ملفات) قائمة الانتظار.</value>
+  </data>
   <data name="queue_ok" xml:space="preserve">
     <value>تم تحميل قائمة الانتظار بنجاح.</value>
   </data>
@@ -1829,6 +2456,42 @@
   </data>
   <data name="queue_temp" xml:space="preserve">
     <value>تم العثور على ملف جلسة مؤقتة لقائمة الانتظار</value>
+  </data>
+  <data name="queue_warn" xml:space="preserve">
+    <value>تم تحميل قائمة الملفات بنجاح.</value>
+  </data>
+  <data name="quick_f_m" xml:space="preserve">
+    <value>تعمل قائمة الملفات السريعة على تحسين وقت تحميل الملف بشكل كبير ، ولكنها تأتي مع بعض القيود:</value>
+  </data>
+  <data name="quick_f_m2" xml:space="preserve">
+    <value>إجمالي الوقت المتبقي غير متاح ، ويعرض إجمالي التقدم عدد الملفات المشفرة فقط.</value>
+  </data>
+  <data name="quick_f_m3" xml:space="preserve">
+    <value>لا يتم تخزين الأعمدة المخصصة ، ولكن يمكنك إضافتها لاحقًا.</value>
+  </data>
+  <data name="quick_f_m4" xml:space="preserve">
+    <value>ميزات الملف (المدة والحجم) يتم تخمينها فقط أثناء التشفير. إذا كانت متوفرة ، يتم عرض التقدم الفردي. إذا لم يكن الأمر كذلك ، فسيتم عرض حالة النجاح / الخطأ فقط في النهاية.</value>
+  </data>
+  <data name="quick_f_m5" xml:space="preserve">
+    <value>لا يمكن استخدام معالج تشفير تمريرين.</value>
+  </data>
+  <data name="quick_f_m6" xml:space="preserve">
+    <value>لا يتم دعم التلاشي للداخل / الخارج عند تمكين قائمة الملفات السريعة.</value>
+  </data>
+  <data name="quick_yt1" xml:space="preserve">
+    <value>رابط سريع / تنزيل قائمة التشغيل</value>
+  </data>
+  <data name="quick_yt2" xml:space="preserve">
+    <value>- انتقل إلى عنوان url الرئيسي لقناة YouTube ، وانقر فوق علامة التبويب VIDEOS.</value>
+  </data>
+  <data name="quick_yt3" xml:space="preserve">
+    <value>- انسخ عنوان url والصقه في حقل القناة.</value>
+  </data>
+  <data name="quick_yt4" xml:space="preserve">
+    <value>- مثال:</value>
+  </data>
+  <data name="quick_zero_no" xml:space="preserve">
+    <value>لا يمكن استخدام هذه الميزة مع تمكين قائمة الملفات السريعة.</value>
   </data>
   <data name="q_abort" xml:space="preserve">
     <value>معالجة قائمة الانتظار قيد التقدم. يرجى إحباط قائمة الانتظار قبل الخروج من التطبيق.</value>
@@ -1865,6 +2528,9 @@
   </data>
   <data name="recycled" xml:space="preserve">
     <value>المعاد تدويره</value>
+  </data>
+  <data name="rec_fail" xml:space="preserve">
+    <value>فشل اختبار التسجيل</value>
   </data>
   <data name="rec_screen" xml:space="preserve">
     <value>1-انقر فوق تسجيل الشاشة باستخدام gdigrab</value>
@@ -1911,8 +2577,17 @@
   <data name="rem_blanks" xml:space="preserve">
     <value>إزالة الصفوف الفارغة</value>
   </data>
+  <data name="rem_cust_p" xml:space="preserve">
+    <value>إزالة المعلمات المخصصة</value>
+  </data>
   <data name="rem_err_rows" xml:space="preserve">
     <value>قم بإزالة صفوف الخطأ</value>
+  </data>
+  <data name="rem_from_list" xml:space="preserve">
+    <value>إزالة العناصر المحددة من القائمة</value>
+  </data>
+  <data name="rem_img" xml:space="preserve">
+    <value>إزالة الصورة؟</value>
   </data>
   <data name="rem_pres" xml:space="preserve">
     <value>هل تريد إزالة الإعداد المسبق الحالي؟</value>
@@ -1922,6 +2597,15 @@
   </data>
   <data name="renamed" xml:space="preserve">
     <value>أعيدت تسميته</value>
+  </data>
+  <data name="ren_chars1" xml:space="preserve">
+    <value>تم العثور على أحرف غير متوافقة [، '] لمرشح ffmpeg في اسم الملف. قد تتسبب أسماء الملفات هذه في حدوث أخطاء.</value>
+  </data>
+  <data name="ren_chars2" xml:space="preserve">
+    <value>هل ترغب في إعادة تسميتها لتحل محل الأحرف المتضاربة؟</value>
+  </data>
+  <data name="ren_chars3" xml:space="preserve">
+    <value>أحرف غير متوافقة في اسم الملف</value>
   </data>
   <data name="ren_out" xml:space="preserve">
     <value>إعادة تسمية الإخراج</value>
@@ -1941,6 +2625,9 @@
   <data name="required_file" xml:space="preserve">
     <value>الملف المطلوب غير موجود</value>
   </data>
+  <data name="req_w1011" xml:space="preserve">
+    <value>تتطلب هذه الميزة التلقائية نظام التشغيل Windows 10/11. يمكنك إضافة استثناء أمان يدويًا في برنامج مكافحة الفيروسات الخاص بك.</value>
+  </data>
   <data name="reset_default" xml:space="preserve">
     <value>سيتم حذف جميع الإعدادات المخصصة والإعدادات المسبقة. هل تريد الاستمرار؟</value>
   </data>
@@ -1952,6 +2639,9 @@
   </data>
   <data name="Reset_list_items_to_queued" xml:space="preserve">
     <value>إعادة تعيين عناصر القائمة إلى قائمة الانتظار</value>
+  </data>
+  <data name="reset_m_jobs" xml:space="preserve">
+    <value>إعادة تعيين حالة المهام</value>
   </data>
   <data name="reset_out" xml:space="preserve">
     <value>انقر نقرًا مزدوجًا لإعادة تعيين مجلد الإخراج الافتراضي</value>
@@ -1970,6 +2660,18 @@
   </data>
   <data name="right_man_path" xml:space="preserve">
     <value>انقر بزر الماوس الأيمن لكتابة / لصق المسار يدويًا</value>
+  </data>
+  <data name="rotate1" xml:space="preserve">
+    <value>تدوير 90 درجة في اتجاه عقارب الساعة</value>
+  </data>
+  <data name="rotate2" xml:space="preserve">
+    <value>تدوير 90 درجة عكس اتجاه عقارب الساعة</value>
+  </data>
+  <data name="rotate3" xml:space="preserve">
+    <value>تدوير 180 درجة</value>
+  </data>
+  <data name="rot_flip" xml:space="preserve">
+    <value>قلب أفقي</value>
   </data>
   <data name="runcom2" xml:space="preserve">
     <value>حدد تطبيقًا لتنفيذه على كل ملف مشفر.</value>
@@ -1998,14 +2700,23 @@
   <data name="saved" xml:space="preserve">
     <value>أنقذ</value>
   </data>
+  <data name="saved_img" xml:space="preserve">
+    <value>تم حفظ الصورة بنجاح.</value>
+  </data>
   <data name="saved_qu" xml:space="preserve">
     <value>تمت مقاطعة البرنامج أثناء ترميز الملف. هل تريد تحميل آخر ملف محفوظ لحالة قائمة الانتظار؟</value>
+  </data>
+  <data name="save_all_str" xml:space="preserve">
+    <value>حفظ جميع تدفقات الملف</value>
   </data>
   <data name="save_current_queue" xml:space="preserve">
     <value>حفظ قائمة الانتظار الحالية</value>
   </data>
   <data name="save_def" xml:space="preserve">
     <value>حفظ المعلمات الحالية كافتراضي</value>
+  </data>
+  <data name="save_img" xml:space="preserve">
+    <value>احفظ الإطار الحالي</value>
   </data>
   <data name="save_pres" xml:space="preserve">
     <value>حفظ الإعداد المسبق الحالي</value>
@@ -2019,11 +2730,29 @@
   <data name="save_track" xml:space="preserve">
     <value>احفظ هذا المسار (المسارات)</value>
   </data>
+  <data name="scr_cap" xml:space="preserve">
+    <value>تصوير الشاشة</value>
+  </data>
+  <data name="scr_fail" xml:space="preserve">
+    <value>فشل اختبار التقاط الشاشة.</value>
+  </data>
+  <data name="scsr_term" xml:space="preserve">
+    <value>تم إنهاء التقاط الشاشة بشكل غير متوقع. قد يتم قطع الملف.</value>
+  </data>
+  <data name="second" xml:space="preserve">
+    <value>ثانية</value>
+  </data>
   <data name="seconds" xml:space="preserve">
     <value>ثواني</value>
   </data>
   <data name="second_p" xml:space="preserve">
     <value>التمريرة الثانية</value>
+  </data>
+  <data name="sec_perf" xml:space="preserve">
+    <value>الأمن والأداء</value>
+  </data>
+  <data name="selc_dev" xml:space="preserve">
+    <value>حدد جهاز التقاط الصوت</value>
   </data>
   <data name="select_out" xml:space="preserve">
     <value>الرجاء تحديد مجلد الإخراج.</value>
@@ -2039,6 +2768,9 @@
   </data>
   <data name="sel_format_pr" xml:space="preserve">
     <value>يرجى تحديد تنسيق الإخراج للإعداد المسبق</value>
+  </data>
+  <data name="sel_lang" xml:space="preserve">
+    <value>اختار اللغة</value>
   </data>
   <data name="sel_out1" xml:space="preserve">
     <value>يرجى تحديد تنسيق الإخراج للإعداد المسبق</value>
@@ -2073,6 +2805,9 @@
   <data name="Set_as_trim_end_time" xml:space="preserve">
     <value>تعيين وقت انتهاء القطع</value>
   </data>
+  <data name="set_cust_p" xml:space="preserve">
+    <value>قم بتعيين المعلمات المخصصة</value>
+  </data>
   <data name="set_del" xml:space="preserve">
     <value>انقر فوق الإعدادات لإعادة تدوير سلة أو حذف الملفات المصدر</value>
   </data>
@@ -2084,6 +2819,9 @@
   </data>
   <data name="set_st" xml:space="preserve">
     <value>تعيين وقت البدء</value>
+  </data>
+  <data name="seventh" xml:space="preserve">
+    <value>السابع</value>
   </data>
   <data name="shift_n" xml:space="preserve">
     <value>تحويل الصوت غير متاح للتسلسل.</value>
@@ -2106,6 +2844,9 @@
   <data name="silence_start" xml:space="preserve">
     <value>وجد الصمت. يبدأ:</value>
   </data>
+  <data name="sixth" xml:space="preserve">
+    <value>السادس</value>
+  </data>
   <data name="size" xml:space="preserve">
     <value>مقاس</value>
   </data>
@@ -2114,6 +2855,9 @@
   </data>
   <data name="skip_err" xml:space="preserve">
     <value>حدث خطأ أثناء تخطي الإصدار:</value>
+  </data>
+  <data name="skip_from_list" xml:space="preserve">
+    <value>تخطي العناصر المحددة من الترميز</value>
   </data>
   <data name="soft_update" xml:space="preserve">
     <value>تحديث النظام</value>
@@ -2127,14 +2871,29 @@
   <data name="some_time" xml:space="preserve">
     <value>يمكن أن تستغرق الملفات بعض الوقت. يكمل؟</value>
   </data>
+  <data name="sort_before" xml:space="preserve">
+    <value>قائمة الفرز قبل البدء؟</value>
+  </data>
   <data name="sort_list" xml:space="preserve">
     <value>قائمة الفرز</value>
+  </data>
+  <data name="sort_list1" xml:space="preserve">
+    <value>قائمة الفرز قبل البدء؟</value>
   </data>
   <data name="sort_list2" xml:space="preserve">
     <value>يمكن أن يؤدي فرز قائمة الملفات عن طريق تنازلي المدة إلى تقليل إجمالي وقت ترميز الملفات المتعددة. يمكنك تغيير هذا الإعداد في التكوين.</value>
   </data>
+  <data name="sort_list21" xml:space="preserve">
+    <value>فرز تلميح قائمة الملف</value>
+  </data>
+  <data name="sort_status" xml:space="preserve">
+    <value>يرجى فرز قائمة الملفات والتحقق منها للعناصر المميزة بالحالة</value>
+  </data>
   <data name="source_mov_text" xml:space="preserve">
     <value>يحتوي الملف المصدر على ترجمات mov_text لا تدعمها حاوية MKV. قم بالتبديل إلى حاوية mp4 أو إزالة ترجمات mov_text من ملفات المصدر.</value>
+  </data>
+  <data name="source_not_deleted" xml:space="preserve">
+    <value>ملفات المصدر التي تعذر حذفها بسبب فشل الترميز أو الملف قيد الاستخدام:</value>
   </data>
   <data name="source_overw" xml:space="preserve">
     <value>ملفات المصدر والوجهة هي نفسها ، ولكن لم يتم تمكين الكتابة فوقها.</value>
@@ -2145,14 +2904,23 @@
   <data name="speed_copy" xml:space="preserve">
     <value>لا يمكن استخدام مرشح زيادة / خفض السرعة مع نسخ دفق الصوت.</value>
   </data>
+  <data name="speed_not comp" xml:space="preserve">
+    <value>إعداد السرعة غير متوافق مع مرشحات الفيديو الأخرى.</value>
+  </data>
   <data name="srt_sub" xml:space="preserve">
     <value>الترجمة SRT المتاحة</value>
   </data>
   <data name="start_app_enc" xml:space="preserve">
     <value>بدء التطبيق في ملف مشفر</value>
   </data>
+  <data name="start_cap" xml:space="preserve">
+    <value>بدء التقاط الشاشة</value>
+  </data>
   <data name="start_enc" xml:space="preserve">
     <value>ابدأ الترميز</value>
+  </data>
+  <data name="start_mark" xml:space="preserve">
+    <value>علامة البداية</value>
   </data>
   <data name="start_one" xml:space="preserve">
     <value>بدء الالتقاط المتسلسل (واحدًا تلو الآخر)</value>
@@ -2172,6 +2940,15 @@
   <data name="stopping2" xml:space="preserve">
     <value>جاري إيقاف تسجيل البث ، يرجى الانتظار ...</value>
   </data>
+  <data name="stop_any" xml:space="preserve">
+    <value>يمكنك إيقاف التسجيل بالضغط على Control-Shift-P في أي وقت.</value>
+  </data>
+  <data name="stop_capt" xml:space="preserve">
+    <value>توقف عن الالتقاط</value>
+  </data>
+  <data name="stop_proc" xml:space="preserve">
+    <value>توقف عن المعالجة</value>
+  </data>
   <data name="Stop_task" xml:space="preserve">
     <value>توقف المهمة</value>
   </data>
@@ -2179,6 +2956,9 @@
     <value>تدفق</value>
   </data>
   <data name="streams" xml:space="preserve">
+    <value>تيارات</value>
+  </data>
+  <data name="streams1" xml:space="preserve">
     <value>تيارات</value>
   </data>
   <data name="streams_f" xml:space="preserve">
@@ -2199,6 +2979,9 @@
   <data name="str_abort" xml:space="preserve">
     <value>دفق الحفظ إحباط.</value>
   </data>
+  <data name="str_map" xml:space="preserve">
+    <value>رسم خرائط الدفق</value>
+  </data>
   <data name="str_ouput" xml:space="preserve">
     <value>إخراج تيار</value>
   </data>
@@ -2217,6 +3000,9 @@
   <data name="subtitle" xml:space="preserve">
     <value>العنوان الفرعي</value>
   </data>
+  <data name="subtitles" xml:space="preserve">
+    <value>ترجمات</value>
+  </data>
   <data name="Subtitle_file" xml:space="preserve">
     <value>ملف الترجمة</value>
   </data>
@@ -2226,14 +3012,23 @@
   <data name="success" xml:space="preserve">
     <value>نجاح</value>
   </data>
+  <data name="sunset1" xml:space="preserve">
+    <value>لا يمكن أن يكون وقت الغروب بعد شروق الشمس.</value>
+  </data>
   <data name="Suspend" xml:space="preserve">
     <value>تعليق</value>
   </data>
   <data name="s_str" xml:space="preserve">
     <value>الدفق الثاني</value>
   </data>
+  <data name="target_size" xml:space="preserve">
+    <value>الحجم المطلوب:</value>
+  </data>
   <data name="task_abort" xml:space="preserve">
     <value>تم إحباط المهام</value>
+  </data>
+  <data name="tenth" xml:space="preserve">
+    <value>العاشر</value>
   </data>
   <data name="test_err" xml:space="preserve">
     <value>فشل اختبار الترميز في الملف المحدد. جرب الإعداد المسبق لمزيد من معلومات الخطأ.</value>
@@ -2249,6 +3044,9 @@
   </data>
   <data name="the_files" xml:space="preserve">
     <value>الملفات:</value>
+  </data>
+  <data name="third" xml:space="preserve">
+    <value>ثالث</value>
   </data>
   <data name="three_pres" xml:space="preserve">
     <value>قم بتشفير تطبيق ما يصل إلى ثلاثة إعدادات مسبقة</value>
@@ -2268,11 +3066,38 @@
   <data name="time_load" xml:space="preserve">
     <value>وقد يستغرق التحميل بعض الوقت. يكمل؟</value>
   </data>
+  <data name="time_out_url" xml:space="preserve">
+    <value>انتهت المهلة في محاولة معالجة عنوان url</value>
+  </data>
   <data name="time_wrong" xml:space="preserve">
     <value>تنسيق الوقت غير صحيح. يرجى التحقق من حقول الوقت.</value>
   </data>
+  <data name="tip1" xml:space="preserve">
+    <value>يطلق هذا التطبيق عمليات ffmpeg للتشفير والتشغيل والإزالة والحصول على التدفقات وما إلى ذلك.</value>
+  </data>
+  <data name="tip2" xml:space="preserve">
+    <value>تقوم بعض برامج مكافحة الفيروسات بفحص كل عملية ffmpeg التي يتم إطلاقها لأنها غير موقعة رقميًا. يمكن أن يؤدي ذلك إلى تقليل أداء عمليات مثل قراءة التدفقات وتصفيتها والحصول على الصور المصغرة وما إلى ذلك.</value>
+  </data>
+  <data name="tip3" xml:space="preserve">
+    <value>إذا واجهت أداءً بطيئًا ، فيمكنك تحسينه عن طريق إضافة استثناء إلى</value>
+  </data>
+  <data name="tip4" xml:space="preserve">
+    <value>يعد ملف ffmpeg.exe المضمن في التطبيق آمنًا ويتم التحقق من صحة المجموع الاختباري لـ MD5 عند كل بدء تشغيل.</value>
+  </data>
+  <data name="tip_win_sec" xml:space="preserve">
+    <value>أمن Windows.</value>
+  </data>
+  <data name="tip_your_av" xml:space="preserve">
+    <value>برنامج مكافحة الفيروسات الحالي الخاص بك.</value>
+  </data>
   <data name="tools" xml:space="preserve">
     <value>أدوات</value>
+  </data>
+  <data name="too_many_files" xml:space="preserve">
+    <value>هناك عدد كبير جدًا من الملفات ليتم تحليلها</value>
+  </data>
+  <data name="total" xml:space="preserve">
+    <value>المجموع</value>
   </data>
   <data name="total_sec" xml:space="preserve">
     <value>إجمالي الثواني</value>
@@ -2282,6 +3107,12 @@
   </data>
   <data name="to_recycle" xml:space="preserve">
     <value>إرسال الملفات المعالجة إلى سلة المحذوفات ...</value>
+  </data>
+  <data name="to_tray1" xml:space="preserve">
+    <value>تصغير إلى علبة النظام</value>
+  </data>
+  <data name="to_tray2" xml:space="preserve">
+    <value>تم تصغير التطبيق إلى رمز علبة النظام</value>
   </data>
   <data name="tracks" xml:space="preserve">
     <value>المسارات:</value>
@@ -2304,6 +3135,12 @@
   <data name="track_up" xml:space="preserve">
     <value>تحريك المسار لأعلى</value>
   </data>
+  <data name="trailer_zero" xml:space="preserve">
+    <value>يؤدي تكوين المقطع الدعائي للفيلم إلى عدم وجود مدة.</value>
+  </data>
+  <data name="transfer_r" xml:space="preserve">
+    <value>معدل نقل:</value>
+  </data>
   <data name="trim1" xml:space="preserve">
     <value>هل ترغب في تطبيق التشذيب على</value>
   </data>
@@ -2324,6 +3161,9 @@
   </data>
   <data name="trim_f" xml:space="preserve">
     <value>تجاوز وقت انتهاء القطع مدة الملف.</value>
+  </data>
+  <data name="trim_fade_n" xml:space="preserve">
+    <value>Fade in / out متوافق فقط مع وضع التشذيب Start / End.</value>
   </data>
   <data name="trim_i" xml:space="preserve">
     <value>وقت بدء القطع يتجاوز مدة الملف.</value>
@@ -2348,6 +3188,9 @@
   </data>
   <data name="try_pr" xml:space="preserve">
     <value>جرب الإعداد المسبق لمزيد من معلومات الخطأ.</value>
+  </data>
+  <data name="try_scr_pr" xml:space="preserve">
+    <value>حاول باستخدام ضبط مسبق لالتقاط الشاشة وتحقق من معلمات التشفير.</value>
   </data>
   <data name="two_comp_f" xml:space="preserve">
     <value>الرجاء تحديد تنسيقين متوافقين فقط.</value>
@@ -2434,6 +3277,12 @@
   <data name="Type" xml:space="preserve">
     <value>يكتب</value>
   </data>
+  <data name="undef_dur_all" xml:space="preserve">
+    <value>لن تستمر المعالجة بعد العناصر ذات المدة غير المحددة (لانهائية).</value>
+  </data>
+  <data name="undef_seq" xml:space="preserve">
+    <value>عناصر ذات مدة غير محددة</value>
+  </data>
   <data name="undo_fil" xml:space="preserve">
     <value>التراجع عن تطبيق عامل التصفية</value>
   </data>
@@ -2479,6 +3328,12 @@
   <data name="url_comp2" xml:space="preserve">
     <value>اكتمل تنزيل URL</value>
   </data>
+  <data name="url_down_c" xml:space="preserve">
+    <value>اكتمل تحميل URL بنجاح</value>
+  </data>
+  <data name="url_down_c2" xml:space="preserve">
+    <value>اكتمل تنزيل URL</value>
+  </data>
   <data name="url_out" xml:space="preserve">
     <value>انتهت مهلة استجابة URL.</value>
   </data>
@@ -2512,11 +3367,29 @@
   <data name="var_url" xml:space="preserve">
     <value>التحقق من صحة URL</value>
   </data>
+  <data name="version" xml:space="preserve">
+    <value>إصدار</value>
+  </data>
   <data name="ver_ff_u" xml:space="preserve">
     <value>نسخة غير معروفة FFmpeg</value>
   </data>
+  <data name="vf_crop_multi" xml:space="preserve">
+    <value>تم العثور على مثيل مرشح فيديو آخر في حقل المعلمات. يمكنك استخدام فلاتر متعددة ، بين قوسين ومفصولة بفواصل. يرجى تعديل عامل التصفية -vf وفقًا لذلك.</value>
+  </data>
+  <data name="vf_crop_multi2" xml:space="preserve">
+    <value>على سبيل المثال: -vf "crop = 50: 50: 0: 10، yadif، format = grey"</value>
+  </data>
+  <data name="video" xml:space="preserve">
+    <value>فيديو</value>
+  </data>
   <data name="Video_codec" xml:space="preserve">
     <value>ترميز الفيديو</value>
+  </data>
+  <data name="vids_dest" xml:space="preserve">
+    <value>مقاطع فيديو في مجلد الوجهة.</value>
+  </data>
+  <data name="vids_unav" xml:space="preserve">
+    <value>(قد تكون بعض مقاطع الفيديو غير متاحة ، ويتم تخطي أحداث البث المباشر.)</value>
   </data>
   <data name="vid_req" xml:space="preserve">
     <value>مطلوب مسار فيديو ل muxing.</value>
@@ -2533,6 +3406,9 @@
   <data name="vob_unsupport" xml:space="preserve">
     <value>لا يتم دعم ترجمات VobSub في حاوية MP4.</value>
   </data>
+  <data name="vs_files_warn" xml:space="preserve">
+    <value>في نصوص Avisynth النصية ، قد تتسبب الأحرف غير الإنجليزية في اسم الملف المصدر في فقد المدة في ترميزات بخلاف UTF / Unicode.</value>
+  </data>
   <data name="v_bitr" xml:space="preserve">
     <value>معدل بت الفيديو</value>
   </data>
@@ -2548,6 +3424,39 @@
   <data name="warnings" xml:space="preserve">
     <value>تحذيرات:</value>
   </data>
+  <data name="warnings_last_s" xml:space="preserve">
+    <value>تحذير (تحذيرات) خلال الجلسة الماضية</value>
+  </data>
+  <data name="warning_file" xml:space="preserve">
+    <value>تحذير: ملف</value>
+  </data>
+  <data name="warning_not_rep" xml:space="preserve">
+    <value>لم يتم استبداله</value>
+  </data>
+  <data name="warn_colon" xml:space="preserve">
+    <value>يحتوي اسم الملف أو المسار على حرف غير مدعوم للتسلسل: '(علامة اقتباس مفردة).</value>
+  </data>
+  <data name="warn_colon2" xml:space="preserve">
+    <value>يرجى إعادة تسمية الملف (الملفات) أو المسار (المسارات) وفقًا لذلك قبل المتابعة.</value>
+  </data>
+  <data name="warn_down" xml:space="preserve">
+    <value>كانت هناك رسائل تحذير أثناء تنزيل قائمة الانتظار:</value>
+  </data>
+  <data name="warn_n_files" xml:space="preserve">
+    <value>يمكن أن تستغرق إضافة آلاف الملفات بضع دقائق حتى يتم تحليل كل ملف. يمكنك تمكين قائمة الملفات السريعة في الإعدادات لتسريع إضافة الملف ، ولكن لن يتم عرض معلومات التقدم ، فقط حالة عنصر النجاح / الفاشل ومعلومات السجل.</value>
+  </data>
+  <data name="warn_n_files2" xml:space="preserve">
+    <value>هل تريد الاستمرار؟ يمكنك إلغاء إضافة الملف في أي وقت.</value>
+  </data>
+  <data name="warn_run_enc" xml:space="preserve">
+    <value>تم تمكين الإعدادات "لا تحذر من الملفات المشفرة بالفعل" و "تخطي الملفات المشفرة" أيضًا.</value>
+  </data>
+  <data name="warn_sort" xml:space="preserve">
+    <value>ملاحظة: لا تقم بإضافة ملفات أو مجلدات جديدة أثناء تشفير الملفات المتعددة ، حيث قد يظل بعضها في قائمة الانتظار ولا تتم معالجته إذا تم تمكين هذا الإعداد.</value>
+  </data>
+  <data name="warn_sp" xml:space="preserve">
+    <value>المساحة المتوفرة على محرك الأقراص الوجهة أقل من 500 ميجابايت ، وقد يتعطل التطبيق أثناء الترميز. هل تريد إجهاض العملية الحالية؟</value>
+  </data>
   <data name="was_rest" xml:space="preserve">
     <value>تمت استعادته بنجاح.</value>
   </data>
@@ -2562,6 +3471,9 @@
   </data>
   <data name="webm_warn2" xml:space="preserve">
     <value>قيود حاوية WEBM</value>
+  </data>
+  <data name="white" xml:space="preserve">
+    <value>أبيض</value>
   </data>
   <data name="width" xml:space="preserve">
     <value>عرض</value>
@@ -2587,11 +3499,20 @@
   <data name="write_path" xml:space="preserve">
     <value>اكتب أسفل المسار النسبي المخصص الخاص بك</value>
   </data>
+  <data name="wrong_chr" xml:space="preserve">
+    <value>يحتوي اسم ملف الإدخال على حرف []. يرجى إزالة هذه الأحرف لتجنب الخطأ عند استخدام عامل التصفية -vf.</value>
+  </data>
+  <data name="wrong_c_dur" xml:space="preserve">
+    <value>مدة الالتقاط غير صحيحة</value>
+  </data>
   <data name="yes" xml:space="preserve">
     <value>نعم</value>
   </data>
   <data name="yes_subfolders" xml:space="preserve">
     <value>تمكين إضافة المجلدات الفرعية</value>
+  </data>
+  <data name="your_sys" xml:space="preserve">
+    <value>نظامك</value>
   </data>
   <data name="yt_channel" xml:space="preserve">
     <value>قد يكون الرابط الذي تم لصقه قناة YouTube ، يرجى استخدام زر تنزيل القناة / قائمة التشغيل بدلاً من ذلك.</value>
@@ -2614,13 +3535,10 @@
   <data name="yt_str_av2" xml:space="preserve">
     <value>تدفقات الجودة المتوفرة على YouTube</value>
   </data>
-  <data name="Display_media_information" xml:space="preserve">
-    <value>عرض معلومات الوسائط المتعددة</value>
+  <data name="yt_url_blank" xml:space="preserve">
+    <value>YouTube URL حقل فارغ.</value>
   </data>
-  <data name="enc_warm" xml:space="preserve">
-    <value>FFmpeg Batch - تشفير كامل مع تحذير (تحذيرات).</value>
-  </data>
-  <data name="wrong_chr" xml:space="preserve">
-    <value>يحتوي اسم ملف الإدخال على حرف []. يرجى إزالة هذه الأحرف لتجنب الخطأ عند استخدام عامل التصفية -vf.</value>
+  <data name="yt_url_sh" xml:space="preserve">
+    <value>عنوان URL لموقع YouTube قصير جدًا.</value>
   </data>
 </root>

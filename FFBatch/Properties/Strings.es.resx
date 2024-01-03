@@ -120,8 +120,14 @@
   <data name="aborted" xml:space="preserve">
     <value>Abortado</value>
   </data>
+  <data name="aborted2" xml:space="preserve">
+    <value>Descarga del enlace abortada por el usuario.</value>
+  </data>
   <data name="aborting" xml:space="preserve">
     <value>Abortando</value>
+  </data>
+  <data name="abort_cap" xml:space="preserve">
+    <value>Abortar captura</value>
   </data>
   <data name="abort_current" xml:space="preserve">
     <value>Abortar tarea actual y continuar</value>
@@ -177,6 +183,12 @@
   <data name="Add_custom_column" xml:space="preserve">
     <value>Añadir columna adicional</value>
   </data>
+  <data name="add_cust_param" xml:space="preserve">
+    <value>Por favor agregue primero la columna de Parámetros de codificación para poder agregar preajustes a uno o varios ficheros seleccionados.</value>
+  </data>
+  <data name="add_excl_ws" xml:space="preserve">
+    <value>Agregar exclusión para ffmpeg en Seguridad de Windows</value>
+  </data>
   <data name="add_file" xml:space="preserve">
     <value>Añadir ficheros</value>
   </data>
@@ -185,6 +197,9 @@
   </data>
   <data name="add_folder" xml:space="preserve">
     <value>Añadir carpeta</value>
+  </data>
+  <data name="add_input" xml:space="preserve">
+    <value>Añadir fichero de entrada a los parámetros</value>
   </data>
   <data name="add_strack" xml:space="preserve">
     <value>Añadir pistas de subtítulos</value>
@@ -198,11 +213,20 @@
   <data name="add_txt_out" xml:space="preserve">
     <value>Añadir cadena al nombre de fichero de destino</value>
   </data>
+  <data name="add_variable" xml:space="preserve">
+    <value>Agregar variable a los parámetros</value>
+  </data>
   <data name="add_vtrack" xml:space="preserve">
     <value>Añadir pistas de vídeo</value>
   </data>
+  <data name="admin_cmd" xml:space="preserve">
+    <value>Se le solicitarán permisos de administrador por parte de la consola de comandos.</value>
+  </data>
   <data name="adm_req" xml:space="preserve">
     <value>Permisos de administrador requeridos a continuación.</value>
+  </data>
+  <data name="all" xml:space="preserve">
+    <value>Todo</value>
   </data>
   <data name="allow_adm" xml:space="preserve">
     <value>Por favor, permita acceso como administrador a la consola de comandos para completar la sustitución de ffmpeg.</value>
@@ -231,6 +255,9 @@
   <data name="alr_track" xml:space="preserve">
     <value>La lista de pistas ya contiene un flujo de vídeo</value>
   </data>
+  <data name="ansi_rec" xml:space="preserve">
+    <value>Se recomienda la codificación ANSI o UTF sin BOM.</value>
+  </data>
   <data name="any_str" xml:space="preserve">
     <value>Cualquier pista</value>
   </data>
@@ -255,6 +282,9 @@
   <data name="app_failed" xml:space="preserve">
     <value>La aplicación falló.</value>
   </data>
+  <data name="app_min_1" xml:space="preserve">
+    <value>La ventana de la aplicación se minimizará 1 segundo antes de comenzar.</value>
+  </data>
   <data name="app_ok" xml:space="preserve">
     <value>La aplicación finalizó satisfactoriamente.</value>
   </data>
@@ -264,14 +294,38 @@
   <data name="as_sub" xml:space="preserve">
     <value>Subtítulo ASS disponible</value>
   </data>
+  <data name="attempt_exc" xml:space="preserve">
+    <value>Va a agregar una exclusión a Seguridad de Windows para ffmpeg.exe.</value>
+  </data>
   <data name="Audio_codec" xml:space="preserve">
     <value>Codec de audio</value>
   </data>
   <data name="aud_str_c" xml:space="preserve">
     <value>Copiar pista de audio</value>
   </data>
+  <data name="Aud_wave" xml:space="preserve">
+    <value>Formato de onda</value>
+  </data>
+  <data name="autorun_dis" xml:space="preserve">
+    <value>La autoejecución está desactivada</value>
+  </data>
+  <data name="autorun_en" xml:space="preserve">
+    <value>La autoejecución está activada</value>
+  </data>
   <data name="autosh" xml:space="preserve">
     <value>El apagado automático no está permitido en la concatenación de ficheros.</value>
+  </data>
+  <data name="autoshut_en" xml:space="preserve">
+    <value>APAGADO AUTOMÁTICO HABILITADO</value>
+  </data>
+  <data name="autoshut_st" xml:space="preserve">
+    <value>APAGADO AUTOMÁTICO INICIADO</value>
+  </data>
+  <data name="auto_ask" xml:space="preserve">
+    <value>La codificación secuencial automática está activada. ¿Desea mantener este ajuste?</value>
+  </data>
+  <data name="auto_ask2" xml:space="preserve">
+    <value>La codificación multi-fichero automática está activada. ¿Desea mantener este ajuste?</value>
   </data>
   <data name="auto_sh" xml:space="preserve">
     <value>Apagar automáticamente al terminar la cola</value>
@@ -279,8 +333,17 @@
   <data name="av" xml:space="preserve">
     <value>Audio y video</value>
   </data>
+  <data name="av1_noslide" xml:space="preserve">
+    <value>Solo los botones de posición de tiempo están disponibles.</value>
+  </data>
+  <data name="av1_w" xml:space="preserve">
+    <value>El selector de fotogramas clave no funciona con vídeos que usan el codec AV1 con la versión actual 'Essentials' de ffmpeg.exe. Por favor, descargue y sustituya por la versión 'Full' desde la opción de ajustes de la aplicación.</value>
+  </data>
   <data name="available" xml:space="preserve">
     <value>disponible</value>
+  </data>
+  <data name="avgs" xml:space="preserve">
+    <value>Velocidad promedio:</value>
   </data>
   <data name="avg_bit" xml:space="preserve">
     <value>Tasa de bits promedio</value>
@@ -297,8 +360,14 @@
   <data name="avoid_overw" xml:space="preserve">
     <value>para evitar posibles sobreescrituras.</value>
   </data>
+  <data name="avoid_overw1" xml:space="preserve">
+    <value>para evitar posibles sobrescrituras.</value>
+  </data>
   <data name="AV_split_wizard" xml:space="preserve">
     <value>Asistente de partición de ficheros multimedia</value>
+  </data>
+  <data name="a_bitr" xml:space="preserve">
+    <value>Tasa de bits de audio</value>
   </data>
   <data name="backup_suc" xml:space="preserve">
     <value>Copia de seguridad cargada con éxito.</value>
@@ -312,6 +381,9 @@
   <data name="batch_concat_msg" xml:space="preserve">
     <value>La concatenación por lotes está activada, pero no se añadió un fichero de inicio o final. Por favor, seleccione alguno de ellos, o desactive esta opcion.</value>
   </data>
+  <data name="batch_concat_msg1" xml:space="preserve">
+    <value>La concatenación por lotes está activada, pero no se añadió fichero de inicio y/o final. Por favor, añada uno o desactive esta opción.</value>
+  </data>
   <data name="batch_mux" xml:space="preserve">
     <value>FFmpeg Batch - Tareas de multiplexado completadas con éxito</value>
   </data>
@@ -320,6 +392,24 @@
   </data>
   <data name="Below_normal" xml:space="preserve">
     <value>Debajo de lo normal</value>
+  </data>
+  <data name="big_size" xml:space="preserve">
+    <value>Mayor tamaño</value>
+  </data>
+  <data name="bitrate" xml:space="preserve">
+    <value>Tasa de bits</value>
+  </data>
+  <data name="black" xml:space="preserve">
+    <value>Negro</value>
+  </data>
+  <data name="browse" xml:space="preserve">
+    <value>Explorar</value>
+  </data>
+  <data name="browsing" xml:space="preserve">
+    <value>Examinando</value>
+  </data>
+  <data name="brow_page" xml:space="preserve">
+    <value>Examinando contenidos: Página</value>
   </data>
   <data name="brow_sub" xml:space="preserve">
     <value>Buscar subtítulos</value>
@@ -366,11 +456,35 @@
   <data name="capture_time2" xml:space="preserve">
     <value>El tiempo de captura de elemento</value>
   </data>
+  <data name="capt_1" xml:space="preserve">
+    <value>Capturando en 1 segundo</value>
+  </data>
+  <data name="capt_2" xml:space="preserve">
+    <value>Capturando en 2 segundos</value>
+  </data>
+  <data name="capt_3" xml:space="preserve">
+    <value>Capturando en 3 segundos</value>
+  </data>
   <data name="capt_params" xml:space="preserve">
     <value>El campo de parámetros de descarga de m3u está en blanco.</value>
   </data>
+  <data name="capt_term" xml:space="preserve">
+    <value>Captura finalizada.</value>
+  </data>
+  <data name="capt_virtual" xml:space="preserve">
+    <value>Para capturar el sonido reproducido, se requiere un controlador virtual.</value>
+  </data>
   <data name="change_def" xml:space="preserve">
     <value>Cambiar estado de pista por defecto</value>
+  </data>
+  <data name="chaps_f" xml:space="preserve">
+    <value>capítulos encontrados.</value>
+  </data>
+  <data name="chapters" xml:space="preserve">
+    <value>capítulos</value>
+  </data>
+  <data name="chapters_all" xml:space="preserve">
+    <value>La configuración manual de capítulos se aplicará a todos los ficheros de la lista. ¿Desea continuar?</value>
   </data>
   <data name="characters" xml:space="preserve">
     <value>caracteres.</value>
@@ -387,6 +501,9 @@
   <data name="check_log" xml:space="preserve">
     <value>Puede revisar el archivo de registro en la pestaña principal para obtener más información sobre el error.</value>
   </data>
+  <data name="check_not_st" xml:space="preserve">
+    <value>La suma MD5 de FFmpeg.exe no ha sido guardada todavía.</value>
+  </data>
   <data name="check_trim1" xml:space="preserve">
     <value>Marque esta casilla para recortar la cantidad de tiempo seleccionada en los campos inicio y fin.</value>
   </data>
@@ -395,6 +512,9 @@
   </data>
   <data name="check_urls" xml:space="preserve">
     <value>Verificar los enlaces de descarga</value>
+  </data>
+  <data name="check_web_up" xml:space="preserve">
+    <value>¿Desea visitar la página web del programa para buscar posibles actualizaciones?</value>
   </data>
   <data name="check_ytdl" xml:space="preserve">
     <value>Revisando versión de yt-dl</value>
@@ -423,6 +543,9 @@
   <data name="codec_params" xml:space="preserve">
     <value>Los parámetros de tipo de codificador, tales como</value>
   </data>
+  <data name="computer_will" xml:space="preserve">
+    <value>El PC iniciará</value>
+  </data>
   <data name="concat_abort" xml:space="preserve">
     <value>Concatenación abortada por el usuario</value>
   </data>
@@ -440,6 +563,9 @@
   </data>
   <data name="concat_vid_help" xml:space="preserve">
     <value>Este filtro permite unir vídeos con diferentes características. Mejora la compatibilidad, pero requiere que audio y video sean recodificados. El campo de parámetros puede quedar en blanco. NOTA: So para ficheros de vídeo.</value>
+  </data>
+  <data name="concat_vid_help1" xml:space="preserve">
+    <value>Este filtro permite unir vídeos con diferentes características. Mejora la compatibilidad, pero requiere que audio y video sean recodificados. El campo de parámetros puede quedar en blanco. NOTA: Solo para ficheros de vídeo.</value>
   </data>
   <data name="conc_comp" xml:space="preserve">
     <value>Concatenación completada</value>
@@ -474,6 +600,9 @@
   <data name="container1" xml:space="preserve">
     <value>El formato de salida no está admitido.</value>
   </data>
+  <data name="contin" xml:space="preserve">
+    <value>¿Continuar?</value>
+  </data>
   <data name="continu" xml:space="preserve">
     <value>¿Desea continuar?</value>
   </data>
@@ -488,6 +617,18 @@
   </data>
   <data name="create_vid_img" xml:space="preserve">
     <value>Crear vídeo a partir de imágenes</value>
+  </data>
+  <data name="crop1" xml:space="preserve">
+    <value>Detectar/recortar barras negras de video</value>
+  </data>
+  <data name="crop2" xml:space="preserve">
+    <value>Se encontró un filtro de recorte en el campo de parámetros. Por favor, asegúrese de borrar cualquier instancia previa del filtro -vf crop.</value>
+  </data>
+  <data name="crop3" xml:space="preserve">
+    <value>El siguiente parámetro fue añadido:</value>
+  </data>
+  <data name="custom" xml:space="preserve">
+    <value>Personalizar</value>
   </data>
   <data name="custom_rel" xml:space="preserve">
     <value>Ruta relativa personalizada</value>
@@ -507,11 +648,29 @@
   <data name="Default_track" xml:space="preserve">
     <value>Pista por defecto</value>
   </data>
+  <data name="def_mapping" xml:space="preserve">
+    <value>Por defecto solo se mapea el primer flujo de cada tipo</value>
+  </data>
   <data name="def_rn" xml:space="preserve">
     <value>El preset por defecto no se puede eliminar.</value>
   </data>
+  <data name="delay_act" xml:space="preserve">
+    <value>Retardo</value>
+  </data>
   <data name="deleted" xml:space="preserve">
     <value>Borrado</value>
+  </data>
+  <data name="deleting_f" xml:space="preserve">
+    <value>Eliminando...</value>
+  </data>
+  <data name="deleting_files" xml:space="preserve">
+    <value>Eliminando ficheros...</value>
+  </data>
+  <data name="deleting_proc" xml:space="preserve">
+    <value>Eliminando ficheros  procesador...</value>
+  </data>
+  <data name="deleting_sourc" xml:space="preserve">
+    <value>Eliminando ficheros de origen</value>
   </data>
   <data name="del_file" xml:space="preserve">
     <value>Borrar fichero</value>
@@ -522,17 +681,29 @@
   <data name="del_overw" xml:space="preserve">
     <value>No es posible eliminar y sobrescribir el fichero de origen. Por favor, verifique que ambas opciones no están habilitadas a la vez.</value>
   </data>
+  <data name="del_overw2" xml:space="preserve">
+    <value>Para habilitar las a la vez las opciones de sobrescribir y eliminar origen, las opciones de borrado se han establecido en: Enviar a la papelera y Eliminar de uno en uno.</value>
+  </data>
   <data name="del_pres" xml:space="preserve">
     <value>Eliminar preset actual</value>
   </data>
   <data name="demuxer_help" xml:space="preserve">
     <value>En este modo, los ficheros de audio/vídeo se pueden copiar sin codificar, siempre que tengan las mismas características (tamaño, codec, etc.). NOTA: No todos los formatos de salida admiten copia de flujos. Si surgen problemas de codificación o reproducción, sería necesario recodificar.</value>
   </data>
+  <data name="demuxer_help1" xml:space="preserve">
+    <value>En este modo, los ficheros de audio/vídeo se pueden copiar sin codificar, siempre que tengan las mismas características (tamaño, codec, etc.). NOTA: No todos los formatos de salida admiten copia de flujos. Si surgen problemas de codificación o reproducción, sería necesario recodificar.</value>
+  </data>
   <data name="dest_err" xml:space="preserve">
     <value>No se pudo crear la carpeta de destino. Asegúrese de que tiene permisos de escritura en la ruta de destino.</value>
   </data>
+  <data name="dest_not_empty" xml:space="preserve">
+    <value>La ruta de destino no está vacía. ¿Desea continuar?</value>
+  </data>
   <data name="Detect_silence_wizard" xml:space="preserve">
     <value>Asistente de detección de silencios</value>
+  </data>
+  <data name="dif_in_out_f" xml:space="preserve">
+    <value>Varias carpetas distintas de entrada a una única carpeta de salida</value>
   </data>
   <data name="Display_file_streams" xml:space="preserve">
     <value>Mostrar flujos del fichero</value>
@@ -552,8 +723,14 @@
   <data name="dis_url_streams" xml:space="preserve">
     <value>Mostrar flujos del enlace</value>
   </data>
+  <data name="download" xml:space="preserve">
+    <value>Descargar</value>
+  </data>
   <data name="Downloading" xml:space="preserve">
     <value>Descargando</value>
+  </data>
+  <data name="down_com" xml:space="preserve">
+    <value>Descarga completada.</value>
   </data>
   <data name="down_empty" xml:space="preserve">
     <value>La lista de enlaces está vacía.</value>
@@ -564,11 +741,26 @@
   <data name="down_multi" xml:space="preserve">
     <value>Descargar todos los enlaces</value>
   </data>
+  <data name="down_prog" xml:space="preserve">
+    <value>La descarga está en curso. Por favor, aborte las descargas antes de salir.</value>
+  </data>
+  <data name="down_prog2" xml:space="preserve">
+    <value>Descarga en curso</value>
+  </data>
+  <data name="down_p_ab" xml:space="preserve">
+    <value>La descarga está en curso. ¿Desea forzar el cierre?</value>
+  </data>
   <data name="down_up" xml:space="preserve">
     <value>Descargando actualización</value>
   </data>
   <data name="drag1" xml:space="preserve">
     <value>Arrastre archivos y carpetas aquí</value>
+  </data>
+  <data name="drop_big" xml:space="preserve">
+    <value>El fichero arrastrado es demasiado grande. Solo se admiten ficheros de texto de hasta 1 MB.</value>
+  </data>
+  <data name="drop_one" xml:space="preserve">
+    <value>Por favor, agregue un solo fichero.</value>
   </data>
   <data name="dup_not" xml:space="preserve">
     <value>Valor duplicado no admitido</value>
@@ -597,8 +789,20 @@
   <data name="edit_pres" xml:space="preserve">
     <value>Editar lista de perfiles</value>
   </data>
+  <data name="eighth" xml:space="preserve">
+    <value>octavo</value>
+  </data>
   <data name="elapsed" xml:space="preserve">
     <value>Tiempo transcurrido</value>
+  </data>
+  <data name="encode" xml:space="preserve">
+    <value>Codificar</value>
+  </data>
+  <data name="encoded" xml:space="preserve">
+    <value>codificado(s)</value>
+  </data>
+  <data name="encoded2" xml:space="preserve">
+    <value>Codificado(s)</value>
   </data>
   <data name="Encoding" xml:space="preserve">
     <value>Codificación</value>
@@ -615,6 +819,21 @@
   <data name="enc_comp3" xml:space="preserve">
     <value>FFmpeg Batch - Codificación completada con</value>
   </data>
+  <data name="enc_fail_first" xml:space="preserve">
+    <value>Se produjo un error durante la prueba de los parámetros de la fase 1.</value>
+  </data>
+  <data name="enc_fail_second" xml:space="preserve">
+    <value>Se produjo un error durante la prueba de los parámetros de la fase 2.</value>
+  </data>
+  <data name="enc_not_sup1" xml:space="preserve">
+    <value>El codificador seleccionado no está disponible en su versión actual de ffmpeg.exe.</value>
+  </data>
+  <data name="enc_not_sup2" xml:space="preserve">
+    <value>Puede probar una versión más completa (full) en Ajustes -&gt; Buscar otras versiones de ffmpeg.</value>
+  </data>
+  <data name="enc_not_sup3" xml:space="preserve">
+    <value>Codificador no soportado</value>
+  </data>
   <data name="enc_preset" xml:space="preserve">
     <value>Procesando preset</value>
   </data>
@@ -624,6 +843,9 @@
   <data name="enc_warm" xml:space="preserve">
     <value>FFmpeg Batch - Codificación completada con avisos</value>
   </data>
+  <data name="enc_warns" xml:space="preserve">
+    <value>FFmpeg Batch - Codificación completada con aviso(s).</value>
+  </data>
   <data name="end_log" xml:space="preserve">
     <value>FIN DEL FICHERO DE REGISTRO</value>
   </data>
@@ -632,6 +854,15 @@
   </data>
   <data name="end_short" xml:space="preserve">
     <value>El tiempo de final es más corto que el tiempo de inicio.</value>
+  </data>
+  <data name="en_day" xml:space="preserve">
+    <value>Activar modo diurno</value>
+  </data>
+  <data name="en_night" xml:space="preserve">
+    <value>Activar modo nocturno</value>
+  </data>
+  <data name="en_target_size" xml:space="preserve">
+    <value>Tamaño de destino:</value>
   </data>
   <data name="error" xml:space="preserve">
     <value>Error</value>
@@ -666,11 +897,20 @@
   <data name="error_test_f" xml:space="preserve">
     <value>Error al escribir un archivo de prueba.</value>
   </data>
+  <data name="error_writing" xml:space="preserve">
+    <value>Error al escribir en la ruta de destino. Por favor, seleccione otra carpeta, o asegúrese de que tiene permisos de escritura.</value>
+  </data>
   <data name="err_bck" xml:space="preserve">
     <value>Error al crear la copia de respaldo. Por favor, seleccione otra carpeta de destino.</value>
   </data>
+  <data name="err_chap" xml:space="preserve">
+    <value>ERROR: El vídeo no contiene capítulos.</value>
+  </data>
   <data name="err_check" xml:space="preserve">
     <value>Se produjo un error al buscar actualizaciones.</value>
+  </data>
+  <data name="err_clipb" xml:space="preserve">
+    <value>Error al copiar en el portapapeles.</value>
   </data>
   <data name="err_close_procs" xml:space="preserve">
     <value>Error al cerrar proceso:</value>
@@ -683,6 +923,9 @@
   </data>
   <data name="err_connect" xml:space="preserve">
     <value>Se produjo un error al conectar a internet. ¿Continuar de todos modos?</value>
+  </data>
+  <data name="err_crop" xml:space="preserve">
+    <value>Se produjo un error al previsualizar el recorte. Revise que los parámetros de tamaño y coordenadas no exceden los límites del vídeo seleccionado.</value>
   </data>
   <data name="err_dec" xml:space="preserve">
     <value>Error desconocido al actualizar la lista de decodificadores.</value>
@@ -705,11 +948,17 @@
   <data name="err_kf" xml:space="preserve">
     <value>Error al obtener los fotogramas clave. Formato de entrada incorrecto.</value>
   </data>
+  <data name="err_long_path" xml:space="preserve">
+    <value>La ruta combinada o la longitud del nombre de archivo de algunos elementos es demasiado larga. Reduzca por favor la longitud a menos de 255 caracteres.</value>
+  </data>
   <data name="err_oc" xml:space="preserve">
     <value>Se produjo un error:</value>
   </data>
   <data name="err_pars_ff" xml:space="preserve">
     <value>Error al verificar ffmpeg, el archivo podría estar dañado.</value>
+  </data>
+  <data name="err_pl_vlc" xml:space="preserve">
+    <value>Error al intentar reproducir el enlace con VLC:</value>
   </data>
   <data name="err_port" xml:space="preserve">
     <value>No se pudo crear la carpeta de configuración en la ruta de la aplicación:</value>
@@ -720,14 +969,29 @@
   <data name="err_qf" xml:space="preserve">
     <value>Error al cargar el fichero de sesión interrumpida. Formato incorrecto.</value>
   </data>
+  <data name="err_save_qu" xml:space="preserve">
+    <value>Se produjo un error al guardar el fichero de cola.</value>
+  </data>
+  <data name="err_save_track" xml:space="preserve">
+    <value>Error al guardar la pista</value>
+  </data>
   <data name="err_saving_pres" xml:space="preserve">
     <value>Se produjo un error al guardar los perfiles</value>
   </data>
   <data name="err_set" xml:space="preserve">
     <value>Se produjo un error al guardar los ajustes</value>
   </data>
+  <data name="err_test_temp" xml:space="preserve">
+    <value>La carpeta de prueba no pudo ser creada en la carpeta de archivos temporales.</value>
+  </data>
   <data name="err_wavs" xml:space="preserve">
     <value>Error al reproducir archivo. Solo ficheros de onda PCM están admitidos.</value>
+  </data>
+  <data name="err_write_out" xml:space="preserve">
+    <value>Error de escritura en la carpeta de destino:</value>
+  </data>
+  <data name="err_write_temp" xml:space="preserve">
+    <value>Error de escritura en la carpeta de archivos temporales.</value>
   </data>
   <data name="err_yt_2" xml:space="preserve">
     <value>Se produjo un error al intentar actualizar yt-dl:</value>
@@ -741,8 +1005,20 @@
   <data name="est_size" xml:space="preserve">
     <value>Tamaño estimado:</value>
   </data>
+  <data name="excl_add2" xml:space="preserve">
+    <value>Excepción agregada</value>
+  </data>
+  <data name="excl_added" xml:space="preserve">
+    <value>La escepción se ha agregado a Seguridad de Windows. Puede revisarla en la siguiente pantalla.</value>
+  </data>
+  <data name="excl_list" xml:space="preserve">
+    <value>Lista de exclusión</value>
+  </data>
   <data name="exc_aud" xml:space="preserve">
     <value>Excluir pista de audio</value>
+  </data>
+  <data name="exc_dur" xml:space="preserve">
+    <value>excede la duración del origen.</value>
   </data>
   <data name="exe_files" xml:space="preserve">
     <value>Archivos ejecutables</value>
@@ -755,6 +1031,12 @@
   </data>
   <data name="extension" xml:space="preserve">
     <value>Extensión</value>
+  </data>
+  <data name="ext_com_err" xml:space="preserve">
+    <value>El comando externo devolvió un error en</value>
+  </data>
+  <data name="ext_com_ok" xml:space="preserve">
+    <value>El comando externo fue ejecutado con éxito en</value>
   </data>
   <data name="fade1" xml:space="preserve">
     <value>El tiempo de desvanecimiento inicial es mayor que la duración del archivo.</value>
@@ -816,6 +1098,9 @@
   <data name="ffs" xml:space="preserve">
     <value>Se detectaron procesos ffmpeg.</value>
   </data>
+  <data name="ff_copied" xml:space="preserve">
+    <value>PARÁMETROS FFMPEG COPIADOS AL PORTAPAPELES:</value>
+  </data>
   <data name="ff_del" xml:space="preserve">
     <value>El fichero ffmpeg.exe fue borrado, el programa no funcionará.</value>
   </data>
@@ -846,6 +1131,9 @@
   <data name="ff_test_ok" xml:space="preserve">
     <value>PRUEBA FFMPEG CORRECTA</value>
   </data>
+  <data name="fifth" xml:space="preserve">
+    <value>quinto</value>
+  </data>
   <data name="file" xml:space="preserve">
     <value>Archivo</value>
   </data>
@@ -854,6 +1142,9 @@
   </data>
   <data name="files" xml:space="preserve">
     <value>fichero(s)</value>
+  </data>
+  <data name="files_long_t" xml:space="preserve">
+    <value>ficheros puede tardar mucho. ¿Está seguro?</value>
   </data>
   <data name="files_time" xml:space="preserve">
     <value>ficheros puede llevar cierto tiempo. ¿Continuar?</value>
@@ -912,6 +1203,12 @@
   <data name="filter_meta" xml:space="preserve">
     <value>Filtrar por metadatos del fichero</value>
   </data>
+  <data name="filter_not_qfl" xml:space="preserve">
+    <value>El filtro no está disponible sin obtener la duración del fichero.</value>
+  </data>
+  <data name="filter_quick_not" xml:space="preserve">
+    <value>Esta opción no es compatible con el listado rápido de ficheros.</value>
+  </data>
   <data name="filter_rate" xml:space="preserve">
     <value>Filtrar por fotogramas por segundo</value>
   </data>
@@ -930,6 +1227,12 @@
   <data name="find_dups" xml:space="preserve">
     <value>Buscando duplicados...</value>
   </data>
+  <data name="finish" xml:space="preserve">
+    <value>Finalizar</value>
+  </data>
+  <data name="first" xml:space="preserve">
+    <value>primero</value>
+  </data>
   <data name="first_audio" xml:space="preserve">
     <value>(Primera pista de audio)</value>
   </data>
@@ -945,6 +1248,9 @@
   <data name="folder_empty" xml:space="preserve">
     <value>La carpeta está vacía.</value>
   </data>
+  <data name="forced" xml:space="preserve">
+    <value>forzados</value>
+  </data>
   <data name="Format" xml:space="preserve">
     <value>Formato</value>
   </data>
@@ -959,6 +1265,12 @@
   </data>
   <data name="found" xml:space="preserve">
     <value>hallado</value>
+  </data>
+  <data name="fourth" xml:space="preserve">
+    <value>cuarto</value>
+  </data>
+  <data name="frame_size" xml:space="preserve">
+    <value>Tamaño de fotograma</value>
   </data>
   <data name="fr_rate" xml:space="preserve">
     <value>Fotogramas por segundo</value>
@@ -978,8 +1290,17 @@
   <data name="get_cont" xml:space="preserve">
     <value>Obteniendo contenidos</value>
   </data>
+  <data name="get_prev" xml:space="preserve">
+    <value>Leyendo fotogramas</value>
+  </data>
   <data name="Get_total_seconds_frames" xml:space="preserve">
     <value>Obtener total de segundos/fotogramas</value>
+  </data>
+  <data name="happy_y" xml:space="preserve">
+    <value>Feliz Año Nuevo</value>
+  </data>
+  <data name="header_fail" xml:space="preserve">
+    <value>No se pudo escribir la cabecera</value>
   </data>
   <data name="height" xml:space="preserve">
     <value>Alto</value>
@@ -1005,6 +1326,12 @@
   <data name="hrq" xml:space="preserve">
     <value>Mayor calidad</value>
   </data>
+  <data name="hw_ff_1" xml:space="preserve">
+    <value>El rendimiento con codificadores hardware de video puede variar según la versión de ffmpeg.exe que utilice.</value>
+  </data>
+  <data name="Hw_ff_2" xml:space="preserve">
+    <value>Si experimenta un bajo rendimiento, verifique las últimas compilaciones git master de ffmpeg en gyan.dev (disponible en la configuración de la aplicación) para reemplazar la versión actual de ffmpeg.exe.</value>
+  </data>
   <data name="Idle" xml:space="preserve">
     <value>Baja</value>
   </data>
@@ -1020,14 +1347,32 @@
   <data name="image_audio" xml:space="preserve">
     <value>Imagen para audio</value>
   </data>
+  <data name="imgs" xml:space="preserve">
+    <value>Imágenes</value>
+  </data>
+  <data name="img_copied" xml:space="preserve">
+    <value>La imagen se ha copiado al potapapeles.</value>
+  </data>
+  <data name="img_empty" xml:space="preserve">
+    <value>No se ha seleccionado una imagen.</value>
+  </data>
+  <data name="img_to_v" xml:space="preserve">
+    <value>Asistente de imagen a vídeo</value>
+  </data>
   <data name="inc_font" xml:space="preserve">
     <value>Aumentar tamaño de fuente</value>
   </data>
   <data name="information" xml:space="preserve">
     <value>Información</value>
   </data>
+  <data name="init0" xml:space="preserve">
+    <value>Reiniciar</value>
+  </data>
   <data name="init1" xml:space="preserve">
     <value>Iniciando</value>
+  </data>
+  <data name="init_wait" xml:space="preserve">
+    <value>Iniciando descarga, espere for favor...</value>
   </data>
   <data name="inst_err" xml:space="preserve">
     <value>Error de instalación</value>
@@ -1059,17 +1404,29 @@
   <data name="invalid_p" xml:space="preserve">
     <value>El preset no es válido. Es posible que necesite revisar los parámetros o el formato.</value>
   </data>
+  <data name="invalid_param" xml:space="preserve">
+    <value>Parámetros no válidos para captura de pantalla.</value>
+  </data>
   <data name="invalid_path" xml:space="preserve">
     <value>La ruta seleccionada no es válida.</value>
   </data>
   <data name="invalid_pres" xml:space="preserve">
     <value>Datos no válidos en el preset.</value>
   </data>
+  <data name="invalid_p_2" xml:space="preserve">
+    <value>Parámetros de captura no válidos</value>
+  </data>
   <data name="invalid_rem" xml:space="preserve">
     <value>Se eliminaron caracteres no válidos en el nombre de archivo de salida.</value>
   </data>
   <data name="invalid_yt" xml:space="preserve">
     <value>No se encontró un enlace de YouTube válido.</value>
+  </data>
+  <data name="in_60" xml:space="preserve">
+    <value>en 60 segundos.</value>
+  </data>
+  <data name="in_avis" xml:space="preserve">
+    <value>En ficheros Avisynth, la codificación de texto</value>
   </data>
   <data name="items_alr" xml:space="preserve">
     <value>Elementos ya procesados en la lista de tareas</value>
@@ -1089,11 +1446,20 @@
   <data name="jobs_reset" xml:space="preserve">
     <value>La lista de tareas ya ha sido procesada. Por favor, reinicialice el estado de las tareas con el botón en la esquina superior derecha para comenzar de nuevo.</value>
   </data>
+  <data name="join_files" xml:space="preserve">
+    <value>Unir ficheros</value>
+  </data>
   <data name="keep" xml:space="preserve">
     <value>Dejar</value>
   </data>
+  <data name="kf_no_a" xml:space="preserve">
+    <value>El deslizador de navegación por fotograma clave puede no estar disponible. Puede utilizar los botones de desplazamiento temporal.</value>
+  </data>
   <data name="Language" xml:space="preserve">
     <value>Idioma</value>
+  </data>
+  <data name="lang_corrupted" xml:space="preserve">
+    <value>Error fatal al configurar idioma, por favor reinstale la aplicación.</value>
   </data>
   <data name="lang_tracks" xml:space="preserve">
     <value>Fijar idioma en pistas sin idioma</value>
@@ -1125,6 +1491,9 @@
   <data name="less_one" xml:space="preserve">
     <value>&lt; 1 minuto</value>
   </data>
+  <data name="libr" xml:space="preserve">
+    <value>Biblioteca</value>
+  </data>
   <data name="links" xml:space="preserve">
     <value>Listas de enlaces</value>
   </data>
@@ -1143,6 +1512,9 @@
   <data name="load_queue_file" xml:space="preserve">
     <value>Cargar fichero de cola</value>
   </data>
+  <data name="logging_f" xml:space="preserve">
+    <value>Registro de:</value>
+  </data>
   <data name="log_dis" xml:space="preserve">
     <value>El registro de aplicación está deshabilitado</value>
   </data>
@@ -1157,6 +1529,12 @@
   </data>
   <data name="log_size" xml:space="preserve">
     <value>TAMAÑO DE REGISTRO:</value>
+  </data>
+  <data name="low_size" xml:space="preserve">
+    <value>Menor tamaño</value>
+  </data>
+  <data name="low_sp" xml:space="preserve">
+    <value>Poco espacio en disco</value>
   </data>
   <data name="lrq" xml:space="preserve">
     <value>Menor calidad</value>
@@ -1173,11 +1551,50 @@
   <data name="man_path" xml:space="preserve">
     <value>Seleccionar ruta de salida</value>
   </data>
+  <data name="map" xml:space="preserve">
+    <value>Mapear</value>
+  </data>
+  <data name="mapp_all_str" xml:space="preserve">
+    <value>Mapear todos los flujos</value>
+  </data>
+  <data name="map_all_a" xml:space="preserve">
+    <value>Mapear todos los flujos de audio</value>
+  </data>
+  <data name="map_all_s" xml:space="preserve">
+    <value>Mapear todos los flujos de subtítulos</value>
+  </data>
+  <data name="map_all_v" xml:space="preserve">
+    <value>Mapear todos los flujos de vídeo</value>
+  </data>
+  <data name="map_str" xml:space="preserve">
+    <value>Mapear flujo</value>
+  </data>
+  <data name="map_strs" xml:space="preserve">
+    <value>Mapear flujos de entrada</value>
+  </data>
   <data name="max_links" xml:space="preserve">
     <value>La lista de descarga admite un máximo de 2000 enlaces.</value>
   </data>
   <data name="max_list" xml:space="preserve">
     <value>Superado tamaño máximo de lista</value>
+  </data>
+  <data name="md5_fail" xml:space="preserve">
+    <value>La suma MD5 de FFmpeg.exe no es válida.</value>
+  </data>
+  <data name="md5_fail1" xml:space="preserve">
+    <value>La suma MD5 de FFmpeg.exe no coincide con el valor almacenado. El fichero podría haber sido dañado o infectado.</value>
+  </data>
+  <data name="md5_not_match" xml:space="preserve">
+    <value>La suma MD5 de ffmpeg no coincide con el valor verificado. Por favor, verifique que confía en la versión actual de ffmpeg antes de agregar una excepción de seguridad.</value>
+  </data>
+  <data name="md5_reinst" xml:space="preserve">
+    <value>En caso contrario, el archivo ha sido modificado y debería reinstalar la aplicación.</value>
+  </data>
+  <data name="md5_trust" xml:space="preserve">
+    <value>Si reemplazó el fichero recientemente puede validarlo en la ventana de Seguridad y rendimiento.</value>
+  </data>
+  <data name="md5_valid" xml:space="preserve">
+    <value>La suma MD5 de FFmpeg.exe es válida.</value>
   </data>
   <data name="media_type" xml:space="preserve">
     <value>Tipo de medio</value>
@@ -1194,14 +1611,32 @@
   <data name="minutes" xml:space="preserve">
     <value>minutos</value>
   </data>
+  <data name="minutes_abrev" xml:space="preserve">
+    <value>min.</value>
+  </data>
   <data name="missing1" xml:space="preserve">
     <value>No se encontró un fichero</value>
+  </data>
+  <data name="missing_f" xml:space="preserve">
+    <value>Ficheros no encontrados</value>
   </data>
   <data name="mix_urls" xml:space="preserve">
     <value>No es posible mezclar enlaces de YouTube y otros tipos en la lista.</value>
   </data>
   <data name="mix_urls2" xml:space="preserve">
     <value>La lista de enlaces contiene una mezcla de enlaces de YouTube y otros tipos de enlaces. Por favor, seleccione listas de enlaces que contengan solamente uno u otro tipo.</value>
+  </data>
+  <data name="mon_ing" xml:space="preserve">
+    <value>Monitorizando cambios en: </value>
+  </data>
+  <data name="mon_ing1" xml:space="preserve">
+    <value>Monitorizando carpeta</value>
+  </data>
+  <data name="mon_no_rel" xml:space="preserve">
+    <value>Una ruta relativa no se puede usar monitorizando subcarpetas, por favor utilice una ruta absoluta, o deshabilite las subcarpetas.</value>
+  </data>
+  <data name="mon_path_equal" xml:space="preserve">
+    <value>La carpeta monitorizada es la misma que la carpeta pirncipal de salida, por favor seleccione otra ruta de destino, o utilice una ruta relativa.</value>
   </data>
   <data name="move_down" xml:space="preserve">
     <value>Mover elemento abajo</value>
@@ -1214,6 +1649,12 @@
   </data>
   <data name="move_up" xml:space="preserve">
     <value>Mover elemento arriba</value>
+  </data>
+  <data name="mov_warn" xml:space="preserve">
+    <value>Algunas funcionalidades pueden no estar disponibles en formato mov. El único formato de subtítulos de texto admitido es mov_text.</value>
+  </data>
+  <data name="mov_warn2" xml:space="preserve">
+    <value>Limitaciones del formato MOV</value>
   </data>
   <data name="mp4_subs" xml:space="preserve">
     <value>Subtítulos MP4 no admitidos en formato de salida MKV</value>
@@ -1233,11 +1674,23 @@
   <data name="multiple_folders" xml:space="preserve">
     <value>Múltiples carpetas de origen con destino una única carpeta de salida puede provocar sobreescrituras de archivos no deseadas. Puede activar</value>
   </data>
+  <data name="multiple_inst" xml:space="preserve">
+    <value>Ya se está ejecutando otra instancia de la aplicación. Múltiples instancias pueden causar comportamientos inesperados. ¿Continuar?</value>
+  </data>
+  <data name="multiple_inst_0" xml:space="preserve">
+    <value>Múltiples instancias</value>
+  </data>
   <data name="Multiple_presets_wizard" xml:space="preserve">
     <value>Asistente de perfiles múltiples</value>
   </data>
   <data name="multiple_tr" xml:space="preserve">
     <value>Varias pistas seleccionadas</value>
+  </data>
+  <data name="multi_drop" xml:space="preserve">
+    <value>Por favor, arrastre solo un fichero.</value>
+  </data>
+  <data name="multi_drop2" xml:space="preserve">
+    <value>Varios ficheros arrastrados</value>
   </data>
   <data name="multi_full" xml:space="preserve">
     <value>INFORMACIÓN MULTIMEDIA (COMPLETA)</value>
@@ -1257,6 +1710,9 @@
   <data name="multi_vid" xml:space="preserve">
     <value>La codificación de vídeo suele ser ya un proceso multi-hilo, por lo que la codificación secuencial está recomendada. ¿Continuar de todos modos?</value>
   </data>
+  <data name="mux_abort" xml:space="preserve">
+    <value>Multiplexado abortado</value>
+  </data>
   <data name="mux_abort1" xml:space="preserve">
     <value>Multiplexado fue abortado.</value>
   </data>
@@ -1265,6 +1721,12 @@
   </data>
   <data name="mux_fail1" xml:space="preserve">
     <value>El multiplexado falló:</value>
+  </data>
+  <data name="mux_jobs" xml:space="preserve">
+    <value>Gestor de tareas de multiplexado</value>
+  </data>
+  <data name="mux_jobs1" xml:space="preserve">
+    <value>Gestor de tareas de multiplexado</value>
   </data>
   <data name="mux_ok" xml:space="preserve">
     <value>FFmpeg Batch - Multiplexado finalizado con éxito</value>
@@ -1305,11 +1767,23 @@
   <data name="next" xml:space="preserve">
     <value>Post.  --&gt;</value>
   </data>
+  <data name="next1" xml:space="preserve">
+    <value>Siguiente</value>
+  </data>
+  <data name="nineth" xml:space="preserve">
+    <value>noveno</value>
+  </data>
   <data name="no" xml:space="preserve">
     <value>No</value>
   </data>
+  <data name="none" xml:space="preserve">
+    <value>Ninguno</value>
+  </data>
   <data name="none_copy" xml:space="preserve">
     <value>No se puede seleccionar ninguno o copy en un preset de audio.</value>
+  </data>
+  <data name="non_eng_rec" xml:space="preserve">
+    <value>NOTA: Los caracteres de idiomas distintos del inglés en el nombre de fichero de origen del script podrían impedir mostrar la duración del fichero si se usa codifcación ANSI.</value>
   </data>
   <data name="non_utf1" xml:space="preserve">
     <value>Hay subtítulos en la lista que no están en formato UTF. Para idiomas distintos del inglés los caracteres podrían mostrarse incorrectamente. ¿Desea continuar?</value>
@@ -1323,14 +1797,29 @@
   <data name="not_abort" xml:space="preserve">
     <value>Algunos procesos no pudieron ser finalizados. Pulse Aceptar para reintentar.</value>
   </data>
+  <data name="not_amf" xml:space="preserve">
+    <value>puede no funcionar con el codificador AMD amf elegido.</value>
+  </data>
   <data name="not_deleted" xml:space="preserve">
     <value>No borrado</value>
+  </data>
+  <data name="not_deleted1" xml:space="preserve">
+    <value>no pudo ser borrado.</value>
+  </data>
+  <data name="not_display" xml:space="preserve">
+    <value>No mostrar de nuevo</value>
   </data>
   <data name="not_found1" xml:space="preserve">
     <value>no fue encontrado. Por favor elimínelo o actualice la lista.</value>
   </data>
   <data name="not_include" xml:space="preserve">
     <value>No incluya</value>
+  </data>
+  <data name="not_nvenc" xml:space="preserve">
+    <value>podría no funcionar con el codificador NVIDIA nvenc elegido.</value>
+  </data>
+  <data name="not_qsv" xml:space="preserve">
+    <value>podría no funcionar con el codificador Intel QuickSync elegido.</value>
   </data>
   <data name="not_queued" xml:space="preserve">
     <value>No hay elementos con estado En cola</value>
@@ -1356,6 +1845,9 @@
   <data name="not_subfolders" xml:space="preserve">
     <value>Subcarpetas: No</value>
   </data>
+  <data name="not_sup_bom" xml:space="preserve">
+    <value>podría no ser admitida por ffmpeg si contiene el campo BOM (Byte order marker).</value>
+  </data>
   <data name="no_aerowiz" xml:space="preserve">
     <value>AeroWizard.dll no fue encontrado en la ruta de la aplicación. Reinstalar el programa debería solucionar el problema.</value>
   </data>
@@ -1374,10 +1866,16 @@
   <data name="no_bck" xml:space="preserve">
     <value>Todavía no se ha creado ninguna copia de seguridad.</value>
   </data>
+  <data name="no_chaps" xml:space="preserve">
+    <value>No se encontraron capítulos en el fichero seleccionado.</value>
+  </data>
   <data name="no_chk_str" xml:space="preserve">
     <value>No se seleccionó ningún flujo.</value>
   </data>
   <data name="no_concat_ef" xml:space="preserve">
+    <value>No hay fichero inicial o final</value>
+  </data>
+  <data name="no_concat_ef1" xml:space="preserve">
     <value>No hay fichero inicial o final</value>
   </data>
   <data name="no_ffmpeg" xml:space="preserve">
@@ -1406,6 +1904,9 @@
   </data>
   <data name="no_log1" xml:space="preserve">
     <value>No se encontró registro</value>
+  </data>
+  <data name="no_log_f" xml:space="preserve">
+    <value>No se encontró un fichero de registro. Salvar registro de aplicación está deshabilitado.</value>
   </data>
   <data name="no_mediainfo" xml:space="preserve">
     <value>No se encontró el ejecutable mediainfo.exe. Reinicie o reinstale la aplicación.</value>
@@ -1476,11 +1977,20 @@
   <data name="one_track" xml:space="preserve">
     <value>Seleccione por favor una sola pista para cambiar su estado por defecto.</value>
   </data>
+  <data name="one_track1" xml:space="preserve">
+    <value>Popr favor, seleccione solo un fichero para agregar sus pistas.</value>
+  </data>
   <data name="one_try" xml:space="preserve">
     <value>Por favor, añada al menos un fichero para hacer la prueba.</value>
   </data>
+  <data name="online_pr" xml:space="preserve">
+    <value>Perfiles en internet</value>
+  </data>
   <data name="onlye_basel" xml:space="preserve">
     <value>Sole el perfil Baseline está admitido en el preset ultrafast.</value>
+  </data>
+  <data name="only_1011" xml:space="preserve">
+    <value>Exclusión automática solo admitida en Windows 10/11</value>
   </data>
   <data name="only_numbers" xml:space="preserve">
     <value>Por favor, introduza solo números.</value>
@@ -1490,6 +2000,15 @@
   </data>
   <data name="only_qu" xml:space="preserve">
     <value>Solo elementos en estado En cola pueden ser movidos.</value>
+  </data>
+  <data name="on_battery1" xml:space="preserve">
+    <value>Equipo funcionando con batería.</value>
+  </data>
+  <data name="on_battery2" xml:space="preserve">
+    <value>La codificación está configurada para pausar en batería y reanudarse enchufado a la corriente eléctrica. ¿Desea desactivar esta función y reanudar la codificación?</value>
+  </data>
+  <data name="on_rel_path" xml:space="preserve">
+    <value>en la ruta relativa.</value>
   </data>
   <data name="open_comp" xml:space="preserve">
     <value>Abrir aplicación al terminar de procesar cola</value>
@@ -1502,6 +2021,9 @@
   </data>
   <data name="open_folder_d" xml:space="preserve">
     <value>Haga click izquierdo para abrir el cuadro de añadir carpeta</value>
+  </data>
+  <data name="open_l_f" xml:space="preserve">
+    <value>Abriendo archivo de registro...</value>
   </data>
   <data name="open_out" xml:space="preserve">
     <value>Abrir carpeta de salida al terminar</value>
@@ -1520,6 +2042,9 @@
   </data>
   <data name="orphan2" xml:space="preserve">
     <value>Procesos huérfanos</value>
+  </data>
+  <data name="outf_count" xml:space="preserve">
+    <value>Descargando. Número total no disponible. Vídeos descargados:</value>
   </data>
   <data name="output" xml:space="preserve">
     <value>Salida</value>
@@ -1541,6 +2066,9 @@
   </data>
   <data name="out_ext" xml:space="preserve">
     <value>Extensión de salida. Deje este campo en blanco para usar la extensión del fichero de origen</value>
+  </data>
+  <data name="out_file" xml:space="preserve">
+    <value>Fichero de salida</value>
   </data>
   <data name="out_files_naming" xml:space="preserve">
     <value>Renombrado de ficheros de salida</value>
@@ -1629,6 +2157,12 @@
   <data name="pass2" xml:space="preserve">
     <value>Fase 2: Codificando vídeo</value>
   </data>
+  <data name="Paste_any_URL" xml:space="preserve">
+    <value>Pegar enlace</value>
+  </data>
+  <data name="Paste_any_URL1" xml:space="preserve">
+    <value>Pegar enlace</value>
+  </data>
   <data name="Paste_M3u_URL" xml:space="preserve">
     <value>Pegar enlace M3u</value>
   </data>
@@ -1650,6 +2184,15 @@
   <data name="path_empty" xml:space="preserve">
     <value>El campo de ruta está en blanco.</value>
   </data>
+  <data name="path_iparam" xml:space="preserve">
+    <value>Añadir fichero de entrada</value>
+  </data>
+  <data name="path_iparam1" xml:space="preserve">
+    <value>Add input file to parameters</value>
+  </data>
+  <data name="path_i_add" xml:space="preserve">
+    <value>Añadir ruta de fichero para af/vf filter</value>
+  </data>
   <data name="path_not" xml:space="preserve">
     <value>La ruta seleccionada no existe.</value>
   </data>
@@ -1664,6 +2207,9 @@
   </data>
   <data name="paused2" xml:space="preserve">
     <value>Codificación pausada</value>
+  </data>
+  <data name="pause_bat_ac" xml:space="preserve">
+    <value>Pausar con batería</value>
   </data>
   <data name="pending" xml:space="preserve">
     <value>Pendiente</value>
@@ -1686,6 +2232,9 @@
   <data name="please_not" xml:space="preserve">
     <value>Por favor, no comience con</value>
   </data>
+  <data name="pls_include" xml:space="preserve">
+    <value>Por favor incluya</value>
+  </data>
   <data name="pl_contents" xml:space="preserve">
     <value>Obteniendo contenidos de la lista</value>
   </data>
@@ -1695,14 +2244,101 @@
   <data name="Power_off" xml:space="preserve">
     <value>Apagar</value>
   </data>
+  <data name="pr01" xml:space="preserve">
+    <value>Video: Copiar flujos a formato MP4</value>
+  </data>
+  <data name="pr02" xml:space="preserve">
+    <value>Video: Convertir pista de audio a AAC HQ 2 canales</value>
+  </data>
+  <data name="pr03" xml:space="preserve">
+    <value>Video: Convertir pista de audio a AC3 2 canales</value>
+  </data>
+  <data name="pr04" xml:space="preserve">
+    <value>Video: Convertir a codec ProRes en formato MKV</value>
+  </data>
+  <data name="pr05" xml:space="preserve">
+    <value>Video: Convertir a codec H264 HQ + Audio original</value>
+  </data>
+  <data name="pr06" xml:space="preserve">
+    <value>Video: Convertir a codec H264 preset Ultrafast</value>
+  </data>
+  <data name="pr07" xml:space="preserve">
+    <value>Video: Convertir a H265 HQ + Audio original</value>
+  </data>
+  <data name="pr08" xml:space="preserve">
+    <value>Video: Redimensionar a tamaño 1280x720 codecs H264 y AAC</value>
+  </data>
+  <data name="pr09" xml:space="preserve">
+    <value>Video: Rotar 90 grados en sentido horario a H264 + Audio original</value>
+  </data>
+  <data name="pr10" xml:space="preserve">
+    <value>Video: Rotar 90 grados en sentido anti-horario y volteo vertical a H264 + Audio original</value>
+  </data>
+  <data name="pr11" xml:space="preserve">
+    <value>Video: Rotar 90 grados en sentido anti-horario a H264 + Audio original</value>
+  </data>
+  <data name="pr12" xml:space="preserve">
+    <value>Video: Rotar 90 grados en sentido horario y volteo vertical a H264 + Audio original</value>
+  </data>
+  <data name="pr13" xml:space="preserve">
+    <value>Video: Rotar 180 grados a H264 + Audio original</value>
+  </data>
+  <data name="pr14" xml:space="preserve">
+    <value>Video: Eliminar subtítulos a MP4</value>
+  </data>
+  <data name="pr15" xml:space="preserve">
+    <value>Audio: Convertir a FLAC 16/44,1KHz 2 canales</value>
+  </data>
+  <data name="pr16" xml:space="preserve">
+    <value>Audio: Convertir a MP3 VBR HQ 2 canales con portada embutida</value>
+  </data>
+  <data name="pr17" xml:space="preserve">
+    <value>Audio: Convertir a MP3 VBR HQ 2 canales</value>
+  </data>
+  <data name="pr18" xml:space="preserve">
+    <value>Audio: Convertir a MP3 CBR HQ 2 canales</value>
+  </data>
+  <data name="pr19" xml:space="preserve">
+    <value>Audio: Convertir a WAV 16/44,1KHz 2 canales</value>
+  </data>
   <data name="pr1_emp" xml:space="preserve">
     <value>Preset 1 está en blanco.</value>
+  </data>
+  <data name="pr20" xml:space="preserve">
+    <value>Subtítulo: Extraer primera pista de subtítulos a SRT (Subrip)</value>
+  </data>
+  <data name="pr21" xml:space="preserve">
+    <value>Imágen: Extraer un fotograma como imagen</value>
+  </data>
+  <data name="pr21-2" xml:space="preserve">
+    <value>Video: Codificar con AMD-VCE H264 HQ + Audio de origen</value>
+  </data>
+  <data name="pr21-21" xml:space="preserve">
+    <value>Video: Codificar AMD-VCE HEVC HQ + Audio de origen</value>
+  </data>
+  <data name="pr22" xml:space="preserve">
+    <value>Capturar pantalla a 24 fotogramas + Audio AAC a formato MKV</value>
+  </data>
+  <data name="pr23" xml:space="preserve">
+    <value>Capturar pantalla a 15 fotogramas en tamaño 1280x720 + Audio a MKV</value>
+  </data>
+  <data name="pr24" xml:space="preserve">
+    <value>Capturar pantalla a 30 fotogramas con Nvidia NVENC + Audio AAC a MKV</value>
+  </data>
+  <data name="pr25" xml:space="preserve">
+    <value>Capturar pantalla a 25 fotogramas con Intel QuickSync + Audio AAC a MKV</value>
+  </data>
+  <data name="pr26" xml:space="preserve">
+    <value>Unir imágenes a tamaño 1920px de ancho como vídeo MP4</value>
   </data>
   <data name="pr2_emp" xml:space="preserve">
     <value>Preset 2 está en blanco.</value>
   </data>
   <data name="presets" xml:space="preserve">
     <value>perfiles.</value>
+  </data>
+  <data name="press_c" xml:space="preserve">
+    <value>Pulse para cancelar</value>
   </data>
   <data name="pres_empt" xml:space="preserve">
     <value>El nombre del preset está en blanco.</value>
@@ -1728,7 +2364,7 @@
   <data name="pres_saved" xml:space="preserve">
     <value>El nuevo preset ha sido guardado.</value>
   </data>
-  <data name="prev" xml:space="preserve">
+  <data name="prev0" xml:space="preserve">
     <value>&lt;-- Prev.</value>
   </data>
   <data name="prevent_dis" xml:space="preserve">
@@ -1736,6 +2372,9 @@
   </data>
   <data name="prevent_en" xml:space="preserve">
     <value>Impedir que el equipo entre en suspensión está activado.</value>
+  </data>
+  <data name="pre_input" xml:space="preserve">
+    <value>Pre-entrada</value>
   </data>
   <data name="pre_input1" xml:space="preserve">
     <value>El formato del campo de pre-posicionamiento es incorrecto. Modifíquelo o haga doble clic para reinicializarlo.</value>
@@ -1751,6 +2390,12 @@
   </data>
   <data name="pre_in_path" xml:space="preserve">
     <value>Se produjo un error al guardar la configuración de pre-entrada. Asegúrese de que tiene permisos de acceso a la carpeta de la aplicación.</value>
+  </data>
+  <data name="pre_ss" xml:space="preserve">
+    <value>Especificar el tiempo del parámetro de pre-entrada -ss</value>
+  </data>
+  <data name="proceed1" xml:space="preserve">
+    <value>¿Desea continuar?</value>
   </data>
   <data name="processing" xml:space="preserve">
     <value>Iniciando</value>
@@ -1791,6 +2436,9 @@
   <data name="queue_net" xml:space="preserve">
     <value>La lista contiene ficheros de una unidad de red. ¿Desea copiarlos a una caché temporal antes de codificarlos?</value>
   </data>
+  <data name="queue_not_f" xml:space="preserve">
+    <value>fichero(s) de la lista no fueron encontrado(s).</value>
+  </data>
   <data name="queue_ok" xml:space="preserve">
     <value>Fichero de cola interrumpida cargado con éxito.</value>
   </data>
@@ -1799,6 +2447,42 @@
   </data>
   <data name="queue_temp" xml:space="preserve">
     <value>Un fichero de sesión pendiente fue encontrado</value>
+  </data>
+  <data name="queue_warn" xml:space="preserve">
+    <value>Lista de ficheros cargada con éxito.</value>
+  </data>
+  <data name="quick_f_m" xml:space="preserve">
+    <value>El listado rápido de ficheros mejora en gran medida los tiempos de carga de ficheros, pero tiene algunas limitaciones:</value>
+  </data>
+  <data name="quick_f_m2" xml:space="preserve">
+    <value>El tiempo total restante no está disponible, y la barra de progreso solo indica el número de ficheros codificados respecto del total.</value>
+  </data>
+  <data name="quick_f_m3" xml:space="preserve">
+    <value>Las columnas adicionales no se cargan al inicio, aunque se pueden agregar después.</value>
+  </data>
+  <data name="quick_f_m4" xml:space="preserve">
+    <value>La información de los ficheros (duración, tamaño) solo se estiman durante la codificación. Si están disponibles, se muestra el progreso individual. Si no, solo se indica si la codificación fue exitosa o fallida al finalizar.</value>
+  </data>
+  <data name="quick_f_m5" xml:space="preserve">
+    <value>El asistente de codificación en dos pasos no está diponible.</value>
+  </data>
+  <data name="quick_f_m6" xml:space="preserve">
+    <value>Desvanecimiento no está soportado cuando se habilita el listado rápido de ficheros.</value>
+  </data>
+  <data name="quick_yt1" xml:space="preserve">
+    <value>Descarga rápida de enlace/lista de reproducción</value>
+  </data>
+  <data name="quick_yt2" xml:space="preserve">
+    <value>- Vaya a la página principal del canal, y haga click en la pestaña VIDEOS.</value>
+  </data>
+  <data name="quick_yt3" xml:space="preserve">
+    <value>- Copie el enlace y péguelo en el campo Canal.</value>
+  </data>
+  <data name="quick_yt4" xml:space="preserve">
+    <value>- Ejemplo:</value>
+  </data>
+  <data name="quick_zero_no" xml:space="preserve">
+    <value>Este ajuste no es compatible con el listado rápido de ficheros habilitado.</value>
   </data>
   <data name="q_abort" xml:space="preserve">
     <value>La aplicación está procesando ficheros. Por favor aborte el procesamiento antes de salir de la aplicación.</value>
@@ -1835,6 +2519,9 @@
   </data>
   <data name="recycled" xml:space="preserve">
     <value>Reciclado</value>
+  </data>
+  <data name="rec_fail" xml:space="preserve">
+    <value>Prueba de grabación fallida.</value>
   </data>
   <data name="rec_screen" xml:space="preserve">
     <value>1-Clic para grabar la pantalla usando gdigrab</value>
@@ -1881,8 +2568,17 @@
   <data name="rem_blanks" xml:space="preserve">
     <value>Quitar filas en blanco</value>
   </data>
+  <data name="rem_cust_p" xml:space="preserve">
+    <value>Borrar parámetros personalizados</value>
+  </data>
   <data name="rem_err_rows" xml:space="preserve">
     <value>Quitar filas con errores</value>
+  </data>
+  <data name="rem_from_list" xml:space="preserve">
+    <value>Eliminar elemento seleccionado de la lista</value>
+  </data>
+  <data name="rem_img" xml:space="preserve">
+    <value>¿Quitar imagen'</value>
   </data>
   <data name="rem_pres" xml:space="preserve">
     <value>¿Desea eliminar el preset seleccionado?</value>
@@ -1892,6 +2588,15 @@
   </data>
   <data name="renamed" xml:space="preserve">
     <value>Renombrado</value>
+  </data>
+  <data name="ren_chars1" xml:space="preserve">
+    <value>Se encontraron caracteres incompatibles [,'] para los filtros de ffmpeg en el nombre del fichero. Se podrían producir errores al utilizarlos.</value>
+  </data>
+  <data name="ren_chars2" xml:space="preserve">
+    <value>¿Desea renombrar dichos ficheros reemplazando los caracteres incompatibles?</value>
+  </data>
+  <data name="ren_chars3" xml:space="preserve">
+    <value>Caracteres incompatibles en los nombres de ficheros</value>
   </data>
   <data name="ren_out" xml:space="preserve">
     <value>Renombrar salida</value>
@@ -1911,6 +2616,9 @@
   <data name="required_file" xml:space="preserve">
     <value>No se encontró un archivo necesario</value>
   </data>
+  <data name="req_w1011" xml:space="preserve">
+    <value>Esta función requiere versiones de Windows 10/11. Puede agregar manualmente una excepción en su software antivirus vigente.</value>
+  </data>
   <data name="reset_default" xml:space="preserve">
     <value>Todos los ajustes y perfiles personalizados se perderán. ¿Desea continuar?</value>
   </data>
@@ -1922,6 +2630,9 @@
   </data>
   <data name="Reset_list_items_to_queued" xml:space="preserve">
     <value>Reiniciar estado de la lista a En cola</value>
+  </data>
+  <data name="reset_m_jobs" xml:space="preserve">
+    <value>Reinicializar estado de las tareas</value>
   </data>
   <data name="reset_out" xml:space="preserve">
     <value>Haga doble clic para volver a la carpeta de salida por defecto</value>
@@ -1940,6 +2651,18 @@
   </data>
   <data name="right_man_path" xml:space="preserve">
     <value>Haga click derecho para escribir o pegar la ruta de origen</value>
+  </data>
+  <data name="rotate1" xml:space="preserve">
+    <value>Rotar 90º en el sentido del reloj</value>
+  </data>
+  <data name="rotate2" xml:space="preserve">
+    <value>Rotar 90º en sentido contrario del reloj</value>
+  </data>
+  <data name="rotate3" xml:space="preserve">
+    <value>Rotar 180º</value>
+  </data>
+  <data name="rot_flip" xml:space="preserve">
+    <value>Voltear horizontalmente</value>
   </data>
   <data name="runcom2" xml:space="preserve">
     <value>Seleccione un comando a ejecutar en cada fichero de salida</value>
@@ -1968,14 +2691,23 @@
   <data name="saved" xml:space="preserve">
     <value>Guardado</value>
   </data>
+  <data name="saved_img" xml:space="preserve">
+    <value>El fotograma se guardó con éxito.</value>
+  </data>
   <data name="saved_qu" xml:space="preserve">
     <value>El programa fue interrumpido durante la codificación. ¿Desea cargar el estado de la última sesión?</value>
+  </data>
+  <data name="save_all_str" xml:space="preserve">
+    <value>Guardar todos los flujos</value>
   </data>
   <data name="save_current_queue" xml:space="preserve">
     <value>Guardar cola actual</value>
   </data>
   <data name="save_def" xml:space="preserve">
     <value>Guardar como parámetros por defecto</value>
+  </data>
+  <data name="save_img" xml:space="preserve">
+    <value>Guardar fotograma</value>
   </data>
   <data name="save_pres" xml:space="preserve">
     <value>Guardar preset actual</value>
@@ -1989,11 +2721,29 @@
   <data name="save_track" xml:space="preserve">
     <value>Guardar esta pista(s)</value>
   </data>
+  <data name="scr_cap" xml:space="preserve">
+    <value>Captura de pantalla</value>
+  </data>
+  <data name="scr_fail" xml:space="preserve">
+    <value>La prueba de captura de pantalla falló.</value>
+  </data>
+  <data name="scsr_term" xml:space="preserve">
+    <value>La captura de pantalla finalizó inesperadamente. El fichero podría estar truncado.</value>
+  </data>
+  <data name="second" xml:space="preserve">
+    <value>segundo</value>
+  </data>
   <data name="seconds" xml:space="preserve">
     <value>segundo(s)</value>
   </data>
   <data name="second_p" xml:space="preserve">
     <value>Segunda pasada</value>
+  </data>
+  <data name="sec_perf" xml:space="preserve">
+    <value>Seguridad y rendimiento</value>
+  </data>
+  <data name="selc_dev" xml:space="preserve">
+    <value>Seleccionar dispositivo de captura de audio</value>
   </data>
   <data name="select_out" xml:space="preserve">
     <value>Por favor, seleccione una ruta de salida.</value>
@@ -2009,6 +2759,9 @@
   </data>
   <data name="sel_format_pr" xml:space="preserve">
     <value>Por favor, seleccione un formato de salida para el preset</value>
+  </data>
+  <data name="sel_lang" xml:space="preserve">
+    <value>Seleccionar idioma</value>
   </data>
   <data name="sel_out1" xml:space="preserve">
     <value>Please select output format for preset</value>
@@ -2043,6 +2796,9 @@
   <data name="Set_as_trim_end_time" xml:space="preserve">
     <value>Usar como tiempo final de recorte</value>
   </data>
+  <data name="set_cust_p" xml:space="preserve">
+    <value>Establecer preajuste / parámetros</value>
+  </data>
   <data name="set_del" xml:space="preserve">
     <value>Vaya a ajustes para configurar si los ficheros se envían a la papelera o se eliminan definitivamente</value>
   </data>
@@ -2054,6 +2810,9 @@
   </data>
   <data name="set_st" xml:space="preserve">
     <value>Usar como tiempo inicial</value>
+  </data>
+  <data name="seventh" xml:space="preserve">
+    <value>séptimo</value>
   </data>
   <data name="shift_n" xml:space="preserve">
     <value>El desplazamiento de audio no está admitido en la concatenación.</value>
@@ -2076,6 +2835,9 @@
   <data name="silence_start" xml:space="preserve">
     <value>Silencio detectado desde::</value>
   </data>
+  <data name="sixth" xml:space="preserve">
+    <value>sexto</value>
+  </data>
   <data name="size" xml:space="preserve">
     <value>Tamaño</value>
   </data>
@@ -2084,6 +2846,9 @@
   </data>
   <data name="skip_err" xml:space="preserve">
     <value>Se produjo un error al omitir la versión:</value>
+  </data>
+  <data name="skip_from_list" xml:space="preserve">
+    <value>Omitir elementos seleccionados de la codificación</value>
   </data>
   <data name="soft_update" xml:space="preserve">
     <value>Actualización del programa</value>
@@ -2097,14 +2862,29 @@
   <data name="some_time" xml:space="preserve">
     <value>ficheros puede llevar cierto tiempo. ¿Continuar?</value>
   </data>
+  <data name="sort_before" xml:space="preserve">
+    <value>¿Ordenar lista antes de comenzar?</value>
+  </data>
   <data name="sort_list" xml:space="preserve">
     <value>Ordenando lista</value>
+  </data>
+  <data name="sort_list1" xml:space="preserve">
+    <value>¿Desea ordenar la lista antes de comenzar?</value>
   </data>
   <data name="sort_list2" xml:space="preserve">
     <value>Ordenar la lista de ficheros por duración descendente puede reducir el tiempo total de codificación multi-fichero. Puede cambiar este ajuste en configuración.</value>
   </data>
+  <data name="sort_list21" xml:space="preserve">
+    <value>Consejo sobre rendimiento</value>
+  </data>
+  <data name="sort_status" xml:space="preserve">
+    <value>Por favor, refresque la lista, u ordene los ficheros por estado</value>
+  </data>
   <data name="source_mov_text" xml:space="preserve">
     <value>El fichero de origen contiene subtítulos en formato mov_text, no admitidos por el formato de salida MKV. Cambie el formato a MP4 o elimine los subtítulos mov_text de los ficheros de origen.</value>
+  </data>
+  <data name="source_not_deleted" xml:space="preserve">
+    <value>Ficheros de origen que no pudieron ser eliminados debido a un error durante la codificación, o estar en uso:</value>
   </data>
   <data name="source_overw" xml:space="preserve">
     <value>El origen y destino de los ficheros es el mismo, pero sobrescribir no está habilitado.</value>
@@ -2115,14 +2895,23 @@
   <data name="speed_copy" xml:space="preserve">
     <value>El filtro de acelerar/ralentizar no puede ser usado con copia de pista de audio.</value>
   </data>
+  <data name="speed_not comp" xml:space="preserve">
+    <value>El cambio de velocidad no es compatible con otros filtros de vídeo.</value>
+  </data>
   <data name="srt_sub" xml:space="preserve">
     <value>Subtítulo SRT disponible</value>
   </data>
   <data name="start_app_enc" xml:space="preserve">
     <value>Iniciando aplicación con el fichero codificado</value>
   </data>
+  <data name="start_cap" xml:space="preserve">
+    <value>Iniciar captura</value>
+  </data>
   <data name="start_enc" xml:space="preserve">
     <value>Iniciar codificación</value>
+  </data>
+  <data name="start_mark" xml:space="preserve">
+    <value>Marca de inicio</value>
   </data>
   <data name="start_one" xml:space="preserve">
     <value> Iniciar descarga secuencial (uno a uno)</value>
@@ -2142,6 +2931,15 @@
   <data name="stopping2" xml:space="preserve">
     <value>Deteniendo grabación, espere por favor...</value>
   </data>
+  <data name="stop_any" xml:space="preserve">
+    <value>Puede detener la grabación pulsando Control-Shift-P en cualquier momento.</value>
+  </data>
+  <data name="stop_capt" xml:space="preserve">
+    <value>Detener grabación</value>
+  </data>
+  <data name="stop_proc" xml:space="preserve">
+    <value>Detener procesamiento de</value>
+  </data>
   <data name="Stop_task" xml:space="preserve">
     <value>Detener tarea</value>
   </data>
@@ -2149,6 +2947,9 @@
     <value>Flujo</value>
   </data>
   <data name="streams" xml:space="preserve">
+    <value>Flujos</value>
+  </data>
+  <data name="streams1" xml:space="preserve">
     <value>Flujos</value>
   </data>
   <data name="streams_f" xml:space="preserve">
@@ -2163,11 +2964,17 @@
   <data name="stream_saved2" xml:space="preserve">
     <value>Pista completada</value>
   </data>
+  <data name="String" xml:space="preserve">
+    <value />
+  </data>
   <data name="strv_c_not" xml:space="preserve">
     <value>La copia de pista de vídeo no está admitida</value>
   </data>
   <data name="str_abort" xml:space="preserve">
     <value>Guardado de pista abortado.</value>
+  </data>
+  <data name="str_map" xml:space="preserve">
+    <value>Mapear flujos</value>
   </data>
   <data name="str_ouput" xml:space="preserve">
     <value>Información de salida</value>
@@ -2187,6 +2994,9 @@
   <data name="subtitle" xml:space="preserve">
     <value>Subtítulo</value>
   </data>
+  <data name="subtitles" xml:space="preserve">
+    <value>Subtítulos</value>
+  </data>
   <data name="Subtitle_file" xml:space="preserve">
     <value>Fichero de subtítulo</value>
   </data>
@@ -2196,6 +3006,9 @@
   <data name="success" xml:space="preserve">
     <value>Codificado</value>
   </data>
+  <data name="sunset1" xml:space="preserve">
+    <value>El atardecer no puede ser posterior al amanecer.</value>
+  </data>
   <data name="Suspend" xml:space="preserve">
     <value>Suspender</value>
   </data>
@@ -2204,6 +3017,9 @@
   </data>
   <data name="task_abort" xml:space="preserve">
     <value>Tarea cancelada</value>
+  </data>
+  <data name="tenth" xml:space="preserve">
+    <value>décimo</value>
   </data>
   <data name="test_err" xml:space="preserve">
     <value>La prueba de codificación falló con el fichero seleccionado. Use el botón Probar preset para más información sobre el error.</value>
@@ -2219,6 +3035,9 @@
   </data>
   <data name="the_files" xml:space="preserve">
     <value>Los ficheros:</value>
+  </data>
+  <data name="third" xml:space="preserve">
+    <value>tercero</value>
   </data>
   <data name="three_pres" xml:space="preserve">
     <value>Codificar usando hasta tres perfiles</value>
@@ -2238,11 +3057,38 @@
   <data name="time_load" xml:space="preserve">
     <value>y podría llevar cierto tiempo cargarlo. ¿Desea continuar?</value>
   </data>
+  <data name="time_out_url" xml:space="preserve">
+    <value>Tiempo de espera agotado intentando acceder a la url</value>
+  </data>
   <data name="time_wrong" xml:space="preserve">
     <value>Tiempo especificado incorrecto. Por favor, revise los campos de tiempo.</value>
   </data>
+  <data name="tip1" xml:space="preserve">
+    <value>Esta aplicación lanza procesos ffmpeg para codificar, multiplexar y demultiplexar, obtener información de flujos, miniaturas, etc.</value>
+  </data>
+  <data name="tip2" xml:space="preserve">
+    <value>Algunos programas antivirus analizan constantemente cada proceso lanzado porque ffmpeg.exe no está firmado digitalmente. Esto a veces puede reducir bastante el rendimiento de operaciones como analizar y filtrar flujos multimedia, obtener miniaturas, etc.</value>
+  </data>
+  <data name="tip3" xml:space="preserve">
+    <value>Si experimenta un rendimiento pobre, puede mejorarlo añadiendo una exclusión a</value>
+  </data>
+  <data name="tip4" xml:space="preserve">
+    <value>La versión de ffmpeg.exe incluída en la aplicación es segura y libre de virus, y la suma MD5 se valida en cada arranque.</value>
+  </data>
+  <data name="tip_win_sec" xml:space="preserve">
+    <value>Seguridad de Windows.</value>
+  </data>
+  <data name="tip_your_av" xml:space="preserve">
+    <value>su software antivirus actual.</value>
+  </data>
   <data name="tools" xml:space="preserve">
     <value>Herramientas</value>
+  </data>
+  <data name="too_many_files" xml:space="preserve">
+    <value>Demasiados ficheros para analizar</value>
+  </data>
+  <data name="total" xml:space="preserve">
+    <value>Total</value>
   </data>
   <data name="total_sec" xml:space="preserve">
     <value>Segundos totales</value>
@@ -2252,6 +3098,12 @@
   </data>
   <data name="to_recycle" xml:space="preserve">
     <value>Enviando ficheros a la papelera de reciclaje...</value>
+  </data>
+  <data name="to_tray1" xml:space="preserve">
+    <value>Minimizado a la bandeja</value>
+  </data>
+  <data name="to_tray2" xml:space="preserve">
+    <value>La aplicación está minimizada como icono en la bandeja del sistema.</value>
   </data>
   <data name="tracks" xml:space="preserve">
     <value>Pistas:</value>
@@ -2274,6 +3126,12 @@
   <data name="track_up" xml:space="preserve">
     <value>Mover pista arriba</value>
   </data>
+  <data name="trailer_zero" xml:space="preserve">
+    <value>Trailer configuration leads to zero duration.</value>
+  </data>
+  <data name="transfer_r" xml:space="preserve">
+    <value>Tasa de transferencia:</value>
+  </data>
   <data name="trim1" xml:space="preserve">
     <value>Desea aplicar el recorte a</value>
   </data>
@@ -2294,6 +3152,9 @@
   </data>
   <data name="trim_f" xml:space="preserve">
     <value>El tiempo final es mayor que la duración del archivo.</value>
+  </data>
+  <data name="trim_fade_n" xml:space="preserve">
+    <value>El efecto de desvanecimiento Fade in/out solo es compatible con el modo de recorte Inicio/Fin.</value>
   </data>
   <data name="trim_i" xml:space="preserve">
     <value>El tiempo inicial es mayor que la duración del archivo.</value>
@@ -2318,6 +3179,9 @@
   </data>
   <data name="try_pr" xml:space="preserve">
     <value>Pruebe el preset para obtener más información del error.</value>
+  </data>
+  <data name="try_scr_pr" xml:space="preserve">
+    <value>Pruebe con un preset de captura de pantalla, y revise los parámetros de codificación.</value>
   </data>
   <data name="two_comp_f" xml:space="preserve">
     <value>Por favor, seleccione solo dos formatos compatibles.</value>
@@ -2404,6 +3268,12 @@
   <data name="Type" xml:space="preserve">
     <value>Tipo</value>
   </data>
+  <data name="undef_dur_all" xml:space="preserve">
+    <value>El procesamiento de la cola no continuará después de elementos de duración indeterminada (infinita).</value>
+  </data>
+  <data name="undef_seq" xml:space="preserve">
+    <value>Elementos de duración indeterminada</value>
+  </data>
   <data name="undo_fil" xml:space="preserve">
     <value>Deshacer filtro aplicado</value>
   </data>
@@ -2449,6 +3319,12 @@
   <data name="url_comp2" xml:space="preserve">
     <value>Descarga finalizada</value>
   </data>
+  <data name="url_down_c" xml:space="preserve">
+    <value>Descarga de enlace completada con éxito</value>
+  </data>
+  <data name="url_down_c2" xml:space="preserve">
+    <value>Descarga de URL completada</value>
+  </data>
   <data name="url_out" xml:space="preserve">
     <value>Tiempo de respuesta del enlace agotado.</value>
   </data>
@@ -2482,11 +3358,26 @@
   <data name="var_url" xml:space="preserve">
     <value>Validando enlace</value>
   </data>
+  <data name="version" xml:space="preserve">
+    <value>Versión</value>
+  </data>
   <data name="ver_ff_u" xml:space="preserve">
     <value>FFmpeg versión desconocida</value>
   </data>
+  <data name="vf_crop_multi" xml:space="preserve">
+    <value>Se encontró otra instancia de filtro de vídeo en el campo de parámetros.. Puede usar múltiples filtros, entre comillas y separados por comas. Por favor modifique el filtro -vf.</value>
+  </data>
+  <data name="vf_crop_multi2" xml:space="preserve">
+    <value>Por ejemplo: -vf "crop=50:50:0:10, yadif, format=gray"</value>
+  </data>
   <data name="Video_codec" xml:space="preserve">
     <value>Codec de vídeo</value>
+  </data>
+  <data name="vids_dest" xml:space="preserve">
+    <value>videos en la carpeta de destino.</value>
+  </data>
+  <data name="vids_unav" xml:space="preserve">
+    <value>(Algunos vídeos podrían no estar disponibles, y los eventos en directo se omiten.)</value>
   </data>
   <data name="vid_req" xml:space="preserve">
     <value>Es necesaria una pista de vídeo para multiplexar.</value>
@@ -2503,6 +3394,9 @@
   <data name="vob_unsupport" xml:space="preserve">
     <value>Los subtítulos en formato VobSub no están admitidos en el formato MP4.</value>
   </data>
+  <data name="vs_files_warn" xml:space="preserve">
+    <value>En ficheros Avisynth, los caracteres de idiomas distintos del inglés en el nombre de fichero de origen del script podrían impedir mostrar la duración del fichero si se usa codificaciones distintas a UTF/Unicode.</value>
+  </data>
   <data name="v_bitr" xml:space="preserve">
     <value>Tasa de bits de vídeo</value>
   </data>
@@ -2518,6 +3412,39 @@
   <data name="warnings" xml:space="preserve">
     <value>ADVERTENCIAS:</value>
   </data>
+  <data name="warnings_last_s" xml:space="preserve">
+    <value>aviso(s) durante la última sesión</value>
+  </data>
+  <data name="warning_file" xml:space="preserve">
+    <value>AVISO: El fichero</value>
+  </data>
+  <data name="warning_not_rep" xml:space="preserve">
+    <value>NO fue reemplazado</value>
+  </data>
+  <data name="warn_colon" xml:space="preserve">
+    <value>El nombre de la la ruta o fichero contiene un carácter no admitido para concatenación: ' (comilla simple).</value>
+  </data>
+  <data name="warn_colon2" xml:space="preserve">
+    <value>Por favor, renombre los ficheros o rutas sin dicho caracter antes de concatenar.</value>
+  </data>
+  <data name="warn_down" xml:space="preserve">
+    <value>Se produjeron mensajes de advertencia durante la descarga:</value>
+  </data>
+  <data name="warn_n_files" xml:space="preserve">
+    <value>La adición de miles de archivos puede tardar unos minutos para analizarlos . Puede habilitar el Listado rápido de archivos en la configuración para acelerar la adición de archivos, pero no se mostrará información de progreso, solo el estado Éxito/Error y la información de registro.</value>
+  </data>
+  <data name="warn_n_files2" xml:space="preserve">
+    <value>¿Desea continuar? Puede cancelar la adición de archivos en cualquier momento.</value>
+  </data>
+  <data name="warn_run_enc" xml:space="preserve">
+    <value>Los ajustes 'No avisar de ficheros ya codificados' e 'Ignorar ficheros codificados' han sido también habilitados.</value>
+  </data>
+  <data name="warn_sort" xml:space="preserve">
+    <value>NOTA: Al habilitar esta opción, no añada nuevos ficheros o carpetas durante la codificación multi-fichero, ya que dependiendo del orden en que se agreguen, podrían quedarse en cola sin procesar.</value>
+  </data>
+  <data name="warn_sp" xml:space="preserve">
+    <value>El espacio disponible en la unidad de destino es inferior a 500 MB, la aplicación puede fallar durante la codificación. ¿Quiere abortar la operación actual?</value>
+  </data>
   <data name="was_rest" xml:space="preserve">
     <value>fue restaurada satisfactoriamente.</value>
   </data>
@@ -2526,6 +3453,15 @@
   </data>
   <data name="wave_abort" xml:space="preserve">
     <value>Forma de onda cancelada.</value>
+  </data>
+  <data name="webm_warn" xml:space="preserve">
+    <value>Algunas funcionalidades podrían no funcionar en el formato webm. Solo vídeo VP8/9 y Vorbis están admitidos.</value>
+  </data>
+  <data name="webm_warn2" xml:space="preserve">
+    <value>Limitaciones del formato WEBM</value>
+  </data>
+  <data name="white" xml:space="preserve">
+    <value>Blanco</value>
   </data>
   <data name="width" xml:space="preserve">
     <value>Ancho</value>
@@ -2554,11 +3490,17 @@
   <data name="wrong_chr" xml:space="preserve">
     <value>El nombre del fichero de entrada contiene los caracteres [ ]. Por favor, elimínelos del nombre de fichero para evitar errores con el filtro -vf.</value>
   </data>
+  <data name="wrong_c_dur" xml:space="preserve">
+    <value>Duración de captura incorrecta</value>
+  </data>
   <data name="yes" xml:space="preserve">
     <value>Sí</value>
   </data>
   <data name="yes_subfolders" xml:space="preserve">
     <value>Subcarpetas: Sí</value>
+  </data>
+  <data name="your_sys" xml:space="preserve">
+    <value>Su sistema</value>
   </data>
   <data name="yt_channel" xml:space="preserve">
     <value>El enlace que ha copiado podría ser un canal completo de YouTube. Por favor, utilice en este caso el botón Descargar canal/lista.</value>
@@ -2581,49 +3523,10 @@
   <data name="yt_str_av2" xml:space="preserve">
     <value>Calidades de YouTube disponibles</value>
   </data>
-  <data name="enc_fail_first" xml:space="preserve">
-    <value>Se produjo un error durante la prueba de los parámetros de la fase 1.</value>
+  <data name="yt_url_blank" xml:space="preserve">
+    <value>El campo de enlace de YouTube está en blanco.</value>
   </data>
-  <data name="enc_fail_second" xml:space="preserve">
-    <value>Se produjo un error durante la prueba de los parámetros de la fase 2.</value>
-  </data>
-  <data name="enc_warns" xml:space="preserve">
-    <value>FFmpeg Batch - Codificación completada con aviso(s).</value>
-  </data>
-  <data name="header_fail" xml:space="preserve">
-    <value>No se pudo escribir la cabecera</value>
-  </data>
-  <data name="minutes_abrev" xml:space="preserve">
-    <value>min.</value>
-  </data>
-  <data name="mov_warn" xml:space="preserve">
-    <value>Algunas funcionalidades pueden no estar disponibles en formato mov. El único formato de subtítulos de texto admitido es mov_text.</value>
-  </data>
-  <data name="mov_warn2" xml:space="preserve">
-    <value>Limitaciones del formato MOV</value>
-  </data>
-  <data name="mux_abort" xml:space="preserve">
-    <value>Multiplexado abortado</value>
-  </data>
-  <data name="mux_jobs" xml:space="preserve">
-    <value>Gestor de tareas de multiplexado</value>
-  </data>
-  <data name="no_log_f" xml:space="preserve">
-    <value>No se encontró un fichero de registro. Salvar registro de aplicación está deshabilitado.</value>
-  </data>
-  <data name="open_l_f" xml:space="preserve">
-    <value>Abriendo archivo de registro...</value>
-  </data>
-  <data name="webm_warn" xml:space="preserve">
-    <value>Algunas funcionalidades podrían no funcionar en el formato webm. Solo vídeo VP8/9 y Vorbis están admitidos.</value>
-  </data>
-  <data name="webm_warn2" xml:space="preserve">
-    <value>Limitaciones del formato WEBM</value>
-  </data>
-  <data name="Paste_any_URL" xml:space="preserve">
-    <value>Pegar enlace</value>
-  </data>
-  <data name="mon_ing" xml:space="preserve">
-    <value>Monitorizando cambios en: </value>
+  <data name="yt_url_sh" xml:space="preserve">
+    <value>El enlace de YouTube es demasiado corto.</value>
   </data>
 </root>
