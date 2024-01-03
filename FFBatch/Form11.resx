@@ -129,8 +129,8 @@
         RF/WBZnFQBrgSi4oKgHSf4DYKCW1OJmBgdEAyM4uLykAijPOAbJFkrLB7A0gdlFIkDOQfQTI5kuHsK+A
         2EkQ9hMQuwjoCSD7C0h9OpjNxAE2B8KWAbFLUitA9jI45xdUFmWmZ5QoGFpaWio4puQnpSoEVxaXpOYW
         K3jmJecXFeQXJZakpgDVQtwHBoIQhaAQ0wBqtNBkoDIAxQOE9TkQHL6MYmcQYgiQXFpUBmUyMhkT5iPM
-        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACxAAAAsQ
-        Aa0jvXUAAAU5SURBVEhLtZV5TFRXFMZPauyCIlrpVKCtSwVj1TQSa1IKjVERQaqiEgxhMQouqKCACAi4
+        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACw8AAAsP
+        AZL5A6UAAAU5SURBVEhLtZV5TFRXFMZPauyCIlrpVKCtSwVj1TQSa1IKjVERQaqiEgxhMQouqKCACAi4
         D45L3RAxUENR0DZaVKgOoGwzw6xv3qwwC5sKSDFIUZPWJubrvGfAts4fTbV/fO8m9737/c45991zCcD/
         KqeTb1Kk1ClJppVRlayKquRV1Mg0ksagIUbPkEavGZbWoH1FrIElrVFLcp2cjFojFdcXR+TV56W2tbSR
         zWLj1702QGVQUbe9m8pqysZFlUf1b6vbBuF1YdAj2yNqYpteD6DWq6m3rZe0rHbUyAMjO5PZZNwavAXK
@@ -195,10 +195,6 @@
   <data name="pic_ok.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
-  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form11</value>
   </data>
@@ -250,8 +246,9 @@
   <data name="pic.Size" type="System.Drawing.Size, System.Drawing">
     <value>33, 33</value>
   </data>
-  <data name="&gt;&gt;pic.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
   <data name="pic_ok.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -314,6 +311,9 @@
         5B8TgRwSRKIHQtaLCwg1RAAAOwAAAAAAAAAAAA==
 </value>
   </data>
+  <data name="&gt;&gt;pic.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="pic.Location" type="System.Drawing.Point, System.Drawing">
     <value>95, 30</value>
   </data>
@@ -334,8 +334,5 @@
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ar-EG</value>
   </metadata>
 </root>
