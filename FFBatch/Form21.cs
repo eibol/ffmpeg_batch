@@ -56,9 +56,8 @@ namespace FFBatch
                 UpdateColorDark(subC);
             }
         }
-
         private void Form21_Load(object sender, EventArgs e)
-        {
+        { 
             String vers = lbl_ver.Text;
             refresh_lang();
             this.Text = FFBatch.Properties.Strings.soft_update;
@@ -100,10 +99,9 @@ namespace FFBatch
             String str = textBox1.Text.Replace("\r\n", "").Replace("\n", "").Replace("\r", "").Replace(" ","%20");
             Process pr = new Process();
             pr.StartInfo.FileName = GetStandardBrowserPath();
-            pr.StartInfo.Arguments = "https://translate.google.com/?sl=en&tl=" + Properties.Settings.Default.app_lang + "&text=" + str + "&op=translate";             
-            //pr.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
+            pr.StartInfo.Arguments = "https://translate.google.com/?sl=en&tl=" + Properties.Settings.Default.app_lang + "&text=" + str + "&op=translate";                                     
             pr.Start();
-            //Process.Start("http://translate.google.com/#en|" + Properties.Settings.Default.app_lang + "|" + textBox1.Text);
+            
         }
 
         private static string GetStandardBrowserPath()

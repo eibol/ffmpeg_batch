@@ -73,18 +73,18 @@ namespace FFBatch
                 no_pop = false;
             }
 
-                this.Text = Properties.Strings2.out_file;
+                this.Text = Properties.Strings.out_file;
                 btn_close.Text = Properties.Strings.close_win;
-                btn_browse.Text = Properties.Strings2.browse;
-                chk_no_popp.Text = Properties.Strings2.not_display;
+                btn_browse.Text = Properties.Strings.browse;
+                chk_no_popp.Text = Properties.Strings.not_display;
                 btn_play.Text = Properties.Strings.Play_file;
                 int current_fr = 4000;
                 Process proc_img = new System.Diagnostics.Process();
                 
-                l_v.Text = Properties.Strings2.video + ":";
+                l_v.Text = Properties.Strings.video + ":";
                 l_s.Text = Properties.Strings.resolution + ":";
-                l_a.Text = Properties.Strings2.audio + ":";
-                l_tb.Text = Properties.Strings2.bitrate + ":";
+                l_a.Text = Properties.Strings.audio + ":";
+                l_tb.Text = Properties.Strings.bitrate + ":";
                 l_size.Text = Properties.Strings.size + ":";
                 l_dur.Text = Properties.Strings.duration + ":";
 

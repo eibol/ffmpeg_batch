@@ -21,19 +21,12 @@ namespace FFBatch
             {
                 if (!mutex.WaitOne(0, false))
                 {
-                    DialogResult a = MessageBox.Show(Properties.Strings2.multiple_inst, Properties.Strings2.multiple_inst_0, MessageBoxButtons.YesNo);
+                    DialogResult a = MessageBox.Show(Properties.Strings.multiple_inst, Properties.Strings.multiple_inst_0, MessageBoxButtons.YesNo);
                     if (a == DialogResult.No) return;                    
                 }
 
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.EnableVisualStyles();
-                //if (Environment.GetCommandLineArgs().Count() == 1)
-                //{
-                    Form6 form_intro = new Form6();
-                    form_intro.Show();
-                    form_intro.Refresh();
-                //}
-                //new SingleInstanceApp().Run(Environment.GetCommandLineArgs());
                 Application.Run(new Form1());
             }
         }

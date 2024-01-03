@@ -245,7 +245,7 @@ namespace FFBatch
 
             if (is_target == true)
             {
-                lbl_enabled_target.Text = Properties.Strings2.en_target_size + " " + n_target_size.Value.ToString() + " MB";
+                lbl_enabled_target.Text = Properties.Strings.en_target_size + " " + n_target_size.Value.ToString() + " MB";
                 txt_pr_two_end.Enabled = false;
                 txt_pr_end_2.Enabled = false;
                 pic_status.Visible = false;
@@ -946,9 +946,9 @@ namespace FFBatch
             refresh_lang();
             if (Properties.Settings.Default.app_lang != "en" && Properties.Settings.Default.app_lang != "es")
             {
-                wizard3.NextButtonText = Properties.Strings2.next;
+                wizard3.NextButtonText = Properties.Strings.next;
                 wizard3.CancelButtonText = Properties.Strings.cancel;
-                wizard3.FinishButtonText = Properties.Strings2.finish;
+                wizard3.FinishButtonText = Properties.Strings.finish;
             }
         }
 

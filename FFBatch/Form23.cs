@@ -34,10 +34,6 @@ namespace FFBatch
         public Boolean open_complete = false;
         private String port_path = System.IO.Path.Combine(Application.StartupPath, "settings") + "\\";
         private int total_videos = 0;
-
-        //ProgressBarWithText Pg1 = new ProgressBarWithText();
-        private int progress = 0;
-
         private String play_file_path = "";
         private System.Media.SoundPlayer soundPlayer = new System.Media.SoundPlayer();
         private Boolean killed = false;
@@ -80,12 +76,12 @@ namespace FFBatch
 
             if (txt_channel.Text.Length == 0)
             {
-                MessageBox.Show(FFBatch.Properties.Strings2.yt_url_blank);
+                MessageBox.Show(FFBatch.Properties.Strings.yt_url_blank);
                 return;
             }
             if (txt_channel.Text.Length < 8)
             {
-                MessageBox.Show(FFBatch.Properties.Strings2.yt_url_sh);
+                MessageBox.Show(FFBatch.Properties.Strings.yt_url_sh);
                 return;
             }
 
@@ -139,7 +135,7 @@ namespace FFBatch
 
                 //if (Directory.GetFiles(destino).Length > 0)
                 //{
-                //    DialogResult a = MessageBox.Show(FFBatch.Properties.Strings2.dest_not_empty, FFBatch.Properties.Strings.warning, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                //    DialogResult a = MessageBox.Show(FFBatch.Properties.Strings.dest_not_empty, FFBatch.Properties.Strings.warning, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 //    if (a == DialogResult.No)
                 //    {
                 //        working = false;
@@ -168,7 +164,7 @@ namespace FFBatch
                     return;
                 }
 
-                this.InvokeEx(f => f.lbl_d_v.Text = FFBatch.Properties.Strings2.init_wait);
+                this.InvokeEx(f => f.lbl_d_v.Text = FFBatch.Properties.Strings.init_wait);
                 this.InvokeEx(f => timer1.Start());
 
                 process_glob.StartInfo.RedirectStandardOutput = true;
@@ -205,8 +201,8 @@ namespace FFBatch
                     {
                         lbl_d_v.Invoke(new MethodInvoker(delegate
                         {
-                            if (pl_title.Length == 0) lbl_d_v.Text = FFBatch.Properties.Strings2.brow_page + " " + err_txt.Replace("[youtube:tab] Downloading page ", "");
-                            else lbl_d_v.Text = FFBatch.Properties.Strings2.browsing + " " + "\u0022" + pl_title + "\u0022" + " Page " + err_txt.Replace("[youtube:tab] Downloading page ", "");
+                            if (pl_title.Length == 0) lbl_d_v.Text = FFBatch.Properties.Strings.brow_page + " " + err_txt.Replace("[youtube:tab] Downloading page ", "");
+                            else lbl_d_v.Text = FFBatch.Properties.Strings.browsing + " " + "\u0022" + pl_title + "\u0022" + " Page " + err_txt.Replace("[youtube:tab] Downloading page ", "");
                         }));
                     }
 
@@ -233,7 +229,7 @@ namespace FFBatch
                     //    n_vs = err_txt.Substring(ind1, ind2 - ind1).Replace("Downloading ", "").Replace("videos", "").Trim(); ;
                     //    lbl_d_v.Invoke(new MethodInvoker(delegate
                     //    {
-                    //        lbl_d_v.Text = FFBatch.Properties.Strings2.total + ": " + n_vs.Replace("Videos: Downloading ", "").Replace("videos", "").Trim();
+                    //        lbl_d_v.Text = FFBatch.Properties.Strings.total + ": " + n_vs.Replace("Videos: Downloading ", "").Replace("videos", "").Trim();
                     //        //lbl_d_v.Visible = true;
                     //        //lbl_d_v.Text = "Starting downloads...";
                     //        total_videos = Convert.ToInt32(n_vs.Replace("Videos: Downloading ", "").Replace("videos", "").Trim());
@@ -264,7 +260,7 @@ namespace FFBatch
                     //        }
                     //        catch
                     //        {
-                    //            lbl_d_v.Text = FFBatch.Properties.Strings2.outf_count + " " + Directory.GetFiles(destino).Length.ToString();
+                    //            lbl_d_v.Text = FFBatch.Properties.Strings.outf_count + " " + Directory.GetFiles(destino).Length.ToString();
                     //            lbl_d_v.Refresh();
                     //            total_videos = 0;
                     //        }
@@ -350,11 +346,11 @@ namespace FFBatch
 
                     if (total_videos > 0 && Directory.GetFiles(destino).Length == total_videos)
                     {
-                        MessageBox.Show(Properties.Strings2.down_com + " " + Environment.NewLine + Environment.NewLine + total_videos.ToString() + " " + Properties.Strings2.vids_dest, Properties.Strings2.down_com, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Properties.Strings.down_com + " " + Environment.NewLine + Environment.NewLine + total_videos.ToString() + " " + Properties.Strings.vids_dest, Properties.Strings.down_com, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
-                        if (Directory.GetFiles(destino).Length < total_videos) MessageBox.Show(Properties.Strings2.down_com + " " + Environment.NewLine + Environment.NewLine + Directory.GetFiles(destino).Length.ToString() + " " + Properties.Strings.of1 + " " + total_videos.ToString() + " " + Properties.Strings2.vids_dest + Environment.NewLine + Environment.NewLine + Properties.Strings2.vids_unav, Properties.Strings2.down_com, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        if (Directory.GetFiles(destino).Length < total_videos) MessageBox.Show(Properties.Strings.down_com + " " + Environment.NewLine + Environment.NewLine + Directory.GetFiles(destino).Length.ToString() + " " + Properties.Strings.of1 + " " + total_videos.ToString() + " " + Properties.Strings.vids_dest + Environment.NewLine + Environment.NewLine + Properties.Strings.vids_unav, Properties.Strings.down_com, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
                 else
@@ -365,7 +361,7 @@ namespace FFBatch
                     String to_remove = "please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; type  youtube-dl -U  to update. Be sure to call youtube-dl with the --verbose flag and include its complete output.";
                     String remove2 = "Type youtube-dl --help to see a list of all options.";
                     if (aborted_url == false && killed == false) MessageBox.Show(Properties.Strings.error2 + Environment.NewLine + Environment.NewLine + error_out.Replace(to_remove, "").Replace(remove2, "Check youtube-dl parameters and url."), FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    if (killed == true) MessageBox.Show(Properties.Strings2.aborted2, Properties.Strings.aborted, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (killed == true) MessageBox.Show(Properties.Strings.aborted2, Properties.Strings.aborted, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
 
@@ -514,7 +510,7 @@ namespace FFBatch
 
                 if (aborted_url == true)
                 {
-                    this.InvokeEx(f => MessageBox.Show(FFBatch.Properties.Strings2.aborted2, FFBatch.Properties.Strings.aborted, MessageBoxButtons.OK, MessageBoxIcon.Error));
+                    this.InvokeEx(f => MessageBox.Show(FFBatch.Properties.Strings.aborted2, FFBatch.Properties.Strings.aborted, MessageBoxButtons.OK, MessageBoxIcon.Error));
                     this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
                     this.InvokeEx(f => this.Cursor = Cursors.Arrow);
                 }
@@ -582,8 +578,8 @@ namespace FFBatch
             //Read play sound
 
             refresh_lang();
-            this.Text = FFBatch.Properties.Strings2.quick_yt1;
-            txt_get_url.Text = FFBatch.Properties.Strings2.quick_yt2 + Environment.NewLine + FFBatch.Properties.Strings2.quick_yt3 + Environment.NewLine + FFBatch.Properties.Strings2.quick_yt4 + " " + "https://www.youtube.com/user/[channel_name]/videos";
+            this.Text = FFBatch.Properties.Strings.quick_yt1;
+            txt_get_url.Text = FFBatch.Properties.Strings.quick_yt2 + Environment.NewLine + FFBatch.Properties.Strings.quick_yt3 + Environment.NewLine + FFBatch.Properties.Strings.quick_yt4 + " " + "https://www.youtube.com/user/[channel_name]/videos";
 
             String ff_play_sound = String.Empty;
             if (is_portable == false)
@@ -698,7 +694,7 @@ namespace FFBatch
         {
             if (working == true)
             {
-                MessageBox.Show(FFBatch.Properties.Strings2.down_prog);
+                MessageBox.Show(FFBatch.Properties.Strings.down_prog);
                 return;
             }
             else this.Close();
@@ -708,7 +704,7 @@ namespace FFBatch
         {
             if (working == true)
             {
-                DialogResult a = MessageBox.Show(FFBatch.Properties.Strings2.down_p_ab, FFBatch.Properties.Strings2.down_prog2, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                DialogResult a = MessageBox.Show(FFBatch.Properties.Strings.down_p_ab, FFBatch.Properties.Strings.down_prog2, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                 if (a == DialogResult.No || a == DialogResult.Cancel) e.Cancel = true;
                 else
                 {
@@ -788,7 +784,7 @@ namespace FFBatch
 
                 //if (Directory.GetFiles(destino).Length > 0)
                 //{
-                //    DialogResult a = MessageBox.Show(FFBatch.Properties.Strings2.dest_not_empty, FFBatch.Properties.Strings.warning, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                //    DialogResult a = MessageBox.Show(FFBatch.Properties.Strings.dest_not_empty, FFBatch.Properties.Strings.warning, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 //    if (a == DialogResult.No)
                 //    {
                 //        working = false;

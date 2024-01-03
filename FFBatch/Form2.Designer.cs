@@ -43,7 +43,9 @@
             this.linkLabel4 = new System.Windows.Forms.LinkLabel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lbl_framew = new System.Windows.Forms.Label();
+            this.pic_season = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_season)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -76,16 +78,16 @@
             // 
             // textBox2
             // 
-            resources.ApplyResources(this.textBox2, "textBox2");
             this.textBox2.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox2, "textBox2");
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             // 
             // button1
             // 
-            resources.ApplyResources(this.button1, "button1");
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            resources.ApplyResources(this.button1, "button1");
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -113,8 +115,8 @@
             // 
             // label4
             // 
-            resources.ApplyResources(this.label4, "label4");
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
             // 
             // linkLabel4
@@ -126,9 +128,9 @@
             // 
             // textBox1
             // 
-            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
             // 
@@ -137,12 +139,19 @@
             resources.ApplyResources(this.lbl_framew, "lbl_framew");
             this.lbl_framew.Name = "lbl_framew";
             // 
+            // pic_season
+            // 
+            resources.ApplyResources(this.pic_season, "pic_season");
+            this.pic_season.Name = "pic_season";
+            this.pic_season.TabStop = false;
+            // 
             // Form2
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.CancelButton = this.button1;
+            this.Controls.Add(this.pic_season);
             this.Controls.Add(this.lbl_framew);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.linkLabel4);
@@ -163,6 +172,7 @@
             this.Name = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_season)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,5 +194,6 @@
         private System.Windows.Forms.LinkLabel linkLabel4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lbl_framew;
+        public System.Windows.Forms.PictureBox pic_season;
     }
 }

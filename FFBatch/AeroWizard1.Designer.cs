@@ -123,6 +123,7 @@
             this.Combo_encoders = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.wz1_1 = new AeroWizard.WizardPage();
+            this.chk_pad = new System.Windows.Forms.CheckBox();
             this.btn_crop_wiz = new System.Windows.Forms.Button();
             this.lbl_a_ratio = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
@@ -1050,6 +1051,7 @@
             // wz1_1
             // 
             resources.ApplyResources(this.wz1_1, "wz1_1");
+            this.wz1_1.Controls.Add(this.chk_pad);
             this.wz1_1.Controls.Add(this.btn_crop_wiz);
             this.wz1_1.Controls.Add(this.lbl_a_ratio);
             this.wz1_1.Controls.Add(this.label47);
@@ -1082,6 +1084,12 @@
             this.wz1_1.Name = "wz1_1";
             this.wz1_1.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz1_1_Commit);
             this.wz1_1.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz1_1_Initialize);
+            // 
+            // chk_pad
+            // 
+            resources.ApplyResources(this.chk_pad, "chk_pad");
+            this.chk_pad.Name = "chk_pad";
+            this.chk_pad.UseVisualStyleBackColor = true;
             // 
             // btn_crop_wiz
             // 
@@ -2100,5 +2108,6 @@
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Label label55;
         public System.Windows.Forms.CheckBox chk_no_aud_tr;
+        private System.Windows.Forms.CheckBox chk_pad;
     }
 }

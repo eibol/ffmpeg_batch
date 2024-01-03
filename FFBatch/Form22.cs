@@ -75,7 +75,7 @@ namespace FFBatch
             //Concat video filter
 
             refresh_lang();
-            this.Text = FFBatch.Properties.Strings2.join_files;
+            this.Text = FFBatch.Properties.Strings.join_files;
 
             String f_concat = String.Empty;
             if (is_portable == false)
@@ -114,7 +114,7 @@ namespace FFBatch
         {
             if (radio_demuxer.Checked == true)
             {
-                textBox1.Text = FFBatch.Properties.Strings2.demuxer_help;
+                textBox1.Text = FFBatch.Properties.Strings.demuxer_help;
                 chk_copy.Enabled = true;
                 chk_filter.Enabled = false;
                 if (chk_copy.Checked == true) txt_params.Text = "-c copy";
@@ -139,7 +139,7 @@ namespace FFBatch
         {
             if (radio_filter.Checked == true)
             {
-                textBox1.Text = FFBatch.Properties.Strings2.concat_vid_help;
+                textBox1.Text = FFBatch.Properties.Strings.concat_vid_help;
                 chk_copy.Enabled = false;
                 chk_filter.Enabled = true;
                 if (chk_filter.Checked == true) txt_params.Text = String.Empty;
@@ -168,7 +168,7 @@ namespace FFBatch
             cancel = false;
             if (chk_batch_concat.Checked == true && txt_intro.Text.Length == 0 && txt_end.Text.Length == 0)
             {
-                MessageBox.Show(FFBatch.Properties.Strings2.batch_concat_msg, FFBatch.Properties.Strings2.no_concat_ef);
+                MessageBox.Show(FFBatch.Properties.Strings.batch_concat_msg, FFBatch.Properties.Strings.no_concat_ef);
                 return;
             }
             this.Close();

@@ -92,9 +92,10 @@ namespace FFBatch
             // 
             // btn_play
             // 
+            this.btn_play.BackColor = System.Drawing.SystemColors.InactiveBorder;
             resources.ApplyResources(this.btn_play, "btn_play");
             this.btn_play.Name = "btn_play";
-            this.btn_play.UseVisualStyleBackColor = true;
+            this.btn_play.UseVisualStyleBackColor = false;
             this.btn_play.Click += new System.EventHandler(this.btn_play_Click);
             // 
             // sep3
@@ -157,9 +158,10 @@ namespace FFBatch
             // 
             // btn_browse
             // 
+            this.btn_browse.BackColor = System.Drawing.SystemColors.InactiveBorder;
             resources.ApplyResources(this.btn_browse, "btn_browse");
             this.btn_browse.Name = "btn_browse";
-            this.btn_browse.UseVisualStyleBackColor = true;
+            this.btn_browse.UseVisualStyleBackColor = false;
             this.btn_browse.Click += new System.EventHandler(this.btn_browse_Click);
             // 
             // lbl_size
@@ -202,9 +204,10 @@ namespace FFBatch
             // 
             // btn_close
             // 
+            this.btn_close.BackColor = System.Drawing.SystemColors.InactiveBorder;
             resources.ApplyResources(this.btn_close, "btn_close");
             this.btn_close.Name = "btn_close";
-            this.btn_close.UseVisualStyleBackColor = true;
+            this.btn_close.UseVisualStyleBackColor = false;
             this.btn_close.Click += new System.EventHandler(this.button1_Click);
             // 
             // chk_no_popp

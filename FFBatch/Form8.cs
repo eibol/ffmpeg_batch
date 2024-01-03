@@ -106,7 +106,7 @@ namespace FFBatch
             dg_streams.Columns[4].HeaderText = FFBatch.Properties.Strings.size;
             dg_streams.Columns[5].HeaderText = FFBatch.Properties.Strings.codec;
             dg_streams.Columns[6].HeaderText = FFBatch.Properties.Strings.resolution;
-            dg_streams.Columns[7].HeaderText = FFBatch.Properties.Strings2.bitrate;
+            dg_streams.Columns[7].HeaderText = FFBatch.Properties.Strings.bitrate;
 
             Process yt = new Process();
             Task t2 = Task.Run(() =>

@@ -25,8 +25,7 @@ namespace FFBatch
         private Boolean is_portable = false;
         private Rectangle dragBoxFromMouseDown;
         private int rowIndexFromMouseDown;
-        private int rowIndexOfItemUnderMouseToDrop;
-        //public Boolean saved = false;
+        private int rowIndexOfItemUnderMouseToDrop;        
         private Boolean duplicates = false;
 
         public Form27()
@@ -120,7 +119,7 @@ namespace FFBatch
             read_presets();
             dg_pr.ClearSelection();
             refresh_lang();
-            this.Text = Properties.Strings2.online_pr;
+            this.Text = Properties.Strings.online_pr;
             char[] letters = this.Text.ToCharArray();
             letters[0] = char.ToUpper(letters[0]);
             this.Text = new string(letters);
@@ -131,7 +130,7 @@ namespace FFBatch
             dg_pr.Columns[1].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             dg_pr.Columns[2].DefaultCellStyle.WrapMode = DataGridViewTriState.True;
             dg_pr.Columns[0].HeaderText = FFBatch.Properties.Strings.Name;
-            dg_pr.Columns[1].HeaderText = FFBatch.Properties.Strings2.pre_input;
+            dg_pr.Columns[1].HeaderText = FFBatch.Properties.Strings.pre_input;
             dg_pr.Columns[2].HeaderText = FFBatch.Properties.Strings.ff_params;
             dg_pr.Columns[3].HeaderText = FFBatch.Properties.Strings.Format;
         }

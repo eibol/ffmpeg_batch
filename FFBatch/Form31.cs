@@ -11,7 +11,6 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Diagnostics;
 
 namespace FFBatch
@@ -109,7 +108,7 @@ namespace FFBatch
             if (File.Exists(output)) chaps_file = File.ReadAllText(output);
             else
             {
-                txt_pre.Text = Properties.Strings2.no_chaps;
+                txt_pre.Text = Properties.Strings.no_chaps;
                 return;
             }
             Boolean titles = false;
@@ -186,7 +185,7 @@ namespace FFBatch
                 }
             }
 
-            txt_pre.Text = list_chaps_w.Count.ToString() + " " + Properties.Strings2.chaps_f;
+            txt_pre.Text = list_chaps_w.Count.ToString() + " " + Properties.Strings.chaps_f;
         }
 
         private void Form31_Load(object sender, EventArgs e)

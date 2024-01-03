@@ -114,7 +114,7 @@ namespace FFBatch
             if (e.ColumnIndex == 2)
             {
                 dg_pr.Rows[e.RowIndex].Cells[e.ColumnIndex].ReadOnly = false;
-                MessageBox.Show(Properties.Strings2.ff_copied + Environment.NewLine + Environment.NewLine + dg_pr.Rows[e.RowIndex].Cells[2].Value.ToString());
+                MessageBox.Show(Properties.Strings.ff_copied + Environment.NewLine + Environment.NewLine + dg_pr.Rows[e.RowIndex].Cells[2].Value.ToString());
                 Clipboard.SetText(dg_pr.Rows[e.RowIndex].Cells[2].Value.ToString());
             }
         }
@@ -126,7 +126,7 @@ namespace FFBatch
             toolT0z.InitialDelay = 750;
             toolT0z.ReshowDelay = 500;
             toolT0z.ShowAlways = true;
-            toolT0z.SetToolTip(this.requeue, Properties.Strings2.reset_m_jobs);
+            toolT0z.SetToolTip(this.requeue, Properties.Strings.reset_m_jobs);
         }
 
         private void Form16_Load(object sender, EventArgs e)
@@ -136,10 +136,10 @@ namespace FFBatch
             tooltips();
             btn_jobs.Enabled = true;
             refresh_lang();
-            this.Text = FFBatch.Properties.Strings2.mux_jobs;
+            this.Text = FFBatch.Properties.Strings.mux_jobs;
             dg_pr.Columns[1].HeaderText = FFBatch.Properties.Strings.filename;
             dg_pr.Columns[2].HeaderText = FFBatch.Properties.Strings.ff_params;
-            dg_pr.Columns[3].HeaderText = FFBatch.Properties.Strings2.streams;
+            dg_pr.Columns[3].HeaderText = FFBatch.Properties.Strings.streams;
             dg_pr.Columns[4].HeaderText = FFBatch.Properties.Strings.duration;
             dg_pr.Columns[5].HeaderText = FFBatch.Properties.Strings.output;
             if (Properties.Settings.Default.dark_mode == true)

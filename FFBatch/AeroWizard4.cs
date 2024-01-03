@@ -43,9 +43,9 @@ namespace FFBatch
             refresh_lang();
             if (Properties.Settings.Default.app_lang != "en" && Properties.Settings.Default.app_lang != "es")
             {
-                wizardControl1.NextButtonText = Properties.Strings2.next;
+                wizardControl1.NextButtonText = Properties.Strings.next;
                 wizardControl1.CancelButtonText = Properties.Strings.cancel;
-                wizardControl1.FinishButtonText = Properties.Strings2.finish;
+                wizardControl1.FinishButtonText = Properties.Strings.finish;
             }
         }
 

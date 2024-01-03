@@ -82,25 +82,44 @@ namespace FFBatch
         {
             btn_abort.Enabled = false;
             pic.Enabled = false;
-            Form1 frm1 = new Form1();
-            foreach (Process proc in frm1.procs.Values)
+            foreach (Process proc in ProcessExtensions.GetChildProcesses(Process.GetCurrentProcess()))
             {
                 try
                 {
                     proc.Kill();
                 }
-                catch { }
-            }
+                catch
+                {
+                    try
+                    {
+                        Thread.Sleep(10);
+                        proc.Kill();
+                    }
+                    catch { }
+                }
+            }            
             timer1.Start();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Stop();
-            Process[] localByName = Process.GetProcessesByName("ffmpeg");
-            if (localByName.Count() > 0) foreach (Process p in localByName) p.Kill();
-            Process[] localByName2 = Process.GetProcessesByName("yt-dlp");
-            if (localByName2.Count() > 0) foreach (Process p in localByName2) p.Kill();
+            foreach (Process proc in ProcessExtensions.GetChildProcesses(Process.GetCurrentProcess()))
+            {
+                try
+                {
+                    proc.Kill();
+                }
+                catch
+                {
+                    try
+                    {
+                        Thread.Sleep(10);
+                        proc.Kill();
+                    }
+                    catch { MessageBox.Show(Properties.Strings.error, Properties.Strings.error,MessageBoxButtons.OK, MessageBoxIcon.Error); }
+                }
+            }
         }
     }
 }

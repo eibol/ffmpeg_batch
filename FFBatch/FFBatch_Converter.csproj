@@ -32,7 +32,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -46,7 +46,7 @@
     <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -72,10 +72,10 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>FFBatch_2023_Key.pfx</AssemblyOriginatorKeyFile>
@@ -314,6 +314,12 @@
     <Compile Include="Form32.Designer.cs">
       <DependentUpon>Form32.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form33.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form33.Designer.cs">
+      <DependentUpon>Form33.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form4.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -352,20 +358,40 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
+    <Compile Include="Properties\Strings.pt-BR.Designer.cs">
+      <DependentUpon>Strings.pt-BR.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Strings.ar-EG.Designer.cs">
+      <DependentUpon>Strings.ar-EG.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Strings.it.Designer.cs">
+      <DependentUpon>Strings.it.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Strings.zh-Hans.Designer.cs">
+      <DependentUpon>Strings.zh-Hans.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Strings.es.Designer.cs">
+      <DependentUpon>Strings.es.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Properties\Strings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Strings2.Designer.cs">
+    <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Strings2.resx</DependentUpon>
+      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
     <EmbeddedResource Include="AeroWizard1.ar-EG.resx">
@@ -409,13 +435,7 @@
     <EmbeddedResource Include="AeroWizard3.ar-EG.resx">
       <DependentUpon>AeroWizard3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AeroWizard3.ar.resx">
-      <DependentUpon>AeroWizard3.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AeroWizard3.es.resx">
-      <DependentUpon>AeroWizard3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AeroWizard3.ibb.resx">
       <DependentUpon>AeroWizard3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AeroWizard3.it.resx">
@@ -503,6 +523,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AeroWizard7.zh-Hans.resx">
       <DependentUpon>AeroWizard7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.aa.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.es.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -632,9 +655,6 @@
     <EmbeddedResource Include="Form17.ar-EG.resx">
       <DependentUpon>Form17.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form17.bin.resx">
-      <DependentUpon>Form17.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form18.ar-EG.resx">
       <DependentUpon>Form18.cs</DependentUpon>
     </EmbeddedResource>
@@ -658,6 +678,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form25.ar-EG.resx">
       <DependentUpon>Form25.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form26.it.resx">
+      <DependentUpon>Form26.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form27.ar-EG.resx">
       <DependentUpon>Form27.cs</DependentUpon>
@@ -782,9 +805,6 @@
     <EmbeddedResource Include="Form20.zh-Hans.resx">
       <DependentUpon>Form20.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form20.zh-Hant.resx">
-      <DependentUpon>Form20.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form21.es.resx">
       <DependentUpon>Form21.cs</DependentUpon>
     </EmbeddedResource>
@@ -907,9 +927,6 @@
     <EmbeddedResource Include="Form3.zh-Hans.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.zh-Hant.resx">
-      <DependentUpon>Form3.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form30.ar-EG.resx">
       <DependentUpon>Form30.cs</DependentUpon>
     </EmbeddedResource>
@@ -943,14 +960,8 @@
     <EmbeddedResource Include="Form31.resx">
       <DependentUpon>Form31.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form31.zh-CHS.resx">
-      <DependentUpon>Form31.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form31.zh-Hans.resx">
       <DependentUpon>Form31.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form32.ar-AE.resx">
-      <DependentUpon>Form32.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form32.ar-EG.resx">
       <DependentUpon>Form32.cs</DependentUpon>
@@ -969,6 +980,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form32.zh-Hans.resx">
       <DependentUpon>Form32.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form33.resx">
+      <DependentUpon>Form33.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form4.ar-EG.resx">
       <DependentUpon>Form4.cs</DependentUpon>
@@ -1064,30 +1078,34 @@
     <EmbeddedResource Include="Form9.zh-Hans.resx">
       <DependentUpon>Form9.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Strings.pt-BR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.pt-BR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Strings.ar-EG.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.ar-EG.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Strings.it.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.it.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Strings.zh-Hans.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.zh-Hans.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Strings.es.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.es.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Strings.ar-EG.resx" />
-    <EmbeddedResource Include="Properties\Strings.es.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Strings.it.resx" />
-    <EmbeddedResource Include="Properties\Strings.pt-BR.resx" />
-    <EmbeddedResource Include="Properties\Strings.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings3.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Strings.zh-Hans.resx" />
-    <EmbeddedResource Include="Properties\Strings2.ar-EG.resx" />
-    <EmbeddedResource Include="Properties\Strings2.es.resx" />
-    <EmbeddedResource Include="Properties\Strings2.it.resx" />
-    <EmbeddedResource Include="Properties\Strings2.pt-BR.resx" />
-    <EmbeddedResource Include="Properties\Strings2.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings2.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Strings2.zh-Hans.resx" />
     <None Include="FFBatch_2023_Key.pfx" />
     <None Include="FFBatch_Converter.ruleset" />
     <None Include="packages.config" />

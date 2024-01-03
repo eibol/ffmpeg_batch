@@ -48,7 +48,7 @@ namespace FFBatch
 
         private void Form28_Load(object sender, EventArgs e)
         {            
-            this.Text = Properties.Strings2.crop1;
+            this.Text = Properties.Strings.crop1;
 
             if (Properties.Settings.Default.dark_mode == true)
             {
@@ -67,13 +67,51 @@ namespace FFBatch
             }
             
             lbl_f.Text = Path.GetFileName(item);
-            if (TimeSpan.Parse(dur).TotalSeconds > 10) txt_seek.Text = "00:00:10";
-            else txt_seek.Text = "00:00:01";
+            if (get_dur_secs(dur) > 10) txt_seek.Text = "00:00:10";
+            else
+            {
+                dur = get_file_dur(item);
+                if (get_dur_secs(dur) > 10) txt_seek.Text = "00:00:10";
+                else txt_seek.Text = "00:00:01";
+            }            
 
             get_size();
-            if (failed == false) original_frame();
-            //if (failed == false) autodetect();
+            if (failed == false) original_frame();            
             if (failed == false) get_prop();
+        }
+
+        Double get_dur_secs(String item)
+        {
+            TimeSpan t = new TimeSpan();
+            if (TimeSpan.TryParse(item, out t)) { return t.TotalSeconds; }
+            else return 0;
+        }
+        private String get_file_dur(String path)
+        {
+            Process tmp = new Process();
+            tmp.StartInfo.FileName = Path.Combine(Application.StartupPath, "MediaInfo.exe");
+            String ffprobe_frames = " " + '\u0022' + "--Inform=General;%Duration/String3%" + '\u0022';
+            tmp.StartInfo.Arguments = ffprobe_frames + " " + '\u0022' + path + '\u0022';
+
+            tmp.StartInfo.RedirectStandardOutput = true;
+            tmp.StartInfo.UseShellExecute = false;
+            tmp.StartInfo.CreateNoWindow = true;
+            tmp.EnableRaisingEvents = true;
+            tmp.Start();
+
+            String duracion = tmp.StandardOutput.ReadToEnd();
+            tmp.WaitForExit();
+
+            if (duracion == null) return "00:00:00";
+            else
+            {
+                TimeSpan time;
+                if (TimeSpan.TryParse(duracion, out time))
+                {
+                    return duracion;
+                }
+                else return "00:00:00";
+            }
         }
 
         private void get_size()
@@ -117,7 +155,7 @@ namespace FFBatch
                 {
                     failed = true;
                     ff_frames = String.Empty;                    
-                    MessageBox.Show(Properties.Strings2.err_size);
+                    MessageBox.Show(Properties.Strings.err_size);
                     this.Close();
                     return;
                 }
@@ -125,7 +163,7 @@ namespace FFBatch
                 if (ff_frames.Length == 0)
                 {
                     failed = true;
-                    MessageBox.Show(Properties.Strings2.err_size);
+                    MessageBox.Show(Properties.Strings.err_size);
                     this.Close();
                     return;
                 }
@@ -144,16 +182,12 @@ namespace FFBatch
             test_crop.Enabled = false;
             Process proc = new Process();
             String temp_f = Path.Combine(Path.GetTempPath() + "FFBatch_test", Path.GetFileName(item));
-            String param = " -i " + '\u0022' + item + '\u0022' + " -ss " + txt_seek.Text + " -t " + n_secs.Value.ToString() + " -c:v libx264 -crf 25 -preset veryfast -c:a copy" + " -vf crop=" + (n_w.Maximum - n_w.Value -n_X.Value).ToString() + ":" + (n_h.Maximum -  n_h.Value - n_Y.Value).ToString() + ":" + n_X.Value.ToString() + ":" + n_Y.Value.ToString() + " -y " + '\u0022' + temp_f + '\u0022'  + " -hide_banner";
+            String param = " -ss " +  txt_seek.Text + " -i " + '\u0022' + item + '\u0022' + " -t " + n_secs.Value.ToString() + " -c:v libx264 -crf 25 -preset ultrafast -c:a copy" + " -vf crop=" + (n_w.Maximum - n_w.Value -n_X.Value).ToString() + ":" + (n_h.Maximum -  n_h.Value - n_Y.Value).ToString() + ":" + n_X.Value.ToString() + ":" + n_Y.Value.ToString() + " -y " + '\u0022' + temp_f + '\u0022'  + " -hide_banner";
             String crop = "";
             List<string> list_lines = new List<string>();
 
-            proc.StartInfo.FileName = Path.Combine(Application.StartupPath, "ffmpeg.exe");
-            proc.StartInfo.RedirectStandardOutput = true;
-            proc.StartInfo.StandardOutputEncoding = Encoding.UTF8;
-            proc.StartInfo.RedirectStandardInput = true;
+            proc.StartInfo.FileName = Path.Combine(Application.StartupPath, "ffmpeg.exe");            
             proc.StartInfo.RedirectStandardError = true;
-            proc.StartInfo.StandardErrorEncoding = Encoding.UTF8;
             proc.StartInfo.UseShellExecute = false;
             proc.StartInfo.CreateNoWindow = true;
             proc.EnableRaisingEvents = true;
@@ -165,13 +199,13 @@ namespace FFBatch
                 list_lines.Add(proc.StandardError.ReadLine());
             }
 
-            proc.WaitForExit(10000);
+            proc.WaitForExit(8000);
             test_crop.Enabled = true;
             this.Cursor = Cursors.Arrow;
             this.Enabled = true;
             if (proc.ExitCode != 0)
             {
-                MessageBox.Show(Properties.Strings2.err_crop);                
+                MessageBox.Show(Properties.Strings.err_crop);                
                 return;
             }            
             
@@ -256,16 +290,12 @@ namespace FFBatch
             original_frame();
             Process proc = new Process();
             String temp_f = Path.Combine(Path.GetTempPath() + "FFBatch_test", Path.GetFileNameWithoutExtension(item) + ".jpg");            
-            String param = "-ss " + txt_seek.Text + " -i " + '\u0022' + item + '\u0022' + " -frames:v 1 -y " + '\u0022' + temp_f + '\u0022' + " -hide_banner";
+            String param = "-ss " + txt_seek.Text + " -i " + '\u0022' + item + '\u0022' + " -vframes 1 -f image2 -qscale:v 3 -y " + '\u0022' + temp_f + '\u0022' + " -hide_banner";
 
             List<string> list_lines = new List<string>();
 
             proc.StartInfo.FileName = Path.Combine(Application.StartupPath, "ffmpeg.exe");
-            proc.StartInfo.RedirectStandardOutput = true;
-            proc.StartInfo.StandardOutputEncoding = Encoding.UTF8;
-            proc.StartInfo.RedirectStandardInput = true;
-            proc.StartInfo.RedirectStandardError = true;
-            proc.StartInfo.StandardErrorEncoding = Encoding.UTF8;
+            proc.StartInfo.RedirectStandardError = true;            
             proc.StartInfo.UseShellExecute = false;
             proc.StartInfo.CreateNoWindow = true;
             proc.EnableRaisingEvents = true;
@@ -285,6 +315,7 @@ namespace FFBatch
             {
                 img = new Bitmap(bmpTemp);
                 pic1.Image = img;
+                bmpTemp.Dispose();
             }
             try
             {
@@ -308,7 +339,7 @@ namespace FFBatch
         {
             Process proc = new Process();
             String temp_f = Path.Combine(Path.GetTempPath() + "FFBatch_test", Path.GetFileNameWithoutExtension(item) + ".jpg");
-            String param = "-ss " + txt_seek.Text + " -i " + '\u0022' + item + '\u0022' + "  -frames:v 1 -y " + '\u0022' + temp_f + '\u0022'  + " -hide_banner";
+            String param = "-ss " + txt_seek.Text + " -i " + '\u0022' + item + '\u0022' + " -vframes 1 -f image2 -qscale:v 3 -y " + '\u0022' + temp_f + '\u0022'  + " -hide_banner";
 
             List<string> list_lines = new List<string>();
 
@@ -447,10 +478,17 @@ namespace FFBatch
             if (DateTime.TryParse(txt_seek.Text, out time2))
             {
                 if (TimeSpan.Parse(dur).TotalSeconds > TimeSpan.Parse(txt_seek.Text).TotalSeconds)
-                 {
+                {
                     Thread.Sleep(250);
                     btn_frame.PerformClick();
-                 }
+                }
+                else
+                {
+                    Double t1 = TimeSpan.Parse(dur).TotalSeconds - (double)n_secs.Value;
+                    TimeSpan t = TimeSpan.FromSeconds(t1);
+                    String tx_elapsed = string.Format("{0:D2}:{1:D2}:{2:D2}", t.Hours, t.Minutes, t.Seconds);
+                    txt_seek.Text = tx_elapsed;
+                }
             }
         }
         private void btn_cancel_Click(object sender, EventArgs e)

@@ -7,7 +7,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+//using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FFBatch
 {
@@ -22,8 +22,7 @@ namespace FFBatch
         public List<string[]> list_chaps_w = new List<string[]>();
         public Boolean by_int_chaps = false;
         public Boolean manual_chaps = false;
-        public List<string> list_files = new List<string>();
-        //public String lv1_item = String.Empty;
+        public List<string> list_files = new List<string>();        
         public Boolean save_preset = false;
         public int list_count = 0;
         private String pr_1st_params = String.Empty;
@@ -112,7 +111,7 @@ namespace FFBatch
 
         private void txt_path_main_TextChanged(object sender, EventArgs e)
         {
-            if (txt_path_main.TextLength >= 3 && txt_path_main.Text.Substring(0, 2) != ".\\") MessageBox.Show(Properties.Strings2.pls_include + ".\\ " + Properties.Strings2.on_rel_path);
+            if (txt_path_main.TextLength >= 3 && txt_path_main.Text.Substring(0, 2) != ".\\") MessageBox.Show(Properties.Strings.pls_include + ".\\ " + Properties.Strings.on_rel_path);
         }
 
         private void combo_Seconds_TextChanged(object sender, EventArgs e)
@@ -247,9 +246,9 @@ namespace FFBatch
             refresh_lang();
             if (Properties.Settings.Default.app_lang != "en" && Properties.Settings.Default.app_lang != "es")
             {
-                wiz_split.NextButtonText = Properties.Strings2.next;
+                wiz_split.NextButtonText = Properties.Strings.next;
                 wiz_split.CancelButtonText = Properties.Strings.cancel;
-                wiz_split.FinishButtonText = Properties.Strings2.finish;
+                wiz_split.FinishButtonText = Properties.Strings.finish;
             }
         }
 
@@ -347,11 +346,15 @@ namespace FFBatch
                 if (File.Exists(output)) chaps_file = File.ReadAllText(output);
                 else
                 {
-                    txt_chaps.Invoke(new MethodInvoker(delegate
-                    {
-                        txt_chaps.AppendText(ch_count.ToString() + ". " + Path.GetFileName(lv1_it).Substring(0, f_l) + dots + " | 0 " + Properties.Strings2.chapters  + Environment.NewLine);
-                        return;
-                    }));
+                         try
+                         {
+                             txt_chaps.Invoke(new MethodInvoker(delegate
+                        {
+                            txt_chaps.AppendText(ch_count.ToString() + ". " + Path.GetFileName(lv1_it).Substring(0, f_l) + dots + " | 0 " + Properties.Strings.chapters + Environment.NewLine);
+                            return;
+                        }));
+                        
+                         } catch { }
                 }
 
                 Boolean titles = false;
@@ -430,11 +433,15 @@ namespace FFBatch
                     }
                 }
 
-                txt_chaps.Invoke(new MethodInvoker(delegate
-                {
-                    txt_chaps.AppendText(ch_count.ToString() + ". " + Path.GetFileName(lv1_it).Substring(0, f_l) + dots + " | " + list_chaps_w.Count.ToString() + " " + Properties.Strings2.chapters + Environment.NewLine);
-                }));          
-               }
+                     try
+                     {
+                         txt_chaps.Invoke(new MethodInvoker(delegate
+                    {
+                        txt_chaps.AppendText(ch_count.ToString() + ". " + Path.GetFileName(lv1_it).Substring(0, f_l) + dots + " | " + list_chaps_w.Count.ToString() + " " + Properties.Strings.chapters + Environment.NewLine);
+                    }));
+                     }
+             catch { }
+                 }
              });
         }
 
@@ -493,7 +500,7 @@ namespace FFBatch
             {
                 if (list_count > 1)
                 {
-                    DialogResult a = MessageBox.Show(Properties.Strings2.chapters_all, Properties.Strings.question, MessageBoxButtons.OKCancel);
+                    DialogResult a = MessageBox.Show(Properties.Strings.chapters_all, Properties.Strings.question, MessageBoxButtons.OKCancel);
                     if (a == DialogResult.Cancel)
                     {
                         e.Cancel = true;

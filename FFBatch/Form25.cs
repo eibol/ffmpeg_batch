@@ -26,8 +26,7 @@ namespace FFBatch
 
         public Boolean check_ff = false;
         private Boolean is_portable = false;
-        private String port_path = System.IO.Path.Combine(Application.StartupPath, "settings") + "\\";
-        private String code = "";
+        private String port_path = System.IO.Path.Combine(Application.StartupPath, "settings") + "\\";        
         private String cpu = "";
         private String videocard = "";
         private String product = "";
@@ -94,13 +93,13 @@ namespace FFBatch
 
             if (FFBatch.Properties.Settings.Default.app_lang == "zh-Hans") this.Height = this.Height + 38;
 
-            this.Text = Properties.Strings2.sec_perf;
+            this.Text = Properties.Strings.sec_perf;
             try
             {
                 ManagementObjectSearcher mosProcessor = new ManagementObjectSearcher("SELECT * FROM Win32_Processor");
                 string Procname = null;
 
-                foreach (ManagementObject moProcessor in mosProcessor.Get())
+                foreach (ManagementObject moProcessor in mosProcessor.Get().Cast<ManagementObject>())
                 {
                     if (moProcessor["name"] != null) cpu = moProcessor["name"].ToString();
                     else cpu = Properties.Strings.unknown;
@@ -109,7 +108,7 @@ namespace FFBatch
                 lbl_cpu.Text = cpu;
 
                 ManagementObjectSearcher search = new ManagementObjectSearcher("SELECT * FROM Win32_VideoController");
-                foreach (ManagementObject mo in search.Get())
+                foreach (ManagementObject mo in search.Get().Cast<ManagementObject>())
                 {
                     PropertyData currentBitsPerPixel = mo.Properties["CurrentBitsPerPixel"];
                     PropertyData description = mo.Properties["Description"];
@@ -119,14 +118,14 @@ namespace FFBatch
                             videocard = videocard + (description.Value) + " ";
                     }
                 }
-                if (videocard == null) videocard = Properties.Strings2.integrated;
-                if (videocard == String.Empty) videocard = Properties.Strings2.integrated;
+                if (videocard == null) videocard = Properties.Strings.integrated;
+                if (videocard == String.Empty) videocard = Properties.Strings.integrated;
                 lbl_vcard.Text = videocard;
 
                 String result = String.Empty;
 
                 ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem");
-                foreach (ManagementObject os in searcher.Get())
+                foreach (ManagementObject os in searcher.Get().Cast<ManagementObject>())
                 {
                     result = os["Caption"].ToString();
                     break;
@@ -136,11 +135,11 @@ namespace FFBatch
                 if (product.ToLower().Contains("windows defender"))
                 {
                     btn_add_ex.Enabled = true;
-                    txt_tip.Text = Properties.Strings2.tip1 + Environment.NewLine + Environment.NewLine + Properties.Strings2.tip2 + Environment.NewLine + Environment.NewLine + Properties.Strings2.tip3 + " " + Properties.Strings2.tip_win_sec + " " + Properties.Strings2.tip4;
+                    txt_tip.Text = Properties.Strings.tip1 + Environment.NewLine + Environment.NewLine + Properties.Strings.tip2 + Environment.NewLine + Environment.NewLine + Properties.Strings.tip3 + " " + Properties.Strings.tip_win_sec + " " + Properties.Strings.tip4;
                 }
                 else
                 {
-                    txt_tip.Text = Properties.Strings2.tip1 + Environment.NewLine + Environment.NewLine + Properties.Strings2.tip2 + Environment.NewLine + Environment.NewLine + Properties.Strings2.tip3 + " " + Properties.Strings2.tip_your_av + " " + Properties.Strings2.tip4;
+                    txt_tip.Text = Properties.Strings.tip1 + Environment.NewLine + Environment.NewLine + Properties.Strings.tip2 + Environment.NewLine + Environment.NewLine + Properties.Strings.tip3 + " " + Properties.Strings.tip_your_av + " " + Properties.Strings.tip4;
                 }
 
                 //Antivirus
@@ -148,7 +147,7 @@ namespace FFBatch
                 ManagementObjectCollection data = wmiData.Get();
 
                 int i = 0;
-                foreach (ManagementObject virusChecker in data)
+                foreach (ManagementObject virusChecker in data.Cast<ManagementObject>())
                 {
                     product = (virusChecker.GetPropertyValue("displayName").ToString());
                     product_state = (virusChecker.GetPropertyValue("productState").ToString());
@@ -175,7 +174,7 @@ namespace FFBatch
             String f_md5 = String.Empty;
             if (is_portable == false) { f_md5 = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_md5.ini"; }
             else { f_md5 = port_path + "ff_md5_portable.ini"; }
-            String saved = Properties.Strings2.none;
+            String saved = Properties.Strings.none;
             String code = "";
             String psk = "FFBatch2022_()*_";
 
@@ -193,22 +192,22 @@ namespace FFBatch
 
                     txt_st_md5.Text = saved;
                     txt_cur_md5.Text = code;
-                    if (txt_st_md5.Text == Properties.Strings2.none) ;
+                    if (txt_st_md5.Text == Properties.Strings.none) ;
                     {
                         pic_1.Image = pic_excl.Image;
-                        lbl_fail_ff.Text = Properties.Strings2.check_not_st;
+                        lbl_fail_ff.Text = Properties.Strings.check_not_st;
                         btn_save_md5.Enabled = true;
                     }                    
                     if (code == saved)
                     {
                         pic_1.Image = pic_success.Image;
                         pic_2.Image = pic_success.Image;
-                        lbl_fail_ff.Text = Properties.Strings2.md5_valid;
+                        lbl_fail_ff.Text = Properties.Strings.md5_valid;
                         btn_save_md5.Enabled = false;
                     }
                     else
                     {
-                        lbl_fail_ff.Text = Properties.Strings2.md5_fail;
+                        lbl_fail_ff.Text = Properties.Strings.md5_fail;
                         btn_save_md5.Enabled = true;
                         pic_2.Image = pic_excl.Image;
                     }
@@ -225,12 +224,12 @@ namespace FFBatch
             this.ActiveControl = lbl_os;
             if (txt_cur_md5.Text != txt_st_md5.Text)
             {
-                MessageBox.Show(Properties.Strings2.md5_not_match, Properties.Strings2.md5_not_validated, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Properties.Strings.md5_not_match, Properties.Strings.md5_not_validated, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             if (!lbl_os.Text.ToLower().Contains("windows 10") && !lbl_os.Text.ToLower().Contains("windows 11"))
             {
-                MessageBox.Show(Properties.Strings2.req_w1011, Properties.Strings2.only_1011, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Properties.Strings.req_w1011, Properties.Strings.only_1011, MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 if (vir_exe.Contains("%ProgramFiles%")) vir_exe = Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles) + vir_exe.Replace("%ProgramFiles%", "");
                 if (File.Exists(vir_exe)) Process.Start(vir_exe);
@@ -250,7 +249,7 @@ namespace FFBatch
                 if (File.Exists(vir_exe)) Process.Start(vir_exe);
                 return;
             }
-            DialogResult a = MessageBox.Show(Properties.Strings2.attempt_exc + Environment.NewLine + Environment.NewLine + Properties.Strings2.admin_cmd + Environment.NewLine + Environment.NewLine + Properties.Strings2.proceed1, Properties.Strings2.add_excl_ws, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            DialogResult a = MessageBox.Show(Properties.Strings.attempt_exc + Environment.NewLine + Environment.NewLine + Properties.Strings.admin_cmd + Environment.NewLine + Environment.NewLine + Properties.Strings.proceed1, Properties.Strings.add_excl_ws, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             if (a != DialogResult.Yes) return;
 
             Boolean writable = false;
@@ -286,7 +285,7 @@ namespace FFBatch
             {
                 ff_ext.Start();
                 ff_ext.WaitForExit();
-                MessageBox.Show(Properties.Strings2.excl_added, Properties.Strings2.excl_add2, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Properties.Strings.excl_added, Properties.Strings.excl_add2, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Process.Start("windowsdefender://exclusions");
             }
             catch (Exception exc)
@@ -313,7 +312,7 @@ namespace FFBatch
             if (txt_cur_md5.Text == txt_st_md5.Text)
             {
                 pic_1.Image = pic_success.Image;
-                lbl_fail_ff.Text = Properties.Strings2.md5_valid;
+                lbl_fail_ff.Text = Properties.Strings.md5_valid;
                 check_ff = true;
             }            
         }

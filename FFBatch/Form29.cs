@@ -50,7 +50,7 @@ namespace FFBatch
                 this.BackColor = SystemColors.InactiveBorder;
             }
 
-            this.Text = Properties.Strings2.pause_bat_ac;
+            this.Text = Properties.Strings.pause_bat_ac;
             chk_battery.Checked = Properties.Settings.Default.pause_bat;
             chk_bat_level.Checked = Properties.Settings.Default.if_bat_low;
             n_bat_l.Value = Properties.Settings.Default.bat_level;

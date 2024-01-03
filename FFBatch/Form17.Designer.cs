@@ -32,11 +32,10 @@ namespace FFBatch
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form17));
             this.label1 = new System.Windows.Forms.Label();
             this.cb_col = new System.Windows.Forms.ComboBox();
-            this.btn_exit = new System.Windows.Forms.Button();
+            this.btn_all = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_del_col = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cb_custom_med = new System.Windows.Forms.ComboBox();
@@ -51,23 +50,23 @@ namespace FFBatch
             // 
             // cb_col
             // 
-            resources.ApplyResources(this.cb_col, "cb_col");
             this.cb_col.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_col.FormattingEnabled = true;
             this.cb_col.Items.AddRange(new object[] {
             resources.GetString("cb_col.Items")});
+            resources.ApplyResources(this.cb_col, "cb_col");
             this.cb_col.Name = "cb_col";
             this.cb_col.SelectedIndexChanged += new System.EventHandler(this.cb_col_SelectedIndexChanged);
             // 
-            // btn_exit
+            // btn_all
             // 
-            resources.ApplyResources(this.btn_exit, "btn_exit");
-            this.btn_exit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_exit.FlatAppearance.BorderSize = 0;
-            this.btn_exit.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_exit.Name = "btn_exit";
-            this.btn_exit.UseVisualStyleBackColor = true;
-            this.btn_exit.Click += new System.EventHandler(this.btn_exit_Click);
+            this.btn_all.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btn_all.FlatAppearance.BorderSize = 0;
+            this.btn_all.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_all, "btn_all");
+            this.btn_all.Name = "btn_all";
+            this.btn_all.UseVisualStyleBackColor = true;
+            this.btn_all.Click += new System.EventHandler(this.btn_exit_Click);
             // 
             // label3
             // 
@@ -76,25 +75,19 @@ namespace FFBatch
             // 
             // btn_del_col
             // 
-            resources.ApplyResources(this.btn_del_col, "btn_del_col");
             this.btn_del_col.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_del_col, "btn_del_col");
             this.btn_del_col.Name = "btn_del_col";
             this.btn_del_col.UseVisualStyleBackColor = true;
             this.btn_del_col.Click += new System.EventHandler(this.btn_del_col_Click);
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label2);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
             // 
             // label2
             // 
@@ -108,8 +101,8 @@ namespace FFBatch
             // 
             // cb_custom_med
             // 
-            resources.ApplyResources(this.cb_custom_med, "cb_custom_med");
             this.cb_custom_med.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cb_custom_med, "cb_custom_med");
             this.cb_custom_med.FormattingEnabled = true;
             this.cb_custom_med.Items.AddRange(new object[] {
             resources.GetString("cb_custom_med.Items"),
@@ -150,8 +143,8 @@ namespace FFBatch
             // 
             // btn_add_col
             // 
-            resources.ApplyResources(this.btn_add_col, "btn_add_col");
             this.btn_add_col.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_add_col, "btn_add_col");
             this.btn_add_col.Name = "btn_add_col";
             this.btn_add_col.UseVisualStyleBackColor = true;
             this.btn_add_col.Click += new System.EventHandler(this.btn_add_col_Click_1);
@@ -161,7 +154,7 @@ namespace FFBatch
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.CancelButton = this.btn_exit;
+            this.CancelButton = this.btn_all;
             this.Controls.Add(this.cb_col);
             this.Controls.Add(this.btn_add_col);
             this.Controls.Add(this.cb_custom_med);
@@ -169,7 +162,7 @@ namespace FFBatch
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btn_del_col);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btn_exit);
+            this.Controls.Add(this.btn_all);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
@@ -187,15 +180,14 @@ namespace FFBatch
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btn_exit;
         public System.Windows.Forms.ComboBox cb_col;
-        private System.Windows.Forms.Button btn_del_col;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.ComboBox cb_custom_med;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_add_col;
+        public System.Windows.Forms.Button btn_all;
+        public System.Windows.Forms.Button btn_del_col;
     }
 }

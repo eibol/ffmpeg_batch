@@ -47,7 +47,7 @@ namespace FFBatch
             {
                 int i = Convert.ToInt32(File.ReadAllText(f_delay));
                 label1.Visible = true;
-                label1.Text = Properties.Strings2.delay_act + ": " + i.ToString();
+                label1.Text = Properties.Strings.delay_act + ": " + i.ToString();
 
             }
             //End startup delay

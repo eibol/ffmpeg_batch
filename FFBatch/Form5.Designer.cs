@@ -88,7 +88,6 @@
             // 
             // dg_streams
             // 
-            resources.ApplyResources(this.dg_streams, "dg_streams");
             this.dg_streams.AllowUserToAddRows = false;
             this.dg_streams.AllowUserToDeleteRows = false;
             this.dg_streams.AllowUserToOrderColumns = true;
@@ -101,6 +100,7 @@
             this.Column1,
             this.Column2});
             this.dg_streams.ContextMenuStrip = this.menu_grid;
+            resources.ApplyResources(this.dg_streams, "dg_streams");
             this.dg_streams.Name = "dg_streams";
             // 
             // Column3
@@ -126,16 +126,16 @@
             // 
             // menu_grid
             // 
-            resources.ApplyResources(this.menu_grid, "menu_grid");
             this.menu_grid.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ct1});
             this.menu_grid.Name = "menu_grid";
+            resources.ApplyResources(this.menu_grid, "menu_grid");
             this.menu_grid.Opening += new System.ComponentModel.CancelEventHandler(this.menu_grid_Opening);
             // 
             // ct1
             // 
-            resources.ApplyResources(this.ct1, "ct1");
             this.ct1.Name = "ct1";
+            resources.ApplyResources(this.ct1, "ct1");
             this.ct1.Click += new System.EventHandler(this.ct1_Click);
             // 
             // img_streams
@@ -160,19 +160,19 @@
             // 
             // pic_frame
             // 
-            resources.ApplyResources(this.pic_frame, "pic_frame");
             this.pic_frame.ContextMenuStrip = this.menu_Img;
+            resources.ApplyResources(this.pic_frame, "pic_frame");
             this.pic_frame.Name = "pic_frame";
             this.pic_frame.TabStop = false;
             this.pic_frame.DoubleClick += new System.EventHandler(this.pic_frame_DoubleClick);
             // 
             // menu_Img
             // 
-            resources.ApplyResources(this.menu_Img, "menu_Img");
             this.menu_Img.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ct_copy,
             this.ct_save});
             this.menu_Img.Name = "menu_Img";
+            resources.ApplyResources(this.menu_Img, "menu_Img");
             // 
             // ct_copy
             // 
@@ -188,7 +188,6 @@
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.btn_kplus1);
             this.groupBox1.Controls.Add(this.btn_k_m1);
             this.groupBox1.Controls.Add(this.pic_cut);
@@ -210,6 +209,7 @@
             this.groupBox1.Controls.Add(this.btn_fr_end);
             this.groupBox1.Controls.Add(this.btn_10);
             this.groupBox1.Controls.Add(this.btn_minus10);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -270,11 +270,11 @@
             // 
             // panel2
             // 
-            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.pg1);
             this.panel2.Controls.Add(this.btn_cancel);
             this.panel2.Controls.Add(this.lbl_prog);
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
             // pg1
@@ -291,16 +291,16 @@
             // 
             // lbl_prog
             // 
-            resources.ApplyResources(this.lbl_prog, "lbl_prog");
             this.lbl_prog.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.lbl_prog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            resources.ApplyResources(this.lbl_prog, "lbl_prog");
             this.lbl_prog.Name = "lbl_prog";
             // 
             // btn_copy
             // 
-            resources.ApplyResources(this.btn_copy, "btn_copy");
             this.btn_copy.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_copy.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_copy, "btn_copy");
             this.btn_copy.Name = "btn_copy";
             this.btn_copy.UseVisualStyleBackColor = true;
             this.btn_copy.Click += new System.EventHandler(this.btn_copy_Click);
@@ -314,9 +314,9 @@
             // 
             // btn_save
             // 
-            resources.ApplyResources(this.btn_save, "btn_save");
             this.btn_save.FlatAppearance.BorderColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_save.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_save, "btn_save");
             this.btn_save.Name = "btn_save";
             this.btn_save.UseVisualStyleBackColor = true;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
@@ -344,8 +344,8 @@
             // 
             // lbl_fr_time
             // 
-            resources.ApplyResources(this.lbl_fr_time, "lbl_fr_time");
             this.lbl_fr_time.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            resources.ApplyResources(this.lbl_fr_time, "lbl_fr_time");
             this.lbl_fr_time.Name = "lbl_fr_time";
             this.lbl_fr_time.TextChanged += new System.EventHandler(this.lbl_fr_time_TextChanged);
             // 
@@ -372,16 +372,16 @@
             // 
             // btn_refresh
             // 
-            resources.ApplyResources(this.btn_refresh, "btn_refresh");
             this.btn_refresh.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_refresh, "btn_refresh");
             this.btn_refresh.Name = "btn_refresh";
             this.btn_refresh.UseVisualStyleBackColor = true;
             this.btn_refresh.Click += new System.EventHandler(this.btn_refresh_Click);
             // 
             // txt_name
             // 
-            resources.ApplyResources(this.txt_name, "txt_name");
             this.txt_name.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            resources.ApplyResources(this.txt_name, "txt_name");
             this.txt_name.Name = "txt_name";
             this.txt_name.ReadOnly = true;
             // 
@@ -394,7 +394,6 @@
             // 
             // save_img
             // 
-            resources.ApplyResources(this.save_img, "save_img");
             this.save_img.FileOk += new System.ComponentModel.CancelEventHandler(this.save_img_FileOk);
             // 
             // timer1
@@ -428,6 +427,7 @@
             this.Name = "Form5";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form5_FormClosing);
             this.Load += new System.EventHandler(this.Form5_Load);
+            this.Shown += new System.EventHandler(this.Form5_Shown);
             this.Resize += new System.EventHandler(this.Form5_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dg_streams)).EndInit();
             this.menu_grid.ResumeLayout(false);

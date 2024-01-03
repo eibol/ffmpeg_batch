@@ -16,6 +16,7 @@ namespace FFBatch
     {
         public Boolean canceled = true;
         public Boolean to_remove = false;
+        public Boolean to_remove_all = false;
 
         public Form17()
         {
@@ -43,8 +44,7 @@ namespace FFBatch
         }
 
         private void Form17_Load(object sender, EventArgs e)
-        {
-            this.Size = new Size(264, 274);
+        {            
             if (cb_col.Items.Count > 0)
             {
                 cb_col.SelectedIndex = 0;
@@ -64,6 +64,7 @@ namespace FFBatch
                 foreach (Control c in this.Controls) UpdateColorDefault(c);
                 this.BackColor = SystemColors.InactiveBorder;
             }
+            if (cb_col.SelectedIndex == cb_col.FindString(Properties.Strings.custom)) cb_custom_med.Enabled = true;
         }
 
         private void refresh_lang()
@@ -85,8 +86,8 @@ namespace FFBatch
 
         private void btn_exit_Click(object sender, EventArgs e)
         {
-            canceled = true;
-            to_remove = false;
+            canceled = false;            
+            to_remove_all = true;
             this.Close();
         }
 
@@ -98,29 +99,32 @@ namespace FFBatch
         }
 
         private void cb_col_SelectedIndexChanged(object sender, EventArgs e)
-        {            
-            if (cb_col.SelectedItem.ToString().Contains(FFBatch.Properties.Strings.Audio_codec))
+        {
+            cb_custom_med.Enabled = false;
+            label5.Enabled = false;
+
+            if (cb_col.SelectedItem.ToString() == Properties.Strings.Audio_codec)
             {
                 label3.Text = FFBatch.Properties.Strings.first_audio;
             }
-            if (cb_col.SelectedItem.ToString().Contains(FFBatch.Properties.Strings.Video_codec))
+            else if (cb_col.SelectedItem.ToString() == Properties.Strings.Video_codec)
             {
                 label3.Text = FFBatch.Properties.Strings.first_video;
             }
-            if (cb_col.SelectedItem.ToString().Contains(FFBatch.Properties.Strings.resolution))
+            else if (cb_col.SelectedItem.ToString() == Properties.Strings.resolution)
             {
                 label3.Text = FFBatch.Properties.Strings.width_heigh;
             }
-            if (cb_col.SelectedItem.ToString().Contains(FFBatch.Properties.Strings2.custom))
-            {
-                label3.Text = FFBatch.Properties.Strings2.custom;
+            else if (cb_col.SelectedItem.ToString() == Properties.Strings.custom)
+            {                
                 btn_add_col.Enabled = false;
-                this.Size = new Size(449, 274);
+                cb_custom_med.Enabled = true;
+                label5.Enabled = true;
             }
             else
             {
                 btn_add_col.Enabled = true;
-                this.Size = new Size(264, 274);
+                label3.Text = String.Empty;
             }
         }
 
@@ -132,25 +136,21 @@ namespace FFBatch
         }
 
         private void cb_custom_med_SelectedIndexChanged(object sender, EventArgs e)
-            {
-            
+        {            
             btn_add_col.Enabled = false;
             if (cb_custom_med.SelectedItem.ToString().ToLower().Contains("video")) label3.Text = "";
             else if (cb_custom_med.SelectedItem.ToString().ToLower().Contains("audio")) label3.Text = "";
             else if (cb_custom_med.SelectedItem.ToString().ToLower().Contains("-----")) label3.Text = "";
             else
             {
-                btn_add_col.Enabled = true;
-                label3.Text = cb_custom_med.SelectedItem.ToString();
+                btn_add_col.Enabled = true;                
             }
-
         }
-
         private void Form17_Activated(object sender, EventArgs e)
         {
             if (cb_col.Items.Count > 0)
             {
-                if (cb_col.SelectedItem.ToString().Contains(FFBatch.Properties.Strings2.custom))
+                if (cb_col.SelectedItem.ToString().Contains(FFBatch.Properties.Strings.custom))
                 {
                     btn_add_col.Enabled = false;
                 }

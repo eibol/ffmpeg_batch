@@ -75,8 +75,7 @@ namespace FFBatch
         public Boolean subfolders;
         public Boolean to_sleep;
         public Boolean never_cache;
-        public Boolean reset_asked = false;
-        private Boolean warn_edit = false;
+        public Boolean reset_asked = false;        
         public Boolean remember_tab;
 
         private void toolTips()
@@ -141,12 +140,12 @@ namespace FFBatch
 
             if (n_sunset.Value >= n_sunrise.Value && chk_dark.Checked && chk_dark_win.Checked == false)
             {
-                MessageBox.Show(Properties.Strings2.sunset1);
+                MessageBox.Show(Properties.Strings.sunset1);
                 return;
             }
             if (txt_monitor.Text == main_out_path)
             {               
-                    MessageBox.Show(Properties.Strings2.mon_path_equal);
+                    MessageBox.Show(Properties.Strings.mon_path_equal);
                     return;
             }
 
@@ -226,7 +225,7 @@ namespace FFBatch
                 this.BackColor = Color.FromArgb(255, 64, 64, 64);
                 Properties.Settings.Default.dark_mode = true;
                 btn_dark.Image = pic_night.Image;
-                btn_dark.Text = Properties.Strings2.en_day;
+                btn_dark.Text = Properties.Strings.en_day;
             }
             else
             {
@@ -234,7 +233,7 @@ namespace FFBatch
                 this.BackColor = SystemColors.InactiveBorder;
                 Properties.Settings.Default.dark_mode = false;
                 btn_dark.Image = pic_night.InitialImage;
-                btn_dark.Text = Properties.Strings2.en_night;
+                btn_dark.Text = Properties.Strings.en_night;
                 textBox1.BackColor = SystemColors.Window;
                 txt_format.BackColor = SystemColors.Window;
             }
@@ -959,9 +958,22 @@ namespace FFBatch
 
             //End autorun settings
 
+            if (chk_auto_start.Checked) chk_autor.Image = pic_auto_en.Image;
+            else chk_autor.Image = pic_auto_dis.Image;
+
+            if (Properties.Settings.Default.large_th == true) chk_thumb_big.Checked = true;
+            else chk_thumb_big.Checked = false;
+
+            txt_monitor.Text = Properties.Settings.Default.fd_monitored;
+
+            if (Properties.Settings.Default.monitor_fd == true) chk_monitor.Checked = true;
+            else chk_monitor.Checked = false;
+            chk_w_subs.Checked = Properties.Settings.Default.mon_fd_subs;
+            n_monitor.Value = Properties.Settings.Default.mon_int;
+
             //FFmpeg latest version
 
-            if (ff_ver == FFBatch.Properties.Strings.error)
+            if (ff_ver == Properties.Strings.error)
             {
                 lbl_ff_latest.Text = FFBatch.Properties.Strings.error;
                 pic_ver.Visible = false;
@@ -971,14 +983,22 @@ namespace FFBatch
             String ff_Date = "";
 
             lbl_ff_latest.Text = "FFmpeg " + ff_ver;
+            
             try
             {
-                ff_Date = lbl_ff_ver.Text.Substring(lbl_ff_ver.Text.IndexOf(Properties.Strings2.version) + Properties.Strings2.version.Length, 11);
+                ff_Date = lbl_ff_ver.Text.Substring(lbl_ff_ver.Text.IndexOf(Properties.Strings.version) + Properties.Strings.version.Length, 11);
             }
             catch
             {
                 Thread.Sleep(1000);
-                ff_Date = lbl_ff_ver.Text.Substring(lbl_ff_ver.Text.IndexOf(Properties.Strings2.version) + Properties.Strings2.version.Length, 11);
+                try { ff_Date = lbl_ff_ver.Text.Substring(lbl_ff_ver.Text.IndexOf(Properties.Strings.version) + Properties.Strings.version.Length, 11); }
+                catch { 
+                    ff_Date = "";
+                    lbl_ff_latest.Text = FFBatch.Properties.Strings.error;
+                    pic_ver.Visible = false;
+                    pic_ff_ok.Visible = false;
+                    return;
+                }
             }
             
             DateTime test = new DateTime();
@@ -996,19 +1016,6 @@ namespace FFBatch
                 pic_ff_ok.Visible = true;
                 pic_ff_ok.Left = lbl_ff_latest.Left + lbl_ff_latest.Text.Length + 60;
             }
-            if (chk_auto_start.Checked) chk_autor.Image = pic_auto_en.Image;
-            else chk_autor.Image = pic_auto_dis.Image;
-
-            if (Properties.Settings.Default.large_th == true) chk_thumb_big.Checked = true;
-            else chk_thumb_big.Checked = false;
-            
-            txt_monitor.Text = Properties.Settings.Default.fd_monitored;
-            
-            if (Properties.Settings.Default.monitor_fd == true) chk_monitor.Checked = true;
-            else chk_monitor.Checked = false;
-            chk_w_subs.Checked = Properties.Settings.Default.mon_fd_subs;            
-            n_monitor.Value = Properties.Settings.Default.mon_int;
-
         }
 
         private void boton_load_bck_Click(object sender, System.EventArgs e)
@@ -1259,31 +1266,11 @@ namespace FFBatch
             }
         }
 
-        private void chk_cache_dialog_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chk_cache_dialog.CheckState == CheckState.Checked)
-            {
-                use_cache_os = true;
-            }
-            else
-            {
-                use_cache_os = false;
-            }
-        }
-
         private void chk_never_cache_Click(object sender, EventArgs e)
         {
             if (chk_never_cache.CheckState == CheckState.Checked)
             {
                 MessageBox.Show(FFBatch.Properties.Strings.cache_rec, FFBatch.Properties.Strings.cache_dis, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        private void chk_cache_dialog_Click(object sender, EventArgs e)
-        {
-            if (chk_cache_dialog.CheckState == CheckState.Checked)
-            {
-                MessageBox.Show(FFBatch.Properties.Strings.cache_os, FFBatch.Properties.Strings.cache_os2, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -1359,7 +1346,7 @@ namespace FFBatch
 
         private void btn_browse_play_Click(object sender, EventArgs e)
         {
-            browse_sound.Filter = Properties.Strings2.Aud_wave + " | *.wav| " + Properties.Strings.all_files + " (*.*) | *.*";
+            browse_sound.Filter = Properties.Strings.Aud_wave + " | *.wav| " + Properties.Strings.all_files + " (*.*) | *.*";
 
             if (browse_sound.ShowDialog() == DialogResult.OK)
             {
@@ -1627,7 +1614,7 @@ namespace FFBatch
                 this.BackColor = Color.FromArgb(255, 64, 64, 64);
                 Properties.Settings.Default.dark_mode = true;
                 btn_dark.Image = pic_night.Image;
-                btn_dark.Text = Properties.Strings2.en_day;
+                btn_dark.Text = Properties.Strings.en_day;
             }
             else
             {
@@ -1635,7 +1622,7 @@ namespace FFBatch
                 this.BackColor = SystemColors.InactiveBorder;
                 Properties.Settings.Default.dark_mode = false;
                 btn_dark.Image = pic_night.InitialImage;
-                btn_dark.Text = Properties.Strings2.en_night;
+                btn_dark.Text = Properties.Strings.en_night;
                 textBox1.BackColor = SystemColors.Window;
                 txt_format.BackColor = SystemColors.Window;
             }
@@ -1663,7 +1650,7 @@ namespace FFBatch
             if (chk_sort.CheckState == CheckState.Checked)
             {
                 sort_multi = true;
-                MessageBox.Show(Properties.Strings2.warn_sort);
+                MessageBox.Show(Properties.Strings.warn_sort);
             }
         }
 
@@ -1687,7 +1674,7 @@ namespace FFBatch
                 chk_warn_successful.Checked = true;
                 chk_ignore_enc.Checked = true;
                 chk_non0.Checked = true;
-                MessageBox.Show(Properties.Strings2.warn_run_enc);
+                MessageBox.Show(Properties.Strings.warn_run_enc);
             }
         }
 
@@ -1730,7 +1717,7 @@ namespace FFBatch
 
         private void chk_quick_q_Click(object sender, EventArgs e)
         {
-            if (chk_quick_q.Checked) MessageBox.Show(Properties.Strings2.quick_f_m + Environment.NewLine + Environment.NewLine + Properties.Strings2.quick_f_m2 + Environment.NewLine + Environment.NewLine + Properties.Strings2.quick_f_m4 + Environment.NewLine + Environment.NewLine + Properties.Strings2.quick_f_m3, Properties.Strings.information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (chk_quick_q.Checked) MessageBox.Show(Properties.Strings.quick_f_m + Environment.NewLine + Environment.NewLine + Properties.Strings.quick_f_m2 + Environment.NewLine + Environment.NewLine + Properties.Strings.quick_f_m4 + Environment.NewLine + Environment.NewLine + Properties.Strings.quick_f_m3, Properties.Strings.information, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void chk_dark_CheckedChanged(object sender, EventArgs e)
@@ -1770,7 +1757,7 @@ namespace FFBatch
             {
                 if (chk_quick_q.Checked)
                 {
-                    MessageBox.Show(Properties.Strings2.filter_quick_not);
+                    MessageBox.Show(Properties.Strings.filter_quick_not);
                     chk_filter_zero.Checked = false;
                     Properties.Settings.Default.filter_zero = false;
                     return;
@@ -1869,8 +1856,8 @@ namespace FFBatch
         private void show_libs()
         {
             Form frmInfo = new Form();
-            frmInfo.Name = "FFmpeg " + FFBatch.Properties.Strings2.libr;
-            frmInfo.Text = "FFmpeg " + FFBatch.Properties.Strings2.libr;
+            frmInfo.Name = "FFmpeg " + FFBatch.Properties.Strings.libr;
+            frmInfo.Text = "FFmpeg " + FFBatch.Properties.Strings.libr;
             frmInfo.Icon = this.Icon;
             frmInfo.Height = 478;
             frmInfo.Width = 366;
@@ -1880,7 +1867,7 @@ namespace FFBatch
             frmInfo.BackColor = this.BackColor;
 
             ListView lstv = new ListView();
-            lstv.Columns.Add(Properties.Strings2.libr, 80);
+            lstv.Columns.Add(Properties.Strings.libr, 80);
             lstv.Columns.Add(Properties.Strings.information, 180);
             lstv.Parent = frmInfo;
             lstv.View = View.Details;
@@ -1930,6 +1917,19 @@ namespace FFBatch
         private void pic_info2_Click(object sender, EventArgs e)
         {
             show_libs();
+        }
+
+        private void chk_cache_dialog_Click(object sender, EventArgs e)
+        {
+            if (chk_cache_dialog.CheckState == CheckState.Checked)
+            {
+                use_cache_os = true;
+                MessageBox.Show(Strings.cache_os, FFBatch.Properties.Strings.cache_os2, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                use_cache_os = false;
+            }
         }
     }
 }

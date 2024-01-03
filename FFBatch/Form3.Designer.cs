@@ -115,6 +115,7 @@
             this.pic_ver = new System.Windows.Forms.PictureBox();
             this.pic_ff_ok = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.pic_info2 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btn_add_sec = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -127,7 +128,6 @@
             this.txt_monitor = new System.Windows.Forms.TextBox();
             this.btn_br_mon = new System.Windows.Forms.Button();
             this.chk_monitor = new System.Windows.Forms.CheckBox();
-            this.pic_info2 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.n_bat_l)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_bat)).BeginInit();
@@ -143,10 +143,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_ver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ff_ok)).BeginInit();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_info2)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_mon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_monitor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_info2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -682,6 +682,7 @@
             resources.ApplyResources(this.chk_cache_dialog, "chk_cache_dialog");
             this.chk_cache_dialog.Name = "chk_cache_dialog";
             this.chk_cache_dialog.UseVisualStyleBackColor = true;
+            this.chk_cache_dialog.Click += new System.EventHandler(this.chk_cache_dialog_Click);
             // 
             // chk_never_cache
             // 
@@ -837,6 +838,14 @@
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
             // 
+            // pic_info2
+            // 
+            this.pic_info2.Cursor = System.Windows.Forms.Cursors.Hand;
+            resources.ApplyResources(this.pic_info2, "pic_info2");
+            this.pic_info2.Name = "pic_info2";
+            this.pic_info2.TabStop = false;
+            this.pic_info2.Click += new System.EventHandler(this.pic_info2_Click);
+            // 
             // button2
             // 
             this.button2.FlatAppearance.BorderSize = 0;
@@ -944,14 +953,6 @@
             this.chk_monitor.UseVisualStyleBackColor = true;
             this.chk_monitor.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
-            // pic_info2
-            // 
-            this.pic_info2.Cursor = System.Windows.Forms.Cursors.Hand;
-            resources.ApplyResources(this.pic_info2, "pic_info2");
-            this.pic_info2.Name = "pic_info2";
-            this.pic_info2.TabStop = false;
-            this.pic_info2.Click += new System.EventHandler(this.pic_info2_Click);
-            // 
             // Form3
             // 
             resources.ApplyResources(this, "$this");
@@ -1002,11 +1003,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_ff_ok)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_info2)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_mon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_monitor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_info2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

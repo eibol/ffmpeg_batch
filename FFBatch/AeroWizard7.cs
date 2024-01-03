@@ -208,9 +208,9 @@ namespace FFBatch
             refresh_lang();
             if (Properties.Settings.Default.app_lang != "en" && Properties.Settings.Default.app_lang != "es")
             {
-                wiz_img.NextButtonText = Properties.Strings2.next;
+                wiz_img.NextButtonText = Properties.Strings.next;
                 wiz_img.CancelButtonText = Properties.Strings.cancel;
-                wiz_img.FinishButtonText = Properties.Strings2.finish;
+                wiz_img.FinishButtonText = Properties.Strings.finish;
             }
         }
 
@@ -656,7 +656,7 @@ namespace FFBatch
         {
             if (txt_image3.Text.Length == 0)
             {
-                MessageBox.Show(Properties.Strings2.img_empty);
+                MessageBox.Show(Properties.Strings.img_empty);
                 e.Cancel = true;
                 return;
             }

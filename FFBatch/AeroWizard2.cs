@@ -14,8 +14,7 @@ namespace FFBatch
         {
             InitializeComponent();
         }
-
-        private Form obj = new FFBatch.Form1();
+        
         private Boolean is_portable = false;
         private String port_path = System.IO.Path.Combine(Application.StartupPath, "settings") + "\\";
         private String pr1_params = String.Empty;
@@ -420,9 +419,9 @@ namespace FFBatch
             refresh_lang();
             if (Properties.Settings.Default.app_lang != "en" && Properties.Settings.Default.app_lang != "es")
             {
-                wz_mpresets.NextButtonText = Properties.Strings2.next;
+                wz_mpresets.NextButtonText = Properties.Strings.next;
                 wz_mpresets.CancelButtonText = Properties.Strings.cancel;
-                wz_mpresets.FinishButtonText = Properties.Strings2.finish;
+                wz_mpresets.FinishButtonText = Properties.Strings.finish;
             }
         }
 

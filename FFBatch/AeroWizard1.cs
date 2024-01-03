@@ -13,7 +13,6 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace FFBatch
 {
@@ -77,8 +76,7 @@ namespace FFBatch
         private String eac3_params = String.Empty;
         private String mp3_params = String.Empty;
         private String vorbis_params = String.Empty;
-        private String opus_params = String.Empty;
-        private Boolean first_resize_rotate = false;
+        private String opus_params = String.Empty;       
         private Boolean two_pass = false;
         private Boolean silence = false;
         private Boolean img_v = false;
@@ -110,7 +108,7 @@ namespace FFBatch
                 combo_crf_mode.Items.Add("Constant Rate Factor");
                 combo_crf_mode.Items.Add("Constant Bitrate");
                 Combo_encoders.SelectedIndex = 0;
-                cb_framerate.Items.Add(FFBatch.Properties.Strings2.custom);
+                cb_framerate.Items.Add(FFBatch.Properties.Strings.custom);
                 cb_framerate.Items.Add("23.976 (Film)");
                 cb_framerate.Items.Add("25 (PAL)");
                 cb_framerate.Items.Add("29.97 (NTSC)");
@@ -120,9 +118,9 @@ namespace FFBatch
                 cb_framerate.Items.Add("60");
                 String[] v_pixels = new string[] { "yuv420p", "yuv422p", "yuv444p", "yuyv422", "yuv422p10", "yuv422p10le", "yuv444p10", "yuv444p10le", "yuva444p10", "yuva444p10le", "rgb24", "rgb32", "rgb565", "rgb555", "nv12", "gray", "monow", "monob" };
                 foreach (String item in v_pixels) cb_pixel.Items.Add(item);
-                String[] sizes = new string[] { FFBatch.Properties.Strings2.custom, "1920x1080", "1920x800", "1440x1080", "1280x720", "1024x768", "1024x576", "960x540", "800x600", "800x480", "720x576", "720x540", "720x480", "640x480", "640x360" };
+                String[] sizes = new string[] { FFBatch.Properties.Strings.custom, "1920x1080", "1920x800", "1440x1080", "1280x720", "1024x768", "1024x576", "960x540", "800x600", "800x480", "720x576", "720x540", "720x480", "640x480", "640x360" };
                 foreach (String v_sizes in sizes) cb_resize.Items.Add(v_sizes);
-                String[] crops = new string[] { FFBatch.Properties.Strings2.custom, "1:1", "4:3", "16:9", "1440x1080", "1280x720", "1024x768", "1024x576", "800x600", "800x480", "720x576", "720x480" };
+                String[] crops = new string[] { FFBatch.Properties.Strings.custom, "1:1", "4:3", "16:9", "1440x1080", "1280x720", "1024x768", "1024x576", "800x600", "800x480", "720x576", "720x480" };
                 foreach (String v_crops in crops) cb_crop.Items.Add(v_crops);
 
                 for (int i = 1; i < 51; i++)
@@ -153,11 +151,11 @@ namespace FFBatch
                 //End ProRes
 
                 cb_rotate.Items.Clear();
-                cb_rotate.Items.Add(FFBatch.Properties.Strings2.none);
-                cb_rotate.Items.Add(FFBatch.Properties.Strings2.rotate1);
-                cb_rotate.Items.Add(FFBatch.Properties.Strings2.rotate2);
-                cb_rotate.Items.Add(FFBatch.Properties.Strings2.rotate3);
-                cb_rotate.Items.Add(FFBatch.Properties.Strings2.rot_flip);
+                cb_rotate.Items.Add(FFBatch.Properties.Strings.none);
+                cb_rotate.Items.Add(FFBatch.Properties.Strings.rotate1);
+                cb_rotate.Items.Add(FFBatch.Properties.Strings.rotate2);
+                cb_rotate.Items.Add(FFBatch.Properties.Strings.rotate3);
+                cb_rotate.Items.Add(FFBatch.Properties.Strings.rot_flip);
             }
             pic_rotate.Image = img_rotate.Images[0];
             started_video = true;
@@ -1115,8 +1113,8 @@ namespace FFBatch
                     txt_current_audio.Text = "FLAC (Lossless)";
                     cb_opus_vbr.Visible = false;
                     chk_vbr_opus.Visible = false;
-                    label15.Text = FFBatch.Properties.Strings2.low_size;
-                    label14.Text = FFBatch.Properties.Strings2.big_size;
+                    label15.Text = FFBatch.Properties.Strings.low_size;
+                    label14.Text = FFBatch.Properties.Strings.big_size;
                     n_bit_audio.Visible = true;
                     cb_sample_rate.Visible = true;
                     cb_channels.Visible = true;
@@ -1749,8 +1747,8 @@ namespace FFBatch
             {
                 label14.Visible = true;
                 label15.Visible = true;
-                label15.Text = FFBatch.Properties.Strings2.low_size;
-                label14.Text = FFBatch.Properties.Strings2.big_size;
+                label15.Text = FFBatch.Properties.Strings.low_size;
+                label14.Text = FFBatch.Properties.Strings.big_size;
                 track_bits_audio.Minimum = 0;
                 track_bits_audio.Maximum = 12;
                 track_bits_audio.Value = 5;
@@ -1929,14 +1927,23 @@ namespace FFBatch
                 //Resize
                 if (cb_resize.SelectedIndex != -1)
                 {
+                    String pad1 = ":force_original_aspect_ratio=decrease,pad=";
+                    String pad2 = "(ow-iw)/2:(oh-ih)/2";
+                    
                     if (cb_resize.SelectedIndex == 0)
                     {
-                        filters = filters + "scale=" + n_width.Value + ":" + n_height.Value + '\u0022';
+                        if (chk_pad.Checked) filters = filters + "scale=w=" + n_width.Value + ":h=" + n_height.Value + pad1 + n_width.Value + ":" + n_height.Value + ":" + pad2 + '\u0022';
+                        else filters = filters + "scale=" + n_width.Value + ":" + n_height.Value + '\u0022';
                     }
                     else
                     {
                         String r_size = cb_resize.SelectedItem.ToString().Replace("x", ":");
-                        filters = filters + "scale=" + r_size + '\u0022';
+                        if (chk_pad.Checked)
+                        {
+                            String r_size_p = cb_resize.SelectedItem.ToString().Replace("x", ":h=");
+                            filters = filters + "scale=w=" + r_size_p + pad1 + r_size + ":" + pad2 + '\u0022';
+                        }
+                        else filters = filters + "scale=" + r_size + '\u0022';
                     }
                 }
                 //Rotate
@@ -2106,6 +2113,7 @@ namespace FFBatch
 
         private void cb_resize_SelectedIndexChanged(object sender, EventArgs e)
         {
+            chk_pad.Enabled = true;
             if (cb_resize.SelectedIndex == 0)
             {
                 n_width.Enabled = true;
@@ -2274,7 +2282,7 @@ namespace FFBatch
             {
                 if (str.ToLower().Contains("is not recognized by ffmpeg"))
                 {                    
-                    MessageBox.Show(Properties.Strings2.enc_not_sup1 + curr_ff.Replace("FFmpeg version", "") + Environment.NewLine + Environment.NewLine + Properties.Strings2.enc_not_sup2, Properties.Strings2.enc_not_sup3, MessageBoxButtons.OK, MessageBoxIcon.Error) ;
+                    MessageBox.Show(Properties.Strings.enc_not_sup1 + curr_ff.Replace("FFmpeg version", "") + Environment.NewLine + Environment.NewLine + Properties.Strings.enc_not_sup2, Properties.Strings.enc_not_sup3, MessageBoxButtons.OK, MessageBoxIcon.Error) ;
                     encoder_supp = false;
                     break;
                 }
@@ -2299,7 +2307,7 @@ namespace FFBatch
 
             {
                 ManagementObjectSearcher search = new ManagementObjectSearcher("SELECT * FROM Win32_VideoController");
-                foreach (ManagementObject mo in search.Get())
+                foreach (ManagementObject mo in search.Get().Cast<ManagementObject>())
                 {
                     PropertyData currentBitsPerPixel = mo.Properties["CurrentBitsPerPixel"];
                     PropertyData description = mo.Properties["Description"];
@@ -2317,12 +2325,12 @@ namespace FFBatch
                     if (!videocard.ToLower().Contains("radeon"))
                     {
                         pic_warn2.Visible = true;
-                        lbl_vcard.Text = videocard + Properties.Strings2.not_amf;
-                        if (cb_deint.SelectedIndex == 1) lbl_vcard.Text = videocard + Properties.Strings2.not_amf + " (yadif_cuda).";
+                        lbl_vcard.Text = videocard + Properties.Strings.not_amf;
+                        if (cb_deint.SelectedIndex == 1) lbl_vcard.Text = videocard + Properties.Strings.not_amf + " (yadif_cuda).";
                         if (cb_deint.SelectedIndex == 1)
                         {
                             pic_warn2.Visible = true;
-                            lbl_vcard.Text = videocard + Properties.Strings2.not_amf + " (yadif_cuda).";
+                            lbl_vcard.Text = videocard + Properties.Strings.not_amf + " (yadif_cuda).";
                         }
                     }
                 }
@@ -2332,7 +2340,7 @@ namespace FFBatch
                     if (!videocard.ToLower().Contains("nvidia"))
                     {
                         pic_warn2.Visible = true;
-                        lbl_vcard.Text = videocard + Properties.Strings2.not_nvenc;
+                        lbl_vcard.Text = videocard + Properties.Strings.not_nvenc;
                     }
                 }
             }
@@ -2341,7 +2349,7 @@ namespace FFBatch
                 ManagementObjectSearcher mosProcessor = new ManagementObjectSearcher("SELECT * FROM Win32_Processor");
                 string Procname = null;
 
-                foreach (ManagementObject moProcessor in mosProcessor.Get())
+                foreach (ManagementObject moProcessor in mosProcessor.Get().Cast<ManagementObject>())
                 {
                     if (moProcessor["name"] != null) cpu_info = moProcessor["name"].ToString();
                     else cpu_info = Properties.Strings.unknown;
@@ -2352,7 +2360,7 @@ namespace FFBatch
                     if (!cpu_info.ToLower().Contains("intel"))
                     {
                         pic_warn2.Visible = true;
-                        lbl_vcard.Text = Properties.Strings2.your_sys + " " + Properties.Strings2.not_qsv;
+                        lbl_vcard.Text = Properties.Strings.your_sys + " " + Properties.Strings.not_qsv;
                     }
                 }
             }
@@ -3469,7 +3477,7 @@ namespace FFBatch
             if (curr_ff.ToLower().Contains("essential")) 
             {
                 if (Combo_encoders.SelectedItem.ToString().Contains("nvenc") || Combo_encoders.SelectedItem.ToString().Contains("amf"))
-                    MessageBox.Show(Properties.Strings2.hw_ff_1 + Environment.NewLine + Environment.NewLine + Properties.Strings2.Hw_ff_2, Properties.Strings.information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(Properties.Strings.hw_ff_1 + Environment.NewLine + Environment.NewLine + Properties.Strings.Hw_ff_2, Properties.Strings.information, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             commit_video_1();
@@ -4893,9 +4901,9 @@ namespace FFBatch
             if (Properties.Settings.Default.app_lang == "zh-Hans") this.Height = this.Height + 35;
             if (Properties.Settings.Default.app_lang != "en" && Properties.Settings.Default.app_lang != "es")
             {
-                wizardControl1.NextButtonText = Properties.Strings2.next;
+                wizardControl1.NextButtonText = Properties.Strings.next;
                 wizardControl1.CancelButtonText = Properties.Strings.cancel;
-                wizardControl1.FinishButtonText = Properties.Strings2.finish;
+                wizardControl1.FinishButtonText = Properties.Strings.finish;
             }
             temp_dur = lv1_dur;            
         }
@@ -5022,7 +5030,7 @@ namespace FFBatch
                 n_speed.Enabled = true;
                 if (warn_spf == true)
                 {
-                    MessageBox.Show(Properties.Strings2.speed_not_comp);
+                    MessageBox.Show(Properties.Strings.speed_not_comp);
                     warn_spf = false;
                 }
             }

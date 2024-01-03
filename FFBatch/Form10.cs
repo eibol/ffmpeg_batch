@@ -20,7 +20,7 @@ namespace FFBatch
         private void Form10_Load(object sender, EventArgs e)
         {
             ct_copy.Text = Properties.Strings.copy;
-            ct_Save.Text = Properties.Strings2.save_img;
+            ct_Save.Text = Properties.Strings.save_img;
             this.BackColor = Color.Lime;
             this.TransparencyKey = Color.Lime;
             pic_y.BackColor = Color.Lime;
@@ -54,7 +54,7 @@ namespace FFBatch
         {
             if (copy_img == false)
             {
-                save_img.Filter = Properties.Strings2.imgs + " PNG|*.png|" + Properties.Strings2.imgs + " JPEG |*.jpg";
+                save_img.Filter = Properties.Strings.imgs + " PNG|*.png|" + Properties.Strings.imgs + " JPEG |*.jpg";
                 save_img.ShowDialog();
                 if (save_ok == false) return;
                 save_ok = false;
@@ -62,7 +62,7 @@ namespace FFBatch
                 {
                     if (Path.GetExtension(save_img.FileName) == ".png") pic_y.Image.Save(save_img.FileName, ImageFormat.Png);
                     else pic_y.Image.Save(save_img.FileName, ImageFormat.Jpeg);
-                    MessageBox.Show(Properties.Strings2.saved_img);
+                    MessageBox.Show(Properties.Strings.saved_img);
                 }
                 catch
                 {
@@ -79,7 +79,7 @@ namespace FFBatch
                         pic_y.Image.Save(temp, ImageFormat.Jpeg);
                         Bitmap imageToAdd = new Bitmap(temp);
                         Clipboard.SetImage(imageToAdd);
-                        MessageBox.Show(Properties.Strings2.img_copied);
+                        MessageBox.Show(Properties.Strings.img_copied);
                     }
                     catch { MessageBox.Show(Properties.Strings.err_dest, Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error); }
                 }

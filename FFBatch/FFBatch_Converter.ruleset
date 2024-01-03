@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<RuleSet Name="Reglas de FFBatch_Converter" Description="Reglas de análisis de código de FFBatch_Converter.csproj." ToolsVersion="16.0">
+<RuleSet Name="Reglas de FFBatch_Converter" Description="Reglas de análisis de código de FFBatch_Converter.csproj." ToolsVersion="17.0">
+  <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
+    <Rule Id="CA1801" Action="Warning" />
+    <Rule Id="CA1804" Action="Warning" />
+    <Rule Id="CA1811" Action="Warning" />
+    <Rule Id="CA1812" Action="Warning" />
+    <Rule Id="CA1823" Action="Warning" />
+  </Rules>
   <Rules AnalyzerId="Microsoft.CodeAnalysis.CSharp" RuleNamespace="Microsoft.CodeAnalysis.CSharp">
     <Rule Id="AD0001" Action="None" />
     <Rule Id="CS0078" Action="None" />
@@ -383,7 +390,7 @@
     <Rule Id="CA1720" Action="None" />
     <Rule Id="CA1721" Action="None" />
     <Rule Id="CA1724" Action="None" />
-    <Rule Id="CA1801" Action="None" />
+    <Rule Id="CA1801" Action="Warning" />
     <Rule Id="CA1802" Action="None" />
     <Rule Id="CA1805" Action="None" />
     <Rule Id="CA1806" Action="None" />
@@ -392,7 +399,7 @@
     <Rule Id="CA1819" Action="None" />
     <Rule Id="CA1821" Action="None" />
     <Rule Id="CA1822" Action="None" />
-    <Rule Id="CA1823" Action="None" />
+    <Rule Id="CA1823" Action="Warning" />
     <Rule Id="CA2007" Action="None" />
     <Rule Id="CA2011" Action="None" />
     <Rule Id="CA2119" Action="None" />
@@ -415,7 +422,7 @@
     <Rule Id="CA1065" Action="None" />
     <Rule Id="CA1200" Action="None" />
     <Rule Id="CA1507" Action="None" />
-    <Rule Id="CA1812" Action="None" />
+    <Rule Id="CA1812" Action="Warning" />
     <Rule Id="CA2234" Action="None" />
   </Rules>
   <Rules AnalyzerId="Microsoft.NetCore.Analyzers" RuleNamespace="Microsoft.NetCore.Analyzers">

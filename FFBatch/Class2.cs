@@ -17,7 +17,7 @@ namespace FFBatch
 
             foreach (ManagementObject mo in mos.Get())
             {
-                children.Add(Process.GetProcessById(Convert.ToInt32(mo["ProcessID"])));
+                try { children.Add(Process.GetProcessById(Convert.ToInt32(mo["ProcessID"]))); } catch { }
             }
 
             return children;

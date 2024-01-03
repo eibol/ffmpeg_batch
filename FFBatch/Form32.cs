@@ -168,7 +168,7 @@ namespace FFBatch
 
         private void btn_clear_Click(object sender, EventArgs e)
         {
-            DialogResult a = MessageBox.Show(FFBatch.Properties.Strings.clear_list + ". " + Properties.Strings2.contin, FFBatch.Properties.Strings.clear_list, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            DialogResult a = MessageBox.Show(FFBatch.Properties.Strings.clear_list + ". " + Properties.Strings.contin, FFBatch.Properties.Strings.clear_list, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             if (a == DialogResult.Yes) { dg_pr.Rows.Clear(); }            
         }
     }

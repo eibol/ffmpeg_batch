@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FFBatch.Properties;
+using System;
 using System.ComponentModel;
 using System.Deployment.Application;
 using System.Diagnostics;
@@ -37,6 +38,9 @@ namespace FFBatch
         private void Form2_Load(object sender, EventArgs e)
         {
             init_lang();
+            if (Settings.Default.season_img == false) pic_season.Visible = false;
+            else pic_season.Visible = true;            
+
             lbl_framew.Text = RuntimeInformation.FrameworkDescription;            
             label2.Text = "Version " + Application.ProductVersion;
             this.Text = FFBatch.Properties.Strings.About + " " + Application.ProductName;
