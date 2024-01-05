@@ -2507,4 +2507,19 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
+  <data name="btn_play.Text" xml:space="preserve">
+    <value>Riproduci</value>
+  </data>
+  <data name="btn_browse.Text" xml:space="preserve">
+    <value>Sfoglia</value>
+  </data>
+  <data name="btn_close.Text" xml:space="preserve">
+    <value>Chiudi finestra</value>
+  </data>
+  <data name="chk_no_popp.Text" xml:space="preserve">
+    <value>Non visualizzare più</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Risultato output</value>
+  </data>
 </root>

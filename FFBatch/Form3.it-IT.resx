@@ -2896,4 +2896,214 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
+  <data name="panel2.Text" xml:space="preserve">
+    <value>Impostazioni esecuzione</value>
+  </data>
+  <data name="chk_no_overw.Text" xml:space="preserve">
+    <value>Non sovarscrivere mai destinazione</value>
+  </data>
+  <data name="chk_bat_level.Text" xml:space="preserve">
+    <value>Solo se la batteria è inferiorae a</value>
+  </data>
+  <data name="chk_battery.Text" xml:space="preserve">
+    <value>Pausa/riprendi con batteria/AC</value>
+  </data>
+  <data name="chk_filter_zero.Text" xml:space="preserve">
+    <value>Filtra file di durata zero</value>
+  </data>
+  <data name="chk_dates.Text" xml:space="preserve">
+    <value>Mantieni data7ora sorgente</value>
+  </data>
+  <data name="chk_ignore_enc.Text" xml:space="preserve">
+    <value>Ignora elementi codificati</value>
+  </data>
+  <data name="chk_non0.Text" xml:space="preserve">
+    <value>Non visualizzare avvisi per file mancanti o di durata zero</value>
+  </data>
+  <data name="btn_browse_play.Text" xml:space="preserve">
+    <value>Sfoglia</value>
+  </data>
+  <data name="chk_play.Text" xml:space="preserve">
+    <value>Riproduci suono al completamento della coda</value>
+  </data>
+  <data name="chk_full_info.Text" xml:space="preserve">
+    <value>Visualizza rapporto completo delle informazioni multimediali</value>
+  </data>
+  <data name="chk_warn_successful.Text" xml:space="preserve">
+    <value>Non avvisare delal presenza di elementi già codificati</value>
+  </data>
+  <data name="chk_sleep.Text" xml:space="preserve">
+    <value>Impedisci al computer di andare in sleep</value>
+  </data>
+  <data name="chk_try.Text" xml:space="preserve">
+    <value>Non provare a preimpostare prima di iniziare la codifica</value>
+  </data>
+  <data name="check_open_output.Text" xml:space="preserve">
+    <value>Al completamento della coda apri la cartella destinazione</value>
+  </data>
+  <data name="check_recreate.Text" xml:space="preserve">
+    <value>Ricrea il percorso sorgente nella cartella destinazione</value>
+  </data>
+  <data name="chk_suffix.Text" xml:space="preserve">
+    <value>Rinomina il file destinazione</value>
+  </data>
+  <data name="checkBox1.Text" xml:space="preserve">
+    <value>Non salvare i registri eventi</value>
+  </data>
+  <data name="btn_save.Text" xml:space="preserve">
+    <value>Salva modifiche</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Profilo predefinito</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Ritardo</value>
+  </data>
+  <data name="chk_run_st.Text" xml:space="preserve">
+    <value>Esegui all'avvio</value>
+  </data>
+  <data name="chk_auto_multi.Text" xml:space="preserve">
+    <value>Esecuzione automatica multi file</value>
+  </data>
+  <data name="chk_auto_start.Text" xml:space="preserve">
+    <value>Abilita esecuzione automatica codfifica</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Formato</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Parametri</value>
+  </data>
+  <data name="btn_cancel.Text" xml:space="preserve">
+    <value>Annulla modifiche</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Impostazioni generali</value>
+  </data>
+  <data name="chk_thumb_big.Text" xml:space="preserve">
+    <value>Utilizza immagini di anteprima più grandi</value>
+  </data>
+  <data name="chk_dark_win.Text" xml:space="preserve">
+    <value>Usa modo sistema</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Fine</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Inizio</value>
+  </data>
+  <data name="chk_dark.Text" xml:space="preserve">
+    <value>Modo scuro pianificato</value>
+  </data>
+  <data name="chk_quick_q.Text" xml:space="preserve">
+    <value>Aggiunta rapida file alla coda</value>
+  </data>
+  <data name="chk_ctrl_p.Text" xml:space="preserve">
+    <value>Disabilita Ctrl-Maiusc-P</value>
+  </data>
+  <data name="chk_tray.Text" xml:space="preserve">
+    <value>Minimizza nella barra di sistema</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Lingua</value>
+  </data>
+  <data name="chk_w_position.Text" xml:space="preserve">
+    <value>Memorizza posizione finestra</value>
+  </data>
+  <data name="chk_remember_tab.Text" xml:space="preserve">
+    <value>Memorizza ultima scheda</value>
+  </data>
+  <data name="chk_verbose_log.Text" xml:space="preserve">
+    <value>Salva registro eventi dettagliato</value>
+  </data>
+  <data name="chk_console_params.Text" xml:space="preserve">
+    <value>Non inviare nome file e parametri alla console</value>
+  </data>
+  <data name="chk_subf.Text" xml:space="preserve">
+    <value>Aggiungi cartelle e sottocartelle</value>
+  </data>
+  <data name="chk_sort.Text" xml:space="preserve">
+    <value>Ordina elenco file per durata</value>
+  </data>
+  <data name="chk_auto_updates.Text" xml:space="preserve">
+    <value>Controlla gli aggiornamenti all'avvio</value>
+  </data>
+  <data name="check_concat.Text" xml:space="preserve">
+    <value>Usa il filtro video concatenato per unire i file</value>
+  </data>
+  <data name="btn_defaults.Text" xml:space="preserve">
+    <value>Usa predefiniti</value>
+  </data>
+  <data name="chk_cache_dialog.Text" xml:space="preserve">
+    <value>Usa finestra di dialogo copia file del s.o.</value>
+  </data>
+  <data name="chk_never_cache.Text" xml:space="preserve">
+    <value>Non chiedere di memorizzare nella cache i file della rete</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Cache file di rete</value>
+  </data>
+  <data name="btn_reset.Text" xml:space="preserve">
+    <value>Ripristina tutte le impostazioni</value>
+  </data>
+  <data name="btn_edit_presets_n.Text" xml:space="preserve">
+    <value>Modifica preimpostazioni salvate</value>
+  </data>
+  <data name="browse_sound.Filter" xml:space="preserve">
+    <value>Audio wave | *.wav| Tutti i file (*.*) | *.*</value>
+  </data>
+  <data name="btn_add_ex.Text" xml:space="preserve">
+    <value>Sicurezza e prestazioni</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Elimina file sorgenti</value>
+  </data>
+  <data name="chk_delete_one.Text" xml:space="preserve">
+    <value>Rimuovi file uno per uno</value>
+  </data>
+  <data name="chk_delete_def.Text" xml:space="preserve">
+    <value>Non spostare nel cestino, elimina i file</value>
+  </data>
+  <data name="btn_dark.Text" xml:space="preserve">
+    <value>Abilta tema scuro</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Profili online</value>
+  </data>
+  <data name="btn_update.Text" xml:space="preserve">
+    <value>Sfoglia build</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Ultima:</value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>Sostituisci</value>
+  </data>
+  <data name="btn_add_sec.Text" xml:space="preserve">
+    <value>Migliora prestazioni</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Cartella da monitorare</value>
+  </data>
+  <data name="btn_excl.Text" xml:space="preserve">
+    <value>Elenco esclusione tipi di file</value>
+  </data>
+  <data name="chk_w_subs.Text" xml:space="preserve">
+    <value>Includi sottocartelle</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>secondi</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>intervallo</value>
+  </data>
+  <data name="btn_br_mon.Text" xml:space="preserve">
+    <value>Sfoglia</value>
+  </data>
+  <data name="chk_monitor.Text" xml:space="preserve">
+    <value>Abilita monitoraggio cartella</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Impostazioni</value>
+  </data>
 </root>
