@@ -3547,4 +3547,10 @@ Puoi annullare l'aggiunta di file in qualsiasi momento.</value>
   <data name="yt_url_sh" xml:space="preserve">
     <value>Il campo URL YouTube è troppo corto.</value>
   </data>
+  <data name="happy_y1" xml:space="preserve">
+    <value>Buon anno nuovo</value>
+  </data>
+  <data name="libr" xml:space="preserve">
+    <value>Librerie</value>
+  </data>
 </root>
