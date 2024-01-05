@@ -194,29 +194,26 @@ namespace FFBatch
         }
 
         private void chk_all_s_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chk_all_s.Checked)
-            {
-                foreach (Control c in tab_subs.Controls)
+        {            
+           foreach (Control c in tab_subs.Controls)
+           {                           
+
+                if (chk_all_s.Checked)
                 {
-                    if (c is RadioButton)
-                    {
-                        c.Enabled = true;
-                        ((RadioButton)c).Checked = false;
-                    }
-                    else c.Enabled = false;
+                    c.Enabled = false;
                 }
-            }
-            else
-            {
-                foreach (Control c in tab_subs.Controls)
+                else
                 {
+                    c.Enabled = true;
+                    if (c is CheckBox)
+                    {
+                        ((CheckBox)c).Checked = false;
+                    }
                     if (c is RadioButton)
                     {
-                        c.Enabled = true;
                         ((RadioButton)c).Checked = false;
+                        ((RadioButton)c).Enabled = false;
                     }
-                    else c.Enabled = true;
                 }
             }
             chk_all_s.Enabled = true;
