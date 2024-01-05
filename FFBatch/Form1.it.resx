@@ -16714,4 +16714,13 @@
         AfEBgAEBAR8B+AEAAQ8B/wHzAcABAwE/AfgB4AF/Av8B4AEHCw==
 </value>
   </data>
+  <data name="ct_path_vf.Text" xml:space="preserve">
+    <value>Aggiungi ercorso file all'interno del filtro</value>
+  </data>
+  <data name="ct_path_input.Text" xml:space="preserve">
+    <value>Aggiungi percorso file input ai parametri</value>
+  </data>
+  <data name="btn_br_path.Text" xml:space="preserve">
+    <value>Sfoglia...</value>
+  </data>
 </root>

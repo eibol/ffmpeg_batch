@@ -2016,4 +2016,16 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Stream multimedia</value>
   </data>
+  <data name="btn_cancel.Text" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="lbl_prog.Text" xml:space="preserve">
+    <value>Estrazione anteprima...</value>
+  </data>
+  <data name="ct_copy.Text" xml:space="preserve">
+    <value>Copia immagine</value>
+  </data>
+  <data name="ct_save.Text" xml:space="preserve">
+    <value>Salva immagine</value>
+  </data>
 </root>
