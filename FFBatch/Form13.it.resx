@@ -2039,4 +2039,10 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Apri l'applicazione al completamento della coda</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Seleziona un'applicazione o un documento da aprire al completamento della codifica.</value>
+  </data>
 </root>
