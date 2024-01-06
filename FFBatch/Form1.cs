@@ -15977,10 +15977,13 @@ namespace FFBatch
                                {
                                 this.Invoke(new MethodInvoker(delegate
                                 {
-                                    pg_adding.Value = pg_adding.Value + 1;
-                                    txt_adding_p.Text = (pg_adding.Value * 100 / pending_dur + "%");
-                                    txt_adding_p.Refresh();
-                                    TaskbarProgress.SetValue(this.Handle, pg_adding.Value * 100 / pending_dur, 100);
+                                    if (pg_adding.Value < pg_adding.Maximum)
+                                    {
+                                        pg_adding.Value = pg_adding.Value + 1;
+                                        txt_adding_p.Text = (pg_adding.Value * 100 / pending_dur + "%");
+                                        txt_adding_p.Refresh();
+                                        TaskbarProgress.SetValue(this.Handle, pg_adding.Value * 100 / pending_dur, 100);
+                                    }
                                 }));
 
                                    String duracion = String.Empty;
@@ -51278,7 +51281,7 @@ namespace FFBatch
                         if (i <= pg_adding.Maximum)
                         {
                             pg_adding.Value = i;
-                            txt_adding_p.Text = (i * 100 / files_to_add.Count).ToString() + "%";
+                            txt_adding_p.Text = (i * 100 / listView1.Items.Count).ToString() + "%";
                             TaskbarProgress.SetValue(this.Handle, i * 100 / listView1.Items.Count, 100);
                         }
                         else
@@ -51307,24 +51310,26 @@ namespace FFBatch
                         if (stream.Contains("Stream #0:"))
                         {
                             has_stream = true;                            
-                            if (lstv2.Columns.Count <= c)
+                            if (lstv2.Columns.Count <= c + 1)
                             {                                
-                                lstv2.Columns.Add(Strings.stream + " " + c, 150);
+                                lstv2.Columns.Add(Strings.stream + " " + c, 150);                                
                             }
 
                             if (stream.Substring(stream.IndexOf("#0:") + 4, 1) == "(")
                             {
                                 if (stream.Substring(stream.IndexOf("#0:") + 4, 5) == "(und)" || stream.Substring(stream.IndexOf("#0:") + 4, 5) == "(unk)")
                                 {
+                                    c++;
                                     sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 11);
                                     lstv2.Items[i].SubItems.Add(stream.Substring((stream.LastIndexOf("#0:") + 11), (stream.Length - sub_str.Length)));
-                                    c = c + 1;
+                                    
                                 }
                                 else
                                 {
+                                    c++;
                                     sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 4);
                                     lstv2.Items[i].SubItems.Add(stream.Substring((stream.LastIndexOf("#0:") + 4), (stream.Length - sub_str.Length)));
-                                    c = c + 1;
+                                    
                                 }                                
                             }
 
@@ -51332,22 +51337,23 @@ namespace FFBatch
                             {
                                 if (stream.Contains("Video"))
                                 {
+                                    c++;
                                     sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 6);
-                                    lstv2.Items[i].SubItems.Add(stream.Substring((stream.LastIndexOf("#0:") + 6), (stream.Length - sub_str.Length)));
-                                    c = c + 1;
+                                    lstv2.Items[i].SubItems.Add(stream.Substring((stream.LastIndexOf("#0:") + 6), (stream.Length - sub_str.Length)));                                    
 
                                 }
                                 if (stream.Contains("Audio"))
                                 {
+                                    c++;
                                     sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 6);
                                     lstv2.Items[i].SubItems.Add(stream.Substring((stream.LastIndexOf("#0:") + 6), (stream.Length - sub_str.Length)));
-                                    c = c + 1;
+                                    
                                 }
                                 if (stream.Contains("Subtitle"))
                                 {
+                                    c++;
                                     sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 6);
-                                    lstv2.Items[i].SubItems.Add(stream.Substring((stream.LastIndexOf("#0:") + 6), (stream.Length - sub_str.Length)));
-                                    c = c + 1;
+                                    lstv2.Items[i].SubItems.Add(stream.Substring((stream.LastIndexOf("#0:") + 6), (stream.Length - sub_str.Length)));                                    
                                 }
                                 
                             }                          
