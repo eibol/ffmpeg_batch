@@ -3085,6 +3085,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Application requires ffmpeg.exe to work.
+        /// </summary>
+        internal static string ff_req {
+            get {
+                return ResourceManager.GetString("ff_req", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a FFmpeg processes running.
         /// </summary>
         internal static string ff_run2 {
@@ -3117,6 +3126,15 @@ namespace FFBatch.Properties {
         internal static string ff_test_ok {
             get {
                 return ResourceManager.GetString("ff_test_ok", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You need to validate any new ffmpeg version.
+        /// </summary>
+        internal static string ff_val {
+            get {
+                return ResourceManager.GetString("ff_val", resourceCulture);
             }
         }
         
@@ -6397,6 +6415,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a my computer.
+        /// </summary>
+        internal static string pc {
+            get {
+                return ResourceManager.GetString("pc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Pending analysis.
         /// </summary>
         internal static string pend_an {
@@ -8085,6 +8112,15 @@ namespace FFBatch.Properties {
         internal static string selkf {
             get {
                 return ResourceManager.GetString("selkf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Server.
+        /// </summary>
+        internal static string server {
+            get {
+                return ResourceManager.GetString("server", resourceCulture);
             }
         }
         

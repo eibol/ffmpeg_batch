@@ -1129,6 +1129,9 @@ Non è possibile visualizzare l'anteprima del ritaglio.</value>
   <data name="ff_ren" xml:space="preserve">
     <value>L'eseguibile FFmpeg è stato rinominato. L'applicazione non può funzionare.</value>
   </data>
+  <data name="ff_req" xml:space="preserve">
+    <value>L'applicazione richiede ffmpeg.exe per funzionare</value>
+  </data>
   <data name="ff_run2" xml:space="preserve">
     <value>Esecuzione processi FFmpeg</value>
   </data>
@@ -1140,6 +1143,9 @@ Non è possibile visualizzare l'anteprima del ritaglio.</value>
   </data>
   <data name="ff_test_ok" xml:space="preserve">
     <value>TEST FFMPEG COMPLETATO</value>
+  </data>
+  <data name="ff_val" xml:space="preserve">
+    <value>È necessario convalidare qualsiasi nuova versione di ffmpeg</value>
   </data>
   <data name="fifth" xml:space="preserve">
     <value>quinto</value>
@@ -2221,6 +2227,9 @@ Non è possibile visualizzare l'anteprima del ritaglio.</value>
   <data name="pause_bat_ac" xml:space="preserve">
     <value>Pausa a batteria</value>
   </data>
+  <data name="pc" xml:space="preserve">
+    <value>il mio PC</value>
+  </data>
   <data name="pending" xml:space="preserve">
     <value>In attesa</value>
   </data>
@@ -2787,6 +2796,9 @@ Non è possibile visualizzare l'anteprima del ritaglio.</value>
   </data>
   <data name="sel_track" xml:space="preserve">
     <value>Seleziona una traccia da salvare.</value>
+  </data>
+  <data name="server" xml:space="preserve">
+    <value>Server</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Impostazioni</value>
@@ -3546,11 +3558,5 @@ Puoi annullare l'aggiunta di file in qualsiasi momento.</value>
   </data>
   <data name="yt_url_sh" xml:space="preserve">
     <value>Il campo URL YouTube è troppo corto.</value>
-  </data>
-  <data name="happy_y1" xml:space="preserve">
-    <value>Buon anno nuovo</value>
-  </data>
-  <data name="libr" xml:space="preserve">
-    <value>Librerie</value>
   </data>
 </root>

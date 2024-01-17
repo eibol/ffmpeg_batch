@@ -1122,6 +1122,9 @@
   <data name="ff_ren" xml:space="preserve">
     <value>O arquivo executável FFmpeg foi renomeado. O aplicativo não funcionará.</value>
   </data>
+  <data name="ff_req" xml:space="preserve">
+    <value>O aplicativo requer ffmpeg.exe para funcionar</value>
+  </data>
   <data name="ff_run2" xml:space="preserve">
     <value>Processos FFmpeg em execução</value>
   </data>
@@ -1133,6 +1136,9 @@
   </data>
   <data name="ff_test_ok" xml:space="preserve">
     <value>TESTE DE FFMPEG COM SUCESSO</value>
+  </data>
+  <data name="ff_val" xml:space="preserve">
+    <value>Você precisa validar qualquer nova versão do ffmpeg</value>
   </data>
   <data name="fifth" xml:space="preserve">
     <value>quinto</value>
@@ -2205,6 +2211,9 @@
   <data name="pause_bat_ac" xml:space="preserve">
     <value>Pausa na bateria</value>
   </data>
+  <data name="pc" xml:space="preserve">
+    <value>no meu pc</value>
+  </data>
   <data name="pending" xml:space="preserve">
     <value>Pendente</value>
   </data>
@@ -2771,6 +2780,9 @@
   </data>
   <data name="sel_track" xml:space="preserve">
     <value>Selecionar uma trilha a ser salva.</value>
+  </data>
+  <data name="server" xml:space="preserve">
+    <value>Servidor</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Configurações</value>

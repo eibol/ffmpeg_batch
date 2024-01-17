@@ -1122,6 +1122,9 @@
   <data name="ff_ren" xml:space="preserve">
     <value>FFmpeg可执行文件已重命名，应用程序将不起作用</value>
   </data>
+  <data name="ff_req" xml:space="preserve">
+    <value>应用程序需要 ffmpeg.exe 才能工作</value>
+  </data>
   <data name="ff_run2" xml:space="preserve">
     <value>正在运行的FFmpeg进程</value>
   </data>
@@ -1133,6 +1136,9 @@
   </data>
   <data name="ff_test_ok" xml:space="preserve">
     <value>FFMPEG测试成功</value>
+  </data>
+  <data name="ff_val" xml:space="preserve">
+    <value>您需要验证任何新的 ffmpeg 版本</value>
   </data>
   <data name="fifth" xml:space="preserve">
     <value>第五</value>
@@ -2205,6 +2211,9 @@
   <data name="pause_bat_ac" xml:space="preserve">
     <value>暂停电池</value>
   </data>
+  <data name="pc" xml:space="preserve">
+    <value>我的电脑</value>
+  </data>
   <data name="pending" xml:space="preserve">
     <value>待办的</value>
   </data>
@@ -2771,6 +2780,9 @@
   </data>
   <data name="sel_track" xml:space="preserve">
     <value>请选择一条轨道进行保存</value>
+  </data>
+  <data name="server" xml:space="preserve">
+    <value>服务器</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>设置</value>

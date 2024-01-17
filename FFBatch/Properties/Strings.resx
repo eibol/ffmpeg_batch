@@ -1131,6 +1131,9 @@
   <data name="ff_ren" xml:space="preserve">
     <value>FFmpeg executable file was renamed. Application will not work.</value>
   </data>
+  <data name="ff_req" xml:space="preserve">
+    <value>Application requires ffmpeg.exe to work</value>
+  </data>
   <data name="ff_run2" xml:space="preserve">
     <value>FFmpeg processes running</value>
   </data>
@@ -1142,6 +1145,9 @@
   </data>
   <data name="ff_test_ok" xml:space="preserve">
     <value>FFMPEG TEST SUCCESSFUL</value>
+  </data>
+  <data name="ff_val" xml:space="preserve">
+    <value>You need to validate any new ffmpeg version</value>
   </data>
   <data name="fifth" xml:space="preserve">
     <value>fifth</value>
@@ -2223,6 +2229,9 @@
   <data name="pause_bat_ac" xml:space="preserve">
     <value>Pause on battery</value>
   </data>
+  <data name="pc" xml:space="preserve">
+    <value>my computer</value>
+  </data>
   <data name="pending" xml:space="preserve">
     <value>Pending</value>
   </data>
@@ -2789,6 +2798,9 @@
   </data>
   <data name="sel_track" xml:space="preserve">
     <value>Please select one track to be saved.</value>
+  </data>
+  <data name="server" xml:space="preserve">
+    <value>Server</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Settings</value>

@@ -562,7 +562,7 @@
     <value>Cambiar entre el filtro nativo y el filtro de vídeo para unir ficheros.</value>
   </data>
   <data name="concat_vid_help" xml:space="preserve">
-    <value>Este filtro permite unir vídeos con diferentes características. Mejora la compatibilidad, pero requiere que audio y video sean recodificados. El campo de parámetros puede quedar en blanco. NOTA: So para ficheros de vídeo.</value>
+    <value>Este filtro permite unir vídeos con diferentes características. Mejora la compatibilidad, pero requiere que audio y video sean recodificados. El campo de parámetros puede quedar en blanco. NOTA: Solo para ficheros de vídeo.</value>
   </data>
   <data name="concat_vid_help1" xml:space="preserve">
     <value>Este filtro permite unir vídeos con diferentes características. Mejora la compatibilidad, pero requiere que audio y video sean recodificados. El campo de parámetros puede quedar en blanco. NOTA: Solo para ficheros de vídeo.</value>
@@ -1119,6 +1119,9 @@
   <data name="ff_ren" xml:space="preserve">
     <value>El fichero ffmpeg.exe fue renombrado, el programa no funcionará.</value>
   </data>
+  <data name="ff_req" xml:space="preserve">
+    <value>La aplicación requiere ffmpeg.exe para funcionar</value>
+  </data>
   <data name="ff_run2" xml:space="preserve">
     <value>Procesos ffmpeg en ejecución</value>
   </data>
@@ -1130,6 +1133,9 @@
   </data>
   <data name="ff_test_ok" xml:space="preserve">
     <value>PRUEBA FFMPEG CORRECTA</value>
+  </data>
+  <data name="ff_val" xml:space="preserve">
+    <value>Es necesario validar nuevas versiones de ffmpeg</value>
   </data>
   <data name="fifth" xml:space="preserve">
     <value>quinto</value>
@@ -1879,7 +1885,7 @@
     <value>No hay fichero inicial o final</value>
   </data>
   <data name="no_ffmpeg" xml:space="preserve">
-    <value>El ejecutable ffmepg.exe no fue encontrado. Reinicie o reinstale la aplicación.</value>
+    <value>El ejecutable ffmpeg.exe no fue encontrado. Reinicie o reinstale la aplicación.</value>
   </data>
   <data name="no_ffprobe" xml:space="preserve">
     <value>El ejecutable ffprobe.exe no fue encontrado. Reinicie o reinstale la aplicación.</value>
@@ -2210,6 +2216,9 @@
   </data>
   <data name="pause_bat_ac" xml:space="preserve">
     <value>Pausar con batería</value>
+  </data>
+  <data name="pc" xml:space="preserve">
+    <value>mi PC</value>
   </data>
   <data name="pending" xml:space="preserve">
     <value>Pendiente</value>
@@ -2777,6 +2786,9 @@
   </data>
   <data name="sel_track" xml:space="preserve">
     <value>Por favor, seleccione una pista para guardar.</value>
+  </data>
+  <data name="server" xml:space="preserve">
+    <value>Servidor</value>
   </data>
   <data name="Settings" xml:space="preserve">
     <value>Configuración</value>
