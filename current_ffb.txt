@@ -1,6 +1,12 @@
 ﻿3.0.4
-• FFmpeg 6.1.1
+• FFmpeg 6.1.1 Essentials included. Full version downloadable within application.
+• New Portable light version without ffmpeg.exe, downloadable within application.
+• Fixed bug adding new files during sequential encoding.
 • Fixed crash joining files.
+• Fixed missing/wrong progress info trimming files.
+• Fixed garbage columns in stream multiplex tab.
 • Added Stream mapping selection button.
+• Added new variables %f1 %f2 for input files inside vf filters requiring specific escaped characters.
+• Added new setting in Batch subtitles to use input file subtitles stream for burning subtitles.
 • Added forced aspect ratio padding in video preset wizard filters.
 • Other minor cosmetic bugfixes.
