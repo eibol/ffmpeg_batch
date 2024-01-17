@@ -73,6 +73,12 @@ namespace FFBatch
 
         private void Form25_Load(object sender, EventArgs e)
         {
+            
+            if (!File.Exists("ffmpeg.exe"))
+            {
+                this.Close();
+                return;
+            }
             this.Cursor = Cursors.WaitCursor;
             refresh_lang();
             if (Properties.Settings.Default.dark_mode == true)

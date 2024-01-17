@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data;
 using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 
 namespace FFBatch
 {
@@ -69,7 +70,6 @@ namespace FFBatch
                 }                
             }
         }
-
         private String safe_out_ffname(String outf)
         {
             outf = outf.Replace("/", "_");
@@ -188,6 +188,31 @@ namespace FFBatch
             txt_pre.Text = list_chaps_w.Count.ToString() + " " + Properties.Strings.chaps_f;
         }
 
+        private void clean_gp1()
+        {
+            foreach (Control c in groupBox1.Controls)
+            {
+                if (c is RadioButton) ((RadioButton)c).Checked = false;
+                if (c is CheckBox) ((CheckBox)c).Checked = false;
+            }
+        }
+
+        private void clean_gp2()
+        {
+            foreach (Control c in groupBox2.Controls)
+            {
+                if (c is RadioButton) ((RadioButton)c).Checked = false;                
+            }
+        }
+
+        private void clean_gp3()
+        {
+            foreach (Control c in groupBox3.Controls)
+            {
+                if (c is RadioButton) ((RadioButton)c).Checked = false;                
+            }
+        }
+
         private void Form31_Load(object sender, EventArgs e)
         {
             if (Properties.Settings.Default.dark_mode == true)
@@ -221,9 +246,21 @@ namespace FFBatch
         }
         private void set_var()
         {
-            if (radio_inputfn.Checked == true) variab = "%1";
-            if (radio_input_fn_noext.Checked == true) variab = "%2";
-            if (radio_fn_path.Checked == true) variab = "%fp";
+            if (radio_inputfn.Checked == true)
+            {
+                if (chk_full1.Checked == true) variab = "%f1";
+                else variab = "%1";
+            }
+            if (radio_input_fn_noext.Checked == true)
+            {
+                if (chk_full2.Checked == true) variab = "%f2";
+                else variab = "%2";
+            }
+            if (radio_fn_path.Checked == true)
+            {
+                if (chk_full_p.Checked == true) variab = "%pff";
+                else variab = "%fp";
+            }
             if (radio_fn.Checked == true) variab = "%fn";
             if (radio_fn_ext.Checked == true) variab = "%ff";
             if (radio_fd.Checked == true) variab = "%fd";            
@@ -262,6 +299,11 @@ namespace FFBatch
         {
             txt_pre.Text = "";
             txt_pre.Text = file;
+            if (radio_inputfn.Checked)
+            {
+                chk_full1.Enabled = true;
+            }
+            else chk_full1.Enabled = false;
         }
 
         private void radio_input_fn_noext_CheckedChanged(object sender, EventArgs e)
@@ -273,6 +315,11 @@ namespace FFBatch
                 txt_pre.Text = file.Substring(0, ind);
             }
             else txt_pre.Text = "";
+            if (radio_input_fn_noext.Checked)
+            {
+                chk_full2.Enabled = true;
+            }
+            else chk_full2.Enabled = false;
         }
 
         private void radio_fn_path_CheckedChanged(object sender, EventArgs e)
@@ -280,6 +327,11 @@ namespace FFBatch
             txt_pre.Text = "";
             if (file.Length > 4) txt_pre.Text = Path.GetFullPath(file).Substring(0, Path.GetFullPath(file).LastIndexOf("\\"));
             else txt_pre.Text = "";
+            if (radio_fn_path.Checked)
+            {
+                chk_full_p.Enabled = true;
+            }
+            else chk_full_p.Enabled = false;
         }
 
         private void radio_fn_ext_CheckedChanged(object sender, EventArgs e)
@@ -349,14 +401,10 @@ namespace FFBatch
                 String dur_2 = TimeSpan.Parse(dur_secs).TotalSeconds.ToString();
                 Double result = Convert.ToDouble(new DataTable().Compute(dur_2 + txt_operator_dur.Text, null));
                 txt_pre.Text = Math.Round(result).ToString();
+                txt_pre.Refresh();  
             }
 
             catch { txt_pre.Text = ""; }
-        }
-
-        private void radio_fdur_1_CheckedChanged(object sender, EventArgs e)
-        {
-            get_fdur();
         }
         Boolean IsDigitsOnly(String str)
         {
@@ -373,42 +421,13 @@ namespace FFBatch
 
         private void txt_pre_TextChanged(object sender, EventArgs e)
         {
-            txt_pre.SelectionStart = txt_pre.TextLength;
-            txt_pre.ScrollToCaret();
+            //txt_pre.SelectionStart = txt_pre.TextLength;
+            //txt_pre.ScrollToCaret();
          
         }
-
-        private void radio_nul_CheckedChanged(object sender, EventArgs e)
-        {
-            if (radio_nul.Checked)
-            {
-                txt_pre.Text = "";
-                btn_copy.Enabled = false;
-            }
-            else
-            {
-                btn_copy.Enabled = true;
-            }
-        }
-
         private void txt_operator_TextChanged(object sender, EventArgs e)
         {
             if (radio_fdur_1.Checked) get_fdur();
-        }
-
-        private void radio_chaps_CheckedChanged(object sender, EventArgs e)
-        {
-            if (file.Length > 0)
-            {
-                if (radio_chaps.Checked) get_chapters();
-            }
-            else txt_pre.Text = "";
-
-        }
-
-        private void radio_bitr_CheckedChanged(object sender, EventArgs e)
-        {
-            txt_pre.Text =  get_bitrate(file, dur).ToString() + "K";
         }
 
         private void txt_operator_bitr_TextChanged(object sender, EventArgs e)
@@ -469,6 +488,88 @@ namespace FFBatch
             if (file.Length > 0 && txt_size.Text.Length > 0)
             {
                 get_bitrate(Convert.ToDouble(txt_size.Text));
+            }
+        }
+
+        private void radio_inputfn_Click(object sender, EventArgs e)
+        {
+            clean_gp2();
+            clean_gp3();
+        }
+
+        private void radio_input_fn_noext_Click(object sender, EventArgs e)
+        {
+            clean_gp2();
+            clean_gp3();
+        }
+
+        private void radio_fn_path_Click(object sender, EventArgs e)
+        {
+            clean_gp2();
+            clean_gp3();
+        }
+
+        private void radio_fn_Click(object sender, EventArgs e)
+        {
+            clean_gp2();
+            clean_gp3();
+        }
+
+        private void radio_fn_ext_Click(object sender, EventArgs e)
+        {
+            clean_gp2();
+            clean_gp3();
+        }
+
+        private void radio_fd_Click(object sender, EventArgs e)
+        {
+            clean_gp2();
+            clean_gp3();
+        }
+
+        private void radio_fdur_1_Click(object sender, EventArgs e)
+        {
+            clean_gp1();
+            clean_gp3();
+            get_fdur();
+        }
+
+        private void radio_bitr_Click(object sender, EventArgs e)
+        {
+            clean_gp1();
+            clean_gp3();
+            txt_pre.Text = get_bitrate(file, dur).ToString() + "K";
+        }
+
+        private void radio_target_size_Click(object sender, EventArgs e)
+        {
+            clean_gp1();
+            clean_gp3();
+        }
+
+        private void radio_chaps_Click(object sender, EventArgs e)
+        {
+            clean_gp1();
+            clean_gp2();
+            if (file.Length > 0)
+            {
+                if (radio_chaps.Checked) get_chapters();
+            }
+            else txt_pre.Text = "";
+        }
+
+        private void radio_nul_Click(object sender, EventArgs e)
+        {
+            clean_gp1();
+            clean_gp2();
+            if (radio_nul.Checked)
+            {
+                txt_pre.Text = "";
+                btn_copy.Enabled = false;
+            }
+            else
+            {
+                btn_copy.Enabled = true;
             }
         }
     }

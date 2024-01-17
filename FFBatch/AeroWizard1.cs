@@ -4193,6 +4193,38 @@ namespace FFBatch
                     }
                 }
 
+                while (textbox_params.Contains("%pff"))
+                {
+                    if (textbox_params.Contains("%pff"))
+                    {
+                        file_prueba2 = file_prueba2.Replace("\\", "/\\");
+                        file_prueba2 = file_prueba2.Replace(":", "\\\\://\\");
+
+                        textbox_params = textbox_params.Replace("%pff", Path.GetDirectoryName(file_prueba2));
+                    }
+                }
+
+                while (textbox_params.Contains("%f1"))
+                {
+                    if (textbox_params.Contains("%f1"))
+                    {
+                        file_prueba2 = file_prueba2.Replace("\\", "/\\");
+                        file_prueba2 = file_prueba2.Replace(":", "\\\\:");
+
+                        textbox_params = textbox_params.Replace("%f1", file_prueba2);
+                    }
+                }
+
+                while (textbox_params.Contains("%f2"))
+                {
+                    if (textbox_params.Contains("%f2"))
+                    {
+                        file_prueba2 = file_prueba2.Replace("\\", "/\\");
+                        file_prueba2 = file_prueba2.Replace(":", "\\\\://\\");
+                        textbox_params = textbox_params.Replace("%f2", Path.Combine(Path.GetDirectoryName(file_prueba2), Path.GetFileNameWithoutExtension(file_prueba2)));
+                    }
+                }
+
                 consola_pre.StartInfo.FileName = "ffmpeg.exe";
                 consola_pre.StartInfo.Arguments = " -i " + "" + '\u0022' + file_prueba + '\u0022' + "" + " -y " + textbox_params + " " + '\u0022' + destino_test + "\\" + System.IO.Path.GetFileNameWithoutExtension(file_prueba) + "." + ext_output + '\u0022';
                 consola_pre.StartInfo.RedirectStandardError = true;

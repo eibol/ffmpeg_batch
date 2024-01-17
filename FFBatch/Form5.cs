@@ -1206,7 +1206,7 @@ namespace FFBatch
                         already_scan = false;
                         if (cancel_keyfr == true)
                         {
-                            MessageBox.Show(Properties.Strings.kf_no_a, Properties.Strings.cancelled);
+                            //MessageBox.Show(Properties.Strings.kf_no_a, Properties.Strings.cancelled);
                             cancel_keyfr = false;
                         }
                         else MessageBox.Show(Properties.Strings.error + ". " + Properties.Strings.kf_no_a, Properties.Strings.error);

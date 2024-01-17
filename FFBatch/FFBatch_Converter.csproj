@@ -72,10 +72,10 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>FFBatch_2023_Key.pfx</AssemblyOriginatorKeyFile>
@@ -320,6 +320,12 @@
     <Compile Include="Form33.Designer.cs">
       <DependentUpon>Form33.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form34.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form34.Designer.cs">
+      <DependentUpon>Form34.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form4.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -523,9 +529,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AeroWizard7.zh-Hans.resx">
       <DependentUpon>AeroWizard7.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.aa.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.es.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -983,6 +986,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form33.resx">
       <DependentUpon>Form33.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form34.resx">
+      <DependentUpon>Form34.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form4.ar-EG.resx">
       <DependentUpon>Form4.cs</DependentUpon>

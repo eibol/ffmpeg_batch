@@ -1438,7 +1438,7 @@ namespace FFBatch
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            Process.Start("https://www.gyan.dev/ffmpeg/builds/");
+            Process.Start("https://www.gyan.dev/ffmpeg/builds/"); 
         }
 
         private void pic_ff_ok_Click(object sender, EventArgs e)
