@@ -2342,10 +2342,4 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
-  <data name="open_file.Filter" xml:space="preserve">
-    <value>File testo | *.ini; *.txt| Tutti i file (*.*) | *.*</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>FFmpeg Batch AV Converter - Profili online</value>
-  </data>
 </root>

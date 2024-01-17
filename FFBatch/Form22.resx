@@ -135,8 +135,8 @@
   <data name="txt_batch_concat.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>panel_batch</value>
+  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="&gt;&gt;chk_copy.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -150,11 +150,14 @@
   <data name="txt_intro.Location" type="System.Drawing.Point, System.Drawing">
     <value>56, 1</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Encoding parameters</value>
-  </data>
   <data name="textBox1.Text" xml:space="preserve">
     <value>In this mode audio/video files can be stream copied, provided they share qualities (size, codec, bitrate). NOTE: Not all containers are supported for stream copy. If playback issues occur or files are not joined, re-encoding is required.</value>
+  </data>
+  <data name="chk_copy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>208, 80</value>
+  </data>
+  <data name="chk_batch_concat.Text" xml:space="preserve">
+    <value>Enable batch concatenation</value>
   </data>
   <data name="chk_filter.Size" type="System.Drawing.Size, System.Drawing">
     <value>133, 17</value>
@@ -165,14 +168,14 @@
   <data name="&gt;&gt;btn_end.Parent" xml:space="preserve">
     <value>panel_batch</value>
   </data>
-  <data name="&gt;&gt;txt_intro.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;panel1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;chk_copy.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chk_batch_concat.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
   </data>
   <data name="&gt;&gt;chk_copy.Parent" xml:space="preserve">
     <value>$this</value>
@@ -218,9 +221,6 @@
   </data>
   <data name="chk_copy.Text" xml:space="preserve">
     <value>Stream copy</value>
-  </data>
-  <data name="&gt;&gt;btn_cancel.Parent" xml:space="preserve">
-    <value>panel1</value>
   </data>
   <data name="panel_batch.Location" type="System.Drawing.Point, System.Drawing">
     <value>25, 241</value>
@@ -270,6 +270,9 @@
   <data name="btn_intro.Location" type="System.Drawing.Point, System.Drawing">
     <value>328, 0</value>
   </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="txt_c_format.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
@@ -303,8 +306,8 @@
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 23</value>
   </data>
-  <data name="chk_batch_concat.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+  <data name="&gt;&gt;btn_cancel.Parent" xml:space="preserve">
+    <value>panel1</value>
   </data>
   <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>25, 140</value>
@@ -315,11 +318,14 @@
   <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
   <data name="textBox1.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
+  <data name="&gt;&gt;txt_intro.Name" xml:space="preserve">
+    <value>txt_intro</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>107, 13</value>
@@ -333,14 +339,17 @@
   <data name="&gt;&gt;radio_filter.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
+  <data name="&gt;&gt;txt_intro.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btn_cancel.Name" xml:space="preserve">
     <value>btn_cancel</value>
   </data>
   <data name="radio_demuxer.Location" type="System.Drawing.Point, System.Drawing">
     <value>28, 79</value>
+  </data>
+  <data name="panel_batch.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
   </data>
   <data name="&gt;&gt;radio_demuxer.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -351,20 +360,14 @@
   <data name="&gt;&gt;chk_filter.Name" xml:space="preserve">
     <value>chk_filter</value>
   </data>
-  <data name="&gt;&gt;txt_end.Name" xml:space="preserve">
-    <value>txt_end</value>
-  </data>
-  <data name="btn_intro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 23</value>
-  </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Join files</value>
   </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="chk_copy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 17</value>
   </data>
   <data name="radio_demuxer.Size" type="System.Drawing.Size, System.Drawing">
     <value>158, 17</value>
@@ -405,17 +408,14 @@
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
+  <data name="&gt;&gt;chk_batch_concat.Name" xml:space="preserve">
+    <value>chk_batch_concat</value>
+  </data>
   <data name="&gt;&gt;txt_end.Parent" xml:space="preserve">
     <value>panel_batch</value>
   </data>
-  <data name="&gt;&gt;btn_intro.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="radio_filter.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="radio_filter.Text" xml:space="preserve">
     <value>Use concatenation video filter</value>
@@ -431,6 +431,9 @@
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
+  </data>
+  <data name="btn_intro.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
   </data>
   <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
     <value>textBox1</value>
@@ -740,9 +743,6 @@
         AAAAAAAHAAAAAAAAAA8AAAAAAAAAD4AAAAAAAAAfwAAAAAAAAD8=
 </value>
   </data>
-  <data name="txt_batch_concat.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="&gt;&gt;txt_end.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
@@ -754,6 +754,9 @@
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>335, 49</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 13</value>
   </data>
   <data name="btn_cancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 23</value>
@@ -767,8 +770,8 @@
   <data name="&gt;&gt;txt_c_format.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 13</value>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="chk_batch_concat.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 17</value>
@@ -779,6 +782,9 @@
   <data name="&gt;&gt;btn_cancel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
   <data name="&gt;&gt;radio_filter.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
@@ -788,20 +794,17 @@
   <data name="btn_end.Text" xml:space="preserve">
     <value>Browse...</value>
   </data>
-  <data name="&gt;&gt;button1.Parent" xml:space="preserve">
-    <value>panel1</value>
-  </data>
   <data name="&gt;&gt;radio_filter.Name" xml:space="preserve">
     <value>radio_filter</value>
   </data>
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 5</value>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Start</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="btn_intro.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 23</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -811,6 +814,9 @@
   </data>
   <data name="radio_filter.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="&gt;&gt;panel_batch.Name" xml:space="preserve">
+    <value>panel_batch</value>
   </data>
   <data name="&gt;&gt;txt_params.Name" xml:space="preserve">
     <value>txt_params</value>
@@ -824,17 +830,17 @@
   <data name="txt_c_format.Location" type="System.Drawing.Point, System.Drawing">
     <value>380, 46</value>
   </data>
-  <data name="panel_batch.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
+  <data name="&gt;&gt;chk_batch_concat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>panel_batch</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Initial file</value>
   </data>
-  <data name="&gt;&gt;chk_batch_concat.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;chk_batch_concat.Name" xml:space="preserve">
-    <value>chk_batch_concat</value>
+  <data name="txt_batch_concat.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;panel_batch.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -854,8 +860,8 @@
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>39, 13</value>
   </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Start</value>
+  <data name="&gt;&gt;txt_end.Name" xml:space="preserve">
+    <value>txt_end</value>
   </data>
   <data name="&gt;&gt;btn_cancel.ZOrder" xml:space="preserve">
     <value>0</value>
@@ -872,17 +878,17 @@
   <data name="radio_demuxer.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Encoding parameters</value>
+  </data>
   <data name="radio_demuxer.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="btn_cancel.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="txt_params.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 46</value>
-  </data>
-  <data name="&gt;&gt;panel_batch.Name" xml:space="preserve">
-    <value>panel_batch</value>
+  <data name="txt_batch_concat.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -893,8 +899,8 @@
   <data name="&gt;&gt;txt_c_format.Name" xml:space="preserve">
     <value>txt_c_format</value>
   </data>
-  <data name="chk_copy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 17</value>
+  <data name="&gt;&gt;chk_batch_concat.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -902,23 +908,20 @@
   <data name="&gt;&gt;radio_demuxer.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="chk_copy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 80</value>
+  <data name="button1.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="radio_demuxer.Text" xml:space="preserve">
     <value>Use concatenation demuxer</value>
   </data>
   <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>274, 7</value>
-  </data>
-  <data name="chk_batch_concat.Text" xml:space="preserve">
-    <value>Enable batch concatenation</value>
+    <value>353, 7</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>348, 7</value>
+    <value>273, 7</value>
   </data>
-  <data name="&gt;&gt;txt_intro.Name" xml:space="preserve">
-    <value>txt_intro</value>
+  <data name="&gt;&gt;btn_intro.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -926,17 +929,11 @@
   <data name="&gt;&gt;textBox1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>391, 61</value>
-  </data>
   <data name="&gt;&gt;btn_intro.Name" xml:space="preserve">
     <value>btn_intro</value>
   </data>
-  <data name="txt_batch_concat.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="&gt;&gt;chk_batch_concat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>391, 61</value>
   </data>
   <data name="&gt;&gt;button1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -944,19 +941,25 @@
   <data name="&gt;&gt;txt_params.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 5</value>
+  </data>
   <data name="&gt;&gt;panel1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chk_copy.Name" xml:space="preserve">
     <value>chk_copy</value>
   </data>
-  <data name="btn_intro.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
+  <data name="txt_params.Location" type="System.Drawing.Point, System.Drawing">
+    <value>25, 46</value>
   </data>
   <data name="&gt;&gt;label4.Name" xml:space="preserve">
     <value>label4</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>es</value>
   </metadata>
 </root>
