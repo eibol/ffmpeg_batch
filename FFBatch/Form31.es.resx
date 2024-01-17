@@ -232,6 +232,24 @@
   <data name="num_aud_target.Location" type="System.Drawing.Point, System.Drawing">
     <value>329, 83</value>
   </data>
+  <data name="chk_full_p.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 17</value>
+  </data>
+  <data name="chk_full_p.Text" xml:space="preserve">
+    <value>Para filtro vf/af</value>
+  </data>
+  <data name="chk_full2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 17</value>
+  </data>
+  <data name="chk_full2.Text" xml:space="preserve">
+    <value>Para filtro vf/af</value>
+  </data>
+  <data name="chk_full1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 17</value>
+  </data>
+  <data name="chk_full1.Text" xml:space="preserve">
+    <value>Para filtro vf/af</value>
+  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Fichero de origen</value>
   </data>

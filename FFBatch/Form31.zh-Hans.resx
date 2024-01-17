@@ -235,6 +235,42 @@
   <data name="num_aud_target.Location" type="System.Drawing.Point, System.Drawing">
     <value>338, 85</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>输入文件名</value>
+  </data>
+  <data name="chk_full_p.Location" type="System.Drawing.Point, System.Drawing">
+    <value>304, 68</value>
+  </data>
+  <data name="chk_full_p.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 17</value>
+  </data>
+  <data name="chk_full_p.Text" xml:space="preserve">
+    <value>适用于 vf/af 滤波器</value>
+  </data>
+  <data name="chk_full2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>304, 45</value>
+  </data>
+  <data name="chk_full2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 17</value>
+  </data>
+  <data name="chk_full2.Text" xml:space="preserve">
+    <value>适用于 vf/af 滤波器</value>
+  </data>
+  <data name="chk_full1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>304, 22</value>
+  </data>
+  <data name="chk_full1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 17</value>
+  </data>
+  <data name="chk_full1.Text" xml:space="preserve">
+    <value>适用于 vf/af 滤波器</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>输入/输出特性</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>其他变量</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>518, 456</value>
   </data>

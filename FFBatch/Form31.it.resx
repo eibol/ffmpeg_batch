@@ -152,7 +152,7 @@
     <value>Nome file sorgente percorso completo (%fp)</value>
   </data>
   <data name="radio_fn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 122</value>
+    <value>30, 113</value>
   </data>
   <data name="radio_fn.Size" type="System.Drawing.Size, System.Drawing">
     <value>211, 17</value>
@@ -161,7 +161,7 @@
     <value>Nome file sorgente con estensione (%ff)</value>
   </data>
   <data name="radio_fn_ext.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 99</value>
+    <value>30, 90</value>
   </data>
   <data name="radio_fn_ext.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 17</value>
@@ -243,6 +243,33 @@
   </data>
   <data name="num_aud_target.Location" type="System.Drawing.Point, System.Drawing">
     <value>416, 83</value>
+  </data>
+  <data name="chk_full_p.Location" type="System.Drawing.Point, System.Drawing">
+    <value>387, 68</value>
+  </data>
+  <data name="chk_full_p.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 17</value>
+  </data>
+  <data name="chk_full_p.Text" xml:space="preserve">
+    <value>Per filtro vf/af</value>
+  </data>
+  <data name="chk_full2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>387, 45</value>
+  </data>
+  <data name="chk_full2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 17</value>
+  </data>
+  <data name="chk_full2.Text" xml:space="preserve">
+    <value>Per filtro vf/af</value>
+  </data>
+  <data name="chk_full1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>387, 22</value>
+  </data>
+  <data name="chk_full1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 17</value>
+  </data>
+  <data name="chk_full1.Text" xml:space="preserve">
+    <value>Per filtro vf/af</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>504, 163</value>
@@ -2056,6 +2083,6 @@
 </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>inserire variabile</value>
+    <value>Inserire variabile</value>
   </data>
 </root>

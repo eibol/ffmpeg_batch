@@ -178,6 +178,12 @@
   <data name="txt_operator_dur.Location" type="System.Drawing.Point, System.Drawing">
     <value>204, 27</value>
   </data>
+  <data name="radio_chaps.Size" type="System.Drawing.Size, System.Drawing">
+    <value>249, 17</value>
+  </data>
+  <data name="radio_chaps.Text" xml:space="preserve">
+    <value>تقسيم الملف حسب علامات الفصل [[split_chapters]]</value>
+  </data>
   <data name="radio_bitr.Size" type="System.Drawing.Size, System.Drawing">
     <value>279, 17</value>
   </data>
@@ -207,6 +213,33 @@
   </data>
   <data name="num_aud_target.Location" type="System.Drawing.Point, System.Drawing">
     <value>371, 84</value>
+  </data>
+  <data name="chk_full_p.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 17</value>
+  </data>
+  <data name="chk_full_p.Text" xml:space="preserve">
+    <value>لمرشح vf/af</value>
+  </data>
+  <data name="chk_full2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 17</value>
+  </data>
+  <data name="chk_full2.Text" xml:space="preserve">
+    <value>لمرشح vf/af</value>
+  </data>
+  <data name="chk_full1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>82, 17</value>
+  </data>
+  <data name="chk_full1.Text" xml:space="preserve">
+    <value>لمرشح vf/af</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>اسم ملف الإدخال</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>ميزات الإدخال/الإخراج اسم الملف</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>متغيرات أخرى</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

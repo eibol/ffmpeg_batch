@@ -241,14 +241,50 @@
   <data name="num_aud_target.Location" type="System.Drawing.Point, System.Drawing">
     <value>444, 82</value>
   </data>
+  <data name="chk_full_p.Location" type="System.Drawing.Point, System.Drawing">
+    <value>420, 68</value>
+  </data>
+  <data name="chk_full_p.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 17</value>
+  </data>
+  <data name="chk_full_p.Text" xml:space="preserve">
+    <value>Para filtro vf/af</value>
+  </data>
+  <data name="chk_full2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>420, 45</value>
+  </data>
+  <data name="chk_full2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 17</value>
+  </data>
+  <data name="chk_full2.Text" xml:space="preserve">
+    <value>Para filtro vf/af</value>
+  </data>
+  <data name="chk_full1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>420, 22</value>
+  </data>
+  <data name="chk_full1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 17</value>
+  </data>
+  <data name="chk_full1.Text" xml:space="preserve">
+    <value>Para filtro vf/af</value>
+  </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>533, 163</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Nome do arquivo de entrada</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>533, 111</value>
   </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Recursos de entrada/saída</value>
+  </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
     <value>533, 81</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Outras variáveis</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>582, 458</value>
