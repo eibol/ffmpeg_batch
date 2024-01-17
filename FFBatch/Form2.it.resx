@@ -2083,4 +2083,7 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Info su FFmpeg Batch AV Converter</value>
+  </data>
 </root>
