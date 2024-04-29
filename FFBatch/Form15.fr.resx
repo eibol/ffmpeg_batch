@@ -117,30 +117,12 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Column1.HeaderText" xml:space="preserve">
-    <value>Name</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="Column1.Width" type="System.Int32, mscorlib">
     <value>258</value>
   </data>
-  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Column2.HeaderText" xml:space="preserve">
-    <value>FFmpeg parameters</value>
-  </data>
   <data name="Column2.Width" type="System.Int32, mscorlib">
     <value>549</value>
-  </data>
-  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="Column3.HeaderText" xml:space="preserve">
-    <value>Format</value>
   </data>
   <data name="Column3.Width" type="System.Int32, mscorlib">
     <value>52</value>
@@ -155,18 +137,6 @@
   <data name="dg_pr.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;dg_pr.Name" xml:space="preserve">
-    <value>dg_pr</value>
-  </data>
-  <data name="&gt;&gt;dg_pr.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dg_pr.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;dg_pr.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btn_save.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -174,7 +144,7 @@
   <data name="btn_save.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACcAAAAnCAYAAACMo1E1AAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABS
-        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACw4AAAsOAUC+4UEAAApzSURBVFhHrdgHVFPXHwfwW3sc
+        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACw0AAAsNAe0HwCwAAApzSURBVFhHrdgHVFPXHwfwW3sc
         tf47Tv1X61YEVBBxIVoHjlrbqq2DtuICreLoXy1LEZ4DFUXZigxLGElICCGELWgBceFCZhgqQ2yrVVAr
         VbSt3//vPXge7TEeqNxzPtzk3bx7v7nvJrkPtlRd/sxyzZXxy+MrpBMDj2s+C8nWNPzxWAPgtd179EQz
         58gJjaXvUY1NbLF8hfaa3VJ1RcclcWXMJraULVKWvBTjX9DCbLG6EutTrmLawWOYFpiB+j+aqG/gekMj
@@ -234,23 +204,8 @@
   <data name="btn_save.TabIndex" type="System.Int32, mscorlib">
     <value>130</value>
   </data>
-  <data name="btn_save.Text" xml:space="preserve">
-    <value> Save  and close</value>
-  </data>
   <data name="btn_save.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
-  </data>
-  <data name="&gt;&gt;btn_save.Name" xml:space="preserve">
-    <value>btn_save</value>
-  </data>
-  <data name="&gt;&gt;btn_save.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_save.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btn_save.ZOrder" xml:space="preserve">
-    <value>14</value>
   </data>
   <data name="btn_load.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -263,8 +218,8 @@
         RF/WBZnFQBrgSi4oKgHSf4DYKCW1OJmBgdEAyM4uLykAijPOAbJFkrLB7A0gdlFIkDOQfQTI5kuHsK+A
         2EkQ9hMQuwjoCSD7C0h9OpjNxAE2B8KWAbFLUitA9jI45xdUFmWmZ5QoGFpaWio4puQnpSoEVxaXpOYW
         K3jmJecXFeQXJZakpgDVQtwHBoIQhaAQ0wBqtNBkoDIAxQOE9TkQHL6MYmcQYgiQXFpUBmUyMhkT5iPM
-        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACw0AAAsN
-        Ae0HwCwAAAWASURBVFhH3ZhrbBRVGIYnYBTBlpZCaClYoAVKW7bUtkJpaJFC5PKrPzTEGJFEIEojgoK3
+        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACwwAAAsM
+        AT9AIsgAAAWASURBVFhH3ZhrbBRVGIYnYBTBlpZCaClYoAVKW7bUtkJpaJFC5PKrPzTEGJFEIEojgoK3
         KkpMiCZoJGDwVo3gjSjVBuUiEUEKf4iW0Nte6W1nZndmZ7bLFrtUeP1OmZge2h1msYvGL3ny5Z2dc/rs
         nJnZmQoAOOx2+53UHyW+Jb4kDhAHDWqH4LsBDPU5G/cN8akeuXbsg9/kn3RFSgwHfEKnKAteSRa6REkQ
         ZVnQNG2Qz6ANbrf7bepxq4IDXVhV5z6HsP8uJtlBkjEJtrW17acet6r8UYLwVguePuq5gLAyKhzwC+3e
@@ -305,29 +260,8 @@
   <data name="btn_load.TabIndex" type="System.Int32, mscorlib">
     <value>131</value>
   </data>
-  <data name="btn_load.Text" xml:space="preserve">
-    <value>Load presets from file</value>
-  </data>
   <data name="btn_load.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
-  </data>
-  <data name="&gt;&gt;btn_load.Name" xml:space="preserve">
-    <value>btn_load</value>
-  </data>
-  <data name="&gt;&gt;btn_load.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_load.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btn_load.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <metadata name="open_file.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="open_file.Filter" xml:space="preserve">
-    <value>Text files | *.ini; *.txt| All files (*.*) | *.*</value>
   </data>
   <data name="btn_cancel.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -344,23 +278,8 @@
   <data name="btn_cancel.TabIndex" type="System.Int32, mscorlib">
     <value>132</value>
   </data>
-  <data name="btn_cancel.Text" xml:space="preserve">
-    <value>Cancel edition</value>
-  </data>
   <data name="btn_cancel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
-  </data>
-  <data name="&gt;&gt;btn_cancel.Name" xml:space="preserve">
-    <value>btn_cancel</value>
-  </data>
-  <data name="&gt;&gt;btn_cancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_cancel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btn_cancel.ZOrder" xml:space="preserve">
-    <value>12</value>
   </data>
   <data name="btn_load_bck.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -368,7 +287,7 @@
   <data name="btn_load_bck.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAcQSURBVFhHzZh7UJNXGsYhhEgX
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAcQSURBVFhHzZh7UJNXGsYhhEgX
         gyJqRSNFiq7ECwmQkJCEJFwDQaxirUgtUwg3wRBE8AKEe0Hb7Rpv7bpOd8Y6vexuq71N/2h3O91uW3e3
         LSoIyKVKsdYiVIF2ehF8+n5fDvWybdXWnewz80ySc873fr+85z3nfIkbgP8r3xEJBEI3n7ulMr8AReL0
         QEWyX4Ay2cc/VCkQek1iQ/738vKZHbDIWFiizjhw2GB9t89kP4ekms+RVDsAU/UAEuznobP+53P5A0+9
@@ -417,23 +336,8 @@
   <data name="btn_load_bck.TabIndex" type="System.Int32, mscorlib">
     <value>133</value>
   </data>
-  <data name="btn_load_bck.Text" xml:space="preserve">
-    <value>Reload last backup</value>
-  </data>
   <data name="btn_load_bck.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
-  </data>
-  <data name="&gt;&gt;btn_load_bck.Name" xml:space="preserve">
-    <value>btn_load_bck</value>
-  </data>
-  <data name="&gt;&gt;btn_load_bck.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_load_bck.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btn_load_bck.ZOrder" xml:space="preserve">
-    <value>11</value>
   </data>
   <data name="btn_decr_font.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -441,7 +345,7 @@
   <data name="btn_decr_font.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw4AAAsOAUC+4UEAAAKrSURBVDhPjZM9aNNBGMZfSqHF
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAKrSURBVDhPjZM9aNNBGMZfSqHF
         RaVihGTIB61Jkzb556OFNKGbg4YsJdBQyRAwEEmHQEkxX21Ck9A2idYPgrioi0jBTQcdBFEcuoighYjg
         aAZRqYgIcj7veYlBSu3wcPe/vM/vnvfuQkIImp6e7snr9T5zu92foRGPx0MYyefz0czMDPn9fjmi7rbL
         5SpNTk6S0+mUkiA2KIVhFIAJzMsMYWmaRjBKsUnV7Pb5/oC6xRifYPE7xEVfUMwJpboGJQnipF31QNBJ
@@ -465,25 +369,13 @@
   <data name="btn_decr_font.TabIndex" type="System.Int32, mscorlib">
     <value>137</value>
   </data>
-  <data name="&gt;&gt;btn_decr_font.Name" xml:space="preserve">
-    <value>btn_decr_font</value>
-  </data>
-  <data name="&gt;&gt;btn_decr_font.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_decr_font.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btn_decr_font.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
   <data name="btn_inc_font.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="btn_inc_font.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw4AAAsOAUC+4UEAAAJxSURBVDhPlZI5iJNBFMeHrXZZ
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAJxSURBVDhPlZI5iJNBFMeHrXZZ
         42IXQ8AEcxCSkPsgKSxslLCwYCxS5UBhA0lMYQ5yJ5jLkIAgaGGhwcq1sRBcCwsF0W0sbIOVkFJYhWUb
         x/8b5gtZF5dY/Phm3jfvN+/NDOOcs0AgsMDr9X5wu92HQOXxeBjhcrkW0Nxqte7b7fanTqeTORwOgRAp
         CSACAYeMY3wPY0b4fD6B3+9nNputCgGXXFM2ECJlgqS3EByCz+AYQqpQbEJfJG5rNBo+nU55o9HgarX6
@@ -506,25 +398,13 @@
   <data name="btn_inc_font.TabIndex" type="System.Int32, mscorlib">
     <value>136</value>
   </data>
-  <data name="&gt;&gt;btn_inc_font.Name" xml:space="preserve">
-    <value>btn_inc_font</value>
-  </data>
-  <data name="&gt;&gt;btn_inc_font.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_inc_font.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btn_inc_font.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="item_down.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="item_down.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABS
-        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACw4AAAsOAUC+4UEAAAQ7SURBVDhPldR7TJV1GAfwb0Zx
+        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAQ7SURBVDhPldR7TJV1GAfwb0Zx
         5HYO58o5cokWF7k5tbys1mxjbm4Sf9QgrloWAzNEwAMhIBcPl0SgTVAupQwMEcJN0zYiIK56MKngnIBz
         4XK4CRyghhZz9vQ7HLIx3Fp/fPf+99n3fd7nfSDM020IV6GFa9FI0IHqsRnuKfX3ttnaJknlXJP42sMx
         t/T+XO/jPdia2LshEOboN4SbrYdzwUj2wVoD8T5Vk03GEDlUzpG4/hF5ZPT3+sZ1w/ukckMgyNFAoFgf
@@ -555,25 +435,13 @@
   <data name="item_down.TabIndex" type="System.Int32, mscorlib">
     <value>135</value>
   </data>
-  <data name="&gt;&gt;item_down.Name" xml:space="preserve">
-    <value>item_down</value>
-  </data>
-  <data name="&gt;&gt;item_down.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;item_down.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;item_down.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
   <data name="item_up.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="item_up.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABS
-        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACw4AAAsOAUC+4UEAAAQxSURBVDhPldR5UNRlHAbwb0bt
+        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAQxSURBVDhPldR5UNRlHAbwb0bt
         yrXL3rsKRBOHXI6a19Q0NuM444zkHzUQp5bFgBki4EIIyOHCkgg0IyhHKQOGCOKMps0QAXEqmFR7BOwu
         LMcCckkNWo5jTy+XhdZM/fHM+/71mef9/t73R+RTSeR1ga0sWy8SvV5LtOsGPfd2PdE7DeScoj3ommOC
         dYIm0CG1l3gqIwk+7SdJ7jAJ8kdI/sUYbftqhl6tuUf/jO28znKNXBO7D228eh/i7H68nKaHML032DbD
@@ -603,18 +471,6 @@
   <data name="item_up.TabIndex" type="System.Int32, mscorlib">
     <value>134</value>
   </data>
-  <data name="&gt;&gt;item_up.Name" xml:space="preserve">
-    <value>item_up</value>
-  </data>
-  <data name="&gt;&gt;item_up.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;item_up.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;item_up.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
   <data name="btn_remove_pr.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -626,7 +482,7 @@
         xUAa4EouKCoB0n+A2CgltTiZgYHRAMjOLi8pAIozzgGyRZKywewNIHZRSJAzkH0EyOZLh7CvgNhJEPYT
         ELsI6Akg+wtIfTqYzcQBNgfClgGxS1IrQPYyOOcXVBZlpmeUKBhaWloqOKbkJ6UqBFcWl6TmFit45iXn
         FxXkFyWWpKYA1ULcBwaCEIWgENMAarTQZKAyAMUDhPU5EBy+jGJnEGIIkFxaVAZlMjIZE+YjzJgjwcDg
-        v5SBgeUPQsykl4FhgQ4DA/9UhJiaIQODgD4Dw745AMDGT/0ZOjZcAAAACXBIWXMAAAsNAAALDQHtB8As
+        v5SBgeUPQsykl4FhgQ4DA/9UhJiaIQODgD4Dw745AMDGT/0ZOjZcAAAACXBIWXMAAAsMAAALDAE/QCLI
         AAADMklEQVRYR9WUSVeTWRRFHZVliOloFKURiYASkFZCbEAlgIo9qAhGwSp/1v2nWdvzSFC/qlurdHYd
         nMF3Bslee537zgC/Vdwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwy
         ctwycv5VTBWL1fbBgdFqGW/fGq93jRcvjGfPjJ0dY3vbaDaNhw+N+/eNe/eM27eNet24dctYXDTm5ozZ
@@ -659,23 +515,8 @@
   <data name="btn_remove_pr.TabIndex" type="System.Int32, mscorlib">
     <value>138</value>
   </data>
-  <data name="btn_remove_pr.Text" xml:space="preserve">
-    <value>Remove preset</value>
-  </data>
   <data name="btn_remove_pr.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
-  </data>
-  <data name="&gt;&gt;btn_remove_pr.Name" xml:space="preserve">
-    <value>btn_remove_pr</value>
-  </data>
-  <data name="&gt;&gt;btn_remove_pr.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_remove_pr.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btn_remove_pr.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="btn_add_pr.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -683,7 +524,7 @@
   <data name="btn_add_pr.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACcAAAAnCAYAAACMo1E1AAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABS
-        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAupSURBVFhHtZh3eFRVGsbPVAiT
+        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAupSURBVFhHtZh3eFRVGsbPVAiT
         aZlQpEoNvSRMAAnghC5NMQTSe4WQAqmkAAmhJZRIUYkRFgTpxSVUacoiLKhrQ0VRbCiKSl10Wd59z80E
         I0uJPvjH77kzw2Tu7/m+77znXISlVC1sc+qI+gu0oskilWi8sJYsVomGJfpU4wzVCy4zRLlhuiivVyDK
         XfJFeV1izBUV9WfpMhsVCXWjGUI0mvlgGhcL4ZajEcY4rTDGq4Qi5z5HL9xL9cJWphO2xbWkVOfRcLEe
@@ -751,23 +592,8 @@
   <data name="btn_add_pr.TabIndex" type="System.Int32, mscorlib">
     <value>139</value>
   </data>
-  <data name="btn_add_pr.Text" xml:space="preserve">
-    <value>Add preset</value>
-  </data>
   <data name="btn_add_pr.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
-  </data>
-  <data name="&gt;&gt;btn_add_pr.Name" xml:space="preserve">
-    <value>btn_add_pr</value>
-  </data>
-  <data name="&gt;&gt;btn_add_pr.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_add_pr.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btn_add_pr.ZOrder" xml:space="preserve">
-    <value>5</value>
   </data>
   <data name="txt_config_ver.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 31</value>
@@ -784,18 +610,6 @@
   <data name="txt_config_ver.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
   </data>
-  <data name="&gt;&gt;txt_config_ver.Name" xml:space="preserve">
-    <value>txt_config_ver</value>
-  </data>
-  <data name="&gt;&gt;txt_config_ver.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txt_config_ver.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;txt_config_ver.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
   <data name="lbl_config.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -808,23 +622,8 @@
   <data name="lbl_config.TabIndex" type="System.Int32, mscorlib">
     <value>140</value>
   </data>
-  <data name="lbl_config.Text" xml:space="preserve">
-    <value>Presets version</value>
-  </data>
   <data name="lbl_config.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;lbl_config.Name" xml:space="preserve">
-    <value>lbl_config</value>
-  </data>
-  <data name="&gt;&gt;lbl_config.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_config.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lbl_config.ZOrder" xml:space="preserve">
-    <value>4</value>
   </data>
   <data name="btn_save_backup.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -832,7 +631,7 @@
   <data name="btn_save_backup.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABS
-        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAmFSURBVFhHtZgLUFTXGcfvmOik
+        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAmFSURBVFhHtZgLUFTXGcfvmOik
         0+pMZxKDozaNtiUSUzVpRAzWgMhLYMEFdmEfd+8+eCgi9VEVll3wyT5YMDNJZprEOkk0ZqZ0ppPUR2Yc
         jU6HNLE2iiECIixCBNSgIooG/fo/d1m8u3sXnbZh5jf37rnnfOd3z/vCZRX/KYSCbTs4vc3NGexuTqhw
         c7zdI0c6X+n8xlDpPA2+DOKUodLVYrC6BMHq4oIxVtUivgvxnZxQXsvlW/aE8FhiBhYklCpUTuMhWN3v
@@ -891,23 +690,8 @@
   <data name="btn_save_backup.TabIndex" type="System.Int32, mscorlib">
     <value>142</value>
   </data>
-  <data name="btn_save_backup.Text" xml:space="preserve">
-    <value> Backup  presets</value>
-  </data>
   <data name="btn_save_backup.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
-  </data>
-  <data name="&gt;&gt;btn_save_backup.Name" xml:space="preserve">
-    <value>btn_save_backup</value>
-  </data>
-  <data name="&gt;&gt;btn_save_backup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_save_backup.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btn_save_backup.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="btn_clear.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -915,7 +699,7 @@
   <data name="btn_clear.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABQAAAATCAYAAACQjC21AAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABS
-        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACw4AAAsOAUC+4UEAAAHgSURBVDhPnZTJiiJBEIY9+A7C
+        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAHgSURBVDhPnZTJiiJBEIY9+A7C
         PEgjgruiomIzB/EozMXT0LcGEQRTEEW9eJhbzzyZB0UR933X6PizOwerKp2W+eEnoravIiMXGxFJO53O
         p8Fg0OGcVqvVUufNZrPG83K5XLCZBAb8NwmHw8+n04nTf+t6vcqYy+VePllSfMsIDAQCqf1+zynR5XKx
         GCDEyWRCXKl8L5vN/vzkWYF+vz+12+04vQ+Eh8Mh9ft9+R6UTqd//BcQhrbbLXU6Hep2uzKHPB7Pdw5G
@@ -936,25 +720,13 @@
   <data name="btn_clear.TabIndex" type="System.Int32, mscorlib">
     <value>143</value>
   </data>
-  <data name="&gt;&gt;btn_clear.Name" xml:space="preserve">
-    <value>btn_clear</value>
-  </data>
-  <data name="&gt;&gt;btn_clear.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_clear.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btn_clear.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="btn_online.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
   <data name="btn_online.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAVISURBVFhHzdhXiF1VFIBhe0N9
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAVISURBVFhHzdhXiF1VFIBhe0N9
         UWMJUSzYRbH33gu2GDsWsPeuiV0RxYpEQWyxix1FRMiDqCDqgwVUUBTs7cEuKuj4/5ezhjX7rpuZTPKQ
         h2+4d+199l73nN3OzDc0NDRP6/2ZMHXmeK2IvXA2bsa9uA+34Bzsg4morh3VnCR4MB7H9xgaxY94Aoei
         amug8SR4Fj5FlchYfI7zUbXdZ3YS3B4foOp0PD7Grqj6GjbWBC9D1cnccC2qPnvGkuA9qBoOP+BJ+Ngc
@@ -995,30 +767,9 @@
   <data name="btn_online.TabIndex" type="System.Int32, mscorlib">
     <value>161</value>
   </data>
-  <data name="btn_online.Text" xml:space="preserve">
-    <value>Online presets</value>
-  </data>
   <data name="btn_online.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
   </data>
-  <data name="&gt;&gt;btn_online.Name" xml:space="preserve">
-    <value>btn_online</value>
-  </data>
-  <data name="&gt;&gt;btn_online.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_online.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btn_online.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
-  </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
@@ -2818,37 +2569,52 @@
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
+  <data name="Column1.UserAddedColumn" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Column2.UserAddedColumn" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="Column3.UserAddedColumn" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="open_file.TrayLocation" type="System.Drawing.Point, System.Drawing">
+    <value>17, 17</value>
+  </data>
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.TrayHeight" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>FFmpeg Batch AV Converter - Presets</value>
+    <value>Convertisseur AV FFmpeg Batch – Profils</value>
   </data>
-  <data name="&gt;&gt;Column1.Name" xml:space="preserve">
-    <value>Column1</value>
+  <data name="btn_add_pr.Text" xml:space="preserve">
+    <value>Ajouter un profil</value>
   </data>
-  <data name="&gt;&gt;Column1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btn_cancel.Text" xml:space="preserve">
+    <value>Annuler la modification</value>
   </data>
-  <data name="&gt;&gt;Column2.Name" xml:space="preserve">
-    <value>Column2</value>
+  <data name="btn_load.Text" xml:space="preserve">
+    <value>Charger des profils de fichiers</value>
   </data>
-  <data name="&gt;&gt;Column2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btn_load_bck.Text" xml:space="preserve">
+    <value>Recharger les derniers profils</value>
   </data>
-  <data name="&gt;&gt;Column3.Name" xml:space="preserve">
-    <value>Column3</value>
+  <data name="btn_online.Text" xml:space="preserve">
+    <value>Profils en ligne</value>
   </data>
-  <data name="&gt;&gt;Column3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btn_remove_pr.Text" xml:space="preserve">
+    <value>Supprimer le profil</value>
   </data>
-  <data name="&gt;&gt;open_file.Name" xml:space="preserve">
-    <value>open_file</value>
+  <data name="btn_save.Text" xml:space="preserve">
+    <value>Enregistrer les profils</value>
   </data>
-  <data name="&gt;&gt;open_file.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btn_save_backup.Text" xml:space="preserve">
+    <value>Sauvegarder les profils</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form15</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lbl_config.Text" xml:space="preserve">
+    <value>Version du profil</value>
   </data>
 </root>
