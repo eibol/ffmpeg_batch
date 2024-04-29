@@ -665,7 +665,7 @@
     <value>146, 17</value>
   </data>
   <data name="chk_tray.Text" xml:space="preserve">
-    <value>Riduci a icona nella barra</value>
+    <value>Riduci ad icona nella barra sistema</value>
   </data>
   <data name="pic_earth.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

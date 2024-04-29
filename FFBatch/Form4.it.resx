@@ -2283,4 +2283,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Filtro elenco file</value>
   </data>
+  <data name="lb_of.Text" xml:space="preserve">
+    <value>di</value>
+  </data>
 </root>
