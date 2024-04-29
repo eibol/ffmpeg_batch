@@ -155,7 +155,7 @@
     <value>408, 61</value>
   </data>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>En este modo, los ficheros multimedia son unidos copiando los flujos, siempre que tengas las mismas características (codec, tamaño, tasa de bits). NOTE: no todos los formatos admiten copia de flujos, si la reproducción falla, es necesario recodificar.</value>
+    <value>En este modo, los ficheros multimedia son unidos copiando los flujos, siempre que tengas las mismas características (codec, tamaño, tasa de bits). NOTA: no todos los formatos admiten copia de flujos, si la reproducción falla, es necesario recodificar.</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
     <value>289, 7</value>

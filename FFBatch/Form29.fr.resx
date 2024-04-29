@@ -117,137 +117,53 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btn_bat_ok.TabIndex" type="System.Int32, mscorlib">
+    <value>180</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btn_down.Location" type="System.Drawing.Point, System.Drawing">
-    <value>441, 255</value>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
   </data>
-  <data name="btn_down.Text" xml:space="preserve">
-    <value>Atualizar</value>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>181</value>
   </data>
-  <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>304, 255</value>
+  <data name="chk_battery.TabIndex" type="System.Int32, mscorlib">
+    <value>175</value>
   </data>
-  <data name="btn_cancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 23</value>
+  <data name="n_bat_l.Location" type="System.Drawing.Point, System.Drawing">
+    <value>138, 41</value>
   </data>
-  <data name="btn_cancel.Text" xml:space="preserve">
-    <value>Lembrar-me mais tarde</value>
+  <data name="chk_battery.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 19</value>
   </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>69, 255</value>
+  <data name="chk_bat_level.TabIndex" type="System.Int32, mscorlib">
+    <value>178</value>
   </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>111, 23</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Pular esta versão</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>479, 20</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Uma nova versão do FFmpeg Batch A/V Converter está disponível!</value>
-  </data>
-  <data name="lbl_ver.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 13</value>
-  </data>
-  <data name="lbl_ver.Text" xml:space="preserve">
-    <value>Versão</value>
-  </data>
-  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>475, 140</value>
-  </data>
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABS
-        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACxEAAAsRAX9kX5EAAAppSURBVFhHlVh5VBXnFf/Apf2r
-        p+1/PSc51RMXXOKCCrLDm5m3zJsHNCnamhqTk8a4RARijBuKsimIQgBNNGqTmESbmlpNjIjswmMRWQQ3
-        cAmLC0YtqBEVub33mxnee4BN+M65b96c+ebe33f3O0wUg92QhmnkrpHjvyQMEwJmMMF3MhPxanx9xRhT
-        9M53rGsP75WTS0vk5PJr1mR7pzWprEveUtUiJxaVyeu//dQUtWOpND/KQzSZmWH2eCb6TyVZyC/Elb9K
-        +r0bbaKbkUgjkIZrNEI0CiMk/xlugueLTDD4M3PUzlfkDcdylLRGULJawJpSB0pSOVgTSwHBqJRQAkpy
-        JSip+Gz7RVDSL4GcUJRnWpo2T1AUZvAey8QgbyZKBpLlKk+lYTogfoOkbpAMw8VZ41mQzcSEt1eJyvqc
-        alt2Gwo5D9bkClcQz6NEpORyULbWgy3zB5C3nD4rLtpkE4JmMtEHtS0JOhgiXTYHRKrSgISMkAS8zhjN
-        BJuNSdsq0uRdt8CW2oACSlQhgwn/v4Tg8QBK6lmgQ5njvtsVoshMmjmGSYYgkqmD6tOQDoiDCfEZy4Ij
-        5vxa3lZfGJp+GZT4U4MIGQrZ1Wsi8bGDknkN5JTqyuC5834f7O+hglLB0NW9z2SSiGbyHM0C5875lfRx
-        c0PY1gvcJwbTipJcBhY8dciGEvBZUwQzVxaA1wcF4L+uGKRNqjmVfu/0EfIMS70AKONa8Jy//EZETXEX
-        UQGpGhKMwkjTjPEsMCKcGbMby8JTzoNMJurHzLbZDsLGUzA56iRMX5GPoMrgjaxqWLanFhbvqoG52yoh
-        MLYYJuHzWR8Uqu8g+P585KRTHJQltao2KBzNN5t8iju6Csjk4zlsdoSR+e2pTg9Pa1Y1Q7bXGBBT0shE
-        FOS/rgg2/vM8FDR0wM17jwCgF0ld3U+ewoW2LviypAXezK7G/bngvboQwregcyMf0iRpNQwPxiMyuwUw
-        RXwh+mFKCPIahv6EgCTBXZr+IgteuMLXsvsG2Da5+kwovhy0vhgmIJjV+xvg0vUuTbxj9fT04O8z9cZp
-        /afyOjc5HWQWmjRqXx28llGFZtVl2MGW1QrGv280G7zHcfdhQuBMN0HwZ7bYnKuhKQ2oTlcw5Bcvx5yE
-        g6Wtmhh1fX/mBmz6+jws/IhMVQGvpVdB9L562HH8Mlxs79R2Afz3wWP4U4odTVrL77cducQPx32Mog/T
-        Ajp5u2iRmYDJkwk+E5k5MkNWstu1SFDBkOMKcSUwKToPTtTe5MxoVVy6A/NQuEdkLkxYrp7cf20R+CJN
-        Q78au+wEeK0qhKRDF6D78VP+ztOnPfAEidY35W1cY7ocAmXDRGtenDJf8B7DmOg3ncnrjpZRZu3bxAHZ
-        kXku7Mu/yhnR2l/cAh7Lc2HKe3naHn2/FtpINnyPHH/0khwIRlNfuXVfe1tdrbcfQDD6kYh79He4lhKK
-        LkiSgBpaEPWCdds5NQP3MS0Dz/cL4PXM0xob1UR/XHSc+xOZUt/7PPLFdPDuJ7XQ0dkNvb29mp/R6oUF
-        yHc2OrtjP+anjMsgvBEzmUnLty9RdrS5mIv8iEK3/OKPnEXr7Yc8QvzQLKQBZ0aO/4573zWFMCetkr/r
-        utSI3Ip+5GI2ovSLYH5/XyxT1h7ab02pd3lI6N/Mcmhn/YFGeOndE79IM0Sm+FIe2ktRQ2lHmyDvbAfc
-        uPeTxg3gUnsXTMFAMSfoqaUU5K11ELb626PMklxsV5IqXRiSw35W+AN/+d79brR5Mc8fzntUGrzIci1i
-        uJNzU0RNRZ8j4TH/qIevTrXCv+xtPPQdgNCPNp8GS3z+WSZvrmhzNhfRRIyeTzVAOTU3B6p3CEThLWtl
-        hrL75OiT3AKkbZfyggeQk8tuMmyu7jszID8waiqPPXAOItAXQjD81ZcH95mhkAW1QiVnwDMETVgYMn3Q
-        X/UERkSVTn0vn4du2JahC+5P4ciDyg5pKQCvVE5c92iA5JTT160JxS4PyQcovHW/cahWBz40gPQ+mWnZ
-        njrIrb/FMzpFrOs+O0Z3yS1mSSqscHZqWVPn37Dm0HUyZmqyOzEwoyn1fUMlD/TLyiY1jeRj1I3DpKvL
-        IrLgYW1J5Q2YpQ9/paRhR6g9IM/3WlWAL9/Bat4N/65ohzis7tRaUOUmBzeg5gaqfHAi7VBZoWRL3QCt
-        7ZgK6JDO++SttWBbfeQYMy/LjFQymhwP0bmoPFBoOq9HWJdqr96FHKxrb+04A37oBw6GziZ0NSdFE2X4
-        nTmXOZ+eZz3cJwOwb+rbh1HOq/7KfXHMOPedUcp27A6xIdc3TEXHW/n5Wc6gt/cZJ+dF2vLBbNzH8DkU
-        hlqkjE+g6EC0jlS2w3jMc4ozcCpbaCVxQbQn9SDMujG3isYbHnq4gRIhXTsfPuZMeB3CenTj7iPunMTw
-        ldTnmQxbCjQPgSAwBPzKTbXAPux+yosqmdBRmJEwS1uTK5slwcBwVhrHzAsTX7Vl4qylRRElMmolSs51
-        cEb66vrpCaQdaeKh6xF5Eqv6wOxNjkp99qjFxzkoHQwtanUpc/OOUX8HzcUb/8iPFwr+07D98J/uFmI1
-        M3NKeZsNRxW+ATeOQy1kHmvmjM61dEJenaMnOnPlHizfW8dTA/VL1BdNQL8jYQSWfCTju2bUrMPU8djM
-        UWQ5gyei8UiJy78tGPzchYDpjOHo406jj7AozmDLau+zLUUUtZyNrZ088kYtzoEDWIec19VbD+BI1XXs
-        ma7Brtwr8CX2S6TVx1o00erofARLd9fwA1Jf7mwqJR41/MkdEKOzw2kWFMUQHINw1paCvHF+n8ZM67/Z
-        q2S38gacwpTUT/5EmiDzkBaoxynHrvHn1l0syl8gQCNmfEoVpHUXv0EZNPcZU0oPB9qMTPKbwb8x8MYa
-        R5CRkvckFhhqYqbUirrwFIq6Uq4ZckJipvdB1C3OxLaVxp+s7y/DcSy+lU13oebKXdTObfi6rA02HMSG
-        D/cSEEoPLj5DRAdObwZLWk2zaJLcpFnY4BtFGoMcgyLN2jTeBkVE/I6GuNA0bGn5OOTECImAEVBvTJ6T
-        MLmR81MipegjoJTwpsTkca0O0AoRjT8Ixrqt8UfBFvoHwYsGRT7nDxilh9NYGxwwiQX/OeK31kR7lYLJ
-        iic6LR0MVsPILwigTs5TywAiMBlXwZpa3ShabS8IXmNRft/U6gJIna1x8CdQpCmDxcgssUe5T1ET7gDl
-        TL+wtpEzp9aD8lEH1qySg6JJHCF4veQ8QuvkZDL1qj4gFfq+zLijv73pVeuW6gb6JsSBcY0NIrQ/0QEo
-        A6fWge1D1EpCSZMpZvdfDSYDE73H62bSacDnGAKkkwYKZ+0gL8bVarEw05K0t6yJJeU0HVip1KTWgnUz
-        dgQkuE971ELgf3ymfHiNlwM8TLUlcucS0RAwXKDpNACrg1EYKE/9zwE5f9IjIoDqf5y16UoTJf/6ZZKY
-        tCDG07zyszXKumOH5PiCGmyq2vgnvWR7l5x06rqSXFGrrD162Lzy81hpfrS3ZDLhRDqNkyjSpxfO0yFD
-        /a/dB7v/Dy4a8o9cSxzQAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 13</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Notas de lançamento:</value>
-  </data>
-  <data name="btn_trans.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-        YII=
-</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="chk_bat_level.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>577, 291</value>
+    <value>225, 126</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="chk_bat_level.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chk_bat_level.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 17</value>
+  </data>
+  <data name="chk_bat_level.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 42</value>
+  </data>
+  <data name="label8.TabIndex" type="System.Int32, mscorlib">
+    <value>176</value>
+  </data>
+  <data name="btn_bat_ok.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2039,7 +1955,55 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Atualização de software</value>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="chk_battery.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 17</value>
+  </data>
+  <data name="btn_bat_ok.Location" type="System.Drawing.Point, System.Drawing">
+    <value>73, 94</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 76</value>
+  </data>
+  <data name="chk_bat_level.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="n_bat_l.TabIndex" type="System.Int32, mscorlib">
+    <value>179</value>
+  </data>
+  <data name="chk_battery.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 13</value>
+  </data>
+  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="n_bat_l.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 20</value>
+  </data>
+  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 45</value>
+  </data>
+  <data name="chk_battery.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btn_bat_ok.Text" xml:space="preserve">
+    <value>Accepter</value>
+  </data>
+  <data name="chk_battery.Text" xml:space="preserve">
+    <value>Pause/reprise sur batterie/AC</value>
+  </data>
+  <data name="chk_bat_level.Text" xml:space="preserve">
+    <value>Seulement si la batterie est en dessous</value>
   </data>
 </root>

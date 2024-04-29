@@ -138,7 +138,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;txt_channel.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -169,7 +169,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>8</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -199,7 +199,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="txt_parameters.Location" type="System.Drawing.Point, System.Drawing">
     <value>125, 46</value>
@@ -220,7 +220,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;txt_parameters.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -294,7 +294,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -324,7 +324,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
   <data name="txt_path_main.Location" type="System.Drawing.Point, System.Drawing">
     <value>125, 74</value>
@@ -345,7 +345,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;txt_path_main.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="btn_browse_path_m3u.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
@@ -375,7 +375,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;btn_browse_path_m3u.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>14</value>
   </data>
   <metadata name="timer_tasks.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
@@ -2282,7 +2282,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;btn_abort_all.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="lbl_d_v.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2459,7 +2459,28 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;btn_clear_list.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>6</value>
+  </data>
+  <data name="cb_format.Location" type="System.Drawing.Point, System.Drawing">
+    <value>203, 107</value>
+  </data>
+  <data name="cb_format.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 21</value>
+  </data>
+  <data name="cb_format.TabIndex" type="System.Int32, mscorlib">
+    <value>167</value>
+  </data>
+  <data name="&gt;&gt;cb_format.Name" xml:space="preserve">
+    <value>cb_format</value>
+  </data>
+  <data name="&gt;&gt;cb_format.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cb_format.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;cb_format.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2489,7 +2510,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="cb_res.Items" xml:space="preserve">
     <value>360p</value>
@@ -2528,7 +2549,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;cb_res.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2558,7 +2579,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="cb_codec.Items" xml:space="preserve">
     <value>av01</value>
@@ -2588,7 +2609,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;cb_codec.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 105</value>
@@ -2687,7 +2708,7 @@
     <value>pg2</value>
   </data>
   <data name="&gt;&gt;pg2.Type" xml:space="preserve">
-    <value>FFBatch.ProgressBarWithText, FFBatch, Version=3.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>FFBatch.ProgressBarWithText, FFBatch, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;pg2.Parent" xml:space="preserve">
     <value>groupBox3</value>
@@ -2711,7 +2732,7 @@
     <value>Pg1</value>
   </data>
   <data name="&gt;&gt;Pg1.Type" xml:space="preserve">
-    <value>FFBatch.ProgressBarWithText, FFBatch, Version=3.0.2.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>FFBatch.ProgressBarWithText, FFBatch, Version=3.0.6.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;Pg1.Parent" xml:space="preserve">
     <value>groupBox3</value>

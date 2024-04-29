@@ -136,6 +136,9 @@
   <data name="btn_cancel.Text" xml:space="preserve">
     <value>Ricordamelo più tardi</value>
   </data>
+  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>69, 255</value>
+  </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 23</value>
   </data>
@@ -155,12 +158,12 @@
     <value>Versione</value>
   </data>
   <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>468, 131</value>
+    <value>468, 140</value>
   </data>
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABS
-        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACxMAAAsTAQCanBgAAAppSURBVFhHlVh5VBXnFf/Apf2r
+        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACxAAAAsQAa0jvXUAAAppSURBVFhHlVh5VBXnFf/Apf2r
         p+1/PSc51RMXXOKCCrLDm5m3zJsHNCnamhqTk8a4RARijBuKsimIQgBNNGqTmESbmlpNjIjswmMRWQQ3
         cAmLC0YtqBEVub33mxnee4BN+M65b96c+ebe33f3O0wUg92QhmnkrpHjvyQMEwJmMMF3MhPxanx9xRhT
         9M53rGsP75WTS0vk5PJr1mR7pzWprEveUtUiJxaVyeu//dQUtWOpND/KQzSZmWH2eCb6TyVZyC/Elb9K
@@ -213,6 +216,38 @@
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Note di rilascio:</value>
+  </data>
+  <data name="btn_trans.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        YII=
+</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>555, 291</value>
@@ -2008,6 +2043,6 @@
 </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Aggiornamento software</value>
+    <value>fff</value>
   </data>
 </root>
