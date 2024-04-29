@@ -96,7 +96,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="cust_med_col" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="cust_med_col_t" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
@@ -110,6 +110,18 @@
     </Setting>
     <Setting Name="season_img" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="w_min" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="cust_modified" Type="System.String" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ffm_path" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Valor" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

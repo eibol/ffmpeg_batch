@@ -504,6 +504,9 @@
   <data name="check_not_st" xml:space="preserve">
     <value>FFmpeg.exe MD5 校验和尚未存储。</value>
   </data>
+  <data name="check_tb_q" xml:space="preserve">
+    <value>标记它以防处理队列出现问题。</value>
+  </data>
   <data name="check_trim1" xml:space="preserve">
     <value>选中此项以修剪在开始/结束字段中选择的时间量</value>
   </data>
@@ -518,6 +521,9 @@
   </data>
   <data name="check_ytdl" xml:space="preserve">
     <value>检查yt-dl版本...</value>
+  </data>
+  <data name="clear" xml:space="preserve">
+    <value>重置</value>
   </data>
   <data name="clear_list" xml:space="preserve">
     <value>清除列表</value>
@@ -719,6 +725,9 @@
   </data>
   <data name="Display_multimedia_file_info" xml:space="preserve">
     <value>显示多媒体文件信息</value>
+  </data>
+  <data name="dis_live_pre" xml:space="preserve">
+    <value>实时预览</value>
   </data>
   <data name="dis_try" xml:space="preserve">
     <value>在开始编码之前禁用尝试预设</value>
@@ -1634,6 +1643,9 @@
   </data>
   <data name="mix_urls2" xml:space="preserve">
     <value>文件列表包含Youtube和其他类型链接的混合。请仅选择包含YouTube链接或其他类型URL的列表。</value>
+  </data>
+  <data name="modified" xml:space="preserve">
+    <value>修改日期</value>
   </data>
   <data name="mon_ing" xml:space="preserve">
     <value>监控文件夹</value>

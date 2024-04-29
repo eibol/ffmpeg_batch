@@ -507,6 +507,9 @@
   <data name="check_not_st" xml:space="preserve">
     <value>FFmpeg.exe MD5 checksum is not stored yet.</value>
   </data>
+  <data name="check_tb_q" xml:space="preserve">
+    <value>Check it in case of trouble processing queue.</value>
+  </data>
   <data name="check_trim1" xml:space="preserve">
     <value>Check this to trim the amount of time selected at start/end fields.</value>
   </data>
@@ -521,6 +524,9 @@
   </data>
   <data name="check_ytdl" xml:space="preserve">
     <value>Checking yt-dl version...</value>
+  </data>
+  <data name="clear" xml:space="preserve">
+    <value>Clear</value>
   </data>
   <data name="clear_list" xml:space="preserve">
     <value>Clear list</value>
@@ -722,6 +728,9 @@
   </data>
   <data name="Display_multimedia_file_info" xml:space="preserve">
     <value>Display multimedia file info</value>
+  </data>
+  <data name="dis_live_pre" xml:space="preserve">
+    <value>Display live preview</value>
   </data>
   <data name="dis_try" xml:space="preserve">
     <value>Disables trying preset before starting encoding</value>
@@ -1652,6 +1661,9 @@
   </data>
   <data name="mix_urls2" xml:space="preserve">
     <value>File list contains a mix of Youtube and other types of links. Please select only lists with either YouTube links or other type of URLs.</value>
+  </data>
+  <data name="modified" xml:space="preserve">
+    <value>Modified</value>
   </data>
   <data name="mon_ing" xml:space="preserve">
     <value>Monitoring folder</value>

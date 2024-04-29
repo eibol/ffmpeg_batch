@@ -504,6 +504,9 @@
   <data name="check_not_st" xml:space="preserve">
     <value>La suma MD5 de FFmpeg.exe no ha sido guardada todavía.</value>
   </data>
+  <data name="check_tb_q" xml:space="preserve">
+    <value>Márquelo en caso de problemas al iniciar la cola.</value>
+  </data>
   <data name="check_trim1" xml:space="preserve">
     <value>Marque esta casilla para recortar la cantidad de tiempo seleccionada en los campos inicio y fin.</value>
   </data>
@@ -518,6 +521,9 @@
   </data>
   <data name="check_ytdl" xml:space="preserve">
     <value>Revisando versión de yt-dl</value>
+  </data>
+  <data name="clear" xml:space="preserve">
+    <value>Inicializar</value>
   </data>
   <data name="clear_list" xml:space="preserve">
     <value>Limpiar lista</value>
@@ -716,6 +722,9 @@
   </data>
   <data name="Display_multimedia_file_info" xml:space="preserve">
     <value>Mostrar información multimedia</value>
+  </data>
+  <data name="dis_live_pre" xml:space="preserve">
+    <value>Vista previa en vivo</value>
   </data>
   <data name="dis_try" xml:space="preserve">
     <value>Deshabilitar la prueba del preset antes de comenzar</value>
@@ -1510,7 +1519,7 @@
     <value>La lista de archivos está vacía.</value>
   </data>
   <data name="live_end" xml:space="preserve">
-    <value>Live recording session finished.</value>
+    <value>Captura de enlace en vivo finalizada.</value>
   </data>
   <data name="loading1" xml:space="preserve">
     <value>Cargando...</value>
@@ -1631,6 +1640,9 @@
   </data>
   <data name="mix_urls2" xml:space="preserve">
     <value>La lista de enlaces contiene una mezcla de enlaces de YouTube y otros tipos de enlaces. Por favor, seleccione listas de enlaces que contengan solamente uno u otro tipo.</value>
+  </data>
+  <data name="modified" xml:space="preserve">
+    <value>Modificado</value>
   </data>
   <data name="mon_ing" xml:space="preserve">
     <value>Monitorizando cambios en: </value>
@@ -3494,7 +3506,7 @@
     <value>Error de escritura:</value>
   </data>
   <data name="write_error2" xml:space="preserve">
-    <value>Error writing to destination folder</value>
+    <value>Error al escribir en el directorio de destino</value>
   </data>
   <data name="write_path" xml:space="preserve">
     <value>Escriba a continuación su ruta relativa personalizada</value>

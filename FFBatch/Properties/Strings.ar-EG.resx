@@ -507,6 +507,9 @@
   <data name="check_not_st" xml:space="preserve">
     <value>لم يتم تخزين المجموع الاختباري لـ FFmpeg.exe MD5 حتى الآن.</value>
   </data>
+  <data name="check_tb_q" xml:space="preserve">
+    <value>ضع علامة عليه في حالة وجود مشكلة في قائمة الانتظار.</value>
+  </data>
   <data name="check_trim1" xml:space="preserve">
     <value>حدد هذا لتقليص مقدار الوقت المحدد في حقول البداية / النهاية.</value>
   </data>
@@ -521,6 +524,9 @@
   </data>
   <data name="check_ytdl" xml:space="preserve">
     <value>جارٍ التحقق من إصدار yt-dl ...</value>
+  </data>
+  <data name="clear" xml:space="preserve">
+    <value>إعادة ضبط</value>
   </data>
   <data name="clear_list" xml:space="preserve">
     <value>لائحة خالية</value>
@@ -722,6 +728,9 @@
   </data>
   <data name="Display_multimedia_file_info" xml:space="preserve">
     <value>عرض معلومات ملف الوسائط المتعددة</value>
+  </data>
+  <data name="dis_live_pre" xml:space="preserve">
+    <value>معاينة حية</value>
   </data>
   <data name="dis_try" xml:space="preserve">
     <value>تعطيل محاولة الإعداد المسبق قبل بدء الترميز</value>
@@ -1649,6 +1658,9 @@
   </data>
   <data name="mix_urls2" xml:space="preserve">
     <value>تحتوي قائمة الملفات على مزيج من Youtube وأنواع أخرى من الروابط. يرجى تحديد القوائم التي تحتوي على روابط YouTube أو أي نوع آخر من عناوين URL فقط.</value>
+  </data>
+  <data name="modified" xml:space="preserve">
+    <value>تاريخ التعديل</value>
   </data>
   <data name="mon_ing" xml:space="preserve">
     <value>مجلد المراقبة</value>

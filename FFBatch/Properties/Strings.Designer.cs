@@ -1222,6 +1222,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Check it in case of trouble processing queue..
+        /// </summary>
+        internal static string check_tb_q {
+            get {
+                return ResourceManager.GetString("check_tb_q", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Check this to trim the amount of time selected at start/end fields..
         /// </summary>
         internal static string check_trim1 {
@@ -1290,6 +1299,15 @@ namespace FFBatch.Properties {
         internal static string cl_tracks {
             get {
                 return ResourceManager.GetString("cl_tracks", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Clear.
+        /// </summary>
+        internal static string clear {
+            get {
+                return ResourceManager.GetString("clear", resourceCulture);
             }
         }
         
@@ -1839,6 +1857,15 @@ namespace FFBatch.Properties {
         internal static string dif_in_out_f {
             get {
                 return ResourceManager.GetString("dif_in_out_f", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Display live preview.
+        /// </summary>
+        internal static string dis_live_pre {
+            get {
+                return ResourceManager.GetString("dis_live_pre", resourceCulture);
             }
         }
         
@@ -4665,6 +4692,15 @@ namespace FFBatch.Properties {
         internal static string mix_urls2 {
             get {
                 return ResourceManager.GetString("mix_urls2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Modified.
+        /// </summary>
+        internal static string modified {
+            get {
+                return ResourceManager.GetString("modified", resourceCulture);
             }
         }
         

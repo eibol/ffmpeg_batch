@@ -501,6 +501,9 @@
   <data name="check_not_st" xml:space="preserve">
     <value>A soma de verificação MD5 ainda não foi armazenada.</value>
   </data>
+  <data name="check_tb_q" xml:space="preserve">
+    <value>Marque-o em caso de problemas na fila de processamento.</value>
+  </data>
   <data name="check_trim1" xml:space="preserve">
     <value>Marque esta opção para cortar a quantidade de tempo selecionada nos campos de início/fim.</value>
   </data>
@@ -515,6 +518,9 @@
   </data>
   <data name="check_ytdl" xml:space="preserve">
     <value>Verificando a versão do yt-dl...</value>
+  </data>
+  <data name="clear" xml:space="preserve">
+    <value>Reiniciar</value>
   </data>
   <data name="clear_list" xml:space="preserve">
     <value>Limpar lista</value>
@@ -716,6 +722,9 @@
   </data>
   <data name="Display_multimedia_file_info" xml:space="preserve">
     <value>Exibir informações do arquivo multimídia</value>
+  </data>
+  <data name="dis_live_pre" xml:space="preserve">
+    <value>Visualização ao vivo</value>
   </data>
   <data name="dis_try" xml:space="preserve">
     <value>Desativa a tentativa de predefinição antes de iniciar a codificação</value>
@@ -1634,6 +1643,9 @@
   </data>
   <data name="mix_urls2" xml:space="preserve">
     <value>A lista de arquivos contém uma mistura do Youtube e outros tipos de links. Selecione apenas listas com links do YouTube ou outro tipo de link.</value>
+  </data>
+  <data name="modified" xml:space="preserve">
+    <value>Modificação de data</value>
   </data>
   <data name="mon_ing" xml:space="preserve">
     <value>Pasta de monitoramento</value>

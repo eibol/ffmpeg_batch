@@ -504,6 +504,9 @@
   <data name="check_not_st" xml:space="preserve">
     <value>Il checksum MD5 di FFmpeg.exe non è ancora stato memorizzato.</value>
   </data>
+  <data name="check_tb_q" xml:space="preserve">
+    <value>Contrassegnalo in caso di problemi nell'elaborazione della coda.</value>
+  </data>
   <data name="check_trim1" xml:space="preserve">
     <value>Seleziona questa opzione per ridurre la quantità di tempo selezionata nei campi di inizio/fine.</value>
   </data>
@@ -518,6 +521,9 @@
   </data>
   <data name="check_ytdl" xml:space="preserve">
     <value>Verifica versione youtube-dl...</value>
+  </data>
+  <data name="clear" xml:space="preserve">
+    <value>Ripristina</value>
   </data>
   <data name="clear_list" xml:space="preserve">
     <value>Azzera elenco</value>
@@ -719,6 +725,9 @@
   </data>
   <data name="Display_multimedia_file_info" xml:space="preserve">
     <value>Visualizza info file multimediale</value>
+  </data>
+  <data name="dis_live_pre" xml:space="preserve">
+    <value>Anteprima dal vivo</value>
   </data>
   <data name="dis_try" xml:space="preserve">
     <value>Disabilita pre-impostazione prima di avviare la codifica</value>
@@ -1644,6 +1653,9 @@ Non è possibile visualizzare l'anteprima del ritaglio.</value>
   </data>
   <data name="mix_urls2" xml:space="preserve">
     <value>L'elenco dei file contiene un mix di collegamenti di Youtube e altri tipi. Seleziona solo elenchi con collegamenti YouTube o altri tipi di URL.</value>
+  </data>
+  <data name="modified" xml:space="preserve">
+    <value>Data di modifica</value>
   </data>
   <data name="mon_ing" xml:space="preserve">
     <value>Monitoraggio modifiche in:</value>
