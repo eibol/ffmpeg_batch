@@ -1,6 +1,11 @@
-3.0.5
-• Pre-input parameters available on a file basis (adding encoding parameters column).
-• Fixed issues when opening application using "Open with" dialog.
-• Fixed bug removing items from Stream multiplex tab.
-• Improved accesibility descriptions for screen reader.
-• Some improvements on night mode.
+3.0.6
+• ffmpeg 7.0 Essential included.
+• ffmpeg.exe path now can be different from application path (ffmpeg shared version supported).
+• New display preview of current YouTube live stream in progress.
+• New custom column: Last modification date.
+• Fix issue refreshing file list with some sorted columns.
+• Fix wrong fade out filter time using trim feature.
+• Fix wrong subtitle disposition when mapping forced subtitles in main tab.
+• Fix some minor multimedia info mislocations with m_jpeg streams.
+• Fix truncated resolutions in YouTube streams dialog.
+• Minor translation fixes.
