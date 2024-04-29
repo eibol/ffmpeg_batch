@@ -68,6 +68,7 @@ namespace FFBatch
                 this.BackColor = Color.FromArgb(255, 64, 64, 64);
             }
             btn_trans.Left = label1.Left + label1.Width + 10;
+            foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
         }
 
         private void refresh_lang()

@@ -556,7 +556,7 @@ namespace FFBatch
                 //textbox_params = multi_1st_pass;
                 String templog = Path.GetTempPath() + "\\" + "FF_pass2.log";
                 String tempfile = Path.GetTempPath() + "\\" + "FF_pass2";
-                consola_pre.StartInfo.FileName = "ffmpeg.exe";
+                consola_pre.StartInfo.FileName = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
 
                 this.Invoke(new MethodInvoker(delegate
                 {
@@ -750,7 +750,7 @@ namespace FFBatch
                 }
 
                 String templog = Path.GetTempPath() + "\\" + "FF_pass2.log";
-                consola_pre.StartInfo.FileName = "ffmpeg.exe";
+                consola_pre.StartInfo.FileName = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
                 consola_pre.StartInfo.Arguments = " -y -i " + "" + '\u0022' + file_prueba + '\u0022' + " -t 00:00:0.100 " + "-y " + textbox_params + " -passlogfile " + '\u0022' + templog + '\u0022' + " " + '\u0022' + destino_test + "\\" + System.IO.Path.GetFileNameWithoutExtension(file_prueba) + ext_output + '\u0022';
 
                 consola_pre.StartInfo.RedirectStandardOutput = true;

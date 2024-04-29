@@ -333,7 +333,7 @@ namespace FFBatch
                 Process get_chap = new Process();
                 String args = " -an -vn -sn -f ffmetadata ";
                 String output = Path.Combine(Path.GetTempPath(), "FFBatch_test") + "\\" + ch_count.ToString() + "_" + Path.GetFileNameWithoutExtension(safe_out_ffname(lv1_it)) + ".txt";
-                get_chap.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "ffmpeg.exe");
+                get_chap.StartInfo.FileName = System.IO.Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
                 get_chap.StartInfo.Arguments = "-i " + '\u0022' + lv1_it + '\u0022' + args + " -y " + '\u0022' + output + '\u0022';
                 get_chap.StartInfo.CreateNoWindow = true;
                 get_chap.EnableRaisingEvents = true;

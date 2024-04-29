@@ -74,7 +74,7 @@ namespace FFBatch
         private void Form25_Load(object sender, EventArgs e)
         {
             
-            if (!File.Exists("ffmpeg.exe"))
+            if (!File.Exists(Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe")))
             {
                 this.Close();
                 return;
@@ -91,6 +91,8 @@ namespace FFBatch
                 foreach (Control c in this.Controls) UpdateColorDefault(c);
                 this.BackColor = SystemColors.InactiveBorder;
             }
+
+            foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
 
             String app_location = Application.StartupPath;
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
@@ -188,7 +190,7 @@ namespace FFBatch
             {
                 saved = StringCipher.Decrypt(File.ReadAllText(f_md5), psk);
             }
-            String ffm = Path.Combine(Application.StartupPath, "ffmpeg.exe");
+            String ffm = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
             using (var md5 = MD5.Create())
             {
                 using (var stream = File.OpenRead(ffm))

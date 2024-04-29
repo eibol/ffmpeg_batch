@@ -49,6 +49,7 @@ namespace FFBatch
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_clear_list = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cb_format = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.cb_res = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -56,9 +57,9 @@ namespace FFBatch
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lbl_vcount = new System.Windows.Forms.Label();
             this.lbl_down_time = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pg2 = new FFBatch.ProgressBarWithText();
             this.Pg1 = new FFBatch.ProgressBarWithText();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -174,6 +175,7 @@ namespace FFBatch
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.White;
+            this.groupBox2.Controls.Add(this.cb_format);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.cb_res);
             this.groupBox2.Controls.Add(this.label5);
@@ -191,6 +193,13 @@ namespace FFBatch
             resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
+            // 
+            // cb_format
+            // 
+            this.cb_format.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_format.FormattingEnabled = true;
+            resources.ApplyResources(this.cb_format, "cb_format");
+            this.cb_format.Name = "cb_format";
             // 
             // label6
             // 
@@ -251,6 +260,11 @@ namespace FFBatch
             resources.ApplyResources(this.lbl_down_time, "lbl_down_time");
             this.lbl_down_time.Name = "lbl_down_time";
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // pg2
             // 
             resources.ApplyResources(this.pg2, "pg2");
@@ -260,11 +274,6 @@ namespace FFBatch
             // 
             resources.ApplyResources(this.Pg1, "Pg1");
             this.Pg1.Name = "Pg1";
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form23
             // 
@@ -318,5 +327,6 @@ namespace FFBatch
         public System.Windows.Forms.ComboBox cb_res;
         private System.Windows.Forms.Label label5;
         public System.Windows.Forms.ComboBox cb_codec;
+        public System.Windows.Forms.ComboBox cb_format;
     }
 }

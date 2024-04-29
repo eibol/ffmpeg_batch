@@ -65,6 +65,8 @@ namespace FFBatch
                 this.BackColor = SystemColors.InactiveBorder;
             }
             if (cb_col.SelectedIndex == cb_col.FindString(Properties.Strings.custom)) cb_custom_med.Enabled = true;
+            
+            foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
         }
 
         private void refresh_lang()

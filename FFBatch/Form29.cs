@@ -54,6 +54,8 @@ namespace FFBatch
             chk_battery.Checked = Properties.Settings.Default.pause_bat;
             chk_bat_level.Checked = Properties.Settings.Default.if_bat_low;
             n_bat_l.Value = Properties.Settings.Default.bat_level;
+
+            foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
         }
 
         private void btn_bat_ok_Click(object sender, EventArgs e)

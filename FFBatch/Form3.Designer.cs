@@ -1025,7 +1025,6 @@
         private System.Windows.Forms.TextBox txt_suffix;
         private System.Windows.Forms.CheckBox check_recreate;
         private System.Windows.Forms.CheckBox chk_suffix;
-        private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox chk_auto_updates;
         private System.Windows.Forms.CheckBox chk_try;
@@ -1092,7 +1091,6 @@
         public System.Windows.Forms.CheckBox chk_dark_win;
         public System.Windows.Forms.CheckBox chk_thumb_big;
         private System.Windows.Forms.PictureBox pic_bat;
-        private System.Windows.Forms.Label label8;
         public System.Windows.Forms.NumericUpDown n_bat_l;
         public System.Windows.Forms.CheckBox chk_bat_level;
         public System.Windows.Forms.CheckBox chk_battery;
@@ -1112,5 +1110,7 @@
         public System.Windows.Forms.CheckBox chk_w_subs;
         private System.Windows.Forms.Button btn_excl;
         private System.Windows.Forms.PictureBox pic_info2;
+        private System.Windows.Forms.Label label8;
+        public System.Windows.Forms.Button btn_cancel;
     }
 }

@@ -137,12 +137,7 @@ namespace FFBatch
                     return;
                 }
             }
-
-            if (n_sunset.Value >= n_sunrise.Value && chk_dark.Checked && chk_dark_win.Checked == false)
-            {
-                MessageBox.Show(Properties.Strings.sunset1);
-                return;
-            }
+       
             if (txt_monitor.Text == main_out_path)
             {               
                     MessageBox.Show(Properties.Strings.mon_path_equal);
@@ -1016,6 +1011,7 @@ namespace FFBatch
                 pic_ff_ok.Visible = true;
                 pic_ff_ok.Left = lbl_ff_latest.Left + lbl_ff_latest.Text.Length + 60;
             }
+            foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
         }
 
         private void boton_load_bck_Click(object sender, System.EventArgs e)
@@ -1492,17 +1488,24 @@ namespace FFBatch
                 lang_set = "it";
                 FFBatch.Properties.Settings.Default.app_lang = "it";
             }
+
             if (combo_lang.SelectedIndex == 3)
+            {
+                lang_set = "fr";
+                FFBatch.Properties.Settings.Default.app_lang = "fr";
+            }
+
+            if (combo_lang.SelectedIndex == 4)
             {
                 lang_set = "pt-BR";
                 FFBatch.Properties.Settings.Default.app_lang = "pt-BR";
             }
-            if (combo_lang.SelectedIndex == 4)
+            if (combo_lang.SelectedIndex == 5)
             {
                 lang_set = "zh-Hans";
                 FFBatch.Properties.Settings.Default.app_lang = "zh-Hans";
             }
-            if (combo_lang.SelectedIndex == 5)
+            if (combo_lang.SelectedIndex == 6)
             {
                 lang_set = "zh-Hans";
                 FFBatch.Properties.Settings.Default.app_lang = "ar-EG";

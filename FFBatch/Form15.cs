@@ -129,6 +129,8 @@ namespace FFBatch
             dg_pr.Columns[0].HeaderText = FFBatch.Properties.Strings.Name;
             dg_pr.Columns[1].HeaderText = FFBatch.Properties.Strings.ff_params;
             dg_pr.Columns[2].HeaderText = FFBatch.Properties.Strings.Format;
+
+            foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
         }
 
         private void create_tips()

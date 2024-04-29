@@ -133,6 +133,8 @@ namespace FFBatch
             dg_pr.Columns[1].HeaderText = FFBatch.Properties.Strings.pre_input;
             dg_pr.Columns[2].HeaderText = FFBatch.Properties.Strings.ff_params;
             dg_pr.Columns[3].HeaderText = FFBatch.Properties.Strings.Format;
+
+            foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
         }
                 
         private void read_presets()

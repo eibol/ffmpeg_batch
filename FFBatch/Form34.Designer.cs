@@ -133,7 +133,7 @@
             this.lbl_size.Name = "lbl_size";
             this.lbl_size.Size = new System.Drawing.Size(89, 15);
             this.lbl_size.TabIndex = 168;
-            this.lbl_size.Text = "Size: 48 MB";
+            this.lbl_size.Text = "Size: 43 MB";
             this.lbl_size.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_d_v
@@ -144,7 +144,7 @@
             this.lbl_d_v.Name = "lbl_d_v";
             this.lbl_d_v.Size = new System.Drawing.Size(89, 13);
             this.lbl_d_v.TabIndex = 167;
-            this.lbl_d_v.Text = "v6.1.1 Full";
+            this.lbl_d_v.Text = "v7 Full";
             this.lbl_d_v.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lbl_srv

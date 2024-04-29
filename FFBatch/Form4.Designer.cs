@@ -314,7 +314,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cb_action;
         private System.Windows.Forms.Button btn_apply;
-        private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.CheckBox chk_invalid;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -333,5 +332,6 @@
         private System.Windows.Forms.ImageList img_streams;
         private System.Windows.Forms.TextBox txt_app;
         public System.Windows.Forms.ComboBox cb_filterby;
+        public System.Windows.Forms.Button btn_cancel;
     }
 }

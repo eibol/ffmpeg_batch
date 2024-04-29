@@ -156,6 +156,7 @@ namespace FFBatch
                 dg_pr.BackgroundColor = SystemColors.InactiveBorder;
                 dg_pr.RowsDefaultCellStyle.BackColor = Color.White;
             }
+            foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
         }
 
         public void UpdateColorDark(Control myControl)

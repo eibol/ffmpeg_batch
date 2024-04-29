@@ -27,7 +27,7 @@ namespace FFBatch
             else if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "cn") combo_lang.SelectedIndex = 4;
             else if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "ar") combo_lang.SelectedIndex = 5;
             else combo_lang.SelectedIndex = 0;
-            label1.TextAlign = HorizontalAlignment.Right;
+            label1.TextAlign = HorizontalAlignment.Right;            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -76,6 +76,7 @@ namespace FFBatch
                 this.Text = "لغة التطبيق";
                 button1.Text = "نعم";
             }
+            foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
         }
     }
 }

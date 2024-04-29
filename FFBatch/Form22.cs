@@ -108,6 +108,7 @@ namespace FFBatch
                 this.Height = 326;
                 panel1.Top = 250;
             }
+            foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
         }
 
         private void radio_demuxer_CheckedChanged(object sender, EventArgs e)

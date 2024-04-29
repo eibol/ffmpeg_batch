@@ -370,6 +370,7 @@ namespace FFBatch
                 foreach (Control c in this.Controls) UpdateColorDefault(c);
                 this.BackColor = SystemColors.InactiveBorder;
             }
+            foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
         }
 
         public void UpdateColorDark(Control myControl)

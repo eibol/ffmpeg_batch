@@ -31,13 +31,17 @@ namespace FFBatch
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form30));
             this.txt_p = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_ok = new System.Windows.Forms.Button();
+            this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_clear = new System.Windows.Forms.Button();
             this.txt_f = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbl_format = new System.Windows.Forms.Label();
             this.combo_presets_ext = new System.Windows.Forms.ComboBox();
-            this.label43 = new System.Windows.Forms.Label();
+            this.lbl_pr = new System.Windows.Forms.Label();
+            this.lbl_par = new System.Windows.Forms.Label();
+            this.txt_prein = new System.Windows.Forms.TextBox();
+            this.lbl_pre = new System.Windows.Forms.Label();
+            this.btn_reset = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txt_p
@@ -45,19 +49,19 @@ namespace FFBatch
             resources.ApplyResources(this.txt_p, "txt_p");
             this.txt_p.Name = "txt_p";
             // 
-            // button1
+            // btn_ok
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            resources.ApplyResources(this.btn_ok, "btn_ok");
+            this.btn_ok.Name = "btn_ok";
+            this.btn_ok.UseVisualStyleBackColor = true;
+            this.btn_ok.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btn_cancel
             // 
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            resources.ApplyResources(this.btn_cancel, "btn_cancel");
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Click += new System.EventHandler(this.button2_Click);
             // 
             // btn_clear
             // 
@@ -72,10 +76,10 @@ namespace FFBatch
             resources.ApplyResources(this.txt_f, "txt_f");
             this.txt_f.Name = "txt_f";
             // 
-            // label2
+            // lbl_format
             // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.Name = "label2";
+            resources.ApplyResources(this.lbl_format, "lbl_format");
+            this.lbl_format.Name = "lbl_format";
             // 
             // combo_presets_ext
             // 
@@ -85,10 +89,32 @@ namespace FFBatch
             this.combo_presets_ext.Name = "combo_presets_ext";
             this.combo_presets_ext.SelectedIndexChanged += new System.EventHandler(this.combo_presets_ext_SelectedIndexChanged);
             // 
-            // label43
+            // lbl_pr
             // 
-            resources.ApplyResources(this.label43, "label43");
-            this.label43.Name = "label43";
+            resources.ApplyResources(this.lbl_pr, "lbl_pr");
+            this.lbl_pr.Name = "lbl_pr";
+            // 
+            // lbl_par
+            // 
+            resources.ApplyResources(this.lbl_par, "lbl_par");
+            this.lbl_par.Name = "lbl_par";
+            // 
+            // txt_prein
+            // 
+            resources.ApplyResources(this.txt_prein, "txt_prein");
+            this.txt_prein.Name = "txt_prein";
+            // 
+            // lbl_pre
+            // 
+            resources.ApplyResources(this.lbl_pre, "lbl_pre");
+            this.lbl_pre.Name = "lbl_pre";
+            // 
+            // btn_reset
+            // 
+            resources.ApplyResources(this.btn_reset, "btn_reset");
+            this.btn_reset.Name = "btn_reset";
+            this.btn_reset.UseVisualStyleBackColor = true;
+            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
             // Form30
             // 
@@ -96,13 +122,17 @@ namespace FFBatch
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ControlBox = false;
+            this.Controls.Add(this.btn_reset);
+            this.Controls.Add(this.lbl_pre);
+            this.Controls.Add(this.txt_prein);
+            this.Controls.Add(this.lbl_par);
             this.Controls.Add(this.combo_presets_ext);
-            this.Controls.Add(this.label43);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbl_pr);
+            this.Controls.Add(this.lbl_format);
             this.Controls.Add(this.txt_f);
             this.Controls.Add(this.btn_clear);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_cancel);
+            this.Controls.Add(this.btn_ok);
             this.Controls.Add(this.txt_p);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MinimizeBox = false;
@@ -119,12 +149,16 @@ namespace FFBatch
         #endregion
 
         public System.Windows.Forms.TextBox txt_p;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_ok;
+        private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Button btn_clear;
         public System.Windows.Forms.TextBox txt_f;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbl_format;
         private System.Windows.Forms.ComboBox combo_presets_ext;
-        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label lbl_pr;
+        private System.Windows.Forms.Label lbl_par;
+        public System.Windows.Forms.TextBox txt_prein;
+        private System.Windows.Forms.Label lbl_pre;
+        private System.Windows.Forms.Button btn_reset;
     }
 }

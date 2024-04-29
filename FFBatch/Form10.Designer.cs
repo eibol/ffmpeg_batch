@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form10));
             this.pic_y = new System.Windows.Forms.PictureBox();
-            this.t1 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.menu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ct_copy = new System.Windows.Forms.ToolStripMenuItem();
             this.ct_Save = new System.Windows.Forms.ToolStripMenuItem();
+            this.t1 = new System.Windows.Forms.Timer(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.save_img = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pic_y)).BeginInit();
             this.menu.SuspendLayout();
@@ -52,6 +52,30 @@
             this.pic_y.TabStop = false;
             this.pic_y.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pic_y_MouseClick);
             // 
+            // menu
+            // 
+            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ct_copy,
+            this.ct_Save});
+            this.menu.Name = "menu";
+            this.menu.Size = new System.Drawing.Size(135, 48);
+            // 
+            // ct_copy
+            // 
+            this.ct_copy.Image = ((System.Drawing.Image)(resources.GetObject("ct_copy.Image")));
+            this.ct_copy.Name = "ct_copy";
+            this.ct_copy.Size = new System.Drawing.Size(134, 22);
+            this.ct_copy.Text = "Copy";
+            this.ct_copy.Click += new System.EventHandler(this.ct_copy_Click);
+            // 
+            // ct_Save
+            // 
+            this.ct_Save.Image = ((System.Drawing.Image)(resources.GetObject("ct_Save.Image")));
+            this.ct_Save.Name = "ct_Save";
+            this.ct_Save.Size = new System.Drawing.Size(134, 22);
+            this.ct_Save.Text = "Save image";
+            this.ct_Save.Click += new System.EventHandler(this.ct_Save_Click);
+            // 
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -61,30 +85,6 @@
             this.button1.TabIndex = 1;
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // menu
-            // 
-            this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ct_copy,
-            this.ct_Save});
-            this.menu.Name = "menu";
-            this.menu.Size = new System.Drawing.Size(181, 70);
-            // 
-            // ct_copy
-            // 
-            this.ct_copy.Image = ((System.Drawing.Image)(resources.GetObject("ct_copy.Image")));
-            this.ct_copy.Name = "ct_copy";
-            this.ct_copy.Size = new System.Drawing.Size(180, 22);
-            this.ct_copy.Text = "Copy";
-            this.ct_copy.Click += new System.EventHandler(this.ct_copy_Click);
-            // 
-            // ct_Save
-            // 
-            this.ct_Save.Image = ((System.Drawing.Image)(resources.GetObject("ct_Save.Image")));
-            this.ct_Save.Name = "ct_Save";
-            this.ct_Save.Size = new System.Drawing.Size(180, 22);
-            this.ct_Save.Text = "Save image";
-            this.ct_Save.Click += new System.EventHandler(this.ct_Save_Click);
             // 
             // save_img
             // 

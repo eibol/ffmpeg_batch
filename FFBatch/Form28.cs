@@ -78,6 +78,8 @@ namespace FFBatch
             get_size();
             if (failed == false) original_frame();            
             if (failed == false) get_prop();
+
+            foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
         }
 
         Double get_dur_secs(String item)
@@ -186,7 +188,7 @@ namespace FFBatch
             String crop = "";
             List<string> list_lines = new List<string>();
 
-            proc.StartInfo.FileName = Path.Combine(Application.StartupPath, "ffmpeg.exe");            
+            proc.StartInfo.FileName = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");            
             proc.StartInfo.RedirectStandardError = true;
             proc.StartInfo.UseShellExecute = false;
             proc.StartInfo.CreateNoWindow = true;
@@ -220,7 +222,7 @@ namespace FFBatch
             Boolean ok = false;
             List<string> list_lines = new List<string>();
 
-            proc.StartInfo.FileName = Path.Combine(Application.StartupPath, "ffmpeg.exe");
+            proc.StartInfo.FileName = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
             proc.StartInfo.RedirectStandardOutput = true;
             proc.StartInfo.StandardOutputEncoding = Encoding.UTF8;
             proc.StartInfo.RedirectStandardInput = true;
@@ -294,7 +296,7 @@ namespace FFBatch
 
             List<string> list_lines = new List<string>();
 
-            proc.StartInfo.FileName = Path.Combine(Application.StartupPath, "ffmpeg.exe");
+            proc.StartInfo.FileName = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
             proc.StartInfo.RedirectStandardError = true;            
             proc.StartInfo.UseShellExecute = false;
             proc.StartInfo.CreateNoWindow = true;
@@ -343,7 +345,7 @@ namespace FFBatch
 
             List<string> list_lines = new List<string>();
 
-            proc.StartInfo.FileName = Path.Combine(Application.StartupPath, "ffmpeg.exe");
+            proc.StartInfo.FileName = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
             proc.StartInfo.RedirectStandardOutput = true;
             proc.StartInfo.StandardOutputEncoding = Encoding.UTF8;
             proc.StartInfo.RedirectStandardInput = true;

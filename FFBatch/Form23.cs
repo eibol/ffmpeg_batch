@@ -105,8 +105,15 @@ namespace FFBatch
             pg2.Refresh();
             lbl_d_v.Text = "";
             lbl_down_time.Text = "";
+            Boolean sel_format = false;
+            String set_format = "";
+            if (cb_format.SelectedIndex != -1)
+            {
+                sel_format = true;
+                set_format = cb_format.SelectedItem.ToString();
+            }
 
-            Disable_Controls();
+                Disable_Controls();
 
             new System.Threading.Thread(() =>
             {
@@ -131,41 +138,34 @@ namespace FFBatch
                         this.InvokeEx(f => f.lbl_d_v.Text = "");
                         return;
                     }
-                }
+                }                
 
-                //if (Directory.GetFiles(destino).Length > 0)
-                //{
-                //    DialogResult a = MessageBox.Show(FFBatch.Properties.Strings.dest_not_empty, FFBatch.Properties.Strings.warning, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                //    if (a == DialogResult.No)
-                //    {
-                //        working = false;
-                //        this.InvokeEx(f => f.lbl_d_v.Text = "");
-                //        this.InvokeEx(f => timer1.Stop());
-                //        Enable_Controls();
-                //        return;
-                //    }
-                //}
-
-                String AppParam = txt_parameters.Text;
                 process_glob.StartInfo.FileName = ffm;
-                AppParam = pre_params + " " + txt_parameters.Text + " " + " -o " + '\u0022' + destino + "\\" + "%(title)s.%(ext)s" + '\u0022' + " " + txt_channel.Text;
+                String AppParam = pre_params + " " + txt_parameters.Text + " " + " -o " + '\u0022' + destino + "\\" + "%(title)s.%(ext)s" + '\u0022' + " --ffmpeg-location " + '\u0022' + Properties.Settings.Default.ffm_path + '\u0022' + " " + txt_channel.Text;
+                if (sel_format == true) AppParam = AppParam + " --merge-output-format " +  set_format;
                 process_glob.StartInfo.Arguments = AppParam;
-
+                                
                 if (!File.Exists(System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe")))
                 {
                     cancel_queue = true;
                     working = false;
                     timer_tasks.Stop();
                     Enable_Controls();
-                    this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
-                    this.InvokeEx(f => timer1.Stop());
-                    this.InvokeEx(f => f.lbl_down_time.Text = "");
+                    this.Invoke(new MethodInvoker(delegate
+                    {
+                        TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress);
+                        timer1.Stop();
+                        lbl_down_time.Text = "";
+                    }));                    
                     MessageBox.Show(FFBatch.Properties.Strings.yt_not, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
-                this.InvokeEx(f => f.lbl_d_v.Text = FFBatch.Properties.Strings.init_wait);
-                this.InvokeEx(f => timer1.Start());
+                this.Invoke(new MethodInvoker(delegate
+                {
+                    lbl_d_v.Text = FFBatch.Properties.Strings.init_wait;
+                    timer1.Start();
+                }));
+               
 
                 process_glob.StartInfo.RedirectStandardOutput = true;
                 process_glob.StartInfo.StandardOutputEncoding = Encoding.UTF8;
@@ -270,13 +270,17 @@ namespace FFBatch
                     {
                         try
                         {
-                            this.InvokeEx(f => f.lbl_d_v.TextAlign = ContentAlignment.MiddleLeft);
-                            this.InvokeEx(f => f.lbl_d_v.Width = 349);
                             Double prog_y = Double.Parse(err_txt.Substring(err_txt.IndexOf("%") - 4, 4));
                             prog_y = prog_y / 10;
                             int progress = Convert.ToInt32(prog_y);
-                            this.InvokeEx(f => f.pg2.Value = progress);
-                            this.InvokeEx(f => f.pg2.Text = progress.ToString() + "%");
+                            this.Invoke(new MethodInvoker(delegate
+                            {
+                                lbl_d_v.TextAlign = ContentAlignment.MiddleLeft;
+                                lbl_d_v.Width = 349;                               
+                                pg2.Value = progress;
+                                pg2.Text = progress.ToString() + "%";
+                            }));
+                            
                         }
                         catch { }
                     }
@@ -313,10 +317,14 @@ namespace FFBatch
                     {
                         try
                         {
-                            this.InvokeEx(f => f.Pg1.Maximum = pg2.Maximum);
-                            this.InvokeEx(f => f.Pg1.Value = pg2.Value);
-                            this.InvokeEx(f => f.Pg1.Text = pg2.Text);
-                            this.InvokeEx(f => TaskbarProgress.SetValue(this.Handle, Pg1.Value, Pg1.Maximum));
+                            this.Invoke(new MethodInvoker(delegate
+                            {
+                               Pg1.Maximum = pg2.Maximum;
+                               Pg1.Value = pg2.Value;
+                               Pg1.Text = pg2.Text;
+                               TaskbarProgress.SetValue(this.Handle, Pg1.Value, Pg1.Maximum);
+                            }));
+                            
                         }
                         catch { }
                     }
@@ -328,21 +336,29 @@ namespace FFBatch
                 }
                 process_glob.WaitForExit();
                 process_glob.StartInfo.Arguments = String.Empty;
-                this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
-                this.InvokeEx(f => timer1.Stop());
 
-                this.InvokeEx(f => f.lbl_d_v.Text = "");
-                this.InvokeEx(f => f.lbl_down_time.Text = "");
+
+                this.Invoke(new MethodInvoker(delegate
+                {
+                    TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress);
+                    timer1.Stop();
+                    lbl_d_v.Text = "";
+                    lbl_down_time.Text = "";
+                }));                
 
                 list_lines.Add("");
                 list_lines.Add("---------End of download log---------");
                 list_lines.Add("");
                 if (process_glob.ExitCode == 0)
                 {
-                    this.InvokeEx(f => f.pg2.Text = "100%");
-                    this.InvokeEx(f => f.Pg1.Text = "100%");
-                    this.InvokeEx(f => f.pg2.Value = pg2.Maximum);
-                    this.InvokeEx(f => f.Pg1.Value = Pg1.Maximum);
+                    this.Invoke(new MethodInvoker(delegate
+                    {
+                       pg2.Text = "100%";
+                       Pg1.Text = "100%";
+                       pg2.Value = pg2.Maximum;
+                       Pg1.Value = Pg1.Maximum;
+                    }));
+             
 
                     if (total_videos > 0 && Directory.GetFiles(destino).Length == total_videos)
                     {
@@ -355,8 +371,11 @@ namespace FFBatch
                 }
                 else
                 {
-                    this.InvokeEx(f => f.Pg1.Refresh());
-                    this.InvokeEx(f => f.pg2.Refresh());
+                    this.Invoke(new MethodInvoker(delegate
+                    {
+                        Pg1.Refresh();
+                        pg2.Refresh();
+                    }));                    
 
                     String to_remove = "please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; type  youtube-dl -U  to update. Be sure to call youtube-dl with the --verbose flag and include its complete output.";
                     String remove2 = "Type youtube-dl --help to see a list of all options.";
@@ -510,9 +529,13 @@ namespace FFBatch
 
                 if (aborted_url == true)
                 {
-                    this.InvokeEx(f => MessageBox.Show(FFBatch.Properties.Strings.aborted2, FFBatch.Properties.Strings.aborted, MessageBoxButtons.OK, MessageBoxIcon.Error));
-                    this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
-                    this.InvokeEx(f => this.Cursor = Cursors.Arrow);
+                    this.Invoke(new MethodInvoker(delegate
+                    {
+                        MessageBox.Show(FFBatch.Properties.Strings.aborted2, FFBatch.Properties.Strings.aborted, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress);
+                        this.Cursor = Cursors.Arrow;
+                    }));
+                   
                 }
 
                 Enable_Controls();
@@ -610,6 +633,7 @@ namespace FFBatch
             }
 
             if (FFBatch.Properties.Settings.Default.app_lang == "zh-Hans") this.Height = this.Height + 20;
+            foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
         }
 
         private void abort_dl()
@@ -885,3 +909,4 @@ namespace FFBatch
         }
     }
 }
+//--merge-output-format mkv

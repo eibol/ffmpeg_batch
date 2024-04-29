@@ -108,6 +108,8 @@ namespace FFBatch
             dg_streams.Columns[6].HeaderText = FFBatch.Properties.Strings.resolution;
             dg_streams.Columns[7].HeaderText = FFBatch.Properties.Strings.bitrate;
 
+            foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
+
             Process yt = new Process();
             Task t2 = Task.Run(() =>
             {
@@ -186,7 +188,7 @@ namespace FFBatch
                                 }
                                 else
                                 {
-                                    dg_streams.Rows.Add(image_streams.Images[0], false, stream.Substring(0, 3).TrimEnd(), stream.Substring(4, 4).TrimEnd(), stream.Substring(9, 10).TrimEnd(), codec.Replace("video only", "").TrimStart(' '), resol.Substring(resol.LastIndexOf("x") + 1, resol.Length - resol.LastIndexOf("x") - 1) + "p", Bitrate);
+                                    dg_streams.Rows.Add(image_streams.Images[0], false, stream.Substring(0, 3).TrimEnd(), stream.Substring(4, 4).TrimEnd(), resol.ToString(), codec.Replace("video only", "").TrimStart(' '), resol.Substring(resol.LastIndexOf("x") + 1, resol.Length - resol.LastIndexOf("x") - 1) + "p", Bitrate);
                                 }
                             }));
                         }

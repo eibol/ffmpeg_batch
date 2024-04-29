@@ -21,7 +21,7 @@ namespace FFBatch
             InitializeComponent();
         }
 
-        private String ff_latest_exe = "https://github.com/eibol/ffmpeg_batch/releases/download/3.0.4/ffmpeg-release-full.7z";
+        private String ff_latest_exe = "https://github.com/eibol/ffmpeg_batch/releases/download/3.0.6/ffmpeg-release-full.7z";
         public String ff_state = String.Empty;
         public Boolean browse_ff = false;
         public Boolean down_g = false;
@@ -37,7 +37,7 @@ namespace FFBatch
 
         private void btn_down_g_Click(object sender, EventArgs e)
         {
-            if (File.Exists("ffmpeg.exe") && !lbl_ff_v.Text.ToLower().Contains("essential"))
+            if (File.Exists(Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe")) && !lbl_ff_v.Text.ToLower().Contains("essential"))
             {
                 cb_srv.Enabled = false;
                 Process.Start("https://www.gyan.dev/ffmpeg/builds/");
@@ -68,17 +68,30 @@ namespace FFBatch
                     down_vh = true;
                     break;
             }
+
             btn_down_g.Enabled = true;
             lbl_expl.Text = Strings.ff_req; lbl_expl.Refresh();
-            if (srv_ok.ToLower() != "ok") return;
-                        
+            if (srv_ok.ToLower() != "ok") return;                        
             this.Close();
         }
 
+        public void UpdateColorDark(Control myControl)
+        {
+            myControl.BackColor = Color.FromArgb(255, 64, 64, 64);
+            myControl.ForeColor = Color.White;
+            foreach (Control subC in myControl.Controls)
+            {
+                UpdateColorDark(subC);
+            }
+        }
         private void Form34_Load(object sender, EventArgs e)
-        {            
-
-            if (File.Exists("ffmpeg.exe"))
+        {
+            if (Properties.Settings.Default.dark_mode == true)
+            {
+                foreach (Control c in this.Controls) UpdateColorDark(c);
+                this.BackColor = Color.FromArgb(255, 64, 64, 64);
+            }
+            if (File.Exists(Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe")))
             {
                 lbl_val.Text = Strings.ff_val;
                 cb_srv.Enabled = false;
@@ -99,7 +112,9 @@ namespace FFBatch
             lbl_ff_v.Text = lbl_ff_v.Text;            
             this.Text = Strings.browse + " " + "ffmpeg";            
             btn_close.Text = Strings.close_win;
-            btn_br_ff.Text = Strings.browse + " " + Strings.pc;            
+            btn_br_ff.Text = Strings.browse + " " + Strings.pc;
+
+            foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
         }
 
         private void btn_close_Click(object sender, EventArgs e)
@@ -138,7 +153,7 @@ namespace FFBatch
               if (cb_srv.SelectedIndex == 0)  lbl_size.Text = "48 MB";
               else lbl_size.Text = "40 MB";
               lbl_val.Text = "MD5: 09c6423522fb9cd0f990f20c9f6bd843";         
-              if (File.Exists("ffmpeg.exe")) lbl_val.Text = Strings.ff_val;
+              if (File.Exists(Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe"))) lbl_val.Text = Strings.ff_val;
         }
     }
 }

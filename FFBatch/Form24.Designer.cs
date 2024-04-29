@@ -39,7 +39,6 @@ namespace FFBatch
             // 
             // combo_lang
             // 
-            resources.ApplyResources(this.combo_lang, "combo_lang");
             this.combo_lang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_lang.FormattingEnabled = true;
             this.combo_lang.Items.AddRange(new object[] {
@@ -49,6 +48,7 @@ namespace FFBatch
             resources.GetString("combo_lang.Items3"),
             resources.GetString("combo_lang.Items4"),
             resources.GetString("combo_lang.Items5")});
+            resources.ApplyResources(this.combo_lang, "combo_lang");
             this.combo_lang.Name = "combo_lang";
             this.combo_lang.SelectedIndexChanged += new System.EventHandler(this.combo_lang_SelectedIndexChanged);
             // 
@@ -67,8 +67,8 @@ namespace FFBatch
             // 
             // label1
             // 
-            resources.ApplyResources(this.label1, "label1");
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             this.label1.ReadOnly = true;
             // 

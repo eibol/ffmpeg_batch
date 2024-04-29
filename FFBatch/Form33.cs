@@ -1,5 +1,6 @@
 ﻿using FFBatch.Properties;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -98,6 +99,8 @@ namespace FFBatch
                 mapp = mapp + a;
             }
 
+            List<int> n_subs_chk = new List<int>();
+
             if (chk_all_s.Checked) mapp = mapp + " -map 0:s ";
             else
             {
@@ -109,10 +112,12 @@ namespace FFBatch
                         {
                             int ind = Convert.ToInt16(tab_subs.Controls[i].Name.Substring(tab_subs.Controls[i].Name.Length - 2, 2).Replace("_", "")) - 1;
                             s = s + "-map 0:s:" + ind.ToString() + " ";
+                            n_subs_chk.Add(ind);
                         }
                     }
                 }
                 mapp = mapp + s;
+                //foreach (int str in n_subs_chk) MessageBox.Show(str.ToString());
             }
             if (rad_def_aud1.Enabled || rad_def_aud2.Enabled || rad_def_aud3.Enabled)
             {
@@ -120,19 +125,22 @@ namespace FFBatch
                 if (rad_def_aud2.Enabled && rad_def_aud2.Checked) mapp = mapp + "-disposition:a none -disposition:a:1 default ";
                 if (rad_def_aud3.Enabled && rad_def_aud3.Checked) mapp = mapp + "-disposition:a none -disposition:a:2 default ";
             }
-            if (rad_def_sub1.Enabled || rad_def_sub2.Enabled || rad_def_sub3.Enabled || rad_def_sub4.Enabled || rad_def_sub5.Enabled || rad_def_sub6.Enabled || rad_def_sub7.Enabled || rad_def_sub8.Enabled || rad_def_sub9.Enabled || rad_def_sub10.Enabled)
-            {                
-                if (rad_def_sub1.Enabled && rad_def_sub1.Checked) mapp = mapp + "-disposition:s forced -disposition:s:0 default ";
-                if (rad_def_sub2.Enabled && rad_def_sub2.Checked) mapp = mapp + "-disposition:s forced -disposition:s:1 default ";
-                if (rad_def_sub3.Enabled && rad_def_sub3.Checked) mapp = mapp + "-disposition:s forced -disposition:s:2 default ";
-                if (rad_def_sub4.Enabled && rad_def_sub4.Checked) mapp = mapp + "-disposition:s forced -disposition:s:3 default ";
-                if (rad_def_sub5.Enabled && rad_def_sub5.Checked) mapp = mapp + "-disposition:s forced -disposition:s:4 default ";
-                if (rad_def_sub6.Enabled && rad_def_sub6.Checked) mapp = mapp + "-disposition:s forced -disposition:s:5 default ";
-                if (rad_def_sub7.Enabled && rad_def_sub7.Checked) mapp = mapp + "-disposition:s forced -disposition:s:6 default ";
-                if (rad_def_sub8.Enabled && rad_def_sub8.Checked) mapp = mapp + "-disposition:s forced -disposition:s:7 default ";
-                if (rad_def_sub9.Enabled && rad_def_sub9.Checked) mapp = mapp + "-disposition:s forced -disposition:s:8 default ";
-                if (rad_def_sub10.Enabled && rad_def_sub10.Checked) mapp = mapp + "-disposition:s forced -disposition:s:9 default ";
 
+            if (rad_def_sub1.Enabled || rad_def_sub2.Enabled || rad_def_sub3.Enabled || rad_def_sub4.Enabled || rad_def_sub5.Enabled || rad_def_sub6.Enabled || rad_def_sub7.Enabled || rad_def_sub8.Enabled || rad_def_sub9.Enabled || rad_def_sub10.Enabled)
+            {
+                int index = 0;
+                if (rad_def_sub1.Enabled && rad_def_sub1.Checked) index = n_subs_chk.FindIndex(inn => inn == (0));                
+                if (rad_def_sub2.Enabled && rad_def_sub2.Checked) index = n_subs_chk.FindIndex(inn => inn == (1));                
+                if (rad_def_sub3.Enabled && rad_def_sub3.Checked) index = n_subs_chk.FindIndex(inn => inn == (2));                
+                if (rad_def_sub4.Enabled && rad_def_sub4.Checked) index = n_subs_chk.FindIndex(inn => inn == (3));
+                if (rad_def_sub5.Enabled && rad_def_sub5.Checked) index = n_subs_chk.FindIndex(inn => inn == (4));
+                if (rad_def_sub6.Enabled && rad_def_sub6.Checked) index = n_subs_chk.FindIndex(inn => inn == (5));
+                if (rad_def_sub7.Enabled && rad_def_sub7.Checked) index = n_subs_chk.FindIndex(inn => inn == (6));
+                if (rad_def_sub8.Enabled && rad_def_sub8.Checked) index = n_subs_chk.FindIndex(inn => inn == (7));
+                if (rad_def_sub9.Enabled && rad_def_sub9.Checked) index = n_subs_chk.FindIndex(inn => inn == (8));
+                if (rad_def_sub10.Enabled && rad_def_sub10.Checked) index = n_subs_chk.FindIndex(inn => inn == (9));
+
+                mapp = mapp + "-disposition:s forced -disposition:s:" + (index).ToString() + " default ";
             }
             mapp = mapp.TrimStart(' ');
             this.Close();
@@ -311,11 +319,26 @@ namespace FFBatch
             rad_def_sub10.Enabled = chk_s_10.Checked;
             clear_rad_s();
         }
-
+        public void UpdateColorDark(Control myControl)
+        {
+            myControl.BackColor = Color.FromArgb(255, 64, 64, 64);
+            myControl.ForeColor = Color.White;
+            foreach (Control subC in myControl.Controls)
+            {
+                UpdateColorDark(subC);
+            }
+        }
         private void Form33_Load(object sender, EventArgs e)
         {
+            if (Properties.Settings.Default.dark_mode == true)
+            {
+                foreach (Control c in this.Controls) UpdateColorDark(c);
+                this.BackColor = Color.FromArgb(255, 64, 64, 64);
+            }
+
             pic_f.Image = img_icons.Images[0];
-            init_lang();                
+            init_lang();
+            foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
         }
 
         private void init_lang()

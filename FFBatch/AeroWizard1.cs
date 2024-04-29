@@ -2260,7 +2260,7 @@ namespace FFBatch
             encoder_supp = true;
             Process consola_hw = new Process();
 
-            consola_hw.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "ffmpeg.exe");
+            consola_hw.StartInfo.FileName = System.IO.Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
             consola_hw.StartInfo.Arguments = " -h encoder=" + Combo_encoders.SelectedItem.ToString();
             consola_hw.StartInfo.RedirectStandardOutput = true;
             consola_hw.StartInfo.RedirectStandardError = true;
@@ -4225,7 +4225,7 @@ namespace FFBatch
                     }
                 }
 
-                consola_pre.StartInfo.FileName = "ffmpeg.exe";
+                consola_pre.StartInfo.FileName = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
                 consola_pre.StartInfo.Arguments = " -i " + "" + '\u0022' + file_prueba + '\u0022' + "" + " -y " + textbox_params + " " + '\u0022' + destino_test + "\\" + System.IO.Path.GetFileNameWithoutExtension(file_prueba) + "." + ext_output + '\u0022';
                 consola_pre.StartInfo.RedirectStandardError = true;
                 consola_pre.StartInfo.StandardErrorEncoding = Encoding.UTF8;
@@ -4470,7 +4470,7 @@ namespace FFBatch
                 textbox_params = textbox_params.Replace("%1", file_prueba3);
             }
 
-            consola_pre.StartInfo.FileName = "ffmpeg.exe";
+            consola_pre.StartInfo.FileName = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
             consola_pre.StartInfo.Arguments = " -i " + "" + '\u0022' + file_prueba + '\u0022' + "" + " -y " + textbox_params + " " + '\u0022' + destino_test + "\\" + System.IO.Path.GetFileNameWithoutExtension(file_prueba) + "." + ext_output + '\u0022';
             consola_pre.StartInfo.RedirectStandardOutput = true;
             consola_pre.StartInfo.RedirectStandardError = true;

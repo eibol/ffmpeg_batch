@@ -131,7 +131,7 @@ namespace FFBatch
                 time_frame = tx_1;
                 String repl_frm = time_frame.Replace(",", "").Replace(".", "").Replace(":", "");
 
-                String ffm_img = Path.Combine(Application.StartupPath, "ffmpeg.exe");                
+                String ffm_img = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");                
 
                 String file_img = Path.GetFullPath(lv1_item);
                 String fullPath_img = file_img;
@@ -336,7 +336,7 @@ namespace FFBatch
                         }
                     }
                 });
-            
+            foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
         }
 
         private void button1_Click(object sender, EventArgs e)

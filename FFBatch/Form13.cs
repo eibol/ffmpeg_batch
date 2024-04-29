@@ -43,6 +43,7 @@ namespace FFBatch
                 foreach (Control c in this.Controls) UpdateColorDark(c);
                 this.BackColor = Color.FromArgb(255, 64, 64, 64);
             }
+            foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
         }
 
         public void UpdateColorDark(Control myControl)

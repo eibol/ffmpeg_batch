@@ -117,6 +117,7 @@ namespace FFBatch
             {
                 if (str.Length > 0) this.dg_pr.Rows.Add(str);
             }
+            foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
         }
 
         private void button1_Click_1(object sender, EventArgs e)

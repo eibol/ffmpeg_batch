@@ -37,7 +37,7 @@ namespace FFBatch
             if (Opacity >= 1)
                 t1.Stop();   //this stops the timer if the form is completely displayed
             else
-                Opacity += 0.05;
+                Opacity += 0.1;
         }
 
         private void button1_Click(object sender, EventArgs e)

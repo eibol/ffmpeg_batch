@@ -71,7 +71,8 @@ namespace FFBatch
 
         private void Form5_Load(object sender, EventArgs e)
         {
-            refresh_lang();            
+            refresh_lang();
+            foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
 
             if (Properties.Settings.Default.large_th == true) thumb_scale = "-vf scale=1024:-1";
 
@@ -131,7 +132,7 @@ namespace FFBatch
             img_prog.Width = 0;
             lbl_fr_time.Text = "00:00:00.000";
             
-                ff_str.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "ffmpeg.exe");
+                ff_str.StartInfo.FileName = System.IO.Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
                 ff_str.StartInfo.Arguments = " -i " + '\u0022' + lv1_item + '\u0022' + " -hide_banner";
                 ff_str.StartInfo.RedirectStandardOutput = true;
                 ff_str.StartInfo.RedirectStandardError = true;
@@ -453,7 +454,7 @@ namespace FFBatch
             String repl_frm = time_frame.Replace(",", "").Replace(".", "").Replace(":", "");
 
             Process proc_img1 = new System.Diagnostics.Process();
-            String ffm_img = Path.Combine(Application.StartupPath, "ffmpeg.exe");
+            String ffm_img = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
 
             String file_img = Path.GetFullPath(lv1_item);
             String fullPath_img = file_img;
@@ -654,7 +655,7 @@ namespace FFBatch
             String time_frame = dur;
 
             Process proc_img = new System.Diagnostics.Process();
-            String ffm_img = Path.Combine(Application.StartupPath, "ffmpeg.exe");
+            String ffm_img = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
 
             String file_img = Path.GetFullPath(lv1_item);
             String fullPath_img = file_img;
@@ -729,7 +730,7 @@ namespace FFBatch
             String time_frame = dur;
 
             Process proc_img = new System.Diagnostics.Process();
-            String ffm_img = Path.Combine(Application.StartupPath, "ffmpeg.exe");
+            String ffm_img = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
 
             String file_img = Path.GetFullPath(lv1_item);
             String fullPath_img = file_img;
@@ -940,7 +941,7 @@ namespace FFBatch
             if (frames== 0)
             {
                 strs.Clear();
-                get_frames.StartInfo.FileName = Path.Combine(Application.StartupPath, "ffmpeg.exe");                
+                get_frames.StartInfo.FileName = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");                
                 get_frames.StartInfo.Arguments = "-an -sn -dn -i " + '\u0022' + lv1_item + '\u0022' + " -hide_banner";
                 get_frames.StartInfo.RedirectStandardError = true;
                 get_frames.Start();
@@ -1164,7 +1165,7 @@ namespace FFBatch
                 }));
 
 
-                String ffm_img = Path.Combine(Application.StartupPath, "ffmpeg.exe");
+                String ffm_img = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
                 String file_img = Path.GetFullPath(lv1_item);
                 String fullPath_img = file_img;
                 String AppParam_img = "";

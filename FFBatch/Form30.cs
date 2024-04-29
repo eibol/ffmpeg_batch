@@ -19,6 +19,7 @@ namespace FFBatch
         }
 
         public Boolean cancel = true;
+        public Boolean reset = false;
         private Point _mouseLoc;
         public String sel_preset = "";
         public Boolean is_portable = false;
@@ -52,7 +53,7 @@ namespace FFBatch
             {
                 foreach (Control subC2 in subC.Controls.OfType<System.Windows.Forms.TextBox>())
                 {
-                    { subC2.BackColor = SystemColors.Window; }
+                     subC2.BackColor = SystemColors.Window;
                 }
             }
         }
@@ -88,6 +89,14 @@ namespace FFBatch
 
         private void Form30_Load(object sender, EventArgs e)
         {
+            lbl_par.Text = Properties.Strings.Parameter;
+            lbl_format.Text = Properties.Strings.Format;
+            lbl_pre.Text = Properties.Strings.pre_input;
+            lbl_pr.Text = Properties.Strings.presets.Substring(0,1).ToUpper() + Properties.Strings.presets.Substring(1, Properties.Strings.presets.Length - 2);
+            btn_cancel.Text = Properties.Strings.cancel;
+            btn_ok.Text = Properties.Strings.ok;
+            btn_reset.Text = Properties.Strings.clear;
+
             String app_location = Application.StartupPath;
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
             if (File.Exists(portable_flag)) is_portable = true;
@@ -106,6 +115,7 @@ namespace FFBatch
                 this.BackColor = SystemColors.InactiveBorder;
                 txt_f.BackColor = SystemColors.Window;
                 txt_p.BackColor = SystemColors.Window;
+                txt_prein.BackColor = SystemColors.Window;
             }
 
             sel_preset = String.Empty;
@@ -145,6 +155,8 @@ namespace FFBatch
                     combo_presets_ext.Items.Add(line.Substring(4, line.LastIndexOf("&") - 5));
                 }
             }
+
+            foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
         }
 
         private void Form30_MouseDown(object sender, MouseEventArgs e)
@@ -228,6 +240,13 @@ namespace FFBatch
                     i = i + 1;
                 }
             }
+        }
+
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
+            reset = true;
+            cancel = false;
+            this.Close();
         }
     }
 }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form27));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dg_pr = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pre_input = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,11 +49,10 @@
             // 
             // dg_pr
             // 
-            resources.ApplyResources(this.dg_pr, "dg_pr");
             this.dg_pr.AllowDrop = true;
             this.dg_pr.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
-            this.dg_pr.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
+            this.dg_pr.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dg_pr.BackgroundColor = System.Drawing.SystemColors.InactiveBorder;
             this.dg_pr.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_pr.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -61,6 +60,7 @@
             this.pre_input,
             this.Column2,
             this.Column3});
+            resources.ApplyResources(this.dg_pr, "dg_pr");
             this.dg_pr.Name = "dg_pr";
             this.dg_pr.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dg_pr_CellValidating);
             this.dg_pr.DragDrop += new System.Windows.Forms.DragEventHandler(this.dg_pr_DragDrop);
@@ -87,17 +87,17 @@
             // 
             // Column3
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
             resources.ApplyResources(this.Column3, "Column3");
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
             // btn_load
             // 
-            resources.ApplyResources(this.btn_load, "btn_load");
             this.btn_load.FlatAppearance.BorderSize = 0;
             this.btn_load.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_load, "btn_load");
             this.btn_load.Name = "btn_load";
             this.btn_load.UseVisualStyleBackColor = true;
             this.btn_load.Click += new System.EventHandler(this.button4_Click);
@@ -109,26 +109,26 @@
             // 
             // btn_cancel
             // 
-            resources.ApplyResources(this.btn_cancel, "btn_cancel");
             this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_cancel.FlatAppearance.BorderSize = 0;
             this.btn_cancel.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_cancel, "btn_cancel");
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // btn_decr_font
             // 
-            resources.ApplyResources(this.btn_decr_font, "btn_decr_font");
             this.btn_decr_font.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_decr_font, "btn_decr_font");
             this.btn_decr_font.Name = "btn_decr_font";
             this.btn_decr_font.UseVisualStyleBackColor = true;
             this.btn_decr_font.Click += new System.EventHandler(this.btn_decr_font_Click);
             // 
             // btn_inc_font
             // 
-            resources.ApplyResources(this.btn_inc_font, "btn_inc_font");
             this.btn_inc_font.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_inc_font, "btn_inc_font");
             this.btn_inc_font.Name = "btn_inc_font";
             this.btn_inc_font.UseVisualStyleBackColor = true;
             this.btn_inc_font.Click += new System.EventHandler(this.btn_inc_font_Click);
@@ -173,7 +173,6 @@
         private System.Windows.Forms.DataGridView dg_pr;
         private System.Windows.Forms.Button btn_load;
         private System.Windows.Forms.OpenFileDialog open_file;
-        private System.Windows.Forms.Button btn_cancel;
         private System.Windows.Forms.Button btn_decr_font;
         private System.Windows.Forms.Button btn_inc_font;
         private System.Windows.Forms.LinkLabel link1;
@@ -182,5 +181,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn pre_input;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        public System.Windows.Forms.Button btn_cancel;
     }
 }
