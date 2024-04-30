@@ -2438,4 +2438,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Download rapido canale/playlist YouTube</value>
   </data>
+  <data name="lbl_vcount.Text" xml:space="preserve">
+    <value>Video</value>
+  </data>
 </root>

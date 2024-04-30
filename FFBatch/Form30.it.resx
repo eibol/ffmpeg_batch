@@ -152,4 +152,22 @@
   <data name="label2.Text" xml:space="preserve">
     <value>Formato</value>
   </data>
+  <data name="btn_ok.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="btn_cancel.Text" xml:space="preserve">
+    <value>Annulla</value>
+  </data>
+  <data name="lbl_format.Text" xml:space="preserve">
+    <value>Formato</value>
+  </data>
+  <data name="lbl_pr.Text" xml:space="preserve">
+    <value>Profili</value>
+  </data>
+  <data name="lbl_par.Text" xml:space="preserve">
+    <value>Parametri</value>
+  </data>
+  <data name="lbl_pre.Text" xml:space="preserve">
+    <value>Pre-sorgente</value>
+  </data>
 </root>
