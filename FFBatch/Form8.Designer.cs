@@ -40,11 +40,6 @@
             this.btn_close = new System.Windows.Forms.Button();
             this.txt_file = new System.Windows.Forms.TextBox();
             this.dg_streams = new System.Windows.Forms.DataGridView();
-            this.image_streams = new System.Windows.Forms.ImageList(this.components);
-            this.btn_select = new System.Windows.Forms.Button();
-            this.pic_yout = new System.Windows.Forms.PictureBox();
-            this.pic_wait_1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.Column3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +48,11 @@
             this.Codec = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Res_p = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_bitrate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.image_streams = new System.Windows.Forms.ImageList(this.components);
+            this.btn_select = new System.Windows.Forms.Button();
+            this.pic_yout = new System.Windows.Forms.PictureBox();
+            this.pic_wait_1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dg_streams)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_yout)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_wait_1)).BeginInit();
@@ -103,38 +103,6 @@
             this.dg_streams.MultiSelect = false;
             this.dg_streams.Name = "dg_streams";
             this.dg_streams.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            // 
-            // image_streams
-            // 
-            this.image_streams.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("image_streams.ImageStream")));
-            this.image_streams.TransparentColor = System.Drawing.Color.Transparent;
-            this.image_streams.Images.SetKeyName(0, "youtube_menu.jpg");
-            this.image_streams.Images.SetKeyName(1, "audio_icon_22.png");
-            // 
-            // btn_select
-            // 
-            resources.ApplyResources(this.btn_select, "btn_select");
-            this.btn_select.Name = "btn_select";
-            this.btn_select.UseVisualStyleBackColor = true;
-            this.btn_select.Click += new System.EventHandler(this.btn_select_Click);
-            // 
-            // pic_yout
-            // 
-            this.pic_yout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.pic_yout, "pic_yout");
-            this.pic_yout.Name = "pic_yout";
-            this.pic_yout.TabStop = false;
-            // 
-            // pic_wait_1
-            // 
-            resources.ApplyResources(this.pic_wait_1, "pic_wait_1");
-            this.pic_wait_1.Name = "pic_wait_1";
-            this.pic_wait_1.TabStop = false;
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
             // 
             // Column3
             // 
@@ -192,6 +160,38 @@
             this.col_bitrate.DefaultCellStyle = dataGridViewCellStyle6;
             resources.ApplyResources(this.col_bitrate, "col_bitrate");
             this.col_bitrate.Name = "col_bitrate";
+            // 
+            // image_streams
+            // 
+            this.image_streams.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("image_streams.ImageStream")));
+            this.image_streams.TransparentColor = System.Drawing.Color.Transparent;
+            this.image_streams.Images.SetKeyName(0, "youtube_menu.jpg");
+            this.image_streams.Images.SetKeyName(1, "audio_icon_22.png");
+            // 
+            // btn_select
+            // 
+            resources.ApplyResources(this.btn_select, "btn_select");
+            this.btn_select.Name = "btn_select";
+            this.btn_select.UseVisualStyleBackColor = true;
+            this.btn_select.Click += new System.EventHandler(this.btn_select_Click);
+            // 
+            // pic_yout
+            // 
+            this.pic_yout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.pic_yout, "pic_yout");
+            this.pic_yout.Name = "pic_yout";
+            this.pic_yout.TabStop = false;
+            // 
+            // pic_wait_1
+            // 
+            resources.ApplyResources(this.pic_wait_1, "pic_wait_1");
+            this.pic_wait_1.Name = "pic_wait_1";
+            this.pic_wait_1.TabStop = false;
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
             // 
             // Form8
             // 

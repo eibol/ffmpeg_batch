@@ -130,7 +130,6 @@
             // 
             resources.ApplyResources(this.wz_mpresets, "wz_mpresets");
             this.wz_mpresets.Controls.Add(this.label17);
-            this.wz_mpresets.Controls.Add(this.pic_warn_bitrate);
             this.wz_mpresets.Controls.Add(this.label10);
             this.wz_mpresets.Controls.Add(this.lbl_advise_1);
             this.wz_mpresets.Controls.Add(this.btn_tips_1);
@@ -214,6 +213,7 @@
             // 
             resources.ApplyResources(this.gr_targ, "gr_targ");
             this.gr_targ.Controls.Add(this.combo_size);
+            this.gr_targ.Controls.Add(this.pic_warn_bitrate);
             this.gr_targ.Controls.Add(this.label18);
             this.gr_targ.Controls.Add(this.n_target_size);
             this.gr_targ.Controls.Add(this.chk_one_pass);

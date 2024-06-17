@@ -13,6 +13,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Management;
 using System.Management.Instrumentation;
 using System.Net;
 using System.Reflection;
@@ -24,6 +25,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
 namespace FFBatch
 {
@@ -332,7 +334,7 @@ namespace FFBatch
         private String down_ff_g = "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-full.7z";
         private String down_ff_v = "https://ffmpeg-batch.sourceforge.io/ffmpeg-release-full.7z";
         private String down_ff_vh = "https://files.videohelp.com/u/273695/ffmpeg-release-full.7z";
-        private String down_ff_gh = "https://github.com/eibol/ffmpeg_batch/releases/download/3.0.6/ffmpeg-release-full.7z";
+        private String down_ff_gh = "https://github.com/eibol/ffmpeg_batch/releases/download/3.0.7/ffmpeg-release-full.7z";
         private string proj_web = "https://ffmpeg-batch.sourceforge.io";
         private String man_en_url = "https://raw.githubusercontent.com/eibol/ffmpeg_batch/gh-pages/FFmpeg_Batch_User_Guide_en.pdf";
         private String man_es_url = "https://raw.githubusercontent.com/eibol/ffmpeg_batch/gh-pages/FFmpeg_Batch_User_Guide_es.pdf";
@@ -504,6 +506,84 @@ namespace FFBatch
             lvwColumnSorter_Full = new ListViewColumnSorter();
             this.listView1.ListViewItemSorter = lvwColumnSorter_Full;
             WebClient webClient1 = new WebClient();
+        }
+
+        public static DriveType GetDriveType(string path)
+        {
+            try
+            {
+                var rootPath = Path.GetPathRoot(path);
+
+                if (string.IsNullOrEmpty(rootPath))
+                {
+                    return DriveType.Unknown;
+                }
+
+                rootPath = rootPath[0].ToString();
+
+                var scope = new ManagementScope(@"\\.\root\microsoft\windows\storage");
+                scope.Connect();
+
+                var partitionSearcher = new ManagementObjectSearcher($"select * from MSFT_Partition where DriveLetter='{rootPath}'");
+                partitionSearcher.Scope = scope;
+
+                var partitions = partitionSearcher.Get();
+
+                if (partitions.Count == 0)
+                {
+                    return DriveType.Unknown;
+                }
+
+                string diskNumber = null;
+
+                foreach (var currentPartition in partitions)
+                {
+                    diskNumber = currentPartition["DiskNumber"].ToString();
+
+                    if (!string.IsNullOrEmpty(diskNumber))
+                    {
+                        break;
+                    }
+                }
+
+                if (string.IsNullOrEmpty(diskNumber))
+                {
+                    return DriveType.Unknown;
+                }
+
+                var diskSearcher = new ManagementObjectSearcher($"SELECT * FROM MSFT_PhysicalDisk WHERE DeviceId='{diskNumber}'");
+                diskSearcher.Scope = scope;
+
+                var physicakDisks = diskSearcher.Get();
+
+                if (physicakDisks.Count == 0)
+                {
+                    return DriveType.Unknown;
+                }
+
+                foreach (var currentDisk in physicakDisks)
+                {
+                    var mediaType = Convert.ToInt16(currentDisk["MediaType"]);
+
+                    switch (mediaType)
+                    {
+                        case 3:
+                            return DriveType.Fixed;
+                        case 4:
+                            return DriveType.Ram;
+                        default:
+                            return DriveType.Unknown;
+                    }
+                }
+
+                return DriveType.Unknown;
+            }
+            catch (Exception ex)
+            {
+                // TODO: Log error.
+
+                return DriveType.Unknown;
+            }
         }
 
         protected override void WndProc(ref Message m)
@@ -4808,6 +4888,11 @@ namespace FFBatch
                         if (cultur != "es") init_lang();
                     }
 
+                    else if (language == "fr")
+                    {
+                        if (cultur != "fr") init_lang();
+                    }
+
                     else if (language == "it")
                     {
                         if (cultur != "it") init_lang();
@@ -4825,11 +4910,7 @@ namespace FFBatch
                     else if (language == "ar-EG")
                     {
                         if (cultur != "ar") init_lang();
-                    }
-                    //else if (language == "fr")
-                    //{
-                    //    if (cultur != "fr") init_lang();
-                    //}
+                    }                
 
                     post_lang();
                     combo_prio_add();
@@ -4863,15 +4944,18 @@ namespace FFBatch
                         language = "es";
                         break;
                     case 2:
-                        language = "it"; //
-                        break;                    
+                        language = "fr";
+                        break;
                     case 3:
+                        language = "it";
+                        break;                    
+                    case 4:
                         language = "pt-BR";
                         break;
-                    case 4:
+                    case 5:
                         language = "zh-Hans";
                         break;
-                    case 5:
+                    case 6:
                         language = "ar-EG";
                         break;
                     default:
@@ -14112,7 +14196,7 @@ namespace FFBatch
             titulo.Left = 15;
             titulo.Width = 415;
 
-            var fuente = new System.Drawing.Font("Microsoft Sans Serif", 11, FontStyle.Regular);
+            Font fuente = new System.Drawing.Font("Microsoft Sans Serif", 11, FontStyle.Regular);
             titulo.Font = fuente;
             titulo.BorderStyle = BorderStyle.Fixed3D;
             titulo.TextAlign = HorizontalAlignment.Left;
@@ -14177,7 +14261,7 @@ namespace FFBatch
 
             frm_audio_input.StartPosition = FormStartPosition.CenterScreen;
 
-            consola.StartInfo.Arguments = " -list_devices true -f dshow -i dummy";
+            consola.StartInfo.Arguments = " -list_devices true -f dshow -i dummy -hide_banner";
 
             consola.StartInfo.RedirectStandardOutput = true;
             consola.StartInfo.RedirectStandardError = true;
@@ -14194,20 +14278,24 @@ namespace FFBatch
             while (!consola.StandardError.EndOfStream)
             {
                 out_ff = consola.StandardError.ReadLine();
-                if (out_ff.Contains("DirectShow audio devices"))
+                if (out_ff.Contains("dshow"))
                 {
                     start_audio_sources = true;
                 }
 
                 if (start_audio_sources == true)
                 {
-                    if (out_ff.Substring(out_ff.Length - 2, 2) != "}" + "\u0022" && out_ff.Contains("DirectShow audio devices") == false && out_ff.Contains("Alternative name") == false && out_ff.Contains("dummy") == false)
-                    {
-                        //if (out_ff.Contains("Ã³")) out_ff = out_ff.Replace("Ã³", "ó");
-                        int trim1 = out_ff.IndexOf("\u0022") + "\u0022".Length;
-                        int trim2 = out_ff.LastIndexOf("\u0022");
-                        if (trim2 - trim1 > 0) this.InvokeEx(f => CB1_o.Items.Add(out_ff.Substring(trim1, trim2 - trim1)));
-                    }
+                    int ind = out_ff.IndexOf("\"");
+                    int ind2 = out_ff.LastIndexOf("\"");
+                    if (out_ff.Contains("dshow") && out_ff.Contains("audio") && out_ff.ToLower().Contains("alternative name") == false)
+                    {                        
+                        try
+                        {
+                            String to_Add = out_ff.Substring(ind + 1, ind2 - ind - 1);
+                            this.InvokeEx(f => CB1_o.Items.Add(to_Add));
+                        }
+                        catch { }
+                    }                    
                 }
             }
             consola.StartInfo.Arguments = String.Empty;
@@ -14258,75 +14346,80 @@ namespace FFBatch
 
             new System.Threading.Thread(() =>
             {
-                System.Threading.Thread.CurrentThread.IsBackground = true;
+            System.Threading.Thread.CurrentThread.IsBackground = true;
 
-                String ffm = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
+            String ffm = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
 
-                String destino = "";
+            String destino = "";
 
-                if (txt_path_main.Text.Contains(".\\"))
+            if (txt_path_main.Text.Contains(".\\"))
+            {
+                if (txt_path_main.Text == (".\\"))
                 {
-                    if (txt_path_main.Text == (".\\"))
-                    {
-                        destino = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyVideos));
-                    }
-                    else
-                    {
-                        destino = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyVideos), txt_path_main.Text.Replace("..\\", String.Empty));
-                    }
+                    destino = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyVideos));
                 }
                 else
                 {
-                    destino = txt_path_main.Text;
+                    destino = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyVideos), txt_path_main.Text.Replace("..\\", String.Empty));
                 }
-                capture_count = capture_count + 1;
+            }
+            else
+            {
+                destino = txt_path_main.Text;
+            }
+            capture_count = capture_count + 1;
 
-                if (File.Exists(destino + "\\" + "Rec_Screen_" + capture_count.ToString() + "." + txt_format.Text) == true)
-                {
-                    MessageBox.Show(Strings.file + " " + destino + "\\" + "Rec_Screen_" + capture_count.ToString() + "." + txt_format.Text + " exits", "Destination file exists", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Enable_Controls();
-                    working = false;
-                    return;
-                }
-                //Recording countdown
-                this.Invoke(new MethodInvoker(delegate
-               {
-                    btn_abort_all.Enabled = false;                   
-                    lbl_capture.Enabled = true;
-                    lbl_capture.Text = "";
-                    lbl_capture.Visible = true;
-                    lbl_capture.Text = Strings.capt_3;
-                    lbl_capture.Refresh();
-                    Thread.Sleep(1000);
-                    lbl_capture.Text = Strings.capt_2;
-                    lbl_capture.Refresh();
-                    Thread.Sleep(1000);
-                    lbl_capture.Text = Strings.capt_1;
-                    lbl_capture.Refresh();
-                    this.WindowState = FormWindowState.Minimized;
-                    Thread.Sleep(1000);
-                    timer_tasks.Start();
-                    lbl_capture.Text = "";
-                    lbl_capture.Visible = false;                   
-                    btn_abort_all.Enabled = true;
-                }));
-                //End recording countdown
+            String time_f = DateTime.Now.ToString("HH:mm:ss", CultureInfo.CurrentCulture).Replace(":", "_");
 
-                String pre_input_var = "";
-                if (txt_pre_input.Text != "")
-                {
-                    pre_input_var = txt_pre_input.Text;
-                }
-                String AppParam = String.Empty;
-                if (audio_capture_device == Strings.none)
-                {
-                    AppParam = " -f gdigrab " + pre_input_var + " -i desktop " + txt_parameters.Text + " -y " + '\u0022' + destino + "\\" + "Rec_Screen_" + capture_count.ToString() + "." + txt_format.Text + '\u0022';
-                }
-                else
-                {
-                    AppParam = " -f dshow -i audio=" + '\u0022' + audio_capture_device + '\u0022' + " -f gdigrab " + pre_input_var + " -i desktop " + txt_parameters.Text + " -y " + '\u0022' + destino + "\\" + "Rec_Screen_" + capture_count.ToString() + "." + txt_format.Text + '\u0022';
-                }
+            if (File.Exists(destino + "\\" + "Rec_Screen_" + capture_count.ToString() + "_" + time_f + "." + txt_format.Text) == true)
+            {
+                MessageBox.Show(Strings.file + " " + destino + "\\" + "Rec_Screen_" + capture_count.ToString() + "_" + time_f + "." + txt_format.Text + " exits", "Destination file exists", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Enable_Controls();
+                working = false;
+                return;
+            }
 
+            //Recording countdown
+            this.Invoke(new MethodInvoker(delegate
+           {
+               btn_abort_all.Enabled = false;
+               lbl_capture.Enabled = true;
+               lbl_capture.Text = "";
+               lbl_capture.Visible = true;
+               lbl_capture.Text = Strings.capt_3;
+               lbl_capture.Refresh();
+               Thread.Sleep(1000);
+               lbl_capture.Text = Strings.capt_2;
+               lbl_capture.Refresh();
+               Thread.Sleep(1000);
+               lbl_capture.Text = Strings.capt_1;
+               lbl_capture.Refresh();
+               this.WindowState = FormWindowState.Minimized;
+               Thread.Sleep(1000);
+               timer_tasks.Start();
+               lbl_capture.Text = "";
+               lbl_capture.Visible = false;
+               btn_abort_all.Enabled = true;
+           }));
+            //End recording countdown
+
+            String pre_input_var = "";
+            if (txt_pre_input.Text != "")
+            {
+                pre_input_var = txt_pre_input.Text;
+            }
+            String AppParam = String.Empty;
+            String vol = String.Empty;
+                if (audio_capture_device.Contains("virtual-audio-capturer")) vol = " -af volume=4 ";
+
+            if (audio_capture_device == Properties.Strings.none)
+            {
+                AppParam = " -f gdigrab " + pre_input_var + " -i desktop " + txt_parameters.Text + " -y " + '\u0022' + destino + "\\" + "Rec_Screen_" + capture_count.ToString() + "_" + time_f + "." + txt_format.Text + '\u0022'; }
+            else
+            {
+                    AppParam = " -f dshow -i audio=" + '\u0022' + audio_capture_device + '\u0022' + " -f gdigrab " + pre_input_var + " -i desktop " + txt_parameters.Text + vol + " -y " + '\u0022' + destino + "\\" + "Rec_Screen_" + capture_count.ToString() + "_" + time_f + "." + txt_format.Text + '\u0022';
+                }
+            
                 if (!Directory.Exists(destino))
                 {
                     Directory.CreateDirectory(destino);
@@ -14385,7 +14478,9 @@ namespace FFBatch
 
         private void boton_driver_Click(object sender, EventArgs e)
         {
-            Process.Start("https://github.com/rdp/screen-capture-recorder-to-video-windows-free/releases/tag/v0.12.11");
+            DialogResult a = MessageBox.Show(Properties.Strings.rec_play_1 + Environment.NewLine + Environment.NewLine + Properties.Strings.virtual_play_dr + Environment.NewLine + Environment.NewLine + Properties.Strings.rec_play_2);
+
+            Process.Start("https://github.com/rdp/screen-capture-recorder-to-video-windows-free/releases");
         }
 
         private void boton_show_rec_Click(object sender, EventArgs e)
@@ -14416,19 +14511,23 @@ namespace FFBatch
             while (!consola.StandardError.EndOfStream)
             {
                 out_ff = consola.StandardError.ReadLine();
-                if (out_ff.Contains("DirectShow audio devices"))
+                if (out_ff.Contains("dshow"))
                 {
                     start_audio_sources = true;
                 }
 
                 if (start_audio_sources == true)
                 {
-                    if (out_ff.Substring(out_ff.Length - 2, 2) != "}" + "\u0022" && out_ff.Contains("DirectShow audio devices") == false && out_ff.Contains("Alternative name") == false && out_ff.Contains("dummy") == false)
+                    int ind = out_ff.IndexOf("\"");
+                    int ind2 = out_ff.LastIndexOf("\"");
+                    if (out_ff.Contains("dshow") && out_ff.Contains("audio") && out_ff.ToLower().Contains("alternative name") == false)
                     {
-                        //if (out_ff.Contains("Ã³")) out_ff = out_ff.Replace("Ã³", "ó");
-                        int trim1 = out_ff.IndexOf("\u0022") + "\u0022".Length;
-                        int trim2 = out_ff.LastIndexOf("\u0022");
-                        if (trim2 - trim1 > 0) this.InvokeEx(f => CB1_o.Items.Add(out_ff.Substring(trim1, trim2 - trim1)));
+                        try
+                        {
+                            String to_Add = out_ff.Substring(ind + 1, ind2 - ind - 1);
+                            this.InvokeEx(f => CB1_o.Items.Add(to_Add));
+                        }
+                        catch { }
                     }
                 }
             }
@@ -15980,7 +16079,7 @@ namespace FFBatch
             CancellationTokenSource cts = new CancellationTokenSource();
             par_op.CancellationToken = cts.Token;
             if (Environment.ProcessorCount > 1) par_op.MaxDegreeOfParallelism = Environment.ProcessorCount / 2;
-            else par_op.MaxDegreeOfParallelism = 1;
+            else par_op.MaxDegreeOfParallelism = 1;            
             ParallelLoopResult res = new ParallelLoopResult();
 
             try
@@ -31383,10 +31482,11 @@ namespace FFBatch
             String current_lang = Settings.Default.app_lang;
             if (language == "en") form3.combo_lang.SelectedIndex = 0;
             if (language == "es") form3.combo_lang.SelectedIndex = 1;
-            if (language == "it") form3.combo_lang.SelectedIndex = 2;            
-            if (language == "pt-BR") form3.combo_lang.SelectedIndex = 3;
-            if (language == "zh-Hans") form3.combo_lang.SelectedIndex = 4;
-            if (language == "ar-EG") form3.combo_lang.SelectedIndex = 5;
+            if (language == "fr") form3.combo_lang.SelectedIndex = 2;
+            if (language == "it") form3.combo_lang.SelectedIndex = 3;
+            if (language == "pt-BR") form3.combo_lang.SelectedIndex = 4;
+            if (language == "zh-Hans") form3.combo_lang.SelectedIndex = 5;
+            if (language == "ar-EG") form3.combo_lang.SelectedIndex = 6;
 
             if (chk_open_compl.Checked) form3.check_open_output.Checked = true;
             else form3.check_open_output.Checked = false;
@@ -31451,10 +31551,11 @@ namespace FFBatch
             {
                 if (form3.combo_lang.SelectedIndex == 0) language = "en";
                 if (form3.combo_lang.SelectedIndex == 1) language = "es";
-                if (form3.combo_lang.SelectedIndex == 2) language = "it";                
-                if (form3.combo_lang.SelectedIndex == 3) language = "pt-BR";
-                if (form3.combo_lang.SelectedIndex == 4) language = "zh-Hans";
-                if (form3.combo_lang.SelectedIndex == 5) language = "ar-EG";
+                if (form3.combo_lang.SelectedIndex == 2) language = "fr";
+                if (form3.combo_lang.SelectedIndex == 3) language = "it";
+                if (form3.combo_lang.SelectedIndex == 4) language = "pt-BR";
+                if (form3.combo_lang.SelectedIndex == 5) language = "zh-Hans";
+                if (form3.combo_lang.SelectedIndex == 6) language = "ar-EG";
 
                 String f_lang = String.Empty;
                 if (is_portable == false)
@@ -32452,10 +32553,11 @@ namespace FFBatch
             frm24.ShowDialog();
             if (frm24.combo_lang.SelectedIndex == 0) language = "en";
             if (frm24.combo_lang.SelectedIndex == 1) language = "es";
-            if (frm24.combo_lang.SelectedIndex == 2) language = "it";            
-            if (frm24.combo_lang.SelectedIndex == 3) language = "pt-BR";
-            if (frm24.combo_lang.SelectedIndex == 4) language = "zh-Hans";
-            if (frm24.combo_lang.SelectedIndex == 5) language = "ar-EG";
+            if (frm24.combo_lang.SelectedIndex == 2) language = "fr";
+            if (frm24.combo_lang.SelectedIndex == 3) language = "it";            
+            if (frm24.combo_lang.SelectedIndex == 4) language = "pt-BR";
+            if (frm24.combo_lang.SelectedIndex == 5) language = "zh-Hans";
+            if (frm24.combo_lang.SelectedIndex == 6) language = "ar-EG";
 
             File.WriteAllText(f_lang, language);
             Settings.Default.app_lang = language;
@@ -37118,6 +37220,7 @@ namespace FFBatch
                             }
 
                             if (verbose_logs == false) tmp.StartInfo.Arguments = tmp.StartInfo.Arguments + " -loglevel warning -stats";
+                            else tmp.StartInfo.Arguments =tmp.StartInfo.Arguments + " -loglevel debug";
 
                             FileInfo f_root = new FileInfo(destis[file_int]);
                             DriveInfo dest_drive = new DriveInfo(Application.StartupPath);
@@ -44408,6 +44511,8 @@ namespace FFBatch
 
         private Boolean check_ff_md5()
         {
+            if (Properties.Settings.Default.validate_ff == false) return true;
+
             if (File.Exists(Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe")) == false) return false;
             //Check MD5 ffmpeg            
 
@@ -46635,15 +46740,15 @@ namespace FFBatch
                 }
             }
 
-            if ((chk_overw.Checked == false && txt_path_main.Text == "." + "\\") && !txt_parameters.Text.Contains("[[split_chapters]]"))
-            {
+            //if ((chk_overw.Checked == false && txt_path_main.Text == "." + "\\") && !txt_parameters.Text.Contains("[[split_chapters]]"))
+            //{
                 //if (match_case == true)
                 //{
                 //    MessageBox.Show("File matching output destination format with different case." + Environment.NewLine + "Please match input extension and output format case.");
                 //    return false;
                 //}
 
-            }
+            //}
 
             return true;
         }
@@ -48059,6 +48164,7 @@ namespace FFBatch
                 }
 
                 if (verbose_logs == false) AppParam = AppParam + " -loglevel warning -stats";
+                else AppParam = AppParam + " -loglevel debug";
 
                 tmp.StartInfo.FileName = ffm;
 
@@ -48228,9 +48334,9 @@ namespace FFBatch
                                 {
                                     try
                                     {
-                                    err_txt2 = tmp.StandardError.ReadLine();
+                                    err_txt2 = tmp.StandardError.ReadLine();                                    
                                     check_space++;
-                                    list_lines.Add(err_txt2);
+                                    list_lines.Add(err_txt2);                                    
                                     if (err_txt2.Contains("time=") && err_txt2.Contains("time=-") == false)
                                     {
                                         if (valid_prog == true && Settings.Default.quick_queue == false)
@@ -48722,6 +48828,8 @@ namespace FFBatch
                         err_txt = tmp.StandardError.ReadLine();
                         check_space++;
                         list_lines.Add(err_txt);
+                        
+                        
                         if (err_txt.Contains("time=") && err_txt.Contains("time=-") == false)
                         {
                             if (valid_prog == true && Settings.Default.quick_queue == false)
@@ -48964,8 +49072,19 @@ namespace FFBatch
                                     }));
                                 }
                             }
-                            if (valid_prog == false && Settings.Default.quick_queue == true && !err_txt.Contains("N/A")) 
+
+                            if (Properties.Settings.Default.quick_queue == true)
                             {
+                                this.Invoke(new MethodInvoker(delegate
+                                {
+                                    Pg1.Text = list_lines[list_lines.Count - 1];
+                                    Pg1.Refresh();
+                                }));
+                            }
+
+                            if (valid_prog == false && Settings.Default.quick_queue == true && !err_txt.Contains("N/A")) 
+                            {                               
+
                                 this.Invoke(new MethodInvoker(delegate
                                 {
                                     durat_n = TimeSpan.Parse(listView1.Items[list_index].SubItems[3].Text).TotalSeconds - TimeSpan.Parse(ss_time_input.Text).TotalSeconds;
@@ -49024,10 +49143,16 @@ namespace FFBatch
                         }
                         catch { }
 
-                        //End monitor available space
+                        //End monitor available space                        
                     }
                 }
-                catch { }
+                catch
+                {
+                    this.Invoke(new MethodInvoker(delegate
+                    {
+                        Pg1.Text = list_lines[list_lines.Count - 1];
+                    }));
+                }
 
                 try
                 {
@@ -52098,8 +52223,20 @@ namespace FFBatch
             object lockCurrent = new object();
 
             ParallelOptions parop = new ParallelOptions();
-            if (Environment.ProcessorCount >= 4) parop.MaxDegreeOfParallelism = 4;
-            else parop.MaxDegreeOfParallelism = Environment.ProcessorCount;
+            parop.MaxDegreeOfParallelism = Environment.ProcessorCount;
+            try
+            {
+                if (GetDriveType(Path.GetPathRoot(lstv2.Items[0].SubItems[1].Text)) != DriveType.Ram)
+                {
+                    parop.MaxDegreeOfParallelism = 1;
+                }
+            }
+            catch
+            { 
+                if (Environment.ProcessorCount >= 2) parop.MaxDegreeOfParallelism = 2;
+                else parop.MaxDegreeOfParallelism = 1;
+            }
+            
             CancellationTokenSource cts = new System.Threading.CancellationTokenSource();
             parop.CancellationToken = cts.Token;                        
 
@@ -52230,7 +52367,7 @@ namespace FFBatch
                             }
                             else
                             {
-                                if (lines[6].Length > 0)
+                                if (lines[7].Length > 0)
                                 {
                                     if (lines[7].ToLower().Contains("mpeg audio"))
                                     {

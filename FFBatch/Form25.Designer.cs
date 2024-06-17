@@ -45,6 +45,7 @@ namespace FFBatch
             this.btn_save_md5 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.chk_valff = new System.Windows.Forms.CheckBox();
             this.label8 = new System.Windows.Forms.Label();
             this.btn_close = new System.Windows.Forms.Button();
             this.pic_success = new System.Windows.Forms.PictureBox();
@@ -159,6 +160,7 @@ namespace FFBatch
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.chk_valff);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
@@ -171,6 +173,13 @@ namespace FFBatch
             resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
+            // 
+            // chk_valff
+            // 
+            resources.ApplyResources(this.chk_valff, "chk_valff");
+            this.chk_valff.Name = "chk_valff";
+            this.chk_valff.UseVisualStyleBackColor = true;
+            this.chk_valff.CheckedChanged += new System.EventHandler(this.chk_valff_CheckedChanged_1);
             // 
             // label8
             // 
@@ -308,5 +317,6 @@ namespace FFBatch
         private System.Windows.Forms.Label lbl_cpu;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.Button btn_close;
+        private System.Windows.Forms.CheckBox chk_valff;
     }
 }

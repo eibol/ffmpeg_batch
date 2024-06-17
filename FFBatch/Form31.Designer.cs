@@ -72,8 +72,8 @@
             // 
             // btn_cancel
             // 
-            this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.btn_cancel, "btn_cancel");
+            this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
@@ -222,12 +222,12 @@
             // 
             // num_aud_target
             // 
+            resources.ApplyResources(this.num_aud_target, "num_aud_target");
             this.num_aud_target.Increment = new decimal(new int[] {
             32,
             0,
             0,
             0});
-            resources.ApplyResources(this.num_aud_target, "num_aud_target");
             this.num_aud_target.Maximum = new decimal(new int[] {
             512,
             0,
@@ -248,6 +248,7 @@
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.chk_full_p);
             this.groupBox1.Controls.Add(this.chk_full2);
             this.groupBox1.Controls.Add(this.chk_full1);
@@ -257,7 +258,6 @@
             this.groupBox1.Controls.Add(this.radio_fn_path);
             this.groupBox1.Controls.Add(this.radio_fn_ext);
             this.groupBox1.Controls.Add(this.radio_fd);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -281,6 +281,7 @@
             // 
             // groupBox2
             // 
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.radio_fdur_1);
             this.groupBox2.Controls.Add(this.radio_bitr);
             this.groupBox2.Controls.Add(this.label16);
@@ -291,15 +292,14 @@
             this.groupBox2.Controls.Add(this.radio_target_size);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.txt_size);
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
             // groupBox3
             // 
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Controls.Add(this.radio_chaps);
             this.groupBox3.Controls.Add(this.radio_nul);
-            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 

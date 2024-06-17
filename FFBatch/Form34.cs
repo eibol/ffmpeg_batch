@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Management;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,12 +17,20 @@ namespace FFBatch
 {
     public partial class Form34 : Form
     {
+        public enum DriveType
+        {
+            None = 0,
+            Hdd,
+            Ssd
+        }
         public Form34()
         {
             InitializeComponent();
         }
 
-        private String ff_latest_exe = "https://github.com/eibol/ffmpeg_batch/releases/download/3.0.6/ffmpeg-release-full.7z";
+        private String vff = "v7.0.0 full";
+        private String vff_size = "43 MB";
+        private String ff_latest_exe = "https://github.com/eibol/ffmpeg_batch/releases/download/3.0.7/ffmpeg-release-full.7z";
         public String ff_state = String.Empty;
         public Boolean browse_ff = false;
         public Boolean down_g = false;
@@ -84,8 +93,10 @@ namespace FFBatch
                 UpdateColorDark(subC);
             }
         }
+
         private void Form34_Load(object sender, EventArgs e)
-        {
+        {  
+
             if (Properties.Settings.Default.dark_mode == true)
             {
                 foreach (Control c in this.Controls) UpdateColorDark(c);
@@ -149,10 +160,8 @@ namespace FFBatch
 
         private void cb_srv_SelectedIndexChanged(object sender, EventArgs e)
         {              
-              lbl_d_v.Text = "v6.1.1 full";
-              if (cb_srv.SelectedIndex == 0)  lbl_size.Text = "48 MB";
-              else lbl_size.Text = "40 MB";
-              lbl_val.Text = "MD5: 09c6423522fb9cd0f990f20c9f6bd843";         
+              lbl_d_v.Text = vff;              
+              lbl_val.Text = "MD5: 7523a4c238fcf4087b94dd97d14c0a71";         
               if (File.Exists(Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe"))) lbl_val.Text = Strings.ff_val;
         }
     }

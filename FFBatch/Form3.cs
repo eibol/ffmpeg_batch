@@ -1483,18 +1483,19 @@ namespace FFBatch
                 lang_set = "es";
                 FFBatch.Properties.Settings.Default.app_lang = "es";
             }
-            if (combo_lang.SelectedIndex == 2)
-            {
-                lang_set = "it";
-                FFBatch.Properties.Settings.Default.app_lang = "it";
-            }
 
-            if (combo_lang.SelectedIndex == 3)
+            if (combo_lang.SelectedIndex == 2)
             {
                 lang_set = "fr";
                 FFBatch.Properties.Settings.Default.app_lang = "fr";
             }
 
+            if (combo_lang.SelectedIndex == 3)
+            {
+                lang_set = "it";
+                FFBatch.Properties.Settings.Default.app_lang = "it";
+            }
+                        
             if (combo_lang.SelectedIndex == 4)
             {
                 lang_set = "pt-BR";
@@ -1579,6 +1580,7 @@ namespace FFBatch
             //Check MD5 ffmpeg
 
             Form25 frm25 = new Form25();
+            frm25.btn_close.Image = btn_cancel.Image;
             frm25.crypt = false;
             frm25.ShowDialog();
         }

@@ -101,12 +101,8 @@
             // 
             // chk_all
             // 
-            this.chk_all.AutoSize = true;
-            this.chk_all.Location = new System.Drawing.Point(17, 18);
+            resources.ApplyResources(this.chk_all, "chk_all");
             this.chk_all.Name = "chk_all";
-            this.chk_all.Size = new System.Drawing.Size(99, 17);
-            this.chk_all.TabIndex = 1;
-            this.chk_all.Text = "Map all streams";
             this.chk_all.UseVisualStyleBackColor = true;
             this.chk_all.CheckedChanged += new System.EventHandler(this.chk_all_CheckedChanged);
             // 
@@ -116,11 +112,9 @@
             this.tab_s.Controls.Add(this.tab_video);
             this.tab_s.Controls.Add(this.tab_audio);
             this.tab_s.Controls.Add(this.tab_subs);
-            this.tab_s.Location = new System.Drawing.Point(10, 22);
+            resources.ApplyResources(this.tab_s, "tab_s");
             this.tab_s.Name = "tab_s";
             this.tab_s.SelectedIndex = 0;
-            this.tab_s.Size = new System.Drawing.Size(376, 211);
-            this.tab_s.TabIndex = 5;
             // 
             // tab_all
             // 
@@ -135,112 +129,68 @@
             this.tab_all.Controls.Add(this.chk_n1);
             this.tab_all.Controls.Add(this.chk_n0);
             this.tab_all.Controls.Add(this.chk_all);
-            this.tab_all.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tab_all, "tab_all");
             this.tab_all.Name = "tab_all";
-            this.tab_all.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_all.Size = new System.Drawing.Size(368, 185);
-            this.tab_all.TabIndex = 0;
-            this.tab_all.Text = "All";
             this.tab_all.UseVisualStyleBackColor = true;
             // 
             // chk_n9
             // 
-            this.chk_n9.AutoSize = true;
-            this.chk_n9.Location = new System.Drawing.Point(172, 143);
+            resources.ApplyResources(this.chk_n9, "chk_n9");
             this.chk_n9.Name = "chk_n9";
-            this.chk_n9.Size = new System.Drawing.Size(90, 17);
-            this.chk_n9.TabIndex = 11;
-            this.chk_n9.Text = "Map stream 9";
             this.chk_n9.UseVisualStyleBackColor = true;
             // 
             // chk_n8
             // 
-            this.chk_n8.AutoSize = true;
-            this.chk_n8.Location = new System.Drawing.Point(172, 120);
+            resources.ApplyResources(this.chk_n8, "chk_n8");
             this.chk_n8.Name = "chk_n8";
-            this.chk_n8.Size = new System.Drawing.Size(90, 17);
-            this.chk_n8.TabIndex = 10;
-            this.chk_n8.Text = "Map stream 8";
             this.chk_n8.UseVisualStyleBackColor = true;
             // 
             // chk_n7
             // 
-            this.chk_n7.AutoSize = true;
-            this.chk_n7.Location = new System.Drawing.Point(172, 96);
+            resources.ApplyResources(this.chk_n7, "chk_n7");
             this.chk_n7.Name = "chk_n7";
-            this.chk_n7.Size = new System.Drawing.Size(90, 17);
-            this.chk_n7.TabIndex = 9;
-            this.chk_n7.Text = "Map stream 7";
             this.chk_n7.UseVisualStyleBackColor = true;
             // 
             // chk_n6
             // 
-            this.chk_n6.AutoSize = true;
-            this.chk_n6.Location = new System.Drawing.Point(172, 73);
+            resources.ApplyResources(this.chk_n6, "chk_n6");
             this.chk_n6.Name = "chk_n6";
-            this.chk_n6.Size = new System.Drawing.Size(90, 17);
-            this.chk_n6.TabIndex = 8;
-            this.chk_n6.Text = "Map stream 6";
             this.chk_n6.UseVisualStyleBackColor = true;
             // 
             // chk_n5
             // 
-            this.chk_n5.AutoSize = true;
-            this.chk_n5.Location = new System.Drawing.Point(172, 50);
+            resources.ApplyResources(this.chk_n5, "chk_n5");
             this.chk_n5.Name = "chk_n5";
-            this.chk_n5.Size = new System.Drawing.Size(90, 17);
-            this.chk_n5.TabIndex = 7;
-            this.chk_n5.Text = "Map stream 5";
             this.chk_n5.UseVisualStyleBackColor = true;
             // 
             // chk_n4
             // 
-            this.chk_n4.AutoSize = true;
-            this.chk_n4.Location = new System.Drawing.Point(17, 143);
+            resources.ApplyResources(this.chk_n4, "chk_n4");
             this.chk_n4.Name = "chk_n4";
-            this.chk_n4.Size = new System.Drawing.Size(90, 17);
-            this.chk_n4.TabIndex = 6;
-            this.chk_n4.Text = "Map stream 4";
             this.chk_n4.UseVisualStyleBackColor = true;
             // 
             // chk_n3
             // 
-            this.chk_n3.AutoSize = true;
-            this.chk_n3.Location = new System.Drawing.Point(17, 120);
+            resources.ApplyResources(this.chk_n3, "chk_n3");
             this.chk_n3.Name = "chk_n3";
-            this.chk_n3.Size = new System.Drawing.Size(90, 17);
-            this.chk_n3.TabIndex = 5;
-            this.chk_n3.Text = "Map stream 3";
             this.chk_n3.UseVisualStyleBackColor = true;
             // 
             // chk_n2
             // 
-            this.chk_n2.AutoSize = true;
-            this.chk_n2.Location = new System.Drawing.Point(17, 96);
+            resources.ApplyResources(this.chk_n2, "chk_n2");
             this.chk_n2.Name = "chk_n2";
-            this.chk_n2.Size = new System.Drawing.Size(90, 17);
-            this.chk_n2.TabIndex = 4;
-            this.chk_n2.Text = "Map stream 2";
             this.chk_n2.UseVisualStyleBackColor = true;
             // 
             // chk_n1
             // 
-            this.chk_n1.AutoSize = true;
-            this.chk_n1.Location = new System.Drawing.Point(17, 73);
+            resources.ApplyResources(this.chk_n1, "chk_n1");
             this.chk_n1.Name = "chk_n1";
-            this.chk_n1.Size = new System.Drawing.Size(90, 17);
-            this.chk_n1.TabIndex = 3;
-            this.chk_n1.Text = "Map stream 1";
             this.chk_n1.UseVisualStyleBackColor = true;
             // 
             // chk_n0
             // 
-            this.chk_n0.AutoSize = true;
-            this.chk_n0.Location = new System.Drawing.Point(17, 50);
+            resources.ApplyResources(this.chk_n0, "chk_n0");
             this.chk_n0.Name = "chk_n0";
-            this.chk_n0.Size = new System.Drawing.Size(90, 17);
-            this.chk_n0.TabIndex = 2;
-            this.chk_n0.Text = "Map stream 0";
             this.chk_n0.UseVisualStyleBackColor = true;
             // 
             // tab_video
@@ -250,62 +200,38 @@
             this.tab_video.Controls.Add(this.chk_v_2);
             this.tab_video.Controls.Add(this.chk_v_1);
             this.tab_video.Controls.Add(this.chk_all_v);
-            this.tab_video.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tab_video, "tab_video");
             this.tab_video.Name = "tab_video";
-            this.tab_video.Padding = new System.Windows.Forms.Padding(3);
-            this.tab_video.Size = new System.Drawing.Size(368, 185);
-            this.tab_video.TabIndex = 1;
-            this.tab_video.Text = "Video";
             this.tab_video.UseVisualStyleBackColor = true;
             // 
             // pic_vid
             // 
-            this.pic_vid.ErrorImage = null;
-            this.pic_vid.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pic_vid.Location = new System.Drawing.Point(327, 20);
+            resources.ApplyResources(this.pic_vid, "pic_vid");
             this.pic_vid.Name = "pic_vid";
-            this.pic_vid.Size = new System.Drawing.Size(16, 16);
-            this.pic_vid.TabIndex = 180;
             this.pic_vid.TabStop = false;
             // 
             // chk_v_3
             // 
-            this.chk_v_3.AutoSize = true;
-            this.chk_v_3.Location = new System.Drawing.Point(18, 97);
+            resources.ApplyResources(this.chk_v_3, "chk_v_3");
             this.chk_v_3.Name = "chk_v_3";
-            this.chk_v_3.Size = new System.Drawing.Size(70, 17);
-            this.chk_v_3.TabIndex = 9;
-            this.chk_v_3.Text = "Map third";
             this.chk_v_3.UseVisualStyleBackColor = true;
             // 
             // chk_v_2
             // 
-            this.chk_v_2.AutoSize = true;
-            this.chk_v_2.Location = new System.Drawing.Point(18, 74);
+            resources.ApplyResources(this.chk_v_2, "chk_v_2");
             this.chk_v_2.Name = "chk_v_2";
-            this.chk_v_2.Size = new System.Drawing.Size(85, 17);
-            this.chk_v_2.TabIndex = 8;
-            this.chk_v_2.Text = "Map second";
             this.chk_v_2.UseVisualStyleBackColor = true;
             // 
             // chk_v_1
             // 
-            this.chk_v_1.AutoSize = true;
-            this.chk_v_1.Location = new System.Drawing.Point(18, 51);
+            resources.ApplyResources(this.chk_v_1, "chk_v_1");
             this.chk_v_1.Name = "chk_v_1";
-            this.chk_v_1.Size = new System.Drawing.Size(66, 17);
-            this.chk_v_1.TabIndex = 7;
-            this.chk_v_1.Text = "Map first";
             this.chk_v_1.UseVisualStyleBackColor = true;
             // 
             // chk_all_v
             // 
-            this.chk_all_v.AutoSize = true;
-            this.chk_all_v.Location = new System.Drawing.Point(18, 19);
+            resources.ApplyResources(this.chk_all_v, "chk_all_v");
             this.chk_all_v.Name = "chk_all_v";
-            this.chk_all_v.Size = new System.Drawing.Size(128, 17);
-            this.chk_all_v.TabIndex = 3;
-            this.chk_all_v.Text = "Map all video streams";
             this.chk_all_v.UseVisualStyleBackColor = true;
             this.chk_all_v.CheckedChanged += new System.EventHandler(this.chk_all_v_CheckedChanged);
             // 
@@ -319,100 +245,62 @@
             this.tab_audio.Controls.Add(this.chk_a_2);
             this.tab_audio.Controls.Add(this.chk_a_1);
             this.tab_audio.Controls.Add(this.chk_all_a);
-            this.tab_audio.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tab_audio, "tab_audio");
             this.tab_audio.Name = "tab_audio";
-            this.tab_audio.Size = new System.Drawing.Size(368, 185);
-            this.tab_audio.TabIndex = 2;
-            this.tab_audio.Text = "Audio";
             this.tab_audio.UseVisualStyleBackColor = true;
             // 
             // rad_def_aud3
             // 
-            this.rad_def_aud3.AutoSize = true;
-            this.rad_def_aud3.Enabled = false;
-            this.rad_def_aud3.Location = new System.Drawing.Point(150, 98);
+            resources.ApplyResources(this.rad_def_aud3, "rad_def_aud3");
             this.rad_def_aud3.Name = "rad_def_aud3";
-            this.rad_def_aud3.Size = new System.Drawing.Size(59, 17);
-            this.rad_def_aud3.TabIndex = 184;
             this.rad_def_aud3.TabStop = true;
-            this.rad_def_aud3.Text = "Default";
             this.rad_def_aud3.UseVisualStyleBackColor = true;
             // 
             // rad_def_aud2
             // 
-            this.rad_def_aud2.AutoSize = true;
-            this.rad_def_aud2.Enabled = false;
-            this.rad_def_aud2.Location = new System.Drawing.Point(150, 75);
+            resources.ApplyResources(this.rad_def_aud2, "rad_def_aud2");
             this.rad_def_aud2.Name = "rad_def_aud2";
-            this.rad_def_aud2.Size = new System.Drawing.Size(59, 17);
-            this.rad_def_aud2.TabIndex = 183;
             this.rad_def_aud2.TabStop = true;
-            this.rad_def_aud2.Text = "Default";
             this.rad_def_aud2.UseVisualStyleBackColor = true;
             // 
             // rad_def_aud1
             // 
-            this.rad_def_aud1.AutoSize = true;
-            this.rad_def_aud1.Enabled = false;
-            this.rad_def_aud1.Location = new System.Drawing.Point(150, 52);
+            resources.ApplyResources(this.rad_def_aud1, "rad_def_aud1");
             this.rad_def_aud1.Name = "rad_def_aud1";
-            this.rad_def_aud1.Size = new System.Drawing.Size(59, 17);
-            this.rad_def_aud1.TabIndex = 182;
             this.rad_def_aud1.TabStop = true;
-            this.rad_def_aud1.Text = "Default";
             this.rad_def_aud1.UseVisualStyleBackColor = true;
             // 
             // pic_aud
             // 
-            this.pic_aud.ErrorImage = null;
-            this.pic_aud.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pic_aud.Location = new System.Drawing.Point(327, 20);
+            resources.ApplyResources(this.pic_aud, "pic_aud");
             this.pic_aud.Name = "pic_aud";
-            this.pic_aud.Size = new System.Drawing.Size(16, 16);
-            this.pic_aud.TabIndex = 181;
             this.pic_aud.TabStop = false;
             // 
             // chk_a_3
             // 
-            this.chk_a_3.AutoSize = true;
-            this.chk_a_3.Location = new System.Drawing.Point(18, 98);
+            resources.ApplyResources(this.chk_a_3, "chk_a_3");
             this.chk_a_3.Name = "chk_a_3";
-            this.chk_a_3.Size = new System.Drawing.Size(70, 17);
-            this.chk_a_3.TabIndex = 12;
-            this.chk_a_3.Text = "Map third";
             this.chk_a_3.UseVisualStyleBackColor = true;
             this.chk_a_3.CheckedChanged += new System.EventHandler(this.chk_a_3_CheckedChanged);
             // 
             // chk_a_2
             // 
-            this.chk_a_2.AutoSize = true;
-            this.chk_a_2.Location = new System.Drawing.Point(18, 75);
+            resources.ApplyResources(this.chk_a_2, "chk_a_2");
             this.chk_a_2.Name = "chk_a_2";
-            this.chk_a_2.Size = new System.Drawing.Size(85, 17);
-            this.chk_a_2.TabIndex = 11;
-            this.chk_a_2.Text = "Map second";
             this.chk_a_2.UseVisualStyleBackColor = true;
             this.chk_a_2.CheckedChanged += new System.EventHandler(this.chk_a_2_CheckedChanged);
             // 
             // chk_a_1
             // 
-            this.chk_a_1.AutoSize = true;
-            this.chk_a_1.Location = new System.Drawing.Point(18, 52);
+            resources.ApplyResources(this.chk_a_1, "chk_a_1");
             this.chk_a_1.Name = "chk_a_1";
-            this.chk_a_1.Size = new System.Drawing.Size(66, 17);
-            this.chk_a_1.TabIndex = 10;
-            this.chk_a_1.Text = "Map first";
             this.chk_a_1.UseVisualStyleBackColor = true;
             this.chk_a_1.CheckedChanged += new System.EventHandler(this.chk_a_1_CheckedChanged);
             // 
             // chk_all_a
             // 
-            this.chk_all_a.AutoSize = true;
-            this.chk_all_a.Location = new System.Drawing.Point(18, 19);
+            resources.ApplyResources(this.chk_all_a, "chk_all_a");
             this.chk_all_a.Name = "chk_all_a";
-            this.chk_all_a.Size = new System.Drawing.Size(128, 17);
-            this.chk_all_a.TabIndex = 4;
-            this.chk_all_a.Text = "Map all audio streams";
             this.chk_all_a.UseVisualStyleBackColor = true;
             this.chk_all_a.CheckedChanged += new System.EventHandler(this.chk_all_a_CheckedChanged);
             // 
@@ -442,43 +330,27 @@
             this.tab_subs.Controls.Add(this.chk_s_2);
             this.tab_subs.Controls.Add(this.chk_s_1);
             this.tab_subs.Controls.Add(this.chk_all_s);
-            this.tab_subs.Location = new System.Drawing.Point(4, 22);
+            resources.ApplyResources(this.tab_subs, "tab_subs");
             this.tab_subs.Name = "tab_subs";
-            this.tab_subs.Size = new System.Drawing.Size(368, 185);
-            this.tab_subs.TabIndex = 3;
-            this.tab_subs.Text = "Subtitles";
             this.tab_subs.UseVisualStyleBackColor = true;
             // 
             // pic_f
             // 
-            this.pic_f.ErrorImage = null;
-            this.pic_f.InitialImage = null;
-            this.pic_f.Location = new System.Drawing.Point(231, 18);
+            resources.ApplyResources(this.pic_f, "pic_f");
             this.pic_f.Name = "pic_f";
-            this.pic_f.Size = new System.Drawing.Size(16, 16);
-            this.pic_f.TabIndex = 193;
             this.pic_f.TabStop = false;
             // 
             // lbl_f
             // 
-            this.lbl_f.AutoSize = true;
-            this.lbl_f.Location = new System.Drawing.Point(249, 20);
+            resources.ApplyResources(this.lbl_f, "lbl_f");
             this.lbl_f.Name = "lbl_f";
-            this.lbl_f.Size = new System.Drawing.Size(40, 13);
-            this.lbl_f.TabIndex = 194;
-            this.lbl_f.Text = "Forced";
             // 
             // rad_def_sub10
             // 
-            this.rad_def_sub10.Enabled = false;
-            this.rad_def_sub10.ImageIndex = 0;
+            resources.ApplyResources(this.rad_def_sub10, "rad_def_sub10");
             this.rad_def_sub10.ImageList = this.img_icons;
-            this.rad_def_sub10.Location = new System.Drawing.Point(308, 139);
             this.rad_def_sub10.Name = "rad_def_sub10";
-            this.rad_def_sub10.Size = new System.Drawing.Size(41, 19);
-            this.rad_def_sub10.TabIndex = 192;
             this.rad_def_sub10.TabStop = true;
-            this.rad_def_sub10.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.rad_def_sub10.UseVisualStyleBackColor = true;
             // 
             // img_icons
@@ -489,260 +361,164 @@
             // 
             // rad_def_sub8
             // 
-            this.rad_def_sub8.Enabled = false;
-            this.rad_def_sub8.ImageIndex = 0;
+            resources.ApplyResources(this.rad_def_sub8, "rad_def_sub8");
             this.rad_def_sub8.ImageList = this.img_icons;
-            this.rad_def_sub8.Location = new System.Drawing.Point(308, 96);
             this.rad_def_sub8.Name = "rad_def_sub8";
-            this.rad_def_sub8.Size = new System.Drawing.Size(41, 19);
-            this.rad_def_sub8.TabIndex = 191;
             this.rad_def_sub8.TabStop = true;
-            this.rad_def_sub8.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.rad_def_sub8.UseVisualStyleBackColor = true;
             // 
             // rad_def_sub9
             // 
-            this.rad_def_sub9.Enabled = false;
-            this.rad_def_sub9.ImageIndex = 0;
+            resources.ApplyResources(this.rad_def_sub9, "rad_def_sub9");
             this.rad_def_sub9.ImageList = this.img_icons;
-            this.rad_def_sub9.Location = new System.Drawing.Point(308, 119);
             this.rad_def_sub9.Name = "rad_def_sub9";
-            this.rad_def_sub9.Size = new System.Drawing.Size(41, 19);
-            this.rad_def_sub9.TabIndex = 190;
             this.rad_def_sub9.TabStop = true;
-            this.rad_def_sub9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.rad_def_sub9.UseVisualStyleBackColor = true;
             // 
             // rad_def_sub7
             // 
-            this.rad_def_sub7.Enabled = false;
-            this.rad_def_sub7.ImageIndex = 0;
+            resources.ApplyResources(this.rad_def_sub7, "rad_def_sub7");
             this.rad_def_sub7.ImageList = this.img_icons;
-            this.rad_def_sub7.Location = new System.Drawing.Point(308, 73);
             this.rad_def_sub7.Name = "rad_def_sub7";
-            this.rad_def_sub7.Size = new System.Drawing.Size(41, 19);
-            this.rad_def_sub7.TabIndex = 189;
             this.rad_def_sub7.TabStop = true;
-            this.rad_def_sub7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.rad_def_sub7.UseVisualStyleBackColor = true;
             // 
             // rad_def_sub6
             // 
-            this.rad_def_sub6.Enabled = false;
-            this.rad_def_sub6.ImageIndex = 0;
+            resources.ApplyResources(this.rad_def_sub6, "rad_def_sub6");
             this.rad_def_sub6.ImageList = this.img_icons;
-            this.rad_def_sub6.Location = new System.Drawing.Point(308, 50);
             this.rad_def_sub6.Name = "rad_def_sub6";
-            this.rad_def_sub6.Size = new System.Drawing.Size(41, 19);
-            this.rad_def_sub6.TabIndex = 188;
             this.rad_def_sub6.TabStop = true;
-            this.rad_def_sub6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.rad_def_sub6.UseVisualStyleBackColor = true;
             // 
             // rad_def_sub5
             // 
-            this.rad_def_sub5.Enabled = false;
-            this.rad_def_sub5.ImageIndex = 0;
+            resources.ApplyResources(this.rad_def_sub5, "rad_def_sub5");
             this.rad_def_sub5.ImageList = this.img_icons;
-            this.rad_def_sub5.Location = new System.Drawing.Point(125, 139);
             this.rad_def_sub5.Name = "rad_def_sub5";
-            this.rad_def_sub5.Size = new System.Drawing.Size(41, 19);
-            this.rad_def_sub5.TabIndex = 187;
             this.rad_def_sub5.TabStop = true;
-            this.rad_def_sub5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.rad_def_sub5.UseVisualStyleBackColor = true;
             // 
             // rad_def_sub4
             // 
-            this.rad_def_sub4.Enabled = false;
-            this.rad_def_sub4.ImageIndex = 0;
+            resources.ApplyResources(this.rad_def_sub4, "rad_def_sub4");
             this.rad_def_sub4.ImageList = this.img_icons;
-            this.rad_def_sub4.Location = new System.Drawing.Point(125, 119);
             this.rad_def_sub4.Name = "rad_def_sub4";
-            this.rad_def_sub4.Size = new System.Drawing.Size(41, 19);
-            this.rad_def_sub4.TabIndex = 186;
             this.rad_def_sub4.TabStop = true;
-            this.rad_def_sub4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.rad_def_sub4.UseVisualStyleBackColor = true;
             // 
             // rad_def_sub3
             // 
-            this.rad_def_sub3.Enabled = false;
-            this.rad_def_sub3.ImageIndex = 0;
+            resources.ApplyResources(this.rad_def_sub3, "rad_def_sub3");
             this.rad_def_sub3.ImageList = this.img_icons;
-            this.rad_def_sub3.Location = new System.Drawing.Point(125, 96);
             this.rad_def_sub3.Name = "rad_def_sub3";
-            this.rad_def_sub3.Size = new System.Drawing.Size(41, 19);
-            this.rad_def_sub3.TabIndex = 185;
             this.rad_def_sub3.TabStop = true;
-            this.rad_def_sub3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.rad_def_sub3.UseVisualStyleBackColor = true;
             // 
             // rad_def_sub2
             // 
-            this.rad_def_sub2.Enabled = false;
-            this.rad_def_sub2.ImageIndex = 0;
+            resources.ApplyResources(this.rad_def_sub2, "rad_def_sub2");
             this.rad_def_sub2.ImageList = this.img_icons;
-            this.rad_def_sub2.Location = new System.Drawing.Point(125, 73);
             this.rad_def_sub2.Name = "rad_def_sub2";
-            this.rad_def_sub2.Size = new System.Drawing.Size(41, 19);
-            this.rad_def_sub2.TabIndex = 184;
             this.rad_def_sub2.TabStop = true;
-            this.rad_def_sub2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.rad_def_sub2.UseVisualStyleBackColor = true;
             // 
             // rad_def_sub1
             // 
-            this.rad_def_sub1.Enabled = false;
-            this.rad_def_sub1.ImageIndex = 0;
+            resources.ApplyResources(this.rad_def_sub1, "rad_def_sub1");
             this.rad_def_sub1.ImageList = this.img_icons;
-            this.rad_def_sub1.Location = new System.Drawing.Point(125, 50);
             this.rad_def_sub1.Name = "rad_def_sub1";
-            this.rad_def_sub1.Size = new System.Drawing.Size(41, 19);
-            this.rad_def_sub1.TabIndex = 183;
             this.rad_def_sub1.TabStop = true;
-            this.rad_def_sub1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.rad_def_sub1.UseVisualStyleBackColor = true;
             // 
             // pic_subs
             // 
-            this.pic_subs.ErrorImage = null;
-            this.pic_subs.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pic_subs.Location = new System.Drawing.Point(327, 20);
+            resources.ApplyResources(this.pic_subs, "pic_subs");
             this.pic_subs.Name = "pic_subs";
-            this.pic_subs.Size = new System.Drawing.Size(16, 16);
-            this.pic_subs.TabIndex = 181;
             this.pic_subs.TabStop = false;
             // 
             // chk_s_10
             // 
-            this.chk_s_10.AutoSize = true;
-            this.chk_s_10.Location = new System.Drawing.Point(209, 144);
+            resources.ApplyResources(this.chk_s_10, "chk_s_10");
             this.chk_s_10.Name = "chk_s_10";
-            this.chk_s_10.Size = new System.Drawing.Size(74, 17);
-            this.chk_s_10.TabIndex = 22;
-            this.chk_s_10.Text = "Map tenth";
             this.chk_s_10.UseVisualStyleBackColor = true;
             this.chk_s_10.CheckedChanged += new System.EventHandler(this.chk_s_10_CheckedChanged);
             // 
             // chk_s_9
             // 
-            this.chk_s_9.AutoSize = true;
-            this.chk_s_9.Location = new System.Drawing.Point(209, 121);
+            resources.ApplyResources(this.chk_s_9, "chk_s_9");
             this.chk_s_9.Name = "chk_s_9";
-            this.chk_s_9.Size = new System.Drawing.Size(79, 17);
-            this.chk_s_9.TabIndex = 21;
-            this.chk_s_9.Text = "Map nineth";
             this.chk_s_9.UseVisualStyleBackColor = true;
             this.chk_s_9.CheckedChanged += new System.EventHandler(this.chk_s_9_CheckedChanged);
             // 
             // chk_s_8
             // 
-            this.chk_s_8.AutoSize = true;
-            this.chk_s_8.Location = new System.Drawing.Point(209, 98);
+            resources.ApplyResources(this.chk_s_8, "chk_s_8");
             this.chk_s_8.Name = "chk_s_8";
-            this.chk_s_8.Size = new System.Drawing.Size(73, 17);
-            this.chk_s_8.TabIndex = 20;
-            this.chk_s_8.Text = "Map eight";
             this.chk_s_8.UseVisualStyleBackColor = true;
             this.chk_s_8.CheckedChanged += new System.EventHandler(this.chk_s_8_CheckedChanged);
             // 
             // chk_s_7
             // 
-            this.chk_s_7.AutoSize = true;
-            this.chk_s_7.Location = new System.Drawing.Point(209, 75);
+            resources.ApplyResources(this.chk_s_7, "chk_s_7");
             this.chk_s_7.Name = "chk_s_7";
-            this.chk_s_7.Size = new System.Drawing.Size(88, 17);
-            this.chk_s_7.TabIndex = 19;
-            this.chk_s_7.Text = "Map seventh";
             this.chk_s_7.UseVisualStyleBackColor = true;
             this.chk_s_7.CheckedChanged += new System.EventHandler(this.chk_s_7_CheckedChanged);
             // 
             // chk_s_6
             // 
-            this.chk_s_6.AutoSize = true;
-            this.chk_s_6.Location = new System.Drawing.Point(209, 52);
+            resources.ApplyResources(this.chk_s_6, "chk_s_6");
             this.chk_s_6.Name = "chk_s_6";
-            this.chk_s_6.Size = new System.Drawing.Size(71, 17);
-            this.chk_s_6.TabIndex = 18;
-            this.chk_s_6.Text = "Map sixth";
             this.chk_s_6.UseVisualStyleBackColor = true;
             this.chk_s_6.CheckedChanged += new System.EventHandler(this.chk_s_6_CheckedChanged);
             // 
             // chk_s_5
             // 
-            this.chk_s_5.AutoSize = true;
-            this.chk_s_5.Location = new System.Drawing.Point(17, 144);
+            resources.ApplyResources(this.chk_s_5, "chk_s_5");
             this.chk_s_5.Name = "chk_s_5";
-            this.chk_s_5.Size = new System.Drawing.Size(64, 17);
-            this.chk_s_5.TabIndex = 17;
-            this.chk_s_5.Text = "Map fith";
             this.chk_s_5.UseVisualStyleBackColor = true;
             this.chk_s_5.CheckedChanged += new System.EventHandler(this.chk_s_5_CheckedChanged);
             // 
             // chk_s_4
             // 
-            this.chk_s_4.AutoSize = true;
-            this.chk_s_4.Location = new System.Drawing.Point(17, 121);
+            resources.ApplyResources(this.chk_s_4, "chk_s_4");
             this.chk_s_4.Name = "chk_s_4";
-            this.chk_s_4.Size = new System.Drawing.Size(77, 17);
-            this.chk_s_4.TabIndex = 16;
-            this.chk_s_4.Text = "Map fourth";
             this.chk_s_4.UseVisualStyleBackColor = true;
             this.chk_s_4.CheckedChanged += new System.EventHandler(this.chk_s_4_CheckedChanged);
             // 
             // chk_s_3
             // 
-            this.chk_s_3.AutoSize = true;
-            this.chk_s_3.Location = new System.Drawing.Point(17, 98);
+            resources.ApplyResources(this.chk_s_3, "chk_s_3");
             this.chk_s_3.Name = "chk_s_3";
-            this.chk_s_3.Size = new System.Drawing.Size(70, 17);
-            this.chk_s_3.TabIndex = 15;
-            this.chk_s_3.Text = "Map third";
             this.chk_s_3.UseVisualStyleBackColor = true;
             this.chk_s_3.CheckedChanged += new System.EventHandler(this.chk_s_3_CheckedChanged);
             // 
             // chk_s_2
             // 
-            this.chk_s_2.AutoSize = true;
-            this.chk_s_2.Location = new System.Drawing.Point(17, 75);
+            resources.ApplyResources(this.chk_s_2, "chk_s_2");
             this.chk_s_2.Name = "chk_s_2";
-            this.chk_s_2.Size = new System.Drawing.Size(85, 17);
-            this.chk_s_2.TabIndex = 14;
-            this.chk_s_2.Text = "Map second";
             this.chk_s_2.UseVisualStyleBackColor = true;
             this.chk_s_2.CheckedChanged += new System.EventHandler(this.chk_s_2_CheckedChanged);
             // 
             // chk_s_1
             // 
-            this.chk_s_1.AutoSize = true;
-            this.chk_s_1.Location = new System.Drawing.Point(17, 52);
+            resources.ApplyResources(this.chk_s_1, "chk_s_1");
             this.chk_s_1.Name = "chk_s_1";
-            this.chk_s_1.Size = new System.Drawing.Size(66, 17);
-            this.chk_s_1.TabIndex = 13;
-            this.chk_s_1.Text = "Map first";
             this.chk_s_1.UseVisualStyleBackColor = true;
             this.chk_s_1.CheckedChanged += new System.EventHandler(this.chk_s_1_CheckedChanged);
             // 
             // chk_all_s
             // 
-            this.chk_all_s.AutoSize = true;
-            this.chk_all_s.Location = new System.Drawing.Point(17, 18);
+            resources.ApplyResources(this.chk_all_s, "chk_all_s");
             this.chk_all_s.Name = "chk_all_s";
-            this.chk_all_s.Size = new System.Drawing.Size(135, 17);
-            this.chk_all_s.TabIndex = 5;
-            this.chk_all_s.Text = "Map all subtitle streams";
             this.chk_all_s.UseVisualStyleBackColor = true;
             this.chk_all_s.CheckedChanged += new System.EventHandler(this.chk_all_s_CheckedChanged);
             // 
             // btn_ok
             // 
             this.btn_ok.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btn_ok.Location = new System.Drawing.Point(226, 270);
+            resources.ApplyResources(this.btn_ok, "btn_ok");
             this.btn_ok.Name = "btn_ok";
-            this.btn_ok.Size = new System.Drawing.Size(75, 23);
-            this.btn_ok.TabIndex = 6;
-            this.btn_ok.Text = "OK";
             this.btn_ok.UseVisualStyleBackColor = false;
             this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
             // 
@@ -750,42 +526,31 @@
             // 
             this.btn_cancel.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btn_cancel.Location = new System.Drawing.Point(307, 270);
+            resources.ApplyResources(this.btn_cancel, "btn_cancel");
             this.btn_cancel.Name = "btn_cancel";
-            this.btn_cancel.Size = new System.Drawing.Size(75, 23);
-            this.btn_cancel.TabIndex = 7;
-            this.btn_cancel.Text = "Cancel";
             this.btn_cancel.UseVisualStyleBackColor = false;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // lbl_explain
             // 
-            this.lbl_explain.AutoSize = true;
-            this.lbl_explain.Location = new System.Drawing.Point(11, 236);
+            resources.ApplyResources(this.lbl_explain, "lbl_explain");
             this.lbl_explain.Name = "lbl_explain";
-            this.lbl_explain.Size = new System.Drawing.Size(248, 13);
-            this.lbl_explain.TabIndex = 8;
-            this.lbl_explain.Text = "By default, only first of each stream type is mapped.";
             // 
             // btn_clear
             // 
             this.btn_clear.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.btn_clear.Location = new System.Drawing.Point(14, 270);
+            resources.ApplyResources(this.btn_clear, "btn_clear");
             this.btn_clear.Name = "btn_clear";
-            this.btn_clear.Size = new System.Drawing.Size(75, 23);
-            this.btn_clear.TabIndex = 9;
-            this.btn_clear.Text = "Clear";
             this.btn_clear.UseVisualStyleBackColor = false;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // Form33
             // 
             this.AcceptButton = this.btn_ok;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.CancelButton = this.btn_cancel;
-            this.ClientSize = new System.Drawing.Size(397, 309);
             this.ControlBox = false;
             this.Controls.Add(this.btn_clear);
             this.Controls.Add(this.lbl_explain);
@@ -795,8 +560,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form33";
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Stream mapping";
             this.Load += new System.EventHandler(this.Form33_Load);
             this.tab_s.ResumeLayout(false);
             this.tab_all.ResumeLayout(false);

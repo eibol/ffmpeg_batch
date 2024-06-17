@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form15));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dg_pr = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,17 +56,17 @@
             // 
             // dg_pr
             // 
+            resources.ApplyResources(this.dg_pr, "dg_pr");
             this.dg_pr.AllowDrop = true;
             this.dg_pr.AllowUserToAddRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.AliceBlue;
-            this.dg_pr.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            this.dg_pr.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dg_pr.BackgroundColor = System.Drawing.SystemColors.InactiveBorder;
             this.dg_pr.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_pr.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3});
-            resources.ApplyResources(this.dg_pr, "dg_pr");
             this.dg_pr.Name = "dg_pr";
             this.dg_pr.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dg_pr_CellValidating);
             this.dg_pr.DragDrop += new System.Windows.Forms.DragEventHandler(this.dg_pr_DragDrop);
@@ -86,25 +86,25 @@
             // 
             // Column3
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle2;
             resources.ApplyResources(this.Column3, "Column3");
             this.Column3.Name = "Column3";
             // 
             // btn_save
             // 
+            resources.ApplyResources(this.btn_save, "btn_save");
             this.btn_save.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_save.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btn_save, "btn_save");
             this.btn_save.Name = "btn_save";
             this.btn_save.UseVisualStyleBackColor = false;
             this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // btn_load
             // 
+            resources.ApplyResources(this.btn_load, "btn_load");
             this.btn_load.FlatAppearance.BorderSize = 0;
             this.btn_load.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_load, "btn_load");
             this.btn_load.Name = "btn_load";
             this.btn_load.UseVisualStyleBackColor = true;
             this.btn_load.Click += new System.EventHandler(this.button4_Click);
@@ -116,77 +116,77 @@
             // 
             // btn_cancel
             // 
+            resources.ApplyResources(this.btn_cancel, "btn_cancel");
             this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_cancel.FlatAppearance.BorderSize = 0;
             this.btn_cancel.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_cancel, "btn_cancel");
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // btn_load_bck
             // 
+            resources.ApplyResources(this.btn_load_bck, "btn_load_bck");
             this.btn_load_bck.FlatAppearance.BorderSize = 0;
             this.btn_load_bck.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_load_bck, "btn_load_bck");
             this.btn_load_bck.Name = "btn_load_bck";
             this.btn_load_bck.UseVisualStyleBackColor = true;
             this.btn_load_bck.Click += new System.EventHandler(this.btn_load_bck_Click);
             // 
             // btn_decr_font
             // 
-            this.btn_decr_font.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.btn_decr_font, "btn_decr_font");
+            this.btn_decr_font.FlatAppearance.BorderSize = 0;
             this.btn_decr_font.Name = "btn_decr_font";
             this.btn_decr_font.UseVisualStyleBackColor = true;
             this.btn_decr_font.Click += new System.EventHandler(this.btn_decr_font_Click);
             // 
             // btn_inc_font
             // 
-            this.btn_inc_font.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.btn_inc_font, "btn_inc_font");
+            this.btn_inc_font.FlatAppearance.BorderSize = 0;
             this.btn_inc_font.Name = "btn_inc_font";
             this.btn_inc_font.UseVisualStyleBackColor = true;
             this.btn_inc_font.Click += new System.EventHandler(this.btn_inc_font_Click);
             // 
             // item_down
             // 
-            this.item_down.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.item_down, "item_down");
+            this.item_down.FlatAppearance.BorderSize = 0;
             this.item_down.Name = "item_down";
             this.item_down.UseVisualStyleBackColor = true;
             this.item_down.Click += new System.EventHandler(this.item_down_Click);
             // 
             // item_up
             // 
-            this.item_up.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.item_up, "item_up");
+            this.item_up.FlatAppearance.BorderSize = 0;
             this.item_up.Name = "item_up";
             this.item_up.UseVisualStyleBackColor = true;
             this.item_up.Click += new System.EventHandler(this.item_up_Click);
             // 
             // btn_remove_pr
             // 
+            resources.ApplyResources(this.btn_remove_pr, "btn_remove_pr");
             this.btn_remove_pr.FlatAppearance.BorderSize = 0;
             this.btn_remove_pr.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_remove_pr, "btn_remove_pr");
             this.btn_remove_pr.Name = "btn_remove_pr";
             this.btn_remove_pr.UseVisualStyleBackColor = true;
             this.btn_remove_pr.Click += new System.EventHandler(this.btn_remove_pr_Click);
             // 
             // btn_add_pr
             // 
+            resources.ApplyResources(this.btn_add_pr, "btn_add_pr");
             this.btn_add_pr.FlatAppearance.BorderSize = 0;
             this.btn_add_pr.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_add_pr, "btn_add_pr");
             this.btn_add_pr.Name = "btn_add_pr";
             this.btn_add_pr.UseVisualStyleBackColor = true;
             this.btn_add_pr.Click += new System.EventHandler(this.btn_add_pr_Click);
             // 
             // txt_config_ver
             // 
-            this.txt_config_ver.BackColor = System.Drawing.SystemColors.Window;
             resources.ApplyResources(this.txt_config_ver, "txt_config_ver");
+            this.txt_config_ver.BackColor = System.Drawing.SystemColors.Window;
             this.txt_config_ver.Name = "txt_config_ver";
             // 
             // lbl_config
@@ -196,26 +196,26 @@
             // 
             // btn_save_backup
             // 
+            resources.ApplyResources(this.btn_save_backup, "btn_save_backup");
             this.btn_save_backup.FlatAppearance.BorderSize = 0;
             this.btn_save_backup.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_save_backup, "btn_save_backup");
             this.btn_save_backup.Name = "btn_save_backup";
             this.btn_save_backup.UseVisualStyleBackColor = true;
             this.btn_save_backup.Click += new System.EventHandler(this.btn_save_backup_Click);
             // 
             // btn_clear
             // 
-            this.btn_clear.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.btn_clear, "btn_clear");
+            this.btn_clear.FlatAppearance.BorderSize = 0;
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.UseVisualStyleBackColor = true;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
             // btn_online
             // 
+            resources.ApplyResources(this.btn_online, "btn_online");
             this.btn_online.FlatAppearance.BorderSize = 0;
             this.btn_online.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_online, "btn_online");
             this.btn_online.Name = "btn_online";
             this.btn_online.UseVisualStyleBackColor = true;
             this.btn_online.Click += new System.EventHandler(this.button1_Click);

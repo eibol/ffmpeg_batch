@@ -50,20 +50,20 @@ namespace FFBatch
             // 
             // cb_col
             // 
+            resources.ApplyResources(this.cb_col, "cb_col");
             this.cb_col.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_col.FormattingEnabled = true;
             this.cb_col.Items.AddRange(new object[] {
             resources.GetString("cb_col.Items")});
-            resources.ApplyResources(this.cb_col, "cb_col");
             this.cb_col.Name = "cb_col";
             this.cb_col.SelectedIndexChanged += new System.EventHandler(this.cb_col_SelectedIndexChanged);
             // 
             // btn_all
             // 
+            resources.ApplyResources(this.btn_all, "btn_all");
             this.btn_all.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_all.FlatAppearance.BorderSize = 0;
             this.btn_all.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_all, "btn_all");
             this.btn_all.Name = "btn_all";
             this.btn_all.UseVisualStyleBackColor = true;
             this.btn_all.Click += new System.EventHandler(this.btn_exit_Click);
@@ -75,18 +75,18 @@ namespace FFBatch
             // 
             // btn_del_col
             // 
-            this.btn_del_col.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.btn_del_col, "btn_del_col");
+            this.btn_del_col.FlatAppearance.BorderSize = 0;
             this.btn_del_col.Name = "btn_del_col";
             this.btn_del_col.UseVisualStyleBackColor = true;
             this.btn_del_col.Click += new System.EventHandler(this.btn_del_col_Click);
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.label2);
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // label2
@@ -101,8 +101,8 @@ namespace FFBatch
             // 
             // cb_custom_med
             // 
-            this.cb_custom_med.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             resources.ApplyResources(this.cb_custom_med, "cb_custom_med");
+            this.cb_custom_med.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cb_custom_med.FormattingEnabled = true;
             this.cb_custom_med.Items.AddRange(new object[] {
             resources.GetString("cb_custom_med.Items"),
@@ -143,8 +143,8 @@ namespace FFBatch
             // 
             // btn_add_col
             // 
-            this.btn_add_col.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.btn_add_col, "btn_add_col");
+            this.btn_add_col.FlatAppearance.BorderSize = 0;
             this.btn_add_col.Name = "btn_add_col";
             this.btn_add_col.UseVisualStyleBackColor = true;
             this.btn_add_col.Click += new System.EventHandler(this.btn_add_col_Click_1);

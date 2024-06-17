@@ -47,18 +47,18 @@
             // 
             // btn_abort
             // 
-            resources.ApplyResources(this.btn_abort, "btn_abort");
             this.btn_abort.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_abort.FlatAppearance.BorderSize = 0;
             this.btn_abort.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_abort, "btn_abort");
             this.btn_abort.Name = "btn_abort";
             this.btn_abort.UseVisualStyleBackColor = true;
             this.btn_abort.Click += new System.EventHandler(this.button2_Click);
             // 
             // txt_path
             // 
-            resources.ApplyResources(this.txt_path, "txt_path");
             this.txt_path.BackColor = System.Drawing.SystemColors.Window;
+            resources.ApplyResources(this.txt_path, "txt_path");
             this.txt_path.Name = "txt_path";
             this.txt_path.ReadOnly = true;
             // 
@@ -85,8 +85,8 @@
             // 
             // txt_args
             // 
-            resources.ApplyResources(this.txt_args, "txt_args");
             this.txt_args.BackColor = System.Drawing.SystemColors.Window;
+            resources.ApplyResources(this.txt_args, "txt_args");
             this.txt_args.Name = "txt_args";
             this.txt_args.ReadOnly = true;
             // 
@@ -104,9 +104,9 @@
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panel1.Controls.Add(this.btn_abort);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // Form14

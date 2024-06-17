@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form16));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dg_pr = new System.Windows.Forms.DataGridView();
             this.column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,10 +59,11 @@
             // 
             // dg_pr
             // 
+            resources.ApplyResources(this.dg_pr, "dg_pr");
             this.dg_pr.AllowDrop = true;
             this.dg_pr.AllowUserToAddRows = false;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.AliceBlue;
-            this.dg_pr.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.AliceBlue;
+            this.dg_pr.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dg_pr.BackgroundColor = System.Drawing.SystemColors.InactiveBorder;
             this.dg_pr.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_pr.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -73,7 +74,6 @@
             this.Column7,
             this.Column3,
             this.Column5});
-            resources.ApplyResources(this.dg_pr, "dg_pr");
             this.dg_pr.Name = "dg_pr";
             this.dg_pr.RowHeadersVisible = false;
             this.dg_pr.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dg_pr_CellClick);
@@ -84,8 +84,8 @@
             // 
             // column4
             // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.column4.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.column4.DefaultCellStyle = dataGridViewCellStyle2;
             resources.ApplyResources(this.column4, "column4");
             this.column4.Name = "column4";
             this.column4.ReadOnly = true;
@@ -104,8 +104,8 @@
             // 
             // Column6
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle3;
             resources.ApplyResources(this.Column6, "Column6");
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
@@ -118,8 +118,8 @@
             // 
             // Column3
             // 
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
             resources.ApplyResources(this.Column3, "Column3");
             this.Column3.Name = "Column3";
             // 
@@ -132,49 +132,49 @@
             // 
             // btn_clear
             // 
-            this.btn_clear.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.btn_clear, "btn_clear");
+            this.btn_clear.FlatAppearance.BorderSize = 0;
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.UseVisualStyleBackColor = true;
             // 
             // btn_cancel
             // 
+            resources.ApplyResources(this.btn_cancel, "btn_cancel");
             this.btn_cancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btn_cancel.FlatAppearance.BorderSize = 0;
             this.btn_cancel.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_cancel, "btn_cancel");
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // item_up
             // 
-            this.item_up.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.item_up, "item_up");
+            this.item_up.FlatAppearance.BorderSize = 0;
             this.item_up.Name = "item_up";
             this.item_up.UseVisualStyleBackColor = true;
             this.item_up.Click += new System.EventHandler(this.item_up_Click);
             // 
             // item_down
             // 
-            this.item_down.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.item_down, "item_down");
+            this.item_down.FlatAppearance.BorderSize = 0;
             this.item_down.Name = "item_down";
             this.item_down.UseVisualStyleBackColor = true;
             this.item_down.Click += new System.EventHandler(this.item_down_Click);
             // 
             // btn_inc_font
             // 
-            this.btn_inc_font.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.btn_inc_font, "btn_inc_font");
+            this.btn_inc_font.FlatAppearance.BorderSize = 0;
             this.btn_inc_font.Name = "btn_inc_font";
             this.btn_inc_font.UseVisualStyleBackColor = true;
             this.btn_inc_font.Click += new System.EventHandler(this.btn_inc_font_Click);
             // 
             // btn_decr_font
             // 
-            this.btn_decr_font.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.btn_decr_font, "btn_decr_font");
+            this.btn_decr_font.FlatAppearance.BorderSize = 0;
             this.btn_decr_font.Name = "btn_decr_font";
             this.btn_decr_font.UseVisualStyleBackColor = true;
             this.btn_decr_font.Click += new System.EventHandler(this.btn_decr_font_Click);
@@ -193,35 +193,35 @@
             // 
             // btn_clear_list
             // 
+            resources.ApplyResources(this.btn_clear_list, "btn_clear_list");
             this.btn_clear_list.FlatAppearance.BorderSize = 0;
             this.btn_clear_list.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_clear_list, "btn_clear_list");
             this.btn_clear_list.Name = "btn_clear_list";
             this.btn_clear_list.UseVisualStyleBackColor = true;
             this.btn_clear_list.Click += new System.EventHandler(this.btn_clear_list_Click);
             // 
             // requeue
             // 
-            this.requeue.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.requeue, "requeue");
+            this.requeue.FlatAppearance.BorderSize = 0;
             this.requeue.Name = "requeue";
             this.requeue.UseVisualStyleBackColor = true;
             this.requeue.Click += new System.EventHandler(this.requeue_Click);
             // 
             // btn_jobs
             // 
+            resources.ApplyResources(this.btn_jobs, "btn_jobs");
             this.btn_jobs.FlatAppearance.BorderSize = 0;
             this.btn_jobs.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_jobs, "btn_jobs");
             this.btn_jobs.Name = "btn_jobs";
             this.btn_jobs.UseVisualStyleBackColor = true;
             this.btn_jobs.Click += new System.EventHandler(this.btn_jobs_Click);
             // 
             // btn_logs_url
             // 
+            resources.ApplyResources(this.btn_logs_url, "btn_logs_url");
             this.btn_logs_url.FlatAppearance.BorderSize = 0;
             this.btn_logs_url.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_logs_url, "btn_logs_url");
             this.btn_logs_url.Name = "btn_logs_url";
             this.btn_logs_url.UseVisualStyleBackColor = true;
             this.btn_logs_url.Click += new System.EventHandler(this.btn_logs_url_Click);

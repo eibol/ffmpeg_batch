@@ -73,7 +73,8 @@ namespace FFBatch
 
         private void Form25_Load(object sender, EventArgs e)
         {
-            
+            chk_valff.Checked = !Properties.Settings.Default.validate_ff;
+
             if (!File.Exists(Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe")))
             {
                 this.Close();
@@ -326,8 +327,22 @@ namespace FFBatch
         }
 
         private void btn_close_Click(object sender, EventArgs e)
-        {
+        {            
             this.Close();
-        }     
+        }
+
+        private void chk_valff_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_valff.Checked == true) { Properties.Settings.Default.validate_ff = false; }
+            else Properties.Settings.Default.validate_ff = true;
+            Properties.Settings.Default.Save();
+        }
+
+        private void chk_valff_CheckedChanged_1(object sender, EventArgs e)
+        {
+            if (chk_valff.Checked == true) { Properties.Settings.Default.validate_ff = false; }
+            else Properties.Settings.Default.validate_ff = true;
+            Properties.Settings.Default.Save();
+        }
     }
 }
