@@ -117,70 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Somme vérifiée MD5</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Somme MD5 trouvée</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 28</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 23</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>41, 51</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 23</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="txt_st_md5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>162, 22</value>
-  </data>
   <data name="txt_st_md5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 20</value>
-  </data>
-  <data name="txt_st_md5.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="txt_cur_md5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>162, 48</value>
+    <value>235, 20</value>
   </data>
   <data name="txt_cur_md5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>205, 20</value>
-  </data>
-  <data name="txt_cur_md5.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>235, 20</value>
   </data>
   <data name="pic_1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>373, 21</value>
-  </data>
-  <data name="pic_1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
-  </data>
-  <data name="pic_1.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>403, 22</value>
   </data>
   <data name="pic_2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>373, 47</value>
-  </data>
-  <data name="pic_2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
-  </data>
-  <data name="pic_2.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btn_add_ex.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+    <value>403, 48</value>
   </data>
   <data name="btn_add_ex.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAcCSURBVFhH1dZrUFRlGMDxh72w
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAcCSURBVFhH1dZrUFRlGMDxh72w
         y3V3me41NVY6ahddFrHbNNlFBbktqNWkpVNZISYrApYpyLKkQNwXNcnGHLXGSrqIEqy7wALLLQQClgVs
         avrQ1Aws0NSU5tNzdkPbPUf2rKXSh/8czgMz+5uX97xnARH/V3EOp3Ocw+kcazDn5DkIM46BymAH1Sk7
         hJlGQVVnh1DjKCw00uyrCZhTNQ7K2jFYcIpmJjvMOz4B99E81DR264L68XVKw+g7/jm2AnGGNUmitc4Q
@@ -213,86 +172,17 @@
         Ihsa04NXluhkS/YLZRF7QJFQBIFRVwg83eMcTuc4h9M3hL8AtKiZmXfWiN0AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btn_add_ex.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
   <data name="btn_add_ex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>186, 434</value>
+    <value>213, 455</value>
   </data>
   <data name="btn_add_ex.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 85</value>
+    <value>79, 101</value>
   </data>
-  <data name="btn_add_ex.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="btn_add_ex.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
-  </data>
-  <data name="lbl_antivir.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="lbl_antivir.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 111</value>
-  </data>
-  <data name="lbl_antivir.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 18</value>
-  </data>
-  <data name="lbl_antivir.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="lbl_antivir.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="lbl_os.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="lbl_os.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 26</value>
-  </data>
-  <data name="lbl_os.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 18</value>
-  </data>
-  <data name="lbl_os.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="lbl_os.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>275, 112</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="lbl_fail_ff.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbl_fail_ff.Location" type="System.Drawing.Point, System.Drawing">
-    <value>162, 74</value>
-  </data>
-  <data name="lbl_fail_ff.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 13</value>
-  </data>
-  <data name="lbl_fail_ff.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="txt_tip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 19</value>
-  </data>
-  <data name="txt_tip.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="btn_add_ex.Text" xml:space="preserve">
+    <value>Ajouter une exception de sécurité</value>
   </data>
   <data name="txt_tip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>501, 108</value>
-  </data>
-  <data name="txt_tip.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btn_save_md5.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+    <value>501, 129</value>
   </data>
   <data name="btn_save_md5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -302,8 +192,8 @@
         RF/WBZnFQBrgSi4oKgHSf4DYKCW1OJmBgdEAyM4uLykAijPOAbJFkrLB7A0gdlFIkDOQfQTI5kuHsK+A
         2EkQ9hMQuwjoCSD7C0h9OpjNxAE2B8KWAbFLUitA9jI45xdUFmWmZ5QoGFpaWio4puQnpSoEVxaXpOYW
         K3jmJecXFeQXJZakpgDVQtwHBoIQhaAQ0wBqtNBkoDIAxQOE9TkQHL6MYmcQYgiQXFpUBmUyMhkT5iPM
-        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACw0AAAsN
-        Ae0HwCwAAApgSURBVFhHzZgLVJRlGsefEK/rDXVP7kZl2dnTZtmmZZ1MpVIUMQGFBOWiICDIVQFFQVQM
+        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACwwAAAsM
+        AT9AIsgAAApgSURBVFhHzZgLVJRlGsefEK/rDXVP7kZl2dnTZtmmZZ1MpVIUMQGFBOWiICDIVQFFQVQM
         L3gJ1Myw1PAKagoKwwwDwwzDDHO/MIwwgnhFxAtra5fTtv9938/VozZtbadaz3f+553znu97v9/3vP/n
         eR8gAI+knE4+CnI6+SjI6eSjIFIb1VRvqqdafS1VqitJpBSRVCOlyvpKYc7QYCC9RU86s+4H4vMGi+En
         ZbQaSd+gp3pzPcm0MlJr1aTRaehT+aeJe2V7ZzsaHHTafpq0Zu29d/2uYHWmOrJYLGTRWejdT96tylBn
@@ -350,71 +240,38 @@
         e8kvkdN/AT0Kcjr5KMjp5KMgp5P/f4H+DWftEgTYEaLBAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btn_save_md5.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
-  <data name="btn_save_md5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>433, 7</value>
-  </data>
   <data name="btn_save_md5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 80</value>
+    <value>84, 90</value>
   </data>
-  <data name="btn_save_md5.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="btn_save_md5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 301</value>
+  <data name="btn_save_md5.Text" xml:space="preserve">
+    <value>FFmpeg actuel est fiable</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>524, 134</value>
+    <value>524, 154</value>
   </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="chk_valff.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 17</value>
   </data>
-  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>162, 96</value>
+  <data name="chk_valff.Text" xml:space="preserve">
+    <value>Ne pas valider ffmpeg</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 13</value>
+    <value>195, 13</value>
   </data>
-  <data name="label8.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="label8.Text" xml:space="preserve">
+    <value>L'ajout MD5 garantit l'intégrité du fichier.</value>
   </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 170</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>524, 121</value>
-  </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btn_close.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btn_close.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Validation FFmpeg</value>
   </data>
   <data name="btn_close.Location" type="System.Drawing.Point, System.Drawing">
-    <value>289, 439</value>
+    <value>298, 461</value>
   </data>
   <data name="btn_close.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 81</value>
+    <value>64, 85</value>
   </data>
-  <data name="btn_close.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btn_close.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
+  <data name="btn_close.Text" xml:space="preserve">
+    <value>Fermer fenêtre</value>
   </data>
   <data name="pic_success.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -424,8 +281,8 @@
         RF/WBZnFQBrgSi4oKgHSf4DYKCW1OJmBgdEAyM4uLykAijPOAbJFkrLB7A0gdlFIkDOQfQTI5kuHsK+A
         2EkQ9hMQuwjoCSD7C0h9OpjNxAE2B8KWAbFLUitA9jI45xdUFmWmZ5QoGFpaWio4puQnpSoEVxaXpOYW
         K3jmJecXFeQXJZakpgDVQtwHBoIQhaAQ0wBqtNBkoDIAxQOE9TkQHL6MYmcQYgiQXFpUBmUyMhkT5iPM
-        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACw0AAAsN
-        Ae0HwCwAAALVSURBVDhPpZNZSJRRGIa/SEEyii4suvOmKFAw1IQwF8yyFIcUFUPCxH0bLVzGyRXJJc21
+        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACwwAAAsM
+        AT9AIsgAAALVSURBVDhPpZNZSJRRGIa/SEEyii4suvOmKFAw1IQwF8yyFIcUFUPCxH0bLVzGyRXJJc21
         MpcyxZIkoch1UEuzWZx9/nHMlFFyxnEyw8zwQnibGckKvRC6eODAOe9zOLzfIQD/BQnkAuLxeTTAH6AJ
         5QRJlVISK8QkUUos69+Y92amZqj3fe/Bwp7CJEbF0OzU7N4E5rWCUZBuSkecVxxuaG/oRvmbcpZOo/sj
         4Al4JFaKdxWo1Cpa065R/LP4VNYgC2ObY3DscER6Z3owjcvGSSAW0IhgZL9Go7EctggUEotEopLQwtQC
@@ -439,21 +296,6 @@
         dwjM3csYKen0RsqvLo7xyDoMbk1G5bxpDmSTUhLKhSRSiHawLTBjfsr03EfqHeFRYLR/Yf/QwNElo8E0
         VFthoUK4g12/6N4B/QJfYG3RxTO8PwAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="pic_success.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pic_success.Location" type="System.Drawing.Point, System.Drawing">
-    <value>488, 438</value>
-  </data>
-  <data name="pic_success.Size" type="System.Drawing.Size, System.Drawing">
-    <value>16, 16</value>
-  </data>
-  <data name="pic_success.TabIndex" type="System.Int32, mscorlib">
-    <value>148</value>
-  </data>
-  <data name="pic_success.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
   </data>
   <data name="pic_excl.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -502,7 +344,7 @@
         XTesb3QPLh88M+QwdP6m681Lt7xuXbu94vbgcOjwnZHokdE77DtTd1PuvriXeW/h/sYH6AdFD6UeVjxS
         fNTws+7PbaOWo6fHXMf6Hwc/vj/OGn/2S8Yv7ycKnpCfVEyqTDZPmU2dmnafvvF05dOJZ+nPFmYKf5X+
         tfa5zvMffnP8rX82YnbiBf/Fp99LXsq/PPRq2aueuYC5R69TXy/MF72Rf3P4LeNt37vwd5MLWe+x7ys/
-        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAALDQAACw0B7QfALAAAAwhJREFUOE9t0ktsE0cY
+        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAALDAAACwwBP0AiyAAAAwhJREFUOE9t0ktsE0cY
         B/APERSaIoQqVVRCJEIpnDjQNHBI1ISiNEUgoAUOfUlF9ABcQGoPrUCIVlzaquqhUuGQUw8tjyKw12/v
         +2GvU7wmkR07D6+bOF7bcWzHxDRtEoV/N0ZEpXD4zUgz8818882QKEovIBDPK2TEzHBYj3t0PUIPHhhk
         GNHnkKqq/6ORwLOkqNkP6g+voj5/DaKY/Zjng6QoCsmy/AwSBP4/BOI4PwW5JJlpvYSlLuDxYaRS8bLb
@@ -519,143 +361,35 @@
         QmCC
 </value>
   </data>
-  <data name="pic_excl.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pic_excl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>510, 441</value>
-  </data>
-  <data name="pic_excl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>14, 14</value>
-  </data>
-  <data name="pic_excl.TabIndex" type="System.Int32, mscorlib">
-    <value>152</value>
-  </data>
-  <data name="pic_excl.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="lbl_vcard.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="lbl_vcard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 82</value>
-  </data>
-  <data name="lbl_vcard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 18</value>
-  </data>
-  <data name="lbl_vcard.TabIndex" type="System.Int32, mscorlib">
-    <value>153</value>
-  </data>
-  <data name="lbl_vcard.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 55</value>
-  </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 16</value>
+    <value>76, 16</value>
   </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>158</value>
-  </data>
-  <data name="label7.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="lbl_cpu.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="lbl_cpu.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lbl_cpu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 55</value>
-  </data>
-  <data name="lbl_cpu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 18</value>
-  </data>
-  <data name="lbl_cpu.TabIndex" type="System.Int32, mscorlib">
-    <value>157</value>
-  </data>
-  <data name="lbl_cpu.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 111</value>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Processeur</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 16</value>
+    <value>106, 16</value>
   </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>156</value>
-  </data>
-  <data name="label6.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 82</value>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Logiciel antivirus</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 16</value>
+    <value>136, 16</value>
   </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>155</value>
-  </data>
-  <data name="label5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 26</value>
+  <data name="label5.Text" xml:space="preserve">
+    <value>carte vidéo principale</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 16</value>
+    <value>108, 16</value>
   </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>154</value>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Système opératif</value>
   </data>
-  <data name="label3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 17</value>
-  </data>
-  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>524, 142</value>
-  </data>
-  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>154</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Informations système</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>557, 530</value>
+    <value>557, 559</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2446,50 +2180,5 @@
         xRPuE8QT7hPCE+4TwBPuE74T7ha9Fu5Ax0CeAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btn_add_ex.Text" xml:space="preserve">
-    <value>Ajouter une exception de sécurité</value>
-  </data>
-  <data name="btn_close.Text" xml:space="preserve">
-    <value>Fermer fenêtre</value>
-  </data>
-  <data name="btn_save_md5.Text" xml:space="preserve">
-    <value>FFmpeg actuel est fiable</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Performance</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Validation FFmpeg</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Informations système</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Somme vérifiée MD5</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Somme MD5 trouvée</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Système opératif</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>carte vidéo principale</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Logiciel antivirus</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Processeur</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>L'ajout MD5 garantit l'intégrité du fichier.</value>
   </data>
 </root>

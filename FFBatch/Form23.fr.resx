@@ -119,57 +119,28 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="txt_channel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 18</value>
+    <value>134, 18</value>
   </data>
   <data name="txt_channel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>336, 20</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="txt_channel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 21</value>
+    <value>327, 20</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 13</value>
+    <value>118, 13</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 49</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Lien de téléchargement</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 13</value>
+    <value>139, 13</value>
   </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Paramètres supplémentaires</value>
   </data>
   <data name="txt_parameters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 46</value>
+    <value>154, 46</value>
   </data>
   <data name="txt_parameters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>336, 20</value>
-  </data>
-  <data name="txt_parameters.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+    <value>307, 20</value>
   </data>
   <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -209,62 +180,29 @@
         pEwMenwk6NmBto/8H+tZVu+0Q9CWAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="button1.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
-  <data name="button1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>221, 143</value>
+    <value>213, 143</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 86</value>
+    <value>92, 86</value>
   </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>148</value>
-  </data>
-  <data name="button1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label4.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 77</value>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Commencer Téléchargement</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 13</value>
+    <value>115, 13</value>
   </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>152</value>
+  <data name="label4.Text" xml:space="preserve">
+    <value>itinéraire de destination</value>
   </data>
   <data name="txt_path_main.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 74</value>
+    <value>134, 74</value>
   </data>
   <data name="txt_path_main.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 20</value>
+    <value>256, 20</value>
   </data>
-  <data name="txt_path_main.TabIndex" type="System.Int32, mscorlib">
-    <value>151</value>
-  </data>
-  <data name="btn_browse_path_m3u.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="btn_browse_path_m3u.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btn_browse_path_m3u.Location" type="System.Drawing.Point, System.Drawing">
-    <value>394, 73</value>
-  </data>
-  <data name="btn_browse_path_m3u.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 22</value>
-  </data>
-  <data name="btn_browse_path_m3u.TabIndex" type="System.Int32, mscorlib">
-    <value>153</value>
+  <data name="btn_browse_path_m3u.Text" xml:space="preserve">
+    <value>Examiner...</value>
   </data>
   <data name="notifyIcon1.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2056,12 +1994,6 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
-  <data name="notifyIcon1.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btn_abort_all.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
   <data name="btn_abort_all.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
@@ -2131,77 +2063,29 @@
         1Ncr/wddAlRCYDg0BgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btn_abort_all.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
-  <data name="btn_abort_all.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btn_abort_all.Location" type="System.Drawing.Point, System.Drawing">
-    <value>322, 141</value>
-  </data>
   <data name="btn_abort_all.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 88</value>
+    <value>88, 88</value>
   </data>
-  <data name="btn_abort_all.TabIndex" type="System.Int32, mscorlib">
-    <value>154</value>
+  <data name="btn_abort_all.Text" xml:space="preserve">
+    <value>Abandonner le téléchargement</value>
   </data>
-  <data name="btn_abort_all.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
-  </data>
-  <data name="lbl_d_v.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lbl_d_v.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 14</value>
-  </data>
-  <data name="lbl_d_v.Size" type="System.Drawing.Size, System.Drawing">
-    <value>454, 18</value>
-  </data>
-  <data name="lbl_d_v.TabIndex" type="System.Int32, mscorlib">
-    <value>156</value>
-  </data>
-  <data name="lbl_d_v.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="lbl_d_v.Text" xml:space="preserve">
+    <value>Téléchargement du fichier :</value>
   </data>
   <data name="txt_get_url.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 40</value>
-  </data>
-  <data name="txt_get_url.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="txt_get_url.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 47</value>
-  </data>
-  <data name="txt_get_url.TabIndex" type="System.Int32, mscorlib">
-    <value>159</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+    <value>48, 40</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>75, 16</value>
+    <value>0, 16</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>308, 13</value>
+    <value>470, 13</value>
   </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>160</value>
-  </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 8</value>
+  <data name="label3.Text" xml:space="preserve">
+    <value>COMMENT OBTENIR UN LIEN DE TÉLÉCHARGEMENT À PARTIR D'UNE CHAÎNE YOUTUBE</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>470, 93</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>161</value>
-  </data>
-  <data name="btn_clear_list.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+    <value>471, 93</value>
   </data>
   <data name="btn_clear_list.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2236,158 +2120,26 @@
         AABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btn_clear_list.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
-  <data name="btn_clear_list.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btn_clear_list.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 143</value>
-  </data>
-  <data name="btn_clear_list.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 86</value>
-  </data>
-  <data name="btn_clear_list.TabIndex" type="System.Int32, mscorlib">
-    <value>162</value>
-  </data>
-  <data name="btn_clear_list.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
-  </data>
-  <data name="cb_format.Location" type="System.Drawing.Point, System.Drawing">
-    <value>203, 107</value>
-  </data>
-  <data name="cb_format.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 21</value>
-  </data>
-  <data name="cb_format.TabIndex" type="System.Int32, mscorlib">
-    <value>167</value>
-  </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label6.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>290, 110</value>
+  <data name="btn_clear_list.Text" xml:space="preserve">
+    <value>Effacer le lien</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 13</value>
+    <value>99, 13</value>
   </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>166</value>
-  </data>
-  <data name="cb_res.Location" type="System.Drawing.Point, System.Drawing">
-    <value>394, 107</value>
-  </data>
-  <data name="cb_res.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 21</value>
-  </data>
-  <data name="cb_res.TabIndex" type="System.Int32, mscorlib">
-    <value>165</value>
-  </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label5.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Résolution préférée</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 110</value>
+    <value>45, 110</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 13</value>
+    <value>67, 13</value>
   </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>164</value>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Codec vidéo</value>
   </data>
-  <data name="cb_codec.Location" type="System.Drawing.Point, System.Drawing">
-    <value>125, 107</value>
-  </data>
-  <data name="cb_codec.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 21</value>
-  </data>
-  <data name="cb_codec.TabIndex" type="System.Int32, mscorlib">
-    <value>163</value>
-  </data>
-  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 105</value>
-  </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>470, 235</value>
-  </data>
-  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>164</value>
-  </data>
-  <data name="lbl_vcount.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lbl_vcount.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 91</value>
-  </data>
-  <data name="lbl_vcount.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 16</value>
-  </data>
-  <data name="lbl_vcount.TabIndex" type="System.Int32, mscorlib">
-    <value>165</value>
-  </data>
-  <data name="lbl_vcount.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="lbl_down_time.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lbl_down_time.Location" type="System.Drawing.Point, System.Drawing">
-    <value>357, 91</value>
-  </data>
-  <data name="lbl_down_time.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 16</value>
-  </data>
-  <data name="lbl_down_time.TabIndex" type="System.Int32, mscorlib">
-    <value>164</value>
-  </data>
-  <data name="lbl_down_time.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="pg2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pg2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 36</value>
-  </data>
-  <data name="pg2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>452, 23</value>
-  </data>
-  <data name="pg2.TabIndex" type="System.Int32, mscorlib">
-    <value>163</value>
-  </data>
-  <data name="Pg1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="Pg1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 65</value>
-  </data>
-  <data name="Pg1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>452, 23</value>
-  </data>
-  <data name="Pg1.TabIndex" type="System.Int32, mscorlib">
-    <value>161</value>
-  </data>
-  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 346</value>
-  </data>
-  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>470, 115</value>
-  </data>
-  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>165</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>494, 473</value>
+  <data name="lbl_down_time.Text" xml:space="preserve">
+    <value>Vitesse/Temps</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2676,64 +2428,7 @@
         AAAAAAAHAAAAAAAAAA8AAAAAAAAAD4AAAAAAAAAfwAAAAAAAAD8=
 </value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
-  <data name="timer_tasks.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>17, 17</value>
-  </data>
-  <data name="notifyIcon1.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>129, 17</value>
-  </data>
-  <data name="fd1.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>242, 17</value>
-  </data>
-  <data name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>311, 17</value>
-  </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="$this.TrayHeight" type="System.Int32, mscorlib">
-    <value>35</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Lien/liste de téléchargement rapide</value>
-  </data>
-  <data name="btn_abort_all.Text" xml:space="preserve">
-    <value>Abandonner le téléchargement</value>
-  </data>
-  <data name="btn_browse_path_m3u.Text" xml:space="preserve">
-    <value>Examiner...</value>
-  </data>
-  <data name="btn_clear_list.Text" xml:space="preserve">
-    <value>Effacer le lien</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Commencer Le Téléchargement</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Lien de téléchargement</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Paramètres supplémentaires</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>COMMENT OBTENIR UN LIEN DE TÉLÉCHARGEMENT À PARTIR D'UNE CHAÎNE YOUTUBE</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>itinéraire de destination</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Codec vidéo</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Résolution préférée</value>
-  </data>
-  <data name="lbl_down_time.Text" xml:space="preserve">
-    <value>Vitesse/Temps</value>
-  </data>
-  <data name="lbl_d_v.Text" xml:space="preserve">
-    <value>Téléchargement du fichier :</value>
   </data>
 </root>

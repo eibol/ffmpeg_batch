@@ -124,15 +124,18 @@
     <value>Español</value>
   </data>
   <data name="combo_lang.Items2" xml:space="preserve">
-    <value>Italiano</value>
+    <value>Français</value>
   </data>
   <data name="combo_lang.Items3" xml:space="preserve">
-    <value>Português (BR)</value>
+    <value>Italiano</value>
   </data>
   <data name="combo_lang.Items4" xml:space="preserve">
-    <value>中文</value>
+    <value>Português (BR)</value>
   </data>
   <data name="combo_lang.Items5" xml:space="preserve">
+    <value>中文</value>
+  </data>
+  <data name="combo_lang.Items6" xml:space="preserve">
     <value>اللغة العربية</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />

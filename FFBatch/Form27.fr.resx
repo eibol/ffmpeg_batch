@@ -117,30 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Column1.Width" type="System.Int32, mscorlib">
-    <value>258</value>
+  <data name="pre_input.HeaderText" xml:space="preserve">
+    <value>Pré-entrée</value>
   </data>
-  <data name="Column2.Width" type="System.Int32, mscorlib">
-    <value>449</value>
-  </data>
-  <data name="Column3.Width" type="System.Int32, mscorlib">
-    <value>52</value>
+  <data name="Column2.HeaderText" xml:space="preserve">
+    <value>Paramètres FFmpeg</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="dg_pr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 57</value>
-  </data>
-  <data name="dg_pr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>903, 369</value>
-  </data>
-  <data name="dg_pr.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btn_load.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
   <data name="btn_load.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGeYUxB9wAAACBjSFJNAACH
@@ -176,41 +159,14 @@
         4WDomu4agJvw3MBFoo32jUY7/Y2OYDDY4XK5uumV94Z/fUD4C1di7HocDUj0AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btn_load.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
-  <data name="btn_load.Location" type="System.Drawing.Point, System.Drawing">
-    <value>402, 432</value>
-  </data>
-  <data name="btn_load.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 82</value>
-  </data>
-  <data name="btn_load.TabIndex" type="System.Int32, mscorlib">
-    <value>131</value>
-  </data>
-  <data name="btn_load.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
-  </data>
-  <data name="btn_cancel.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btn_cancel.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
-  <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>491, 432</value>
+  <data name="btn_load.Text" xml:space="preserve">
+    <value>Utiliser le profil sélectionné</value>
   </data>
   <data name="btn_cancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 82</value>
+    <value>73, 82</value>
   </data>
-  <data name="btn_cancel.TabIndex" type="System.Int32, mscorlib">
-    <value>132</value>
-  </data>
-  <data name="btn_cancel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
-  </data>
-  <data name="btn_decr_font.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="btn_cancel.Text" xml:space="preserve">
+    <value>Annuler la modification</value>
   </data>
   <data name="btn_decr_font.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -230,18 +186,6 @@
         VE3T6Dc+7qI3EsmqgwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btn_decr_font.Location" type="System.Drawing.Point, System.Drawing">
-    <value>899, 22</value>
-  </data>
-  <data name="btn_decr_font.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 27</value>
-  </data>
-  <data name="btn_decr_font.TabIndex" type="System.Int32, mscorlib">
-    <value>137</value>
-  </data>
-  <data name="btn_inc_font.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
   <data name="btn_inc_font.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
@@ -258,30 +202,6 @@
         tHdKhNasVInkCMLfcvwDLBZLVJBxvP49PGR6zAIhws7nkfAQvAJvwHtwgMpe0tnRS18Gj/djMBi8HQ6H
         WSgUAiH2B6ZYniu82CKTAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="btn_inc_font.Location" type="System.Drawing.Point, System.Drawing">
-    <value>877, 22</value>
-  </data>
-  <data name="btn_inc_font.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 27</value>
-  </data>
-  <data name="btn_inc_font.TabIndex" type="System.Int32, mscorlib">
-    <value>136</value>
-  </data>
-  <data name="link1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="link1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="link1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>435, 17</value>
-  </data>
-  <data name="link1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 16</value>
-  </data>
-  <data name="link1.TabIndex" type="System.Int32, mscorlib">
-    <value>143</value>
   </data>
   <data name="pic_w.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -311,21 +231,6 @@
         KcXrniGnslcyUecaHgiM9v4L7Dwwexg6fJ4P5lxPvf5XoGo/kHnOzZ8MTfofAj2uY5DuEX4AAAAASUVO
         RK5CYII=
 </value>
-  </data>
-  <data name="pic_w.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 8</value>
-  </data>
-  <data name="pic_w.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 41</value>
-  </data>
-  <data name="pic_w.TabIndex" type="System.Int32, mscorlib">
-    <value>144</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>946, 516</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2117,46 +2022,7 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
-  </data>
-  <data name="Column1.UserAddedColumn" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="pre_input.UserAddedColumn" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Column2.UserAddedColumn" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="Column3.UserAddedColumn" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="open_file.TrayLocation" type="System.Drawing.Point, System.Drawing">
-    <value>17, 17</value>
-  </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="$this.TrayHeight" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>FFmpeg Batch AV Converter – Profils</value>
-  </data>
-  <data name="btn_cancel.Text" xml:space="preserve">
-    <value>Annuler la modification</value>
-  </data>
-  <data name="btn_load.Text" xml:space="preserve">
-    <value>Utiliser le profil sélectionné</value>
-  </data>
-  <data name="Column2.HeaderText" xml:space="preserve">
-    <value>Paramètres FFmpeg</value>
-  </data>
-  <data name="Column3.HeaderText" xml:space="preserve">
-    <value>Format</value>
-  </data>
-  <data name="pre_input.HeaderText" xml:space="preserve">
-    <value>Pré-entrée</value>
   </data>
 </root>

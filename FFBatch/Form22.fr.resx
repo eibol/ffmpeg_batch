@@ -118,154 +118,86 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>436, 287</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="txt_batch_concat.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="chk_batch_concat.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chk_filter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 109</value>
-  </data>
-  <data name="txt_intro.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 1</value>
-  </data>
-  <data name="chk_filter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 17</value>
-  </data>
-  <data name="panel_batch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>401, 103</value>
-  </data>
-  <data name="txt_params.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="txt_params.Size" type="System.Drawing.Size, System.Drawing">
-    <value>305, 20</value>
-  </data>
-  <data name="panel_batch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 241</value>
-  </data>
   <data name="radio_filter.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 17</value>
+    <value>204, 17</value>
   </data>
-  <data name="chk_filter.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btn_end.Location" type="System.Drawing.Point, System.Drawing">
-    <value>328, 28</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>-1, 250</value>
-  </data>
-  <data name="txt_batch_concat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1, 64</value>
-  </data>
-  <data name="btn_end.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="btn_intro.Location" type="System.Drawing.Point, System.Drawing">
-    <value>328, 0</value>
-  </data>
-  <data name="txt_c_format.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="panel_batch.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 32</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
-  <data name="txt_intro.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="radio_filter.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 108</value>
-  </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 23</value>
-  </data>
-  <data name="chk_batch_concat.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 140</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 25</value>
-  </data>
-  <data name="textBox1.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 13</value>
-  </data>
-  <data name="radio_demuxer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 79</value>
-  </data>
-  <data name="btn_intro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 23</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
+  <data name="radio_filter.Text" xml:space="preserve">
+    <value>Utiliser le filtre de concaténation vidéo</value>
   </data>
   <data name="radio_demuxer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 17</value>
+    <value>162, 17</value>
   </data>
-  <data name="chk_copy.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="radio_demuxer.Text" xml:space="preserve">
+    <value>Utiliser le concaténateur natif</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="chk_copy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>238, 80</value>
   </data>
-  <data name="txt_end.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
+  <data name="chk_copy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 17</value>
   </data>
-  <data name="txt_end.Location" type="System.Drawing.Point, System.Drawing">
-    <value>56, 29</value>
+  <data name="chk_copy.Text" xml:space="preserve">
+    <value>Copier les flux</value>
   </data>
-  <data name="panel1.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="chk_filter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>238, 109</value>
   </data>
-  <data name="radio_filter.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="chk_filter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>194, 17</value>
   </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="chk_filter.Text" xml:space="preserve">
+    <value>Utiliser les paramètres automatiques</value>
   </data>
-  <data name="txt_intro.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 20</value>
+  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>401, 61</value>
   </data>
-  <data name="btn_end.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 23</value>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>Dans ce mode, les fichiers multimédias sont joints en copiant les flux, à condition d'avoir les mêmes caractéristiques (codec, taille, débit). REMARQUE : Tous les formats ne prennent pas en charge la copie de flux. Si la lecture échoue, un réencodage est nécessaire.</value>
   </data>
-  <data name="txt_batch_concat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>388, 34</value>
+  <data name="button1.Text" xml:space="preserve">
+    <value>Commencer</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
+  <data name="btn_cancel.Text" xml:space="preserve">
+    <value>Annuler</value>
   </data>
-  <data name="txt_c_format.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>457, 47</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 13</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Paramètres d'encodage</value>
+  </data>
+  <data name="chk_batch_concat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 17</value>
+  </data>
+  <data name="chk_batch_concat.Text" xml:space="preserve">
+    <value>Activer la concaténation série</value>
+  </data>
+  <data name="txt_batch_concat.Text" xml:space="preserve">
+    <value>Dans ce mode, les fichiers de début et de fin spécifiés sont concaténés à chaque fichier de la liste, au lieu de concaténer la liste en un seul fichier.</value>
+  </data>
+  <data name="btn_end.Text" xml:space="preserve">
+    <value>Examiner...</value>
+  </data>
+  <data name="btn_intro.Text" xml:space="preserve">
+    <value>Examiner...</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 13</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Dossier final</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 13</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Fichier initial</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>451, 287</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -553,149 +485,5 @@
         AAcAAAAAAAAABwAAAAAAAAAHAAAAAAAAAAcAAAAAAAAABwAAAAAAAAAHAAAAAAAAAAcAAAAAAAAABwAA
         AAAAAAAHAAAAAAAAAA8AAAAAAAAAD4AAAAAAAAAfwAAAAAAAAD8=
 </value>
-  </data>
-  <data name="txt_batch_concat.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>446, 47</value>
-  </data>
-  <data name="txt_end.Size" type="System.Drawing.Size, System.Drawing">
-    <value>267, 20</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 49</value>
-  </data>
-  <data name="btn_cancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 23</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 13</value>
-  </data>
-  <data name="chk_batch_concat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 17</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 5</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chk_copy.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="radio_filter.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="txt_c_format.Location" type="System.Drawing.Point, System.Drawing">
-    <value>380, 46</value>
-  </data>
-  <data name="panel_batch.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="chk_filter.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="chk_batch_concat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>27, 210</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>39, 13</value>
-  </data>
-  <data name="txt_c_format.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 20</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 13</value>
-  </data>
-  <data name="textBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="radio_demuxer.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="radio_demuxer.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btn_cancel.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="txt_params.Location" type="System.Drawing.Point, System.Drawing">
-    <value>25, 46</value>
-  </data>
-  <data name="chk_copy.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 17</value>
-  </data>
-  <data name="chk_copy.Location" type="System.Drawing.Point, System.Drawing">
-    <value>208, 80</value>
-  </data>
-  <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>353, 7</value>
-  </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>273, 7</value>
-  </data>
-  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>391, 61</value>
-  </data>
-  <data name="txt_batch_concat.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="btn_intro.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="btn_cancel.Text" xml:space="preserve">
-    <value>Annuler</value>
-  </data>
-  <data name="btn_end.Text" xml:space="preserve">
-    <value>Examiner...</value>
-  </data>
-  <data name="btn_intro.Text" xml:space="preserve">
-    <value>Examiner...</value>
-  </data>
-  <data name="button1.Text" xml:space="preserve">
-    <value>Commencer</value>
-  </data>
-  <data name="chk_batch_concat.Text" xml:space="preserve">
-    <value>Activer la concaténation série</value>
-  </data>
-  <data name="chk_copy.Text" xml:space="preserve">
-    <value>Copier les flux</value>
-  </data>
-  <data name="chk_filter.Text" xml:space="preserve">
-    <value>Utiliser les paramètres automatiques</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Paramètres d'encodage</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Fichier initial</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Dossier final</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Format</value>
-  </data>
-  <data name="radio_demuxer.Text" xml:space="preserve">
-    <value>Utiliser le concaténateur natif</value>
-  </data>
-  <data name="radio_filter.Text" xml:space="preserve">
-    <value>Utiliser le filtre de concaténation vidéo</value>
-  </data>
-  <data name="textBox1.Text" xml:space="preserve">
-    <value>Dans ce mode, les fichiers multimédias sont joints en copiant les flux, à condition d'avoir les mêmes caractéristiques (codec, taille, débit). REMARQUE : Tous les formats ne prennent pas en charge la copie de flux. Si la lecture échoue, un réencodage est nécessaire.</value>
-  </data>
-  <data name="txt_batch_concat.Text" xml:space="preserve">
-    <value>Dans ce mode, les fichiers de début et de fin spécifiés sont concaténés à chaque fichier de la liste, au lieu de concaténer la liste en un seul fichier.</value>
   </data>
 </root>
