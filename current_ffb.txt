@@ -1,11 +1,9 @@
-﻿3.0.6
-• ffmpeg 7.0 Essential included.
-• ffmpeg.exe path now can be different from application path (ffmpeg shared version supported).
-• New display preview of current YouTube live stream in progress.
-• New custom column: Last modification date.
-• Fix issue refreshing file list with some sorted columns.
-• Fix wrong fade out filter time using trim feature.
-• Fix wrong subtitle disposition when mapping forced subtitles in main tab.
-• Fix some minor multimedia info mislocations with m_jpeg streams.
-• Fix truncated resolutions in YouTube streams dialog.
-• Minor translation fixes.
+3.0.7
+• ffmpeg 7.0.1 included (essential).
+• French translation available.
+• New setting at security and performance to disable ffmpeg.exe checksum validation.
+• When progress info fails to display, or when using quick file adding, standard ffmpeg output is displayed in progress bar so encoding can be followed up (sequential encoding).
+• Verbose logs increased -loglevel for better ffmpeg debugging (could generate big log files).
+• Fixed: screen recording audio dialog not available. Updated virtual audio playback driver url for recording audio playback.
+• Fixed: very slow custom columns loading from hard disks (multithread info attempted only from SSD/NVMe).
+• Minor translations and bugfixes.
