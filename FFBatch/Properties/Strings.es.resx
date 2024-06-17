@@ -2544,6 +2544,12 @@
   <data name="rec_fail" xml:space="preserve">
     <value>Prueba de grabación fallida.</value>
   </data>
+  <data name="rec_play_1" xml:space="preserve">
+    <value>La grabación de reproducción de audio solo está disponible a través de un dispositivo mezclador estéreo o similar. A veces está disponible como dispositivo oculto de audio.</value>
+  </data>
+  <data name="rec_play_2" xml:space="preserve">
+    <value>Si su tarjeta de audio no muestra el bucle invertido de audio del mezclador estéreo, puede intentar usar la aplicación OBS Studio.</value>
+  </data>
   <data name="rec_screen" xml:space="preserve">
     <value>1-Clic para grabar la pantalla usando gdigrab</value>
   </data>
@@ -3405,6 +3411,9 @@
   </data>
   <data name="vid_req" xml:space="preserve">
     <value>Es necesaria una pista de vídeo para multiplexar.</value>
+  </data>
+  <data name="virtual_play_dr" xml:space="preserve">
+    <value>También puede intentar instalar el controlador de audio virtual de captura de pantalla en https://github.com/rdp/screen-capture-recorder-to-video-windows-free/releases</value>
   </data>
   <data name="visualc_req" xml:space="preserve">
     <value>El paquete Microsoft Visual C++ 2010 es necesario para la descarga de enlaces de YouTube.</value>

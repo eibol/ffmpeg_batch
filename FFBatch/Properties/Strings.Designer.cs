@@ -7342,6 +7342,24 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Audio playback recording is only available through Stereo mixer device or similar. It is sometimes available as a hidden audio device..
+        /// </summary>
+        internal static string rec_play_1 {
+            get {
+                return ResourceManager.GetString("rec_play_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a If your audio card does not display Stereo mixer audio loopback, you could try using OBS Studio application..
+        /// </summary>
+        internal static string rec_play_2 {
+            get {
+                return ResourceManager.GetString("rec_play_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a 1-Click record screen using gdigrab.
         /// </summary>
         internal static string rec_screen {
@@ -9993,6 +10011,15 @@ namespace FFBatch.Properties {
         internal static string vids_unav {
             get {
                 return ResourceManager.GetString("vids_unav", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a You can also try installing Screen capture virtual audio driver at https://github.com/rdp/screen-capture-recorder-to-video-windows-free/releases.
+        /// </summary>
+        internal static string virtual_play_dr {
+            get {
+                return ResourceManager.GetString("virtual_play_dr", resourceCulture);
             }
         }
         

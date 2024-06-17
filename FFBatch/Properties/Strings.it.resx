@@ -2554,6 +2554,12 @@ Non è possibile visualizzare l'anteprima del ritaglio.</value>
   <data name="rec_fail" xml:space="preserve">
     <value>Test registrazione fallito</value>
   </data>
+  <data name="rec_play_1" xml:space="preserve">
+    <value>La registrazione della riproduzione audio è disponibile solo tramite il dispositivo mixer stereo o simile. A volte è disponibile come dispositivo audio nascosto.</value>
+  </data>
+  <data name="rec_play_2" xml:space="preserve">
+    <value>Se la tua scheda audio non visualizza il loopback audio del mixer stereo, puoi provare a utilizzare l'applicazione OBS Studio.</value>
+  </data>
   <data name="rec_screen" xml:space="preserve">
     <value>Registrazione schermo 1 clic usando gdigrab</value>
   </data>
@@ -3422,6 +3428,9 @@ Puoi utilizzare più filtri, tra parentesi e separati da virgole. Si prega di mo
   </data>
   <data name="vid_req" xml:space="preserve">
     <value>Per il muxing è richiesta una traccia video.</value>
+  </data>
+  <data name="virtual_play_dr" xml:space="preserve">
+    <value>Puoi anche provare a installare il driver audio virtuale per l'acquisizione dello schermo su https://github.com/rdp/screen-capture-recorder-to-video-windows-free/releases</value>
   </data>
   <data name="visualc_req" xml:space="preserve">
     <value>Per la funzione download YouTube è richiesto il pacchetto Microsoft Visual C++ 2010.</value>

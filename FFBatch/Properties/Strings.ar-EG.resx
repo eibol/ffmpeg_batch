@@ -2553,6 +2553,12 @@
   <data name="rec_fail" xml:space="preserve">
     <value>فشل اختبار التسجيل</value>
   </data>
+  <data name="rec_play_1" xml:space="preserve">
+    <value>تسجيل تشغيل الصوت متاح فقط من خلال جهاز مزج الصوت الاستريو أو ما شابه. يتوفر أحيانًا كجهاز صوت مخفي.</value>
+  </data>
+  <data name="rec_play_2" xml:space="preserve">
+    <value>إذا لم تعرض بطاقة الصوت الخاصة بك استرجاع صوت خلاط الاستريو، فيمكنك تجربة استخدام تطبيق OBS Studio.</value>
+  </data>
   <data name="rec_screen" xml:space="preserve">
     <value>1-انقر فوق تسجيل الشاشة باستخدام gdigrab</value>
   </data>
@@ -3417,6 +3423,9 @@
   </data>
   <data name="vid_req" xml:space="preserve">
     <value>مطلوب مسار فيديو ل muxing.</value>
+  </data>
+  <data name="virtual_play_dr" xml:space="preserve">
+    <value>يمكنك أيضًا تجربة تثبيت برنامج تشغيل الصوت الافتراضي لالتقاط الشاشة على https://github.com/rdp/screen-capture-recorder-to-video-windows-free/releases</value>
   </data>
   <data name="visualc_req" xml:space="preserve">
     <value>حزمة Microsoft Visual C ++ 2010 مطلوبة لميزة تنزيل YouTube.</value>

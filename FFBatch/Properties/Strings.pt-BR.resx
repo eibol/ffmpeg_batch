@@ -2538,6 +2538,12 @@
   <data name="rec_fail" xml:space="preserve">
     <value>O teste de gravação falhou</value>
   </data>
+  <data name="rec_play_1" xml:space="preserve">
+    <value>A gravação de reprodução de áudio está disponível apenas através de um dispositivo mixer estéreo ou similar. Às vezes, está disponível como um dispositivo de áudio oculto.</value>
+  </data>
+  <data name="rec_play_2" xml:space="preserve">
+    <value>Se a sua placa de áudio não exibir loopback de áudio do mixer estéreo, você pode tentar usar o aplicativo OBS Studio.</value>
+  </data>
   <data name="rec_screen" xml:space="preserve">
     <value>Gravar tela com 1-clique usando gdigrab</value>
   </data>
@@ -3402,6 +3408,9 @@
   </data>
   <data name="vid_req" xml:space="preserve">
     <value>Uma trilha de vídeo é necessária para a mixagem.</value>
+  </data>
+  <data name="virtual_play_dr" xml:space="preserve">
+    <value>Você também pode tentar instalar o driver de áudio virtual de captura de tela em https://github.com/rdp/screen-capture-recorder-to-video-windows-free/releases</value>
   </data>
   <data name="visualc_req" xml:space="preserve">
     <value>O pacote Microsoft Visual C ++ 2010 é necessário para o recurso de download do YouTube.</value>

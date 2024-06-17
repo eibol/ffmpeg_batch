@@ -2556,6 +2556,12 @@
   <data name="rec_fail" xml:space="preserve">
     <value>Le test d'enregistrement a échoué</value>
   </data>
+  <data name="rec_play_1" xml:space="preserve">
+    <value>L'enregistrement de lecture audio n'est disponible que via un appareil de mixage stéréo ou similaire. Il est parfois disponible en tant que périphérique audio caché.</value>
+  </data>
+  <data name="rec_play_2" xml:space="preserve">
+    <value>Si votre carte audio n'affiche pas le bouclage audio du mixeur stéréo, vous pouvez essayer d'utiliser l'application OBS Studio.</value>
+  </data>
   <data name="rec_screen" xml:space="preserve">
     <value>Écran d'enregistrement en 1 clic à l'aide de gdigrab</value>
   </data>
@@ -3425,6 +3431,9 @@
   </data>
   <data name="vid_req" xml:space="preserve">
     <value>Une piste vidéo est requise pour le multiplexage.</value>
+  </data>
+  <data name="virtual_play_dr" xml:space="preserve">
+    <value>Vous pouvez également essayer d'installer le pilote audio virtuel de capture d'écran sur https://github.com/rdp/screen-capture-recorder-to-video-windows-free/releases</value>
   </data>
   <data name="visualc_req" xml:space="preserve">
     <value>Le package Microsoft Visual C++ 2010 est requis pour la fonctionnalité de téléchargement YouTube.</value>

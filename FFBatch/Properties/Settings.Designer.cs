@@ -483,13 +483,13 @@ namespace FFBatch.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Valor {
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool validate_ff {
             get {
-                return ((string)(this["Valor"]));
+                return ((bool)(this["validate_ff"]));
             }
             set {
-                this["Valor"] = value;
+                this["validate_ff"] = value;
             }
         }
     }

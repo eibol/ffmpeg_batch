@@ -2556,6 +2556,12 @@
   <data name="rec_fail" xml:space="preserve">
     <value>Recording test failed</value>
   </data>
+  <data name="rec_play_1" xml:space="preserve">
+    <value>Audio playback recording is only available through Stereo mixer device or similar. It is sometimes available as a hidden audio device.</value>
+  </data>
+  <data name="rec_play_2" xml:space="preserve">
+    <value>If your audio card does not display Stereo mixer audio loopback, you could try using OBS Studio application.</value>
+  </data>
   <data name="rec_screen" xml:space="preserve">
     <value>1-Click record screen using gdigrab</value>
   </data>
@@ -3426,6 +3432,9 @@
   </data>
   <data name="vid_req" xml:space="preserve">
     <value>A video track is required for muxing.</value>
+  </data>
+  <data name="virtual_play_dr" xml:space="preserve">
+    <value>You can also try installing Screen capture virtual audio driver at https://github.com/rdp/screen-capture-recorder-to-video-windows-free/releases</value>
   </data>
   <data name="visualc_req" xml:space="preserve">
     <value>Microsoft Visual C++ 2010 package is required for YouTube download feature.</value>

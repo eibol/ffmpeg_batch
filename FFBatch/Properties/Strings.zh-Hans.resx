@@ -2538,6 +2538,12 @@
   <data name="rec_fail" xml:space="preserve">
     <value>录音测试失败</value>
   </data>
+  <data name="rec_play_1" xml:space="preserve">
+    <value>音频播放录制仅可通过立体声混音器设备或类似设备进行。有时可作为隐藏音频设备使用。</value>
+  </data>
+  <data name="rec_play_2" xml:space="preserve">
+    <value>如果您的音频卡未显示立体声混音器音频环回，您可以尝试使用 OBS Studio 应用程序。</value>
+  </data>
   <data name="rec_screen" xml:space="preserve">
     <value>使用gdigrab一键录制屏幕</value>
   </data>
@@ -3402,6 +3408,9 @@
   </data>
   <data name="vid_req" xml:space="preserve">
     <value>多路复用需要一个视频轨道</value>
+  </data>
+  <data name="virtual_play_dr" xml:space="preserve">
+    <value>您还可以尝试在 https://github.com/rdp/screen-capture-recorder-to-video-windows-free/releases 安装屏幕捕获虚拟音频驱动程序</value>
   </data>
   <data name="visualc_req" xml:space="preserve">
     <value>YouTube下载功能需要Microsoft Visual C++ 2010软件包。</value>
