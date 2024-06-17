@@ -134,11 +134,14 @@
   <data name="txt_ext_2.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 23</value>
   </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="&gt;&gt;lbl_ovw.Parent" xml:space="preserve">
     <value>wzp2</value>
   </data>
-  <data name="&gt;&gt;txt_pr_3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btn_abort.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
   </data>
   <data name="wz_mpresets.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -161,9 +164,6 @@
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="btn_abort.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
   <data name="&gt;&gt;txt_ext_1.Name" xml:space="preserve">
     <value>txt_ext_1</value>
   </data>
@@ -173,26 +173,14 @@
   <data name="txt_pr_1.Size" type="System.Drawing.Size, System.Drawing">
     <value>354, 36</value>
   </data>
-  <data name="lbl_ovw.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="cb_w_presets.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
   </data>
   <data name="&gt;&gt;cb_w_presets.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
   <data name="&gt;&gt;txt_pr_1.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txt_pr_2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>70, 163</value>
-  </data>
-  <data name="&gt;&gt;btn_clear.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txt_pr_1.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="btn_abort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 74</value>
   </data>
   <data name="wz_mpresets.TitleIcon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2417,10 +2405,25 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
 </value>
   </data>
+  <data name="txt_pr_2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>70, 163</value>
+  </data>
+  <data name="&gt;&gt;btn_clear.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txt_pr_1.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="btn_abort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 74</value>
+  </data>
+  <data name="wzp1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="btn_abort.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAAA6fSURBVFhHrZgHVFVX2oaPBhsg
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw0AAAsNAe0HwCwAAA6fSURBVFhHrZgHVFVX2oaPBhsg
         qKCxYSExMTF1lomuiWaiiTGxZCwJ6tiNJo5GYzeKLXYTzWgsQUWjNOlNBRWDCoh0BO4FBJQqXHq5Uq/w
         /u/eeCkRM5mZ/6z1XQ6n7P2sr39Haaivb1PQ0FIaGgVoFJ4Xhd0ert6zzfrmxDGe3oPM4lwMlbwLHRXt
         hU6K1sVI0XgPMo+/OeEDL9WuLVsKQ4NGyDVbvN8o+rXbZhDS5kUhreCeLFyTrzGP37Z+p0cvo9yzigLH
@@ -2498,9 +2501,6 @@
   <data name="cb_w_presets.Location" type="System.Drawing.Point, System.Drawing">
     <value>70, 52</value>
   </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>19, 5</value>
-  </data>
   <data name="txt_ext_3.MaxLength" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
@@ -2509,6 +2509,9 @@
   </data>
   <data name="wz_mpresets.Size" type="System.Drawing.Size, System.Drawing">
     <value>574, 415</value>
+  </data>
+  <data name="txt_ext_1.MaxLength" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;txt_pr_2.ZOrder" xml:space="preserve">
     <value>7</value>
@@ -2522,9 +2525,6 @@
   <data name="&gt;&gt;lbl_ovw.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="txt_ext_2.MaxLength" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
   <data name="&gt;&gt;btn_abort.Name" xml:space="preserve">
     <value>btn_abort</value>
   </data>
@@ -2537,11 +2537,8 @@
   <data name="&gt;&gt;btn_clear.Name" xml:space="preserve">
     <value>btn_clear</value>
   </data>
-  <data name="&gt;&gt;btn_abort.Parent" xml:space="preserve">
-    <value>wzp2</value>
-  </data>
-  <data name="&gt;&gt;txt_pr_1.Parent" xml:space="preserve">
-    <value>wzp1</value>
+  <data name="txt_pr_2.MaxLength" type="System.Int32, mscorlib">
+    <value>500</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>AeroWizard2</value>
@@ -2552,14 +2549,17 @@
   <data name="&gt;&gt;btn_abort.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;btn_start_multi.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="lbl_ovw.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 55</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>47</value>
   </data>
-  <data name="&gt;&gt;btn_start_multi.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>19, 5</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2601,7 +2601,7 @@
   <data name="btn_start_multi.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAAAlvSURBVFhHzZl5UFXnGcZFicEY
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAlvSURBVFhHzZl5UFXnGcZFicEY
         TGw1xFoTFxbBBVCQTeDChQsXFYyI1oDi1UrAuCugXpBFEKwa4542mtStk3R0MpPpdDqdSfuPU2v+6CRB
         2Te3uFutUad1efq855y7oOe6RTDfzDN34dxzfjzv873fd+7tBuAhyfDs5+3Ts1ffN/jUTdNPY+gB9x8c
         lpD7W2B6Wd2dgQHJS3mYJ9WTevHgesAjYvOscwg8teoacj8GEnIOtXp4DjDz8Fcpd+rFgesB+4ZlWrO3
@@ -2651,6 +2651,9 @@
   <data name="&gt;&gt;pic_warning.Name" xml:space="preserve">
     <value>pic_warning</value>
   </data>
+  <data name="pic_warning.InitialImage" type="System.Resources.ResXNullRef, System.Windows.Forms">
+    <value />
+  </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Format</value>
   </data>
@@ -2687,8 +2690,8 @@
   <data name="&gt;&gt;txt_pr_2.Name" xml:space="preserve">
     <value>txt_pr_2</value>
   </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>wzp1</value>
+  <data name="btn_abort.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2696,8 +2699,8 @@
   <data name="&gt;&gt;txt_pr_3.Name" xml:space="preserve">
     <value>txt_pr_3</value>
   </data>
-  <data name="txt_ext_1.MaxLength" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="&gt;&gt;btn_abort.Parent" xml:space="preserve">
+    <value>wzp2</value>
   </data>
   <data name="txt_pr_2.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2711,8 +2714,8 @@
   <data name="btn_clear.Size" type="System.Drawing.Size, System.Drawing">
     <value>24, 28</value>
   </data>
-  <data name="&gt;&gt;wzp2.Type" xml:space="preserve">
-    <value>AeroWizard.WizardPage, AeroWizard, Version=2.3.1.0, Culture=neutral, PublicKeyToken=915e74f5d64b8f37</value>
+  <data name="wzp2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>527, 261</value>
   </data>
   <data name="&gt;&gt;txt_ext_1.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2726,8 +2729,11 @@
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>wzp1</value>
   </data>
-  <data name="wzp2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>527, 261</value>
+  <data name="&gt;&gt;txt_pr_1.Parent" xml:space="preserve">
+    <value>wzp1</value>
+  </data>
+  <data name="lbl_ovw.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
@@ -2741,16 +2747,16 @@
   <data name="txt_pr_3.Location" type="System.Drawing.Point, System.Drawing">
     <value>70, 217</value>
   </data>
+  <data name="&gt;&gt;txt_pr_3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="wzp1.Size" type="System.Drawing.Size, System.Drawing">
     <value>527, 261</value>
-  </data>
-  <data name="cb_w_presets.TabIndex" type="System.Int32, mscorlib">
-    <value>36</value>
   </data>
   <data name="btn_clear.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABkAAAAXCAYAAAD+4+QTAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABS
-        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACw8AAAsPAZL5A6UAAAKPSURBVEhLpZVNa1pBFIbdtwju
+        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAKPSURBVEhLpZVNa1pBFIbdtwju
         q9EkbgSbndFoIoKC2iCi1p2bQsG20F1/ivssshBCKbRIuvNHCIIoIokfMVHj90cSczrv1LkkvddbNQde
         5nqdOc85M+fM1RCRpL29vbdspOl0OhsMBn01DYfDPuZms9lfmiUGn9AziNfrjbNxZZvP53w8Ozv7ufD7
         zNhfcojb7ZYgcLBMj4+P9PDwQCwburq64vNPTk6+L3xLxl7LIUdHR+/ZyE3JuRAg9/f3HFKpVPhvWDqd
@@ -2766,6 +2772,9 @@
   </data>
   <data name="&gt;&gt;btn_abort.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;wzp2.Type" xml:space="preserve">
+    <value>AeroWizard.WizardPage, AeroWizard, Version=2.3.1.0, Culture=neutral, PublicKeyToken=915e74f5d64b8f37</value>
   </data>
   <data name="btn_start_multi.Location" type="System.Drawing.Point, System.Drawing">
     <value>179, 128</value>
@@ -2815,8 +2824,8 @@
   <data name="&gt;&gt;label9.Parent" xml:space="preserve">
     <value>wzp1</value>
   </data>
-  <data name="btn_start_multi.Text" xml:space="preserve">
-    <value>Start</value>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
   </data>
   <data name="&gt;&gt;wzp2.Name" xml:space="preserve">
     <value>wzp2</value>
@@ -2824,8 +2833,8 @@
   <data name="txt_pr_1.Multiline" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;wz_mpresets.Name" xml:space="preserve">
     <value>wz_mpresets</value>
@@ -2842,9 +2851,6 @@
   <data name="txt_ext_1.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 23</value>
   </data>
-  <data name="wzp1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
   <data name="&gt;&gt;txt_pr_1.Name" xml:space="preserve">
     <value>txt_pr_1</value>
   </data>
@@ -2853,6 +2859,9 @@
   </data>
   <data name="&gt;&gt;txt_ext_3.Name" xml:space="preserve">
     <value>txt_ext_3</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>wzp1</value>
   </data>
   <data name="txt_ext_3.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 23</value>
@@ -2868,8 +2877,8 @@
         RF/WBZnFQBrgSi4oKgHSf4DYKCW1OJmBgdEAyM4uLykAijPOAbJFkrLB7A0gdlFIkDOQfQTI5kuHsK+A
         2EkQ9hMQuwjoCSD7C0h9OpjNxAE2B8KWAbFLUitA9jI45xdUFmWmZ5QoGFpaWio4puQnpSoEVxaXpOYW
         K3jmJecXFeQXJZakpgDVQtwHBoIQhaAQ0wBqtNBkoDIAxQOE9TkQHL6MYmcQYgiQXFpUBmUyMhkT5iPM
-        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACw8AAAsP
-        AZL5A6UAAARESURBVDhPlZR7UFRlGMYPLBCOhFwzZC2Vm04IrmMIgZdRDEZokpIai8GxPywtGptpHCOh
+        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACw0AAAsN
+        Ae0HwCwAAARESURBVDhPlZR7UFRlGMYPLBCOhFwzZC2Vm04IrmMIgZdRDEZokpIai8GxPywtGptpHCOh
         BgWyYCTUIWQwaYiLhYgiDJdtYCFMFtEUgpCLKAisXGrP2V327MLTe5azrONQTs/Ms/ud73m/33nPt99Z
         5mmSLHaVuvqu3+S5YccuaVBEjNuaoG2SJc+vEuP/J2tHqXd4QnLqgRKFMqV9Sps1DJyeAs78DZwaBVI7
         OP6j8tbb4Ye/zrL19H9ZXPbfCnn/aFr6XS3/E4CCGSBnHDhxHzj2B4f0TjUyaVwwCZRRfpV8cgQI/Sw7
@@ -2890,6 +2899,12 @@
         tQOf0h+4mzhFEoBmLwQVLECtmH8A+RE2i/ZIhfsAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="btn_start_multi.Text" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="&gt;&gt;txt_ext_1.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
   <data name="&gt;&gt;wz_mpresets.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
@@ -2899,8 +2914,8 @@
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
     <value>427, 228</value>
   </data>
-  <data name="btn_abort.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
+  <data name="txt_ext_2.MaxLength" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>289, 15</value>
@@ -4740,8 +4755,8 @@
   <data name="&gt;&gt;txt_ext_1.Parent" xml:space="preserve">
     <value>wzp1</value>
   </data>
-  <data name="&gt;&gt;txt_ext_1.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Format</value>
   </data>
   <data name="txt_pr_3.MaxLength" type="System.Int32, mscorlib">
     <value>500</value>
@@ -4752,17 +4767,8 @@
   <data name="&gt;&gt;lbl_ovw.Name" xml:space="preserve">
     <value>lbl_ovw</value>
   </data>
-  <data name="pic_warning.InitialImage" type="System.Resources.ResXNullRef, System.Windows.Forms">
-    <value />
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Format</value>
-  </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txt_pr_2.MaxLength" type="System.Int32, mscorlib">
-    <value>500</value>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Select up to 3 saved presets to be applied sequentially</value>
   </data>
   <data name="txt_ext_1.Location" type="System.Drawing.Point, System.Drawing">
     <value>474, 116</value>
@@ -4827,9 +4833,6 @@
   <data name="&gt;&gt;cb_w_presets.Name" xml:space="preserve">
     <value>cb_w_presets</value>
   </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Select up to 3 saved presets to be applied sequentially</value>
-  </data>
   <data name="lbl_ovw.Text" xml:space="preserve">
     <value>Output files will be renamed to avoid overwriting.</value>
   </data>
@@ -4851,10 +4854,10 @@
   <data name="btn_start_multi.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>fr</value>
   </metadata>
 </root>

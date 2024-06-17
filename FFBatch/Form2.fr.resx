@@ -221,190 +221,44 @@
         8PbWdD1lXNX9U09pfzJJ/7sCVQGqoP0vImFJ1DjMBHsAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 12</value>
-  </data>
-  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 52</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="pictureBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 14</value>
-  </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 13</value>
+    <value>237, 13</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 32</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>0, 13</value>
-  </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 49</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>117, 13</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="linkLabel3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="linkLabel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>150, 31</value>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Convertisseur AV par lots FFmpeg pour Windows</value>
   </data>
   <data name="linkLabel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
+    <value>87, 13</value>
   </data>
-  <data name="linkLabel3.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+  <data name="linkLabel3.Text" xml:space="preserve">
+    <value>Notes de version</value>
   </data>
-  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 92</value>
-  </data>
-  <data name="textBox2.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>192, 47</value>
-  </data>
-  <data name="textBox2.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>317, 179</value>
-  </data>
-  <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 25</value>
-  </data>
-  <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="linkLabel2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="linkLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>319, 141</value>
+  <data name="textBox2.Text" xml:space="preserve">
+    <value>Cette application est gratuite et open source. Sous licence GNU Lesser General Public License (LGPL) 3.0+.</value>
   </data>
   <data name="linkLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 13</value>
+    <value>66, 13</value>
   </data>
-  <data name="linkLabel2.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="linkLabel1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>319, 109</value>
+  <data name="linkLabel2.Text" xml:space="preserve">
+    <value>Faire un don</value>
   </data>
   <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
+    <value>67, 13</value>
   </data>
-  <data name="linkLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="linkLabel1.Text" xml:space="preserve">
+    <value>Forum d'aide</value>
   </data>
-  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 179</value>
-  </data>
-  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 25</value>
-  </data>
-  <data name="button2.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 170</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>412, 2</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="linkLabel4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="linkLabel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>319, 92</value>
+  <data name="button2.Text" xml:space="preserve">
+    <value>Avis juridique</value>
   </data>
   <data name="linkLabel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 13</value>
+    <value>58, 13</value>
   </data>
-  <data name="linkLabel4.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
+  <data name="linkLabel4.Text" xml:space="preserve">
+    <value>Page Web</value>
   </data>
-  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 142</value>
-  </data>
-  <data name="textBox1.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 16</value>
-  </data>
-  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="lbl_framew.Location" type="System.Drawing.Point, System.Drawing">
-    <value>79, 63</value>
-  </data>
-  <data name="lbl_framew.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 18</value>
-  </data>
-  <data name="lbl_framew.TabIndex" type="System.Int32, mscorlib">
-    <value>14</value>
-  </data>
-  <data name="lbl_framew.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="pic_season.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="pic_season.Location" type="System.Drawing.Point, System.Drawing">
-    <value>335, 12</value>
-  </data>
-  <data name="pic_season.Size" type="System.Drawing.Size, System.Drawing">
-    <value>26, 40</value>
-  </data>
-  <data name="pic_season.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="pic_season.TabIndex" type="System.Int32, mscorlib">
-    <value>181</value>
-  </data>
-  <data name="pic_season.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>410, 212</value>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>Merci d'envisager un don de soutien.</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2196,37 +2050,7 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
-  </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>À propos du convertisseur AV par lots FFmpeg</value>
-  </data>
-  <data name="button2.Text" xml:space="preserve">
-    <value>Avis juridique</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Convertisseur AV par lots FFmpeg pour Windows</value>
-  </data>
-  <data name="linkLabel1.Text" xml:space="preserve">
-    <value>Forum d'aide</value>
-  </data>
-  <data name="linkLabel2.Text" xml:space="preserve">
-    <value>Faire un don</value>
-  </data>
-  <data name="linkLabel3.Text" xml:space="preserve">
-    <value>Notes de version</value>
-  </data>
-  <data name="linkLabel4.Text" xml:space="preserve">
-    <value>Page Web</value>
-  </data>
-  <data name="textBox1.Text" xml:space="preserve">
-    <value>Merci d'envisager un don de soutien.</value>
-  </data>
-  <data name="textBox2.Text" xml:space="preserve">
-    <value>Cette application est gratuite et open source. Sous licence GNU Lesser General Public License (LGPL) 3.0+.</value>
   </data>
 </root>

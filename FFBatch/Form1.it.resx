@@ -16185,13 +16185,4 @@
         AfEBgAEBAR8B+AEAAQ8B/wHzAcABAwE/AfgB4AF/Av8B4AEHCw==
 </value>
   </data>
-  <data name="btn_live_preview.Text" xml:space="preserve">
-    <value>Anteprima visualizzazione live</value>
-  </data>
-  <data name="ct_path_vf.Text" xml:space="preserve">
-    <value>Aggiungi percorso file all'interno di un filtro /v/a</value>
-  </data>
-  <data name="ct_path_input.Text" xml:space="preserve">
-    <value>Aggiungi percorso file sorgente ai parametri</value>
-  </data>
 </root>

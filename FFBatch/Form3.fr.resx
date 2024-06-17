@@ -118,17 +118,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="chk_no_overw.Location" type="System.Drawing.Point, System.Drawing">
+    <value>269, 105</value>
+  </data>
   <data name="chk_no_overw.Size" type="System.Drawing.Size, System.Drawing">
     <value>208, 17</value>
   </data>
   <data name="chk_no_overw.Text" xml:space="preserve">
     <value>Ne pas écraser la destination existante</value>
   </data>
+  <data name="chk_bat_level.Location" type="System.Drawing.Point, System.Drawing">
+    <value>300, 180</value>
+  </data>
   <data name="chk_bat_level.Size" type="System.Drawing.Size, System.Drawing">
-    <value>178, 17</value>
+    <value>127, 17</value>
   </data>
   <data name="chk_bat_level.Text" xml:space="preserve">
-    <value>Faites une pause si vous perdez</value>
+    <value>Pause si vous perdez</value>
+  </data>
+  <data name="chk_battery.Location" type="System.Drawing.Point, System.Drawing">
+    <value>312, 157</value>
   </data>
   <data name="chk_battery.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 17</value>
@@ -141,6 +150,9 @@
   </data>
   <data name="chk_filter_zero.Text" xml:space="preserve">
     <value>Filtrer les fichiers invalides</value>
+  </data>
+  <data name="chk_dates.Location" type="System.Drawing.Point, System.Drawing">
+    <value>316, 79</value>
   </data>
   <data name="chk_dates.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 17</value>
@@ -188,6 +200,12 @@
         TkSuQmCC
 </value>
   </data>
+  <data name="btn_stop_play.Location" type="System.Drawing.Point, System.Drawing">
+    <value>287, 228</value>
+  </data>
+  <data name="btn_browse_play.Location" type="System.Drawing.Point, System.Drawing">
+    <value>227, 228</value>
+  </data>
   <data name="btn_browse_play.Text" xml:space="preserve">
     <value>Examiner...</value>
   </data>
@@ -201,6 +219,9 @@
         v6GF31CKPRyjjXX8hRIGh9iDDjkxg084weyfhQ3KWy/BW/ihT1xgDXo4jHeFyxhAQvL0+tiBHopigwVs
         4AUjNKAXx2GDsjfy+Zxh++dEIsZMAaP8sd/tdg2gAAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="btn_play_sound.Location" type="System.Drawing.Point, System.Drawing">
+    <value>287, 228</value>
   </data>
   <data name="chk_play.Size" type="System.Drawing.Size, System.Drawing">
     <value>207, 17</value>
@@ -290,6 +311,9 @@
         qOe3oPRygVAUHOB76AcHGx5pa2uT7Uy7/32j+PQPiTvKt04+6kYAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="pic_bat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>333, 22</value>
+  </data>
   <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>215, 17</value>
   </data>
@@ -356,6 +380,9 @@
   <data name="btn_save.Text" xml:space="preserve">
     <value>Enregistrer les modifications</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Préréglage par défaut</value>
+  </data>
   <data name="chk_autor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
@@ -387,11 +414,17 @@
         g8qjRB9yKAFIpMRpmrlM0yIq6k/2/CI0mkE69wAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>765, 79</value>
+  </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 13</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Temporisation</value>
+  </data>
+  <data name="chk_run_st.Location" type="System.Drawing.Point, System.Drawing">
+    <value>630, 77</value>
   </data>
   <data name="chk_run_st.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 17</value>
@@ -461,6 +494,9 @@
         oEQdXqQEYBElumlum2atefP+Aj71xWTSUNHkAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="chk_auto_multi.Location" type="System.Drawing.Point, System.Drawing">
+    <value>317, 77</value>
+  </data>
   <data name="chk_auto_multi.Size" type="System.Drawing.Size, System.Drawing">
     <value>194, 17</value>
   </data>
@@ -475,9 +511,6 @@
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Paramètres</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Préréglage par défaut</value>
   </data>
   <data name="btn_cancel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -532,11 +565,20 @@
   <data name="btn_cancel.Text" xml:space="preserve">
     <value>Annuler les modifications</value>
   </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Ajustements généraux</value>
+  </data>
+  <data name="chk_thumb_big.Location" type="System.Drawing.Point, System.Drawing">
+    <value>291, 128</value>
+  </data>
   <data name="chk_thumb_big.Size" type="System.Drawing.Size, System.Drawing">
     <value>195, 17</value>
   </data>
   <data name="chk_thumb_big.Text" xml:space="preserve">
     <value>Aperçu à une résolution plus élevée</value>
+  </data>
+  <data name="chk_dark_win.Location" type="System.Drawing.Point, System.Drawing">
+    <value>326, 174</value>
   </data>
   <data name="chk_dark_win.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 17</value>
@@ -556,17 +598,26 @@
   <data name="label6.Text" xml:space="preserve">
     <value>Début</value>
   </data>
+  <data name="chk_dark.Location" type="System.Drawing.Point, System.Drawing">
+    <value>326, 151</value>
+  </data>
   <data name="chk_dark.Size" type="System.Drawing.Size, System.Drawing">
     <value>159, 17</value>
   </data>
   <data name="chk_dark.Text" xml:space="preserve">
     <value>Programmer le mode sombre</value>
   </data>
+  <data name="chk_quick_q.Location" type="System.Drawing.Point, System.Drawing">
+    <value>311, 32</value>
+  </data>
   <data name="chk_quick_q.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 17</value>
   </data>
   <data name="chk_quick_q.Text" xml:space="preserve">
     <value>Utiliser la liste rapide des fichiers</value>
+  </data>
+  <data name="chk_ctrl_p.Location" type="System.Drawing.Point, System.Drawing">
+    <value>311, 56</value>
   </data>
   <data name="chk_ctrl_p.Size" type="System.Drawing.Size, System.Drawing">
     <value>125, 17</value>
@@ -639,11 +690,14 @@
   <data name="chk_remember_tab.Text" xml:space="preserve">
     <value>Mémoriser le dernier onglet</value>
   </data>
+  <data name="chk_verbose_log.Location" type="System.Drawing.Point, System.Drawing">
+    <value>311, 80</value>
+  </data>
   <data name="chk_verbose_log.Size" type="System.Drawing.Size, System.Drawing">
-    <value>236, 17</value>
+    <value>164, 17</value>
   </data>
   <data name="chk_verbose_log.Text" xml:space="preserve">
-    <value>Enregistrer des enregistrements plus détaillés</value>
+    <value>Enregistrements plus détaillés</value>
   </data>
   <data name="chk_console_params.Size" type="System.Drawing.Size, System.Drawing">
     <value>288, 17</value>
@@ -675,15 +729,12 @@
   <data name="check_concat.Text" xml:space="preserve">
     <value>Utilisez le filtre de concaténation pour joindre des fichiers</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Ajustements généraux</value>
-  </data>
   <data name="img_edit.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAu
-        FgAAAk1TRnQBSQFMAgEBAwEAAfwBCgH8AQoBFAEAARQBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFQ
+        FgAAAk1TRnQBSQFMAgEBAwEAAQwBCwEMAQsBFAEAARQBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFQ
         AwABFAMAAQEBAAEgBgABGRIAAwQBBQNIAYQDTgGWA1YBswNaAccDXwHVA2EB3gNhAeQDYwHpA10B6gNe
         Ae0DYwHpA2UB5wNhAeIDYAHbA10BzwNaAb8DUwGlA0oBiwMwAUssAAQBAwIBAwMCAQMDBQEGAwIBAwMC
         AQMEAhAAAxgBIQJcAWEB1gJfAWEB2gMbASYgAAMMAQ8DVgGyAlkBYgHvAj8BQAFuBAJYAAMLAQ4CagFB
@@ -761,7 +812,7 @@
         AaIBAAH/AbwBmAEAAf8BsQGPAQAB/wPTAf8wAANXAbEBqQG2AfEB/wGUAaUB6QH/AZIBoQHqAf8BjgGe
         AekB/wGJAZoB6AH/AYMBlgHlAf8BjgGfAfIB/wNSAaMDDAEPBAADOQFeAYoBiwHsAf8CAAHYAf8CAAHX
         Af8CAAHaAf8CAAHcAf8CAAHfAf8CAAHpAf8DYAHgVAADQwF3AdIBqwEAAf8BngIAAf8C/QH7Af8BqgGK
-        AQAB/wGVAgAB/wHTAcIBmxX/AeIBywGvAf8BsAIAAf8B4wGkAQAB/wHdAZ8BAAH/AoABdwH+A0cBgAgA
+        AQAB/wGVAgAB/wHTAcIBmxX/AeIBywGvAf8BsAIAAf8B4wGkAQAB/wHdAZ8BAAH/AoABeQH+A0cBgAgA
         A9UB/wHWAcUBpQH/AdIBwQGhAf8BzQG9AZwB/wHIAbgBmAH/AcMBtAGUAf8D1QH/MAADVQGtAysB/AGe
         Aa0B6wH/AZsBqQHrAf8BlgGmAeoB/wGRAaIB6QH/AZ0BqwH0Af8DWAG3AwgBCgwAAzQBUwNtAfcCAAHV
         Af8CAAHYAf8CAAHaAf8CAAHcAf8CAAHlAf8CXAFeAdlUAANDAXcB1gGuAQAB/wGpAYQBAAH/Av0B+wH/
@@ -837,13 +888,19 @@
 </value>
   </data>
   <data name="btn_defaults.Location" type="System.Drawing.Point, System.Drawing">
-    <value>89, 570</value>
+    <value>95, 570</value>
   </data>
   <data name="btn_defaults.Size" type="System.Drawing.Size, System.Drawing">
     <value>99, 81</value>
   </data>
   <data name="btn_defaults.Text" xml:space="preserve">
     <value>Utiliser les valeurs par défaut</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Cache de fichiers réseau</value>
+  </data>
+  <data name="chk_cache_dialog.Location" type="System.Drawing.Point, System.Drawing">
+    <value>260, 26</value>
   </data>
   <data name="chk_cache_dialog.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 17</value>
@@ -852,13 +909,10 @@
     <value>Utiliser une copie du système d'exploitation</value>
   </data>
   <data name="chk_never_cache.Size" type="System.Drawing.Size, System.Drawing">
-    <value>320, 17</value>
+    <value>242, 17</value>
   </data>
   <data name="chk_never_cache.Text" xml:space="preserve">
-    <value>Ne pas demander de mettre en cache les fichiers sur le réseau</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Cache de fichiers réseau</value>
+    <value>Ne pas demander cache fichiers sur le réseau</value>
   </data>
   <data name="btn_reset.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -918,8 +972,11 @@
         du5nP/bnOI5nHuZju7s4hP8BnNB6g3+alGIAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="btn_reset.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 571</value>
+  </data>
   <data name="btn_reset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 81</value>
+    <value>90, 81</value>
   </data>
   <data name="btn_reset.Text" xml:space="preserve">
     <value>Réinitialiser la configuration</value>
@@ -961,11 +1018,15 @@
         FnqFwugF+g4F5k6S/wJyGJMMqQvJmAAAAABJRU5ErkJggg==
 </value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btn_edit_presets_n.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btn_edit_presets_n.Location" type="System.Drawing.Point, System.Drawing">
-    <value>496, 572</value>
+    <value>496, 568</value>
   </data>
   <data name="btn_edit_presets_n.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 80</value>
+    <value>72, 89</value>
   </data>
   <data name="btn_edit_presets_n.Text" xml:space="preserve">
     <value>Modifier les préréglages enregistrés</value>
@@ -975,11 +1036,11 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACQ
-        DgAAAk1TRnQBSQFMAgEBAgEAAdQBCQHUAQkBFAEAARQBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFQ
+        DgAAAk1TRnQBSQFMAgEBAgEAAeQBCQHkAQkBFAEAARQBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFQ
         AwABFAMAAQEBAAEgBgABGRYAAwgBCgMVAR0DQQFyAx8BLDwABAIEAQQCAwMBBAMGAQcDDAEQAxMBGgMZ
         ASIDHQEpAx4BKgMeASoDHQEpAxkBIwMUARsDDQERAwcBCQMEAQUEAgQABAKkAAMGAQcDEwEaA10BzwFb
         AV8BWwHYAyoBQDgAAwgBCgMwBEoBigNMAZADUAGcA1MBpwNVAbEDVwG5A1kBwANaAcQDWgHEA1kBwANY
-        AboDVgGzA1MBqQNQAZwDTQGSA0oBiwMzAVIDCgENpAADAgEDAwsBDgNWAbIBAAGUAQAB/wEmAYABJgH+
+        AboDVgGzA1MBqQNQAZwDTQGSA0oBiwMzAVIDCgENpAADAgEDAwsBDgNWAbIBAAGUAQAB/wEoAYABKAH+
         A1IBowMgAS0wAAMEAQUDTAGQAgAB5QH/AgAB1gH/AgABzwH/AgAB0AH/AgAB0AH/AgAB0AH/AgAB0AH/
         AgAB0AH/AgAB0AH/AgAB0AH/AgAB0AH/AgAB0AH/AgAB0AH/AgABzwH/AgAB1QH/AgAB5gH/A1MBqQMK
         AQ2kAAMDAQQDDAEQA1gBtwEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wNgAegDRgF9AxIBGCwAA0UBfAIA
@@ -999,11 +1060,11 @@
         AwIBAxAAA0YBfQIAAdQB/wIAAdIB/wIAAckB/wIAAcwB/wIAAcwB/wIAAcwB/wIAAcwB/wIAAcwB/wIA
         AcwB/wIAAcwB/wIAAcwB/wIAAcwB/wIAAcwB/wIAAcsB/wIAAdMB/wIAAdMB/wNOAZQDBAEFpAADAgED
         AwwBEANWAbYBAAGUAQAB/wEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/AQABlAEAAf8BAAGU
-        AQAB/wEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/ASYBgAEmAf4DWQHBAzQBUwMCAQMIAANG
+        AQAB/wEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/ASgBgAEoAf4DWQHBAzQBUwMCAQMIAANG
         AX0CAAHbAf8CAAHYAf8CAAHLAf8CAAHLAf8CAAHLAf8CAAHMAf8CAAHMAf8CAAHMAf8CAAHMAf8CAAHM
         Af8CAAHMAf8CAAHMAf8CAAHMAf8CAAHLAf8CAAHTAf8CAAHUAf8DTgGUAwQBBaQAAwIBAwMMARADVgG2
         AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/AQABlAEAAf8BAAGU
-        AQAB/wEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/AQABlAEAAf8BJgGAASYB/gNYAboDLQFF
+        AQAB/wEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/AQABlAEAAf8BKAGAASgB/gNYAboDLQFF
         BAADRgF9AgAB2wH/AgAB3AH/AgAB0gH/AgAB0AH/AgABzQH/AgABywH/AgABywH/AgABzAH/AgABzAH/
         AgABzAH/AgABzAH/AgABzAH/AgABzAH/AgABywH/AgAB0wH/AgAB1AH/A04BlAMEAQWkAAMCAQMDDAEQ
         A1YBtgEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/
@@ -1074,10 +1135,16 @@
     <value>343, 568</value>
   </data>
   <data name="btn_add_ex.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 83</value>
+    <value>89, 87</value>
   </data>
   <data name="btn_add_ex.Text" xml:space="preserve">
     <value>Sécurité et performances</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Supprimer les fichiers sources</value>
+  </data>
+  <data name="chk_delete_one.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 26</value>
   </data>
   <data name="chk_delete_one.Size" type="System.Drawing.Size, System.Drawing">
     <value>173, 17</value>
@@ -1085,14 +1152,14 @@
   <data name="chk_delete_one.Text" xml:space="preserve">
     <value>Supprimer les fichiers un par un</value>
   </data>
+  <data name="chk_delete_def.Location" type="System.Drawing.Point, System.Drawing">
+    <value>190, 26</value>
+  </data>
   <data name="chk_delete_def.Size" type="System.Drawing.Size, System.Drawing">
     <value>299, 17</value>
   </data>
   <data name="chk_delete_def.Text" xml:space="preserve">
     <value>Ne pas déplacer vers la corbeille, supprimer définitivement</value>
-  </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>Supprimer les fichiers sources</value>
   </data>
   <data name="pic_night.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1337,6 +1404,9 @@
         cG0AAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="btn_dark.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 86</value>
+  </data>
   <data name="btn_dark.Text" xml:space="preserve">
     <value>Activer le mode nuit</value>
   </data>
@@ -1370,10 +1440,10 @@
 </value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>431, 569</value>
+    <value>425, 569</value>
   </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 82</value>
+    <value>70, 86</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Préréglages en ligne</value>
@@ -1418,8 +1488,14 @@
         k5RnT5SyIQfOcbO7Bo2Qf5eFwrb/oWb4D5yjD8D/qs9bAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="btn_update.Location" type="System.Drawing.Point, System.Drawing">
+    <value>834, 10</value>
+  </data>
+  <data name="btn_update.Size" type="System.Drawing.Size, System.Drawing">
+    <value>139, 28</value>
+  </data>
   <data name="btn_update.Text" xml:space="preserve">
-    <value>Rechercher d'autres versions</value>
+    <value>Rechercher versions</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 13</value>
@@ -1528,6 +1604,12 @@
         aU5OaP8Ds/EvjXGeeXdamSIAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>307, 10</value>
+  </data>
+  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 28</value>
+  </data>
   <data name="button2.Text" xml:space="preserve">
     <value>Remplacer</value>
   </data>
@@ -1599,8 +1681,17 @@
         rJa2vLxqVVdL5QZc86uMp89tS5mRFFcptehfrAkZSH5SUlwAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="btn_add_sec.Location" type="System.Drawing.Point, System.Drawing">
+    <value>668, 10</value>
+  </data>
+  <data name="btn_add_sec.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 28</value>
+  </data>
   <data name="btn_add_sec.Text" xml:space="preserve">
     <value>Améliorer les performances</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Dossier Moniteur</value>
   </data>
   <data name="btn_excl.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1676,6 +1767,12 @@
         IqYMNcPMAwLvKNlMqHVSGYq/AD7ekG0e5QAGAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="btn_excl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>312, 86</value>
+  </data>
+  <data name="btn_excl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 28</value>
+  </data>
   <data name="btn_excl.Text" xml:space="preserve">
     <value>Exclure les types de fichiers</value>
   </data>
@@ -1732,6 +1829,9 @@
   <data name="label10.Text" xml:space="preserve">
     <value>secondes</value>
   </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 93</value>
+  </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 13</value>
   </data>
@@ -1746,9 +1846,6 @@
   </data>
   <data name="chk_monitor.Text" xml:space="preserve">
     <value>Activer la surveillance</value>
-  </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>Dossier Moniteur</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

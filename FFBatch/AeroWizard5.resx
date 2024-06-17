@@ -117,6 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="radio_absolute.Location" type="System.Drawing.Point, System.Drawing">
+    <value>42, 224</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Press Finish or Close button to return to main tab.</value>
+  </data>
   <data name="&gt;&gt;wiz_img.Type" xml:space="preserve">
     <value>AeroWizard.WizardControl, AeroWizard, Version=2.3.1.0, Culture=neutral, PublicKeyToken=915e74f5d64b8f37</value>
   </data>
@@ -136,7 +143,6 @@
   <data name="radio_all.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>234, 62</value>
   </data>
@@ -1939,8 +1945,8 @@
   <data name="combo_Frames.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="label8.TabIndex" type="System.Int32, mscorlib">
-    <value>94</value>
+  <data name="lbl_warn.Text" xml:space="preserve">
+    <value>Absolute path can lead to overwriting</value>
   </data>
   <data name="radio_absolute.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1987,17 +1993,14 @@
   <data name="combo_ext.Items" xml:space="preserve">
     <value>jpg</value>
   </data>
-  <data name="radio_Frames.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="combo_Frames.Items4" xml:space="preserve">
-    <value>120</value>
-  </data>
   <data name="&gt;&gt;btn_abort.Parent" xml:space="preserve">
     <value>wz_final</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>107</value>
+  </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;combo_Frames.Name" xml:space="preserve">
     <value>combo_Frames</value>
@@ -2020,20 +2023,11 @@
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;check_name.Name" xml:space="preserve">
-    <value>check_name</value>
+  <data name="txt_preset_name.TabIndex" type="System.Int32, mscorlib">
+    <value>92</value>
   </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;radio_4_3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_Start.Name" xml:space="preserve">
-    <value>btn_Start</value>
-  </data>
-  <data name="&gt;&gt;chk_save_pres.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="txt_path.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 23</value>
   </data>
   <data name="&gt;&gt;combo_ext.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2053,9 +2047,6 @@
   <data name="radio_4_3.Location" type="System.Drawing.Point, System.Drawing">
     <value>439, 42</value>
   </data>
-  <data name="combo_resize.Location" type="System.Drawing.Point, System.Drawing">
-    <value>343, 27</value>
-  </data>
   <data name="btn_Start.Size" type="System.Drawing.Size, System.Drawing">
     <value>63, 75</value>
   </data>
@@ -2074,14 +2065,11 @@
   <data name="btn_start_multi.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopCenter</value>
   </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>wz_end</value>
+  <data name="&gt;&gt;txt_naming.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>574, 415</value>
-  </data>
-  <data name="combo_ext.Items3" xml:space="preserve">
-    <value>png</value>
   </data>
   <data name="&gt;&gt;wiz_img.Parent" xml:space="preserve">
     <value>$this</value>
@@ -2101,14 +2089,17 @@
   <data name="&gt;&gt;radio_Frames.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;wz_final.Name" xml:space="preserve">
+    <value>wz_final</value>
+  </data>
   <data name="radio_keys.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="chk_save_preset.Text" xml:space="preserve">
     <value>Save selected  preset</value>
   </data>
-  <data name="&gt;&gt;wiz_img.Name" xml:space="preserve">
-    <value>wiz_img</value>
+  <data name="&gt;&gt;label9.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label8.Parent" xml:space="preserve">
     <value>wz_end</value>
@@ -2124,9 +2115,6 @@
   </data>
   <data name="check_name.Text" xml:space="preserve">
     <value>Use source filename for output</value>
-  </data>
-  <data name="&gt;&gt;radio_relative.Parent" xml:space="preserve">
-    <value>wz1</value>
   </data>
   <data name="lbl_warn.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -2149,9 +2137,6 @@
   <data name="radio_relative.Location" type="System.Drawing.Point, System.Drawing">
     <value>42, 191</value>
   </data>
-  <data name="&gt;&gt;txt_preset_name.Parent" xml:space="preserve">
-    <value>wz_end</value>
-  </data>
   <data name="combo_resize.Size" type="System.Drawing.Size, System.Drawing">
     <value>81, 23</value>
   </data>
@@ -2164,7 +2149,7 @@
   <data name="btn_start_multi.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAlvSURBVFhHzZl5UFXnGcZFicEY
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAlvSURBVFhHzZl5UFXnGcZFicEY
         TGw1xFoTFxbBBVCQTeDChQsXFYyI1oDi1UrAuCugXpBFEKwa4542mtStk3R0MpPpdDqdSfuPU2v+6CRB
         2Te3uFutUad1efq855y7oOe6RTDfzDN34dxzfjzv873fd+7tBuAhyfDs5+3Ts1ffN/jUTdNPY+gB9x8c
         lpD7W2B6Wd2dgQHJS3mYJ9WTevHgesAjYvOscwg8teoacj8GEnIOtXp4DjDz8Fcpd+rFgesB+4ZlWrO3
@@ -2238,7 +2223,7 @@
   <data name="btn_abort.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw0AAAsNAe0HwCwAAA6fSURBVFhHrZgHVFVX2oaPBhsg
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAA6fSURBVFhHrZgHVFVX2oaPBhsg
         qKCxYSExMTF1lomuiWaiiTGxZCwJ6tiNJo5GYzeKLXYTzWgsQUWjNOlNBRWDCoh0BO4FBJQqXHq5Uq/w
         /u/eeCkRM5mZ/6z1XQ6n7P2sr39Haaivb1PQ0FIaGgVoFJ4Xhd0ert6zzfrmxDGe3oPM4lwMlbwLHRXt
         hU6K1sVI0XgPMo+/OeEDL9WuLVsKQ4NGyDVbvN8o+rXbZhDS5kUhreCeLFyTrzGP37Z+p0cvo9yzigLH
@@ -2325,14 +2310,17 @@
   <data name="radio_time.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="chk_save_preset.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
+  <data name="btn_abort.Text" xml:space="preserve">
+    <value>Close</value>
   </data>
   <data name="chk_save_preset.Font" type="System.Drawing.Font, System.Drawing">
     <value>Segoe UI, 9pt</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>236, 15</value>
+  </data>
+  <data name="label8.TabIndex" type="System.Int32, mscorlib">
+    <value>94</value>
   </data>
   <data name="&gt;&gt;btn_start_multi.Parent" xml:space="preserve">
     <value>wz_final</value>
@@ -2345,9 +2333,6 @@
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
     <value>31, 174</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>6</value>
   </data>
   <data name="chk_save_pres.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 24</value>
@@ -2366,9 +2351,6 @@
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>256, 67</value>
-  </data>
-  <data name="radio_Frames.Location" type="System.Drawing.Point, System.Drawing">
-    <value>183, 28</value>
   </data>
   <data name="&gt;&gt;btn_browse.Name" xml:space="preserve">
     <value>btn_browse</value>
@@ -2391,8 +2373,11 @@
   <data name="txt_path_main.Size" type="System.Drawing.Size, System.Drawing">
     <value>88, 23</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>AeroWizard5</value>
+  <data name="&gt;&gt;chk_save_pres.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="combo_Frames.Items2" xml:space="preserve">
+    <value>30</value>
   </data>
   <data name="txt_preset_name.Size" type="System.Drawing.Size, System.Drawing">
     <value>323, 23</value>
@@ -2406,7 +2391,7 @@
   <data name="btn_cancel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw0AAAsNAe0HwCwAAA6fSURBVFhHrZgHVFVX2oaPBhsg
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAA6fSURBVFhHrZgHVFVX2oaPBhsg
         qKCxYSExMTF1lomuiWaiiTGxZCwJ6tiNJo5GYzeKLXYTzWgsQUWjNOlNBRWDCoh0BO4FBJQqXHq5Uq/w
         /u/eeCkRM5mZ/6z1XQ6n7P2sr39Haaivb1PQ0FIaGgVoFJ4Xhd0ert6zzfrmxDGe3oPM4lwMlbwLHRXt
         hU6K1sVI0XgPMo+/OeEDL9WuLVsKQ4NGyDVbvN8o+rXbZhDS5kUhreCeLFyTrzGP37Z+p0cvo9yzigLH
@@ -2493,6 +2478,9 @@
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;radio_4_3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;label6.Parent" xml:space="preserve">
     <value>wz_final</value>
   </data>
@@ -2504,9 +2492,6 @@
   </data>
   <data name="&gt;&gt;txt_naming.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Output format</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 109</value>
@@ -2531,6 +2516,9 @@
   </data>
   <data name="&gt;&gt;check_name.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txt_naming.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 23</value>
   </data>
   <data name="wz_final.Text" xml:space="preserve">
     <value>Preset complete</value>
@@ -2565,11 +2553,11 @@
   <data name="txt_preset_name.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;radio_Frames.Name" xml:space="preserve">
-    <value>radio_Frames</value>
+  <data name="&gt;&gt;pic_warn_two.Parent" xml:space="preserve">
+    <value>wz_final</value>
   </data>
-  <data name="wz_end.Text" xml:space="preserve">
-    <value>Preset complete</value>
+  <data name="&gt;&gt;txt_path.Name" xml:space="preserve">
+    <value>txt_path</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
     <value>31, 193</value>
@@ -2601,6 +2589,9 @@
   <data name="&gt;&gt;lbl_warn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>wz_end</value>
+  </data>
   <data name="label4.Text" xml:space="preserve">
     <value>The image extraction preset wizard is ready.</value>
   </data>
@@ -2621,6 +2612,9 @@
   </data>
   <data name="&gt;&gt;combo_resize.Parent" xml:space="preserve">
     <value>groupBox2</value>
+  </data>
+  <data name="btn_browse.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 15</value>
@@ -2661,8 +2655,11 @@
   <data name="&gt;&gt;label6.Name" xml:space="preserve">
     <value>label6</value>
   </data>
-  <data name="&gt;&gt;chk_save_preset.Name" xml:space="preserve">
-    <value>chk_save_preset</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>AeroWizard5</value>
+  </data>
+  <data name="&gt;&gt;radio_all.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label6.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2688,9 +2685,6 @@
   <data name="txt_path_main.Text" xml:space="preserve">
     <value>.\FF_thumbs</value>
   </data>
-  <data name="txt_preset_name.TabIndex" type="System.Int32, mscorlib">
-    <value>92</value>
-  </data>
   <data name="&gt;&gt;txt_path_main.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
@@ -2711,6 +2705,9 @@
   </data>
   <data name="&gt;&gt;radio_4_3.Parent" xml:space="preserve">
     <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>51, 15</value>
@@ -2741,6 +2738,9 @@
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 3</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Press Start button to start encoding with current preset.</value>
   </data>
   <data name="lbl_warn.Location" type="System.Drawing.Point, System.Drawing">
     <value>31, 228</value>
@@ -2796,9 +2796,6 @@
   <data name="radio_16_9.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="label9.TabIndex" type="System.Int32, mscorlib">
-    <value>95</value>
-  </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -2839,11 +2836,8 @@
   <data name="&gt;&gt;radio_keys.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="btn_cancel.Text" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="btn_Start.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Output format</value>
   </data>
   <data name="radio_all.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2872,6 +2866,9 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="label2.Text" xml:space="preserve">
     <value>second(s)</value>
   </data>
@@ -2887,8 +2884,8 @@
   <data name="radio_keys.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="btn_abort.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="btn_Start.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
   </data>
   <data name="radio_keys.Text" xml:space="preserve">
     <value>Every keyframe</value>
@@ -2920,20 +2917,26 @@
   <data name="pic_warn_two.Location" type="System.Drawing.Point, System.Drawing">
     <value>240, 226</value>
   </data>
-  <data name="txt_path.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 23</value>
-  </data>
   <data name="&gt;&gt;radio_16_9.Parent" xml:space="preserve">
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;radio_16_9.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
   <data name="&gt;&gt;wiz_img.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="textBox1.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="&gt;&gt;radio_16_9.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;btn_browse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;check_name.Parent" xml:space="preserve">
     <value>wz_final</value>
@@ -2959,8 +2962,8 @@
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>93</value>
   </data>
-  <data name="textBox1.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;chk_save_preset.Name" xml:space="preserve">
+    <value>chk_save_preset</value>
   </data>
   <data name="&gt;&gt;radio_time.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -2969,8 +2972,11 @@
     <value>
     </value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Press Finish or Close button to return to main tab.</value>
+  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;txt_preset_name.Parent" xml:space="preserve">
+    <value>wz_end</value>
   </data>
   <data name="wz_final.Size" type="System.Drawing.Size, System.Drawing">
     <value>527, 261</value>
@@ -2981,16 +2987,13 @@
   <data name="radio_Frames.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="chk_save_preset.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="&gt;&gt;radio_relative.Name" xml:space="preserve">
     <value>radio_relative</value>
   </data>
   <data name="btn_Start.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAlvSURBVFhHzZl5UFXnGcZFicEY
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAlvSURBVFhHzZl5UFXnGcZFicEY
         TGw1xFoTFxbBBVCQTeDChQsXFYyI1oDi1UrAuCugXpBFEKwa4542mtStk3R0MpPpdDqdSfuPU2v+6CRB
         2Te3uFutUad1efq855y7oOe6RTDfzDN34dxzfjzv873fd+7tBuAhyfDs5+3Ts1ffN/jUTdNPY+gB9x8c
         lpD7W2B6Wd2dgQHJS3mYJ9WTevHgesAjYvOscwg8teoacj8GEnIOtXp4DjDz8Fcpd+rFgesB+4ZlWrO3
@@ -3049,11 +3052,14 @@
   <data name="&gt;&gt;btn_Start.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="radio_time.Text" xml:space="preserve">
-    <value>Every </value>
-  </data>
   <data name="&gt;&gt;chk_save_preset.ZOrder" xml:space="preserve">
     <value>4</value>
+  </data>
+  <data name="chk_save_pres.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;wiz_img.Name" xml:space="preserve">
+    <value>wiz_img</value>
   </data>
   <data name="&gt;&gt;chk_save_preset.Parent" xml:space="preserve">
     <value>wz_end</value>
@@ -3064,8 +3070,8 @@
   <data name="check_name.Location" type="System.Drawing.Point, System.Drawing">
     <value>34, 64</value>
   </data>
-  <data name="btn_browse.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;radio_absolute.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3073,7 +3079,7 @@
   <data name="check_resize.Location" type="System.Drawing.Point, System.Drawing">
     <value>248, 29</value>
   </data>
-  <data name="label8.AutoSize" type="System.Boolean, mscorlib">
+  <data name="chk_save_preset.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="radio_16_9.Size" type="System.Drawing.Size, System.Drawing">
@@ -3085,8 +3091,8 @@
   <data name="label7.Text" xml:space="preserve">
     <value>The image extraction preset wizard is ready.</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;radio_Frames.Name" xml:space="preserve">
+    <value>radio_Frames</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -3094,11 +3100,14 @@
   <data name="&gt;&gt;txt_path.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="combo_ext.Items3" xml:space="preserve">
+    <value>png</value>
   </data>
   <data name="&gt;&gt;label9.Parent" xml:space="preserve">
     <value>wz_end</value>
+  </data>
+  <data name="combo_ext.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="combo_ext.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 23</value>
@@ -3139,11 +3148,11 @@
   <data name="&gt;&gt;combo_Seconds.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Press Start button to start encoding with current preset.</value>
+  <data name="radio_Frames.Location" type="System.Drawing.Point, System.Drawing">
+    <value>183, 28</value>
   </data>
-  <data name="chk_save_pres.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="&gt;&gt;combo_ext.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>213, 13</value>
@@ -3163,11 +3172,11 @@
   <data name="&gt;&gt;label4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btn_browse.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
   </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="combo_resize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>343, 27</value>
   </data>
   <data name="txt_preset_name.Location" type="System.Drawing.Point, System.Drawing">
     <value>165, 68</value>
@@ -3202,20 +3211,17 @@
   <data name="&gt;&gt;btn_abort.Name" xml:space="preserve">
     <value>btn_abort</value>
   </data>
-  <data name="&gt;&gt;wz_final.Name" xml:space="preserve">
-    <value>wz_final</value>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="combo_ext.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="wz_end.Text" xml:space="preserve">
+    <value>Preset complete</value>
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
-  </data>
-  <data name="&gt;&gt;pic_warn_two.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>455, 185</value>
@@ -3229,8 +3235,8 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>108</value>
   </data>
   <data name="&gt;&gt;combo_Seconds.Name" xml:space="preserve">
     <value>combo_Seconds</value>
@@ -3250,20 +3256,20 @@
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>266, 13</value>
   </data>
-  <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="&gt;&gt;radio_relative.Parent" xml:space="preserve">
+    <value>wz1</value>
   </data>
-  <data name="&gt;&gt;pic_warn_two.Parent" xml:space="preserve">
-    <value>wz_final</value>
+  <data name="radio_time.Text" xml:space="preserve">
+    <value>Every </value>
   </data>
   <data name="&gt;&gt;check_resize.Name" xml:space="preserve">
     <value>check_resize</value>
   </data>
-  <data name="&gt;&gt;radio_all.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="combo_Frames.Items4" xml:space="preserve">
+    <value>120</value>
   </data>
-  <data name="combo_Frames.Items2" xml:space="preserve">
-    <value>30</value>
+  <data name="label9.TabIndex" type="System.Int32, mscorlib">
+    <value>95</value>
   </data>
   <data name="combo_Frames.Items3" xml:space="preserve">
     <value>60</value>
@@ -3277,8 +3283,8 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>108</value>
+  <data name="chk_save_preset.CheckAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
   </data>
   <data name="combo_Seconds.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -3295,11 +3301,8 @@
   <data name="&gt;&gt;btn_cancel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txt_path.Name" xml:space="preserve">
-    <value>txt_path</value>
-  </data>
-  <data name="&gt;&gt;label9.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;pic_warn_two.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
@@ -3310,8 +3313,8 @@
   <data name="btn_Start.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="txt_naming.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 23</value>
+  <data name="btn_cancel.Text" xml:space="preserve">
+    <value>Cancel</value>
   </data>
   <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3319,8 +3322,8 @@
   <data name="check_resize.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="radio_absolute.Location" type="System.Drawing.Point, System.Drawing">
-    <value>42, 224</value>
+  <data name="&gt;&gt;btn_Start.Name" xml:space="preserve">
+    <value>btn_Start</value>
   </data>
   <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -3343,23 +3346,20 @@
   <data name="&gt;&gt;radio_absolute.Parent" xml:space="preserve">
     <value>wz1</value>
   </data>
-  <data name="&gt;&gt;txt_naming.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="radio_Frames.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;btn_Start.Parent" xml:space="preserve">
     <value>wz_end</value>
   </data>
-  <data name="&gt;&gt;combo_ext.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
   <data name="wz_end.Size" type="System.Drawing.Size, System.Drawing">
     <value>527, 261</value>
   </data>
-  <data name="lbl_warn.Text" xml:space="preserve">
-    <value>Absolute path can lead to overwriting</value>
+  <data name="btn_abort.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
-  <data name="btn_abort.Text" xml:space="preserve">
-    <value>Close</value>
+  <data name="&gt;&gt;check_name.Name" xml:space="preserve">
+    <value>check_name</value>
   </data>
   <data name="combo_Seconds.Items3" xml:space="preserve">
     <value>30</value>
@@ -3392,7 +3392,7 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ar-EG</value>
+    <value>fr</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>

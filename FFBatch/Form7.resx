@@ -143,14 +143,17 @@
   <data name="label4.Text" xml:space="preserve">
     <value>added to the file list.</value>
   </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>74, 101</value>
+  </data>
   <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Invalid A/V files found</value>
+  </data>
   <data name="label5.Text" xml:space="preserve">
     <value>could not be parsed (Duration = 0 or N/A).</value>
-  </data>
-  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 157</value>
   </data>
   <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>$this</value>
@@ -162,11 +165,14 @@
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;pic1.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pic1.Name" xml:space="preserve">
     <value>pic1</value>
@@ -180,8 +186,8 @@
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
     <value>150, 50</value>
   </data>
-  <data name="pic_clean.Location" type="System.Drawing.Point, System.Drawing">
-    <value>456, 93</value>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 157</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 20</value>
@@ -198,14 +204,14 @@
   <data name="&gt;&gt;pic_clean.Name" xml:space="preserve">
     <value>pic_clean</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="&gt;&gt;pic1.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="pic1.Location" type="System.Drawing.Point, System.Drawing">
     <value>20, 26</value>
@@ -216,14 +222,11 @@
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
   </data>
-  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 12pt</value>
-  </data>
   <data name="pic1.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Invalid A/V files found</value>
+  <data name="&gt;&gt;button1.Name" xml:space="preserve">
+    <value>button1</value>
   </data>
   <data name="pic_clean.Size" type="System.Drawing.Size, System.Drawing">
     <value>22, 23</value>
@@ -246,9 +249,6 @@
   <data name="button1.Text" xml:space="preserve">
     <value>OK</value>
   </data>
-  <data name="&gt;&gt;pic_clean.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="button1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
   </data>
@@ -257,6 +257,9 @@
   </data>
   <data name="&gt;&gt;label3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pic_clean.Location" type="System.Drawing.Point, System.Drawing">
+    <value>456, 93</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2051,9 +2054,6 @@
   <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>515, 201</value>
   </data>
@@ -2071,6 +2071,9 @@
   </data>
   <data name="&gt;&gt;label5.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form7</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -2090,11 +2093,11 @@
   <data name="panel1.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;button1.Name" xml:space="preserve">
-    <value>button1</value>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;pic1.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="pic1.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 47</value>
@@ -2108,14 +2111,11 @@
   <data name="&gt;&gt;label5.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form7</value>
+  <data name="&gt;&gt;pic_clean.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>4</value>
-  </data>
-  <data name="&gt;&gt;button1.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -2126,8 +2126,8 @@
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>74, 101</value>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pic_clean.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2137,6 +2137,9 @@
   </data>
   <data name="label2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 12pt, style=Bold</value>
+  </data>
+  <data name="pic_clean.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>302, 20</value>
@@ -2197,7 +2200,7 @@
         XTesb3QPLh88M+QwdP6m681Lt7xuXbu94vbgcOjwnZHokdE77DtTd1PuvriXeW/h/sYH6AdFD6UeVjxS
         fNTws+7PbaOWo6fHXMf6Hwc/vj/OGn/2S8Yv7ycKnpCfVEyqTDZPmU2dmnafvvF05dOJZ+nPFmYKf5X+
         tfa5zvMffnP8rX82YnbiBf/Fp99LXsq/PPRq2aueuYC5R69TXy/MF72Rf3P4LeNt37vwd5MLWe+x7ys/
-        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAALDgAACw4BQL7hQQAADn9JREFUWEetmHl4VPW5
+        6H7o/ujz8cGn1E+f/gUDmPP8usTo0wAAAAlwSFlzAAALDAAACwwBP0AiyAAADn9JREFUWEetmHl4VPW5
         xw9hyQYoguVarUUWtbIpgiwKAYtsSoUQCKCsCr1aCte6ta6P3ttyH/VWn8fneh9vbW2pXDZJSDJbZt8n
         s2W2TMJkss+a2TKZyWQjyfe+ZyKVZRo2//hwJuf8lu95z7v9YBQK5Q+KVCqfpVSqS+12R2NZWfmvT548
         yRgMesZqtTDV1eYfhIwb3ywymfRHJpNZ0tbWidbWXtTWtUIiFn2k02kYm83KWCzVPwi0keyWkUpljFwu
@@ -2262,16 +2265,16 @@
         /k7P/kbPjsll0mNUmdMo5LJjdP+Y7Pt73yhVyt9RYbnHbrcz/w9F10F/y085nQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="pic_clean.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="label4.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>517, 45</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>fr</value>
   </metadata>
 </root>
