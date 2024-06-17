@@ -130,7 +130,7 @@
   <data name="cb_col.Location" type="System.Drawing.Point, System.Drawing">
     <value>57, 41</value>
   </data>
-  <data name="btn_exit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_all.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAABGdBTUEAALGeYUxB9wAAACBjSFJNAACH
         EAAAjBIAAP1NAACBPgAAWesAARIPAAA85gAAGc66ySIyAAABK2lDQ1BQaG90b3Nob3AgSUNDIHByb2Zp
@@ -138,8 +138,8 @@
         RF/WBZnFQBrgSi4oKgHSf4DYKCW1OJmBgdEAyM4uLykAijPOAbJFkrLB7A0gdlFIkDOQfQTI5kuHsK+A
         2EkQ9hMQuwjoCSD7C0h9OpjNxAE2B8KWAbFLUitA9jI45xdUFmWmZ5QoGFpaWio4puQnpSoEVxaXpOYW
         K3jmJecXFeQXJZakpgDVQtwHBoIQhaAQ0wBqtNBkoDIAxQOE9TkQHL6MYmcQYgiQXFpUBmUyMhkT5iPM
-        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACxAAAAsQ
-        Aa0jvXUAAAMlSURBVFhH7ZbJUlNRFEUdiYaYjh5pREKjBKSVEJU+NIotICIYOvWzzp+mlvuSoL5wLXF2
+        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACwwAAAsM
+        AT9AIsgAAAMlSURBVFhH7ZbJUlNRFEUdiYaYjh5pREKjBKSVEJU+NIotICIYOvWzzp+mlvuSoL5wLXF2
         rXqDM3h7kKxatc+tcwv4r8YbhjzeMOTxhiGPNwx5vGHIcy0YTafz1aMjo1IxDg6M3T3j3TvjzRtjZ8fY
         2jLKZWNtzVhZMRYXjWfPjGLRePrUmJkxJieNiXGjMGY8emQMDxuDg8bAgNHfb/T0Gt3dRmen0d5mtLYY
         2ayRShnJpJG4azSnbOH23dFGvsiHGwEvV4+PoHKCgGFvD96/R8AIGLa3YWMDASNgBIyAobiAgGF2FqYm
@@ -155,13 +155,10 @@
         XAvi4yc+fhqC+PiJj5+GID5+4uPHE4Y83jDk8YbhDrd+ADi18I3SUGQ+AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btn_exit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>154, 98</value>
+  <data name="btn_all.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 82</value>
   </data>
-  <data name="btn_exit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 82</value>
-  </data>
-  <data name="btn_exit.Text" xml:space="preserve">
+  <data name="btn_all.Text" xml:space="preserve">
     <value>Rimuovi tutte le colonne</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
@@ -196,11 +193,15 @@
         YII=
 </value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btn_del_col.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
   <data name="btn_del_col.Location" type="System.Drawing.Point, System.Drawing">
-    <value>61, 93</value>
+    <value>55, 101</value>
   </data>
   <data name="btn_del_col.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 83</value>
+    <value>83, 82</value>
   </data>
   <data name="btn_del_col.Text" xml:space="preserve">
     <value>Rimuovi ultima colonna</value>

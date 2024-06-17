@@ -133,7 +133,7 @@
   <data name="cb_col.Size" type="System.Drawing.Size, System.Drawing">
     <value>175, 21</value>
   </data>
-  <data name="btn_exit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_all.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAABGdBTUEAALGeYUxB9wAAACBjSFJNAACH
         EAAAjBIAAP1NAACBPgAAWesAARIPAAA85gAAGc66ySIyAAABK2lDQ1BQaG90b3Nob3AgSUNDIHByb2Zp
@@ -141,8 +141,8 @@
         RF/WBZnFQBrgSi4oKgHSf4DYKCW1OJmBgdEAyM4uLykAijPOAbJFkrLB7A0gdlFIkDOQfQTI5kuHsK+A
         2EkQ9hMQuwjoCSD7C0h9OpjNxAE2B8KWAbFLUitA9jI45xdUFmWmZ5QoGFpaWio4puQnpSoEVxaXpOYW
         K3jmJecXFeQXJZakpgDVQtwHBoIQhaAQ0wBqtNBkoDIAxQOE9TkQHL6MYmcQYgiQXFpUBmUyMhkT5iPM
-        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACw8AAAsP
-        AZL5A6UAAAMlSURBVFhH7ZbJUlNRFEUdiYaYjh5pREKjBKSVEJU+NIotICIYOvWzzp+mlvuSoL5wLXF2
+        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACwwAAAsM
+        AT9AIsgAAAMlSURBVFhH7ZbJUlNRFEUdiYaYjh5pREKjBKSVEJU+NIotICIYOvWzzp+mlvuSoL5wLXF2
         rXqDM3h7kKxatc+tcwv4r8YbhjzeMOTxhiGPNwx5vGHIcy0YTafz1aMjo1IxDg6M3T3j3TvjzRtjZ8fY
         2jLKZWNtzVhZMRYXjWfPjGLRePrUmJkxJieNiXGjMGY8emQMDxuDg8bAgNHfb/T0Gt3dRmen0d5mtLYY
         2ayRShnJpJG4azSnbOH23dFGvsiHGwEvV4+PoHKCgGFvD96/R8AIGLa3YWMDASNgBIyAobiAgGF2FqYm
@@ -158,13 +158,10 @@
         XAvi4yc+fhqC+PiJj5+GID5+4uPHE4Y83jDk8YbhDrd+ADi18I3SUGQ+AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btn_exit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>141, 97</value>
+  <data name="btn_all.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 82</value>
   </data>
-  <data name="btn_exit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 79</value>
-  </data>
-  <data name="btn_exit.Text" xml:space="preserve">
+  <data name="btn_all.Text" xml:space="preserve">
     <value>Remover todas as colunas</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
@@ -184,7 +181,7 @@
         xUAa4EouKCoB0n+A2CgltTiZgYHRAMjOLi8pAIozzgGyRZKywewNIHZRSJAzkH0EyOZLh7CvgNhJEPYT
         ELsI6Akg+wtIfTqYzcQBNgfClgGxS1IrQPYyOOcXVBZlpmeUKBhaWloqOKbkJ6UqBFcWl6TmFit45iXn
         FxXkFyWWpKYA1ULcBwaCEIWgENMAarTQZKAyAMUDhPU5EBy+jGJnEGIIkFxaVAZlMjIZE+YjzJgjwcDg
-        v5SBgeUPQsykl4FhgQ4DA/9UhJiaIQODgD4Dw745AMDGT/0ZOjZcAAAACXBIWXMAAAsNAAALDQHtB8As
+        v5SBgeUPQsykl4FhgQ4DA/9UhJiaIQODgD4Dw745AMDGT/0ZOjZcAAAACXBIWXMAAAsMAAALDAE/QCLI
         AAADMklEQVRYR9WUSVeTWRRFHZVliOloFKURiYASkFZCbEAlgIo9qAhGwSp/1v2nWdvzSFC/qlurdHYd
         nMF3Bslee537zgC/Vdwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwy
         ctwycv5VTBWL1fbBgdFqGW/fGq93jRcvjGfPjJ0dY3vbaDaNhw+N+/eNe/eM27eNet24dctYXDTm5ozZ
@@ -203,10 +200,10 @@
 </value>
   </data>
   <data name="btn_del_col.Location" type="System.Drawing.Point, System.Drawing">
-    <value>63, 92</value>
+    <value>60, 99</value>
   </data>
   <data name="btn_del_col.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 83</value>
+    <value>77, 82</value>
   </data>
   <data name="btn_del_col.Text" xml:space="preserve">
     <value>Remover a última coluna</value>
@@ -235,7 +232,7 @@
   <data name="btn_add_col.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw4AAAsOAUC+4UEAAAUSSURBVDhPfdR7UJRVGMfx5333
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAUSSURBVDhPfdR7UJRVGMfx5333
         3WXZZXfZXdhdUC6CqGAIAtIIYxca00nHUgnRFZOrCKQCKjqichW5CZIOqWSgaWaiKViYMSZ5G29pU9bY
         dJmpZmqyy2TjruXrr+dd0pFs/OM755+znzln33MOmRvUZNskkWOzihyt/6lZpfbfKnWYOqnXtIN6DB3U
         a21WddorRa2tRqQHc9SLZK1QkU+eisjSIJFfoxdZW7hNQ1OVi9bx/aHYjVfwGlqxF+2IPxYGcbkQaNng

@@ -119,10 +119,10 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 13</value>
+    <value>158, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>选择列类型</value>
+    <value>Sélectionnez le type de colonne</value>
   </data>
   <data name="btn_all.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -150,13 +150,13 @@
 </value>
   </data>
   <data name="btn_all.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 82</value>
+    <value>94, 82</value>
   </data>
   <data name="btn_all.Text" xml:space="preserve">
-    <value>删除所有列</value>
+    <value>Supprimer toutes les colonnes</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>(找到第一个音频流)</value>
+    <value>(Première piste audio)</value>
   </data>
   <data name="btn_del_col.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -166,7 +166,7 @@
         xUAa4EouKCoB0n+A2CgltTiZgYHRAMjOLi8pAIozzgGyRZKywewNIHZRSJAzkH0EyOZLh7CvgNhJEPYT
         ELsI6Akg+wtIfTqYzcQBNgfClgGxS1IrQPYyOOcXVBZlpmeUKBhaWloqOKbkJ6UqBFcWl6TmFit45iXn
         FxXkFyWWpKYA1ULcBwaCEIWgENMAarTQZKAyAMUDhPU5EBy+jGJnEGIIkFxaVAZlMjIZE+YjzJgjwcDg
-        v5SBgeUPQsykl4FhgQ4DA/9UhJiaIQODgD4Dw745AMDGT/0ZOjZcAAAACXBIWXMAAAsNAAALDQHtB8As
+        v5SBgeUPQsykl4FhgQ4DA/9UhJiaIQODgD4Dw745AMDGT/0ZOjZcAAAACXBIWXMAAAsMAAALDAE/QCLI
         AAADMklEQVRYR9WUSVeTWRRFHZVliOloFKURiYASkFZCbEAlgIo9qAhGwSp/1v2nWdvzSFC/qlurdHYd
         nMF3Bslee537zgC/Vdwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwyctwy
         ctwycv5VTBWL1fbBgdFqGW/fGq93jRcvjGfPjJ0dY3vbaDaNhw+N+/eNe/eM27eNet24dctYXDTm5ozZ
@@ -184,32 +184,25 @@
         YII=
 </value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btn_del_col.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="btn_del_col.Text" xml:space="preserve">
-    <value>删除最后一列</value>
-  </data>
-  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>101, 6</value>
+    <value>Supprimer la dernière colonne</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>211, 13</value>
+    <value>436, 13</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>添加列会增加刷新文件列表所需的时间</value>
+    <value>REMARQUE : L'ajout de colonnes augmente le temps de mise à jour de la liste des fichiers.</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 13</value>
+    <value>116, 13</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>选择字段</value>
+    <value>Sélectionner un champ</value>
   </data>
   <data name="btn_add_col.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAAAUSSURBVDhPfdR7UJRVGMfx5333
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAUSSURBVDhPfdR7UJRVGMfx5333
         3WXZZXfZXdhdUC6CqGAIAtIIYxca00nHUgnRFZOrCKQCKjqichW5CZIOqWSgaWaiKViYMSZ5G29pU9bY
         dJmpZmqyy2TjruXrr+dd0pFs/OM755+znzln33MOmRvUZNskkWOzihyt/6lZpfbfKnWYOqnXtIN6DB3U
         a21WddorRa2tRqQHc9SLZK1QkU+eisjSIJFfoxdZW7hNQ1OVi9bx/aHYjVfwGlqxF+2IPxYGcbkQaNng
@@ -233,15 +226,6 @@
         /LcgvNuK4E4jhu/Ww1Sqgs9sIdADPdh8Tlm1gppWq0nPgHo2kWaeMLS5gobP3U5DvtDrkyP0+GQLvfr5
         4i4pTdBK6QINKU0gL6dIxgUi/QOq6B87V6beXQAAAABJRU5ErkJggg==
 </value>
-  </data>
-  <data name="btn_add_col.Location" type="System.Drawing.Point, System.Drawing">
-    <value>202, 41</value>
-  </data>
-  <data name="btn_add_col.Size" type="System.Drawing.Size, System.Drawing">
-    <value>24, 24</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>439, 220</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2032,8 +2016,5 @@
         xRPuE8QT7hPCE+4TwBPuE74T7ha9Fu5Ax0CeAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>添加自定义列</value>
   </data>
 </root>

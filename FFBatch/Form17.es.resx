@@ -124,7 +124,7 @@
   <data name="label1.Text" xml:space="preserve">
     <value>Seleccione el tipo de columna</value>
   </data>
-  <data name="btn_exit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btn_all.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAABGdBTUEAALGeYUxB9wAAACBjSFJNAACH
         EAAAjBIAAP1NAACBPgAAWesAARIPAAA85gAAGc66ySIyAAABK2lDQ1BQaG90b3Nob3AgSUNDIHByb2Zp
@@ -132,8 +132,8 @@
         RF/WBZnFQBrgSi4oKgHSf4DYKCW1OJmBgdEAyM4uLykAijPOAbJFkrLB7A0gdlFIkDOQfQTI5kuHsK+A
         2EkQ9hMQuwjoCSD7C0h9OpjNxAE2B8KWAbFLUitA9jI45xdUFmWmZ5QoGFpaWio4puQnpSoEVxaXpOYW
         K3jmJecXFeQXJZakpgDVQtwHBoIQhaAQ0wBqtNBkoDIAxQOE9TkQHL6MYmcQYgiQXFpUBmUyMhkT5iPM
-        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACw4AAAsO
-        AUC+4UEAAAMlSURBVFhH7ZbJUlNRFEUdiYaYjh5pREKjBKSVEJU+NIotICIYOvWzzp+mlvuSoL5wLXF2
+        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACwwAAAsM
+        AT9AIsgAAAMlSURBVFhH7ZbJUlNRFEUdiYaYjh5pREKjBKSVEJU+NIotICIYOvWzzp+mlvuSoL5wLXF2
         rXqDM3h7kKxatc+tcwv4r8YbhjzeMOTxhiGPNwx5vGHIcy0YTafz1aMjo1IxDg6M3T3j3TvjzRtjZ8fY
         2jLKZWNtzVhZMRYXjWfPjGLRePrUmJkxJieNiXGjMGY8emQMDxuDg8bAgNHfb/T0Gt3dRmen0d5mtLYY
         2ayRShnJpJG4azSnbOH23dFGvsiHGwEvV4+PoHKCgGFvD96/R8AIGLa3YWMDASNgBIyAobiAgGF2FqYm
@@ -149,13 +149,10 @@
         XAvi4yc+fhqC+PiJj5+GID5+4uPHE4Y83jDk8YbhDrd+ADi18I3SUGQ+AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btn_exit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>133, 101</value>
+  <data name="btn_all.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 82</value>
   </data>
-  <data name="btn_exit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 82</value>
-  </data>
-  <data name="btn_exit.Text" xml:space="preserve">
+  <data name="btn_all.Text" xml:space="preserve">
     <value>Quitar todas las columnas</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
