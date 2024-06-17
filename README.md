@@ -1,6 +1,6 @@
 # FFmpeg Batch AV Converter
 
-FFmpeg Batch AV Converter is an ffmepg gui, a front-end for Windows ffmpeg users, and for Linux via Wine that allows the use of the full potential of ffmpeg command line with a few mouse clicks in a convenient GUI. Among other things, you can drag and drop, see progress information, change encoding priority, pause and 
+FFmpeg Batch AV Converter is an ffmepg gui, a front-end for Windows ffmpeg users, that allows the use of the full potential of ffmpeg command line with a few mouse clicks in a convenient GUI. Among other things, you can drag and drop, see progress information, change encoding priority, pause and 
 resume, and set automatic shutdown. It is good for seasoned ffmpeg users as well as beginners.
 
 Downloads: https://ffmpeg-batch.sourceforge.io
