@@ -2105,4 +2105,10 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Ritaglio barre nere</value>
+  </data>
+  <data name="lbl_or.Text" xml:space="preserve">
+    <value>Originale</value>
+  </data>
 </root>

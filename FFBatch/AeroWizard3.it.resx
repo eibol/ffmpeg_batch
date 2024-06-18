@@ -4594,4 +4594,25 @@
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
+  <data name="profile_target.Items5" xml:space="preserve">
+    <value>lento</value>
+  </data>
+  <data name="profile_target.Items1" xml:space="preserve">
+    <value>molto veloce</value>
+  </data>
+  <data name="profile_target.Items3" xml:space="preserve">
+    <value>veloce</value>
+  </data>
+  <data name="profile_target.Items2" xml:space="preserve">
+    <value>più veloce</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Parametri</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Profilo</value>
+  </data>
+  <data name="profile_target.Items" xml:space="preserve">
+    <value>ultra veloce</value>
+  </data>
 </root>
