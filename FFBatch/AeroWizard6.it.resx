@@ -2377,4 +2377,25 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
+  <data name="btn_start_multi.Text" xml:space="preserve">
+    <value>Avvia</value>
+  </data>
+  <data name="wz_final.Text" xml:space="preserve">
+    <value>Profilo completo</value>
+  </data>
+  <data name="check_name.Text" xml:space="preserve">
+    <value>Usa nome file sorgente per la destinazione</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>La procedura guidata per l'estrazione dei profili delle immagini è pronta.</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Seelziona 'Fine' o 'Chiudi' per tornare alla scheda principale.</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Seelziona 'Avvia' per avviare la codifica con il profilo attuale.</value>
+  </data>
+  <data name="lbl_warn.Text" xml:space="preserve">
+    <value>Il percorso assoluto può portare alla sovrascrittura</value>
+  </data>
 </root>
