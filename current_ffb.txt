@@ -1,9 +1,7 @@
-3.0.7
-• ffmpeg 7.0.1 included (essential).
-• French translation available.
-• New setting at security and performance to disable ffmpeg.exe checksum validation.
-• When progress info fails to display, or when using quick file adding, standard ffmpeg output is displayed in progress bar so encoding can be followed up (sequential encoding).
-• Verbose logs increased -loglevel for better ffmpeg debugging (could generate big log files).
-• Fixed: screen recording audio dialog not available. Updated virtual audio playback driver url for recording audio playback.
-• Fixed: very slow custom columns loading from hard disks (multithread info attempted only from SSD/NVMe).
-• Minor translations and bugfixes.
+3.0.8
+• ffmpeg 7.0.2.
+• Fixed ffmpeg location being requested despite existing in selected path.
+• Fixed ffmpeg location sometimes not found when downloading YouTube videos.
+• Fixed YouTube urls not correctly added from text file.
+• Fixed but setting language in french Windows installations.
+• Set detailed loglevel to info, to avoid too big log files / decrease potential memory usage.
