@@ -1,7 +1,4 @@
-3.0.8
-• ffmpeg 7.0.2.
-• Fixed ffmpeg location being requested despite existing in selected path.
-• Fixed ffmpeg location sometimes not found when downloading YouTube videos.
-• Fixed YouTube urls not correctly added from text file.
-• Fixed but setting language in french Windows installations.
-• Set detailed loglevel to info, to avoid too big log files / decrease potential memory usage.
+3.0.9
+• FFmpeg 7.1
+• Fixed bug using encoding parameters column causing encoding error.
+• Fixed bug in frame count statistics dialog.
