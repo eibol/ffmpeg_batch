@@ -28,9 +28,9 @@ namespace FFBatch
             InitializeComponent();
         }
 
-        private String vff = "v7.0.0 full";
-        private String vff_size = "43 MB";
-        private String ff_latest_exe = "https://github.com/eibol/ffmpeg_batch/releases/download/3.0.7/ffmpeg-release-full.7z";
+        private String vff = "v7.1 full";
+        private String vff_size = "44 MB";
+        private String ff_latest_exe = "https://github.com/eibol/ffmpeg_batch/releases/download/" + Application.ProductVersion + "/ffmpeg-release-full.7z";
         public String ff_state = String.Empty;
         public Boolean browse_ff = false;
         public Boolean down_g = false;
@@ -160,7 +160,7 @@ namespace FFBatch
 
         private void cb_srv_SelectedIndexChanged(object sender, EventArgs e)
         {              
-              lbl_d_v.Text = vff;              
+              lbl_d_v.Text = vff;
               lbl_val.Text = "MD5: 7523a4c238fcf4087b94dd97d14c0a71";         
               if (File.Exists(Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe"))) lbl_val.Text = Strings.ff_val;
         }

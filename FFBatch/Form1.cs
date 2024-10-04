@@ -334,8 +334,8 @@ namespace FFBatch
         private String down_ff_g = "https://www.gyan.dev/ffmpeg/builds/ffmpeg-release-full.7z";
         private String down_ff_v = "https://ffmpeg-batch.sourceforge.io/ffmpeg-release-full.7z";
         private String down_ff_vh = "https://files.videohelp.com/u/273695/ffmpeg-release-full.7z";
-        private String down_ff_gh = "https://github.com/eibol/ffmpeg_batch/releases/download/3.0.7/ffmpeg-release-full.7z";
-        private string proj_web = "https://ffmpeg-batch.sourceforge.io";
+        private String down_ff_gh = "https://github.com/eibol/ffmpeg_batch/releases/download/" + Application.ProductVersion + "/ffmpeg-release-full.7z";
+        private String proj_web = "https://ffmpeg-batch.sourceforge.io";
         private String man_en_url = "https://raw.githubusercontent.com/eibol/ffmpeg_batch/gh-pages/FFmpeg_Batch_User_Guide_en.pdf";
         private String man_es_url = "https://raw.githubusercontent.com/eibol/ffmpeg_batch/gh-pages/FFmpeg_Batch_User_Guide_es.pdf";
         private Boolean images_v = false;
@@ -2338,7 +2338,7 @@ namespace FFBatch
                         add_suffix = txt_suffix.Text;
                     }
 
-                    String AppParam = pre_input_var + " " + pre_ss + " -i " + "" + '\u0022' + file + '\u0022' + " " + silence_params + " -loglevel info -stats";
+                    String AppParam = pre_input_var + " " + pre_ss + " -i " + "" + '\u0022' + file + '\u0022' + " " + silence_params + " -loglevel warning -stats";
 
                     if (!Directory.Exists(destino))
                     {
@@ -4875,7 +4875,7 @@ namespace FFBatch
                 String cultur = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
                 if (language == "en")
                 {
-                    if (cultur == "es" || cultur == "ar" || cultur == "pt" || cultur == "it" || cultur == "zh")
+                    if (cultur == "es" || cultur == "ar" || cultur == "pt" || cultur == "it" || cultur == "zh" || cultur == "fr")
                     {
                         init_lang();
                         post_lang();                      
@@ -7560,13 +7560,7 @@ namespace FFBatch
             else return 0;
         }
         private void button13_Click(object sender, EventArgs e)
-        {
-            //Pg1.Focus();
-            //if (!File.Exists(Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe")))
-            //{
-            //    MessageBox.Show(Strings.no_ffmpeg, Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
+        {            
             
             String path = "cmd.exe";
             String param = String.Empty;
@@ -16691,6 +16685,8 @@ namespace FFBatch
                 List<Image> images = new List<Image>();
                 Boolean has_img = false;
                 Boolean has_m3u = false;
+                adding_youtube = false;
+                has_m3u = false;
 
                 for (int i = 0; i <= lines_txt_m3u.Count() - 1; i++)
                 {
@@ -16791,8 +16787,10 @@ namespace FFBatch
                     {
                         if (i >= 0)
                         {
-                            out_file = Path.GetFileNameWithoutExtension(lines_txt_m3u[i]);
-                            dg1.Rows.Add(pic_noimg.Image, lines_txt_m3u[i], "", "", out_file, "");
+                            String trimm = lines_txt_m3u[i].Substring(0, lines_txt_m3u[i].IndexOf("&"));
+                            out_file = Path.GetFileNameWithoutExtension(trimm);                            
+                            dg1.Rows.Add(pic_noimg.Image, trimm, "", "", out_file, "");
+                            //MessageBox.Show(lines_txt_m3u[i].Substring(0, lines_txt_m3u[i].IndexOf("&")));
                         }
                     }
                 }
@@ -19217,6 +19215,7 @@ namespace FFBatch
                         }
                         this.InvokeEx(f => f.Pg1.Maximum = 100 * dg1.Rows.Count);
                         tmp.StartInfo.Arguments = tmp.StartInfo.Arguments + " --ffmpeg-location " + '\u0022' + Properties.Settings.Default.ffm_path + '\u0022';
+                        
                     }
                     else
                     {
@@ -28792,27 +28791,9 @@ namespace FFBatch
             else return;
 
             Properties.Settings.Default.ffm_path = Path.GetDirectoryName(browse_file.FileName);
-            Properties.Settings.Default.Save();
+            Properties.Settings.Default.Save();            
             is_ff_ok = true;
 
-            //String path = "cmd.exe";
-            //String param = "/C copy " + '\u0022' + file_path + '\u0022' + " " + '\u0022' + Application.StartupPath + '\u0022' + " / Y";
-            //Process ff_ext = new Process();
-            //ff_ext.StartInfo.FileName = path;
-            //ff_ext.StartInfo.Arguments = param;
-            //ff_ext.StartInfo.WindowStyle = ProcessWindowStyle.Hidden;
-            //if (writable == false) ff_ext.StartInfo.Verb = "runas";
-            //try
-            //{
-            //    ff_ext.Start();
-            //    ff_ext.WaitForExit();
-            //    is_ff_ok = true;
-            //}
-            //catch
-            //{
-            //    MessageBox.Show(Strings.err_dest, Strings.write_error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    is_ff_ok = false;
-            //}
         }
 
         private void obtain_mediainfo()
@@ -29614,7 +29595,7 @@ namespace FFBatch
         }
 
         private void Form1_Shown(object sender, EventArgs e)
-        {
+        {            
             if (Settings.Default.dark_mode == false)
             {
                 for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
@@ -29716,6 +29697,7 @@ namespace FFBatch
 
             is_ff_ok = true;
             String ffm = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
+
             if (!File.Exists(ffm))
             {
                 if (File.Exists(Path.Combine(Application.StartupPath, "ffmpeg.exe")))
@@ -29724,13 +29706,13 @@ namespace FFBatch
                     Properties.Settings.Default.Save();
                     ffm = Path.Combine(Application.StartupPath, "ffmpeg.exe");
                 }
-            }            
+            }
             
             if (!File.Exists(ffm))
             {
                 Form34 frm34 = new Form34();
-                if (!File.Exists(Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe"))) frm34.lbl_ff_v.Text = Properties.Strings.file_not_found;
-                else frm34.lbl_ff_v.Text = btn_change_ff.Text;
+                //if (!File.Exists(Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe"))) frm34.lbl_ff_v.Text = Properties.Strings.file_not_found;
+                //else frm34.lbl_ff_v.Text = btn_change_ff.Text;
                 frm34.Icon = this.Icon;
                 frm34.ShowDialog();
                 if (frm34.down_g == true)
@@ -29775,6 +29757,7 @@ namespace FFBatch
                     }
                 }
                 else read_hw_dec();
+                
             }
             else
             {
@@ -34942,6 +34925,7 @@ namespace FFBatch
 
         private void ct1_total_frames_Click(object sender, EventArgs e)
         {
+            //Bug
             String file = listView1.SelectedItems[0].SubItems[1].Text + "\\" + listView1.SelectedItems[0].Text;
             String ff_frames = String.Empty;
             String ff_rate = String.Empty;
@@ -34961,18 +34945,19 @@ namespace FFBatch
                 get_frames.StartInfo.CreateNoWindow = true;
                 get_frames.EnableRaisingEvents = true;
                 get_frames.Start();
-
+                
                 while (!get_frames.StandardOutput.EndOfStream)
                 {
                     ff_frames = get_frames.StandardOutput.ReadLine();
                 }
                 get_frames.WaitForExit();
-
+                
                 try
                 {
                     int ff_rate_1 = ff_frames.IndexOf(",");
                     ff_rate = ff_frames.Substring(ff_frames.IndexOf(",") + 1, ff_frames.Length - ff_rate_1 - 1);
                     ff_frames = ff_frames.Substring(0, ff_frames.IndexOf(","));
+                    
                 }
                 catch
                 {
@@ -34986,7 +34971,7 @@ namespace FFBatch
                     {
                         try
                         {
-                            tot_frames = decimal.Parse(ff_frames) / 1000;
+                            tot_frames = decimal.Parse(ff_frames);
                         }
                         catch
                         {
@@ -36769,7 +36754,7 @@ namespace FFBatch
                                         int end = custom_m_params[file_int].LastIndexOf("]]");
                                         int cut = end - start + 3;
                                         int length = custom_m_params[file_int].Length;
-                                        tmp_params = custom_m_params[file_int].Substring(0, cut);
+                                        tmp_params = custom_m_params[file_int].Substring(0, length - cut);
 
                                         if (start != -1 && end != -1)
                                         {
@@ -36788,8 +36773,8 @@ namespace FFBatch
                                 }
                                     catch { }
                                 }
-                            //End custom item parameters
-
+                    //End custom item parameters
+       
 
                             String file2 = fullPath;
                             while (tmp_params.Contains("%fn"))
@@ -37220,7 +37205,7 @@ namespace FFBatch
                             }
 
                             if (verbose_logs == false) tmp.StartInfo.Arguments = tmp.StartInfo.Arguments + " -loglevel warning -stats";
-                            else tmp.StartInfo.Arguments =tmp.StartInfo.Arguments + " -loglevel debug";
+                            else tmp.StartInfo.Arguments =tmp.StartInfo.Arguments + " -loglevel info";
 
                             FileInfo f_root = new FileInfo(destis[file_int]);
                             DriveInfo dest_drive = new DriveInfo(Application.StartupPath);
@@ -47319,8 +47304,8 @@ namespace FFBatch
                                         int end = listView1.Items[list_index].SubItems[cust_p_col].Text.LastIndexOf("]]");
                                         int cut = end - start + 3;
                                         int length = listView1.Items[list_index].SubItems[cust_p_col].Text.Length;
-                                        textbox_params = listView1.Items[list_index].SubItems[cust_p_col].Text.Substring(0, cut);
-
+                                        textbox_params = listView1.Items[list_index].SubItems[cust_p_col].Text.Substring(0, length - cut);
+                                                                                
                                         if (start != -1 && end != -1)
                                         {
                                             cust_output1 = "." + listView1.Items[list_index].SubItems[cust_p_col].Text.Substring(start + 2, cut - 5);
@@ -47337,7 +47322,7 @@ namespace FFBatch
                                 }                            
                         }
                         //End custom item parameters
-
+                        
 
                         status = listView1.Items[list_index].SubItems[5].Text;
                         file = listView1.Items[list_index].SubItems[1].Text + "\\" + listView1.Items[list_index].Text;
@@ -48164,7 +48149,7 @@ namespace FFBatch
                 }
 
                 if (verbose_logs == false) AppParam = AppParam + " -loglevel warning -stats";
-                else AppParam = AppParam + " -loglevel debug";
+                else AppParam = AppParam + " -loglevel info";
 
                 tmp.StartInfo.FileName = ffm;
 
@@ -49114,6 +49099,23 @@ namespace FFBatch
                                 else this.InvokeEx(f => f.listView1.Items[list_index].SubItems[5].Text = "100%");
                             }
                         }
+
+                        if (err_txt.ToLower().Contains("time=n/a"))
+                        {
+                            this.Invoke(new MethodInvoker(delegate
+                            {
+                                Pg1.Text = list_lines[list_lines.Count - 1];
+                                String[] split = err_txt.Split(' ');
+                                foreach(String str1 in split)
+                                {
+                                    if (str1.ToLower().Contains("speed="))
+                                    {
+                                        lbl_speed.Text = Properties.Strings.speed + " " + str1;
+                                    }
+                                }                                
+                            }));
+                        }
+
                         //Monitor available space
                         try
                         {
@@ -49151,12 +49153,19 @@ namespace FFBatch
                     this.Invoke(new MethodInvoker(delegate
                     {
                         Pg1.Text = list_lines[list_lines.Count - 1];
+                        String[] split = err_txt.Split(' ');
+                        foreach (String str1 in split)
+                        {
+                            if (str1.ToLower().Contains("speed="))
+                            {
+                                lbl_speed.Text = Properties.Strings.speed + " " + str1;
+                            }
+                        }
                     }));
                 }
 
                 try
                 {
-
                     tmp.StartInfo.Arguments = String.Empty;
                     timer_est_size.Stop();
                     time_est_size = 0;
@@ -52584,26 +52593,11 @@ namespace FFBatch
         {
             pic_title.Focus();
             Form34 frm34 = new Form34();
-            if (!File.Exists(Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe"))) frm34.lbl_ff_v.Text = Properties.Strings.file_not_found;
+            String ffm = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
+            if (!File.Exists(ffm)) frm34.lbl_ff_v.Text = Properties.Strings.file_not_found;
             else frm34.lbl_ff_v.Text = btn_change_ff.Text;
             frm34.Icon = this.Icon;
             frm34.ShowDialog();
-            if (frm34.down_g == true)
-            {
-                down_ffAsync(down_ff_g);
-            }
-            if (frm34.down_v == true)
-            {
-                down_ffAsync(down_ff_v);
-            }
-            if (frm34.down_vh == true)
-            {
-                down_ffAsync(down_ff_vh);
-            }
-            if (frm34.down_gh == true)
-            {
-                down_ffAsync(down_ff_gh);
-            }
 
             if (frm34.browse_ff == true)
             {
@@ -52614,7 +52608,47 @@ namespace FFBatch
                     ff_ver();
                     read_hw_dec();
                 }
-            }            
+                return;
+            }
+
+            if (frm34.down_g == true)
+            {
+                down_ffAsync(down_ff_g);                
+            }
+            if (frm34.down_v == true)
+            {
+                down_ffAsync(down_ff_v);                
+            }
+            if (frm34.down_vh == true)
+            {
+                down_ffAsync(down_ff_vh);                
+            }
+            if (frm34.down_gh == true)
+            {
+                down_ffAsync(down_ff_gh);                
+            }
+            
+            Properties.Settings.Default.ffm_path = Path.Combine(Application.StartupPath);
+            Properties.Settings.Default.Save();
+            ffm = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
+
+            if (File.Exists(ffm))
+            {
+                if (check_ff_md5() == false)
+                {
+                    Form25 frm25 = new Form25();
+                    frm25.btn_close.Image = btn_exit.Image;
+                    frm25.ShowDialog();
+
+                    if (frm25.check_ff == true)
+                    {
+                        ff_ver();
+                        read_hw_dec();
+                    }
+                }
+                else read_hw_dec();                
+            }
+       
         }
 
         private void btn_live_preview_Click(object sender, EventArgs e)
