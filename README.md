@@ -4,6 +4,7 @@ FFmpeg Batch AV Converter is an ffmepg gui, a front-end for Windows ffmpeg users
 resume, and set automatic shutdown. It is good for seasoned ffmpeg users as well as beginners.
 
 ![Donations](https://ffmpeg-batch.sourceforge.io/#about)
+
 ![Buy me a coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=ffbatch&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff)
 
 It provides unlimited single or multi-file batch encoding for almost any audio/video format. You can use any set of parameters 
