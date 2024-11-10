@@ -36,7 +36,7 @@ FEATURES
    - Batch download YouTube and m3u8 urls
    - Youtube-dl frontend for any supported URL.
 
-![Screenshots]([https://ffmpeg-batch.sourceforge.io/#about](https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/FFbatch_2024_main.jpg))
+![Screenshot](https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/FFbatch_2024_main.jpg)
 
 To compile code, download all files to any folder.
 
