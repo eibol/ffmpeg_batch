@@ -36,9 +36,9 @@ FEATURES
    - Batch download YouTube and m3u8 urls
    - Youtube-dl frontend for any supported URL.
 
-| Main tab      | Wizard   |
-|------------|-------------|
-| <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/FFbatch_2024_main.jpg" width="250"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/FFbatch_2024_wizard.jpg" width="250"> | 
+| Main tab   | Wizard   | Streams   | Subtitles  | URLs    |
+|------------|----------|-----------|------------|---------|
+| <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/FFbatch_2024_main.jpg" width="250"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/FFbatch_2024_wizard.jpg" width="250"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/FFbatch_2024_mux.jpg" width="250"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/FFbatch_2024_subs.jpg" width="250"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/FFbatch_2024_urls.jpg" width="250"> |
 
 To compile code, download all files to any folder.
 
