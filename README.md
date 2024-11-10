@@ -36,10 +36,9 @@ FEATURES
    - Batch download YouTube and m3u8 urls
    - Youtube-dl frontend for any supported URL.
 
-To compile code, please follow these steps:
+![Screenshots]([https://ffmpeg-batch.sourceforge.io/#about](https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/FFbatch_2024_main.jpg))
 
-- Download all files to any folder.
-- In folder bin/debug, you have to place ffmpeg.exe, mediainfo.exe and yt-dlp.exe.
+To compile code, download all files to any folder.
 
 NOTES:
 - The application uses Aerowizard nuget package as mandatory.
