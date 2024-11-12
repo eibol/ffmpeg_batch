@@ -12161,4 +12161,10 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>Produttore</value>
+  </data>
+  <data name="cb_q_amd.Items" xml:space="preserve">
+    <value>bilanciato</value>
+  </data>
 </root>

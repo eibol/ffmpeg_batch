@@ -16350,4 +16350,13 @@
         AfEBgAEBAR8B+AEAAQ8B/wHzAcABAwE/AfgB4AF/Av8B4AEHCw==
 </value>
   </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Parametri</value>
+  </data>
+  <data name="menu_create_chaps.Text" xml:space="preserve">
+    <value>Crea file capitoli</value>
+  </data>
+  <data name="btn_br_path.Text" xml:space="preserve">
+    <value>Sfoglia...</value>
+  </data>
 </root>
