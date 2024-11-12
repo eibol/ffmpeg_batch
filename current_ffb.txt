@@ -1,5 +1,11 @@
-3.0.9
-
-• FFmpeg 7.1
-• Fixed bug using encoding parameters column causing encoding error.
-• Fixed bug in frame count statistics dialog.
+﻿3.1.0
+• FFmpeg.exe/yt-dlp.exe no longer included in installer versión (downloadable within application).
+• FFmpeg.exe checksum warnings removed, no longer useful.
+• Enhanced cropping tool menu, added resolutions, location and aspect ratio with preview.
+• Added setting in Subtitles tab to change font type, size and color for hardcoded (burnt) subtitles, and attach font for soft subtitles.
+• Added menu wizard to create metadata chapters text file (;FFMETADATA1).
+• Fixed download test failing for multiple link types. Sequential download/link/playlist buttons now supporting all yt-dlp sites:
+https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md
+• Fixed error downloading yt-dlp valid links in sequential download different from YouTube or m3u links.
+• Fixed minor bug making application restart required when replacing ffmpeg.exe.
+• Fixed some missing translations and bad dialog layouts in some languages.
