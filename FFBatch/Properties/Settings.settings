@@ -118,10 +118,10 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="ffm_path" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Application.StartupPath</Value>
     </Setting>
     <Setting Name="validate_ff" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

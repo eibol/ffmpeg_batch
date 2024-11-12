@@ -1326,6 +1326,9 @@
   <data name="happy_y" xml:space="preserve">
     <value>سنة جديدة سعيدة</value>
   </data>
+  <data name="happy_y1" xml:space="preserve">
+    <value>سنة جديدة سعيدة</value>
+  </data>
   <data name="header_fail" xml:space="preserve">
     <value>تعذر كتابة العنوان</value>
   </data>
@@ -3573,5 +3576,35 @@
   </data>
   <data name="yt_url_sh" xml:space="preserve">
     <value>عنوان URL لموقع YouTube قصير جدًا.</value>
+  </data>
+  <data name="mon_ing1" xml:space="preserve">
+    <value>مراقبة المجلد</value>
+  </data>
+  <data name="Paste_any_URL1" xml:space="preserve">
+    <value>مدمج</value>
+  </data>
+  <data name="path_iparam1" xml:space="preserve">
+    <value>إضافة ملف الإدخال إلى المعلمات</value>
+  </data>
+  <data name="try_d_again" xml:space="preserve">
+    <value>يمكنك المحاولة مرة أخرى أو تنزيل الملف ونسخه إلى موقع التطبيق.</value>
+  </data>
+  <data name="please_down_yt" xml:space="preserve">
+    <value>يرجى تنزيله إلى مجلد التطبيق أو استخدام زر تحديث yt-dlp.</value>
+  </data>
+  <data name="yt_down_now" xml:space="preserve">
+    <value>هل ترغب في تنزيله الآن؟</value>
+  </data>
+  <data name="create_chaps" xml:space="preserve">
+    <value>إنشاء ملف الفصول</value>
+  </data>
+  <data name="chaps_params_dup" xml:space="preserve">
+    <value>تم تضمين معلمة بيانات وصفية أخرى بالفعل، يرجى التأكد من عدم وجود تكرار في ملفات فصول الإدخال.</value>
+  </data>
+  <data name="cropped" xml:space="preserve">
+    <value>مقصوص</value>
+  </data>
+  <data name="use_prev" xml:space="preserve">
+    <value>استخدم معاينة الفيديو</value>
   </data>
 </root>

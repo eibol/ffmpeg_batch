@@ -297,6 +297,9 @@
   <data name="attempt_exc" xml:space="preserve">
     <value>Va a agregar una exclusión a Seguridad de Windows para ffmpeg.exe.</value>
   </data>
+  <data name="audio" xml:space="preserve">
+    <value>Audio</value>
+  </data>
   <data name="Audio_codec" xml:space="preserve">
     <value>Codec de audio</value>
   </data>
@@ -564,6 +567,9 @@
   <data name="concat_failed" xml:space="preserve">
     <value>La concatenación de ficheros falló. Revise el error a continuación. Algunos caracteres especiales en los nombres de ficheros de origen podrían causar errores.</value>
   </data>
+  <data name="concat_fil" xml:space="preserve">
+    <value>Unir ficheros</value>
+  </data>
   <data name="concat_mux" xml:space="preserve">
     <value>Cambiar entre el filtro nativo y el filtro de vídeo para unir ficheros.</value>
   </data>
@@ -625,7 +631,7 @@
     <value>Crear vídeo a partir de imágenes</value>
   </data>
   <data name="crop1" xml:space="preserve">
-    <value>Detectar/recortar barras negras de video</value>
+    <value>Recortar vídeo/barras negras</value>
   </data>
   <data name="crop2" xml:space="preserve">
     <value>Se encontró un filtro de recorte en el campo de parámetros. Por favor, asegúrese de borrar cualquier instancia previa del filtro -vf crop.</value>
@@ -990,6 +996,9 @@
   <data name="err_set" xml:space="preserve">
     <value>Se produjo un error al guardar los ajustes</value>
   </data>
+  <data name="err_size" xml:space="preserve">
+    <value>Error al obtener resolución. No se puede mostrar el recorte.</value>
+  </data>
   <data name="err_test_temp" xml:space="preserve">
     <value>La carpeta de prueba no pudo ser creada en la carpeta de archivos temporales.</value>
   </data>
@@ -1037,6 +1046,9 @@
   </data>
   <data name="exit" xml:space="preserve">
     <value>Salir</value>
+  </data>
+  <data name="exit_code" xml:space="preserve">
+    <value>Código de salida</value>
   </data>
   <data name="extension" xml:space="preserve">
     <value>Extensión</value>
@@ -1314,6 +1326,9 @@
   <data name="happy_y" xml:space="preserve">
     <value>Feliz Año Nuevo</value>
   </data>
+  <data name="happy_y1" xml:space="preserve">
+    <value>Feliz Año Nuevo</value>
+  </data>
   <data name="header_fail" xml:space="preserve">
     <value>No se pudo escribir la cabecera</value>
   </data>
@@ -1391,6 +1406,9 @@
   </data>
   <data name="inst_err" xml:space="preserve">
     <value>Error de instalación</value>
+  </data>
+  <data name="integrated" xml:space="preserve">
+    <value>Integrado</value>
   </data>
   <data name="interval" xml:space="preserve">
     <value>Intervalo</value>
@@ -1602,6 +1620,9 @@
   <data name="md5_not_match" xml:space="preserve">
     <value>La suma MD5 de ffmpeg no coincide con el valor verificado. Por favor, verifique que confía en la versión actual de ffmpeg antes de agregar una excepción de seguridad.</value>
   </data>
+  <data name="md5_not_validated" xml:space="preserve">
+    <value>FFmpeg no validado</value>
+  </data>
   <data name="md5_reinst" xml:space="preserve">
     <value>En caso contrario, el archivo ha sido modificado y debería reinstalar la aplicación.</value>
   </data>
@@ -1646,9 +1667,6 @@
   </data>
   <data name="mon_ing" xml:space="preserve">
     <value>Monitorizando cambios en: </value>
-  </data>
-  <data name="mon_ing1" xml:space="preserve">
-    <value>Monitorizando carpeta</value>
   </data>
   <data name="mon_no_rel" xml:space="preserve">
     <value>Una ruta relativa no se puede usar monitorizando subcarpetas, por favor utilice una ruta absoluta, o deshabilite las subcarpetas.</value>
@@ -1897,7 +1915,7 @@
     <value>No hay fichero inicial o final</value>
   </data>
   <data name="no_ffmpeg" xml:space="preserve">
-    <value>El ejecutable ffmpeg.exe no fue encontrado. Reinicie o reinstale la aplicación.</value>
+    <value>El ejecutable ffmpeg.exe no fue encontrado. Localice o descárguelo.</value>
   </data>
   <data name="no_ffprobe" xml:space="preserve">
     <value>El ejecutable ffprobe.exe no fue encontrado. Reinicie o reinstale la aplicación.</value>
@@ -2178,9 +2196,6 @@
   <data name="Paste_any_URL" xml:space="preserve">
     <value>Pegar enlace</value>
   </data>
-  <data name="Paste_any_URL1" xml:space="preserve">
-    <value>Pegar enlace</value>
-  </data>
   <data name="Paste_M3u_URL" xml:space="preserve">
     <value>Pegar enlace M3u</value>
   </data>
@@ -2204,9 +2219,6 @@
   </data>
   <data name="path_iparam" xml:space="preserve">
     <value>Añadir fichero de entrada</value>
-  </data>
-  <data name="path_iparam1" xml:space="preserve">
-    <value>Add input file to parameters</value>
   </data>
   <data name="path_i_add" xml:space="preserve">
     <value>Añadir ruta de fichero para af/vf filter</value>
@@ -2818,7 +2830,7 @@
     <value>Ajuste modificado no guardado.</value>
   </data>
   <data name="setting_pr_c" xml:space="preserve">
-    <value>La configuración ha sida modificada, hay un nuevo preset sin guardar. ¿Desea guardarlo antes de salir?</value>
+    <value>La configuración ha sida modificada, hay un nuevo perfil sin guardar. ¿Desea guardarlo antes de salir?</value>
   </data>
   <data name="sett_not_s" xml:space="preserve">
     <value>Ajustes no guardados</value>
@@ -2994,9 +3006,6 @@
   <data name="stream_saved2" xml:space="preserve">
     <value>Pista completada</value>
   </data>
-  <data name="String" xml:space="preserve">
-    <value />
-  </data>
   <data name="strv_c_not" xml:space="preserve">
     <value>La copia de pista de vídeo no está admitida</value>
   </data>
@@ -3044,6 +3053,9 @@
   </data>
   <data name="s_str" xml:space="preserve">
     <value>Segunda pista</value>
+  </data>
+  <data name="target_size" xml:space="preserve">
+    <value>Tamaño destino:</value>
   </data>
   <data name="task_abort" xml:space="preserve">
     <value>Tarea cancelada</value>
@@ -3400,6 +3412,9 @@
   <data name="vf_crop_multi2" xml:space="preserve">
     <value>Por ejemplo: -vf "crop=50:50:0:10, yadif, format=gray"</value>
   </data>
+  <data name="video" xml:space="preserve">
+    <value>Video</value>
+  </data>
   <data name="Video_codec" xml:space="preserve">
     <value>Codec de vídeo</value>
   </data>
@@ -3539,7 +3554,7 @@
     <value>El enlace que ha copiado podría ser un canal completo de YouTube. Por favor, utilice en este caso el botón Descargar canal/lista.</value>
   </data>
   <data name="yt_not" xml:space="preserve">
-    <value>El fichero yt-dl.exe no fue encontrado.</value>
+    <value>yt-dl.exe no fue encontrado.</value>
   </data>
   <data name="yt_params" xml:space="preserve">
     <value>Parámetros yt-dl</value>
@@ -3561,5 +3576,35 @@
   </data>
   <data name="yt_url_sh" xml:space="preserve">
     <value>El enlace de YouTube es demasiado corto.</value>
+  </data>
+  <data name="mon_ing1" xml:space="preserve">
+    <value>Monitorizando carpeta</value>
+  </data>
+  <data name="Paste_any_URL1" xml:space="preserve">
+    <value>Pegar enlace</value>
+  </data>
+  <data name="path_iparam1" xml:space="preserve">
+    <value>Añadir fichero de entrada</value>
+  </data>
+  <data name="try_d_again" xml:space="preserve">
+    <value>Puede intentarlo nuevamente o descargar y copiar el archivo a la ubicación de la aplicación.</value>
+  </data>
+  <data name="please_down_yt" xml:space="preserve">
+    <value>Descárguelo a la carpeta de la aplicación o utilice el botón actualizar yt-dlp.</value>
+  </data>
+  <data name="yt_down_now" xml:space="preserve">
+    <value>¿Desea descargarlo ahora?</value>
+  </data>
+  <data name="create_chaps" xml:space="preserve">
+    <value>Crear fichero de capítulos</value>
+  </data>
+  <data name="chaps_params_dup" xml:space="preserve">
+    <value>Ya está incluido otro parámetro de metadatos, asegúrese de que no haya duplicidad de archivos de entrada de capítulos.</value>
+  </data>
+  <data name="cropped" xml:space="preserve">
+    <value>Recortado</value>
+  </data>
+  <data name="use_prev" xml:space="preserve">
+    <value>Use previsualización</value>
   </data>
 </root>

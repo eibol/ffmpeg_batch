@@ -297,6 +297,9 @@
   <data name="attempt_exc" xml:space="preserve">
     <value>Questa funzione tenta di aggiungere un'esclusione alla sicurezza di Windows per l'attuale ffmpeg.exe.</value>
   </data>
+  <data name="audio" xml:space="preserve">
+    <value>Audio</value>
+  </data>
   <data name="Audio_codec" xml:space="preserve">
     <value>Codec audio</value>
   </data>
@@ -1324,6 +1327,9 @@ Non è possibile visualizzare l'anteprima del ritaglio.</value>
   <data name="happy_y" xml:space="preserve">
     <value>Buon Anno</value>
   </data>
+  <data name="happy_y1" xml:space="preserve">
+    <value>Buon anno</value>
+  </data>
   <data name="header_fail" xml:space="preserve">
     <value>Impossibile scrivere l'intestazione</value>
   </data>
@@ -1519,6 +1525,9 @@ Non è possibile visualizzare l'anteprima del ritaglio.</value>
   <data name="less_one" xml:space="preserve">
     <value>&lt; 1 minuto</value>
   </data>
+  <data name="libr" xml:space="preserve">
+    <value>Librerie</value>
+  </data>
   <data name="links" xml:space="preserve">
     <value>Elenco URL</value>
   </data>
@@ -1659,9 +1668,6 @@ Non è possibile visualizzare l'anteprima del ritaglio.</value>
   </data>
   <data name="mon_ing" xml:space="preserve">
     <value>Monitoraggio modifiche in:</value>
-  </data>
-  <data name="mon_ing1" xml:space="preserve">
-    <value>Cartella di monitoraggio</value>
   </data>
   <data name="mon_no_rel" xml:space="preserve">
     <value>Non è possibile utilizzare un percorso principale relativo con il monitoraggio delle sottocartelle, utilizzare un percorso assoluto.</value>
@@ -2190,9 +2196,6 @@ Non è possibile visualizzare l'anteprima del ritaglio.</value>
   </data>
   <data name="Paste_any_URL" xml:space="preserve">
     <value>Incolla collegamento</value>
-  </data>
-  <data name="Paste_any_URL1" xml:space="preserve">
-    <value>Incolla il link</value>
   </data>
   <data name="Paste_M3u_URL" xml:space="preserve">
     <value>Paste M3u URL</value>
@@ -3004,9 +3007,6 @@ Non è possibile visualizzare l'anteprima del ritaglio.</value>
   <data name="stream_saved2" xml:space="preserve">
     <value>Salvataggio stream completato</value>
   </data>
-  <data name="String" xml:space="preserve">
-    <value>Incolla il collegamento</value>
-  </data>
   <data name="strv_c_not" xml:space="preserve">
     <value>Copia stream video non supportata</value>
   </data>
@@ -3214,9 +3214,6 @@ Non è possibile visualizzare l'anteprima del ritaglio.</value>
   <data name="Try_current_preset" xml:space="preserve">
     <value>Prova il profilo selezionato</value>
   </data>
-  <data name="try_d_again" xml:space="preserve">
-    <value>Puoi riprovare o scaricare e copiare il file nel percorso dell'applicazione.</value>
-  </data>
   <data name="try_ff" xml:space="preserve">
     <value>Prova i parametri ffmpeg don il file selezionato</value>
   </data>
@@ -3417,6 +3414,9 @@ Puoi utilizzare più filtri, tra parentesi e separati da virgole. Si prega di mo
   <data name="vf_crop_multi2" xml:space="preserve">
     <value>Per esempio: -vf "crop=50:50:0:10, yadif, format=gray"</value>
   </data>
+  <data name="video" xml:space="preserve">
+    <value>Video</value>
+  </data>
   <data name="Video_codec" xml:space="preserve">
     <value>Codec video</value>
   </data>
@@ -3580,10 +3580,34 @@ Puoi annullare l'aggiunta di file in qualsiasi momento.</value>
   <data name="yt_url_sh" xml:space="preserve">
     <value>Il campo URL YouTube è troppo corto.</value>
   </data>
-  <data name="happy_y1" xml:space="preserve">
-    <value>Buon anno</value>
+  <data name="mon_ing1" xml:space="preserve">
+    <value>Cartella di monitoraggio</value>
   </data>
-  <data name="libr" xml:space="preserve">
-    <value>Librerie</value>
+  <data name="Paste_any_URL1" xml:space="preserve">
+    <value>Incolla il link</value>
+  </data>
+  <data name="path_iparam1" xml:space="preserve">
+    <value>Aggiungi il file di input ai parametri</value>
+  </data>
+  <data name="try_d_again" xml:space="preserve">
+    <value>Puoi riprovare o scaricare e copiare il file nel percorso dell'applicazione.</value>
+  </data>
+  <data name="please_down_yt" xml:space="preserve">
+    <value>Scaricalo nella cartella dell'applicazione o utilizza il pulsante di aggiornamento yt-dlp.</value>
+  </data>
+  <data name="yt_down_now" xml:space="preserve">
+    <value>Vuoi scaricarlo subito?</value>
+  </data>
+  <data name="create_chaps" xml:space="preserve">
+    <value>Crea file di capitoli</value>
+  </data>
+  <data name="chaps_params_dup" xml:space="preserve">
+    <value>Un altro parametro di metadati è già incluso, assicurati che non vi siano duplicazioni nei file dei capitoli.</value>
+  </data>
+  <data name="cropped" xml:space="preserve">
+    <value>ritagliato</value>
+  </data>
+  <data name="use_prev" xml:space="preserve">
+    <value>Usa l'anteprima video</value>
   </data>
 </root>

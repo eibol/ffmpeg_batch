@@ -631,7 +631,7 @@
     <value>Create video from still images</value>
   </data>
   <data name="crop1" xml:space="preserve">
-    <value>Detect/Crop video black bars</value>
+    <value>Crop video / autodetect black bars</value>
   </data>
   <data name="crop2" xml:space="preserve">
     <value>A crop filter was found in parameters field. Please ensure to remove any previous -vf crop instance.</value>
@@ -1915,7 +1915,7 @@
     <value>No initial or end files</value>
   </data>
   <data name="no_ffmpeg" xml:space="preserve">
-    <value>FFmpeg executable file was not found. Restart or reinstall application.</value>
+    <value>FFmpeg executable file was not found. Browse or download it.</value>
   </data>
   <data name="no_ffprobe" xml:space="preserve">
     <value>FFprobe executable file was not found. Restart or reinstall application.</value>
@@ -3006,12 +3006,6 @@
   <data name="stream_saved2" xml:space="preserve">
     <value>Stream saving completed</value>
   </data>
-  <data name="String" xml:space="preserve">
-    <value />
-  </data>
-  <data name="String1" xml:space="preserve">
-    <value />
-  </data>
   <data name="strv_c_not" xml:space="preserve">
     <value>Video stream copy not supported</value>
   </data>
@@ -3582,5 +3576,35 @@
   </data>
   <data name="yt_url_sh" xml:space="preserve">
     <value>YouTube URL is too short.</value>
+  </data>
+  <data name="mon_ing1" xml:space="preserve">
+    <value>Monitoring folder</value>
+  </data>
+  <data name="Paste_any_URL1" xml:space="preserve">
+    <value>Paste internet link</value>
+  </data>
+  <data name="path_iparam1" xml:space="preserve">
+    <value>Add input file to parameters</value>
+  </data>
+  <data name="try_d_again" xml:space="preserve">
+    <value>You can try again or download and copy the file to the application path.</value>
+  </data>
+  <data name="please_down_yt" xml:space="preserve">
+    <value>Please download it to application folder or use the update yt-dlp button.</value>
+  </data>
+  <data name="yt_down_now" xml:space="preserve">
+    <value>Would you like to download it now?</value>
+  </data>
+  <data name="create_chaps" xml:space="preserve">
+    <value>Create chapters file</value>
+  </data>
+  <data name="chaps_params_dup" xml:space="preserve">
+    <value>Another metadata parameter is already included, please ensure there is no duplicity of input chapters files.</value>
+  </data>
+  <data name="cropped" xml:space="preserve">
+    <value>Cropped</value>
+  </data>
+  <data name="use_prev" xml:space="preserve">
+    <value>Use Video preview</value>
   </data>
 </root>

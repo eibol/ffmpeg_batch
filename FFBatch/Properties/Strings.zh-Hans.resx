@@ -297,6 +297,9 @@
   <data name="attempt_exc" xml:space="preserve">
     <value>此功能尝试为当前 ffmpeg.exe 添加一个排除项到 Windows 安全中心。</value>
   </data>
+  <data name="audio" xml:space="preserve">
+    <value>声音的</value>
+  </data>
   <data name="Audio_codec" xml:space="preserve">
     <value>音频编解码器</value>
   </data>
@@ -813,6 +816,9 @@
   <data name="encoded" xml:space="preserve">
     <value>编码</value>
   </data>
+  <data name="encoded2" xml:space="preserve">
+    <value>成功编码</value>
+  </data>
   <data name="Encoding" xml:space="preserve">
     <value>编码</value>
   </data>
@@ -989,6 +995,9 @@
   </data>
   <data name="err_set" xml:space="preserve">
     <value>保存设置时出错</value>
+  </data>
+  <data name="err_size" xml:space="preserve">
+    <value>获取文件分辨率时出错。无法显示裁剪预览。</value>
   </data>
   <data name="err_test_temp" xml:space="preserve">
     <value>无法在TEMP位置创建测试文件夹</value>
@@ -1317,6 +1326,9 @@
   <data name="happy_y" xml:space="preserve">
     <value>新年快乐</value>
   </data>
+  <data name="happy_y1" xml:space="preserve">
+    <value>新年快乐</value>
+  </data>
   <data name="header_fail" xml:space="preserve">
     <value>无法写入标题</value>
   </data>
@@ -1394,6 +1406,9 @@
   </data>
   <data name="inst_err" xml:space="preserve">
     <value>安装错误</value>
+  </data>
+  <data name="integrated" xml:space="preserve">
+    <value>融合的</value>
   </data>
   <data name="interval" xml:space="preserve">
     <value>无效</value>
@@ -1604,6 +1619,9 @@
   </data>
   <data name="md5_not_match" xml:space="preserve">
     <value>当前 MD5 校验和与存储值不匹配。 在添加排除项之前，请单击信任当前 ffmpeg。</value>
+  </data>
+  <data name="md5_not_validated" xml:space="preserve">
+    <value>FFmpeg 校验和未验证</value>
   </data>
   <data name="md5_reinst" xml:space="preserve">
     <value>否则，它可能已被修改，应重新安装应用程序。</value>
@@ -2988,12 +3006,6 @@
   <data name="stream_saved2" xml:space="preserve">
     <value>流保存完成</value>
   </data>
-  <data name="String" xml:space="preserve">
-    <value>粘贴链接</value>
-  </data>
-  <data name="String1" xml:space="preserve">
-    <value />
-  </data>
   <data name="strv_c_not" xml:space="preserve">
     <value>不支持视频流复制</value>
   </data>
@@ -3041,6 +3053,9 @@
   </data>
   <data name="s_str" xml:space="preserve">
     <value>第二条流</value>
+  </data>
+  <data name="target_size" xml:space="preserve">
+    <value>目标尺寸：</value>
   </data>
   <data name="task_abort" xml:space="preserve">
     <value>任务中止</value>
@@ -3397,6 +3412,9 @@
   <data name="vf_crop_multi2" xml:space="preserve">
     <value>例如： -vf "crop=50:50:0:10, yadif, format=gray"</value>
   </data>
+  <data name="video" xml:space="preserve">
+    <value>视频</value>
+  </data>
   <data name="Video_codec" xml:space="preserve">
     <value>视频编解码器</value>
   </data>
@@ -3558,5 +3576,35 @@
   </data>
   <data name="yt_url_sh" xml:space="preserve">
     <value>YouTube网址太短</value>
+  </data>
+  <data name="mon_ing1" xml:space="preserve">
+    <value>文件夹监控</value>
+  </data>
+  <data name="Paste_any_URL1" xml:space="preserve">
+    <value>粘贴网络链接</value>
+  </data>
+  <data name="path_iparam1" xml:space="preserve">
+    <value>将输入文件添加到参数</value>
+  </data>
+  <data name="try_d_again" xml:space="preserve">
+    <value>您可以重试或下载文件并将其复制到应用程序位置。</value>
+  </data>
+  <data name="please_down_yt" xml:space="preserve">
+    <value>请将其下载至应用程序文件夹或使用更新 yt-dlp 按钮。</value>
+  </data>
+  <data name="yt_down_now" xml:space="preserve">
+    <value>您想立即下载吗？</value>
+  </data>
+  <data name="create_chaps" xml:space="preserve">
+    <value>创建章节文件</value>
+  </data>
+  <data name="chaps_params_dup" xml:space="preserve">
+    <value>另一个元数据参数已包含在内，请确保输入章节文件没有重复。</value>
+  </data>
+  <data name="cropped" xml:space="preserve">
+    <value>裁剪</value>
+  </data>
+  <data name="use_prev" xml:space="preserve">
+    <value>使用视频预览</value>
   </data>
 </root>

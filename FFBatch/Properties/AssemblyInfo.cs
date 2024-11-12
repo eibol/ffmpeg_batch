@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
 [assembly: AssemblyTitle("FFmpeg Batch AV Converter")]
-[assembly: AssemblyDescription("Universal batch encoder for Windows")]
+[assembly: AssemblyDescription("Universal batch audio video encoder for Windows")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Eibolsoft")]
 [assembly: AssemblyProduct("FFmpeg Batch AV Converter")]
@@ -31,5 +31,5 @@ using System.Runtime.InteropServices;
 // Puede especificar todos los valores o utilizar los números de compilación y de revisión predeterminados
 // mediante el carácter '*', como se muestra a continuación:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("3.0.7")]
-[assembly: AssemblyFileVersion("3.0.7")]
+[assembly: AssemblyVersion("3.1.0")]
+[assembly: AssemblyFileVersion("3.1.0")]

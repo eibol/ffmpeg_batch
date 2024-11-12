@@ -730,7 +730,7 @@
     <value>Afficher les informations sur le fichier multimédia</value>
   </data>
   <data name="dis_live_pre" xml:space="preserve">
-    <value>Afficher un aperçu en direct</value>
+    <value>Afficher aperçu en direct</value>
   </data>
   <data name="dis_try" xml:space="preserve">
     <value>Désactive l'essai du préréglage avant de commencer l'encodage</value>
@@ -2509,7 +2509,7 @@
     <value>- Accédez à l'URL principale de la chaîne YouTube et cliquez sur l'onglet VIDÉOS.</value>
   </data>
   <data name="quick_yt3" xml:space="preserve">
-    <value>#¿NOMBRE?</value>
+    <value>- Copiez le lien et collez-le dans le champ de texte Chaîne.</value>
   </data>
   <data name="quick_yt4" xml:space="preserve">
     <value>-Exemple:</value>
@@ -3006,12 +3006,6 @@
   <data name="stream_saved2" xml:space="preserve">
     <value>Sauvegarde du flux terminée</value>
   </data>
-  <data name="String" xml:space="preserve">
-    <value />
-  </data>
-  <data name="String1" xml:space="preserve">
-    <value />
-  </data>
   <data name="strv_c_not" xml:space="preserve">
     <value>Copie de flux vidéo non prise en charge</value>
   </data>
@@ -3307,7 +3301,7 @@
     <value>Conseils d'encodage en deux passes</value>
   </data>
   <data name="two_tip_12" xml:space="preserve">
-    <value>REMARQUE : Certaines configurations peuvent être considérées comme valides, mais en fonction de la combinaison de paramètres, le premier passage peut être inutile ou être ignoré lors du codage du deuxième passage. Choisissez soigneusement les paramètres de l'encodeur et examinez-les avant de commencer.</value>
+    <value>REMARQUE : Certaines configurations peuvent être considérées comme valides, mais en fonction de la combinaison de paramètres, le premier passage peut être inutile ou être ignoré après l'encodage du deuxième passage. Choisissez soigneusement les paramètres de l'encodeur et examinez-les avant de commencer.</value>
   </data>
   <data name="txt_f" xml:space="preserve">
     <value>Fichiers texte</value>
@@ -3581,5 +3575,32 @@
   </data>
   <data name="yt_url_sh" xml:space="preserve">
     <value>L'URL YouTube est trop courte.</value>
+  </data>
+  <data name="mon_ing1" xml:space="preserve">
+    <value>Surveillance des dossiers</value>
+  </data>
+  <data name="Paste_any_URL1" xml:space="preserve">
+    <value>Coller le lien Internet</value>
+  </data>
+  <data name="path_iparam1" xml:space="preserve">
+    <value>Ajouter un fichier d'entrée aux paramètres</value>
+  </data>
+  <data name="try_d_again" xml:space="preserve">
+    <value>Vous pouvez réessayer ou télécharger et copier le fichier vers l'emplacement de l'application.</value>
+  </data>
+  <data name="please_down_yt" xml:space="preserve">
+    <value>Veuillez le télécharger dans le dossier d'application ou utiliser le bouton de mise à jour yt-dlp.</value>
+  </data>
+  <data name="yt_down_now" xml:space="preserve">
+    <value>Souhaitez-vous le télécharger maintenant ?</value>
+  </data>
+  <data name="create_chaps" xml:space="preserve">
+    <value>Créer un fichier de chapitres</value>
+  </data>
+  <data name="chaps_params_dup" xml:space="preserve">
+    <value>Un autre paramètre de métadonnées est déjà inclus, veuillez vous assurer qu'il n'y a pas de doublon dans les fichiers de chapitres.</value>
+  </data>
+  <data name="cropped" xml:space="preserve">
+    <value>Tondue</value>
   </data>
 </root>

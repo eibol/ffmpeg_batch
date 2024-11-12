@@ -1168,6 +1168,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Another metadata parameter is already included, please ensure there is no duplicity of input chapters files..
+        /// </summary>
+        internal static string chaps_params_dup {
+            get {
+                return ResourceManager.GetString("chaps_params_dup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a chapters.
         /// </summary>
         internal static string chapters {
@@ -1600,6 +1609,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Create chapters file.
+        /// </summary>
+        internal static string create_chaps {
+            get {
+                return ResourceManager.GetString("create_chaps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Create video from still images.
         /// </summary>
         internal static string create_vid_img {
@@ -1609,7 +1627,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Detect/Crop video black bars.
+        ///   Busca una cadena traducida similar a Crop video / autodetect black bars.
         /// </summary>
         internal static string crop1 {
             get {
@@ -1632,6 +1650,15 @@ namespace FFBatch.Properties {
         internal static string crop3 {
             get {
                 return ResourceManager.GetString("crop3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cropped.
+        /// </summary>
+        internal static string cropped {
+            get {
+                return ResourceManager.GetString("cropped", resourceCulture);
             }
         }
         
@@ -4714,6 +4741,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Monitoring folder.
+        /// </summary>
+        internal static string mon_ing1 {
+            get {
+                return ResourceManager.GetString("mon_ing1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a A relative main path cannot be used with subfolders monitoring, please use an absolute path..
         /// </summary>
         internal static string mon_no_rel {
@@ -5254,7 +5290,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a FFmpeg executable file was not found. Restart or reinstall application..
+        ///   Busca una cadena traducida similar a FFmpeg executable file was not found. Browse or download it..
         /// </summary>
         internal static string no_ffmpeg {
             get {
@@ -6316,6 +6352,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Paste internet link.
+        /// </summary>
+        internal static string Paste_any_URL1 {
+            get {
+                return ResourceManager.GetString("Paste_any_URL1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Paste M3u URL.
         /// </summary>
         internal static string Paste_M3u_URL {
@@ -6384,6 +6429,15 @@ namespace FFBatch.Properties {
         internal static string path_iparam {
             get {
                 return ResourceManager.GetString("path_iparam", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Add input file to parameters.
+        /// </summary>
+        internal static string path_iparam1 {
+            get {
+                return ResourceManager.GetString("path_iparam1", resourceCulture);
             }
         }
         
@@ -6519,6 +6573,15 @@ namespace FFBatch.Properties {
         internal static string play_vlc {
             get {
                 return ResourceManager.GetString("play_vlc", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Please download it to application folder or use the update yt-dlp button..
+        /// </summary>
+        internal static string please_down_yt {
+            get {
+                return ResourceManager.GetString("please_down_yt", resourceCulture);
             }
         }
         
@@ -8764,24 +8827,6 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a .
-        /// </summary>
-        internal static string String {
-            get {
-                return ResourceManager.GetString("String", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a .
-        /// </summary>
-        internal static string String1 {
-            get {
-                return ResourceManager.GetString("String1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a Video stream copy not supported.
         /// </summary>
         internal static string strv_c_not {
@@ -9358,6 +9403,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a You can try again or download and copy the file to the application path..
+        /// </summary>
+        internal static string try_d_again {
+            get {
+                return ResourceManager.GetString("try_d_again", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Try ffmpeg parameters with selected file.
         /// </summary>
         internal static string try_ff {
@@ -9858,6 +9912,15 @@ namespace FFBatch.Properties {
         internal static string use_img_aud {
             get {
                 return ResourceManager.GetString("use_img_aud", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Use Video preview.
+        /// </summary>
+        internal static string use_prev {
+            get {
+                return ResourceManager.GetString("use_prev", resourceCulture);
             }
         }
         
@@ -10380,6 +10443,15 @@ namespace FFBatch.Properties {
         internal static string yt_channel {
             get {
                 return ResourceManager.GetString("yt_channel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Would you like to download it now?.
+        /// </summary>
+        internal static string yt_down_now {
+            get {
+                return ResourceManager.GetString("yt_down_now", resourceCulture);
             }
         }
         

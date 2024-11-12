@@ -297,6 +297,9 @@
   <data name="attempt_exc" xml:space="preserve">
     <value>Este recurso tenta adicionar uma exclusão à Segurança do Windows para o ffmpeg.exe atual.</value>
   </data>
+  <data name="audio" xml:space="preserve">
+    <value>Áudio</value>
+  </data>
   <data name="Audio_codec" xml:space="preserve">
     <value>Codec de áudio</value>
   </data>
@@ -365,6 +368,9 @@
   </data>
   <data name="AV_split_wizard" xml:space="preserve">
     <value>Assistente de divisão de arquivos</value>
+  </data>
+  <data name="a_bitr" xml:space="preserve">
+    <value>Taxa de bits de áudio</value>
   </data>
   <data name="backup_suc" xml:space="preserve">
     <value>Arquivo de backup carregado com sucesso.</value>
@@ -990,6 +996,9 @@
   <data name="err_set" xml:space="preserve">
     <value>Ocorreu um erro ao salvar as configurações.</value>
   </data>
+  <data name="err_size" xml:space="preserve">
+    <value>Erro ao obter resolução de arquivo. A pré-visualização do corte não pode ser exibida.</value>
+  </data>
   <data name="err_test_temp" xml:space="preserve">
     <value>A pasta de teste não pôde ser criada no local TEMP.</value>
   </data>
@@ -1317,6 +1326,9 @@
   <data name="happy_y" xml:space="preserve">
     <value>Feliz Ano Novo</value>
   </data>
+  <data name="happy_y1" xml:space="preserve">
+    <value>Feliz Ano Novo</value>
+  </data>
   <data name="header_fail" xml:space="preserve">
     <value>Não foi possível escrever o cabeçalho</value>
   </data>
@@ -1394,6 +1406,9 @@
   </data>
   <data name="inst_err" xml:space="preserve">
     <value>Erro de instalação</value>
+  </data>
+  <data name="integrated" xml:space="preserve">
+    <value>integrado</value>
   </data>
   <data name="interval" xml:space="preserve">
     <value>Intervalo</value>
@@ -1604,6 +1619,9 @@
   </data>
   <data name="md5_not_match" xml:space="preserve">
     <value>A soma de verificação MD5 atual não corresponde ao valor armazenado. Clique em Trust current ffmpeg antes de adicionar uma exclusão.</value>
+  </data>
+  <data name="md5_not_validated" xml:space="preserve">
+    <value>Soma de verificação FFmpeg não validada</value>
   </data>
   <data name="md5_reinst" xml:space="preserve">
     <value>Caso contrário, ele pode ter sido modificado e o aplicativo deve ser reinstalado.</value>
@@ -2988,12 +3006,6 @@
   <data name="stream_saved2" xml:space="preserve">
     <value>Salvamento do fluxo concluído</value>
   </data>
-  <data name="String" xml:space="preserve">
-    <value>Colar link</value>
-  </data>
-  <data name="String1" xml:space="preserve">
-    <value />
-  </data>
   <data name="strv_c_not" xml:space="preserve">
     <value>Cópia de fluxo de vídeo não suportada</value>
   </data>
@@ -3041,6 +3053,9 @@
   </data>
   <data name="s_str" xml:space="preserve">
     <value>Segundo fluxo</value>
+  </data>
+  <data name="target_size" xml:space="preserve">
+    <value>Tamanho do alvo:</value>
   </data>
   <data name="task_abort" xml:space="preserve">
     <value>Tarefas canceladas</value>
@@ -3397,6 +3412,9 @@
   <data name="vf_crop_multi2" xml:space="preserve">
     <value>Por exemplo: -vf "crop=50:50:0:10, yadif, format=gray"</value>
   </data>
+  <data name="video" xml:space="preserve">
+    <value>Vídeo</value>
+  </data>
   <data name="Video_codec" xml:space="preserve">
     <value>Codec de vídeo</value>
   </data>
@@ -3558,5 +3576,35 @@
   </data>
   <data name="yt_url_sh" xml:space="preserve">
     <value>O link do YouTube é muito curto.</value>
+  </data>
+  <data name="mon_ing1" xml:space="preserve">
+    <value>Monitoramento de pastas</value>
+  </data>
+  <data name="Paste_any_URL1" xml:space="preserve">
+    <value>Colar link da internet</value>
+  </data>
+  <data name="path_iparam1" xml:space="preserve">
+    <value>Adicionar arquivo de entrada aos parâmetros</value>
+  </data>
+  <data name="try_d_again" xml:space="preserve">
+    <value>Você pode tentar novamente ou baixar e copiar o arquivo para o local do aplicativo.</value>
+  </data>
+  <data name="please_down_yt" xml:space="preserve">
+    <value>Faça o download para a pasta do aplicativo ou use o botão de atualização yt-dlp.</value>
+  </data>
+  <data name="yt_down_now" xml:space="preserve">
+    <value>Gostaria de baixá-lo agora?</value>
+  </data>
+  <data name="create_chaps" xml:space="preserve">
+    <value>Criar arquivo de capítulos</value>
+  </data>
+  <data name="chaps_params_dup" xml:space="preserve">
+    <value>Outro parâmetro de metadados já está incluído. Certifique-se de que não haja duplicidade de arquivos de capítulos.</value>
+  </data>
+  <data name="cropped" xml:space="preserve">
+    <value>Cortado</value>
+  </data>
+  <data name="use_prev" xml:space="preserve">
+    <value>Usar pré-visualização de vídeo</value>
   </data>
 </root>
