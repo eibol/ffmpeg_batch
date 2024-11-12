@@ -8,8 +8,8 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Management;
-using System.Security.Authentication.ExtendedProtection;
-using System.Security.Cryptography;
+//using System.Security.Authentication.ExtendedProtection;
+//using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -73,7 +73,7 @@ namespace FFBatch
 
         private void Form25_Load(object sender, EventArgs e)
         {
-            chk_valff.Checked = !Properties.Settings.Default.validate_ff;
+            //chk_valff.Checked = !Properties.Settings.Default.validate_ff;
 
             if (!File.Exists(Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe")))
             {
@@ -170,7 +170,7 @@ namespace FFBatch
                 lbl_vcard.Width = groupBox3.Width - lbl_vcard.Left - 13;
                 lbl_antivir.Width = groupBox3.Width - lbl_antivir.Left - 13;
 
-                pic_2.Image = pic_excl.Image;
+                //pic_2.Image = pic_excl.Image;
             }
             catch
             {
@@ -180,48 +180,48 @@ namespace FFBatch
                 lbl_antivir.Text = "-";
             }
 
-            String f_md5 = String.Empty;
-            if (is_portable == false) { f_md5 = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_md5.ini"; }
-            else { f_md5 = port_path + "ff_md5_portable.ini"; }
-            String saved = Properties.Strings.none;
-            String code = "";
-            String psk = "FFBatch2022_()*_";
+            //String f_md5 = String.Empty;
+            //if (is_portable == false) { f_md5 = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_md5.ini"; }
+            //else { f_md5 = port_path + "ff_md5_portable.ini"; }
+            //String saved = Properties.Strings.none;
+            //String code = "";
+            //String psk = "FFBatch2022_()*_";
 
-            if (File.Exists(f_md5))
-            {
-                saved = StringCipher.Decrypt(File.ReadAllText(f_md5), psk);
-            }
-            String ffm = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
-            using (var md5 = MD5.Create())
-            {
-                using (var stream = File.OpenRead(ffm))
-                {
-                    var hash = md5.ComputeHash(stream);
-                    code = BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
+            //if (File.Exists(f_md5))
+            //{
+            //    saved = StringCipher.Decrypt(File.ReadAllText(f_md5), psk);
+            //}
+            //String ffm = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
+            //using (var md5 = MD5.Create())
+            //{
+            //    using (var stream = File.OpenRead(ffm))
+            //    {
+            //        var hash = md5.ComputeHash(stream);
+            //        code = BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
 
-                    txt_st_md5.Text = saved;
-                    txt_cur_md5.Text = code;
-                    if (txt_st_md5.Text == Properties.Strings.none) ;
-                    {
-                        pic_1.Image = pic_excl.Image;
-                        lbl_fail_ff.Text = Properties.Strings.check_not_st;
-                        btn_save_md5.Enabled = true;
-                    }                    
-                    if (code == saved)
-                    {
-                        pic_1.Image = pic_success.Image;
-                        pic_2.Image = pic_success.Image;
-                        lbl_fail_ff.Text = Properties.Strings.md5_valid;
-                        btn_save_md5.Enabled = false;
-                    }
-                    else
-                    {
-                        lbl_fail_ff.Text = Properties.Strings.md5_fail;
-                        btn_save_md5.Enabled = true;
-                        pic_2.Image = pic_excl.Image;
-                    }
-                }
-            }
+            //        txt_st_md5.Text = saved;
+            //        txt_cur_md5.Text = code;
+            //        if (txt_st_md5.Text == Properties.Strings.none) ;
+            //        {
+            //            pic_1.Image = pic_excl.Image;
+            //            lbl_fail_ff.Text = Properties.Strings.check_not_st;
+            //            btn_save_md5.Enabled = true;
+            //        }                    
+            //        if (code == saved)
+            //        {
+            //            pic_1.Image = pic_success.Image;
+            //            pic_2.Image = pic_success.Image;
+            //            lbl_fail_ff.Text = Properties.Strings.md5_valid;
+            //            btn_save_md5.Enabled = false;
+            //        }
+            //        else
+            //        {
+            //            lbl_fail_ff.Text = Properties.Strings.md5_fail;
+            //            btn_save_md5.Enabled = true;
+            //            pic_2.Image = pic_excl.Image;
+            //        }
+            //    }
+            //}
 
             Properties.Settings.Default.Save();
             this.Cursor = Cursors.Arrow;
@@ -231,11 +231,11 @@ namespace FFBatch
         private void btn_add_ex_Click(object sender, EventArgs e)
         {
             this.ActiveControl = lbl_os;
-            if (txt_cur_md5.Text != txt_st_md5.Text)
-            {
-                MessageBox.Show(Properties.Strings.md5_not_match, Properties.Strings.md5_not_validated, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
+            //if (txt_cur_md5.Text != txt_st_md5.Text)
+            //{
+            //    MessageBox.Show(Properties.Strings.md5_not_match, Properties.Strings.md5_not_validated, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    return;
+            //}
             if (!lbl_os.Text.ToLower().Contains("windows 10") && !lbl_os.Text.ToLower().Contains("windows 11"))
             {
                 MessageBox.Show(Properties.Strings.req_w1011, Properties.Strings.only_1011, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -303,46 +303,46 @@ namespace FFBatch
             }
         }
 
-        private void btn_save_md5_Click(object sender, EventArgs e)
-        {
-            String f_md5 = String.Empty;
-            if (is_portable == false) { f_md5 = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_md5.ini"; }
-            else { f_md5 = port_path + "ff_md5_portable.ini"; }
-            String psk = "FFBatch2022_()*_";
+        //private void btn_save_md5_Click(object sender, EventArgs e)
+        //{
+        //    String f_md5 = String.Empty;
+        //    if (is_portable == false) { f_md5 = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_md5.ini"; }
+        //    else { f_md5 = port_path + "ff_md5_portable.ini"; }
+        //    String psk = "FFBatch2022_()*_";
 
-            try
-            {
-                File.WriteAllText(f_md5, StringCipher.Encrypt(txt_cur_md5.Text, psk));                
-            }
-            catch { MessageBox.Show(Properties.Strings.err_set, Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error); }
+        //    try
+        //    {
+        //        File.WriteAllText(f_md5, StringCipher.Encrypt(txt_cur_md5.Text, psk));                
+        //    }
+        //    catch { MessageBox.Show(Properties.Strings.err_set, Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error); }
 
-            txt_st_md5.Text = txt_cur_md5.Text;
-            pic_2.Image = pic_success.Image;
-            if (txt_cur_md5.Text == txt_st_md5.Text)
-            {
-                pic_1.Image = pic_success.Image;
-                lbl_fail_ff.Text = Properties.Strings.md5_valid;
-                check_ff = true;
-            }            
-        }
+        //    txt_st_md5.Text = txt_cur_md5.Text;
+        //    pic_2.Image = pic_success.Image;
+        //    if (txt_cur_md5.Text == txt_st_md5.Text)
+        //    {
+        //        pic_1.Image = pic_success.Image;
+        //        lbl_fail_ff.Text = Properties.Strings.md5_valid;
+        //        check_ff = true;
+        //    }            
+        //}
 
         private void btn_close_Click(object sender, EventArgs e)
         {            
             this.Close();
         }
 
-        private void chk_valff_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chk_valff.Checked == true) { Properties.Settings.Default.validate_ff = false; }
-            else Properties.Settings.Default.validate_ff = true;
-            Properties.Settings.Default.Save();
-        }
+        //private void chk_valff_CheckedChanged(object sender, EventArgs e)
+        //{
+        //    if (chk_valff.Checked == true) { Properties.Settings.Default.validate_ff = false; }
+        //    else Properties.Settings.Default.validate_ff = true;
+        //    Properties.Settings.Default.Save();
+        //}
 
-        private void chk_valff_CheckedChanged_1(object sender, EventArgs e)
-        {
-            if (chk_valff.Checked == true) { Properties.Settings.Default.validate_ff = false; }
-            else Properties.Settings.Default.validate_ff = true;
-            Properties.Settings.Default.Save();
-        }
+        //private void chk_valff_CheckedChanged_1(object sender, EventArgs e)
+        //{
+        //    if (chk_valff.Checked == true) { Properties.Settings.Default.validate_ff = false; }
+        //    else Properties.Settings.Default.validate_ff = true;
+        //    Properties.Settings.Default.Save();
+        //}
     }
 }

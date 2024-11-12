@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 27</value>
+    <value>215, 29</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>97, 13</value>
@@ -130,14 +130,8 @@
   <data name="label3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
   </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 13</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Tamaño actual</value>
-  </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>475, 28</value>
+    <value>438, 29</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>70, 13</value>
@@ -148,7 +142,7 @@
   <data name="test_crop.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABS
-        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACxMAAAsTAQCanBgAAANmSURBVDhPldNbTNt1FAfwQ8CB
+        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACw0AAAsNAe0HwCwAAANmSURBVDhPldNbTNt1FAfwQ8CB
         xtUWSAv8aQuS0bLe263QQlvqevsjBUbZxHRRIRGdm05GC25ssEpnwZGhWzTZ4paYzD0M3TUhfdLExCdj
         4iUKtAUGI3NGlyHEJYrL15/VkDRRwYeT83Q++Z7fhQCkS+sOH6l/9txBoURBAmkdSVS7SKprIplhJ3Fq
         nmTGAOseKtu2i8SVDiozt1NhhZXyK5zp+TWosffzZOd5wBp870apsUObl6+hkq0ekpva/h9k77w04R9a
@@ -175,7 +169,7 @@
   <data name="btn_detect.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABS
-        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACxMAAAsTAQCanBgAAAHVSURBVDhPhVK7SgNREJ34AEsj
+        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAHVSURBVDhPhVK7SgNREJ34AEsj
         QZIQ3CSSNNlk8w55FyG/YKO1laVYSsBSENsgoojYWIkggvETJL9gIWJlIwoiSTzncu+yBDHFYeaemTnz
         2JV8Pi/FYlEKhYKvUqn04/H4ZjgcFsuyDK9yaLPZrDiOI7lczsJ7O5VKzSuSAElM6vX6Tbvdlmq1qjgW
         GwEWI3cF/gTiE/BLJsEPYlUHrmD95Lwgh+IU/A/mQbxQq9WExU9UIzkD37rrCEIYxhFMK9JsNjcymUwP
@@ -187,7 +181,7 @@
 </value>
   </data>
   <data name="btn_detect.Location" type="System.Drawing.Point, System.Drawing">
-    <value>665, 24</value>
+    <value>715, 23</value>
   </data>
   <data name="btn_detect.Size" type="System.Drawing.Size, System.Drawing">
     <value>90, 23</value>
@@ -195,19 +189,61 @@
   <data name="btn_detect.Text" xml:space="preserve">
     <value>Auto-recorte</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Ajustes del filtro</value>
+  <data name="chk_center.Text" xml:space="preserve">
+    <value>Centrado</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>204, 78</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 13</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Recortar a resolución</value>
+  </data>
+  <data name="cb_dar.Location" type="System.Drawing.Point, System.Drawing">
+    <value>722, 72</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>652, 78</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>67, 13</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Rel. aspecto</value>
+  </data>
+  <data name="cb_crop.Location" type="System.Drawing.Point, System.Drawing">
+    <value>318, 74</value>
+  </data>
+  <data name="cb_crop.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 23</value>
   </data>
   <data name="txt_size1.Location" type="System.Drawing.Point, System.Drawing">
     <value>105, 29</value>
   </data>
   <data name="btn_reset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>758, 24</value>
+    <value>27, 61</value>
+  </data>
+  <data name="btn_reset.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 36</value>
+  </data>
+  <data name="btn_reset.Text" xml:space="preserve">
+    <value>Inicializar</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 13</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Tamaño actual</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Ajustes del filtro</value>
   </data>
   <data name="btn_frame.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABS
-        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACxMAAAsTAQCanBgAAAPfSURBVEhLtZR/TNR1GMefz/P5
+        CAABFVgAADqXAAAXb9daH5AAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAPfSURBVEhLtZR/TNR1GMefz/P5
         3u87DjrvUEREwjsBh0oRqNOwmjmy3FTAcTLx5M5QQH4YijdOrUUKBvIHhPZP2q81ZtOURjmrLaI/lJzV
         Eslla25pNcU/pATy6TnuuqsOlK353p7vvs/nx+v7fJ/P83yAiB6IBR730GyHI31tzd66mmNfdhS0Hmt2
         5K4r0uv1xuB0SFKlh3mFh2Bh+al7g2fZU9NqT3x1/uAQ0Y5hotzLRIsHiDKvEM04OULq1XW7g0vHZJkx
@@ -228,7 +264,7 @@
 </value>
   </data>
   <data name="btn_frame.Size" type="System.Drawing.Size, System.Drawing">
-    <value>115, 31</value>
+    <value>115, 44</value>
   </data>
   <data name="btn_frame.Text" xml:space="preserve">
     <value>Actualizar vista</value>
@@ -241,8 +277,8 @@
         RF/WBZnFQBrgSi4oKgHSf4DYKCW1OJmBgdEAyM4uLykAijPOAbJFkrLB7A0gdlFIkDOQfQTI5kuHsK+A
         2EkQ9hMQuwjoCSD7C0h9OpjNxAE2B8KWAbFLUitA9jI45xdUFmWmZ5QoGFpaWio4puQnpSoEVxaXpOYW
         K3jmJecXFeQXJZakpgDVQtwHBoIQhaAQ0wBqtNBkoDIAxQOE9TkQHL6MYmcQYgiQXFpUBmUyMhkT5iPM
-        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACxMAAAsT
-        AQCanBgAAASUSURBVDhPrdVpTBN2GAbwF+dUFoyYjS2BGI+RoBPQIcMDBIUil7QWC5F44AHqUFSOipZC
+        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAACw0AAAsN
+        Ae0HwCwAAASUSURBVDhPrdVpTBN2GAbwF+dUFoyYjS2BGI+RoBPQIcMDBIUil7QWC5F44AHqUFSOipZC
         OeQsUFqpVDkFhGIFOsddENralVIuBURa2DRuH+DjiN+WPKtkMTExi7rlnyf/b7+8H94nLwH430OX6+KJ
         JQ2js3VnSWlUEr81jY7eiqKkyut09baAShpk9LvpFZkmTW9jnjSTecpMQ8YhauxttCvqK8os7ip2ybif
         QSXtJZ+OvvmfjDwhea98Y2Jb4iNxjzg450EOidpEn4aaJky0YF4grU77+Y6yHT0p03ywG9kzF8ovOFb2
@@ -276,7 +312,7 @@
         xUAa4EouKCoB0n+A2CgltTiZgYHRAMjOLi8pAIozzgGyRZKywewNIHZRSJAzkH0EyOZLh7CvgNhJEPYT
         ELsI6Akg+wtIfTqYzcQBNgfClgGxS1IrQPYyOOcXVBZlpmeUKBhaWloqOKbkJ6UqBFcWl6TmFit45iXn
         FxXkFyWWpKYA1ULcBwaCEIWgENMAarTQZKAyAMUDhPU5EBy+jGJnEGIIkFxaVAZlMjIZE+YjzJgjwcDg
-        v5SBgeUPQsykl4FhgQ4DA/9UhJiaIQODgD4Dw745AMDGT/0ZOjZcAAAACXBIWXMAAAsTAAALEwEAmpwY
+        v5SBgeUPQsykl4FhgQ4DA/9UhJiaIQODgD4Dw745AMDGT/0ZOjZcAAAACXBIWXMAAAsNAAALDQHtB8As
         AAAD+UlEQVQ4T5VUbUyVZRh+OR8v5/sczhfIOQcoDKg2o2VNak23Sv/UlmtDYhVhI8lKk0W4Y+NLJQvZ
         UDxTFx+GymwLojmbmyIbWQSUZBEw/PacNP1T828fV9fznFfew8aPvLZrz/3c931dz/M+z/u+SgpU8jGy
         hFxxDxT9T5AucgGKl5sN58usBqy13AuNclxHPqkaLtLn2aSdolgfNxvmejwm7HMb0U7uYdxqVSRFvEfk
@@ -298,10 +334,10 @@
 </value>
   </data>
   <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>606, 375</value>
+    <value>606, 434</value>
   </data>
   <data name="btn_cancel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 31</value>
+    <value>113, 44</value>
   </data>
   <data name="btn_cancel.Text" xml:space="preserve">
     <value>Cerrar ventana</value>
