@@ -3841,10 +3841,10 @@
     <value>Afficher cette fenêtre au démarrage</value>
   </data>
   <data name="radio_split.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 19</value>
+    <value>177, 19</value>
   </data>
   <data name="radio_split.Text" xml:space="preserve">
-    <value>Division des fichiers</value>
+    <value>Division de fichiers/chapitres</value>
   </data>
   <data name="radio_images.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 19</value>
@@ -4076,7 +4076,7 @@
 </value>
   </data>
   <data name="lbl_amd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 15</value>
+    <value>123, 17</value>
   </data>
   <data name="lbl_amd.Text" xml:space="preserve">
     <value>Sélecteur de qualité</value>
@@ -4114,7 +4114,7 @@
     <value>Référence</value>
   </data>
   <data name="label28.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 15</value>
+    <value>76, 17</value>
   </data>
   <data name="label28.Text" xml:space="preserve">
     <value>Bits par Mo</value>
@@ -4126,19 +4126,19 @@
     <value>84, 23</value>
   </data>
   <data name="label26.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 15</value>
+    <value>103, 17</value>
   </data>
   <data name="label26.Text" xml:space="preserve">
     <value>format de pixels</value>
   </data>
   <data name="label25.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 15</value>
+    <value>38, 17</value>
   </data>
   <data name="label25.Text" xml:space="preserve">
     <value>Profil</value>
   </data>
   <data name="label23.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 15</value>
+    <value>135, 17</value>
   </data>
   <data name="label23.Text" xml:space="preserve">
     <value>Qualité constante CRF</value>
@@ -4147,7 +4147,7 @@
     <value>270, 231</value>
   </data>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 15</value>
+    <value>49, 17</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
     <value>Cadres</value>
@@ -4159,7 +4159,7 @@
     <value>84, 23</value>
   </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 15</value>
+    <value>103, 17</value>
   </data>
   <data name="label16.Text" xml:space="preserve">
     <value>format de pixels</value>
@@ -4171,13 +4171,13 @@
     <value>138, 23</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 15</value>
+    <value>116, 17</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Mode d'encodage</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 15</value>
+    <value>63, 17</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Encodeur</value>
@@ -4209,7 +4209,7 @@
 </value>
   </data>
   <data name="label47.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 15</value>
+    <value>65, 17</value>
   </data>
   <data name="label47.Text" xml:space="preserve">
     <value>DONNER:</value>
@@ -4267,7 +4267,7 @@
     <value>77, 23</value>
   </data>
   <data name="label40.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 15</value>
+    <value>112, 17</value>
   </data>
   <data name="label40.Text" xml:space="preserve">
     <value>Désentrelacement</value>
@@ -4279,7 +4279,7 @@
     <value>68, 23</value>
   </data>
   <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 15</value>
+    <value>67, 17</value>
   </data>
   <data name="label21.Text" xml:space="preserve">
     <value>Vitesse +-</value>
@@ -4288,19 +4288,19 @@
     <value>253, 48</value>
   </data>
   <data name="lbl_crop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 15</value>
+    <value>51, 17</value>
   </data>
   <data name="lbl_crop.Text" xml:space="preserve">
     <value>Couper</value>
   </data>
   <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 15</value>
+    <value>37, 17</value>
   </data>
   <data name="label20.Text" xml:space="preserve">
     <value>Taille</value>
   </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 15</value>
+    <value>53, 17</value>
   </data>
   <data name="label18.Text" xml:space="preserve">
     <value>Tourner</value>
@@ -4309,7 +4309,7 @@
     <value>Filtres vidéo</value>
   </data>
   <data name="chk_normalize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>84, 19</value>
+    <value>92, 21</value>
   </data>
   <data name="chk_normalize.Text" xml:space="preserve">
     <value>Normaliser</value>
@@ -4318,31 +4318,31 @@
     <value>350, 207</value>
   </data>
   <data name="label32.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 15</value>
+    <value>108, 17</value>
   </data>
   <data name="label32.Text" xml:space="preserve">
     <value>Accélérer/ralentir</value>
   </data>
   <data name="label29.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 15</value>
+    <value>63, 17</value>
   </data>
   <data name="label29.Text" xml:space="preserve">
     <value>Fragment</value>
   </data>
   <data name="label22.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 15</value>
+    <value>36, 17</value>
   </data>
   <data name="label22.Text" xml:space="preserve">
     <value>Filtre</value>
   </data>
   <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 15</value>
+    <value>84, 17</value>
   </data>
   <data name="label14.Text" xml:space="preserve">
     <value>Basse qualité</value>
   </data>
   <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>95, 15</value>
+    <value>105, 17</value>
   </data>
   <data name="label15.Text" xml:space="preserve">
     <value>Meilleure qualité</value>
@@ -4360,13 +4360,13 @@
     <value>Canaux</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 15</value>
+    <value>99, 17</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>Échantillonnage</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 15</value>
+    <value>63, 17</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Encodeur</value>
@@ -4524,19 +4524,16 @@
 </value>
   </data>
   <data name="chk_save_pres.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 19</value>
+    <value>140, 21</value>
   </data>
   <data name="chk_save_pres.Text" xml:space="preserve">
     <value>Enregistrer le profil</value>
   </data>
   <data name="label24.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 15</value>
+    <value>105, 17</value>
   </data>
   <data name="label24.Text" xml:space="preserve">
     <value>Format de sortie</value>
-  </data>
-  <data name="wz_end.Size" type="System.Drawing.Size, System.Drawing">
-    <value>527, 261</value>
   </data>
   <data name="wz_end.Text" xml:space="preserve">
     <value>Assistant terminé</value>
@@ -6775,7 +6772,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAD8
-        swAAAk1TRnQBSQFMAgEBBQEAAXwBDQF8AQ0B3QEAAXwBAAT/AREBAAj/AUIBTQE2BwABNgMAASgDAAF0
+        swAAAk1TRnQBSQFMAgEBBQEAAYwBDQGMAQ0B3QEAAXwBAAT/AREBAAj/AUIBTQE2BwABNgMAASgDAAF0
         AQMCAAH4AwABAQEAARAFAAHAAbABBv8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
         /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
         /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
@@ -7551,7 +7548,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAD0
-        GgAAAk1TRnQBSQFMAgEBAwEAAdwBCwHcAQsBGAEAARgBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFg
+        GgAAAk1TRnQBSQFMAgEBAwEAAewBCwHsAQsBGAEAARgBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFg
         AwABGAMAAQEBAAEgBgABJC4AAwkBCwMzAlICVAGoA14B3QNeAfADXgHwAVsCYQHeAVICVAGoAzMBUgMJ
         AQyAAAM7AWQDWwHEA2EB3gNfAdgDXgHXA14B1wNeAdcDXgHXA14B1wNfAdgDXwHYA14B1wNfAdgDXwHY
         A18B2ANfAdgDXgHXA14B1wNfAdgDYQHeA1oBvwM2AVd4AAMEAQUDQgF1A14B0gEAAbIC/wEAAbIC/wEA
@@ -7674,7 +7671,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAq
-        MAIAAk1TRnQBSQFMAgEBBwEAAbwBCQG8AQkBQAEAAUABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgEAAEB
+        MAIAAk1TRnQBSQFMAgEBBwEAAcwBCQHMAQkBQAEAAUABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgEAAEB
         AgABgAMAAQEBAAEgBwABAhEAAf0B/wH+Af8B9wH6AfgB/wH9Af4B+gP/AfsC/wH9AfoD/wH8Bf8B/QX/
         Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/
         Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/

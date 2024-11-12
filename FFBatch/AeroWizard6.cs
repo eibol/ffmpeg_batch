@@ -1,12 +1,19 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.Design;
 using System.Diagnostics;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Linq;
+using System.Reflection.Emit;
+using System.Runtime.InteropServices.ComTypes;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Net.Mime.MediaTypeNames;
 //using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FFBatch
@@ -20,6 +27,9 @@ namespace FFBatch
 
         int ch_count = 0;
         public List<string[]> list_chaps_w = new List<string[]>();
+        public int startpage = 0;
+        public Boolean chaps_file = false;
+        public String dest_chaps = String.Empty;
         public Boolean by_int_chaps = false;
         public Boolean manual_chaps = false;
         public List<string> list_files = new List<string>();        
@@ -31,6 +41,7 @@ namespace FFBatch
         private String jpg_q = "";
         public Boolean canceled = false;
         public Boolean start_enc = false;
+        private List<String[]> list_chaps = new List<String[]>();
 
         private Boolean ok_images = false;
 
@@ -250,6 +261,15 @@ namespace FFBatch
                 wiz_split.CancelButtonText = Properties.Strings.cancel;
                 wiz_split.FinishButtonText = Properties.Strings.finish;
             }
+            if (startpage == 4)
+            {
+                wiz_split.NextPage(wiz_split.Pages[4]);
+                wiz_split.Pages[0].Suppress = true;
+                wiz_split.Pages[1].Suppress = true;
+                wiz_split.Pages[2].Suppress = true;
+                wiz_split.Pages[3].Suppress = true;
+            }
+            
         }
 
         private void refresh_lang()
@@ -295,10 +315,11 @@ namespace FFBatch
             {
                 wz0.NextPage = wiz_split.Pages[2];
             }
-            else
+            else if (radio_chapters.Checked)
             {
                 wz0.NextPage = wiz_split.Pages[1];
             }
+            else wz0.NextPage = wiz_split.Pages[4];
         }
 
         private String safe_out_ffname(String outf)
@@ -447,6 +468,7 @@ namespace FFBatch
 
         private void radio_by_chap_CheckedChanged(object sender, EventArgs e)
         {
+            txt_chaps.ReadOnly = true;
             wiz_split.Pages[1].AllowNext = true;            
             if (radio_by_chap.Checked)
             {
@@ -505,8 +527,7 @@ namespace FFBatch
                     {
                         e.Cancel = true;
                     }
-                }
-                        
+                }                        
                 manual_chaps = true;
             }
         }
@@ -525,9 +546,122 @@ namespace FFBatch
 
         private void radio_chap_man_CheckedChanged(object sender, EventArgs e)
         {
+            txt_chaps.ReadOnly = false;
             txt_chaps.Clear();            
             txt_chaps.Text = "-ss 00:00:00.000 -to 00:00:01.500";
             ch_count = 0;
+        }
+
+        private void button1_Click_2(object sender, EventArgs e)
+        {
+            if (txt_chaps_tosave.Lines.Count() < 1) return;
+            
+            list_chaps.Clear();
+            Double tstd = 0;
+            Double tsendd = 0;
+            String chap_name = "";            
+                        
+            foreach (String str in txt_chaps_tosave.Text.Split(new[] { "\n", "\r" }, StringSplitOptions.RemoveEmptyEntries))
+            {
+                try
+                {
+                    TimeSpan test = new TimeSpan();
+                    String ss = str.Substring(0, str.IndexOf(" | "));
+                    if (TimeSpan.TryParse(ss, out test)) tstd = TimeSpan.Parse(ss).TotalMilliseconds;
+                    else
+                    {
+                        MessageBox.Show(Properties.Strings.time_bad, Properties.Strings.error, MessageBoxButtons.OK);
+                        return;
+                    }
+                    String to = str.Substring(str.IndexOf(" | ") + 3, 12);
+
+                    if (TimeSpan.TryParse(to, out test)) tsendd = TimeSpan.Parse(to).TotalMilliseconds;
+                    else
+                    {
+                        MessageBox.Show(Properties.Strings.time_bad, Properties.Strings.error, MessageBoxButtons.OK);
+                        return;
+                    }
+                    chap_name = str.Substring(str.LastIndexOf(" | ") + 4, str.Length - str.LastIndexOf(" | ") - 4);
+                    String[] chaps = new String[] { tstd.ToString(), tsendd.ToString(), chap_name };
+                    list_chaps.Add(chaps);
+                }
+                catch
+                {
+                    MessageBox.Show(Properties.Strings.time_bad, Properties.Strings.error, MessageBoxButtons.OK);
+                    return;
+                }
+            }
+            
+            dest_chaps = "";
+            SaveFileDialog saveFile = new SaveFileDialog();
+            saveFile.Filter = "*.txt" + " |*.txt| " + Properties.Strings.all_files + " " + "(*.*) | *.*";
+            saveFile.DefaultExt = "txt";
+
+            if (saveFile.ShowDialog() == DialogResult.OK)
+            {
+                dest_chaps = saveFile.FileName;
+
+                File.WriteAllText(dest_chaps, ";FFMETADATA1" + Environment.NewLine);
+                foreach (String[] str in list_chaps)
+                {
+                    String toadd = "[CHAPTER]" + Environment.NewLine + "TIMEBASE=1/1000" + Environment.NewLine + "START=" + str[0].Replace("-ss ", "") + Environment.NewLine + "END=" + str[1].Replace("-to ", "") + Environment.NewLine + "title=" + str[2];
+                    File.AppendAllText(dest_chaps, Environment.NewLine + toadd + Environment.NewLine);
+                }
+                chaps_file = true;
+                this.Close();
+            }
+        }
+
+        private void btn_add_chap_Click(object sender, EventArgs e)
+        {
+            TimeSpan test = new TimeSpan();
+            if (!TimeSpan.TryParse(txt_init.Text, out test) || !TimeSpan.TryParse(txt_end.Text, out test))
+            {
+                MessageBox.Show(Properties.Strings.time_bad, Properties.Strings.error, MessageBoxButtons.OK);
+                return;
+            }
+            else
+            {
+                if (TimeSpan.Parse(txt_end.Text).TotalMilliseconds < TimeSpan.Parse(txt_init.Text).TotalMilliseconds)
+                {
+                    MessageBox.Show(Properties.Strings.time_wrong, Properties.Strings.error, MessageBoxButtons.OK);
+                    return;
+                }
+                if (TimeSpan.Parse(txt_end.Text).TotalMilliseconds == TimeSpan.Parse(txt_init.Text).TotalMilliseconds)
+                {
+                    MessageBox.Show(Properties.Strings.time_wrong, Properties.Strings.error, MessageBoxButtons.OK);
+                    return;
+                }
+            }
+            
+            if (txt_chaps_tosave.Text.Length == 0) txt_chaps_tosave.Text = txt_init.Text + " | " + txt_end.Text + " | " + txt_chapt.Text;
+            else txt_chaps_tosave.Text = txt_chaps_tosave.Text + Environment.NewLine + txt_init.Text + " | " + txt_end.Text + " | " + txt_chapt.Text;
+            txt_init.Text = txt_end.Text;
+        }
+
+        private void btn_clear_chaps_Click(object sender, EventArgs e)
+        {
+            txt_chaps_tosave.Clear();
+        }
+
+        private void txt_init_TextChanged(object sender, EventArgs e)
+        {
+            txt_init.BackColor = SystemColors.Window;
+            TimeSpan test = new TimeSpan();
+            if (!TimeSpan.TryParse(txt_init.Text, out test))
+            {
+                txt_init.BackColor = Color.LightSalmon;
+            }
+        }
+
+        private void txt_end_TextChanged(object sender, EventArgs e)
+        {
+            txt_end.BackColor = SystemColors.Window;
+            TimeSpan test = new TimeSpan();
+            if (!TimeSpan.TryParse(txt_end.Text, out test))
+            {
+                txt_end.BackColor = Color.LightSalmon;
+            }
         }
     }
 }

@@ -366,8 +366,35 @@
   <data name="wz1.Text" xml:space="preserve">
     <value>Partition de fichiers audio/vidéo</value>
   </data>
+  <data name="radio_chaps_file.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 19</value>
+  </data>
+  <data name="radio_chaps_file.Text" xml:space="preserve">
+    <value>Créer un fichier de métadonnées de chapitres</value>
+  </data>
+  <data name="radio_chapters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 19</value>
+  </data>
+  <data name="radio_chapters.Text" xml:space="preserve">
+    <value>Diviser par chapitres</value>
+  </data>
+  <data name="radio_time_size.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 19</value>
+  </data>
+  <data name="radio_time_size.Text" xml:space="preserve">
+    <value>Réparti par durée ou par taille</value>
+  </data>
   <data name="wz0.Text" xml:space="preserve">
     <value>Assistant de partition de fichiers</value>
+  </data>
+  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 243</value>
+  </data>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>230, 15</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Utilisez Ctrl-Entrée pour l'édition manuelle</value>
   </data>
   <data name="btn_load_chap.Location" type="System.Drawing.Point, System.Drawing">
     <value>401, 25</value>
@@ -421,7 +448,7 @@
     <value>267, 23</value>
   </data>
   <data name="chk_save_preset.Size" type="System.Drawing.Size, System.Drawing">
-    <value>188, 19</value>
+    <value>187, 17</value>
   </data>
   <data name="chk_save_preset.Text" xml:space="preserve">
     <value>Enregistrer le préréglage actuel</value>
@@ -559,6 +586,48 @@
   </data>
   <data name="wz01.Text" xml:space="preserve">
     <value>Assistant de partition de fichiers</value>
+  </data>
+  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>131, 236</value>
+  </data>
+  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>190, 15</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Ctrl-Entrée pour l'édition manuelle</value>
+  </data>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 15</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Titre</value>
+  </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 15</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Fin</value>
+  </data>
+  <data name="label11.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 15</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Commencer</value>
+  </data>
+  <data name="btn_clear_chaps.Text" xml:space="preserve">
+    <value>Effacer la liste</value>
+  </data>
+  <data name="btn_add_chap.Text" xml:space="preserve">
+    <value>Ajouter</value>
+  </data>
+  <data name="txt_chapt.Text" xml:space="preserve">
+    <value>Chapitre 1</value>
+  </data>
+  <data name="btn_save_chaps.Text" xml:space="preserve">
+    <value>Sauvegarder les chapitres</value>
+  </data>
+  <data name="wz_2.Text" xml:space="preserve">
+    <value>Créer un fichier de métadonnées de chapitres</value>
   </data>
   <data name="wiz_split.Title" xml:space="preserve">
     <value>Assistant de partition de fichiers</value>
@@ -2352,17 +2421,5 @@
         xRPuE8QT7hPCE+4TwBPuE74T7ha9Fu5Ax0CeAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
-  </data>
-  <data name="radio_chapters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>131, 19</value>
-  </data>
-  <data name="radio_chapters.Text" xml:space="preserve">
-    <value>Diviser par chapitres</value>
-  </data>
-  <data name="radio_time_size.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 19</value>
-  </data>
-  <data name="radio_time_size.Text" xml:space="preserve">
-    <value>Réparti par durée ou par taille</value>
   </data>
 </root>

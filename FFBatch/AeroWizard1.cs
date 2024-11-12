@@ -76,7 +76,8 @@ namespace FFBatch
         private String eac3_params = String.Empty;
         private String mp3_params = String.Empty;
         private String vorbis_params = String.Empty;
-        private String opus_params = String.Empty;       
+        private String opus_params = String.Empty;
+        private String aspect = String.Empty;
         private Boolean two_pass = false;
         private Boolean silence = false;
         private Boolean img_v = false;
@@ -2060,7 +2061,8 @@ namespace FFBatch
                 }
                 
                 video_encoder_param = video_encoder_param + trailer_vparam + " -filter_complex " + '\u0022' + "[0:v]setpts=" + v_sp.ToString().Replace(",", ".") + "*PTS[v];[0:a]atempo=" + a_sp.ToString().Replace(",", ".") + "[a]" + '\u0022' + " -map " + '\u0022' + "[v]" + '\u0022' + " -map " + '\u0022' + "[a]" + '\u0022' + " ";                
-            }            
+            }
+            video_encoder_param = video_encoder_param + " " + aspect + " ";
         }
 
         private void cb_framerate_SelectedIndexChanged(object sender, EventArgs e)
@@ -5157,6 +5159,7 @@ namespace FFBatch
             frm28.dur = lv1_dur;
             frm28.ShowDialog();
             auto_crop = frm28.vf_crop;
+            aspect = frm28.aspect_r;
             if (auto_crop.Length > 0) btn_crop_wiz.BackColor = Color.LightGreen;
             else btn_crop_wiz.BackColor = Color.White;
         }

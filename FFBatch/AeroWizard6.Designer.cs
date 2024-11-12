@@ -63,9 +63,11 @@
             this.radio_time = new System.Windows.Forms.RadioButton();
             this.wiz_split = new AeroWizard.WizardControl();
             this.wz0 = new AeroWizard.WizardPage();
+            this.radio_chaps_file = new System.Windows.Forms.RadioButton();
             this.radio_chapters = new System.Windows.Forms.RadioButton();
             this.radio_time_size = new System.Windows.Forms.RadioButton();
             this.wz01 = new AeroWizard.WizardPage();
+            this.label15 = new System.Windows.Forms.Label();
             this.txt_chaps = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btn_load_chap = new System.Windows.Forms.Button();
@@ -79,6 +81,18 @@
             this.chk_save_preset = new System.Windows.Forms.CheckBox();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_Start = new System.Windows.Forms.Button();
+            this.wz_2 = new AeroWizard.WizardPage();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btn_clear_chaps = new System.Windows.Forms.Button();
+            this.btn_add_chap = new System.Windows.Forms.Button();
+            this.txt_chapt = new System.Windows.Forms.TextBox();
+            this.txt_end = new System.Windows.Forms.TextBox();
+            this.txt_init = new System.Windows.Forms.TextBox();
+            this.btn_save_chaps = new System.Windows.Forms.Button();
+            this.txt_chaps_tosave = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pic_warn_two)).BeginInit();
             this.wz_final.SuspendLayout();
             this.wz1.SuspendLayout();
@@ -89,6 +103,7 @@
             this.wz01.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.wz_end.SuspendLayout();
+            this.wz_2.SuspendLayout();
             this.SuspendLayout();
             // 
             // fd1
@@ -359,15 +374,23 @@
             this.wiz_split.Pages.Add(this.wz01);
             this.wiz_split.Pages.Add(this.wz1);
             this.wiz_split.Pages.Add(this.wz_end);
+            this.wiz_split.Pages.Add(this.wz_2);
             this.wiz_split.Cancelling += new System.ComponentModel.CancelEventHandler(this.wizardControl1_Cancelling);
             // 
             // wz0
             // 
             resources.ApplyResources(this.wz0, "wz0");
+            this.wz0.Controls.Add(this.radio_chaps_file);
             this.wz0.Controls.Add(this.radio_chapters);
             this.wz0.Controls.Add(this.radio_time_size);
             this.wz0.Name = "wz0";
             this.wz0.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz0_Commit);
+            // 
+            // radio_chaps_file
+            // 
+            resources.ApplyResources(this.radio_chaps_file, "radio_chaps_file");
+            this.radio_chaps_file.Name = "radio_chaps_file";
+            this.radio_chaps_file.UseVisualStyleBackColor = true;
             // 
             // radio_chapters
             // 
@@ -386,6 +409,7 @@
             // wz01
             // 
             resources.ApplyResources(this.wz01, "wz01");
+            this.wz01.Controls.Add(this.label15);
             this.wz01.Controls.Add(this.txt_chaps);
             this.wz01.Controls.Add(this.groupBox3);
             this.wz01.Name = "wz01";
@@ -393,10 +417,16 @@
             this.wz01.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz01_Commit);
             this.wz01.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz01_Initialize);
             // 
+            // label15
+            // 
+            resources.ApplyResources(this.label15, "label15");
+            this.label15.Name = "label15";
+            // 
             // txt_chaps
             // 
             resources.ApplyResources(this.txt_chaps, "txt_chaps");
             this.txt_chaps.Name = "txt_chaps";
+            this.txt_chaps.ReadOnly = true;
             // 
             // groupBox3
             // 
@@ -491,6 +521,86 @@
             this.btn_Start.UseVisualStyleBackColor = true;
             this.btn_Start.Click += new System.EventHandler(this.btn_Start_Click);
             // 
+            // wz_2
+            // 
+            resources.ApplyResources(this.wz_2, "wz_2");
+            this.wz_2.AllowNext = false;
+            this.wz_2.Controls.Add(this.label14);
+            this.wz_2.Controls.Add(this.label13);
+            this.wz_2.Controls.Add(this.label12);
+            this.wz_2.Controls.Add(this.label11);
+            this.wz_2.Controls.Add(this.btn_clear_chaps);
+            this.wz_2.Controls.Add(this.btn_add_chap);
+            this.wz_2.Controls.Add(this.txt_chapt);
+            this.wz_2.Controls.Add(this.txt_end);
+            this.wz_2.Controls.Add(this.txt_init);
+            this.wz_2.Controls.Add(this.btn_save_chaps);
+            this.wz_2.Controls.Add(this.txt_chaps_tosave);
+            this.wz_2.Name = "wz_2";
+            // 
+            // label14
+            // 
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.Name = "label14";
+            // 
+            // label13
+            // 
+            resources.ApplyResources(this.label13, "label13");
+            this.label13.Name = "label13";
+            // 
+            // label12
+            // 
+            resources.ApplyResources(this.label12, "label12");
+            this.label12.Name = "label12";
+            // 
+            // label11
+            // 
+            resources.ApplyResources(this.label11, "label11");
+            this.label11.Name = "label11";
+            // 
+            // btn_clear_chaps
+            // 
+            resources.ApplyResources(this.btn_clear_chaps, "btn_clear_chaps");
+            this.btn_clear_chaps.Name = "btn_clear_chaps";
+            this.btn_clear_chaps.UseVisualStyleBackColor = true;
+            this.btn_clear_chaps.Click += new System.EventHandler(this.btn_clear_chaps_Click);
+            // 
+            // btn_add_chap
+            // 
+            resources.ApplyResources(this.btn_add_chap, "btn_add_chap");
+            this.btn_add_chap.Name = "btn_add_chap";
+            this.btn_add_chap.UseVisualStyleBackColor = true;
+            this.btn_add_chap.Click += new System.EventHandler(this.btn_add_chap_Click);
+            // 
+            // txt_chapt
+            // 
+            resources.ApplyResources(this.txt_chapt, "txt_chapt");
+            this.txt_chapt.Name = "txt_chapt";
+            // 
+            // txt_end
+            // 
+            resources.ApplyResources(this.txt_end, "txt_end");
+            this.txt_end.Name = "txt_end";
+            this.txt_end.TextChanged += new System.EventHandler(this.txt_end_TextChanged);
+            // 
+            // txt_init
+            // 
+            resources.ApplyResources(this.txt_init, "txt_init");
+            this.txt_init.Name = "txt_init";
+            this.txt_init.TextChanged += new System.EventHandler(this.txt_init_TextChanged);
+            // 
+            // btn_save_chaps
+            // 
+            resources.ApplyResources(this.btn_save_chaps, "btn_save_chaps");
+            this.btn_save_chaps.Name = "btn_save_chaps";
+            this.btn_save_chaps.UseVisualStyleBackColor = true;
+            this.btn_save_chaps.Click += new System.EventHandler(this.button1_Click_2);
+            // 
+            // txt_chaps_tosave
+            // 
+            resources.ApplyResources(this.txt_chaps_tosave, "txt_chaps_tosave");
+            this.txt_chaps_tosave.Name = "txt_chaps_tosave";
+            // 
             // AeroWizard6
             // 
             resources.ApplyResources(this, "$this");
@@ -517,6 +627,8 @@
             this.groupBox3.PerformLayout();
             this.wz_end.ResumeLayout(false);
             this.wz_end.PerformLayout();
+            this.wz_2.ResumeLayout(false);
+            this.wz_2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -572,5 +684,19 @@
         private System.Windows.Forms.Button btn_load_chap;
         public System.Windows.Forms.RadioButton radio_chap_man;
         public System.Windows.Forms.TextBox txt_chaps;
+        private System.Windows.Forms.RadioButton radio_chaps_file;
+        private AeroWizard.WizardPage wz_2;
+        public System.Windows.Forms.TextBox txt_chaps_tosave;
+        private System.Windows.Forms.Button btn_save_chaps;
+        private System.Windows.Forms.Button btn_add_chap;
+        public System.Windows.Forms.TextBox txt_chapt;
+        public System.Windows.Forms.TextBox txt_end;
+        public System.Windows.Forms.TextBox txt_init;
+        private System.Windows.Forms.Button btn_clear_chaps;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
     }
 }
