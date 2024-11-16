@@ -33,7 +33,7 @@ FEATURES
    - Batch download YouTube and m3u8 urls.
    - Yt-dlp frontend for any supported URL.
 
-![Donations](https://ffmpeg-batch.sourceforge.io/#about)
+[Donations](https://sourceforge.net/p/ffmpeg-batch/wiki/ffmpeg-batch/)
 
 ![Buy me a coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=ffbatch&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff)
 
