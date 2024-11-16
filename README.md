@@ -15,14 +15,15 @@ FEATURES
    - Video encoding: AV1 / H264 / H265 / NVENC / QuickSync / ProRes / VP9 / Any other video format supported by ffmpeg.
    - Audio encoding: MP3 / AAC / AC3 / FLAC / WAV / Opus / Vorbis / Any other audio format supported by ffmpeg.
    - Unlimited batch processing and automatic folder monitoring.
-   - Multi-file encode simultaneous encoding.
+   - Multi-file simultaneous encoding.
    - Two pass encoding and fixed output target size.
    - Dynamic variables for ffmpeg parameters.
    - Automatic shutdown, with option to run post-encoding executables.   
    - Set encoding priority
-   - Stream mapping and multiplex with jobs manager.   
+   - Stream mapping and multiplex with jobs manager.
+   - Batch stream subtitles and hardcoded (burnt) subtitles. 
    - Batch mux and demux.
-   - FFmpeg presets wizard
+   - FFmpeg wizard
    - Filter files using different criteria.
    - File multimedia info and up to 12 properties columns.
    - Trim and concatenate files
