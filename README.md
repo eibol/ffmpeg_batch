@@ -3,10 +3,6 @@
 FFmpeg Batch AV Converter is an ffmepg gui, a front-end for Windows ffmpeg users, that allows the use of the full potential of ffmpeg command line with a few mouse clicks in a convenient GUI. Among other things, you can drag and drop, see progress information, change encoding priority, pause and 
 resume, and set automatic shutdown. It is good for seasoned ffmpeg users as well as beginners.
 
-![Donations](https://ffmpeg-batch.sourceforge.io/#about)
-
-![Buy me a coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=ffbatch&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff)
-
 It provides unlimited single or multi-file batch encoding for almost any audio/video format. You can use any set of parameters 
 and try them before starting encoding. You can manipulate and multiplex streams, batch subtitle (as track and hardcoded), 
 trim, concatenate, record screen, capture M3u8 or YouTube URLs. You can also access useful multimedia file information.
@@ -35,6 +31,14 @@ FEATURES
    - Batch audio silence detection
    - Batch download YouTube and m3u8 urls
    - Youtube-dl frontend for any supported URL.
+
+![Donations](https://ffmpeg-batch.sourceforge.io/#about)
+![Buy me a coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=ffbatch&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff)
+
+Available in the following languages:
+| English | Spanish | French | Italian | Portuguese (BR) | Chinese (Simplified) | Arabic (Egypt) |
+|---------|---------|--------|---------|-----------------|
+| <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/us.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/es.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/fr.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/it.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/br.png" width="16"> |  <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/cn.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/ar_eg.png" width="16"> |
 
 | Main tab   | Wizard   | Streams   | Subtitles  | URLs    |
 |------------|----------|-----------|------------|---------|
