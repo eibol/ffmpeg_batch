@@ -31,7 +31,8 @@ FEATURES
    - Batch image to video creation.
    - Batch audio silence detection.
    - Batch file split and chapters creation.
-   - Batch download YouTube and m3u8 urls.
+   - Batch trailer/extract sample videos.
+   - Batch download YouTube videos, Live YouTube events and m3u8 links.
    - Yt-dlp frontend for any supported URL.
 
 [Donations](https://sourceforge.net/p/ffmpeg-batch/wiki/ffmpeg-batch/)
