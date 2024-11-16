@@ -14,12 +14,12 @@ FEATURES
 
    - Video encoding: AV1 / H264 / H265 / NVENC / QuickSync / ProRes / VP9 / Any other video format supported by ffmpeg.
    - Audio encoding: MP3 / AAC / AC3 / FLAC / WAV / Opus / Vorbis / Any other audio format supported by ffmpeg.
-   - Unlimited batch processing
-   - Multi-file encode for thousands of files
+   - Unlimited batch processing and automatic folder monitoring.
+   - Multi-file encode simultaneous encoding.
+   - Two pass encoding.
    - Dynamic variables for ffmpeg parameters.
    - Automatic shutdown, with option to run post-encoding executables.   
    - Set encoding priority
-   - Drag and drop
    - Stream mapping and multiplex with jobs manager.   
    - Batch mux and demux.
    - FFmpeg presets wizard
@@ -28,9 +28,10 @@ FEATURES
    - Trim and concatenate files
    - Batch image thumbnail extraction
    - Batch image to video creation.
-   - Batch audio silence detection
-   - Batch download YouTube and m3u8 urls
-   - Youtube-dl frontend for any supported URL.
+   - Batch audio silence detection.
+   - Batch file split and chapters creation.
+   - Batch download YouTube and m3u8 urls.
+   - Yt-dlp frontend for any supported URL.
 
 ![Donations](https://ffmpeg-batch.sourceforge.io/#about)
 
