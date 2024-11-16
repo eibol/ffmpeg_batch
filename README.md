@@ -33,11 +33,13 @@ FEATURES
    - Youtube-dl frontend for any supported URL.
 
 ![Donations](https://ffmpeg-batch.sourceforge.io/#about)
+
 ![Buy me a coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=ffbatch&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff)
 
 Available in the following languages:
+
 | English | Spanish | French | Italian | Portuguese (BR) | Chinese (Simplified) | Arabic (Egypt) |
-|---------|---------|--------|---------|-----------------|
+|---------|---------|--------|---------|-----------------|----------------------|----------------|
 | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/us.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/es.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/fr.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/it.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/br.png" width="16"> |  <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/cn.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/ar_eg.png" width="16"> |
 
 | Main tab   | Wizard   | Streams   | Subtitles  | URLs    |
