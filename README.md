@@ -16,7 +16,7 @@ FEATURES
    - Audio encoding: MP3 / AAC / AC3 / FLAC / WAV / Opus / Vorbis / Any other audio format supported by ffmpeg.
    - Unlimited batch processing and automatic folder monitoring.
    - Multi-file encode simultaneous encoding.
-   - Two pass encoding.
+   - Two pass encoding and fixed output target size.
    - Dynamic variables for ffmpeg parameters.
    - Automatic shutdown, with option to run post-encoding executables.   
    - Set encoding priority
