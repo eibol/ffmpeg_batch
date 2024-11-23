@@ -1,6 +1,6 @@
 # FFmpeg Batch AV Converter
 
-FFmpeg Batch AV Converter is an ffmepg gui, a front-end for Windows ffmpeg users, that allows the use of the full potential of ffmpeg command line with a few mouse clicks in a convenient GUI. Among other things, you can drag and drop, see progress information, change encoding priority, pause and 
+FFmpeg Batch AV Converter is an ffmepg gui, a front-end for Windows and Linux (Via wine/mono), that allows the use of the full potential of ffmpeg command line with a few mouse clicks in a convenient GUI. Among other things, you can drag and drop, see progress information, change encoding priority, pause and 
 resume, and set automatic shutdown. It is good for seasoned ffmpeg users as well as beginners.
 
 It provides unlimited single or multi-file batch encoding for almost any audio/video format. You can use any set of parameters 
@@ -41,7 +41,7 @@ FEATURES
 
 Available in the following languages:
 
-| English | Spanish | French | Italian | Portuguese (BR) | Chinese (Simplified) | Arabic (Egypt) |
+| English | Spanish | French | Italian | Portuguese (BR) | Chinese (Simplified) | Arabic |
 |---------|---------|--------|---------|-----------------|----------------------|----------------|
 | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/us.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/es.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/fr.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/it.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/br.png" width="16"> |  <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/cn.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/ar_eg.png" width="16">|
 
