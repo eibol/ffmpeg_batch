@@ -5,3 +5,4 @@
 • Improved layout and translations for french language (thanks temis).
 • Dark mode available on first run.
 • Other minor layout corrections.
+• NEW: Taken back Linux Wine version (Wine 9 and mono) with latest functionality, better performance and more reliable.
