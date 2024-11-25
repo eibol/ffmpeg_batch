@@ -26,11 +26,10 @@ Generic commands for Ubuntu/Debian:
 
 After installation you will be able to run setup.exe or FFBatch.exe right-clicking on it and selecting "Open with wine". 
 
-**NOTE**: When prompted,  install wine-mono or application will not work.
+**NOTE**: When prompted,  install wine-mono or application will not work, unless you installed earlier (wine-mono-9.3.1-x86.msi). 
 
-In order to avoid some runtime error and wrong size windows, in a terminal run 'winecfg':
-* In applications tab, set application mode to 'Windows 10'.
-* In desktop integration tab, Appearance, 'No theme'.
+If you wish to use Wine visual styles in Wine with FFBatch.exe, you need to run 'winecfg', add the application and then set it wo Windows 2003 or XP.
+If you don't need visual styles, you can disable them at Desktop integration tab, Appearance, 'No theme'.
 
 <img src="https://private-user-images.githubusercontent.com/907799/388438280-1d1489b3-c40c-41b2-9f44-b3467cc2decf.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzIzODEwNjIsIm5iZiI6MTczMjM4MDc2MiwicGF0aCI6Ii85MDc3OTkvMzg4NDM4MjgwLTFkMTQ4OWIzLWM0MGMtNDFiMi05ZjQ0LWIzNDY3Y2MyZGVjZi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMTIzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTEyM1QxNjUyNDJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jN2JhMGJhMTNiMjlmYWFlY2JhYTAzOTcwYjQzMGNiMmY4N2M2ZDRiOWZlOGY5MzFmZDNmOTFmN2U2ZGRlODdmJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.gCssOcXOABfIFGuew864eGbrMMzRhw0cXuKVOZyviSQ">
 <img src="https://private-user-images.githubusercontent.com/907799/388438707-3f314333-decf-4dc4-98e5-4a58617a5339.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzIzODEwNjIsIm5iZiI6MTczMjM4MDc2MiwicGF0aCI6Ii85MDc3OTkvMzg4NDM4NzA3LTNmMzE0MzMzLWRlY2YtNGRjNC05OGU1LTRhNTg2MTdhNTMzOS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQxMTIzJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MTEyM1QxNjUyNDJaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jMTE4MTIwMDI0YjU2YjNhZjE2MTI4YjUzZGJmZTRjMTYzNTQzZWVkZTNhYTkxNGI1YjYyYWUxNzY2NzZiM2M5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.WziMyQqCpC7NDVrxkaOCsG2Yh47mgWg0L1RtXAO3qi0">
