@@ -90,12 +90,12 @@
             this.chk_subf = new System.Windows.Forms.CheckBox();
             this.chk_sort = new System.Windows.Forms.CheckBox();
             this.chk_auto_updates = new System.Windows.Forms.CheckBox();
-            this.check_concat = new System.Windows.Forms.CheckBox();
             this.img_edit = new System.Windows.Forms.ImageList(this.components);
             this.btn_defaults = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.chk_cache_dialog = new System.Windows.Forms.CheckBox();
             this.chk_never_cache = new System.Windows.Forms.CheckBox();
+            this.pic_net_set = new System.Windows.Forms.PictureBox();
             this.btn_reset = new System.Windows.Forms.Button();
             this.btn_edit_presets_n = new System.Windows.Forms.Button();
             this.browse_sound = new System.Windows.Forms.OpenFileDialog();
@@ -105,6 +105,7 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.chk_delete_one = new System.Windows.Forms.CheckBox();
             this.chk_delete_def = new System.Windows.Forms.CheckBox();
+            this.pic_trash_set = new System.Windows.Forms.PictureBox();
             this.pic_night = new System.Windows.Forms.PictureBox();
             this.btn_dark = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -117,7 +118,6 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.pic_info2 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.btn_add_sec = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.btn_excl = new System.Windows.Forms.Button();
             this.chk_w_subs = new System.Windows.Forms.CheckBox();
@@ -138,7 +138,9 @@
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_earth)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_net_set)).BeginInit();
             this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_trash_set)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_night)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ver)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ff_ok)).BeginInit();
@@ -495,7 +497,6 @@
             this.groupBox2.Controls.Add(this.checkBox1);
             this.groupBox2.Controls.Add(this.chk_sort);
             this.groupBox2.Controls.Add(this.chk_auto_updates);
-            this.groupBox2.Controls.Add(this.check_concat);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
@@ -646,13 +647,6 @@
             this.chk_auto_updates.UseVisualStyleBackColor = true;
             this.chk_auto_updates.CheckedChanged += new System.EventHandler(this.chk_auto_updates_CheckedChanged);
             // 
-            // check_concat
-            // 
-            resources.ApplyResources(this.check_concat, "check_concat");
-            this.check_concat.Name = "check_concat";
-            this.check_concat.UseVisualStyleBackColor = true;
-            this.check_concat.CheckedChanged += new System.EventHandler(this.check_concat_CheckedChanged);
-            // 
             // img_edit
             // 
             this.img_edit.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("img_edit.ImageStream")));
@@ -675,6 +669,7 @@
             resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Controls.Add(this.chk_cache_dialog);
             this.groupBox3.Controls.Add(this.chk_never_cache);
+            this.groupBox3.Controls.Add(this.pic_net_set);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 
@@ -692,6 +687,12 @@
             this.chk_never_cache.UseVisualStyleBackColor = true;
             this.chk_never_cache.CheckedChanged += new System.EventHandler(this.chk_never_cache_CheckedChanged);
             this.chk_never_cache.Click += new System.EventHandler(this.chk_never_cache_Click);
+            // 
+            // pic_net_set
+            // 
+            resources.ApplyResources(this.pic_net_set, "pic_net_set");
+            this.pic_net_set.Name = "pic_net_set";
+            this.pic_net_set.TabStop = false;
             // 
             // btn_reset
             // 
@@ -741,6 +742,7 @@
             resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Controls.Add(this.chk_delete_one);
             this.groupBox5.Controls.Add(this.chk_delete_def);
+            this.groupBox5.Controls.Add(this.pic_trash_set);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.TabStop = false;
             // 
@@ -759,6 +761,12 @@
             this.chk_delete_def.Name = "chk_delete_def";
             this.chk_delete_def.UseVisualStyleBackColor = true;
             this.chk_delete_def.CheckedChanged += new System.EventHandler(this.chk_delete_def_CheckedChanged);
+            // 
+            // pic_trash_set
+            // 
+            resources.ApplyResources(this.pic_trash_set, "pic_trash_set");
+            this.pic_trash_set.Name = "pic_trash_set";
+            this.pic_trash_set.TabStop = false;
             // 
             // pic_night
             // 
@@ -829,7 +837,6 @@
             resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Controls.Add(this.pic_info2);
             this.groupBox4.Controls.Add(this.button2);
-            this.groupBox4.Controls.Add(this.btn_add_sec);
             this.groupBox4.Controls.Add(this.pic_ff_ok);
             this.groupBox4.Controls.Add(this.pic_ver);
             this.groupBox4.Controls.Add(this.lbl_ff_latest);
@@ -855,15 +862,6 @@
             this.button2.Name = "button2";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btn_add_sec
-            // 
-            resources.ApplyResources(this.btn_add_sec, "btn_add_sec");
-            this.btn_add_sec.FlatAppearance.BorderSize = 0;
-            this.btn_add_sec.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btn_add_sec.Name = "btn_add_sec";
-            this.btn_add_sec.UseVisualStyleBackColor = true;
-            this.btn_add_sec.Click += new System.EventHandler(this.btn_add_sec_Click);
             // 
             // groupBox6
             // 
@@ -997,8 +995,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_earth)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_net_set)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_trash_set)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_night)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ver)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ff_ok)).EndInit();
@@ -1029,7 +1029,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.CheckBox chk_auto_updates;
         private System.Windows.Forms.CheckBox chk_try;
-        private System.Windows.Forms.CheckBox check_concat;
         private System.Windows.Forms.CheckBox chk_sort;
         private System.Windows.Forms.ImageList img_edit;
         private System.Windows.Forms.CheckBox chk_sleep;
@@ -1083,7 +1082,6 @@
         private System.Windows.Forms.PictureBox pic_ver;
         private System.Windows.Forms.PictureBox pic_ff_ok;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button btn_add_sec;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         public System.Windows.Forms.CheckBox chk_dark;
@@ -1113,5 +1111,7 @@
         private System.Windows.Forms.PictureBox pic_info2;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.Button btn_cancel;
+        private System.Windows.Forms.PictureBox pic_net_set;
+        private System.Windows.Forms.PictureBox pic_trash_set;
     }
 }

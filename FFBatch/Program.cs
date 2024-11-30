@@ -23,10 +23,10 @@ namespace FFBatch
                 {
                     DialogResult a = MessageBox.Show(Properties.Strings.multiple_inst, Properties.Strings.multiple_inst_0, MessageBoxButtons.YesNo);
                     if (a == DialogResult.No) return;                    
-                }
-
+                }                                
+                
+                if (Properties.Settings.Default.visuals == true) Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-                Application.EnableVisualStyles();
                 Application.Run(new Form1());
             }
         }

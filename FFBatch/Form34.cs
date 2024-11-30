@@ -96,25 +96,37 @@ namespace FFBatch
 
         private void Form34_Load(object sender, EventArgs e)
         {  
-
             if (Properties.Settings.Default.dark_mode == true)
             {
                 foreach (Control c in this.Controls) UpdateColorDark(c);
                 this.BackColor = Color.FromArgb(255, 64, 64, 64);
             }
-            if (File.Exists(Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe")))
-            {
-                lbl_val.Text = Strings.ff_val;
+            String full_path = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
+            if (File.Exists(full_path))
+            {                
                 cb_srv.Enabled = false;
-                lbl_ff_v.Text = lbl_ff_v.Text;
+                lbl_ff_v.Text = lbl_ff_v.Text;                
+                String show_path = Path.GetDirectoryName(full_path);
+                if (show_path.Length > 46) { show_path = show_path.Substring(0, 46); }
+                if (Path.GetDirectoryName(full_path) != Path.GetDirectoryName(Application.ExecutablePath))
+                {
+                    lbl_path.Text = Strings.path + ": " + Path.GetDirectoryName(show_path) + "...";
+                }
+                else lbl_path.Text = Strings.path + ": " + Properties.Strings.local_file;
+                
                 if (!lbl_ff_v.Text.ToLower().Contains("essential")) btn_down_g.Text = Strings.browse + " " + "ffmpeg";
-                else btn_down_g.Text = Strings.download + " " + "ffmpeg";                
+                else btn_down_g.Text = Strings.download + " " + "ffmpeg";
+
+                ToolTip tt = new ToolTip();                
+                tt.ToolTipIcon = ToolTipIcon.Info;
+                tt.IsBalloon = true;
+                tt.ShowAlways = true;                
+                tt.SetToolTip(lbl_path, Path.GetDirectoryName(full_path));                
             }
             else
             {
                 lbl_ff_v.Text = lbl_ff_v.Text + " ffmpeg.exe";
-                btn_down_g.Text = Strings.download + " " + "ffmpeg";
-                lbl_val.Text = "MD5: 09c6423522fb9cd0f990f20c9f6bd843";
+                btn_down_g.Text = Strings.download + " " + "ffmpeg";        
             }
             
             cb_srv.SelectedIndex = 0;
@@ -160,9 +172,7 @@ namespace FFBatch
 
         private void cb_srv_SelectedIndexChanged(object sender, EventArgs e)
         {              
-              lbl_d_v.Text = vff;
-              lbl_val.Text = "MD5: 7523a4c238fcf4087b94dd97d14c0a71";         
-              if (File.Exists(Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe"))) lbl_val.Text = Strings.ff_val;
+              lbl_d_v.Text = vff;              
         }
     }
 }

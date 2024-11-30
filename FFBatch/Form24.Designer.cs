@@ -34,6 +34,7 @@ namespace FFBatch
             this.button1 = new System.Windows.Forms.Button();
             this.pic_earth = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.TextBox();
+            this.chk_dark = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pic_earth)).BeginInit();
             this.SuspendLayout();
             // 
@@ -73,10 +74,18 @@ namespace FFBatch
             this.label1.Name = "label1";
             this.label1.ReadOnly = true;
             // 
+            // chk_dark
+            // 
+            resources.ApplyResources(this.chk_dark, "chk_dark");
+            this.chk_dark.Name = "chk_dark";
+            this.chk_dark.UseVisualStyleBackColor = true;
+            this.chk_dark.CheckedChanged += new System.EventHandler(this.chk_dark_CheckedChanged);
+            // 
             // Form24
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.chk_dark);
             this.Controls.Add(this.pic_earth);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -97,5 +106,6 @@ namespace FFBatch
         public System.Windows.Forms.ComboBox combo_lang;
         private System.Windows.Forms.PictureBox pic_earth;
         private System.Windows.Forms.TextBox label1;
+        public System.Windows.Forms.CheckBox chk_dark;
     }
 }

@@ -27,6 +27,7 @@ namespace FFBatch
         private Boolean rename = false;
         private int n_presets = 2;
         private Boolean started = false;
+        private Boolean init = false;
         private Boolean quit = false;
 
         public String pr1_string
@@ -92,7 +93,6 @@ namespace FFBatch
             wz_mpresets.FinishButtonText = FFBatch.Properties.Strings.start_enc;
 
             if (wz_mpresets.SelectedPage == wzp1 && started == false)
-
             {
                 Boolean pr_loaded = false;
                 if (pr1_string != String.Empty)
@@ -159,6 +159,10 @@ namespace FFBatch
         private void wzp1_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
         {
             started = true;
+            if (txt_pr_1.Text.Length == 0) txt_ext_1.Text = String.Empty;
+            if (txt_pr_2.Text.Length == 0) txt_ext_2.Text = String.Empty;
+            if (txt_pr_3.Text.Length == 0) txt_ext_3.Text = String.Empty;
+
 
             if (txt_pr_1.Text == String.Empty)
             {
@@ -252,7 +256,12 @@ namespace FFBatch
         }
 
         private void cb_w_presets_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {            
+            if (init == false)
+            {
+                init = true;
+                return;
+            }
             if (cb_w_presets.SelectedIndex == 0)
             {
                 String path = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch.ini";

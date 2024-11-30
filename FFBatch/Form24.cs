@@ -18,7 +18,7 @@ namespace FFBatch
         {
             InitializeComponent();
         }
-
+        String restart = String.Empty;
         private void Form24_Load(object sender, EventArgs e)
         {
             if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "es") combo_lang.SelectedIndex = 1;
@@ -28,7 +28,7 @@ namespace FFBatch
             else if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "cn") combo_lang.SelectedIndex = 5;
             else if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "ar") combo_lang.SelectedIndex = 6;
             else combo_lang.SelectedIndex = 0;
-            label1.TextAlign = HorizontalAlignment.Right;            
+            label1.TextAlign = HorizontalAlignment.Right;         
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -43,12 +43,16 @@ namespace FFBatch
                 label1.Text = "Select language";
                 this.Text = "Application language";
                 button1.Text = "OK";
+                chk_dark.Text = "User dark theme";
+                restart = "Application will be restarted.";
             }
             if (combo_lang.SelectedIndex == 1)
             {
                 label1.Text = "Elija idioma";
                 this.Text = "Idioma de la aplicación";
                 button1.Text = "Aceptar";
+                chk_dark.Text = "Usar tema oscuro";
+                restart = "La aplicación se reiniciará.";
             }
 
             if (combo_lang.SelectedIndex == 2)
@@ -56,6 +60,8 @@ namespace FFBatch
                 label1.Text = "Choisir la langue";
                 this.Text = "Sélectionner la langue de l'application";
                 button1.Text = "D'ACCORD";
+                chk_dark.Text = "Activer le mode sombre";
+                restart = "L'application sera redémarrée.";
             }
 
             if (combo_lang.SelectedIndex == 3)
@@ -63,6 +69,8 @@ namespace FFBatch
                 label1.Text = "Seleziona lingua";
                 this.Text = "Seleziona lingua applicazione";
                 button1.Text = "OK";
+                chk_dark.Text = "Usa la modalità scura";
+                restart = "L'applicazione verrà riavviata.";
             }            
 
             if (combo_lang.SelectedIndex == 4)
@@ -70,6 +78,8 @@ namespace FFBatch
                 label1.Text = "Selecione o língua";
                 this.Text = "Idioma do aplicativo";
                 button1.Text = "OK";
+                chk_dark.Text = "Use o modo escuro";
+                restart = "O aplicativo será reiniciado.";
             }
 
             if (combo_lang.SelectedIndex == 5)
@@ -77,14 +87,35 @@ namespace FFBatch
                 label1.Text = "选择语言";
                 this.Text = "应用语言";
                 button1.Text = "确定";
+                chk_dark.Text = "开启夜间模式";
+                restart = "应用程序将重新启动。";
             }
             if (combo_lang.SelectedIndex == 6)
             {
                 label1.Text = "اختار اللغة";
                 this.Text = "لغة التطبيق";
                 button1.Text = "نعم";
+                chk_dark.Text = "استخدم الوضع الداكن";
+                restart = "سيتم إعادة تشغيل التطبيق.";
             }
-            foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
+            chk_dark.Checked = !chk_dark.Checked;
+            chk_dark.Checked = !chk_dark.Checked;
+        }
+
+        private void chk_dark_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_dark.Checked)
+            {
+                this.BackColor = Color.FromArgb(255, 64, 64, 64);
+                button1.BackColor = Color.LightGray;
+
+            }
+            else
+            {
+                this.BackColor = Control.DefaultBackColor; 
+                button1.BackColor = Color.LightGray;   
+            }
+            
         }
     }
 }

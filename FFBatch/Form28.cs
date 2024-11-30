@@ -58,6 +58,9 @@ namespace FFBatch
             var dateStr = "00:00:10";
             var dateTime = DateTime.ParseExact(dateStr, "HH:mm:ss", null, System.Globalization.DateTimeStyles.None);
 
+            time_pre_subs.Format = DateTimePickerFormat.Custom;
+            time_pre_subs.CustomFormat = "HH:mm:ss";              
+            
             if (Properties.Settings.Default.dark_mode == true)
             {
                 foreach (Control c in this.Controls) UpdateColorDark(c);
@@ -77,18 +80,18 @@ namespace FFBatch
             lbl_f.Text = Path.GetFileName(item);
             if (get_dur_secs(dur) > 10)
             {
-                txt_seek.Text = "00:00:10";
+                time_pre_subs.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 10);
             }
             else
             {
                 dur = get_file_dur(item);
                 if (get_dur_secs(dur) > 10)
                 {
-                    txt_seek.Text = "00:00:10";    
+                    time_pre_subs.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 10);
                 }
                 else
                 {
-                    txt_seek.Text = "00:00:01";     
+                    time_pre_subs.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 1);
                 }
             }            
 
@@ -99,8 +102,11 @@ namespace FFBatch
             foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
             String[] crops = new string[] { "1:1", "4:3", "5:3", "16:9", "1920x1080", "1440x1080", "1366x768", "1280x720", "1024x768", "1024x576", "800x600", "800x480", "720x576", "720x480", "640x480", "640x360", "320x240" };
             foreach (String v_crops in crops) cb_crop.Items.Add(v_crops);
-            String[] dar = new string[] { "1:1", "2:3", "4:3", "5:3", "16:9", "1.85", "2.35" };
-            foreach (String dars in dar) cb_dar.Items.Add(dars);       
+            String[] dar = new string[] { "1:1", "2:3", "4:3", "5:3", "16:9", "1.85", "2.35", "2.40" };
+            foreach (String dars in dar) cb_dar.Items.Add(dars);
+
+            time_pre_subs.Select();
+            SendKeys.Send("{RIGHT}"); SendKeys.Send("{RIGHT}");            
         }
 
         Double get_dur_secs(String item)
@@ -207,12 +213,12 @@ namespace FFBatch
             test_crop.Enabled = false;
             Process proc = new Process();
             String temp_f = Path.Combine(Path.GetTempPath() + "FFBatch_test", Path.GetFileName(item));
-            String param = " -ss " +  txt_seek.Text + " -i " + '\u0022' + item + '\u0022' + " -t " + n_secs.Value.ToString() + " -c:v libx264 -crf 25 -preset ultrafast -c:a copy" + " -vf crop=" + (n_w.Maximum - n_w.Value -n_X.Value).ToString() + ":" + (n_h.Maximum -  n_h.Value - n_Y.Value).ToString() + ":" + n_X.Value.ToString() + ":" + n_Y.Value.ToString() + " " + aspect_r + " -y " + '\u0022' + temp_f + '\u0022'  + " -hide_banner";
+            String param = " -ss " + time_pre_subs.Value.TimeOfDay.ToString() + " -i " + '\u0022' + item + '\u0022' + " -t " + n_secs.Value.ToString() + " -c:v libx264 -crf 25 -preset ultrafast -c:a copy" + " -vf crop=" + (n_w.Maximum - n_w.Value -n_X.Value).ToString() + ":" + (n_h.Maximum -  n_h.Value - n_Y.Value).ToString() + ":" + n_X.Value.ToString() + ":" + n_Y.Value.ToString() + " " + aspect_r + " -y " + '\u0022' + temp_f + '\u0022'  + " -hide_banner";
             if (cb_crop.SelectedIndex != -1)
             {
                 String coord_crp = String.Empty;
                 if (chk_center.Checked == false) coord_crp = ":" + n_crop_res_X.Value.ToString() + ":" + n_crop_res_Y.Value.ToString();
-                param = " -ss " + txt_seek.Text + " -i " + '\u0022' + item + '\u0022' + " -t " + n_secs.Value.ToString() + " -c:v libx264 -crf 25 -preset ultrafast -c:a copy" + " -vf crop=" + selected_crop + coord_crp + " " + aspect_r + " -y " + '\u0022' + temp_f + '\u0022' + " -hide_banner";
+                param = " -ss " + time_pre_subs.Value.TimeOfDay.ToString() + " -i " + '\u0022' + item + '\u0022' + " -t " + n_secs.Value.ToString() + " -c:v libx264 -crf 25 -preset ultrafast -c:a copy" + " -vf crop=" + selected_crop + coord_crp + " " + aspect_r + " -y " + '\u0022' + temp_f + '\u0022' + " -hide_banner";
             }
             String crop = "";
             List<string> list_lines = new List<string>();
@@ -246,7 +252,7 @@ namespace FFBatch
         private void autodetect()
         {
             Process proc = new Process();
-            String param = "-ss " + txt_seek.Text + " -i " + '\u0022' + item + '\u0022' + " -t 1 -vf cropdetect -f null -" + " -hide_banner";
+            String param = "-ss " + time_pre_subs.Value.TimeOfDay.ToString() + " -i " + '\u0022' + item + '\u0022' + " -t 1 -vf cropdetect -f null -" + " -hide_banner";
             String crop = "";
             Boolean ok = false;
             List<string> list_lines = new List<string>();
@@ -329,7 +335,7 @@ namespace FFBatch
             original_frame();
             Process proc = new Process();
             String temp_f = Path.Combine(Path.GetTempPath() + "FFBatch_test", Path.GetFileNameWithoutExtension(item) + ".jpg");            
-            String param = "-ss " + txt_seek.Text + " -i " + '\u0022' + item + '\u0022' + " -vframes 1 -f image2 -qscale:v 3 -y " + '\u0022' + temp_f + '\u0022' + " -hide_banner";
+            String param = "-ss " + time_pre_subs.Value.TimeOfDay.ToString() + " -i " + '\u0022' + item + '\u0022' + " -vframes 1 -f image2 -qscale:v 3 -y " + '\u0022' + temp_f + '\u0022' + " -hide_banner";
 
             List<string> list_lines = new List<string>();
 
@@ -355,37 +361,38 @@ namespace FFBatch
             }
 
             catch { }
-            if (cb_crop.SelectedIndex != -1)
-            {
-                //Image img;
-                //using (var bmpTemp = new Bitmap(temp_f))
-                //{
-                //    img = new Bitmap(bmpTemp);
-                //    pic1.Image = img;
-                //    bmpTemp.Dispose();
-                //}
 
-                //int x, y, w, h = 0;
-                //x = (int)n_X.Value;
-                //y = (int)n_Y.Value;
-                //w = (int)(n_w.Maximum - n_w.Value);
-                //h = (int)(n_h.Maximum - n_h.Value);
-                //if (w == 0 || h == 0) return;
-                //Rectangle rect = new Rectangle(x, y, w, h);
-                //Bitmap bmp = new Bitmap(img);
-                //pic1.Image = cropAtRect(bmp, rect, x, y);
-            }
-            else crop_pic();
+            if (cb_crop.SelectedIndex == -1) crop_pic();
+            //{
+            //    Image img;
+            //    using (var bmpTemp = new Bitmap(temp_f))
+            //    {
+            //        img = new Bitmap(bmpTemp);
+            //        pic1.Image = img;
+            //        bmpTemp.Dispose();
+            //    }
+
+            //    int x, y, w, h = 0;
+            //    x = (int)n_X.Value;
+            //    y = (int)n_Y.Value;
+            //    w = (int)(n_w.Maximum - n_w.Value);
+            //    h = (int)(n_h.Maximum - n_h.Value);
+            //    if (w == 0 || h == 0) return;
+            //    Rectangle rect = new Rectangle(x, y, w, h);
+            //    Bitmap bmp = new Bitmap(img);
+            //    pic1.Image = cropAtRect(bmp, rect, x, y);
+            //}
+            //else crop_pic();
             this.Cursor = Cursors.Arrow;
-            change_crop();
-            get_frame_prev();
+           change_crop();
+           get_frame_prev();
         }
 
         private void original_frame()
         {
             Process proc = new Process();
             String temp_f = Path.Combine(Path.GetTempPath() + "FFBatch_test", Path.GetFileNameWithoutExtension(item) + ".jpg");
-            String param = "-ss " + txt_seek.Text + " -i " + '\u0022' + item + '\u0022' + " -vframes 1 -f image2 -qscale:v 3 -y " + '\u0022' + temp_f + '\u0022'  + " -hide_banner";
+            String param = "-ss " + time_pre_subs.Value.TimeOfDay.ToString() + " -i " + '\u0022' + item + '\u0022' + " -vframes 1 -f image2 -qscale:v 3 -y " + '\u0022' + temp_f + '\u0022'  + " -hide_banner";
 
             List<string> list_lines = new List<string>();
 
@@ -478,19 +485,19 @@ namespace FFBatch
         private void txt_seek_Leave(object sender, EventArgs e)
         {
             DateTime time2;
-            if (!DateTime.TryParse(txt_seek.Text, out time2))
+            if (!DateTime.TryParse(time_pre_subs.Value.TimeOfDay.ToString(), out time2))
             {
                 MessageBox.Show(FFBatch.Properties.Strings.time_bad, FFBatch.Properties.Strings.pre_input2, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                if (TimeSpan.Parse(dur).TotalSeconds > 10) txt_seek.Text = "00:00:10";
-                else txt_seek.Text = "00:00:01";                
+                if (TimeSpan.Parse(dur).TotalSeconds > 10) time_pre_subs.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 10);
+                else time_pre_subs.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 1);
                 return;
             }
         }
 
         private void txt_seek_DoubleClick(object sender, EventArgs e)
         {
-            if (TimeSpan.Parse(dur).TotalSeconds > 10) txt_seek.Text = "00:00:10";
-            else txt_seek.Text = "00:00:01";
+            if (TimeSpan.Parse(dur).TotalSeconds > 10) time_pre_subs.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 10);
+            else time_pre_subs.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 1); ;
         }        
 
         private void crop_pic()
@@ -596,22 +603,14 @@ namespace FFBatch
 
         private void txt_seek_TextChanged(object sender, EventArgs e)
         {
-            DateTime time2;
-            if (txt_seek.Text.Substring(txt_seek.Text.Length - 1, 1) == ".") return;
-            if (DateTime.TryParse(txt_seek.Text, out time2))
+            DateTime time2;            
+            if (DateTime.TryParse(time_pre_subs.Value.TimeOfDay.ToString(), out time2))
             {
-                if (TimeSpan.Parse(dur).TotalSeconds > TimeSpan.Parse(txt_seek.Text).TotalSeconds)
+                if (TimeSpan.Parse(dur).TotalSeconds > TimeSpan.Parse(time_pre_subs.Value.TimeOfDay.ToString()).TotalSeconds)
                 {
                     Thread.Sleep(250);
                     btn_frame.PerformClick();
-                }
-                else
-                {
-                    Double t1 = TimeSpan.Parse(dur).TotalSeconds - (double)n_secs.Value;
-                    TimeSpan t = TimeSpan.FromSeconds(t1);
-                    String tx_elapsed = string.Format("{0:D2}:{1:D2}:{2:D2}", t.Hours, t.Minutes, t.Seconds);
-                    txt_seek.Text = tx_elapsed;
-                }
+                }                
             }
         }
         private void btn_cancel_Click(object sender, EventArgs e)
@@ -673,8 +672,7 @@ namespace FFBatch
             btn_use.Left = this.Width - btn_use.Width - 35;
             btn_cancel.Left = this.Width - btn_cancel.Width - btn_use.Width - 40;
             test_crop.Left = (this.Width / 2) - (test_crop.Width / 2) - 8;
-            txt_seek.Left = test_crop.Left - txt_seek.Width - 28;
-            n_time_upd.Left = txt_seek.Left + 64;
+            time_pre_subs.Left = test_crop.Left - time_pre_subs.Width - 28;            
             n_secs.Left = test_crop.Left + test_crop.Width + 8;
             lbl_sec.Left = n_secs.Left + n_secs.Width + 3;
             lbl_prop.Left = (this.Width / 2) - (lbl_prop.Width / 2) - 3;
@@ -683,10 +681,9 @@ namespace FFBatch
             test_crop.Top = this.Height - (457 - 365);
             btn_cancel.Top = this.Height - (457 - 365);
             btn_use.Top = this.Height - (457 - 365);
-            txt_seek.Top = this.Height - (457 - 375);
+            time_pre_subs.Top = this.Height - (457 - 375);
             n_secs.Top = this.Height - (457 - 375);
-            lbl_sec.Top = this.Height - (457 - 374);
-            n_time_upd.Top = this.Height - (457 - 375);
+            lbl_sec.Top = this.Height - (457 - 374);            
         }
         private void change_crop()
         {
@@ -735,7 +732,7 @@ namespace FFBatch
             String temp_f = Path.Combine(Path.GetTempPath() + "FFBatch_test", Path.GetFileNameWithoutExtension(item) + ".jpg");
             String coord_crp = String.Empty;
             if (chk_center.Checked == false) coord_crp = ":" + n_crop_res_X.Value.ToString() + ":" + n_crop_res_Y.Value.ToString();
-            String param = " -ss " + txt_seek.Text + " -i " + '\u0022' + item + '\u0022' + " -frames:v 1 -vf crop=" + selected_crop + coord_crp + " -y " + '\u0022' + temp_f + '\u0022' + " -hide_banner";
+            String param = " -ss " + time_pre_subs.Value.TimeOfDay.ToString() + " -i " + '\u0022' + item + '\u0022' + " -frames:v 1 -vf crop=" + selected_crop + coord_crp + " -y " + '\u0022' + temp_f + '\u0022' + " -hide_banner";
 
             List<string> list_lines = new List<string>();
 
@@ -811,8 +808,7 @@ namespace FFBatch
             Decimal pre_rel = (Decimal)pic1.Image.Width / (Decimal)pic1.Image.Height;            
                 int new_width = 0;            
             new_width = (int)(pic1.Image.Width * rel / pre_rel);
-            Bitmap img_resize = new Bitmap(pic1.Image, new Size(new_width, pic1.Image.Height));
-            //Bitmap img_resize2 = new Bitmap(img_resize, new Size((int)rel_w * img_resize.Width , img_resize.Height));
+            Bitmap img_resize = new Bitmap(pic1.Image, new Size(new_width, pic1.Image.Height));            
             pic1.Image = img_resize;
             pic1.SizeMode = PictureBoxSizeMode.Zoom;
             lbl_crop.Text = Properties.Strings.cropped + " " + "(" + Properties.Strings.use_prev + ")";
@@ -856,15 +852,6 @@ namespace FFBatch
             change_crop();
             get_frame_prev();
         }
-
-        private void n_time_upd_ValueChanged(object sender, EventArgs e)
-        {            
-                    Double t1 = TimeSpan.Parse(txt_seek.Text).TotalSeconds + 1;
-                    TimeSpan t = TimeSpan.FromSeconds(t1);
-                    String tx_elapsed = string.Format("{0:D2}:{1:D2}:{2:D2}", t.Hours, t.Minutes, t.Seconds);
-                    txt_seek.Text = tx_elapsed;            
-        }
-
         private void n_crop_res_X_KeyUp(object sender, KeyEventArgs e)
         {
             cb_dar.SelectedIndex = -1;
@@ -900,6 +887,15 @@ namespace FFBatch
         {
             crop_pic();
         }
+
+        private void time_pre_subs_ValueChanged(object sender, EventArgs e)
+        {
+            if (time_pre_subs.Value.TimeOfDay.TotalSeconds > get_dur_secs(dur))
+            {
+                MessageBox.Show(Properties.Strings.time_err + ", " + Properties.Strings.exc_dur);
+                time_pre_subs.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
+            }
+            btn_frame.PerformClick();
+        }
     }
 }
-

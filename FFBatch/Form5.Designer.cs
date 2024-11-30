@@ -417,11 +417,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.Controls.Add(this.txt_file);
-            this.Controls.Add(this.btn_refresh);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.dg_streams);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txt_name);
+            this.Controls.Add(this.btn_refresh);
             this.glassExtenderProvider1.SetGlassMargins(this, new System.Windows.Forms.Padding(0));
             this.MinimizeBox = false;
             this.Name = "Form5";

@@ -44,6 +44,7 @@ namespace FFBatch
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.chk_visuals = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
@@ -149,11 +150,19 @@ namespace FFBatch
             this.label3.ForeColor = System.Drawing.SystemColors.WindowText;
             this.label3.Name = "label3";
             // 
+            // chk_visuals
+            // 
+            resources.ApplyResources(this.chk_visuals, "chk_visuals");
+            this.chk_visuals.Name = "chk_visuals";
+            this.chk_visuals.UseVisualStyleBackColor = true;
+            this.chk_visuals.CheckedChanged += new System.EventHandler(this.chk_visuals_CheckedChanged);
+            // 
             // Form25
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Controls.Add(this.chk_visuals);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.groupBox1);
@@ -169,6 +178,7 @@ namespace FFBatch
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -187,5 +197,6 @@ namespace FFBatch
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbl_cpu;
         public System.Windows.Forms.Button btn_close;
+        private System.Windows.Forms.CheckBox chk_visuals;
     }
 }

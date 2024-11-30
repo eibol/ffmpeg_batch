@@ -9,7 +9,7 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
-using System.Security.Cryptography;
+//using System.Security.Cryptography;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -64,8 +64,7 @@ namespace FFBatch
         public String txt_format_str;
         private Boolean is_portable = false;
         public Boolean updates;
-        public Boolean remember_w;
-        public Boolean concat_filter;
+        public Boolean remember_w;        
         public Boolean sort_multi;
         public Boolean send_params_console;
         public Boolean warn_successful;
@@ -75,7 +74,7 @@ namespace FFBatch
         public Boolean subfolders;
         public Boolean to_sleep;
         public Boolean never_cache;
-        public Boolean reset_asked = false;
+        public Boolean reset_asked = false;        
         public Boolean remember_tab;
 
         private void toolTips()
@@ -137,11 +136,11 @@ namespace FFBatch
                     return;
                 }
             }
-
+       
             if (txt_monitor.Text == main_out_path)
-            {
-                MessageBox.Show(Properties.Strings.mon_path_equal);
-                return;
+            {               
+                    MessageBox.Show(Properties.Strings.mon_path_equal);
+                    return;
             }
 
             if (chk_monitor.Checked == true && !Directory.Exists(txt_monitor.Text))
@@ -150,7 +149,7 @@ namespace FFBatch
                 {
                     MessageBox.Show(Properties.Strings.path_empty);
                 }
-                else MessageBox.Show(Properties.Strings.path_not);
+                else MessageBox.Show(Properties.Strings.path_not);                
 
                 return;
             }
@@ -176,7 +175,7 @@ namespace FFBatch
         }
 
         private void Form3_Load(object sender, EventArgs e)
-        {
+        {   
             edit_presets = false;
             presets_online = false;
             String app_location = Application.StartupPath;
@@ -186,6 +185,8 @@ namespace FFBatch
 
             if (Properties.Settings.Default.to_tray == false) chk_tray.Checked = false;
             else chk_tray.Checked = true;
+            if (Properties.Settings.Default.filter_zero == false) chk_filter_zero.Checked = false;
+            else chk_filter_zero.Checked = true;
 
             if (Properties.Settings.Default.auto_dark == true)
             {
@@ -245,16 +246,16 @@ namespace FFBatch
             else chk_no_overw.Checked = false;
 
             if (Properties.Settings.Default.bat_level < 10) Properties.Settings.Default.bat_level = 20;
-
+            
             n_bat_l.Value = Properties.Settings.Default.bat_level;
 
             if (Properties.Settings.Default.pause_bat == true)
             {
-                chk_battery.Checked = true;
+                chk_battery.Checked = true;               
             }
             else
             {
-                chk_battery.Checked = false;
+                chk_battery.Checked = false;               
             }
             if (Properties.Settings.Default.if_bat_low == true)
             {
@@ -429,38 +430,7 @@ namespace FFBatch
             else try_preset = false;
 
             //End Disable preset
-
-            //Concat video filter
-
-            String f_concat = String.Empty;
-            if (is_portable == false)
-            {
-                f_concat = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_concat.ini";
-            }
-            else
-            {
-                f_concat = port_path + "ff_concat_portable.ini";
-            }
-
-            if (File.Exists(f_concat))
-            {
-                check_concat.Checked = true;
-            }
-            else
-            {
-                check_concat.Checked = false;
-            }
-            if (check_concat.CheckState == CheckState.Checked)
-            {
-                concat_filter = true;
-            }
-            else
-            {
-                concat_filter = false;
-            }
-
-            //End concat video filter
-
+                        
             //Auto updates
 
             String f_updates = String.Empty;
@@ -978,7 +948,7 @@ namespace FFBatch
             String ff_Date = "";
 
             lbl_ff_latest.Text = "FFmpeg " + ff_ver;
-
+            
             try
             {
                 ff_Date = lbl_ff_ver.Text.Substring(lbl_ff_ver.Text.IndexOf(Properties.Strings.version) + Properties.Strings.version.Length, 11);
@@ -987,8 +957,7 @@ namespace FFBatch
             {
                 Thread.Sleep(1000);
                 try { ff_Date = lbl_ff_ver.Text.Substring(lbl_ff_ver.Text.IndexOf(Properties.Strings.version) + Properties.Strings.version.Length, 11); }
-                catch
-                {
+                catch { 
                     ff_Date = "";
                     lbl_ff_latest.Text = FFBatch.Properties.Strings.error;
                     pic_ver.Visible = false;
@@ -996,9 +965,9 @@ namespace FFBatch
                     return;
                 }
             }
-
+            
             DateTime test = new DateTime();
-
+            
             if (!lbl_ff_ver.Text.Contains(ff_ver) && DateTime.TryParse(ff_Date, out test) == false)
             {
                 pic_ver.Visible = true;
@@ -1152,24 +1121,11 @@ namespace FFBatch
             if (chk_auto_updates.CheckState == CheckState.Checked) updates = true;
             else updates = false;
         }
-
-        private void check_concat_CheckedChanged(object sender, EventArgs e)
-        {
-            if (check_concat.CheckState == CheckState.Checked)
-            {
-                concat_filter = true;
-            }
-            else
-            {
-                concat_filter = false;
-            }
-        }
-
         private void chk_sort_CheckedChanged(object sender, EventArgs e)
         {
             if (chk_sort.CheckState == CheckState.Checked)
             {
-                sort_multi = true;
+                sort_multi = true;                
             }
             else
             {
@@ -1216,8 +1172,7 @@ namespace FFBatch
             chk_delete_one.CheckState = CheckState.Checked;
             chk_delete_def.CheckState = CheckState.Unchecked;
             chk_subf.CheckState = CheckState.Checked;
-            checkBox1.CheckState = CheckState.Unchecked;
-            check_concat.CheckState = CheckState.Unchecked;
+            checkBox1.CheckState = CheckState.Unchecked;            
             chk_sort.CheckState = CheckState.Unchecked;
             chk_verbose_log.CheckState = CheckState.Unchecked;
             chk_console_params.CheckState = CheckState.Unchecked;
@@ -1435,7 +1390,7 @@ namespace FFBatch
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            Process.Start("https://www.gyan.dev/ffmpeg/builds/");
+            Process.Start("https://www.gyan.dev/ffmpeg/builds/"); 
         }
 
         private void pic_ff_ok_Click(object sender, EventArgs e)
@@ -1472,50 +1427,69 @@ namespace FFBatch
             }
         }
 
+        private void hide_pics()
+        {
+            pic_trash_set.Visible = false;
+            pic_net_set.Visible = false;
+        }
+
+        private void show_pics()
+        {
+            pic_trash_set.Visible = true;
+            pic_net_set.Visible = true;
+        }
         private void combo_lang_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (combo_lang.SelectedIndex == 0)
             {
                 lang_set = "en";
                 FFBatch.Properties.Settings.Default.app_lang = "en";
+                show_pics();
             }
             if (combo_lang.SelectedIndex == 1)
             {
                 lang_set = "es";
                 FFBatch.Properties.Settings.Default.app_lang = "es";
+                show_pics();
             }
 
             if (combo_lang.SelectedIndex == 2)
             {
                 lang_set = "fr";
                 FFBatch.Properties.Settings.Default.app_lang = "fr";
+                hide_pics();
             }
 
             if (combo_lang.SelectedIndex == 3)
             {
                 lang_set = "it";
                 FFBatch.Properties.Settings.Default.app_lang = "it";
+                hide_pics();
             }
-
+                        
             if (combo_lang.SelectedIndex == 4)
             {
                 lang_set = "pt-BR";
                 FFBatch.Properties.Settings.Default.app_lang = "pt-BR";
+                hide_pics();
+
             }
             if (combo_lang.SelectedIndex == 5)
             {
                 lang_set = "zh-Hans";
                 FFBatch.Properties.Settings.Default.app_lang = "zh-Hans";
+                show_pics();
             }
             if (combo_lang.SelectedIndex == 6)
             {
                 lang_set = "zh-Hans";
                 FFBatch.Properties.Settings.Default.app_lang = "ar-EG";
+                show_pics();
             }
 
             FFBatch.Properties.Settings.Default.Save();
             refresh_lang();
-            this.Text = FFBatch.Properties.Strings.Settings;
+            this.Text = FFBatch.Properties.Strings.Settings;            
         }
 
         private void refresh_lang()
@@ -1581,8 +1555,7 @@ namespace FFBatch
             //Check MD5 ffmpeg
 
             Form25 frm25 = new Form25();
-            frm25.btn_close.Image = btn_cancel.Image;
-            frm25.crypt = false;
+            frm25.btn_close.Image = btn_cancel.Image;            
             frm25.ShowDialog();
         }
 
@@ -1609,7 +1582,7 @@ namespace FFBatch
             {
                 UpdateColorDefault(subC);
             }
-        }
+        }       
 
         private void btn_dark_Click(object sender, EventArgs e)
         {
@@ -1641,14 +1614,14 @@ namespace FFBatch
             {
                 Properties.Settings.Default.dark_mode = !Properties.Settings.Default.dark_mode;
                 Properties.Settings.Default.Save();
-            }
+            }       
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             presets_online = true;
             cancel = false;
-            this.Close();
+            this.Close();            
         }
 
         private void chk_sort_Click(object sender, EventArgs e)
@@ -1669,7 +1642,7 @@ namespace FFBatch
         private void chk_run_st_CheckedChanged(object sender, EventArgs e)
         {
             RegistryKey rk = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
-            if (chk_run_st.CheckState == CheckState.Unchecked) rk.DeleteValue("FFBatch", false);
+            if (chk_run_st.CheckState == CheckState.Unchecked) rk.DeleteValue("FFBatch", false);            
             else rk.SetValue("FFBatch", Application.ExecutablePath);
         }
 
@@ -1695,14 +1668,13 @@ namespace FFBatch
             {
                 f_delay = port_path + "ff_delay_portable.ini";
             }
-
+                        
             try
             {
                 if (n_delay.Value != 0) File.WriteAllText(f_delay, n_delay.Value.ToString());
                 else File.Delete(f_delay);
 
-            }
-            catch { }
+            } catch { }            
         }
 
         private void chk_tray_CheckedChanged(object sender, EventArgs e)
@@ -1761,7 +1733,7 @@ namespace FFBatch
         private void chk_filter_zero_CheckedChanged(object sender, EventArgs e)
         {
             if (chk_filter_zero.CheckState == CheckState.Checked)
-            {
+            {                
                 if (chk_quick_q.Checked)
                 {
                     MessageBox.Show(Properties.Strings.filter_quick_not);
@@ -1771,7 +1743,7 @@ namespace FFBatch
                 }
                 else Properties.Settings.Default.filter_zero = true;
             }
-            else Properties.Settings.Default.filter_zero = false;
+            else Properties.Settings.Default.filter_zero = false;            
         }
 
         private void chk_battery_CheckedChanged(object sender, EventArgs e)
@@ -1808,7 +1780,7 @@ namespace FFBatch
         private void chk_no_overw_CheckedChanged(object sender, EventArgs e)
         {
             if (chk_no_overw.CheckState == CheckState.Checked) no_dest_overwrite = true;
-            else no_dest_overwrite = false;
+            else no_dest_overwrite = false;            
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
@@ -1903,7 +1875,7 @@ namespace FFBatch
                 else if (str.Contains("libxvid")) item.SubItems.Add("XVID video encoder");
                 else if (str.Contains("librav1e")) item.SubItems.Add("AV1 video encoder");
                 else if (str.Contains("libdav1d")) item.SubItems.Add("AV1 video decoder");
-
+                
                 else item.SubItems.Add("-");
                 lstv.Items.Add(item);
             }

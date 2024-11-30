@@ -32,7 +32,6 @@ namespace FFBatch
         private String product = "";
         private String product_state = "";
         private String vir_exe = "";
-        public Boolean crypt = true;
 
         private void refresh_lang()
         {
@@ -73,7 +72,7 @@ namespace FFBatch
 
         private void Form25_Load(object sender, EventArgs e)
         {
-            //chk_valff.Checked = !Properties.Settings.Default.validate_ff;
+            chk_visuals.Checked = !Properties.Settings.Default.visuals;
 
             if (!File.Exists(Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe")))
             {
@@ -302,47 +301,25 @@ namespace FFBatch
                 MessageBox.Show(FFBatch.Properties.Strings.error3 + " " + exc.Message, FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        //private void btn_save_md5_Click(object sender, EventArgs e)
-        //{
-        //    String f_md5 = String.Empty;
-        //    if (is_portable == false) { f_md5 = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_md5.ini"; }
-        //    else { f_md5 = port_path + "ff_md5_portable.ini"; }
-        //    String psk = "FFBatch2022_()*_";
-
-        //    try
-        //    {
-        //        File.WriteAllText(f_md5, StringCipher.Encrypt(txt_cur_md5.Text, psk));                
-        //    }
-        //    catch { MessageBox.Show(Properties.Strings.err_set, Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error); }
-
-        //    txt_st_md5.Text = txt_cur_md5.Text;
-        //    pic_2.Image = pic_success.Image;
-        //    if (txt_cur_md5.Text == txt_st_md5.Text)
-        //    {
-        //        pic_1.Image = pic_success.Image;
-        //        lbl_fail_ff.Text = Properties.Strings.md5_valid;
-        //        check_ff = true;
-        //    }            
-        //}
-
+                
         private void btn_close_Click(object sender, EventArgs e)
         {            
             this.Close();
         }
 
-        //private void chk_valff_CheckedChanged(object sender, EventArgs e)
-        //{
-        //    if (chk_valff.Checked == true) { Properties.Settings.Default.validate_ff = false; }
-        //    else Properties.Settings.Default.validate_ff = true;
-        //    Properties.Settings.Default.Save();
-        //}
-
-        //private void chk_valff_CheckedChanged_1(object sender, EventArgs e)
-        //{
-        //    if (chk_valff.Checked == true) { Properties.Settings.Default.validate_ff = false; }
-        //    else Properties.Settings.Default.validate_ff = true;
-        //    Properties.Settings.Default.Save();
-        //}
+        private void chk_visuals_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_visuals.Checked == true)
+            {
+                Properties.Settings.Default.visuals = false;
+                Application.VisualStyleState = System.Windows.Forms.VisualStyles.VisualStyleState.NoneEnabled;
+            }
+            else
+            {
+                Properties.Settings.Default.visuals = true;
+                Application.VisualStyleState = System.Windows.Forms.VisualStyles.VisualStyleState.ClientAndNonClientAreasEnabled;
+            }
+            Properties.Settings.Default.Save();            
+        }        
     }
 }

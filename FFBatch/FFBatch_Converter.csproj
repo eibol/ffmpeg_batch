@@ -15,6 +15,7 @@
     <TargetFrameworkProfile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <ForceDesignerDPIUnaware>true</ForceDesignerDPIUnaware>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -63,23 +64,36 @@
     <StartupObject>FFBatch.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>69699E5BEB77B4BE56886122000CE5DAC3FFE261</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>AE154C5B51B29EEDF16E7CE1B5B82E42606BFF60</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>FFBatch_2023_Key.pfx</ManifestKeyFile>
+    <ManifestKeyFile>FFBatch_2024.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>false</SignManifests>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>FFBatch_2023_Key.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>FFBatch_2024.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup Label="MultilingualAppToolkit">
+    <MultilingualAppToolkitVersion>4.0</MultilingualAppToolkitVersion>
+    <MultilingualFallbackLanguage>en</MultilingualFallbackLanguage>
+    <TranslationReport Condition="'$(Configuration)' == 'Release'">true</TranslationReport>
+    <SuppressPseudoWarning Condition="'$(Configuration)' == 'Debug'">true</SuppressPseudoWarning>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
   <PropertyGroup />
   <PropertyGroup />
   <PropertyGroup />
@@ -193,12 +207,6 @@
     <Compile Include="Form14.Designer.cs">
       <DependentUpon>Form14.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form25.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form25.Designer.cs">
-      <DependentUpon>Form25.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form27.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,6 +278,12 @@
     </Compile>
     <Compile Include="Form24.Designer.cs">
       <DependentUpon>Form24.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form25.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form25.Designer.cs">
+      <DependentUpon>Form25.cs</DependentUpon>
     </Compile>
     <Compile Include="Form26.cs">
       <SubType>Form</SubType>
@@ -401,8 +415,12 @@
     <Compile Include="Settings.cs" />
     <EmbeddedResource Include="AeroWizard1.ar-EG.resx">
       <DependentUpon>AeroWizard1.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AeroWizard1.es.resx">
+      <DependentUpon>AeroWizard1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AeroWizard1.fr.resx">
       <DependentUpon>AeroWizard1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AeroWizard1.it.resx">
@@ -424,9 +442,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AeroWizard2.es.resx">
       <DependentUpon>AeroWizard2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AeroWizard2.fr.resx">
+      <DependentUpon>AeroWizard2.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AeroWizard2.it.resx">
       <DependentUpon>AeroWizard2.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="AeroWizard2.pt-BR.resx">
       <DependentUpon>AeroWizard2.cs</DependentUpon>
@@ -441,6 +465,9 @@
       <DependentUpon>AeroWizard3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AeroWizard3.es.resx">
+      <DependentUpon>AeroWizard3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AeroWizard3.fr.resx">
       <DependentUpon>AeroWizard3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AeroWizard3.it.resx">
@@ -461,6 +488,9 @@
     <EmbeddedResource Include="AeroWizard4.es.resx">
       <DependentUpon>AeroWizard4.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AeroWizard4.fr.resx">
+      <DependentUpon>AeroWizard4.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AeroWizard4.it.resx">
       <DependentUpon>AeroWizard4.cs</DependentUpon>
     </EmbeddedResource>
@@ -473,13 +503,22 @@
     <EmbeddedResource Include="AeroWizard5.ar-EG.resx">
       <DependentUpon>AeroWizard5.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AeroWizard5.fr.resx">
+      <DependentUpon>AeroWizard5.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AeroWizard6.ar-EG.resx">
+      <DependentUpon>AeroWizard6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AeroWizard6.fr.resx">
       <DependentUpon>AeroWizard6.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AeroWizard7.ar-EG.resx">
       <DependentUpon>AeroWizard7.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AeroWizard7.es.resx">
+      <DependentUpon>AeroWizard7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AeroWizard7.fr.resx">
       <DependentUpon>AeroWizard7.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AeroWizard7.it.resx">
@@ -565,6 +604,9 @@
     <EmbeddedResource Include="Form11.es.resx">
       <DependentUpon>Form11.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form11.fr.resx">
+      <DependentUpon>Form11.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form11.it.resx">
       <DependentUpon>Form11.cs</DependentUpon>
     </EmbeddedResource>
@@ -578,6 +620,9 @@
       <DependentUpon>Form11_2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form11_2.es.resx">
+      <DependentUpon>Form11_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form11_2.fr.resx">
       <DependentUpon>Form11_2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form11_2.it.resx">
@@ -601,6 +646,9 @@
     <EmbeddedResource Include="Form12.es.resx">
       <DependentUpon>Form12.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form12.fr.resx">
+      <DependentUpon>Form12.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form12.it.resx">
       <DependentUpon>Form12.cs</DependentUpon>
     </EmbeddedResource>
@@ -619,6 +667,9 @@
     <EmbeddedResource Include="Form13.es.resx">
       <DependentUpon>Form13.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form13.fr.resx">
+      <DependentUpon>Form13.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form13.it.resx">
       <DependentUpon>Form13.cs</DependentUpon>
@@ -639,6 +690,9 @@
     <EmbeddedResource Include="Form14.es.resx">
       <DependentUpon>Form14.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form14.fr.resx">
+      <DependentUpon>Form14.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form14.it.resx">
       <DependentUpon>Form14.cs</DependentUpon>
     </EmbeddedResource>
@@ -654,52 +708,70 @@
     <EmbeddedResource Include="Form15.ar-EG.resx">
       <DependentUpon>Form15.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form15.fr.resx">
+      <DependentUpon>Form15.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form16.ar-EG.resx">
+      <DependentUpon>Form16.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form16.fr.resx">
       <DependentUpon>Form16.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form17.ar-EG.resx">
       <DependentUpon>Form17.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form17.fr.resx">
+      <DependentUpon>Form17.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form18.ar-EG.resx">
+      <DependentUpon>Form18.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form18.fr.resx">
       <DependentUpon>Form18.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form19.ar-EG.resx">
       <DependentUpon>Form19.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form19.fr.resx">
+      <DependentUpon>Form19.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form2.ar-EG.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.fr.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form20.ar-EG.resx">
       <DependentUpon>Form20.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form20.fr.resx">
+      <DependentUpon>Form20.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form21.ar-EG.resx">
+      <DependentUpon>Form21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form21.en.resx">
+      <DependentUpon>Form21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form21.fr.resx">
       <DependentUpon>Form21.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form22.ar-EG.resx">
       <DependentUpon>Form22.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form22.fr.resx">
+      <DependentUpon>Form22.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form23.ar-EG.resx">
+      <DependentUpon>Form23.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form23.fr.resx">
       <DependentUpon>Form23.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form25.ar-EG.resx">
       <DependentUpon>Form25.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form25.es.resx">
-      <DependentUpon>Form25.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form25.fr.resx">
-      <DependentUpon>Form25.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form25.it.resx">
-      <DependentUpon>Form25.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form25.pt-BR.resx">
-      <DependentUpon>Form25.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form25.resx">
-      <DependentUpon>Form25.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form25.zh-Hans.resx">
       <DependentUpon>Form25.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form26.it.resx">
@@ -709,6 +781,9 @@
       <DependentUpon>Form27.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form27.es.resx">
+      <DependentUpon>Form27.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form27.fr.resx">
       <DependentUpon>Form27.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form27.it.resx">
@@ -877,6 +952,21 @@
     <EmbeddedResource Include="Form24.resx">
       <DependentUpon>Form24.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form25.es.resx">
+      <DependentUpon>Form25.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form25.it.resx">
+      <DependentUpon>Form25.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form25.pt-BR.resx">
+      <DependentUpon>Form25.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form25.resx">
+      <DependentUpon>Form25.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form25.zh-Hans.resx">
+      <DependentUpon>Form25.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form26.resx">
       <DependentUpon>Form26.cs</DependentUpon>
     </EmbeddedResource>
@@ -884,6 +974,9 @@
       <DependentUpon>Form28.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form28.es.resx">
+      <DependentUpon>Form28.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form28.fr.resx">
       <DependentUpon>Form28.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form28.it.resx">
@@ -904,6 +997,9 @@
     <EmbeddedResource Include="Form29.es.resx">
       <DependentUpon>Form29.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form29.fr.resx">
+      <DependentUpon>Form29.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form29.it.resx">
       <DependentUpon>Form29.cs</DependentUpon>
     </EmbeddedResource>
@@ -922,7 +1018,7 @@
     <EmbeddedResource Include="Form3.es.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form3.fo.resx">
+    <EmbeddedResource Include="Form3.fr.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form3.it.resx">
@@ -944,6 +1040,9 @@
     <EmbeddedResource Include="Form30.es.resx">
       <DependentUpon>Form30.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form30.fr.resx">
+      <DependentUpon>Form30.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form30.it.resx">
       <DependentUpon>Form30.cs</DependentUpon>
     </EmbeddedResource>
@@ -960,6 +1059,9 @@
       <DependentUpon>Form31.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form31.es.resx">
+      <DependentUpon>Form31.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form31.fr.resx">
       <DependentUpon>Form31.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form31.it.resx">
@@ -980,6 +1082,9 @@
     <EmbeddedResource Include="Form32.es.resx">
       <DependentUpon>Form32.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form32.fr.resx">
+      <DependentUpon>Form32.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form32.it.resx">
       <DependentUpon>Form32.cs</DependentUpon>
     </EmbeddedResource>
@@ -995,6 +1100,9 @@
     <EmbeddedResource Include="Form33.resx">
       <DependentUpon>Form33.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form34.es.resx">
+      <DependentUpon>Form34.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form34.resx">
       <DependentUpon>Form34.cs</DependentUpon>
     </EmbeddedResource>
@@ -1002,6 +1110,9 @@
       <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form4.es.resx">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form4.fr.resx">
       <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form4.it.resx">
@@ -1021,6 +1132,9 @@
       <DependentUpon>Form5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form5.es.resx">
+      <DependentUpon>Form5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form5.fr.resx">
       <DependentUpon>Form5.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form5.it.resx">
@@ -1044,6 +1158,9 @@
     <EmbeddedResource Include="Form7.es.resx">
       <DependentUpon>Form7.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form7.fr.resx">
+      <DependentUpon>Form7.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form7.it.resx">
       <DependentUpon>Form7.cs</DependentUpon>
     </EmbeddedResource>
@@ -1060,6 +1177,9 @@
       <DependentUpon>Form8.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form8.es.resx">
+      <DependentUpon>Form8.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form8.fr.resx">
       <DependentUpon>Form8.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form8.it.resx">
@@ -1080,6 +1200,9 @@
     <EmbeddedResource Include="Form9.es.resx">
       <DependentUpon>Form9.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form9.fr.resx">
+      <DependentUpon>Form9.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form9.it.resx">
       <DependentUpon>Form9.cs</DependentUpon>
     </EmbeddedResource>
@@ -1092,6 +1215,7 @@
     <EmbeddedResource Include="Form9.zh-Hans.resx">
       <DependentUpon>Form9.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.fr.resx" />
     <EmbeddedResource Include="Properties\Strings.fr.resx" />
     <EmbeddedResource Include="Properties\Strings.pt-BR.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -1115,14 +1239,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+      <LastGenOutput>Strings1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Strings.fr.resx" />
-    <None Include="FFBatch_2023_Key.pfx" />
+    <None Include="FFBatch_2024.pfx" />
     <None Include="FFBatch_Converter.ruleset" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -1165,4 +1288,8 @@
     </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets" Label="MultilingualAppToolkit" Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\v$(MultilingualAppToolkitVersion)\Microsoft.Multilingual.ResxResources.targets')" />
+  <Target Name="MATPrerequisite" BeforeTargets="PrepareForBuild" Condition="!Exists('$(MSBuildExtensionsPath)\Microsoft\Multilingual App Toolkit\Microsoft.Multilingual.ResxResources.targets')" Label="MultilingualAppToolkit">
+    <Warning Text="$(MSBuildProjectFile) is Multilingual build enabled, but the Multilingual App Toolkit is unavailable during the build. If building with Visual Studio, please check to ensure that toolkit is properly installed." />
+  </Target>
 </Project>

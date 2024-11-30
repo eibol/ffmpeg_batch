@@ -30,7 +30,6 @@ namespace FFBatch
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form28));
-            this.txt_seek = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -64,7 +63,7 @@ namespace FFBatch
             this.lbl_or = new System.Windows.Forms.Label();
             this.lbl_crop = new System.Windows.Forms.Label();
             this.lbl_prop = new System.Windows.Forms.Label();
-            this.n_time_upd = new System.Windows.Forms.NumericUpDown();
+            this.time_pre_subs = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.n_secs)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.n_crop_res_Y)).BeginInit();
@@ -75,16 +74,7 @@ namespace FFBatch
             ((System.ComponentModel.ISupportInitialize)(this.n_w)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_0)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.n_time_upd)).BeginInit();
             this.SuspendLayout();
-            // 
-            // txt_seek
-            // 
-            resources.ApplyResources(this.txt_seek, "txt_seek");
-            this.txt_seek.Name = "txt_seek";
-            this.txt_seek.TextChanged += new System.EventHandler(this.txt_seek_TextChanged);
-            this.txt_seek.DoubleClick += new System.EventHandler(this.txt_seek_DoubleClick);
-            this.txt_seek.Leave += new System.EventHandler(this.txt_seek_Leave);
             // 
             // label3
             // 
@@ -362,28 +352,20 @@ namespace FFBatch
             resources.ApplyResources(this.lbl_prop, "lbl_prop");
             this.lbl_prop.Name = "lbl_prop";
             // 
-            // n_time_upd
+            // time_pre_subs
             // 
-            resources.ApplyResources(this.n_time_upd, "n_time_upd");
-            this.n_time_upd.Maximum = new decimal(new int[] {
-            20000,
-            0,
-            0,
-            0});
-            this.n_time_upd.Name = "n_time_upd";
-            this.n_time_upd.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
-            this.n_time_upd.ValueChanged += new System.EventHandler(this.n_time_upd_ValueChanged);
+            this.time_pre_subs.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            resources.ApplyResources(this.time_pre_subs, "time_pre_subs");
+            this.time_pre_subs.Name = "time_pre_subs";
+            this.time_pre_subs.ShowUpDown = true;
+            this.time_pre_subs.ValueChanged += new System.EventHandler(this.time_pre_subs_ValueChanged);
             // 
             // Form28
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.Controls.Add(this.n_time_upd);
+            this.Controls.Add(this.time_pre_subs);
             this.Controls.Add(this.lbl_prop);
             this.Controls.Add(this.lbl_crop);
             this.Controls.Add(this.lbl_or);
@@ -395,7 +377,6 @@ namespace FFBatch
             this.Controls.Add(this.lbl_sec);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lbl_f);
-            this.Controls.Add(this.txt_seek);
             this.Controls.Add(this.test_crop);
             this.Controls.Add(this.n_secs);
             this.Name = "Form28";
@@ -413,14 +394,12 @@ namespace FFBatch
             ((System.ComponentModel.ISupportInitialize)(this.n_w)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_0)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.n_time_upd)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txt_seek;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
@@ -454,6 +433,6 @@ namespace FFBatch
         private System.Windows.Forms.NumericUpDown n_crop_res_Y;
         private System.Windows.Forms.NumericUpDown n_crop_res_X;
         private System.Windows.Forms.CheckBox chk_center;
-        private System.Windows.Forms.NumericUpDown n_time_upd;
+        private System.Windows.Forms.DateTimePicker time_pre_subs;
     }
 }

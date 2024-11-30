@@ -38,7 +38,7 @@
             this.lbl_d_v = new System.Windows.Forms.Label();
             this.lbl_srv = new System.Windows.Forms.Label();
             this.cb_srv = new System.Windows.Forms.ComboBox();
-            this.lbl_val = new System.Windows.Forms.Label();
+            this.lbl_path = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -116,17 +116,17 @@
             this.cb_srv.Name = "cb_srv";
             this.cb_srv.SelectedIndexChanged += new System.EventHandler(this.cb_srv_SelectedIndexChanged);
             // 
-            // lbl_val
+            // lbl_path
             // 
-            resources.ApplyResources(this.lbl_val, "lbl_val");
-            this.lbl_val.Name = "lbl_val";
+            resources.ApplyResources(this.lbl_path, "lbl_path");
+            this.lbl_path.Name = "lbl_path";
             // 
             // Form34
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.Controls.Add(this.lbl_val);
+            this.Controls.Add(this.lbl_path);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lbl_expl);
             this.Controls.Add(this.lbl_ff_v);
@@ -135,7 +135,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form34";
-            this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.Form34_Load);
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -153,6 +152,6 @@
         private System.Windows.Forms.ComboBox cb_srv;
         private System.Windows.Forms.Label lbl_srv;
         private System.Windows.Forms.Label lbl_d_v;
-        private System.Windows.Forms.Label lbl_val;
+        private System.Windows.Forms.Label lbl_path;
     }
 }
