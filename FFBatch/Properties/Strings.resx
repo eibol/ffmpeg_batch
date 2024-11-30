@@ -1324,10 +1324,7 @@
     <value>Get total seconds/frames</value>
   </data>
   <data name="happy_y" xml:space="preserve">
-    <value>Happy New Year</value>
-  </data>
-  <data name="happy_y1" xml:space="preserve">
-    <value>Happy New Year</value>
+    <value>Merry Christmas and Happy New Year!</value>
   </data>
   <data name="header_fail" xml:space="preserve">
     <value>Could not write header</value>
@@ -2779,7 +2776,7 @@
     <value>Second pass</value>
   </data>
   <data name="sec_perf" xml:space="preserve">
-    <value>Security and performanace</value>
+    <value>System performanace</value>
   </data>
   <data name="selc_dev" xml:space="preserve">
     <value>Select audio capture device</value>
@@ -3606,5 +3603,20 @@
   </data>
   <data name="use_prev" xml:space="preserve">
     <value>Use Video preview</value>
+  </data>
+  <data name="mkv_attach" xml:space="preserve">
+    <value>Mkv attachments</value>
+  </data>
+  <data name="attach_png_mp4" xml:space="preserve">
+    <value>Image cover for MP4 (png)</value>
+  </data>
+  <data name="cover_mkv" xml:space="preserve">
+    <value>Image cover</value>
+  </data>
+  <data name="attach_ttf" xml:space="preserve">
+    <value>TrueType font</value>
+  </data>
+  <data name="local_file" xml:space="preserve">
+    <value>Application path file</value>
   </data>
 </root>

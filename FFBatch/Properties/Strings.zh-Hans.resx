@@ -1324,10 +1324,7 @@
     <value>获取总秒数/帧</value>
   </data>
   <data name="happy_y" xml:space="preserve">
-    <value>新年快乐</value>
-  </data>
-  <data name="happy_y1" xml:space="preserve">
-    <value>新年快乐</value>
+    <value>圣诞快乐，新年快乐</value>
   </data>
   <data name="header_fail" xml:space="preserve">
     <value>无法写入标题</value>
@@ -2779,7 +2776,7 @@
     <value>2 pass</value>
   </data>
   <data name="sec_perf" xml:space="preserve">
-    <value>安全和性能</value>
+    <value>系统性能</value>
   </data>
   <data name="selc_dev" xml:space="preserve">
     <value>选择音频捕获设备</value>
@@ -3606,5 +3603,14 @@
   </data>
   <data name="use_prev" xml:space="preserve">
     <value>使用视频预览</value>
+  </data>
+  <data name="attach_png_mp4" xml:space="preserve">
+    <value>MP4 的图像封面 (png)</value>
+  </data>
+  <data name="cover_mkv" xml:space="preserve">
+    <value>图片封面</value>
+  </data>
+  <data name="local_file" xml:space="preserve">
+    <value>应用程序路径文件</value>
   </data>
 </root>

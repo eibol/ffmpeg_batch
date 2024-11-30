@@ -1324,10 +1324,7 @@
     <value>Obtener total de segundos/fotogramas</value>
   </data>
   <data name="happy_y" xml:space="preserve">
-    <value>Feliz Año Nuevo</value>
-  </data>
-  <data name="happy_y1" xml:space="preserve">
-    <value>Feliz Año Nuevo</value>
+    <value>Feliz Navidad y próspero Año Nuevo</value>
   </data>
   <data name="header_fail" xml:space="preserve">
     <value>No se pudo escribir la cabecera</value>
@@ -2617,7 +2614,7 @@
     <value>Eliminar elemento seleccionado de la lista</value>
   </data>
   <data name="rem_img" xml:space="preserve">
-    <value>¿Quitar imagen'</value>
+    <value>¿Quitar imagen?</value>
   </data>
   <data name="rem_pres" xml:space="preserve">
     <value>¿Desea eliminar el preset seleccionado?</value>
@@ -2779,7 +2776,7 @@
     <value>Segunda pasada</value>
   </data>
   <data name="sec_perf" xml:space="preserve">
-    <value>Seguridad y rendimiento</value>
+    <value>Rendimiento del sistema</value>
   </data>
   <data name="selc_dev" xml:space="preserve">
     <value>Seleccionar dispositivo de captura de audio</value>
@@ -3606,5 +3603,20 @@
   </data>
   <data name="use_prev" xml:space="preserve">
     <value>Use previsualización</value>
+  </data>
+  <data name="mkv_attach" xml:space="preserve">
+    <value>Adjuntar a mkv</value>
+  </data>
+  <data name="attach_png_mp4" xml:space="preserve">
+    <value>Miniatura para mp4 (png)</value>
+  </data>
+  <data name="cover_mkv" xml:space="preserve">
+    <value>Imagen de portada</value>
+  </data>
+  <data name="attach_ttf" xml:space="preserve">
+    <value>Fuente TrueType</value>
+  </data>
+  <data name="local_file" xml:space="preserve">
+    <value>Fichero de la ruta de la aplicación</value>
   </data>
 </root>

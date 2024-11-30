@@ -1324,10 +1324,7 @@
     <value>Obtenha o total de segundos/frames</value>
   </data>
   <data name="happy_y" xml:space="preserve">
-    <value>Feliz Ano Novo</value>
-  </data>
-  <data name="happy_y1" xml:space="preserve">
-    <value>Feliz Ano Novo</value>
+    <value>Feliz Natal e próspero ano novo</value>
   </data>
   <data name="header_fail" xml:space="preserve">
     <value>Não foi possível escrever o cabeçalho</value>
@@ -2779,7 +2776,7 @@
     <value>Segundo passo</value>
   </data>
   <data name="sec_perf" xml:space="preserve">
-    <value>Segurança e desempenho</value>
+    <value>Desempenho do sistema</value>
   </data>
   <data name="selc_dev" xml:space="preserve">
     <value>Selecione o dispositivo de captura de áudio</value>
@@ -3606,5 +3603,20 @@
   </data>
   <data name="use_prev" xml:space="preserve">
     <value>Usar pré-visualização de vídeo</value>
+  </data>
+  <data name="mkv_attach" xml:space="preserve">
+    <value>Anexos MKV</value>
+  </data>
+  <data name="attach_png_mp4" xml:space="preserve">
+    <value>Formato de miniatura P4 (PNG)</value>
+  </data>
+  <data name="cover_mkv" xml:space="preserve">
+    <value>Capa da imagem</value>
+  </data>
+  <data name="attach_ttf" xml:space="preserve">
+    <value>Fonte TrueType</value>
+  </data>
+  <data name="local_file" xml:space="preserve">
+    <value>Arquivo de caminho do aplicativo</value>
   </data>
 </root>

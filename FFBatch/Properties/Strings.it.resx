@@ -1325,10 +1325,7 @@ Non è possibile visualizzare l'anteprima del ritaglio.</value>
     <value>Analisi totale secondi/fotogrammi</value>
   </data>
   <data name="happy_y" xml:space="preserve">
-    <value>Buon Anno</value>
-  </data>
-  <data name="happy_y1" xml:space="preserve">
-    <value>Buon anno</value>
+    <value>Buon Natale e felice anno nuovo</value>
   </data>
   <data name="header_fail" xml:space="preserve">
     <value>Impossibile scrivere l'intestazione</value>
@@ -2780,7 +2777,7 @@ Non è possibile visualizzare l'anteprima del ritaglio.</value>
     <value>Secondo passaggio</value>
   </data>
   <data name="sec_perf" xml:space="preserve">
-    <value>Sicurezza e prestazioni</value>
+    <value>Prestazioni del sistema</value>
   </data>
   <data name="selc_dev" xml:space="preserve">
     <value>Seleziona dispositivo registrazione audio</value>
@@ -3609,5 +3606,20 @@ Puoi annullare l'aggiunta di file in qualsiasi momento.</value>
   </data>
   <data name="use_prev" xml:space="preserve">
     <value>Usa l'anteprima video</value>
+  </data>
+  <data name="mkv_attach" xml:space="preserve">
+    <value>Allegati Mkv</value>
+  </data>
+  <data name="attach_png_mp4" xml:space="preserve">
+    <value>Modulo miniatura MP4 (PNG)</value>
+  </data>
+  <data name="cover_mkv" xml:space="preserve">
+    <value>Immagine di copertina</value>
+  </data>
+  <data name="attach_ttf" xml:space="preserve">
+    <value>Carattere TrueType</value>
+  </data>
+  <data name="local_file" xml:space="preserve">
+    <value>File del percorso dell'applicazione</value>
   </data>
 </root>

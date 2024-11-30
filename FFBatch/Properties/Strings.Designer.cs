@@ -601,6 +601,24 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Image cover for MP4 (png).
+        /// </summary>
+        internal static string attach_png_mp4 {
+            get {
+                return ResourceManager.GetString("attach_png_mp4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a TrueType font.
+        /// </summary>
+        internal static string attach_ttf {
+            get {
+                return ResourceManager.GetString("attach_ttf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a This feature attempts to add an exclusion to Windows Security for current ffmpeg.exe..
         /// </summary>
         internal static string attempt_exc {
@@ -1605,6 +1623,15 @@ namespace FFBatch.Properties {
         internal static string copy {
             get {
                 return ResourceManager.GetString("copy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Image cover.
+        /// </summary>
+        internal static string cover_mkv {
+            get {
+                return ResourceManager.GetString("cover_mkv", resourceCulture);
             }
         }
         
@@ -3706,7 +3733,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Happy New Year.
+        ///   Busca una cadena traducida similar a Merry Christmas and Happy New Year.
         /// </summary>
         internal static string happy_y {
             get {
@@ -4372,6 +4399,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Application path file.
+        /// </summary>
+        internal static string local_file {
+            get {
+                return ResourceManager.GetString("local_file", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Logging is disabled.
         /// </summary>
         internal static string log_dis {
@@ -4719,6 +4755,15 @@ namespace FFBatch.Properties {
         internal static string mix_urls2 {
             get {
                 return ResourceManager.GetString("mix_urls2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Mkv attachments.
+        /// </summary>
+        internal static string mkv_attach {
+            get {
+                return ResourceManager.GetString("mkv_attach", resourceCulture);
             }
         }
         
@@ -8089,7 +8134,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Security and performanace.
+        ///   Busca una cadena traducida similar a System performanace.
         /// </summary>
         internal static string sec_perf {
             get {

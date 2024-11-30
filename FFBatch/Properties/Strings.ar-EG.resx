@@ -1324,10 +1324,7 @@
     <value>احصل على إجمالي الثواني / الإطارات</value>
   </data>
   <data name="happy_y" xml:space="preserve">
-    <value>سنة جديدة سعيدة</value>
-  </data>
-  <data name="happy_y1" xml:space="preserve">
-    <value>سنة جديدة سعيدة</value>
+    <value>عيد ميلاد سعيد وسنة جديدة سعيدة</value>
   </data>
   <data name="header_fail" xml:space="preserve">
     <value>تعذر كتابة العنوان</value>
@@ -3606,5 +3603,14 @@
   </data>
   <data name="use_prev" xml:space="preserve">
     <value>استخدم معاينة الفيديو</value>
+  </data>
+  <data name="attach_png_mp4" xml:space="preserve">
+    <value>غلاف الصورة لملف MP4 (png)</value>
+  </data>
+  <data name="cover_mkv" xml:space="preserve">
+    <value>غلاف الصورة</value>
+  </data>
+  <data name="attach_ttf" xml:space="preserve">
+    <value>خط تروتايب</value>
   </data>
 </root>
