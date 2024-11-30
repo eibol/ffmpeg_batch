@@ -1,11 +1,12 @@
-﻿3.1.0
-• FFmpeg.exe/yt-dlp.exe no longer included in installer versión (downloadable within application).
-• FFmpeg.exe checksum warnings removed, no longer useful.
-• Enhanced cropping tool menu, added resolutions, location and aspect ratio with preview.
-• Added setting in Subtitles tab to change font type, size and color for hardcoded (burnt) subtitles, and attach font for soft subtitles.
-• Added menu wizard to create metadata chapters text file (;FFMETADATA1).
-• Fixed download test failing for multiple link types. Sequential download/link/playlist buttons now supporting all yt-dlp sites:
-https://github.com/yt-dlp/yt-dlp/blob/master/supportedsites.md
-• Fixed error downloading yt-dlp valid links in sequential download different from YouTube or m3u links.
-• Fixed minor bug making application restart required when replacing ffmpeg.exe.
-• Fixed some missing translations and bad dialog layouts in some languages.
+3.1.2
+• Linux Wine version back (Wine 9 or higher required) with latest functionality, better performance and more reliable.
+• New Settings -> System performance -> Disable visual styles, to improve startup time on slow computers.
+• Added menu in parameters input files button to add mkv attachments (cover/font) and mp4 png thumbnail.
+• Fixed error trimming/joining with quick file adding enabled.
+• Fixed bug in multiple presets wizard.
+• Fixed bug in cropping tool selecting preview time.
+• Fixed bug in yt-dlp mkv container download.
+• Fixed pause/resume during multi-file encoding.
+• Fixed minor bug saving settings (filter zero duration setting).
+• Fixed minor bug selecting ffmpeg.exe outside application path.
+• Fixed minor layout and translation fixes.
