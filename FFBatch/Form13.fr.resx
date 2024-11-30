@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btn_browse_path_m3u.Text" xml:space="preserve">
-    <value>Examiner...</value>
+    <value>Parcourir...</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>Exécutable</value>
@@ -137,7 +137,7 @@
     <value>Accepter</value>
   </data>
   <data name="button3.Text" xml:space="preserve">
-    <value>Examiner...</value>
+    <value>Parcourir...</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 13</value>

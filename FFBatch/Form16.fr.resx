@@ -134,7 +134,7 @@
 </value>
   </data>
   <data name="btn_cancel.Text" xml:space="preserve">
-    <value>Fermer fenêtre</value>
+    <value>Annuler</value>
   </data>
   <data name="item_up.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -224,7 +224,7 @@
     <value>234, 24</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Tâches de multiplexage</value>
+    <value>Multiplexage</value>
   </data>
   <data name="pic.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -371,7 +371,7 @@
     <value>67, 87</value>
   </data>
   <data name="btn_jobs.Text" xml:space="preserve">
-    <value>Démarrer des tâches</value>
+    <value>Démarrer</value>
   </data>
   <data name="btn_logs_url.Location" type="System.Drawing.Point, System.Drawing">
     <value>609, 439</value>
@@ -380,7 +380,7 @@
     <value>88, 88</value>
   </data>
   <data name="btn_logs_url.Text" xml:space="preserve">
-    <value>Afficher l'enregistrement</value>
+    <value>Afficher la log</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -2068,7 +2068,7 @@
     <value>True</value>
   </data>
   <data name="btn_abort.Text" xml:space="preserve">
-    <value>Avorter</value>
+    <value>Abandonner</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Exécutable</value>

@@ -2117,13 +2117,13 @@
     <value>True</value>
   </data>
   <data name="btn_cancel.Text" xml:space="preserve">
-    <value>Rappelez-vous plus tard</value>
+    <value>Rappelez-moi plus tard</value>
   </data>
   <data name="btn_down.Text" xml:space="preserve">
     <value>Obtenir la mise à jour</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>Passez cette version</value>
+    <value>Igonrer cette version</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Notes de version:</value>

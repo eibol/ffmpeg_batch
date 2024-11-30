@@ -2060,12 +2060,12 @@
     <value>Accepter</value>
   </data>
   <data name="button3.Text" xml:space="preserve">
-    <value>Examiner...</value>
+    <value>Parcourir...</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Tapez ou collez le chemin local ou distant ici :</value>
+    <value>Entrez le chemin local ou distant :</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>Itinéraire:</value>
+    <value>Chemin:</value>
   </data>
 </root>

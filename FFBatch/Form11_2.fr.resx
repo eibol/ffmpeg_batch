@@ -236,9 +236,9 @@
     <value>True</value>
   </data>
   <data name="btn_abort.Text" xml:space="preserve">
-    <value>Avorter</value>
+    <value>Abandonner</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Contenu de la liste de lecture</value>
+    <value>Liste de lecture</value>
   </data>
 </root>

@@ -128,7 +128,7 @@
     <value>162, 17</value>
   </data>
   <data name="radio_demuxer.Text" xml:space="preserve">
-    <value>Utiliser le concaténateur natif</value>
+    <value>Utiliser la concaténation native</value>
   </data>
   <data name="chk_copy.Location" type="System.Drawing.Point, System.Drawing">
     <value>238, 80</value>
@@ -155,7 +155,7 @@
     <value>Dans ce mode, les fichiers multimédias sont joints en copiant les flux, à condition d'avoir les mêmes caractéristiques (codec, taille, débit). REMARQUE : Tous les formats ne prennent pas en charge la copie de flux. Si la lecture échoue, un réencodage est nécessaire.</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
-    <value>Commencer</value>
+    <value>Démarrer</value>
   </data>
   <data name="btn_cancel.Text" xml:space="preserve">
     <value>Annuler</value>
@@ -173,16 +173,16 @@
     <value>166, 17</value>
   </data>
   <data name="chk_batch_concat.Text" xml:space="preserve">
-    <value>Activer la concaténation série</value>
+    <value>Activer la concaténation en série</value>
   </data>
   <data name="txt_batch_concat.Text" xml:space="preserve">
-    <value>Dans ce mode, les fichiers de début et de fin spécifiés sont concaténés à chaque fichier de la liste, au lieu de concaténer la liste en un seul fichier.</value>
+    <value>Dans ce mode, les fichiers de début et de fin spécifiés sont agrégés à chaque fichier de la liste.</value>
   </data>
   <data name="btn_end.Text" xml:space="preserve">
-    <value>Examiner...</value>
+    <value>Parcourir...</value>
   </data>
   <data name="btn_intro.Text" xml:space="preserve">
-    <value>Examiner...</value>
+    <value>Parcourir...</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 13</value>
