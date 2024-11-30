@@ -3841,10 +3841,10 @@
     <value>إظهار مربع الحوار هذا عند بدء التشغيل</value>
   </data>
   <data name="radio_split.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 19</value>
+    <value>158, 19</value>
   </data>
   <data name="radio_split.Text" xml:space="preserve">
-    <value>معالج تقسيم الملف</value>
+    <value>معالج تقسيم الملف/الفصل</value>
   </data>
   <data name="radio_images.Size" type="System.Drawing.Size, System.Drawing">
     <value>127, 19</value>
@@ -4073,7 +4073,7 @@
     <value>يساعد</value>
   </data>
   <data name="lbl_amd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 15</value>
+    <value>78, 17</value>
   </data>
   <data name="lbl_amd.Text" xml:space="preserve">
     <value>محدد الجودة</value>
@@ -4114,13 +4114,13 @@
     <value>مرجع</value>
   </data>
   <data name="label27.Size" type="System.Drawing.Size, System.Drawing">
-    <value>25, 15</value>
+    <value>27, 17</value>
   </data>
   <data name="label27.Text" xml:space="preserve">
     <value>بائع</value>
   </data>
   <data name="label26.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 15</value>
+    <value>83, 17</value>
   </data>
   <data name="label26.Text" xml:space="preserve">
     <value>تنسيق البكسل</value>
@@ -4129,25 +4129,25 @@
     <value>24, 107</value>
   </data>
   <data name="label25.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 15</value>
+    <value>86, 17</value>
   </data>
   <data name="label25.Text" xml:space="preserve">
     <value>حساب تعريفي</value>
   </data>
   <data name="label23.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 15</value>
+    <value>89, 17</value>
   </data>
   <data name="label23.Text" xml:space="preserve">
     <value>جودة ثابتة CRF</value>
   </data>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 15</value>
+    <value>73, 17</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
     <value>معدل الإطار</value>
   </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 15</value>
+    <value>83, 17</value>
   </data>
   <data name="label16.Text" xml:space="preserve">
     <value>تنسيق البكسل</value>
@@ -4159,7 +4159,7 @@
     <value>65, 21</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 15</value>
+    <value>75, 17</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>المعد مسبقا</value>
@@ -4168,7 +4168,7 @@
     <value>268, 41</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 15</value>
+    <value>72, 17</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>وضع الترميز</value>
@@ -4177,7 +4177,7 @@
     <value>117, 40</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 15</value>
+    <value>114, 17</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>برنامج تشفير الفيديو</value>
@@ -4209,7 +4209,7 @@
 </value>
   </data>
   <data name="label47.Size" type="System.Drawing.Size, System.Drawing">
-    <value>61, 15</value>
+    <value>67, 17</value>
   </data>
   <data name="label47.Text" xml:space="preserve">
     <value>ابعاد متزنة:</value>
@@ -4249,7 +4249,7 @@
     <value>375, 201</value>
   </data>
   <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 15</value>
+    <value>87, 17</value>
   </data>
   <data name="label21.Text" xml:space="preserve">
     <value>تسريع / لأسفل</value>
@@ -4279,13 +4279,13 @@
     <value>253, 48</value>
   </data>
   <data name="lbl_crop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 15</value>
+    <value>55, 17</value>
   </data>
   <data name="lbl_crop.Text" xml:space="preserve">
     <value>اقتصاص</value>
   </data>
   <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 15</value>
+    <value>68, 17</value>
   </data>
   <data name="label20.Text" xml:space="preserve">
     <value>تغيير الحجم</value>
@@ -4297,7 +4297,7 @@
     <value>55, 23</value>
   </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>43, 15</value>
+    <value>47, 17</value>
   </data>
   <data name="label18.Text" xml:space="preserve">
     <value>استدارة</value>
@@ -4306,19 +4306,16 @@
     <value>مرشحات الفيديو</value>
   </data>
   <data name="chk_normalize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 19</value>
+    <value>58, 21</value>
   </data>
   <data name="chk_normalize.Text" xml:space="preserve">
     <value>تطبيع</value>
   </data>
   <data name="label32.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 15</value>
+    <value>87, 17</value>
   </data>
   <data name="label32.Text" xml:space="preserve">
     <value>تسريع / لأسفل</value>
-  </data>
-  <data name="label29.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 15</value>
   </data>
   <data name="label29.Text" xml:space="preserve">
     <value>حجم قطعة</value>
@@ -4327,19 +4324,19 @@
     <value>388, 41</value>
   </data>
   <data name="label22.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 15</value>
+    <value>34, 17</value>
   </data>
   <data name="label22.Text" xml:space="preserve">
     <value>قطع</value>
   </data>
   <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 15</value>
+    <value>60, 17</value>
   </data>
   <data name="label14.Text" xml:space="preserve">
     <value>أقل جودة</value>
   </data>
   <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 15</value>
+    <value>67, 17</value>
   </data>
   <data name="label15.Text" xml:space="preserve">
     <value>جودة أعلى</value>
@@ -4360,7 +4357,7 @@
     <value>195, 41</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 15</value>
+    <value>74, 17</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>معدل العينة</value>
@@ -4369,7 +4366,7 @@
     <value>18, 41</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 15</value>
+    <value>76, 17</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>ترميز الصوت</value>
@@ -4560,7 +4557,7 @@
     <value>54, 183</value>
   </data>
   <data name="chk_save_pres.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 19</value>
+    <value>90, 21</value>
   </data>
   <data name="chk_save_pres.Text" xml:space="preserve">
     <value>حفظ مسبقا</value>
@@ -4569,13 +4566,10 @@
     <value>51, 41</value>
   </data>
   <data name="label24.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 15</value>
+    <value>75, 17</value>
   </data>
   <data name="label24.Text" xml:space="preserve">
     <value>حاوية الإخراج</value>
-  </data>
-  <data name="wz_end.Size" type="System.Drawing.Size, System.Drawing">
-    <value>527, 261</value>
   </data>
   <data name="wz_end.Text" xml:space="preserve">
     <value>اكتمل الإعداد المسبق</value>
@@ -6811,7 +6805,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAD8
-        swAAAk1TRnQBSQFMAgEBBQEAAUQBCgFEAQoB3QEAAXwBAAT/AREBAAj/AUIBTQE2BwABNgMAASgDAAF0
+        swAAAk1TRnQBSQFMAgEBBQEAAUwBCgFMAQoB3QEAAXwBAAT/AREBAAj/AUIBTQE2BwABNgMAASgDAAF0
         AQMCAAH4AwABAQEAARAFAAHAAbABBv8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
         /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
         /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
@@ -7586,8 +7580,8 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAD6
-        GgAAAk1TRnQBSQFMAgEBAwEAAaQBCAGkAQgBGAEAARgBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFg
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAD0
+        GgAAAk1TRnQBSQFMAgEBAwEAAawBCAGsAQgBGAEAARgBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFg
         AwABGAMAAQEBAAEgBgABJC4AAwkBCwMzAlICVAGoA14B3QNeAfADXgHwAVsCYQHeAVICVAGoAzMBUgMJ
         AQyAAAM7AWQDWwHEA2EB3gNfAdgDXgHXA14B1wNeAdcDXgHXA14B1wNfAdgDXwHYA14B1wNfAdgDXwHY
         A18B2ANfAdgDXgHXA14B1wNfAdgDYQHeA1oBvwM2AVd4AAMEAQUDQgF1A14B0gEAAbIC/wEAAbIC/wEA
@@ -7604,7 +7598,7 @@
         Ae4B/wIAAe8B/wIAAe4B/wIAAe8B/wIAAe8B/wIAAe8B/wIAAe8B/wIAAe4B/wIAAe8B/wHdAdwB/AX/
         A2MB6WgAAxwBJwNgAeMBAAG2Av8BAAG2Av8BAAG2Av8BAAG2Av8BAAG3Av8BAAG5Av8BAAGnAfsB/wEA
         AYkB7AH/AQABgQHnAf8BAAGSAe0B/wEAAZ0B7wH/AQABmgHuAf8BAAGaAe4B/wEAAZoB7gH/AQABmwHu
-        Af8BAAGYAe4B/wFbAmEB5AMdASgkAAM4AV0DAAH/AQAB/wGJAf8BAAHNAQAB/wNTAfgDFQEcLAADWwHE
+        Af8BAAGYAe4B/wFbAmEB5AMdASgkAAM4AV0DAAH/AQAB/wGJAf8BAAHNAQAB/wNVAfgDFQEcLAADWwHE
         BP8BtwG2AfkB/wIAAewB/wIAAfAB/wIAAfAB/wIAAfAB/wIAAe4B/wIAAfAB/wIAAfAB/wIAAe8B/wIA
         AfAB/wIAAfEB/wIAAe8B/wIAAe4B/wIAAe8B/wIAAfAB/wIAAfAB/wIAAfAB/wIAAfAB/wIAAe0B/wHH
         AcYB+wX/A1cBsWQAAwMBBANaAccBAAGyAv8BAAG3Av8BAAG2Av8BAAG2Av8BAAG2Av8BAAG0Av8BAAG5
@@ -7643,66 +7637,66 @@
         Af0BAAGkAQAB/wEAAcMBAAH/AQABtgEAAf8BAAG7AQAB/wEAAcgBAAH/AQABywEAAf8DAAH/AQABgQEA
         Af8BAAHXAYAB/wEAAcUBAAH/AQABxAEAAf8BAAHAAQAB/wEAAc4BjAH/AQABmwEAAf8DXQHRBAIcAAMJ
         AQsDXAHDBP8BiAGHAfYB/wIAAe0B/wIAAfAB/wIAAfAB/wIAAe8B/wIAAe8B/wL7Af4B/wLsAf0B/wIA
-        Ae8B/wIAAfAB/wIAAfAB/wIAAfAB/wIAAe0B/wKaAfcF/wNWAbIDAwEEaAABZAJlAfEBAAG2Av8BAAG2
-        Av8BAAG2Av8BAAG2Av8BAAG2Av8BAAG2Av8BAAG1Av8BAAG7Av8BAAGnAf0B/wGJAdIB+A3/AQABvAHz
-        Af8BAAGCAekB/wEAAZgB7gH/AQABmwHuAf8BAAGbAe4B/wEAAZgB7QH/AQABkwHqAf8BAAGtAfgB/wEA
-        Ab4C/wFkAmUB8QMfASwBQQFqAUEB+QEAAZsBAAH/AQABwAEAAf8BAAG0AQAB/wEAAbgBAAH/AQABxgEA
-        Af8BAAHHAQAB/wMAAf8DQAFvA1ABmwEAAYkBAAH/AQAB0QGCAf8BAAG+AQAB/wEAAbYBAAH/AQABrwEA
-        Af8BAAHMAY8B/wEAAZgBAAH/A1wByyAAAzIBTwMrAfwB4QHgAf0B/wIAAe8B/wIAAe8B/wIAAfAB/wIA
-        Ae8B/wIAAfAB/wL9Av8C7gH+Af8CAAHwAf8CAAHvAf8CAAHwAf8CAAHvAf8CAAHwAf8C6gH+Af8DYgH2
-        AykBPWwAA14B8AEAAbYC/wEAAbYC/wEAAbYC/wEAAbYC/wEAAbYC/wEAAbYC/wEAAboC/wEAAboC/wEA
-        AZIB7QH/AQABgwHnAf8BuQHjAfoN/wEAAcMB9AH/AQABiAHrAf8BAAGcAe8B/wEAAZcB7QH/AQABkwHq
-        Af8BAAGtAfgB/wEAAb4C/wEAAbYC/wFkAmUB8QMAAf8BAAGlAQAB/wEAAcMBhgH/AQABswEAAf8BAAG4
-        AQAB/wEAAcUBAAH/AQABwwEAAf8DAAH/Az0BaQgAA1UBrQEAAY0BAAH/AQABzAGHAf8BAAG+AQAB/wEA
-        AbkBAAH/AQABsQEAAf8BAAHGAY0B/wEAAZgBAAH/A10B0RwAAwYBCANcAcME/wKIAfYB/wIAAe4B/wIA
-        AfAB/wIAAe8B/wIAAfEF/wH1AfYB/gH/AgAB8AH/AgAB7wH/AgAB8AH/AgAB7gH/ApkB9wX/A1cBsQQB
-        bAADYAHgAQABtAL/AQABtgL/AQABtgL/AQABtgL/AQABtgL/AQABugL/AQABsAH8Af8BAAGTAe4B/wEA
-        AZcB6gH/AQABkgHtAf8BAAGGAeoB/wGjAdgB+A3/AQABtAHyAf8BAAGJAeoB/wEAAZMB6gH/AQABrQH4
-        Af8BAAG+Av8BAAG2Av8BAAG0Av8DYgHhA0cBggEAAYcBAAH/AQABvgEAAf8BAAG/AQAB/wEAAcMBAAH/
-        AQAByAGEAf8BAAGDAQAB/wNCAXQQAANWAbYBAAGTAQAB/wGBAc4BkAH/AQABvwEAAf8BAAG6AQAB/wEA
-        AbQBAAH/AYoBxwGTAf8BAAGUAQAB/wFbAV8BWwHQHAADMwFQA00B+gLiAf0B/wIAAe8B/wIAAe8B/wIA
-        Ae8B/wIAAfIF/wL9Av8CAAHxAf8CAAHvAf8CAAHvAf8CAAHwAf8C6wH9Af8DWgH1AykBPnAAA1MBpwEA
-        AbAC/wEAAbYC/wEAAbYC/wEAAbYC/wEAAbYC/wEAAa4C/wEAAc4B+wH/AcgB4gH4Af8B7QH2Af4B/wGx
-        Ad4B+QH/AgAB5wH/AgAB5wH/Ac0B6AH7Cf8BsgHbAfgB/wIAAeYB/wEAAa4B+AH/AQABvgL/AQABtgL/
-        AQABtgL/AQABsAL/AVICVAGoBAADSQGHAQABhQEAAf8BhQHKAY4B/wGAAcoBiQH/AQABiwEAAf8DRQF8
-        GAADWAG6AQABnAEAAf8BkgHTAZwB/wEAAcIBgQH/AQABvgEAAf8BAAG6AQAB/wGWAcoBmwH/AQABjAEA
-        Af8BWwFdAVsByhgAAwUBBgNbAcQE/wGJAYgB9gH/AgAB7QH/AgAB7gH/AgAB8wn/AgAB8gH/AgAB7gH/
-        AgAB7QH/ApkB9wH/Av4C/wNXAbF0AAMwAUsBAAGuAv8BAAG3Av8BAAG2Av8BAAG2Av8BAAG3Av8BAAGl
-        Av8BhQHcDv8BAAG/AfQB/wEAAasB8QH/AeMB8wH9Cf8BowHRAfQB/wEAAZkB9AH/AQABvgL/AQABtgL/
-        AQABtgL/AQABtwL/AQABrgL/AzABTAgAA00BkgEAAbMBAAH/AQABswEAAf8DRwGCIAABWgFbAVoBxAEA
-        AaMBAAH/AaIB2QGnAf8BhgHIAYkB/wGDAcQBhgH/AYYBwwGHAf8BpgHSAagB/wEAAYoBAAH/AVoBWwFa
-        AcQYAAMxAU0DagH5AeUB5AH9Af8CAAHvAf8CAAHtAf8CAAHzCf8CAAHyAf8CAAHsAf8CAAHwAf8C7wH+
-        Af8DYAHzAygBPHQAAwUBBgNfAdUBAAG0Av8BAAG2Av8BAAG2Av8BAAG2Av8BAAGyAv8BAAGxAv8B6wH4
-        HP8B/gH/AQABugH7Af8BAAGxAv8BAAG2Av8BAAG2Av8BAAG2Av8BAAG0Av8DXwHVAwYBBwwAA0kBhgNG
-        AX4oAAFbAVwBWwHNAQABqgEAAf8BsAHiAbIB/wGRAdEBkgH/AY8BzAGPAf8BlQHOAZQB/wGlAdcBpQH/
-        AQABnAEAAf8DWAG6FAAEAQNbAcUE/wGIAYcB9gH/AgAB7QH/AgAB8QH/AtEB+wH/As8B+wH/AgAB8AH/
-        AgAB7AH/ApsB+AH/AvwC/wNWAbJ8AAM/AW0BAAGpAv8BAAG4Av8BAAG2Av8BAAG2Av8BAAG4Av8BAAGs
-        Av8BAAG5Av8B0AHuAf4R/wHgAfQB/gH/AQABxQH+Af8BAAGsAv8BAAG4Av8BAAG2Av8BAAG2Av8BAAG4
-        Av8BAAGpAv8BPwJAAW5EAAFbAV8BWwHYAQABsAEAAf8BxAHvAcQB/wGdAdsBnAH/AZUB1wGVAf8BxQHx
-        AcUB/wGJAdIBiQH/AQABmAEAAf8YAAMwAUwDXAH4AukB/gH/AgAB8AH/AgAB7gH/AgAB8gH/AgAB8QH/
-        AgAB7gH/AgAB8QH/AfMB8gH+Af8DYAHzAycBOnwAAwMBBANaAccBAAGyAv8BAAG3Av8BAAG2Av8BAAG2
-        Av8BAAG4Av8BAAGsAv8BAAGvAf4B/wEAAcMC/wEAAdIC/wEAAdMC/wEAAccC/wEAAbIB/gH/AQABqgL/
-        AQABtwL/AQABtgL/AQABtgL/AQABtwL/AQABsgL/A1oBxwMEAQVEAAMCAQMBXAFeAVwB2QEAAbkBAAH/
-        Ac8B/QHPAf8BywH9AcsB/wGGAdYBhgH/AwAB/wMnATocAANbAcUC/gL/AYkBiAH2Af8CAAHtAf8CAAHu
-        Af8CAAHvAf8CAAHtAf8CmwH4Af8C/AL/A1YBs4QAAxsBJgNgAeMBAAG1Av8BAAG3Av8BAAG2Av8BAAG2
-        Av8BAAG4Av8BAAG0Av8BAAGsAv8BAAGpAv8BAAGpAv8BAAGrAv8BAAGzAv8BAAG4Av8BAAG2Av8BAAG2
-        Av8BAAG3Av8BAAG1Av8BWwJhAeQDHAEnTAADCQELA2AB4AEAAc8BAAH/AbcB8QG3Af8DAAH/AysBQiAA
-        Ay4BSANqAfkC7gH+Af8CAAHwAf8CAAHuAf8CAAHuAf8CAAHxAf8C+AH+Af8DWgH1AyYBOIgAAyMBMwFb
-        AmEB5AEAAbIC/wEAAbgC/wEAAbYC/wEAAbYC/wEAAbYC/wEAAbYC/wEAAbcC/wEAAbcC/wEAAbYC/wEA
-        AbYC/wEAAbYC/wEAAbYC/wEAAbcC/wEAAbMC/wFbAmEB5AMkATRUAAMNAREDXgHtAQABvwEAAf8DLgFH
-        KAADWgHHAvwC/wLKAfwB/wIAAfMB/wIAAfQB/wLTAfwB/wL7Av8DVgGzkAADHgErAVoCWwHEAQABrQL/
-        AQABtQL/AQABtwL/AQABtgL/AQABtgL/AQABtgL/AQABtgL/AQABtgL/AQABtgL/AQABtwL/AQABtQL/
-        AQABrQL/A1sBxQMeAStcAAM2AVcDQgF0LAADKwFBA2oB+Qz/Av4C/wNtAfcDIQEwlAADAwEEA0IBdANe
-        AdIBAAGyAv8BAAGyAv8BAAG0Av8BAAG2Av8BAAG2Av8BAAG0Av8BAAGyAv8BAAGxAv8DXgHSA0IBdAMD
-        AQSYAANWAbUDTQH6A4AB/gOAAf4DTQH6A1IBoKAAAwkBCwMzAVEDUwGnAV0CYQHcAVkCYgHvAVkCYgHv
-        AV0CYQHcA1MBpwMzAVIDCQELoAADBAEFA04BlANhAeYDYQHiA0oBiogAAUIBTQE+BwABPgMAASgDAAFg
-        AwABGAMAAQEBAAEBBQABIAEBFgAD/wEAAf4BAAF/A/8BgAEAAQEDAAH4AQABHwP/BgAB8AEAAQ8B/wGf
-        Af8GAAHgAQABBwH/AQ8B/wYAAcABAAEDAf4BBwH/BgABgAEAAQEB/AEDAf8GAAGAAQABAQH4AQEB/wkA
-        AfABAAH/AYABAAEBBgAB4AEAAX8BgAEAAQEGAAHAAQABPwHAAQABAwYAAYABAAEfAcABAAEDCAABHwHg
-        AQABBwcAAWABDwHgAQABBwcAAfABBwHwAQABDwYAAYEB+AEDAfABAAEfBgABwwH8AQEB+AEAAR8GAAHn
-        Af4BAAH4AQABPwMAAYABAAEBAv8BAAH8AQABPwMAAYABAAEBAv8BAAH+AQABfwMAAcABAAEDAv8BgQH+
-        AQABfwMAAeABAAEHAv8BwwH/AQAB/wMAAfABAAEPAv8B5wH/AQAB/wMAAfgBAAEfBP8BgQH/AwAB/gEA
-        AX8E/wGDAf8DAAs=
+        Ae8B/wIAAfAB/wIAAfAB/wIAAfAB/wIAAe0B/wKaAfcF/wNWAbIDAwEEaAADZQHxAQABtgL/AQABtgL/
+        AQABtgL/AQABtgL/AQABtgL/AQABtgL/AQABtQL/AQABuwL/AQABpwH9Af8BiQHSAfgN/wEAAbwB8wH/
+        AQABggHpAf8BAAGYAe4B/wEAAZsB7gH/AQABmwHuAf8BAAGYAe0B/wEAAZMB6gH/AQABrQH4Af8BAAG+
+        Av8DZQHxAx8BLAFBAWoBQQH5AQABmwEAAf8BAAHAAQAB/wEAAbQBAAH/AQABuAEAAf8BAAHGAQAB/wEA
+        AccBAAH/AwAB/wNAAW8DUAGbAQABiQEAAf8BAAHRAYIB/wEAAb4BAAH/AQABtgEAAf8BAAGvAQAB/wEA
+        AcwBjwH/AQABmAEAAf8DXAHLIAADMgFPAysB/AHhAeAB/QH/AgAB7wH/AgAB7wH/AgAB8AH/AgAB7wH/
+        AgAB8AH/Av0C/wLuAf4B/wIAAfAB/wIAAe8B/wIAAfAB/wIAAe8B/wIAAfAB/wLqAf4B/wNiAfYDKQE9
+        bAADXgHwAQABtgL/AQABtgL/AQABtgL/AQABtgL/AQABtgL/AQABtgL/AQABugL/AQABugL/AQABkgHt
+        Af8BAAGDAecB/wG5AeMB+g3/AQABwwH0Af8BAAGIAesB/wEAAZwB7wH/AQABlwHtAf8BAAGTAeoB/wEA
+        Aa0B+AH/AQABvgL/AQABtgL/A2UB8QMAAf8BAAGlAQAB/wEAAcMBhgH/AQABswEAAf8BAAG4AQAB/wEA
+        AcUBAAH/AQABwwEAAf8DAAH/Az0BaQgAA1UBrQEAAY0BAAH/AQABzAGHAf8BAAG+AQAB/wEAAbkBAAH/
+        AQABsQEAAf8BAAHGAY0B/wEAAZgBAAH/A10B0RwAAwYBCANcAcME/wKIAfYB/wIAAe4B/wIAAfAB/wIA
+        Ae8B/wIAAfEF/wH1AfYB/gH/AgAB8AH/AgAB7wH/AgAB8AH/AgAB7gH/ApkB9wX/A1cBsQQBbAADYAHg
+        AQABtAL/AQABtgL/AQABtgL/AQABtgL/AQABtgL/AQABugL/AQABsAH8Af8BAAGTAe4B/wEAAZcB6gH/
+        AQABkgHtAf8BAAGGAeoB/wGjAdgB+A3/AQABtAHyAf8BAAGJAeoB/wEAAZMB6gH/AQABrQH4Af8BAAG+
+        Av8BAAG2Av8BAAG0Av8DYgHhA0cBggEAAYcBAAH/AQABvgEAAf8BAAG/AQAB/wEAAcMBAAH/AQAByAGE
+        Af8BAAGDAQAB/wNCAXQQAANWAbYBAAGTAQAB/wGBAc4BkAH/AQABvwEAAf8BAAG6AQAB/wEAAbQBAAH/
+        AYoBxwGTAf8BAAGUAQAB/wFbAV8BWwHQHAADMwFQA00B+gLiAf0B/wIAAe8B/wIAAe8B/wIAAe8B/wIA
+        AfIF/wL9Av8CAAHxAf8CAAHvAf8CAAHvAf8CAAHwAf8C6wH9Af8DWgH1AykBPnAAA1MBpwEAAbAC/wEA
+        AbYC/wEAAbYC/wEAAbYC/wEAAbYC/wEAAa4C/wEAAc4B+wH/AcgB4gH4Af8B7QH2Af4B/wGxAd4B+QH/
+        AgAB5wH/AgAB5wH/Ac0B6AH7Cf8BsgHbAfgB/wIAAeYB/wEAAa4B+AH/AQABvgL/AQABtgL/AQABtgL/
+        AQABsAL/AVICVAGoBAADSQGHAQABhQEAAf8BhQHKAY4B/wGAAcoBiQH/AQABiwEAAf8DRQF8GAADWAG6
+        AQABnAEAAf8BkgHTAZwB/wEAAcIBgQH/AQABvgEAAf8BAAG6AQAB/wGWAcoBmwH/AQABjAEAAf8BWwFd
+        AVsByhgAAwUBBgNbAcQE/wGJAYgB9gH/AgAB7QH/AgAB7gH/AgAB8wn/AgAB8gH/AgAB7gH/AgAB7QH/
+        ApkB9wH/Av4C/wNXAbF0AAMwAUsBAAGuAv8BAAG3Av8BAAG2Av8BAAG2Av8BAAG3Av8BAAGlAv8BhQHc
+        Dv8BAAG/AfQB/wEAAasB8QH/AeMB8wH9Cf8BowHRAfQB/wEAAZkB9AH/AQABvgL/AQABtgL/AQABtgL/
+        AQABtwL/AQABrgL/AzABTAgAA00BkgEAAbMBAAH/AQABswEAAf8DRwGCIAABWgFbAVoBxAEAAaMBAAH/
+        AaIB2QGnAf8BhgHIAYkB/wGDAcQBhgH/AYYBwwGHAf8BpgHSAagB/wEAAYoBAAH/AVoBWwFaAcQYAAMx
+        AU0DagH5AeUB5AH9Af8CAAHvAf8CAAHtAf8CAAHzCf8CAAHyAf8CAAHsAf8CAAHwAf8C7wH+Af8DYAHz
+        AygBPHQAAwUBBgNfAdUBAAG0Av8BAAG2Av8BAAG2Av8BAAG2Av8BAAGyAv8BAAGxAv8B6wH4HP8B/gH/
+        AQABugH7Af8BAAGxAv8BAAG2Av8BAAG2Av8BAAG2Av8BAAG0Av8DXwHVAwYBBwwAA0kBhgNGAX4oAAFb
+        AVwBWwHNAQABqgEAAf8BsAHiAbIB/wGRAdEBkgH/AY8BzAGPAf8BlQHOAZQB/wGlAdcBpQH/AQABnAEA
+        Af8DWAG6FAAEAQNbAcUE/wGIAYcB9gH/AgAB7QH/AgAB8QH/AtEB+wH/As8B+wH/AgAB8AH/AgAB7AH/
+        ApsB+AH/AvwC/wNWAbJ8AAM/AW0BAAGpAv8BAAG4Av8BAAG2Av8BAAG2Av8BAAG4Av8BAAGsAv8BAAG5
+        Av8B0AHuAf4R/wHgAfQB/gH/AQABxQH+Af8BAAGsAv8BAAG4Av8BAAG2Av8BAAG2Av8BAAG4Av8BAAGp
+        Av8BPwJAAW5EAAFbAV8BWwHYAQABsAEAAf8BxAHvAcQB/wGdAdsBnAH/AZUB1wGVAf8BxQHxAcUB/wGJ
+        AdIBiQH/AQABmAEAAf8YAAMwAUwDXAH4AukB/gH/AgAB8AH/AgAB7gH/AgAB8gH/AgAB8QH/AgAB7gH/
+        AgAB8QH/AfMB8gH+Af8DYAHzAycBOnwAAwMBBANaAccBAAGyAv8BAAG3Av8BAAG2Av8BAAG2Av8BAAG4
+        Av8BAAGsAv8BAAGvAf4B/wEAAcMC/wEAAdIC/wEAAdMC/wEAAccC/wEAAbIB/gH/AQABqgL/AQABtwL/
+        AQABtgL/AQABtgL/AQABtwL/AQABsgL/A1oBxwMEAQVEAAMCAQMBXAFeAVwB2QEAAbkBAAH/Ac8B/QHP
+        Af8BywH9AcsB/wGGAdYBhgH/AwAB/wMnATocAANbAcUC/gL/AYkBiAH2Af8CAAHtAf8CAAHuAf8CAAHv
+        Af8CAAHtAf8CmwH4Af8C/AL/A1YBs4QAAxsBJgNgAeMBAAG1Av8BAAG3Av8BAAG2Av8BAAG2Av8BAAG4
+        Av8BAAG0Av8BAAGsAv8BAAGpAv8BAAGpAv8BAAGrAv8BAAGzAv8BAAG4Av8BAAG2Av8BAAG2Av8BAAG3
+        Av8BAAG1Av8BWwJhAeQDHAEnTAADCQELA2AB4AEAAc8BAAH/AbcB8QG3Af8DAAH/AysBQiAAAy4BSANq
+        AfkC7gH+Af8CAAHwAf8CAAHuAf8CAAHuAf8CAAHxAf8C+AH+Af8DWgH1AyYBOIgAAyMBMwFbAmEB5AEA
+        AbIC/wEAAbgC/wEAAbYC/wEAAbYC/wEAAbYC/wEAAbYC/wEAAbcC/wEAAbcC/wEAAbYC/wEAAbYC/wEA
+        AbYC/wEAAbYC/wEAAbcC/wEAAbMC/wFbAmEB5AMkATRUAAMNAREDXgHtAQABvwEAAf8DLgFHKAADWgHH
+        AvwC/wLKAfwB/wIAAfMB/wIAAfQB/wLTAfwB/wL7Av8DVgGzkAADHgErAVoCWwHEAQABrQL/AQABtQL/
+        AQABtwL/AQABtgL/AQABtgL/AQABtgL/AQABtgL/AQABtgL/AQABtgL/AQABtwL/AQABtQL/AQABrQL/
+        A1sBxQMeAStcAAM2AVcDQgF0LAADKwFBA2oB+Qz/Av4C/wNtAfcDIQEwlAADAwEEA0IBdANeAdIBAAGy
+        Av8BAAGyAv8BAAG0Av8BAAG2Av8BAAG2Av8BAAG0Av8BAAGyAv8BAAGxAv8DXgHSA0IBdAMDAQSYAANW
+        AbUDTQH6A4AB/gOAAf4DTQH6A1IBoKAAAwkBCwMzAVEDUwGnAV0CYQHcAVkCYgHvAVkCYgHvAV0CYQHc
+        A1MBpwMzAVIDCQELoAADBAEFA04BlANhAeYDYQHiA0oBiogAAUIBTQE+BwABPgMAASgDAAFgAwABGAMA
+        AQEBAAEBBQABIAEBFgAD/wEAAf4BAAF/A/8BgAEAAQEDAAH4AQABHwP/BgAB8AEAAQ8B/wGfAf8GAAHg
+        AQABBwH/AQ8B/wYAAcABAAEDAf4BBwH/BgABgAEAAQEB/AEDAf8GAAGAAQABAQH4AQEB/wkAAfABAAH/
+        AYABAAEBBgAB4AEAAX8BgAEAAQEGAAHAAQABPwHAAQABAwYAAYABAAEfAcABAAEDCAABHwHgAQABBwcA
+        AWABDwHgAQABBwcAAfABBwHwAQABDwYAAYEB+AEDAfABAAEfBgABwwH8AQEB+AEAAR8GAAHnAf4BAAH4
+        AQABPwMAAYABAAEBAv8BAAH8AQABPwMAAYABAAEBAv8BAAH+AQABfwMAAcABAAEDAv8BgQH+AQABfwMA
+        AeABAAEHAv8BwwH/AQAB/wMAAfABAAEPAv8B5wH/AQAB/wMAAfgBAAEfBP8BgQH/AwAB/gEAAX8E/wGD
+        Af8DAAs=
 </value>
   </data>
   <data name="images.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
@@ -7710,7 +7704,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAq
-        MAIAAk1TRnQBSQFMAgEBBwEAAYQBBgGEAQYBQAEAAUABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgEAAEB
+        MAIAAk1TRnQBSQFMAgEBBwEAAYwBBgGMAQYBQAEAAUABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgEAAEB
         AgABgAMAAQEBAAEgBwABAhEAAf0B/wH+Af8B9wH6AfgB/wH9Af4B+gP/AfsC/wH9AfoD/wH8Bf8B/QX/
         Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/
         Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/

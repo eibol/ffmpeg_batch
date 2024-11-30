@@ -271,10 +271,10 @@
     <value>129, 15</value>
   </data>
   <data name="label11.Text" xml:space="preserve">
-    <value>Temps entre les images</value>
+    <value>Intervalle entre les images</value>
   </data>
   <data name="button3.Text" xml:space="preserve">
-    <value>Examiner...</value>
+    <value>Parcourir...</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>197, 34</value>
@@ -382,7 +382,7 @@
     <value>Image en vidéo</value>
   </data>
   <data name="browse_aud2.Text" xml:space="preserve">
-    <value>Examiner...</value>
+    <value>Parcourir...</value>
   </data>
   <data name="chk_audio2.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 19</value>
@@ -484,7 +484,7 @@
     <value>289, 23</value>
   </data>
   <data name="browse_img3.Text" xml:space="preserve">
-    <value>Examiner...</value>
+    <value>Parcourir...</value>
   </data>
   <data name="check_resize3.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 80</value>
@@ -690,7 +690,7 @@
     <value>525, 15</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
-    <value>Appuyez sur Terminer pour démarrer la conversion ou sur Annuler pour revenir à l'onglet principal.</value>
+    <value>Cliquez sur Terminer pour démarrer la conversion ou sur Annuler pour revenir à l'onglet principal.</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 26</value>

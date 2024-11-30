@@ -2311,7 +2311,7 @@
     <value>25</value>
   </data>
   <data name="btn_close.Text" xml:space="preserve">
-    <value>Fermer fenêtre</value>
+    <value>Fermer</value>
   </data>
   <data name="btn_select.Text" xml:space="preserve">
     <value>Utiliser le format sélectionné</value>

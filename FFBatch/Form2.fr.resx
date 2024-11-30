@@ -225,7 +225,7 @@
     <value>237, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Convertisseur AV par lots FFmpeg pour Windows</value>
+    <value>Convertisseur AV FFmpeg par batch pour Windows</value>
   </data>
   <data name="linkLabel3.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
@@ -234,7 +234,7 @@
     <value>Notes de version</value>
   </data>
   <data name="textBox2.Text" xml:space="preserve">
-    <value>Cette application est gratuite et open source. Sous licence GNU Lesser General Public License (LGPL) 3.0+.</value>
+    <value>Cette application est gratuite et Open Source sous licence GNU Lesser General Public License (LGPL) 3.0+.</value>
   </data>
   <data name="linkLabel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 13</value>
@@ -255,7 +255,7 @@
     <value>58, 13</value>
   </data>
   <data name="linkLabel4.Text" xml:space="preserve">
-    <value>Page Web</value>
+    <value>Site Web</value>
   </data>
   <data name="textBox1.Text" xml:space="preserve">
     <value>Merci d'envisager un don de soutien.</value>
@@ -2051,6 +2051,6 @@
 </value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>À propos du convertisseur AV par lots FFmpeg</value>
+    <value>A propos du convertisseur AV FFmpeg par batch </value>
   </data>
 </root>

@@ -271,7 +271,7 @@
     <value>168, 19</value>
   </data>
   <data name="chk_out_name.Text" xml:space="preserve">
-    <value>Utiliser le nom de la source</value>
+    <value>Utiliser le nom du fichier source</value>
   </data>
   <data name="check_resize.Location" type="System.Drawing.Point, System.Drawing">
     <value>230, 29</value>
@@ -313,7 +313,7 @@
     <value>Chemin de sortie relatif</value>
   </data>
   <data name="btn_browse.Text" xml:space="preserve">
-    <value>Examiner</value>
+    <value>Parcourir</value>
   </data>
   <data name="radio_keys.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 19</value>
@@ -370,7 +370,7 @@
     <value>372, 15</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
-    <value>Appuyez sur Démarrer pour commencer l’extraction immédiatement.</value>
+    <value>Cliquez sur Démarrer pour commencer l’extraction immédiatement.</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 120</value>
@@ -379,7 +379,7 @@
     <value>525, 15</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
-    <value>Appuyez sur Terminer pour utiliser le préréglage ou sur Annuler pour revenir à la fenêtre principale.</value>
+    <value>Cliquez sur Terminer pour utiliser le préréglage ou sur Annuler pour revenir à la fenêtre principale.</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>223, 15</value>

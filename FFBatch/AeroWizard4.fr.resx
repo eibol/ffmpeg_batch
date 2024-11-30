@@ -131,7 +131,7 @@
     <value>secondes)</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
-    <value>Appuyez sur Terminer pour commencer la détection.</value>
+    <value>Cliquer sur Terminer pour commencer la détection.</value>
   </data>
   <data name="wizardControl1.Title" xml:space="preserve">
     <value>Détecteur de silence par lots</value>

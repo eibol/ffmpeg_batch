@@ -230,7 +230,7 @@
     <value>114, 19</value>
   </data>
   <data name="chk_one_pass.Text" xml:space="preserve">
-    <value>Juste un passage</value>
+    <value>Une seule passe</value>
   </data>
   <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 15</value>
@@ -406,13 +406,13 @@
     <value>106, 15</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
-    <value>Deuxième passage</value>
+    <value>Deuxième passe</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>93, 15</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>Premier passage</value>
+    <value>Première passe</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>312, 15</value>
