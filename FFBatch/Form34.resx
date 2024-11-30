@@ -290,10 +290,10 @@
     <value>NoControl</value>
   </data>
   <data name="btn_close.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 220</value>
+    <value>20, 209</value>
   </data>
   <data name="btn_close.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 28</value>
+    <value>301, 46</value>
   </data>
   <data name="btn_close.TabIndex" type="System.Int32, mscorlib">
     <value>160</value>
@@ -356,7 +356,7 @@
     <value>17, 159</value>
   </data>
   <data name="lbl_expl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 13</value>
+    <value>304, 17</value>
   </data>
   <data name="lbl_expl.TabIndex" type="System.Int32, mscorlib">
     <value>163</value>
@@ -496,34 +496,28 @@
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="lbl_val.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 8.25pt</value>
+  <data name="lbl_path.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 182</value>
   </data>
-  <data name="lbl_val.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="lbl_path.Size" type="System.Drawing.Size, System.Drawing">
+    <value>295, 13</value>
   </data>
-  <data name="lbl_val.Location" type="System.Drawing.Point, System.Drawing">
-    <value>17, 177</value>
-  </data>
-  <data name="lbl_val.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 13</value>
-  </data>
-  <data name="lbl_val.TabIndex" type="System.Int32, mscorlib">
+  <data name="lbl_path.TabIndex" type="System.Int32, mscorlib">
     <value>165</value>
   </data>
-  <data name="lbl_val.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="lbl_path.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
   </data>
-  <data name="&gt;&gt;lbl_val.Name" xml:space="preserve">
-    <value>lbl_val</value>
+  <data name="&gt;&gt;lbl_path.Name" xml:space="preserve">
+    <value>lbl_path</value>
   </data>
-  <data name="&gt;&gt;lbl_val.Type" xml:space="preserve">
+  <data name="&gt;&gt;lbl_path.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbl_val.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lbl_path.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;lbl_val.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lbl_path.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -533,7 +527,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>339, 260</value>
+    <value>339, 267</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

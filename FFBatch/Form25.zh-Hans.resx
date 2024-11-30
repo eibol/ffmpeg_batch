@@ -121,7 +121,7 @@
   <data name="btn_add_ex.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAAAcCSURBVFhH1dZrUFRlGMDxh72w
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAcCSURBVFhH1dZrUFRlGMDxh72w
         y3V3me41NVY6ahddFrHbNNlFBbktqNWkpVNZISYrApYpyLKkQNwXNcnGHLXGSrqIEqy7wALLLQQClgVs
         avrQ1Aws0NSU5tNzdkPbPUf2rKXSh/8czgMz+5uX97xnARH/V3EOp3Ocw+kcazDn5DkIM46BymAH1Sk7
         hJlGQVVnh1DjKCw00uyrCZhTNQ7K2jFYcIpmJjvMOz4B99E81DR264L68XVKw+g7/jm2AnGGNUmitc4Q
@@ -166,15 +166,6 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>表现</value>
   </data>
-  <data name="chk_valff.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 314</value>
-  </data>
-  <data name="chk_valff.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 17</value>
-  </data>
-  <data name="chk_valff.Text" xml:space="preserve">
-    <value>不验证 ffmpeg</value>
-  </data>
   <data name="btn_close.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 75</value>
   </data>
@@ -184,14 +175,11 @@
   <data name="lbl_vcard.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>系统信息</value>
-  </data>
   <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 20</value>
+    <value>83, 18</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>处理器名称</value>
@@ -203,7 +191,7 @@
     <value>Microsoft Sans Serif, 11.25pt</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 20</value>
+    <value>68, 18</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>防毒软件</value>
@@ -212,7 +200,7 @@
     <value>Microsoft Sans Serif, 11.25pt</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>57, 20</value>
+    <value>53, 18</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>主显卡</value>
@@ -221,10 +209,25 @@
     <value>Microsoft Sans Serif, 11.25pt</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 20</value>
+    <value>68, 18</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>操作系统</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>系统信息</value>
+  </data>
+  <data name="chk_visuals.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 17</value>
+  </data>
+  <data name="chk_visuals.Text" xml:space="preserve">
+    <value>禁用视觉样式</value>
+  </data>
+  <data name="lbl_restart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 13</value>
+  </data>
+  <data name="lbl_restart.Text" xml:space="preserve">
+    <value>需要重新启动</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>558, 416</value>

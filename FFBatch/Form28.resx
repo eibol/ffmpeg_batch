@@ -117,42 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="txt_seek.Location" type="System.Drawing.Point, System.Drawing">
-    <value>289, 448</value>
-  </data>
-  <data name="txt_seek.Size" type="System.Drawing.Size, System.Drawing">
-    <value>62, 20</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="txt_seek.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="txt_seek.Text" xml:space="preserve">
-    <value>00:00:10</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="txt_seek.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
-  <data name="&gt;&gt;txt_seek.Name" xml:space="preserve">
-    <value>txt_seek</value>
-  </data>
-  <data name="&gt;&gt;txt_seek.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txt_seek.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;txt_seek.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label3.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>265, 29</value>
   </data>
@@ -319,7 +292,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;test_crop.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>12</value>
   </data>
   <data name="lbl_f.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
@@ -367,7 +340,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;n_secs.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
   <data name="lbl_sec.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1190,25 +1163,25 @@
   <data name="&gt;&gt;lbl_prop.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="n_time_upd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>353, 448</value>
+  <data name="time_pre_subs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>298, 448</value>
   </data>
-  <data name="n_time_upd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>18, 20</value>
+  <data name="time_pre_subs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 20</value>
   </data>
-  <data name="n_time_upd.TabIndex" type="System.Int32, mscorlib">
-    <value>30</value>
+  <data name="time_pre_subs.TabIndex" type="System.Int32, mscorlib">
+    <value>180</value>
   </data>
-  <data name="&gt;&gt;n_time_upd.Name" xml:space="preserve">
-    <value>n_time_upd</value>
+  <data name="&gt;&gt;time_pre_subs.Name" xml:space="preserve">
+    <value>time_pre_subs</value>
   </data>
-  <data name="&gt;&gt;n_time_upd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;time_pre_subs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;n_time_upd.Parent" xml:space="preserve">
+  <data name="&gt;&gt;time_pre_subs.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;n_time_upd.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;time_pre_subs.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

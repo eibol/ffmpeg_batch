@@ -211,7 +211,13 @@
     <value>477, 74</value>
   </data>
   <data name="chk_center.Location" type="System.Drawing.Point, System.Drawing">
-    <value>399, 77</value>
+    <value>409, 77</value>
+  </data>
+  <data name="chk_center.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 17</value>
+  </data>
+  <data name="chk_center.Text" xml:space="preserve">
+    <value>Centrée</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>161, 78</value>

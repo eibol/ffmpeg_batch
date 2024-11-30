@@ -121,7 +121,7 @@
   <data name="btn_add_ex.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw4AAAsOAUC+4UEAAAcCSURBVFhH1dZrUFRlGMDxh72w
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAcCSURBVFhH1dZrUFRlGMDxh72w
         y3V3me41NVY6ahddFrHbNNlFBbktqNWkpVNZISYrApYpyLKkQNwXNcnGHLXGSrqIEqy7wALLLQQClgVs
         avrQ1Aws0NSU5tNzdkPbPUf2rKXSh/8czgMz+5uX97xnARH/V3EOp3Ocw+kcazDn5DkIM46BymAH1Sk7
         hJlGQVVnh1DjKCw00uyrCZhTNQ7K2jFYcIpmJjvMOz4B99E81DR264L68XVKw+g7/jm2AnGGNUmitc4Q
@@ -178,12 +178,6 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Desempenho</value>
   </data>
-  <data name="chk_valff.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 17</value>
-  </data>
-  <data name="chk_valff.Text" xml:space="preserve">
-    <value>Não valide o ffmpeg</value>
-  </data>
   <data name="btn_close.Location" type="System.Drawing.Point, System.Drawing">
     <value>298, 330</value>
   </data>
@@ -193,8 +187,11 @@
   <data name="lbl_vcard.Location" type="System.Drawing.Point, System.Drawing">
     <value>197, 84</value>
   </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Informação do sistema</value>
+  </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 17</value>
+    <value>143, 16</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Nome do processador</value>
@@ -203,7 +200,7 @@
     <value>197, 55</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 17</value>
+    <value>111, 16</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Software antivírus</value>
@@ -212,19 +209,28 @@
     <value>28, 84</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>158, 17</value>
+    <value>152, 16</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Placa de vídeo principal</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 17</value>
+    <value>131, 16</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Sistema operacional</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Informação do sistema</value>
+  <data name="chk_visuals.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 17</value>
+  </data>
+  <data name="chk_visuals.Text" xml:space="preserve">
+    <value>Desativar estilos visuais</value>
+  </data>
+  <data name="lbl_restart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 13</value>
+  </data>
+  <data name="lbl_restart.Text" xml:space="preserve">
+    <value>Reinicialização necessária</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>558, 421</value>

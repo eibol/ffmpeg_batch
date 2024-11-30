@@ -163,15 +163,6 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>أداء</value>
   </data>
-  <data name="chk_valff.Location" type="System.Drawing.Point, System.Drawing">
-    <value>356, 95</value>
-  </data>
-  <data name="chk_valff.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 17</value>
-  </data>
-  <data name="chk_valff.Text" xml:space="preserve">
-    <value>لا تقم بالتحقق من صحة ffmpeg</value>
-  </data>
   <data name="btn_close.Location" type="System.Drawing.Point, System.Drawing">
     <value>298, 311</value>
   </data>
@@ -182,31 +173,43 @@
     <value>أغلق النافذة</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 17</value>
+    <value>62, 16</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>اسم المعالج</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 17</value>
+    <value>129, 16</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>برامج مكافحة الفيروسات</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 17</value>
+    <value>108, 16</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>بطاقة الفيديو الرئيسية</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 17</value>
+    <value>67, 16</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>نظام التشغيل</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>معلومات النظام</value>
+  </data>
+  <data name="chk_visuals.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 17</value>
+  </data>
+  <data name="chk_visuals.Text" xml:space="preserve">
+    <value>تعطيل الأنماط المرئية</value>
+  </data>
+  <data name="lbl_restart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 13</value>
+  </data>
+  <data name="lbl_restart.Text" xml:space="preserve">
+    <value>مطلوب إعادة التشغيل</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>557, 447</value>

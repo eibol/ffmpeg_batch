@@ -122,7 +122,7 @@
     <value>182, 18</value>
   </data>
   <data name="txt_channel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 20</value>
+    <value>318, 20</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 13</value>
@@ -140,48 +140,10 @@
     <value>182, 46</value>
   </data>
   <data name="txt_parameters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>279, 20</value>
-  </data>
-  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
+    <value>318, 20</value>
   </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>245, 106</value>
+    <value>245, 145</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>Iniciar o download</value>
@@ -196,7 +158,10 @@
     <value>182, 74</value>
   </data>
   <data name="txt_path_main.Size" type="System.Drawing.Size, System.Drawing">
-    <value>208, 20</value>
+    <value>245, 20</value>
+  </data>
+  <data name="btn_browse_path_m3u.Location" type="System.Drawing.Point, System.Drawing">
+    <value>433, 74</value>
   </data>
   <data name="btn_browse_path_m3u.Text" xml:space="preserve">
     <value>Navegar...</value>
@@ -1994,7 +1959,7 @@
   <data name="btn_abort_all.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxMAAAsTAQCanBgAAA6fSURBVFhHrZgHVFVX2oaPBhsg
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxIAAAsSAdLdfvwAAA6fSURBVFhHrZgHVFVX2oaPBhsg
         qKCxYSExMTF1lomuiWaiiTGxZCwJ6tiNJo5GYzeKLXYTzWgsQUWjNOlNBRWDCoh0BO4FBJQqXHq5Uq/w
         /u/eeCkRM5mZ/6z1XQ6n7P2sr39Haaivb1PQ0FIaGgVoFJ4Xhd0ert6zzfrmxDGe3oPM4lwMlbwLHRXt
         hU6K1sVI0XgPMo+/OeEDL9WuLVsKQ4NGyDVbvN8o+rXbZhDS5kUhreCeLFyTrzGP37Z+p0cvo9yzigLH
@@ -2061,7 +2026,7 @@
 </value>
   </data>
   <data name="btn_abort_all.Location" type="System.Drawing.Point, System.Drawing">
-    <value>311, 103</value>
+    <value>311, 142</value>
   </data>
   <data name="btn_abort_all.Text" xml:space="preserve">
     <value>Cancelar download</value>
@@ -2095,7 +2060,7 @@
         xUAa4EouKCoB0n+A2CgltTiZgYHRAMjOLi8pAIozzgGyRZKywewNIHZRSJAzkH0EyOZLh7CvgNhJEPYT
         ELsI6Akg+wtIfTqYzcQBNgfClgGxS1IrQPYyOOcXVBZlpmeUKBhaWloqOKbkJ6UqBFcWl6TmFit45iXn
         FxXkFyWWpKYA1ULcBwaCEIWgENMAarTQZKAyAMUDhPU5EBy+jGJnEGIIkFxaVAZlMjIZE+YjzJgjwcDg
-        v5SBgeUPQsykl4FhgQ4DA/9UhJiaIQODgD4Dw745AMDGT/0ZOjZcAAAACXBIWXMAAAsTAAALEwEAmpwY
+        v5SBgeUPQsykl4FhgQ4DA/9UhJiaIQODgD4Dw745AMDGT/0ZOjZcAAAACXBIWXMAAAsSAAALEgHS3X78
         AAAE3klEQVRYR82Y2UsjSRzH430ryIILA4qukAw7sN4ajW/BP2RRERVFPBBFPJ68dbznwed2kYWdZd/9
         B0REUBFF431rvG9r61ubynR1O2Pb6cT9wYdUV3eqPl35dVV1TIQQFYiamprfaZlcXFxcnZ2dOT2FtuO8
         v79He1t2u/0T60RDyL2AqgLExsb+Mj4+/icteyWcTueFzWb71eX0w6CXC6gqQExMzMexsbG/aZk8PT0Z
@@ -2121,17 +2086,25 @@
 </value>
   </data>
   <data name="btn_clear_list.Location" type="System.Drawing.Point, System.Drawing">
-    <value>182, 104</value>
+    <value>182, 143</value>
   </data>
   <data name="btn_clear_list.Text" xml:space="preserve">
     <value>Canal limpo</value>
   </data>
-  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>509, 195</value>
+  <data name="cb_format.Location" type="System.Drawing.Point, System.Drawing">
+    <value>228, 107</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lbl_down_time.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>329, 110</value>
+  </data>
+  <data name="cb_res.Location" type="System.Drawing.Point, System.Drawing">
+    <value>433, 107</value>
+  </data>
+  <data name="cb_codec.Location" type="System.Drawing.Point, System.Drawing">
+    <value>128, 107</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>509, 235</value>
   </data>
   <data name="lbl_down_time.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 16</value>
@@ -2149,7 +2122,7 @@
     <value>509, 97</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>532, 408</value>
+    <value>532, 466</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

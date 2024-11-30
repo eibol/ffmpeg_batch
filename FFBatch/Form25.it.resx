@@ -121,7 +121,7 @@
   <data name="btn_add_ex.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAAAcCSURBVFhH1dZrUFRlGMDxh72w
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAcCSURBVFhH1dZrUFRlGMDxh72w
         y3V3me41NVY6ahddFrHbNNlFBbktqNWkpVNZISYrApYpyLKkQNwXNcnGHLXGSrqIEqy7wALLLQQClgVs
         avrQ1Aws0NSU5tNzdkPbPUf2rKXSh/8czgMz+5uX97xnARH/V3EOp3Ocw+kcazDn5DkIM46BymAH1Sk7
         hJlGQVVnh1DjKCw00uyrCZhTNQ7K2jFYcIpmJjvMOz4B99E81DR264L68XVKw+g7/jm2AnGGNUmitc4Q
@@ -187,15 +187,6 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Prestazione</value>
   </data>
-  <data name="chk_valff.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 329</value>
-  </data>
-  <data name="chk_valff.Size" type="System.Drawing.Size, System.Drawing">
-    <value>139, 17</value>
-  </data>
-  <data name="chk_valff.Text" xml:space="preserve">
-    <value>Non convalidare ffmpeg</value>
-  </data>
   <data name="btn_close.Location" type="System.Drawing.Point, System.Drawing">
     <value>282, 327</value>
   </data>
@@ -209,7 +200,7 @@
     <value>Scheda grafica</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>143, 17</value>
+    <value>138, 16</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Nome del processore</value>
@@ -218,25 +209,40 @@
     <value>197, 55</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 17</value>
+    <value>130, 16</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Programma antivirus</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 17</value>
+    <value>153, 16</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Scheda video principale</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>121, 17</value>
+    <value>116, 16</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Sistema operativo</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>Informazioni di sistema</value>
+  </data>
+  <data name="chk_visuals.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 329</value>
+  </data>
+  <data name="chk_visuals.Size" type="System.Drawing.Size, System.Drawing">
+    <value>124, 17</value>
+  </data>
+  <data name="chk_visuals.Text" xml:space="preserve">
+    <value>Disabilita gli stili visivi</value>
+  </data>
+  <data name="lbl_restart.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 13</value>
+  </data>
+  <data name="lbl_restart.Text" xml:space="preserve">
+    <value>Riavvio richiesto</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>558, 418</value>
