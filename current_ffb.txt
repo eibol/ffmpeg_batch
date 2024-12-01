@@ -1,8 +1,12 @@
-3.1.1
-• Fixed dpi default app configuration messing up user interface when Windows scale factor was higher than 100%.
-• Fixed issue in Subtitles hardcoding and incorrect error messages when retrying subtitles encoding.
-• Added setting to create preview video sample in Subtitles tab.
-• Improved layout and translations for french language (thanks temis).
-• Dark mode available on first run.
-• Other minor layout corrections.
-• NEW: Taken back Linux Wine version (Wine 9 and mono) with latest functionality, better performance and more reliable.
+3.1.2
+• Linux Wine version back (Wine 9 or higher required) with latest functionality, better performance and more reliable.
+• New Settings -> System performance -> Disable visual styles, to improve startup time on slow computers.
+• Added menu in parameters input files button to add mkv attachments (cover/font) and mp4 png thumbnail.
+• Fixed error trimming/joining with quick file adding enabled.
+• Fixed bug in multiple presets wizard.
+• Fixed bug in cropping tool selecting preview time.
+• Fixed bug in yt-dlp mkv container download.
+• Fixed pause/resume during multi-file encoding.
+• Fixed minor bug saving settings (filter zero duration setting).
+• Fixed minor bug selecting ffmpeg.exe outside application path.
+• Fixed minor layout and translation fixes.
