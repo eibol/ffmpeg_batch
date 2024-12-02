@@ -16368,4 +16368,13 @@
         AfEBgAEBAR8B+AEAAQ8B/wHzAcABAwE/AfgB4AF/Av8B4AEHCw==
 </value>
   </data>
+  <data name="ct_attach_mkv.Text" xml:space="preserve">
+    <value>Alllegati MKV</value>
+  </data>
+  <data name="ct_cover_mp4.Text" xml:space="preserve">
+    <value>immagine copertina per mp4 (png)</value>
+  </data>
+  <data name="btn_br_path.Text" xml:space="preserve">
+    <value>Sfoglia...</value>
+  </data>
 </root>
