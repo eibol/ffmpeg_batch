@@ -2171,4 +2171,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Ritaglio barre nere</value>
   </data>
+  <data name="chk_center.Text" xml:space="preserve">
+    <value>Centrato</value>
+  </data>
 </root>
