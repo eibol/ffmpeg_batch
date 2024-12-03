@@ -1,13 +1,15 @@
 # FFmpeg Batch AV Converter 3.1.2 for Linux Wine 9.0
 
-This version of FFmpeg Batch A/V Converter is designed to work in Linux by using Wine 9.x or higher. 
-Instructions for installation will vary depending on Linux version. Staging (experimental version) is supported too.
+This version of FFmpeg Batch A/V Converter is designed to work in Linux by using Wine 9.0 or higher. Wine staging versions work fine too.
+Some video encoding tests show that performance in Ubuntu 22 is equal, even better than in Windows 11 on the same PC.
+
+Instructions for installation will vary depending on Linux version
 
 Example for Ubuntu 22: 
 https://wine.htmlvalidator.com/install-wine-on-ubuntu-22.04.html
 (Install mono on first run of FFBatch.exe)
 
-For Uuntu/Debian, general installation instructions: 
+Ubuntu/Debian general installation instructions: 
 
 * Wine info: https://gitlab.winehq.org/wine/wine/-/wikis/Debian-Ubuntu (wine64).
 * Mono info: https://github.com/madewokherd/wine-mono/releases
