@@ -35,8 +35,7 @@ FEATURES
    - Batch download YouTube videos, Live YouTube events and m3u8 links.
    - Youtube-dl / yt-dlp frontend GUI for any supported URL.
 
-Since 2017 FFmpeg Batch AV Converter has been developed as a free and open source application. 
-
+Since 2017 FFmpeg Batch AV Converter has been developed as a free and open source application.
 If application is useful for you, please consider supporting this work with a complimentary donation.
 
 [Donations](https://sourceforge.net/p/ffmpeg-batch/wiki/ffmpeg-batch/)
