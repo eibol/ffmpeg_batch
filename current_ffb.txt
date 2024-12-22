@@ -1,12 +1,16 @@
-3.1.2
-• Linux Wine version back (Wine 9 or higher required) with latest functionality, better performance and more reliable.
-• New Settings -> System performance -> Disable visual styles, to improve startup time on slow computers.
-• Added menu in parameters input files button to add mkv attachments (cover/font) and mp4 png thumbnail.
-• Fixed error trimming/joining with quick file adding enabled.
-• Fixed bug in multiple presets wizard.
-• Fixed bug in cropping tool selecting preview time.
-• Fixed bug in yt-dlp mkv container download.
-• Fixed pause/resume during multi-file encoding.
-• Fixed minor bug saving settings (filter zero duration setting).
-• Fixed minor bug selecting ffmpeg.exe outside application path.
-• Fixed minor layout and translation fixes.
+3.2.0
+• Multimedia file information now included as standalone application, more customizable and localized. (FFBatch_mediainfo.exe).
+• New quick startup setting, to greatly speed up application loading by using limited visual styles.
+• Added current file stream selection at stream mapping button.
+• Added map metadata and attachments setting at stream mapping button and mapped by default at stream multiplex tab.
+• Stream multiplex tab: Removed 1 video stream limitation. Found cover streams (mjpeg/png) set as the last stream. 
+• Added detection of metadata rotated videos in cropping tool.
+• Added url context menu quick download best available avc/av1/vp9 video and mp3, opus, flac and aac (m4a) audio (YouTube).
+• Added url download "Quick start" setting to allow starting downloads immediately (url validation performed in the background).
+• Fixed: url audio selected formats not being downloaded.
+• Fixed: url download error messages not logged during sequential downloading and download log button not working.
+• Fixed: url download finish popup dialog not finding output file.
+• Fixed: portable version saving some settings outside application folder. Now truly portable.
+• Fixed: stream mapping button always forcing selected subtitles stream.
+• Fixed: ffmpeg.exe version being displayed as Unknown until application restart and not displaying banner in some circumstances.
+• Minor layout and translation fixes.
