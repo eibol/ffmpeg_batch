@@ -36,7 +36,8 @@ FEATURES
    - Youtube-dl / yt-dlp frontend GUI for any supported URL.
 
 Since 2017 FFmpeg Batch AV Converter has been developed as a free and open source application.
-If application is useful for you, please consider supporting this work with a complimentary donation.
+
+If it is useful for you, please consider supporting this work with a complimentary donation.
 
 [Donations](https://sourceforge.net/p/ffmpeg-batch/wiki/ffmpeg-batch/)
 
