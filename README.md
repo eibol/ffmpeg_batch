@@ -36,9 +36,11 @@ FEATURES
    - Youtube-dl / yt-dlp frontend GUI for any supported URL.
 
 Since 2017 FFmpeg Batch AV Converter has been developed as a free and open source application. 
+
 If application is useful for you, please consider supporting this work with a complimentary donation.
-I wish you a Merry Christmas and a Happy New Year!
+
 [Donations](https://sourceforge.net/p/ffmpeg-batch/wiki/ffmpeg-batch/)
+
 ![Buy me a coffee]([https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=ffbatch&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff](https://buymeacoffee.com/ffbatch))
 
 Available languages:
