@@ -27683,31 +27683,39 @@ namespace FFBatch
             if (Properties.Settings.Default.app_lang == "fr") this.MinimumSize = new Size(1326 + 30, 705);
             else this.MinimumSize = new Size(1276 + 30, 705);
 
+            tabControl1.Left = 15;
+            groupBox1.Left = 15;
+            groupBox_m3u.Left = 15;
+            group_subs.Left = 15;
+            list_tracks.Left = 15;
+            group_prog.Left = 15;
+            tabControl1.Height = this.Height - 458 - 40;
+            listView1.Height = this.Height - 495 - 30;
+            listView2.Height = this.Height - 495 - 30;
+            listView3.Height = this.Height - 495 - 30;
+
+            tabControl1.Width = this.Width - 45;
+            listView1.Width = this.Width - 50;
+            listView2.Width = this.Width - 50;
+            listView3.Width = this.Width - 50;
+            groupBox_m3u.Width = this.Width - 49;
+            dg1.Width = this.Width - 50;
+            groupBox1.Width = this.Width / 2 - 26;
+            panel1.Left = this.Width / 2 - 1;
+            panel1.Width = this.Width / 2 - 31;
+            group_prog.Width = this.Width - 46;
+            groupBox4.Width = this.Width / 2 - 115;
+            group_subs.Width = this.Width - 49;
+            groupBox2.Width = 627;            
+            list_tracks.Width = this.Width - 49;
+            panel2.Width = 174;
+
             if (Settings.Default.no_resize == true) return;
 
-                tabControl1.Left = 15;
-                groupBox1.Left = 15;
-                groupBox_m3u.Left = 15;
-                group_subs.Left = 15;
-                list_tracks.Left = 15;
-                group_prog.Left = 15;
-                tabControl1.Height = this.Height - 458 - 40;
-                listView1.Height = this.Height - 495 - 30;
-                listView2.Height = this.Height - 495 - 30;
-                listView3.Height = this.Height - 495 - 30;
-
-                tabControl1.Width = this.Width - 45;
-                listView1.Width = this.Width - 50;
-                listView2.Width = this.Width - 50;
-                listView3.Width = this.Width - 50;
-
-                dg1.Height = this.Height - 495 - 30;
-                dg1.Width = this.Width - 50;
+                groupBox9.Width = this.Width - 678;
+                dg1.Height = this.Height - 495 - 30;                
                 groupBox1.Top = this.Height - 369 - 20;
-                panel1.Top = this.Height - 369 - 20;
-                panel1.Left = this.Width / 2 - 1;
-                panel1.Width = this.Width / 2 - 31;
-                groupBox1.Width = this.Width / 2 - 26;
+                panel1.Top = this.Height - 369 - 20;                
 
                 btn_edit_presets.Left = this.Width / 2 - 57;
                 btn_del_preset.Left = this.Width / 2 - 83;
@@ -27717,9 +27725,8 @@ namespace FFBatch
                 txt_config_ver.Left = this.Width / 2 - 65;
                 lbl_config.Left = this.Width / 2 - 108;
                 combo_presets.Width = this.Width / 2 - 180;
-                txt_parameters.Width = this.Width / 2 - 180; ;
-
-                group_prog.Width = this.Width - 46;
+                txt_parameters.Width = this.Width / 2 - 180;
+                
                 btn_cancel_shut.Width = this.Width - 61;
                 combo_prio.Left = this.Width - 201;
                 lbl_cpu_pr.Left = combo_prio.Left + 2;
@@ -27753,7 +27760,7 @@ namespace FFBatch
                 lbl_speed.Left = (group_prog.Width / 2) - 97;
                 btn_cancel_shut.Width = group_prog.Width - 10;
                 TB1.Left = (group_prog.Width / 2) - 290;
-                group_subs.Width = this.Width - 49;
+                
                 listView3.Columns[1].Width = this.Width - 988;
                 button24.Left = this.Width - 130;
                 button25.Left = this.Width - 130;
@@ -27768,7 +27775,7 @@ namespace FFBatch
 
                 Combo_sub_lang_mux.Left = (group_subs.Width / 2) + 300;
                 lbl_lang_sub_mux.Left = Combo_sub_lang_mux.Left - lbl_lang_sub_mux.Width - 2;
-                groupBox_m3u.Width = this.Width - 49;
+                
                 dg1.Columns[4].Width = this.Width - 954;
 
                 ss_time_input.Left = this.Width / 2 - 179;
@@ -27781,9 +27788,9 @@ namespace FFBatch
                 btn_try_pr.Left = this.Width / 2 - 260;
                 btn_display_log.Left = btn_try_pr.Left + btn_try_pr.Width;
                 btn_sh_strs.Left = btn_display_log.Left + btn_display_log.Width + 3;
-                groupBox4.Width = this.Width / 2 - 115;
+                
                 panel2.Left = this.Width / 2 - 211;
-                panel2.Width = 174;
+               
                 txt_path_main.Width = (this.Width / 2) - 240;
                 btn_br_path.Left = this.Width / 2 - 160;
                 btn_cust_path.Left = btn_br_path.Left + btn_br_path.Width + 1;
@@ -27816,15 +27823,12 @@ namespace FFBatch
                 num_a_out.Left = (int)(panel1.Width / 2 - 25);
                 label18.Left = (int)(panel1.Width / 2 + 15);
                 label23.Left = (int)(panel1.Width / 2 + 15);
-
-                list_tracks.Width = this.Width - 49;
-                listView2.Width = this.Width - 49;
+                
+                //listView2.Width = this.Width - 49;
                 listView2.Columns[0].Width = this.Width - 677;
                 list_tracks.Columns[0].Width = this.Width - 677;
-                groupBox2.Left = this.Width - 658;
-                groupBox2.Width = 627;
-                groupBox9.Left = 15;
-                groupBox9.Width = this.Width - 678;
+                groupBox2.Left = this.Width - 658;               
+                groupBox9.Left = 15;               
                 btn_mux.Left = this.Width - 749;
                 groupBox11.Left = this.Width - 751;
                 txt_track_format.Left = this.Width - 795;
