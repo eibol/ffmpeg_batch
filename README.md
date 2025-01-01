@@ -58,5 +58,5 @@ To compile code, download all files to any folder.
 NOTES:
 - The application uses Aerowizard nuget package as mandatory.
 - You can find these packages at nuget package manager inside Visual Studio.
-- You need to create your own Code key for encryption, at menu Project -> Properties of FFBatch_Converter -> Signature, or disable code signing.
-- You may have to run Visual Studio 2019 with admin rights at least once, after key generation.
+- You need to create your own Code key for encryption, at menu Project -> Properties of FFBatch_Converter -> Signature, or disable manifest signing.
+- You may have to run Visual Studio with admin rights at least once, after key generation.
