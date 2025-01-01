@@ -608,7 +608,7 @@
     <value>添加文件</value>
   </data>
   <data name="radio_trailer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>198, 31</value>
+    <value>198, 205</value>
   </data>
   <data name="radio_trailer.Size" type="System.Drawing.Size, System.Drawing">
     <value>112, 19</value>
@@ -4178,6 +4178,12 @@
   <data name="btn_ref.Text" xml:space="preserve">
     <value>参考</value>
   </data>
+  <data name="label27.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 15</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>小贩</value>
+  </data>
   <data name="label26.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 15</value>
   </data>
@@ -4213,6 +4219,27 @@
   </data>
   <data name="label16.Text" xml:space="preserve">
     <value>像素格式</value>
+  </data>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 15</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>调</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 13</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>轮廓</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 157</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 15</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>预设</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 15</value>
@@ -4368,10 +4395,10 @@
     <value>水平翻转</value>
   </data>
   <data name="lbl_crop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>32, 15</value>
+    <value>31, 15</value>
   </data>
   <data name="lbl_crop.Text" xml:space="preserve">
-    <value>旋转</value>
+    <value>作物</value>
   </data>
   <data name="label20.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 48</value>
@@ -4380,7 +4407,7 @@
     <value>31, 15</value>
   </data>
   <data name="label20.Text" xml:space="preserve">
-    <value>裁切</value>
+    <value>尺寸</value>
   </data>
   <data name="cb_resize.Location" type="System.Drawing.Point, System.Drawing">
     <value>36, 45</value>
@@ -4388,11 +4415,14 @@
   <data name="cb_resize.Size" type="System.Drawing.Size, System.Drawing">
     <value>91, 23</value>
   </data>
+  <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
+    <value>9, 200</value>
+  </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 15</value>
   </data>
   <data name="label18.Text" xml:space="preserve">
-    <value>绝不</value>
+    <value>旋转</value>
   </data>
   <data name="wz1_1.Size" type="System.Drawing.Size, System.Drawing">
     <value>543, 260</value>
@@ -6924,7 +6954,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAD8
-        swAAAk1TRnQBSQFMAgEBBQEAAdABBgHQAQYB3QEAAXwBAAT/AREBAAj/AUIBTQE2BwABNgMAASgDAAF0
+        swAAAk1TRnQBSQFMAgEBBQEAAdgBBgHYAQYB3QEAAXwBAAT/AREBAAj/AUIBTQE2BwABNgMAASgDAAF0
         AQMCAAH4AwABAQEAARAFAAHAAbABBv8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
         /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
         /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
@@ -7700,8 +7730,8 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAc
-        GwAAAk1TRnQBSQFMAgEBAwEAATABBQEwAQUBGAEAARgBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFg
-        AwABGAMAAQEBAAEgBgABJC4AAwkBCwMzAlICVAGoA14B3QFZAl4B8AFZAl4B8AFbAmEB3gFSAlQBqAMz
+        GwAAAk1TRnQBSQFMAgEBAwEAATgBBQE4AQUBGAEAARgBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFg
+        AwABGAMAAQEBAAEgBgABJC4AAwkBCwMzAlICVAGoA14B3QFaAl4B8AFaAl4B8AFbAmEB3gFSAlQBqAMz
         AVIDCQEMgAADOwFkA1sBxANhAd4DXwHYA14B1wNeAdcDXgHXA14B1wNeAdcDXwHYA18B2ANeAdcDXwHY
         A18B2ANfAdgDXwHYA14B1wNeAdcDXwHYA2EB3gNaAb8DNgFXeAADBAEFA0IBdQNeAdIBAAGyAv8BAAGy
         Av8BAAG0Av8BAAG1Av8BAAG6Av8BAAG3Af4B/wEAAZkB7wH/AQABjwHqAf8BWwJeAdMDQgF1AwQBBXQA
@@ -7717,7 +7747,7 @@
         Af8CAAHuAf8CAAHvAf8CAAHuAf8CAAHvAf8CAAHvAf8CAAHvAf8CAAHvAf8CAAHuAf8CAAHvAf8B3QHc
         AfwF/wNjAeloAAMcAScDYAHjAQABtgL/AQABtgL/AQABtgL/AQABtgL/AQABtwL/AQABuQL/AQABpwH7
         Af8BAAGJAewB/wEAAYEB5wH/AQABkgHtAf8BAAGdAe8B/wEAAZoB7gH/AQABmgHuAf8BAAGaAe4B/wEA
-        AZsB7gH/AQABmAHuAf8BWwJhAeQDHQEoJAADOAFdAwAB/wEAAf8BiQH/AQABzQEAAf8DSAH4AxUBHCwA
+        AZsB7gH/AQABmAHuAf8BWwJhAeQDHQEoJAADOAFdAwAB/wEAAf8BiQH/AQABzQEAAf8DSQH4AxUBHCwA
         A1sBxAT/AbcBtgH5Af8CAAHsAf8CAAHwAf8CAAHwAf8CAAHwAf8CAAHuAf8CAAHwAf8CAAHwAf8CAAHv
         Af8CAAHwAf8CAAHxAf8CAAHvAf8CAAHuAf8CAAHvAf8CAAHwAf8CAAHwAf8CAAHwAf8CAAHwAf8CAAHt
         Af8BxwHGAfsF/wNXAbFkAAMDAQQDWgHHAQABsgL/AQABtwL/AQABtgL/AQABtgL/AQABtgL/AQABtAL/
@@ -7756,16 +7786,16 @@
         AyABLQNAAf0BAAGkAQAB/wEAAcMBAwH/AQABtgEAAf8BAAG7AQAB/wEAAcgBAAH/AQABywEMAf8DAAH/
         AQABgQEAAf8BAAHXAYAB/wEAAcUBAQH/AQABxAEKAf8BAAHAAQgB/wEEAc4BjAH/AQABmwEAAf8DXQHR
         BAIcAAMJAQsDXAHDBP8BiAGHAfYB/wIAAe0B/wIAAfAB/wIAAfAB/wIAAe8B/wIAAe8B/wL7Af4B/wLs
-        Af0B/wIAAe8B/wIAAfAB/wIAAfAB/wIAAfAB/wIAAe0B/wKaAfcF/wNWAbIDAwEEaAABXgJlAfEBAAG2
+        Af0B/wIAAe8B/wIAAfAB/wIAAfAB/wIAAfAB/wIAAe0B/wKaAfcF/wNWAbIDAwEEaAABXwJlAfEBAAG2
         Av8BAAG2Av8BAAG2Av8BAAG2Av8BAAG2Av8BAAG2Av8BAAG1Av8BAAG7Av8BAAGnAf0B/wGJAdIB+A3/
         AQABvAHzAf8BAAGCAekB/wEAAZgB7gH/AQABmwHuAf8BAAGbAe4B/wEAAZgB7QH/AQABkwHqAf8BAAGt
-        AfgB/wEAAb4C/wFeAmUB8QMfASwBQQFqAUEB+QEAAZsBAAH/AQABwAENAf8BAAG0AQAB/wEAAbgBAAH/
+        AfgB/wEAAb4C/wFfAmUB8QMfASwBQQFqAUEB+QEAAZsBAAH/AQABwAENAf8BAAG0AQAB/wEAAbgBAAH/
         AQABxgEIAf8BAAHHAQ0B/wEAAQYBAAH/A0ABbwNQAZsBAAGJAQAB/wEAAdEBggH/AQABvgEAAf8BAAG2
         AQAB/wEAAa8BAAH/AQ4BzAGPAf8BAAGYAQAB/wNcAcsgAAMyAU8DKwH8AeEB4AH9Af8CAAHvAf8CAAHv
         Af8CAAHwAf8CAAHvAf8CAAHwAf8C/QL/Au4B/gH/AgAB8AH/AgAB7wH/AgAB8AH/AgAB7wH/AgAB8AH/
-        AuoB/gH/A2IB9gMpAT1sAAFZAl4B8AEAAbYC/wEAAbYC/wEAAbYC/wEAAbYC/wEAAbYC/wEAAbYC/wEA
+        AuoB/gH/A2IB9gMpAT1sAAFaAl4B8AEAAbYC/wEAAbYC/wEAAbYC/wEAAbYC/wEAAbYC/wEAAbYC/wEA
         AboC/wEAAboC/wEAAZIB7QH/AQABgwHnAf8BuQHjAfoN/wESAcMB9AH/AQABiAHrAf8BAAGcAe8B/wEA
-        AZcB7QH/AQABkwHqAf8BAAGtAfgB/wEAAb4C/wEAAbYC/wFeAmUB8QEAARIBAAH/AQABpQEAAf8BCwHD
+        AZcB7QH/AQABkwHqAf8BAAGtAfgB/wEAAb4C/wEAAbYC/wFfAmUB8QEAARIBAAH/AQABpQEAAf8BCwHD
         AYYB/wEAAbMBAAH/AQABuAEDAf8BAAHFARAB/wEAAcMBDwH/AQABDQEAAf8DPQFpCAADVQGtAQABjQEA
         Af8BBgHMAYcB/wEAAb4BBwH/AQABuQEFAf8BAAGxAQAB/wERAcYBjQH/AQABmAEAAf8DXQHRHAADBgEI
         A1wBwwT/AogB9gH/AgAB7gH/AgAB8AH/AgAB7wH/AgAB8QX/AfUB9gH+Af8CAAHwAf8CAAHvAf8CAAHw
@@ -7823,7 +7853,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAB6
-        TgIAAk1TRnQBSQFMAgEBBwEAARABAwEQAQMBQAEAAUABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgEAAEB
+        TgIAAk1TRnQBSQFMAgEBBwEAARgBAwEYAQMBQAEAAUABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgEAAEB
         AgABgAMAAQEBAAEgBwABAhEAAf0B/wH+Af8B9wH6AfgB/wH9Af4B+gP/AfsC/wH9AfoD/wH8Bf8B/QX/
         Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/
         Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/

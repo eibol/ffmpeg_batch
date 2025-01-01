@@ -222,7 +222,7 @@
 </value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>237, 13</value>
+    <value>248, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Convertisseur AV FFmpeg par batch pour Windows</value>
@@ -235,6 +235,9 @@
   </data>
   <data name="textBox2.Text" xml:space="preserve">
     <value>Cette application est gratuite et Open Source sous licence GNU Lesser General Public License (LGPL) 3.0+.</value>
+  </data>
+  <data name="button1.Text" xml:space="preserve">
+    <value>D'ACCORD</value>
   </data>
   <data name="linkLabel2.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 13</value>
@@ -252,7 +255,7 @@
     <value>Avis juridique</value>
   </data>
   <data name="linkLabel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
+    <value>51, 13</value>
   </data>
   <data name="linkLabel4.Text" xml:space="preserve">
     <value>Site Web</value>

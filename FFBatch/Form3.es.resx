@@ -118,6 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="chk_ext_rep.Location" type="System.Drawing.Point, System.Drawing">
+    <value>219, 207</value>
+  </data>
+  <data name="chk_ext_rep.Size" type="System.Drawing.Size, System.Drawing">
+    <value>241, 17</value>
+  </data>
+  <data name="chk_ext_rep.Text" xml:space="preserve">
+    <value>Usar aplicación externa de informe multimedia</value>
+  </data>
   <data name="chk_no_overw.Location" type="System.Drawing.Point, System.Drawing">
     <value>284, 105</value>
   </data>
@@ -320,6 +329,9 @@
         l8Mj8Ani7zyUeu5zsdUfM4r5qPl/zq/Yvn6j7O1nkY4Ol2z4uuR/Ys88YUiUwD88q9QruqTbK7qqzzus
         qOe3oPRygVAUHOB76AcHGx5pa2uT7Uy7/32j+PQPiTvKt04+6kYAAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="pic_bat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>285, 26</value>
   </data>
   <data name="checkBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>113, 17</value>
@@ -584,8 +596,23 @@
   <data name="btn_cancel.Text" xml:space="preserve">
     <value>Descartar cambios</value>
   </data>
+  <data name="chk_resize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>132, 17</value>
+  </data>
+  <data name="chk_resize.Text" xml:space="preserve">
+    <value>No auto-redimensionar</value>
+  </data>
+  <data name="chk_visuals.Location" type="System.Drawing.Point, System.Drawing">
+    <value>312, 30</value>
+  </data>
+  <data name="chk_visuals.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 17</value>
+  </data>
+  <data name="chk_visuals.Text" xml:space="preserve">
+    <value>Inicio rápido</value>
+  </data>
   <data name="chk_thumb_big.Location" type="System.Drawing.Point, System.Drawing">
-    <value>305, 103</value>
+    <value>311, 127</value>
   </data>
   <data name="chk_thumb_big.Size" type="System.Drawing.Size, System.Drawing">
     <value>167, 17</value>
@@ -594,7 +621,7 @@
     <value>Previsualizar a más resolución</value>
   </data>
   <data name="chk_dark_win.Location" type="System.Drawing.Point, System.Drawing">
-    <value>322, 156</value>
+    <value>328, 180</value>
   </data>
   <data name="chk_dark_win.Size" type="System.Drawing.Size, System.Drawing">
     <value>132, 17</value>
@@ -603,13 +630,13 @@
     <value>Usar modo del sistema</value>
   </data>
   <data name="n_sunrise.Location" type="System.Drawing.Point, System.Drawing">
-    <value>369, 207</value>
+    <value>375, 231</value>
   </data>
   <data name="n_sunset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>369, 181</value>
+    <value>375, 205</value>
   </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>333, 213</value>
+    <value>339, 237</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>21, 13</value>
@@ -618,7 +645,7 @@
     <value>Fin</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>333, 184</value>
+    <value>339, 208</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>32, 13</value>
@@ -627,7 +654,7 @@
     <value>Inicio</value>
   </data>
   <data name="chk_dark.Location" type="System.Drawing.Point, System.Drawing">
-    <value>322, 133</value>
+    <value>328, 157</value>
   </data>
   <data name="chk_dark.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 17</value>
@@ -636,7 +663,7 @@
     <value>Programar modo oscuro</value>
   </data>
   <data name="chk_quick_q.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 31</value>
+    <value>312, 55</value>
   </data>
   <data name="chk_quick_q.Size" type="System.Drawing.Size, System.Drawing">
     <value>168, 17</value>
@@ -645,7 +672,7 @@
     <value>Usar listado rápido de ficheros</value>
   </data>
   <data name="chk_ctrl_p.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 55</value>
+    <value>312, 79</value>
   </data>
   <data name="chk_ctrl_p.Size" type="System.Drawing.Size, System.Drawing">
     <value>129, 17</value>
@@ -654,7 +681,7 @@
     <value>Desactivar Ctrl-Shift-P</value>
   </data>
   <data name="chk_tray.Location" type="System.Drawing.Point, System.Drawing">
-    <value>305, 80</value>
+    <value>311, 104</value>
   </data>
   <data name="chk_tray.Size" type="System.Drawing.Size, System.Drawing">
     <value>130, 17</value>
@@ -765,7 +792,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACA
-        FgAAAk1TRnQBSQFMAgEBAwEAAYABBAGAAQQBFAEAARQBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFQ
+        FgAAAk1TRnQBSQFMAgEBAwEAAbABBAGwAQQBFAEAARQBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFQ
         AwABFAMAAQEBAAEgBgABGRIAAwQBBQNIAYQDTgGWA1YBswNaAccDXwHVA2EB3gNhAeQDYwHpA10B6gNe
         Ae0DYwHpA2UB5wNhAeIDYAHbA10BzwNaAb8DUwGlA0oBiwMwAUssAAQBAwIBAwMCAQMDBQEGAwIBAwMC
         AQMEAhAAAxgBIQJcAWEB1gJfAWEB2gMbASYgAAMMAQ8DVgGyAlkBYgHvAj8BQAFuBAJYAAMLAQ4CagFB
@@ -831,12 +858,12 @@
         AQMBgwHjAf8BBAGBAeMB/wEIAQsB4wH/AoAB4wH/AYYBhAHmAf8CAAHYAf8CAAHZAf8CAAHcAf8CAAHf
         Af8CAAHpAf8DYAHoAx0BKFwAA0MBdwHKAaIBAAH/AbsBnAEAAf8BuAGYAQAB/wG4AZcBAAH/AbgBlwEA
         Af8BuAGXAQAB/wG4AZcBAAH/AbgBlwEAAf8BuAGXAQAB/wG4AZcBAAH/AaIBoQEAAf8BAAHfAZgB/wEA
-        AdgBkAH/AQAB2AGQAf8BAAHYAZAB/wEAAdwBlQH/Al8BWAH7CAADzQH/AdgBrAEAAf8BzQGiAQAB/wHA
+        AdgBkAH/AQAB2AGQAf8BAAHYAZAB/wEAAdwBlQH/Al8BXgH7CAADzQH/AdgBrAEAAf8BzQGiAQAB/wHA
         AZgBAAH/AbQBjQEAAf8BqAGDAQAB/wPNAf80AAMMAQ8DUgGjAY0BnQHzAf8BBgGOAeQB/wEDAYsB5AH/
         AQQBiQHkAf8BBgGHAeQB/wEIAYUB4wH/A4AB/gMrAfwCAAHiAf8CAAHWAf8CAAHaAf8CAAHcAf8CAAHf
         Af8CAAHpAf8DYAHoAyIBMVgAA0MBdwHMAaYBAAH/AZkCAAH/AakBiAEAAf8BsAGSAQAB/wGwAZIBAAH/
         Aa8BkQEAAf8BrgGQAQAB/wGuAZABAAH/Aa4BkAEAAf8BrgGQAQAB/wGXAZkBAAH/AQAB4QGaAf8BAAHb
-        AZMB/wEAAdoBkwH/AQAB2gGTAf8BAAHfAZgB/wJfAVsB+wgAA9AB/wPQAf8D0AH/A9AB/wPQAf8D0AH/
+        AZMB/wEAAdoBkwH/AQAB2gGTAf8BAAHfAZgB/wJfAV4B+wgAA9AB/wPQAf8D0AH/A9AB/wPQAf8D0AH/
         A9AB/zQAA1YBsgGiAbIB+gH/AYgBmQHmAf8BhAGWAecB/wGAAZMB5gH/AQgBjwHlAf8BCAGNAeQB/wGR
         AZwB+QH/A1QBqAMbASUCkQHwAf8CAAHaAf8CAAHXAf8CAAHaAf8CAAHcAf8CAAHfAf8CAAHoAf8CAAHH
         Af8DGwEmVAADQwF3Ac8BqAEAAf8BmgEBAQAB/wH+Af0B/AH/AfAB6gHdAf8B7AHlAdQB/wH3AfQB7RH/
@@ -845,7 +872,7 @@
         AekB/wGSAaEB6gH/AY4BngHpAf8BiQGaAegB/wGDAZYB5QH/AY4BnwHyAf8DUgGjAwwBDwQAAzkBXgGK
         AYsB7AH/AgAB2AH/AgAB1wH/AgAB2gH/AgAB3AH/AgAB3wH/AgAB6QH/A2AB4FQAA0MBdwHSAasBAAH/
         AZ4BBgEAAf8C/QH7Af8BqgGKAQAB/wGVAgAB/wHTAcIBmxX/AeIBywGvAf8BsAEFAQAB/wHjAaQBAAH/
-        Ad0BnwEAAf8CgAFpAf4DRwGACAAD1QH/AdYBxQGlAf8B0gHBAaEB/wHNAb0BnAH/AcgBuAGYAf8BwwG0
+        Ad0BnwEAAf8CgAFvAf4DRwGACAAD1QH/AdYBxQGlAf8B0gHBAaEB/wHNAb0BnAH/AcgBuAGYAf8BwwG0
         AZQB/wPVAf8wAANVAa0DKwH8AZ4BrQHrAf8BmwGpAesB/wGWAaYB6gH/AZEBogHpAf8BnQGrAfQB/wNY
         AbcDCAEKDAADNAFTA20B9wIAAdUB/wIAAdgB/wIAAdoB/wIAAdwB/wIAAeUB/wJcAV4B2VQAA0MBdwHW
         Aa4BAAH/AakBhAEAAf8C/QH7Af8BuQGYAQAB/wGnAYABAAH/AdoBygGlFf8B3gHPAa8B/wGwAYkBAAH/
@@ -1094,11 +1121,11 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACQ
-        DgAAAk1TRnQBSQFMAgEBAgEAAVgBAwFYAQMBFAEAARQBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFQ
+        DgAAAk1TRnQBSQFMAgEBAgEAAYgBAwGIAQMBFAEAARQBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFQ
         AwABFAMAAQEBAAEgBgABGRYAAwgBCgMVAR0DQQFyAx8BLDwABAIEAQQCAwMBBAMGAQcDDAEQAxMBGgMZ
         ASIDHQEpAx4BKgMeASoDHQEpAxkBIwMUARsDDQERAwcBCQMEAQUEAgQABAKkAAMGAQcDEwEaA10BzwFb
         AV8BWwHYAyoBQDgAAwgBCgMwBEoBigNMAZADUAGcA1MBpwNVAbEDVwG5A1kBwANaAcQDWgHEA1kBwANY
-        AboDVgGzA1MBqQNQAZwDTQGSA0oBiwMzAVIDCgENpAADAgEDAwsBDgNWAbIBAAGUAQAB/wEYAYABGAH+
+        AboDVgGzA1MBqQNQAZwDTQGSA0oBiwMzAVIDCgENpAADAgEDAwsBDgNWAbIBAAGUAQAB/wEeAYABHgH+
         A1IBowMgAS0wAAMEAQUDTAGQAgAB5QH/AgAB1gH/AgABzwH/AgAB0AH/AgAB0AH/AgAB0AH/AgAB0AH/
         AgAB0AH/AgAB0AH/AgAB0AH/AgAB0AH/AgAB0AH/AgAB0AH/AgABzwH/AgAB1QH/AgAB5gH/A1MBqQMK
         AQ2kAAMDAQQDDAEQA1gBtwEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wNgAegDRgF9AxIBGCwAA0UBfAIA
@@ -1118,11 +1145,11 @@
         AwIBAxAAA0YBfQIAAdQB/wIAAdIB/wIAAckB/wIAAcwB/wIAAcwB/wIAAcwB/wIAAcwB/wIAAcwB/wIA
         AcwB/wIAAcwB/wIAAcwB/wIAAcwB/wIAAcwB/wIAAcsB/wIAAdMB/wIAAdMB/wNOAZQDBAEFpAADAgED
         AwwBEANWAbYBAAGUAQAB/wEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/AQABlAEAAf8BAAGU
-        AQAB/wEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/ARgBgAEYAf4DWQHBAzQBUwMCAQMIAANG
+        AQAB/wEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/AR4BgAEeAf4DWQHBAzQBUwMCAQMIAANG
         AX0CAAHbAf8CAAHYAf8CAAHLAf8CAAHLAf8CAAHLAf8CAAHMAf8CAAHMAf8CAAHMAf8CAAHMAf8CAAHM
         Af8CAAHMAf8CAAHMAf8CAAHMAf8CAAHLAf8CAAHTAf8CAAHUAf8DTgGUAwQBBaQAAwIBAwMMARADVgG2
         AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/AQABlAEAAf8BAAGU
-        AQAB/wEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/AQABlAEAAf8BGAGAARgB/gNYAboDLQFF
+        AQAB/wEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/AQABlAEAAf8BHgGAAR4B/gNYAboDLQFF
         BAADRgF9AgAB2wH/AgAB3AH/AgAB0gH/AgAB0AH/AgABzQH/AgABywH/AgABywH/AgABzAH/AgABzAH/
         AgABzAH/AgABzAH/AgABzAH/AgABzAH/AgABywH/AgAB0wH/AgAB1AH/A04BlAMEAQWkAAMCAQMDDAEQ
         A1YBtgEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/
