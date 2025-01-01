@@ -221,7 +221,7 @@
 </value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>234, 24</value>
+    <value>129, 24</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Multiplexage</value>
