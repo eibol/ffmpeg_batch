@@ -293,7 +293,7 @@
     <value>20, 209</value>
   </data>
   <data name="btn_close.Size" type="System.Drawing.Size, System.Drawing">
-    <value>301, 46</value>
+    <value>316, 46</value>
   </data>
   <data name="btn_close.TabIndex" type="System.Int32, mscorlib">
     <value>160</value>
@@ -383,16 +383,13 @@
     <value>NoControl</value>
   </data>
   <data name="lbl_d_v.Location" type="System.Drawing.Point, System.Drawing">
-    <value>187, 72</value>
+    <value>188, 72</value>
   </data>
   <data name="lbl_d_v.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 13</value>
+    <value>113, 13</value>
   </data>
   <data name="lbl_d_v.TabIndex" type="System.Int32, mscorlib">
     <value>167</value>
-  </data>
-  <data name="lbl_d_v.Text" xml:space="preserve">
-    <value>v7 Full</value>
   </data>
   <data name="lbl_d_v.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -443,10 +440,10 @@
     <value>Segoe UI, 7.926606pt</value>
   </data>
   <data name="cb_srv.Items" xml:space="preserve">
-    <value>Gyan.dev</value>
+    <value>GitHub</value>
   </data>
   <data name="cb_srv.Items1" xml:space="preserve">
-    <value>GitHub</value>
+    <value>Git master</value>
   </data>
   <data name="cb_srv.Items2" xml:space="preserve">
     <value>Mirror #1</value>
@@ -458,7 +455,7 @@
     <value>190, 41</value>
   </data>
   <data name="cb_srv.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 21</value>
+    <value>114, 21</value>
   </data>
   <data name="cb_srv.TabIndex" type="System.Int32, mscorlib">
     <value>160</value>
@@ -479,7 +476,7 @@
     <value>17, 39</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>304, 115</value>
+    <value>319, 115</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>164</value>
@@ -500,7 +497,7 @@
     <value>20, 182</value>
   </data>
   <data name="lbl_path.Size" type="System.Drawing.Size, System.Drawing">
-    <value>295, 13</value>
+    <value>313, 13</value>
   </data>
   <data name="lbl_path.TabIndex" type="System.Int32, mscorlib">
     <value>165</value>
@@ -527,7 +524,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>339, 267</value>
+    <value>351, 267</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

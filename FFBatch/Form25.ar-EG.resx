@@ -154,17 +154,26 @@
         Ihsa04NXluhkS/YLZRF7QJFQBIFRVwg83eMcTuc4h9M3hL8AtKiZmXfWiN0AAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="btn_add_ex.Location" type="System.Drawing.Point, System.Drawing">
+    <value>186, 372</value>
+  </data>
   <data name="btn_add_ex.Text" xml:space="preserve">
     <value>أضف استثناء إلى أمن Windows</value>
   </data>
+  <data name="txt_tip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>501, 156</value>
+  </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 171</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>524, 186</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>أداء</value>
   </data>
   <data name="btn_close.Location" type="System.Drawing.Point, System.Drawing">
-    <value>298, 311</value>
+    <value>298, 376</value>
   </data>
   <data name="btn_close.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 81</value>
@@ -199,20 +208,17 @@
   <data name="groupBox3.Text" xml:space="preserve">
     <value>معلومات النظام</value>
   </data>
+  <data name="chk_visuals.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 372</value>
+  </data>
   <data name="chk_visuals.Size" type="System.Drawing.Size, System.Drawing">
     <value>118, 17</value>
   </data>
   <data name="chk_visuals.Text" xml:space="preserve">
     <value>تعطيل الأنماط المرئية</value>
   </data>
-  <data name="lbl_restart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 13</value>
-  </data>
-  <data name="lbl_restart.Text" xml:space="preserve">
-    <value>مطلوب إعادة التشغيل</value>
-  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>557, 447</value>
+    <value>557, 467</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

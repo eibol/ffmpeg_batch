@@ -155,7 +155,7 @@
 </value>
   </data>
   <data name="btn_add_ex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>182, 344</value>
+    <value>182, 363</value>
   </data>
   <data name="btn_add_ex.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 85</value>
@@ -170,16 +170,16 @@
     <value>207, 26</value>
   </data>
   <data name="txt_tip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>501, 136</value>
+    <value>501, 156</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>524, 164</value>
+    <value>524, 183</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Rendimiento</value>
   </data>
   <data name="btn_close.Location" type="System.Drawing.Point, System.Drawing">
-    <value>283, 349</value>
+    <value>283, 368</value>
   </data>
   <data name="btn_close.Text" xml:space="preserve">
     <value>Cerrar ventana</value>
@@ -221,7 +221,7 @@
     <value>Información del sistema</value>
   </data>
   <data name="chk_visuals.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 349</value>
+    <value>16, 363</value>
   </data>
   <data name="chk_visuals.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 17</value>
@@ -229,17 +229,8 @@
   <data name="chk_visuals.Text" xml:space="preserve">
     <value>Desactivar estilos visuales</value>
   </data>
-  <data name="lbl_restart.Location" type="System.Drawing.Point, System.Drawing">
-    <value>33, 372</value>
-  </data>
-  <data name="lbl_restart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 13</value>
-  </data>
-  <data name="lbl_restart.Text" xml:space="preserve">
-    <value>Requiere reiniciar</value>
-  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>556, 440</value>
+    <value>556, 458</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

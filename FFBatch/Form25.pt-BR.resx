@@ -155,7 +155,7 @@
 </value>
   </data>
   <data name="btn_add_ex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>191, 325</value>
+    <value>193, 363</value>
   </data>
   <data name="btn_add_ex.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 85</value>
@@ -170,25 +170,22 @@
     <value>197, 26</value>
   </data>
   <data name="txt_tip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>501, 118</value>
+    <value>501, 157</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>524, 145</value>
+    <value>524, 184</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Desempenho</value>
   </data>
   <data name="btn_close.Location" type="System.Drawing.Point, System.Drawing">
-    <value>298, 330</value>
+    <value>300, 368</value>
   </data>
   <data name="btn_close.Text" xml:space="preserve">
     <value>Janela fechada</value>
   </data>
   <data name="lbl_vcard.Location" type="System.Drawing.Point, System.Drawing">
     <value>197, 84</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Informação do sistema</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 16</value>
@@ -220,20 +217,20 @@
   <data name="label3.Text" xml:space="preserve">
     <value>Sistema operacional</value>
   </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Informação do sistema</value>
+  </data>
+  <data name="chk_visuals.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 367</value>
+  </data>
   <data name="chk_visuals.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 17</value>
   </data>
   <data name="chk_visuals.Text" xml:space="preserve">
     <value>Desativar estilos visuais</value>
   </data>
-  <data name="lbl_restart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 13</value>
-  </data>
-  <data name="lbl_restart.Text" xml:space="preserve">
-    <value>Reinicialização necessária</value>
-  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>558, 421</value>
+    <value>558, 460</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2024,5 +2021,9 @@
         xRPuE8QT7hPCE+4TwBPuE74T7ha9Fu5Ax0CeAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
 </root>

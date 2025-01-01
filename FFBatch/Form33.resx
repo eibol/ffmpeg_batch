@@ -424,7 +424,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tab_all.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 185</value>
+    <value>402, 179</value>
   </data>
   <data name="tab_all.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -451,7 +451,7 @@
     <value>NoControl</value>
   </data>
   <data name="pic_vid.Location" type="System.Drawing.Point, System.Drawing">
-    <value>327, 20</value>
+    <value>361, 19</value>
   </data>
   <data name="pic_vid.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
@@ -586,7 +586,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="tab_video.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 185</value>
+    <value>402, 179</value>
   </data>
   <data name="tab_video.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -703,7 +703,7 @@
     <value>NoControl</value>
   </data>
   <data name="pic_aud.Location" type="System.Drawing.Point, System.Drawing">
-    <value>327, 20</value>
+    <value>361, 20</value>
   </data>
   <data name="pic_aud.Size" type="System.Drawing.Size, System.Drawing">
     <value>16, 16</value>
@@ -835,7 +835,7 @@
     <value>4, 22</value>
   </data>
   <data name="tab_audio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 185</value>
+    <value>402, 179</value>
   </data>
   <data name="tab_audio.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -922,22 +922,40 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABG
-        AwAAAk1TRnQBSQFMAwEBAAE8AQABPAEAARABAAEQAQAE/wEZAQAI/wFCAU0BNgcAATYDAAEoAwABQAMA
-        ARADAAEBAQABGAYAAQzkAAHGAcwBxgP7twAB4QHjAeABDwF3AT4BygHSAcy0AAHkAeMB4gEFAYcBNAEI
-        Af8BcAEBAZ4BPAHKAcwBx64AAuoB6QEEAX0BLQEFAd8BVQEKAdYBSgELAeYBWgEEAY8BNQHVAdcB06gA
-        AecB6QHmAQgBeQEoAQ4BwgFOAREBvQFHARUBwwFPAQsBugFEAQABvgFBAQABegEZAdYB3AHVogAB7gHv
-        Ae0BFQF/ASwBPQHBAWQBSQHDAWYBTAHJAW8BMwGoAVcBRgHCAWsBRQG/AWUBNQG7AWABIAGIATYB3AHh
-        AdqcAAHqAe0B6gEXAYABJgFMAbcBZgFVAbsBaQFZAcsBdgE/AZ0BUwGzAb4BsAFAAZQBTwFWAcoBcwFc
-        AcABbwFnAcYBfgEwAZABPgHZAeEB2ZkAASwBhwExAVUBsgFmAW8BvgF7AW0BxwF+AToBmwFIAdUB3QHU
-        AwAB6QHrAegBNAGSAT8BagHHAX0BYAG4AW4BbQG9AXwBLQGNATUB4QHnAeGWAAHxAfMB8QEwAZIBMwF1
-        AccBfwFFAaUBSwHRAdwB0QkAAegB7AHoATwBnAFBAYABygGKAXcBvQF9AYEBwgGIASUBiwEpAd8B5gHf
-        lgAB8AHyAfABVQGpAVUBzQHcAc0PAAHhAegB4QE+AaIBQAGaAdYBnQGMAcgBjgGSAcoBkwEgAYwBIAHi
-        AekB4pYAA/4VAAHeAeYB3gFDAasBQwGuAeYBrgGrAeEBqwGiAeABogE3AZ8BN7EAAdgB5AHYAU8BugFP
-        AcMB/AHDAS0BpQEtAeYB7AHmtAAB1QHiAdUBXwG5AV8B6wHvAeu3AAP9Ad4B5wHe/wBXAAFCAU0BPgcA
-        AT4DAAEoAwABQAMAARADAAEBAQABAQUAAYAXAAP/AQAC/wYAAfwB/wYAAfgB/wYAAfABfwYAAeABPwYA
-        AcABHwYAAYABDwcAAQcGAAECAQMGAAEHAQEGAAGPAYAGAAHfAcAGAAH/AeAGAAH/AfEGAAH/AfMGAAL/
-        BgAL
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACU
+        BwAAAk1TRnQBSQFMAgEBAgEAAagBAAGoAQABEAEAARABAAT/ARkBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        AwABEAMAAQEBAAEYBgABDEIAA/8D/gP9A/wG+wn6BvsD/AP9Bv51AAHGAcwBxgP7GAAD+AG2Ac4B1gGU
+        Ab4BzwGKAbgBygGFAbYByQGAAbMBxwF/AbMBxgF9AbIBxgF9AbIBxgGAAbQBxwGCAbUBxwGIAbcBygGP
+        AbsBzAHQAdkB2wPyA/9vAAHhAeMB4AEPAXcBPgHKAdIBzBgAAfcB+AH5AREBqwHlAREBrAHlAREBrAHl
+        AREBrAHlAREBrAHlAREBrAHlAREBrAHlAREBrAHlAREBrAHlAREBrAHlAREBrAHlAREBrAHlAV8BwQHm
+        cgAB5AHjAeIBBQGHATQBCAH/AXABAQGeATwBygHMAccVAAHvAfIB9AEiAaIB3QEbAa8B5wEbAa8B5wEb
+        Aa8B5wEbAa8B5wEbAa8B5wEbAa8B5wEbAa8B5wEbAa8B5wEbAa8B5wEbAa8B5wEbAa8B5wEdAa8B5wL6
+        AftsAALqAekBBAF9AS0BBQHfAVUBCgHWAUoBCwHmAVoBBAGPATUB1QHXAdMSAAHkAeoB7gFhAa4B2wEl
+        AbIB6QElAbIB6QElAbIB6QElAbIB6QElAbIB6QElAbIB6QElAbIB6QElAbIB6QElAbIB6QElAbIB6QEl
+        AbIB6QElAbIB6QHbAesB8WkAAecB6QHmAQgBeQEoAQ4BwgFOAREBvQFHARUBwwFPAQsBugFEAQABvgFB
+        AQABegEZAdYB3AHVDwAB1wHhAeoBewGwAdgBVAHAAesBMAG1AeoBMAG1AeoBMAG1AeoBMAG1AeoBMAG1
+        AeoBMAG1AeoBMAG1AeoBMAG1AeoBMAG1AeoBMAG1AeoBMAG1AeoBqAHZAe1mAAHuAe8B7QEVAX8BLAE9
+        AcEBZAFJAcMBZgFMAckBbwEzAagBVwFGAcIBawFFAb8BZQE1AbsBYAEgAYgBNgHcAeEB2gwAAcgB2gHo
+        AWUBpwHaAawB2gHsAU4BwgHvAUEBuwHtAUEBuwHtAUEBuwHtAT8BugHtATsBuAHsATsBuAHsATsBuAHs
+        ATsBuAHsATsBuAHsATsBuAHsAWYBxAHsYwAB6gHtAeoBFwGAASYBTAG3AWYBVQG7AWkBWQHLAXYBPwGd
+        AVMBswG+AbABQAGUAU8BVgHKAXMBXAHAAW8BZwHGAX4BMAGQAT4B2QHhAdkJAAG4AdUB6QFQAaEB3QHr
+        AewB7QGaAbgBqgGhAc8B3gGfAcwB2gGmAdQB5AGSAcUB1AFpAcgB7gFGAbwB7gFFAbsB7gFFAbsB7gFF
+        AbsB7gFFAbsB7gFFAbsB7gH3AvlgAAEsAYcBMQFVAbIBZgFvAb4BewFtAccBfgE6AZsBSAHVAd0B1AMA
+        AekB6wHoATQBkgE/AWoBxwF9AWABuAFuAW0BvQF8AS0BjQE1AeEB5wHhBgABrQHRAesBPQGeAeMD7QHq
+        AegB5AHbAdQBzQHSAckBvwHbAdQBzQHUAc0BxAHIAdEB0gFtAcoB8gFQAb4B8AFQAb4B8AFQAb4B8AFQ
+        Ab4B8AFQAb4B8AHcAesB8mAAAfEB8wHxATABkgEzAXUBxwF/AUUBpQFLAdEB3AHRCQAB6AHsAegBPAGc
+        AUEBgAHKAYoBdwG9AX0BgQHCAYgBJQGLASkB3wHmAd8DAAH0AfYB+AG3AdcB7QHqAewB7QbsAeUB4gHf
+        AeEB3AHXAeAB3AHXAeMB4AHeAdIB4wHqAXYBzwH0AWwBywH0AWwBywH0AWwBywH0AW0BzAH1AcgB5AHx
+        YwAB8AHyAfABVQGpAVUBzQHcAc0PAAHhAegB4QE+AaIBQAGaAdYBnQGMAcgBjgGSAcoBkwEgAYwBIAHi
+        AekB4gkABu0D8APzA/wB8gH2AfQDAAH3AvkB3gHpAe8B3QHpAe8B3QHpAe8B3wHqAe8D/GYAA/4VAAHe
+        AeYB3gFDAasBQwGuAeYBrgGrAeEBqwGiAeABogE3AZ8BNxgAAW4B0gGiAZcB2AG2AfcB+QH4kAAB2AHk
+        AdgBTwG6AU8BwwH8AcMBLQGlAS0B5gHsAeYJAAH5AvoB+QL6Af0B/gH9AfQB9wH2AdEB7QHiAU4B1wGf
+        ASMBzAGCATcByAGEAeUB8QHrkAAB1QHiAdUBXwG5AV8B6wHvAesPAAGfAecBzQEaAdsBlAEaAdsBlAEa
+        AdoBkwEaAdoBkgEcAdcBjwEtAdYBkQHxAfYB9JAAA/0B3gHnAd4SAAP/AdUB7wHlAYYB5QHBAXEB4wG4
+        AZgB5wHJASEB3AGXAbsB6wHYugABpQHoAc8D/W8AAUIBTQE+BwABPgMAASgDAAFAAwABEAMAAQEBAAEB
+        BQABgBcAA/8BAAL/AQABAQQAAfwB/wYAAfgB/wEAAQMEAAHwAX8BAAEBBAAB4AE/AQABAQQAAcABHwEA
+        AQEEAAGAAQ8BAAEBBQABBwYAAQIBAwYAAQcBAQYAAY8BgAHgAUAEAAHfAcAB/wEfBAAB/wLgAQ8EAAH/
+        AfEB8AEPBAAB/wHzAfABHwQAA/8BnwQACw==
 </value>
   </data>
   <data name="rad_def_sub10.Location" type="System.Drawing.Point, System.Drawing">
@@ -1562,7 +1580,7 @@
     <value>4, 22</value>
   </data>
   <data name="tab_subs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>368, 185</value>
+    <value>402, 179</value>
   </data>
   <data name="tab_subs.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -1586,7 +1604,7 @@
     <value>10, 22</value>
   </data>
   <data name="tab_s.Size" type="System.Drawing.Size, System.Drawing">
-    <value>376, 211</value>
+    <value>410, 205</value>
   </data>
   <data name="tab_s.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -1601,10 +1619,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tab_s.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="btn_ok.Location" type="System.Drawing.Point, System.Drawing">
-    <value>226, 270</value>
+    <value>256, 297</value>
   </data>
   <data name="btn_ok.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -1625,10 +1643,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btn_ok.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>307, 270</value>
+    <value>337, 297</value>
   </data>
   <data name="btn_cancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -1649,13 +1667,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btn_cancel.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="lbl_explain.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="lbl_explain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 236</value>
+    <value>28, 261</value>
   </data>
   <data name="lbl_explain.Size" type="System.Drawing.Size, System.Drawing">
     <value>248, 13</value>
@@ -1676,10 +1694,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbl_explain.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="btn_clear.Location" type="System.Drawing.Point, System.Drawing">
-    <value>14, 270</value>
+    <value>15, 297</value>
   </data>
   <data name="btn_clear.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -1700,11 +1718,62 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btn_clear.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="chk_meta.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chk_meta.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chk_meta.Location" type="System.Drawing.Point, System.Drawing">
+    <value>31, 233</value>
+  </data>
+  <data name="chk_meta.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="chk_meta.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;chk_meta.Name" xml:space="preserve">
+    <value>chk_meta</value>
+  </data>
+  <data name="&gt;&gt;chk_meta.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chk_meta.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;chk_meta.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="chk_attach.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chk_attach.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chk_attach.Location" type="System.Drawing.Point, System.Drawing">
+    <value>186, 233</value>
+  </data>
+  <data name="chk_attach.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="chk_attach.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;chk_attach.Name" xml:space="preserve">
+    <value>chk_attach</value>
+  </data>
+  <data name="&gt;&gt;chk_attach.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;chk_attach.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;chk_attach.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>es</value>
-  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1715,7 +1784,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>397, 309</value>
+    <value>429, 330</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>

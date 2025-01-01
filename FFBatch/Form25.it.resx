@@ -121,7 +121,7 @@
   <data name="btn_add_ex.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw0AAAsNAe0HwCwAAAcCSURBVFhH1dZrUFRlGMDxh72w
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAcCSURBVFhH1dZrUFRlGMDxh72w
         y3V3me41NVY6ahddFrHbNNlFBbktqNWkpVNZISYrApYpyLKkQNwXNcnGHLXGSrqIEqy7wALLLQQClgVs
         avrQ1Aws0NSU5tNzdkPbPUf2rKXSh/8czgMz+5uX97xnARH/V3EOp3Ocw+kcazDn5DkIM46BymAH1Sk7
         hJlGQVVnh1DjKCw00uyrCZhTNQ7K2jFYcIpmJjvMOz4B99E81DR264L68XVKw+g7/jm2AnGGNUmitc4Q
@@ -155,7 +155,7 @@
 </value>
   </data>
   <data name="btn_add_ex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>174, 323</value>
+    <value>174, 358</value>
   </data>
   <data name="btn_add_ex.Size" type="System.Drawing.Size, System.Drawing">
     <value>110, 85</value>
@@ -176,19 +176,19 @@
     <value>S.O.</value>
   </data>
   <data name="txt_tip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>501, 133</value>
+    <value>501, 168</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 165</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>524, 158</value>
+    <value>528, 193</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Prestazione</value>
   </data>
   <data name="btn_close.Location" type="System.Drawing.Point, System.Drawing">
-    <value>282, 327</value>
+    <value>282, 362</value>
   </data>
   <data name="btn_close.Text" xml:space="preserve">
     <value>Chiudi finestra</value>
@@ -230,7 +230,7 @@
     <value>Informazioni di sistema</value>
   </data>
   <data name="chk_visuals.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 329</value>
+    <value>16, 364</value>
   </data>
   <data name="chk_visuals.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 17</value>
@@ -238,14 +238,8 @@
   <data name="chk_visuals.Text" xml:space="preserve">
     <value>Disabilita gli stili visivi</value>
   </data>
-  <data name="lbl_restart.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 13</value>
-  </data>
-  <data name="lbl_restart.Text" xml:space="preserve">
-    <value>Riavvio richiesto</value>
-  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>558, 418</value>
+    <value>551, 451</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

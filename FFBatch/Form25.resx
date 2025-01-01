@@ -162,7 +162,7 @@
     <value>TopCenter</value>
   </data>
   <data name="btn_add_ex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>186, 307</value>
+    <value>186, 341</value>
   </data>
   <data name="btn_add_ex.Size" type="System.Drawing.Size, System.Drawing">
     <value>106, 85</value>
@@ -277,7 +277,7 @@
     <value>True</value>
   </data>
   <data name="txt_tip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>501, 108</value>
+    <value>501, 122</value>
   </data>
   <data name="txt_tip.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -298,7 +298,7 @@
     <value>16, 174</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>524, 134</value>
+    <value>524, 154</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -325,7 +325,7 @@
     <value>TopCenter</value>
   </data>
   <data name="btn_close.Location" type="System.Drawing.Point, System.Drawing">
-    <value>289, 312</value>
+    <value>289, 346</value>
   </data>
   <data name="btn_close.Size" type="System.Drawing.Size, System.Drawing">
     <value>64, 81</value>
@@ -577,7 +577,7 @@
     <value>True</value>
   </data>
   <data name="chk_visuals.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 324</value>
+    <value>16, 341</value>
   </data>
   <data name="chk_visuals.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 17</value>
@@ -607,7 +607,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>557, 401</value>
+    <value>554, 433</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
