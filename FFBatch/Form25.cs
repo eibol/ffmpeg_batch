@@ -8,8 +8,6 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Management;
-//using System.Security.Authentication.ExtendedProtection;
-//using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -25,6 +23,7 @@ namespace FFBatch
         }
 
         public Boolean check_ff = false;
+        private Boolean pre_vis = Properties.Settings.Default.visuals;
         private Boolean is_portable = false;
         private String port_path = System.IO.Path.Combine(Application.StartupPath, "settings") + "\\";        
         private String cpu = "";
@@ -72,8 +71,16 @@ namespace FFBatch
 
         private void Form25_Load(object sender, EventArgs e)
         {
-            chk_visuals.Checked = !Properties.Settings.Default.visuals;
+            chk_visuals.Checked = Properties.Settings.Default.visuals_all;
 
+            System.Windows.Forms.ToolTip toolT2z = new ToolTip();
+            toolT2z.AutoPopDelay = 9000;
+            toolT2z.InitialDelay = 750;
+            toolT2z.ReshowDelay = 500;
+            toolT2z.ShowAlways = true;
+            toolT2z.SetToolTip(this.chk_visuals, Properties.Strings.improve_start);
+
+            this.Cursor = Cursors.Default;
             if (!File.Exists(Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe")))
             {
                 this.Close();
@@ -143,11 +150,11 @@ namespace FFBatch
                 if (product.ToLower().Contains("windows defender"))
                 {
                     btn_add_ex.Enabled = true;
-                    txt_tip.Text = Properties.Strings.tip1 + Environment.NewLine + Environment.NewLine + Properties.Strings.tip2 + Environment.NewLine + Environment.NewLine + Properties.Strings.tip3 + " " + Properties.Strings.tip_win_sec + " " + Properties.Strings.tip4;
+                    txt_tip.Text = Properties.Strings.tip1 + Environment.NewLine + Environment.NewLine + Properties.Strings.tip2 + Environment.NewLine + Environment.NewLine + Properties.Strings.tip3 + " " + Properties.Strings.tip_win_sec + " " + Properties.Strings.tip4 + Environment.NewLine + Environment.NewLine + Properties.Strings.tip5;
                 }
                 else
                 {
-                    txt_tip.Text = Properties.Strings.tip1 + Environment.NewLine + Environment.NewLine + Properties.Strings.tip2 + Environment.NewLine + Environment.NewLine + Properties.Strings.tip3 + " " + Properties.Strings.tip_your_av + " " + Properties.Strings.tip4;
+                    txt_tip.Text = Properties.Strings.tip1 + Environment.NewLine + Environment.NewLine + Properties.Strings.tip2 + Environment.NewLine + Environment.NewLine + Properties.Strings.tip3 + " " + Properties.Strings.tip_your_av + " " + Properties.Strings.tip4 + Environment.NewLine + Environment.NewLine + Properties.Strings.tip5;
                 }
 
                 //Antivirus
@@ -179,49 +186,7 @@ namespace FFBatch
                 lbl_antivir.Text = "-";
             }
 
-            //String f_md5 = String.Empty;
-            //if (is_portable == false) { f_md5 = System.IO.Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_md5.ini"; }
-            //else { f_md5 = port_path + "ff_md5_portable.ini"; }
-            //String saved = Properties.Strings.none;
-            //String code = "";
-            //String psk = "FFBatch2022_()*_";
-
-            //if (File.Exists(f_md5))
-            //{
-            //    saved = StringCipher.Decrypt(File.ReadAllText(f_md5), psk);
-            //}
-            //String ffm = Path.Combine(Properties.Settings.Default.ffm_path, "ffmpeg.exe");
-            //using (var md5 = MD5.Create())
-            //{
-            //    using (var stream = File.OpenRead(ffm))
-            //    {
-            //        var hash = md5.ComputeHash(stream);
-            //        code = BitConverter.ToString(hash).Replace("-", "").ToLowerInvariant();
-
-            //        txt_st_md5.Text = saved;
-            //        txt_cur_md5.Text = code;
-            //        if (txt_st_md5.Text == Properties.Strings.none) ;
-            //        {
-            //            pic_1.Image = pic_excl.Image;
-            //            lbl_fail_ff.Text = Properties.Strings.check_not_st;
-            //            btn_save_md5.Enabled = true;
-            //        }                    
-            //        if (code == saved)
-            //        {
-            //            pic_1.Image = pic_success.Image;
-            //            pic_2.Image = pic_success.Image;
-            //            lbl_fail_ff.Text = Properties.Strings.md5_valid;
-            //            btn_save_md5.Enabled = false;
-            //        }
-            //        else
-            //        {
-            //            lbl_fail_ff.Text = Properties.Strings.md5_fail;
-            //            btn_save_md5.Enabled = true;
-            //            pic_2.Image = pic_excl.Image;
-            //        }
-            //    }
-            //}
-
+            
             Properties.Settings.Default.Save();
             this.Cursor = Cursors.Arrow;
             this.ActiveControl = lbl_os;
@@ -230,11 +195,7 @@ namespace FFBatch
         private void btn_add_ex_Click(object sender, EventArgs e)
         {
             this.ActiveControl = lbl_os;
-            //if (txt_cur_md5.Text != txt_st_md5.Text)
-            //{
-            //    MessageBox.Show(Properties.Strings.md5_not_match, Properties.Strings.md5_not_validated, MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //    return;
-            //}
+            
             if (!lbl_os.Text.ToLower().Contains("windows 10") && !lbl_os.Text.ToLower().Contains("windows 11"))
             {
                 MessageBox.Show(Properties.Strings.req_w1011, Properties.Strings.only_1011, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -307,19 +268,21 @@ namespace FFBatch
             this.Close();
         }
 
-        private void chk_visuals_CheckedChanged(object sender, EventArgs e)
+        private void chk_visuals_Click(object sender, EventArgs e)
         {
             if (chk_visuals.Checked == true)
             {
-                Properties.Settings.Default.visuals = false;
+                Properties.Settings.Default.visuals_all = true;
                 Application.VisualStyleState = System.Windows.Forms.VisualStyles.VisualStyleState.NoneEnabled;
+                Properties.Settings.Default.visuals = false;
             }
             else
             {
-                Properties.Settings.Default.visuals = true;
+                Properties.Settings.Default.visuals_all = false;
+                Properties.Settings.Default.visuals = pre_vis;
                 Application.VisualStyleState = System.Windows.Forms.VisualStyles.VisualStyleState.ClientAndNonClientAreasEnabled;
             }
-            Properties.Settings.Default.Save();            
-        }        
+            Properties.Settings.Default.Save();
+        }
     }
 }

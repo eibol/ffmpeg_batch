@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form6));
             this.pic1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_delay = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,14 +46,15 @@
             this.pic1.TabStop = false;
             this.pic1.Click += new System.EventHandler(this.pic1_Click);
             // 
-            // label1
+            // lbl_delay
             // 
-            this.label1.Location = new System.Drawing.Point(130, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(96, 18);
-            this.label1.TabIndex = 13;
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Visible = false;
+            this.lbl_delay.Enabled = false;
+            this.lbl_delay.Location = new System.Drawing.Point(113, 74);
+            this.lbl_delay.Name = "lbl_delay";
+            this.lbl_delay.Size = new System.Drawing.Size(96, 13);
+            this.lbl_delay.TabIndex = 13;
+            this.lbl_delay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_delay.Visible = false;
             // 
             // Form6
             // 
@@ -61,7 +62,7 @@
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.ClientSize = new System.Drawing.Size(329, 94);
             this.ControlBox = false;
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_delay);
             this.Controls.Add(this.pic1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -70,6 +71,7 @@
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TopMost = true;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form6_FormClosed);
             this.Load += new System.EventHandler(this.Form6_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form6_Paint);
             ((System.ComponentModel.ISupportInitialize)(this.pic1)).EndInit();
@@ -79,6 +81,6 @@
 
         #endregion
         public System.Windows.Forms.PictureBox pic1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_delay;
     }
 }

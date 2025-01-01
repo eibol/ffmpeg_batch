@@ -51,9 +51,9 @@ namespace FFBatch
             // 
             // btn_add_ex
             // 
+            resources.ApplyResources(this.btn_add_ex, "btn_add_ex");
             this.btn_add_ex.FlatAppearance.BorderSize = 0;
             this.btn_add_ex.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_add_ex, "btn_add_ex");
             this.btn_add_ex.Name = "btn_add_ex";
             this.btn_add_ex.UseVisualStyleBackColor = true;
             this.btn_add_ex.Click += new System.EventHandler(this.btn_add_ex_Click);
@@ -72,30 +72,30 @@ namespace FFBatch
             // 
             // label4
             // 
-            this.label4.ForeColor = System.Drawing.Color.SteelBlue;
             resources.ApplyResources(this.label4, "label4");
+            this.label4.ForeColor = System.Drawing.Color.SteelBlue;
             this.label4.Name = "label4";
             // 
             // txt_tip
             // 
+            resources.ApplyResources(this.txt_tip, "txt_tip");
             this.txt_tip.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.txt_tip.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.txt_tip, "txt_tip");
             this.txt_tip.Name = "txt_tip";
             this.txt_tip.ReadOnly = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.txt_tip);
             resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.txt_tip);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
             // btn_close
             // 
+            resources.ApplyResources(this.btn_close, "btn_close");
             this.btn_close.FlatAppearance.BorderSize = 0;
             this.btn_close.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            resources.ApplyResources(this.btn_close, "btn_close");
             this.btn_close.Name = "btn_close";
             this.btn_close.UseVisualStyleBackColor = true;
             this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
@@ -108,6 +108,7 @@ namespace FFBatch
             // 
             // groupBox3
             // 
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.lbl_cpu);
             this.groupBox3.Controls.Add(this.label6);
@@ -116,7 +117,6 @@ namespace FFBatch
             this.groupBox3.Controls.Add(this.lbl_vcard);
             this.groupBox3.Controls.Add(this.lbl_antivir);
             this.groupBox3.Controls.Add(this.lbl_os);
-            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 
@@ -155,7 +155,7 @@ namespace FFBatch
             resources.ApplyResources(this.chk_visuals, "chk_visuals");
             this.chk_visuals.Name = "chk_visuals";
             this.chk_visuals.UseVisualStyleBackColor = true;
-            this.chk_visuals.CheckedChanged += new System.EventHandler(this.chk_visuals_CheckedChanged);
+            this.chk_visuals.Click += new System.EventHandler(this.chk_visuals_Click);
             // 
             // Form25
             // 
@@ -197,6 +197,6 @@ namespace FFBatch
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label lbl_cpu;
         public System.Windows.Forms.Button btn_close;
-        private System.Windows.Forms.CheckBox chk_visuals;
+        public System.Windows.Forms.CheckBox chk_visuals;
     }
 }

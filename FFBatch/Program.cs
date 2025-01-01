@@ -1,14 +1,17 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
+﻿using Bluegrams.Application;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
+using System.Diagnostics.Contracts;
 using System.IO;
 using System.Linq;
+using System.Runtime;
 using System.Threading;
 using System.Windows.Forms;
 
 namespace FFBatch
-{
+{    
     internal static class Program
-    {
+    {        
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
@@ -23,11 +26,25 @@ namespace FFBatch
                 {
                     DialogResult a = MessageBox.Show(Properties.Strings.multiple_inst, Properties.Strings.multiple_inst_0, MessageBoxButtons.YesNo);
                     if (a == DialogResult.No) return;                    
-                }                                
+                }
+
+                Boolean is_portable = false;
+                String portable_flag = Application.StartupPath + "\\" + "portable.ini";
+                if (File.Exists(portable_flag))
+                {
+                    is_portable = true;
+                    ProfileOptimization.SetProfileRoot(Application.StartupPath);
+                    PortableSettingsProvider.ApplyProvider(Properties.Settings.Default);
+                }
+                else
+                {
+                    ProfileOptimization.SetProfileRoot(Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch"));
+                }
                 
-                if (Properties.Settings.Default.visuals == true) Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new Form1());
+                ProfileOptimization.StartProfile("FFBatch.Startup.Profile");
+                if (Properties.Settings.Default.visuals == true && Properties.Settings.Default.visuals_all == false) Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);                
+                Application.Run(new Form1());                
             }
         }
 

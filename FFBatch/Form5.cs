@@ -104,7 +104,7 @@ namespace FFBatch
                 dg_streams.RowsDefaultCellStyle.BackColor = Color.White;
             }
 
-            dg_streams.Columns[2].HeaderText = FFBatch.Properties.Strings.str_ouput;
+            dg_streams.Columns[3].HeaderText = FFBatch.Properties.Strings.str_ouput;
             this.Enabled = false;
 
             if (!lv1_item.ToLower().Substring(0, 4).Contains("http")) pic_frame.Image = null;
@@ -116,6 +116,7 @@ namespace FFBatch
             dg_streams.RowsDefaultCellStyle.WrapMode = DataGridViewTriState.True;
             dg_streams.Columns[1].ReadOnly = true;
             dg_streams.Columns[2].ReadOnly = true;
+            dg_streams.Columns[3].ReadOnly = true;
             dg_streams.Rows.Clear();
             String filepath, name = "";
 
@@ -128,6 +129,7 @@ namespace FFBatch
             {
                 name = lv1_item;
             }
+
             txt_file.Text = name + " - " + dur_lv1;
             img_prog.Width = 0;
             lbl_fr_time.Text = "00:00:00.000";
@@ -172,41 +174,52 @@ namespace FFBatch
                         {
                             stream_n = stream_n + 1;
                             sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 11);
-                            dg_streams.Rows.Add(img_streams.Images[img], "#0:" + f_streams.ToString(), stream.Substring((stream.LastIndexOf("#0:") + 11), (stream.Length - sub_str.Length)));
+                            dg_streams.Rows.Add(img_streams.Images[img], dg_streams.RowCount + 1, "#0:" + f_streams.ToString(), stream.Substring((stream.LastIndexOf("#0:") + 11), (stream.Length - sub_str.Length)));
                         }
                         else
                         {
                             sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 4);
-                            dg_streams.Rows.Add(img_streams.Images[img], "#0:" + f_streams.ToString(), stream.Substring((stream.LastIndexOf("#0:") + 4), (stream.Length - sub_str.Length)));
+                            dg_streams.Rows.Add(img_streams.Images[img], dg_streams.RowCount + 1, "#0:" + f_streams.ToString(), stream.Substring((stream.LastIndexOf("#0:") + 4), (stream.Length - sub_str.Length)));
                         }
                     }
                     else
                     {
                         if (stream.Contains("Video"))
                         {
-                            sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 6);
-                            String to_add = stream.Substring((stream.LastIndexOf("#0:") + 6), (stream.Length - sub_str.Length));
+                            sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 4);
+                            String to_add = stream.Substring((stream.LastIndexOf("#0:") + 4), (stream.Length - sub_str.Length));
+                            //Remove () and []
                             to_add = Regex.Replace(to_add, @"\([^()]*\)", string.Empty);
+                            Regex yourRegex = new Regex(@"\[([^\]]+)\]");
+                            to_add = yourRegex.Replace(to_add, "");
                             RegexOptions options = RegexOptions.None;
                             Regex regex = new Regex("[ ]{2,}", options);
                             to_add = regex.Replace(to_add, " ");
+                            
+                            if (to_add.Substring(0, 2) == ": ") to_add = to_add.Substring(2, to_add.Length - 2);
 
-                            dg_streams.Rows.Add(img_streams.Images[0], "#0:" + f_streams.ToString(), to_add);
+                            dg_streams.Rows.Add(img_streams.Images[0], dg_streams.RowCount + 1, "#0:" + f_streams.ToString(), to_add);
                         }
                         if (stream.Contains("Audio"))
                         {
-                            sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 6);
-                            String to_add = stream.Substring((stream.LastIndexOf("#0:") + 6), (stream.Length - sub_str.Length));
+                            sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 4);
+                            String to_add = stream.Substring((stream.LastIndexOf("#0:") + 4), (stream.Length - sub_str.Length));
+                            //Remove () and []
                             to_add = Regex.Replace(to_add, @"\([^()]*\)", string.Empty);
+                            Regex yourRegex = new Regex(@"\[([^\]]+)\]");
+                            to_add = yourRegex.Replace(to_add, "");
                             RegexOptions options = RegexOptions.None;
                             Regex regex = new Regex("[ ]{2,}", options);
                             to_add = regex.Replace(to_add, " ");
-                            this.InvokeEx(f => dg_streams.Rows.Add(img_streams.Images[1], "#0:" + f_streams.ToString(), to_add));
+                            
+                            if (to_add.Substring(0, 2) == ": ") to_add = to_add.Substring(2, to_add.Length - 2);
+
+                            this.InvokeEx(f => dg_streams.Rows.Add(img_streams.Images[1], dg_streams.RowCount + 1, "#0:" + f_streams.ToString(), to_add));
                         }
                         if (stream.Contains("Subtitle"))
                         {
                             sub_str = stream.Substring(0, stream.LastIndexOf("#0:") + 6);
-                            dg_streams.Rows.Add(img_streams.Images[2], "#0:" + f_streams.ToString(), stream.Substring((stream.LastIndexOf("#0:") + 6), (stream.Length - sub_str.Length)));
+                            dg_streams.Rows.Add(img_streams.Images[2], dg_streams.RowCount + 1, "#0:" + f_streams.ToString(), stream.Substring((stream.LastIndexOf("#0:") + 6), (stream.Length - sub_str.Length)));
                         }
                     }
                 }

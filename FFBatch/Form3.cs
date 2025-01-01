@@ -54,6 +54,7 @@ namespace FFBatch
         public Boolean not_save_logs;
         public Boolean verbose_logs;
         public Boolean full_report;
+        public Boolean ext_rep_app;
         public Boolean not_save_cache;
         public Boolean use_cache_os;
         public Boolean suffix;
@@ -155,7 +156,7 @@ namespace FFBatch
             }
 
             cancel = false;
-            Properties.Settings.Default.Save();
+            Settings.Default.Save();
             ActiveForm.Close();
         }
 
@@ -175,7 +176,19 @@ namespace FFBatch
         }
 
         private void Form3_Load(object sender, EventArgs e)
-        {   
+        {
+            if (Settings.Default.visuals == false && Settings.Default.dark_mode == false)
+            {
+                foreach (var groupbox in this.Controls.OfType<GroupBox>())
+                {
+                    groupbox.FlatStyle = FlatStyle.System;
+                    foreach (var chk in groupbox.Controls.OfType<CheckBox>())
+                    {
+                        chk.FlatStyle = FlatStyle.System;
+                    }
+                }
+            }
+            
             edit_presets = false;
             presets_online = false;
             String app_location = Application.StartupPath;
@@ -183,20 +196,28 @@ namespace FFBatch
             if (File.Exists(portable_flag)) is_portable = true;
             else is_portable = false;
 
-            if (Properties.Settings.Default.to_tray == false) chk_tray.Checked = false;
+            chk_visuals.Checked = !Settings.Default.visuals;
+            ToolTip toolT2z = new ToolTip();
+            toolT2z.AutoPopDelay = 9000;
+            toolT2z.InitialDelay = 250;
+            toolT2z.ReshowDelay = 500;
+            toolT2z.ShowAlways = true;
+            toolT2z.SetToolTip(this.chk_visuals, Properties.Strings.improve_start);
+
+            if (Settings.Default.to_tray == false) chk_tray.Checked = false;
             else chk_tray.Checked = true;
-            if (Properties.Settings.Default.filter_zero == false) chk_filter_zero.Checked = false;
+            if (Settings.Default.filter_zero == false) chk_filter_zero.Checked = false;
             else chk_filter_zero.Checked = true;
 
-            if (Properties.Settings.Default.auto_dark == true)
+            if (Settings.Default.auto_dark == true)
             {
                 chk_dark.Checked = true;
                 n_sunset.Enabled = true;
                 n_sunrise.Enabled = true;
 
-                n_sunset.Value = Properties.Settings.Default.dark_sunset;
-                n_sunrise.Value = Properties.Settings.Default.dark_sunrise;
-                if (Properties.Settings.Default.dark_os == true)
+                n_sunset.Value = Settings.Default.dark_sunset;
+                n_sunrise.Value = Settings.Default.dark_sunrise;
+                if (Settings.Default.dark_os == true)
                 {
                     chk_dark_win.Checked = true;
                     n_sunset.Enabled = false;
@@ -215,11 +236,11 @@ namespace FFBatch
                 chk_dark.Checked = false;
             }
 
-            if (Properties.Settings.Default.dark_mode == true)
+            if (Settings.Default.dark_mode == true)
             {
                 foreach (Control c in this.Controls) UpdateColorDark(c);
                 this.BackColor = Color.FromArgb(255, 64, 64, 64);
-                Properties.Settings.Default.dark_mode = true;
+                Settings.Default.dark_mode = true;
                 btn_dark.Image = pic_night.Image;
                 btn_dark.Text = Properties.Strings.en_day;
             }
@@ -227,7 +248,7 @@ namespace FFBatch
             {
                 foreach (Control c in this.Controls) UpdateColorDefault(c);
                 this.BackColor = SystemColors.InactiveBorder;
-                Properties.Settings.Default.dark_mode = false;
+                Settings.Default.dark_mode = false;
                 btn_dark.Image = pic_night.InitialImage;
                 btn_dark.Text = Properties.Strings.en_night;
                 textBox1.BackColor = SystemColors.Window;
@@ -242,14 +263,14 @@ namespace FFBatch
             browse_sound.InitialDirectory = Application.StartupPath;
 
             //Read configuration
-            if (Properties.Settings.Default.no_dest_overw == true) chk_no_overw.Checked = true;
+            if (Settings.Default.no_dest_overw == true) chk_no_overw.Checked = true;
             else chk_no_overw.Checked = false;
 
-            if (Properties.Settings.Default.bat_level < 10) Properties.Settings.Default.bat_level = 20;
+            if (Settings.Default.bat_level < 10) Settings.Default.bat_level = 20;
             
-            n_bat_l.Value = Properties.Settings.Default.bat_level;
+            n_bat_l.Value = Settings.Default.bat_level;
 
-            if (Properties.Settings.Default.pause_bat == true)
+            if (Settings.Default.pause_bat == true)
             {
                 chk_battery.Checked = true;               
             }
@@ -257,7 +278,7 @@ namespace FFBatch
             {
                 chk_battery.Checked = false;               
             }
-            if (Properties.Settings.Default.if_bat_low == true)
+            if (Settings.Default.if_bat_low == true)
             {
                 chk_bat_level.Checked = true;
             }
@@ -266,8 +287,14 @@ namespace FFBatch
                 chk_bat_level.Checked = false;
             }
 
-            if (Properties.Settings.Default.no_ctrl_p == false) chk_ctrl_p.Checked = false;
+            if (Settings.Default.no_resize == false) chk_resize.Checked = false;
+            else chk_resize.Checked = true;
+
+            if (Settings.Default.no_ctrl_p == false) chk_ctrl_p.Checked = false;
             else chk_ctrl_p.Checked = true;
+
+            if (Settings.Default.report_ext == false) chk_ext_rep.Checked = false;
+            else chk_ext_rep.Checked = true;
 
             if (is_startup() == false) chk_run_st.Checked = false;
             else chk_run_st.Checked = true;
@@ -371,10 +398,10 @@ namespace FFBatch
 
             //End read configuration
 
-            if (Properties.Settings.Default.no_ctrl_p == true) chk_ctrl_p.Checked = true;
+            if (Settings.Default.no_ctrl_p == true) chk_ctrl_p.Checked = true;
             else chk_ctrl_p.Checked = false;
 
-            if (Properties.Settings.Default.quick_queue == true) chk_quick_q.Checked = true;
+            if (Settings.Default.quick_queue == true) chk_quick_q.Checked = true;
             else chk_quick_q.Checked = false;
 
             //Read auto-saved configuration
@@ -926,15 +953,15 @@ namespace FFBatch
             if (chk_auto_start.Checked) chk_autor.Image = pic_auto_en.Image;
             else chk_autor.Image = pic_auto_dis.Image;
 
-            if (Properties.Settings.Default.large_th == true) chk_thumb_big.Checked = true;
+            if (Settings.Default.large_th == true) chk_thumb_big.Checked = true;
             else chk_thumb_big.Checked = false;
 
-            txt_monitor.Text = Properties.Settings.Default.fd_monitored;
+            txt_monitor.Text = Settings.Default.fd_monitored;
 
-            if (Properties.Settings.Default.monitor_fd == true) chk_monitor.Checked = true;
+            if (Settings.Default.monitor_fd == true) chk_monitor.Checked = true;
             else chk_monitor.Checked = false;
-            chk_w_subs.Checked = Properties.Settings.Default.mon_fd_subs;
-            n_monitor.Value = Properties.Settings.Default.mon_int;
+            chk_w_subs.Checked = Settings.Default.mon_fd_subs;
+            n_monitor.Value = Settings.Default.mon_int;
 
             //FFmpeg latest version
 
@@ -982,6 +1009,7 @@ namespace FFBatch
                 pic_ff_ok.Left = lbl_ff_latest.Left + lbl_ff_latest.Text.Length + 60;
             }
             foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
+
         }
 
         private void boton_load_bck_Click(object sender, System.EventArgs e)
@@ -1165,6 +1193,11 @@ namespace FFBatch
 
         private void btn_defaults_Click(object sender, EventArgs e)
         {
+            chk_resize.Checked = false;
+            chk_ext_rep.Checked = false;
+            chk_visuals.Checked = false;
+            Settings.Default.visuals = false;
+            Settings.Default.visuals_all = false;
             chk_ignore_enc.Checked = false;
             chk_monitor.Checked = false;
             chk_w_subs.Checked = false;
@@ -1197,11 +1230,20 @@ namespace FFBatch
             chk_run_st.Checked = false;
             n_delay.Value = 0;
             chk_ctrl_p.Checked = false;
-            chk_quick_q.Checked = false;
+            chk_quick_q.Checked = true;
             chk_thumb_big.Checked = false;
             chk_dark.Checked = false;
             chk_battery.Checked = false;
             chk_dates.Checked = false;
+            Settings.Default.dark_mode = false;
+            foreach (Control c in this.Controls) UpdateColorDefault(c);
+            this.BackColor = SystemColors.InactiveBorder;
+            Settings.Default.dark_mode = false;
+            btn_dark.Image = pic_night.InitialImage;
+            btn_dark.Text = Properties.Strings.en_night;
+            textBox1.BackColor = SystemColors.Window;
+            txt_format.BackColor = SystemColors.Window;
+            Settings.Default.Save();
         }
 
         private void chk_never_cache_CheckedChanged(object sender, EventArgs e)
@@ -1245,7 +1287,7 @@ namespace FFBatch
         }
 
         private void btn_reset_Click(object sender, EventArgs e)
-        {
+        {           
             reset_asked = true;
             cancel = false;
             ActiveForm.Close();
@@ -1443,59 +1485,59 @@ namespace FFBatch
             if (combo_lang.SelectedIndex == 0)
             {
                 lang_set = "en";
-                FFBatch.Properties.Settings.Default.app_lang = "en";
+                Settings.Default.app_lang = "en";
                 show_pics();
             }
             if (combo_lang.SelectedIndex == 1)
             {
                 lang_set = "es";
-                FFBatch.Properties.Settings.Default.app_lang = "es";
+                Settings.Default.app_lang = "es";
                 show_pics();
             }
 
             if (combo_lang.SelectedIndex == 2)
             {
                 lang_set = "fr";
-                FFBatch.Properties.Settings.Default.app_lang = "fr";
+                Settings.Default.app_lang = "fr";
                 hide_pics();
             }
 
             if (combo_lang.SelectedIndex == 3)
             {
                 lang_set = "it";
-                FFBatch.Properties.Settings.Default.app_lang = "it";
+                Settings.Default.app_lang = "it";
                 hide_pics();
             }
                         
             if (combo_lang.SelectedIndex == 4)
             {
                 lang_set = "pt-BR";
-                FFBatch.Properties.Settings.Default.app_lang = "pt-BR";
+                Settings.Default.app_lang = "pt-BR";
                 hide_pics();
 
             }
             if (combo_lang.SelectedIndex == 5)
             {
                 lang_set = "zh-Hans";
-                FFBatch.Properties.Settings.Default.app_lang = "zh-Hans";
+                Settings.Default.app_lang = "zh-Hans";
                 show_pics();
             }
             if (combo_lang.SelectedIndex == 6)
             {
                 lang_set = "zh-Hans";
-                FFBatch.Properties.Settings.Default.app_lang = "ar-EG";
+                Settings.Default.app_lang = "ar-EG";
                 show_pics();
             }
 
-            FFBatch.Properties.Settings.Default.Save();
+            Settings.Default.Save();
             refresh_lang();
             this.Text = FFBatch.Properties.Strings.Settings;            
         }
 
         private void refresh_lang()
         {
-            //Thread.CurrentThread.CurrentCulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo(FFBatch.Properties.Settings.Default.app_lang, true);
+            //Thread.CurrentThread.CurrentCulture = new CultureInfo(Settings.Default.app_lang, true);
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(Settings.Default.app_lang, true);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             RefreshResources(this, resources);
             changed_lang = true;
@@ -1552,16 +1594,16 @@ namespace FFBatch
 
         private void btn_add_ex_Click(object sender, EventArgs e)
         {
-            //Check MD5 ffmpeg
-
             Form25 frm25 = new Form25();
-            frm25.btn_close.Image = btn_cancel.Image;            
+            frm25.btn_close.Image = btn_cancel.Image;
+            this.Cursor = Cursors.WaitCursor;
             frm25.ShowDialog();
+            this.Cursor = Cursors.Default;            
         }
 
         private void Form3_Shown(object sender, EventArgs e)
         {
-            if (FFBatch.Properties.Settings.Default.app_lang == "zh-Hans") this.Height = this.Height + 55;
+            if (Settings.Default.app_lang == "zh-Hans") this.Height = this.Height + 55;
         }
 
         public void UpdateColorDark(Control myControl)
@@ -1586,12 +1628,12 @@ namespace FFBatch
 
         private void btn_dark_Click(object sender, EventArgs e)
         {
-            Properties.Settings.Default.dark_mode = !Properties.Settings.Default.dark_mode;
-            if (Properties.Settings.Default.dark_mode == true)
+            Settings.Default.dark_mode = !Settings.Default.dark_mode;
+            if (Settings.Default.dark_mode == true)
             {
                 foreach (Control c in this.Controls) UpdateColorDark(c);
                 this.BackColor = Color.FromArgb(255, 64, 64, 64);
-                Properties.Settings.Default.dark_mode = true;
+                Settings.Default.dark_mode = true;
                 btn_dark.Image = pic_night.Image;
                 btn_dark.Text = Properties.Strings.en_day;
             }
@@ -1599,21 +1641,21 @@ namespace FFBatch
             {
                 foreach (Control c in this.Controls) UpdateColorDefault(c);
                 this.BackColor = SystemColors.InactiveBorder;
-                Properties.Settings.Default.dark_mode = false;
+                Settings.Default.dark_mode = false;
                 btn_dark.Image = pic_night.InitialImage;
                 btn_dark.Text = Properties.Strings.en_night;
                 textBox1.BackColor = SystemColors.Window;
                 txt_format.BackColor = SystemColors.Window;
             }
-            Properties.Settings.Default.Save();
+            Settings.Default.Save();
         }
 
         private void Form3_FormClosing_1(object sender, FormClosingEventArgs e)
         {
             if (cancel == true)
             {
-                Properties.Settings.Default.dark_mode = !Properties.Settings.Default.dark_mode;
-                Properties.Settings.Default.Save();
+                Settings.Default.dark_mode = !Settings.Default.dark_mode;
+                Settings.Default.Save();
             }       
         }
 
@@ -1696,7 +1738,7 @@ namespace FFBatch
 
         private void chk_quick_q_Click(object sender, EventArgs e)
         {
-            if (chk_quick_q.Checked) MessageBox.Show(Properties.Strings.quick_f_m + Environment.NewLine + Environment.NewLine + Properties.Strings.quick_f_m2 + Environment.NewLine + Environment.NewLine + Properties.Strings.quick_f_m4 + Environment.NewLine + Environment.NewLine + Properties.Strings.quick_f_m3, Properties.Strings.information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (chk_quick_q.Checked) MessageBox.Show(Properties.Strings.quick_f_m + Environment.NewLine + Environment.NewLine + Properties.Strings.quick_f_m2 + Environment.NewLine + Environment.NewLine + Properties.Strings.quick_f_m4, Properties.Strings.information, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void chk_dark_CheckedChanged(object sender, EventArgs e)
@@ -1721,29 +1763,23 @@ namespace FFBatch
             if (chk_dark_win.Checked)
             {
                 n_sunset.Enabled = false;
-                n_sunrise.Enabled = false;
+                n_sunrise.Enabled = false;                
             }
             else
             {
                 n_sunset.Enabled = true;
                 n_sunrise.Enabled = true;
+                Settings.Default.dark_os = false;
             }
         }
 
         private void chk_filter_zero_CheckedChanged(object sender, EventArgs e)
         {
             if (chk_filter_zero.CheckState == CheckState.Checked)
-            {                
-                if (chk_quick_q.Checked)
-                {
-                    MessageBox.Show(Properties.Strings.filter_quick_not);
-                    chk_filter_zero.Checked = false;
-                    Properties.Settings.Default.filter_zero = false;
-                    return;
-                }
-                else Properties.Settings.Default.filter_zero = true;
+            {
+                Settings.Default.filter_zero = true;
             }
-            else Properties.Settings.Default.filter_zero = false;            
+            else Settings.Default.filter_zero = false;            
         }
 
         private void chk_battery_CheckedChanged(object sender, EventArgs e)
@@ -1762,7 +1798,7 @@ namespace FFBatch
 
         private void n_bat_l_ValueChanged(object sender, EventArgs e)
         {
-            Properties.Settings.Default.bat_level = n_bat_l.Value;
+            Settings.Default.bat_level = n_bat_l.Value;
         }
 
         private void chk_quick_q_CheckedChanged(object sender, EventArgs e)
@@ -1822,12 +1858,12 @@ namespace FFBatch
         {
             Form32 frm32 = new Form32();
             frm32.ShowDialog();
-            Properties.Settings.Default.excl_list.Clear();
+            Settings.Default.excl_list.Clear();
             foreach (DataGridViewRow row in frm32.dg_pr.Rows)
             {
                 if (row.Cells[0].Value != null)
                 {
-                    if (row.Cells[0].Value.ToString().Length > 0) Properties.Settings.Default.excl_list.Add(row.Cells[0].Value.ToString());
+                    if (row.Cells[0].Value.ToString().Length > 0) Settings.Default.excl_list.Add(row.Cells[0].Value.ToString());
                 }
             }
         }
@@ -1909,6 +1945,31 @@ namespace FFBatch
             {
                 use_cache_os = false;
             }
+        }
+
+        private void chk_visuals_Click(object sender, EventArgs e)
+        {
+            Settings.Default.visuals_all = false;
+            
+            if (chk_visuals.Checked == true)
+            {
+                Settings.Default.visuals = false;                
+
+            }
+            else
+            {
+                Settings.Default.visuals = true;                
+            }            
+            Settings.Default.Save();
+        }
+
+        private void chk_ext_rep_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_ext_rep.CheckState == CheckState.Checked)
+            {
+                ext_rep_app = true;
+            }
+            else ext_rep_app = false;
         }
     }
 }

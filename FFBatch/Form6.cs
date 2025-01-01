@@ -2,6 +2,7 @@
 using Microsoft.Win32;
 using System;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
@@ -49,14 +50,9 @@ namespace FFBatch
             }
         }
         private void Form6_Load(object sender, System.EventArgs e)
-        {
-
-            if (Settings.Default.dark_os == false)
-            {
-                if (Settings.Default.dark_mode == true)
-                {
-                    foreach (Control c in this.Controls) UpdateColorDark(c);                    
-                }
+        {            
+            if (Settings.Default.dark_os == false && Settings.Default.auto_dark == true)
+            {                
                 if (Settings.Default.dark_mode == false && Settings.Default.auto_dark == true)
                 {
                     String t_sunset0 = Settings.Default.dark_sunset.ToShortTimeString();
@@ -81,21 +77,25 @@ namespace FFBatch
                 }
             }
 
-            if (Settings.Default.dark_os == true && Settings.Default.dark_mode == false)
+            if (Settings.Default.dark_os == true  && Settings.Default.auto_dark == true)
             {
                 if (IsNightLightEnabled() == true)
                 {
                     Settings.Default.dark_mode = true;
+                    foreach (Control c in this.Controls) UpdateColorDark(c);
+                    this.BackColor = Color.FromArgb(255, 64, 64, 64);
                 }
                 else Settings.Default.dark_mode = false;
             }
-
-            if (Properties.Settings.Default.dark_mode == true)
+            else
             {
-                foreach (Control c in this.Controls) UpdateColorDark(c);
-                this.BackColor = Color.FromArgb(255, 64, 64, 64);                
+                if (Settings.Default.dark_mode == true)
+                {
+                    foreach (Control c in this.Controls) UpdateColorDark(c);
+                    this.BackColor = Color.FromArgb(255, 64, 64, 64);
+                }
             }
-
+            Settings.Default.Save();
             String app_location = Application.StartupPath;
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
             if (File.Exists(portable_flag)) is_portable = true;
@@ -116,16 +116,36 @@ namespace FFBatch
             if (File.Exists(f_delay))
             {
                 int i = Convert.ToInt32(File.ReadAllText(f_delay));
-                label1.Visible = true;
-                label1.Text = Properties.Strings.delay_act + ": " + i.ToString();
+                lbl_delay.Visible = true;
+                //lbl_delay.Text = Properties.Strings.delay_act + ": " + i.ToString();
+                lbl_delay.Text = Strings.ResourceManager.GetString("delay_act", new CultureInfo(Properties.Settings.Default.app_lang)) + ": " + i.ToString();
 
             }
-            //End startup delay
+            if (Properties.Settings.Default.visuals == false)
+            {
+                lbl_delay.Visible = true;
+                lbl_delay.Text = lbl_delay.Text + Strings.ResourceManager.GetString("quick_ena", new CultureInfo(Properties.Settings.Default.app_lang));
+            }            
         }
 
         private void pic1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        private void Form6_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
+            {
+                if (Application.OpenForms[i].Name == "Form1")
+                {
+                    foreach (Control ct in Application.OpenForms[i].Controls)
+                    {
+                        if (ct is PictureBox && ct.Name == "pic_title") ((PictureBox)ct).Image = pic1.Image;
+                    }
+                    break;
+                }
+            }
+        }        
     }
 }

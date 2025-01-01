@@ -31,6 +31,7 @@ namespace FFBatch
         String selected_crop = "";
         Boolean failed = false;
         Boolean reset = false;
+        Boolean rotated = false;
 
         public void UpdateColorDark(Control myControl)
         {
@@ -55,7 +56,7 @@ namespace FFBatch
         private void Form28_Load(object sender, EventArgs e)
         {            
             this.Text = Properties.Strings.crop1;
-            var dateStr = "00:00:10";
+            var dateStr = "00:00:00";
             var dateTime = DateTime.ParseExact(dateStr, "HH:mm:ss", null, System.Globalization.DateTimeStyles.None);
 
             time_pre_subs.Format = DateTimePickerFormat.Custom;
@@ -78,14 +79,14 @@ namespace FFBatch
             }
             
             lbl_f.Text = Path.GetFileName(item);
-            if (get_dur_secs(dur) > 10)
+            if (get_dur_secs(dur) > 13)
             {
                 time_pre_subs.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 10);
             }
             else
             {
                 dur = get_file_dur(item);
-                if (get_dur_secs(dur) > 10)
+                if (get_dur_secs(dur) > 13)
                 {
                     time_pre_subs.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 10);
                 }
@@ -153,7 +154,7 @@ namespace FFBatch
             String ff_frames = String.Empty;
             Process get_frames = new Process();
             get_frames.StartInfo.FileName = System.IO.Path.Combine(Application.StartupPath, "Mediainfo.exe");
-            String ffprobe_frames = "--Inform=Video;%Width%" + "x" + "%Height%";
+            String ffprobe_frames = "--Inform=Video;%Width%" + "x" + "%Height%" + "\\n%Rotation%";
             get_frames.StartInfo.Arguments = ffprobe_frames + " " + '\u0022' + item + '\u0022';
 
             get_frames.StartInfo.RedirectStandardOutput = true;
@@ -163,11 +164,16 @@ namespace FFBatch
             get_frames.EnableRaisingEvents = true;
             get_frames.Start();
 
-            ff_frames = get_frames.StandardOutput.ReadLine();
+            List<string> outm = new List<string>();
+            while (!get_frames.StandardOutput.EndOfStream)
+            {
+                outm.Add(get_frames.StandardOutput.ReadLine());
+            }            
             get_frames.WaitForExit();
 
             if (get_frames.ExitCode == 0)
             {
+                ff_frames = outm[0];
                 if (ff_frames != null)
                 {
                     has_streams = true;
@@ -188,7 +194,33 @@ namespace FFBatch
                     this.Close();
                     return;
                 }
-                txt_size1.Text = ff_frames;
+
+                Decimal dec = 0;
+                if (outm.Count() > 1)
+                {
+                    if (outm[1].Length > 0)
+                    {
+                        
+                        
+                        if (Decimal.TryParse(outm[1], out dec))
+                        {
+                            if (System.Globalization.CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator == ",")
+                            {
+                                dec = Math.Round(Decimal.Parse(outm[1].Replace(".", ",")), 0);
+                            }
+                            else
+                            {
+                                dec = Math.Round(Decimal.Parse(outm[1]), 0);
+                            }
+                                                        
+                            if (dec == 90 || dec == 270)
+                            {
+                                rotated = true;
+                            }
+                        }
+                    }
+                }                
+                
                 if (ff_frames.Length == 0)
                 {
                     failed = true;
@@ -196,14 +228,27 @@ namespace FFBatch
                     this.Close();
                     return;
                 }
-                n_w.Maximum = Convert.ToDecimal(ff_frames.Substring(0, ff_frames.IndexOf("x")));
-                n_w.Value = 0;                
-                n_h.Maximum = Convert.ToDecimal(ff_frames.Substring(ff_frames.IndexOf("x") + 1, ff_frames.Length - ff_frames.IndexOf("x") - 1));
-                n_h.Value = 0;
+                if (rotated == false)
+                {
+                    n_w.Maximum = Convert.ToDecimal(ff_frames.Substring(0, ff_frames.IndexOf("x")));
+                    n_w.Value = 0;
+                    n_h.Maximum = Convert.ToDecimal(ff_frames.Substring(ff_frames.IndexOf("x") + 1, ff_frames.Length - ff_frames.IndexOf("x") - 1));
+                    n_h.Value = 0;
+                }
+                else
+                {
+                    n_h.Maximum = Convert.ToDecimal(ff_frames.Substring(0, ff_frames.IndexOf("x")));
+                    n_h.Value = 0;
+                    n_w.Maximum = Convert.ToDecimal(ff_frames.Substring(ff_frames.IndexOf("x") + 1, ff_frames.Length - ff_frames.IndexOf("x") - 1));
+                    n_w.Value = 0;
+                }
                 n_X.Maximum = n_w.Maximum;
                 n_Y.Maximum = n_h.Maximum;
                 n_crop_res_X.Maximum = n_w.Maximum;
                 n_crop_res_Y.Maximum = n_h.Maximum;
+                String rota = String.Empty;
+                if (rotated == true) rota = " (" + dec.ToString() + "º)";                
+                txt_size1.Text = n_w.Maximum.ToString() + "x" + n_h.Maximum.ToString() + rota;
             }
         }
 
@@ -704,7 +749,7 @@ namespace FFBatch
             if (cb_crop.SelectedIndex == 13) selected_crop = "720:480";
             if (cb_crop.SelectedIndex == 14) selected_crop = "640:480";
             if (cb_crop.SelectedIndex == 15) selected_crop = "640:360";
-            if (cb_crop.SelectedIndex == 16) selected_crop = "320:240";
+            if (cb_crop.SelectedIndex == 16) selected_crop = "320:240";            
 
             if (cb_crop.SelectedIndex == -1)
             {
@@ -896,6 +941,11 @@ namespace FFBatch
                 time_pre_subs.Value = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 0, 0, 0);
             }
             btn_frame.PerformClick();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

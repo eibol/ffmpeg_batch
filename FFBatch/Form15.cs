@@ -11,6 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace FFBatch
 {
     public partial class Form15 : Form
@@ -23,6 +24,7 @@ namespace FFBatch
         public Boolean saved = false;
         private Boolean duplicates = false;
         public Boolean online_pr = false;
+
 
         public Form15()
         {
@@ -65,9 +67,9 @@ namespace FFBatch
                 UpdateColorDefault(subC);
             }
         }
-
+        
         private void Form15_Load(object sender, EventArgs e)
-        {
+        {   
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
             if (File.Exists(portable_flag)) is_portable = true;
             else is_portable = false;
@@ -78,8 +80,7 @@ namespace FFBatch
                 this.BackColor = Color.FromArgb(255, 64, 64, 64);
                 dg_pr.BackgroundColor = Color.Gray;
                 dg_pr.RowsDefaultCellStyle.BackColor = Color.Gray;
-                dg_pr.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(255, 79, 79, 99);
-                dg_pr.RowsDefaultCellStyle.BackColor = Color.Gray;
+                dg_pr.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(255, 79, 79, 99);                
             }
             else
             {
@@ -126,9 +127,11 @@ namespace FFBatch
             this.Text = new string(letters);
             // upper case the first char
 
-            dg_pr.Columns[0].HeaderText = FFBatch.Properties.Strings.Name;
-            dg_pr.Columns[1].HeaderText = FFBatch.Properties.Strings.ff_params;
-            dg_pr.Columns[2].HeaderText = FFBatch.Properties.Strings.Format;
+            dg_pr.Columns[0].HeaderText = Properties.Strings.Name;
+            dg_pr.Columns[1].HeaderText = Properties.Strings.ff_params;
+            dg_pr.Columns[2].HeaderText = Properties.Strings.Format;
+            ct_top.Text = Properties.Strings.Move_item_to_top;
+            ct_bottom.Text = Properties.Strings.Move_item_to_bottom;
 
             foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
         }
@@ -666,6 +669,69 @@ namespace FFBatch
         {
             online_pr = true;
             this.Close();
+        }
+
+        private void ct_bottom_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow sel = dg_pr.Rows[dg_pr.SelectedCells[0].RowIndex];
+            dg_pr.Rows.RemoveAt(dg_pr.SelectedCells[0].RowIndex);
+            dg_pr.Rows.Insert(dg_pr.RowCount, sel);
+            dg_pr.ClearSelection();
+            dg_pr.FirstDisplayedScrollingRowIndex = dg_pr.RowCount - 1;
+        }
+
+        private void ct_top_Click(object sender, EventArgs e)
+        {            
+            DataGridViewRow sel = dg_pr.Rows[dg_pr.SelectedCells[0].RowIndex];
+            dg_pr.Rows.RemoveAt(dg_pr.SelectedCells[0].RowIndex);
+            dg_pr.Rows.Insert(0, sel);
+            dg_pr.ClearSelection();
+            dg_pr.FirstDisplayedScrollingRowIndex = 0;            
+        }
+
+        private void ctm_move_Opening(object sender, CancelEventArgs e)
+        {
+            if (dg_pr.SelectedCells.Count == 1)
+            {
+                ct_top.Enabled = true;
+                ct_bottom.Enabled = true;
+            }
+            else
+            {
+                if (dg_pr.SelectedCells.Count == 0)
+                {
+                    ct_top.Enabled = false;
+                    ct_bottom.Enabled = false;
+                }
+                else
+                {
+                    if (dg_pr.SelectedCells.Count > 1)
+                    {
+                        Boolean ena = true;
+                        int ind = dg_pr.SelectedCells[0].RowIndex;
+                        foreach (DataGridViewCell cell in dg_pr.SelectedCells)
+                        {
+                            if (cell.RowIndex != ind)
+                            {
+                                ena = false;
+                                break;
+                            }
+                            
+                        }
+                        if (ena == false)
+                        {
+                            ct_top.Enabled = false;
+                            ct_bottom.Enabled = false;
+                        }
+                        else
+                        {
+                            ct_top.Enabled = true;
+                            ct_bottom.Enabled = true;
+
+                        }
+                    }
+                }
+            }
         }
     }
 }

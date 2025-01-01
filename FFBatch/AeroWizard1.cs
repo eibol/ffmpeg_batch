@@ -93,7 +93,7 @@ namespace FFBatch
         public Boolean images_to_v = false;
 
         private void wizardControl1_SelectedPageChanged(object sender, EventArgs e)
-        {
+        {            
             String app_location = Application.StartupPath;
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
             if (File.Exists(portable_flag)) is_portable = true;
@@ -3189,7 +3189,7 @@ namespace FFBatch
                         }
                     }
                 }
-                video_encoder_param = video_encoder_param;
+                //video_encoder_param = video_encoder_param;
             }
 
             if (Combo_encoders.SelectedIndex == Combo_encoders.FindString("h264_amf"))

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form15));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -35,6 +36,9 @@
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ctm_move = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ct_top = new System.Windows.Forms.ToolStripMenuItem();
+            this.ct_bottom = new System.Windows.Forms.ToolStripMenuItem();
             this.btn_save = new System.Windows.Forms.Button();
             this.btn_load = new System.Windows.Forms.Button();
             this.open_file = new System.Windows.Forms.OpenFileDialog();
@@ -52,6 +56,7 @@
             this.btn_clear = new System.Windows.Forms.Button();
             this.btn_online = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dg_pr)).BeginInit();
+            this.ctm_move.SuspendLayout();
             this.SuspendLayout();
             // 
             // dg_pr
@@ -67,6 +72,7 @@
             this.Column1,
             this.Column2,
             this.Column3});
+            this.dg_pr.ContextMenuStrip = this.ctm_move;
             this.dg_pr.Name = "dg_pr";
             this.dg_pr.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dg_pr_CellValidating);
             this.dg_pr.DragDrop += new System.Windows.Forms.DragEventHandler(this.dg_pr_DragDrop);
@@ -90,6 +96,27 @@
             this.Column3.DefaultCellStyle = dataGridViewCellStyle2;
             resources.ApplyResources(this.Column3, "Column3");
             this.Column3.Name = "Column3";
+            // 
+            // ctm_move
+            // 
+            resources.ApplyResources(this.ctm_move, "ctm_move");
+            this.ctm_move.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ct_top,
+            this.ct_bottom});
+            this.ctm_move.Name = "ctm_move";
+            this.ctm_move.Opening += new System.ComponentModel.CancelEventHandler(this.ctm_move_Opening);
+            // 
+            // ct_top
+            // 
+            resources.ApplyResources(this.ct_top, "ct_top");
+            this.ct_top.Name = "ct_top";
+            this.ct_top.Click += new System.EventHandler(this.ct_top_Click);
+            // 
+            // ct_bottom
+            // 
+            resources.ApplyResources(this.ct_bottom, "ct_bottom");
+            this.ct_bottom.Name = "ct_bottom";
+            this.ct_bottom.Click += new System.EventHandler(this.ct_bottom_Click);
             // 
             // btn_save
             // 
@@ -245,6 +272,7 @@
             this.Load += new System.EventHandler(this.Form15_Load);
             this.Resize += new System.EventHandler(this.Form15_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.dg_pr)).EndInit();
+            this.ctm_move.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,5 +300,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         public System.Windows.Forms.Button btn_cancel;
+        public System.Windows.Forms.ContextMenuStrip ctm_move;
+        private System.Windows.Forms.ToolStripMenuItem ct_top;
+        private System.Windows.Forms.ToolStripMenuItem ct_bottom;
     }
 }

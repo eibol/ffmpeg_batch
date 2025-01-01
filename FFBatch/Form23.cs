@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FFBatch.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,8 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Reflection;
+using System.Resources;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
@@ -86,8 +89,8 @@ namespace FFBatch
             }
 
             lbl_d_v.TextAlign = ContentAlignment.MiddleCenter;
-            lbl_d_v.Width = 452;
-
+            lbl_d_v.Width = 452;            
+            btn_abort_all.Text = Strings.ResourceManager.GetString("abort_down", new CultureInfo(Properties.Settings.Default.app_lang)); ;
             List<string> list_lines = new List<string>();
             List<string> list_err = new List<string>();
             total_videos = 0;
@@ -95,7 +98,7 @@ namespace FFBatch
             lbl_d_v.Text = "";
             Pg1.Value = 0;
             pg2.Value = 0;
-            working = true;
+            working = true;            
             killed = false;
             Pg1.Value = 0;
             Pg1.Text = "0%";
@@ -141,10 +144,16 @@ namespace FFBatch
                 }                
 
                 process_glob.StartInfo.FileName = ffm;
-                String AppParam = pre_params + " " + txt_parameters.Text + " " + " -o " + '\u0022' + destino + "\\" + "%(title)s.%(ext)s" + '\u0022' + " --ffmpeg-location " + '\u0022' + Properties.Settings.Default.ffm_path + '\u0022' + " " + txt_channel.Text;
+                String AppParam = pre_params + " " + txt_parameters.Text + " -o " + '\u0022' + destino + "\\" + "%(title)s.%(ext)s" + '\u0022' + " --ffmpeg-location " + '\u0022' + Properties.Settings.Default.ffm_path + '\u0022' + " " + txt_channel.Text;
                 if (sel_format == true) AppParam = AppParam + " --merge-output-format " +  set_format;
                 process_glob.StartInfo.Arguments = AppParam;
-                                
+
+                if (set_format == "m4a") process_glob.StartInfo.Arguments = "-f bestaudio[ext=m4a] -x " + " -o " + '\u0022' + destino + "\\" + "%(title)s.%(ext)s" + '\u0022' + " --ffmpeg-location " + '\u0022' + Properties.Settings.Default.ffm_path + '\u0022' + " " + txt_channel.Text;
+                if (set_format == "mp3") process_glob.StartInfo.Arguments = "-f bestaudio[ext=m4a] -x --audio-format mp3 --audio-quality 0 " + " -o " + '\u0022' + destino + "\\" + "%(title)s.%(ext)s" + '\u0022' + " --ffmpeg-location " + '\u0022' + Properties.Settings.Default.ffm_path + '\u0022' + " " + txt_channel.Text;
+                if (set_format == "flac") process_glob.StartInfo.Arguments = " -f bestaudio -x --audio-format flac --audio-quality 5 " + " -o " + '\u0022' + destino + "\\" + "%(title)s.%(ext)s" + '\u0022' + " --ffmpeg-location " + '\u0022' + Properties.Settings.Default.ffm_path + '\u0022' + " " + txt_channel.Text;
+                if (set_format == "opus") process_glob.StartInfo.Arguments = "-f bestaudio -x --audio-format opus --audio-quality 0 " + " -o " + '\u0022' + destino + "\\" + "%(title)s.%(ext)s" + '\u0022' + " --ffmpeg-location " + '\u0022' + Properties.Settings.Default.ffm_path + '\u0022' + " " + txt_channel.Text;
+                process_glob.StartInfo.Arguments = "--windows-filenames   " + process_glob.StartInfo.Arguments;
+
                 if (!File.Exists(System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe")))
                 {
                     cancel_queue = true;
@@ -221,22 +230,7 @@ namespace FFBatch
                             Pg1.Text = n_vid +  " of " + total_videos.ToString();
                         }));
                     }
-            
-                    //if (err_txt.Contains("[youtube:tab] playlist ") && err_txt.Contains("Downloading ") && err_txt.Contains("videos"))
-                    //{
-                    //    int ind1 = err_txt.LastIndexOf("Downloading ");
-                    //    int ind2 = err_txt.Length;
-                    //    n_vs = err_txt.Substring(ind1, ind2 - ind1).Replace("Downloading ", "").Replace("videos", "").Trim(); ;
-                    //    lbl_d_v.Invoke(new MethodInvoker(delegate
-                    //    {
-                    //        lbl_d_v.Text = FFBatch.Properties.Strings.total + ": " + n_vs.Replace("Videos: Downloading ", "").Replace("videos", "").Trim();
-                    //        //lbl_d_v.Visible = true;
-                    //        //lbl_d_v.Text = "Starting downloads...";
-                    //        total_videos = Convert.ToInt32(n_vs.Replace("Videos: Downloading ", "").Replace("videos", "").Trim());
-                    //        Pg1.Maximum = total_videos;
-                    //        this.InvokeEx(f => f.Pg1.Text = "0 of " + total_videos.ToString());
-                    //    }));
-                    //}
+                    
                     if (err_txt.Contains("[download] Destination: "))
                     {
                         lbl_d_v.Invoke(new MethodInvoker(delegate
@@ -244,28 +238,7 @@ namespace FFBatch
                             lbl_d_v.Text = Path.GetFileName(err_txt.Replace("Downloading video: ", ""));
                         }));
                     }
-                    //if (err_txt.Contains("[download] Downloading video ") && err_txt.Contains(total_videos.ToString()))
-                    //{
-                    //    String prog = "";
-                    //    Pg1.Invoke(new MethodInvoker(delegate
-                    //    {
-                    //        try
-                    //        {
-                    //            prog = err_txt.Replace("[download] ", "");
-                    //            prog = prog.Replace("Downloading video ", "");
-                    //            prog = prog.Replace(" of " + total_videos.ToString(), "");
-                    //            Pg1.Value = Convert.ToInt32(prog);
-                    //            Pg1.Text = err_txt.Replace("[download] Downloading video ", "");
-                    //            this.InvokeEx(f => TaskbarProgress.SetValue(this.Handle, Pg1.Value, Pg1.Maximum));
-                    //        }
-                    //        catch
-                    //        {
-                    //            lbl_d_v.Text = FFBatch.Properties.Strings.outf_count + " " + Directory.GetFiles(destino).Length.ToString();
-                    //            lbl_d_v.Refresh();
-                    //            total_videos = 0;
-                    //        }
-                    //    }));
-                    //}
+            
                     if (err_txt.Contains("%"))
                     {
                         try
@@ -380,7 +353,7 @@ namespace FFBatch
                     String to_remove = "please report this issue on https://yt-dl.org/bug . Make sure you are using the latest version; type  youtube-dl -U  to update. Be sure to call youtube-dl with the --verbose flag and include its complete output.";
                     String remove2 = "Type youtube-dl --help to see a list of all options.";
                     if (aborted_url == false && killed == false) MessageBox.Show(Properties.Strings.error2 + Environment.NewLine + Environment.NewLine + error_out.Replace(to_remove, "").Replace(remove2, "Check youtube-dl parameters and url."), FFBatch.Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    if (killed == true) MessageBox.Show(Properties.Strings.aborted2, Properties.Strings.aborted, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //if (killed == true) MessageBox.Show(Properties.Strings.aborted2, Properties.Strings.aborted, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 this.InvokeEx(f => TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress));
 
@@ -592,15 +565,15 @@ namespace FFBatch
                 this.BackColor = SystemColors.InactiveBorder;
             }
 
-            working = false;
+            working = false;            
             Pg1.Text = "0%";
             pg2.Text = "0%";
             String app_location = Application.StartupPath;
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";
             if (File.Exists(portable_flag)) is_portable = true; else is_portable = false;
-            //Read play sound
-
+            
             refresh_lang();
+            btn_abort_all.Text = Strings.ResourceManager.GetString("close_win", new CultureInfo(Properties.Settings.Default.app_lang));
             this.Text = FFBatch.Properties.Strings.quick_yt1;
             txt_get_url.Text = FFBatch.Properties.Strings.quick_yt2 + Environment.NewLine + FFBatch.Properties.Strings.quick_yt3 + Environment.NewLine + FFBatch.Properties.Strings.quick_yt4 + " " + "https://www.youtube.com/user/[channel_name]/videos";
 
@@ -634,6 +607,8 @@ namespace FFBatch
 
             if (FFBatch.Properties.Settings.Default.app_lang == "zh-Hans") this.Height = this.Height + 20;
             foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
+            cb_format.Items.RemoveAt(cb_format.FindString("m3u8"));
+
         }
 
         private void abort_dl()
@@ -680,7 +655,14 @@ namespace FFBatch
 
         private void btn_abort_all_Click(object sender, EventArgs e)
         {
-            abort_dl();
+            if (working == true)
+            {
+                btn_abort_all.Text = Strings.ResourceManager.GetString("aborting", new CultureInfo(Properties.Settings.Default.app_lang));
+                abort_dl();
+                btn_abort_all.Text = Strings.ResourceManager.GetString("close_win", new CultureInfo(Properties.Settings.Default.app_lang));
+            }
+            else this.Close();
+
         }
 
         private void btn_browse_path_m3u_Click(object sender, EventArgs e)
@@ -805,19 +787,6 @@ namespace FFBatch
                     txt_channel.Enabled = false;
                     btn_clear_list.Enabled = false;
                 }));
-
-                //if (Directory.GetFiles(destino).Length > 0)
-                //{
-                //    DialogResult a = MessageBox.Show(FFBatch.Properties.Strings.dest_not_empty, FFBatch.Properties.Strings.warning, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                //    if (a == DialogResult.No)
-                //    {
-                //        working = false;
-                //        this.InvokeEx(f => f.lbl_d_v.Text = "");
-                //        this.InvokeEx(f => timer1.Stop());
-                //        Enable_Controls();
-                //        return;
-                //    }
-                //}
 
                 String AppParam = txt_parameters.Text;
                 process_glob.StartInfo.FileName = ffm;

@@ -34,7 +34,12 @@ namespace FFBatch
         CultureInfo ci = System.Threading.Thread.CurrentThread.CurrentUICulture;        
 
         private void Form26_Load(object sender, EventArgs e)
-        {            
+        {
+            if (!File.Exists(out_file))
+            {
+                this.Close();
+                return;
+            }
             if (Owner != null) Location = new Point(Owner.Location.X + Owner.Width / 2 - Width / 2,
                     Owner.Location.Y + Owner.Height / 2 - Height / 2);
 
@@ -100,7 +105,7 @@ namespace FFBatch
                 lbl_succ.Text = Properties.Strings.success;
                 //pic_success.Left = lbl_succ.Left + lbl_succ.Width + 5;
                 if (tot_bit != null && tot_bit.Length > 3) lbl_gb_th.Text = tot_bit.Substring(tot_bit.LastIndexOf(":") + 2, tot_bit.Length - tot_bit.LastIndexOf(":") - 2);
-                lbl_size.Text = out_size.Substring(out_size.LastIndexOf(":") + 2, out_size.Length - out_size.LastIndexOf(":") - 2);
+            if (out_size.Length > 3) lbl_size.Text = out_size.Substring(out_size.LastIndexOf(":") + 2, out_size.Length - out_size.LastIndexOf(":") - 2);
 
                 if (!Directory.Exists(Path.Combine(Path.GetTempPath(), "FFBatch_Test"))) Directory.CreateDirectory(Path.Combine(Path.GetTempPath(), "FFBatch_Test"));
 
@@ -408,7 +413,20 @@ namespace FFBatch
         private void btn_play_Click(object sender, EventArgs e)
         {
             if (File.Exists(out_file)) Process.Start(out_file);
-            else MessageBox.Show(Properties.Strings.file_not_f);
+            else
+            {
+                String pattern = "*" + Path.GetExtension(out_file);
+                var dirInfo = new DirectoryInfo(Path.GetDirectoryName(out_file));
+                int count = dirInfo.GetFiles(pattern).Length;
+                if (count > 0)
+                {
+                    var new_out = (from f in dirInfo.GetFiles(pattern) orderby f.CreationTime descending select f).First();
+                    String cur_out = new_out.FullName;
+                }
+
+                if (File.Exists(out_file)) Process.Start(out_file);
+                else MessageBox.Show(Properties.Strings.file_not_f);
+            }
         }
     }
 }

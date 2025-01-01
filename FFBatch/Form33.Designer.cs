@@ -88,6 +88,8 @@
             this.btn_cancel = new System.Windows.Forms.Button();
             this.lbl_explain = new System.Windows.Forms.Label();
             this.btn_clear = new System.Windows.Forms.Button();
+            this.chk_meta = new System.Windows.Forms.CheckBox();
+            this.chk_attach = new System.Windows.Forms.CheckBox();
             this.tab_s.SuspendLayout();
             this.tab_all.SuspendLayout();
             this.tab_video.SuspendLayout();
@@ -112,9 +114,11 @@
             this.tab_s.Controls.Add(this.tab_video);
             this.tab_s.Controls.Add(this.tab_audio);
             this.tab_s.Controls.Add(this.tab_subs);
+            this.tab_s.HotTrack = true;
             resources.ApplyResources(this.tab_s, "tab_s");
             this.tab_s.Name = "tab_s";
             this.tab_s.SelectedIndex = 0;
+            this.tab_s.SelectedIndexChanged += new System.EventHandler(this.tab_s_SelectedIndexChanged);
             // 
             // tab_all
             // 
@@ -358,6 +362,7 @@
             this.img_icons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("img_icons.ImageStream")));
             this.img_icons.TransparentColor = System.Drawing.Color.Transparent;
             this.img_icons.Images.SetKeyName(0, "check_default_16.png");
+            this.img_icons.Images.SetKeyName(1, "Open-file.16.png");
             // 
             // rad_def_sub8
             // 
@@ -544,6 +549,22 @@
             this.btn_clear.UseVisualStyleBackColor = false;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
             // 
+            // chk_meta
+            // 
+            resources.ApplyResources(this.chk_meta, "chk_meta");
+            this.chk_meta.Checked = true;
+            this.chk_meta.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chk_meta.Name = "chk_meta";
+            this.chk_meta.UseVisualStyleBackColor = true;
+            // 
+            // chk_attach
+            // 
+            resources.ApplyResources(this.chk_attach, "chk_attach");
+            this.chk_attach.Checked = true;
+            this.chk_attach.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chk_attach.Name = "chk_attach";
+            this.chk_attach.UseVisualStyleBackColor = true;
+            // 
             // Form33
             // 
             this.AcceptButton = this.btn_ok;
@@ -552,7 +573,9 @@
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.CancelButton = this.btn_cancel;
             this.ControlBox = false;
+            this.Controls.Add(this.chk_attach);
             this.Controls.Add(this.btn_clear);
+            this.Controls.Add(this.chk_meta);
             this.Controls.Add(this.lbl_explain);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.btn_ok);
@@ -638,5 +661,7 @@
         private System.Windows.Forms.RadioButton rad_def_sub2;
         private System.Windows.Forms.PictureBox pic_f;
         private System.Windows.Forms.Label lbl_f;
+        private System.Windows.Forms.CheckBox chk_attach;
+        private System.Windows.Forms.CheckBox chk_meta;
     }
 }

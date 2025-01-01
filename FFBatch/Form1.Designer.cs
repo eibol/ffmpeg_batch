@@ -71,7 +71,7 @@
             this.ct_move_bottom = new System.Windows.Forms.ToolStripMenuItem();
             this.ctm1_queue = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.cti4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ct1_minfo = new System.Windows.Forms.ToolStripMenuItem();
             this.ct1_streams = new System.Windows.Forms.ToolStripMenuItem();
             this.ct1_total_frames = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
@@ -135,7 +135,6 @@
             this.btn_mux = new System.Windows.Forms.Button();
             this.btn_cancel_shut = new System.Windows.Forms.Button();
             this.Timer_apaga = new System.Windows.Forms.Timer(this.components);
-            this.listBox4 = new System.Windows.Forms.ListBox();
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.lbl_items = new System.Windows.Forms.Label();
             this.btn_clean_list = new System.Windows.Forms.Button();
@@ -166,6 +165,16 @@
             this.ctm_m3u = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ct_paste_youtube = new System.Windows.Forms.ToolStripMenuItem();
             this.ct_paste_m3u = new System.Windows.Forms.ToolStripMenuItem();
+            this.sep_down_av = new System.Windows.Forms.ToolStripSeparator();
+            this.ctm_down_v = new System.Windows.Forms.ToolStripMenuItem();
+            this.ct_best_h264 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ct_best_av1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ct_down_vp9 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ctm_down_a = new System.Windows.Forms.ToolStripMenuItem();
+            this.ct_aud_m4a = new System.Windows.Forms.ToolStripMenuItem();
+            this.ct_aud_mp3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.ct_aud_flac = new System.Windows.Forms.ToolStripMenuItem();
+            this.ct_aud_opus = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator10 = new System.Windows.Forms.ToolStripSeparator();
             this.ct3_ready = new System.Windows.Forms.ToolStripMenuItem();
             this.ct_remove_url = new System.Windows.Forms.ToolStripMenuItem();
@@ -495,6 +504,7 @@
             this.btn_add_yts = new System.Windows.Forms.Button();
             this.btn_save_path_url = new System.Windows.Forms.Button();
             this.groupBox_yout = new System.Windows.Forms.GroupBox();
+            this.chk_yt_chapt = new System.Windows.Forms.CheckBox();
             this.chk_auto_subs = new System.Windows.Forms.CheckBox();
             this.pic_no_yt = new System.Windows.Forms.PictureBox();
             this.pic_ok = new System.Windows.Forms.PictureBox();
@@ -512,9 +522,9 @@
             this.chk_cache_yt = new System.Windows.Forms.CheckBox();
             this.label25 = new System.Windows.Forms.Label();
             this.n_down_speed = new System.Windows.Forms.NumericUpDown();
+            this.chk_quick_down = new System.Windows.Forms.CheckBox();
             this.pic_noimg = new System.Windows.Forms.PictureBox();
             this.group_downs = new System.Windows.Forms.GroupBox();
-            this.chk_yt_chapt = new System.Windows.Forms.CheckBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btn_save_downs = new System.Windows.Forms.Button();
             this.n_downs = new System.Windows.Forms.NumericUpDown();
@@ -555,6 +565,7 @@
             this.img_icons = new System.Windows.Forms.ImageList(this.components);
             this.BG_R_Cols = new System.ComponentModel.BackgroundWorker();
             this.pic_title = new System.Windows.Forms.PictureBox();
+            this.BG_Dur_Backgr = new System.ComponentModel.BackgroundWorker();
             this.ctm1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_add_variable)).BeginInit();
@@ -756,7 +767,7 @@
             this.ct_move_bottom,
             this.ctm1_queue,
             this.toolStripSeparator1,
-            this.cti4,
+            this.ct1_minfo,
             this.ct1_streams,
             this.ct1_total_frames,
             this.toolStripSeparator15,
@@ -896,11 +907,11 @@
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
-            // cti4
+            // ct1_minfo
             // 
-            resources.ApplyResources(this.cti4, "cti4");
-            this.cti4.Name = "cti4";
-            this.cti4.Click += new System.EventHandler(this.cti4_Click);
+            resources.ApplyResources(this.ct1_minfo, "ct1_minfo");
+            this.ct1_minfo.Name = "ct1_minfo";
+            this.ct1_minfo.Click += new System.EventHandler(this.cti4_Click);
             // 
             // ct1_streams
             // 
@@ -1413,19 +1424,6 @@
             this.Timer_apaga.Interval = 500;
             this.Timer_apaga.Tick += new System.EventHandler(this.Timer_apaga_Tick);
             // 
-            // listBox4
-            // 
-            this.listBox4.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.listBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            resources.ApplyResources(this.listBox4, "listBox4");
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.Items.AddRange(new object[] {
-            resources.GetString("listBox4.Items"),
-            resources.GetString("listBox4.Items1"),
-            resources.GetString("listBox4.Items2")});
-            this.listBox4.Name = "listBox4";
-            this.listBox4.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            // 
             // imageList2
             // 
             this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
@@ -1632,6 +1630,9 @@
             this.ctm_m3u.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ct_paste_youtube,
             this.ct_paste_m3u,
+            this.sep_down_av,
+            this.ctm_down_v,
+            this.ctm_down_a,
             this.toolStripSeparator10,
             this.ct3_ready,
             this.ct_remove_url,
@@ -1658,6 +1659,72 @@
             resources.ApplyResources(this.ct_paste_m3u, "ct_paste_m3u");
             this.ct_paste_m3u.Name = "ct_paste_m3u";
             this.ct_paste_m3u.Click += new System.EventHandler(this.ct_paste_m3u_Click);
+            // 
+            // sep_down_av
+            // 
+            this.sep_down_av.Name = "sep_down_av";
+            resources.ApplyResources(this.sep_down_av, "sep_down_av");
+            // 
+            // ctm_down_v
+            // 
+            this.ctm_down_v.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ct_best_h264,
+            this.ct_best_av1,
+            this.ct_down_vp9});
+            resources.ApplyResources(this.ctm_down_v, "ctm_down_v");
+            this.ctm_down_v.Name = "ctm_down_v";
+            // 
+            // ct_best_h264
+            // 
+            this.ct_best_h264.Name = "ct_best_h264";
+            resources.ApplyResources(this.ct_best_h264, "ct_best_h264");
+            this.ct_best_h264.Click += new System.EventHandler(this.ct_best_h264_Click);
+            // 
+            // ct_best_av1
+            // 
+            this.ct_best_av1.Name = "ct_best_av1";
+            resources.ApplyResources(this.ct_best_av1, "ct_best_av1");
+            this.ct_best_av1.Click += new System.EventHandler(this.ct_best_av1_Click);
+            // 
+            // ct_down_vp9
+            // 
+            this.ct_down_vp9.Name = "ct_down_vp9";
+            resources.ApplyResources(this.ct_down_vp9, "ct_down_vp9");
+            this.ct_down_vp9.Click += new System.EventHandler(this.ct_down_vp9_Click);
+            // 
+            // ctm_down_a
+            // 
+            this.ctm_down_a.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ct_aud_m4a,
+            this.ct_aud_mp3,
+            this.ct_aud_flac,
+            this.ct_aud_opus});
+            resources.ApplyResources(this.ctm_down_a, "ctm_down_a");
+            this.ctm_down_a.Name = "ctm_down_a";
+            // 
+            // ct_aud_m4a
+            // 
+            this.ct_aud_m4a.Name = "ct_aud_m4a";
+            resources.ApplyResources(this.ct_aud_m4a, "ct_aud_m4a");
+            this.ct_aud_m4a.Click += new System.EventHandler(this.ct_aud_m4a_Click);
+            // 
+            // ct_aud_mp3
+            // 
+            this.ct_aud_mp3.Name = "ct_aud_mp3";
+            resources.ApplyResources(this.ct_aud_mp3, "ct_aud_mp3");
+            this.ct_aud_mp3.Click += new System.EventHandler(this.ct_aud_mp3_Click);
+            // 
+            // ct_aud_flac
+            // 
+            this.ct_aud_flac.Name = "ct_aud_flac";
+            resources.ApplyResources(this.ct_aud_flac, "ct_aud_flac");
+            this.ct_aud_flac.Click += new System.EventHandler(this.ct_aud_flac_Click);
+            // 
+            // ct_aud_opus
+            // 
+            this.ct_aud_opus.Name = "ct_aud_opus";
+            resources.ApplyResources(this.ct_aud_opus, "ct_aud_opus");
+            this.ct_aud_opus.Click += new System.EventHandler(this.ct_aud_opus_Click);
             // 
             // toolStripSeparator10
             // 
@@ -2005,7 +2072,6 @@
             this.group_prog.Controls.Add(this.pic_resume);
             this.group_prog.Controls.Add(this.lbl_elapsed);
             this.group_prog.Controls.Add(this.lbl_speed);
-            this.group_prog.Controls.Add(this.listBox4);
             this.group_prog.Controls.Add(this.btn_pause);
             this.group_prog.Controls.Add(this.combo_shut);
             this.group_prog.Controls.Add(this.lbl_bitrate);
@@ -4146,7 +4212,10 @@
             resources.GetString("combo_ext_m3u.Items2"),
             resources.GetString("combo_ext_m3u.Items3"),
             resources.GetString("combo_ext_m3u.Items4"),
-            resources.GetString("combo_ext_m3u.Items5")});
+            resources.GetString("combo_ext_m3u.Items5"),
+            resources.GetString("combo_ext_m3u.Items6"),
+            resources.GetString("combo_ext_m3u.Items7"),
+            resources.GetString("combo_ext_m3u.Items8")});
             resources.ApplyResources(this.combo_ext_m3u, "combo_ext_m3u");
             this.combo_ext_m3u.Name = "combo_ext_m3u";
             this.combo_ext_m3u.SelectedIndexChanged += new System.EventHandler(this.combo_ext_m3u_SelectedIndexChanged);
@@ -4192,6 +4261,7 @@
             this.txt_path_m3u.BackColor = System.Drawing.SystemColors.InactiveBorder;
             resources.ApplyResources(this.txt_path_m3u, "txt_path_m3u");
             this.txt_path_m3u.Name = "txt_path_m3u";
+            this.txt_path_m3u.DoubleClick += new System.EventHandler(this.txt_path_m3u_DoubleClick);
             // 
             // btn_browse_path_m3u
             // 
@@ -4305,6 +4375,7 @@
             // 
             // groupBox_yout
             // 
+            this.groupBox_yout.Controls.Add(this.chk_yt_chapt);
             this.groupBox_yout.Controls.Add(this.chk_auto_subs);
             this.groupBox_yout.Controls.Add(this.pic_no_yt);
             this.groupBox_yout.Controls.Add(this.pic_ok);
@@ -4325,6 +4396,13 @@
             resources.ApplyResources(this.groupBox_yout, "groupBox_yout");
             this.groupBox_yout.Name = "groupBox_yout";
             this.groupBox_yout.TabStop = false;
+            // 
+            // chk_yt_chapt
+            // 
+            resources.ApplyResources(this.chk_yt_chapt, "chk_yt_chapt");
+            this.chk_yt_chapt.Name = "chk_yt_chapt";
+            this.chk_yt_chapt.UseVisualStyleBackColor = true;
+            this.chk_yt_chapt.CheckedChanged += new System.EventHandler(this.chk_yt_chapt_CheckedChanged);
             // 
             // chk_auto_subs
             // 
@@ -4449,6 +4527,13 @@
             0});
             this.n_down_speed.ValueChanged += new System.EventHandler(this.n_down_speed_ValueChanged);
             // 
+            // chk_quick_down
+            // 
+            resources.ApplyResources(this.chk_quick_down, "chk_quick_down");
+            this.chk_quick_down.Name = "chk_quick_down";
+            this.chk_quick_down.UseVisualStyleBackColor = true;
+            this.chk_quick_down.Click += new System.EventHandler(this.chk_quick_down_Click);
+            // 
             // pic_noimg
             // 
             this.pic_noimg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -4458,20 +4543,14 @@
             // 
             // group_downs
             // 
-            this.group_downs.Controls.Add(this.chk_yt_chapt);
+            this.group_downs.Controls.Add(this.chk_quick_down);
             this.group_downs.Controls.Add(this.label12);
             this.group_downs.Controls.Add(this.btn_save_downs);
             this.group_downs.Controls.Add(this.n_downs);
+            this.group_downs.Controls.Add(this.combo_ext_m3u);
             resources.ApplyResources(this.group_downs, "group_downs");
             this.group_downs.Name = "group_downs";
             this.group_downs.TabStop = false;
-            // 
-            // chk_yt_chapt
-            // 
-            resources.ApplyResources(this.chk_yt_chapt, "chk_yt_chapt");
-            this.chk_yt_chapt.Name = "chk_yt_chapt";
-            this.chk_yt_chapt.UseVisualStyleBackColor = true;
-            this.chk_yt_chapt.CheckedChanged += new System.EventHandler(this.chk_yt_chapt_CheckedChanged);
             // 
             // label12
             // 
@@ -4539,7 +4618,6 @@
             this.groupBox_m3u.Controls.Add(this.btn_clear_urls);
             this.groupBox_m3u.Controls.Add(this.btn_start_m3u);
             this.groupBox_m3u.Controls.Add(this.label8);
-            this.groupBox_m3u.Controls.Add(this.combo_ext_m3u);
             resources.ApplyResources(this.groupBox_m3u, "groupBox_m3u");
             this.groupBox_m3u.Name = "groupBox_m3u";
             this.groupBox_m3u.TabStop = false;
@@ -4707,7 +4785,7 @@
             // 
             // imageList3
             // 
-            this.imageList3.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.imageList3.ColorDepth = System.Windows.Forms.ColorDepth.Depth16Bit;
             resources.ApplyResources(this.imageList3, "imageList3");
             this.imageList3.TransparentColor = System.Drawing.Color.Transparent;
             // 
@@ -4791,12 +4869,17 @@
             this.pic_title.Click += new System.EventHandler(this.pic_title_Click);
             this.pic_title.DoubleClick += new System.EventHandler(this.pictureBox1_DoubleClick);
             // 
+            // BG_Dur_Backgr
+            // 
+            this.BG_Dur_Backgr.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BG_Dur_Backgr_DoWork);
+            this.BG_Dur_Backgr.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BG_Dur_Backgr_RunWorkerCompleted);
+            // 
             // Form1
             // 
             this.AllowDrop = true;
-            resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            resources.ApplyResources(this, "$this");
             this.Controls.Add(this.pic_mon);
             this.Controls.Add(this.btn_wizard);
             this.Controls.Add(this.pic_batt);
@@ -4959,7 +5042,7 @@
         private System.Windows.Forms.ToolStripMenuItem cti2;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ToolStripMenuItem cti3;
-        private System.Windows.Forms.ToolStripMenuItem cti4;
+        private System.Windows.Forms.ToolStripMenuItem ct1_minfo;
         private System.Windows.Forms.Button btn_add_folders;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -4974,7 +5057,6 @@
         private System.Windows.Forms.Timer Timer_apaga;
         private System.Windows.Forms.Button btn_cancel_shut;
         private System.Windows.Forms.Button btn_try_pr;
-        private System.Windows.Forms.ListBox listBox4;
         private System.Windows.Forms.Button btn_show_console;
         private System.Windows.Forms.ImageList imageList2;
         private System.Windows.Forms.Label lbl_items;
@@ -5461,6 +5543,18 @@
         private System.Windows.Forms.ToolStripMenuItem ct_mkv_font;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator33;
         private System.Windows.Forms.ToolStripMenuItem ct_cover_mp4;
+        private System.Windows.Forms.ToolStripSeparator sep_down_av;
+        private System.Windows.Forms.ToolStripMenuItem ctm_down_v;
+        private System.Windows.Forms.ToolStripMenuItem ctm_down_a;
+        private System.Windows.Forms.ToolStripMenuItem ct_best_h264;
+        private System.Windows.Forms.ToolStripMenuItem ct_best_av1;
+        private System.Windows.Forms.ToolStripMenuItem ct_aud_m4a;
+        private System.Windows.Forms.ToolStripMenuItem ct_aud_mp3;
+        private System.Windows.Forms.ToolStripMenuItem ct_aud_flac;
+        private System.Windows.Forms.ToolStripMenuItem ct_aud_opus;
+        private System.Windows.Forms.ToolStripMenuItem ct_down_vp9;
+        private System.Windows.Forms.CheckBox chk_quick_down;
+        private System.ComponentModel.BackgroundWorker BG_Dur_Backgr;
     }
 }
 

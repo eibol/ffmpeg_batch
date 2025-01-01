@@ -100,6 +100,7 @@ namespace FFBatch
                 this.BackColor = Color.FromArgb(255, 64, 64, 64);
                 dg_pr.BackgroundColor = Color.Gray;
                 dg_pr.RowsDefaultCellStyle.BackColor = Color.Gray;
+                dg_pr.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(255, 79, 79, 99);                
             }
             else
             {
