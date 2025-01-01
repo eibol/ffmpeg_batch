@@ -1277,7 +1277,7 @@ Non è possibile visualizzare l'anteprima del ritaglio.</value>
     <value>La cartella è vuota.</value>
   </data>
   <data name="forced" xml:space="preserve">
-    <value>costretto</value>
+    <value>Costretto</value>
   </data>
   <data name="Format" xml:space="preserve">
     <value>Formato</value>
@@ -3113,7 +3113,7 @@ Non è possibile visualizzare l'anteprima del ritaglio.</value>
     <value>Se riscontri prestazioni lente, puoi migliorarle aggiungendo un'esclusione a</value>
   </data>
   <data name="tip4" xml:space="preserve">
-    <value>Il file ffmpeg.exe incluso nell'applicazione è sicuro e il checksum MD5 viene convalidato ad ogni avvio.</value>
+    <value>Eseguire questa operazione se si ritiene attendibile il file ffmpeg.exe utilizzato dall'applicazione.</value>
   </data>
   <data name="tip_win_sec" xml:space="preserve">
     <value>Sicurezza Windows.</value>
@@ -3621,5 +3621,32 @@ Puoi annullare l'aggiunta di file in qualsiasi momento.</value>
   </data>
   <data name="local_file" xml:space="preserve">
     <value>File del percorso dell'applicazione</value>
+  </data>
+  <data name="tip5" xml:space="preserve">
+    <value>Se l'avvio delle applicazioni richiede troppo tempo, puoi provare a disabilitare gli stili visivi selezionando la casella sottostante.</value>
+  </data>
+  <data name="improve_start" xml:space="preserve">
+    <value>Seleziona questa opzione se riscontri un avvio lento dell'applicazione.</value>
+  </data>
+  <data name="quick_ena" xml:space="preserve">
+    <value>Avvio rapido</value>
+  </data>
+  <data name="abort_down" xml:space="preserve">
+    <value>Interrompi download</value>
+  </data>
+  <data name="already_down" xml:space="preserve">
+    <value>Il file è già stato scaricato.</value>
+  </data>
+  <data name="download_settings" xml:space="preserve">
+    <value>Opzioni di download</value>
+  </data>
+  <data name="multimed" xml:space="preserve">
+    <value>Multimedia</value>
+  </data>
+  <data name="map_meta" xml:space="preserve">
+    <value>Includi metadati</value>
+  </data>
+  <data name="map_attach" xml:space="preserve">
+    <value>Includi allegati</value>
   </data>
 </root>

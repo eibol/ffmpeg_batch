@@ -1276,7 +1276,7 @@
     <value>Pasta está vazia.</value>
   </data>
   <data name="forced" xml:space="preserve">
-    <value>forçado</value>
+    <value>Forçado</value>
   </data>
   <data name="Format" xml:space="preserve">
     <value>Formato</value>
@@ -3112,7 +3112,7 @@
     <value>Se você tiver um desempenho lento, pode melhorá-lo adicionando uma exclusão a</value>
   </data>
   <data name="tip4" xml:space="preserve">
-    <value>O ffmpeg.exe incluído no aplicativo é seguro e a soma de verificação MD5 é validada a cada inicialização.</value>
+    <value>Faça isso se você confia no ffmpeg.exe usado pelo aplicativo.</value>
   </data>
   <data name="tip_win_sec" xml:space="preserve">
     <value>Segurança do Windows.</value>
@@ -3618,5 +3618,32 @@
   </data>
   <data name="local_file" xml:space="preserve">
     <value>Arquivo de caminho do aplicativo</value>
+  </data>
+  <data name="tip5" xml:space="preserve">
+    <value>Se os aplicativos demorarem muito para iniciar, você pode tentar desabilitar os estilos visuais marcando a caixa abaixo.</value>
+  </data>
+  <data name="improve_start" xml:space="preserve">
+    <value>Verifique isto se o início do aplicativo estiver lento.</value>
+  </data>
+  <data name="quick_ena" xml:space="preserve">
+    <value>Inicialização rápida</value>
+  </data>
+  <data name="abort_down" xml:space="preserve">
+    <value>Cancelar download</value>
+  </data>
+  <data name="already_down" xml:space="preserve">
+    <value>O arquivo já foi baixado.</value>
+  </data>
+  <data name="download_settings" xml:space="preserve">
+    <value>Opções de download</value>
+  </data>
+  <data name="multimed" xml:space="preserve">
+    <value>Multimídia</value>
+  </data>
+  <data name="map_meta" xml:space="preserve">
+    <value>Mapear metadados</value>
+  </data>
+  <data name="map_attach" xml:space="preserve">
+    <value>Incluir anexos</value>
   </data>
 </root>

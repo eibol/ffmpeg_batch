@@ -2200,7 +2200,7 @@
     <value>Paste/write path</value>
   </data>
   <data name="Paste_YouTube_URL" xml:space="preserve">
-    <value>Add YouTube URL</value>
+    <value>Paste YouTube URL</value>
   </data>
   <data name="path" xml:space="preserve">
     <value>Path</value>
@@ -2482,16 +2482,16 @@
     <value>File list successfully loaded.</value>
   </data>
   <data name="quick_f_m" xml:space="preserve">
-    <value>Quick file listing dramatically improves file loading time. It comes with these changes:</value>
+    <value>Quick file listing dramatically improves file loading time, but it comes with some constraints:</value>
   </data>
   <data name="quick_f_m2" xml:space="preserve">
-    <value>Files duration is obtained in the background. If encoding is started before it finishes, total remaining time is not available, and total progress displays only the encoded files count.</value>
+    <value>Total remaining time is not available, and total progress displays only the encoded files count.</value>
   </data>
   <data name="quick_f_m3" xml:space="preserve">
     <value>Custom columns are not stored, but you can add them later.</value>
   </data>
   <data name="quick_f_m4" xml:space="preserve">
-    <value>Individual progress is displayed if duration is obtained. If not, only success/error status will be displayed at the end.</value>
+    <value>File features (duration, size) are only guessed during encoding. If they are available, individual progress is displayed. If not, only success/error status will be displayed at the end.</value>
   </data>
   <data name="quick_f_m5" xml:space="preserve">
     <value>Two pass encoding wizard cannot be used.</value>
@@ -3112,7 +3112,7 @@
     <value>If you experience sluggish performance, you can improve it by adding an exclusion to</value>
   </data>
   <data name="tip4" xml:space="preserve">
-    <value>Do this if you trust ffmpeg.exe used by application.</value>
+    <value>The included ffmpeg.exe in the application is safe and MD5 checksum is validated on every startup.</value>
   </data>
   <data name="tip_win_sec" xml:space="preserve">
     <value>Windows Security.</value>
@@ -3619,31 +3619,7 @@
   <data name="local_file" xml:space="preserve">
     <value>Application path file</value>
   </data>
-  <data name="tip5" xml:space="preserve">
-    <value>If application takes a long time to start, you can try disabling visual styles, using the chekbox below.</value>
-  </data>
   <data name="improve_start" xml:space="preserve">
     <value>Check it if you experience slow application startup.</value>
-  </data>
-  <data name="quick_ena" xml:space="preserve">
-    <value>Quick startup</value>
-  </data>
-  <data name="abort_down" xml:space="preserve">
-    <value>Abort download</value>
-  </data>
-  <data name="already_down" xml:space="preserve">
-    <value>File has already been downloaded.</value>
-  </data>
-  <data name="download_settings" xml:space="preserve">
-    <value>Download settings</value>
-  </data>
-  <data name="multimed" xml:space="preserve">
-    <value>Multimedia</value>
-  </data>
-  <data name="map_meta" xml:space="preserve">
-    <value>Map metadata</value>
-  </data>
-  <data name="map_attach" xml:space="preserve">
-    <value>Map attachments</value>
   </data>
 </root>

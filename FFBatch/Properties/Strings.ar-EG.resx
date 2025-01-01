@@ -3613,4 +3613,34 @@
   <data name="attach_ttf" xml:space="preserve">
     <value>خط تروتايب</value>
   </data>
+  <data name="local_file" xml:space="preserve">
+    <value>ملف مسار التطبيق</value>
+  </data>
+  <data name="tip5" xml:space="preserve">
+    <value>إذا استغرق بدء تشغيل التطبيقات وقتًا طويلاً، فيمكنك محاولة تعطيل الأنماط المرئية من خلال تحديد المربع أدناه.</value>
+  </data>
+  <data name="improve_start" xml:space="preserve">
+    <value>تحقق من هذا إذا كنت تعاني من بطء بدء تشغيل التطبيق.</value>
+  </data>
+  <data name="quick_ena" xml:space="preserve">
+    <value>بدء التشغيل السريع</value>
+  </data>
+  <data name="abort_down" xml:space="preserve">
+    <value>إحباط التحميل</value>
+  </data>
+  <data name="already_down" xml:space="preserve">
+    <value>تم تنزيل الملف بالفعل.</value>
+  </data>
+  <data name="download_settings" xml:space="preserve">
+    <value>خيارات التنزيل</value>
+  </data>
+  <data name="multimed" xml:space="preserve">
+    <value>الوسائط المتعددة</value>
+  </data>
+  <data name="map_meta" xml:space="preserve">
+    <value>بيانات الخريطة الوصفية</value>
+  </data>
+  <data name="map_attach" xml:space="preserve">
+    <value>تضمين المرفقات</value>
+  </data>
 </root>

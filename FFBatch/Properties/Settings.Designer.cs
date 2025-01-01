@@ -504,5 +504,53 @@ namespace FFBatch.Properties {
                 this["visuals"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool visuals_all {
+            get {
+                return ((bool)(this["visuals_all"]));
+            }
+            set {
+                this["visuals_all"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool quick_down {
+            get {
+                return ((bool)(this["quick_down"]));
+            }
+            set {
+                this["quick_down"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool report_ext {
+            get {
+                return ((bool)(this["report_ext"]));
+            }
+            set {
+                this["report_ext"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool no_resize {
+            get {
+                return ((bool)(this["no_resize"]));
+            }
+            set {
+                this["no_resize"] = value;
+            }
+        }
     }
 }

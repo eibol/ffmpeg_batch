@@ -574,7 +574,7 @@
     <value>在concat muxer和video filter muxer之间切换.</value>
   </data>
   <data name="concat_vid_help" xml:space="preserve">
-    <value>	此过滤器允许加入不同质量的视频，它提高了兼容性，但需要重新编码音频和视频。参数字段可以留空。注意：只允许使用视频文件。</value>
+    <value>此过滤器允许加入不同质量的视频，它提高了兼容性，但需要重新编码音频和视频。参数字段可以留空。注意：只允许使用视频文件。</value>
   </data>
   <data name="concat_vid_help1" xml:space="preserve">
     <value>此滤镜允许合并不同质量的视频，它提高了兼容性，但需要重新编码音频和视频。参数字段可以留空。注意：只允许使用视频文件。</value>
@@ -3112,7 +3112,7 @@
     <value>如果您遇到性能缓慢的情况，您可以通过添加排除项来改进它</value>
   </data>
   <data name="tip4" xml:space="preserve">
-    <value>应用程序中包含的 ffmpeg.exe 是安全的，并且每次启动时都会验证 MD5 校验和。</value>
+    <value>如果您信任应用程序使用的 ffmpeg.exe，请执行此操作。</value>
   </data>
   <data name="tip_win_sec" xml:space="preserve">
     <value>视窗安全。</value>
@@ -3612,5 +3612,32 @@
   </data>
   <data name="local_file" xml:space="preserve">
     <value>应用程序路径文件</value>
+  </data>
+  <data name="tip5" xml:space="preserve">
+    <value>如果应用程序启动时间过长，您可以尝试通过选中下面的框来禁用视觉样式。</value>
+  </data>
+  <data name="improve_start" xml:space="preserve">
+    <value>如果应用程序启动缓慢，请检查此项。</value>
+  </data>
+  <data name="quick_ena" xml:space="preserve">
+    <value>快速启动</value>
+  </data>
+  <data name="abort_down" xml:space="preserve">
+    <value>中止下载</value>
+  </data>
+  <data name="already_down" xml:space="preserve">
+    <value>文件已下载。</value>
+  </data>
+  <data name="download_settings" xml:space="preserve">
+    <value>下载选项</value>
+  </data>
+  <data name="multimed" xml:space="preserve">
+    <value>多媒体</value>
+  </data>
+  <data name="map_meta" xml:space="preserve">
+    <value>包括元数据</value>
+  </data>
+  <data name="map_attach" xml:space="preserve">
+    <value>包含附件</value>
   </data>
 </root>

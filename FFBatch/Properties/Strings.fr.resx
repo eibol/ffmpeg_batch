@@ -1276,7 +1276,7 @@
     <value>Le dossier est vide.</value>
   </data>
   <data name="forced" xml:space="preserve">
-    <value>forcé</value>
+    <value>Forcé</value>
   </data>
   <data name="Format" xml:space="preserve">
     <value>Format</value>
@@ -3112,7 +3112,7 @@
     <value>Si vous constatez des performances lentes, vous pouvez les améliorer en ajoutant une exclusion à</value>
   </data>
   <data name="tip4" xml:space="preserve">
-    <value>Le ffmpeg.exe inclus dans l’application est sûr et la somme de contrôle MD5 est validée à chaque démarrage.</value>
+    <value>Faites ceci si vous faites confiance à ffmpeg.exe utilisé par l'application.</value>
   </data>
   <data name="tip_win_sec" xml:space="preserve">
     <value>Sécurité Windows.</value>
@@ -3614,5 +3614,29 @@
   </data>
   <data name="local_file" xml:space="preserve">
     <value>Fichier de chemin d'application</value>
+  </data>
+  <data name="tip5" xml:space="preserve">
+    <value>Si les applications prennent trop de temps à démarrer, vous pouvez essayer de désactiver les styles visuels en cochant la case ci-dessous.</value>
+  </data>
+  <data name="improve_start" xml:space="preserve">
+    <value>Vérifiez ceci si vous rencontrez un démarrage lent de l'application.</value>
+  </data>
+  <data name="quick_ena" xml:space="preserve">
+    <value>Démarrage rapide</value>
+  </data>
+  <data name="abort_down" xml:space="preserve">
+    <value>Abandonner le téléchargement</value>
+  </data>
+  <data name="already_down" xml:space="preserve">
+    <value>Le fichier a déjà été téléchargé.</value>
+  </data>
+  <data name="multimed" xml:space="preserve">
+    <value>Multimédia</value>
+  </data>
+  <data name="map_meta" xml:space="preserve">
+    <value>Mapper les métadonnées</value>
+  </data>
+  <data name="map_attach" xml:space="preserve">
+    <value>Inclure les pièces jointes</value>
   </data>
 </root>
