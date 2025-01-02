@@ -12161,4 +12161,13 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
+  <data name="cb_de_parity.Items" xml:space="preserve">
+    <value>Automatica</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>Venditore</value>
+  </data>
+  <data name="cb_q_amd.Items" xml:space="preserve">
+    <value>bilanciato</value>
+  </data>
 </root>
