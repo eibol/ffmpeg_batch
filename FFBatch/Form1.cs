@@ -371,30 +371,26 @@ namespace FFBatch
         private static extern int GetWindowThreadProcessId(IntPtr handle, out int processId);
 
         private void do_dark()
-        {            
-                if (Settings.Default.auto_dark == true && Settings.Default.dark_os == false)
-                {
-                    String t_sunset0 = Settings.Default.dark_sunset.ToShortTimeString();
-                    String t_sunset1 = t_sunset0.Substring(0, t_sunset0.IndexOf(":"));
-                    String t_sunset2 = t_sunset0.Substring(t_sunset0.IndexOf(":") + 1, t_sunset0.Length - t_sunset0.IndexOf(":") - 1);
-                    TimeSpan sunset_t = new TimeSpan(Convert.ToInt32(t_sunset1), Convert.ToInt32(t_sunset2), 0);
-                    DateTime sunset0 = DateTime.Now.Date + sunset_t;
+        {
+            if (Settings.Default.auto_dark == true) Settings.Default.dark_mode = false;
 
-                    String t_sunrise0 = Settings.Default.dark_sunrise.ToShortTimeString();
-                    String t_sunrise1 = t_sunrise0.Substring(0, t_sunrise0.IndexOf(":"));
-                    String t_sunrise2 = t_sunrise0.Substring(t_sunrise0.IndexOf(":") + 1, t_sunrise0.Length - t_sunrise0.IndexOf(":") - 1);
-                    TimeSpan sunrise_t = new TimeSpan(Convert.ToInt32(t_sunrise1), Convert.ToInt32(t_sunrise2), 0);
-                    DateTime sunrise0 = DateTime.Now.Date + sunrise_t;
+            if (Settings.Default.auto_dark == true && Settings.Default.dark_os == false)
+            {
+                String t_sunset0 = Settings.Default.dark_sunset.ToShortTimeString();
+                String t_sunset1 = t_sunset0.Substring(0, t_sunset0.IndexOf(":"));
+                String t_sunset2 = t_sunset0.Substring(t_sunset0.IndexOf(":") + 1, t_sunset0.Length - t_sunset0.IndexOf(":") - 1);
+                TimeSpan sunset_t = new TimeSpan(Convert.ToInt32(t_sunset1), Convert.ToInt32(t_sunset2), 0);
 
-                    TimeSpan r_sunset = DateTime.Now - sunset0;
-                    TimeSpan r_sunrise = DateTime.Now - sunrise0;
+                String t_sunrise0 = Settings.Default.dark_sunrise.ToShortTimeString();
+                String t_sunrise1 = t_sunrise0.Substring(0, t_sunrise0.IndexOf(":"));
+                String t_sunrise2 = t_sunrise0.Substring(t_sunrise0.IndexOf(":") + 1, t_sunrise0.Length - t_sunrise0.IndexOf(":") - 1);
+                TimeSpan sunrise_t = new TimeSpan(Convert.ToInt32(t_sunrise1), Convert.ToInt32(t_sunrise2), 0);
 
-                    if (r_sunset.TotalSeconds > 0 && r_sunrise.TotalSeconds < 0)
-                    {
-                        Settings.Default.dark_mode = true;                        
-                    }
-                }
-            
+                TimeSpan r_sunset = sunset_t - DateTime.Now.TimeOfDay;
+                TimeSpan r_sunrise = DateTime.Now.AddDays(1).TimeOfDay - sunrise_t;
+
+                if (r_sunset.TotalSeconds > 0 && r_sunrise.TotalSeconds < 0) Settings.Default.dark_mode = true;                
+            }            
 
             if (Settings.Default.dark_os == true && Settings.Default.auto_dark == true)
             {
@@ -463,6 +459,14 @@ namespace FFBatch
                 }
 
                 foreach (var groupbox in groupBox_m3u.Controls.OfType<GroupBox>())
+                {
+                    groupbox.FlatStyle = FlatStyle.System;
+                    foreach (var chk in groupbox.Controls.OfType<CheckBox>())
+                    {
+                        chk.FlatStyle = FlatStyle.System;
+                    }
+                }
+                foreach (var groupbox in groupBox4.Controls.OfType<GroupBox>())
                 {
                     groupbox.FlatStyle = FlatStyle.System;
                     foreach (var chk in groupbox.Controls.OfType<CheckBox>())
@@ -51425,6 +51429,36 @@ namespace FFBatch
             {
                 calc_list_size();                
                 lbl_items.Text = listView1.Items.Count.ToString() + " " + Strings.files;
+            }
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                canceled_add = true;
+                canceled_file_adding = true;
+                dur_ok = false;
+                group_prog.Focus();
+
+                if (working == true)
+                {
+                    wc.CancelAsync();
+                    cancel_cache = true;
+                }
+                else
+                {
+                    try
+                    {
+                        wc2.CancelAsync();
+                    }
+                    catch { }
+                    try
+                    {
+                        wc_dl2.CancelAsync();
+                    }
+                    catch { }
+                }
             }
         }
 
