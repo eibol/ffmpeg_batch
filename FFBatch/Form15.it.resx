@@ -2336,4 +2336,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>FFmpeg Batch AV Converter - Profili</value>
   </data>
+  <data name="ct_top.Text" xml:space="preserve">
+    <value>In alto</value>
+  </data>
+  <data name="ct_bottom.Text" xml:space="preserve">
+    <value>In basso</value>
+  </data>
 </root>

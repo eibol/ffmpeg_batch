@@ -5141,9 +5141,6 @@
   <data name="cti4.Size" type="System.Drawing.Size, System.Drawing">
     <value>280, 24</value>
   </data>
-  <data name="cti4.Text" xml:space="preserve">
-    <value>Visualizza info file multimediale</value>
-  </data>
   <data name="ct1_streams.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABIAAAARCAYAAADQWvz5AAAABGdBTUEAALGeYUxB9wAAACBjSFJNAACH
@@ -16480,5 +16477,26 @@
         AYABAwEHAQEDAAF4AQABAwGPAYADAAH4AQABAwHfAcACAAEDAfgBAAEDAf8B4AGAAQABBwH4AQABAwH/
         AfEBgAEBAR8B+AEAAQ8B/wHzAcABAwE/AfgB4AF/Av8B4AEHCw==
 </value>
+  </data>
+  <data name="ct_mkv_cover.Text" xml:space="preserve">
+    <value>Immagine copertina (JPEG)</value>
+  </data>
+  <data name="ct_attach_mkv.Text" xml:space="preserve">
+    <value>Allegati MKV</value>
+  </data>
+  <data name="ct_cover_mp4.Text" xml:space="preserve">
+    <value>Immagine copertina MP4 (JPEG)</value>
+  </data>
+  <data name="btn_br_path.Text" xml:space="preserve">
+    <value>Sfoglia...</value>
+  </data>
+  <data name="chk_quick_down.Text" xml:space="preserve">
+    <value>Avvio rapido</value>
+  </data>
+  <data name="menu_create_chaps.Text" xml:space="preserve">
+    <value>Crea file capitoli</value>
+  </data>
+  <data name="cti4.Text" xml:space="preserve">
+    <value>Visualizza info file multimediale</value>
   </data>
 </root>
