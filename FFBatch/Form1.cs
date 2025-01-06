@@ -376,20 +376,11 @@ namespace FFBatch
 
             if (Settings.Default.auto_dark == true && Settings.Default.dark_os == false)
             {
-                String t_sunset0 = Settings.Default.dark_sunset.ToShortTimeString();
-                String t_sunset1 = t_sunset0.Substring(0, t_sunset0.IndexOf(":"));
-                String t_sunset2 = t_sunset0.Substring(t_sunset0.IndexOf(":") + 1, t_sunset0.Length - t_sunset0.IndexOf(":") - 1);
-                TimeSpan sunset_t = new TimeSpan(Convert.ToInt32(t_sunset1), Convert.ToInt32(t_sunset2), 0);
+                TimeSpan sunrise01 = TimeSpan.Parse(Settings.Default.dark_sunrise.ToShortTimeString());
+                TimeSpan sunset01 = TimeSpan.Parse(Settings.Default.dark_sunset.ToShortTimeString());
+                TimeSpan now = DateTime.Now.TimeOfDay;
 
-                String t_sunrise0 = Settings.Default.dark_sunrise.ToShortTimeString();
-                String t_sunrise1 = t_sunrise0.Substring(0, t_sunrise0.IndexOf(":"));
-                String t_sunrise2 = t_sunrise0.Substring(t_sunrise0.IndexOf(":") + 1, t_sunrise0.Length - t_sunrise0.IndexOf(":") - 1);
-                TimeSpan sunrise_t = new TimeSpan(Convert.ToInt32(t_sunrise1), Convert.ToInt32(t_sunrise2), 0);
-
-                TimeSpan r_sunset = sunset_t - DateTime.Now.TimeOfDay;
-                TimeSpan r_sunrise = DateTime.Now.AddDays(1).TimeOfDay - sunrise_t;
-
-                if (r_sunset.TotalSeconds > 0 && r_sunrise.TotalSeconds < 0) Settings.Default.dark_mode = true;                
+                if (sunrise01 > now || now > sunset01) Settings.Default.dark_mode = true;                   
             }            
 
             if (Settings.Default.dark_os == true && Settings.Default.auto_dark == true)
@@ -450,6 +441,15 @@ namespace FFBatch
                 }
 
                 foreach (var groupbox in panel1.Controls.OfType<GroupBox>())
+                {
+                    groupbox.FlatStyle = FlatStyle.System;
+                    foreach (var chk in groupbox.Controls.OfType<CheckBox>())
+                    {
+                        chk.FlatStyle = FlatStyle.System;
+                    }
+                }
+
+                foreach (var groupbox in panel2.Controls.OfType<GroupBox>())
                 {
                     groupbox.FlatStyle = FlatStyle.System;
                     foreach (var chk in groupbox.Controls.OfType<CheckBox>())
@@ -49502,7 +49502,7 @@ namespace FFBatch
 
         private void fade_a_in_Click(object sender, EventArgs e)
         {
-            if (Settings.Default.quick_queue == true)
+            if (Settings.Default.quick_queue == true && get_all_dur_ok() == false)
             {
                 MessageBox.Show(Strings.quick_f_m6);
                 fade_a_in.Checked = false;
@@ -49511,7 +49511,7 @@ namespace FFBatch
 
         private void fade_a_out_Click(object sender, EventArgs e)
         {
-            if (Settings.Default.quick_queue == true)
+            if (Settings.Default.quick_queue == true && get_all_dur_ok() == false)
             {
                 MessageBox.Show(Strings.quick_f_m6);
                 fade_a_out.Checked = false;
@@ -49520,7 +49520,7 @@ namespace FFBatch
 
         private void fade_v_in_Click(object sender, EventArgs e)
         {
-            if (Settings.Default.quick_queue == true)
+            if (Settings.Default.quick_queue == true && get_all_dur_ok() == false)
             {
                 MessageBox.Show(Strings.quick_f_m6);
                 fade_v_in.Checked = false;
@@ -49529,7 +49529,7 @@ namespace FFBatch
 
         private void fade_v_out_Click(object sender, EventArgs e)
         {
-            if (Settings.Default.quick_queue == true)
+            if (Settings.Default.quick_queue == true && get_all_dur_ok() == false)
             {
                 MessageBox.Show(Strings.quick_f_m6);
                 fade_v_out.Checked = false;

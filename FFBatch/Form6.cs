@@ -50,32 +50,25 @@ namespace FFBatch
             }
         }
         private void Form6_Load(object sender, System.EventArgs e)
-        {            
-            if (Settings.Default.dark_os == false && Settings.Default.auto_dark == true)
+        {
+            Settings.Default.dark_sunset = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, Settings.Default.dark_sunset.Hour, Settings.Default.dark_sunset.Minute, Settings.Default.dark_sunset.Second);
+            Settings.Default.dark_sunrise = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, Settings.Default.dark_sunrise.Hour, Settings.Default.dark_sunrise.Minute, Settings.Default.dark_sunrise.Second);
+            Settings.Default.Save();
+
+            if (Settings.Default.auto_dark == true) Settings.Default.dark_mode = false;
+
+            if (Settings.Default.auto_dark == true && Settings.Default.dark_os == false)
             {                
-                if (Settings.Default.dark_mode == false && Settings.Default.auto_dark == true)
+                TimeSpan sunrise01 = TimeSpan.Parse( Settings.Default.dark_sunrise.ToShortTimeString());
+                TimeSpan sunset01 = TimeSpan.Parse(Settings.Default.dark_sunset.ToShortTimeString());                
+                TimeSpan now = DateTime.Now.TimeOfDay;
+
+                if (sunrise01 > now || now > sunset01)
                 {
-                    String t_sunset0 = Settings.Default.dark_sunset.ToShortTimeString();
-                    String t_sunset1 = t_sunset0.Substring(0, t_sunset0.IndexOf(":"));
-                    String t_sunset2 = t_sunset0.Substring(t_sunset0.IndexOf(":") + 1, t_sunset0.Length - t_sunset0.IndexOf(":") - 1);
-                    TimeSpan sunset_t = new TimeSpan(Convert.ToInt32(t_sunset1), Convert.ToInt32(t_sunset2), 0);
-                    DateTime sunset0 = DateTime.Now.Date + sunset_t;
-
-                    String t_sunrise0 = Settings.Default.dark_sunrise.ToShortTimeString();
-                    String t_sunrise1 = t_sunrise0.Substring(0, t_sunrise0.IndexOf(":"));
-                    String t_sunrise2 = t_sunrise0.Substring(t_sunrise0.IndexOf(":") + 1, t_sunrise0.Length - t_sunrise0.IndexOf(":") - 1);
-                    TimeSpan sunrise_t = new TimeSpan(Convert.ToInt32(t_sunrise1), Convert.ToInt32(t_sunrise2), 0);
-                    DateTime sunrise0 = DateTime.Now.Date + sunrise_t;
-
-                    TimeSpan r_sunset = DateTime.Now - sunset0;
-                    TimeSpan r_sunrise = DateTime.Now - sunrise0;
-
-                    if (r_sunset.TotalSeconds > 0 && r_sunrise.TotalSeconds < 0)
-                    {
-                        foreach (Control c in this.Controls) UpdateColorDark(c);                        
-                    }
-                }
-            }
+                    foreach (Control c in this.Controls) UpdateColorDark(c);
+                    this.BackColor = Color.FromArgb(255, 64, 64, 64);
+                }                
+            }            
 
             if (Settings.Default.dark_os == true  && Settings.Default.auto_dark == true)
             {
@@ -87,14 +80,13 @@ namespace FFBatch
                 }
                 else Settings.Default.dark_mode = false;
             }
-            else
-            {
+            
                 if (Settings.Default.dark_mode == true)
                 {
                     foreach (Control c in this.Controls) UpdateColorDark(c);
                     this.BackColor = Color.FromArgb(255, 64, 64, 64);
                 }
-            }
+            
             Settings.Default.Save();
             String app_location = Application.StartupPath;
             String portable_flag = Application.StartupPath + "\\" + "portable.ini";

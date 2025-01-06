@@ -71,11 +71,11 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.n_sunrise = new System.Windows.Forms.DateTimePicker();
             this.chk_resize = new System.Windows.Forms.CheckBox();
             this.chk_visuals = new System.Windows.Forms.CheckBox();
             this.chk_thumb_big = new System.Windows.Forms.CheckBox();
             this.chk_dark_win = new System.Windows.Forms.CheckBox();
-            this.n_sunrise = new System.Windows.Forms.DateTimePicker();
             this.n_sunset = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -486,11 +486,11 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.n_sunrise);
             this.groupBox2.Controls.Add(this.chk_resize);
             this.groupBox2.Controls.Add(this.chk_visuals);
             this.groupBox2.Controls.Add(this.chk_thumb_big);
             this.groupBox2.Controls.Add(this.chk_dark_win);
-            this.groupBox2.Controls.Add(this.n_sunrise);
             this.groupBox2.Controls.Add(this.n_sunset);
             this.groupBox2.Controls.Add(this.pic_bat);
             this.groupBox2.Controls.Add(this.label7);
@@ -513,6 +513,13 @@
             resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
+            // 
+            // n_sunrise
+            // 
+            resources.ApplyResources(this.n_sunrise, "n_sunrise");
+            this.n_sunrise.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.n_sunrise.Name = "n_sunrise";
+            this.n_sunrise.ShowUpDown = true;
             // 
             // chk_resize
             // 
@@ -539,13 +546,6 @@
             this.chk_dark_win.Name = "chk_dark_win";
             this.chk_dark_win.UseVisualStyleBackColor = true;
             this.chk_dark_win.CheckedChanged += new System.EventHandler(this.chk_dark_win_CheckedChanged);
-            // 
-            // n_sunrise
-            // 
-            resources.ApplyResources(this.n_sunrise, "n_sunrise");
-            this.n_sunrise.Format = System.Windows.Forms.DateTimePickerFormat.Time;
-            this.n_sunrise.Name = "n_sunrise";
-            this.n_sunrise.ShowUpDown = true;
             // 
             // n_sunset
             // 
