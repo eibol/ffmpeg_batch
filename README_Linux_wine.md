@@ -1,6 +1,6 @@
 # FFmpeg Batch AV Converter 3.1.2 for Linux Wine 9.0
 
-This version of FFmpeg Batch A/V Converter is designed to work in Linux by using Wine 9.0 or higher. Wine staging versions work fine too.
+This version of FFmpeg Batch A/V Converter (<a href="https://github.com/eibol/ffmpeg_batch/releases/tag/3.1.2" target="_blank">v3.1.2</a>) is designed to work in Linux by using Wine 9.0 or higher. Wine staging versions work fine too.
 Some video encoding tests show that performance in Ubuntu 22 is equal, even better than in Windows 11 on the same PC.
 
 Instructions for installation will vary depending on Linux version
