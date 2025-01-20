@@ -1,16 +1,16 @@
-3.2.0
-• Multimedia file information now included as standalone application, more customizable and localized. (FFBatch_mediainfo.exe).
-• New quick startup setting, to greatly speed up application loading by using limited visual styles.
-• Added current file stream selection at stream mapping button.
-• Added map metadata and attachments setting at stream mapping button and mapped by default at stream multiplex tab.
-• Stream multiplex tab: Removed 1 video stream limitation. Found cover streams (mjpeg/png) set as the last stream. 
-• Added detection of metadata rotated videos in cropping tool.
-• Added url context menu quick download best available avc/av1/vp9 video and mp3, opus, flac and aac (m4a) audio (YouTube).
-• Added url download "Quick start" setting to allow starting downloads immediately (url validation performed in the background).
-• Fixed: url audio selected formats not being downloaded.
-• Fixed: url download error messages not logged during sequential downloading and download log button not working.
-• Fixed: url download finish popup dialog not finding output file.
-• Fixed: portable version saving some settings outside application folder. Now truly portable.
-• Fixed: stream mapping button always forcing selected subtitles stream.
-• Fixed: ffmpeg.exe version being displayed as Unknown until application restart and not displaying banner in some circumstances.
-• Minor layout and translation fixes.
+3.2.1
+• Fixed stream multiplex tab displaying undefined language for stream numbers above #10.
+• Fixed time lag when dragging/dropping many items to file list.
+• Fixed video keyframes preview not working in some non-admin configurations.
+• Fixed duplicated files being added again from root directories.
+• Fixed fade in/out not selecting/white/alpha.
+• Fixed hardware decoder not being reset when trying presets.
+• Fixed wrong input fuke frame rate on some regional settings (decimal separator).
+• Fixed dark mode bugs in scheduling and quick startup layout.
+• Alternate progress info for some files displaying progress = N/A (FFmpeg.exe 7.0+).
+• Quick queue file adding: It now obtains files duration in the background before encoding, while still allowing to start encoding immediately.
+• Quick queue file adding: Columns size is saved too.
+• Added setting to disable layout autoresize and disable autoscaling for main window, to mitigate issues with Windows scaling above 100%.
+• Drag/drop text file to urls list (YouTube links).
+• Preset editor: Move items to top/bottom menu.
+• FFBatch_mediainfo.exe 1.0.1: Added Video/Audio category. Fixed some runtime errors and missing fields in non-english languages.
