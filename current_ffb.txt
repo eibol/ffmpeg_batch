@@ -1,5 +1,5 @@
 3.2.2
-• Tested with ffmpg 7.1.1.
+• Tested with ffmpeg 7.1.1.
 • Fixed: Youtube download hangs when testing format writing a temp file is required.
 • Fixed: Encoding parameters column reading input files metadata innecesarily.
 • FFBatch_mediainfo will use same theme (light/dark) as main application.
