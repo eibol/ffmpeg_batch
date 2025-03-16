@@ -1,16 +1,7 @@
-3.2.1
-• Fixed stream multiplex tab displaying undefined language for stream numbers above #10.
-• Fixed time lag when dragging/dropping many items to file list.
-• Fixed video keyframes preview not working in some non-admin configurations.
-• Fixed duplicated files being added again from root directories.
-• Fixed fade in/out not selecting/white/alpha.
-• Fixed hardware decoder not being reset when trying presets.
-• Fixed wrong input fuke frame rate on some regional settings (decimal separator).
-• Fixed dark mode bugs in scheduling and quick startup layout.
-• Alternate progress info for some files displaying progress = N/A (FFmpeg.exe 7.0+).
-• Quick queue file adding: It now obtains files duration in the background before encoding, while still allowing to start encoding immediately.
-• Quick queue file adding: Columns size is saved too.
-• Added setting to disable layout autoresize and disable autoscaling for main window, to mitigate issues with Windows scaling above 100%.
-• Drag/drop text file to urls list (YouTube links).
-• Preset editor: Move items to top/bottom menu.
-• FFBatch_mediainfo.exe 1.0.1: Added Video/Audio category. Fixed some runtime errors and missing fields in non-english languages.
+3.2.2
+• Tested with ffmpg 7.1.1.
+• Fixed: Youtube download hangs when testing format writing a temp file is required.
+• Fixed: Encoding parameters column reading input files metadata innecesarily.
+• FFBatch_mediainfo will use same theme (light/dark) as main application.
+• Quick file listing background duration can be aborted.
+• Other minor settings and wizard bugfixes.
