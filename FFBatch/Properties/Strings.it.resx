@@ -3649,4 +3649,7 @@ Puoi annullare l'aggiunta di file in qualsiasi momento.</value>
   <data name="map_attach" xml:space="preserve">
     <value>Includi allegati</value>
   </data>
+  <data name="dis_try_try" xml:space="preserve">
+    <value>Se ritieni che la preimpostazione sia valida, puoi abilitare "Non provare la preimpostazione" e riprovare l'operazione.</value>
+  </data>
 </root>

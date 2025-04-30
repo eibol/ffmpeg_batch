@@ -3646,4 +3646,7 @@
   <data name="map_attach" xml:space="preserve">
     <value>Map attachments</value>
   </data>
+  <data name="dis_try_try" xml:space="preserve">
+    <value>If you consider preset looks valid, you can enable "Do not try preset" and retry the operation.</value>
+  </data>
 </root>

@@ -3643,4 +3643,7 @@
   <data name="map_attach" xml:space="preserve">
     <value>تضمين المرفقات</value>
   </data>
+  <data name="dis_try_try" xml:space="preserve">
+    <value>إذا كنت تعتقد أن الإعداد المسبق صالح، فيمكنك تمكين "عدم محاولة الإعداد المسبق" وإعادة محاولة العملية.</value>
+  </data>
 </root>

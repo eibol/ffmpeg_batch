@@ -1951,6 +1951,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a If you consider preset looks valid, you can enable &quot;Do not try preset&quot; and retry the operation..
+        /// </summary>
+        internal static string dis_try_try {
+            get {
+                return ResourceManager.GetString("dis_try_try", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Display URL streams.
         /// </summary>
         internal static string dis_url_streams {

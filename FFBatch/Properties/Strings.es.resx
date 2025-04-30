@@ -3646,4 +3646,7 @@
   <data name="map_attach" xml:space="preserve">
     <value>Mapear adjuntos</value>
   </data>
+  <data name="dis_try_try" xml:space="preserve">
+    <value>Si el preajuste parece válido, puede habilitar "No probar preajuste" y reintentar la operación.</value>
+  </data>
 </root>

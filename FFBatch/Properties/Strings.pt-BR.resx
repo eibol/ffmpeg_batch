@@ -3646,4 +3646,7 @@
   <data name="map_attach" xml:space="preserve">
     <value>Incluir anexos</value>
   </data>
+  <data name="dis_try_try" xml:space="preserve">
+    <value>Se você considerar que a predefinição é válida, você pode habilitar "Não tentar predefinição" e tentar a operação novamente.</value>
+  </data>
 </root>

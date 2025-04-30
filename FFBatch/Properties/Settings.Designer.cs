@@ -552,5 +552,17 @@ namespace FFBatch.Properties {
                 this["no_resize"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool first_run {
+            get {
+                return ((bool)(this["first_run"]));
+            }
+            set {
+                this["first_run"] = value;
+            }
+        }
     }
 }

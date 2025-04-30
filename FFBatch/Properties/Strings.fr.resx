@@ -3639,4 +3639,7 @@
   <data name="map_attach" xml:space="preserve">
     <value>Inclure les pièces jointes</value>
   </data>
+  <data name="dis_try_try" xml:space="preserve">
+    <value>Si vous considérez que le préréglage est valide, vous pouvez activer « Ne pas essayer le préréglage » et réessayer l'opération.</value>
+  </data>
 </root>
