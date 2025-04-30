@@ -2563,4 +2563,7 @@
   <data name="groupBox1.Text" xml:space="preserve">
     <value>Opzioni</value>
   </data>
+  <data name="btn_start_multi.Text" xml:space="preserve">
+    <value>Avvia</value>
+  </data>
 </root>
