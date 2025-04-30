@@ -22,6 +22,8 @@ namespace FFBatch
             InitializeComponent();
         }
 
+        private Boolean is_portable = false;
+        private String port_path = Path.Combine(Application.StartupPath, "settings") + "\\";
         public Boolean ff_ess = false;
         private Boolean is_av1 = false;
         private String thumb_scale = "-vf scale=480:-1";
@@ -71,6 +73,10 @@ namespace FFBatch
 
         private void Form5_Load(object sender, EventArgs e)
         {
+            String app_location = Application.StartupPath;
+            String portable_flag = Application.StartupPath + "\\" + "portable.ini";
+            if (File.Exists(portable_flag)) is_portable = true;
+
             refresh_lang();
             foreach (Control ct in this.Controls) ct.AccessibleDescription = ct.Text;
 
@@ -449,7 +455,7 @@ namespace FFBatch
             //Attempt to extract frame as image
 
             DateTime time2;
-            Double seconds = 0;
+            //Double seconds = 0;
             if (!DateTime.TryParse(lbl_fr_time.Text, out time2))
             {
                 return;
@@ -678,12 +684,13 @@ namespace FFBatch
             String target_img = Path.GetTempPath() + "FFBatch_Test" + "\\" + Path.GetFileNameWithoutExtension(file_img) + "_480_" + rel_path + "_" + current_fr + "." + "jpg";
 
             String destino = Path.Combine(Path.GetTempPath(), "FFBatch_test");
+           
 
             if (copy_img == false)
             {
                 save_img.Filter = Properties.Strings.imgs + " PNG|*.png|" + Properties.Strings.imgs + " JPEG |*.jpg";
-                String img_Ext = "png";
-                if (Path.GetExtension(save_img.FileName) == ".jpg") img_Ext = "jpg";
+                String img_ext = "png";
+                if (Path.GetExtension(save_img.FileName) == ".jpg") img_ext = "jpg";
                 save_img.ShowDialog();
                 if (save_ok == false) return;
                 save_ok = false;
@@ -1031,9 +1038,10 @@ namespace FFBatch
         {
             pos.Clear();
             file_kf.Clear();
-
-            String destino0 = Path.Combine(Path.GetTempPath(), "FFBatch_test");
+                        
             String vstats_name = Regex.Replace("vstats_" + Path.GetFileNameWithoutExtension(lv1_item), @"[^\u0000-\u007F]+", string.Empty);
+            String destino0 = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch");
+            if (is_portable == true) destino0 = port_path;
             String target_log = destino0 + "\\" + vstats_name + ".log";
             String it = "";
             Double test = 0;
@@ -1165,7 +1173,7 @@ namespace FFBatch
             elapsed = 0;
 
             DateTime time2;
-            Double seconds = 0;
+            //Double seconds = 0;
             if (!DateTime.TryParse(lbl_fr_time.Text, out time2)) return;
             working = true;
             try
@@ -1195,11 +1203,21 @@ namespace FFBatch
                     catch { return; }
 
                 String vstats_name = Regex.Replace("vstats_" + Path.GetFileNameWithoutExtension(lv1_item), @"[^\u0000-\u007F]+", string.Empty);
-                String target_log = destino + "\\" + vstats_name + ".log";
+                String stats_dest = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch");
 
-                AppParam_img = "-hwaccel auto -skip_frame nokey -an -sn -dn" + " -i " + '\u0022' + file_img + '\u0022' + " -fps_mode passthrough  " + thumb_scale + " -frame_pts 1 -q:v 5 -y " + '\u0022' + target_img + "_" + "%d" + ".jpg" + '\u0022' + " -vstats -vstats_file " + '\u0022' + target_log + '\u0022' + " -hide_banner";
+                if (is_portable == true) stats_dest = port_path;
+                
+                String target_log = stats_dest + "\\" + vstats_name + ".log";
+                String err_txt = "";
+                List<string> list_lines = new List<string>();
 
-                proc_img_0.StartInfo.RedirectStandardError = false;
+                AppParam_img = "-skip_frame nokey -an -sn -dn" + " -i " + '\u0022' + file_img + '\u0022' + " -map V" + " -fps_mode passthrough  " + thumb_scale + " -frame_pts 1 -q:v 5 -y " + '\u0022' + target_img + "_" + "%d" + ".jpg" + '\u0022' + " -vstats -vstats_file " + '\u0022' + target_log + '\u0022' + " -hide_banner";
+                this.Invoke(new MethodInvoker(delegate
+                {
+                    Clipboard.SetText(AppParam_img);
+                }));                
+                
+                proc_img_0.StartInfo.RedirectStandardError = true;
                 proc_img_0.StartInfo.CreateNoWindow = true;
                 proc_img_0.StartInfo.UseShellExecute = false;
                 proc_img_0.StartInfo.FileName = ffm_img;
@@ -1209,7 +1227,32 @@ namespace FFBatch
                 if (already_scan == false)
                 {
                     proc_img_0.Start();
+                    while (!proc_img_0.StandardError.EndOfStream)
+                    {
+                        err_txt = proc_img_0.StandardError.ReadLine();
+                        list_lines.Add(err_txt);
+                    }
                     proc_img_0.WaitForExit();
+
+                    //Save log
+                    string[] array_err = list_lines.ToArray();
+                    String path = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch_frames.log";
+                    if (is_portable == true) path = port_path + "ff_batch_frames_portable.log";
+
+                    StreamWriter SaveFile = new StreamWriter(path);
+                    SaveFile.WriteLine("FFmpeg log sesion: " + System.DateTime.Now);
+                    SaveFile.WriteLine("-------------------------------");
+                    foreach (String item in array_err)
+                    {
+                        SaveFile.WriteLine(item);
+                    }
+                    SaveFile.Close();
+
+                    File.AppendAllText(path, "-----------------------");
+                    File.AppendAllText(path, "-----------------------");
+
+                    //End save log
+
 
                     if (proc_img_0.ExitCode == 0)
                     {
@@ -1267,34 +1310,51 @@ namespace FFBatch
         {
             this.Cursor = Cursors.WaitCursor;
             get_fullscr();
-            Form6 frm6 = new Form6();
             Rectangle resolution = Screen.PrimaryScreen.Bounds;
+            Form frm66 = new Form();
+            frm66.FormBorderStyle = FormBorderStyle.None;
+            frm66.KeyPreview = true;
+            PictureBox pic1 = new PictureBox();
+            pic1.Parent = frm66;
+            frm66.Top = 0; frm66.Left = 0;
+            frm66.Width = resolution.Width;
+            frm66.Height = resolution.Height;
+            pic1.Image = Clipboard.GetImage();
+            pic1.SizeMode = PictureBoxSizeMode.Zoom;
+            pic1.Click += new EventHandler(pic1_Click);
+            frm66.KeyDown += new KeyEventHandler(frm66_KeyDown);
+
             try
-            {
-                frm6.Top = 0; frm6.Left = 0;
-                frm6.Width = resolution.Width;
-                frm6.Height = resolution.Height;
-                frm6.pic1.Image = Clipboard.GetImage();
-                frm6.pic1.SizeMode = PictureBoxSizeMode.Zoom;
+            {                
                 int width = 0;
                 int height = 0;
-                if (resolution.Width >= frm6.pic1.Image.Width)
+                if (resolution.Width >= pic1.Image.Width)
                 {
-                    width = (resolution.Width - frm6.pic1.Image.Width) / 2;
-                    frm6.pic1.SizeMode = PictureBoxSizeMode.Normal;
+                    width = (resolution.Width - pic1.Image.Width) / 2;
+                    pic1.SizeMode = PictureBoxSizeMode.Normal;
                 }
-                if (resolution.Height >= frm6.pic1.Image.Height)
+                if (resolution.Height >= pic1.Image.Height)
                 {
-                    height = (resolution.Height - frm6.pic1.Image.Height) / 2;
-                    frm6.pic1.SizeMode = PictureBoxSizeMode.Normal;
+                    height = (resolution.Height - pic1.Image.Height) / 2;
+                    pic1.SizeMode = PictureBoxSizeMode.Normal;
                 }
-                frm6.pic1.Top = height; frm6.pic1.Left = width;
-                frm6.pic1.Width = resolution.Width;
-                frm6.pic1.Height = resolution.Height;
+                pic1.Top = height; pic1.Left = width;
+                pic1.Width = resolution.Width;
+                pic1.Height = resolution.Height;
                 this.Cursor = Cursors.Arrow;
-                frm6.ShowDialog();
+                frm66.ShowDialog();
             }
             catch { }
+        }
+
+        private void frm66_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape) ActiveForm.Close();
+        }
+
+        private void pic1_Click(object sender, EventArgs e)
+        {
+            ActiveForm.Close();
         }
 
         private void Form5_Resize(object sender, EventArgs e)

@@ -32,6 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dg_streams = new System.Windows.Forms.DataGridView();
+            this.Column3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ColumnN = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menu_grid = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ct1 = new System.Windows.Forms.ToolStripMenuItem();
             this.img_streams = new System.Windows.Forms.ImageList(this.components);
@@ -72,10 +76,6 @@
             this.BG_Keyframes = new System.ComponentModel.BackgroundWorker();
             this.txt_file = new System.Windows.Forms.Label();
             this.glassExtenderProvider1 = new Vanara.Interop.DesktopWindowManager.GlassExtenderProvider();
-            this.Column3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ColumnN = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dg_streams)).BeginInit();
             this.menu_grid.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_frame)).BeginInit();
@@ -104,6 +104,32 @@
             this.dg_streams.ContextMenuStrip = this.menu_grid;
             resources.ApplyResources(this.dg_streams, "dg_streams");
             this.dg_streams.Name = "dg_streams";
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 25F;
+            resources.ApplyResources(this.Column3, "Column3");
+            this.Column3.Name = "Column3";
+            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ColumnN
+            // 
+            resources.ApplyResources(this.ColumnN, "ColumnN");
+            this.ColumnN.Name = "ColumnN";
+            // 
+            // Column1
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
+            resources.ApplyResources(this.Column1, "Column1");
+            this.Column1.Name = "Column1";
+            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Column2
+            // 
+            resources.ApplyResources(this.Column2, "Column2");
+            this.Column2.Name = "Column2";
+            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // menu_grid
             // 
@@ -368,6 +394,7 @@
             // 
             // btn_close
             // 
+            this.btn_close.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             resources.ApplyResources(this.btn_close, "btn_close");
             this.btn_close.Name = "btn_close";
             this.btn_close.UseVisualStyleBackColor = true;
@@ -392,37 +419,12 @@
             resources.ApplyResources(this.txt_file, "txt_file");
             this.txt_file.Name = "txt_file";
             // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 25F;
-            resources.ApplyResources(this.Column3, "Column3");
-            this.Column3.Name = "Column3";
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // ColumnN
-            // 
-            resources.ApplyResources(this.ColumnN, "ColumnN");
-            this.ColumnN.Name = "ColumnN";
-            // 
-            // Column1
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle1;
-            resources.ApplyResources(this.Column1, "Column1");
-            this.Column1.Name = "Column1";
-            this.Column1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Column2
-            // 
-            resources.ApplyResources(this.Column2, "Column2");
-            this.Column2.Name = "Column2";
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // Form5
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.CancelButton = this.btn_close;
             this.Controls.Add(this.txt_file);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.dg_streams);

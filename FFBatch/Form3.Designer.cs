@@ -240,7 +240,6 @@
             resources.ApplyResources(this.chk_filter_zero, "chk_filter_zero");
             this.chk_filter_zero.Name = "chk_filter_zero";
             this.chk_filter_zero.UseVisualStyleBackColor = true;
-            this.chk_filter_zero.CheckedChanged += new System.EventHandler(this.chk_filter_zero_CheckedChanged);
             // 
             // chk_dates
             // 
@@ -550,7 +549,7 @@
             // n_sunset
             // 
             resources.ApplyResources(this.n_sunset, "n_sunset");
-            this.n_sunset.Format = System.Windows.Forms.DateTimePickerFormat.Time;
+            this.n_sunset.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.n_sunset.Name = "n_sunset";
             this.n_sunset.ShowUpDown = true;
             // 

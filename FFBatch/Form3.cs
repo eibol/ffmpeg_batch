@@ -177,6 +177,7 @@ namespace FFBatch
 
         private void Form3_Load(object sender, EventArgs e)
         {
+            Settings.Default.Reload();
             if (Settings.Default.visuals == false && Settings.Default.dark_mode == false)
             {
                 foreach (var groupbox in this.Controls.OfType<GroupBox>())
@@ -206,9 +207,7 @@ namespace FFBatch
 
             if (Settings.Default.to_tray == false) chk_tray.Checked = false;
             else chk_tray.Checked = true;
-            if (Settings.Default.filter_zero == false) chk_filter_zero.Checked = false;
-            else chk_filter_zero.Checked = true;
-
+            
             if (Settings.Default.auto_dark == true)
             {
                 chk_dark.Checked = true;
@@ -265,6 +264,9 @@ namespace FFBatch
             //Read configuration
             if (Settings.Default.no_dest_overw == true) chk_no_overw.Checked = true;
             else chk_no_overw.Checked = false;
+
+            if (Settings.Default.filter_zero == true) chk_filter_zero.Checked = true;
+            else chk_filter_zero.Checked = false;
 
             if (Settings.Default.bat_level < 10) Settings.Default.bat_level = 20;
             
@@ -1773,15 +1775,6 @@ namespace FFBatch
             }
         }
 
-        private void chk_filter_zero_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chk_filter_zero.CheckState == CheckState.Checked)
-            {
-                Settings.Default.filter_zero = true;
-            }
-            else Settings.Default.filter_zero = false;            
-        }
-
         private void chk_battery_CheckedChanged(object sender, EventArgs e)
         {
             if (chk_battery.Checked == true)
@@ -1803,7 +1796,7 @@ namespace FFBatch
 
         private void chk_quick_q_CheckedChanged(object sender, EventArgs e)
         {
-            if (chk_quick_q.CheckState == CheckState.Checked) chk_filter_zero.Checked = false;
+            //if (chk_quick_q.CheckState == CheckState.Checked) chk_filter_zero.Checked = false;
         }
 
         private void button2_Click(object sender, EventArgs e)

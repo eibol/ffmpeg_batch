@@ -137,7 +137,7 @@
     <value>No sobreescribir destino existente</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>447, 183</value>
+    <value>449, 183</value>
   </data>
   <data name="n_bat_l.Location" type="System.Drawing.Point, System.Drawing">
     <value>411, 179</value>
@@ -393,6 +393,9 @@
   <data name="btn_save.Text" xml:space="preserve">
     <value>Guardar cambios</value>
   </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Preajuste por defecto</value>
+  </data>
   <data name="chk_autor.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
@@ -546,9 +549,6 @@
   <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>773, 39</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Preajuste por defecto</value>
-  </data>
   <data name="btn_cancel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAIGNIUk0AAHolAACAgwAA+f8AAIDoAABS
@@ -596,8 +596,8 @@
   <data name="btn_cancel.Text" xml:space="preserve">
     <value>Descartar cambios</value>
   </data>
-  <data name="label11.Location" type="System.Drawing.Point, System.Drawing">
-    <value>445, 235</value>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Ajustes generales</value>
   </data>
   <data name="n_sunrise.Location" type="System.Drawing.Point, System.Drawing">
     <value>375, 231</value>
@@ -787,15 +787,12 @@
   <data name="chk_auto_updates.Text" xml:space="preserve">
     <value>Buscar actualizaciones</value>
   </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>Ajustes generales</value>
-  </data>
   <data name="img_edit.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACA
-        FgAAAk1TRnQBSQFMAgEBAwEAAcABBAHAAQQBFAEAARQBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFQ
+        FgAAAk1TRnQBSQFMAgEBAwEAAcgBBAHIAQQBFAEAARQBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFQ
         AwABFAMAAQEBAAEgBgABGRIAAwQBBQNIAYQDTgGWA1YBswNaAccDXwHVA2EB3gNhAeQDYwHpA10B6gNe
         Ae0DYwHpA2UB5wNhAeIDYAHbA10BzwNaAb8DUwGlA0oBiwMwAUssAAQBAwIBAwMCAQMDBQEGAwIBAwMC
         AQMEAhAAAxgBIQJcAWEB1gJfAWEB2gMbASYgAAMMAQ8DVgGyAlkBYgHvAj8BQAFuBAJYAAMLAQ4CagFB
@@ -875,7 +872,7 @@
         AekB/wGSAaEB6gH/AY4BngHpAf8BiQGaAegB/wGDAZYB5QH/AY4BnwHyAf8DUgGjAwwBDwQAAzkBXgGK
         AYsB7AH/AgAB2AH/AgAB1wH/AgAB2gH/AgAB3AH/AgAB3wH/AgAB6QH/A2AB4FQAA0MBdwHSAasBAAH/
         AZ4BBgEAAf8C/QH7Af8BqgGKAQAB/wGVAgAB/wHTAcIBmxX/AeIBywGvAf8BsAEFAQAB/wHjAaQBAAH/
-        Ad0BnwEAAf8CgAFxAf4DRwGACAAD1QH/AdYBxQGlAf8B0gHBAaEB/wHNAb0BnAH/AcgBuAGYAf8BwwG0
+        Ad0BnwEAAf8CgAFyAf4DRwGACAAD1QH/AdYBxQGlAf8B0gHBAaEB/wHNAb0BnAH/AcgBuAGYAf8BwwG0
         AZQB/wPVAf8wAANVAa0DKwH8AZ4BrQHrAf8BmwGpAesB/wGWAaYB6gH/AZEBogHpAf8BnQGrAfQB/wNY
         AbcDCAEKDAADNAFTA20B9wIAAdUB/wIAAdgB/wIAAdoB/wIAAdwB/wIAAeUB/wJcAV4B2VQAA0MBdwHW
         Aa4BAAH/AakBhAEAAf8C/QH7Af8BuQGYAQAB/wGnAYABAAH/AdoBygGlFf8B3gHPAa8B/wGwAYkBAAH/
@@ -962,6 +959,9 @@
   <data name="btn_defaults.Text" xml:space="preserve">
     <value>Usar valores por defecto</value>
   </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Caché de ficheros en red</value>
+  </data>
   <data name="chk_cache_dialog.Location" type="System.Drawing.Point, System.Drawing">
     <value>306, 26</value>
   </data>
@@ -1002,9 +1002,6 @@
         cnJfc0ZenpUzLlH7FYPBMEC+LNkuiz6yBUfc8ngMDg4iITGJr6iaoA9qzZpFlMcuXS5liMYUzuD3881t
         UhKvwC5/f3+Pn5+fh3+5TnzCnRrFJ8RERkBAAGd0E7ypkwThH641I49s1FhyAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>Caché de ficheros en red</value>
   </data>
   <data name="btn_reset.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1124,11 +1121,11 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACQ
-        DgAAAk1TRnQBSQFMAgEBAgEAAZgBAwGYAQMBFAEAARQBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFQ
+        DgAAAk1TRnQBSQFMAgEBAgEAAaABAwGgAQMBFAEAARQBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFQ
         AwABFAMAAQEBAAEgBgABGRYAAwgBCgMVAR0DQQFyAx8BLDwABAIEAQQCAwMBBAMGAQcDDAEQAxMBGgMZ
         ASIDHQEpAx4BKgMeASoDHQEpAxkBIwMUARsDDQERAwcBCQMEAQUEAgQABAKkAAMGAQcDEwEaA10BzwFb
         AV8BWwHYAyoBQDgAAwgBCgMwBEoBigNMAZADUAGcA1MBpwNVAbEDVwG5A1kBwANaAcQDWgHEA1kBwANY
-        AboDVgGzA1MBqQNQAZwDTQGSA0oBiwMzAVIDCgENpAADAgEDAwsBDgNWAbIBAAGUAQAB/wEgAYABIAH+
+        AboDVgGzA1MBqQNQAZwDTQGSA0oBiwMzAVIDCgENpAADAgEDAwsBDgNWAbIBAAGUAQAB/wEhAYABIQH+
         A1IBowMgAS0wAAMEAQUDTAGQAgAB5QH/AgAB1gH/AgABzwH/AgAB0AH/AgAB0AH/AgAB0AH/AgAB0AH/
         AgAB0AH/AgAB0AH/AgAB0AH/AgAB0AH/AgAB0AH/AgAB0AH/AgABzwH/AgAB1QH/AgAB5gH/A1MBqQMK
         AQ2kAAMDAQQDDAEQA1gBtwEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wNgAegDRgF9AxIBGCwAA0UBfAIA
@@ -1148,11 +1145,11 @@
         AwIBAxAAA0YBfQIAAdQB/wIAAdIB/wIAAckB/wIAAcwB/wIAAcwB/wIAAcwB/wIAAcwB/wIAAcwB/wIA
         AcwB/wIAAcwB/wIAAcwB/wIAAcwB/wIAAcwB/wIAAcsB/wIAAdMB/wIAAdMB/wNOAZQDBAEFpAADAgED
         AwwBEANWAbYBAAGUAQAB/wEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/AQABlAEAAf8BAAGU
-        AQAB/wEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/ASABgAEgAf4DWQHBAzQBUwMCAQMIAANG
+        AQAB/wEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/ASEBgAEhAf4DWQHBAzQBUwMCAQMIAANG
         AX0CAAHbAf8CAAHYAf8CAAHLAf8CAAHLAf8CAAHLAf8CAAHMAf8CAAHMAf8CAAHMAf8CAAHMAf8CAAHM
         Af8CAAHMAf8CAAHMAf8CAAHMAf8CAAHLAf8CAAHTAf8CAAHUAf8DTgGUAwQBBaQAAwIBAwMMARADVgG2
         AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/AQABlAEAAf8BAAGU
-        AQAB/wEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/AQABlAEAAf8BIAGAASAB/gNYAboDLQFF
+        AQAB/wEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/AQABlAEAAf8BIQGAASEB/gNYAboDLQFF
         BAADRgF9AgAB2wH/AgAB3AH/AgAB0gH/AgAB0AH/AgABzQH/AgABywH/AgABywH/AgABzAH/AgABzAH/
         AgABzAH/AgABzAH/AgABzAH/AgABzAH/AgABywH/AgAB0wH/AgAB1AH/A04BlAMEAQWkAAMCAQMDDAEQ
         A1YBtgEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/AQABlAEAAf8BAAGUAQAB/wEAAZQBAAH/
@@ -1225,6 +1222,9 @@
   <data name="btn_add_ex.Text" xml:space="preserve">
     <value>Rendimiento</value>
   </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Eliminar ficheros de origen</value>
+  </data>
   <data name="chk_delete_one.Location" type="System.Drawing.Point, System.Drawing">
     <value>312, 26</value>
   </data>
@@ -1276,9 +1276,6 @@
         k1wcwi8TxZGpONEUK0T3Nrqt2Ow2M6Evu/pdJ7u6upZ/ammZZE4+4nu3iJisl9DzlOuriMtax3HUnwTy
         GeeSVlgCAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>Eliminar ficheros de origen</value>
   </data>
   <data name="pic_night.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1725,6 +1722,9 @@
   <data name="button2.Text" xml:space="preserve">
     <value>Reemplazar</value>
   </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>Monitorizar carpeta</value>
+  </data>
   <data name="btn_excl.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABUAAAAYCAYAAAAVibZIAAAABGdBTUEAALGOfPtRkwAAACBjSFJNAACH
@@ -1938,9 +1938,6 @@
   </data>
   <data name="chk_monitor.Text" xml:space="preserve">
     <value>Activar monitorización</value>
-  </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>Monitorizar carpeta</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

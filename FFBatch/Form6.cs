@@ -51,17 +51,16 @@ namespace FFBatch
         }
         private void Form6_Load(object sender, System.EventArgs e)
         {
-            Settings.Default.dark_sunset = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, Settings.Default.dark_sunset.Hour, Settings.Default.dark_sunset.Minute, Settings.Default.dark_sunset.Second);
-            Settings.Default.dark_sunrise = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, Settings.Default.dark_sunrise.Hour, Settings.Default.dark_sunrise.Minute, Settings.Default.dark_sunrise.Second);
-            Settings.Default.Save();
-
             if (Settings.Default.auto_dark == true) Settings.Default.dark_mode = false;
 
             if (Settings.Default.auto_dark == true && Settings.Default.dark_os == false)
-            {                
-                TimeSpan sunrise01 = TimeSpan.Parse( Settings.Default.dark_sunrise.ToShortTimeString());
-                TimeSpan sunset01 = TimeSpan.Parse(Settings.Default.dark_sunset.ToShortTimeString());                
-                TimeSpan now = DateTime.Now.TimeOfDay;
+            {
+                
+                TimeSpan sunrise01 = TimeSpan.Parse(Settings.Default.dark_sunrise.ToString("HH:mm"));
+                TimeSpan sunset01 = TimeSpan.Parse(Settings.Default.dark_sunset.ToString("HH:mm"));  
+                //TimeSpan sunrise01 = TimeSpan.Parse(Settings.Default.dark_sunrise.ToShortTimeString());
+                //TimeSpan sunset01 = TimeSpan.Parse(Settings.Default.dark_sunset.ToShortTimeString());                
+                TimeSpan now = TimeSpan.Parse(DateTime.Now.TimeOfDay.ToString());
 
                 if (sunrise01 > now || now > sunset01)
                 {
