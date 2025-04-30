@@ -152,7 +152,7 @@ namespace FFBatch
                 if (set_format == "mp3") process_glob.StartInfo.Arguments = "-f bestaudio[ext=m4a] -x --audio-format mp3 --audio-quality 0 " + " -o " + '\u0022' + destino + "\\" + "%(title)s.%(ext)s" + '\u0022' + " --ffmpeg-location " + '\u0022' + Properties.Settings.Default.ffm_path + '\u0022' + " " + txt_channel.Text;
                 if (set_format == "flac") process_glob.StartInfo.Arguments = " -f bestaudio -x --audio-format flac --audio-quality 5 " + " -o " + '\u0022' + destino + "\\" + "%(title)s.%(ext)s" + '\u0022' + " --ffmpeg-location " + '\u0022' + Properties.Settings.Default.ffm_path + '\u0022' + " " + txt_channel.Text;
                 if (set_format == "opus") process_glob.StartInfo.Arguments = "-f bestaudio -x --audio-format opus --audio-quality 0 " + " -o " + '\u0022' + destino + "\\" + "%(title)s.%(ext)s" + '\u0022' + " --ffmpeg-location " + '\u0022' + Properties.Settings.Default.ffm_path + '\u0022' + " " + txt_channel.Text;
-                process_glob.StartInfo.Arguments = "--windows-filenames   " + process_glob.StartInfo.Arguments;
+                process_glob.StartInfo.Arguments = "--windows-filenames   " + process_glob.StartInfo.Arguments + " -P " + destino;
 
                 if (!File.Exists(System.IO.Path.Combine(Application.StartupPath, "yt-dlp.exe")))
                 {
