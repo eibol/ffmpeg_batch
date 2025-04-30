@@ -37,11 +37,12 @@ namespace FFBatch
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            this.CenterToParent();
             init_lang();
             if (Settings.Default.season_img == false) pic_season.Visible = false;
             else pic_season.Visible = true;            
 
-            lbl_framew.Text = RuntimeInformation.FrameworkDescription;            
+            //lbl_framew.Text = RuntimeInformation.FrameworkDescription;            
             label2.Text = "Version " + Application.ProductVersion;
             this.Text = FFBatch.Properties.Strings.About + " " + Application.ProductName;
             if (Properties.Settings.Default.dark_mode == true)

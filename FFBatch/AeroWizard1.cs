@@ -4076,6 +4076,8 @@ namespace FFBatch
 
                 String ext_output = String.Empty;
                 this.InvokeEx(f => ext_output = cb_container.SelectedItem.ToString());
+                if (ext_output.Length == 0) ext_output = Path.GetExtension(file_prueba);
+
 
                 String textbox_params = wiz_params;
                 String file_prueba2 = file_prueba;
