@@ -16499,4 +16499,7 @@
   <data name="cti4.Text" xml:space="preserve">
     <value>Visualizza info file multimediale</value>
   </data>
+  <data name="ct1_minfo.Text" xml:space="preserve">
+    <value>visualizza info file multimedia</value>
+  </data>
 </root>
