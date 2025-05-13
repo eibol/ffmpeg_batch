@@ -54,6 +54,7 @@ namespace FFBatch
             this.lbl_name = new System.Windows.Forms.Label();
             this.btn_close = new System.Windows.Forms.Button();
             this.chk_no_popp = new System.Windows.Forms.CheckBox();
+            this.btn_info = new System.Windows.Forms.Button();
             this.panel_thumb.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_success)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_frame)).BeginInit();
@@ -61,6 +62,7 @@ namespace FFBatch
             // 
             // panel_thumb
             // 
+            resources.ApplyResources(this.panel_thumb, "panel_thumb");
             this.panel_thumb.Controls.Add(this.lbl_succ);
             this.panel_thumb.Controls.Add(this.btn_play);
             this.panel_thumb.Controls.Add(this.sep3);
@@ -81,7 +83,6 @@ namespace FFBatch
             this.panel_thumb.Controls.Add(this.lbl_s_th);
             this.panel_thumb.Controls.Add(this.pic_frame);
             this.panel_thumb.Controls.Add(this.lbl_a_th);
-            resources.ApplyResources(this.panel_thumb, "panel_thumb");
             this.panel_thumb.Name = "panel_thumb";
             this.panel_thumb.TabStop = false;
             // 
@@ -92,28 +93,28 @@ namespace FFBatch
             // 
             // btn_play
             // 
-            this.btn_play.BackColor = System.Drawing.SystemColors.InactiveBorder;
             resources.ApplyResources(this.btn_play, "btn_play");
+            this.btn_play.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_play.Name = "btn_play";
             this.btn_play.UseVisualStyleBackColor = false;
             this.btn_play.Click += new System.EventHandler(this.btn_play_Click);
             // 
             // sep3
             // 
-            this.sep3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             resources.ApplyResources(this.sep3, "sep3");
+            this.sep3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.sep3.Name = "sep3";
             // 
             // sep2
             // 
-            this.sep2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             resources.ApplyResources(this.sep2, "sep2");
+            this.sep2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.sep2.Name = "sep2";
             // 
             // sep1
             // 
-            this.sep1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             resources.ApplyResources(this.sep1, "sep1");
+            this.sep1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.sep1.Name = "sep1";
             // 
             // lbl_v_th
@@ -158,8 +159,8 @@ namespace FFBatch
             // 
             // btn_browse
             // 
-            this.btn_browse.BackColor = System.Drawing.SystemColors.InactiveBorder;
             resources.ApplyResources(this.btn_browse, "btn_browse");
+            this.btn_browse.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_browse.Name = "btn_browse";
             this.btn_browse.UseVisualStyleBackColor = false;
             this.btn_browse.Click += new System.EventHandler(this.btn_browse_Click);
@@ -187,8 +188,8 @@ namespace FFBatch
             // 
             // pic_frame
             // 
-            this.pic_frame.Cursor = System.Windows.Forms.Cursors.Default;
             resources.ApplyResources(this.pic_frame, "pic_frame");
+            this.pic_frame.Cursor = System.Windows.Forms.Cursors.Default;
             this.pic_frame.Name = "pic_frame";
             this.pic_frame.TabStop = false;
             // 
@@ -200,12 +201,13 @@ namespace FFBatch
             // lbl_name
             // 
             resources.ApplyResources(this.lbl_name, "lbl_name");
+            this.lbl_name.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.lbl_name.Name = "lbl_name";
             // 
             // btn_close
             // 
-            this.btn_close.BackColor = System.Drawing.SystemColors.InactiveBorder;
             resources.ApplyResources(this.btn_close, "btn_close");
+            this.btn_close.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_close.Name = "btn_close";
             this.btn_close.UseVisualStyleBackColor = false;
             this.btn_close.Click += new System.EventHandler(this.button1_Click);
@@ -217,11 +219,21 @@ namespace FFBatch
             this.chk_no_popp.UseVisualStyleBackColor = true;
             this.chk_no_popp.CheckedChanged += new System.EventHandler(this.chk_no_popp_CheckedChanged);
             // 
+            // btn_info
+            // 
+            resources.ApplyResources(this.btn_info, "btn_info");
+            this.btn_info.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.btn_info.FlatAppearance.BorderSize = 0;
+            this.btn_info.Name = "btn_info";
+            this.btn_info.UseVisualStyleBackColor = false;
+            this.btn_info.Click += new System.EventHandler(this.btn_info_Click);
+            // 
             // Form26
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.Controls.Add(this.btn_info);
             this.Controls.Add(this.chk_no_popp);
             this.Controls.Add(this.btn_close);
             this.Controls.Add(this.lbl_name);
@@ -265,5 +277,6 @@ namespace FFBatch
         private System.Windows.Forms.Label sep1;
         public System.Windows.Forms.CheckBox chk_no_popp;
         private System.Windows.Forms.Button btn_play;
+        private System.Windows.Forms.Button btn_info;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FFBatch.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,6 +12,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace FFBatch
 {
@@ -427,6 +429,15 @@ namespace FFBatch
                 if (File.Exists(out_file)) Process.Start(out_file);
                 else MessageBox.Show(Properties.Strings.file_not_f);
             }
+        }
+        private void btn_info_Click(object sender, EventArgs e)
+        {
+            String med = Path.Combine(Application.StartupPath, "FFBatch_mediainfo.exe");
+            String send_dark = String.Empty;
+            if (Settings.Default.dark_mode == true) send_dark = "--dark";
+            if (File.Exists(med)) Process.Start(med, send_dark + " " + out_file);
+            else MessageBox.Show(Strings.file_not_found + " FFBatch_mediainfo.exe", Strings.file_miss, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            
         }
     }
 }
