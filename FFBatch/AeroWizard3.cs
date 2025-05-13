@@ -1045,5 +1045,52 @@ namespace FFBatch
         {
             if (n_target_size.Value == 11) n_target_size.Value = 10;
         }
+
+        private void combo_codec_t_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            String[] modes = new string[] { "ultrafast", "veryfast", "faster", "fast", "medium", "slow" };
+            if (combo_codec_t.SelectedItem.ToString() == "libvvenc")
+            {
+                modes = new string[] { "faster", "fast", "medium", "slow", "slower" };
+            }
+            profile_target.Items.Clear();
+            foreach (String item in modes) profile_target.Items.Add(item);
+            profile_target.SelectedIndex = 0;
+            
+
+            switch (combo_codec_t.SelectedItem.ToString())
+            {
+                case "libx264":
+                    txt_video_current.Text = "AVC H.264";
+                    break;
+                case "libx265":
+                    txt_video_current.Text = "HEVC H.265";
+                    break;
+                case "h264_qsv":
+                    txt_video_current.Text = "AVC Intel QuickSync";
+                    break;
+                case "h264_nvenc":
+                    txt_video_current.Text = "AVC Nvidia Encoder";
+                    break;
+                case "h264_amf":
+                    txt_video_current.Text = "AVC AMD Encoder ";
+                    break;
+                case "hevc_qsv":
+                    txt_video_current.Text = "HEVC Intel QuickSync";
+                    break;
+                case "hevc_nvenc":
+                    txt_video_current.Text = "HEVC Nvidia Encoder";
+                    break;
+                case "hevc_amf":
+                    txt_video_current.Text = "HEVC AMD Encoder";
+                    break;
+                case "libtheora":
+                    txt_video_current.Text = "Theora Video Encoder";
+                    break;
+                case "libvvenc":
+                    txt_video_current.Text = "Verstile Video H.266";
+                    break;
+            }
+        }
     }
 }

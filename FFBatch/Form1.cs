@@ -51,6 +51,7 @@ namespace FFBatch
         private delegate Boolean ConsoleCtrlDelegate(uint CtrlType);
 
         //Variables
+        List<string> list_lines = new List<string>();
         System.Windows.Forms.Timer t1 = new System.Windows.Forms.Timer();
         Boolean pre_quick_queue = Settings.Default.quick_queue;
         ListView lstv_dur_bg = new ListView();
@@ -2967,7 +2968,8 @@ namespace FFBatch
             String remain_time = "0";
             //End get total duration of files
 
-            List<string> list_lines = new List<string>();
+            //List<string> list_lines = new List<string>();
+            list_lines.Clear();
 
             procs.Clear();
 
@@ -3555,9 +3557,9 @@ namespace FFBatch
                     {
                         Directory.CreateDirectory(destino);
                     }
-
+                                        
                     tmp.StartInfo.FileName = ffm;
-                    tmp.StartInfo.Arguments = AppParam + " -hide_banner";
+                    tmp.StartInfo.Arguments = AppParam + " -hide_banner";                    
 
                     //valid_prog = false;
 
@@ -3989,7 +3991,7 @@ namespace FFBatch
                             if (is_portable == true) path = port_path + "ff_batch_portable.log";
 
                             StreamWriter SaveFile = new StreamWriter(path);
-                            SaveFile.WriteLine("FFmpeg log sesion: " + System.DateTime.Now);
+                            SaveFile.WriteLine("FFmpeg " + Strings.log + ": " + System.DateTime.Now + " (" + Strings.Two_pass_encoding_wizard + ")");
                             SaveFile.WriteLine("-------------------------------");
                             foreach (String item in array_err)
                             {
@@ -4609,6 +4611,21 @@ namespace FFBatch
                 }
             }
             if (Opacity >= 1) t1.Stop();
+        }
+
+        private Boolean check_updates()
+        {
+            String f_updates = String.Empty;
+            if (is_portable == false)
+            {
+                f_updates = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_updates.ini";
+            }
+            else
+            {
+                f_updates = port_path + "ff_updates_portable.ini";
+            }
+            if (!File.Exists(f_updates)) return true;            
+            else return false;            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -8994,6 +9011,7 @@ namespace FFBatch
                 {
                     ct.Enabled = false;
                 }
+                btn_display_log.Enabled = true;
 
                 groupBox4.Enabled = true;
                 foreach (Control ct in groupBox4.Controls)
@@ -26558,7 +26576,8 @@ namespace FFBatch
 
             //End total duration
 
-            List<string> list_lines = new List<string>();
+            //List<string> list_lines = new List<string>();
+            list_lines.Clear();
             procs.Clear();
             procs.Add("proc_urls_0", new Process());
 
@@ -27008,7 +27027,7 @@ namespace FFBatch
                 if (no_save_logs == false)
                 {
                     StreamWriter SaveFile = new StreamWriter(path_l);
-                    SaveFile.WriteLine("FFmpeg log session: " + System.DateTime.Now);
+                    SaveFile.WriteLine("FFmpeg " + Strings.log + ": " + System.DateTime.Now + " (" + Strings.concat_fil + ")");
                     SaveFile.WriteLine("-------------------------------");
                     foreach (String item in array_err)
                     {
@@ -27725,6 +27744,12 @@ namespace FFBatch
 
         private void youtube_dl_ver()
         {
+            if (check_updates() == false)
+            {
+                pic_wait_1.Visible = false;
+                return;
+            }
+
             String trans_lbl = lbl_yl_name.Text = Strings.ResourceManager.GetString("check_ytdl", new CultureInfo(Properties.Settings.Default.app_lang));
             this.InvokeEx(f => f.lbl_yl_name.Text = trans_lbl);
             if (!File.Exists(Path.Combine(Application.StartupPath, "yt-dlp.exe")))
@@ -27739,10 +27764,13 @@ namespace FFBatch
                     pic_wait_1.Visible = false;
                     pic_no_yt.Visible = true;
                 }));
-
+                
                 return;
             }
-            try { BG_check_ytdl.RunWorkerAsync(); } catch { }
+            if (check_updates() == true)
+            {                
+                try { BG_check_ytdl.RunWorkerAsync(); } catch { }
+            }
         }
         private void resize()
         {
@@ -28057,6 +28085,8 @@ namespace FFBatch
 
         }
 
+
+
         private void Form1_Shown(object sender, EventArgs e)
         {            
             if (Settings.Default.dark_mode == false)
@@ -28255,24 +28285,13 @@ namespace FFBatch
 
             //Automatic update
 
-            String f_updates = String.Empty;
-            if (is_portable == false)
-            {
-                f_updates = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_updates.ini";
-            }
-            else
-            {
-                f_updates = port_path + "ff_updates_portable.ini";
-            }
-            if (!File.Exists(f_updates))
+            if (check_updates() == true)
             {
                 chk_auto_updates.Checked = true;
                 check_back_updates();
             }
-            else
-            {
-                chk_auto_updates.Checked = false;
-            }
+            else chk_auto_updates.Checked = false;
+
             //Pg1.Focus();
             //End automatic updates
 
@@ -34977,7 +34996,8 @@ namespace FFBatch
             }));
 
             List<string> destis = new List<string>();
-            List<string> list_lines = new List<string>();
+            //List<string> list_lines = new List<string>();
+            list_lines.Clear();
             list_successful_m.Clear();
             list_failed_m.Clear();
 
@@ -36682,7 +36702,7 @@ namespace FFBatch
                 try
                 {
                     StreamWriter SaveFile = new StreamWriter(path);
-                    SaveFile.WriteLine("Multi-file log session: " + System.DateTime.Now);
+                    SaveFile.WriteLine("FFmpeg " + Strings.log + ":"  + System.DateTime.Now + " (" + Strings.multi_file + ")");
                     SaveFile.WriteLine("-----------------------------------------------------");
                     SaveFile.Write(string.Join(Environment.NewLine, multi_logs.Select(a => $"{a.Value}")));
                     SaveFile.Close();
@@ -38757,6 +38777,40 @@ namespace FFBatch
 
         private void display_log()
         {
+            if (working == true && multi_running == false)
+            {
+                string[] array_err = list_lines.ToArray();
+                String path = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch.log";
+                if (is_portable == true) path = port_path + "ff_batch_portable.log";
+
+                StreamWriter SaveFile = new StreamWriter(path);
+                SaveFile.WriteLine("FFmpeg log sesion: " + System.DateTime.Now);
+                SaveFile.WriteLine("-------------------------------");
+                foreach (String item in array_err)
+                {
+                    SaveFile.WriteLine(item);
+                }
+                SaveFile.Close();
+
+            }
+
+            if (working == true && multi_running == true)
+            {
+                String[] array_err = list_lines.ToArray();
+
+                String path = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch.log";
+                if (is_portable == true) path = port_path + "ff_batch_portable.log";
+                try
+                {
+                    StreamWriter SaveFile = new StreamWriter(path);
+                    SaveFile.WriteLine("Multi-file log session: " + System.DateTime.Now);
+                    SaveFile.WriteLine("-----------------------------------------------------");
+                    SaveFile.Write(string.Join(Environment.NewLine, multi_logs.Select(a => $"{a.Value}")));
+                    SaveFile.Close();
+                }
+                catch { }
+            }
+
             String path_log_file = Path.Combine(Environment.GetEnvironmentVariable("appdata"), "FFBatch") + "\\" + "ff_batch.log";
             if (is_portable == true) path_log_file = port_path + "ff_batch_portable.log";
             if (!File.Exists(path_log_file))
@@ -41324,7 +41378,6 @@ namespace FFBatch
             this.Invoke(new MethodInvoker(delegate
             {
                 pic_wait_1.Visible = false;
-
                 if (t_out_yt == true)
                 {
                     //lbl_yl_name.Text = Strings.err_yt_u;
@@ -45461,7 +45514,8 @@ namespace FFBatch
             String remain_time = "0";
             //End get total duration of files
 
-            List<string> list_lines = new List<string>();
+            //List<string> list_lines = new List<string>();
+            list_lines.Clear();
             List<string> list_successful = new List<string>();
             List<string> list_failed = new List<string>();
             procs.Clear();
@@ -47748,7 +47802,7 @@ namespace FFBatch
                         if (is_portable == true) path = port_path + "ff_batch_portable.log";
 
                         StreamWriter SaveFile = new StreamWriter(path);
-                        SaveFile.WriteLine("FFmpeg log sesion: " + System.DateTime.Now);
+                        SaveFile.WriteLine("FFmpeg " + Strings.log + ": " + System.DateTime.Now + " (" + Strings.sequential +  ")");
                         SaveFile.WriteLine("-------------------------------");
                         foreach (String item in array_err)
                         {
@@ -48671,7 +48725,8 @@ namespace FFBatch
             pic_no_errors.Visible = false;
             timer_tasks.Start();
 
-            List<string> list_lines = new List<string>();
+            //List<string> list_lines = new List<string>();
+            list_lines.Clear();
             procs.Clear();
 
             for (int ii = 0; ii < listView1.Items.Count; ii++)
@@ -49298,7 +49353,7 @@ namespace FFBatch
                             if (is_portable == true) path = port_path + "ff_batch_portable.log";
 
                             StreamWriter SaveFile = new StreamWriter(path);
-                            SaveFile.WriteLine("FFmpeg log sesion: " + System.DateTime.Now);
+                            SaveFile.WriteLine("FFmpeg " + Strings.log + ": " + System.DateTime.Now + " (" + Strings.trim_comp2 + ")");
                             SaveFile.WriteLine("-------------------------------");
                             foreach (String item in array_err)
                             {

@@ -227,7 +227,7 @@
     <value>Taille finale</value>
   </data>
   <data name="chk_one_pass.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 19</value>
+    <value>109, 19</value>
   </data>
   <data name="chk_one_pass.Text" xml:space="preserve">
     <value>Une seule passe</value>
@@ -403,13 +403,13 @@
 </value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 15</value>
+    <value>93, 15</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>Deuxième passe</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 15</value>
+    <value>86, 15</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>Première passe</value>
@@ -2660,7 +2660,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABe
-        HAAAAk1TRnQBSQFMAgEBAwEAAagBAwGoAQMBGAEAARgBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFg
+        HAAAAk1TRnQBSQFMAgEBAwEAAbABAwGwAQMBGAEAARgBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFg
         AwABGAMAAQEBAAEgBgABJC4AAwkBCwMzAlICVAGoA14B3QNeAfADXgHwAVsCYQHeAVICVAGoAzMBUgMJ
         AQyAAAM7AWQDWwHEA2EB3gNfAdgDXgHXA14B1wNeAdcDXgHXA14B1wNfAdgDXwHYA14B1wNfAdgDXwHY
         A18B2ANfAdgDXgHXA14B1wNfAdgDYQHeA1oBvwM2AVd4AAMEAQUDQgF1A14B0gEAAbIC/wEAAbIC/wEA
