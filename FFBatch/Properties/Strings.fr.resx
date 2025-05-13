@@ -3642,4 +3642,13 @@
   <data name="dis_try_try" xml:space="preserve">
     <value>Si vous considérez que le préréglage est valide, vous pouvez activer « Ne pas essayer le préréglage » et réessayer l'opération.</value>
   </data>
+  <data name="log" xml:space="preserve">
+    <value>journal</value>
+  </data>
+  <data name="sequential" xml:space="preserve">
+    <value>Séquentiel</value>
+  </data>
+  <data name="multi_file" xml:space="preserve">
+    <value>multi-fichiers</value>
+  </data>
 </root>

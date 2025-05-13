@@ -4444,6 +4444,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a log.
+        /// </summary>
+        internal static string log {
+            get {
+                return ResourceManager.GetString("log", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Logging is disabled.
         /// </summary>
         internal static string log_dis {
@@ -4971,6 +4980,15 @@ namespace FFBatch.Properties {
         internal static string multi_drop2 {
             get {
                 return ResourceManager.GetString("multi_drop2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a multi-file.
+        /// </summary>
+        internal static string multi_file {
+            get {
+                return ResourceManager.GetString("multi_file", resourceCulture);
             }
         }
         
@@ -8346,6 +8364,15 @@ namespace FFBatch.Properties {
         internal static string selkf {
             get {
                 return ResourceManager.GetString("selkf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Sequential.
+        /// </summary>
+        internal static string sequential {
+            get {
+                return ResourceManager.GetString("sequential", resourceCulture);
             }
         }
         

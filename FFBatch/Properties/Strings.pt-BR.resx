@@ -3649,4 +3649,13 @@
   <data name="dis_try_try" xml:space="preserve">
     <value>Se você considerar que a predefinição é válida, você pode habilitar "Não tentar predefinição" e tentar a operação novamente.</value>
   </data>
+  <data name="log" xml:space="preserve">
+    <value>registro</value>
+  </data>
+  <data name="sequential" xml:space="preserve">
+    <value>Sequencial</value>
+  </data>
+  <data name="multi_file" xml:space="preserve">
+    <value>vários simultâneos</value>
+  </data>
 </root>

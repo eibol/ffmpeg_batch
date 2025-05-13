@@ -3643,4 +3643,13 @@
   <data name="dis_try_try" xml:space="preserve">
     <value>如果您认为预设有效，您可以启用“不尝试预设”并重试操作。</value>
   </data>
+  <data name="log" xml:space="preserve">
+    <value>日志档案</value>
+  </data>
+  <data name="sequential" xml:space="preserve">
+    <value>顺序</value>
+  </data>
+  <data name="multi_file" xml:space="preserve">
+    <value>多文件</value>
+  </data>
 </root>

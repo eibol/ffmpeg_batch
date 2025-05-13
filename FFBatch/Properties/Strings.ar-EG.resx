@@ -3646,4 +3646,13 @@
   <data name="dis_try_try" xml:space="preserve">
     <value>إذا كنت تعتقد أن الإعداد المسبق صالح، فيمكنك تمكين "عدم محاولة الإعداد المسبق" وإعادة محاولة العملية.</value>
   </data>
+  <data name="log" xml:space="preserve">
+    <value>سجل</value>
+  </data>
+  <data name="sequential" xml:space="preserve">
+    <value>تسلسلي</value>
+  </data>
+  <data name="multi_file" xml:space="preserve">
+    <value>متعدد الملفات</value>
+  </data>
 </root>

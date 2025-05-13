@@ -3649,4 +3649,13 @@
   <data name="dis_try_try" xml:space="preserve">
     <value>If you consider preset looks valid, you can enable "Do not try preset" and retry the operation.</value>
   </data>
+  <data name="log" xml:space="preserve">
+    <value>log</value>
+  </data>
+  <data name="sequential" xml:space="preserve">
+    <value>Sequential</value>
+  </data>
+  <data name="multi_file" xml:space="preserve">
+    <value>multi-file</value>
+  </data>
 </root>
