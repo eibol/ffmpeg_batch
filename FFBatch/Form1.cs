@@ -4810,7 +4810,7 @@ namespace FFBatch
                 String cultur = CultureInfo.CurrentUICulture.TwoLetterISOLanguageName;
                 if (language == "en")
                 {
-                    if (cultur == "es" || cultur == "ar" || cultur == "pt" || cultur == "it" || cultur == "zh" || cultur == "fr")
+                    if (cultur == "es" || cultur == "ar" || cultur == "pt" || cultur == "it" || cultur == "zh" || cultur == "fr" || cultur == "pl")
                     {
                         init_lang();
                         post_lang();
@@ -4845,6 +4845,10 @@ namespace FFBatch
                     else if (language == "ar-EG")
                     {
                         if (cultur != "ar") init_lang();
+                    }
+                    else if (language == "pl")
+                    {
+                        if (cultur != "pl") init_lang();
                     }
 
                     post_lang();
@@ -4893,6 +4897,9 @@ namespace FFBatch
                         break;
                     case 6:
                         language = "ar-EG";
+                        break;
+                    case 7:
+                        language = "pl";
                         break;
                     default:
                         language = "en";
@@ -29977,6 +29984,7 @@ namespace FFBatch
             if (language == "pt-BR") form3.combo_lang.SelectedIndex = 4;
             if (language == "zh-Hans") form3.combo_lang.SelectedIndex = 5;
             if (language == "ar-EG") form3.combo_lang.SelectedIndex = 6;
+            if (language == "pl") form3.combo_lang.SelectedIndex = 7;
 
             if (chk_open_compl.Checked) form3.check_open_output.Checked = true;
             else form3.check_open_output.Checked = false;
@@ -30052,6 +30060,7 @@ namespace FFBatch
                 if (form3.combo_lang.SelectedIndex == 4) language = "pt-BR";
                 if (form3.combo_lang.SelectedIndex == 5) language = "zh-Hans";
                 if (form3.combo_lang.SelectedIndex == 6) language = "ar-EG";
+                if (form3.combo_lang.SelectedIndex == 7) language = "pl";
 
                 String f_lang = String.Empty;
                 if (is_portable == false)
@@ -31040,6 +31049,7 @@ namespace FFBatch
             if (frm24.combo_lang.SelectedIndex == 4) language = "pt-BR";
             if (frm24.combo_lang.SelectedIndex == 5) language = "zh-Hans";
             if (frm24.combo_lang.SelectedIndex == 6) language = "ar-EG";
+            if (frm24.combo_lang.SelectedIndex == 7) language = "pl";
 
             File.WriteAllText(f_lang, language);
             Settings.Default.app_lang = language;
