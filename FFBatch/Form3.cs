@@ -1530,6 +1530,12 @@ namespace FFBatch
                 Settings.Default.app_lang = "ar-EG";
                 show_pics();
             }
+            if (combo_lang.SelectedIndex == 7)
+            {
+                lang_set = "pl";
+                Settings.Default.app_lang = "pl";
+                show_pics();
+            }
 
             Settings.Default.Save();
             refresh_lang();
