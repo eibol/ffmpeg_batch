@@ -3576,6 +3576,9 @@
   <data name="mon_ing1" xml:space="preserve">
     <value>Dossier de surveillance</value>
   </data>
+  <data name="Paste_any_URL1" xml:space="preserve">
+    <value>Coller le lien internet</value>
+  </data>
   <data name="path_iparam1" xml:space="preserve">
     <value>Ajouter un fichier d'entrée aux paramètres</value>
   </data>
@@ -3630,6 +3633,9 @@
   <data name="already_down" xml:space="preserve">
     <value>Le fichier a déjà été téléchargé.</value>
   </data>
+  <data name="download_settings" xml:space="preserve">
+    <value>Paramètres de téléchargement</value>
+  </data>
   <data name="multimed" xml:space="preserve">
     <value>Multimédia</value>
   </data>
@@ -3650,5 +3656,29 @@
   </data>
   <data name="multi_file" xml:space="preserve">
     <value>multi-fichiers</value>
+  </data>
+  <data name="vff" xml:space="preserve">
+    <value>Un seul paramètre -vf est pris en charge pour les sous-titres par lots. Vous pouvez utiliser plusieurs filtres séparés par une virgule.</value>
+  </data>
+  <data name="ren_chars_p" xml:space="preserve">
+    <value>Caractères incompatibles [,'] pour les filtres ffmpeg détectés dans le chemin du fichier. Ces caractères pourraient provoquer des erreurs.</value>
+  </data>
+  <data name="ren_chars_ren" xml:space="preserve">
+    <value>Veuillez renommer le nom du chemin en conflit en supprimant les caractères en conflit.</value>
+  </data>
+  <data name="summary" xml:space="preserve">
+    <value>Résumé</value>
+  </data>
+  <data name="minimize" xml:space="preserve">
+    <value>Réduire</value>
+  </data>
+  <data name="frame" xml:space="preserve">
+    <value>cadre</value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>temps</value>
+  </data>
+  <data name="end_of" xml:space="preserve">
+    <value />
   </data>
 </root>

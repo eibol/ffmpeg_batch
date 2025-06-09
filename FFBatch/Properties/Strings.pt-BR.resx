@@ -1297,7 +1297,7 @@
     <value>quarto</value>
   </data>
   <data name="frame_size" xml:space="preserve">
-    <value>Tamanho da moldura</value>
+    <value>Tamanho de quadro</value>
   </data>
   <data name="fr_rate" xml:space="preserve">
     <value>Taxa de quadros</value>
@@ -3657,5 +3657,29 @@
   </data>
   <data name="multi_file" xml:space="preserve">
     <value>vários simultâneos</value>
+  </data>
+  <data name="vff" xml:space="preserve">
+    <value>Apenas o parâmetro -vf é suportado para legendas em lote. Você pode usar vários filtros separados por vírgula.</value>
+  </data>
+  <data name="ren_chars_p" xml:space="preserve">
+    <value>Caracteres incompatíveis [,'] para filtros ffmpeg encontrados no caminho do arquivo. Esses caracteres podem causar erros.</value>
+  </data>
+  <data name="ren_chars_ren" xml:space="preserve">
+    <value>Renomeie o nome do caminho conflitante removendo os caracteres conflitantes.</value>
+  </data>
+  <data name="summary" xml:space="preserve">
+    <value>Resumo</value>
+  </data>
+  <data name="minimize" xml:space="preserve">
+    <value>Minimizar</value>
+  </data>
+  <data name="frame" xml:space="preserve">
+    <value>quadro</value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>tempo</value>
+  </data>
+  <data name="end_of" xml:space="preserve">
+    <value />
   </data>
 </root>

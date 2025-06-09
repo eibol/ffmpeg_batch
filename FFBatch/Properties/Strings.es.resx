@@ -3632,7 +3632,7 @@
     <value>Abortar descarga</value>
   </data>
   <data name="already_down" xml:space="preserve">
-    <value>El archivo ya ha sido descargado.</value>
+    <value>El archivo ya había sido descargado.</value>
   </data>
   <data name="download_settings" xml:space="preserve">
     <value>Opciones de descarga</value>
@@ -3657,5 +3657,29 @@
   </data>
   <data name="multi_file" xml:space="preserve">
     <value>multi-fichero</value>
+  </data>
+  <data name="vff" xml:space="preserve">
+    <value>Solo se admite un parámetro -vf. Puede encadenar varios filtros separándolos por comas.</value>
+  </data>
+  <data name="ren_chars_p" xml:space="preserve">
+    <value>Se encontraron caracteres incompatibles [,'] para los filtros de ffmpeg en la ruta del fichero. Se podrían producir errores al utilizarlos.</value>
+  </data>
+  <data name="ren_chars_ren" xml:space="preserve">
+    <value>Por favor renombre la carpeta eliminando los caracteres problemáticos.</value>
+  </data>
+  <data name="summary" xml:space="preserve">
+    <value>Resumen</value>
+  </data>
+  <data name="minimize" xml:space="preserve">
+    <value>Minimizar</value>
+  </data>
+  <data name="frame" xml:space="preserve">
+    <value>fotograma</value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>tiempo</value>
+  </data>
+  <data name="end_of" xml:space="preserve">
+    <value>Fin de</value>
   </data>
 </root>

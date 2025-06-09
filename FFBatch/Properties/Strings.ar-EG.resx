@@ -3655,4 +3655,28 @@
   <data name="multi_file" xml:space="preserve">
     <value>متعدد الملفات</value>
   </data>
+  <data name="vff" xml:space="preserve">
+    <value>يُدعم مُعامل -vf واحد فقط لترجمات الدفعات. يُمكنك استخدام عدة مُرشِّحات مفصولة بفواصل.</value>
+  </data>
+  <data name="ren_chars_p" xml:space="preserve">
+    <value>تم العثور على أحرف غير متوافقة [,'] لمرشحات ffmpeg في مسار الملف. قد تُسبب هذه الأحرف أخطاءً.</value>
+  </data>
+  <data name="ren_chars_ren" xml:space="preserve">
+    <value>يرجى إعادة تسمية اسم المسار المتضارب عن طريق إزالة الأحرف المتضاربة.</value>
+  </data>
+  <data name="summary" xml:space="preserve">
+    <value>ملخص</value>
+  </data>
+  <data name="minimize" xml:space="preserve">
+    <value>تصغير النافذة</value>
+  </data>
+  <data name="frame" xml:space="preserve">
+    <value>لاطار</value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>وقت</value>
+  </data>
+  <data name="end_of" xml:space="preserve">
+    <value />
+  </data>
 </root>

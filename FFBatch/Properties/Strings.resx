@@ -2674,7 +2674,7 @@
     <value>Double-click to reset default output folder</value>
   </data>
   <data name="Reset_to_factory_defaults" xml:space="preserve">
-    <value>Rest to factory defaults</value>
+    <value>Reset to factory defaults</value>
   </data>
   <data name="resolution" xml:space="preserve">
     <value>Resolution</value>
@@ -3214,7 +3214,7 @@
     <value>Try ffmpeg parameters with selected file</value>
   </data>
   <data name="try_ff2" xml:space="preserve">
-    <value>Try with con FFmpeg</value>
+    <value>Try with FFmpeg</value>
   </data>
   <data name="try_pr" xml:space="preserve">
     <value>Try preset for more error information.</value>
@@ -3632,7 +3632,7 @@
     <value>Abort download</value>
   </data>
   <data name="already_down" xml:space="preserve">
-    <value>File has already been downloaded.</value>
+    <value>File had already been downloaded.</value>
   </data>
   <data name="download_settings" xml:space="preserve">
     <value>Download settings</value>
@@ -3657,5 +3657,29 @@
   </data>
   <data name="multi_file" xml:space="preserve">
     <value>multi-file</value>
+  </data>
+  <data name="vff" xml:space="preserve">
+    <value>Only one -vf parameter is supported for batch subtitles. You can use several filters separated by comma.</value>
+  </data>
+  <data name="ren_chars_p" xml:space="preserve">
+    <value>Incompatible characters [,'] for ffmpeg filters found in file path. Those characters could cause errors.</value>
+  </data>
+  <data name="ren_chars_ren" xml:space="preserve">
+    <value>Would you like to rename them replacing conflicting characters?</value>
+  </data>
+  <data name="summary" xml:space="preserve">
+    <value>Summary</value>
+  </data>
+  <data name="minimize" xml:space="preserve">
+    <value>Minimize</value>
+  </data>
+  <data name="frame" xml:space="preserve">
+    <value>frame</value>
+  </data>
+  <data name="time" xml:space="preserve">
+    <value>time</value>
+  </data>
+  <data name="end_of" xml:space="preserve">
+    <value>End of</value>
   </data>
 </root>

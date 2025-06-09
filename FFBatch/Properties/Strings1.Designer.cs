@@ -475,7 +475,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a File has already been downloaded..
+        ///   Busca una cadena traducida similar a File had already been downloaded..
         /// </summary>
         internal static string already_down {
             get {
@@ -2419,6 +2419,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a End of.
+        /// </summary>
+        internal static string end_of {
+            get {
+                return ResourceManager.GetString("end_of", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Encoding priority.
         /// </summary>
         internal static string end_prio {
@@ -3724,6 +3733,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a frame.
+        /// </summary>
+        internal static string frame {
+            get {
+                return ResourceManager.GetString("frame", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Frame size.
         /// </summary>
         internal static string frame_size {
@@ -4764,6 +4782,15 @@ namespace FFBatch.Properties {
         internal static string Metadata {
             get {
                 return ResourceManager.GetString("Metadata", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Minimize.
+        /// </summary>
+        internal static string minimize {
+            get {
+                return ResourceManager.GetString("minimize", resourceCulture);
             }
         }
         
@@ -7792,6 +7819,24 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Incompatible characters [,&apos;] for ffmpeg filters found in file path. Those characters could cause errors..
+        /// </summary>
+        internal static string ren_chars_p {
+            get {
+                return ResourceManager.GetString("ren_chars_p", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Would you like to rename them replacing conflicting characters?.
+        /// </summary>
+        internal static string ren_chars_ren {
+            get {
+                return ResourceManager.GetString("ren_chars_ren", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Incompatible characters [,&apos;] for ffmpeg filter found in filename. Those filenames could cause errors..
         /// </summary>
         internal static string ren_chars1 {
@@ -7945,7 +7990,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Rest to factory defaults.
+        ///   Busca una cadena traducida similar a Reset to factory defaults.
         /// </summary>
         internal static string Reset_to_factory_defaults {
             get {
@@ -9061,6 +9106,15 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Summary.
+        /// </summary>
+        internal static string summary {
+            get {
+                return ResourceManager.GetString("summary", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Sunset time cannot be later than sunrise..
         /// </summary>
         internal static string sunset1 {
@@ -9174,6 +9228,15 @@ namespace FFBatch.Properties {
         internal static string Thumbnail {
             get {
                 return ResourceManager.GetString("Thumbnail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a time.
+        /// </summary>
+        internal static string time {
+            get {
+                return ResourceManager.GetString("time", resourceCulture);
             }
         }
         
@@ -9574,7 +9637,7 @@ namespace FFBatch.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Try with con FFmpeg.
+        ///   Busca una cadena traducida similar a Try with FFmpeg.
         /// </summary>
         internal static string try_ff2 {
             get {
@@ -10182,6 +10245,15 @@ namespace FFBatch.Properties {
         internal static string vf_crop_multi2 {
             get {
                 return ResourceManager.GetString("vf_crop_multi2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Only one -vf parameter is supported for batch subtitles. You can use several filters separated by comma..
+        /// </summary>
+        internal static string vff {
+            get {
+                return ResourceManager.GetString("vff", resourceCulture);
             }
         }
         
