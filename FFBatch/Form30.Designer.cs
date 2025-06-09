@@ -65,8 +65,8 @@ namespace FFBatch
             // 
             // btn_clear
             // 
-            resources.ApplyResources(this.btn_clear, "btn_clear");
             this.btn_clear.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.btn_clear, "btn_clear");
             this.btn_clear.Name = "btn_clear";
             this.btn_clear.UseVisualStyleBackColor = true;
             this.btn_clear.Click += new System.EventHandler(this.btn_clear_Click);
@@ -83,9 +83,9 @@ namespace FFBatch
             // 
             // combo_presets_ext
             // 
-            resources.ApplyResources(this.combo_presets_ext, "combo_presets_ext");
             this.combo_presets_ext.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_presets_ext.FormattingEnabled = true;
+            resources.ApplyResources(this.combo_presets_ext, "combo_presets_ext");
             this.combo_presets_ext.Name = "combo_presets_ext";
             this.combo_presets_ext.SelectedIndexChanged += new System.EventHandler(this.combo_presets_ext_SelectedIndexChanged);
             // 

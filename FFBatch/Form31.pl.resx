@@ -118,32 +118,164 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>203, 46</value>
+  <data name="btn_add.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 23</value>
   </data>
-  <data name="n_bat_l.Location" type="System.Drawing.Point, System.Drawing">
-    <value>165, 42</value>
+  <data name="btn_add.Text" xml:space="preserve">
+    <value>Wstaw zmienną</value>
   </data>
-  <data name="chk_bat_level.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 17</value>
+  <data name="btn_cancel.Text" xml:space="preserve">
+    <value>Anulować</value>
   </data>
-  <data name="chk_bat_level.Text" xml:space="preserve">
-    <value>Tylko jeżeli bateria poniżej</value>
+  <data name="radio_inputfn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>236, 17</value>
   </data>
-  <data name="chk_battery.Size" type="System.Drawing.Size, System.Drawing">
-    <value>185, 17</value>
+  <data name="radio_inputfn.Text" xml:space="preserve">
+    <value>Wprowadź nazwę pliku z pełną ścieżką (%1)</value>
   </data>
-  <data name="chk_battery.Text" xml:space="preserve">
-    <value>Pauza/wznów na baterii/zasilaniu</value>
+  <data name="radio_input_fn_noext.Size" type="System.Drawing.Size, System.Drawing">
+    <value>320, 17</value>
   </data>
-  <data name="btn_bat_ok.Location" type="System.Drawing.Point, System.Drawing">
-    <value>92, 94</value>
+  <data name="radio_input_fn_noext.Text" xml:space="preserve">
+    <value>Wprowadź nazwę pliku z pełną ścieżką bez rozszerzenia  (%2)</value>
   </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>235, 76</value>
+  <data name="radio_fn_path.Size" type="System.Drawing.Size, System.Drawing">
+    <value>264, 17</value>
+  </data>
+  <data name="radio_fn_path.Text" xml:space="preserve">
+    <value>Wprowadź nazwę pliku tylko z pełną ścieżką (%fp)</value>
+  </data>
+  <data name="radio_fn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>282, 17</value>
+  </data>
+  <data name="radio_fn.Text" xml:space="preserve">
+    <value>Wprowadź nazwę pliku bez ścieżki i rozszerzenia (%fn)</value>
+  </data>
+  <data name="radio_fn_ext.Size" type="System.Drawing.Size, System.Drawing">
+    <value>293, 17</value>
+  </data>
+  <data name="radio_fn_ext.Text" xml:space="preserve">
+    <value>Wprowadź nazwę pliku bez ścieżki, z rozszerzeniem (%ff)</value>
+  </data>
+  <data name="radio_fd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>176, 17</value>
+  </data>
+  <data name="radio_fd.Text" xml:space="preserve">
+    <value>Folder plików wejściowych (%fd)</value>
+  </data>
+  <data name="radio_fdur_1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 30</value>
+  </data>
+  <data name="radio_fdur_1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>272, 17</value>
+  </data>
+  <data name="radio_fdur_1.Text" xml:space="preserve">
+    <value>Czas trwania pliku wejściowego z operatorami: %fdur</value>
+  </data>
+  <data name="btn_copy.Location" type="System.Drawing.Point, System.Drawing">
+    <value>154, 431</value>
+  </data>
+  <data name="btn_copy.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 23</value>
+  </data>
+  <data name="btn_copy.Text" xml:space="preserve">
+    <value>Kopiuj do schowka</value>
+  </data>
+  <data name="radio_nul.Size" type="System.Drawing.Size, System.Drawing">
+    <value>255, 17</value>
+  </data>
+  <data name="radio_nul.Text" xml:space="preserve">
+    <value>Zastąp automatyczny wybór wyjścia (Format=nul)</value>
+  </data>
+  <data name="txt_operator_dur.Location" type="System.Drawing.Point, System.Drawing">
+    <value>283, 29</value>
+  </data>
+  <data name="radio_chaps.Size" type="System.Drawing.Size, System.Drawing">
+    <value>310, 17</value>
+  </data>
+  <data name="radio_chaps.Text" xml:space="preserve">
+    <value>Podziel plik według znaczników rozdziałów [[split_chapters]]</value>
+  </data>
+  <data name="radio_bitr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 57</value>
+  </data>
+  <data name="radio_bitr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>351, 17</value>
+  </data>
+  <data name="radio_bitr.Text" xml:space="preserve">
+    <value>Całkowita szybkość transmisji pliku wejściowego z operatorami: %fbitr</value>
+  </data>
+  <data name="txt_operator_bitr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>363, 55</value>
+  </data>
+  <data name="radio_target_size.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 84</value>
+  </data>
+  <data name="radio_target_size.Size" type="System.Drawing.Size, System.Drawing">
+    <value>202, 17</value>
+  </data>
+  <data name="radio_target_size.Text" xml:space="preserve">
+    <value>Docelowy rozmiar wyjściowego wideo</value>
+  </data>
+  <data name="txt_size.Location" type="System.Drawing.Point, System.Drawing">
+    <value>213, 83</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>255, 87</value>
+  </data>
+  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>280, 86</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 13</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>dla bitrate'u audio</value>
+  </data>
+  <data name="label15.Location" type="System.Drawing.Point, System.Drawing">
+    <value>424, 87</value>
+  </data>
+  <data name="num_aud_target.Location" type="System.Drawing.Point, System.Drawing">
+    <value>372, 83</value>
+  </data>
+  <data name="chk_full_p.Location" type="System.Drawing.Point, System.Drawing">
+    <value>354, 68</value>
+  </data>
+  <data name="chk_full_p.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 17</value>
+  </data>
+  <data name="chk_full_p.Text" xml:space="preserve">
+    <value>Do filtra vf/af</value>
+  </data>
+  <data name="chk_full2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>354, 45</value>
+  </data>
+  <data name="chk_full2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 17</value>
+  </data>
+  <data name="chk_full2.Text" xml:space="preserve">
+    <value>Do filtra vf/af</value>
+  </data>
+  <data name="chk_full1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>354, 22</value>
+  </data>
+  <data name="chk_full1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 17</value>
+  </data>
+  <data name="chk_full1.Text" xml:space="preserve">
+    <value>Do filtra vf/af</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Wprowadź nazwę pliku</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Funkcje wejścia/wyjścia</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Inne zmienne</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>259, 126</value>
+    <value>527, 467</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1934,8 +2066,5 @@
         xRPuE8QT7hPCE+4TwBPuE74T7ha9Fu5Ax0CeAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Pauza w trybie bateryjnym</value>
   </data>
 </root>

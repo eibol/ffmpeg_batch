@@ -98,8 +98,8 @@ namespace FFBatch
             // 
             // test_crop
             // 
-            this.test_crop.BackColor = System.Drawing.SystemColors.InactiveBorder;
             resources.ApplyResources(this.test_crop, "test_crop");
+            this.test_crop.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.test_crop.Name = "test_crop";
             this.test_crop.UseVisualStyleBackColor = false;
             this.test_crop.Click += new System.EventHandler(this.test_crop_Click);
@@ -131,14 +131,15 @@ namespace FFBatch
             // 
             // btn_detect
             // 
-            this.btn_detect.BackColor = System.Drawing.SystemColors.InactiveBorder;
             resources.ApplyResources(this.btn_detect, "btn_detect");
+            this.btn_detect.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_detect.Name = "btn_detect";
             this.btn_detect.UseVisualStyleBackColor = false;
             this.btn_detect.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.n_crop_res_Y);
             this.groupBox1.Controls.Add(this.n_crop_res_X);
@@ -159,7 +160,6 @@ namespace FFBatch
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             this.groupBox1.UseCompatibleTextRendering = true;
@@ -210,10 +210,10 @@ namespace FFBatch
             // 
             // cb_dar
             // 
+            resources.ApplyResources(this.cb_dar, "cb_dar");
             this.cb_dar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_dar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_dar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.cb_dar, "cb_dar");
             this.cb_dar.FormattingEnabled = true;
             this.cb_dar.Name = "cb_dar";
             this.cb_dar.SelectedIndexChanged += new System.EventHandler(this.cb_dar_SelectedIndexChanged);
@@ -226,10 +226,10 @@ namespace FFBatch
             // 
             // cb_crop
             // 
+            resources.ApplyResources(this.cb_crop, "cb_crop");
             this.cb_crop.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_crop.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_crop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            resources.ApplyResources(this.cb_crop, "cb_crop");
             this.cb_crop.FormattingEnabled = true;
             this.cb_crop.Name = "cb_crop";
             this.cb_crop.SelectedIndexChanged += new System.EventHandler(this.cb_crop_SelectedIndexChanged);
@@ -241,8 +241,8 @@ namespace FFBatch
             // 
             // btn_reset
             // 
-            this.btn_reset.BackColor = System.Drawing.SystemColors.InactiveBorder;
             resources.ApplyResources(this.btn_reset, "btn_reset");
+            this.btn_reset.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_reset.Name = "btn_reset";
             this.btn_reset.UseVisualStyleBackColor = false;
             this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
@@ -302,38 +302,38 @@ namespace FFBatch
             // 
             // btn_frame
             // 
-            this.btn_frame.BackColor = System.Drawing.SystemColors.InactiveBorder;
             resources.ApplyResources(this.btn_frame, "btn_frame");
+            this.btn_frame.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_frame.Name = "btn_frame";
             this.btn_frame.UseVisualStyleBackColor = false;
             this.btn_frame.Click += new System.EventHandler(this.btn_frame_Click);
             // 
             // pic1
             // 
-            this.pic1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.pic1, "pic1");
+            this.pic1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pic1.Name = "pic1";
             this.pic1.TabStop = false;
             // 
             // btn_use
             // 
-            this.btn_use.BackColor = System.Drawing.SystemColors.InactiveBorder;
             resources.ApplyResources(this.btn_use, "btn_use");
+            this.btn_use.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_use.Name = "btn_use";
             this.btn_use.UseVisualStyleBackColor = false;
             this.btn_use.Click += new System.EventHandler(this.btn_use_Click);
             // 
             // pic_0
             // 
-            this.pic_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.pic_0, "pic_0");
+            this.pic_0.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pic_0.Name = "pic_0";
             this.pic_0.TabStop = false;
             // 
             // btn_cancel
             // 
-            this.btn_cancel.BackColor = System.Drawing.SystemColors.InactiveBorder;
             resources.ApplyResources(this.btn_cancel, "btn_cancel");
+            this.btn_cancel.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.UseVisualStyleBackColor = false;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
@@ -355,8 +355,8 @@ namespace FFBatch
             // 
             // time_pre_subs
             // 
-            this.time_pre_subs.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             resources.ApplyResources(this.time_pre_subs, "time_pre_subs");
+            this.time_pre_subs.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.time_pre_subs.Name = "time_pre_subs";
             this.time_pre_subs.ShowUpDown = true;
             this.time_pre_subs.ValueChanged += new System.EventHandler(this.time_pre_subs_ValueChanged);

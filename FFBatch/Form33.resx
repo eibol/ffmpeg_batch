@@ -923,7 +923,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACU
-        BwAAAk1TRnQBSQFMAgEBAgEAAagBAAGoAQABEAEAARABAAT/ARkBAAj/AUIBTQE2BwABNgMAASgDAAFA
+        BwAAAk1TRnQBSQFMAgEBAgEAAbABAAGwAQABEAEAARABAAT/ARkBAAj/AUIBTQE2BwABNgMAASgDAAFA
         AwABEAMAAQEBAAEYBgABDEIAA/8D/gP9A/wG+wn6BvsD/AP9Bv51AAHGAcwBxgP7GAAD+AG2Ac4B1gGU
         Ab4BzwGKAbgBygGFAbYByQGAAbMBxwF/AbMBxgF9AbIBxgF9AbIBxgGAAbQBxwGCAbUBxwGIAbcBygGP
         AbsBzAHQAdkB2wPyA/9vAAHhAeMB4AEPAXcBPgHKAdIBzBgAAfcB+AH5AREBqwHlAREBrAHlAREBrAHl
@@ -1774,6 +1774,9 @@
   <data name="&gt;&gt;chk_attach.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>pl</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

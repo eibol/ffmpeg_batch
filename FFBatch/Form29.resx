@@ -133,8 +133,8 @@
   <data name="&gt;&gt;btn_bat_ok.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="&gt;&gt;chk_battery.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="chk_battery.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 17</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btn_bat_ok.TabIndex" type="System.Int32, mscorlib">
@@ -149,15 +149,14 @@
   <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;btn_bat_ok.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="label8.TabIndex" type="System.Int32, mscorlib">
     <value>176</value>
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
   </data>
   <data name="chk_battery.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -174,8 +173,8 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Pause on battery mode</value>
   </data>
-  <data name="chk_bat_level.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 42</value>
+  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
+    <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;n_bat_l.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -186,12 +185,10 @@
   <data name="&gt;&gt;chk_battery.Name" xml:space="preserve">
     <value>chk_battery</value>
   </data>
-  <data name="chk_battery.Size" type="System.Drawing.Size, System.Drawing">
-    <value>164, 17</value>
-  </data>
   <data name="chk_bat_level.TabIndex" type="System.Int32, mscorlib">
     <value>178</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="chk_bat_level.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -2039,11 +2036,14 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
-  <data name="&gt;&gt;label8.Parent" xml:space="preserve">
-    <value>groupBox1</value>
+  <data name="&gt;&gt;chk_battery.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="chk_bat_level.Text" xml:space="preserve">
     <value>Only if battery below</value>
+  </data>
+  <data name="btn_bat_ok.Location" type="System.Drawing.Point, System.Drawing">
+    <value>73, 94</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 76</value>
@@ -2078,11 +2078,11 @@
   <data name="&gt;&gt;btn_bat_ok.Name" xml:space="preserve">
     <value>btn_bat_ok</value>
   </data>
-  <data name="&gt;&gt;btn_bat_ok.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="chk_bat_level.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 42</value>
   </data>
-  <data name="btn_bat_ok.Location" type="System.Drawing.Point, System.Drawing">
-    <value>73, 94</value>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
   </data>
   <data name="&gt;&gt;btn_bat_ok.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2091,6 +2091,6 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>fr</value>
+    <value>pl</value>
   </metadata>
 </root>
