@@ -48,9 +48,9 @@ BTC: 394svDjYkfYtakt5L4Ce3whjpToPfYGej2
 <br/><br/><br/><br/>
 Available languages:
 
-| English | Spanish | French | Italian | Portuguese (BR) | Chinese (Simplified) | Arabic |
-|---------|---------|--------|---------|-----------------|----------------------|----------------|
-| <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/us.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/es.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/fr.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/it.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/br.png" width="16"> |  <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/cn.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/ar_eg.png" width="16">|
+| English | Spanish | French | Italian | Polish | Portuguese (BR) | Chinese (Simplified) | Arabic |
+|---------|---------|--------|---------|--------|-----------------|----------------------|--------|
+| <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/us.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/es.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/fr.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/it.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/pl.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/br.png" width="16"> |  <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/cn.png" width="16"> | <img src="https://raw.githubusercontent.com/eibol/ffmpeg_batch/refs/heads/gh-pages/flags/ar_eg.png" width="16">|
 
 | Main tab   | Wizard   | Streams   | Subtitles  | URLs    |
 |------------|----------|-----------|------------|---------|
