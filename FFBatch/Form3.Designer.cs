@@ -575,7 +575,6 @@
             resources.ApplyResources(this.chk_quick_q, "chk_quick_q");
             this.chk_quick_q.Name = "chk_quick_q";
             this.chk_quick_q.UseVisualStyleBackColor = true;
-            this.chk_quick_q.CheckedChanged += new System.EventHandler(this.chk_quick_q_CheckedChanged);
             this.chk_quick_q.Click += new System.EventHandler(this.chk_quick_q_Click);
             // 
             // chk_ctrl_p
@@ -609,7 +608,8 @@
             resources.GetString("combo_lang.Items3"),
             resources.GetString("combo_lang.Items4"),
             resources.GetString("combo_lang.Items5"),
-            resources.GetString("combo_lang.Items6")});
+            resources.GetString("combo_lang.Items6"),
+            resources.GetString("combo_lang.Items7")});
             resources.ApplyResources(this.combo_lang, "combo_lang");
             this.combo_lang.Name = "combo_lang";
             this.combo_lang.SelectedIndexChanged += new System.EventHandler(this.combo_lang_SelectedIndexChanged);

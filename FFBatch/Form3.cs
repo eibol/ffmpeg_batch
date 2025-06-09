@@ -1513,29 +1513,32 @@ namespace FFBatch
                         
             if (combo_lang.SelectedIndex == 4)
             {
+                lang_set = "pl";
+                Settings.Default.app_lang = "pl";
+                hide_pics();
+
+            }
+
+            if (combo_lang.SelectedIndex == 5)
+            {
                 lang_set = "pt-BR";
                 Settings.Default.app_lang = "pt-BR";
                 hide_pics();
 
             }
-            if (combo_lang.SelectedIndex == 5)
+
+            if (combo_lang.SelectedIndex == 6)
             {
                 lang_set = "zh-Hans";
                 Settings.Default.app_lang = "zh-Hans";
                 show_pics();
             }
-            if (combo_lang.SelectedIndex == 6)
+            if (combo_lang.SelectedIndex == 7)
             {
                 lang_set = "zh-Hans";
                 Settings.Default.app_lang = "ar-EG";
                 show_pics();
-            }
-            if (combo_lang.SelectedIndex == 7)
-            {
-                lang_set = "pl";
-                Settings.Default.app_lang = "pl";
-                show_pics();
-            }
+            }            
 
             Settings.Default.Save();
             refresh_lang();
@@ -1800,11 +1803,6 @@ namespace FFBatch
             Settings.Default.bat_level = n_bat_l.Value;
         }
 
-        private void chk_quick_q_CheckedChanged(object sender, EventArgs e)
-        {
-            //if (chk_quick_q.CheckState == CheckState.Checked) chk_filter_zero.Checked = false;
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             change_ff_ver = true;
@@ -1910,7 +1908,8 @@ namespace FFBatch
                 else if (str.Contains("libxvid")) item.SubItems.Add("XVID video encoder");
                 else if (str.Contains("librav1e")) item.SubItems.Add("AV1 video encoder");
                 else if (str.Contains("libdav1d")) item.SubItems.Add("AV1 video decoder");
-                
+                else if (str.Contains("libvvenc")) item.SubItems.Add("Versatile Video H266 encoder");
+
                 else item.SubItems.Add("-");
                 lstv.Items.Add(item);
             }

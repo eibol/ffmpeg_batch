@@ -381,17 +381,25 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-
     <Compile Include="Properties\Strings.ar-EG.Designer.cs">
       <DependentUpon>Strings.ar-EG.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Properties\Strings.es.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.es.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Strings.fr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.fr.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Strings.it.Designer.cs">
       <DependentUpon>Strings.it.resx</DependentUpon>
@@ -399,9 +407,9 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Properties\Strings.pl.Designer.cs">
-      <DependentUpon>Strings.pl.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <DependentUpon>Strings.pl.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Strings.pt-BR.Designer.cs">
       <DependentUpon>Strings.pt-BR.resx</DependentUpon>
@@ -413,6 +421,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Form21.pl.resx">
+      <DependentUpon>Form21.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form31.pl.resx">
+      <DependentUpon>Form31.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings1.Designer.cs</LastGenOutput>
@@ -446,7 +460,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.zh-Hans.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -466,7 +479,6 @@
       <DependentUpon>AeroWizard1.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-
     <EmbeddedResource Include="AeroWizard1.ar-EG.resx">
       <DependentUpon>AeroWizard1.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -495,7 +507,6 @@
       <DependentUpon>AeroWizard1.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-
     <EmbeddedResource Include="AeroWizard2.resx">
       <DependentUpon>AeroWizard2.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -528,7 +539,6 @@
       <DependentUpon>AeroWizard2.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-
     <EmbeddedResource Include="AeroWizard3.resx">
       <DependentUpon>AeroWizard3.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -561,7 +571,6 @@
       <DependentUpon>AeroWizard3.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-
     <EmbeddedResource Include="AeroWizard4.resx">
       <DependentUpon>AeroWizard4.cs</DependentUpon>
     </EmbeddedResource>
@@ -586,7 +595,6 @@
     <EmbeddedResource Include="AeroWizard4.zh-Hans.resx">
       <DependentUpon>AeroWizard4.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="AeroWizard5.resx">
       <DependentUpon>AeroWizard5.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -597,7 +605,6 @@
     <EmbeddedResource Include="AeroWizard5.fr.resx">
       <DependentUpon>AeroWizard5.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="AeroWizard5.es.resx">
       <DependentUpon>AeroWizard5.cs</DependentUpon>
     </EmbeddedResource>
@@ -613,7 +620,6 @@
     <EmbeddedResource Include="AeroWizard5.zh-Hans.resx">
       <DependentUpon>AeroWizard5.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="AeroWizard6.resx">
       <DependentUpon>AeroWizard6.cs</DependentUpon>
     </EmbeddedResource>
@@ -638,7 +644,6 @@
     <EmbeddedResource Include="AeroWizard6.zh-Hans.resx">
       <DependentUpon>AeroWizard6.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="AeroWizard7.resx">
       <DependentUpon>AeroWizard7.cs</DependentUpon>
     </EmbeddedResource>
@@ -664,7 +669,6 @@
     <EmbeddedResource Include="AeroWizard7.zh-Hans.resx">
       <DependentUpon>AeroWizard7.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -696,7 +700,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
@@ -712,7 +715,6 @@
     <EmbeddedResource Include="Form2.it.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form2.pl.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
@@ -722,7 +724,6 @@
     <EmbeddedResource Include="Form2.zh-Hans.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form3.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
@@ -748,7 +749,6 @@
     <EmbeddedResource Include="Form3.zh-Hans.resx">
       <DependentUpon>Form3.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
     </EmbeddedResource>
@@ -774,7 +774,6 @@
       <DependentUpon>Form4.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form5.resx">
       <DependentUpon>Form5.cs</DependentUpon>
     </EmbeddedResource>
@@ -799,14 +798,9 @@
     <EmbeddedResource Include="Form5.zh-Hans.resx">
       <DependentUpon>Form5.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form6.resx">
       <DependentUpon>Form6.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form6.pl.resx">
-      <DependentUpon>Form6.cs</DependentUpon>
-    </EmbeddedResource>
-
     <EmbeddedResource Include="Form7.resx">
       <DependentUpon>Form7.cs</DependentUpon>
     </EmbeddedResource>
@@ -831,7 +825,6 @@
     <EmbeddedResource Include="Form7.zh-Hans.resx">
       <DependentUpon>Form7.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form8.resx">
       <DependentUpon>Form8.cs</DependentUpon>
     </EmbeddedResource>
@@ -856,7 +849,6 @@
     <EmbeddedResource Include="Form8.zh-Hans.resx">
       <DependentUpon>Form8.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form9.resx">
       <DependentUpon>Form9.cs</DependentUpon>
     </EmbeddedResource>
@@ -881,11 +873,9 @@
     <EmbeddedResource Include="Form9.zh-Hans.resx">
       <DependentUpon>Form9.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form10.resx">
       <DependentUpon>Form10.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form11.resx">
       <DependentUpon>Form11.cs</DependentUpon>
     </EmbeddedResource>
@@ -901,20 +891,15 @@
     <EmbeddedResource Include="Form11.it.resx">
       <DependentUpon>Form11.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form11.pl.resx">
-      <DependentUpon>Form11.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form11.pt-BR.resx">
       <DependentUpon>Form11.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form11.zh-Hans.resx">
       <DependentUpon>Form11.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form11_2.resx">
       <DependentUpon>Form11_2.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form11_2.ar-EG.resx">
       <DependentUpon>Form11_2.cs</DependentUpon>
     </EmbeddedResource>
@@ -930,19 +915,9 @@
     <EmbeddedResource Include="Form11_2.pt-BR.resx">
       <DependentUpon>Form11_2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form11_2.resx">
-      <DependentUpon>Form11_2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form11_2.pl.resx">
-      <DependentUpon>Form11_2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form11_2.pt-BR.resx">
-      <DependentUpon>Form11_2.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form11_2.zh-Hans.resx">
       <DependentUpon>Form11_2.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form12.resx">
       <DependentUpon>Form12.cs</DependentUpon>
     </EmbeddedResource>
@@ -958,9 +933,6 @@
     <EmbeddedResource Include="Form12.it.resx">
       <DependentUpon>Form12.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form12.pl.resx">
-      <DependentUpon>Form12.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form12.pt-BR.resx">
       <DependentUpon>Form12.cs</DependentUpon>
     </EmbeddedResource>
@@ -971,7 +943,6 @@
       <DependentUpon>Form13.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form13.ar-EG.resx">
       <DependentUpon>Form13.cs</DependentUpon>
     </EmbeddedResource>
@@ -994,7 +965,6 @@
     <EmbeddedResource Include="Form13.zh-Hans.resx">
       <DependentUpon>Form13.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form14.resx">
       <DependentUpon>Form14.cs</DependentUpon>
     </EmbeddedResource>
@@ -1019,7 +989,6 @@
     <EmbeddedResource Include="Form14.zh-Hans.resx">
       <DependentUpon>Form14.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form15.resx">
       <DependentUpon>Form15.cs</DependentUpon>
     </EmbeddedResource>
@@ -1044,7 +1013,6 @@
     <EmbeddedResource Include="Form15.zh-Hans.resx">
       <DependentUpon>Form15.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form16.resx">
       <DependentUpon>Form16.cs</DependentUpon>
     </EmbeddedResource>
@@ -1069,7 +1037,6 @@
     <EmbeddedResource Include="Form16.zh-Hans.resx">
       <DependentUpon>Form16.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form17.resx">
       <DependentUpon>Form17.cs</DependentUpon>
     </EmbeddedResource>
@@ -1094,7 +1061,6 @@
     <EmbeddedResource Include="Form17.zh-Hans.resx">
       <DependentUpon>Form17.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form18.resx">
       <DependentUpon>Form18.cs</DependentUpon>
     </EmbeddedResource>
@@ -1119,7 +1085,6 @@
     <EmbeddedResource Include="Form18.zh-Hans.resx">
       <DependentUpon>Form18.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form19.resx">
       <DependentUpon>Form19.cs</DependentUpon>
     </EmbeddedResource>
@@ -1144,7 +1109,6 @@
     <EmbeddedResource Include="Form19.zh-Hans.resx">
       <DependentUpon>Form19.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form20.resx">
       <DependentUpon>Form20.cs</DependentUpon>
     </EmbeddedResource>
@@ -1169,11 +1133,9 @@
     <EmbeddedResource Include="Form20.zh-Hans.resx">
       <DependentUpon>Form20.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form21.resx">
       <DependentUpon>Form21.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form21.ar-EG.resx">
       <DependentUpon>Form21.cs</DependentUpon>
     </EmbeddedResource>
@@ -1189,16 +1151,12 @@
     <EmbeddedResource Include="Form21.it.resx">
       <DependentUpon>Form21.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form21.pl.resx">
-      <DependentUpon>Form21.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form21.pt-BR.resx">
       <DependentUpon>Form21.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form21.zh-Hans.resx">
       <DependentUpon>Form21.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form22.resx">
       <DependentUpon>Form22.cs</DependentUpon>
     </EmbeddedResource>
@@ -1223,7 +1181,6 @@
     <EmbeddedResource Include="Form22.zh-Hans.resx">
       <DependentUpon>Form22.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form23.resx">
       <DependentUpon>Form23.cs</DependentUpon>
     </EmbeddedResource>
@@ -1249,14 +1206,12 @@
     <EmbeddedResource Include="Form23.zh-Hans.resx">
       <DependentUpon>Form23.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form24.resx">
       <DependentUpon>Form24.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form24.pl.resx">
       <DependentUpon>Form24.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form25.resx">
       <DependentUpon>Form25.cs</DependentUpon>
     </EmbeddedResource>
@@ -1281,17 +1236,12 @@
     <EmbeddedResource Include="Form25.zh-Hans.resx">
       <DependentUpon>Form25.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form26.resx">
       <DependentUpon>Form26.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form26.it.resx">
       <DependentUpon>Form26.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form26.pl.resx">
-      <DependentUpon>Form26.cs</DependentUpon>
-    </EmbeddedResource>
-
     <EmbeddedResource Include="Form27.resx">
       <DependentUpon>Form27.cs</DependentUpon>
     </EmbeddedResource>
@@ -1316,7 +1266,6 @@
     <EmbeddedResource Include="Form27.zh-Hans.resx">
       <DependentUpon>Form27.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form28.resx">
       <DependentUpon>Form28.cs</DependentUpon>
     </EmbeddedResource>
@@ -1341,7 +1290,6 @@
     <EmbeddedResource Include="Form28.zh-Hans.resx">
       <DependentUpon>Form28.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form29.resx">
       <DependentUpon>Form29.cs</DependentUpon>
     </EmbeddedResource>
@@ -1366,7 +1314,6 @@
     <EmbeddedResource Include="Form29.zh-Hans.resx">
       <DependentUpon>Form29.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form30.resx">
       <DependentUpon>Form30.cs</DependentUpon>
     </EmbeddedResource>
@@ -1382,16 +1329,12 @@
     <EmbeddedResource Include="Form30.it.resx">
       <DependentUpon>Form30.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form30.pl.resx">
-      <DependentUpon>Form30.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form30.pt-BR.resx">
       <DependentUpon>Form30.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form30.zh-Hans.resx">
       <DependentUpon>Form30.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form31.resx">
       <DependentUpon>Form31.cs</DependentUpon>
     </EmbeddedResource>
@@ -1407,16 +1350,12 @@
     <EmbeddedResource Include="Form31.it.resx">
       <DependentUpon>Form31.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form31.pl.resx">
-      <DependentUpon>Form31.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form31.pt-BR.resx">
       <DependentUpon>Form31.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form31.zh-Hans.resx">
       <DependentUpon>Form31.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form32.resx">
       <DependentUpon>Form32.cs</DependentUpon>
     </EmbeddedResource>
@@ -1432,27 +1371,18 @@
     <EmbeddedResource Include="Form32.it.resx">
       <DependentUpon>Form32.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form32.pl.resx">
-      <DependentUpon>Form32.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form32.pt-BR.resx">
       <DependentUpon>Form32.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form32.zh-Hans.resx">
       <DependentUpon>Form32.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form33.resx">
       <DependentUpon>Form33.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Form34.resx">
       <DependentUpon>Form34.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form34.es.resx">
-      <DependentUpon>Form34.cs</DependentUpon>
-    </EmbeddedResource>
-
     <None Include="FFBatch_2025_Eibol.pfx" />
     <None Include="FFBatch_Converter.ruleset" />
     <None Include="packages.config" />

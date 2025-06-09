@@ -14,7 +14,6 @@ namespace FFBatch
         public Form6()
         {
             InitializeComponent();
-
         }
         
         private String port_path = System.IO.Path.Combine(Application.StartupPath, "settings") + "\\";
@@ -54,12 +53,9 @@ namespace FFBatch
             if (Settings.Default.auto_dark == true) Settings.Default.dark_mode = false;
 
             if (Settings.Default.auto_dark == true && Settings.Default.dark_os == false)
-            {
-                
+            {                
                 TimeSpan sunrise01 = TimeSpan.Parse(Settings.Default.dark_sunrise.ToString("HH:mm"));
-                TimeSpan sunset01 = TimeSpan.Parse(Settings.Default.dark_sunset.ToString("HH:mm"));  
-                //TimeSpan sunrise01 = TimeSpan.Parse(Settings.Default.dark_sunrise.ToShortTimeString());
-                //TimeSpan sunset01 = TimeSpan.Parse(Settings.Default.dark_sunset.ToShortTimeString());                
+                TimeSpan sunset01 = TimeSpan.Parse(Settings.Default.dark_sunset.ToString("HH:mm"));                             
                 TimeSpan now = TimeSpan.Parse(DateTime.Now.TimeOfDay.ToString());
 
                 if (sunrise01 > now || now > sunset01)

@@ -241,6 +241,7 @@
             this.pic_recording = new System.Windows.Forms.PictureBox();
             this.chk_autor = new System.Windows.Forms.Button();
             this.img_autorun = new System.Windows.Forms.ImageList(this.components);
+            this.lbl_processed = new System.Windows.Forms.Label();
             this.btn_cancel_add = new System.Windows.Forms.Button();
             this.pg_adding = new System.Windows.Forms.ProgressBar();
             this.txt_adding_p = new System.Windows.Forms.TextBox();
@@ -265,8 +266,9 @@
             this.button25 = new System.Windows.Forms.Button();
             this.txt_help_subs = new System.Windows.Forms.TextBox();
             this.group_subs = new System.Windows.Forms.GroupBox();
+            this.btn_log_subs = new System.Windows.Forms.Button();
+            this.n_font_size = new System.Windows.Forms.NumericUpDown();
             this.time_pre_subs = new System.Windows.Forms.DateTimePicker();
-            this.lbl_dur_subs = new System.Windows.Forms.Label();
             this.chk_prev_subs = new System.Windows.Forms.CheckBox();
             this.lbl_sec = new System.Windows.Forms.Label();
             this.n_secs_pre_subs = new System.Windows.Forms.NumericUpDown();
@@ -277,7 +279,6 @@
             this.color_subs = new System.Windows.Forms.Button();
             this.chk_font_subs = new System.Windows.Forms.CheckBox();
             this.chk_font_size = new System.Windows.Forms.CheckBox();
-            this.n_font_size = new System.Windows.Forms.NumericUpDown();
             this.btn_add_font = new System.Windows.Forms.Button();
             this.n_subs_str = new System.Windows.Forms.NumericUpDown();
             this.chk_burn_input = new System.Windows.Forms.CheckBox();
@@ -566,6 +567,7 @@
             this.BG_R_Cols = new System.ComponentModel.BackgroundWorker();
             this.pic_title = new System.Windows.Forms.PictureBox();
             this.BG_Dur_Backgr = new System.ComponentModel.BackgroundWorker();
+            this.timer_logs = new System.Windows.Forms.Timer(this.components);
             this.ctm1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_add_variable)).BeginInit();
@@ -585,8 +587,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_no_errors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pic_recording)).BeginInit();
             this.group_subs.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.n_secs_pre_subs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_font_size)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.n_secs_pre_subs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_subs_str)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox9.SuspendLayout();
@@ -2082,6 +2084,7 @@
             this.group_prog.Controls.Add(this.pic_no_errors);
             this.group_prog.Controls.Add(this.pic_recording);
             this.group_prog.Controls.Add(this.chk_autor);
+            this.group_prog.Controls.Add(this.lbl_processed);
             resources.ApplyResources(this.group_prog, "group_prog");
             this.group_prog.Name = "group_prog";
             this.group_prog.TabStop = false;
@@ -2219,6 +2222,11 @@
             this.img_autorun.TransparentColor = System.Drawing.Color.Transparent;
             this.img_autorun.Images.SetKeyName(0, "autorun22.png");
             this.img_autorun.Images.SetKeyName(1, "autoplay_11.png");
+            // 
+            // lbl_processed
+            // 
+            resources.ApplyResources(this.lbl_processed, "lbl_processed");
+            this.lbl_processed.Name = "lbl_processed";
             // 
             // btn_cancel_add
             // 
@@ -2451,8 +2459,9 @@
             // 
             // group_subs
             // 
+            this.group_subs.Controls.Add(this.btn_log_subs);
+            this.group_subs.Controls.Add(this.n_font_size);
             this.group_subs.Controls.Add(this.time_pre_subs);
-            this.group_subs.Controls.Add(this.lbl_dur_subs);
             this.group_subs.Controls.Add(this.chk_prev_subs);
             this.group_subs.Controls.Add(this.lbl_sec);
             this.group_subs.Controls.Add(this.n_secs_pre_subs);
@@ -2463,7 +2472,6 @@
             this.group_subs.Controls.Add(this.color_subs);
             this.group_subs.Controls.Add(this.chk_font_subs);
             this.group_subs.Controls.Add(this.chk_font_size);
-            this.group_subs.Controls.Add(this.n_font_size);
             this.group_subs.Controls.Add(this.btn_add_font);
             this.group_subs.Controls.Add(this.n_subs_str);
             this.group_subs.Controls.Add(this.chk_burn_input);
@@ -2489,17 +2497,36 @@
             this.group_subs.Name = "group_subs";
             this.group_subs.TabStop = false;
             // 
+            // btn_log_subs
+            // 
+            this.btn_log_subs.FlatAppearance.BorderSize = 0;
+            this.btn_log_subs.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_log_subs, "btn_log_subs");
+            this.btn_log_subs.Name = "btn_log_subs";
+            this.btn_log_subs.UseVisualStyleBackColor = true;
+            this.btn_log_subs.Click += new System.EventHandler(this.btn_log_subs_Click);
+            // 
+            // n_font_size
+            // 
+            resources.ApplyResources(this.n_font_size, "n_font_size");
+            this.n_font_size.Minimum = new decimal(new int[] {
+            6,
+            0,
+            0,
+            0});
+            this.n_font_size.Name = "n_font_size";
+            this.n_font_size.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            // 
             // time_pre_subs
             // 
             resources.ApplyResources(this.time_pre_subs, "time_pre_subs");
             this.time_pre_subs.Format = System.Windows.Forms.DateTimePickerFormat.Time;
             this.time_pre_subs.Name = "time_pre_subs";
             this.time_pre_subs.ShowUpDown = true;
-            // 
-            // lbl_dur_subs
-            // 
-            resources.ApplyResources(this.lbl_dur_subs, "lbl_dur_subs");
-            this.lbl_dur_subs.Name = "lbl_dur_subs";
             // 
             // chk_prev_subs
             // 
@@ -2571,21 +2598,6 @@
             this.chk_font_size.Name = "chk_font_size";
             this.chk_font_size.UseVisualStyleBackColor = true;
             this.chk_font_size.CheckedChanged += new System.EventHandler(this.chk_font_size_CheckedChanged);
-            // 
-            // n_font_size
-            // 
-            resources.ApplyResources(this.n_font_size, "n_font_size");
-            this.n_font_size.Minimum = new decimal(new int[] {
-            6,
-            0,
-            0,
-            0});
-            this.n_font_size.Name = "n_font_size";
-            this.n_font_size.Value = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
             // 
             // btn_add_font
             // 
@@ -4874,6 +4886,11 @@
             this.BG_Dur_Backgr.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BG_Dur_Backgr_DoWork);
             this.BG_Dur_Backgr.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BG_Dur_Backgr_RunWorkerCompleted);
             // 
+            // timer_logs
+            // 
+            this.timer_logs.Interval = 60000;
+            this.timer_logs.Tick += new System.EventHandler(this.timer_logs_Tick);
+            // 
             // Form1
             // 
             this.AllowDrop = true;
@@ -4965,8 +4982,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pic_recording)).EndInit();
             this.group_subs.ResumeLayout(false);
             this.group_subs.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.n_secs_pre_subs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_font_size)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.n_secs_pre_subs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.n_subs_str)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -5537,7 +5554,6 @@
         private System.Windows.Forms.CheckBox chk_prev_subs;
         private System.Windows.Forms.Label lbl_sec;
         private System.Windows.Forms.NumericUpDown n_secs_pre_subs;
-        private System.Windows.Forms.Label lbl_dur_subs;
         private System.Windows.Forms.DateTimePicker time_pre_subs;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator32;
         private System.Windows.Forms.ToolStripMenuItem ct_attach_mkv;
@@ -5557,6 +5573,9 @@
         private System.Windows.Forms.ToolStripMenuItem ct_down_vp9;
         private System.Windows.Forms.CheckBox chk_quick_down;
         private System.ComponentModel.BackgroundWorker BG_Dur_Backgr;
+        private System.Windows.Forms.Button btn_log_subs;
+        private System.Windows.Forms.Label lbl_processed;
+        private System.Windows.Forms.Timer timer_logs;
     }
 }
 
