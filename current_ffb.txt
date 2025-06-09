@@ -1,7 +1,14 @@
-3.2.3
-• Tested support for Versatile Video Coding (H.266), using with ffmpeg git master full version may 2025.
-• Added VVC H.266 to Main and and Two pass/Target size wizards.
-• View ffmpeg log during encoding (ffmpeg output) using Display log button. (Sequential/multi-file encoding, trim, concatenate, two-pass). 
-• Updated mediainfo for better VVC H.266 data display.
-• Youtube-dl version checking disabled if automatic updates disabled.
-• Other minor bugfixes and translations.
+3.2.4
+• Polish translation available (a few translations were automatic).
+• Log refreshable during encoding, now with encoding results summary. 
+• Log saved every 60 seconds kept in case of application crash/blackout. 
+• Added warning for incompatible characters [',] found in input file path, required to be renamed to avoid errors when using ffmpeg filters.
+• Fixed: Sequential encoding abruptly ends with some ffmpeg.exe builds.
+• Fixed: some settings being lost after upgrades, like ffmpeg.exe path. (installer version).
+• Fixed: %fn variable not working (working directory was not set properly).
+• Fixed: %f2 variable not working (Windows paths conversion issue).
+• Fixed: Keep source timestamp was not applied for some features (two pass encoding, multiplex, batch subtitling).
+• Fixed: -vf filter previously not supported in batch subtitles parameters (Burnt subtitles) .
+• Fixed: Try preset button sometimes rendering application unresponsive.
+• Hopefully fixed Youtube download progress sometimes wrong by a factor of 10.
+• Other minor corrections and bugfixes.
