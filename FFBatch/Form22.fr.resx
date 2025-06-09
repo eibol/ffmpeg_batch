@@ -125,7 +125,7 @@
     <value>Utiliser le filtre de concaténation vidéo</value>
   </data>
   <data name="radio_demuxer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>162, 17</value>
+    <value>170, 17</value>
   </data>
   <data name="radio_demuxer.Text" xml:space="preserve">
     <value>Utiliser la concaténation native</value>
@@ -170,7 +170,7 @@
     <value>Paramètres d'encodage</value>
   </data>
   <data name="chk_batch_concat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 17</value>
+    <value>181, 17</value>
   </data>
   <data name="chk_batch_concat.Text" xml:space="preserve">
     <value>Activer la concaténation en série</value>

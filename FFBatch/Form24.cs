@@ -18,15 +18,17 @@ namespace FFBatch
         {
             InitializeComponent();
         }
+        
         String restart = String.Empty;
         private void Form24_Load(object sender, EventArgs e)
         {
             if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "es") combo_lang.SelectedIndex = 1;
             else if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "fr") combo_lang.SelectedIndex = 2;
             else if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "it") combo_lang.SelectedIndex = 3;
-            else if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "pt") combo_lang.SelectedIndex = 4;
-            else if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "cn") combo_lang.SelectedIndex = 5;
-            else if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "ar") combo_lang.SelectedIndex = 6;
+            else if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "pl") combo_lang.SelectedIndex = 4;
+            else if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "pt") combo_lang.SelectedIndex = 5;
+            else if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "cn") combo_lang.SelectedIndex = 6;
+            else if (CultureInfo.CurrentUICulture.TwoLetterISOLanguageName == "ar") combo_lang.SelectedIndex = 7;
             else combo_lang.SelectedIndex = 0;
             label1.TextAlign = HorizontalAlignment.Right;         
         }
@@ -35,7 +37,6 @@ namespace FFBatch
         {
             this.Close();
         }
-
         private void combo_lang_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (combo_lang.SelectedIndex == 0)
@@ -75,6 +76,15 @@ namespace FFBatch
 
             if (combo_lang.SelectedIndex == 4)
             {
+                label1.Text = "Wybierz język";
+                this.Text = "Język aplikacji";
+                button1.Text = "OK";
+                chk_dark.Text = "Ciemny motyw użytkownika";
+                restart = "Aplikacja zostanie uruchomiona ponownie.";
+            }
+
+            if (combo_lang.SelectedIndex == 5)
+            {
                 label1.Text = "Selecione o língua";
                 this.Text = "Idioma do aplicativo";
                 button1.Text = "OK";
@@ -82,7 +92,7 @@ namespace FFBatch
                 restart = "O aplicativo será reiniciado.";
             }
 
-            if (combo_lang.SelectedIndex == 5)
+            if (combo_lang.SelectedIndex == 6)
             {
                 label1.Text = "选择语言";
                 this.Text = "应用语言";
@@ -90,7 +100,7 @@ namespace FFBatch
                 chk_dark.Text = "开启夜间模式";
                 restart = "应用程序将重新启动。";
             }
-            if (combo_lang.SelectedIndex == 6)
+            if (combo_lang.SelectedIndex == 7)
             {
                 label1.Text = "اختار اللغة";
                 this.Text = "لغة التطبيق";
@@ -112,8 +122,8 @@ namespace FFBatch
             }
             else
             {
-                this.BackColor = Control.DefaultBackColor; 
-                button1.BackColor = Color.LightGray;   
+                this.BackColor = SystemColors.InactiveBorder;
+                button1.BackColor = SystemColors.InactiveBorder;
             }
             
         }

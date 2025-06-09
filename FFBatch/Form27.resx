@@ -117,14 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btn_cancel.TabIndex" type="System.Int32, mscorlib">
-    <value>132</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pic_w.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 41</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="dg_pr.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
@@ -137,11 +134,12 @@
   <data name="&gt;&gt;btn_decr_font.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;dg_pr.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="btn_load.Text" xml:space="preserve">
     <value>Load selected preset</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
   <data name="&gt;&gt;open_file.Name" xml:space="preserve">
     <value>open_file</value>
@@ -149,12 +147,8 @@
   <data name="link1.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 16</value>
   </data>
-  <data name="&gt;&gt;btn_inc_font.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
+  <data name="btn_cancel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
   </data>
   <data name="btn_cancel.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopCenter</value>
@@ -1952,14 +1946,17 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
+  <data name="&gt;&gt;btn_load.Name" xml:space="preserve">
+    <value>btn_load</value>
+  </data>
   <data name="&gt;&gt;btn_load.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;btn_decr_font.Type" xml:space="preserve">
+  <data name="&gt;&gt;btn_load.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>946, 516</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>FFmpeg Batch AV Converter - Presets online</value>
   </data>
   <data name="&gt;&gt;dg_pr.Type" xml:space="preserve">
     <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2000,26 +1997,29 @@
   <data name="Column1.Width" type="System.Int32, mscorlib">
     <value>258</value>
   </data>
-  <data name="&gt;&gt;link1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="Column3.HeaderText" xml:space="preserve">
     <value>Format</value>
   </data>
-  <data name="pic_w.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 8</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form27</value>
+  </data>
+  <data name="&gt;&gt;dg_pr.Name" xml:space="preserve">
+    <value>dg_pr</value>
+  </data>
+  <data name="Column1.HeaderText" xml:space="preserve">
+    <value>Name</value>
   </data>
   <data name="&gt;&gt;link1.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btn_load.Location" type="System.Drawing.Point, System.Drawing">
-    <value>402, 432</value>
+  <data name="link1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>435, 17</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>FFmpeg Batch AV Converter - Presets online</value>
+  <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>491, 432</value>
   </data>
-  <data name="&gt;&gt;btn_cancel.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;Column3.Name" xml:space="preserve">
+    <value>Column3</value>
   </data>
   <data name="&gt;&gt;link1.Name" xml:space="preserve">
     <value>link1</value>
@@ -2027,29 +2027,11 @@
   <data name="&gt;&gt;btn_inc_font.Name" xml:space="preserve">
     <value>btn_inc_font</value>
   </data>
-  <data name="btn_cancel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
+  <data name="&gt;&gt;btn_decr_font.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btn_inc_font.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="btn_decr_font.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAKrSURBVDhPjZM9aNNBGMZfSqHF
-        RaVihGTIB61Jkzb556OFNKGbg4YsJdBQyRAwEEmHQEkxX21Ck9A2idYPgrioi0jBTQcdBFEcuoighYjg
-        aAZRqYgIcj7veYlBSu3wcPe/vM/vnvfuQkIImp6e7snr9T5zu92foRGPx0MYyefz0czMDPn9fjmi7rbL
-        5SpNTk6S0+mUkiA2KIVhFIAJzMsMYWmaRjBKsUnV7Pb5/oC6xRifYPE7xEVfUMwJpboGJQnipF31QNBJ
-        LoCK0Kyan4H+hUgQ9LZ/IwlSaS6qgrPQMTW/rzY5HAjRBvDxQhX06yt0BDocCJPz6sddpLuMQ72K+VO1
-        dmGfVPuD1FWKsbGxyMTEBPG1jo6OnuY1GBqq9f+D7HY7xz8eCoUonU5TJpOhSCTCV60zm81HsYE8RzYc
-        CEqlUrS8vDy0sbGh1et13+bmpqfRaGgADsViMUokEhQMBonTHghaX18/Ua1W31cqFVEul0WxWJTC2k6r
-        1aKtrS356vcD8XcPBPMAjNFkMllZXFw8VygUXjKwVCrdQkoKh8PE7XWNCvSGv/nseqC1tTXKZrMUj8dp
-        aWnJwBDA3q2urlI0GiWLxcLm6zDcNZlM1wwGg9Dr9Z8AL+Dp3MR6SoLy+TzlcjlCqmFA9pBEAGxhOO9o
-        tVp53IFBILXAhnJcWFgQDodD4LcHEoTdpZDg4crKCqcJAUbc1vz8PBmNRn4Sp3CD32q1muh0OqLdbksg
-        1l7xZhLEaWBOA8SHfAcigIbxPdhsNomfBQx82BG0Kba3tzmx0Ol0e0ip750RWvMgyU9OA/0A4BfPAfyI
-        m5PJAoEAvzey2Ww3+LDxxril2ampqb//fhhGYLwCPYIeQ8+h11i/x+fEqebm5mSLMA+Oj49/QLpL3BI/
-        VE3T6Dc+7qI3EsmqgwAAAABJRU5ErkJggg==
-</value>
   </data>
   <data name="&gt;&gt;btn_cancel.Parent" xml:space="preserve">
     <value>$this</value>
@@ -2089,8 +2071,8 @@
         RK5CYII=
 </value>
   </data>
-  <data name="&gt;&gt;Column3.Name" xml:space="preserve">
-    <value>Column3</value>
+  <data name="pic_w.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 8</value>
   </data>
   <data name="link1.TabIndex" type="System.Int32, mscorlib">
     <value>143</value>
@@ -2101,8 +2083,11 @@
   <data name="dg_pr.Size" type="System.Drawing.Size, System.Drawing">
     <value>903, 369</value>
   </data>
-  <data name="link1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>435, 17</value>
+  <data name="dg_pr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 57</value>
+  </data>
+  <data name="&gt;&gt;Column3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="link1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 9.75pt</value>
@@ -2110,8 +2095,14 @@
   <data name="btn_inc_font.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 27</value>
   </data>
+  <data name="&gt;&gt;Column1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="btn_load.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
+  </data>
+  <data name="&gt;&gt;pre_input.Name" xml:space="preserve">
+    <value>pre_input</value>
   </data>
   <data name="Column2.HeaderText" xml:space="preserve">
     <value>FFmpeg parameters</value>
@@ -2145,9 +2136,6 @@
   </data>
   <data name="btn_inc_font.TabIndex" type="System.Int32, mscorlib">
     <value>136</value>
-  </data>
-  <data name="&gt;&gt;btn_load.Name" xml:space="preserve">
-    <value>btn_load</value>
   </data>
   <data name="btn_load.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2184,8 +2172,8 @@
         4WDomu4agJvw3MBFoo32jUY7/Y2OYDDY4XK5uumV94Z/fUD4C1di7HocDUj0AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form27</value>
+  <data name="&gt;&gt;btn_inc_font.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btn_inc_font.Location" type="System.Drawing.Point, System.Drawing">
     <value>877, 22</value>
@@ -2207,17 +2195,17 @@
         WSgUAiH2B6ZYniu82CKTAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="&gt;&gt;Column3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;pic_w.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>491, 432</value>
+  <data name="btn_load.Location" type="System.Drawing.Point, System.Drawing">
+    <value>402, 432</value>
   </data>
-  <data name="&gt;&gt;Column1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;link1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>946, 516</value>
   </data>
   <data name="btn_decr_font.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -2234,32 +2222,44 @@
   <data name="&gt;&gt;Column2.Name" xml:space="preserve">
     <value>Column2</value>
   </data>
-  <data name="Column1.HeaderText" xml:space="preserve">
-    <value>Name</value>
+  <data name="btn_cancel.TabIndex" type="System.Int32, mscorlib">
+    <value>132</value>
   </data>
   <data name="btn_inc_font.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="&gt;&gt;btn_load.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;pic_w.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="dg_pr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 57</value>
+  <data name="&gt;&gt;btn_cancel.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="pic_w.TabIndex" type="System.Int32, mscorlib">
     <value>144</value>
   </data>
-  <data name="&gt;&gt;pre_input.Name" xml:space="preserve">
-    <value>pre_input</value>
-  </data>
-  <data name="&gt;&gt;pic_w.Parent" xml:space="preserve">
+  <data name="&gt;&gt;dg_pr.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="btn_decr_font.TabIndex" type="System.Int32, mscorlib">
     <value>137</value>
   </data>
-  <data name="&gt;&gt;dg_pr.Name" xml:space="preserve">
-    <value>dg_pr</value>
+  <data name="btn_decr_font.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAKrSURBVDhPjZM9aNNBGMZfSqHF
+        RaVihGTIB61Jkzb556OFNKGbg4YsJdBQyRAwEEmHQEkxX21Ck9A2idYPgrioi0jBTQcdBFEcuoighYjg
+        aAZRqYgIcj7veYlBSu3wcPe/vM/vnvfuQkIImp6e7snr9T5zu92foRGPx0MYyefz0czMDPn9fjmi7rbL
+        5SpNTk6S0+mUkiA2KIVhFIAJzMsMYWmaRjBKsUnV7Pb5/oC6xRifYPE7xEVfUMwJpboGJQnipF31QNBJ
+        LoCK0Kyan4H+hUgQ9LZ/IwlSaS6qgrPQMTW/rzY5HAjRBvDxQhX06yt0BDocCJPz6sddpLuMQ72K+VO1
+        dmGfVPuD1FWKsbGxyMTEBPG1jo6OnuY1GBqq9f+D7HY7xz8eCoUonU5TJpOhSCTCV60zm81HsYE8RzYc
+        CEqlUrS8vDy0sbGh1et13+bmpqfRaGgADsViMUokEhQMBonTHghaX18/Ua1W31cqFVEul0WxWJTC2k6r
+        1aKtrS356vcD8XcPBPMAjNFkMllZXFw8VygUXjKwVCrdQkoKh8PE7XWNCvSGv/nseqC1tTXKZrMUj8dp
+        aWnJwBDA3q2urlI0GiWLxcLm6zDcNZlM1wwGg9Dr9Z8AL+Dp3MR6SoLy+TzlcjlCqmFA9pBEAGxhOO9o
+        tVp53IFBILXAhnJcWFgQDodD4LcHEoTdpZDg4crKCqcJAUbc1vz8PBmNRn4Sp3CD32q1muh0OqLdbksg
+        1l7xZhLEaWBOA8SHfAcigIbxPdhsNomfBQx82BG0Kba3tzmx0Ol0e0ip750RWvMgyU9OA/0A4BfPAfyI
+        m5PJAoEAvzey2Ww3+LDxxril2ampqb//fhhGYLwCPYIeQ8+h11i/x+fEqebm5mSLMA+Oj49/QLpL3BI/
+        VE3T6Dc+7qI3EsmqgwAAAABJRU5ErkJggg==
+</value>
   </data>
   <data name="&gt;&gt;btn_decr_font.Name" xml:space="preserve">
     <value>btn_decr_font</value>
@@ -2267,10 +2267,13 @@
   <data name="&gt;&gt;btn_load.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <metadata name="pre_input.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>pl</value>
+  </metadata>
+  <metadata name="pre_input.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -2279,7 +2282,7 @@
   <metadata name="open_file.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

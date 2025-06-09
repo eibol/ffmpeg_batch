@@ -49,13 +49,15 @@ namespace FFBatch
             resources.GetString("combo_lang.Items3"),
             resources.GetString("combo_lang.Items4"),
             resources.GetString("combo_lang.Items5"),
-            resources.GetString("combo_lang.Items6")});
+            resources.GetString("combo_lang.Items6"),
+            resources.GetString("combo_lang.Items7")});
             resources.ApplyResources(this.combo_lang, "combo_lang");
             this.combo_lang.Name = "combo_lang";
             this.combo_lang.SelectedIndexChanged += new System.EventHandler(this.combo_lang_SelectedIndexChanged);
             // 
             // button1
             // 
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
             resources.ApplyResources(this.button1, "button1");
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -69,6 +71,7 @@ namespace FFBatch
             // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
@@ -85,6 +88,7 @@ namespace FFBatch
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.Controls.Add(this.chk_dark);
             this.Controls.Add(this.pic_earth);
             this.Controls.Add(this.label1);

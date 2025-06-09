@@ -115,8 +115,8 @@ namespace FFBatch
                 sel_format = true;
                 set_format = cb_format.SelectedItem.ToString();
             }
-
-                Disable_Controls();
+            
+            Disable_Controls();
 
             new System.Threading.Thread(() =>
             {
@@ -309,15 +309,26 @@ namespace FFBatch
                 }
                 process_glob.WaitForExit();
                 process_glob.StartInfo.Arguments = String.Empty;
-
-
+                
+                foreach (String str in list_lines)
+                {
+                    if (str.ToLower().Contains("has already been downloaded"))
+                    {
+                        this.Invoke(new MethodInvoker(delegate
+                        {
+                            MessageBox.Show(Strings.already_down + Environment.NewLine + Environment.NewLine + Strings.check_log, Strings.warning, MessageBoxButtons.OK, MessageBoxIcon.Warning);                        
+                        }));
+                        break;
+                    }
+                }
+                
                 this.Invoke(new MethodInvoker(delegate
                 {
                     TaskbarProgress.SetState(this.Handle, TaskbarProgress.TaskbarStates.NoProgress);
                     timer1.Stop();
                     lbl_d_v.Text = "";
                     lbl_down_time.Text = "";
-                }));                
+                }));
 
                 list_lines.Add("");
                 list_lines.Add("---------End of download log---------");
@@ -470,6 +481,7 @@ namespace FFBatch
 
                     //End save log
                 }
+
                 if (aborted_url == false && process_glob.ExitCode == 0)
                 {
                     if (Form.ActiveForm == null)
@@ -510,7 +522,7 @@ namespace FFBatch
                     }));
                    
                 }
-
+                
                 Enable_Controls();
             }).Start();
         }

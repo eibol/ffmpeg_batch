@@ -435,7 +435,7 @@ namespace FFBatch
             String med = Path.Combine(Application.StartupPath, "FFBatch_mediainfo.exe");
             String send_dark = String.Empty;
             if (Settings.Default.dark_mode == true) send_dark = "--dark";
-            if (File.Exists(med)) Process.Start(med, send_dark + " " + out_file);
+            if (File.Exists(med)) Process.Start(med, send_dark + " " + '\u0022' + out_file + '\u0022');
             else MessageBox.Show(Strings.file_not_found + " FFBatch_mediainfo.exe", Strings.file_miss, MessageBoxButtons.OK, MessageBoxIcon.Error);
             
         }

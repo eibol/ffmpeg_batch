@@ -117,233 +117,239 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btn_add_ex.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btn_add_ex.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
-  <data name="btn_add_ex.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
-  <data name="btn_add_ex.Location" type="System.Drawing.Point, System.Drawing">
-    <value>186, 341</value>
-  </data>
-  <data name="btn_add_ex.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 85</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btn_add_ex.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="btn_add_ex.Text" xml:space="preserve">
-    <value>Add exception to Windows Security</value>
-  </data>
-  <data name="btn_add_ex.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
-  </data>
-  <data name="&gt;&gt;btn_add_ex.Name" xml:space="preserve">
-    <value>btn_add_ex</value>
-  </data>
-  <data name="&gt;&gt;btn_add_ex.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btn_add_ex.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btn_add_ex.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="lbl_antivir.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="lbl_antivir.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 111</value>
-  </data>
-  <data name="lbl_antivir.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 18</value>
-  </data>
-  <data name="lbl_antivir.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="lbl_antivir.Text" xml:space="preserve">
-    <value>Antivirus</value>
-  </data>
-  <data name="lbl_antivir.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;lbl_antivir.Name" xml:space="preserve">
-    <value>lbl_antivir</value>
-  </data>
-  <data name="&gt;&gt;lbl_antivir.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_antivir.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;lbl_antivir.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="lbl_os.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="lbl_os.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 26</value>
-  </data>
-  <data name="lbl_os.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 18</value>
-  </data>
-  <data name="lbl_os.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="lbl_os.Text" xml:space="preserve">
-    <value>OS</value>
-  </data>
-  <data name="lbl_os.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;lbl_os.Name" xml:space="preserve">
-    <value>lbl_os</value>
-  </data>
-  <data name="&gt;&gt;lbl_os.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_os.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;lbl_os.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>275, 112</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 23</value>
-  </data>
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="txt_tip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 19</value>
-  </data>
-  <data name="txt_tip.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="txt_tip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>501, 122</value>
-  </data>
-  <data name="txt_tip.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;txt_tip.Name" xml:space="preserve">
-    <value>txt_tip</value>
-  </data>
   <data name="&gt;&gt;txt_tip.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txt_tip.Parent" xml:space="preserve">
-    <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;txt_tip.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 174</value>
-  </data>
-  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>524, 154</value>
-  </data>
-  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Performance</value>
+  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
+    <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 17</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>110, 16</value>
+  </data>
+  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="txt_tip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>501, 122</value>
+  </data>
+  <data name="lbl_cpu.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lbl_cpu.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lbl_antivir.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>154</value>
+  </data>
+  <data name="&gt;&gt;lbl_antivir.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 111</value>
+  </data>
+  <data name="&gt;&gt;lbl_antivir.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;chk_visuals.Name" xml:space="preserve">
+    <value>chk_visuals</value>
+  </data>
+  <data name="lbl_vcard.TabIndex" type="System.Int32, mscorlib">
+    <value>153</value>
+  </data>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
+  </data>
+  <data name="lbl_os.Text" xml:space="preserve">
+    <value>OS</value>
+  </data>
+  <data name="label7.TabIndex" type="System.Int32, mscorlib">
+    <value>158</value>
+  </data>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Main video card</value>
+  </data>
+  <data name="btn_close.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 81</value>
+  </data>
+  <data name="lbl_vcard.Text" xml:space="preserve">
+    <value>Video card</value>
+  </data>
+  <data name="&gt;&gt;btn_add_ex.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>System Information</value>
+  </data>
+  <data name="&gt;&gt;chk_visuals.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btn_close.Text" xml:space="preserve">
+    <value>Close window</value>
+  </data>
+  <data name="lbl_cpu.Location" type="System.Drawing.Point, System.Drawing">
+    <value>167, 55</value>
+  </data>
+  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_cpu.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 26</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Operating system</value>
+  </data>
+  <data name="btn_close.Location" type="System.Drawing.Point, System.Drawing">
+    <value>289, 346</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterParent</value>
+  </data>
+  <data name="chk_visuals.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label6.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Processor name</value>
+  </data>
+  <data name="btn_add_ex.Text" xml:space="preserve">
+    <value>Add exception to Windows Security</value>
+  </data>
+  <data name="&gt;&gt;lbl_os.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>554, 433</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;label3.Name" xml:space="preserve">
+    <value>label3</value>
+  </data>
+  <data name="lbl_os.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lbl_antivir.Text" xml:space="preserve">
+    <value>Antivirus</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="label5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Performance</value>
+  </data>
+  <data name="lbl_antivir.Location" type="System.Drawing.Point, System.Drawing">
+    <value>167, 111</value>
+  </data>
+  <data name="label6.TabIndex" type="System.Int32, mscorlib">
+    <value>156</value>
+  </data>
+  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
+    <value>groupBox3</value>
   </data>
   <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+  <data name="chk_visuals.Text" xml:space="preserve">
+    <value>Disable visual styles</value>
+  </data>
+  <data name="label3.TabIndex" type="System.Int32, mscorlib">
+    <value>154</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Security and performance</value>
+  </data>
+  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
   <data name="btn_close.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="btn_close.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
+  <data name="lbl_os.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 18</value>
   </data>
-  <data name="btn_close.Location" type="System.Drawing.Point, System.Drawing">
-    <value>289, 346</value>
+  <data name="&gt;&gt;lbl_antivir.Parent" xml:space="preserve">
+    <value>groupBox3</value>
   </data>
-  <data name="btn_close.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 81</value>
+  <data name="lbl_os.Location" type="System.Drawing.Point, System.Drawing">
+    <value>167, 26</value>
   </data>
-  <data name="btn_close.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="label7.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
   </data>
-  <data name="btn_close.Text" xml:space="preserve">
-    <value>Close window</value>
+  <data name="btn_add_ex.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
-  <data name="btn_close.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomCenter</value>
+  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
   </data>
-  <data name="&gt;&gt;btn_close.Name" xml:space="preserve">
-    <value>btn_close</value>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;btn_close.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_os.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>Form25</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_cpu.Name" xml:space="preserve">
+    <value>lbl_cpu</value>
   </data>
   <data name="&gt;&gt;btn_close.Parent" xml:space="preserve">
     <value>$this</value>
@@ -351,263 +357,116 @@
   <data name="&gt;&gt;btn_close.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="lbl_vcard.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="lbl_vcard.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 82</value>
-  </data>
-  <data name="lbl_vcard.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 18</value>
-  </data>
-  <data name="lbl_vcard.TabIndex" type="System.Int32, mscorlib">
-    <value>153</value>
-  </data>
-  <data name="lbl_vcard.Text" xml:space="preserve">
-    <value>Video card</value>
-  </data>
-  <data name="lbl_vcard.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;lbl_vcard.Name" xml:space="preserve">
-    <value>lbl_vcard</value>
-  </data>
-  <data name="&gt;&gt;lbl_vcard.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_vcard.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;lbl_vcard.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 174</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 55</value>
-  </data>
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 16</value>
-  </data>
-  <data name="label7.TabIndex" type="System.Int32, mscorlib">
-    <value>158</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Processor name</value>
-  </data>
-  <data name="label7.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lbl_cpu.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="lbl_cpu.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lbl_cpu.Location" type="System.Drawing.Point, System.Drawing">
-    <value>167, 55</value>
-  </data>
-  <data name="lbl_cpu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 18</value>
-  </data>
-  <data name="lbl_cpu.TabIndex" type="System.Int32, mscorlib">
-    <value>157</value>
-  </data>
-  <data name="lbl_cpu.Text" xml:space="preserve">
-    <value>CPU</value>
-  </data>
-  <data name="lbl_cpu.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;lbl_cpu.Name" xml:space="preserve">
-    <value>lbl_cpu</value>
-  </data>
-  <data name="&gt;&gt;lbl_cpu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_cpu.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;lbl_cpu.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 111</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>110, 16</value>
-  </data>
-  <data name="label6.TabIndex" type="System.Int32, mscorlib">
-    <value>156</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Antivirus software</value>
-  </data>
-  <data name="label6.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label5.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label5.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 82</value>
-  </data>
-  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 16</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>155</value>
-  </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Main video card</value>
-  </data>
-  <data name="label5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label3.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
-  </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>28, 26</value>
-  </data>
-  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 16</value>
-  </data>
-  <data name="label3.TabIndex" type="System.Int32, mscorlib">
-    <value>154</value>
-  </data>
-  <data name="label3.Text" xml:space="preserve">
-    <value>Operating system</value>
-  </data>
-  <data name="label3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 17</value>
-  </data>
-  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>524, 142</value>
-  </data>
-  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
-    <value>154</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>System Information</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
-    <value>groupBox3</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="chk_visuals.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chk_visuals.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 341</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="chk_visuals.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 17</value>
   </data>
-  <data name="chk_visuals.TabIndex" type="System.Int32, mscorlib">
-    <value>155</value>
+  <data name="&gt;&gt;btn_add_ex.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
-  <data name="chk_visuals.Text" xml:space="preserve">
-    <value>Disable visual styles</value>
-  </data>
-  <data name="&gt;&gt;chk_visuals.Name" xml:space="preserve">
-    <value>chk_visuals</value>
-  </data>
-  <data name="&gt;&gt;chk_visuals.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chk_visuals.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
+  </data>
+  <data name="&gt;&gt;btn_close.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="label3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>524, 154</value>
+  </data>
+  <data name="&gt;&gt;lbl_vcard.Name" xml:space="preserve">
+    <value>lbl_vcard</value>
+  </data>
+  <data name="&gt;&gt;lbl_os.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>275, 112</value>
+  </data>
+  <data name="lbl_antivir.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="lbl_vcard.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 18</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 23</value>
+  </data>
+  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label3.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;btn_add_ex.Name" xml:space="preserve">
+    <value>btn_add_ex</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txt_tip.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 55</value>
+  </data>
+  <data name="btn_add_ex.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;chk_visuals.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="txt_tip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 19</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>554, 433</value>
+  <data name="lbl_cpu.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbl_vcard.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>28, 82</value>
+  </data>
+  <data name="&gt;&gt;label3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btn_close.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 16</value>
+  </data>
+  <data name="&gt;&gt;lbl_cpu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btn_add_ex.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2399,16 +2258,160 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterParent</value>
+  <data name="lbl_cpu.Text" xml:space="preserve">
+    <value>CPU</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Security and performance</value>
+  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>524, 142</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>Form25</value>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lbl_antivir.Name" xml:space="preserve">
+    <value>lbl_antivir</value>
   </data>
+  <data name="lbl_cpu.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 16</value>
+  </data>
+  <data name="btn_close.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lbl_vcard.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txt_tip.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="txt_tip.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Antivirus software</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lbl_vcard.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="lbl_cpu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 18</value>
+  </data>
+  <data name="&gt;&gt;txt_tip.Name" xml:space="preserve">
+    <value>txt_tip</value>
+  </data>
+  <data name="btn_close.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomCenter</value>
+  </data>
+  <data name="btn_add_ex.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
+  </data>
+  <data name="lbl_os.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 16</value>
+  </data>
+  <data name="btn_add_ex.Size" type="System.Drawing.Size, System.Drawing">
+    <value>106, 85</value>
+  </data>
+  <data name="label7.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;chk_visuals.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lbl_os.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;lbl_os.Name" xml:space="preserve">
+    <value>lbl_os</value>
+  </data>
+  <data name="lbl_antivir.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 18</value>
+  </data>
+  <data name="chk_visuals.TabIndex" type="System.Int32, mscorlib">
+    <value>155</value>
+  </data>
+  <data name="&gt;&gt;lbl_vcard.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="btn_add_ex.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="lbl_vcard.Location" type="System.Drawing.Point, System.Drawing">
+    <value>167, 82</value>
+  </data>
+  <data name="label6.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>155</value>
+  </data>
+  <data name="btn_add_ex.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="lbl_antivir.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="&gt;&gt;lbl_vcard.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="chk_visuals.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 341</value>
+  </data>
+  <data name="&gt;&gt;btn_close.Name" xml:space="preserve">
+    <value>btn_close</value>
+  </data>
+  <data name="lbl_cpu.TabIndex" type="System.Int32, mscorlib">
+    <value>157</value>
+  </data>
+  <data name="btn_add_ex.Location" type="System.Drawing.Point, System.Drawing">
+    <value>186, 341</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>pl</value>
+  </metadata>
 </root>

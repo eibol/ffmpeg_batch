@@ -57,9 +57,9 @@ namespace FFBatch
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lbl_vcount = new System.Windows.Forms.Label();
             this.lbl_down_time = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pg2 = new FFBatch.ProgressBarWithText();
             this.Pg1 = new FFBatch.ProgressBarWithText();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -264,11 +264,6 @@ namespace FFBatch
             resources.ApplyResources(this.lbl_down_time, "lbl_down_time");
             this.lbl_down_time.Name = "lbl_down_time";
             // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // pg2
             // 
             resources.ApplyResources(this.pg2, "pg2");
@@ -278,6 +273,11 @@ namespace FFBatch
             // 
             resources.ApplyResources(this.Pg1, "Pg1");
             this.Pg1.Name = "Pg1";
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form23
             // 

@@ -130,12 +130,15 @@
     <value>Italiano</value>
   </data>
   <data name="combo_lang.Items4" xml:space="preserve">
-    <value>Português (BR)</value>
+    <value>Polski</value>
   </data>
   <data name="combo_lang.Items5" xml:space="preserve">
-    <value>中文</value>
+    <value>Português (BR)</value>
   </data>
   <data name="combo_lang.Items6" xml:space="preserve">
+    <value>中文</value>
+  </data>
+  <data name="combo_lang.Items7" xml:space="preserve">
     <value>اللغة العربية</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
@@ -147,7 +150,7 @@
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="combo_lang.TabIndex" type="System.Int32, mscorlib">
-    <value>157</value>
+    <value>1</value>
   </data>
   <data name="&gt;&gt;combo_lang.Name" xml:space="preserve">
     <value>combo_lang</value>
@@ -161,6 +164,10 @@
   <data name="&gt;&gt;combo_lang.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
   <data name="button1.Location" type="System.Drawing.Point, System.Drawing">
     <value>249, 24</value>
   </data>
@@ -168,7 +175,7 @@
     <value>70, 23</value>
   </data>
   <data name="button1.TabIndex" type="System.Int32, mscorlib">
-    <value>159</value>
+    <value>0</value>
   </data>
   <data name="button1.Text" xml:space="preserve">
     <value>OK</value>
@@ -226,7 +233,6 @@
         BJOLAAAAAElFTkSuQmCC
 </value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pic_earth.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -285,7 +291,7 @@
     <value>15, 14</value>
   </data>
   <data name="chk_dark.TabIndex" type="System.Int32, mscorlib">
-    <value>162</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;chk_dark.Name" xml:space="preserve">
     <value>chk_dark</value>
