@@ -3814,7 +3814,7 @@ namespace FFBatch
                 {
                     a_sp = 1 - (Math.Abs((n_speed2.Value / 100)) / 2);
                 }
-                speed_a = "atempo=" + a_sp.ToString().Replace(",", ".");
+                speed_a = "atempo=" + "'" + a_sp.ToString().Replace(",", ".") + "'";
                 if (chk_normalize.Checked)
                 {   
                     normalize = "loudnorm";
@@ -4396,7 +4396,7 @@ namespace FFBatch
                         }
                     }
                     if (unsupported == true) MessageBox.Show(FFBatch.Properties.Strings.test_fail1 + " " + Environment.NewLine + Environment.NewLine + FFBatch.Properties.Strings.unsup_enc + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + Properties.Strings.try_pr, Properties.Strings.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    else this.InvokeEx(f => MessageBox.Show(this, FFBatch.Properties.Strings.test_fail1 + " " + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + "Try preset for more error information", "FFmpeg command failed", MessageBoxButtons.OK, MessageBoxIcon.Error));
+                    else this.InvokeEx(f => MessageBox.Show(this, FFBatch.Properties.Strings.test_fail1 + " " + Environment.NewLine + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 4].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 3].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 2].ToString() + Environment.NewLine + LB1_o.Items[LB1_o.Items.Count - 1].ToString() + Environment.NewLine + Environment.NewLine + Properties.Strings.try_pr, "FFmpeg " + Properties.Strings.Try_current_preset + " " + Properties.Strings.failed, MessageBoxButtons.OK, MessageBoxIcon.Error));
 
                     this.InvokeEx(f => this.Cursor = Cursors.Arrow);
                     tried_ok = false;

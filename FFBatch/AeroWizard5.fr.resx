@@ -268,7 +268,7 @@
     <value>277, 190</value>
   </data>
   <data name="chk_out_name.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 19</value>
+    <value>193, 19</value>
   </data>
   <data name="chk_out_name.Text" xml:space="preserve">
     <value>Utiliser le nom du fichier source</value>
@@ -367,7 +367,7 @@
     <value>0, 141</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>372, 15</value>
+    <value>365, 15</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Cliquez sur Démarrer pour commencer l’extraction immédiatement.</value>
@@ -376,7 +376,7 @@
     <value>0, 120</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>525, 15</value>
+    <value>518, 15</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>Cliquez sur Terminer pour utiliser le préréglage ou sur Annuler pour revenir à la fenêtre principale.</value>

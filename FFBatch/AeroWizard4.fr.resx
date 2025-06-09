@@ -117,21 +117,36 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Seuil</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>Durée</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>276, 15</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Cliquer sur Terminer pour commencer la détection.</value>
+  </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>158, 83</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 15</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>secondes)</value>
   </data>
-  <data name="label5.Text" xml:space="preserve">
-    <value>Cliquer sur Terminer pour commencer la détection.</value>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 15</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Durée</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 15</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Seuil</value>
+  </data>
+  <data name="wz1.Text" xml:space="preserve">
+    <value>Détecteur de silence</value>
   </data>
   <data name="wizardControl1.Title" xml:space="preserve">
     <value>Détecteur de silence par lots</value>
@@ -1925,8 +1940,5 @@
         xRPuE8QT7hPCE+4TwBPuE74T7ha9Fu5Ax0CeAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
-  </data>
-  <data name="wz1.Text" xml:space="preserve">
-    <value>Détecteur de silence</value>
   </data>
 </root>

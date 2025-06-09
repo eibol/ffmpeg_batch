@@ -1698,11 +1698,13 @@
             // lbl_vcard
             // 
             resources.ApplyResources(this.lbl_vcard, "lbl_vcard");
+            this.lbl_vcard.AutoEllipsis = true;
             this.lbl_vcard.Name = "lbl_vcard";
             // 
             // lbl_help
             // 
             resources.ApplyResources(this.lbl_help, "lbl_help");
+            this.lbl_help.AutoEllipsis = true;
             this.lbl_help.Name = "lbl_help";
             // 
             // pic_status
