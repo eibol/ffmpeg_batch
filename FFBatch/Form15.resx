@@ -133,10 +133,6 @@
   <data name="&gt;&gt;item_down.Name" xml:space="preserve">
     <value>item_down</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="txt_config_ver.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Center</value>
-  </data>
   <data name="btn_cancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 82</value>
   </data>
@@ -172,14 +168,18 @@
   <data name="&gt;&gt;btn_online.Name" xml:space="preserve">
     <value>btn_online</value>
   </data>
-  <data name="&gt;&gt;lbl_config.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btn_load.TabIndex" type="System.Int32, mscorlib">
+    <value>131</value>
   </data>
-  <data name="&gt;&gt;txt_config_ver.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;Column1.Name" xml:space="preserve">
+    <value>Column1</value>
   </data>
   <data name="ct_top.Text" xml:space="preserve">
     <value>Top</value>
+  </data>
+  <data name="btn_add_pr.Text" xml:space="preserve">
+    <value>Add preset</value>
   </data>
   <data name="&gt;&gt;btn_remove_pr.Name" xml:space="preserve">
     <value>btn_remove_pr</value>
@@ -187,7 +187,6 @@
   <data name="lbl_config.Text" xml:space="preserve">
     <value>Presets version</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btn_save.TabIndex" type="System.Int32, mscorlib">
     <value>130</value>
   </data>
@@ -209,12 +208,10 @@
   <data name="btn_load_bck.Text" xml:space="preserve">
     <value>Reload last backup</value>
   </data>
-  <data name="btn_load_bck.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 84</value>
+  <data name="&gt;&gt;dg_pr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btn_add_pr.Text" xml:space="preserve">
-    <value>Add preset</value>
-  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="item_down.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -227,8 +224,8 @@
   <data name="btn_load.Location" type="System.Drawing.Point, System.Drawing">
     <value>396, 432</value>
   </data>
-  <data name="lbl_config.Size" type="System.Drawing.Size, System.Drawing">
-    <value>79, 13</value>
+  <data name="&gt;&gt;btn_load_bck.Name" xml:space="preserve">
+    <value>btn_load_bck</value>
   </data>
   <data name="&gt;&gt;item_up.Name" xml:space="preserve">
     <value>item_up</value>
@@ -263,8 +260,8 @@
   <data name="btn_remove_pr.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
   </data>
-  <data name="&gt;&gt;btn_clear.Name" xml:space="preserve">
-    <value>btn_clear</value>
+  <data name="txt_config_ver.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Center</value>
   </data>
   <data name="btn_inc_font.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 27</value>
@@ -2062,11 +2059,40 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
-  <data name="btn_save.Text" xml:space="preserve">
-    <value> Save  and close</value>
+  <data name="ct_top.Size" type="System.Drawing.Size, System.Drawing">
+    <value>114, 22</value>
   </data>
   <data name="lbl_config.TabIndex" type="System.Int32, mscorlib">
     <value>140</value>
+  </data>
+  <data name="btn_online.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
   </data>
   <data name="btn_remove_pr.TabIndex" type="System.Int32, mscorlib">
     <value>138</value>
@@ -2074,61 +2100,8 @@
   <data name="btn_add_pr.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 84</value>
   </data>
-  <data name="btn_add_pr.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
+  <data name="&gt;&gt;ct_top.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btn_clear.TabIndex" type="System.Int32, mscorlib">
     <value>143</value>
@@ -2157,17 +2130,11 @@
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
-  <data name="&gt;&gt;ctm_move.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="Column3.HeaderText" xml:space="preserve">
     <value>Format</value>
   </data>
   <data name="&gt;&gt;btn_decr_font.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>809, 432</value>
   </data>
   <data name="btn_load.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopCenter</value>
@@ -2175,17 +2142,11 @@
   <data name="item_up.Location" type="System.Drawing.Point, System.Drawing">
     <value>899, 27</value>
   </data>
+  <data name="btn_cancel.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
   <data name="item_up.TabIndex" type="System.Int32, mscorlib">
     <value>134</value>
-  </data>
-  <data name="&gt;&gt;btn_add_pr.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;lbl_config.Name" xml:space="preserve">
-    <value>lbl_config</value>
-  </data>
-  <data name="Column2.Width" type="System.Int32, mscorlib">
-    <value>549</value>
   </data>
   <data name="btn_save_backup.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2213,8 +2174,14 @@
   <data name="ct_bottom.Text" xml:space="preserve">
     <value>Bottom</value>
   </data>
-  <data name="&gt;&gt;btn_save.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;btn_load.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;btn_clear.Name" xml:space="preserve">
+    <value>btn_clear</value>
+  </data>
+  <data name="&gt;&gt;btn_save_backup.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dg_pr.Name" xml:space="preserve">
     <value>dg_pr</value>
@@ -2222,8 +2189,8 @@
   <data name="btn_add_pr.Location" type="System.Drawing.Point, System.Drawing">
     <value>21, 432</value>
   </data>
-  <data name="&gt;&gt;Column2.Name" xml:space="preserve">
-    <value>Column2</value>
+  <data name="Column2.Width" type="System.Int32, mscorlib">
+    <value>549</value>
   </data>
   <data name="btn_online.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2234,8 +2201,8 @@
   <data name="$this.Text" xml:space="preserve">
     <value>FFmpeg Batch AV Converter - Presets</value>
   </data>
-  <data name="&gt;&gt;Column3.Name" xml:space="preserve">
-    <value>Column3</value>
+  <data name="btn_load.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="btn_cancel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
@@ -2282,8 +2249,8 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="btn_cancel.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="btn_save.Text" xml:space="preserve">
+    <value> Save  and close</value>
   </data>
   <data name="&gt;&gt;dg_pr.ZOrder" xml:space="preserve">
     <value>16</value>
@@ -2339,8 +2306,11 @@
   <data name="&gt;&gt;btn_load_bck.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="btn_load_bck.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="btn_save_backup.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 84</value>
+  </data>
+  <data name="&gt;&gt;open_file.Name" xml:space="preserve">
+    <value>open_file</value>
   </data>
   <data name="btn_save.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopCenter</value>
@@ -2350,9 +2320,6 @@
   </data>
   <data name="btn_load.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
-  </data>
-  <data name="btn_save.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
   </data>
   <data name="&gt;&gt;btn_inc_font.Parent" xml:space="preserve">
     <value>$this</value>
@@ -2366,8 +2333,14 @@
   <data name="btn_add_pr.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopCenter</value>
   </data>
+  <data name="&gt;&gt;btn_decr_font.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
   <data name="btn_save_backup.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
+  </data>
+  <data name="&gt;&gt;btn_save.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="btn_load.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2404,17 +2377,14 @@
         4WDomu4agJvw3MBFoo32jUY7/Y2OYDDY4XK5uumV94Z/fUD4C1di7HocDUj0AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="&gt;&gt;item_up.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;item_up.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txt_config_ver.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btn_online.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btn_load_bck.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <data name="&gt;&gt;btn_inc_font.ZOrder" xml:space="preserve">
     <value>9</value>
@@ -2434,14 +2404,23 @@
   <data name="lbl_config.Location" type="System.Drawing.Point, System.Drawing">
     <value>63, 34</value>
   </data>
+  <data name="&gt;&gt;open_file.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="btn_inc_font.TabIndex" type="System.Int32, mscorlib">
     <value>136</value>
   </data>
   <data name="&gt;&gt;btn_cancel.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;Column2.Name" xml:space="preserve">
+    <value>Column2</value>
+  </data>
   <data name="btn_decr_font.Size" type="System.Drawing.Size, System.Drawing">
     <value>20, 27</value>
+  </data>
+  <data name="&gt;&gt;btn_online.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="txt_config_ver.MaxLength" type="System.Int32, mscorlib">
     <value>4</value>
@@ -2503,34 +2482,8 @@
   <data name="btn_remove_pr.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopCenter</value>
   </data>
-  <data name="btn_online.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
+  <data name="&gt;&gt;ctm_move.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btn_load.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -2599,8 +2552,8 @@
   <data name="btn_load.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 82</value>
   </data>
-  <data name="&gt;&gt;btn_save_backup.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btn_load_bck.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 84</value>
   </data>
   <data name="&gt;&gt;item_down.Parent" xml:space="preserve">
     <value>$this</value>
@@ -2608,17 +2561,23 @@
   <data name="btn_online.TabIndex" type="System.Int32, mscorlib">
     <value>161</value>
   </data>
+  <data name="&gt;&gt;lbl_config.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
   <data name="txt_config_ver.Location" type="System.Drawing.Point, System.Drawing">
     <value>144, 31</value>
   </data>
-  <data name="dg_pr.Size" type="System.Drawing.Size, System.Drawing">
-    <value>903, 369</value>
+  <data name="&gt;&gt;item_up.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btn_remove_pr.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btn_save_backup.Name" xml:space="preserve">
     <value>btn_save_backup</value>
+  </data>
+  <data name="&gt;&gt;Column3.Name" xml:space="preserve">
+    <value>Column3</value>
   </data>
   <data name="btn_save.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 83</value>
@@ -2668,14 +2627,14 @@
   <data name="btn_save_backup.Text" xml:space="preserve">
     <value> Backup  presets</value>
   </data>
-  <data name="btn_load.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;btn_cancel.ZOrder" xml:space="preserve">
+    <value>13</value>
   </data>
   <data name="&gt;&gt;btn_decr_font.Name" xml:space="preserve">
     <value>btn_decr_font</value>
   </data>
-  <data name="&gt;&gt;btn_load_bck.Name" xml:space="preserve">
-    <value>btn_load_bck</value>
+  <data name="&gt;&gt;btn_add_pr.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;btn_save.ZOrder" xml:space="preserve">
     <value>15</value>
@@ -2692,11 +2651,11 @@
   <data name="&gt;&gt;lbl_config.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btn_load.ZOrder" xml:space="preserve">
-    <value>14</value>
+  <data name="btn_cancel.TabIndex" type="System.Int32, mscorlib">
+    <value>132</value>
   </data>
-  <data name="&gt;&gt;btn_decr_font.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="btn_save.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
   <data name="btn_add_pr.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2716,17 +2675,67 @@
   <data name="&gt;&gt;btn_load_bck.ZOrder" xml:space="preserve">
     <value>12</value>
   </data>
-  <data name="&gt;&gt;dg_pr.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ct_top.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btn_add_pr.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
   </data>
   <data name="&gt;&gt;item_down.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btn_save_backup.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 84</value>
+  <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>809, 432</value>
   </data>
   <data name="btn_remove_pr.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -2743,14 +2752,11 @@
   <data name="&gt;&gt;item_up.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="btn_load.TabIndex" type="System.Int32, mscorlib">
-    <value>131</value>
-  </data>
   <data name="item_down.Location" type="System.Drawing.Point, System.Drawing">
     <value>876, 27</value>
   </data>
-  <data name="&gt;&gt;open_file.Type" xml:space="preserve">
-    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lbl_config.Name" xml:space="preserve">
+    <value>lbl_config</value>
   </data>
   <data name="&gt;&gt;btn_online.Parent" xml:space="preserve">
     <value>$this</value>
@@ -2786,11 +2792,11 @@
   <data name="item_up.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="&gt;&gt;open_file.Name" xml:space="preserve">
-    <value>open_file</value>
+  <data name="dg_pr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>903, 369</value>
   </data>
-  <data name="&gt;&gt;Column1.Name" xml:space="preserve">
-    <value>Column1</value>
+  <data name="lbl_config.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 13</value>
   </data>
   <data name="Column1.HeaderText" xml:space="preserve">
     <value>Name</value>
@@ -2798,23 +2804,17 @@
   <data name="btn_load_bck.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopCenter</value>
   </data>
-  <data name="btn_cancel.TabIndex" type="System.Int32, mscorlib">
-    <value>132</value>
-  </data>
   <data name="&gt;&gt;btn_clear.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;item_down.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
-  <data name="&gt;&gt;btn_cancel.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
   <data name="btn_online.Size" type="System.Drawing.Size, System.Drawing">
     <value>56, 82</value>
   </data>
-  <data name="ct_top.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 22</value>
+  <data name="&gt;&gt;txt_config_ver.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="btn_save_backup.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2869,11 +2869,14 @@
   <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="open_file.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>pl</value>
   </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="open_file.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
   <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

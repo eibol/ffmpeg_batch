@@ -124,8 +124,8 @@
   <data name="btn_inc_font.Location" type="System.Drawing.Point, System.Drawing">
     <value>945, 36</value>
   </data>
-  <data name="&gt;&gt;Column6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="btn_cancel.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 82</value>
@@ -198,9 +198,6 @@
   <data name="&gt;&gt;btn_clear_list.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;Column7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="btn_logs_url.Location" type="System.Drawing.Point, System.Drawing">
     <value>602, 439</value>
   </data>
@@ -225,6 +222,9 @@
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form16</value>
   </data>
+  <data name="&gt;&gt;Column5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="btn_clear_list.Location" type="System.Drawing.Point, System.Drawing">
     <value>429, 444</value>
   </data>
@@ -243,9 +243,6 @@
   <data name="Column3.Width" type="System.Int32, mscorlib">
     <value>163</value>
   </data>
-  <data name="&gt;&gt;Column5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewButtonColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterParent</value>
   </data>
@@ -261,14 +258,14 @@
   <data name="btn_cancel.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>441, 13</value>
+  <data name="btn_jobs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>56, 87</value>
+  </data>
+  <data name="&gt;&gt;Column6.Name" xml:space="preserve">
+    <value>Column6</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>232, 24</value>
-  </data>
-  <data name="Column2.Width" type="System.Int32, mscorlib">
-    <value>548</value>
   </data>
   <data name="requeue.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 26</value>
@@ -289,9 +286,6 @@
         tHdKhNasVInkCMLfcvwDLBZLVJBxvP49PGR6zAIhws7nkfAQvAJvwHtwgMpe0tnRS18Gj/djMBi8HQ6H
         WSgUAiH2B6ZYniu82CKTAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="&gt;&gt;btn_clear.Parent" xml:space="preserve">
-    <value>$this</value>
   </data>
   <data name="pic.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -325,14 +319,11 @@
   <data name="&gt;&gt;dg_pr.Name" xml:space="preserve">
     <value>dg_pr</value>
   </data>
-  <data name="&gt;&gt;btn_clear.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
   <data name="Column6.HeaderText" xml:space="preserve">
     <value>Streams</value>
   </data>
-  <data name="&gt;&gt;Column2.Name" xml:space="preserve">
-    <value>Column2</value>
+  <data name="Column2.Width" type="System.Int32, mscorlib">
+    <value>548</value>
   </data>
   <data name="btn_clear_list.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -360,8 +351,8 @@
   <data name="requeue.TabIndex" type="System.Int32, mscorlib">
     <value>163</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Multiplex jobs manager</value>
+  <data name="&gt;&gt;btn_clear_list.Name" xml:space="preserve">
+    <value>btn_clear_list</value>
   </data>
   <data name="&gt;&gt;Column3.Name" xml:space="preserve">
     <value>Column3</value>
@@ -393,8 +384,8 @@
         VE3T6Dc+7qI3EsmqgwAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="&gt;&gt;Column5.Name" xml:space="preserve">
-    <value>Column5</value>
+  <data name="&gt;&gt;Column7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Column5.MinimumWidth" type="System.Int32, mscorlib">
     <value>25</value>
@@ -447,11 +438,20 @@
   <data name="btn_cancel.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>TopCenter</value>
   </data>
-  <data name="&gt;&gt;Column2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;btn_clear.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;Column5.Name" xml:space="preserve">
+    <value>Column5</value>
   </data>
   <data name="btn_decr_font.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;Column2.Name" xml:space="preserve">
+    <value>Column2</value>
+  </data>
+  <data name="&gt;&gt;Column6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>159</value>
@@ -521,8 +521,95 @@
   <data name="btn_clear.Location" type="System.Drawing.Point, System.Drawing">
     <value>-50, -19</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Multiplex jobs manager</value>
+  </data>
   <data name="&gt;&gt;btn_inc_font.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btn_clear.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="Column7.HeaderText" xml:space="preserve">
+    <value>Duration</value>
+  </data>
+  <data name="&gt;&gt;item_up.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;requeue.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btn_inc_font.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;pic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btn_logs_url.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="btn_clear_list.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="&gt;&gt;btn_inc_font.Name" xml:space="preserve">
+    <value>btn_inc_font</value>
+  </data>
+  <data name="btn_logs_url.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="requeue.Location" type="System.Drawing.Point, System.Drawing">
+    <value>992, 37</value>
+  </data>
+  <data name="btn_inc_font.TabIndex" type="System.Int32, mscorlib">
+    <value>151</value>
+  </data>
+  <data name="&gt;&gt;btn_cancel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btn_decr_font.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 27</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>441, 13</value>
+  </data>
+  <data name="pic.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btn_clear_list.Text" xml:space="preserve">
+    <value>Clear  list </value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Column3.HeaderText" xml:space="preserve">
+    <value>Output</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;pic.Name" xml:space="preserve">
+    <value>pic</value>
+  </data>
+  <data name="requeue.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="Column6.MinimumWidth" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="item_up.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 27</value>
+  </data>
+  <data name="btn_logs_url.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 88</value>
+  </data>
+  <data name="dg_pr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>22, 69</value>
+  </data>
+  <data name="&gt;&gt;btn_inc_font.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btn_clear_list.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -2314,87 +2401,6 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
-  <data name="&gt;&gt;pic.Type" xml:space="preserve">
-    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;item_up.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;requeue.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btn_inc_font.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="btn_jobs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>56, 87</value>
-  </data>
-  <data name="btn_logs_url.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
-  <data name="btn_clear_list.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="&gt;&gt;btn_inc_font.Name" xml:space="preserve">
-    <value>btn_inc_font</value>
-  </data>
-  <data name="btn_logs_url.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="requeue.Location" type="System.Drawing.Point, System.Drawing">
-    <value>992, 37</value>
-  </data>
-  <data name="btn_inc_font.TabIndex" type="System.Int32, mscorlib">
-    <value>151</value>
-  </data>
-  <data name="&gt;&gt;btn_cancel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btn_decr_font.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 27</value>
-  </data>
-  <data name="pic.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="btn_clear_list.Text" xml:space="preserve">
-    <value>Clear  list </value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Column3.HeaderText" xml:space="preserve">
-    <value>Output</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;pic.Name" xml:space="preserve">
-    <value>pic</value>
-  </data>
-  <data name="Column7.HeaderText" xml:space="preserve">
-    <value>Duration</value>
-  </data>
-  <data name="requeue.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="Column6.MinimumWidth" type="System.Int32, mscorlib">
-    <value>55</value>
-  </data>
-  <data name="item_up.Size" type="System.Drawing.Size, System.Drawing">
-    <value>21, 27</value>
-  </data>
-  <data name="btn_logs_url.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 88</value>
-  </data>
-  <data name="dg_pr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>22, 69</value>
-  </data>
-  <data name="&gt;&gt;btn_inc_font.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btn_clear_list.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
   <data name="&gt;&gt;item_down.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -2449,11 +2455,11 @@
   <data name="&gt;&gt;btn_clear_list.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
-  <data name="&gt;&gt;btn_decr_font.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;btn_logs_url.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="&gt;&gt;Column2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btn_jobs.Text" xml:space="preserve">
     <value>Start mux jobs</value>
@@ -2485,8 +2491,8 @@
   <data name="Column1.MinimumWidth" type="System.Int32, mscorlib">
     <value>50</value>
   </data>
-  <data name="&gt;&gt;Column6.Name" xml:space="preserve">
-    <value>Column6</value>
+  <data name="item_down.TabIndex" type="System.Int32, mscorlib">
+    <value>150</value>
   </data>
   <data name="dg_pr.TabIndex" type="System.Int32, mscorlib">
     <value>144</value>
@@ -2503,17 +2509,11 @@
   <data name="btn_logs_url.Text" xml:space="preserve">
     <value>View log file</value>
   </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
   <data name="&gt;&gt;item_down.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btn_cancel.Location" type="System.Drawing.Point, System.Drawing">
     <value>480, 444</value>
-  </data>
-  <data name="&gt;&gt;btn_clear_list.Name" xml:space="preserve">
-    <value>btn_clear_list</value>
   </data>
   <data name="Column1.Width" type="System.Int32, mscorlib">
     <value>153</value>
@@ -2545,8 +2545,8 @@
         gg==
 </value>
   </data>
-  <data name="item_down.TabIndex" type="System.Int32, mscorlib">
-    <value>150</value>
+  <data name="&gt;&gt;btn_decr_font.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;item_up.ZOrder" xml:space="preserve">
     <value>10</value>
@@ -2620,6 +2620,9 @@
   </metadata>
   <metadata name="Column6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>pl</value>
   </metadata>
   <metadata name="column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
