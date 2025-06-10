@@ -689,7 +689,7 @@
     <value>120, 17</value>
   </data>
   <data name="chk_ctrl_p.Text" xml:space="preserve">
-    <value>Disabilita Ctrl-Shift-P</value>
+    <value>Disabilita Ctrl-Maiusc-P</value>
   </data>
   <data name="chk_tray.Location" type="System.Drawing.Point, System.Drawing">
     <value>331, 157</value>
