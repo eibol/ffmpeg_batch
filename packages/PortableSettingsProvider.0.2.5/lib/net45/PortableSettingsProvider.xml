@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PortableSettingsProvider</name>
+    </assembly>
+    <members>
+        <member name="T:Bluegrams.Application.PortableSettingsProvider">
+            <summary>
+            Provides portable, persistent application settings.
+            </summary>
+        </member>
+        <member name="P:Bluegrams.Application.PortableSettingsProvider.SettingsFileName">
+            <summary>
+            Specifies the name of the settings file to be used.
+            </summary>
+        </member>
+        <member name="M:Bluegrams.Application.PortableSettingsProvider.ApplyProvider(System.Configuration.ApplicationSettingsBase[])">
+            <summary>
+            Applies this settings provider to each property of the given settings.
+            </summary>
+            <param name="settingsList">An array of settings.</param>
+        </member>
+        <member name="T:Bluegrams.Application.PortableSettingsProviderBase">
+            <summary>
+            A shared base class for portable settings providers.
+            </summary>
+        </member>
+        <member name="P:Bluegrams.Application.PortableSettingsProviderBase.AllRoaming">
+            <summary>
+            Specifies if all settings should be roaming.
+            </summary>
+        </member>
+        <member name="P:Bluegrams.Application.PortableSettingsProviderBase.SettingsDirectory">
+            <summary>
+            Specifies the directory of the settings file.
+            </summary>
+        </member>
+        <member name="M:Bluegrams.Application.PortableSettingsProviderBase.IsUserScoped(System.Configuration.SettingsProperty)">
+            <summary>
+            Iterates through a property's attributes to determine whether it is user-scoped or application-scoped.
+            </summary>
+        </member>
+        <member name="M:Bluegrams.Application.PortableSettingsProviderBase.IsRoaming(System.Configuration.SettingsProperty)">
+            <summary>
+            Iterates through a property's attributes to determine whether it is set to roam.
+            </summary>
+        </member>
+    </members>
+</doc>
