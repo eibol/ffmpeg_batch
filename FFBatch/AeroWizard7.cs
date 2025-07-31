@@ -78,17 +78,15 @@ namespace FFBatch
         }
 
         private void wz1_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
-        {
-            Double t_to = (double)n_multiv_secs.Value * (double)list_count;
-            TimeSpan t1 = TimeSpan.FromSeconds((t_to));
-            String tx_1 = string.Format("{0:D2}:{1:D2}:{2:D2}",
-                t1.Hours,
-                t1.Minutes,
-                t1.Seconds);
+        {    
 
             pr_pre_prms = "";
-            pr_1st_params = "-c:v libx264 -preset fast" + " " + "-pix_fmt " + cb_pixel.SelectedItem.ToString() + " " + "-r " + cb_framerate1.Text + " " + "-to " + tx_1;
-            pr1_img_dur = t_to.ToString();
+            
+            if (cb_framerate1.Text != "1") pr_1st_params = "-c:v libx264 -preset fast -crf 20 -pix_fmt " + cb_pixel.SelectedItem.ToString() + " " + "-r " + cb_framerate1.Text + " ";
+            else pr_1st_params = "-c:v libx264 -preset fast -crf 20 -pix_fmt " + cb_pixel.SelectedItem.ToString() + " ";
+
+            pr1_img_dur = n_multiv_secs.Value.ToString().Replace(",", ".");
+            //pr1_img_dur = t_to.ToString();
 
             String resize = "";
             //"-vf scale=";
@@ -100,7 +98,10 @@ namespace FFBatch
                     else resize = combo_resize.Text.Substring(0, combo_resize.Text.IndexOf("x")) + ":-2";
                 }
                 else resize = combo_resize.Text.Replace("x", ":");
-                pr_1st_params = "-c:v libx264 -preset fast" + " " + "-pix_fmt " + cb_pixel.SelectedItem.ToString() + " " + "-r " + cb_framerate1.Text + " " + "-vf scale=" + resize + " " + "-to " + tx_1;
+                
+                pr_1st_params = "-c:v libx264 -preset fast -crf 20 -pix_fmt " + cb_pixel.SelectedItem.ToString() + " " + "-r " + cb_framerate1.Text + " " + "-vf " + "\u0022" +  "scale=" + resize + "\u0022" + " ";
+                //pr_1st_params = "-c:v libx264 -preset fast -crf 20 -pix_fmt " + cb_pixel.SelectedItem.ToString() + " " + "-r " + cb_framerate1.Text + " " + "-vf " + "\u0022" + "pad=ceil(iw/2)*2:ceil(ih/2)*2" + "\u0022" + " ";
+                
             }
             if (chk_audio.Checked && txt_audio_path.Text.Length > 5)
             {
@@ -111,7 +112,7 @@ namespace FFBatch
             out_format = combo_ext.Text;
             pr1_out_format = out_format;
             imgs_time = n_multiv_secs.Value.ToString();
-            pr1_imgs_time = imgs_time;
+            pr1_imgs_time = imgs_time;            
         }
 
         private void check_resize_CheckedChanged(object sender, EventArgs e)
@@ -121,7 +122,7 @@ namespace FFBatch
                 combo_resize.Enabled = true;
                 radio_16_9.Enabled = true;
                 radio_4_3.Enabled = true;
-                chk_width1.Enabled = true;
+                chk_width1.Enabled = true;                
 
                 if (radio_16_9.Checked == true)
                 {
@@ -233,7 +234,7 @@ namespace FFBatch
 
         private void wz0_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
         {
-            String[] v_pixels = new string[] { "yuv420p", "yuv422p", "yuv444p", "yuyv422", "yuv422p10", "yuv422p10le", "yuv444p10", "yuv444p10le", "yuva444p10", "yuva444p10le", "rgb24", "rgb32", "rgb565", "rgb555", "nv12", "gray", "monow", "monob" };
+            String[] v_pixels = new string[] { "yuv444p", "yuyv422", "yuv422p10", "yuv422p10le", "yuv444p10", "yuv444p10le", "yuva444p10", "yuva444p10le", "rgb24", "rgb32", "rgb565", "rgb555", "nv12", "gray", "monow", "monob" };
             foreach (String item in v_pixels)
             {
                 cb_pixel.Items.Add(item);
@@ -341,9 +342,8 @@ namespace FFBatch
             }
 
             out_format = combo_ext2.Text;
-            pr1_out_format = out_format;
+            pr1_out_format = out_format;            
         }
-
         private void check_resize2_CheckedChanged(object sender, EventArgs e)
         {
             if (check_resize2.Checked == true)
@@ -697,6 +697,14 @@ namespace FFBatch
         private void chk_width3_CheckedChanged(object sender, EventArgs e)
         {
             chk_even3.Enabled = !chk_even3.Enabled;
+        }
+
+        private void n_multiv_secs_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar.Equals('.') || e.KeyChar.Equals(','))
+            {
+                e.KeyChar = ((System.Globalization.CultureInfo)System.Globalization.CultureInfo.CurrentCulture).NumberFormat.NumberDecimalSeparator.ToCharArray()[0];
+            }
         }
     }
 }

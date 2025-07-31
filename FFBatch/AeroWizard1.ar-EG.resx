@@ -4073,7 +4073,7 @@
     <value>يساعد</value>
   </data>
   <data name="lbl_amd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>78, 17</value>
+    <value>68, 15</value>
   </data>
   <data name="lbl_amd.Text" xml:space="preserve">
     <value>محدد الجودة</value>
@@ -4114,13 +4114,13 @@
     <value>مرجع</value>
   </data>
   <data name="label27.Size" type="System.Drawing.Size, System.Drawing">
-    <value>27, 17</value>
+    <value>25, 15</value>
   </data>
   <data name="label27.Text" xml:space="preserve">
     <value>بائع</value>
   </data>
   <data name="label26.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 17</value>
+    <value>76, 15</value>
   </data>
   <data name="label26.Text" xml:space="preserve">
     <value>تنسيق البكسل</value>
@@ -4129,25 +4129,25 @@
     <value>24, 107</value>
   </data>
   <data name="label25.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 17</value>
+    <value>78, 15</value>
   </data>
   <data name="label25.Text" xml:space="preserve">
     <value>حساب تعريفي</value>
   </data>
   <data name="label23.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 17</value>
+    <value>80, 15</value>
   </data>
   <data name="label23.Text" xml:space="preserve">
     <value>جودة ثابتة CRF</value>
   </data>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 17</value>
+    <value>66, 15</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
     <value>معدل الإطار</value>
   </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 17</value>
+    <value>76, 15</value>
   </data>
   <data name="label16.Text" xml:space="preserve">
     <value>تنسيق البكسل</value>
@@ -4159,7 +4159,7 @@
     <value>65, 21</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 17</value>
+    <value>67, 15</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>المعد مسبقا</value>
@@ -4168,7 +4168,7 @@
     <value>268, 41</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 17</value>
+    <value>66, 15</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>وضع الترميز</value>
@@ -4177,7 +4177,7 @@
     <value>117, 40</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 17</value>
+    <value>104, 15</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>برنامج تشفير الفيديو</value>
@@ -4187,6 +4187,12 @@
   </data>
   <data name="wz_trailer.Text" xml:space="preserve">
     <value>إنشاء مقطع دعائي للفيلم</value>
+  </data>
+  <data name="chk_factor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 19</value>
+  </data>
+  <data name="chk_factor.Text" xml:space="preserve">
+    <value>عامل</value>
   </data>
   <data name="chk_pad.Size" type="System.Drawing.Size, System.Drawing">
     <value>161, 19</value>
@@ -4209,7 +4215,7 @@
 </value>
   </data>
   <data name="label47.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 17</value>
+    <value>61, 15</value>
   </data>
   <data name="label47.Text" xml:space="preserve">
     <value>ابعاد متزنة:</value>
@@ -4245,14 +4251,14 @@
   <data name="btn_reset.Text" xml:space="preserve">
     <value>إعادة ضبط</value>
   </data>
-  <data name="label21.Location" type="System.Drawing.Point, System.Drawing">
-    <value>375, 201</value>
+  <data name="lbl_sp_up_d.Location" type="System.Drawing.Point, System.Drawing">
+    <value>377, 200</value>
   </data>
-  <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 17</value>
+  <data name="lbl_sp_up_d.Size" type="System.Drawing.Size, System.Drawing">
+    <value>72, 15</value>
   </data>
-  <data name="label21.Text" xml:space="preserve">
-    <value>تسريع / لأسفل</value>
+  <data name="lbl_sp_up_d.Text" xml:space="preserve">
+    <value>تسريع/تسريع</value>
   </data>
   <data name="cb_rotate.Items" xml:space="preserve">
     <value>لا أحد</value>
@@ -4279,13 +4285,13 @@
     <value>253, 48</value>
   </data>
   <data name="lbl_crop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>55, 17</value>
+    <value>51, 15</value>
   </data>
   <data name="lbl_crop.Text" xml:space="preserve">
     <value>اقتصاص</value>
   </data>
   <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 17</value>
+    <value>62, 15</value>
   </data>
   <data name="label20.Text" xml:space="preserve">
     <value>تغيير الحجم</value>
@@ -4297,7 +4303,7 @@
     <value>55, 23</value>
   </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 17</value>
+    <value>43, 15</value>
   </data>
   <data name="label18.Text" xml:space="preserve">
     <value>استدارة</value>
@@ -4306,16 +4312,19 @@
     <value>مرشحات الفيديو</value>
   </data>
   <data name="chk_normalize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 21</value>
+    <value>55, 19</value>
   </data>
   <data name="chk_normalize.Text" xml:space="preserve">
     <value>تطبيع</value>
   </data>
   <data name="label32.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 17</value>
+    <value>79, 15</value>
   </data>
   <data name="label32.Text" xml:space="preserve">
     <value>تسريع / لأسفل</value>
+  </data>
+  <data name="label29.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 15</value>
   </data>
   <data name="label29.Text" xml:space="preserve">
     <value>حجم قطعة</value>
@@ -4324,19 +4333,19 @@
     <value>388, 41</value>
   </data>
   <data name="label22.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 17</value>
+    <value>30, 15</value>
   </data>
   <data name="label22.Text" xml:space="preserve">
     <value>قطع</value>
   </data>
   <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 17</value>
+    <value>52, 15</value>
   </data>
   <data name="label14.Text" xml:space="preserve">
     <value>أقل جودة</value>
   </data>
   <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>67, 17</value>
+    <value>59, 15</value>
   </data>
   <data name="label15.Text" xml:space="preserve">
     <value>جودة أعلى</value>
@@ -4357,7 +4366,7 @@
     <value>195, 41</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>74, 17</value>
+    <value>66, 15</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>معدل العينة</value>
@@ -4366,7 +4375,7 @@
     <value>18, 41</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 17</value>
+    <value>70, 15</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>ترميز الصوت</value>
@@ -4557,7 +4566,7 @@
     <value>54, 183</value>
   </data>
   <data name="chk_save_pres.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 21</value>
+    <value>82, 19</value>
   </data>
   <data name="chk_save_pres.Text" xml:space="preserve">
     <value>حفظ مسبقا</value>
@@ -4566,7 +4575,7 @@
     <value>51, 41</value>
   </data>
   <data name="label24.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 17</value>
+    <value>68, 15</value>
   </data>
   <data name="label24.Text" xml:space="preserve">
     <value>حاوية الإخراج</value>
@@ -6805,7 +6814,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAD8
-        swAAAk1TRnQBSQFMAgEBBQEAAUwBCgFMAQoB3QEAAXwBAAT/AREBAAj/AUIBTQE2BwABNgMAASgDAAF0
+        swAAAk1TRnQBSQFMAgEBBQEAAVQBCgFUAQoB3QEAAXwBAAT/AREBAAj/AUIBTQE2BwABNgMAASgDAAF0
         AQMCAAH4AwABAQEAARAFAAHAAbABBv8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
         /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
         /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
@@ -7581,7 +7590,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAD0
-        GgAAAk1TRnQBSQFMAgEBAwEAAawBCAGsAQgBGAEAARgBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFg
+        GgAAAk1TRnQBSQFMAgEBAwEAAbQBCAG0AQgBGAEAARgBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFg
         AwABGAMAAQEBAAEgBgABJC4AAwkBCwMzAlICVAGoA14B3QNeAfADXgHwAVsCYQHeAVICVAGoAzMBUgMJ
         AQyAAAM7AWQDWwHEA2EB3gNfAdgDXgHXA14B1wNeAdcDXgHXA14B1wNfAdgDXwHYA14B1wNfAdgDXwHY
         A18B2ANfAdgDXgHXA14B1wNfAdgDYQHeA1oBvwM2AVd4AAMEAQUDQgF1A14B0gEAAbIC/wEAAbIC/wEA
@@ -7598,7 +7607,7 @@
         Ae4B/wIAAe8B/wIAAe4B/wIAAe8B/wIAAe8B/wIAAe8B/wIAAe8B/wIAAe4B/wIAAe8B/wHdAdwB/AX/
         A2MB6WgAAxwBJwNgAeMBAAG2Av8BAAG2Av8BAAG2Av8BAAG2Av8BAAG3Av8BAAG5Av8BAAGnAfsB/wEA
         AYkB7AH/AQABgQHnAf8BAAGSAe0B/wEAAZ0B7wH/AQABmgHuAf8BAAGaAe4B/wEAAZoB7gH/AQABmwHu
-        Af8BAAGYAe4B/wFbAmEB5AMdASgkAAM4AV0DAAH/AQAB/wGJAf8BAAHNAQAB/wNVAfgDFQEcLAADWwHE
+        Af8BAAGYAe4B/wFbAmEB5AMdASgkAAM4AV0DAAH/AQAB/wGJAf8BAAHNAQAB/wNXAfgDFQEcLAADWwHE
         BP8BtwG2AfkB/wIAAewB/wIAAfAB/wIAAfAB/wIAAfAB/wIAAe4B/wIAAfAB/wIAAfAB/wIAAe8B/wIA
         AfAB/wIAAfEB/wIAAe8B/wIAAe4B/wIAAe8B/wIAAfAB/wIAAfAB/wIAAfAB/wIAAfAB/wIAAe0B/wHH
         AcYB+wX/A1cBsWQAAwMBBANaAccBAAGyAv8BAAG3Av8BAAG2Av8BAAG2Av8BAAG2Av8BAAG0Av8BAAG5
@@ -7704,7 +7713,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAq
-        MAIAAk1TRnQBSQFMAgEBBwEAAYwBBgGMAQYBQAEAAUABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgEAAEB
+        MAIAAk1TRnQBSQFMAgEBBwEAAZQBBgGUAQYBQAEAAUABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgEAAEB
         AgABgAMAAQEBAAEgBwABAhEAAf0B/wH+Af8B9wH6AfgB/wH9Af4B+gP/AfsC/wH9AfoD/wH8Bf8B/QX/
         Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/
         Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/

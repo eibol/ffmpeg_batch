@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>FFBatch</RootNamespace>
     <AssemblyName>FFBatch</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -64,10 +64,10 @@
     <StartupObject>FFBatch.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>FE4D7774C397B7D18016E888930453380EF868E6</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>2C975594D8BEF997254AC2F818417384A772AF55</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>FFBatch_2025_Eibol.pfx</ManifestKeyFile>
+    <ManifestKeyFile>FFBatch_Converter_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -76,10 +76,10 @@
     <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
+    <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>FFBatch_2025_Eibol.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>parclaves.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup />
@@ -1385,7 +1385,9 @@
     </EmbeddedResource>
     <None Include="FFBatch_2025_Eibol.pfx" />
     <None Include="FFBatch_Converter.ruleset" />
+    <None Include="FFBatch_Converter_TemporaryKey.pfx" />
     <None Include="packages.config" />
+    <None Include="parclaves.snk" />
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

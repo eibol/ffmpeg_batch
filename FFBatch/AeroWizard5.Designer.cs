@@ -57,6 +57,9 @@
             this.btn_browse = new System.Windows.Forms.Button();
             this.txt_path_main = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.n_scene = new System.Windows.Forms.NumericUpDown();
+            this.rad_scenes = new System.Windows.Forms.RadioButton();
             this.radio_keys = new System.Windows.Forms.RadioButton();
             this.radio_all = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -74,18 +77,17 @@
             this.chk_save_preset = new System.Windows.Forms.CheckBox();
             this.btn_cancel = new System.Windows.Forms.Button();
             this.btn_Start = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pic_warn_two)).BeginInit();
             this.wz_final.SuspendLayout();
             this.wz1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.n_scene)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.wiz_img)).BeginInit();
             this.wz_end.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // fd1
-            // 
-            resources.ApplyResources(this.fd1, "fd1");
             // 
             // chk_save_pres
             // 
@@ -109,17 +111,17 @@
             // 
             // btn_start_multi
             // 
-            resources.ApplyResources(this.btn_start_multi, "btn_start_multi");
             this.btn_start_multi.FlatAppearance.BorderSize = 0;
             this.btn_start_multi.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_start_multi, "btn_start_multi");
             this.btn_start_multi.Name = "btn_start_multi";
             this.btn_start_multi.UseVisualStyleBackColor = true;
             // 
             // btn_abort
             // 
-            resources.ApplyResources(this.btn_abort, "btn_abort");
             this.btn_abort.FlatAppearance.BorderSize = 0;
             this.btn_abort.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_abort, "btn_abort");
             this.btn_abort.Name = "btn_abort";
             this.btn_abort.UseVisualStyleBackColor = true;
             // 
@@ -149,7 +151,6 @@
             // 
             // wz_final
             // 
-            resources.ApplyResources(this.wz_final, "wz_final");
             this.wz_final.Controls.Add(this.textBox1);
             this.wz_final.Controls.Add(this.check_name);
             this.wz_final.Controls.Add(this.pic_warn_two);
@@ -162,10 +163,10 @@
             this.wz_final.Controls.Add(this.chk_save_pres);
             this.wz_final.IsFinishPage = true;
             this.wz_final.Name = "wz_final";
+            resources.ApplyResources(this.wz_final, "wz_final");
             // 
             // wz1
             // 
-            resources.ApplyResources(this.wz1, "wz1");
             this.wz1.Controls.Add(this.txt_naming);
             this.wz1.Controls.Add(this.chk_out_name);
             this.wz1.Controls.Add(this.groupBox2);
@@ -176,6 +177,7 @@
             this.wz1.Controls.Add(this.txt_path_main);
             this.wz1.Controls.Add(this.groupBox1);
             this.wz1.Name = "wz1";
+            resources.ApplyResources(this.wz1, "wz1");
             this.wz1.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz1_Commit);
             // 
             // txt_naming
@@ -195,13 +197,13 @@
             // 
             // groupBox2
             // 
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.radio_4_3);
             this.groupBox2.Controls.Add(this.radio_16_9);
             this.groupBox2.Controls.Add(this.combo_resize);
             this.groupBox2.Controls.Add(this.check_resize);
             this.groupBox2.Controls.Add(this.combo_ext);
             this.groupBox2.Controls.Add(this.label3);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
@@ -223,8 +225,8 @@
             // 
             // combo_resize
             // 
-            resources.ApplyResources(this.combo_resize, "combo_resize");
             this.combo_resize.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.combo_resize, "combo_resize");
             this.combo_resize.FormattingEnabled = true;
             this.combo_resize.Name = "combo_resize";
             // 
@@ -237,7 +239,6 @@
             // 
             // combo_ext
             // 
-            resources.ApplyResources(this.combo_ext, "combo_ext");
             this.combo_ext.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.combo_ext.FormattingEnabled = true;
             this.combo_ext.Items.AddRange(new object[] {
@@ -247,6 +248,7 @@
             resources.GetString("combo_ext.Items3"),
             resources.GetString("combo_ext.Items4"),
             resources.GetString("combo_ext.Items5")});
+            resources.ApplyResources(this.combo_ext, "combo_ext");
             this.combo_ext.Name = "combo_ext";
             // 
             // label3
@@ -272,8 +274,8 @@
             // 
             // txt_path
             // 
-            resources.ApplyResources(this.txt_path, "txt_path");
             this.txt_path.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            resources.ApplyResources(this.txt_path, "txt_path");
             this.txt_path.Name = "txt_path";
             this.txt_path.ReadOnly = true;
             // 
@@ -288,14 +290,17 @@
             // 
             // txt_path_main
             // 
-            resources.ApplyResources(this.txt_path_main, "txt_path_main");
             this.txt_path_main.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            resources.ApplyResources(this.txt_path_main, "txt_path_main");
             this.txt_path_main.Name = "txt_path_main";
             this.txt_path_main.TextChanged += new System.EventHandler(this.txt_path_main_TextChanged);
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.n_scene);
+            this.groupBox1.Controls.Add(this.rad_scenes);
             this.groupBox1.Controls.Add(this.radio_keys);
             this.groupBox1.Controls.Add(this.radio_all);
             this.groupBox1.Controls.Add(this.label2);
@@ -304,8 +309,44 @@
             this.groupBox1.Controls.Add(this.combo_Frames);
             this.groupBox1.Controls.Add(this.radio_time);
             this.groupBox1.Controls.Add(this.radio_Frames);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            // 
+            // label16
+            // 
+            resources.ApplyResources(this.label16, "label16");
+            this.label16.Name = "label16";
+            // 
+            // n_scene
+            // 
+            this.n_scene.DecimalPlaces = 2;
+            resources.ApplyResources(this.n_scene, "n_scene");
+            this.n_scene.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            131072});
+            this.n_scene.Maximum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.n_scene.Name = "n_scene";
+            this.n_scene.Value = new decimal(new int[] {
+            4,
+            0,
+            0,
+            65536});
+            // 
+            // rad_scenes
+            // 
+            resources.ApplyResources(this.rad_scenes, "rad_scenes");
+            this.rad_scenes.Checked = true;
+            this.rad_scenes.Name = "rad_scenes";
+            this.rad_scenes.TabStop = true;
+            this.rad_scenes.UseVisualStyleBackColor = true;
+            this.rad_scenes.CheckedChanged += new System.EventHandler(this.rad_scenes_CheckedChanged);
             // 
             // radio_keys
             // 
@@ -331,7 +372,6 @@
             // 
             // combo_Seconds
             // 
-            resources.ApplyResources(this.combo_Seconds, "combo_Seconds");
             this.combo_Seconds.FormattingEnabled = true;
             this.combo_Seconds.Items.AddRange(new object[] {
             resources.GetString("combo_Seconds.Items"),
@@ -341,12 +381,12 @@
             resources.GetString("combo_Seconds.Items4"),
             resources.GetString("combo_Seconds.Items5"),
             resources.GetString("combo_Seconds.Items6")});
+            resources.ApplyResources(this.combo_Seconds, "combo_Seconds");
             this.combo_Seconds.Name = "combo_Seconds";
             this.combo_Seconds.TextChanged += new System.EventHandler(this.combo_Seconds_TextChanged);
             // 
             // combo_Frames
             // 
-            resources.ApplyResources(this.combo_Frames, "combo_Frames");
             this.combo_Frames.FormattingEnabled = true;
             this.combo_Frames.Items.AddRange(new object[] {
             resources.GetString("combo_Frames.Items"),
@@ -354,6 +394,7 @@
             resources.GetString("combo_Frames.Items2"),
             resources.GetString("combo_Frames.Items3"),
             resources.GetString("combo_Frames.Items4")});
+            resources.ApplyResources(this.combo_Frames, "combo_Frames");
             this.combo_Frames.Name = "combo_Frames";
             this.combo_Frames.TextChanged += new System.EventHandler(this.combo_Frames_TextChanged);
             // 
@@ -364,7 +405,6 @@
             this.radio_time.Name = "radio_time";
             this.radio_time.TabStop = true;
             this.radio_time.UseVisualStyleBackColor = true;
-            this.radio_time.CheckedChanged += new System.EventHandler(this.radio_time_CheckedChanged);
             // 
             // radio_Frames
             // 
@@ -379,12 +419,10 @@
             this.wiz_img.Pages.Add(this.wz1);
             this.wiz_img.Pages.Add(this.wz_end);
             this.wiz_img.Cancelling += new System.ComponentModel.CancelEventHandler(this.wizardControl1_Cancelling);
-            this.wiz_img.Finished += new System.EventHandler(this.wiz_img_Finished);
             this.wiz_img.SelectedPageChanged += new System.EventHandler(this.wizardControl1_SelectedPageChanged);
             // 
             // wz_end
             // 
-            resources.ApplyResources(this.wz_end, "wz_end");
             this.wz_end.Controls.Add(this.label9);
             this.wz_end.Controls.Add(this.label8);
             this.wz_end.Controls.Add(this.label7);
@@ -394,6 +432,7 @@
             this.wz_end.Controls.Add(this.btn_Start);
             this.wz_end.IsFinishPage = true;
             this.wz_end.Name = "wz_end";
+            resources.ApplyResources(this.wz_end, "wz_end");
             this.wz_end.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz_end_Commit);
             this.wz_end.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz_end_Initialize);
             this.wz_end.Rollback += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz_end_Rollback);
@@ -427,21 +466,27 @@
             // 
             // btn_cancel
             // 
-            resources.ApplyResources(this.btn_cancel, "btn_cancel");
             this.btn_cancel.FlatAppearance.BorderSize = 0;
             this.btn_cancel.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_cancel, "btn_cancel");
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 
             // btn_Start
             // 
-            resources.ApplyResources(this.btn_Start, "btn_Start");
             this.btn_Start.FlatAppearance.BorderSize = 0;
             this.btn_Start.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_Start, "btn_Start");
             this.btn_Start.Name = "btn_Start";
             this.btn_Start.UseVisualStyleBackColor = true;
             this.btn_Start.Click += new System.EventHandler(this.btn_Start_Click);
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // AeroWizard5
             // 
@@ -460,9 +505,11 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.n_scene)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.wiz_img)).EndInit();
             this.wz_end.ResumeLayout(false);
             this.wz_end.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -513,5 +560,9 @@
         private System.Windows.Forms.Label label7;
         public System.Windows.Forms.TextBox txt_preset_name;
         public System.Windows.Forms.RadioButton radio_keys;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.NumericUpDown n_scene;
+        private System.Windows.Forms.RadioButton rad_scenes;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

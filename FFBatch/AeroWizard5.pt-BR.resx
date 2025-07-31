@@ -121,7 +121,7 @@
   <data name="btn_start_multi.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxMAAAsTAQCanBgAAAlvSURBVFhHzZl5UFXnGcZFicEY
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxEAAAsRAX9kX5EAAAlvSURBVFhHzZl5UFXnGcZFicEY
         TGw1xFoTFxbBBVCQTeDChQsXFYyI1oDi1UrAuCugXpBFEKwa4542mtStk3R0MpPpdDqdSfuPU2v+6CRB
         2Te3uFutUad1efq855y7oOe6RTDfzDN34dxzfjzv873fd+7tBuAhyfDs5+3Ts1ffN/jUTdNPY+gB9x8c
         lpD7W2B6Wd2dgQHJS3mYJ9WTevHgesAjYvOscwg8teoacj8GEnIOtXp4DjDz8Fcpd+rFgesB+4ZlWrO3
@@ -168,7 +168,7 @@
   <data name="btn_abort.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxMAAAsTAQCanBgAAA6fSURBVFhHrZgHVFVX2oaPBhsg
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxEAAAsRAX9kX5EAAA6fSURBVFhHrZgHVFVX2oaPBhsg
         qKCxYSExMTF1lomuiWaiiTGxZCwJ6tiNJo5GYzeKLXYTzWgsQUWjNOlNBRWDCoh0BO4FBJQqXHq5Uq/w
         /u/eeCkRM5mZ/6z1XQ6n7P2sr39Haaivb1PQ0FIaGgVoFJ4Xhd0ert6zzfrmxDGe3oPM4lwMlbwLHRXt
         hU6K1sVI0XgPMo+/OeEDL9WuLVsKQ4NGyDVbvN8o+rXbZhDS5kUhreCeLFyTrzGP37Z+p0cvo9yzigLH
@@ -242,8 +242,8 @@
         RF/WBZnFQBrgSi4oKgHSf4DYKCW1OJmBgdEAyM4uLykAijPOAbJFkrLB7A0gdlFIkDOQfQTI5kuHsK+A
         2EkQ9hMQuwjoCSD7C0h9OpjNxAE2B8KWAbFLUitA9jI45xdUFmWmZ5QoGFpaWio4puQnpSoEVxaXpOYW
         K3jmJecXFeQXJZakpgDVQtwHBoIQhaAQ0wBqtNBkoDIAxQOE9TkQHL6MYmcQYgiQXFpUBmUyMhkT5iPM
-        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAAEnQAABJ0
-        Ad5mH3gAAAQgSURBVDhPfZNZbBtVFIZv0oasEgSBQklYCg8sFUFURWxqQW0jQpFoERKIsCio4oFAA5Sm
+        mCPBwOC/lIGB5Q9CzKSXgWGBDgMD/1SEmJohA4OAPgPDvjkAwMZP/eeaqagAAAAJcEhZcwAAEnIAABJy
+        AV5lW+MAAAQgSURBVDhPfZNZbBtVFIZv0oasEgSBQklYCg8sFUFURWxqQW0jQpFoERKIsCio4oFAA5Sm
         gIAnnhA8gBAVRWokpJSlKd3iNk1rZ69jO7E9XjJje7yM7VnsjB0vsbOnP3fckBK58PBppDnn/vec859L
         fD4fCQaDJBAIFBEKBbV4pckcDk1YwyZZFomqThFFUUgsFltHPB4nsiwT4na7idPpLMLlchGGsROrXT6S
         VDuhyMfhcKrfSWKERCL/zQ3FNBwOTUy60+93AUs7gOV9YFkeXu9UnaLIJBqN3pBCJcU4id3OEJabO5tP
@@ -291,9 +291,6 @@
   <data name="combo_ext.Location" type="System.Drawing.Point, System.Drawing">
     <value>110, 26</value>
   </data>
-  <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 29</value>
-  </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>98, 15</value>
   </data>
@@ -321,8 +318,38 @@
   <data name="radio_relative.Text" xml:space="preserve">
     <value>Caminho de saída relativo</value>
   </data>
+  <data name="txt_path.Location" type="System.Drawing.Point, System.Drawing">
+    <value>187, 221</value>
+  </data>
+  <data name="txt_path.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 23</value>
+  </data>
+  <data name="btn_browse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>441, 221</value>
+  </data>
   <data name="btn_browse.Text" xml:space="preserve">
     <value>Navegar</value>
+  </data>
+  <data name="txt_path_main.Location" type="System.Drawing.Point, System.Drawing">
+    <value>187, 187</value>
+  </data>
+  <data name="txt_path_main.Size" type="System.Drawing.Size, System.Drawing">
+    <value>81, 23</value>
+  </data>
+  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>387, 79</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 15</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>taxa de mudança</value>
+  </data>
+  <data name="rad_scenes.Size" type="System.Drawing.Size, System.Drawing">
+    <value>119, 19</value>
+  </data>
+  <data name="rad_scenes.Text" xml:space="preserve">
+    <value>Mudança de cena</value>
   </data>
   <data name="radio_keys.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 19</value>
@@ -335,12 +362,6 @@
   </data>
   <data name="radio_all.Text" xml:space="preserve">
     <value>Cada quadro</value>
-  </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 15</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>segundo(s)</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 15</value>
@@ -367,7 +388,7 @@
     <value>Assistente de predefinição de extração de imagem</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>402, 15</value>
+    <value>403, 15</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Pressione o botão Iniciar para iniciar a extração da imagem imediatamente.</value>
@@ -379,7 +400,7 @@
     <value>Pressione Concluir para usar a predefinição ou Cancelar para retornar à guia principal.</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>347, 15</value>
+    <value>348, 15</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
     <value>O assistente de predefinição de extração de imagem está pronto.</value>
@@ -399,7 +420,7 @@
   <data name="btn_cancel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxMAAAsTAQCanBgAAA6fSURBVFhHrZgHVFVX2oaPBhsg
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxEAAAsRAX9kX5EAAA6fSURBVFhHrZgHVFVX2oaPBhsg
         qKCxYSExMTF1lomuiWaiiTGxZCwJ6tiNJo5GYzeKLXYTzWgsQUWjNOlNBRWDCoh0BO4FBJQqXHq5Uq/w
         /u/eeCkRM5mZ/6z1XQ6n7P2sr39Haaivb1PQ0FIaGgVoFJ4Xhd0ert6zzfrmxDGe3oPM4lwMlbwLHRXt
         hU6K1sVI0XgPMo+/OeEDL9WuLVsKQ4NGyDVbvN8o+rXbZhDS5kUhreCeLFyTrzGP37Z+p0cvo9yzigLH
@@ -477,7 +498,7 @@
   <data name="btn_Start.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAYAAAAehFoBAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxMAAAsTAQCanBgAAAlvSURBVFhHzZl5UFXnGcZFicEY
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACxEAAAsRAX9kX5EAAAlvSURBVFhHzZl5UFXnGcZFicEY
         TGw1xFoTFxbBBVCQTeDChQsXFYyI1oDi1UrAuCugXpBFEKwa4542mtStk3R0MpPpdDqdSfuPU2v+6CRB
         2Te3uFutUad1efq855y7oOe6RTDfzDN34dxzfjzv873fd+7tBuAhyfDs5+3Ts1ffN/jUTdNPY+gB9x8c
         lpD7W2B6Wd2dgQHJS3mYJ9WTevHgesAjYvOscwg8teoacj8GEnIOtXp4DjDz8Fcpd+rFgesB+4ZlWrO3

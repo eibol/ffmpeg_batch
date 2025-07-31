@@ -662,5 +662,26 @@ namespace FFBatch
                 txt_end.BackColor = Color.LightSalmon;
             }
         }
+        //private void get_scenes()
+        //{
+            //List<String> list_scenes = new List<String>();
+            //list_scenes.Add("0");
+            //String file_scene = Path.Combine(Path.GetTempPath(), "FFBatch_test") + "\\" + "time_scenes.txt";            
+            //foreach (String str in File.ReadLines(file_scene))
+            //{
+            //    if (str.Contains("pts_time:"))
+            //    {
+            //        int ind = str.IndexOf("pts_time:") + 9;
+            //        list_scenes.Add(str.Substring(ind, str.Length - ind));
+            //    }
+            //}
+            //MessageBox.Show(list_scenes.Count().ToString());
+            //String param = String.Empty;
+            //for (int i = 0; i < list_scenes.Count - 1; i++)
+            //{
+            //    param = param + "-ss " + list_scenes[i] + " -to " + list_scenes[i + 1] + " -c copy scene_" + i.ToString("X4") + ".mp4 ";
+            //}
+            //Clipboard.SetText(param);
+        //}        
     }
 }

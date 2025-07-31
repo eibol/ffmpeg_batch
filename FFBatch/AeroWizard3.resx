@@ -121,11 +121,11 @@
     <value>hevc_amf</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
-    <value>10, 112</value>
+  <data name="txt_pr_1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>339, 40</value>
   </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Second pass</value>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>wz_two_end</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
     <value>16, 8</value>
@@ -142,19 +142,16 @@
   <data name="radio_target.Text" xml:space="preserve">
     <value>One/two pass target size</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="txt_pr_end_2.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="combo_size.Size" type="System.Drawing.Size, System.Drawing">
     <value>42, 23</value>
   </data>
-  <data name="label18.TabIndex" type="System.Int32, mscorlib">
-    <value>109</value>
+  <data name="&gt;&gt;btn_status.Parent" xml:space="preserve">
+    <value>wz_two_end</value>
   </data>
-  <data name="&gt;&gt;wizardPage1.Name" xml:space="preserve">
-    <value>wizardPage1</value>
+  <data name="txt_video_current.Location" type="System.Drawing.Point, System.Drawing">
+    <value>306, 11</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label10.TabIndex" type="System.Int32, mscorlib">
     <value>94</value>
   </data>
@@ -170,6 +167,9 @@
   <data name="pic_warn_bitrate.Size" type="System.Drawing.Size, System.Drawing">
     <value>21, 22</value>
   </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Second pass</value>
+  </data>
   <data name="combo_audio_target.Items1" xml:space="preserve">
     <value>eac3</value>
   </data>
@@ -182,11 +182,11 @@
   <data name="combo_audio_target.Items2" xml:space="preserve">
     <value>ac3</value>
   </data>
-  <data name="btn_start_multi.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
+  <data name="&gt;&gt;pic_status.Parent" xml:space="preserve">
+    <value>wz_two_end</value>
   </data>
-  <data name="txt_ext_end_2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 23</value>
+  <data name="txt_video_current.TabIndex" type="System.Int32, mscorlib">
+    <value>111</value>
   </data>
   <data name="&gt;&gt;label18.Name" xml:space="preserve">
     <value>label18</value>
@@ -200,23 +200,20 @@
   <data name="&gt;&gt;radio_target.Name" xml:space="preserve">
     <value>radio_target</value>
   </data>
-  <data name="radio_two.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
   <data name="btn_start_multi.TabIndex" type="System.Int32, mscorlib">
     <value>89</value>
   </data>
   <data name="btn_tips_1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>BottomCenter</value>
   </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>73, 15</value>
+  <data name="&gt;&gt;btn_abort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txt_video_current.Parent" xml:space="preserve">
     <value>wz_mpresets</value>
   </data>
-  <data name="cb_w_presets.Location" type="System.Drawing.Point, System.Drawing">
-    <value>82, 56</value>
+  <data name="&gt;&gt;txt_pr_1.Parent" xml:space="preserve">
+    <value>wz_mpresets</value>
   </data>
   <data name="chk_one_pass.TabIndex" type="System.Int32, mscorlib">
     <value>108</value>
@@ -233,32 +230,32 @@
   <data name="txt_ext_end_2.TabIndex" type="System.Int32, mscorlib">
     <value>65</value>
   </data>
-  <data name="&gt;&gt;txt_pr_1.Parent" xml:space="preserve">
-    <value>wz_mpresets</value>
-  </data>
-  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 15</value>
+  <data name="label5.TabIndex" type="System.Int32, mscorlib">
+    <value>60</value>
   </data>
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>55, 15</value>
   </data>
+  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
+    <value>37, 15</value>
+  </data>
   <data name="label12.TabIndex" type="System.Int32, mscorlib">
     <value>100</value>
-  </data>
-  <data name="&gt;&gt;label7.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;BG_Try_Two_Final.Type" xml:space="preserve">
     <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txt_pr_1.Name" xml:space="preserve">
-    <value>txt_pr_1</value>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>93</value>
   </data>
   <data name="&gt;&gt;txt_pr_end_2.Name" xml:space="preserve">
     <value>txt_pr_end_2</value>
   </data>
   <data name="&gt;&gt;label17.Parent" xml:space="preserve">
     <value>wz_mpresets</value>
+  </data>
+  <data name="&gt;&gt;combo_codec_t.ZOrder" xml:space="preserve">
+    <value>6</value>
   </data>
   <data name="txt_video_current.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleRight</value>
@@ -278,32 +275,23 @@
   <data name="&gt;&gt;txt_pr_two_end.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="wz_mpresets.Text" xml:space="preserve">
-    <value>Two pass / Target size encoding wizard</value>
-  </data>
   <data name="wizardPage1.Text" xml:space="preserve">
     <value>Two pass / Target size encoding wizard</value>
   </data>
   <data name="combo_audio_target.TabIndex" type="System.Int32, mscorlib">
     <value>103</value>
   </data>
-  <data name="&gt;&gt;txt_ext_1.Name" xml:space="preserve">
-    <value>txt_ext_1</value>
+  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>73, 15</value>
   </data>
-  <data name="&gt;&gt;label10.Name" xml:space="preserve">
-    <value>label10</value>
+  <data name="lbl_advise_1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;btn_status.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="lbl_advise_1.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 15</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>FFmpeg Batch AV Converter</value>
-  </data>
-  <data name="profile_target.Items4" xml:space="preserve">
-    <value>medium</value>
   </data>
   <data name="&gt;&gt;label14.Parent" xml:space="preserve">
     <value>gr_targ</value>
@@ -323,20 +311,23 @@
   <data name="&gt;&gt;lbl_advise_1.Parent" xml:space="preserve">
     <value>wz_mpresets</value>
   </data>
-  <data name="&gt;&gt;lbl_bitrate.Name" xml:space="preserve">
-    <value>lbl_bitrate</value>
+  <data name="label15.Text" xml:space="preserve">
+    <value>Kbps</value>
+  </data>
+  <data name="btn_start_multi.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
   </data>
   <data name="btn_status.TabIndex" type="System.Int32, mscorlib">
     <value>96</value>
   </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>wz_two_end</value>
+  <data name="&gt;&gt;img_status.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;combo_size.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="txt_pr_two_end.MaxLength" type="System.Int32, mscorlib">
-    <value>500</value>
+  <data name="&gt;&gt;label10.Name" xml:space="preserve">
+    <value>label10</value>
   </data>
   <data name="pic_status.Location" type="System.Drawing.Point, System.Drawing">
     <value>121, 202</value>
@@ -347,14 +338,11 @@
   <data name="&gt;&gt;label17.Name" xml:space="preserve">
     <value>label17</value>
   </data>
-  <data name="&gt;&gt;wz_mpresets.Name" xml:space="preserve">
-    <value>wz_mpresets</value>
-  </data>
   <data name="txt_ext_end_2.MaxLength" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;profile_target.Parent" xml:space="preserve">
-    <value>gr_targ</value>
+  <data name="&gt;&gt;label7.Name" xml:space="preserve">
+    <value>label7</value>
   </data>
   <data name="&gt;&gt;radio_two.Name" xml:space="preserve">
     <value>radio_two</value>
@@ -371,9 +359,6 @@
   </data>
   <data name="&gt;&gt;btn_tips.Name" xml:space="preserve">
     <value>btn_tips</value>
-  </data>
-  <data name="lbl_advise_1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
   </data>
   <data name="txt_pr_two_end.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 68</value>
@@ -399,17 +384,17 @@
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>255, 15</value>
   </data>
-  <data name="chk_one_pass.Location" type="System.Drawing.Point, System.Drawing">
-    <value>11, 65</value>
+  <data name="&gt;&gt;txt_ext_1.Name" xml:space="preserve">
+    <value>txt_ext_1</value>
+  </data>
+  <data name="&gt;&gt;txt_ext_end_2.Parent" xml:space="preserve">
+    <value>wz_two_end</value>
   </data>
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>58</value>
   </data>
   <data name="&gt;&gt;label13.ZOrder" xml:space="preserve">
     <value>12</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>16</value>
   </data>
   <data name="&gt;&gt;num_aud_target.Parent" xml:space="preserve">
     <value>gr_targ</value>
@@ -423,11 +408,17 @@
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <data name="txt_pr_two_end.MaxLength" type="System.Int32, mscorlib">
+    <value>500</value>
+  </data>
   <data name="label18.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 36</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>174, 116</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Required parameters will be added on next step.</value>
   </data>
   <data name="&gt;&gt;img_status.Name" xml:space="preserve">
     <value>img_status</value>
@@ -447,11 +438,8 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>574, 415</value>
   </data>
-  <data name="btn_tips.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>TopCenter</value>
-  </data>
-  <data name="&gt;&gt;combo_audio_target.Parent" xml:space="preserve">
-    <value>gr_targ</value>
+  <data name="&gt;&gt;combo_size.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
     <value>5</value>
@@ -468,14 +456,11 @@
   <data name="profile_target.Items5" xml:space="preserve">
     <value>slow</value>
   </data>
-  <data name="&gt;&gt;combo_size.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="profile_target.Items4" xml:space="preserve">
+    <value>medium</value>
   </data>
-  <data name="&gt;&gt;label7.Name" xml:space="preserve">
-    <value>label7</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
+  <data name="radio_two.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 19</value>
   </data>
   <data name="profile_target.Items1" xml:space="preserve">
     <value>veryfast</value>
@@ -495,8 +480,8 @@
   <data name="label14.Text" xml:space="preserve">
     <value>Audio</value>
   </data>
-  <data name="label12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>37, 15</value>
+  <data name="radio_two.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
   <data name="label14.TabIndex" type="System.Int32, mscorlib">
     <value>104</value>
@@ -525,9 +510,6 @@
   <data name="&gt;&gt;wz_mpresets.Type" xml:space="preserve">
     <value>AeroWizard.WizardPage, AeroWizard, Version=2.3.1.0, Culture=neutral, PublicKeyToken=915e74f5d64b8f37</value>
   </data>
-  <data name="&gt;&gt;txt_pr_ext_end.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;n_target_size.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
@@ -543,14 +525,11 @@
   <data name="wz_mpresets.Size" type="System.Drawing.Size, System.Drawing">
     <value>527, 261</value>
   </data>
-  <data name="btn_tips_1.TabIndex" type="System.Int32, mscorlib">
-    <value>92</value>
+  <data name="txt_pr_end_2.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;profile_target.Type" xml:space="preserve">
     <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;wizardPage1.Type" xml:space="preserve">
-    <value>AeroWizard.WizardPage, AeroWizard, Version=2.3.1.0, Culture=neutral, PublicKeyToken=915e74f5d64b8f37</value>
   </data>
   <data name="&gt;&gt;txt_ext_end_2.Name" xml:space="preserve">
     <value>txt_ext_end_2</value>
@@ -558,8 +537,8 @@
   <data name="&gt;&gt;txt_tip_1st.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;btn_abort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
+    <value>8</value>
   </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
     <value>61, 15</value>
@@ -567,14 +546,14 @@
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>62</value>
   </data>
-  <data name="label15.Text" xml:space="preserve">
-    <value>Kbps</value>
+  <data name="&gt;&gt;txt_ext_end_2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lbl_enabled_target.Parent" xml:space="preserve">
     <value>wz_two_end</value>
   </data>
-  <data name="label13.TabIndex" type="System.Int32, mscorlib">
-    <value>102</value>
+  <data name="&gt;&gt;label12.Name" xml:space="preserve">
+    <value>label12</value>
   </data>
   <data name="&gt;&gt;label15.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -582,8 +561,8 @@
   <data name="txt_ext_1.TabIndex" type="System.Int32, mscorlib">
     <value>56</value>
   </data>
-  <data name="radio_two.Size" type="System.Drawing.Size, System.Drawing">
-    <value>157, 19</value>
+  <data name="&gt;&gt;txt_pr_ext_end.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cb_w_presets.TabIndex" type="System.Int32, mscorlib">
     <value>52</value>
@@ -666,9 +645,6 @@
   <data name="&gt;&gt;txt_tip_1st.Name" xml:space="preserve">
     <value>txt_tip_1st</value>
   </data>
-  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
   <data name="label3.TabIndex" type="System.Int32, mscorlib">
     <value>53</value>
   </data>
@@ -699,6 +675,9 @@
   <data name="btn_tips.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
+  <data name="&gt;&gt;lbl_bitrate.Name" xml:space="preserve">
+    <value>lbl_bitrate</value>
+  </data>
   <data name="&gt;&gt;txt_video_current.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
@@ -717,14 +696,14 @@
   <data name="label9.Text" xml:space="preserve">
     <value>Select base preset for two pass video encoding:</value>
   </data>
+  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 15</value>
+  </data>
   <data name="txt_pr_ext_end.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="gr_targ.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="&gt;&gt;txt_tip_1st.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label5.Parent" xml:space="preserve">
     <value>wz_two_end</value>
@@ -738,17 +717,11 @@
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;img_status.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ImageList, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;BG_Try_Two_Final.Name" xml:space="preserve">
-    <value>BG_Try_Two_Final</value>
-  </data>
   <data name="&gt;&gt;label18.Parent" xml:space="preserve">
     <value>gr_targ</value>
   </data>
-  <data name="&gt;&gt;txt_ext_end_2.Parent" xml:space="preserve">
-    <value>wz_two_end</value>
+  <data name="label18.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
     <value>223, 67</value>
@@ -768,9 +741,6 @@
   <data name="n_target_size.Location" type="System.Drawing.Point, System.Drawing">
     <value>90, 32</value>
   </data>
-  <data name="&gt;&gt;gr_targ.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
     <value>424, 146</value>
   </data>
@@ -779,9 +749,6 @@
   </data>
   <data name="&gt;&gt;BG_Try_1.Type" xml:space="preserve">
     <value>System.ComponentModel.BackgroundWorker, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_enabled_target.ZOrder" xml:space="preserve">
-    <value>0</value>
   </data>
   <data name="radio_two.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -795,11 +762,11 @@
   <data name="&gt;&gt;wz_two_end.Name" xml:space="preserve">
     <value>wz_two_end</value>
   </data>
-  <data name="gr_targ.Text" xml:space="preserve">
-    <value>Target output settings</value>
+  <data name="&gt;&gt;label7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
+  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
+    <value>16</value>
   </data>
   <data name="combo_codec_t.Items1" xml:space="preserve">
     <value>libx265</value>
@@ -3060,8 +3027,8 @@
   <data name="txt_ext_1.Size" type="System.Drawing.Size, System.Drawing">
     <value>30, 23</value>
   </data>
-  <data name="&gt;&gt;label12.ZOrder" xml:space="preserve">
-    <value>8</value>
+  <data name="&gt;&gt;label5.Name" xml:space="preserve">
+    <value>label5</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 15</value>
@@ -3069,11 +3036,14 @@
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 15</value>
   </data>
-  <data name="&gt;&gt;btn_start_multi.Name" xml:space="preserve">
-    <value>btn_start_multi</value>
+  <data name="cb_w_presets.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 56</value>
   </data>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 15</value>
+  </data>
+  <data name="&gt;&gt;txt_video_current.Name" xml:space="preserve">
+    <value>txt_video_current</value>
   </data>
   <data name="btn_start_multi.Location" type="System.Drawing.Point, System.Drawing">
     <value>193, 185</value>
@@ -3081,8 +3051,8 @@
   <data name="txt_ext_1.Location" type="System.Drawing.Point, System.Drawing">
     <value>471, 109</value>
   </data>
-  <data name="txt_tip_2nd.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
-    <value>Right</value>
+  <data name="&gt;&gt;btn_start_multi.Name" xml:space="preserve">
+    <value>btn_start_multi</value>
   </data>
   <data name="&gt;&gt;txt_ext_1.Parent" xml:space="preserve">
     <value>wz_mpresets</value>
@@ -3108,20 +3078,17 @@
   <data name="&gt;&gt;label18.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="label15.TabIndex" type="System.Int32, mscorlib">
-    <value>106</value>
+  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>10, 112</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>44, 15</value>
   </data>
-  <data name="&gt;&gt;btn_status.Parent" xml:space="preserve">
-    <value>wz_two_end</value>
-  </data>
   <data name="&gt;&gt;radio_target.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;combo_size.Parent" xml:space="preserve">
-    <value>gr_targ</value>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
   </data>
   <data name="txt_pr_end_2.MaxLength" type="System.Int32, mscorlib">
     <value>500</value>
@@ -3144,9 +3111,6 @@
   <data name="txt_tip_2nd.TabIndex" type="System.Int32, mscorlib">
     <value>95</value>
   </data>
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>93</value>
-  </data>
   <data name="&gt;&gt;cb_w_presets.Name" xml:space="preserve">
     <value>cb_w_presets</value>
   </data>
@@ -3158,9 +3122,6 @@
   </data>
   <data name="&gt;&gt;label13.Name" xml:space="preserve">
     <value>label13</value>
-  </data>
-  <data name="&gt;&gt;label12.Name" xml:space="preserve">
-    <value>label12</value>
   </data>
   <data name="radio_target.Size" type="System.Drawing.Size, System.Drawing">
     <value>154, 19</value>
@@ -3183,32 +3144,20 @@
   <data name="combo_size.Items1" xml:space="preserve">
     <value>GB</value>
   </data>
-  <data name="txt_video_current.Location" type="System.Drawing.Point, System.Drawing">
-    <value>306, 11</value>
+  <data name="&gt;&gt;label8.ZOrder" xml:space="preserve">
+    <value>9</value>
   </data>
   <data name="btn_tips_1.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 31</value>
   </data>
-  <data name="&gt;&gt;txt_ext_end_2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;txt_pr_ext_end.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;txt_pr_two_end.ZOrder" xml:space="preserve">
-    <value>17</value>
+  <data name="&gt;&gt;wz_mpresets.Name" xml:space="preserve">
+    <value>wz_mpresets</value>
   </data>
   <data name="profile_target.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="label17.TabIndex" type="System.Int32, mscorlib">
     <value>109</value>
-  </data>
-  <data name="wz_two_end.Size" type="System.Drawing.Size, System.Drawing">
-    <value>527, 261</value>
   </data>
   <data name="chk_one_pass.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -3225,8 +3174,8 @@
   <data name="txt_pr_ext_end.MaxLength" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="combo_audio_target.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
+  <data name="radio_two.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="txt_pr_ext_end.Location" type="System.Drawing.Point, System.Drawing">
     <value>471, 75</value>
@@ -3246,20 +3195,20 @@
   <data name="txt_video_current.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 15</value>
   </data>
+  <data name="gr_targ.Text" xml:space="preserve">
+    <value>Target output settings</value>
+  </data>
   <data name="lbl_enabled_target.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label17.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="txt_pr_1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>339, 40</value>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>wz_two_end</value>
   </data>
   <data name="&gt;&gt;label3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label5.TabIndex" type="System.Int32, mscorlib">
-    <value>60</value>
   </data>
   <data name="&gt;&gt;btn_start_multi.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -3270,11 +3219,14 @@
   <data name="txt_tip_2nd.Location" type="System.Drawing.Point, System.Drawing">
     <value>117, 116</value>
   </data>
-  <data name="&gt;&gt;wizard3.Name" xml:space="preserve">
-    <value>wizard3</value>
+  <data name="&gt;&gt;combo_audio_target.Parent" xml:space="preserve">
+    <value>gr_targ</value>
   </data>
   <data name="&gt;&gt;label3.Name" xml:space="preserve">
     <value>label3</value>
+  </data>
+  <data name="&gt;&gt;wizard3.Name" xml:space="preserve">
+    <value>wizard3</value>
   </data>
   <data name="pic_warn_bitrate.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -3300,8 +3252,8 @@
   <data name="&gt;&gt;txt_tip_1st.Parent" xml:space="preserve">
     <value>wz_two_end</value>
   </data>
-  <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>33, 15</value>
+  <data name="wz_mpresets.Text" xml:space="preserve">
+    <value>Two pass / Target size encoding wizard</value>
   </data>
   <data name="&gt;&gt;BG_Try_1.Name" xml:space="preserve">
     <value>BG_Try_1</value>
@@ -3309,14 +3261,17 @@
   <data name="&gt;&gt;wz_two_end.Type" xml:space="preserve">
     <value>AeroWizard.WizardPage, AeroWizard, Version=2.3.1.0, Culture=neutral, PublicKeyToken=915e74f5d64b8f37</value>
   </data>
-  <data name="radio_two.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;btn_abort.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="wz_two_end.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="label18.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;gr_targ.Parent" xml:space="preserve">
+    <value>wz_mpresets</value>
+  </data>
+  <data name="btn_tips_1.TabIndex" type="System.Int32, mscorlib">
+    <value>92</value>
   </data>
   <data name="combo_size.Items" xml:space="preserve">
     <value>MB</value>
@@ -3339,8 +3294,8 @@
   <data name="btn_abort.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 73</value>
   </data>
-  <data name="num_aud_target.Size" type="System.Drawing.Size, System.Drawing">
-    <value>50, 23</value>
+  <data name="&gt;&gt;txt_pr_ext_end.ZOrder" xml:space="preserve">
+    <value>15</value>
   </data>
   <data name="txt_pr_1.MaxLength" type="System.Int32, mscorlib">
     <value>500</value>
@@ -3357,11 +3312,8 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
-  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI Semibold, 9pt, style=Bold</value>
-  </data>
-  <data name="&gt;&gt;pic_status.Parent" xml:space="preserve">
-    <value>wz_two_end</value>
+  <data name="&gt;&gt;profile_target.Parent" xml:space="preserve">
+    <value>gr_targ</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Format</value>
@@ -3408,11 +3360,14 @@
   <data name="txt_pr_1.TabIndex" type="System.Int32, mscorlib">
     <value>54</value>
   </data>
-  <data name="btn_tips_1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
+  <data name="&gt;&gt;wizardPage1.Type" xml:space="preserve">
+    <value>AeroWizard.WizardPage, AeroWizard, Version=2.3.1.0, Culture=neutral, PublicKeyToken=915e74f5d64b8f37</value>
   </data>
-  <data name="&gt;&gt;txt_pr_two_end.Name" xml:space="preserve">
-    <value>txt_pr_two_end</value>
+  <data name="wizard3.Title" xml:space="preserve">
+    <value>Two pass / Target size video encoding wizard</value>
+  </data>
+  <data name="label13.TabIndex" type="System.Int32, mscorlib">
+    <value>102</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5204,8 +5159,8 @@
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
   </data>
-  <data name="txt_video_current.TabIndex" type="System.Int32, mscorlib">
-    <value>111</value>
+  <data name="label13.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 15</value>
   </data>
   <data name="&gt;&gt;txt_ext_end_2.ZOrder" xml:space="preserve">
     <value>10</value>
@@ -5216,17 +5171,23 @@
   <data name="radio_target.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;combo_codec_t.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="chk_one_pass.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 65</value>
+  </data>
+  <data name="&gt;&gt;wizardPage1.Name" xml:space="preserve">
+    <value>wizardPage1</value>
   </data>
   <data name="&gt;&gt;label10.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
-    <value>gr_targ</value>
+  <data name="label18.TabIndex" type="System.Int32, mscorlib">
+    <value>109</value>
   </data>
-  <data name="chk_one_pass.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;txt_tip_1st.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="wz_two_end.Size" type="System.Drawing.Size, System.Drawing">
+    <value>527, 261</value>
   </data>
   <data name="&gt;&gt;lbl_advise_1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -5264,6 +5225,9 @@
   <data name="&gt;&gt;pic_status.Name" xml:space="preserve">
     <value>pic_status</value>
   </data>
+  <data name="txt_pr_two_end.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="&gt;&gt;txt_pr_ext_end.Parent" xml:space="preserve">
     <value>wz_two_end</value>
   </data>
@@ -5285,8 +5249,8 @@
   <data name="&gt;&gt;num_aud_target.Type" xml:space="preserve">
     <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>260, 15</value>
+  <data name="btn_tips.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
   </data>
   <data name="&gt;&gt;radio_two.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -5296,6 +5260,9 @@
   </data>
   <data name="label12.Text" xml:space="preserve">
     <value>Video</value>
+  </data>
+  <data name="label15.TabIndex" type="System.Int32, mscorlib">
+    <value>106</value>
   </data>
   <data name="wz_mpresets.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -5339,8 +5306,8 @@
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
-  <data name="label10.Text" xml:space="preserve">
-    <value>Required parameters will be added on next step.</value>
+  <data name="&gt;&gt;lbl_enabled_target.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;chk_one_pass.Type" xml:space="preserve">
     <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -5357,11 +5324,11 @@
   <data name="label7.Text" xml:space="preserve">
     <value>First pass</value>
   </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="num_aud_target.Size" type="System.Drawing.Size, System.Drawing">
+    <value>50, 23</value>
   </data>
-  <data name="combo_codec_t.TabIndex" type="System.Int32, mscorlib">
-    <value>99</value>
+  <data name="&gt;&gt;txt_pr_two_end.ZOrder" xml:space="preserve">
+    <value>17</value>
   </data>
   <data name="label13.Text" xml:space="preserve">
     <value>Profile</value>
@@ -5426,8 +5393,14 @@
         tQOf0h+4mzhFEoBmLwQVLECtmH8A+RE2i/ZIhfsAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="&gt;&gt;radio_target.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="chk_one_pass.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="btn_tips_1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="combo_codec_t.TabIndex" type="System.Int32, mscorlib">
+    <value>99</value>
   </data>
   <data name="label15.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5450,6 +5423,9 @@
   <data name="&gt;&gt;profile_target.ZOrder" xml:space="preserve">
     <value>10</value>
   </data>
+  <data name="&gt;&gt;txt_pr_1.Name" xml:space="preserve">
+    <value>txt_pr_1</value>
+  </data>
   <data name="combo_codec_t.Items6" xml:space="preserve">
     <value>hevc_nvenc</value>
   </data>
@@ -5462,8 +5438,8 @@
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbl_bitrate.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 15</value>
+  <data name="lbl_bitrate.TabIndex" type="System.Int32, mscorlib">
+    <value>107</value>
   </data>
   <data name="n_target_size.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 23</value>
@@ -5485,6 +5461,15 @@
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
     <value>14</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>260, 15</value>
+  </data>
+  <data name="lbl_bitrate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 15</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -5516,8 +5501,35 @@
   <data name="&gt;&gt;lbl_advise_1.Name" xml:space="preserve">
     <value>lbl_advise_1</value>
   </data>
-  <data name="&gt;&gt;gr_targ.Parent" xml:space="preserve">
-    <value>wz_mpresets</value>
+  <data name="btn_tips.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+</value>
   </data>
   <data name="&gt;&gt;txt_tip_2nd.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -5531,11 +5543,17 @@
   <data name="combo_codec_t.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
+  <data name="combo_audio_target.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
   <data name="wizardPage1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
   <data name="label9.TabIndex" type="System.Int32, mscorlib">
     <value>58</value>
+  </data>
+  <data name="txt_tip_2nd.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
+    <value>Right</value>
   </data>
   <data name="btn_start_multi.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -5587,8 +5605,8 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="txt_pr_two_end.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;txt_pr_two_end.Name" xml:space="preserve">
+    <value>txt_pr_two_end</value>
   </data>
   <data name="&gt;&gt;profile_target.Name" xml:space="preserve">
     <value>profile_target</value>
@@ -5626,8 +5644,8 @@
   <data name="num_aud_target.TabIndex" type="System.Int32, mscorlib">
     <value>105</value>
   </data>
-  <data name="&gt;&gt;btn_abort.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;BG_Try_Two_Final.Name" xml:space="preserve">
+    <value>BG_Try_Two_Final</value>
   </data>
   <data name="&gt;&gt;label12.Parent" xml:space="preserve">
     <value>gr_targ</value>
@@ -5638,14 +5656,17 @@
   <data name="txt_pr_ext_end.TabIndex" type="System.Int32, mscorlib">
     <value>59</value>
   </data>
-  <data name="lbl_bitrate.TabIndex" type="System.Int32, mscorlib">
-    <value>107</value>
+  <data name="&gt;&gt;gr_targ.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="profile_target.Size" type="System.Drawing.Size, System.Drawing">
     <value>68, 23</value>
   </data>
   <data name="&gt;&gt;pic_status.Type" xml:space="preserve">
     <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;radio_target.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <data name="profile_target.Items" xml:space="preserve">
     <value>ultrafast</value>
@@ -5668,6 +5689,9 @@
   <data name="&gt;&gt;label8.Name" xml:space="preserve">
     <value>label8</value>
   </data>
+  <data name="&gt;&gt;combo_size.Parent" xml:space="preserve">
+    <value>gr_targ</value>
+  </data>
   <data name="&gt;&gt;txt_pr_two_end.Parent" xml:space="preserve">
     <value>wz_two_end</value>
   </data>
@@ -5680,11 +5704,14 @@
   <data name="&gt;&gt;radio_two.Parent" xml:space="preserve">
     <value>wizardPage1</value>
   </data>
-  <data name="wizard3.Title" xml:space="preserve">
-    <value>Two pass / Target size video encoding wizard</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>FFmpeg Batch AV Converter</value>
   </data>
   <data name="combo_codec_t.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
+  </data>
+  <data name="&gt;&gt;label15.Parent" xml:space="preserve">
+    <value>gr_targ</value>
   </data>
   <data name="num_aud_target.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -5709,7 +5736,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAABe
-        HAAAAk1TRnQBSQFMAgEBAwEAAcwBAwHQAQMBGAEAARgBAAT/ASEBEAj/AUIBTQE2BwABNgMAASgDAAFg
+        HAAAAk1TRnQBSQFMAgEBAwEAAcwBAwHYAQMBGAEAARgBAAT/ASEBEAj/AUIBTQE2BwABNgMAASgDAAFg
         AwABGAMAAQEBAAEgBgABJC4AAwkBCwMzAlICVAGoA14B3QNeAfADXgHwAVsCYQHeAVICVAGoAzMBUgMJ
         AQyAAAM7AWQDWwHEA2EB3gNfAdgDXgHXA14B1wNeAdcDXgHXA14B1wNfAdgDXwHYA14B1wNfAdgDXwHY
         A18B2ANfAdgDXgHXA14B1wNfAdgDYQHeA1oBvwM2AVd4AAMEAQUDQgF1A14B0gEAAbIC/wEAAbIC/wEA
@@ -5836,11 +5863,11 @@
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>wz_two_end</value>
+  <data name="label7.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Semibold, 9pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;txt_video_current.Name" xml:space="preserve">
-    <value>txt_video_current</value>
+  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="n_target_size.TextAlign" type="System.Windows.Forms.HorizontalAlignment, System.Windows.Forms">
     <value>Center</value>
@@ -5848,35 +5875,8 @@
   <data name="&gt;&gt;wizard3.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="btn_tips.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
+  <data name="txt_ext_end_2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 23</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 59</value>
@@ -5884,9 +5884,6 @@
   <data name="btn_start_multi.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 72</value>
   </data>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>pl</value>
-  </metadata>
   <metadata name="BG_Try_Two_Final.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>280, 17</value>
   </metadata>

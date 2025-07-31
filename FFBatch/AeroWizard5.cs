@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Globalization;
+using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -90,6 +91,14 @@ namespace FFBatch
             if (radio_keys.Checked == true && check_resize.Checked == true)
             {
                 pr_1st_params = pr_1st_params + "-vf " + "\u0022" + "scale=" + combo_resize.Text + ", " + "select='eq(pict_type,PICT_TYPE_I)'" + "\u0022" + " -vsync vfr -frame_pts true";
+            }
+            if (rad_scenes.Checked == true)
+            {
+                String destino = Path.Combine(Path.GetTempPath(), "FFBatch_test") + "\\" + "time.txt";
+                destino = destino.Replace("\\", "/\\");
+                destino = destino.Replace(":", "\\\\://\\");
+                String rate = n_scene.Value.ToString().Replace(",", ".");
+                pr_1st_params = "-filter_complex " + "\u0022" + "select='gt(scene," + rate + ")' ,metadata=print:file=" + destino + "\u0022" +  " -frame_pts true -vsync vfr ";
             }
 
             if (combo_ext.SelectedIndex == 0) jpg_q = "-q:v 6";
@@ -281,15 +290,6 @@ namespace FFBatch
             }
             else txt_naming.Enabled = false;
         }
-
-        private void radio_time_CheckedChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void wiz_img_Finished(object sender, EventArgs e)
-        {
-        }
-
         private void wz_end_Commit(object sender, AeroWizard.WizardPageConfirmEventArgs e)
         {
             start_enc = false;
@@ -369,6 +369,21 @@ namespace FFBatch
             foreach (Control control in ctrl.Controls)
                 RefreshResources(control, res); // recursion
             ctrl.ResumeLayout(false);
+        }
+
+        private void rad_scenes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rad_scenes.Checked)
+            {
+                check_resize.Checked = false;
+                check_resize.Enabled = false;
+                n_scene.Enabled = true;
+            }
+            else
+            {
+                check_resize.Enabled = true;
+                n_scene.Enabled = false;
+            }
         }
     }
 }

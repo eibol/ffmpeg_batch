@@ -2084,8 +2084,13 @@ namespace FFBatch
                     v_sp = 1 + Math.Abs(n_speed.Value / 100);
                     a_sp = Math.Round(1 / v_sp,3);
                 }
-                
-                video_encoder_param = video_encoder_param + trailer_vparam + " -filter_complex " + '\u0022' + "[0:v]setpts=" + v_sp.ToString().Replace(",", ".") + "*PTS[v];[0:a]atempo=" + a_sp.ToString().Replace(",", ".") + "[a]" + '\u0022' + " -map " + '\u0022' + "[v]" + '\u0022' + " -map " + '\u0022' + "[a]" + '\u0022' + " ";                
+
+                if (chk_factor.Checked == false)
+                {
+                    video_encoder_param = video_encoder_param + trailer_vparam + " -filter_complex " + '\u0022' + "[0:v]setpts=" + v_sp.ToString().Replace(",", ".") + "*PTS[v];[0:a]atempo=" + a_sp.ToString().Replace(",", ".") + "[a]" + '\u0022' + " -map " + '\u0022' + "[v]" + '\u0022' + " -map " + '\u0022' + "[a]" + '\u0022' + " ";
+                }
+                else video_encoder_param = video_encoder_param + trailer_vparam + " -filter_complex " + '\u0022' + "[0:v]setpts=1/" + n_speed.Value.ToString().Replace(",", ".") + "*PTS[v];[0:a]atempo=" + n_speed.Value.ToString().Replace(",", ".") + "[a]" + '\u0022' + " -map " + '\u0022' + "[v]" + '\u0022' + " -map " + '\u0022' + "[a]" + '\u0022';
+
             }
             video_encoder_param = video_encoder_param + " " + aspect + " ";
         }
@@ -5141,8 +5146,11 @@ namespace FFBatch
             
             if (n_speed.Value != 0)
             {
-                foreach (Control ct in wz1_1.Controls)
-                    if (ct.Name != n_speed.Name) ct.Enabled = false;
+                foreach (Control ct in wz1_1.Controls) if (ct.Name != n_speed.Name) ct.Enabled = false;
+                chk_factor.Enabled = true;
+                lbl_speed_factor.Enabled = true;
+                lbl_sp_up_d.Enabled = true;
+
                 cb_resize.SelectedIndex = -1;
                 cb_crop.SelectedIndex = -1;
                 cb_deint.SelectedIndex = -1;
@@ -5629,6 +5637,21 @@ namespace FFBatch
         private void txt_trailer_final_DoubleClick(object sender, EventArgs e)
         {
             txt_trailer_final.Text = "00:00:00";
+        }
+
+        private void chk_factor_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chk_factor.Checked)
+            {
+                lbl_speed_factor.Text = "x";
+                n_speed.Minimum = 0;
+            }
+            else
+            {
+                lbl_speed_factor.Text = "%";
+                n_speed.Minimum = -100;
+            }
+
         }
     }
 }

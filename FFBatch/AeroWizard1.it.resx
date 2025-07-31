@@ -4088,10 +4088,13 @@
     <value>138, 194</value>
   </data>
   <data name="lbl_amd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>118, 17</value>
+    <value>105, 15</value>
   </data>
   <data name="lbl_amd.Text" xml:space="preserve">
     <value>Selettore di qualità</value>
+  </data>
+  <data name="cb_q_amd.Items" xml:space="preserve">
+    <value>bilanciato</value>
   </data>
   <data name="cb_q_amd.Items1" xml:space="preserve">
     <value>velocità</value>
@@ -4131,23 +4134,29 @@
   <data name="btn_ref.Text" xml:space="preserve">
     <value>Riferimento</value>
   </data>
+  <data name="label27.Size" type="System.Drawing.Size, System.Drawing">
+    <value>57, 15</value>
+  </data>
+  <data name="label27.Text" xml:space="preserve">
+    <value>Venditore</value>
+  </data>
   <data name="label26.Location" type="System.Drawing.Point, System.Drawing">
     <value>207, 108</value>
   </data>
   <data name="label26.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 17</value>
+    <value>80, 15</value>
   </data>
   <data name="label26.Text" xml:space="preserve">
     <value>Formato pixel</value>
   </data>
   <data name="label25.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 17</value>
+    <value>42, 15</value>
   </data>
   <data name="label25.Text" xml:space="preserve">
     <value>Profilo</value>
   </data>
   <data name="label23.Size" type="System.Drawing.Size, System.Drawing">
-    <value>128, 17</value>
+    <value>117, 15</value>
   </data>
   <data name="label23.Text" xml:space="preserve">
     <value>Qualità costante CRF</value>
@@ -4156,7 +4165,7 @@
     <value>205, 231</value>
   </data>
   <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
-    <value>141, 17</value>
+    <value>128, 15</value>
   </data>
   <data name="label17.Text" xml:space="preserve">
     <value>Frequenza fotogrammi</value>
@@ -4174,13 +4183,13 @@
     <value>16, 231</value>
   </data>
   <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
-    <value>88, 17</value>
+    <value>80, 15</value>
   </data>
   <data name="label16.Text" xml:space="preserve">
     <value>Formato pixel</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>54, 17</value>
+    <value>50, 15</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>Sintonia</value>
@@ -4192,19 +4201,19 @@
     <value>Profilo</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>46, 17</value>
+    <value>42, 15</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Profilo</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 17</value>
+    <value>84, 15</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>Modo codifica</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>92, 17</value>
+    <value>82, 15</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Encoder video</value>
@@ -4214,6 +4223,15 @@
   </data>
   <data name="wz_trailer.Text" xml:space="preserve">
     <value>Crea trailer del film</value>
+  </data>
+  <data name="chk_factor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>454, 220</value>
+  </data>
+  <data name="chk_factor.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 19</value>
+  </data>
+  <data name="chk_factor.Text" xml:space="preserve">
+    <value>Fattore</value>
   </data>
   <data name="chk_pad.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 19</value>
@@ -4239,7 +4257,7 @@
     <value>40, 76</value>
   </data>
   <data name="label47.Size" type="System.Drawing.Size, System.Drawing">
-    <value>40, 17</value>
+    <value>36, 15</value>
   </data>
   <data name="label47.Text" xml:space="preserve">
     <value>DAR: </value>
@@ -4273,7 +4291,7 @@
 </value>
   </data>
   <data name="btn_reset.Location" type="System.Drawing.Point, System.Drawing">
-    <value>402, 230</value>
+    <value>132, 3</value>
   </data>
   <data name="btn_reset.Size" type="System.Drawing.Size, System.Drawing">
     <value>122, 29</value>
@@ -4287,11 +4305,11 @@
   <data name="cb_de_deint.Items1" xml:space="preserve">
     <value>Interlacciato</value>
   </data>
-  <data name="label45.Size" type="System.Drawing.Size, System.Drawing">
-    <value>41, 17</value>
-  </data>
   <data name="label45.Text" xml:space="preserve">
     <value>Parità</value>
+  </data>
+  <data name="cb_de_parity.Items" xml:space="preserve">
+    <value>Automatica</value>
   </data>
   <data name="cb_de_parity.Items1" xml:space="preserve">
     <value>Campo superiore</value>
@@ -4300,31 +4318,31 @@
     <value>Campo inferiore</value>
   </data>
   <data name="label44.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 17</value>
+    <value>39, 15</value>
   </data>
   <data name="label44.Text" xml:space="preserve">
     <value>Modo</value>
   </data>
   <data name="label40.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 17</value>
+    <value>69, 15</value>
   </data>
   <data name="label40.Text" xml:space="preserve">
     <value>Deinterlacc.</value>
   </data>
-  <data name="label30.Location" type="System.Drawing.Point, System.Drawing">
-    <value>505, 197</value>
+  <data name="lbl_speed_factor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>502, 199</value>
   </data>
   <data name="n_speed.Location" type="System.Drawing.Point, System.Drawing">
     <value>459, 193</value>
   </data>
-  <data name="label21.Location" type="System.Drawing.Point, System.Drawing">
-    <value>384, 196</value>
+  <data name="lbl_sp_up_d.Location" type="System.Drawing.Point, System.Drawing">
+    <value>399, 175</value>
   </data>
-  <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 17</value>
+  <data name="lbl_sp_up_d.Size" type="System.Drawing.Size, System.Drawing">
+    <value>118, 15</value>
   </data>
-  <data name="label21.Text" xml:space="preserve">
-    <value>Velocità +/-</value>
+  <data name="lbl_sp_up_d.Text" xml:space="preserve">
+    <value>Accelerare/diminuire</value>
   </data>
   <data name="cb_rotate.Items" xml:space="preserve">
     <value>Nessuno</value>
@@ -4351,7 +4369,7 @@
     <value>282, 21</value>
   </data>
   <data name="lbl_crop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 17</value>
+    <value>46, 15</value>
   </data>
   <data name="lbl_crop.Text" xml:space="preserve">
     <value>Ritaglia</value>
@@ -4360,7 +4378,7 @@
     <value>26, 21</value>
   </data>
   <data name="label20.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 17</value>
+    <value>79, 15</value>
   </data>
   <data name="label20.Text" xml:space="preserve">
     <value>Ridimensiona</value>
@@ -4372,7 +4390,7 @@
     <value>98, 23</value>
   </data>
   <data name="label18.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 17</value>
+    <value>38, 15</value>
   </data>
   <data name="label18.Text" xml:space="preserve">
     <value>Ruota</value>
@@ -4384,7 +4402,7 @@
     <value>388, 206</value>
   </data>
   <data name="chk_normalize.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 21</value>
+    <value>95, 19</value>
   </data>
   <data name="chk_normalize.Text" xml:space="preserve">
     <value>Normalizzare</value>
@@ -4399,7 +4417,7 @@
     <value>217, 208</value>
   </data>
   <data name="label32.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 17</value>
+    <value>69, 15</value>
   </data>
   <data name="label32.Text" xml:space="preserve">
     <value>Velocità +/-</value>
@@ -4408,7 +4426,7 @@
     <value>324, 94</value>
   </data>
   <data name="label29.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 17</value>
+    <value>126, 15</value>
   </data>
   <data name="label29.Text" xml:space="preserve">
     <value>Dimensione segmento</value>
@@ -4420,19 +4438,19 @@
     <value>385, 31</value>
   </data>
   <data name="label22.Size" type="System.Drawing.Size, System.Drawing">
-    <value>42, 17</value>
+    <value>37, 15</value>
   </data>
   <data name="label22.Text" xml:space="preserve">
     <value>Taglia</value>
   </data>
   <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 17</value>
+    <value>77, 15</value>
   </data>
   <data name="label14.Text" xml:space="preserve">
     <value>Qualità bassa</value>
   </data>
   <data name="label15.Size" type="System.Drawing.Size, System.Drawing">
-    <value>101, 17</value>
+    <value>92, 15</value>
   </data>
   <data name="label15.Text" xml:space="preserve">
     <value>Qualità migliore</value>
@@ -4471,7 +4489,7 @@
     <value>185, 31</value>
   </data>
   <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>166, 17</value>
+    <value>152, 15</value>
   </data>
   <data name="label10.Text" xml:space="preserve">
     <value>Frequenza campionamento</value>
@@ -4490,9 +4508,6 @@
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 31</value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>82, 17</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Codec audio</value>
@@ -4662,7 +4677,7 @@
     <value>373, 47</value>
   </data>
   <data name="chk_save_pres.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 21</value>
+    <value>91, 19</value>
   </data>
   <data name="chk_save_pres.Text" xml:space="preserve">
     <value>Salva profilo</value>
@@ -4674,7 +4689,7 @@
     <value>21, 29</value>
   </data>
   <data name="label24.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 17</value>
+    <value>139, 15</value>
   </data>
   <data name="label24.Text" xml:space="preserve">
     <value>Contenitore destinazione</value>
@@ -6916,7 +6931,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAD8
-        swAAAk1TRnQBSQFMAgEBBQEAAUwBBgFMAQYB3QEAAXwBAAT/AREBAAj/AUIBTQE2BwABNgMAASgDAAF0
+        swAAAk1TRnQBSQFMAgEBBQEAAVwBBgFcAQYB3QEAAXwBAAT/AREBAAj/AUIBTQE2BwABNgMAASgDAAF0
         AQMCAAH4AwABAQEAARAFAAHAAbABBv8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
         /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
         /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
@@ -7692,8 +7707,8 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAc
-        GwAAAk1TRnQBSQFMAgEBAwEAAawBBAGsAQQBGAEAARgBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFg
-        AwABGAMAAQEBAAEgBgABJC4AAwkBCwMzAlICVAGoA14B3QFaAl4B8AFaAl4B8AFbAmEB3gFSAlQBqAMz
+        GwAAAk1TRnQBSQFMAgEBAwEAAbwBBAG8AQQBGAEAARgBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFg
+        AwABGAMAAQEBAAEgBgABJC4AAwkBCwMzAlICVAGoA14B3QFcAl4B8AFcAl4B8AFbAmEB3gFSAlQBqAMz
         AVIDCQEMgAADOwFkA1sBxANhAd4DXwHYA14B1wNeAdcDXgHXA14B1wNeAdcDXwHYA18B2ANeAdcDXwHY
         A18B2ANfAdgDXwHYA14B1wNeAdcDXwHYA2EB3gNaAb8DNgFXeAADBAEFA0IBdQNeAdIBAAGyAv8BAAGy
         Av8BAAG0Av8BAAG1Av8BAAG6Av8BAAG3Af4B/wEAAZkB7wH/AQABjwHqAf8BWwJeAdMDQgF1AwQBBXQA
@@ -7709,7 +7724,7 @@
         Af8CAAHuAf8CAAHvAf8CAAHuAf8CAAHvAf8CAAHvAf8CAAHvAf8CAAHvAf8CAAHuAf8CAAHvAf8B3QHc
         AfwF/wNjAeloAAMcAScDYAHjAQABtgL/AQABtgL/AQABtgL/AQABtgL/AQABtwL/AQABuQL/AQABpwH7
         Af8BAAGJAewB/wEAAYEB5wH/AQABkgHtAf8BAAGdAe8B/wEAAZoB7gH/AQABmgHuAf8BAAGaAe4B/wEA
-        AZsB7gH/AQABmAHuAf8BWwJhAeQDHQEoJAADOAFdAwAB/wEAAf8BiQH/AQABzQEAAf8DSQH4AxUBHCwA
+        AZsB7gH/AQABmAHuAf8BWwJhAeQDHQEoJAADOAFdAwAB/wEAAf8BiQH/AQABzQEAAf8DTQH4AxUBHCwA
         A1sBxAT/AbcBtgH5Af8CAAHsAf8CAAHwAf8CAAHwAf8CAAHwAf8CAAHuAf8CAAHwAf8CAAHwAf8CAAHv
         Af8CAAHwAf8CAAHxAf8CAAHvAf8CAAHuAf8CAAHvAf8CAAHwAf8CAAHwAf8CAAHwAf8CAAHwAf8CAAHt
         Af8BxwHGAfsF/wNXAbFkAAMDAQQDWgHHAQABsgL/AQABtwL/AQABtgL/AQABtgL/AQABtgL/AQABtAL/
@@ -7748,16 +7763,16 @@
         AyABLQNAAf0BAAGkAQAB/wEAAcMBBgH/AQABtgEAAf8BAAG7AQAB/wEAAcgBAwH/AQABywEPAf8DAAH/
         AQABgQEAAf8BAAHXAYAB/wEAAcUBBAH/AQABxAENAf8BAAHAAQsB/wEHAc4BjAH/AQABmwEAAf8DXQHR
         BAIcAAMJAQsDXAHDBP8BiAGHAfYB/wIAAe0B/wIAAfAB/wIAAfAB/wIAAe8B/wIAAe8B/wL7Af4B/wLs
-        Af0B/wIAAe8B/wIAAfAB/wIAAfAB/wIAAfAB/wIAAe0B/wKaAfcF/wNWAbIDAwEEaAABXwJlAfEBAAG2
+        Af0B/wIAAe8B/wIAAfAB/wIAAfAB/wIAAfAB/wIAAe0B/wKaAfcF/wNWAbIDAwEEaAABYQJlAfEBAAG2
         Av8BAAG2Av8BAAG2Av8BAAG2Av8BAAG2Av8BAAG2Av8BAAG1Av8BAAG7Av8BAAGnAf0B/wGJAdIB+A3/
         AQABvAHzAf8BAAGCAekB/wEAAZgB7gH/AQABmwHuAf8BAAGbAe4B/wEAAZgB7QH/AQABkwHqAf8BAAGt
-        AfgB/wEAAb4C/wFfAmUB8QMfASwBQQFqAUEB+QEAAZsBAAH/AQABwAEQAf8BAAG0AQAB/wEAAbgBAAH/
+        AfgB/wEAAb4C/wFhAmUB8QMfASwBQQFqAUEB+QEAAZsBAAH/AQABwAEQAf8BAAG0AQAB/wEAAbgBAAH/
         AQABxgELAf8BAAHHARAB/wEAAQkBAAH/A0ABbwNQAZsBAAGJAQAB/wEAAdEBggH/AQABvgECAf8BAAG2
         AQAB/wEAAa8BAAH/AREBzAGPAf8BAAGYAQAB/wNcAcsgAAMyAU8DKwH8AeEB4AH9Af8CAAHvAf8CAAHv
         Af8CAAHwAf8CAAHvAf8CAAHwAf8C/QL/Au4B/gH/AgAB8AH/AgAB7wH/AgAB8AH/AgAB7wH/AgAB8AH/
-        AuoB/gH/A2IB9gMpAT1sAAFaAl4B8AEAAbYC/wEAAbYC/wEAAbYC/wEAAbYC/wEAAbYC/wEAAbYC/wEA
+        AuoB/gH/A2IB9gMpAT1sAAFcAl4B8AEAAbYC/wEAAbYC/wEAAbYC/wEAAbYC/wEAAbYC/wEAAbYC/wEA
         AboC/wEAAboC/wEAAZIB7QH/AQABgwHnAf8BuQHjAfoN/wEVAcMB9AH/AQABiAHrAf8BAAGcAe8B/wEA
-        AZcB7QH/AQABkwHqAf8BAAGtAfgB/wEAAb4C/wEAAbYC/wFfAmUB8QEAARUBAAH/AQABpQEAAf8BDgHD
+        AZcB7QH/AQABkwHqAf8BAAGtAfgB/wEAAb4C/wEAAbYC/wFhAmUB8QEAARUBAAH/AQABpQEAAf8BDgHD
         AYYB/wEAAbMBAQH/AQABuAEGAf8BAgHFARMB/wEAAcMBEgH/AQABEAEAAf8DPQFpCAADVQGtAQABjQEA
         Af8BCQHMAYcB/wEAAb4BCgH/AQABuQEIAf8BAAGxAQAB/wEUAcYBjQH/AQABmAEAAf8DXQHRHAADBgEI
         A1wBwwT/AogB9gH/AgAB7gH/AgAB8AH/AgAB7wH/AgAB8QX/AfUB9gH+Af8CAAHwAf8CAAHvAf8CAAHw
@@ -7815,7 +7830,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAAs
-        UAIAAk1TRnQBSQFMAgEBBwEAAYwBAgGMAQIBQAEAAUABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgEAAEB
+        UAIAAk1TRnQBSQFMAgEBBwEAAZwBAgGcAQIBQAEAAUABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgEAAEB
         AgABgAMAAQEBAAEgBwABAhEAAf0B/wH+Af8B9wH6AfgB/wH9Af4B+gP/AfsC/wH9AfoD/wH8Bf8B/QX/
         Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/
         Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/
@@ -12160,14 +12175,5 @@
         xRPuE8QT7hPCE+4TwBPuE74T7ha9Fu5Ax0CeAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
         AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=
 </value>
-  </data>
-  <data name="cb_de_parity.Items" xml:space="preserve">
-    <value>Automatica</value>
-  </data>
-  <data name="label27.Text" xml:space="preserve">
-    <value>Venditore</value>
-  </data>
-  <data name="cb_q_amd.Items" xml:space="preserve">
-    <value>bilanciato</value>
   </data>
 </root>

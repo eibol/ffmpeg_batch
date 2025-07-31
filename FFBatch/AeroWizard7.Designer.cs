@@ -161,17 +161,17 @@
             // 
             // btn_start_multi
             // 
-            resources.ApplyResources(this.btn_start_multi, "btn_start_multi");
             this.btn_start_multi.FlatAppearance.BorderSize = 0;
             this.btn_start_multi.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_start_multi, "btn_start_multi");
             this.btn_start_multi.Name = "btn_start_multi";
             this.btn_start_multi.UseVisualStyleBackColor = true;
             // 
             // btn_abort
             // 
-            resources.ApplyResources(this.btn_abort, "btn_abort");
             this.btn_abort.FlatAppearance.BorderSize = 0;
             this.btn_abort.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_abort, "btn_abort");
             this.btn_abort.Name = "btn_abort";
             this.btn_abort.UseVisualStyleBackColor = true;
             // 
@@ -201,7 +201,6 @@
             // 
             // wz_final
             // 
-            resources.ApplyResources(this.wz_final, "wz_final");
             this.wz_final.Controls.Add(this.textBox1);
             this.wz_final.Controls.Add(this.check_name);
             this.wz_final.Controls.Add(this.pic_warn_two);
@@ -214,19 +213,19 @@
             this.wz_final.Controls.Add(this.chk_save_pres);
             this.wz_final.IsFinishPage = true;
             this.wz_final.Name = "wz_final";
+            resources.ApplyResources(this.wz_final, "wz_final");
             // 
             // wz1
             // 
-            resources.ApplyResources(this.wz1, "wz1");
             this.wz1.Controls.Add(this.groupBox1);
             this.wz1.Controls.Add(this.groupBox2);
             this.wz1.Name = "wz1";
+            resources.ApplyResources(this.wz1, "wz1");
             this.wz1.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz1_Commit);
             this.wz1.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz1_Initialize);
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.lbl_c);
             this.groupBox1.Controls.Add(this.cb_framerate1);
             this.groupBox1.Controls.Add(this.txt_audio_path);
@@ -236,6 +235,7 @@
             this.groupBox1.Controls.Add(this.chk_audio);
             this.groupBox1.Controls.Add(this.label15);
             this.groupBox1.Controls.Add(this.n_multiv_secs);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -246,9 +246,9 @@
             // 
             // cb_framerate1
             // 
-            resources.ApplyResources(this.cb_framerate1, "cb_framerate1");
             this.cb_framerate1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_framerate1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            resources.ApplyResources(this.cb_framerate1, "cb_framerate1");
             this.cb_framerate1.FormattingEnabled = true;
             this.cb_framerate1.Items.AddRange(new object[] {
             resources.GetString("cb_framerate1.Items"),
@@ -296,6 +296,12 @@
             // 
             // n_multiv_secs
             // 
+            this.n_multiv_secs.DecimalPlaces = 2;
+            this.n_multiv_secs.Increment = new decimal(new int[] {
+            1,
+            0,
+            0,
+            65536});
             resources.ApplyResources(this.n_multiv_secs, "n_multiv_secs");
             this.n_multiv_secs.Maximum = new decimal(new int[] {
             1000,
@@ -304,14 +310,14 @@
             0});
             this.n_multiv_secs.Name = "n_multiv_secs";
             this.n_multiv_secs.Value = new decimal(new int[] {
-            5,
+            1,
             0,
             0,
             0});
+            this.n_multiv_secs.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.n_multiv_secs_KeyPress);
             // 
             // groupBox2
             // 
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.chk_even);
             this.groupBox2.Controls.Add(this.cb_pixel);
             this.groupBox2.Controls.Add(this.label1);
@@ -322,6 +328,7 @@
             this.groupBox2.Controls.Add(this.check_resize);
             this.groupBox2.Controls.Add(this.combo_ext);
             this.groupBox2.Controls.Add(this.label3);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
@@ -333,10 +340,10 @@
             // 
             // cb_pixel
             // 
-            resources.ApplyResources(this.cb_pixel, "cb_pixel");
             this.cb_pixel.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_pixel.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_pixel.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cb_pixel, "cb_pixel");
             this.cb_pixel.FormattingEnabled = true;
             this.cb_pixel.Name = "cb_pixel";
             // 
@@ -383,13 +390,13 @@
             // 
             // combo_ext
             // 
-            resources.ApplyResources(this.combo_ext, "combo_ext");
             this.combo_ext.FormattingEnabled = true;
             this.combo_ext.Items.AddRange(new object[] {
             resources.GetString("combo_ext.Items"),
             resources.GetString("combo_ext.Items1"),
             resources.GetString("combo_ext.Items2"),
             resources.GetString("combo_ext.Items3")});
+            resources.ApplyResources(this.combo_ext, "combo_ext");
             this.combo_ext.Name = "combo_ext";
             // 
             // label3
@@ -410,13 +417,13 @@
             // 
             // wz0
             // 
-            resources.ApplyResources(this.wz0, "wz0");
             this.wz0.Controls.Add(this.pic_img_v);
             this.wz0.Controls.Add(this.radio_img_aud);
             this.wz0.Controls.Add(this.radio_1_v);
             this.wz0.Controls.Add(this.radio_multi_v);
             this.wz0.Controls.Add(this.label10);
             this.wz0.Name = "wz0";
+            resources.ApplyResources(this.wz0, "wz0");
             this.wz0.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz0_Commit);
             this.wz0.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz0_Initialize);
             // 
@@ -456,16 +463,15 @@
             // 
             // wz2
             // 
-            resources.ApplyResources(this.wz2, "wz2");
             this.wz2.Controls.Add(this.groupBox4);
             this.wz2.Controls.Add(this.groupBox3);
             this.wz2.Name = "wz2";
+            resources.ApplyResources(this.wz2, "wz2");
             this.wz2.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz2_Commit);
             this.wz2.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz2_Initialize);
             // 
             // groupBox4
             // 
-            resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Controls.Add(this.txt_audio2);
             this.groupBox4.Controls.Add(this.browse_aud2);
             this.groupBox4.Controls.Add(this.chk_audio2);
@@ -474,6 +480,7 @@
             this.groupBox4.Controls.Add(this.label17);
             this.groupBox4.Controls.Add(this.label13);
             this.groupBox4.Controls.Add(this.label12);
+            resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
             // 
@@ -499,9 +506,9 @@
             // 
             // cb_framerate2
             // 
-            resources.ApplyResources(this.cb_framerate2, "cb_framerate2");
             this.cb_framerate2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_framerate2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            resources.ApplyResources(this.cb_framerate2, "cb_framerate2");
             this.cb_framerate2.FormattingEnabled = true;
             this.cb_framerate2.Items.AddRange(new object[] {
             resources.GetString("cb_framerate2.Items"),
@@ -544,7 +551,6 @@
             // 
             // groupBox3
             // 
-            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Controls.Add(this.chk_even2);
             this.groupBox3.Controls.Add(this.cb_pixel2);
             this.groupBox3.Controls.Add(this.label9);
@@ -555,6 +561,7 @@
             this.groupBox3.Controls.Add(this.check_resize2);
             this.groupBox3.Controls.Add(this.combo_ext2);
             this.groupBox3.Controls.Add(this.label14);
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 
@@ -566,10 +573,10 @@
             // 
             // cb_pixel2
             // 
-            resources.ApplyResources(this.cb_pixel2, "cb_pixel2");
             this.cb_pixel2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_pixel2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_pixel2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cb_pixel2, "cb_pixel2");
             this.cb_pixel2.FormattingEnabled = true;
             this.cb_pixel2.Name = "cb_pixel2";
             // 
@@ -614,13 +621,13 @@
             // 
             // combo_ext2
             // 
-            resources.ApplyResources(this.combo_ext2, "combo_ext2");
             this.combo_ext2.FormattingEnabled = true;
             this.combo_ext2.Items.AddRange(new object[] {
             resources.GetString("combo_ext2.Items"),
             resources.GetString("combo_ext2.Items1"),
             resources.GetString("combo_ext2.Items2"),
             resources.GetString("combo_ext2.Items3")});
+            resources.ApplyResources(this.combo_ext2, "combo_ext2");
             this.combo_ext2.Name = "combo_ext2";
             // 
             // label14
@@ -630,16 +637,15 @@
             // 
             // wz3
             // 
-            resources.ApplyResources(this.wz3, "wz3");
             this.wz3.Controls.Add(this.groupBox5);
             this.wz3.Controls.Add(this.groupBox6);
             this.wz3.Name = "wz3";
+            resources.ApplyResources(this.wz3, "wz3");
             this.wz3.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz3_Commit);
             this.wz3.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz3_Initialize);
             // 
             // groupBox5
             // 
-            resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Controls.Add(this.chk_even3);
             this.groupBox5.Controls.Add(this.label19);
             this.groupBox5.Controls.Add(this.txt_image3);
@@ -649,6 +655,7 @@
             this.groupBox5.Controls.Add(this.chk_width3);
             this.groupBox5.Controls.Add(this.radio_16_9_3);
             this.groupBox5.Controls.Add(this.radio_4_3_3);
+            resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.TabStop = false;
             // 
@@ -712,7 +719,6 @@
             // 
             // groupBox6
             // 
-            resources.ApplyResources(this.groupBox6, "groupBox6");
             this.groupBox6.Controls.Add(this.aud_sc);
             this.groupBox6.Controls.Add(this.cb_pixel3);
             this.groupBox6.Controls.Add(this.label21);
@@ -720,6 +726,7 @@
             this.groupBox6.Controls.Add(this.label18);
             this.groupBox6.Controls.Add(this.combo_ext3);
             this.groupBox6.Controls.Add(this.label22);
+            resources.ApplyResources(this.groupBox6, "groupBox6");
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.TabStop = false;
             // 
@@ -731,10 +738,10 @@
             // 
             // cb_pixel3
             // 
-            resources.ApplyResources(this.cb_pixel3, "cb_pixel3");
             this.cb_pixel3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_pixel3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cb_pixel3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            resources.ApplyResources(this.cb_pixel3, "cb_pixel3");
             this.cb_pixel3.FormattingEnabled = true;
             this.cb_pixel3.Name = "cb_pixel3";
             // 
@@ -745,9 +752,9 @@
             // 
             // cb_framerate3
             // 
-            resources.ApplyResources(this.cb_framerate3, "cb_framerate3");
             this.cb_framerate3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cb_framerate3.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            resources.ApplyResources(this.cb_framerate3, "cb_framerate3");
             this.cb_framerate3.FormattingEnabled = true;
             this.cb_framerate3.Items.AddRange(new object[] {
             resources.GetString("cb_framerate3.Items"),
@@ -764,13 +771,13 @@
             // 
             // combo_ext3
             // 
-            resources.ApplyResources(this.combo_ext3, "combo_ext3");
             this.combo_ext3.FormattingEnabled = true;
             this.combo_ext3.Items.AddRange(new object[] {
             resources.GetString("combo_ext3.Items"),
             resources.GetString("combo_ext3.Items1"),
             resources.GetString("combo_ext3.Items2"),
             resources.GetString("combo_ext3.Items3")});
+            resources.ApplyResources(this.combo_ext3, "combo_ext3");
             this.combo_ext3.Name = "combo_ext3";
             // 
             // label22
@@ -780,7 +787,6 @@
             // 
             // wz_end
             // 
-            resources.ApplyResources(this.wz_end, "wz_end");
             this.wz_end.Controls.Add(this.btn_cancel);
             this.wz_end.Controls.Add(this.btn_Start);
             this.wz_end.Controls.Add(this.label16);
@@ -788,24 +794,25 @@
             this.wz_end.Controls.Add(this.label7);
             this.wz_end.IsFinishPage = true;
             this.wz_end.Name = "wz_end";
+            resources.ApplyResources(this.wz_end, "wz_end");
             this.wz_end.Commit += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz_end_Commit);
             this.wz_end.Initialize += new System.EventHandler<AeroWizard.WizardPageInitEventArgs>(this.wz_end_Initialize);
             this.wz_end.Rollback += new System.EventHandler<AeroWizard.WizardPageConfirmEventArgs>(this.wz_end_Rollback);
             // 
             // btn_cancel
             // 
-            resources.ApplyResources(this.btn_cancel, "btn_cancel");
             this.btn_cancel.FlatAppearance.BorderSize = 0;
             this.btn_cancel.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_cancel, "btn_cancel");
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.UseVisualStyleBackColor = true;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click_1);
             // 
             // btn_Start
             // 
-            resources.ApplyResources(this.btn_Start, "btn_Start");
             this.btn_Start.FlatAppearance.BorderSize = 0;
             this.btn_Start.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            resources.ApplyResources(this.btn_Start, "btn_Start");
             this.btn_Start.Name = "btn_Start";
             this.btn_Start.UseVisualStyleBackColor = true;
             this.btn_Start.Click += new System.EventHandler(this.btn_Start_Click_1);
@@ -827,17 +834,14 @@
             // 
             // openf
             // 
-            resources.ApplyResources(this.openf, "openf");
             this.openf.FileOk += new System.ComponentModel.CancelEventHandler(this.openf_FileOk);
             // 
             // openf2
             // 
-            resources.ApplyResources(this.openf2, "openf2");
             this.openf2.FileOk += new System.ComponentModel.CancelEventHandler(this.openf2_FileOk);
             // 
             // openf3
             // 
-            resources.ApplyResources(this.openf3, "openf3");
             this.openf3.FileOk += new System.ComponentModel.CancelEventHandler(this.openf3_FileOk);
             // 
             // images

@@ -4263,6 +4263,9 @@
   <data name="wz_trailer.Text" xml:space="preserve">
     <value>Crear videoclip (trailer)</value>
   </data>
+  <data name="chk_factor.Location" type="System.Drawing.Point, System.Drawing">
+    <value>459, 229</value>
+  </data>
   <data name="chk_pad.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 19</value>
   </data>
@@ -4347,19 +4350,16 @@
   <data name="cb_deint.Location" type="System.Drawing.Point, System.Drawing">
     <value>77, 116</value>
   </data>
-  <data name="label30.Location" type="System.Drawing.Point, System.Drawing">
-    <value>505, 202</value>
-  </data>
   <data name="n_speed.Location" type="System.Drawing.Point, System.Drawing">
     <value>462, 198</value>
   </data>
-  <data name="label21.Location" type="System.Drawing.Point, System.Drawing">
-    <value>384, 200</value>
+  <data name="lbl_sp_up_d.Location" type="System.Drawing.Point, System.Drawing">
+    <value>385, 201</value>
   </data>
-  <data name="label21.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="lbl_sp_up_d.Size" type="System.Drawing.Size, System.Drawing">
     <value>74, 15</value>
   </data>
-  <data name="label21.Text" xml:space="preserve">
+  <data name="lbl_sp_up_d.Text" xml:space="preserve">
     <value>Velocidad +-</value>
   </data>
   <data name="cb_rotate.Location" type="System.Drawing.Point, System.Drawing">
@@ -6928,7 +6928,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAD8
-        swAAAk1TRnQBSQFMAgEBBQEAAfgBBgH4AQYB3QEAAXwBAAT/AREBAAj/AUIBTQE2BwABNgMAASgDAAF0
+        swAAAk1TRnQBSQFMAgEBBQEAAQgBBwEIAQcB3QEAAXwBAAT/AREBAAj/AUIBTQE2BwABNgMAASgDAAF0
         AQMCAAH4AwABAQEAARAFAAHAAbABBv8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
         /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
         /wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A/wD/AP8A
@@ -7704,7 +7704,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAD0
-        GgAAAk1TRnQBSQFMAgEBAwEAAVgBBQFYAQUBGAEAARgBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFg
+        GgAAAk1TRnQBSQFMAgEBAwEAAWgBBQFoAQUBGAEAARgBAAT/ASEBAAj/AUIBTQE2BwABNgMAASgDAAFg
         AwABGAMAAQEBAAEgBgABJC4AAwkBCwMzAlICVAGoA14B3QNeAfADXgHwAVsCYQHeAVICVAGoAzMBUgMJ
         AQyAAAM7AWQDWwHEA2EB3gNfAdgDXgHXA14B1wNeAdcDXgHXA14B1wNfAdgDXwHYA14B1wNfAdgDXwHY
         A18B2ANfAdgDXgHXA14B1wNfAdgDYQHeA1oBvwM2AVd4AAMEAQUDQgF1A14B0gEAAbIC/wEAAbIC/wEA
@@ -7721,7 +7721,7 @@
         Ae4B/wIAAe8B/wIAAe4B/wIAAe8B/wIAAe8B/wIAAe8B/wIAAe8B/wIAAe4B/wIAAe8B/wHdAdwB/AX/
         A2MB6WgAAxwBJwNgAeMBAAG2Av8BAAG2Av8BAAG2Av8BAAG2Av8BAAG3Av8BAAG5Av8BAAGnAfsB/wEA
         AYkB7AH/AQABgQHnAf8BAAGSAe0B/wEAAZ0B7wH/AQABmgHuAf8BAAGaAe4B/wEAAZoB7gH/AQABmwHu
-        Af8BAAGYAe4B/wFbAmEB5AMdASgkAAM4AV0DAAH/AQAB/wGJAf8BAAHNAQAB/wNXAfgDFQEcLAADWwHE
+        Af8BAAGYAe4B/wFbAmEB5AMdASgkAAM4AV0DAAH/AQAB/wGJAf8BAAHNAQAB/wNaAfgDFQEcLAADWwHE
         BP8BtwG2AfkB/wIAAewB/wIAAfAB/wIAAfAB/wIAAfAB/wIAAe4B/wIAAfAB/wIAAfAB/wIAAe8B/wIA
         AfAB/wIAAfEB/wIAAe8B/wIAAe4B/wIAAe8B/wIAAfAB/wIAAfAB/wIAAfAB/wIAAfAB/wIAAe0B/wHH
         AcYB+wX/A1cBsWQAAwMBBANaAccBAAGyAv8BAAG3Av8BAAG2Av8BAAG2Av8BAAG2Av8BAAG0Av8BAAG5
@@ -7827,7 +7827,7 @@
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
         ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAD+
-        OgIAAk1TRnQBSQFMAgEBBwEAATgBAwE4AQMBQAEAAUABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgEAAEB
+        OgIAAk1TRnQBSQFMAgEBBwEAAUgBAwFIAQMBQAEAAUABAAT/ASEBAAj/AUIBTQE2BwABNgMAASgEAAEB
         AgABgAMAAQEBAAEgBwABAhEAAf0B/wH+Af8B9wH6AfgB/wH9Af4B+gP/AfsC/wH9AfoD/wH8Bf8B/QX/
         Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/
         Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/Af4D/wH+A/8B/gP/
